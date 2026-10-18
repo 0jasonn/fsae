@@ -20,6 +20,8 @@ extern const u8 data_020d1259[];
 extern Entity *data_0212c648;
 extern s32 data_021348c8;
 extern const u16 data_020d1262[];
+extern const u32 data_020d126c[];
+extern const u32 data_020f2698[];
 
 struct Vars_Flag {
     /* 00 */ u8 unk_00[0x70];
@@ -36,6 +38,11 @@ void func_020266f8(void);
 void func_02036bd0(Entity *e);
 void func_02036b2c(Entity *e);
 void func_02036c64(Entity *e, u16 x, u16 y);
+void func_02045ac0(Entity *e);
+u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
+void *func_0208dde0(void *a, u32 *out, u32 b);
+void func_020845b0(u32 dest, void *src, u16 size);
+u8 func_02085620(u32 a);
 int func_02085608(void);
 u8 func_02086078(Entity *e, Entity *target);
 void *func_0208da4c(void);
@@ -317,4 +324,79 @@ ARM extern "C" void func_020368d8(Entity *e) {
     }
     e->unk_18 = (func_0208455c() & 7) + 1;
     V(e)->unk_74 = 5;
+}
+
+ARM extern "C" void func_02036a58(Entity *e) {
+    Entity *target = e->unk_58;
+    e->unk_30.HALF.HI = target->unk_30.HALF.HI;
+    e->unk_34.HALF.HI = target->unk_34.HALF.HI;
+    if (target->unk_45 == 0) {
+        V(e)->unk_74 = 0;
+        e->unk_45 = 0;
+        func_02085f80(0xa3);
+    }
+    if (V(e)->unk_74-- != 0) {
+        return;
+    }
+    if (e->unk_58->unk_45 != 0) {
+        data_021348c8 = 0;
+    }
+    e->unk_1c.b0 ^= 1;
+    func_020859e0(e, 0);
+    func_02036b2c(e);
+    e->unk_2b = func_02086080(e->unk_30.HALF.HI, e->unk_34.HALF.HI, 0x1f8, 0x1f8);
+}
+
+ARM extern "C" void func_02036b14(Entity *e) {
+    func_02045ac0(e);
+    e->unk_0a = 5;
+}
+
+ARM extern "C" void func_02036b2c(Entity *e) {
+    if (e->unk_45 == 0) {
+        u8 level = e->unk_0a;
+        if (level < 3 && level != 0) {
+            u32 size;
+            void *data = func_0208dde0(func_0208da4c(), &size, data_020d126c[level - 1]);
+            func_020845b0(0x6403000, data, size);
+        }
+    }
+    e->unk_10 = 0x30000;
+    e->unk_14 = 1;
+    e->unk_17 = 0x5a;
+    V(e)->unk_78 = 0x78;
+    e->unk_2e = 2;
+    e->unk_1c.b4 = 1;
+    V(e)->unk_7a = 0;
+}
+
+ARM extern "C" void func_02036bd0(Entity *e) {
+    if (V(e)->unk_70 != 2 && V(e)->unk_71 == 0) {
+        V(e)->unk_70 = 2;
+    } else {
+        u8 mode;
+        do {
+            mode = func_02085620(data_020f2698[e->unk_0a - 1]);
+        } while (V(e)->unk_70 == mode || (mode == 2 && V(e)->unk_71 != 0));
+        V(e)->unk_70 = mode;
+    }
+    e->unk_17 = 0x1e;
+    e->unk_18 = 2;
+    e->unk_2b = 8;
+    e->unk_0c = 0x200;
+    e->unk_14 = 2;
+    V(e)->unk_72 = e->unk_30.HALF.HI;
+}
+
+ARM extern "C" void func_02036c64(Entity *e, u16 x, u16 y) {
+    if (func_0208455c() & 1) {
+        return;
+    }
+    Entity *fx = func_0204bdb8(0xf);
+    if (fx != NULL) {
+        fx->unk_30.HALF.HI = x;
+        fx->unk_34.HALF.HI = y;
+        fx->unk_0b = 2;
+        fx->unk_54 = e;
+    }
 }

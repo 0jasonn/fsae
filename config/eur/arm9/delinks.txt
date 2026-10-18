@@ -67,4 +67,4 @@ src/Unknown/enemy_02036064.cpp:
 
 src/Unknown/object_020361e8.cpp:
     complete
-    .text       start:0x020361e8 end:0x02036a58
+    .text       start:0x020361e8 end:0x02036ca4
