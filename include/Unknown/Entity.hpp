@@ -78,7 +78,7 @@ struct Entity {
     /* 53 */ u8 unk_53;
     /* 54 */ Entity *unk_54;
     /* 58 */ Entity *unk_58;
-    /* 5c */ u8 unk_5c[2];
+    /* 5c */ u16 unk_5c;
     /* 5e */ struct {
         u8 b0 : 2;
         u8 b2 : 2;

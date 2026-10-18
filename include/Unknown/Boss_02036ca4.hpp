@@ -43,6 +43,10 @@ extern u16 data_0212c5bc;
 extern const u8 data_020f26a8[][8];
 extern const u16 *const data_020d1464[];
 extern const u8 data_020d1450[];
+extern const u8 data_020d1458[];
+extern const u16 *const data_020d1448[];
+extern const u16 *const data_020d1474[];
+extern const u8 data_020d1432[][2];
 
 extern "C" {
 void func_020547ec(void);
@@ -83,6 +87,7 @@ Entity *func_0204bcc8(void);
 Entity *func_0204bd00(void);
 void func_0204c178(int list, Entity *e);
 void func_02086200(Entity *e, int a);
+BOOL func_02084670(const u8 *bits, int index);
 }
 
 #endif

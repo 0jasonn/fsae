@@ -11,7 +11,9 @@ struct PlayerData {
     /* 08 */ u16 unk_08;
     /* 0a */ u8 unk_0a[2];
     /* 0c */ u8 unk_0c;
-    /* 0d */ u8 unk_0d[0x11];
+    /* 0d */ u8 unk_0d[7];
+    /* 14 */ u8 unk_14;
+    /* 15 */ u8 unk_15[9];
     /* 1e */ u8 unk_1e;
     /* 1f */ u8 unk_1f[7];
     /* 26 */ u8 unk_26;
