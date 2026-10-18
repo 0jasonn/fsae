@@ -21,6 +21,9 @@ extern const u8 data_020d1438[];
 extern const u8 data_020d1428[];
 extern const u8 data_020d70c8[];
 extern s32 data_02134914;
+extern u8 data_0212c504;
+extern u8 data_0212c618;
+extern const u16 data_020d142c[];
 
 extern "C" {
 void func_020547ec(void);
@@ -38,6 +41,14 @@ void func_0204625c(int a, int b);
 Entity *func_0204bdb8(int id);
 void func_0205031c(Entity *e, Entity *other);
 u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
+u8 *func_02093b5c(void);
+void func_0205396c(void);
+void func_02026720(void);
+void func_0204fd40(Entity *e);
+void func_02037f6c(Entity *e);
+BOOL func_0203808c(Entity *e);
+void func_02038138(Entity *e);
+int func_020384b8(Entity *e);
 }
 
 ARM extern "C" void func_02036ca4(Entity *e) {
@@ -266,4 +277,63 @@ ARM extern "C" void func_02037390(Entity *e) {
         e->unk_17 = 0x1e;
         e->unk_2e = 0xc;
     }
+}
+
+ARM extern "C" void func_020373d8(Entity *e) {
+    func_02085980(e);
+    func_02060a70(e);
+    if (--e->unk_17 != 0) {
+        return;
+    }
+    e->unk_14 = 0xd;
+    e->unk_0c = 0x100;
+    e->unk_17 = 1;
+    e->unk_1c.b14 = 2;
+    e->unk_1c.b30 = 2;
+    e->unk_5e.b0 = 2;
+    if (func_0208de54(func_0208da4c()) != 0) {
+        data_0212c648 = data_0212ceb0[data_0212c504].unk_28;
+    } else {
+        data_0212c648 = data_0212ceb0[*func_02093b5c()].unk_28;
+    }
+    for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
+        PlayerData *player = &data_0212ceb0[i];
+        player->unk_08 = 0xc;
+        player->unk_38 = 1;
+        player->unk_02 = 0x41;
+        player->unk_28->unk_10 = 0x20000;
+    }
+    func_02076fe0(0x1af);
+    data_0212c618 = 1;
+    func_0205396c();
+    func_02026720();
+}
+
+ARM extern "C" void func_02037528(Entity *e) {
+    func_02085980(e);
+    if ((u16)(e->unk_30.HALF.HI - 0x1f7) <= 2 && (u16)(e->unk_34.HALF.HI - 0x19f) <= 2) {
+        e->unk_30.HALF.HI = 0x1f8;
+        e->unk_34.HALF.HI = 0x1a0;
+        if (--e->unk_17 != 0) {
+            return;
+        }
+        func_02037f6c(e);
+        return;
+    }
+    e->unk_2b = func_02086080(e->unk_30.HALF.HI, e->unk_34.HALF.HI, 0x1f8, 0x1a0);
+    func_0204fd40(e);
+    func_02060a70(e);
+}
+
+ARM extern "C" void func_020375c8(Entity *e) {
+    if (e->unk_29 & 1) {
+        if (func_0203808c(e) == 0) {
+            return;
+        }
+        func_02038138(e);
+        e->unk_0c = data_020d142c[func_020384b8(e)];
+        func_02085980(e);
+        return;
+    }
+    func_02085980(e);
 }

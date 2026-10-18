@@ -5,7 +5,9 @@
 
 // Per-player state, one per connected Link
 struct PlayerData {
-    /* 00 */ u8 unk_00[8];
+    /* 00 */ u8 unk_00[2];
+    /* 02 */ u8 unk_02;
+    /* 03 */ u8 unk_03[5];
     /* 08 */ u16 unk_08;
     /* 0a */ u8 unk_0a[2];
     /* 0c */ u8 unk_0c;
