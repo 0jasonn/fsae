@@ -33,6 +33,8 @@ extern const EntityFunc data_020d0dc0[];
 extern const u8 data_020d0a42[];
 extern const u8 data_020d0a52[];
 extern const u8 data_020d0a72[];
+extern const u8 data_020d0a4a[];
+extern const u16 data_020d0a5a[];
 
 extern "C" {
 Entity *func_0204bd80(int id);
@@ -63,6 +65,8 @@ void func_02030ae4(int index);
 void func_02032e5c(Entity *e);
 void func_02076fe0(int sfx);
 u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
+u8 func_02086078(Entity *target, Entity *e);
+void func_0203298c(Entity *e);
 }
 
 #endif

@@ -43,7 +43,7 @@ struct Entity {
     /* 29 */ u8 unk_29;
     /* 2a */ u8 unk_2a; // animation state
     /* 2b */ u8 unk_2b; // direction
-    /* 2c */ u8 unk_2c[2];
+    /* 2c */ u16 unk_2c;
     /* 2e */ u8 unk_2e;
     /* 2f */ u8 unk_2f;
     /* 30 */ FixedPoint unk_30; // x
