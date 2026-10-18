@@ -24,3 +24,6 @@ objdiff.json
 /dsd.exe
 __pycache__/
 .vscode/
+
+# Local working files
+/scratch/

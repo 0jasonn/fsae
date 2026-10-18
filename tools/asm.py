@@ -12,18 +12,23 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("start", type=lambda x: int(x, 16))
     parser.add_argument("end", type=lambda x: int(x, 16), nargs="?")
-    parser.add_argument("--asm", type=Path, default=ROOT / "build/eur/asm/_dsd_gap@main_0.s")
+    parser.add_argument("--asm-dir", type=Path, default=ROOT / "build/eur/asm")
     args = parser.parse_args()
     end = args.end if args.end is not None else args.start + 1
 
     printing = False
-    for line in args.asm.read_text().splitlines():
+    lines = []
+    for path in sorted(args.asm_dir.rglob("*.s")):
+        lines.extend(path.read_text().splitlines())
+    for line in lines:
         m = re.match(r"^(\S+): ; 0x([0-9a-f]{8})$", line)
         if m:
             addr = int(m.group(2), 16)
             printing = args.start <= addr < end
         if printing and line.strip() and not line.lstrip().startswith((".global", "arm_func_start", "thumb_func_start")):
             print(line)
+        if line.lstrip().startswith(("arm_func_end", "thumb_func_end")):
+            printing = False
 
 
 if __name__ == "__main__":

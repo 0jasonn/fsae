@@ -195,6 +195,21 @@ index 8b92f88..70265bd 100644
              result.relocations.push(Relocation::new_branch(
                  address,
                  called_function.address,
+diff --git a/cli/src/cmd/lcf.rs b/cli/src/cmd/lcf.rs
+index c27c4be..aab1681 100644
+--- a/cli/src/cmd/lcf.rs
++++ b/cli/src/cmd/lcf.rs
+@@ -230,6 +230,10 @@ impl Lcf {
+                 // Migrated files will have the same name as the original, that is intentional
+                 continue;
+             }
++            if file.gap() {
++                // Gap files share a name per module and are told apart by their ID
++                continue;
++            }
+             let filename = file.name.rsplit_once(['/', '\\']).unwrap_or(("", &file.name)).1;
+             match delink_files.entry(filename.to_string()) {
+                 hash_map::Entry::Occupied(occupied_entry) => {
 diff --git a/cli/src/cmd/rom/config.rs b/cli/src/cmd/rom/config.rs
 index 296c517..cd16810 100644
 --- a/cli/src/cmd/rom/config.rs
@@ -327,3 +342,21 @@ index 6dc036a..f27bce3 100644
          let base_address = arm9.base_address();
          let start = (exceptix_start - base_address) as usize;
          let end = (exceptix_end - base_address) as usize;
+diff --git a/lib/src/config/module.rs b/lib/src/config/module.rs
+index 73ea986..33e87da 100644
+--- a/lib/src/config/module.rs
++++ b/lib/src/config/module.rs
+@@ -1091,7 +1091,12 @@ impl Module {
+ 
+         // .rodata
+         let rodata_start = rodata_start.unwrap_or(text_exceptix_end);
+-        self.add_rodata_section(rodata_start, ctor.start)?;
++        if rodata_start >= ctor.start && read_only_end > text_exceptix_end {
++            // TwlSDK places .rodata between .text and .init instead of between .init and .ctor
++            self.add_rodata_section(text_exceptix_end.next_multiple_of(4), read_only_end)?;
++        } else {
++            self.add_rodata_section(rodata_start, ctor.start)?;
++        }
+ 
+         // .data and .bss
+         let data_start = ctor.end.next_multiple_of(32);
