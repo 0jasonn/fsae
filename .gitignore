@@ -1,0 +1,26 @@
+# Game data: never commit
+*.nds
+*.srl
+*.app
+*bios*.bin
+/extract/*
+!/extract/README.md
+
+# Build output
+/build/
+build.ninja
+.ninja_log*
+.ninja_lock
+.ninja_deps
+objdiff.json
+*.xMAP
+*.sav
+
+# Tools
+/tools/dsd.exe
+/tools/dsd.pdb
+/tools/mwccarm/
+/objdiff-cli.exe
+/dsd.exe
+__pycache__/
+.vscode/

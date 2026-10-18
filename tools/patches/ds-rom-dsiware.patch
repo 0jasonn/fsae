@@ -1,0 +1,145 @@
+diff --git a/lib/src/rom/config.rs b/lib/src/rom/config.rs
+index 43c3487..2bd233f 100644
+--- a/lib/src/rom/config.rs
++++ b/lib/src/rom/config.rs
+@@ -76,6 +76,11 @@ pub struct RomConfigDsi {
+     /// the DSi area. Not covered by any digest or SHA1-HMAC.
+     pub region_padding: PathBuf,
+ 
++    /// Path to the reserved bytes at 0x1000..0x4000 of the header. Zero on cartridges, but DSiWare carries data here that
++    /// nothing else in the ROM determines, so it is preserved verbatim when non-zero.
++    #[serde(skip_serializing_if = "Option::is_none", default)]
++    pub header_reserved: Option<PathBuf>,
++
+     /// Alignment of DSi area sections.
+     pub alignment: RomConfigDsiAlignment,
+ 
+diff --git a/lib/src/rom/rom.rs b/lib/src/rom/rom.rs
+index a99cb78..8ce932b 100644
+--- a/lib/src/rom/rom.rs
++++ b/lib/src/rom/rom.rs
+@@ -64,6 +64,8 @@ pub struct DsiArea<'a> {
+     pub arm7i: DsiProgram<'a>,
+     /// Filler between the DS and DSi areas, see [`RomConfigDsi::region_padding`].
+     pub region_padding: Box<[u8]>,
++    /// Reserved header bytes, see [`RomConfigDsi::header_reserved`].
++    pub header_reserved: Option<Box<[u8]>>,
+ }
+ 
+ /// Errors related to [`Rom::extract`].
+@@ -572,10 +574,15 @@ impl<'a> Rom<'a> {
+             let arm7i = read_file(path.join(&dsi_config.arm7i_bin))?;
+             let arm7i_offsets = serde_saphyr::from_reader(open_file(path.join(&dsi_config.arm7i_config))?)?;
+             let region_padding = read_file(path.join(&dsi_config.region_padding))?;
++            let header_reserved = match &dsi_config.header_reserved {
++                Some(header_reserved) => Some(read_file(path.join(header_reserved))?.into_boxed_slice()),
++                None => None,
++            };
+             Some(DsiArea {
+                 arm9i: DsiProgram::new(arm9i, arm9i_offsets),
+                 arm7i: DsiProgram::new(arm7i, arm7i_offsets),
+                 region_padding: region_padding.into_boxed_slice(),
++                header_reserved,
+             })
+         } else {
+             None
+@@ -787,6 +794,9 @@ impl<'a> Rom<'a> {
+                 create_file_and_dirs(path.join(&config.arm7i_bin))?.write_all(dsi.arm7i.full_data())?;
+                 serde_saphyr::to_io_writer(&mut create_file_and_dirs(path.join(&config.arm7i_config))?, dsi.arm7i.offsets())?;
+                 create_file_and_dirs(path.join(&config.region_padding))?.write_all(&dsi.region_padding)?;
++                if let (Some(data), Some(file)) = (&dsi.header_reserved, &config.header_reserved) {
++                    create_file_and_dirs(path.join(file))?.write_all(data)?;
++                }
+             }
+             (None, Some(_)) => log::warn!("DSi area not found, but config requested it to be saved"),
+             (Some(_), None) => log::warn!("DSi area found, but config has no place to save it"),
+@@ -972,7 +982,13 @@ impl<'a> Rom<'a> {
+     fn extract_dsi_area(rom: &'a raw::Rom, header: &raw::Header) -> Result<(DsiArea<'a>, RomConfigDsi), RomExtractError> {
+         let data = rom.data();
+ 
+-        let region_start = header.ds_rom_region_end as usize * DSI_REGION_UNIT as usize;
++        // DSiWare (NAND titles) has no DS/DSi region boundary in the header, and the DSi area starts right where the DS area
++        // ends instead.
++        let region_start = if header.ds_rom_region_end == 0 {
++            header.rom_size_ds as usize
++        } else {
++            header.ds_rom_region_end as usize * DSI_REGION_UNIT as usize
++        };
+         let end_of_dsi_area = (header.rom_size_dsi as usize)
+             .max(header.arm9i.offset as usize + header.arm9i.size as usize)
+             .max(header.arm7i.offset as usize + header.arm7i.size as usize)
+@@ -1028,12 +1044,15 @@ impl<'a> Rom<'a> {
+         // Everything between the end of the DS region and the ARM9i program is dummy data
+         let region_padding = data[region_start..header.arm9i.offset as usize].to_vec().into_boxed_slice();
+ 
++        let header_reserved = (header.reserved7.iter().any(|&b| b != 0)).then(|| header.reserved7.to_vec().into_boxed_slice());
++
+         let config = RomConfigDsi {
+             arm9i_bin: "dsi/arm9i.bin".into(),
+             arm9i_config: "dsi/arm9i.yaml".into(),
+             arm7i_bin: "dsi/arm7i.bin".into(),
+             arm7i_config: "dsi/arm7i.yaml".into(),
+             region_padding: "dsi/region_padding.bin".into(),
++            header_reserved: header_reserved.as_ref().map(|_| "dsi/header_reserved.bin".into()),
+             alignment: RomConfigDsiAlignment {
+                 digest_block_hashtable: detect_alignment(header.digest_block_hashtable.offset),
+                 rom_size_ds: detect_alignment(header.rom_size_ds),
+@@ -1049,7 +1068,7 @@ impl<'a> Rom<'a> {
+             },
+         };
+ 
+-        Ok((DsiArea { arm9i, arm7i, region_padding }, config))
++        Ok((DsiArea { arm9i, arm7i, region_padding, header_reserved }, config))
+     }
+ 
+     fn extract_dsi_program(
+@@ -1220,12 +1239,19 @@ impl<'a> Rom<'a> {
+         context.dsi = self.build_dsi_area(&mut cursor, &mut context, key)?;
+ 
+         // --------------------- Write padding ---------------------
+-        let padded_rom_size = cursor.position().next_power_of_two().max(128 * 1024) as u32;
+-        self.align(&mut cursor, padded_rom_size, self.config.padding.rom)?;
++        // DSiWare is not a cartridge image, so it ends with the DSi area instead of being padded to a chip capacity
++        let is_dsiware = self.header.dsi.as_ref().is_some_and(|dsi| dsi.ds_rom_region_end == 0);
++        if !is_dsiware {
++            let padded_rom_size = cursor.position().next_power_of_two().max(128 * 1024) as u32;
++            self.align(&mut cursor, padded_rom_size, self.config.padding.rom)?;
++        }
+ 
+         // --------------------- Update header ---------------------
+         cursor.set_position(context.header_offset.unwrap() as u64);
+-        let header = self.header.build(&context, &self)?;
++        let mut header = self.header.build(&context, &self)?;
++        if let Some(header_reserved) = self.dsi.as_ref().and_then(|dsi| dsi.header_reserved.as_ref()) {
++            header.reserved7.copy_from_slice(header_reserved);
++        }
+         cursor.write_all(bytemuck::bytes_of(&header))?;
+ 
+         Ok(raw::Rom::new(cursor.into_inner()))
+@@ -1267,8 +1293,12 @@ impl<'a> Rom<'a> {
+         let arm9i_len = dsi.arm9i.full_data().len() as u32;
+         let arm7i_len = dsi.arm7i.full_data().len() as u32;
+         let mut ds_rom_region_end = header_dsi.ds_rom_region_end;
++        // DSiWare has no region boundary, the DSi area starts where the DS area ends. Iterate until that settles.
++        let no_region = ds_rom_region_end == 0;
++        let mut nand_region_start = sector_hashtable_offset;
+         let layout: DsiLayout = loop {
+-            let region_start = ds_rom_region_end as u32 * DSI_REGION_UNIT;
++            let region_start =
++                if no_region { nand_region_start } else { ds_rom_region_end as u32 * DSI_REGION_UNIT };
+             let arm9i_offset = region_start + dsi.region_padding.len() as u32;
+             let arm7i_offset = align_up(arm9i_offset + arm9i_len, config.alignment.arm7i);
+             let rom_size_dsi = align_up(arm7i_offset + arm7i_len, params.sector_size);
+@@ -1281,6 +1311,12 @@ impl<'a> Rom<'a> {
+             let block_hashtable_size = num_blocks * HASH_SIZE;
+             let rom_size_ds = align_up(block_hashtable_offset + block_hashtable_size, config.alignment.rom_size_ds);
+ 
++            if no_region {
++                if rom_size_ds != region_start {
++                    nand_region_start = rom_size_ds;
++                    continue;
++                }
++            }
+             if rom_size_ds <= region_start {
+                 break DsiLayout {
+                     region_start,

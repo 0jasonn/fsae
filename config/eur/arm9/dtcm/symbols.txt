@@ -1,0 +1,5 @@
+data_02fe0000 kind:data(any) addr:0x02fe0000
+data_02fe000d kind:data(any) addr:0x02fe000d
+data_02fe0020 kind:data(any) addr:0x02fe0020
+data_02fe00a0 kind:bss addr:0x02fe00a0
+data_02fe00a8 kind:bss addr:0x02fe00a8
