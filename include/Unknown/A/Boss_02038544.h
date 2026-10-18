@@ -29,7 +29,7 @@ int func_0208de54(void *a);
 u8 *func_02093b5c(void);
 u8 func_02045aa0(void);
 void func_02084f54(Entity *e);
-void func_02039278(Entity *e);
+void Boss_RandomizeDirection(Entity *e);
 Entity *func_02084f98(Entity *e, int a, int b);
 u8 func_02045a8c(u8 a);
 void CopyPosition(Entity *e, Entity *other);

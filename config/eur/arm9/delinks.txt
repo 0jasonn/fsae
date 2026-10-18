@@ -121,6 +121,10 @@ src/Unknown/A/boss_0203901c.c:
     complete
     .text       start:0x0203901c end:0x02039074
 
+src/Unknown/A/boss_02039074.c:
+    complete
+    .text       start:0x02039074 end:0x02039e8c
+
 src/Unknown/B/actor_0204001c.c:
     complete
     .text       start:0x0204001c end:0x020404f4

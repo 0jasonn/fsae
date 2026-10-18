@@ -1,15 +1,15 @@
 #include "Unknown/D/Misc_D.h"
 #include "global.h"
 
-ARM void func_02050a50(void) {
-    s32 size;
-    void *p;
-    func_02082c54((void *)func_02050924);
-    data_0216fcf8.unk_2 = 0xffff;
+ARM void PaletteFade_Init(void) {
+    s32 copySize;
+    void *copySource;
+    func_02082c54((void *)PaletteFade_Update);
+    data_0216fcf8.fadeLevel = 0xffff;
     func_020152ec();
-    p = func_0208dde0(func_0208da4c(), &size, 0x3b);
-    MIi_CpuCopyFast(p, data_0216fd04, size);
-    MIi_CpuCopyFast(p, data_02170104, size);
-    data_0216fcf8.unk_8 = 1;
-    data_0216fcf8.unk_0 = 0;
+    copySource = func_0208dde0(func_0208da4c(), &copySize, 0x3b);
+    MIi_CpuCopyFast(copySource, data_0216fd04, copySize);
+    MIi_CpuCopyFast(copySource, data_02170104, copySize);
+    data_0216fcf8.bufferSelect = 1;
+    data_0216fcf8.fadeActive = 0;
 }

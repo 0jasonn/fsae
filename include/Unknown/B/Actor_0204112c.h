@@ -3,19 +3,23 @@
 
 #include "Unknown/Player.h"
 
+// Overlay for the enemy whose functions start at 0x0204112c (actor identity not known yet).
 typedef struct Vars_0204112c {
     /* 00 */ u8 unk_00[0x64];
-    /* 64 */ Entity *unk_64; // target entity
-    /* 68 */ u8 unk_68[0xc];
-    /* 74 */ u8 unk_74;
-    /* 75 */ u8 unk_75;
-    /* 76 */ u8 unk_76;
-    /* 77 */ u8 unk_77;
-    /* 78 */ u16 unk_78;
-    /* 7a */ u16 unk_7a;
+    /* 64 */ Entity *target;      // player the enemy tracks
+    /* 68 */ u8 unk_68[0x8];
+    /* 70 */ u16 subPosX;         // scroll position, stepped by 0x18 per frame
+    /* 72 */ u16 subPosY;         // scroll position, stepped by 0x10 per frame
+    /* 74 */ u8 restTimer;        // rest time saved when a pause ends
+    /* 75 */ u8 turnActive;       // 1 while a turn towards the target is running
+    /* 76 */ u8 turnStartDir;     // direction when the turn started
+    /* 77 */ u8 retargetDelay;    // frames until the target is checked again
+    /* 78 */ u16 turnTimeout;     // 0x12c frames
+    /* 7a */ u16 idleTimer;       // countdown for Enemy_IdleThenMove
 } Vars_0204112c;
 #define V(e) VARS(Vars_0204112c, e)
 
+// data_0212c648 is a shared symbol. Other headers declare it as Entity *; these are the fields this range reads.
 typedef struct UnkStruct_0212c648 {
     /* 00 */ u8 unk_00[0x18];
     /* 18 */ u16 unk_18;
@@ -28,6 +32,8 @@ typedef struct UnkStruct_021348cc {
     s32 unk_4;
 } UnkStruct_021348cc;
 extern UnkStruct_021348cc data_021348cc;
+extern const u16 data_020d347a[];
+extern u16 data_0212c574[3];
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,9 +48,14 @@ Entity *func_02084f98(Entity *e, int size, int align);
 void *func_0208da4c(void);
 int func_0208de54(void *a);
 u8 *func_02093b5c(void);
-void func_020410e4(Entity *e);
-int func_020415f4(Entity *e);
-int func_02041498(Entity *e, u8 dir);
+int func_02042cc8(Entity *e);
+
+void func_0205063c(u16 *pos, Entity *e);
+void Enemy_TurnTowardTarget(Entity *e);
+void Enemy_ScrollTowardLimit(Entity *e);
+void Enemy_IdleThenMove(Entity *e);
+int Enemy_UpdateHomingChase(Entity *e);
+int Enemy_IsPathClear(Entity *e, int dir);
 #ifdef __cplusplus
 }
 #endif

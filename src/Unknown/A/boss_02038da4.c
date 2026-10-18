@@ -23,13 +23,13 @@ ARM void func_02038dc4(Entity *e) {
     e->timer = 1;
     e->animationState = 0;
     InitAnimationForceUpdate(e, 0);
-    func_02039278(e);
+    Boss_RandomizeDirection(e);
 }
 
 ARM void func_02038e54(Entity *e) {
     if (--e->timer == 0) {
         e->timer = (Random() & 0x1c) + 0x1e;
-        func_02039278(e);
+        Boss_RandomizeDirection(e);
     }
     func_020847a0(e);
     UpdateAnimationSingleFrame(e);

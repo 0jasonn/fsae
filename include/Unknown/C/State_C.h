@@ -31,38 +31,24 @@ typedef struct PlayerC {
 // 8-byte record of the game state block, indexed by player count
 typedef struct Slot8_C {
     /* 00 */ u32 unk_00;
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 unk_05;
-    /* 06 */ u16 unk_06;
+    /* 04 */ u8 unk_04[4];
 } Slot8_C;
 
 // Game state block (layout known up to 0x6f, see Unknown/Player.hpp for the first 0x28 bytes)
 typedef struct GameStateC {
     /* 00 */ u8 unk_0; // number of players
-    /* 01 */ u8 unk_1;
-    /* 02 */ u8 unk_2;
+    /* 01 */ u8 unk_1[2];
     /* 03 */ u8 unk_3;
     /* 04 */ u8 unk_4;
     /* 05 */ u8 unk_5;
     /* 06 */ u8 unk_6;
-    /* 07 */ u8 unk_7[1];
-    /* 08 */ u32 unk_8;
-    /* 0c */ u32 unk_c[4];
+    /* 07 */ u8 unk_7[0x15];
     /* 1c */ u32 unk_1c;
     /* 20 */ u8 unk_20[6];
     /* 26 */ u16 unk_26;
     /* 28 */ Slot8_C unk_28[4];
     /* 48 */ u8 unk_48;
-    /* 49 */ u8 unk_49[5];
-    /* 4e */ u8 unk_4e;
-    /* 4f */ u8 unk_4f;
-    /* 50 */ u8 unk_50[8];
-    /* 58 */ u8 unk_58[4];
-    /* 5c */ u8 unk_5c[4];
-    /* 60 */ u8 unk_60[4];
-    /* 64 */ u8 unk_64[4];
-    /* 68 */ u8 unk_68[4];
-    /* 6c */ u8 unk_6c[3];
+    /* 49 */ u8 unk_49[0x26];
     /* 6f */ u8 unk_6f;
     /* 70 */ u8 unk_70[0x20];
     /* 90 */ u8 unk_90;
@@ -70,15 +56,6 @@ typedef struct GameStateC {
 
 extern PlayerC data_0212ceb0[4];
 extern GameStateC data_0212c7c8;
-
-// 8-byte entry of data_0212c7f0, indexed by Entity::type
-typedef struct FlagsC {
-    /* 00 */ u32 unk_0;
-    /* 04 */ u8 unk_4;
-    /* 05 */ u8 unk_5;
-    /* 06 */ u16 unk_6;
-} FlagsC;
-extern FlagsC data_0212c7f0[];
 
 #ifdef __cplusplus
 extern "C" {
