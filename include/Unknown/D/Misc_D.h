@@ -69,12 +69,37 @@ extern UnkStruct_0212c648_D data_0212c648;
 
 // Effect state block. Kept as a byte array: a struct-typed declaration makes mwcc schedule the stores differently.
 enum {
+    EFFECT_STATE_SCENE = 0x00, // scene state machine of Scene_Update
+    EFFECT_STATE_TIMER = 0x04, // u16 countdown used by Scene_Update
     EFFECT_STATE_STEP_TIMER = 0x09, // counts down before the step index advances
     EFFECT_STATE_STEP_INDEX = 0x0a, // index into data_02104a58, 0xff at the end
     EFFECT_STATE_ACTIVE = 0x0b,
     EFFECT_STATE_LEVEL = 0x0c,
+    EFFECT_STATE_FLAG_E = 0x0e, // set to 2/3 by Scene_UpdateTransition, cleared by its last state
 };
 extern u8 data_021349c0[];
+
+// Scene/actor control byte block (data_0217d384): low 7 bits of [0] are the mode, [3] and [4] hold 5-bit sub-modes
+enum {
+    SCENE_CTRL_MODE = 0x00,
+    SCENE_CTRL_SUBMODE_3 = 0x03,
+    SCENE_CTRL_SUBMODE_4 = 0x04,
+};
+extern u8 data_0217d384[];
+
+// Scene control block (data_02134d30)
+typedef struct UnkStruct_02134d30 {
+    /* 00 */ u8 unk_0[2];
+    /* 02 */ u8 unk_2;
+    /* 03 */ u8 unk_3;
+    /* 04 */ u8 unk_4;
+    /* 05 */ u8 unk_5;
+    /* 06 */ u8 unk_6;
+    /* 07 */ u8 unk_7[5];
+    /* 0c */ Entity *entity;
+} UnkStruct_02134d30;
+extern UnkStruct_02134d30 data_02134d30;
+extern const u8 data_02104a74[];
 
 extern EntityNode data_0212c6b0[];
 extern EntityNode data_0212c6f0[];
@@ -149,5 +174,15 @@ void func_02029fe8(s32 a);
 void func_02027ec4(s32 a);
 void func_02026774(void);
 void GameMode_Init(void);
+Entity *func_02072554(s32 a);
+void func_020725d0(s32 a, s32 b, s32 c);
+void func_0204f994(s32 a, s32 b, s32 c);
+void func_02049f0c(s32 a);
+void func_02049eb8(void);
+void func_0204fa70(void *a, const void *b);
+s32 func_0204fa78(void *a);
+void Scene_Update(void);
+void Scene_Begin(void);
+void Scene_UpdateTransition(void);
 
 #endif

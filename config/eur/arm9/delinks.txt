@@ -157,6 +157,38 @@ src/Unknown/B/actor_02041064.c:
     complete
     .text       start:0x02041064 end:0x0204112c
 
+src/Unknown/B/actor_0204112c.c:
+    complete
+    .text       start:0x0204112c end:0x02041244
+
+src/Unknown/B/actor_02041344.c:
+    complete
+    .text       start:0x02041344 end:0x02041498
+
+src/Unknown/B/actor_02041774.c:
+    complete
+    .text       start:0x02041774 end:0x020417e8
+
+src/Unknown/B/actor_0204198c.c:
+    complete
+    .text       start:0x0204198c end:0x02041a3c
+
+src/Unknown/B/actor_020421f8.c:
+    complete
+    .text       start:0x020421f8 end:0x02042318
+
+src/Unknown/B/actor_02042424.c:
+    complete
+    .text       start:0x02042424 end:0x020426e0
+
+src/Unknown/B/actor_02042798.c:
+    complete
+    .text       start:0x02042798 end:0x02042818
+
+src/Unknown/B/actor_0204294c.c:
+    complete
+    .text       start:0x0204294c end:0x020429c8
+
 src/Unknown/C/state_02048264.c:
     complete
     .text       start:0x02048264 end:0x020483f8
