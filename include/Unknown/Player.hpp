@@ -22,7 +22,8 @@ struct PlayerData {
 extern PlayerData data_0212ceb0[4];
 struct UnkStruct_0212c7c8 {
     /* 0 */ u8 unk_0; // number of players
-    /* 1 */ u8 unk_1[5];
+    /* 1 */ u8 unk_1[4];
+    /* 5 */ u8 unk_5;
     /* 6 */ u8 unk_6;
 };
 extern UnkStruct_0212c7c8 data_0212c7c8;
