@@ -66,9 +66,11 @@ struct Entity {
     /* 40 */ u8 unk_40;
     /* 41 */ u8 unk_41;
     /* 42 */ u8 unk_42;
-    /* 43 */ u8 unk_43[2];
+    /* 43 */ u8 unk_43;
+    /* 44 */ u8 unk_44;
     /* 45 */ u8 unk_45;
-    /* 46 */ u8 unk_46[2];
+    /* 46 */ s8 unk_46;
+    /* 47 */ u8 unk_47;
     /* 48 */ const void *unk_48;
     /* 4c */ Entity *unk_4c;
     /* 50 */ u16 unk_50;

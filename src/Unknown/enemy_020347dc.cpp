@@ -1,64 +1,5 @@
-#include "Unknown/Player.hpp"
+#include "Unknown/Enemy_020347dc.hpp"
 #include "global.h"
-
-struct Vars_020347dc {
-    /* 00 */ u8 unk_00[0x64];
-    /* 64 */ Entity *unk_64;
-    /* 68 */ u8 unk_68[6];
-    /* 6e */ u16 unk_6e;
-    /* 70 */ Entity *unk_70;
-    /* 74 */ u8 unk_74[8];
-    /* 7c */ u16 unk_7c;
-    /* 7e */ u8 unk_7e;
-    /* 7f */ u8 unk_7f;
-};
-#define V(e) VARS(Vars_020347dc, e)
-
-struct Vars_Event {
-    /* 00 */ u8 unk_00[0x7d];
-    /* 7d */ u8 unk_7d;
-};
-#define VE(e) VARS(Vars_Event, e)
-
-struct UnkStruct_021348c0 {
-    s32 unk_0;
-    s32 unk_4;
-};
-extern UnkStruct_021348c0 data_021348c0;
-
-extern const EntityFunc data_020d11e0[];
-extern const EntityFunc data_020d11c0[];
-extern const u8 data_020f266e[];
-extern const u8 data_020f266b[];
-extern const u8 data_020f2668[];
-extern const u16 data_020f267a[];
-extern const u16 data_020f2680[];
-extern const u8 data_020d119c[];
-extern const s16 data_020d7e58[];
-extern const u32 data_020cf9b8[];
-
-extern "C" {
-void *func_0208da4c(void);
-int func_0208de54(void *a);
-u8 *func_02093b5c(void);
-int func_02035d50(Entity *e);
-void func_0205031c(Entity *e, Entity *other);
-void func_02050390(Entity *e, Entity *other, s32 a, s32 b);
-void func_020360c0(Entity *e);
-void func_02035a8c(Entity *e);
-void func_02036064(Entity *e);
-void func_02035c3c(Entity *e);
-int func_020358c4(Entity *e);
-void func_02035f18(Entity *e);
-void func_02035c98(Entity *e);
-void func_02035ce8(Entity *e);
-Entity *func_02045eb4(void);
-u8 func_02084fd0(Entity *e, Entity *target);
-void func_0204fd40(Entity *e);
-void func_02035f9c(Entity *e);
-void func_02035ba4(Entity *e);
-void func_02035ff8(Entity *e);
-}
 
 ARM extern "C" void func_020347dc(Entity *e) {
     if (e->unk_0a == 0) {
@@ -512,4 +453,158 @@ ARM extern "C" void func_02035588(Entity *e) {
     if (e->unk_29 & 0x80) {
         e->unk_14 = 0x13;
     }
+}
+
+ARM extern "C" void func_02035600(Entity *e) {
+    if (e->unk_3d != 0) {
+        return;
+    }
+    if (--e->unk_17 == 0) {
+        e->unk_14 = 0x17;
+        return;
+    }
+    if ((e->unk_17 & 0xf) == 0) {
+        e->unk_2b = func_0208455c() & 0x1f;
+        func_02076fe0(0x2e);
+    }
+    func_0204fd40(e);
+}
+
+ARM extern "C" void func_02035658(Entity *e) {
+    e->unk_30.HALF.HI += data_020f2675[e->unk_17 & 3];
+    if (++e->unk_17 >= 0x3c) {
+        e->unk_17 = 0x1e;
+        e->unk_14 = 0x18;
+    }
+}
+
+ARM extern "C" void func_0203569c(Entity *e) {
+    if (--e->unk_17 != 0) {
+        return;
+    }
+    func_02035f18(e);
+}
+
+ARM extern "C" void func_020356bc(Entity *e) {
+    e->unk_14 = 1;
+    e->unk_45 = 0xff;
+    e->unk_3c &= 0x7f;
+    e->unk_3f = 0x3f;
+    e->unk_48 = data_020d11ac;
+}
+
+ARM extern "C" void func_020356f4(Entity *e) {
+    Entity *parent = e->unk_54;
+    if (parent->unk_0b != 0 || VCT(parent->unk_54)->unk_7c != 1) {
+        return;
+    }
+    if (!(e->unk_3c & 0x80)) {
+        return;
+    }
+    e->unk_14 = 2;
+    e->unk_17 = (func_0208455c() + 0x1e) & 0xf;
+}
+
+ARM extern "C" void func_02035740(Entity *e) {
+    if (--e->unk_17 == 0) {
+        e->unk_14 = 3;
+        func_020859e0(e, 9);
+    }
+    if (!(e->unk_3c & 0x80)) {
+        e->unk_14 = 1;
+    }
+}
+
+ARM extern "C" void func_02035780(Entity *e) {
+    e->unk_38.HALF.HI = data_020f2671[(e->unk_29 >> 4) & 3];
+    e->unk_54->unk_38.HALF.HI = e->unk_38.HALF.HI;
+    if (e->unk_29 & 1) {
+        Entity *proj = func_0204bdb8(0xd);
+        if (proj != NULL) {
+            proj->unk_2b = func_0204fdf0(e, data_0212ceb0[func_0208455c() % data_0212c7c8.unk_0].unk_28);
+            func_0205031c(e, proj);
+            e->unk_29 = 0;
+            func_02085f80(0xa5);
+        }
+    } else if (e->unk_29 == 0x80) {
+        e->unk_14 = 2;
+        e->unk_17 = (func_0208455c() + 0x1e) & 0xf;
+        func_020859e0(e, 8);
+    }
+    if (!(e->unk_3c & 0x80)) {
+        e->unk_14 = 1;
+    }
+}
+
+ARM extern "C" void func_02035860(Entity *e, Entity *src) {
+    V(e)->unk_6e |= 1;
+    u8 damage = src->unk_4c->unk_44;
+    if (e->unk_45 < damage) {
+        e->unk_45 = 0;
+    } else {
+        e->unk_45 -= damage;
+    }
+    e->unk_3d = src->unk_4c->unk_46 < 0 ? -0x10 - src->unk_4c->unk_46 : src->unk_4c->unk_46 + 0x10;
+    if (V(e)->unk_70 != NULL) {
+        V(e)->unk_70->unk_3d = e->unk_3d;
+    }
+    func_02085f80(0x2d);
+}
+
+ARM extern "C" BOOL func_020358c4(Entity *e) {
+    Entity *other = V(e)->unk_70;
+    if (other != NULL && other->unk_1c.b20 == e->unk_1c.b20) {
+        if (e->unk_41 & 0x80) {
+            if ((u16)(e->unk_41 - 0x84) <= 0x9f) {
+                if (e->unk_1c.b20 - 7 == e->unk_4c->unk_0a) {
+                    func_02035860(e, e);
+                    return TRUE;
+                }
+            } else {
+                e->unk_3d = 0xf8;
+                other->unk_3d = 0xf8;
+            }
+        } else if (other->unk_41 & 0x80) {
+            if ((u16)(other->unk_41 - 0x84) <= 0x9f) {
+                if (other->unk_1c.b20 - 7 == other->unk_4c->unk_0a) {
+                    func_02035860(e, other);
+                    return TRUE;
+                }
+            } else {
+                e->unk_3d = 0xf8;
+                other->unk_3d = 0xf8;
+            }
+        }
+    } else {
+        u32 flags = 0;
+        if ((e->unk_41 & 0x80) && (u16)(e->unk_41 - 0x84) <= 0x9f) {
+            flags = 0x10;
+            if (e->unk_1c.b20 - 7 == e->unk_4c->unk_0a) {
+                flags |= 1;
+            }
+        }
+        if (other != NULL && (other->unk_41 & 0x80) && (u16)(other->unk_41 - 0x84) <= 0x9f) {
+            flags |= 0x20;
+            if (other->unk_1c.b20 - 7 == other->unk_4c->unk_0a) {
+                flags |= 2;
+            }
+        }
+        if (flags != 0) {
+            if ((flags & 3) == 3) {
+                Entity *src = e;
+                if (other != NULL && e->unk_4c->unk_44 < other->unk_4c->unk_44) {
+                    src = other;
+                }
+                func_02035860(e, src);
+                return TRUE;
+            }
+            if ((flags & 3) == 0) {
+                e->unk_3d = 0xf8;
+                if (V(e)->unk_70 != NULL) {
+                    V(e)->unk_70->unk_3d = 0xf8;
+                }
+            }
+        }
+    }
+    return FALSE;
 }
