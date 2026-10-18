@@ -54,7 +54,7 @@ CC_FLAGS = " ".join([
 # Passed to all modules and final arm9.o link
 LD_FLAGS = " ".join([
     "-proc arm946e",        # Target processor
-    "-dead",                # Strip unused code
+    "-nodead",              # Keep functions that nothing references by relocation (e.g. only called from Thumb code)
     "-nostdlib",            # No C/C++ standard library
     "-interworking",        # Enable ARM/Thumb interworking
     "-map closure,unused",  # Generate map file

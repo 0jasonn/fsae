@@ -48,7 +48,7 @@ ARM extern "C" void func_020400b4(Entity *e) {
 }
 
 ARM extern "C" void func_0204017c(Entity *e) {
-    func_020852f9_unk(e, 0x40, e->unk_2b ^ 0x10);
+    func_020852f8(e, 0x40, e->unk_2b ^ 0x10);
     func_02085980(e);
     if (e->unk_29 & 0x20) {
         e->unk_14 = 7;

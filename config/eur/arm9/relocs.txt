@@ -8510,7 +8510,7 @@ from:0x02050108 kind:arm_call_thumb to:0x02083c8c module:main
 from:0x020501ec kind:load to:0x0212c7c8 module:main
 from:0x0205027c kind:load to:0x0212cebd module:main
 from:0x0205030c kind:arm_call to:0x0200d948 module:main
-from:0x02050350 kind:load to:0x0208ae79 module:main
+from:0x02050350 kind:load to:0x0208ae78 add:0x1 module:main
 from:0x0205035c kind:arm_call to:0x0205031c module:main
 from:0x020503c8 kind:arm_call_thumb to:0x0208ae78 module:main
 from:0x020503e0 kind:arm_call to:0x0208da4c module:main

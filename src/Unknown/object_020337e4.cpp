@@ -11,7 +11,7 @@ extern const u8 data_020d0eb8[];
 extern const u8 data_020d0ebe[];
 extern const s8 data_020d0ebc[];
 extern u16 data_0212c584[];
-extern "C" void func_020852f9_unk(Entity *e, s32 dist, u8 speed);
+extern "C" void func_020852f8(Entity *e, s32 dist, u8 speed);
 
 ARM extern "C" void func_020337e4(Entity *e) {
     if (!(VE(e->unk_54)->unk_7d & data_020cf9b8[VL(V(e)->unk_7c)->unk_7e])) {
@@ -195,7 +195,7 @@ ARM extern "C" void func_02033e10(Entity *e) {
     if (V(e)->unk_72 < 0x30) {
         s16 px = player->unk_30.HALF.HI;
         s16 py = player->unk_34.HALF.HI;
-        func_020852f9_unk(player, 0x40, speed);
+        func_020852f8(player, 0x40, speed);
         if (px == player->unk_30.HALF.HI && py == player->unk_34.HALF.HI) {
             return;
         }
@@ -205,7 +205,7 @@ ARM extern "C" void func_02033e10(Entity *e) {
         } else {
             dist = px - player->unk_30.HALF.HI;
         }
-        func_020852f9_unk(e, dist << 8, speed);
+        func_020852f8(e, dist << 8, speed);
         func_020340a8(e);
         if (V(e)->unk_72 >= 0x30) {
             V(e)->unk_77 = 0;
