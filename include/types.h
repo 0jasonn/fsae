@@ -20,6 +20,10 @@ typedef s8 unk8;
 typedef s16 unk16;
 typedef s32 unk32;
 
+typedef int BOOL;
+#define TRUE 1
+#define FALSE 0
+
 #define CEIL_DIV(a, b) (((a) + (b) - 1) / (b))
 
 #endif

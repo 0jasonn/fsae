@@ -27,7 +27,8 @@ struct Vars_02033708 {
     /* 74 */ u8 unk_74;
     /* 75 */ u8 unk_75; // side
     /* 76 */ u8 unk_76;
-    /* 77 */ u8 unk_77[5];
+    /* 77 */ u8 unk_77;
+    /* 78 */ u8 unk_78[4];
     /* 7c */ Entity *unk_7c;
 };
 #define V(e) VARS(Vars_02033708, e)
@@ -40,6 +41,7 @@ extern const s8 data_020d0f0a[];
 extern const s8 data_020d0ec0[];
 extern const u8 data_020d0f02[];
 extern s32 data_021348b8[];
+extern s32 data_021348b4;
 
 extern "C" {
 void func_0204be88(Entity *e);
