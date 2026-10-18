@@ -71,4 +71,8 @@ src/Unknown/object_020361e8.cpp:
 
 src/Unknown/boss_02036ca4.cpp:
     complete
-    .text       start:0x02036ca4 end:0x02037620
+    .text       start:0x02036ca4 end:0x020379d8
+
+src/Unknown/boss_02037a6c.cpp:
+    complete
+    .text       start:0x02037a6c end:0x02037c24
