@@ -59,4 +59,8 @@ src/Unknown/enemy_020347dc.cpp:
 
 src/Unknown/enemy_02035ba4.cpp:
     complete
-    .text       start:0x02035ba4 end:0x02035d50
+    .text       start:0x02035ba4 end:0x02035ff8
+
+src/Unknown/enemy_02036064.cpp:
+    complete
+    .text       start:0x02036064 end:0x020361e8

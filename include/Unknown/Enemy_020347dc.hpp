@@ -9,7 +9,8 @@ struct Vars_020347dc {
     /* 68 */ u8 unk_68[6];
     /* 6e */ u16 unk_6e;
     /* 70 */ Entity *unk_70;
-    /* 74 */ u8 unk_74[8];
+    /* 74 */ Entity **unk_74; // slot in the parent's segment list
+    /* 78 */ u8 unk_78[4];
     /* 7c */ u16 unk_7c;
     /* 7e */ u8 unk_7e;
     /* 7f */ u8 unk_7f;
@@ -46,6 +47,16 @@ extern const s8 data_020f2671[];
 extern const u8 data_020d11ac[];
 extern const u8 data_020d11a4[];
 extern const u8 data_020d119f[][3];
+extern const s8 data_020f2686[];
+extern const u8 data_020d11d0[];
+
+struct Vars_SegmentList {
+    /* 00 */ u8 unk_00[0x70];
+    /* 70 */ Entity *unk_70;
+    /* 74 */ Entity *unk_74;
+    /* 78 */ Entity *unk_78;
+};
+#define VS(e) VARS(Vars_SegmentList, e)
 extern const u8 data_020d119c[];
 extern const s16 data_020d7e58[];
 extern const u32 data_020cf9b8[];
@@ -71,6 +82,11 @@ void func_0204fd40(Entity *e);
 void func_02035f9c(Entity *e);
 void func_02035ba4(Entity *e);
 void func_02035ff8(Entity *e);
+Entity *func_0204bcc8(void);
+Entity *func_0204bd00(void);
+void func_0204c178(int list, Entity *e);
+void func_0203614c(Entity *e);
+void func_0204be88(Entity *e);
 void func_02076fe0(int sfx);
 Entity *func_0204bdb8(int id);
 
