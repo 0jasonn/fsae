@@ -15,7 +15,7 @@ for u in units:
 staged = subprocess.run(["git", "diff", "--cached", "--name-only", "--diff-filter=A"], cwd=ROOT, capture_output=True, text=True).stdout.split()
 drop = []
 for f in staged:
-    if re.match(r"src/Unknown/[A-Z]/", f) and f not in units:
+    if f.startswith("src/") and f.endswith((".c", ".cpp")) and f not in units:
         drop.append(f)
     m = re.match(r"include/(Unknown/[A-Z]/.+)", f)
     if m and m.group(1) not in included:
