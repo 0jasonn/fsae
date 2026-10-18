@@ -1,6 +1,11 @@
 #include "Unknown/Entity.hpp"
 #include "global.h"
 
+struct Vars_02030790 {
+    /* 00 */ u8 unk_00[0x7c];
+    /* 7c */ u8 unk_7c;
+};
+
 extern const EntityFunc data_020d08e4[];
 extern const EntityFunc data_020d08fc[];
 extern const u8 data_020d08cc[];
@@ -14,7 +19,7 @@ ARM extern "C" void func_020307a4(Entity *e) {
 }
 
 ARM extern "C" void func_020307c0(Entity *e) {
-    if (e->unk_45 != 0 && e->unk_7c != e->unk_45) {
+    if (e->unk_45 != 0 && VARS(Vars_02030790, e)->unk_7c != e->unk_45) {
         e->unk_14 = 6;
         return;
     }
@@ -22,13 +27,13 @@ ARM extern "C" void func_020307c0(Entity *e) {
 }
 
 ARM extern "C" void func_020307f0(Entity *e) {
-    e->unk_1c = (e->unk_1c & ~3) | 1;
+    e->unk_1c.b0 = 1;
     e->unk_2e = 2;
     e->unk_48 = data_020d08cc;
     func_020859e0(e, 0);
     e->unk_14++;
     e->unk_17 = (func_0208455c() + 0x1e) & 0x3c;
-    e->unk_7c = e->unk_45;
+    VARS(Vars_02030790, e)->unk_7c = e->unk_45;
 }
 
 ARM extern "C" void func_0203084c(Entity *e) {
@@ -71,7 +76,7 @@ ARM extern "C" void func_02030930(Entity *e) {
     }
     e->unk_14++;
     e->unk_17 = 0x78;
-    e->unk_1c &= ~3;
+    e->unk_1c.b0 = 0;
 }
 
 ARM extern "C" void func_02030980(Entity *e) {
@@ -79,7 +84,7 @@ ARM extern "C" void func_02030980(Entity *e) {
         return;
     }
     e->unk_14++;
-    e->unk_1c = (e->unk_1c & ~3) | 1;
+    e->unk_1c.b0 = 1;
     func_020859e0(e, 6);
 }
 

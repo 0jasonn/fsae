@@ -16,3 +16,7 @@ src/Unknown/enemy_020301f0.cpp:
 src/Unknown/enemy_02030790.cpp:
     complete
     .text       start:0x02030790 end:0x02030a14
+
+src/Unknown/boss_02030a14.cpp:
+    complete
+    .text       start:0x02030a14 end:0x0203120c

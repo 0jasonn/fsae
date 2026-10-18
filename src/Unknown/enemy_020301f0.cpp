@@ -54,7 +54,7 @@ ARM extern "C" void func_02030220(Entity *e) {
 ARM extern "C" void func_020302f8(Entity *e) {
     e->unk_14 = 1;
     e->unk_17 = 1;
-    e->unk_1c = (e->unk_1c & ~3) | 1;
+    e->unk_1c.b0 = 1;
     e->unk_2e = 5;
     e->unk_48 = data_020d07c4;
     e->unk_2b = func_0208455c() & 0x18;
@@ -151,7 +151,7 @@ ARM extern "C" void func_020305b0(Entity *e) {
         if ((e->unk_17 & 1) == 0) {
             return;
         }
-        e->unk_32 += data_020d07a0[(e->unk_17 >> 1) & 3];
+        e->unk_30.HALF.HI += data_020d07a0[(e->unk_17 >> 1) & 3];
         return;
     }
     e->unk_14 = 5;
@@ -171,7 +171,7 @@ ARM extern "C" void func_02030630(Entity *e) {
 
 ARM extern "C" void func_0203066c(Entity *e) {
     e->unk_14 = 1;
-    e->unk_1c = (e->unk_1c & ~3) | 1;
+    e->unk_1c.b0 = 1;
     e->unk_2e = 5;
     e->unk_48 = data_020d0894;
     func_020859e0(e, 0);
