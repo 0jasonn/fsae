@@ -39,6 +39,29 @@ def diff(target: bytes, code: bytes, mask: bytes, addr: int, thumb: bool) -> str
     return "\n".join(out)
 
 
+_NAMES = None
+
+
+def name_to_addr(name):
+    """Address of a function: from a func_XXXXXXXX name, symbols.txt, or a pending rename in scratch/agent*/renames.txt."""
+    global _NAMES
+    m = re.fullmatch(r"func_([0-9a-fA-F]{8})(?:_unk)?", name)
+    if m:
+        return int(m.group(1), 16)
+    if _NAMES is None:
+        _NAMES = {}
+        for line in (ROOT / "config/eur/arm9/symbols.txt").read_text().splitlines():
+            sm = re.match(r"(\S+) kind:function\S* addr:0x([0-9a-f]+)", line)
+            if sm:
+                _NAMES[sm.group(1)] = int(sm.group(2), 16)
+        for ren in (ROOT / "scratch").glob("agent*/renames.txt"):
+            for line in ren.read_text().splitlines():
+                parts = line.split()
+                if len(parts) == 2 and parts[0].startswith("func_"):
+                    _NAMES[parts[1]] = int(parts[0][5:13], 16)
+    return _NAMES.get(name)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
@@ -65,10 +88,9 @@ def main():
             ok = bad = 0
             lines = []
             for name, thumb, code, mask in extract_functions(out.read_bytes()):
-                m = re.search(r"([0-9a-fA-F]{8})", name)
-                if not m:
+                addr = name_to_addr(name)
+                if addr is None:
                     continue
-                addr = int(m.group(1), 16)
                 good = matches_at(data, addr - args.base, code, mask)
                 ok += good
                 bad += not good
