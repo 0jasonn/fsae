@@ -21,7 +21,9 @@ struct PlayerData {
     /* 36 */ u16 unk_36;
     /* 38 */ u8 unk_38;
     /* 39 */ u8 unk_39;
-    /* 3a */ u8 unk_3a[0x5a];
+    /* 3a */ u8 unk_3a[2];
+    /* 3c */ u8 unk_3c;
+    /* 3d */ u8 unk_3d[0x57];
 }; // size 0x94
 
 extern PlayerData data_0212ceb0[4];

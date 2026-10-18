@@ -68,6 +68,11 @@ void func_020382fc(Entity *e);
 void func_02038414(Entity *e);
 void func_020383bc(Entity *e);
 void func_02076a50(Entity *e, int a, int b, int c);
+void func_02038460(Entity *e);
+void func_02053958(void);
+void func_020899e4(Entity *e);
+void func_020384f8(void);
+void func_020266f8(void);
 }
 
 #endif
