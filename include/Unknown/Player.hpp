@@ -5,7 +5,9 @@
 
 // Per-player state, one per connected Link
 struct PlayerData {
-    /* 00 */ u8 unk_00[0xc];
+    /* 00 */ u8 unk_00[8];
+    /* 08 */ u16 unk_08;
+    /* 0a */ u8 unk_0a[2];
     /* 0c */ u8 unk_0c;
     /* 0d */ u8 unk_0d[0x11];
     /* 1e */ u8 unk_1e;
@@ -16,15 +18,20 @@ struct PlayerData {
     /* 2c */ u8 unk_2c[0xa];
     /* 36 */ u16 unk_36;
     /* 38 */ u8 unk_38;
-    /* 39 */ u8 unk_39[0x5b];
+    /* 39 */ u8 unk_39;
+    /* 3a */ u8 unk_3a[0x5a];
 }; // size 0x94
 
 extern PlayerData data_0212ceb0[4];
 struct UnkStruct_0212c7c8 {
-    /* 0 */ u8 unk_0; // number of players
-    /* 1 */ u8 unk_1[4];
-    /* 5 */ u8 unk_5;
-    /* 6 */ u8 unk_6;
+    /* 00 */ u8 unk_0; // number of players
+    /* 01 */ u8 unk_1[2];
+    /* 03 */ u8 unk_3;
+    /* 04 */ u8 unk_4;
+    /* 05 */ u8 unk_5;
+    /* 06 */ u8 unk_6;
+    /* 07 */ u8 unk_7[0x1f];
+    /* 26 */ u16 unk_26;
 };
 extern UnkStruct_0212c7c8 data_0212c7c8;
 extern u16 data_0212c584[4];
