@@ -36,7 +36,9 @@ struct Entity {
         u32 b20 : 4;
         u32 b24 : 8;
     } unk_1c;
-    /* 20 */ u8 unk_20[8];
+    /* 20 */ u8 unk_20[3];
+    /* 23 */ u8 unk_23;
+    /* 24 */ u8 unk_24[4];
     /* 28 */ u8 unk_28;
     /* 29 */ u8 unk_29;
     /* 2a */ u8 unk_2a; // animation state

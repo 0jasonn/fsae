@@ -20,7 +20,12 @@ struct PlayerData {
 }; // size 0x94
 
 extern PlayerData data_0212ceb0[4];
-extern u8 data_0212c7c8; // number of players
+struct UnkStruct_0212c7c8 {
+    /* 0 */ u8 unk_0; // number of players
+    /* 1 */ u8 unk_1[5];
+    /* 6 */ u8 unk_6;
+};
+extern UnkStruct_0212c7c8 data_0212c7c8;
 extern u16 data_0212c584[4];
 
 #endif
