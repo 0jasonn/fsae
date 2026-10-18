@@ -36,3 +36,11 @@ src/Unknown/pathmover_02032edc.cpp:
 src/Unknown/event_02033290.cpp:
     complete
     .text       start:0x02033290 end:0x02033708
+
+src/Unknown/object_02033708.cpp:
+    complete
+    .text       start:0x02033708 end:0x02033744
+
+src/Unknown/object_020337e4.cpp:
+    complete
+    .text       start:0x020337e4 end:0x02033ba8

@@ -27,7 +27,8 @@ struct Entity {
     /* 16 */ u8 unk_16;
     /* 17 */ u8 unk_17; // timer
     /* 18 */ u8 unk_18;
-    /* 19 */ u8 unk_19[2];
+    /* 19 */ u8 unk_19;
+    /* 1a */ u8 unk_1a;
     /* 1b */ u8 unk_1b;
     /* 1c */ struct {
         u32 b0 : 2;
