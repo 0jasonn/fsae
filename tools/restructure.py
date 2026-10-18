@@ -9,7 +9,7 @@ def kind_dir(path: Path) -> str:
     if n.startswith("boss"): return "boss"
     if n.startswith(("enemy", "actor", "func_")): return "enemy"
     if n.startswith(("object", "event", "pathmover")): return "object"
-    if n.startswith("state"): return "game"
+    if n.startswith(("state", "gamestate")): return "game"
     if n.startswith(("misc", "common")): return "engine"
     if n in ("entity", "player"): return "engine"
     return "misc"
