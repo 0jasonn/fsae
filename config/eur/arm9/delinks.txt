@@ -32,3 +32,7 @@ src/Unknown/boss_0203224c.cpp:
 src/Unknown/pathmover_02032edc.cpp:
     complete
     .text       start:0x02032edc end:0x02033290
+
+src/Unknown/event_02033290.cpp:
+    complete
+    .text       start:0x02033290 end:0x02033708
