@@ -10,9 +10,12 @@ struct Vars_02036ca4 {
     /* 71 */ u8 unk_71;
     /* 72 */ u8 unk_72;
     /* 73 */ u8 unk_73;
-    /* 74 */ u8 unk_74[8];
-    /* 7c */ u8 unk_7c;
+    /* 74 */ const u16 *unk_74; // path
+    /* 78 */ u16 unk_78; // target x
+    /* 7a */ u16 unk_7a; // target y
+    /* 7c */ u8 unk_7c; // attack history
     /* 7d */ s8 unk_7d;
+    /* 7e */ u8 unk_7e;
 };
 #define V(e) VARS(Vars_02036ca4, e)
 
@@ -37,6 +40,9 @@ extern const u32 data_020cf9b8[];
 extern const s16 data_020d7e58[];
 extern const u8 data_020d1440[];
 extern u16 data_0212c5bc;
+extern const u8 data_020f26a8[][8];
+extern const u16 *const data_020d1464[];
+extern const u8 data_020d1450[];
 
 extern "C" {
 void func_020547ec(void);
@@ -63,7 +69,7 @@ BOOL func_0203808c(Entity *e);
 void func_02038138(Entity *e);
 int func_020384b8(Entity *e);
 void func_02038194(Entity *e);
-BOOL func_020381ec(Entity *e);
+int func_020381ec(Entity *e);
 void func_020382fc(Entity *e);
 void func_02038414(Entity *e);
 void func_020383bc(Entity *e);
@@ -73,6 +79,10 @@ void func_02053958(void);
 void func_020899e4(Entity *e);
 void func_020384f8(void);
 void func_020266f8(void);
+Entity *func_0204bcc8(void);
+Entity *func_0204bd00(void);
+void func_0204c178(int list, Entity *e);
+void func_02086200(Entity *e, int a);
 }
 
 #endif
