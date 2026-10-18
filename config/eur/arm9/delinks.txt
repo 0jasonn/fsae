@@ -27,4 +27,4 @@ src/Unknown/boss_02031304.cpp:
 
 src/Unknown/boss_0203224c.cpp:
     complete
-    .text       start:0x0203224c end:0x02032910
+    .text       start:0x0203224c end:0x02032e5c

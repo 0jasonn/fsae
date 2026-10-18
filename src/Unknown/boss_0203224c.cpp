@@ -12,11 +12,25 @@ struct Vars_BossCore {
 #define VC(e) VARS(Vars_BossCore, e)
 
 struct Vars_BossPart {
-    /* 00 */ u8 unk_00[0x73];
+    /* 00 */ u8 unk_00[0x72];
+    /* 72 */ u8 unk_72;
     /* 73 */ u8 unk_73;
     /* 74 */ u8 unk_74;
 };
 #define VP(e) VARS(Vars_BossPart, e)
+
+extern const u8 *const data_020f2658[];
+extern "C" int func_0205076c(Entity *e, int a, int b);
+extern const u8 data_020d0c84[][6];
+extern const u16 data_020d0ac2[];
+extern u8 data_0212c504;
+extern "C" {
+Entity *func_020769d4(Entity *e, u8 id);
+void *func_0208da4c(void);
+int func_0208de54(void *a);
+u8 *func_02093b5c(void);
+}
+
 
 extern const u8 data_020d0d40[][4];
 extern const u8 data_020d0d80[][4];
@@ -170,4 +184,163 @@ ARM extern "C" void func_0203263c(Entity *e) {
     VP(VC(e)->unk_78)->unk_73 = data_020d0d80[idx][VC(e)->unk_78->unk_0b & 0xf];
     VP(VC(e)->unk_7c)->unk_73 = data_020d0d80[idx][VC(e)->unk_7c->unk_0b & 0xf];
     func_02076fe0(0xa3);
+}
+
+ARM extern "C" void func_02032910(Entity *e) {
+    u8 i;
+    u8 pick = func_0208455c() & 3;
+    u8 flip = func_0208455c() & 1;
+    for (i = 0; i < 4; i++) {
+        Entity *part = func_0204bd80(0x2a);
+        if (part != NULL) {
+            part->unk_0a = 1;
+            part->unk_0b = i | 0x40;
+            VP(part)->unk_72 = flip + i * 2;
+            part->unk_54 = e;
+            if (i == pick) {
+                part->unk_17 = 0xff;
+            } else {
+                part->unk_17 = 0;
+            }
+        }
+    }
+    func_02076fe0(0xa1);
+}
+
+ARM extern "C" void func_0203298c(Entity *e) {
+    int target = func_0205076c(e, 0, 0);
+    e->unk_18 = target;
+    e->unk_2b = func_02086078(data_0212ceb0[target].unk_28, e);
+}
+
+ARM extern "C" void func_020329c8(Entity *e) {
+    if (e->unk_0a == 2 && e->unk_1c.b0 == 0) {
+        return;
+    }
+    Entity *fx = func_02076858(0x60, 0, 0);
+    if (fx != NULL) {
+        fx->unk_1b = 0x81;
+        fx->unk_23 = (e->unk_0a - 1) * 10 + 3;
+        fx->unk_30.HALF.HI = e->unk_30.HALF.HI;
+        fx->unk_34.HALF.HI = e->unk_34.HALF.HI;
+        fx->unk_1c.b16 = e->unk_1c.b16 + 1;
+        fx->unk_1c.b14 = e->unk_1c.b14;
+        fx->unk_1c.b30 = e->unk_1c.b30;
+        fx->unk_1c.b6 = e->unk_1c.b6;
+        fx->unk_20 = e->unk_20;
+        fx->unk_5e.b0 = 0;
+    }
+    func_02076fe0(0xa7);
+}
+
+ARM extern "C" void func_02032ac4(Entity *e) {
+    e->unk_1c.b0 = 1;
+    e->unk_3f = 0x3d;
+    e->unk_3c |= 0x80;
+    V(e)->unk_75 = 0;
+    e->unk_0c = 0x300;
+    e->unk_10 = 0x30000;
+    e->unk_14 = 2;
+    e->unk_17 = 0x20;
+    e->unk_18 = 0;
+    if (e->unk_0a > 1) {
+        func_020859e0(e, (e->unk_0a - 1) * 10 + 2);
+    } else {
+        func_020859e0(e, 2);
+    }
+}
+
+ARM extern "C" void func_02032b48(Entity *e) {
+    e->unk_45 = data_020f2658[data_0212c7c8.unk_0 - 1][e->unk_0a - 1];
+}
+
+ARM extern "C" void func_02032b78(Entity *e) {
+    if (V(e)->unk_7c == 0) {
+        return;
+    }
+    if (V(e)->unk_74 >= 5) {
+        V(e)->unk_74 = 4;
+    }
+    for (u8 i = 0; data_020d0c84[V(e)->unk_74][i] != 0xff; i++) {
+        Entity *debris = func_020769d4(e, data_020d0c84[V(e)->unk_74][i]);
+        if (debris != NULL) {
+            debris->unk_30.HALF.HI -= 8;
+            debris->unk_38.HALF.HI = -0x10;
+            debris->unk_2b = ((func_0208455c() & 7) + 0x14) | 0x80;
+            debris->unk_0b = 1;
+        }
+    }
+}
+
+ARM extern "C" void func_02032c2c(Entity *e) {
+    V(e)->unk_70 = data_020d0ac2[func_0208455c() & 7];
+    e->unk_2b = func_02086078(e, data_0212ceb0[e->unk_17].unk_28) & 0x18;
+    e->unk_0c = 0x100;
+    e->unk_10 = 0x20000;
+    func_020859e0(e, (e->unk_0a - 1) * 10 + 1);
+}
+
+ARM extern "C" u8 func_02032cac(Entity *e) {
+    u8 result = 0;
+    if (e->unk_30.HALF.HI < 0x198) {
+        e->unk_30.HALF.HI = 0x198;
+        result = 1;
+    } else if (e->unk_30.HALF.HI > 0x250) {
+        if (!(e->unk_0b & 0x40) && e->unk_38.WORD == 0) {
+            func_02032ac4(e);
+        }
+        if (e->unk_30.HALF.HI > 0x298) {
+            e->unk_30.HALF.HI = 0x298;
+            result = 1;
+        }
+    }
+    if (e->unk_34.HALF.HI < 0x1a8) {
+        e->unk_34.HALF.HI = 0x1a8;
+        result |= 2;
+    } else if (e->unk_34.HALF.HI > 0x248) {
+        e->unk_34.HALF.HI = 0x248;
+        result |= 2;
+    }
+    return result;
+}
+
+ARM extern "C" u8 func_02032d34(Entity *e) {
+    u8 i;
+    u8 best;
+    u16 bestDist = 0xffff;
+    best = 0xff;
+    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+        if (e->unk_17 != i) {
+            Entity *player = data_0212ceb0[i].unk_28;
+            if (player->unk_30.HALF.HI < 0x250) {
+                s16 dx = player->unk_30.HALF.HI - e->unk_30.HALF.HI;
+                s16 dy = player->unk_34.HALF.HI - e->unk_34.HALF.HI;
+                dx = -dx;
+                dy = -dy;
+                if (best == 0xff) {
+                    bestDist = dy + dx;
+                    best = i;
+                } else if (bestDist > (u16)(dy + dx)) {
+                    bestDist = dy + dx;
+                    best = i;
+                }
+            }
+        }
+    }
+    return best;
+}
+
+ARM extern "C" void func_02032e04(Entity *e) {
+    if (e->unk_0a != 3) {
+        return;
+    }
+    u8 player = data_0212c504;
+    if (func_0208de54(func_0208da4c()) == 0) {
+        player = *func_02093b5c();
+    }
+    if (player == V(e)->unk_78) {
+        e->unk_1c.b0 = 1;
+    } else {
+        e->unk_1c.b0 = 0;
+    }
 }
