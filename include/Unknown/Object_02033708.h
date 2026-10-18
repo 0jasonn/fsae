@@ -49,7 +49,7 @@ extern "C" {
 void DeleteEntity(Entity *e);
 Entity *CreateEnemy(int id);
 void ProcessMovement(Entity *e);
-void func_02050840(Entity *e);
+void Entity_UpdateSubActionFromPlayers(Entity *e);
 void PositionRelative(Entity *e, Entity *other, s32 a, s32 b);
 void func_02033e10(Entity *e);
 void func_02085d78(Entity *e);

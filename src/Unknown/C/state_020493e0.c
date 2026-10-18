@@ -1,6 +1,6 @@
 // Functions in this file:
-//   func_020493e0 -> GameState_UpdatePeriodicFlag
-//   func_0204942c -> GameState_RerollPickIndex
+//   GameState_UpdatePeriodicFlag -> GameState_UpdatePeriodicFlag
+//   GameState_RerollPickIndex -> GameState_RerollPickIndex
 #include "Unknown/C/GameStateView_C.h"
 #include "global.h"
 

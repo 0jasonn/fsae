@@ -193,6 +193,18 @@ src/Unknown/C/state_02048264.c:
     complete
     .text       start:0x02048264 end:0x020483f8
 
+src/Unknown/C/state_02049020.c:
+    complete
+    .text       start:0x02049020 end:0x020490d8
+
+src/Unknown/C/state_020493e0.c:
+    complete
+    .text       start:0x020493e0 end:0x02049454
+
+src/Unknown/C/state_020497e4.c:
+    complete
+    .text       start:0x020497e4 end:0x020499c8
+
 src/Unknown/D/misc_020502e0.c:
     complete
     .text       start:0x020502e0 end:0x02050504
@@ -200,3 +212,19 @@ src/Unknown/D/misc_020502e0.c:
 src/Unknown/D/misc_0205063c.c:
     complete
     .text       start:0x0205063c end:0x0205069c
+
+src/Unknown/D/misc_02050840.c:
+    complete
+    .text       start:0x02050840 end:0x02050880
+
+src/Unknown/D/misc_02050910.c:
+    complete
+    .text       start:0x02050910 end:0x02050ac4
+
+src/Unknown/D/misc_02050b08.c:
+    complete
+    .text       start:0x02050b08 end:0x0205114c
+
+src/Unknown/D/misc_0205193c.c:
+    complete
+    .text       start:0x0205193c end:0x02051994

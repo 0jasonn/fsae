@@ -29,7 +29,7 @@ ARM void func_020337e4(Entity *e) {
 }
 
 ARM void func_0203386c(Entity *e) {
-    func_02050840(e);
+    Entity_UpdateSubActionFromPlayers(e);
     if (e->subAction == 5) {
         Entity *player = data_0212ceb0[e->type2].unk_28;
         if (V(e)->unk_74 == 0) {

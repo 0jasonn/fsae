@@ -73,8 +73,8 @@ ARM void GameMode_Init(void) {
         GX_DispOff();
     }
     data_0212c4f8 = 0;
-    func_02076fe0(bankValue);
-    func_02076fe0(0x800b01ad);
+    SoundReq(bankValue);
+    SoundReq(0x800b01ad);
     func_0202a60c();
     func_0205b700();
     ((u8 *)&data_0212c7c8)[0x8e] = 0;
@@ -139,7 +139,7 @@ ARM void GameMode_Init(void) {
     func_020463f0(0x100);
     Palette_BlendTowardColor(data_0212c5ac.blendColor, 0x100);
     {
-        Entity *spawned = func_02076858(0x5a, setupIndexB, zero);
+        Entity *spawned = CreateFx(0x5a, setupIndexB, zero);
         spawned->x.HALF.HI = 0x80;
         spawned->y.HALF.HI = 0xf0;
     }
@@ -204,7 +204,7 @@ ARM void Effect_Start(void) {
     if (data_0212c500 != 1) {
         return;
     }
-    func_02076fe0(0x80010000);
+    SoundReq(0x80010000);
     data_0212c5ac.resetValue = -1;
     PaletteFade_ClearBufferFlag();
     data_021349c0[EFFECT_STATE_STEP_TIMER] = 0;
