@@ -44,3 +44,11 @@ src/Unknown/object_02033708.cpp:
 src/Unknown/object_020337e4.cpp:
     complete
     .text       start:0x020337e4 end:0x020340a8
+
+src/Unknown/object_02034508.cpp:
+    complete
+    .text       start:0x02034508 end:0x0203464c
+
+src/Unknown/object_02034730.cpp:
+    complete
+    .text       start:0x02034730 end:0x020347dc

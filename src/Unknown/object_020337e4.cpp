@@ -1,14 +1,6 @@
 #include "Unknown/Object_02033708.hpp"
 #include "global.h"
 
-struct Vars_Chain {
-    /* 00 */ u8 unk_00[0x70];
-    /* 70 */ Entity *unk_70;
-    /* 74 */ Entity *unk_74;
-    /* 78 */ Entity *unk_78;
-};
-#define VC(e) VARS(Vars_Chain, e)
-
 extern "C" {
 void func_020347a8(Entity *e);
 void func_0203464c(Entity *e, Entity *other, u16 a);

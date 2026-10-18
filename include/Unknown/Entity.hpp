@@ -17,7 +17,9 @@ typedef void (*EntityFunc)(Entity *e);
 
 // Game object shared by the actor update functions. Field meanings are not known yet.
 struct Entity {
-    /* 00 */ u8 unk_00[0xa];
+    /* 00 */ u8 unk_00[8];
+    /* 08 */ u8 unk_08;
+    /* 09 */ u8 unk_09;
     /* 0a */ u8 unk_0a;
     /* 0b */ u8 unk_0b;
     /* 0c */ s32 unk_0c; // speed
