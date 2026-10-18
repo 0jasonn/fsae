@@ -23,7 +23,8 @@ struct Entity {
     /* 0c */ s32 unk_0c; // speed
     /* 10 */ s32 unk_10;
     /* 14 */ u8 unk_14; // action
-    /* 15 */ u8 unk_15[2];
+    /* 15 */ u8 unk_15; // subaction
+    /* 16 */ u8 unk_16;
     /* 17 */ u8 unk_17; // timer
     /* 18 */ u8 unk_18;
     /* 19 */ u8 unk_19[2];
@@ -68,7 +69,8 @@ struct Entity {
     /* 48 */ const void *unk_48;
     /* 4c */ Entity *unk_4c;
     /* 50 */ u16 unk_50;
-    /* 52 */ u8 unk_52[2];
+    /* 52 */ u8 unk_52;
+    /* 53 */ u8 unk_53;
     /* 54 */ Entity *unk_54;
     /* 58 */ Entity *unk_58;
     /* 5c */ u8 unk_5c[2];

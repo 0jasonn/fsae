@@ -22,6 +22,7 @@ struct Vars_BossPart {
 extern const u8 *const data_020f2658[];
 extern "C" int func_0205076c(Entity *e, int a, int b);
 extern const u8 data_020d0c84[][6];
+extern "C" void func_0205031c(Entity *e, Entity *other);
 extern const u16 data_020d0ac2[];
 extern u8 data_0212c504;
 extern "C" {
@@ -342,5 +343,18 @@ ARM extern "C" void func_02032e04(Entity *e) {
         e->unk_1c.b0 = 1;
     } else {
         e->unk_1c.b0 = 0;
+    }
+}
+
+ARM extern "C" void func_02032e5c(Entity *e) {
+    for (u8 i = 0; i < 4; i++) {
+        Entity *fx = func_02076858(0xf, 0xd, 0x20);
+        if (fx != NULL) {
+            func_0205031c(e, fx);
+            fx->unk_34.HALF.HI -= 0x10;
+            fx->unk_0c = (func_0208455c() & 0x1f) << 8;
+            fx->unk_2b = func_0208455c() & 0x1f;
+            func_0204fd40(fx);
+        }
     }
 }
