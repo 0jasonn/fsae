@@ -12,3 +12,7 @@ src/Unknown/func_020300b4.cpp:
 src/Unknown/enemy_020301f0.cpp:
     complete
     .text       start:0x020301f0 end:0x02030790
+
+src/Unknown/enemy_02030790.cpp:
+    complete
+    .text       start:0x02030790 end:0x02030a14

@@ -23,7 +23,8 @@ struct Entity {
     /* 32 */ s16 unk_32;
     /* 34 */ u8 unk_34[6];
     /* 3a */ s16 unk_3a;
-    /* 3c */ u8 unk_3c[2];
+    /* 3c */ u8 unk_3c;
+    /* 3d */ u8 unk_3d;
     /* 3e */ u8 unk_3e;
     /* 3f */ u8 unk_3f;
     /* 40 */ u8 unk_40;
@@ -38,6 +39,9 @@ struct Entity {
     /* 5c */ u8 unk_5c[0x14];
     /* 70 */ u16 unk_70;
     /* 72 */ u16 unk_72;
+    /* 74 */ u8 unk_74[8];
+    /* 7c */ u8 unk_7c;
+    /* 7d */ u8 unk_7d[3];
 };
 
 typedef void (*EntityFunc)(Entity *e);
@@ -52,6 +56,7 @@ void func_02084a7c(Entity *e, const void *funcs);
 u32 func_02084ac8(Entity *e, int a);
 s32 func_02084f18(void);
 int func_020856cc(Entity *e, int a);
+void func_020852ec(Entity *e);
 void func_02085980(Entity *e);
 void func_020859e0(Entity *e, u8 anim);
 void func_02085f80(int sfx);
