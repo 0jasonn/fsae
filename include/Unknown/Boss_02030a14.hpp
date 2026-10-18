@@ -21,6 +21,16 @@ struct Vars_Boss {
 };
 #define V(e) VARS(Vars_Boss, e)
 
+// Hand-like child entity of the boss
+struct Vars_BossHand {
+    /* 00 */ u8 unk_00[0x72];
+    /* 72 */ u8 unk_72;
+    /* 73 */ u8 unk_73;
+    /* 74 */ s16 unk_74;
+    /* 76 */ u16 unk_76;
+};
+#define VH(e) VARS(Vars_BossHand, e)
+
 struct Vars_Counter {
     /* 00 */ u8 unk_00[0x62];
     /* 62 */ u16 unk_62;
@@ -35,6 +45,7 @@ extern const u8 data_020d0a52[];
 extern const u8 data_020d0a72[];
 extern const u8 data_020d0a4a[];
 extern const u16 data_020d0a5a[];
+extern const s8 data_020d0ab2[];
 
 extern "C" {
 Entity *func_0204bd80(int id);
@@ -54,7 +65,7 @@ void func_02032b78(Entity *e);
 void func_020325f8(Entity *e);
 void func_0203263c(Entity *e);
 void func_02032c2c(Entity *e);
-void func_02032cac(Entity *e);
+u8 func_02032cac(Entity *e);
 u8 func_02032d34(Entity *e);
 void func_02032e04(Entity *e);
 void func_02027fe8(int a);
@@ -67,6 +78,7 @@ void func_02076fe0(int sfx);
 u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
 u8 func_02086078(Entity *target, Entity *e);
 void func_0203298c(Entity *e);
+void func_02032328(Entity *e);
 }
 
 #endif
