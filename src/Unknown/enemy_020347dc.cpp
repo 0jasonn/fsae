@@ -4,7 +4,8 @@
 struct Vars_020347dc {
     /* 00 */ u8 unk_00[0x64];
     /* 64 */ Entity *unk_64;
-    /* 68 */ u8 unk_68[8];
+    /* 68 */ u8 unk_68[6];
+    /* 6e */ u16 unk_6e;
     /* 70 */ Entity *unk_70;
     /* 74 */ u8 unk_74[8];
     /* 7c */ u16 unk_7c;
@@ -31,6 +32,7 @@ extern const u8 data_020f266e[];
 extern const u8 data_020f266b[];
 extern const u8 data_020f2668[];
 extern const u16 data_020f267a[];
+extern const u16 data_020f2680[];
 extern const u8 data_020d119c[];
 extern const s16 data_020d7e58[];
 extern const u32 data_020cf9b8[];
@@ -52,6 +54,10 @@ void func_02035c98(Entity *e);
 void func_02035ce8(Entity *e);
 Entity *func_02045eb4(void);
 u8 func_02084fd0(Entity *e, Entity *target);
+void func_0204fd40(Entity *e);
+void func_02035f9c(Entity *e);
+void func_02035ba4(Entity *e);
+void func_02035ff8(Entity *e);
 }
 
 ARM extern "C" void func_020347dc(Entity *e) {
@@ -249,4 +255,261 @@ ARM extern "C" void func_02034db4(Entity *e) {
     }
     e->unk_2b = func_02084fd0(e, V(e)->unk_64);
     func_020859e0(e, (e->unk_2a = ((e->unk_2b + 2) >> 2) & 7) + 0x14);
+}
+
+ARM extern "C" void func_02034ea0(Entity *e) {
+    if (V(e)->unk_6e & 0x80) {
+        e->unk_14 = 0xb;
+        func_02035a8c(e);
+        return;
+    }
+    if (e->unk_41 & 0x80) {
+        u8 index = e->unk_4c->unk_0a;
+        if (index < 4) {
+            V(e)->unk_64 = data_0212ceb0[index].unk_28;
+        }
+    }
+    if (--e->unk_17 != 0) {
+        if ((e->unk_17 & 3) == 0) {
+            func_02086200(e, func_02084fd0(e, V(e)->unk_64));
+            int anim = ((e->unk_2b + 2) >> 2) & 7;
+            if (anim != e->unk_2a) {
+                func_020859e0(e, (e->unk_2a = anim) + 0x14);
+            }
+        }
+        func_0204fd40(e);
+    } else {
+        e->unk_14 = 0xa;
+    }
+}
+
+ARM extern "C" void func_02034f74(Entity *e) {
+    if (V(e)->unk_6e & 0x80) {
+        e->unk_14 = 0xb;
+        func_02035a8c(e);
+        func_0205031c(e->unk_58, e);
+        return;
+    }
+    func_02085980(e);
+    if (e->unk_29 & 1) {
+        e->unk_29 = 0;
+        func_02035f9c(e);
+        return;
+    }
+    if (e->unk_29 & 0x80) {
+        e->unk_14 = 8;
+    }
+}
+
+ARM extern "C" void func_02034fd8(Entity *e) {
+    if (V(e)->unk_70 != NULL) {
+        func_02085980(V(e)->unk_70);
+    }
+    func_02085980(e);
+    if (!(e->unk_29 & 0x80)) {
+        return;
+    }
+    e->unk_14 = 0xc;
+    e->unk_17 = 0xf0;
+    func_02035c3c(e);
+}
+
+ARM extern "C" void func_02035020(Entity *e) {
+    if (e->unk_17 != 0) {
+        e->unk_17--;
+        if (func_020358c4(e) == 0) {
+            return;
+        }
+        if (e->unk_45 != 0) {
+            return;
+        }
+        func_02035f18(e);
+        return;
+    }
+    if (e->unk_3d != 0) {
+        return;
+    }
+    e->unk_14 = 0xd;
+    func_02035c98(e);
+}
+
+ARM extern "C" void func_0203507c(Entity *e) {
+    if (V(e)->unk_70 != NULL) {
+        func_02085980(V(e)->unk_70);
+    }
+    func_02085980(e);
+    if (!(e->unk_29 & 0x80)) {
+        return;
+    }
+    e->unk_14 = 8;
+    e->unk_17 = 0x1e;
+    V(e)->unk_7c = 0x10;
+    func_02035ce8(e);
+}
+
+ARM extern "C" void func_020350cc(Entity *e) {
+    func_0204fd40(e);
+    if (--e->unk_17 != 0) {
+        return;
+    }
+    e->unk_14 = 0xf;
+    e->unk_0c = data_020f2680[data_0212c7c8.unk_6 - 1];
+    V(e)->unk_6e = 1;
+    VE(e->unk_54)->unk_7d |= (u8)data_020cf9b8[V(e)->unk_7e];
+}
+
+ARM extern "C" void func_02035148(Entity *e) {
+    if ((V(e)->unk_6e & 0xc0) == 0xc0) {
+        e->unk_14 = 0x10;
+        func_02035a8c(e);
+        func_02035ba4(e);
+        func_0205031c(e->unk_58, e);
+        return;
+    }
+    V(e)->unk_6e &= 0x3f;
+    func_02035ff8(e);
+}
+
+ARM extern "C" void func_02035194(Entity *e) {
+    if (V(e)->unk_70 != NULL) {
+        func_02085980(V(e)->unk_70);
+    }
+    func_02085980(e);
+    if (!(e->unk_29 & 0x80)) {
+        return;
+    }
+    e->unk_14 = 0x11;
+    e->unk_17 = 0xf0;
+    func_02035c3c(e);
+}
+
+ARM extern "C" void func_020351dc(Entity *e) {
+    if (e->unk_17 != 0) {
+        e->unk_17--;
+        if (func_020358c4(e) == 0) {
+            return;
+        }
+        if (e->unk_45 != 0) {
+            return;
+        }
+        e->unk_45 = 0xff;
+        e->unk_14 = 0x16;
+        e->unk_17 = 0xb4;
+        e->unk_3c &= 0x7f;
+        e->unk_5e.b0 = 3;
+        if (V(e)->unk_70 != NULL) {
+            V(e)->unk_70->unk_3c &= 0x7f;
+            V(e)->unk_70->unk_5e.b0 = 3;
+        }
+        e->unk_2b = func_0208455c() & 0xf;
+        e->unk_0c = 0x400;
+        V(e)->unk_7c = 0xf;
+        V(e->unk_54)->unk_6e = 0xffff;
+        return;
+    }
+    if (e->unk_3d != 0) {
+        return;
+    }
+    e->unk_14 = 0x12;
+    V(e)->unk_6e ^= 2;
+    func_02035c98(e);
+}
+
+ARM extern "C" void func_020352c8(Entity *e) {
+    if (V(e)->unk_70 != NULL) {
+        func_02085980(V(e)->unk_70);
+    }
+    func_02085980(e);
+    if (!(e->unk_29 & 0x80)) {
+        return;
+    }
+    V(e)->unk_7c = 0x10;
+    func_02035ce8(e);
+    if (V(e)->unk_6e & 2) {
+        e->unk_14 = 0x13;
+        e->unk_17 = 0x1e;
+        return;
+    }
+    e->unk_14 = 0xe;
+    e->unk_17 = 0x96;
+    e->unk_0c = 0x100;
+    e->unk_2b = func_0204fdf0(e->unk_54, e);
+    func_020859e0(e, (e->unk_2a = ((e->unk_2b + 2) >> 2) & 7) + 0x14);
+}
+
+ARM extern "C" void func_02035370(Entity *e) {
+    if (e->unk_17 != 0) {
+        e->unk_17--;
+        return;
+    }
+    e->unk_14 = 0x14;
+    e->unk_17 = 0x78;
+    e->unk_0c = 0x120;
+    if (func_0208de54(func_0208da4c()) == 0) {
+        if (data_021348c0.unk_0 == 0) {
+            V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].unk_28;
+        }
+        if (V(e)->unk_64 == NULL) {
+            V(e)->unk_64 = func_02045eb4();
+        }
+    } else {
+        V(e)->unk_64 = func_02045eb4();
+    }
+    e->unk_2b = func_02084fd0(e, V(e)->unk_64);
+    func_020859e0(e, (e->unk_2a = ((e->unk_2b + 2) >> 2) & 7) + 0x14);
+}
+
+ARM extern "C" void func_02035438(Entity *e) {
+    if ((V(e)->unk_6e & 0xc0) == 0xc0) {
+        e->unk_14 = 0x10;
+        func_02035a8c(e);
+        func_02035ba4(e);
+        func_0205031c(e->unk_58, e);
+        return;
+    }
+    V(e)->unk_6e &= 0x3f;
+    if ((e->unk_41 & 0x80) && e->unk_4c->unk_0a < 4) {
+        if (func_0208de54(func_0208da4c()) == 0) {
+            if (data_021348c0.unk_0 == 0) {
+                V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].unk_28;
+            }
+            if (V(e)->unk_64 == NULL) {
+                V(e)->unk_64 = data_0212ceb0[e->unk_4c->unk_0a].unk_28;
+            }
+        } else {
+            V(e)->unk_64 = data_0212ceb0[e->unk_4c->unk_0a].unk_28;
+        }
+    }
+    if (--e->unk_17 != 0) {
+        if ((e->unk_17 & 3) == 0) {
+            func_02086200(e, func_02084fd0(e, V(e)->unk_64));
+            int anim = ((e->unk_2b + 2) >> 2) & 7;
+            if (anim != e->unk_2a) {
+                func_020859e0(e, (e->unk_2a = anim) + 0x14);
+            }
+        }
+        func_0204fd40(e);
+    } else {
+        e->unk_14 = 0x15;
+    }
+}
+
+ARM extern "C" void func_02035588(Entity *e) {
+    if ((V(e)->unk_6e & 0xc0) == 0xc0) {
+        e->unk_14 = 0x10;
+        func_02035a8c(e);
+        func_02035ba4(e);
+        func_0205031c(e->unk_58, e);
+        return;
+    }
+    V(e)->unk_6e &= 0x3f;
+    func_02085980(e);
+    if (e->unk_29 & 1) {
+        e->unk_29 = 0;
+        func_02035f9c(e);
+        return;
+    }
+    if (e->unk_29 & 0x80) {
+        e->unk_14 = 0x13;
+    }
 }
