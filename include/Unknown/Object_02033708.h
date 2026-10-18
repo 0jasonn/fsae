@@ -46,11 +46,11 @@ extern s32 data_021348b4;
 #ifdef __cplusplus
 extern "C" {
 #endif
-void func_0204be88(Entity *e);
-Entity *func_0204bd80(int id);
-void func_0204fd40(Entity *e);
+void DeleteEntity(Entity *e);
+Entity *CreateEnemy(int id);
+void ProcessMovement(Entity *e);
 void func_02050840(Entity *e);
-void func_02050390(Entity *e, Entity *other, s32 a, s32 b);
+void PositionRelative(Entity *e, Entity *other, s32 a, s32 b);
 void func_02033e10(Entity *e);
 void func_02085d78(Entity *e);
 void func_02089524(Entity *e);
@@ -83,7 +83,7 @@ extern "C" {
 Entity *func_0204bcc8(void);
 Entity *func_0204bd00(void);
 void func_0204c178(int list, Entity *e);
-void func_0205031c(Entity *e, Entity *other);
+void CopyPosition(Entity *e, Entity *other);
 u8 func_02086220(s16 dx, s16 dy);
 void func_0203464c(Entity *e, Entity *target, u16 dist);
 #ifdef __cplusplus

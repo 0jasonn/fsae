@@ -6,12 +6,12 @@ ARM void func_02040ad8(Entity *e) {
     if (V(e)->unk_7e == 0) {
         func_020768d8();
         func_02040d00(e);
-        func_0204be88(e);
+        DeleteEntity(e);
         return;
     }
     func_020847c8(e);
-    func_02085980(e);
-    if (func_020856cc(e, 0x1800) == 0) {
+    UpdateAnimationSingleFrame(e);
+    if (UpdateGravity(e, 0x1800) == 0) {
         func_02040be0(e);
     }
 }
@@ -26,16 +26,16 @@ ARM void func_02040b3c(Entity *e) {
         return;
     }
     func_02040d60(e, a);
-    a->unk_30.HALF.HI -= 4;
-    a->unk_54 = b;
-    a->unk_2b = (e->unk_3e - 2) & 0x1f;
+    a->x.HALF.HI -= 4;
+    a->parent = b;
+    a->direction = (e->unk_3e - 2) & 0x1f;
     func_02040d60(e, b);
-    b->unk_30.HALF.HI += 4;
-    b->unk_54 = a;
-    b->unk_2b = (e->unk_3e + 2) & 0x1f;
-    Entity *other = func_02076858(0xf, 2, 0);
+    b->x.HALF.HI += 4;
+    b->parent = a;
+    b->direction = (e->unk_3e + 2) & 0x1f;
+    Entity *other = CreateFx(0xf, 2, 0);
     if (other != NULL) {
-        func_0205031c(e, other);
+        CopyPosition(e, other);
     }
-    func_0204be88(e);
+    DeleteEntity(e);
 }

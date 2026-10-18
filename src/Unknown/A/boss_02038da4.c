@@ -9,38 +9,38 @@ ARM void func_02038da4(Entity *e) {
 }
 
 ARM void func_02038dc4(Entity *e) {
-    if (e->unk_0a != 0) {
+    if (e->type != 0) {
         e->unk_3f = 9;
     }
-    e->unk_1c.b0 = 1;
+    e->spriteSettings.b0 = 1;
     e->unk_2e = 6;
-    V(e)->unk_7d = e->unk_45;
-    e->unk_48 = data_020d19b8;
-    if (e->unk_0a == 3) {
-        e->unk_18 = (func_0208455c() & 0x7f) + 0x40;
+    V(e)->unk_7d = e->health;
+    e->hitbox = data_020d19b8;
+    if (e->type == 3) {
+        e->subtimer = (Random() & 0x7f) + 0x40;
     }
-    e->unk_14++;
-    e->unk_17 = 1;
-    e->unk_2a = 0;
-    func_020859e0(e, 0);
+    e->action++;
+    e->timer = 1;
+    e->animationState = 0;
+    InitAnimationForceUpdate(e, 0);
     func_02039278(e);
 }
 
 ARM void func_02038e54(Entity *e) {
-    if (--e->unk_17 == 0) {
-        e->unk_17 = (func_0208455c() & 0x1c) + 0x1e;
+    if (--e->timer == 0) {
+        e->timer = (Random() & 0x1c) + 0x1e;
         func_02039278(e);
     }
     func_020847a0(e);
-    func_02085980(e);
+    UpdateAnimationSingleFrame(e);
 }
 
 ARM void func_02038e9c(Entity *e) {
     func_020847c8(e);
-    func_02085980(e);
-    if (func_020856cc(e, 0x1100) != 0) {
+    UpdateAnimationSingleFrame(e);
+    if (UpdateGravity(e, 0x1100) != 0) {
         return;
     }
-    e->unk_14++;
-    func_020859e0(e, e->unk_2a + 6);
+    e->action++;
+    InitAnimationForceUpdate(e, e->animationState + 6);
 }

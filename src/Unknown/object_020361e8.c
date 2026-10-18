@@ -29,16 +29,16 @@ typedef struct Vars_Flag {
 } Vars_Flag;
 
 void func_020547ec(void);
-void func_0204fd40(Entity *e);
-Entity *func_0204bdb8(int id);
-void func_02076fe0(int sfx);
+void ProcessMovement(Entity *e);
+Entity *CreateProjectile(int id);
+void SoundReq(int sfx);
 void func_02026720(void);
 void func_020266f8(void);
 void func_02036bd0(Entity *e);
 void func_02036b2c(Entity *e);
 void func_02036c64(Entity *e, u16 x, u16 y);
 void func_02045ac0(Entity *e);
-u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
+u8 CalculateDirectionTo(s16 x, s16 y, s16 tx, s16 ty);
 void *func_0208dde0(void *a, u32 *out, u32 b);
 void func_020845b0(u32 dest, void *src, u16 size);
 u8 func_02085620(u32 a);
@@ -49,36 +49,36 @@ int func_0208de54(void *a);
 u8 *func_02093b5c(void);
 
 ARM void func_020361e8(Entity *e) {
-    data_020d1320[e->unk_14](e);
-    if (!(e->unk_41 & 0x80)) {
+    data_020d1320[e->action](e);
+    if (!(e->contactFlags & 0x80)) {
         return;
     }
-    if (e->unk_41 & 0x7f) {
+    if (e->contactFlags & 0x7f) {
         return;
     }
-    if (data_0212ceb0[e->unk_4c->unk_0a].unk_36 & 0x400) {
+    if (data_0212ceb0[e->contactedEntity->type].unk_36 & 0x400) {
         return;
     }
-    Entity *obj = func_02076858(0x55, 1, 0);
+    Entity *obj = CreateFx(0x55, 1, 0);
     if (obj == NULL) {
         return;
     }
-    obj->unk_58 = e->unk_4c;
-    data_0212ceb0[e->unk_4c->unk_0a].unk_36 |= 0x400;
+    obj->child = e->contactedEntity;
+    data_0212ceb0[e->contactedEntity->type].unk_36 |= 0x400;
 }
 
 ARM void func_02036278(Entity *e) {
     e->unk_50 = 0x4000;
-    e->unk_1c.b0 = 1;
-    func_020859e0(e, 0);
+    e->spriteSettings.b0 = 1;
+    InitAnimationForceUpdate(e, 0);
     e->unk_5e.b2 = 2;
-    e->unk_48 = data_020d1259;
-    e->unk_2b = 0xff;
+    e->hitbox = data_020d1259;
+    e->direction = 0xff;
     e->unk_6a = 1;
     func_02036b2c(e);
-    e->unk_18 = 0x3c;
+    e->subtimer = 0x3c;
     V(e)->unk_7b = 0x1e;
-    e->unk_58 = data_0212c648;
+    e->child = data_0212c648;
     data_0212c648 = e;
     func_020266f8();
     data_021348c8 = 0;
@@ -86,165 +86,165 @@ ARM void func_02036278(Entity *e) {
 }
 
 ARM void func_02036314(Entity *e) {
-    if (e->unk_0a == 0) {
+    if (e->type == 0) {
         func_020547ec();
-        if (e->unk_18 != 0) {
-            e->unk_18--;
+        if (e->subtimer != 0) {
+            e->subtimer--;
             return;
         }
     }
-    if (e->unk_45 == 0) {
-        if (data_0212c7c8.unk_6 == e->unk_0a) {
+    if (e->health == 0) {
+        if (data_0212c7c8.unk_6 == e->type) {
             V(e)->unk_79 = 4;
         } else {
-            V(e)->unk_79 = e->unk_0a + 1;
+            V(e)->unk_79 = e->type + 1;
         }
     } else {
-        V(e)->unk_79 = e->unk_0a;
+        V(e)->unk_79 = e->type;
     }
     if (V(e)->unk_79 >= 4) {
         V(e)->unk_79 = 4;
     }
-    if (e->unk_0a >= 4) {
-        e->unk_0a = 4;
+    if (e->type >= 4) {
+        e->type = 4;
     }
-    if (e->unk_10 != 0) {
-        func_02085980(e);
-        func_020856cc(e, 0x2000);
-        func_0204fd40(e);
+    if (e->zVelocity != 0) {
+        UpdateAnimationSingleFrame(e);
+        UpdateGravity(e, 0x2000);
+        ProcessMovement(e);
         return;
     }
     if (V(e)->unk_78 != 0) {
         if (--V(e)->unk_78 % 4 != 0) {
             return;
         }
-        Entity *fx = func_0204bdb8(0xf);
+        Entity *fx = CreateProjectile(0xf);
         if (fx == NULL) {
             return;
         }
-        if (func_0208455c() & 1) {
-            fx->unk_30.HALF.HI = e->unk_30.HALF.HI + (func_0208455c() & 0xf);
+        if (Random() & 1) {
+            fx->x.HALF.HI = e->x.HALF.HI + (Random() & 0xf);
         } else {
-            fx->unk_30.HALF.HI = e->unk_30.HALF.HI - (func_0208455c() & 0xf);
+            fx->x.HALF.HI = e->x.HALF.HI - (Random() & 0xf);
         }
-        if (func_0208455c() & 1) {
-            fx->unk_34.HALF.HI = e->unk_34.HALF.HI + (func_0208455c() & 0xf);
+        if (Random() & 1) {
+            fx->y.HALF.HI = e->y.HALF.HI + (Random() & 0xf);
         } else {
-            fx->unk_34.HALF.HI = e->unk_34.HALF.HI - (func_0208455c() & 0xf);
+            fx->y.HALF.HI = e->y.HALF.HI - (Random() & 0xf);
         }
-        fx->unk_0b = 4;
-        fx->unk_54 = e;
+        fx->type2 = 4;
+        fx->parent = e;
         if ((V(e)->unk_7a++ & 3) == 0) {
-            func_02085f80(0xbb);
+            EnqueueSFX(0xbb);
         }
         return;
     }
-    if (e->unk_17 != 0) {
-        if (e->unk_17 == 0x5a && e->unk_0a != 4) {
-            func_02085f80(0xbc);
+    if (e->timer != 0) {
+        if (e->timer == 0x5a && e->type != 4) {
+            EnqueueSFX(0xbc);
         }
-        if (--e->unk_17 & 1) {
-            func_020859e0(e, 0);
+        if (--e->timer & 1) {
+            InitAnimationForceUpdate(e, 0);
             return;
         }
         int anim = V(e)->unk_79;
         if (anim == 4) {
             return;
         }
-        func_020859e0(e, anim);
+        InitAnimationForceUpdate(e, anim);
         return;
     }
-    if (e->unk_0a == 0) {
-        data_0212c648 = e->unk_58;
-        func_02076fe0(0x19c);
+    if (e->type == 0) {
+        data_0212c648 = e->child;
+        SoundReq(0x19c);
         func_02026720();
     }
-    e->unk_45 = 1;
-    e->unk_0a = V(e)->unk_79;
+    e->health = 1;
+    e->type = V(e)->unk_79;
     int next = V(e)->unk_79;
     if (next == 4) {
-        func_020859e0(e, 0);
+        InitAnimationForceUpdate(e, 0);
     } else {
-        func_020859e0(e, next);
-        e->unk_1c.b4 = 2;
+        InitAnimationForceUpdate(e, next);
+        e->spriteSettings.b4 = 2;
         e->unk_3c |= 0x80;
     }
     func_02036bd0(e);
 }
 
 ARM void func_02036580(Entity *e) {
-    func_02085980(e);
-    func_020856cc(e, 0x2000);
+    UpdateAnimationSingleFrame(e);
+    UpdateGravity(e, 0x2000);
     switch (V(e)->unk_70) {
         case 4:
-            if (e->unk_38.WORD != 0) {
+            if (e->z.WORD != 0) {
                 return;
             }
-            e->unk_17 -= 10;
-            if (e->unk_17 != 0) {
-                e->unk_10 = 0x30000;
+            e->timer -= 10;
+            if (e->timer != 0) {
+                e->zVelocity = 0x30000;
                 return;
             }
             break;
         case 0:
         case 1:
         case 2:
-            e->unk_30.HALF.HI = V(e)->unk_72 + (s8)e->unk_18;
-            e->unk_18 = -e->unk_18;
-            if (--e->unk_17 != 0) {
+            e->x.HALF.HI = V(e)->unk_72 + (s8)e->subtimer;
+            e->subtimer = -e->subtimer;
+            if (--e->timer != 0) {
                 return;
             }
             break;
         case 3:
-            func_0204fd40(e);
-            e->unk_2b = (e->unk_2b + 1) & 0x1f;
+            ProcessMovement(e);
+            e->direction = (e->direction + 1) & 0x1f;
             break;
     }
-    e->unk_30.HALF.HI = V(e)->unk_72;
+    e->x.HALF.HI = V(e)->unk_72;
     switch (V(e)->unk_70) {
         case 4:
-            for (e->unk_17 = data_0212c7c8.unk_0 << 2; e->unk_17 != 0; e->unk_17--) {
-                int x = ((func_0208455c() & 0x1f) << 4) + 0x76;
-                int y = ((func_0208455c() & 0x1f) << 4) + 0xa8;
+            for (e->timer = data_0212c7c8.unk_0 << 2; e->timer != 0; e->timer--) {
+                int x = ((Random() & 0x1f) << 4) + 0x76;
+                int y = ((Random() & 0x1f) << 4) + 0xa8;
                 func_02036c64(e, x, y);
             }
             func_02036bd0(e);
             return;
         case 0:
-            e->unk_2b = func_0208455c() & 0x1f;
-            e->unk_0c = 0x100;
-            e->unk_14 = 3;
-            e->unk_10 = 0x20000;
-            e->unk_17 = 5;
-            func_02036c64(e, e->unk_30.HALF.HI, e->unk_34.HALF.HI);
+            e->direction = Random() & 0x1f;
+            e->speed = 0x100;
+            e->action = 3;
+            e->zVelocity = 0x20000;
+            e->timer = 5;
+            func_02036c64(e, e->x.HALF.HI, e->y.HALF.HI);
             return;
         case 1:
-            e->unk_2b = func_02086078(e, data_0212ceb0[func_02085608()].unk_28);
-            e->unk_17 = e->unk_0a + 3;
-            e->unk_0c = 0x100;
-            e->unk_14 = 3;
-            e->unk_10 = 0x20000;
+            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].unk_28);
+            e->timer = e->type + 3;
+            e->speed = 0x100;
+            e->action = 3;
+            e->zVelocity = 0x20000;
             return;
         case 2: {
-            Entity *fx = func_0204bdb8(0xf);
+            Entity *fx = CreateProjectile(0xf);
             if (fx != NULL) {
-                fx->unk_30.HALF.HI = e->unk_30.HALF.HI;
-                fx->unk_34.HALF.HI = e->unk_34.HALF.HI;
-                fx->unk_17 = func_02085608();
-                fx->unk_54 = e;
+                fx->x.HALF.HI = e->x.HALF.HI;
+                fx->y.HALF.HI = e->y.HALF.HI;
+                fx->timer = func_02085608();
+                fx->parent = e;
                 V(e)->unk_71 = 1;
             }
             func_02036bd0(e);
             return;
         }
         case 3: {
-            Entity *fx = func_0204bdb8(0xf);
+            Entity *fx = CreateProjectile(0xf);
             if (fx != NULL) {
-                fx->unk_17 = func_02085608();
-                fx->unk_30.HALF.HI = e->unk_30.HALF.HI;
-                fx->unk_34.HALF.HI = e->unk_34.HALF.HI;
-                fx->unk_0b = 1;
-                fx->unk_54 = e;
+                fx->timer = func_02085608();
+                fx->x.HALF.HI = e->x.HALF.HI;
+                fx->y.HALF.HI = e->y.HALF.HI;
+                fx->type2 = 1;
+                fx->parent = e;
             }
             func_02036bd0(e);
             return;
@@ -253,118 +253,118 @@ ARM void func_02036580(Entity *e) {
 }
 
 ARM void func_020367e0(Entity *e) {
-    func_02085980(e);
+    UpdateAnimationSingleFrame(e);
     func_020852ec(e);
-    if (func_020856cc(e, 0x2000) != 0) {
+    if (UpdateGravity(e, 0x2000) != 0) {
         return;
     }
-    if (e->unk_0a < 4) {
-        func_02085f80(0xa7);
+    if (e->type < 4) {
+        EnqueueSFX(0xa7);
     }
-    if (--e->unk_17 != 0) {
-        if (e->unk_0a == 4) {
-            func_02085f80(0x31);
+    if (--e->timer != 0) {
+        if (e->type == 4) {
+            EnqueueSFX(0x31);
         }
-        e->unk_10 = 0x20000;
+        e->zVelocity = 0x20000;
         if (V(e)->unk_70 == 0) {
-            e->unk_2b = func_0208455c() & 0x1f;
+            e->direction = Random() & 0x1f;
         } else if (func_0208de54(func_0208da4c()) != 0) {
-            e->unk_2b = func_02086078(e, data_0212ceb0[func_02085608()].unk_28);
+            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].unk_28);
         } else {
-            e->unk_2b = func_02086078(e, data_0212ceb0[*func_02093b5c()].unk_28);
+            e->direction = func_02086078(e, data_0212ceb0[*func_02093b5c()].unk_28);
         }
-        func_02036c64(e, e->unk_30.HALF.HI, e->unk_34.HALF.HI);
+        func_02036c64(e, e->x.HALF.HI, e->y.HALF.HI);
         return;
     }
     func_02036bd0(e);
 }
 
 ARM void func_020368d8(Entity *e) {
-    if (e->unk_0a == 4 && data_021348c8 != 0) {
-        e->unk_14 = 6;
+    if (e->type == 4 && data_021348c8 != 0) {
+        e->action = 6;
         return;
     }
-    e->unk_1c.b0 ^= 1;
+    e->spriteSettings.b0 ^= 1;
     e->unk_3c &= 0x7f;
-    if (e->unk_18 != 0) {
+    if (e->subtimer != 0) {
         if (V(e)->unk_74-- != 0) {
             return;
         }
         V(e)->unk_74 = 5;
-        if (e->unk_17 != 0) {
-            Entity *fx = func_0204bdb8(0xf);
+        if (e->timer != 0) {
+            Entity *fx = CreateProjectile(0xf);
             if (fx != NULL) {
-                fx->unk_30.HALF.HI = e->unk_30.HALF.HI;
-                fx->unk_34.HALF.HI = e->unk_34.HALF.HI;
-                fx->unk_38.HALF.HI = e->unk_38.HALF.HI;
-                fx->unk_0a = e->unk_0a;
-                fx->unk_0b = 3;
-                fx->unk_54 = e;
-                if (e->unk_17 == e->unk_18) {
-                    e->unk_58 = fx;
-                    fx->unk_45 = 0x20;
+                fx->x.HALF.HI = e->x.HALF.HI;
+                fx->y.HALF.HI = e->y.HALF.HI;
+                fx->z.HALF.HI = e->z.HALF.HI;
+                fx->type = e->type;
+                fx->type2 = 3;
+                fx->parent = e;
+                if (e->timer == e->subtimer) {
+                    e->child = fx;
+                    fx->health = 0x20;
                     VARS(Vars_Flag, fx)->unk_70 = 1;
                 }
             }
-            e->unk_17--;
+            e->timer--;
             return;
         }
-        e->unk_14++;
-        V(e)->unk_74 = data_020d1262[e->unk_0a - 1];
-        if (e->unk_0a == 4 && data_021348c8 == 0) {
+        e->action++;
+        V(e)->unk_74 = data_020d1262[e->type - 1];
+        if (e->type == 4 && data_021348c8 == 0) {
             V(e)->unk_74 = 0x258;
         }
-        e->unk_1c.b0 = 0;
-        if (e->unk_0a == 4) {
+        e->spriteSettings.b0 = 0;
+        if (e->type == 4) {
             data_021348c8++;
         }
         return;
     }
-    e->unk_18 = (func_0208455c() & 7) + 1;
+    e->subtimer = (Random() & 7) + 1;
     V(e)->unk_74 = 5;
 }
 
 ARM void func_02036a58(Entity *e) {
-    Entity *target = e->unk_58;
-    e->unk_30.HALF.HI = target->unk_30.HALF.HI;
-    e->unk_34.HALF.HI = target->unk_34.HALF.HI;
-    if (target->unk_45 == 0) {
+    Entity *target = e->child;
+    e->x.HALF.HI = target->x.HALF.HI;
+    e->y.HALF.HI = target->y.HALF.HI;
+    if (target->health == 0) {
         V(e)->unk_74 = 0;
-        e->unk_45 = 0;
-        func_02085f80(0xa3);
+        e->health = 0;
+        EnqueueSFX(0xa3);
     }
     if (V(e)->unk_74-- != 0) {
         return;
     }
-    if (e->unk_58->unk_45 != 0) {
+    if (e->child->health != 0) {
         data_021348c8 = 0;
     }
-    e->unk_1c.b0 ^= 1;
-    func_020859e0(e, 0);
+    e->spriteSettings.b0 ^= 1;
+    InitAnimationForceUpdate(e, 0);
     func_02036b2c(e);
-    e->unk_2b = func_02086080(e->unk_30.HALF.HI, e->unk_34.HALF.HI, 0x1f8, 0x1f8);
+    e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
 }
 
 ARM void func_02036b14(Entity *e) {
     func_02045ac0(e);
-    e->unk_0a = 5;
+    e->type = 5;
 }
 
 ARM void func_02036b2c(Entity *e) {
-    if (e->unk_45 == 0) {
-        u8 level = e->unk_0a;
+    if (e->health == 0) {
+        u8 level = e->type;
         if (level < 3 && level != 0) {
             u32 size;
             void *data = func_0208dde0(func_0208da4c(), &size, data_020d126c[level - 1]);
             func_020845b0(0x6403000, data, size);
         }
     }
-    e->unk_10 = 0x30000;
-    e->unk_14 = 1;
-    e->unk_17 = 0x5a;
+    e->zVelocity = 0x30000;
+    e->action = 1;
+    e->timer = 0x5a;
     V(e)->unk_78 = 0x78;
     e->unk_2e = 2;
-    e->unk_1c.b4 = 1;
+    e->spriteSettings.b4 = 1;
     V(e)->unk_7a = 0;
 }
 
@@ -374,27 +374,27 @@ ARM void func_02036bd0(Entity *e) {
     } else {
         u8 mode;
         do {
-            mode = func_02085620(data_020f2698[e->unk_0a - 1]);
+            mode = func_02085620(data_020f2698[e->type - 1]);
         } while (V(e)->unk_70 == mode || (mode == 2 && V(e)->unk_71 != 0));
         V(e)->unk_70 = mode;
     }
-    e->unk_17 = 0x1e;
-    e->unk_18 = 2;
-    e->unk_2b = 8;
-    e->unk_0c = 0x200;
-    e->unk_14 = 2;
-    V(e)->unk_72 = e->unk_30.HALF.HI;
+    e->timer = 0x1e;
+    e->subtimer = 2;
+    e->direction = 8;
+    e->speed = 0x200;
+    e->action = 2;
+    V(e)->unk_72 = e->x.HALF.HI;
 }
 
 ARM void func_02036c64(Entity *e, u16 x, u16 y) {
-    if (func_0208455c() & 1) {
+    if (Random() & 1) {
         return;
     }
-    Entity *fx = func_0204bdb8(0xf);
+    Entity *fx = CreateProjectile(0xf);
     if (fx != NULL) {
-        fx->unk_30.HALF.HI = x;
-        fx->unk_34.HALF.HI = y;
-        fx->unk_0b = 2;
-        fx->unk_54 = e;
+        fx->x.HALF.HI = x;
+        fx->y.HALF.HI = y;
+        fx->type2 = 2;
+        fx->parent = e;
     }
 }

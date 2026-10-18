@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 s32 func_0200d948(s32 a, s32 b);
-Entity *func_0205031c(Entity *src, Entity *dst);
+Entity *CopyPosition(Entity *src, Entity *dst);
 Entity *func_0208ae78(Entity *e);
 void *func_0208da4c(void);
 int func_0208de54(void *a);

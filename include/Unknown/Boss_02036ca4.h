@@ -53,7 +53,7 @@ extern "C" {
 #endif
 void func_020547ec(void);
 void func_0208ae30(Entity *e);
-void func_02076fe0(int sfx);
+void SoundReq(int sfx);
 void *func_0208da4c(void);
 int func_0208de54(void *a);
 void func_02076988(Entity *e, int a, int b);
@@ -63,13 +63,13 @@ void func_02049f0c(int a);
 void func_02049eb8(void);
 void func_02021ec4(const void *a, int b);
 void func_0204625c(int a, int b);
-Entity *func_0204bdb8(int id);
-void func_0205031c(Entity *e, Entity *other);
-u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
+Entity *CreateProjectile(int id);
+void CopyPosition(Entity *e, Entity *other);
+u8 CalculateDirectionTo(s16 x, s16 y, s16 tx, s16 ty);
 u8 *func_02093b5c(void);
 void func_0205396c(void);
 void func_02026720(void);
-void func_0204fd40(Entity *e);
+void ProcessMovement(Entity *e);
 void func_02037f6c(Entity *e);
 BOOL func_0203808c(Entity *e);
 void func_02038138(Entity *e);

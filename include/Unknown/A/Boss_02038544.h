@@ -32,7 +32,7 @@ void func_02084f54(Entity *e);
 void func_02039278(Entity *e);
 Entity *func_02084f98(Entity *e, int a, int b);
 u8 func_02045a8c(u8 a);
-void func_0205031c(Entity *e, Entity *other);
+void CopyPosition(Entity *e, Entity *other);
 #ifdef __cplusplus
 }
 #endif

@@ -2,24 +2,24 @@
 #include "global.h"
 
 ARM void func_02038c58(Entity *e) {
-    if (e->unk_17 != 0) {
-        e->unk_17--;
+    if (e->timer != 0) {
+        e->timer--;
         return;
     }
-    func_02085980(e);
+    UpdateAnimationSingleFrame(e);
     if (func_020847a0(e) != 0) {
         return;
     }
-    e->unk_14 = 1;
-    e->unk_0c = 0x80;
-    e->unk_18 = 0x14;
-    func_020859e0(e, e->unk_2a);
+    e->action = 1;
+    e->speed = 0x80;
+    e->subtimer = 0x14;
+    InitAnimationForceUpdate(e, e->animationState);
 }
 
 ARM void func_02038cb0(Entity *e) {
-    func_02084a7c(e, data_020d1a34);
+    EnemyFunctionHandler(e, data_020d1a34);
 }
 
 ARM void func_02038cc4(Entity *e) {
-    data_020d19ec[e->unk_0a][e->unk_14](e);
+    data_020d19ec[e->type][e->action](e);
 }

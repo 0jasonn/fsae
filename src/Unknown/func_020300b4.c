@@ -2,12 +2,12 @@
 #include "global.h"
 
 ARM void func_020300b4(Entity *e, int dir) {
-    if ((e->unk_2a & 0xe) == dir) {
-        if ((e->unk_2b & 0xf) == 0 || (e->unk_2a & 1) == (e->unk_2b >> 4)) {
+    if ((e->animationState & 0xe) == dir) {
+        if ((e->direction & 0xf) == 0 || (e->animationState & 1) == (e->direction >> 4)) {
             return;
         }
-        func_020859e0(e, e->unk_2a = dir + (e->unk_2b >> 4));
+        InitAnimationForceUpdate(e, e->animationState = dir + (e->direction >> 4));
         return;
     }
-    func_020859e0(e, e->unk_2a = dir + (e->unk_2a & 1));
+    InitAnimationForceUpdate(e, e->animationState = dir + (e->animationState & 1));
 }

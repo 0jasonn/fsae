@@ -2,15 +2,15 @@
 #include "global.h"
 
 ARM void func_02038ee8(Entity *e) {
-    func_02085980(e);
-    if ((e->unk_29 & 0x80) == 0) {
+    UpdateAnimationSingleFrame(e);
+    if ((e->frame & 0x80) == 0) {
         return;
     }
-    e->unk_14 = 1;
-    e->unk_17 = 1;
-    e->unk_2a = 0;
-    e->unk_0c = 0x80;
+    e->action = 1;
+    e->timer = 1;
+    e->animationState = 0;
+    e->speed = 0x80;
     e->unk_3c &= 0xef;
     e->unk_3f = 9;
-    func_020859e0(e, 0);
+    InitAnimationForceUpdate(e, 0);
 }

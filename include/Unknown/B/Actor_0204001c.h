@@ -26,10 +26,10 @@ u32 func_02084ae8(Entity *e, int a, Entity *target);
 int func_02084ac0(Entity *e, int a, Entity *target);
 void func_020852f8(Entity *e, s32 dist, u8 speed);
 u8 func_02084fd0(Entity *e, Entity *target);
-void func_0205031c(Entity *e, Entity *other);
-void func_02050390(Entity *e, Entity *other, s32 a, s32 b);
-Entity *func_0204bdb8(int id);
-u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
+void CopyPosition(Entity *e, Entity *other);
+void PositionRelative(Entity *e, Entity *other, s32 a, s32 b);
+Entity *CreateProjectile(int id);
+u8 CalculateDirectionTo(s16 x, s16 y, s16 tx, s16 ty);
 
 void func_0204007c(Entity *e);
 void func_020400b4(Entity *e);

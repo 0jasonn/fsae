@@ -50,9 +50,9 @@ extern const s8 data_020d0ab2[];
 #ifdef __cplusplus
 extern "C" {
 #endif
-Entity *func_0204bd80(int id);
-void func_0204be88(Entity *e);
-void func_0204fd40(Entity *e);
+Entity *CreateEnemy(int id);
+void DeleteEntity(Entity *e);
+void ProcessMovement(Entity *e);
 void func_02026720(void);
 void func_020266f8(void);
 void func_020547ec(void);
@@ -76,8 +76,8 @@ void func_02081088(Entity *e, int a);
 void func_02081160(Entity *e);
 void func_02030ae4(int index);
 void func_02032e5c(Entity *e);
-void func_02076fe0(int sfx);
-u8 func_02086080(s16 x, s16 y, s16 tx, s16 ty);
+void SoundReq(int sfx);
+u8 CalculateDirectionTo(s16 x, s16 y, s16 tx, s16 ty);
 u8 func_02086078(Entity *target, Entity *e);
 void func_0203298c(Entity *e);
 void func_02032328(Entity *e);

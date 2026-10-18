@@ -10,7 +10,7 @@ ARM BOOL func_02048264(void) {
     u8 i;
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         if (!(data_0212ceb0[i].unk_36 & 1)) {
-            if (data_0212ceb0[i].unk_28->unk_45 != 0) {
+            if (data_0212ceb0[i].unk_28->health != 0) {
                 continue;
             }
         }

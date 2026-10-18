@@ -22,7 +22,7 @@ void func_020547ec(void);
 int func_02034124(Entity *e);
 void func_020266f8(void);
 void func_02026720(void);
-void func_02076fe0(int sfx);
+void SoundReq(int sfx);
 void *func_0208da4c(void);
 int func_0208de54(void *a);
 u8 *func_02093b5c(void);
@@ -31,33 +31,33 @@ int func_02034508(Entity *e);
 void func_02049f38(int a);
 
 ARM void func_02033290(Entity *e) {
-    func_02084a7c(e, data_020d1004);
-    if (!(e->unk_41 & 0x80)) {
+    EnemyFunctionHandler(e, data_020d1004);
+    if (!(e->contactFlags & 0x80)) {
         return;
     }
-    if ((e->unk_41 & 0x7f) != 0x10) {
+    if ((e->contactFlags & 0x7f) != 0x10) {
         return;
     }
-    data_0212ceb0[e->unk_4c->unk_0a].unk_0c = 6;
-    data_0212ceb0[e->unk_4c->unk_0a].unk_38 = 1;
+    data_0212ceb0[e->contactedEntity->type].unk_0c = 6;
+    data_0212ceb0[e->contactedEntity->type].unk_38 = 1;
 }
 
 ARM void func_020332f8(Entity *e) {
-    data_020d0ff0[e->unk_0a](e);
+    data_020d0ff0[e->type](e);
 }
 
 ARM void func_02033314(Entity *e) {
-    func_020849f4(e, data_020d1004);
+    GenericKnockback(e, data_020d1004);
 }
 
 ARM void func_02033328(Entity *e) {
-    data_020d1050[e->unk_14](e);
-    func_02085980(e);
-    if (!(e->unk_29 & 1)) {
+    data_020d1050[e->action](e);
+    UpdateAnimationSingleFrame(e);
+    if (!(e->frame & 1)) {
         return;
     }
-    e->unk_29 = 0;
-    e->unk_28 += func_0208455c() & 0x38;
+    e->frame = 0;
+    e->unk_28 += Random() & 0x38;
 }
 
 ARM void func_02033378(Entity *e) {
@@ -65,13 +65,13 @@ ARM void func_02033378(Entity *e) {
     if (func_02034124(e) == 0) {
         return;
     }
-    e->unk_14 = 1;
-    e->unk_17 = 0x1e;
-    e->unk_1c.b0 = 1;
-    e->unk_48 = data_020d0efa;
+    e->action = 1;
+    e->timer = 0x1e;
+    e->spriteSettings.b0 = 1;
+    e->hitbox = data_020d0efa;
     e->unk_6a = 1;
     e->unk_5e.b0 = 0;
-    func_020859e0(e, 0);
+    InitAnimationForceUpdate(e, 0);
     data_0212c648 = e;
     func_020266f8();
 }
@@ -81,13 +81,13 @@ ARM void func_020333f0(Entity *e) {
     if (V(e)->unk_7d != 7) {
         return;
     }
-    if (--e->unk_17 != 0) {
+    if (--e->timer != 0) {
         return;
     }
-    e->unk_14 = 2;
-    e->unk_17 = 0xb4;
+    e->action = 2;
+    e->timer = 0xb4;
     V(e)->unk_6e = 0x4b0;
-    func_02076fe0(0x19c);
+    SoundReq(0x19c);
     if (func_0208de54(func_0208da4c()) != 0) {
         data_0212c648 = data_0212ceb0[data_0212c504].unk_28;
     } else {
@@ -98,9 +98,9 @@ ARM void func_020333f0(Entity *e) {
 
 ARM void func_020334a4(Entity *e) {
     if (V(e)->unk_7c == 0) {
-        if (e->unk_17 != 0) {
-            if (--e->unk_17 == 0x5a) {
-                func_020859e0(e, 0x1d);
+        if (e->timer != 0) {
+            if (--e->timer == 0x5a) {
+                InitAnimationForceUpdate(e, 0x1d);
             }
             return;
         }
@@ -108,17 +108,17 @@ ARM void func_020334a4(Entity *e) {
             if (func_0203432c(e) == 0) {
                 return;
             }
-            e->unk_14 = 3;
-            e->unk_17 = 0x3c;
-            e->unk_34.WORD++;
+            e->action = 3;
+            e->timer = 0x3c;
+            e->y.WORD++;
             V(e)->unk_6e = 0xe10;
             data_021348b4 = 0;
         } else {
             if (func_02034508(e) == 0) {
                 return;
             }
-            e->unk_14 = 5;
-            e->unk_34.WORD++;
+            e->action = 5;
+            e->y.WORD++;
             V(e)->unk_6e = 0x4b0;
         }
         return;
@@ -133,24 +133,24 @@ ARM void func_020334a4(Entity *e) {
 
 ARM void func_02033594(Entity *e) {
     if (V(e)->unk_7d == 3) {
-        e->unk_14 = 4;
-        e->unk_17 = 0xb4;
+        e->action = 4;
+        e->timer = 0xb4;
     }
 }
 
 ARM void func_020335b0(Entity *e) {
     if (V(e)->unk_7c == 0) {
-        if (e->unk_17 != 0) {
-            if (--e->unk_17 == 0x5a) {
-                func_020859e0(e, 0x1d);
+        if (e->timer != 0) {
+            if (--e->timer == 0x5a) {
+                InitAnimationForceUpdate(e, 0x1d);
             }
             return;
         }
         if (func_02034508(e) == 0) {
             return;
         }
-        e->unk_14 = 5;
-        e->unk_34.WORD++;
+        e->action = 5;
+        e->y.WORD++;
         V(e)->unk_6e = 0x4b0;
         return;
     }
@@ -171,14 +171,14 @@ ARM void func_020335b0(Entity *e) {
 
 ARM void func_0203367c(Entity *e) {
     if (V(e)->unk_7d == 1) {
-        e->unk_14 = 6;
+        e->action = 6;
     }
 }
 
 ARM void func_02033690(Entity *e) {
     if (V(e)->unk_7c == 0) {
-        e->unk_14 = 7;
-        e->unk_17 = 0x96;
+        e->action = 7;
+        e->timer = 0x96;
         return;
     }
     V(e)->unk_6e--;
@@ -190,8 +190,8 @@ ARM void func_02033690(Entity *e) {
 }
 
 ARM void func_020336e0(Entity *e) {
-    if (--e->unk_17 == 0) {
-        e->unk_45 = 0;
+    if (--e->timer == 0) {
+        e->health = 0;
         e->unk_3c &= 0x7f;
     }
 }

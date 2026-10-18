@@ -7,11 +7,11 @@ ARM void func_02040dcc(Entity *e) {
 }
 
 ARM void func_02040dfc(Entity *e) {
-    data_020d321c[e->unk_14](e);
+    data_020d321c[e->action](e);
 }
 
 ARM void func_02040e18(Entity *e) {
-    func_020849f4(e, data_020d322c);
+    GenericKnockback(e, data_020d322c);
 }
 
 ARM void func_02040e2c(Entity *e) {

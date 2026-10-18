@@ -8,8 +8,8 @@ ARM void func_02035ba4(Entity *e) {
     if (func_0208de54(func_0208da4c()) == 0) {
         return;
     }
-    V(e)->unk_70->unk_1c.b20 = data_020d119f[e->unk_1c.b16][func_0208455c() % (data_0212c7c8.unk_0 - 1)];
-    V(e)->unk_70->unk_1c.b16 = V(e)->unk_70->unk_1c.b20;
+    V(e)->unk_70->spriteSettings.b20 = data_020d119f[e->spriteSettings.b16][Random() % (data_0212c7c8.unk_0 - 1)];
+    V(e)->unk_70->spriteSettings.b16 = V(e)->unk_70->spriteSettings.b20;
 }
 
 ARM void func_02035c3c(Entity *e) {
@@ -18,31 +18,31 @@ ARM void func_02035c3c(Entity *e) {
         return;
     }
     e->unk_3f = 0x3f;
-    e->unk_48 = data_020d11a4;
+    e->hitbox = data_020d11a4;
     other->unk_3c |= 0x80;
-    func_020859e0(V(e)->unk_70, 8);
-    V(e)->unk_70->unk_28 += func_0208455c() & 7;
+    InitAnimationForceUpdate(V(e)->unk_70, 8);
+    V(e)->unk_70->unk_28 += Random() & 7;
 }
 
 ARM void func_02035c98(Entity *e) {
     Entity *other = V(e)->unk_70;
     e->unk_3f = 0x40;
-    e->unk_48 = data_020d119c;
+    e->hitbox = data_020d119c;
     if (other != NULL) {
         other->unk_3c &= 0x7f;
-        func_020859e0(V(e)->unk_70, 7);
+        InitAnimationForceUpdate(V(e)->unk_70, 7);
     }
-    func_020859e0(e, 6);
+    InitAnimationForceUpdate(e, 6);
 }
 
 ARM void func_02035ce8(Entity *e) {
     V(e)->unk_6e &= 0x3f;
-    e->unk_1c.b20 = e->unk_54->unk_1c.b16;
-    e->unk_1c.b16 = e->unk_1c.b20;
+    e->spriteSettings.b20 = e->parent->spriteSettings.b16;
+    e->spriteSettings.b16 = e->spriteSettings.b20;
     if (V(e)->unk_70 != NULL) {
-        V(e)->unk_70->unk_1c.b0 = 0;
+        V(e)->unk_70->spriteSettings.b0 = 0;
     }
-    func_020859e0(e, 3);
+    InitAnimationForceUpdate(e, 3);
 }
 
 ARM BOOL func_02035d50(Entity *e) {
@@ -60,50 +60,50 @@ ARM BOOL func_02035d50(Entity *e) {
         b->unk_09 = 0x2c;
         c->unk_09 = 0x2c;
         d->unk_09 = 0x2c;
-        a->unk_0a = 1;
-        b->unk_0a = 2;
-        c->unk_0a = 2;
-        d->unk_0a = 2;
-        b->unk_0b = (e->unk_0b << 4) | 3;
-        c->unk_0b = (e->unk_0b << 4) | 2;
-        d->unk_0b = (e->unk_0b << 4) | 1;
-        a->unk_54 = e;
-        b->unk_54 = e;
-        c->unk_54 = e;
-        d->unk_54 = e;
-        b->unk_58 = e;
-        c->unk_58 = b;
-        d->unk_58 = c;
-        func_0205031c(e, a);
-        func_0205031c(e, b);
-        func_0205031c(e, c);
-        func_0205031c(e, d);
+        a->type = 1;
+        b->type = 2;
+        c->type = 2;
+        d->type = 2;
+        b->type2 = (e->type2 << 4) | 3;
+        c->type2 = (e->type2 << 4) | 2;
+        d->type2 = (e->type2 << 4) | 1;
+        a->parent = e;
+        b->parent = e;
+        c->parent = e;
+        d->parent = e;
+        b->child = e;
+        c->child = b;
+        d->child = c;
+        CopyPosition(e, a);
+        CopyPosition(e, b);
+        CopyPosition(e, c);
+        CopyPosition(e, d);
         func_0204c178(4, a);
         func_0204c178(4, b);
         func_0204c178(4, c);
         func_0204c178(4, d);
         V(e)->unk_70 = a;
-        if (e->unk_0b == 2) {
-            b->unk_17 = 0x1e;
-            c->unk_17 = 0x3c;
-            d->unk_17 = 0x5a;
+        if (e->type2 == 2) {
+            b->timer = 0x1e;
+            c->timer = 0x3c;
+            d->timer = 0x5a;
         } else {
-            b->unk_17 = 0xf;
-            c->unk_17 = 0x1e;
-            d->unk_17 = 0x2d;
+            b->timer = 0xf;
+            c->timer = 0x1e;
+            d->timer = 0x2d;
         }
-        if (VS(e->unk_58)->unk_70 == NULL) {
-            VS(e->unk_58)->unk_70 = d;
-            V(e)->unk_74 = &VS(e->unk_58)->unk_70;
+        if (VS(e->child)->unk_70 == NULL) {
+            VS(e->child)->unk_70 = d;
+            V(e)->unk_74 = &VS(e->child)->unk_70;
             return TRUE;
         }
-        if (VS(e->unk_58)->unk_74 == NULL) {
-            VS(e->unk_58)->unk_74 = d;
-            V(e)->unk_74 = &VS(e->unk_58)->unk_74;
+        if (VS(e->child)->unk_74 == NULL) {
+            VS(e->child)->unk_74 = d;
+            V(e)->unk_74 = &VS(e->child)->unk_74;
             return TRUE;
         } else {
-            VS(e->unk_58)->unk_78 = d;
-            V(e)->unk_74 = &VS(e->unk_58)->unk_78;
+            VS(e->child)->unk_78 = d;
+            V(e)->unk_74 = &VS(e->child)->unk_78;
             return TRUE;
         }
     }
@@ -112,28 +112,28 @@ ARM BOOL func_02035d50(Entity *e) {
 
 ARM void func_02035f18(Entity *e) {
     *V(e)->unk_74 = NULL;
-    VCT(e->unk_54)->unk_7c--;
-    Entity *fx = func_02076858(0xf, 1, 0);
+    VCT(e->parent)->unk_7c--;
+    Entity *fx = CreateFx(0xf, 1, 0);
     if (fx != NULL) {
-        func_0205031c(e, fx);
+        CopyPosition(e, fx);
     }
     func_0203614c(e);
-    e->unk_14 = 0x19;
-    e->unk_1c.b0 = 0;
+    e->action = 0x19;
+    e->spriteSettings.b0 = 0;
     e->unk_3c &= 0x7f;
-    e->unk_45 = 0;
+    e->health = 0;
     if (V(e)->unk_70 != NULL) {
-        func_0204be88(V(e)->unk_70);
+        DeleteEntity(V(e)->unk_70);
     }
 }
 
 ARM void func_02035f9c(Entity *e) {
-    Entity *proj = func_0204bdb8(0xe);
+    Entity *proj = CreateProjectile(0xe);
     if (proj == NULL) {
         return;
     }
-    proj->unk_2b = e->unk_2a << 2;
-    func_02050390(e, proj, data_020f2686[e->unk_2a * 2] << 16, data_020f2686[e->unk_2a * 2 + 1] << 16);
-    func_02085f80(0xa5);
+    proj->direction = e->animationState << 2;
+    PositionRelative(e, proj, data_020f2686[e->animationState * 2] << 16, data_020f2686[e->animationState * 2 + 1] << 16);
+    EnqueueSFX(0xa5);
 }
 

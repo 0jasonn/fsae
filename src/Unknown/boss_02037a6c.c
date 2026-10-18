@@ -2,91 +2,91 @@
 #include "global.h"
 
 ARM void func_02037a6c(Entity *e) {
-    func_02085980(e);
-    if (--e->unk_17 != 0) {
+    UpdateAnimationSingleFrame(e);
+    if (--e->timer != 0) {
         return;
     }
-    if (--e->unk_18 != 0) {
-        e->unk_14 = 0x17;
-        e->unk_17 = 0x3c;
+    if (--e->subtimer != 0) {
+        e->action = 0x17;
+        e->timer = 0x3c;
     } else {
-        e->unk_14 = 0xd;
-        e->unk_17 = 0x3c;
-        e->unk_0c = 0x100;
-        func_020859e0(e, 0);
+        e->action = 0xd;
+        e->timer = 0x3c;
+        e->speed = 0x100;
+        InitAnimationForceUpdate(e, 0);
     }
-    e->unk_1c.b30 = 2;
-    e->unk_1c.b14 = e->unk_1c.b30;
+    e->spriteSettings.b30 = 2;
+    e->spriteSettings.b14 = e->spriteSettings.b30;
 }
 
 ARM void func_02037af8(Entity *e) {
-    func_02085980(e);
-    if (--e->unk_17 == 0) {
-        e->unk_14 = 0x1f;
-        e->unk_0c = 0x100;
+    UpdateAnimationSingleFrame(e);
+    if (--e->timer == 0) {
+        e->action = 0x1f;
+        e->speed = 0x100;
     }
 }
 
 ARM void func_02037b28(Entity *e) {
-    func_02085980(e);
-    if ((u16)(e->unk_30.HALF.HI - 0x1f7) <= 2 && (u16)(e->unk_34.HALF.HI - 0x1f7) <= 2) {
-        e->unk_14 = 0x20;
-        e->unk_17 = 0x3c;
-        e->unk_30.HALF.HI = 0x1f8;
-        e->unk_34.HALF.HI = 0x1f8;
+    UpdateAnimationSingleFrame(e);
+    if ((u16)(e->x.HALF.HI - 0x1f7) <= 2 && (u16)(e->y.HALF.HI - 0x1f7) <= 2) {
+        e->action = 0x20;
+        e->timer = 0x3c;
+        e->x.HALF.HI = 0x1f8;
+        e->y.HALF.HI = 0x1f8;
         return;
     }
-    e->unk_2b = func_02086080(e->unk_30.HALF.HI, e->unk_34.HALF.HI, 0x1f8, 0x1f8);
+    e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
     if ((data_0212c5bc & 7) == 0) {
         func_02076a50(e, 1, 1, 0x14);
     }
-    func_0204fd40(e);
+    ProcessMovement(e);
     func_02060a70(e);
 }
 
 ARM void func_02037bd8(Entity *e) {
-    func_02085980(e);
-    if (--e->unk_17 != 0) {
+    UpdateAnimationSingleFrame(e);
+    if (--e->timer != 0) {
         return;
     }
-    e->unk_14 = 0x21;
-    e->unk_17 = 0xd2;
-    V(e)->unk_6e = data_020d1440[func_0208455c() & 7];
+    e->action = 0x21;
+    e->timer = 0xd2;
+    V(e)->unk_6e = data_020d1440[Random() & 7];
 }
 
 ARM void func_02037c24(Entity *e) {
-    func_02085980(e);
-    if (--e->unk_17 == 0) {
+    UpdateAnimationSingleFrame(e);
+    if (--e->timer == 0) {
         if (V(e)->unk_6e != 0) {
             V(e)->unk_6e--;
-            e->unk_17 = 0xf0;
+            e->timer = 0xf0;
             return;
         }
-        e->unk_14 = 0x22;
+        e->action = 0x22;
         func_02038460(e);
         return;
     }
-    if (e->unk_17 != 0x78) {
+    if (e->timer != 0x78) {
         return;
     }
     if (V(e)->unk_6e == 0) {
-        Entity *child = func_0204bdb8(0xa);
+        Entity *child = CreateProjectile(0xa);
         if (child != NULL) {
-            child->unk_0b = 1;
-            child->unk_54 = e;
+            child->type2 = 1;
+            child->parent = e;
         }
     } else {
-        Entity *child = func_0204bdb8(0xa);
+        Entity *child = CreateProjectile(0xa);
         if (child != NULL) {
-            child->unk_54 = e;
+            child->parent = e;
         }
     }
 }
 
 ARM void func_02037cb4(Entity *e) {
-    func_02085980(e);
-    if (e->unk_17 != 0) {
-        e->unk_17--;
+    UpdateAnimationSingleFrame(e);
+    if (e->timer != 0) {
+        e->timer--;
         return;
     }
     if ((data_0212c5bc & 7) == 0) {
@@ -94,34 +94,34 @@ ARM void func_02037cb4(Entity *e) {
     }
     int result = func_020381ec(e);
     if (result == 0) {
-        if (--e->unk_18 != 0) {
-            e->unk_14 = 0x20;
-            e->unk_17 = 0x3c;
+        if (--e->subtimer != 0) {
+            e->action = 0x20;
+            e->timer = 0x3c;
             return;
         }
-        e->unk_14 = 0xd;
-        e->unk_17 = 0x3c;
-        e->unk_0c = 0x100;
-        func_020859e0(e, 0);
+        e->action = 0xd;
+        e->timer = 0x3c;
+        e->speed = 0x100;
+        InitAnimationForceUpdate(e, 0);
         return;
     }
     if (result == 2) {
-        e->unk_17 = 0x1e;
+        e->timer = 0x1e;
     }
 }
 
 ARM void func_02037d68(Entity *e) {
     if (e->unk_3c != 0) {
         e->unk_3c = 0;
-        e->unk_17 = 0xb4;
+        e->timer = 0xb4;
         func_02053958();
         func_020266f8();
-        func_02076fe0(0x80010000);
-        func_02076fe0(0x2e);
+        SoundReq(0x80010000);
+        SoundReq(0x2e);
     }
-    e->unk_1c.b0 ^= 1;
-    if (e->unk_17 != 0) {
-        e->unk_17--;
+    e->spriteSettings.b0 ^= 1;
+    if (e->timer != 0) {
+        e->timer--;
         return;
     }
     u8 count = data_0212c7c8.unk_0;
@@ -130,45 +130,45 @@ ARM void func_02037d68(Entity *e) {
         if ((player->unk_36 & 1) || player->unk_3c != 0) {
             return;
         }
-        if (player->unk_28->unk_45 == 0) {
+        if (player->unk_28->health == 0) {
             return;
         }
     }
     for (u32 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
-        player->unk_28->unk_38.HALF.HI = 0;
-        player->unk_28->unk_10 = 0;
-        player->unk_28->unk_2b = 0xff;
-        player->unk_28->unk_3d = 0x88;
+        player->unk_28->z.HALF.HI = 0;
+        player->unk_28->zVelocity = 0;
+        player->unk_28->direction = 0xff;
+        player->unk_28->iframes = 0x88;
         player->unk_36 &= 0xf3ff;
         func_020899e4(player->unk_28);
     }
-    e->unk_14 = 0x24;
-    e->unk_17 = 0x20;
-    func_020859e0(e, 0);
+    e->action = 0x24;
+    e->timer = 0x20;
+    InitAnimationForceUpdate(e, 0);
     func_0204625c(3, 0x10);
     func_02049eb8();
     func_020384f8();
 }
 
 ARM void func_02037ed8(Entity *e) {
-    func_02085980(e);
-    e->unk_1c.b0 ^= 1;
+    UpdateAnimationSingleFrame(e);
+    e->spriteSettings.b0 ^= 1;
     func_020384f8();
-    if (e->unk_17 != 0) {
-        e->unk_17--;
+    if (e->timer != 0) {
+        e->timer--;
         return;
     }
-    Entity *child = func_02076858(0x69, 0, 0);
+    Entity *child = CreateFx(0x69, 0, 0);
     if (child == NULL) {
         return;
     }
-    child->unk_54 = e;
-    e->unk_14 = 0x25;
-    e->unk_1c.b0 = 1;
+    child->parent = e;
+    e->action = 0x25;
+    e->spriteSettings.b0 = 1;
 }
 
 ARM void func_02037f54(Entity *e) {
     func_020547ec();
-    func_02085980(e);
+    UpdateAnimationSingleFrame(e);
 }

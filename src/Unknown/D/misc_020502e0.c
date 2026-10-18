@@ -16,26 +16,26 @@ ARM s16 func_020502f8(s32 a, s32 b) {
     return func_0200d948(a << 8, b);
 }
 
-ARM Entity *func_0205031c(Entity *src, Entity *dst) {
-    dst->unk_30 = src->unk_30;
-    dst->unk_34 = src->unk_34;
-    dst->unk_38 = src->unk_38;
+ARM Entity *CopyPosition(Entity *src, Entity *dst) {
+    dst->x = src->x;
+    dst->y = src->y;
+    dst->z = src->z;
     dst->unk_50 = src->unk_50;
     dst->unk_52 = src->unk_52;
     return func_0208ae78(dst);
 }
 
 ARM void func_02050354(Entity *src, Entity *dst) {
-    func_0205031c(src, dst);
+    CopyPosition(src, dst);
     if (dst->unk_5e.b0 < 3) {
         dst->unk_5e.b0++;
     }
 }
 
-ARM void func_02050390(Entity *src, Entity *dst, s32 dx, s32 dy) {
-    dst->unk_30.WORD = src->unk_30.WORD + dx;
-    dst->unk_34.WORD = src->unk_34.WORD + dy;
-    dst->unk_38 = src->unk_38;
+ARM void PositionRelative(Entity *src, Entity *dst, s32 dx, s32 dy) {
+    dst->x.WORD = src->x.WORD + dx;
+    dst->y.WORD = src->y.WORD + dy;
+    dst->z = src->z;
     dst->unk_50 = src->unk_50;
     dst->unk_52 = src->unk_52;
     func_0208ae78(dst);
@@ -78,13 +78,13 @@ ARM void func_020503d0(s32 i, s32 value, s32 flags) {
         default:
             return;
     }
-    fx = func_02076858(0, idx, 1);
+    fx = CreateFx(0, idx, 1);
     if (fx == NULL) {
         return;
     }
-    func_0205031c(data_0212ceb0[i].unk_28, fx);
-    fx->unk_2b = flags | 0x80;
-    fx->unk_10 = 0x20000;
-    fx->unk_38.HALF.HI -= 4;
+    CopyPosition(data_0212ceb0[i].unk_28, fx);
+    fx->direction = flags | 0x80;
+    fx->zVelocity = 0x20000;
+    fx->z.HALF.HI -= 4;
     func_020260c8(target, (s16)(-value));
 }

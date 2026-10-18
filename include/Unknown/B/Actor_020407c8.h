@@ -40,10 +40,10 @@ extern "C" {
 Entity *func_020849c8(Entity *e);
 void func_02084ab8(Entity *e, Entity *other);
 u8 func_02084a30(Entity *e);
-Entity *func_0204bd80(int id);
+Entity *CreateEnemy(int id);
 Entity *func_0204bcc8(void);
 Entity *func_0204bd00(void);
-void func_0204be88(Entity *e);
+void DeleteEntity(Entity *e);
 void func_02045ac0(Entity *e);
 void func_02045b74(void);
 void func_0204c178(int list, Entity *e);
@@ -53,10 +53,10 @@ void func_02040d60(Entity *e, Entity *other);
 void func_02084700(Entity *e);
 u8 func_02084a30(Entity *e);
 void func_0208ae30(Entity *e);
-void func_020849f4(Entity *e, const void *funcs);
+void GenericKnockback(Entity *e, const void *funcs);
 void func_02040be0(Entity *e);
-void func_0205031c(Entity *e, Entity *other);
-Entity *func_02076858(int id, int a, int b);
+void CopyPosition(Entity *e, Entity *other);
+Entity *CreateFx(int id, int a, int b);
 
 void func_020407c8(Entity *e);
 void func_02040834(Entity *e);
@@ -78,12 +78,12 @@ void func_02040ff8(Entity *e);
 void func_02041064(Entity *e);
 void func_020410e4(Entity *e);
 Entity *func_0204bdf0(int id);
-u32 func_0208455c(void);
+u32 Random(void);
 void *func_0208da4c(void);
 int func_0208de54(void *a);
 u8 *func_02093b5c(void);
 int func_020847dc(Entity *e);
-void func_020859e0(Entity *e, u8 anim);
+void InitAnimationForceUpdate(Entity *e, u8 anim);
 #ifdef __cplusplus
 }
 #endif

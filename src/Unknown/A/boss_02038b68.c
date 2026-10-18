@@ -2,13 +2,13 @@
 #include "global.h"
 
 ARM void func_02038b68(Entity *e) {
-    e->unk_14++;
-    e->unk_17 = (func_0208455c() & 0x30) + 0x3c;
-    e->unk_2b = func_0208455c() & 0x18;
+    e->action++;
+    e->timer = (Random() & 0x30) + 0x3c;
+    e->direction = Random() & 0x18;
     u8 anim = func_02045aa0();
-    if (anim == e->unk_2a) {
+    if (anim == e->animationState) {
         return;
     }
-    e->unk_2a = anim;
-    func_020859e0(e, anim);
+    e->animationState = anim;
+    InitAnimationForceUpdate(e, anim);
 }

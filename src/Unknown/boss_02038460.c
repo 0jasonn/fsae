@@ -2,15 +2,15 @@
 #include "global.h"
 
 ARM void func_02038460(Entity *e) {
-    V(e)->unk_74 = data_020d1474[func_0208455c() & 3];
+    V(e)->unk_74 = data_020d1474[Random() & 3];
     V(e)->unk_78 = *V(e)->unk_74++;
     V(e)->unk_7a = *V(e)->unk_74++;
-    e->unk_2b = *V(e)->unk_74++;
+    e->direction = *V(e)->unk_74++;
     V(e)->unk_7e = 0x80;
 }
 
 ARM int func_020384b8(Entity *e) {
-    u8 hp = e->unk_45;
+    u8 hp = e->health;
     u8 difficulty = data_0212c7c8.unk_3;
     int result = 0;
     if (((const u8 *)data_020d1432)[difficulty * 2] > hp) {

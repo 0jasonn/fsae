@@ -68,8 +68,8 @@ void *func_0208da4c(void);
 int func_0208de54(void *a);
 u8 *func_02093b5c(void);
 int func_02035d50(Entity *e);
-void func_0205031c(Entity *e, Entity *other);
-void func_02050390(Entity *e, Entity *other, s32 a, s32 b);
+void CopyPosition(Entity *e, Entity *other);
+void PositionRelative(Entity *e, Entity *other, s32 a, s32 b);
 void func_020360c0(Entity *e);
 void func_02035a8c(Entity *e);
 void func_02036064(Entity *e);
@@ -80,7 +80,7 @@ void func_02035c98(Entity *e);
 void func_02035ce8(Entity *e);
 Entity *func_02045eb4(void);
 u8 func_02084fd0(Entity *e, Entity *target);
-void func_0204fd40(Entity *e);
+void ProcessMovement(Entity *e);
 void func_02035f9c(Entity *e);
 void func_02035ba4(Entity *e);
 void func_02035ff8(Entity *e);
@@ -88,9 +88,9 @@ Entity *func_0204bcc8(void);
 Entity *func_0204bd00(void);
 void func_0204c178(int list, Entity *e);
 void func_0203614c(Entity *e);
-void func_0204be88(Entity *e);
-void func_02076fe0(int sfx);
-Entity *func_0204bdb8(int id);
+void DeleteEntity(Entity *e);
+void SoundReq(int sfx);
+Entity *CreateProjectile(int id);
 
 #ifdef __cplusplus
 }
