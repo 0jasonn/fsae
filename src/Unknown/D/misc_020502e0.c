@@ -46,7 +46,7 @@ ARM void func_020503d0(s32 i, s32 value, s32 flags) {
     Entity *target;
     Entity *fx;
     void *a = func_0208da4c();
-    target = data_0212ceb0[i].unk_28;
+    target = data_0212ceb0[i].entity;
     if (data_0212c7d4[i] - value < 0) {
         if (func_0208de54(a) != 0) {
             return;
@@ -54,7 +54,7 @@ ARM void func_020503d0(s32 i, s32 value, s32 flags) {
         if (data_0212c7d4[i ^ 1] - value < 0) {
             return;
         }
-        target = data_0212ceb0[i ^ 1].unk_28;
+        target = data_0212ceb0[i ^ 1].entity;
     }
     switch (value) {
         case 1:
@@ -82,7 +82,7 @@ ARM void func_020503d0(s32 i, s32 value, s32 flags) {
     if (fx == NULL) {
         return;
     }
-    CopyPosition(data_0212ceb0[i].unk_28, fx);
+    CopyPosition(data_0212ceb0[i].entity, fx);
     fx->direction = flags | 0x80;
     fx->zVelocity = 0x20000;
     fx->z.HALF.HI -= 4;

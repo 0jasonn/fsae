@@ -89,9 +89,9 @@ ARM void func_020333f0(Entity *e) {
     V(e)->unk_6e = 0x4b0;
     SoundReq(0x19c);
     if (func_0208de54(func_0208da4c()) != 0) {
-        data_0212c648 = data_0212ceb0[data_0212c504].unk_28;
+        data_0212c648 = data_0212ceb0[data_0212c504].entity;
     } else {
-        data_0212c648 = data_0212ceb0[*func_02093b5c()].unk_28;
+        data_0212c648 = data_0212ceb0[*func_02093b5c()].entity;
     }
     func_02026720();
 }

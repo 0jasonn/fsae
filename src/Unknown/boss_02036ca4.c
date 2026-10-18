@@ -49,8 +49,8 @@ ARM void func_02036df4(Entity *e) {
         e->spriteSettings.b0 = 1;
         data_0212c648 = e;
         for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
-            data_0212ceb0[i].unk_28->animationState = 0;
-            func_02076988(data_0212ceb0[i].unk_28, -8, -12);
+            data_0212ceb0[i].entity->animationState = 0;
+            func_02076988(data_0212ceb0[i].entity, -8, -12);
         }
         return;
     }
@@ -70,7 +70,7 @@ ARM void func_02036df4(Entity *e) {
     }
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         if (Random() & 7) {
-            data_0212ceb0[i].unk_28->animationState = Random() & 6;
+            data_0212ceb0[i].entity->animationState = Random() & 6;
         }
     }
 }
@@ -196,8 +196,8 @@ ARM void func_0203720c(Entity *e) {
         player->unk_08 = 0x1af;
         player->unk_38 = 0xb4;
         player->unk_39 = 0;
-        player->unk_28->direction = CalculateDirectionTo(0x1f8, 0x1c0, player->unk_28->x.HALF.HI, player->unk_28->y.HALF.HI);
-        player->unk_28->animationState = player->unk_28->direction < 0x10 ? 2 : 6;
+        player->entity->direction = CalculateDirectionTo(0x1f8, 0x1c0, player->entity->x.HALF.HI, player->entity->y.HALF.HI);
+        player->entity->animationState = player->entity->direction < 0x10 ? 2 : 6;
     }
 }
 
@@ -213,7 +213,7 @@ ARM void func_020372e4(Entity *e) {
     e->spriteSettings.b30 = 1;
     e->unk_5e.b0 = 3;
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
-        data_0212ceb0[i].unk_28->direction = 0xff;
+        data_0212ceb0[i].entity->direction = 0xff;
     }
 }
 
@@ -242,16 +242,16 @@ ARM void func_020373d8(Entity *e) {
     e->spriteSettings.b30 = 2;
     e->unk_5e.b0 = 2;
     if (func_0208de54(func_0208da4c()) != 0) {
-        data_0212c648 = data_0212ceb0[data_0212c504].unk_28;
+        data_0212c648 = data_0212ceb0[data_0212c504].entity;
     } else {
-        data_0212c648 = data_0212ceb0[*func_02093b5c()].unk_28;
+        data_0212c648 = data_0212ceb0[*func_02093b5c()].entity;
     }
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
         player->unk_08 = 0xc;
         player->unk_38 = 1;
         player->unk_02 = 0x41;
-        player->unk_28->zVelocity = 0x20000;
+        player->entity->zVelocity = 0x20000;
     }
     SoundReq(0x1af);
     data_0212c618 = 1;

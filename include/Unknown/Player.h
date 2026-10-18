@@ -18,7 +18,7 @@ typedef struct PlayerData {
     /* 1f */ u8 unk_1f[7];
     /* 26 */ u8 unk_26;
     /* 27 */ u8 unk_27;
-    /* 28 */ Entity *unk_28;
+    /* 28 */ Entity *entity;
     /* 2c */ u8 unk_2c[0xa];
     /* 36 */ u16 unk_36;
     /* 38 */ u8 unk_38;

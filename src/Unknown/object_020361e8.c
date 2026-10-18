@@ -219,7 +219,7 @@ ARM void func_02036580(Entity *e) {
             func_02036c64(e, e->x.HALF.HI, e->y.HALF.HI);
             return;
         case 1:
-            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].unk_28);
+            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].entity);
             e->timer = e->type + 3;
             e->speed = 0x100;
             e->action = 3;
@@ -269,9 +269,9 @@ ARM void func_020367e0(Entity *e) {
         if (V(e)->unk_70 == 0) {
             e->direction = Random() & 0x1f;
         } else if (func_0208de54(func_0208da4c()) != 0) {
-            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].unk_28);
+            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].entity);
         } else {
-            e->direction = func_02086078(e, data_0212ceb0[*func_02093b5c()].unk_28);
+            e->direction = func_02086078(e, data_0212ceb0[*func_02093b5c()].entity);
         }
         func_02036c64(e, e->x.HALF.HI, e->y.HALF.HI);
         return;

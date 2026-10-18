@@ -34,7 +34,7 @@ ARM Entity *Enemy_AllocChildIfUnclaimed(Entity *e) {
         return NULL;
     }
     if (func_0208de54(func_0208da4c()) == 0) {
-        if (child != data_0212ceb0[*func_02093b5c()].unk_28) {
+        if (child != data_0212ceb0[*func_02093b5c()].entity) {
             return NULL;
         }
         if (data_021348cc.unk_0 != 0) {

@@ -279,7 +279,7 @@ ARM void func_02031b80(Entity *e) {
         e->timer--;
         func_020852ec(e);
         if (e->unk_2c & data_020d0a5a[e->direction >> 3]) {
-            u8 target = func_02086078(data_0212ceb0[e->subtimer].unk_28, e);
+            u8 target = func_02086078(data_0212ceb0[e->subtimer].entity, e);
             if (e->direction != target) {
                 e->direction ^= 0x10;
             } else {

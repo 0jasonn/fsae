@@ -220,7 +220,7 @@ ARM void Boss_Init(Entity *e) {
     VB(e)->lastHealth = e->health;
     InitAnimationForceUpdate(e, 0);
     e->action++;
-    e->child = data_0212ceb0[0].unk_28;
+    e->child = data_0212ceb0[0].entity;
     VB(e)->target = func_02045eb4();
     e->direction = GetFacingDirection(e, VB(e)->target);
 }
@@ -261,7 +261,7 @@ ARM void Boss_LaunchAtPlayer(Entity *e) {
     e->z.HALF.HI = -8;
     if (func_0208de54(func_0208da4c()) == 0) {
         u8 playerIndex = *func_02093b5c();
-        VB(e)->target = data_0212ceb0[playerIndex].unk_28;
+        VB(e)->target = data_0212ceb0[playerIndex].entity;
     }
     e->direction = func_02084fd0(e, VB(e)->target);
     InitAnimationForceUpdate(e, 2);
@@ -462,14 +462,14 @@ ARM void Boss_UpdateSubAction(Entity *e) {
 ARM void Boss_InitMirrorPlayer(Entity *e) {
     e->subAction = 1;
     e->unk_5c = 0x3100;
-    Entity *player = data_0212ceb0[e->type2].unk_28;
+    Entity *player = data_0212ceb0[e->type2].entity;
     VB(e)->mirroredAnim = player->animationState;
     VB(e)->poseLatched = 0;
     e->unk_2e = 0;
 }
 
 ARM void Boss_SyncMirrorAnim(Entity *e) {
-    Entity *player = data_0212ceb0[e->type2].unk_28;
+    Entity *player = data_0212ceb0[e->type2].entity;
     if (((VB(e)->mirroredAnim ^ player->animationState) & 4) == 0) {
         return;
     }
@@ -483,7 +483,7 @@ ARM void Boss_UpdatePose(Entity *e) {
     e->unk_2e = 2;
     if (VB(e)->poseLatched == 0) {
         VB(e)->poseLatched = 1;
-        Entity *player = data_0212ceb0[e->type2].unk_28;
+        Entity *player = data_0212ceb0[e->type2].entity;
         e->unk_2c = *(const u16 *)(data_020d1cdc + (player->animationState & ~1));
     }
     func_02039f24(e);

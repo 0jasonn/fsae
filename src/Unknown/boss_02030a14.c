@@ -37,11 +37,11 @@ ARM void func_02030ae4(int index) {
     data_0212ceb0[index].unk_38 = 1;
     PlayerData *other = NULL;
     if (data_0212ceb0[index].unk_1e & 0x80) {
-        other = V(data_0212ceb0[index].unk_28)->unk_64;
+        other = V(data_0212ceb0[index].entity)->unk_64;
     } else if (data_0212ceb0[index].unk_1e & 0x20) {
-        other = (PlayerData *)V(data_0212ceb0[index].unk_28)->unk_60;
+        other = (PlayerData *)V(data_0212ceb0[index].entity)->unk_60;
     }
-    if (other != NULL && other->unk_0c != 6 && other->unk_28->action != 6) {
+    if (other != NULL && other->unk_0c != 6 && other->entity->action != 6) {
         other->unk_0c = 6;
         other->unk_38 = 1;
     }

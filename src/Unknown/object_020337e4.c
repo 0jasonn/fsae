@@ -31,7 +31,7 @@ ARM void func_020337e4(Entity *e) {
 ARM void func_0203386c(Entity *e) {
     Entity_UpdateSubActionFromPlayers(e);
     if (e->subAction == 5) {
-        Entity *player = data_0212ceb0[e->type2].unk_28;
+        Entity *player = data_0212ceb0[e->type2].entity;
         if (V(e)->unk_74 == 0) {
             player->x.HALF.HI = e->x.HALF.HI + data_020d0f0a[player->animationState];
             player->y.HALF.HI = e->y.HALF.HI + data_020d0f0a[player->animationState + 1];
@@ -188,7 +188,7 @@ ARM void func_02033d8c(Entity *e) {
 
 
 ARM void func_02033e10(Entity *e) {
-    Entity *player = data_0212ceb0[e->type2].unk_28;
+    Entity *player = data_0212ceb0[e->type2].entity;
     u8 speed = data_020d0eb8[V(e)->unk_75];
     if (V(e)->unk_72 < 0x30) {
         s16 px = player->x.HALF.HI;

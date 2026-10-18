@@ -183,7 +183,7 @@ ARM void func_02034db4(Entity *e) {
     }
     if (func_0208de54(func_0208da4c()) == 0) {
         if (data_021348c0.unk_0 == 0) {
-            V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].unk_28;
+            V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].entity;
         }
         if (V(e)->unk_64 == NULL) {
             V(e)->unk_64 = func_02045eb4();
@@ -207,7 +207,7 @@ ARM void func_02034ea0(Entity *e) {
     if (e->contactFlags & 0x80) {
         u8 index = e->contactedEntity->type;
         if (index < 4) {
-            V(e)->unk_64 = data_0212ceb0[index].unk_28;
+            V(e)->unk_64 = data_0212ceb0[index].entity;
         }
     }
     if (--e->timer != 0) {
@@ -388,7 +388,7 @@ ARM void func_02035370(Entity *e) {
     e->speed = 0x120;
     if (func_0208de54(func_0208da4c()) == 0) {
         if (data_021348c0.unk_0 == 0) {
-            V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].unk_28;
+            V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].entity;
         }
         if (V(e)->unk_64 == NULL) {
             V(e)->unk_64 = func_02045eb4();
@@ -412,13 +412,13 @@ ARM void func_02035438(Entity *e) {
     if ((e->contactFlags & 0x80) && e->contactedEntity->type < 4) {
         if (func_0208de54(func_0208da4c()) == 0) {
             if (data_021348c0.unk_0 == 0) {
-                V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].unk_28;
+                V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].entity;
             }
             if (V(e)->unk_64 == NULL) {
-                V(e)->unk_64 = data_0212ceb0[e->contactedEntity->type].unk_28;
+                V(e)->unk_64 = data_0212ceb0[e->contactedEntity->type].entity;
             }
         } else {
-            V(e)->unk_64 = data_0212ceb0[e->contactedEntity->type].unk_28;
+            V(e)->unk_64 = data_0212ceb0[e->contactedEntity->type].entity;
         }
     }
     if (--e->timer != 0) {
@@ -521,7 +521,7 @@ ARM void func_02035780(Entity *e) {
     if (e->frame & 1) {
         Entity *proj = CreateProjectile(0xd);
         if (proj != NULL) {
-            proj->direction = GetFacingDirection(e, data_0212ceb0[Random() % data_0212c7c8.unk_0].unk_28);
+            proj->direction = GetFacingDirection(e, data_0212ceb0[Random() % data_0212c7c8.unk_0].entity);
             CopyPosition(e, proj);
             e->frame = 0;
             EnqueueSFX(0xa5);

@@ -130,18 +130,18 @@ ARM void func_02037d68(Entity *e) {
         if ((player->unk_36 & 1) || player->unk_3c != 0) {
             return;
         }
-        if (player->unk_28->health == 0) {
+        if (player->entity->health == 0) {
             return;
         }
     }
     for (u32 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
-        player->unk_28->z.HALF.HI = 0;
-        player->unk_28->zVelocity = 0;
-        player->unk_28->direction = 0xff;
-        player->unk_28->iframes = 0x88;
+        player->entity->z.HALF.HI = 0;
+        player->entity->zVelocity = 0;
+        player->entity->direction = 0xff;
+        player->entity->iframes = 0x88;
         player->unk_36 &= 0xf3ff;
-        func_020899e4(player->unk_28);
+        func_020899e4(player->entity);
     }
     e->action = 0x24;
     e->timer = 0x20;

@@ -209,7 +209,7 @@ ARM void func_02032910(Entity *e) {
 ARM void func_0203298c(Entity *e) {
     int target = func_0205076c(e, 0, 0);
     e->subtimer = target;
-    e->direction = func_02086078(data_0212ceb0[target].unk_28, e);
+    e->direction = func_02086078(data_0212ceb0[target].entity, e);
 }
 
 ARM void func_020329c8(Entity *e) {
@@ -273,7 +273,7 @@ ARM void func_02032b78(Entity *e) {
 
 ARM void func_02032c2c(Entity *e) {
     V(e)->unk_70 = data_020d0ac2[Random() & 7];
-    e->direction = func_02086078(e, data_0212ceb0[e->timer].unk_28) & 0x18;
+    e->direction = func_02086078(e, data_0212ceb0[e->timer].entity) & 0x18;
     e->speed = 0x100;
     e->zVelocity = 0x20000;
     InitAnimationForceUpdate(e, (e->type - 1) * 10 + 1);
@@ -310,7 +310,7 @@ ARM u8 func_02032d34(Entity *e) {
     best = 0xff;
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         if (e->timer != i) {
-            Entity *player = data_0212ceb0[i].unk_28;
+            Entity *player = data_0212ceb0[i].entity;
             if (player->x.HALF.HI < 0x250) {
                 s16 dx = player->x.HALF.HI - e->x.HALF.HI;
                 s16 dy = player->y.HALF.HI - e->y.HALF.HI;

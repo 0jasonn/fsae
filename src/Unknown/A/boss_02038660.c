@@ -35,7 +35,7 @@ ARM void func_02038728(Entity *e) {
     InitAnimationForceUpdate(e, 2);
     if (func_0208de54(func_0208da4c()) == 0) {
         u8 p = *func_02093b5c();
-        V(e)->unk_64 = data_0212ceb0[p].unk_28;
+        V(e)->unk_64 = data_0212ceb0[p].entity;
     }
     e->direction = func_02084fd0(e, V(e)->unk_64);
     func_02083c84(e);
