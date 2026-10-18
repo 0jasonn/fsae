@@ -568,11 +568,15 @@ def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: lis
 
 
 def get_c_cpp_files(dirs: list[Path]):
+    # Only build sources that are delinks units, so implementers' work in progress can't break the build
+    units = set()
+    for delinks_file in get_config_files(config_path / args.version, "delinks.txt"):
+        units |= {Path(line[:-1]) for line in Path(delinks_file).read_text().splitlines() if line.endswith((".c:", ".cpp:"))}
     for dir in dirs:
         for root, _, files in os.walk(dir):
             root = Path(root)
             for file in files:
-                if is_cpp(file) or is_c(file):
+                if (is_cpp(file) or is_c(file)) and (root / file) in units:
                     yield root / file
 
 
