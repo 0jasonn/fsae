@@ -173,7 +173,7 @@ func_0200d740 kind:function(arm,size=0x1c0) addr:0x0200d740
 func_0200d900 kind:function(arm,size=0x48) addr:0x0200d900
 func_0200d90c kind:label(arm) addr:0x0200d90c
 func_0200d948 kind:function(arm,size=0x20c) addr:0x0200d948
-func_0200db54 kind:function(arm,size=0x1e4) addr:0x0200db54
+_u32_div_f kind:function(arm,size=0x1e4) addr:0x0200db54
 func_0200db5c kind:label(arm) addr:0x0200db5c
 func_0200dd38 kind:function(arm,size=0x40) addr:0x0200dd38
 func_0200dd78 kind:function(arm,size=0x8c) addr:0x0200dd78
