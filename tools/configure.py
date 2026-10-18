@@ -40,7 +40,6 @@ CC_FLAGS = " ".join([
     "-gccext,on",           # Enable GCC extensions
     "-fp soft",             # Compute float operations in software
     "-inline noauto",       # Inline only functions marked with 'inline'
-    "-lang=c++",            # Set language to C++
     "-Cpp_exceptions off",  # Disable C++ exceptions
     "-RTTI off",            # Disable runtime type information
     "-interworking",        # Enable ARM/Thumb interworking
@@ -71,7 +70,7 @@ ARM9_LD_FLAGS = " ".join([
 DSD_OBJDIFF_ARGS = " ".join([
     "--scratch",                        # Metadata for creating decomp.me scratches
     f"--compiler {DECOMP_ME_COMPILER}", # decomp.me compiler name
-    f'--c-flags "{CC_FLAGS} -lang=c++"',# decomp.me compiler flags
+    f'--c-flags "{CC_FLAGS} -lang=c99"',# decomp.me compiler flags
     "--custom-make ninja",              # Command for rebuilding files
 ])
 DSD_BASE_FLAGS = " ".join([
@@ -543,7 +542,7 @@ def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: lis
         if is_cpp(source_file):
             cc_flags.append("-lang=c++")
         elif is_c(source_file):
-            cc_flags.append("-lang=c")
+            cc_flags.append("-lang=c99")
         n.build(
             inputs=str(source_file),
             implicit=mwcc_implicit,

@@ -52,7 +52,7 @@ def main():
     args = parser.parse_args()
 
     data = args.base_bin.read_bytes()
-    lang = "-lang=c++" if args.source.suffix == ".cpp" else "-lang=c"
+    lang = "-lang=c++" if args.source.suffix == ".cpp" else "-lang=c99"
     for version in args.versions:
         cc = ROOT / "tools/mwccarm" / version / "mwccarm.exe"
         with tempfile.TemporaryDirectory() as tmp:

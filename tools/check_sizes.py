@@ -14,7 +14,7 @@ files = [Path(a) for a in sys.argv[1:]] or sorted((ROOT / "src").rglob("*.c*"))
 bad = 0
 for f in files:
     out = ROOT / "scratch/size_check.o"
-    lang = "-lang=c++" if f.suffix == ".cpp" else "-lang=c"
+    lang = "-lang=c++" if f.suffix == ".cpp" else "-lang=c99"
     subprocess.run([str(ROOT / "tools/mwccarm/dsi/1.2/mwccarm.exe"), *flags, lang, "-i", str(ROOT / "include"), "-c", str(f), "-o", str(out)], capture_output=True)
     for name, thumb, code, mask in extract_functions(out.read_bytes()):
         m = re.search(r"([0-9a-f]{8})", name)
