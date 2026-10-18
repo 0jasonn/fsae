@@ -6,7 +6,7 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 ## Workflow
 
 - `python tools/asm.py START [END]` prints dsd's disassembly for a function or address range.
-- `python tools/trymatch.py file.cpp -d` compiles a file and diffs every `func_XXXXXXXX` against the base ROM,
+- `python tools/trymatch.py file.cpp -d` compiles a file (`.c` as C99) and diffs every `func_XXXXXXXX` against the base ROM,
   ignoring relocated bits. `-v dsi/1.1 dsi/1.6sp2 ...` compares compiler versions.
 - `python tools/add_unit.py src/... FIRST LAST` adds a complete unit to `delinks.txt`; a unit must be contiguous and
   every function in it must match. Split around non-matching functions and keep the attempt in `docs/nonmatching/`.
@@ -34,7 +34,7 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 
 ## Types
 
-- `Entity` (`include/Unknown/Entity.hpp`) holds the fields shared by all actors; from about 0x60 the layout depends on
+- `Entity` (`include/Unknown/Entity.h`) holds the fields shared by all actors; from about 0x60 the layout depends on
   the actor, so each file overlays its own `Vars_*` struct with `VARS(type, e)`.
 - Positions are 16.16 fixed point (`FixedPoint`) at 0x30/0x34/0x38; most code uses the integer half.
 - `unk_1c` is a bitfield word (`b0:2 b2:2 b4:2 b6:2 b8:6 b14:2 b16:4 b20:4 b24:6 b30:2`).
