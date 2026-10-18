@@ -88,3 +88,39 @@ src/Unknown/boss_020383bc.cpp:
 src/Unknown/boss_02038460.cpp:
     complete
     .text       start:0x02038460 end:0x02038544
+
+src/Unknown/B/actor_0204001c.cpp:
+    complete
+    .text       start:0x0204001c end:0x020404f4
+
+src/Unknown/B/actor_02040548.cpp:
+    complete
+    .text       start:0x02040548 end:0x020407c8
+
+src/Unknown/B/actor_020407c8.cpp:
+    complete
+    .text       start:0x020407c8 end:0x020408ac
+
+src/Unknown/B/actor_02040ad8.cpp:
+    complete
+    .text       start:0x02040ad8 end:0x02040be0
+
+src/Unknown/B/actor_02040d00.cpp:
+    complete
+    .text       start:0x02040d00 end:0x02040d60
+
+src/Unknown/B/actor_02040dcc.cpp:
+    complete
+    .text       start:0x02040dcc end:0x02040e44
+
+src/Unknown/B/actor_02040e94.cpp:
+    complete
+    .text       start:0x02040e94 end:0x02040f34
+
+src/Unknown/B/actor_02041064.cpp:
+    complete
+    .text       start:0x02041064 end:0x0204112c
+
+src/Unknown/C/state_02048264.cpp:
+    complete
+    .text       start:0x02048264 end:0x020483f8
