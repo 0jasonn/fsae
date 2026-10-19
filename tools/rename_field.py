@@ -43,3 +43,9 @@ for f in units:
     else:
         sys.exit(f"{f}: too many errors")
 print(f"renamed {old} -> {new}; all {len(units)} units compile")
+# A renamed access can silently resolve to a same-named field of another struct; the code then changes. Check it.
+changed = [u for u in units if subprocess.run(["git", "diff", "--quiet", "--", str(u)], cwd=ROOT).returncode]
+for u in changed:
+    out = subprocess.run([sys.executable, str(ROOT / "tools/trymatch.py"), str(u), "-q"], capture_output=True, text=True).stdout
+    if " 0 differ" not in out:
+        print(f"WARNING: {u.relative_to(ROOT)} no longer matches after the rename: {out.strip()}")
