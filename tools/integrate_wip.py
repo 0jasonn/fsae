@@ -17,7 +17,9 @@ py = sys.executable
 
 names = {l.split(" ", 1)[0] for l in (ROOT / "config/eur/arm9/symbols.txt").read_text().splitlines()}
 ren = ROOT / f"scratch/agent{letter}/renames.txt"
-lines = [l for l in ren.read_text().splitlines() if len(l.split()) == 2 and l.split()[0] in names] if ren.exists() else []
+lines = [l for l in ren.read_text().splitlines() if len(l.split()) == 2 and l.split()[0] in names
+         and l.split()[1] not in names] if ren.exists() else []
+lines = list(dict.fromkeys(lines))
 if lines:
     tmp = ROOT / f"scratch/integrate_{letter}_renames.txt"
     tmp.write_text("\n".join(lines) + "\n", newline="\n")

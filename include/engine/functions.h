@@ -302,7 +302,7 @@ void func_02083000(const void *src, void *dst);
 void func_020830ec(void);
 void func_02083694(u32 layer, u16 index, u32 size);
 int func_02083c74(Entity *e, int dx, int dy);
-void func_02083c84(Entity *e);
+u16 func_02083c84(Entity *e);
 int func_02083c8c(int x, int y, u16 unk);
 int func_02083ca8(u16 cell, u16 key);
 int func_02083d4c(u16 a, u16 b);
