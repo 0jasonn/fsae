@@ -29,9 +29,45 @@ src/game/shikake_3.cpp:
     complete
     .text       start:0x02022dfc end:0x02022e1c
 
+src/game/bganm.cpp:
+    complete
+    .text       start:0x02023b50 end:0x02023d78
+
+src/object/bomb_2.cpp:
+    complete
+    .text       start:0x02023d78 end:0x02023f58
+
 src/object/bomb.cpp:
     complete
     .text       start:0x0202406c end:0x02024234
+
+src/object/bomb_3.cpp:
+    complete
+    .text       start:0x02024400 end:0x02024498
+
+src/object/boots.cpp:
+    complete
+    .text       start:0x02024498 end:0x020244d4
+
+src/game/hit.cpp:
+    complete
+    .text       start:0x020248f0 end:0x02024b20
+
+src/game/hit_2.cpp:
+    complete
+    .text       start:0x02024b38 end:0x020250f8
+
+src/game/hit_3.cpp:
+    complete
+    .text       start:0x020251ec end:0x02025518
+
+src/game/hit_4.cpp:
+    complete
+    .text       start:0x02025518 end:0x02025628
+
+src/game/hit_5.cpp:
+    complete
+    .text       start:0x02025ce8 end:0x02025d2c
 
 src/enemy/seqset.cpp:
     complete
