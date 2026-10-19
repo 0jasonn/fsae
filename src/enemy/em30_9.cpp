@@ -127,7 +127,7 @@ ARM void flowerTamaSet(Entity *e) {
 // Em30CheckAttack (0x02043148): true for a part (tags 3/0x30, type 0, action 0xb) whose phase timer is past 0x5a.
 
 ARM BOOL Em30CheckAttack(Entity *e) {
-    if (e->unk_08 == 3 && e->unk_09 == 0x30 && e->type == 0 && e->action == 0xb) {
+    if (e->objKind == 3 && e->objId == 0x30 && e->type == 0 && e->action == 0xb) {
         if (W(e)->phaseTimer > 0x5a) {
             return TRUE;
         }
@@ -138,7 +138,7 @@ ARM BOOL Em30CheckAttack(Entity *e) {
 // Em30GetRightColor (0x02043184): the sprite index of part B for a part with tags 3/0x30, or 0xff otherwise.
 
 ARM u8 Em30GetRightColor(Entity *e) {
-    if (e->unk_08 != 3 || e->unk_09 != 0x30) {
+    if (e->objKind != 3 || e->objId != 0x30) {
         return 0xff;
     }
     return VPARTS(e)->partB->spriteSettings.b20 - 7;
@@ -164,9 +164,9 @@ ARM void em31_damage(Entity *e) {
     u8 contact = e->contactFlags;
     u8 offset = contact - 0x84;
     if (offset <= 0x9e) {
-        e->direction = e->unk_3e;
-        if (e->unk_3e & 0xf) {
-            SPRITE_BIT2(e)->bit2 = ((e->unk_3e >> 4) ^ 1) & 1;
+        e->direction = e->baseDirection;
+        if (e->baseDirection & 0xf) {
+            SPRITE_BIT2(e)->bit2 = ((e->baseDirection >> 4) ^ 1) & 1;
         }
         e->speed = 0x480;
         u8 value;

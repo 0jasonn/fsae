@@ -33,7 +33,7 @@ ARM void em2a_shadowinit(Entity *e) {
     e->action++;
     e->spriteSettings.b0 = 1;
     Entity *parent = e->parent;
-    e->unk_50 = parent->unk_50;
+    e->layer = parent->layer;
     e->spriteSettings.b16 = parent->spriteSettings.b16;
     e->spriteSettings.b20 = e->spriteSettings.b16;
     e->spriteSettings.b6 = parent->spriteSettings.b6;
@@ -41,7 +41,7 @@ ARM void em2a_shadowinit(Entity *e) {
     e->x.WORD = parent->x.WORD;
     e->y.WORD = parent->y.WORD;
     if (e->timer == 0) {
-        e->unk_3c = 0;
+        e->statusFlags = 0;
     } else {
         e->unk_2e = 8;
         e->spriteSettings.b4 = 3;
@@ -229,8 +229,8 @@ ARM void jumpefectSet(Entity *e) {
 
 ARM void bigjumpinit(Entity *e) {
     e->spriteSettings.b0 = 1;
-    e->unk_3f = 0x3d;
-    e->unk_3c |= 0x80;
+    e->poseId = 0x3d;
+    e->statusFlags |= 0x80;
     V(e)->hitWindow = 0;
     e->speed = 0x300;
     e->zVelocity = 0x30000;

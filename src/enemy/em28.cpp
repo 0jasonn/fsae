@@ -12,7 +12,7 @@ ARM void em28_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->unk_2e = 5;
-    e->unk_3c |= 0x80;
+    e->statusFlags |= 0x80;
     e->hitbox = em28_hitbox;
     e->timer = 0x64;
     em28_claim.claimed = 0;

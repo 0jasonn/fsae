@@ -56,9 +56,9 @@ ARM void seqMove(Entity *e) {
 ARM void kuttsukiReset(Entity *e) {
     data_0212ceb0[e->child->type].unk_02 = 0x41;
     data_0212ceb0[e->child->type].unk_0a[0] = 0;
-    data_0212ceb0[e->child->type].unk_36 &= 0xffef;
+    data_0212ceb0[e->child->type].statusFlags &= 0xffef;
     e->child->zVelocity = 0x18000;
-    e->child->unk_3c |= 0x80;
+    e->child->statusFlags |= 0x80;
     e->child->iframes = 0xdc;
     e->child->z.HALF.HI = 0;
     e->child->unk_2e = VBT(e)->savedChildUnk2e;

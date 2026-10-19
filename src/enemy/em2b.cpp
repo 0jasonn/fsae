@@ -36,7 +36,7 @@ ARM void em2b_init(Entity *e) {
     e->hitbox = em2b_hitbox;
     V(e)->startX = e->x.HALF.HI;
     V(e)->startY = e->y.HALF.HI;
-    V(e)->pathStart = V(e)->pathCursor = (const u16 *)GetInfoAdrs(e->unk_52, e->type2);
+    V(e)->pathStart = V(e)->pathCursor = (const u16 *)GetInfoAdrs(e->areaIndex, e->type2);
     em2b_getNextInfo(e);
     InitAnimationForceUpdate(e, 0);
     e->action = 1;

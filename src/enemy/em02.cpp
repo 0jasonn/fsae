@@ -72,7 +72,7 @@ ARM void em02_vanish(Entity *e) {
         return;
     }
     if (e->frame == 1) {
-        e->unk_3c &= 0x7f;
+        e->statusFlags &= 0x7f;
         return;
     }
     e->action++;
@@ -95,7 +95,7 @@ ARM void em02_appear(Entity *e) {
         return;
     }
     if (e->frame == 1) {
-        e->unk_3c |= 0x80;
+        e->statusFlags |= 0x80;
         return;
     }
     e->action = 1;

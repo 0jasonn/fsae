@@ -34,7 +34,7 @@ ARM void scene_03(void) {
                 fx->y.HALF.HI = data_0212ceb0[0].entity->y.HALF.HI - 8;
             }
             DemoLinkWalkSet(0, 8, 8);
-            data_0212ceb0[0].unk_0c = 8;
+            data_0212ceb0[0].state = 8;
             break;
         case 3:
             opdemo_scroll();

@@ -12,7 +12,7 @@ ARM void getFiveMoveInfo(Entity *e) {
 
 ARM int gufuVitalCheck(Entity *e) {
     u8 hp = e->health;
-    u8 difficulty = data_0212c7c8.unk_3;
+    u8 difficulty = data_0212c7c8.difficulty;
     int result = 0;
     if (((const u8 *)em2f_vitalThresholds)[difficulty * 2] > hp) {
         result = 1;

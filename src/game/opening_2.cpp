@@ -15,7 +15,7 @@ ARM s32 OpeningTaskCanPrepareFinalize(void) {
         node = head->next;
         if (node != head) {
             do {
-                if (((Entity *)node)->unk_08 == 6 && ((Entity *)node)->unk_09 == 0x28 && ((Entity *)node)->type == 5) {
+                if (((Entity *)node)->objKind == 6 && ((Entity *)node)->objId == 0x28 && ((Entity *)node)->type == 5) {
                     return 0;
                 }
                 node = node->next;
@@ -33,7 +33,7 @@ ARM void OpeningTaskPrepareFinalize(void) {
         node = head->next;
         if (node != head) {
             do {
-                if (((Entity *)node)->unk_08 == 6 && ((Entity *)node)->unk_09 == 0x28 && ((Entity *)node)->type == 0) {
+                if (((Entity *)node)->objKind == 6 && ((Entity *)node)->objId == 0x28 && ((Entity *)node)->type == 0) {
                     ((Entity *)node)->subtimer = 1;
                     break;
                 }
@@ -49,7 +49,7 @@ ARM void OpeningTaskPrepareFinalize(void) {
             node2 = head2->next;
             if (node2 != head2) {
                 do {
-                    if (((Entity *)node2)->unk_08 == 6 && ((Entity *)node2)->unk_09 == 0x28 && ((Entity *)node2)->type == 5) {
+                    if (((Entity *)node2)->objKind == 6 && ((Entity *)node2)->objId == 0x28 && ((Entity *)node2)->type == 5) {
                         prevNode = node2->prev;
                         PutObjWork((Entity *)node2);
                         node2 = prevNode;

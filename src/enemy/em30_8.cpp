@@ -40,10 +40,10 @@ ARM BOOL setUde(Entity *e) {
     Entity *first;
     Entity *second;
     if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
-        first->unk_08 = 3;
-        second->unk_08 = 3;
-        first->unk_09 = 0x30;
-        second->unk_09 = 0x30;
+        first->objKind = 3;
+        second->objKind = 3;
+        first->objId = 0x30;
+        second->objId = 0x30;
         first->type = 3;
         second->type = 3;
         first->type2 = 2;
@@ -69,10 +69,10 @@ ARM int setFlower(Entity *e) {
     Entity *first;
     Entity *second;
     if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
-        first->unk_08 = 3;
-        second->unk_08 = 3;
-        first->unk_09 = 0x30;
-        second->unk_09 = 0x30;
+        first->objKind = 3;
+        second->objKind = 3;
+        first->objId = 0x30;
+        second->objId = 0x30;
         first->type = 1;
         second->type = 2;
         first->parent = e->parent;

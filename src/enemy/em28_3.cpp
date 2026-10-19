@@ -11,9 +11,9 @@ ARM void em28_attack(Entity *e) {
         return;
     }
     if (e->frame != 0) {
-        e->unk_3f = 0x3c;
+        e->poseId = 0x3c;
     } else {
-        e->unk_3f = 0x3b;
+        e->poseId = 0x3b;
     }
 }
 
@@ -42,7 +42,7 @@ ARM Entity *plCheck(Entity *e) {
             return NULL;
         }
     }
-    if (data_0212ceb0[child->type].unk_36 & 0x1091) {
+    if (data_0212ceb0[child->type].statusFlags & 0x1091) {
         return NULL;
     }
     return child;

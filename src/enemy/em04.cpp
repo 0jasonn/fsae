@@ -14,7 +14,7 @@ ARM void em03_release(Entity *e) {
 }
 
 ARM void aibou_check(Entity *e) {
-    if (e->unk_60 == 0) {
+    if (e->linkedEntity == 0) {
         return;
     }
     Entity *parentEntity = e->parent;

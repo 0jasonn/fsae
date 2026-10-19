@@ -9,7 +9,7 @@ ARM void BubbleReset(Entity *e) {
     }
     bubble->x.HALF.HI = V(e)->homeX;
     bubble->y.HALF.HI = V(e)->homeY;
-    bubble->unk_52 = e->unk_52;
+    bubble->areaIndex = e->areaIndex;
     V(bubble)->resetVal0 = V(e)->resetVal0;
     V(bubble)->resetVal1 = V(e)->resetVal1;
     V(bubble)->resetVal2 = V(e)->resetVal2;

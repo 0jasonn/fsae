@@ -136,7 +136,7 @@ ARM void em2a_buttobi(Entity *e) {
     }
     if (e->x.HALF.HI > 0x2a8) {
         e->iframes = 0xe0;
-        e->unk_3f = 0x48;
+        e->poseId = 0x48;
         e->x.HALF.HI = 0x2a8;
         InitAnimationForceUpdate(e, (e->type - 1) * 10 + 6);
         e->action = 8;
@@ -187,7 +187,7 @@ ARM void em2a_ice(Entity *e) {
         if (e->health == 0) {
             e->type++;
             PutVGroup(e);
-            if (data_0212c7c8.unk_6 + 1 == e->type) {
+            if (data_0212c7c8.stage + 1 == e->type) {
                 e->type = 4;
             }
             lifeset(e);
@@ -215,7 +215,7 @@ ARM void em2a_ice(Entity *e) {
             e->spriteSettings.b20 = GetObjColor(0x17);
             e->spriteSettings.b16 = e->spriteSettings.b20;
             e->action = 0xf;
-            e->unk_3c &= 0x7f;
+            e->statusFlags &= 0x7f;
             e->spriteSettings.b0 = 0;
             e->z.WORD = 0;
             return;
@@ -279,13 +279,13 @@ ARM void em2a_coremove(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         func_020852ec(e);
-        if (e->unk_2c & em2a_wallMasks[e->direction >> 3]) {
+        if (e->wallFlags & em2a_wallMasks[e->direction >> 3]) {
             u8 targetDir = func_02086078(data_0212ceb0[e->subtimer].entity, e);
             if (e->direction != targetDir) {
                 e->direction ^= 0x10;
             } else {
                 e->direction = (e->direction + 8) & 0x1f;
-                if (e->unk_2c & em2a_wallMasks[e->direction >> 3]) {
+                if (e->wallFlags & em2a_wallMasks[e->direction >> 3]) {
                     e->direction = (e->direction - 0x10) & 0x1f;
                 }
             }

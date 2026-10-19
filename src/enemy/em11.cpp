@@ -44,7 +44,7 @@ ARM void sleepSet(Entity *e) {
 ARM void dirSet(Entity *e) {
     int desiredDir = func_02084fd0(e, VBP(e)->target);
     u8 currentDir = e->direction;
-    if ((e->unk_2c & em11_blockMasks[currentDir >> 3]) != 0) {
+    if ((e->wallFlags & em11_blockMasks[currentDir >> 3]) != 0) {
         if (((desiredDir + 4) & 0x18) == currentDir) {
             if ((currentDir & 8) != 0) {
                 if (VBP(e)->target->y.HALF.HI > e->y.HALF.HI) {

@@ -12,8 +12,8 @@
 
 // Writes the value through the entity pointer in unk_60, when there is one
 ARM void ObjSetTargetWord(Entity *e, u16 value) {
-    if (e->unk_60 != 0) {
-        *(u16 *)e->unk_60 = value;
+    if (e->linkedEntity != 0) {
+        *(u16 *)e->linkedEntity = value;
     }
 }
 

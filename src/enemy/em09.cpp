@@ -13,7 +13,7 @@ ARM void tenka(Entity *e) {
     e->action = 4;
     e->iframes = 0xfc;
     VBD(e)->dying = 1;
-    e->unk_3f = 0x11;
+    e->poseId = 0x11;
     e->zVelocity = 0x20000;
     e->unk_5c = 0x21ff;
     VBD(e)->dyingTimer = 0xf0;
@@ -27,14 +27,14 @@ ARM void searchCandle(Entity *e) {
     if (VBD(e)->dying != 0) {
         return;
     }
-    if (e->unk_2c & 0xe) {
+    if (e->wallFlags & 0xe) {
         probeA = func_02083c74(e, 2, -6);
         probeB = func_02083c74(e, -2, -6);
         if (probeA == 0x10e || probeB == 0x10e) {
             tenka(e);
             return;
         }
-    } else if (e->unk_2c & 0xe0) {
+    } else if (e->wallFlags & 0xe0) {
         probeA = func_02083c74(e, 2, 6);
         probeB = func_02083c74(e, -2, 6);
         if (probeA == 0x10e || probeB == 0x10e) {
@@ -42,7 +42,7 @@ ARM void searchCandle(Entity *e) {
             return;
         }
     }
-    if (e->unk_2c & 0xe000) {
+    if (e->wallFlags & 0xe000) {
         probeA = func_02083c74(e, 8, 2);
         probeB = func_02083c74(e, 8, -2);
         if (probeA == 0x10e || probeB == 0x10e) {
@@ -50,7 +50,7 @@ ARM void searchCandle(Entity *e) {
         }
         return;
     }
-    if (e->unk_2c & 0xe00) {
+    if (e->wallFlags & 0xe00) {
         probeA = func_02083c74(e, -8, 2);
         probeB = func_02083c74(e, -8, -2);
         if (probeA == 0x10e || probeB == 0x10e) {
@@ -69,8 +69,8 @@ ARM int purupuru(Entity *e) {
             e->timer = 1;
             e->unk_1a = 0;
             e->iframes = 0xfc;
-            e->unk_46 = 0xc;
-            e->unk_3f = 0x10;
+            e->attackKnockback = 0xc;
+            e->poseId = 0x10;
             e->unk_5c = 0x31ff;
             em08_seqSet(e, 0);
             e->unk_2e = 2;
@@ -89,8 +89,8 @@ ARM int purupuru(Entity *e) {
 
 ARM void piyoriSet(Entity *e) {
     e->action = 3;
-    e->unk_46 = 3;
-    e->unk_3f = 0x47;
+    e->attackKnockback = 3;
+    e->poseId = 0x47;
     e->unk_5c = 0x31ff;
     em08_seqSet(e, 4);
     e->unk_2e = 2;
@@ -121,10 +121,10 @@ ARM void em09_normal(Entity *e) {
 }
 
 ARM void em09_damage(Entity *e) {
-    if (e->unk_3f == 0x14) {
-        e->unk_3f = 0x13;
+    if (e->poseId == 0x14) {
+        e->poseId = 0x13;
         e->hitbox = em09_hurtHitbox;
-        e->unk_3c &= 0x7f;
+        e->statusFlags &= 0x7f;
         e->unk_20 = VBT(e)->savedAttr;
         e->spriteSettings.b20 = VBT(e)->savedPalette;
         e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -135,7 +135,7 @@ ARM void em09_damage(Entity *e) {
         e->parent->spriteSettings.b0 = 1;
         InitAnimationForceUpdate(e->parent, 5);
         KemuriSet(e);
-        if (e->contactedEntity->unk_08 == 8 || e->contactedEntity->unk_08 == 1) {
+        if (e->contactedEntity->objKind == 8 || e->contactedEntity->objKind == 1) {
             e->child = data_0212ceb0[e->contactedEntity->type].entity;
         } else {
             e->child = EmGetAimPl();
@@ -145,14 +145,14 @@ ARM void em09_damage(Entity *e) {
     if (e->action == 4) {
         kuttsukiReset(e);
     }
-    if (e->contactedEntity->unk_08 == 1) {
-        if ((data_0212ceb0[e->contactedEntity->type].unk_36 & 2) == 0) {
+    if (e->contactedEntity->objKind == 1) {
+        if ((data_0212ceb0[e->contactedEntity->type].statusFlags & 2) == 0) {
             if (e->action == 2) {
                 InitAnimationForceUpdate(e, 0);
                 InitAnimationForceUpdate(e->parent, 3);
             }
             e->child = e->contactedEntity;
-            e->child->unk_3c &= 0x7f;
+            e->child->statusFlags &= 0x7f;
             VBT(e)->savedChildUnk2e = e->child->unk_2e;
             e->unk_5c = em09_attrByChildType[e->child->type];
             e->action = 4;
@@ -161,7 +161,7 @@ ARM void em09_damage(Entity *e) {
         } else {
             e->child = EmGetAimPl();
         }
-    } else if (e->contactedEntity->unk_08 == 8) {
+    } else if (e->contactedEntity->objKind == 8) {
         e->child = data_0212ceb0[e->contactedEntity->type].entity;
     } else {
         e->child = EmGetAimPl();
@@ -203,7 +203,7 @@ ARM void em09_init(Entity *e) {
         e->spriteSettings.b16 = e->spriteSettings.b20;
     }
     e->unk_2e = 2;
-    e->unk_3c |= 0x80;
+    e->statusFlags |= 0x80;
     e->hitbox = em09_hitbox;
     e->spriteSettings.b0 = 1;
     VBT(e)->savedAttr = e->unk_20 | (e->spriteSettings.b6 << 8);
@@ -238,7 +238,7 @@ ARM void em09_appear(Entity *e) {
         InitAnimationForceUpdate(e->parent, e->animationState + 3);
     } else if (e->frame == 1) {
         e->frame = 0;
-        e->unk_3c |= 0x80;
+        e->statusFlags |= 0x80;
     }
 }
 

@@ -42,36 +42,36 @@ ARM void type0_attackBlossom(Entity *e) {
     if (W(e)->phaseTimer > 0x5a) {
         damageCheck(e);
         if (VPARTS(e)->partA->frame != 0) {
-            VPARTS(e)->partA->unk_3c |= 0x80;
+            VPARTS(e)->partA->statusFlags |= 0x80;
         } else {
             UpdateAnimationSingleFrame(VPARTS(e)->partA);
         }
         if (VPARTS(e)->partB->frame != 0) {
-            VPARTS(e)->partB->unk_3c |= 0x80;
+            VPARTS(e)->partB->statusFlags |= 0x80;
             return;
         }
         UpdateAnimationSingleFrame(VPARTS(e)->partB);
         return;
     }
     if (W(e)->phaseTimer > 0x1e) {
-        VPARTS(e)->partA->unk_3c &= 0x7f;
-        VPARTS(e)->partB->unk_3c &= 0x7f;
+        VPARTS(e)->partA->statusFlags &= 0x7f;
+        VPARTS(e)->partB->statusFlags &= 0x7f;
         UpdateAnimationSingleFrame(VPARTS(e)->partA);
         UpdateAnimationSingleFrame(VPARTS(e)->partB);
         return;
     }
     if (W(e)->phaseTimer == 0x1e) {
         flowerTamaSet(e);
-        VPARTS(e)->partA->unk_3c |= 0x80;
-        VPARTS(e)->partB->unk_3c |= 0x80;
+        VPARTS(e)->partA->statusFlags |= 0x80;
+        VPARTS(e)->partB->statusFlags |= 0x80;
         return;
     }
     if (W(e)->phaseTimer != 0) {
         return;
     }
     e->action = 0xc;
-    VPARTS(e)->partA->unk_3c &= 0x7f;
-    VPARTS(e)->partB->unk_3c &= 0x7f;
+    VPARTS(e)->partA->statusFlags &= 0x7f;
+    VPARTS(e)->partB->statusFlags &= 0x7f;
     InitAnimationForceUpdate(e, 1);
     InitAnimationForceUpdate(VPARTS(e)->partA, 4);
     InitAnimationForceUpdate(VPARTS(e)->partB, 5);

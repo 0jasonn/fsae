@@ -11,7 +11,7 @@ ARM void em05_land(Entity *e) {
     e->timer = 1;
     e->animationState = 0;
     e->speed = 0x80;
-    e->unk_3c &= 0xef;
-    e->unk_3f = 9;
+    e->statusFlags &= 0xef;
+    e->poseId = 9;
     InitAnimationForceUpdate(e, 0);
 }

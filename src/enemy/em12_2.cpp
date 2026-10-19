@@ -10,7 +10,7 @@ ARM void em12_wakeup(Entity *e) {
         return;
     }
     e->action = 4;
-    e->unk_3c |= 0x80;
+    e->statusFlags |= 0x80;
     V(e)->w70.b.inArea = 0;
     V(e)->w70.b.flag = 0;
     V(e)->w70.b.walkState = 0;
@@ -140,7 +140,7 @@ ARM void em12_return(Entity *e) {
             return;
         }
         e->action = 6;
-        e->unk_3c &= 0x7f;
+        e->statusFlags &= 0x7f;
         InitAnimationForceUpdate(e, 0xe);
         igoalRewCell(e);
         break;

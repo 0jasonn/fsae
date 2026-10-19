@@ -90,7 +90,7 @@ ARM Entity *SearchWork(s32 id, s32 list) {
     head = &data_0212c6b0[list];
     node = head->next;
     while (node != head) {
-        if (((Entity *)node)->unk_09 == id) {
+        if (((Entity *)node)->objId == id) {
             return (Entity *)node;
         }
         node = node->next;
@@ -107,9 +107,9 @@ ARM Entity *SearchWorkNext(Entity *start, s32 list) {
     head = &data_0212c6b0[list];
     node = ((EntityNode *)start)->next;
     if (node != head) {
-        id = start->unk_09;
+        id = start->objId;
         do {
-            if (((Entity *)node)->unk_09 == id) {
+            if (((Entity *)node)->objId == id) {
                 return (Entity *)node;
             }
             node = node->next;

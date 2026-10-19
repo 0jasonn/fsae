@@ -182,7 +182,7 @@ ARM void em29_die(Entity *e) {
 
 ARM void breakSekichu(Entity *e) {
     u16 cell = ((e->x.HALF.HI - data_0212c648.unk_18) >> 4) | (((e->y.HALF.HI - data_0212c648.unk_1a) >> 4) << 6);
-    if (func_02083ca8(cell, e->unk_50) != 0x138) {
+    if (func_02083ca8(cell, e->layer) != 0x138) {
         return;
     }
     Entity *fx = GetSetWork(0xf, 0xf, 0);
@@ -190,7 +190,7 @@ ARM void breakSekichu(Entity *e) {
         return;
     }
     ObjPosCopy(e, fx);
-    RewCell(0x2f, cell, e->unk_50);
+    RewCell(0x2f, cell, e->layer);
 }
 
 // movecheck (0x02041edc): true when the entity is active, its player slot has no blocking flags, and the
@@ -198,7 +198,7 @@ ARM void breakSekichu(Entity *e) {
 
 ARM BOOL movecheck(Entity *e) {
     if (func_020860dc(e) != 0) {
-        if (data_0212ceb0[e->type].unk_36 & 0x100) {
+        if (data_0212ceb0[e->type].statusFlags & 0x100) {
             return FALSE;
         }
         if (data_0212ceb0[e->type].unk_03[2] == 1) {
@@ -214,7 +214,7 @@ ARM BOOL movecheck(Entity *e) {
 
 ARM BOOL hikiyoseSet(Entity *segment, Entity *leader, u16 speed) {
     if (leader->child != NULL) {
-        if (leader->child->unk_08 == 4 && leader->child->unk_09 == 2) {
+        if (leader->child->objKind == 4 && leader->child->objId == 2) {
             return FALSE;
         }
     }

@@ -29,11 +29,11 @@ ARM void em26_div(Entity *e) {
     childInit(e, leftPart);
     leftPart->x.HALF.HI -= 4;
     leftPart->parent = rightPart;
-    leftPart->direction = (e->unk_3e - 2) & 0x1f;
+    leftPart->direction = (e->baseDirection - 2) & 0x1f;
     childInit(e, rightPart);
     rightPart->x.HALF.HI += 4;
     rightPart->parent = leftPart;
-    rightPart->direction = (e->unk_3e + 2) & 0x1f;
+    rightPart->direction = (e->baseDirection + 2) & 0x1f;
     Entity *anchor = GetSetWork(0xf, 2, 0);
     if (anchor != NULL) {
         ObjPosCopy(e, anchor);

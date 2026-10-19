@@ -18,19 +18,19 @@ ARM void openEndSet(Entity *e) {
     if (other == NULL) {
         return;
     }
-    e->unk_3f = 0x3f;
+    e->poseId = 0x3f;
     e->hitbox = em2d_openHitbox;
-    other->unk_3c |= 0x80;
+    other->statusFlags |= 0x80;
     InitAnimationForceUpdate(V(e)->petal, 8);
     V(e)->petal->unk_28 += Random() & 7;
 }
 
 ARM void closeInit(Entity *e) {
     Entity *other = V(e)->petal;
-    e->unk_3f = 0x40;
+    e->poseId = 0x40;
     e->hitbox = em2d_closeHitbox;
     if (other != NULL) {
-        other->unk_3c &= 0x7f;
+        other->statusFlags &= 0x7f;
         InitAnimationForceUpdate(V(e)->petal, 7);
     }
     InitAnimationForceUpdate(e, 6);
@@ -53,14 +53,14 @@ ARM BOOL kukiSet(Entity *e) {
     Entity *partD;
     if ((partA = GetObjWork()) != NULL && (partB = GetObjWork2(partA)) != NULL && (partC = GetObjWork2(partB)) != NULL &&
         (partD = GetObjWork2(partC)) != NULL) {
-        partA->unk_08 = 3;
-        partB->unk_08 = 3;
-        partC->unk_08 = 3;
-        partD->unk_08 = 3;
-        partA->unk_09 = 0x2d;
-        partB->unk_09 = 0x2c;
-        partC->unk_09 = 0x2c;
-        partD->unk_09 = 0x2c;
+        partA->objKind = 3;
+        partB->objKind = 3;
+        partC->objKind = 3;
+        partD->objKind = 3;
+        partA->objId = 0x2d;
+        partB->objId = 0x2c;
+        partC->objId = 0x2c;
+        partD->objId = 0x2c;
         partA->type = 1;
         partB->type = 2;
         partC->type = 2;
@@ -121,7 +121,7 @@ ARM void flowerDie(Entity *e) {
     testiRupeeSet(e);
     e->action = 0x19;
     e->spriteSettings.b0 = 0;
-    e->unk_3c &= 0x7f;
+    e->statusFlags &= 0x7f;
     e->health = 0;
     if (V(e)->petal != NULL) {
         PutObjWork(V(e)->petal);

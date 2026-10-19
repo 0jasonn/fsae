@@ -18,8 +18,8 @@ typedef void (*EntityFunc)(Entity *e);
 // Game object shared by the actor update functions. Field meanings are not known yet.
 typedef struct OBJ_WORK_ {
     /* 00 */ u8 unk_00[8];
-    /* 08 */ u8 unk_08;
-    /* 09 */ u8 unk_09;
+    /* 08 */ u8 objKind;
+    /* 09 */ u8 objId;
     /* 0a */ u8 type;
     /* 0b */ u8 type2;
     /* 0c */ s32 speed; // speed
@@ -53,28 +53,28 @@ typedef struct OBJ_WORK_ {
     /* 29 */ u8 frame;
     /* 2a */ u8 animationState; // animation state
     /* 2b */ u8 direction; // direction
-    /* 2c */ u16 unk_2c;
+    /* 2c */ u16 wallFlags;
     /* 2e */ u8 unk_2e;
     /* 2f */ u8 unk_2f;
     /* 30 */ FixedPoint x; // x
     /* 34 */ FixedPoint y; // y
     /* 38 */ FixedPoint z; // z
-    /* 3c */ u8 unk_3c;
+    /* 3c */ u8 statusFlags;
     /* 3d */ u8 iframes;
-    /* 3e */ u8 unk_3e;
-    /* 3f */ u8 unk_3f;
+    /* 3e */ u8 baseDirection;
+    /* 3f */ u8 poseId;
     /* 40 */ u8 unk_40;
     /* 41 */ u8 contactFlags;
     /* 42 */ u8 unk_42;
     /* 43 */ u8 unk_43;
-    /* 44 */ u8 unk_44;
+    /* 44 */ u8 attackDamage;
     /* 45 */ u8 health;
-    /* 46 */ s8 unk_46;
+    /* 46 */ s8 attackKnockback;
     /* 47 */ u8 unk_47;
     /* 48 */ const void *hitbox;
     /* 4c */ Entity *contactedEntity;
-    /* 50 */ u16 unk_50;
-    /* 52 */ u8 unk_52;
+    /* 50 */ u16 layer;
+    /* 52 */ u8 areaIndex;
     /* 53 */ u8 unk_53;
     /* 54 */ Entity *parent;
     /* 58 */ Entity *child;
@@ -85,7 +85,7 @@ typedef struct OBJ_WORK_ {
         u8 b4 : 4;
     } unk_5e;
     /* 5f */ u8 unk_5f;
-    /* 60 */ Entity *unk_60;
+    /* 60 */ Entity *linkedEntity;
     /* 64 */ u8 unk_64[6];
     /* 6a */ u8 unk_6a;
     /* 6b */ u8 unk_6b;

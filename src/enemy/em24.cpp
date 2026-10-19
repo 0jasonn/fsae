@@ -35,10 +35,10 @@ ARM void em24_aimMove(Entity *e) {
         e->speed = 0x280;
         e->direction = (e->animationState & 3) << 3;
         charset(e, 0x10);
-        e->child->unk_44 = 8;
+        e->child->attackDamage = 8;
         return;
     }
-    e->child->unk_44 = 4;
+    e->child->attackDamage = 4;
     e->direction = func_02084fd0(e, V(e)->aimTarget);
     charset(e, 8);
     func_020847a0(e);
@@ -74,7 +74,7 @@ ARM void swordset(Entity *e) {
     }
     ObjPosCopy(e, e->child);
     e->child->hitbox = em24_swordHitboxes[((e->animationState & 3) << 2) + (e->frame & 3)];
-    e->child->unk_3c = (e->child->unk_3c & 0x7f) | (e->unk_3c & 0x80);
+    e->child->statusFlags = (e->child->statusFlags & 0x7f) | (e->statusFlags & 0x80);
 }
 
 ARM void charset(Entity *e, u8 baseAnim) {

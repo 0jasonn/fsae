@@ -42,9 +42,9 @@ ARM void em1e_damage(Entity *e) {
                 e->action = 6;
                 e->zVelocity = 0x18000;
                 e->speed = 0xc0;
-                e->direction = e->unk_3e;
+                e->direction = e->baseDirection;
                 e->unk_42 = 0;
-                e->unk_3f = 0x2f;
+                e->poseId = 0x2f;
                 InitAnimationForceUpdate(e, 9);
             }
             break;
@@ -158,7 +158,7 @@ ARM void em1e_piyori(Entity *e) {
     e->action = 5;
     e->zVelocity = 0x10000;
     e->speed = 0x80;
-    e->unk_3f = 0x2e;
+    e->poseId = 0x2e;
     InitAnimationForceUpdate(e, e->animationState);
     EnqueueSFX(0x31);
 }

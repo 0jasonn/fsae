@@ -62,7 +62,7 @@ ARM void ObjMove(void) {
         data_0212c52c = node;
         if (node != list) {
             do {
-                data_02103c50[((Entity *)node)->unk_08]((Entity *)node);
+                data_02103c50[((Entity *)node)->objKind]((Entity *)node);
                 if (node == data_0212c52c) {
                     func_02084460();
                 }
@@ -143,8 +143,8 @@ ARM Entity *GetEnemyWork(u16 id) {
     if (e == 0) {
         return 0;
     }
-    e->unk_08 = 3;
-    e->unk_09 = (u8)id;
+    e->objKind = 3;
+    e->objId = (u8)id;
     RegistObjWork(4, e);
     return e;
 }
@@ -157,8 +157,8 @@ ARM Entity *GetTamaWork(u16 id) {
     if (e == 0) {
         return 0;
     }
-    e->unk_08 = 4;
-    e->unk_09 = (u8)id;
+    e->objKind = 4;
+    e->objId = (u8)id;
     RegistObjWork(5, e);
     return e;
 }
@@ -171,8 +171,8 @@ ARM Entity *GetTamaWork2(u16 id) {
     if (e == 0) {
         return 0;
     }
-    e->unk_08 = 4;
-    e->unk_09 = (u8)id;
+    e->objKind = 4;
+    e->objId = (u8)id;
     RegistObjWork(3, e);
     return e;
 }
@@ -184,13 +184,13 @@ ARM Entity *GetChildWork(Entity *parent, u8 type, u8 type2) {
 
     child = GetObjWork();
     if (child != 0) {
-        kind = parent->unk_08;
-        child->unk_08 = kind;
-        child->unk_09 = parent->unk_09;
+        kind = parent->objKind;
+        child->objKind = kind;
+        child->objId = parent->objId;
         child->type = type;
         child->type2 = type2;
-        child->unk_50 = parent->unk_50;
-        child->unk_52 = parent->unk_52;
+        child->layer = parent->layer;
+        child->areaIndex = parent->areaIndex;
         RegistObjWork(data_020d7c60[kind], child);
     }
     return child;

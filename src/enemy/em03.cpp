@@ -6,7 +6,7 @@ ARM void Em03(Entity *e) {
     func_02084700(e);
     Entity *partner = func_020849c8(e);
     if (partner != 0) {
-        if (!(e->unk_3c & 0x80) && e->timer == 1) {
+        if (!(e->statusFlags & 0x80) && e->timer == 1) {
             aibou_check(e);
         }
         func_02084ab8(e, partner);

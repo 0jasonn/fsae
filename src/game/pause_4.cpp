@@ -75,7 +75,7 @@ ARM void keyDisable(void) {
 }
 
 ARM void Entity_DispatchByUnk09(Entity *e) {
-    entityDispatchTable[e->unk_09](e);
+    entityDispatchTable[e->objId](e);
 }
 
 ARM void LinkControl(Entity *e) {

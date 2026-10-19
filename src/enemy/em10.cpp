@@ -10,7 +10,7 @@
 ARM void em10_damage(Entity *e) {
     if (e->action == 1) {
         e->action = 2;
-        if (e->contactedEntity->unk_08 == 1) {
+        if (e->contactedEntity->objKind == 1) {
             VBP(e)->target = e->contactedEntity;
         } else if (e->contactedEntity->type < data_0212c7c8.unk_0) {
             VBP(e)->target = data_0212ceb0[e->contactedEntity->type].entity;
@@ -48,7 +48,7 @@ ARM void em10_awake(Entity *e) {
     if (e->frame == 2) {
         e->frame = 0;
         e->unk_5c = 0x21ff;
-        e->unk_3f = 0x1c;
+        e->poseId = 0x1c;
         e->hitbox = em10_awakeHitbox;
         attreset(e);
         return;
@@ -135,7 +135,7 @@ ARM void em10_sleep(Entity *e) {
         }
         e->frame = 0;
         e->unk_5c = 0x2055;
-        e->unk_3f = 1;
+        e->poseId = 1;
         e->hitbox = em10_hitbox;
         attset(e);
         return;

@@ -28,23 +28,23 @@ ARM void em02_div(Entity *e) {
     if (fx != NULL) {
         fx->x.HALF.HI = e->x.HALF.HI - 4;
         fx->y.HALF.HI = e->y.HALF.HI;
-        fx->unk_50 = e->unk_50;
+        fx->layer = e->layer;
     }
     PutObjWork(e);
 }
 
 ARM void func_02030ae4(int index) {
-    data_0212ceb0[index].unk_0c = 6;
-    data_0212ceb0[index].unk_38 = 1;
+    data_0212ceb0[index].state = 6;
+    data_0212ceb0[index].stateTimer = 1;
     PlayerData *other = NULL;
     if (data_0212ceb0[index].unk_1e & 0x80) {
         other = V(data_0212ceb0[index].entity)->playerData;
     } else if (data_0212ceb0[index].unk_1e & 0x20) {
         other = (PlayerData *)V(data_0212ceb0[index].entity)->linked;
     }
-    if (other != NULL && other->unk_0c != 6 && other->entity->action != 6) {
-        other->unk_0c = 6;
-        other->unk_38 = 1;
+    if (other != NULL && other->state != 6 && other->entity->action != 6) {
+        other->state = 6;
+        other->stateTimer = 1;
     }
 }
 
@@ -68,8 +68,8 @@ ARM void Em2a(Entity *e) {
             return;
         }
         Entity *hitter = e->contactedEntity;
-        data_0212ceb0[hitter->type].unk_0c = 6;
-        data_0212ceb0[hitter->type].unk_38 = 1;
+        data_0212ceb0[hitter->type].state = 6;
+        data_0212ceb0[hitter->type].stateTimer = 1;
         e->iframes = 0xfe;
         if (hitter->animationState != 2) {
             return;
@@ -77,7 +77,7 @@ ARM void Em2a(Entity *e) {
         e->parent->x.WORD = e->x.WORD;
         e->parent->y.WORD = e->y.WORD;
         e->parent->z.WORD = 0;
-        e->parent->unk_3c |= 0x80;
+        e->parent->statusFlags |= 0x80;
         e->parent->spriteSettings.b0 = 1;
         e->parent->speed = 0x200;
         e->parent->zVelocity = 0x18000;
@@ -105,8 +105,8 @@ ARM void Em2a(Entity *e) {
         if (e->action != 8 && e->z.WORD == 0 && e->type != 0 && (e->contactFlags & 0x80) && (e->contactFlags & 0x7f) != 0) {
             if ((e->contactFlags & 0x7f) == 0x10) {
                 Entity *hitter = e->contactedEntity;
-                data_0212ceb0[hitter->type].unk_0c = 6;
-                data_0212ceb0[hitter->type].unk_38 = 1;
+                data_0212ceb0[hitter->type].state = 6;
+                data_0212ceb0[hitter->type].stateTimer = 1;
                 e->iframes = 0xfe;
                 if (hitter->animationState == 2) {
                     e->spriteSettings.b0 = 1;
@@ -157,7 +157,7 @@ ARM void em2a_init(Entity *e) {
     e->unk_5e.b2 = 2;
     e->hitbox = em2a_hitbox;
     e->unk_6a = 1;
-    e->unk_3f = 0x48;
+    e->poseId = 0x48;
     e->child = data_0212c648;
     data_0212c648 = e;
     CockpitOff();

@@ -10,7 +10,7 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 03 */ u8 unk_03[5];
     /* 08 */ u16 unk_08;
     /* 0a */ u8 unk_0a[2];
-    /* 0c */ u8 unk_0c;
+    /* 0c */ u8 state;
     /* 0d */ u8 unk_0d[7];
     /* 14 */ u8 unk_14;
     /* 15 */ u8 unk_15[9];
@@ -20,8 +20,8 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 27 */ u8 unk_27;
     /* 28 */ Entity *entity;
     /* 2c */ u8 unk_2c[0xa];
-    /* 36 */ u16 unk_36;
-    /* 38 */ u8 unk_38;
+    /* 36 */ u16 statusFlags;
+    /* 38 */ u8 stateTimer;
     /* 39 */ u8 unk_39;
     /* 3a */ u8 unk_3a[2];
     /* 3c */ u8 unk_3c;
@@ -32,10 +32,10 @@ extern PlayerData data_0212ceb0[4];
 typedef struct UnkStruct_0212c7c8 {
     /* 00 */ u8 unk_0; // number of players
     /* 01 */ u8 unk_1[2];
-    /* 03 */ u8 unk_3;
+    /* 03 */ u8 difficulty;
     /* 04 */ u8 unk_4;
     /* 05 */ u8 unk_5;
-    /* 06 */ u8 unk_6;
+    /* 06 */ u8 stage;
     /* 07 */ u8 unk_7[0x1f];
     /* 26 */ u16 unk_26;
 } UnkStruct_0212c7c8;

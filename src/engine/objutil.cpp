@@ -21,8 +21,8 @@ ARM Entity *ObjPosCopy(Entity *src, Entity *dst) {
     dst->x = src->x;
     dst->y = src->y;
     dst->z = src->z;
-    dst->unk_50 = src->unk_50;
-    dst->unk_52 = src->unk_52;
+    dst->layer = src->layer;
+    dst->areaIndex = src->areaIndex;
     return func_0208ae78(dst);
 }
 
@@ -37,8 +37,8 @@ ARM void ObjPosCopyOfs32(Entity *src, Entity *dst, s32 dx, s32 dy) {
     dst->x.WORD = src->x.WORD + dx;
     dst->y.WORD = src->y.WORD + dy;
     dst->z = src->z;
-    dst->unk_50 = src->unk_50;
-    dst->unk_52 = src->unk_52;
+    dst->layer = src->layer;
+    dst->areaIndex = src->areaIndex;
     func_0208ae78(dst);
 }
 

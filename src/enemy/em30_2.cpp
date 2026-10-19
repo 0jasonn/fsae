@@ -49,7 +49,7 @@ ARM void em30_type0_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 8;
     e->unk_5e.b2 = 3;
-    e->unk_3c |= 0x80;
+    e->statusFlags |= 0x80;
     e->unk_6c[4] = e->direction;
     e->hitbox = em30_type0Hitbox;
     e->unk_6c[6] = 1;

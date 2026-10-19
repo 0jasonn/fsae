@@ -11,9 +11,9 @@ ARM void swordMgr(Entity *e) {
     }
     ObjPosCopy(e, e->child);
     if ((e->frame & 7) == 0) {
-        e->child->unk_3c &= 0x7f;
+        e->child->statusFlags &= 0x7f;
         return;
     }
-    e->child->unk_3c |= 0x80;
+    e->child->statusFlags |= 0x80;
     e->child->hitbox = em28_swordHitboxes[e->animationState * 5 + (e->frame & 7) - 1];
 }

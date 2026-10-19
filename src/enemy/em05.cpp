@@ -5,13 +5,13 @@
 ARM void em05_stop(Entity *e) {
     func_02084f54(e);
     if (e->unk_43 == 0) {
-        e->unk_3f = V(e)->savedUnk3f;
+        e->poseId = V(e)->savedUnk3f;
     }
 }
 
 ARM void em05_init(Entity *e) {
     if (e->type != 0) {
-        e->unk_3f = 9;
+        e->poseId = 9;
     }
     e->spriteSettings.b0 = 1;
     e->unk_2e = 6;

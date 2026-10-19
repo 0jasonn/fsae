@@ -28,8 +28,8 @@ ARM void Em2c(Entity *e) {
     if ((e->contactFlags & 0x7f) != 0x10) {
         return;
     }
-    data_0212ceb0[e->contactedEntity->type].unk_0c = 6;
-    data_0212ceb0[e->contactedEntity->type].unk_38 = 1;
+    data_0212ceb0[e->contactedEntity->type].state = 6;
+    data_0212ceb0[e->contactedEntity->type].stateTimer = 1;
 }
 
 ARM void em2c_normal(Entity *e) {
@@ -94,7 +94,7 @@ ARM void type0_1stMove(Entity *e) {
             }
             return;
         }
-        if (data_0212c7c8.unk_6 != 1) {
+        if (data_0212c7c8.stage != 1) {
             if (set2nd(e) == 0) {
                 return;
             }
@@ -182,6 +182,6 @@ ARM void type0_3rdMove(Entity *e) {
 ARM void type0_Die(Entity *e) {
     if (--e->timer == 0) {
         e->health = 0;
-        e->unk_3c &= 0x7f;
+        e->statusFlags &= 0x7f;
     }
 }

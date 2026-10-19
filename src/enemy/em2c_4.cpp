@@ -9,14 +9,14 @@ ARM BOOL set3rd(Entity *e) {
     Entity *partD;
     if ((partA = GetObjWork()) != NULL && (partB = GetObjWork2(partA)) != NULL && (partC = GetObjWork2(partB)) != NULL &&
         (partD = GetObjWork2(partC)) != NULL) {
-        partA->unk_08 = 3;
-        partB->unk_08 = 3;
-        partC->unk_08 = 3;
-        partD->unk_08 = 3;
-        partA->unk_09 = 0x2c;
-        partB->unk_09 = 0x2c;
-        partC->unk_09 = 0x2d;
-        partD->unk_09 = 0x2c;
+        partA->objKind = 3;
+        partB->objKind = 3;
+        partC->objKind = 3;
+        partD->objKind = 3;
+        partA->objId = 0x2c;
+        partB->objId = 0x2c;
+        partC->objId = 0x2d;
+        partD->objId = 0x2c;
         partA->type = 1;
         partB->type = 1;
         partD->type = 3;

@@ -6,7 +6,7 @@
 
 // Em12 actor fields (file-local overlay for src/enemy/em12.c)
 typedef union Em12Word70 {
-    u32 typeBits; // ParseTypeBits(e->type), tested against em12_typeMasks[e->unk_52]
+    u32 typeBits; // ParseTypeBits(e->type), tested against em12_typeMasks[e->areaIndex]
     struct {
         u8 flag;   // set and cleared by em12_move / em12_return
         u8 inArea; // 0xff while a player stands inside the area box

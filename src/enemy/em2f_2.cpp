@@ -112,8 +112,8 @@ ARM void em2f_fiveMove(Entity *e) {
 }
 
 ARM void em2f_die(Entity *e) {
-    if (e->unk_3c != 0) {
-        e->unk_3c = 0;
+    if (e->statusFlags != 0) {
+        e->statusFlags = 0;
         e->timer = 0xb4;
         Scene_SetFlag5();
         CockpitOff();
@@ -128,7 +128,7 @@ ARM void em2f_die(Entity *e) {
     u8 count = data_0212c7c8.unk_0;
     for (u32 i = 0; i < count; i++) {
         PlayerData *player = &data_0212ceb0[i];
-        if ((player->unk_36 & 1) || player->unk_3c != 0) {
+        if ((player->statusFlags & 1) || player->unk_3c != 0) {
             return;
         }
         if (player->entity->health == 0) {
@@ -141,7 +141,7 @@ ARM void em2f_die(Entity *e) {
         player->entity->zVelocity = 0;
         player->entity->direction = 0xff;
         player->entity->iframes = 0x88;
-        player->unk_36 &= 0xf3ff;
+        player->statusFlags &= 0xf3ff;
         func_020899e4(player->entity);
     }
     e->action = 0x24;

@@ -19,7 +19,7 @@ ARM void em2f_init(Entity *e) {
     e->unk_5e.b2 = 2;
     e->hitbox = em2f_hitbox;
     V(e)->attackSeed = Random();
-    e->health = em2f_healthByDifficulty[data_0212c7c8.unk_3];
+    e->health = em2f_healthByDifficulty[data_0212c7c8.difficulty];
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
         switch (data_0212c7c8.unk_0) {
             case 2:
@@ -193,9 +193,9 @@ ARM void em2f_plDown(Entity *e) {
     e->timer = 0x24;
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
-        player->unk_0c = 0xf;
+        player->state = 0xf;
         player->unk_08 = 0x1af;
-        player->unk_38 = 0xb4;
+        player->stateTimer = 0xb4;
         player->unk_39 = 0;
         player->entity->direction = CalculateDirectionTo(0x1f8, 0x1c0, player->entity->x.HALF.HI, player->entity->y.HALF.HI);
         player->entity->animationState = player->entity->direction < 0x10 ? 2 : 6;
@@ -250,7 +250,7 @@ ARM void em2f_demoEnd(Entity *e) {
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
         player->unk_08 = 0xc;
-        player->unk_38 = 1;
+        player->stateTimer = 1;
         player->unk_02 = 0x41;
         player->entity->zVelocity = 0x20000;
     }

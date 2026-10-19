@@ -6,10 +6,10 @@ ARM BOOL setTsubomi(Entity *e) {
     Entity *first;
     Entity *second;
     if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
-        first->unk_08 = 3;
-        second->unk_08 = 3;
-        first->unk_09 = 0x30;
-        second->unk_09 = 0x30;
+        first->objKind = 3;
+        second->objKind = 3;
+        first->objId = 0x30;
+        second->objId = 0x30;
         first->type2 = 0;
         second->type2 = 1;
         first->direction = 0xa0;

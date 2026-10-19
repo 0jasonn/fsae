@@ -15,10 +15,10 @@ ARM u8 get_maplevel(void) {
     const u8 *row;
 
     if (data_0212c7c8.unk_1[0] == 2) {
-        value = data_0212c7c8.unk_3 + 3;
+        value = data_0212c7c8.difficulty + 3;
         row = data_02103dc4 + value * 8;
     } else {
-        value = data_0212c7c8.unk_6 - 1;
+        value = data_0212c7c8.stage - 1;
         row = data_02103dc4 + value * 8;
     }
     return row[Random() & 7];

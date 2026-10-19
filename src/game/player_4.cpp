@@ -59,21 +59,21 @@ ARM void PlWeaponFireCheck(Entity *e) {
         return;
     }
     e->contactedEntity->contactFlags = (e->contactedEntity->contactFlags & 0x7f) | 0x40;
-    e->unk_3f = 0xe;
-    e->contactedEntity->unk_3f = 0xe;
+    e->poseId = 0xe;
+    e->contactedEntity->poseId = 0xe;
     dx = e->x.WORD - e->contactedEntity->x.WORD;
     dy = e->y.WORD - e->contactedEntity->y.WORD;
     shot = GetObjWork();
     if (shot == 0) {
         return;
     }
-    shot->unk_09 = 0x17;
-    shot->unk_08 = 6;
+    shot->objId = 0x17;
+    shot->objKind = 6;
     shot->x.WORD = e->x.WORD - (dx >> 1);
     shot->y.WORD = e->y.WORD - (dy >> 1);
     shot->spriteSettings.b14 = e->spriteSettings.b14;
     shot->spriteSettings.b30 = e->spriteSettings.b30;
-    shot->unk_50 = e->unk_50;
+    shot->layer = e->layer;
     RegistObjWork(6, shot);
 }
 

@@ -31,14 +31,14 @@ ARM void em2c_type0_init_034878(Entity *e) {
             e->timer = 0x78;
             e->subtimer = 0x96;
             e->speed = 0x100;
-            e->health = em2d_healthType0[data_0212c7c8.unk_6 - 1];
+            e->health = em2d_healthType0[data_0212c7c8.stage - 1];
             V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             break;
         case 1: {
             e->action = 7;
             e->timer = 0x3c;
-            e->health = em2d_healthType1[data_0212c7c8.unk_6 - 1];
+            e->health = em2d_healthType1[data_0212c7c8.stage - 1];
             V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             Entity *fx = GetSetWork(0xf, 2, 0x20);
@@ -51,7 +51,7 @@ ARM void em2c_type0_init_034878(Entity *e) {
             e->action = 0xe;
             e->timer = 0x96;
             e->speed = 0x100;
-            e->health = em2d_healthType2[data_0212c7c8.unk_6 - 1];
+            e->health = em2d_healthType2[data_0212c7c8.stage - 1];
             V(e)->orbitRadius = 0x10;
             e->direction = Random() & 0x1f;
             InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
@@ -98,7 +98,7 @@ ARM void em2c_type0_1stDemoWait_034b44(Entity *e) {
     }
     e->action = 3;
     e->timer = 0x5a;
-    e->speed = em2d_demoSpeeds[data_0212c7c8.unk_6 - 1];
+    e->speed = em2d_demoSpeeds[data_0212c7c8.stage - 1];
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
 
@@ -295,7 +295,7 @@ ARM void type0_3rdDemo(Entity *e) {
         return;
     }
     e->action = 0xf;
-    e->speed = em2d_thirdDemoSpeeds[data_0212c7c8.unk_6 - 1];
+    e->speed = em2d_thirdDemoSpeeds[data_0212c7c8.stage - 1];
     V(e)->phaseFlags = 1;
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
@@ -337,10 +337,10 @@ ARM void type0_3rdBlossom(Entity *e) {
         e->health = 0xff;
         e->action = 0x16;
         e->timer = 0xb4;
-        e->unk_3c &= 0x7f;
+        e->statusFlags &= 0x7f;
         e->unk_5e.b0 = 3;
         if (V(e)->petal != NULL) {
-            V(e)->petal->unk_3c &= 0x7f;
+            V(e)->petal->statusFlags &= 0x7f;
             V(e)->petal->unk_5e.b0 = 3;
         }
         e->direction = Random() & 0xf;
@@ -489,8 +489,8 @@ ARM void type0_DieDemo2(Entity *e) {
 ARM void em2c_type1_init_0356bc(Entity *e) {
     e->action = 1;
     e->health = 0xff;
-    e->unk_3c &= 0x7f;
-    e->unk_3f = 0x3f;
+    e->statusFlags &= 0x7f;
+    e->poseId = 0x3f;
     e->hitbox = em2d_type1Hitbox;
 }
 
@@ -499,7 +499,7 @@ ARM void em2c_type1_wait_0356f4(Entity *e) {
     if (parent->type2 != 0 || VCT(parent->parent)->flowerCount != 1) {
         return;
     }
-    if (!(e->unk_3c & 0x80)) {
+    if (!(e->statusFlags & 0x80)) {
         return;
     }
     e->action = 2;
@@ -511,7 +511,7 @@ ARM void type1_attackWait(Entity *e) {
         e->action = 3;
         InitAnimationForceUpdate(e, 9);
     }
-    if (!(e->unk_3c & 0x80)) {
+    if (!(e->statusFlags & 0x80)) {
         e->action = 1;
     }
 }
@@ -532,20 +532,20 @@ ARM void type1_attack(Entity *e) {
         e->timer = (Random() + 0x1e) & 0xf;
         InitAnimationForceUpdate(e, 8);
     }
-    if (!(e->unk_3c & 0x80)) {
+    if (!(e->statusFlags & 0x80)) {
         e->action = 1;
     }
 }
 
 ARM void damageSet(Entity *e, Entity *src) {
     V(e)->phaseFlags |= 1;
-    u8 damage = src->contactedEntity->unk_44;
+    u8 damage = src->contactedEntity->attackDamage;
     if (e->health < damage) {
         e->health = 0;
     } else {
         e->health -= damage;
     }
-    e->iframes = src->contactedEntity->unk_46 < 0 ? -0x10 - src->contactedEntity->unk_46 : src->contactedEntity->unk_46 + 0x10;
+    e->iframes = src->contactedEntity->attackKnockback < 0 ? -0x10 - src->contactedEntity->attackKnockback : src->contactedEntity->attackKnockback + 0x10;
     if (V(e)->petal != NULL) {
         V(e)->petal->iframes = e->iframes;
     }
@@ -593,7 +593,7 @@ ARM BOOL damagecheck(Entity *e) {
         if (flags != 0) {
             if ((flags & 3) == 3) {
                 Entity *src = e;
-                if (other != NULL && e->contactedEntity->unk_44 < other->contactedEntity->unk_44) {
+                if (other != NULL && e->contactedEntity->attackDamage < other->contactedEntity->attackDamage) {
                     src = other;
                 }
                 damageSet(e, src);

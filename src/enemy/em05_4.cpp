@@ -39,7 +39,7 @@ ARM void em05_move2(Entity *e) {
             e->action = 4;
             e->timer = 0x20;
             e->subtimer = 0;
-            e->unk_3f = 6;
+            e->poseId = 6;
             InitAnimationForceUpdate(e, 0xc);
             return;
         }
@@ -75,7 +75,7 @@ ARM void em05_nage(Entity *e) {
             } else {
                 projectile->direction = Random() & 0x1f;
             }
-            if (e->unk_09 != 5) {
+            if (e->objId != 5) {
                 projectile->type = 1;
             }
             ObjPosCopy(e, projectile);
@@ -91,7 +91,7 @@ ARM void em05_nage(Entity *e) {
     e->timer = 1;
     e->subtimer = (Random() & 0x7f) + 0x40;
     e->animationState = 0;
-    e->unk_3f = 9;
+    e->poseId = 9;
     InitAnimationForceUpdate(e, 0);
 }
 
@@ -115,8 +115,8 @@ ARM void em0d_die(Entity *e) {
         e->unk_43 = 0;
         VB(e)->jumpPhase++;
         VB(e)->jumpTimer = 0x1e0;
-        e->unk_3c |= 0x80;
-        e->unk_3f = 0x44;
+        e->statusFlags |= 0x80;
+        e->poseId = 0x44;
         InitAnimationForceUpdate(e, 2);
         EnqueueSFX(0x16);
         break;
@@ -143,7 +143,7 @@ ARM void em0d_die(Entity *e) {
         e->subtimer = 0x10;
         e->speed = 0x80;
         e->animationState = 0;
-        e->unk_3f = 6;
+        e->poseId = 6;
         e->health = VB(e)->healthBackup;
         InitAnimationForceUpdate(e, 0);
         break;
@@ -296,7 +296,7 @@ ARM void em07_vanish(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         e->frame = 0;
-        e->unk_3c &= 0x7f;
+        e->statusFlags &= 0x7f;
         return;
     }
     if ((e->frame & 0x80) == 0) {
@@ -320,7 +320,7 @@ ARM void em07_appear(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         e->frame = 0;
-        e->unk_3c |= 0x80;
+        e->statusFlags |= 0x80;
         return;
     }
     if ((e->frame & 0x80) == 0) {
@@ -351,8 +351,8 @@ ARM void em07_div(Entity *e) {
         pieceB->parent = pieceA;
         pieceB->type2 = 1;
     }
-    if (e->unk_60 != NULL) {
-        VARS(Vars_Target, e->unk_60)->pieceCount += (u16)count;
+    if (e->linkedEntity != NULL) {
+        VARS(Vars_Target, e->linkedEntity)->pieceCount += (u16)count;
     }
     Entity *fx = GetSetWork(0xf, 2, 0);
     if (fx != NULL) {
@@ -400,7 +400,7 @@ ARM void em08_damage(Entity *e) {
         if (animOffset < 2) {
             return;
         }
-        u8 tableIndex = ((e->unk_3e + 4) & 0x18) >> 3;
+        u8 tableIndex = ((e->baseDirection + 4) & 0x18) >> 3;
         func_02085a60(e, em08_hitParams[tableIndex]);
         if (e->action < 5) {
             em08_seqSet(e, 0);
@@ -485,7 +485,7 @@ ARM void em08_lift_throw(Entity *e) {
     if (VB(e)->poseLatched == 0) {
         VB(e)->poseLatched = 1;
         Entity *player = data_0212ceb0[e->type2].entity;
-        e->unk_2c = *(const u16 *)(em08_throwParams + (player->animationState & ~1));
+        e->wallFlags = *(const u16 *)(em08_throwParams + (player->animationState & ~1));
     }
     searchCandle(e);
 }

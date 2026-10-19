@@ -38,7 +38,7 @@ ARM void em2e_main(Entity *e) {
     if (e->contactFlags & 0x7f) {
         return;
     }
-    if (data_0212ceb0[e->contactedEntity->type].unk_36 & 0x400) {
+    if (data_0212ceb0[e->contactedEntity->type].statusFlags & 0x400) {
         return;
     }
     Entity *obj = GetSetWork(0x55, 1, 0);
@@ -46,11 +46,11 @@ ARM void em2e_main(Entity *e) {
         return;
     }
     obj->child = e->contactedEntity;
-    data_0212ceb0[e->contactedEntity->type].unk_36 |= 0x400;
+    data_0212ceb0[e->contactedEntity->type].statusFlags |= 0x400;
 }
 
 ARM void em2e_init(Entity *e) {
-    e->unk_50 = 0x4000;
+    e->layer = 0x4000;
     e->spriteSettings.b0 = 1;
     InitAnimationForceUpdate(e, 0);
     e->unk_5e.b2 = 2;
@@ -76,7 +76,7 @@ ARM void em2e_gatherwait(Entity *e) {
         }
     }
     if (e->health == 0) {
-        if (data_0212c7c8.unk_6 == e->type) {
+        if (data_0212c7c8.stage == e->type) {
             V(e)->displayType = 4;
         } else {
             V(e)->displayType = e->type + 1;
@@ -149,7 +149,7 @@ ARM void em2e_gatherwait(Entity *e) {
     } else {
         InitAnimationForceUpdate(e, next);
         e->spriteSettings.b4 = 2;
-        e->unk_3c |= 0x80;
+        e->statusFlags |= 0x80;
     }
     atSelect(e);
 }
@@ -267,7 +267,7 @@ ARM void em2e_break(Entity *e) {
         return;
     }
     e->spriteSettings.b0 ^= 1;
-    e->unk_3c &= 0x7f;
+    e->statusFlags &= 0x7f;
     if (e->subtimer != 0) {
         if (V(e)->hideTimer-- != 0) {
             return;
