@@ -68,6 +68,43 @@ def name_to_addr(name):
     return _NAMES.get(name)
 
 
+def call_mismatches(obj: bytes, data: bytes, base: int):
+    """{function: [(offset, called symbol, original target)]} for ARM bl/blx whose target differs from the ROM.
+    The byte comparison masks relocated bits, so a call to the wrong function would otherwise pass."""
+    from io import BytesIO
+    from elftools.elf.elffile import ELFFile
+    from elftools.elf.relocation import RelocationSection
+    elf = ELFFile(BytesIO(obj))
+    symtab = elf.get_section_by_name(".symtab")
+    funcs = [s for s in symtab.iter_symbols() if s["st_info"]["type"] == "STT_FUNC" and isinstance(s["st_shndx"], int)]
+    out = {}
+    for sec in elf.iter_sections():
+        if not isinstance(sec, RelocationSection):
+            continue
+        for rel in sec.iter_relocations():
+            if rel["r_info_type"] not in (1, 28, 29):  # ARM PC24 / CALL / JUMP24
+                continue
+            target = symtab.get_symbol(rel["r_info_sym"]).name
+            want = name_to_addr(target)
+            if want is None:
+                continue
+            for f in funcs:
+                start = f["st_value"] & ~1
+                if f["st_shndx"] == sec["sh_info"] and start <= rel["r_offset"] < start + f["st_size"] and not f["st_value"] & 1:
+                    addr = name_to_addr(f.name)
+                    if addr is None:
+                        break
+                    pc = addr + rel["r_offset"] - start
+                    word = int.from_bytes(data[pc - base:pc - base + 4], "little")
+                    imm = word & 0xffffff
+                    imm = imm - 0x1000000 if imm & 0x800000 else imm
+                    got = pc + 8 + imm * 4 + (2 if word >> 28 == 0xf and word & 0x1000000 else 0)
+                    if got & ~1 != want & ~1:
+                        out.setdefault(f.name, []).append((rel["r_offset"] - start, target, got))
+                    break
+    return out
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
@@ -93,14 +130,17 @@ def main():
                 continue
             ok = bad = 0
             lines = []
+            calls = call_mismatches(out.read_bytes(), data, args.base)
             for name, thumb, code, mask in extract_functions(out.read_bytes()):
                 addr = name_to_addr(name)
                 if addr is None:
                     continue
-                good = matches_at(data, addr - args.base, code, mask)
+                good = matches_at(data, addr - args.base, code, mask) and name not in calls
                 ok += good
                 bad += not good
                 lines.append(f"  {'OK  ' if good else 'FAIL'} {name} size={len(code):#x}")
+                for off, target, got in calls.get(name, []):
+                    lines.append(f"    call at +{off:#x} goes to {target}, the original calls {got:#010x}")
                 if args.diff and not good:
                     lines.append(diff(data[addr - args.base:addr - args.base + len(code)], code, mask, addr, thumb))
             print(f"{version}: {ok} match, {bad} differ")
