@@ -42,3 +42,5 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 - **Initialised local arrays** (`u16 ids[8] = {...}`) copy from a rodata table. Give the table its ROM name as a global
   `const` struct, copy it (`TelopIdList list = data_020d7c50;`), index `list.ids[i]`, and add the table's range as a
   `.rodata` line on the unit in `delinks.txt` (see `src/game/message_02049f38.c`).
+- **trymatch ignores call targets** (relocated bits), so `%`/`/` calling `_s32_div_f` instead of `_u32_div_f` passes
+  trymatch and only fails the ROM checksum. Unsigned operands (`(u32)x % n`) give the unsigned helper.
