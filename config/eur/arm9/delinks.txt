@@ -990,6 +990,82 @@ src/object/door_silver_2.cpp:
     complete
     .text       start:0x0206930c end:0x02069378
 
+src/object/door_silver_3.cpp:
+    complete
+    .text       start:0x020693fc end:0x0206942c
+
+src/object/cursor.cpp:
+    complete
+    .text       start:0x0206942c end:0x020695c8
+
+src/object/key.cpp:
+    complete
+    .text       start:0x020695c8 end:0x0206983c
+
+src/object/key_2.cpp:
+    complete
+    .text       start:0x02069930 end:0x020699a4
+
+src/object/lever.cpp:
+    complete
+    .text       start:0x020699a4 end:0x02069c20
+
+src/object/lr_cursor.cpp:
+    complete
+    .text       start:0x02069c20 end:0x02069d64
+
+src/object/mapmarker.cpp:
+    complete
+    .text       start:0x02069d64 end:0x02069e0c
+
+src/object/set32.cpp:
+    complete
+    .text       start:0x02069e0c end:0x02069f5c
+
+src/object/marker.cpp:
+    complete
+    .text       start:0x02069f5c end:0x0206a0c8
+
+src/object/set33.cpp:
+    complete
+    .text       start:0x0206a0c8 end:0x0206a0e4
+
+src/object/set33_2.cpp:
+    complete
+    .text       start:0x0206a8e4 end:0x0206a964
+
+src/object/set34.cpp:
+    complete
+    .text       start:0x0206ab6c end:0x0206ab88
+
+src/object/areacheck.cpp:
+    complete
+    .text       start:0x0206b000 end:0x0206b068
+
+src/object/set35.cpp:
+    complete
+    .text       start:0x0206b068 end:0x0206b124
+
+src/object/set36.cpp:
+    complete
+    .text       start:0x0206b34c end:0x0206b368
+
+src/object/set36_2.cpp:
+    complete
+    .text       start:0x0206b404 end:0x0206b460
+
+src/object/setrupee.cpp:
+    complete
+    .text       start:0x0206b4dc end:0x0206b5b8
+
+src/object/set37.cpp:
+    complete
+    .text       start:0x0206b5b8 end:0x0206b5d4
+
+src/object/set37_2.cpp:
+    complete
+    .text       start:0x0206b730 end:0x0206b7d4
+
 src/object/set50.cpp:
     complete
     .text       start:0x0207005c end:0x02070140
