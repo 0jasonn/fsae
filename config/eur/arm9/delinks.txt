@@ -5,6 +5,34 @@
     .data       start:0x020df5a0 end:0x02127280 kind:data align:32
     .bss        start:0x02127280 end:0x021870c0 kind:bss align:32
 
+src/object/arrow.cpp:
+    complete
+    .text       start:0x02020fc8 end:0x02021004
+
+src/object/arrow_2.cpp:
+    complete
+    .text       start:0x020216d0 end:0x02021784
+
+src/game/map.cpp:
+    complete
+    .text       start:0x02021b78 end:0x02021c28
+
+src/game/shikake.cpp:
+    complete
+    .text       start:0x02021fb0 end:0x0202203c
+
+src/game/shikake_2.cpp:
+    complete
+    .text       start:0x020220c0 end:0x02022110
+
+src/game/shikake_3.cpp:
+    complete
+    .text       start:0x02022dfc end:0x02022e1c
+
+src/object/bomb.cpp:
+    complete
+    .text       start:0x0202406c end:0x02024234
+
 src/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108
