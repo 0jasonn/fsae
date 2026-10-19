@@ -13,7 +13,7 @@ ARM s16 fix_div(s32 a, s32 b) {
     if (b == 0) {
         return 0;
     }
-    return func_0200d948(a << 8, b);
+    return _s32_div_f(a << 8, b);
 }
 
 ARM Entity *ObjPosCopy(Entity *src, Entity *dst) {

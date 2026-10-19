@@ -7,7 +7,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-s32 func_0200d948(s32 a, s32 b);
+s32 _s32_div_f(s32 a, s32 b);
 Entity *ObjPosCopy(Entity *src, Entity *dst);
 Entity *func_0208ae78(Entity *e);
 void *KnifeApp_getInstance(void);

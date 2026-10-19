@@ -1,0 +1,70 @@
+#ifndef UNKNOWN_WIP_A_EM12_H
+#define UNKNOWN_WIP_A_EM12_H
+
+#include "engine/entity.h"
+#include "engine/player.h"
+
+// Em12 actor fields (file-local overlay for src/enemy/em12.c)
+typedef union Em12Word70 {
+    u32 typeBits; // ParseTypeBits(e->type), tested against data_02134954[e->unk_52]
+    struct {
+        u8 flag;   // set and cleared by em12_move / em12_return
+        u8 inArea; // 0xff while a player stands inside the area box
+        u8 unk_72;
+        u8 unk_73;
+    } b;
+} Em12Word70;
+
+typedef struct Vars_Em12 {
+    /* 00 */ u8 unk_00[0x58];
+    /* 58 */ Entity *target;      // player the actor aims at
+    /* 5c */ u8 unk_5c[0x14];
+    /* 70 */ Em12Word70 w70;
+    /* 74 */ s16 homeX;           // spawn position (x.HI) after em12_init
+    /* 76 */ s16 homeY;           // spawn position (y.HI) after em12_init
+    /* 78 */ u16 areaX;           // area box origin and size (guessed)
+    /* 7a */ u16 areaY;
+    /* 7c */ u16 areaW;
+    /* 7e */ u16 areaH;
+} Vars_Em12;
+#define V(e) VARS(Vars_Em12, e)
+
+typedef struct UnkStruct_0212c648 {
+    /* 00 */ u8 unk_00[0x18];
+    /* 18 */ u16 unk_18;
+    /* 1a */ u16 unk_1a;
+} UnkStruct_0212c648;
+
+extern UnkStruct_0212c648 data_0212c648;
+extern u16 data_0212c5bc;          // frame counter
+extern u32 data_02134954[];
+extern u16 data_0213492c[];
+extern u16 data_0213492e[];
+extern const u8 data_020d2088[];
+extern const s8 data_020d2114[];
+extern const s8 data_020d2124[];
+extern const u16 data_020d2144[];
+extern u8 *data_02171e0c;
+extern u16 data_0212c584[4];
+extern const u8 data_020f26b8[];
+
+u32 ParseTypeBits(u8 type);
+u32 GetObjColor(u8 index);
+void func_0208ae30(Entity *e);
+void ObjPosCopy(Entity *e, Entity *other);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *app);
+u8 *Knife_Single_SinglePlay_GetInstance(void);
+u8 func_02084fd0(Entity *e, Entity *target);
+u8 CalculateDirectionTo(int x, int y, int targetX, int targetY);
+BOOL tgtareacheck(Entity *e, Entity *target);
+void igoalGetDir(Entity *e);
+void igoalWalk(Entity *e);
+void yukaRewCell(Entity *e);
+void igoalRewCell(Entity *e);
+void em12_kemuriSet(Entity *e);
+void func_02089e34(Entity *e, int mode, u16 x, u16 y);
+int func_02083c8c(int x, int y, u16 unk);
+void RewCell(int id, u16 cell, u16 flag);
+
+#endif

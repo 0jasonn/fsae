@@ -141,6 +141,14 @@ src/boss/boss_0203b02c.c:
     complete
     .text       start:0x0203b02c end:0x0203b384
 
+src/enemy/em12.c:
+    complete
+    .text       start:0x0203b434 end:0x0203b594
+
+src/enemy/em12_2.c:
+    complete
+    .text       start:0x0203b638 end:0x0203bca4
+
 src/enemy/enemy_0204001c.c:
     complete
     .text       start:0x0204001c end:0x020404f4
@@ -245,9 +253,29 @@ src/enemy/enemy_0204370c.c:
     complete
     .text       start:0x0204370c end:0x02043760
 
+src/enemy/encnt_02043760.c:
+    complete
+    .text       start:0x02043760 end:0x020438b4
+
+src/enemy/encnt_02043b54.c:
+    complete
+    .text       start:0x02043b54 end:0x02043bf8
+
 src/enemy/enemy_02043cb8.c:
     complete
     .text       start:0x02043cb8 end:0x02043d28
+
+src/enemy/encnt_02043da8.c:
+    complete
+    .text       start:0x02043da8 end:0x02043dc8
+
+src/enemy/encnt_02043f00.c:
+    complete
+    .text       start:0x02043f00 end:0x02043f70
+
+src/enemy/nextset_02044324.c:
+    complete
+    .text       start:0x02044324 end:0x020443a0
 
 src/game/state_02048264.c:
     complete
@@ -277,21 +305,42 @@ src/engine/system_02049ea8.c:
     complete
     .text       start:0x02049ea8 end:0x02049f38
 
+src/game/message_02049f38.c:
+    complete
+    .text       start:0x02049f38 end:0x0204a048
+    .rodata     start:0x020d7c50 end:0x020d7c60
+
 src/engine/system_0204a048.c:
     complete
     .text       start:0x0204a048 end:0x0204a110
+
+src/game/message_0204a110.c:
+    complete
+    .text       start:0x0204a110 end:0x0204a250
 
 src/engine/system_0204a250.c:
     complete
     .text       start:0x0204a250 end:0x0204a258
 
+src/game/telop_0204a370.c:
+    complete
+    .text       start:0x0204a370 end:0x0204a4b4
+
 src/engine/system_0204a4b4.c:
     complete
     .text       start:0x0204a4b4 end:0x0204a5bc
 
+src/game/message_0204a5bc.c:
+    complete
+    .text       start:0x0204a5bc end:0x0204a61c
+
 src/engine/system_0204a5e8.c:
     complete
     .text       start:0x0204a61c end:0x0204a624
+
+src/game/telop_0204aa00.c:
+    complete
+    .text       start:0x0204aa00 end:0x0204aa84
 
 src/engine/misc_020502e0.c:
     complete
@@ -344,3 +393,39 @@ src/game/scene_020537bc.c:
 src/game/scene_02053bc8.c:
     complete
     .text       start:0x02053bc8 end:0x02053c6c
+
+src/game/pause.c:
+    complete
+    .text       start:0x02053ebc end:0x02053f14
+
+src/game/pause_return.c:
+    complete
+    .text       start:0x02054340 end:0x020543ac
+
+src/game/pl.c:
+    complete
+    .text       start:0x02054510 end:0x02054788
+
+src/game/pl_bind.c:
+    complete
+    .text       start:0x020547ec end:0x02054894
+
+src/game/pl_reset.c:
+    complete
+    .text       start:0x02054a44 end:0x02054b64
+
+src/game/pl_colorreset.c:
+    complete
+    .text       start:0x02054c04 end:0x02054c4c
+
+src/game/pl_fire.c:
+    complete
+    .text       start:0x02054c4c end:0x02054ddc
+
+src/game/pl_sync.c:
+    complete
+    .text       start:0x02054f30 end:0x02054f64
+
+src/game/ranking.c:
+    complete
+    .text       start:0x02055170 end:0x02055194
