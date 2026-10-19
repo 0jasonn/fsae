@@ -39,3 +39,6 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 - Positions are 16.16 fixed point (`FixedPoint`) at 0x30/0x34/0x38; most code uses the integer half.
 - `unk_1c` is a bitfield word (`b0:2 b2:2 b4:2 b6:2 b8:6 b14:2 b16:4 b20:4 b24:6 b30:2`).
 - `_u32_div_f` (0x0200db54) is the runtime unsigned divide that `%`/`/` on unsigned values call.
+- **Initialised local arrays** (`u16 ids[8] = {...}`) copy from a rodata table. Give the table its ROM name as a global
+  `const` struct, copy it (`TelopIdList list = data_020d7c50;`), index `list.ids[i]`, and add the table's range as a
+  `.rodata` line on the unit in `delinks.txt` (see `src/game/message_02049f38.c`).
