@@ -397,6 +397,30 @@ src/game/fade_native.cpp:
     complete
     .text       start:0x020464c0 end:0x020465ec
 
+src/game/fade_native_2.cpp:
+    complete
+    .text       start:0x020465ec end:0x020470e8
+
+src/game/write.cpp:
+    complete
+    .text       start:0x020470e8 end:0x02047454
+
+src/game/game00.cpp:
+    complete
+    .text       start:0x02047454 end:0x02047478
+
+src/game/multiplay.cpp:
+    complete
+    .text       start:0x02047478 end:0x02047490
+
+src/game/multiplay_2.cpp:
+    complete
+    .text       start:0x02047794 end:0x02047838
+
+src/game/makemap.cpp:
+    complete
+    .text       start:0x02047838 end:0x020479d8
+
 src/game/warp.cpp:
     complete
     .text       start:0x02048264 end:0x020483f8
