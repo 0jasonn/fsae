@@ -149,6 +149,26 @@ src/enemy/em12_2.cpp:
     complete
     .text       start:0x0203b638 end:0x0203bca4
 
+src/enemy/em13.cpp:
+    complete
+    .text       start:0x0203c208 end:0x0203c27c
+
+src/enemy/em13_2.cpp:
+    complete
+    .text       start:0x0203c36c end:0x0203c570
+
+src/enemy/em13_3.cpp:
+    complete
+    .text       start:0x0203c694 end:0x0203c7f8
+
+src/enemy/em14.cpp:
+    complete
+    .text       start:0x0203c7f8 end:0x0203ca40
+
+src/enemy/em15.cpp:
+    complete
+    .text       start:0x0203ccc8 end:0x0203cf18
+
 src/enemy/em24.cpp:
     complete
     .text       start:0x0204001c end:0x020404f4
