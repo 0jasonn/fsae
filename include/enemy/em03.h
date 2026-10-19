@@ -15,27 +15,6 @@ typedef struct Vars_02038544 {
 } Vars_02038544;
 #define V(e) VARS(Vars_02038544, e)
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-int func_020849c8(Entity *e);
-int func_02084a30(Entity *e);
-void func_02084ab8(Entity *e, int a);
-void func_02083c84(Entity *e);
-void aibou_check(Entity *e);
-u8 func_02084fd0(Entity *e, Entity *target);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-u8 *Knife_Single_SinglePlay_GetInstance(void);
-u8 EmCharDir4(void);
-void func_02084f54(Entity *e);
-void em05DirChange(Entity *e);
-Entity *func_02084f98(Entity *e, int a, int b);
-u8 EmCharDir2(u8 a);
-void ObjPosCopy(Entity *e, Entity *other);
-#ifdef __cplusplus
-}
-#endif
 
 extern const EntityFunc data_020d1868[];
 extern const EntityFunc data_020d1880[];

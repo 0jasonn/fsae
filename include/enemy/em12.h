@@ -48,23 +48,5 @@ extern u8 *data_02171e0c;
 extern u16 data_0212c584[4];
 extern const u8 data_020f26b8[];
 
-u32 ParseTypeBits(u8 type);
-u32 GetObjColor(u8 index);
-void func_0208ae30(Entity *e);
-void ObjPosCopy(Entity *e, Entity *other);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *app);
-u8 *Knife_Single_SinglePlay_GetInstance(void);
-u8 func_02084fd0(Entity *e, Entity *target);
-u8 CalculateDirectionTo(int x, int y, int targetX, int targetY);
-BOOL tgtareacheck(Entity *e, Entity *target);
-void igoalGetDir(Entity *e);
-void igoalWalk(Entity *e);
-void yukaRewCell(Entity *e);
-void igoalRewCell(Entity *e);
-void em12_kemuriSet(Entity *e);
-void func_02089e34(Entity *e, int mode, u16 x, u16 y);
-int func_02083c8c(int x, int y, u16 unk);
-void RewCell(int id, u16 cell, u16 flag);
 
 #endif

@@ -74,9 +74,6 @@ extern u8 data_0216efd4[];
 extern u8 data_0211ed80[];
 extern u8 data_021371a0[];
 extern u8 data_021361a0[];
-extern void func_02026774(void);
-extern void telopFrame(s8 height, u16 *tiles);
-extern void telopString(u16 *tiles, u8 flag);
 extern MsgStateFunc data_02103c00[];
 extern MsgStateFunc data_02103c18[];
 extern MsgVoidFunc data_02103c34[];
@@ -86,21 +83,8 @@ extern WindowSlot data_0216efe0[];
 extern WindowSlot data_0216eff0[];
 extern u8 data_0212c618[];
 
-extern void *KnifeApp_getInstance(void);
-extern void func_02029a50(void *dst, u32 size);
-extern void MIi_CpuCopy32(const void *src, void *dst, u32 size);
-extern void MIi_CpuClearFast(u32 value, void *dst, u32 size);
-extern void statusUpdate(int mode);
-extern int telopUpdate(int mode);
-extern int msgWinSizeChange(int mode);
-extern void SoundReq(int sfx);
-extern void Stub_IgnoreArg(int arg);
 extern void knife_msgLineChange(MsgWork *msg, s32 lines);
 extern void Knife_msgFrameDma(MsgWork *msg, u32 bank);
 extern void Knife_palletChange(MsgWork *msg, u8 pallet);
-extern void *Knife_MsgReadPtrFromID(void *dat, u16 id);
-extern void deleteWindow(void);
-extern void telopWindow(void);
-extern void createWindow(void);
 
 #endif

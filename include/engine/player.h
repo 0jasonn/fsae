@@ -4,7 +4,7 @@
 #include "engine/entity.h"
 
 // Per-player state, one per connected Link
-typedef struct PlayerData {
+typedef struct PL_WORK_ { // original name PL_WORK_
     /* 00 */ u8 unk_00[2];
     /* 02 */ u8 unk_02;
     /* 03 */ u8 unk_03[5];

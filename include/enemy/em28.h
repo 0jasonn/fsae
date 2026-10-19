@@ -52,29 +52,6 @@ extern UnkStruct_021348cc data_021348cc;
 extern const u16 data_020d347a[];
 extern u16 data_0212c574[3];
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-void UpdateAnimationSingleFrame(Entity *e);
-void InitAnimationForceUpdate(Entity *e, u8 anim);
-int func_020847a0(Entity *e);
-int GetFacingDirection(Entity *e, Entity *target);
-u8 func_02086220(s16 dx, s16 dy);
-int func_02083d4c(u16 a, u16 b);
-Entity *func_02084f98(Entity *e, int size, int align);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-u8 *Knife_Single_SinglePlay_GetInstance(void);
-int setFlower(Entity *e);
 
-void ObjAffineSet2(u16 *pos, Entity *e);
-void Enemy_TurnTowardTarget(Entity *e);
-void em29_kakudai(Entity *e);
-void em28_attackwait(Entity *e);
-int Enemy_UpdateHomingChase(Entity *e);
-int Enemy_IsPathClear(Entity *e, int dir);
-#ifdef __cplusplus
-}
-#endif
 
 #endif

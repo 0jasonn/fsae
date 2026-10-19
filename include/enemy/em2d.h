@@ -61,39 +61,6 @@ extern const u8 data_020d119c[];
 extern const s16 data_020d7e58[];
 extern const u32 data_020cf9b8[];
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-u8 *Knife_Single_SinglePlay_GetInstance(void);
-int kukiSet(Entity *e);
-void ObjPosCopy(Entity *e, Entity *other);
-void ObjPosCopyOfs32(Entity *e, Entity *other, s32 a, s32 b);
-void cercleMoveC2(Entity *e);
-void openInit(Entity *e);
-void cercleMove2(Entity *e);
-void openEndSet(Entity *e);
-BOOL damagecheck(Entity *e);
-void flowerDie(Entity *e);
-void closeInit(Entity *e);
-void closeEndSet(Entity *e);
-Entity *EmGetAimPl(void);
-u8 func_02084fd0(Entity *e, Entity *target);
-void MoveDir(Entity *e);
-void seedSet(Entity *e);
-void differentColSet(Entity *e);
-void cercleMoveC(Entity *e);
-Entity *GetObjWork(void);
-Entity *GetObjWork2(void);
-void RegistObjWork(int list, Entity *e);
-void testiRupeeSet(Entity *e);
-void PutObjWork(Entity *e);
-void SoundReq(int sfx);
-Entity *GetTamaWork(int id);
 
-#ifdef __cplusplus
-}
-#endif
 
 #endif

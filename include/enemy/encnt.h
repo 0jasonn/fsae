@@ -24,7 +24,7 @@ typedef struct EncntState {
 extern EncntState data_02134b48;
 
 // One record per spawn slot (data_02134b60).
-typedef struct EncntEntry {
+typedef struct ENCNT_ { // original name ENCNT_
     u16 x;
     u16 y;
     u8 angle;
@@ -92,27 +92,11 @@ extern GridOrigin data_0212c648;
 extern u8 data_0212c500;
 extern void (*const data_020f29fc[])(void);
 
-u32 Random(void);
-u32 GetVgRemain(void);
-const u8 *GetInfoAdrs(u8 area, u8 kind);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-void Task_Chain(s32 a);
-Entity *GetEnemyWork(u8 id);
-void func_0208ae30(Entity *e);
 
-void nextset(void);
-BOOL area_check(u8 area);
-void encnt_setinit(void);
-void encnt_getpos(void);
-void encnt_move(void);
-void encnt_setem(void);
 void housha0(EncntEntry *e, u16 index);
 void housha0att(EncntEntry *e, u16 index);
 void nopos(EncntEntry *e, u16 index);
 void plbackinit(EncntEntry *e, u16 index);
 void plfrontinit(EncntEntry *e, u16 index);
-void EndingFinish(void);
-void EndingTask(void);
 
 #endif

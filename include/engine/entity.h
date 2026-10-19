@@ -12,11 +12,11 @@ typedef union FixedPoint {
     } HALF;
 } FixedPoint;
 
-typedef struct Entity Entity;
+typedef struct OBJ_WORK_ Entity; // original name OBJ_WORK_
 typedef void (*EntityFunc)(Entity *e);
 
 // Game object shared by the actor update functions. Field meanings are not known yet.
-typedef struct Entity {
+typedef struct OBJ_WORK_ {
     /* 00 */ u8 unk_00[8];
     /* 08 */ u8 unk_08;
     /* 09 */ u8 unk_09;
@@ -95,29 +95,5 @@ typedef struct Entity {
 // Accesses the actor-specific fields of an entity through the file's own struct
 #define VARS(type, e) ((type *)(e))
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-u32 Random(void); // random
-int func_020847a0(Entity *e);
-int func_020847c8(Entity *e);
-void func_02084700(Entity *e);
-void GenericKnockback(Entity *e, const void *funcs);
-void EnemyFunctionHandler(Entity *e, const void *funcs);
-u32 func_02084ac8(Entity *e, int a);
-Entity *func_02084f18(void);
-void func_020852ec(Entity *e);
-int UpdateGravity(Entity *e, int a);
-void UpdateAnimationSingleFrame(Entity *e);
-void InitAnimationForceUpdate(Entity *e, u8 anim);
-void EnqueueSFX(int sfx);
-int func_02086044(Entity *e, int a);
-void func_02086200(Entity *e, int a);
-Entity *EmGetAimPl(void);
-int GetFacingDirection(Entity *e, Entity *target);
-Entity *GetSetWork(int id, int a, int b);
-#ifdef __cplusplus
-}
-#endif
 
 #endif

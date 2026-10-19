@@ -57,17 +57,6 @@ typedef struct GameStateC {
 extern PlayerC data_0212ceb0[4];
 extern GameStateC data_0212c7c8;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-u32 func_020280e0(void);
-u8 *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void);
-void TelopRequest(int a);
-u16 get_time_bonus(void);
-#ifdef __cplusplus
-}
-#endif
 
 // Timer-like block written by time_bonus
 typedef struct TimerC {

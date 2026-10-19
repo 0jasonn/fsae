@@ -85,29 +85,9 @@ extern u8 data_0212c6c0[];          // list sentinel
 extern u16 data_0212c5bc;           // frame counter
 extern u16 data_0212c574[3];        // scroll arguments for ObjAffineSet2
 
-void moveInit(Entity *e);
-void ObjAffineSet2(u16 *pos, Entity *e);
-void func_02085f98(Entity *e, int id);
-void func_02085cf8(Entity *e);
-void func_02085d34(Entity *e);
-void func_0204be88(Entity *e);
-void plhikiyose(Entity *e);
-void breakSekichu(Entity *e);
-void damageCheck(Entity *e);
-void flowerTamaSet(Entity *e);
-void Enemy_SetSpriteFromTable(Entity *e);
-void func_02050390(Entity *child, Entity *e, int a, int b);
-void EnemyFunctionHandler(Entity *e, const void *funcs);
-void GenericKnockback(Entity *e, const void *funcs);
-Entity *func_0204bdb8(int kind);
 extern const u8 data_020d34d2[];
 extern const u8 data_020d34ca[];
 extern const u8 data_020d34da[];
-int setUde(Entity *e);
-Entity *GetObjWork(void);
-Entity *GetObjWork2(void);
-void RegistObjWork(int kind, Entity *e);
-u32 func_0208455c(u32 value);
 extern const u8 data_020f26c0[];
 extern const u32 data_020cf9b8[];
 extern const u8 data_020f26c3[];
@@ -143,28 +123,8 @@ typedef struct UnkStruct_02134b48 {
 extern UnkStruct_02134b48 data_02134b48;
 extern const u8 data_020f270c[];
 extern const u8 data_020f273c[];
-void func_02029a50(void *p, int size);
-void plbackinit(Entity *e);
-void plfrontinit(Entity *e);
-void housha0(Entity *e, int a);
 extern void (*const data_020d413c[])(void);
-void nextset(u8 *state);
 extern const void *data_020d35f4[];
-u8 func_02086080(s16 x, s16 y, s16 dx, s16 dy);
-void Enemy_StartScript(Entity *e);
-void honyaMove(Entity *e);
-void honyaGetInfo(Entity *e);
-void MoveDir(Entity *e);
-int UpdateGravity(Entity *e, int a);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-void EmBossDropRupee(Entity *e);
-int func_020860dc(Entity *e);
-int func_02083ca8(u16 cell, u16 key);
-int RewCell(int id, u16 cell, u16 key);
-Entity *ObjPosCopy(Entity *src, Entity *dst);
-Entity *EmGetTama(Entity *e, int kind, int flags);
-void func_020852f8(Entity *e, int dist, int direction);
 
 
 #endif

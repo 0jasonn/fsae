@@ -5,427 +5,427 @@
     .data       start:0x020df5a0 end:0x02127280 kind:data align:32
     .bss        start:0x02127280 end:0x021870c0 kind:bss align:32
 
-src/enemy/seqset.c:
+src/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108
 
-src/enemy/em1e.c:
+src/enemy/em1e.cpp:
     complete
     .text       start:0x020301f0 end:0x02030790
 
-src/enemy/em02.c:
+src/enemy/em02.cpp:
     complete
     .text       start:0x02030790 end:0x02030a14
 
-src/enemy/em2a.c:
+src/enemy/em2a.cpp:
     complete
     .text       start:0x02030a14 end:0x0203120c
 
-src/enemy/em2a_2.c:
+src/enemy/em2a_2.cpp:
     complete
     .text       start:0x02031304 end:0x02031cb0
 
-src/enemy/em2a_3.c:
+src/enemy/em2a_3.cpp:
     complete
     .text       start:0x0203224c end:0x02032edc
 
-src/enemy/em2b.c:
+src/enemy/em2b.cpp:
     complete
     .text       start:0x02032edc end:0x02033290
 
-src/enemy/em2c.c:
+src/enemy/em2c.cpp:
     complete
     .text       start:0x02033290 end:0x02033708
 
-src/enemy/em2c_2.c:
+src/enemy/em2c_2.cpp:
     complete
     .text       start:0x02033708 end:0x02033744
 
-src/enemy/em2c_3.c:
+src/enemy/em2c_3.cpp:
     complete
     .text       start:0x020337e4 end:0x020340a8
 
-src/enemy/em2c_4.c:
+src/enemy/em2c_4.cpp:
     complete
     .text       start:0x02034508 end:0x0203464c
 
-src/enemy/em2c_5.c:
+src/enemy/em2c_5.cpp:
     complete
     .text       start:0x02034730 end:0x020347dc
 
-src/enemy/em2d.c:
+src/enemy/em2d.cpp:
     complete
     .text       start:0x020347dc end:0x02035a8c
 
-src/enemy/em2d_2.c:
+src/enemy/em2d_2.cpp:
     complete
     .text       start:0x02035ba4 end:0x02035ff8
 
-src/enemy/em2d_3.c:
+src/enemy/em2d_3.cpp:
     complete
     .text       start:0x02036064 end:0x020361e8
 
-src/enemy/em2e.c:
+src/enemy/em2e.cpp:
     complete
     .text       start:0x020361e8 end:0x02036ca4
 
-src/enemy/em2f.c:
+src/enemy/em2f.cpp:
     complete
     .text       start:0x02036ca4 end:0x020379d8
 
-src/enemy/em2f_2.c:
+src/enemy/em2f_2.cpp:
     complete
     .text       start:0x02037a6c end:0x02037f6c
 
-src/enemy/em2f_3.c:
+src/enemy/em2f_3.cpp:
     complete
     .text       start:0x0203808c end:0x020382fc
 
-src/enemy/em2f_4.c:
+src/enemy/em2f_4.cpp:
     complete
     .text       start:0x020383bc end:0x02038414
 
-src/enemy/em2f_5.c:
+src/enemy/em2f_5.cpp:
     complete
     .text       start:0x02038460 end:0x02038544
 
-src/enemy/em03.c:
+src/enemy/em03.cpp:
     complete
     .text       start:0x02038544 end:0x020385cc
 
-src/enemy/em03_2.c:
+src/enemy/em03_2.cpp:
     complete
     .text       start:0x02038660 end:0x0203888c
 
-src/enemy/em04.c:
+src/enemy/em04.cpp:
     complete
     .text       start:0x02038a34 end:0x02038b68
 
-src/enemy/em04_2.c:
+src/enemy/em04_2.cpp:
     complete
     .text       start:0x02038b68 end:0x02038bbc
 
-src/enemy/em04_3.c:
+src/enemy/em04_3.cpp:
     complete
     .text       start:0x02038c58 end:0x02038ce8
 
-src/enemy/em05.c:
+src/enemy/em05.cpp:
     complete
     .text       start:0x02038da4 end:0x02038ee8
 
-src/enemy/em05_2.c:
+src/enemy/em05_2.cpp:
     complete
     .text       start:0x02038ee8 end:0x02038f3c
 
-src/enemy/em05_3.c:
+src/enemy/em05_3.cpp:
     complete
     .text       start:0x0203901c end:0x02039074
 
-src/enemy/em05_4.c:
+src/enemy/em05_4.cpp:
     complete
     .text       start:0x02039074 end:0x02039e8c
 
-src/enemy/em09.c:
+src/enemy/em09.cpp:
     complete
     .text       start:0x02039ed4 end:0x0203a75c
 
-src/enemy/em09_2.c:
+src/enemy/em09_2.cpp:
     complete
     .text       start:0x0203a8bc end:0x0203ab78
 
-src/enemy/em10.c:
+src/enemy/em10.cpp:
     complete
     .text       start:0x0203ab78 end:0x0203af20
 
-src/enemy/em11.c:
+src/enemy/em11.cpp:
     complete
     .text       start:0x0203b02c end:0x0203b384
 
-src/enemy/em12.c:
+src/enemy/em12.cpp:
     complete
     .text       start:0x0203b434 end:0x0203b594
 
-src/enemy/em12_2.c:
+src/enemy/em12_2.cpp:
     complete
     .text       start:0x0203b638 end:0x0203bca4
 
-src/enemy/em24.c:
+src/enemy/em24.cpp:
     complete
     .text       start:0x0204001c end:0x020404f4
 
-src/enemy/em25.c:
+src/enemy/em25.cpp:
     complete
     .text       start:0x02040548 end:0x020407c8
 
-src/enemy/em26.c:
+src/enemy/em26.cpp:
     complete
     .text       start:0x020407c8 end:0x020408ac
 
-src/enemy/em26_2.c:
+src/enemy/em26_2.cpp:
     complete
     .text       start:0x02040ad8 end:0x02040be0
 
-src/enemy/em26_3.c:
+src/enemy/em26_3.cpp:
     complete
     .text       start:0x02040d00 end:0x02040d60
 
-src/enemy/em27.c:
+src/enemy/em27.cpp:
     complete
     .text       start:0x02040dcc end:0x02040e44
 
-src/enemy/em27_2.c:
+src/enemy/em27_2.cpp:
     complete
     .text       start:0x02040e94 end:0x02040f34
 
-src/enemy/em28.c:
+src/enemy/em28.cpp:
     complete
     .text       start:0x02041064 end:0x0204112c
 
-src/enemy/em28_2.c:
+src/enemy/em28_2.cpp:
     complete
     .text       start:0x0204112c end:0x02041244
 
-src/enemy/em28_3.c:
+src/enemy/em28_3.cpp:
     complete
     .text       start:0x02041344 end:0x02041498
 
-src/enemy/em28_4.c:
+src/enemy/em28_4.cpp:
     complete
     .text       start:0x02041774 end:0x020417e8
 
-src/enemy/em29.c:
+src/enemy/em29.cpp:
     complete
     .text       start:0x020417e8 end:0x0204198c
 
-src/enemy/em29_2.c:
+src/enemy/em29_2.cpp:
     complete
     .text       start:0x0204198c end:0x02041a3c
 
-src/enemy/em29_3.c:
+src/enemy/em29_3.cpp:
     complete
     .text       start:0x02041a3c end:0x02042044
 
-src/enemy/em30.c:
+src/enemy/em30.cpp:
     complete
     .text       start:0x020421f8 end:0x02042318
 
-src/enemy/em30_2.c:
+src/enemy/em30_2.cpp:
     complete
     .text       start:0x02042318 end:0x02042424
 
-src/enemy/em30_3.c:
+src/enemy/em30_3.cpp:
     complete
     .text       start:0x02042424 end:0x020426e0
 
-src/enemy/em30_4.c:
+src/enemy/em30_4.cpp:
     complete
     .text       start:0x02042798 end:0x02042818
 
-src/enemy/em30_5.c:
+src/enemy/em30_5.cpp:
     complete
     .text       start:0x02042818 end:0x0204294c
 
-src/enemy/em30_6.c:
+src/enemy/em30_6.cpp:
     complete
     .text       start:0x0204294c end:0x020429c8
 
-src/enemy/em30_7.c:
+src/enemy/em30_7.cpp:
     complete
     .text       start:0x020429c8 end:0x02042abc
 
-src/enemy/em30_8.c:
+src/enemy/em30_8.cpp:
     complete
     .text       start:0x02042c18 end:0x02042dc8
 
-src/enemy/em30_9.c:
+src/enemy/em30_9.cpp:
     complete
     .text       start:0x02042f30 end:0x020432dc
 
-src/enemy/em31.c:
+src/enemy/em31.cpp:
     complete
     .text       start:0x020433dc end:0x02043428
 
-src/enemy/encnt.c:
+src/enemy/encnt.cpp:
     complete
     .text       start:0x0204361c end:0x0204363c
 
-src/enemy/encnt_2.c:
+src/enemy/encnt_2.cpp:
     complete
     .text       start:0x0204370c end:0x02043760
 
-src/enemy/encnt_3.c:
+src/enemy/encnt_3.cpp:
     complete
     .text       start:0x02043760 end:0x020438b4
 
-src/enemy/encnt_4.c:
+src/enemy/encnt_4.cpp:
     complete
     .text       start:0x02043b54 end:0x02043bf8
 
-src/enemy/encnt_5.c:
+src/enemy/encnt_5.cpp:
     complete
     .text       start:0x02043cb8 end:0x02043d28
 
-src/enemy/encnt_6.c:
+src/enemy/encnt_6.cpp:
     complete
     .text       start:0x02043da8 end:0x02043dc8
 
-src/enemy/encnt_7.c:
+src/enemy/encnt_7.cpp:
     complete
     .text       start:0x02043f00 end:0x02043f70
 
-src/enemy/ending.c:
+src/enemy/ending.cpp:
     complete
     .text       start:0x02044324 end:0x020443a0
 
-src/game/warp.c:
+src/game/warp.cpp:
     complete
     .text       start:0x02048264 end:0x020483f8
 
-src/game/rank.c:
+src/game/rank.cpp:
     complete
     .text       start:0x02049020 end:0x020490d8
 
-src/game/stage.c:
+src/game/stage.cpp:
     complete
     .text       start:0x020493e0 end:0x02049454
 
-src/game/bgm.c:
+src/game/bgm.cpp:
     complete
     .text       start:0x020497e4 end:0x020499c8
 
-src/engine/irq.c:
+src/engine/irq.cpp:
     complete
     .text       start:0x020499c8 end:0x02049a94
 
-src/engine/irq_2.c:
+src/engine/irq_2.cpp:
     complete
     .text       start:0x02049bd8 end:0x02049cdc
 
-src/game/message.c:
+src/game/message.cpp:
     complete
     .text       start:0x02049ea8 end:0x02049f38
 
-src/game/message_2.c:
+src/game/message_2.cpp:
     complete
     .text       start:0x02049f38 end:0x0204a048
     .rodata     start:0x020d7c50 end:0x020d7c60
 
-src/game/message_3.c:
+src/game/message_3.cpp:
     complete
     .text       start:0x0204a048 end:0x0204a110
 
-src/game/message_4.c:
+src/game/message_4.cpp:
     complete
     .text       start:0x0204a110 end:0x0204a250
 
-src/game/message_5.c:
+src/game/message_5.cpp:
     complete
     .text       start:0x0204a250 end:0x0204a258
 
-src/game/message_6.c:
+src/game/message_6.cpp:
     complete
     .text       start:0x0204a370 end:0x0204a4b4
 
-src/game/message_7.c:
+src/game/message_7.cpp:
     complete
     .text       start:0x0204a4b4 end:0x0204a5bc
 
-src/game/message_8.c:
+src/game/message_8.cpp:
     complete
     .text       start:0x0204a5bc end:0x0204a61c
 
-src/game/message_9.c:
+src/game/message_9.cpp:
     complete
     .text       start:0x0204a61c end:0x0204a624
 
-src/game/message_10.c:
+src/game/message_10.cpp:
     complete
     .text       start:0x0204aa00 end:0x0204aa84
 
-src/engine/objutil.c:
+src/engine/objutil.cpp:
     complete
     .text       start:0x020502e0 end:0x02050504
 
-src/engine/objutil_2.c:
+src/engine/objutil_2.cpp:
     complete
     .text       start:0x0205063c end:0x0205069c
 
-src/engine/objutil_3.c:
+src/engine/objutil_3.cpp:
     complete
     .text       start:0x02050840 end:0x02050880
 
-src/game/opening.c:
+src/game/opening.cpp:
     complete
     .text       start:0x02050910 end:0x02050ac4
 
-src/game/opening_2.c:
+src/game/opening_2.cpp:
     complete
     .text       start:0x02050b08 end:0x0205114c
 
-src/game/opdemo.c:
+src/game/opdemo.cpp:
     complete
     .text       start:0x0205193c end:0x02051994
 
-src/game/opdemo_2.c:
+src/game/opdemo_2.cpp:
     complete
     .text       start:0x02051b24 end:0x02051d84
 
-src/game/opdemo_3.c:
+src/game/opdemo_3.cpp:
     complete
     .text       start:0x02052688 end:0x020527f0
 
-src/game/title.c:
+src/game/title.cpp:
     complete
     .text       start:0x020529fc end:0x02052a80
 
-src/game/title_2.c:
+src/game/title_2.cpp:
     complete
     .text       start:0x020531c8 end:0x02053428
 
-src/game/stageinit.c:
+src/game/stageinit.cpp:
     complete
     .text       start:0x02053428 end:0x020535fc
 
-src/game/stageinit_2.c:
+src/game/stageinit_2.cpp:
     complete
     .text       start:0x020537bc end:0x02053ab8
 
-src/game/pause.c:
+src/game/pause.cpp:
     complete
     .text       start:0x02053bc8 end:0x02053c6c
 
-src/game/pause_2.c:
+src/game/pause_2.cpp:
     complete
     .text       start:0x02053ebc end:0x02053f14
 
-src/game/pause_3.c:
+src/game/pause_3.cpp:
     complete
     .text       start:0x02054340 end:0x020543ac
 
-src/game/pause_4.c:
+src/game/pause_4.cpp:
     complete
     .text       start:0x02054510 end:0x02054788
 
-src/game/player.c:
+src/game/player.cpp:
     complete
     .text       start:0x020547ec end:0x02054894
 
-src/game/player_2.c:
+src/game/player_2.cpp:
     complete
     .text       start:0x02054a44 end:0x02054b64
 
-src/game/player_3.c:
+src/game/player_3.cpp:
     complete
     .text       start:0x02054c04 end:0x02054c4c
 
-src/game/player_4.c:
+src/game/player_4.cpp:
     complete
     .text       start:0x02054c4c end:0x02054ddc
 
-src/game/player_5.c:
+src/game/player_5.cpp:
     complete
     .text       start:0x02054f30 end:0x02054f64
 
-src/game/ranking.c:
+src/game/ranking.cpp:
     complete
     .text       start:0x02055170 end:0x02055194

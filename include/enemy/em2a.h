@@ -47,42 +47,5 @@ extern const u8 data_020d0a4a[];
 extern const u16 data_020d0a5a[];
 extern const s8 data_020d0ab2[];
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-Entity *GetEnemyWork(int id);
-void PutObjWork(Entity *e);
-void MoveDir(Entity *e);
-void CockpitOn(void);
-void CockpitOff(void);
-void BindPlayers(void);
-void EmDie(Entity *e);
-void EmDivPosSet(Entity *e, Entity *a, Entity *b);
-void YureSet(int a, int b);
-void em2a_core(Entity *e);
-void jumpefectSet(Entity *e);
-void bigjumpinit(Entity *e);
-void lifeset(Entity *e);
-void em2a_ruppyset(Entity *e);
-void coreSync(Entity *e);
-void coreSet(Entity *e);
-void move3Init(Entity *e);
-u8 em2a_areaCheck(Entity *e);
-u8 move3search(Entity *e);
-void flashcheck(Entity *e);
-void PutObjColor(int a);
-u32 GetObjColor(int a);
-void GetVGroup(Entity *e, int a);
-void PutVGroup(Entity *e);
-void func_02030ae4(int index);
-void efectset(Entity *e);
-void SoundReq(int sfx);
-u8 CalculateDirectionTo(s16 x, s16 y, s16 tx, s16 ty);
-u8 func_02086078(Entity *target, Entity *e);
-void nearplcheck(Entity *e);
-void shadowmoveset(Entity *e);
-#ifdef __cplusplus
-}
-#endif
 
 #endif

@@ -54,42 +54,6 @@ extern const EntityFunc data_020d1e14[];
 extern const EntityFunc data_020d1e2c[];
 extern const s8 data_020d1cbc[];
 
-void em08_seqSet(Entity *e, int a);
-void tenka(Entity *e);
-void searchCandle(Entity *e);
-int purupuru(Entity *e);
-void piyoriSet(Entity *e);
-void Em09(Entity *e);
-void em09_normal(Entity *e);
-void type2Move(Entity *e);
-void em09_damage(Entity *e);
-void em09_init(Entity *e);
-void em09_wait(Entity *e);
-void em09_appear(Entity *e);
-void em09_move(Entity *e);
-void em09_kuttsuki(Entity *e);
-void em09_wait2(Entity *e);
-void em09_type2_init(Entity *e);
-void em09_type2_move(Entity *e);
-void em09_seqSet(Entity *e);
-void seqMove(Entity *e);
-void kuttsukiReset(Entity *e);
-void em09_kuttsuki_reset(Entity *e);
-void Boss_RunStateTable(Entity *e);
-void em10_normal(Entity *e);
-void em10_damage(Entity *e);
-void em10_init(Entity *e);
-void Boss_NoOp(Entity *e);
-void em10_awake(Entity *e);
-void em10_move(Entity *e);
-void em10_endmove0(Entity *e);
-void em10_endmove1(Entity *e);
-void em10_sleep(Entity *e);
-void attset(Entity *e);
-void attreset(Entity *e);
-int poscheck(Entity *e);
-void nextendmoveset(Entity *e);
-void sleepSet(Entity *e);
 
 typedef struct UnkStruct_0212c648 {
     /* 00 */ u8 unk_00[0x18];
@@ -97,26 +61,10 @@ typedef struct UnkStruct_0212c648 {
     /* 1a */ u16 unk_1a;
 } UnkStruct_0212c648;
 extern UnkStruct_0212c648 data_0212c648;
-int GetBgBuffAdrs(int a);
 extern const u16 data_020d1eb8[];
 extern const EntityFunc data_020d2044[];
 extern const EntityFunc data_020d205c[];
 extern const u8 data_020d2000[];
-void em11_waitSet(Entity *e);
-void dirSet(Entity *e);
-void Boss_RunStateTableB(Entity *e);
-void em11_normal(Entity *e);
-void Boss_GenericKnockbackB(Entity *e);
-void em11_init(Entity *e);
-void em11_wait(Entity *e);
-void em11_look(Entity *e);
-void em11_tame(Entity *e);
-void em11_jump(Entity *e);
-void em11_land(Entity *e);
-void Boss_RunStateTableC(Entity *e);
-void em12_normal(Entity *e);
-void em12_damage(Entity *e);
-int func_020856cc(Entity *e, int a);
 extern const u8 data_020d1ff4[];
 extern const EntityFunc data_020d21dc[];
 extern const EntityFunc data_020d215c[];
@@ -145,24 +93,6 @@ typedef struct Vars_ParentWord {
 } Vars_ParentWord;
 #define VPW(e) VARS(Vars_ParentWord, e)
 
-Entity *GetEnemyWork(int id);
-void func_02084788(Entity *e);
-u8 func_02084fd0(Entity *e, Entity *target);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-u8 *Knife_Single_SinglePlay_GetInstance(void);
-void func_0208919c(void);
-void AddRupee(Entity *a, int b);
-void ObjPosCopyOfs32(Entity *e, Entity *target, int a, int b);
-void SoundReq(int sfx);
-void PutObjWork(Entity *e);
-u8 EmCharDir2(int dir);
 
-int func_02083c75_unk(Entity *e, int a, int b);
-void KemuriSet(Entity *e);
-void func_020859e0(Entity *e, int a);
-void func_02084ab8(Entity *e, Entity *other);
-Entity *func_020849c8(Entity *e);
-u8 func_02084a30(Entity *e);
 
 #endif

@@ -3,6 +3,9 @@
 set -e
 cd "$(dirname "$0")/.."
 python tools/configure.py eur > /dev/null
+# Compile first (linking may fail on new C++ names), give symbols.txt the mangled names, then build for real.
+PATH=/c/tools/bin:$PATH ninja -k 0 > scratch/ninja.log 2>&1 || true
+python tools/cxx_symbols.py | grep -v "^MISSING plain data_" || true
 PATH=/c/tools/bin:$PATH ninja > scratch/ninja.log 2>&1 || { grep -iE "error|undefined|FAILED" scratch/ninja.log | head -20; exit 1; }
 grep -q "fsae_eur.nds: OK" scratch/ninja.log || { echo "ROM does not match"; exit 1; }
 python tools/stage_integrated.py

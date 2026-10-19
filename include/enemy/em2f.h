@@ -48,50 +48,5 @@ extern const u16 *const data_020d1448[];
 extern const u16 *const data_020d1474[];
 extern const u8 data_020d1432[][2];
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-void BindPlayers(void);
-void func_0208ae30(Entity *e);
-void SoundReq(int sfx);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-void BikkuriSet(Entity *e, int a, int b);
-void MakeFadeBuff256(int a);
-void GufuFuyusnd(Entity *e);
-void MessageRequest(int a);
-void Status_ArmIfEnabled(void);
-void MapLoad(const void *a, int b);
-void FadeSet(int a, int b);
-Entity *GetTamaWork(int id);
-void ObjPosCopy(Entity *e, Entity *other);
-u8 CalculateDirectionTo(s16 x, s16 y, s16 tx, s16 ty);
-u8 *Knife_Single_SinglePlay_GetInstance(void);
-void Scene_ClearFlag5(void);
-void CockpitOn(void);
-void MoveDir(Entity *e);
-void nextSet(Entity *e);
-BOOL setTsubomi(Entity *e);
-void tsubomiCloseWaitSet(Entity *e);
-int gufuVitalCheck(Entity *e);
-void getTsubomiMoveInfo(Entity *e);
-int tblMove(Entity *e);
-void stormGetTama(Entity *e);
-void stormMove(Entity *e);
-void getStormMoveInfo(Entity *e);
-void SetDisp(Entity *e, int a, int b, int c);
-void getFiveMoveInfo(Entity *e);
-void Scene_SetFlag5(void);
-void func_020899e4(Entity *e);
-void gufuBindPls(void);
-void CockpitOff(void);
-Entity *GetObjWork(void);
-Entity *GetObjWork2(void);
-void RegistObjWork(int list, Entity *e);
-void func_02086200(Entity *e, int a);
-BOOL func_02084670(const u8 *bits, int index);
-#ifdef __cplusplus
-}
-#endif
 
 #endif

@@ -43,23 +43,6 @@ extern const u8 data_020d0f02[];
 extern s32 data_021348b8[];
 extern s32 data_021348b4;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-void PutObjWork(Entity *e);
-Entity *GetEnemyWork(int id);
-void MoveDir(Entity *e);
-void ObjHippariCheck(Entity *e);
-void ObjPosCopyOfs32(Entity *e, Entity *other, s32 a, s32 b);
-void em2c_leverMove(Entity *e);
-void func_02085d78(Entity *e);
-void func_02089524(Entity *e);
-void em2c_setdist(Entity *e);
-void *KnifeApp_getInstance(void);
-int KnifeApp_isWirelessMode(void *a);
-#ifdef __cplusplus
-}
-#endif
 
 typedef struct Vars_Chain {
     /* 00 */ u8 unk_00[0x70];
@@ -77,17 +60,5 @@ typedef struct Vars_Controller {
 #define VCT(e) VARS(Vars_Controller, e)
 
 extern const s16 data_020d7e58[];
-#ifdef __cplusplus
-extern "C" {
-#endif
-Entity *GetObjWork(void);
-Entity *GetObjWork2(void);
-void RegistObjWork(int list, Entity *e);
-void ObjPosCopy(Entity *e, Entity *other);
-u8 func_02086220(s16 dx, s16 dy);
-void kukiRangeSet(Entity *e, Entity *target, u16 dist);
-#ifdef __cplusplus
-}
-#endif
 
 #endif

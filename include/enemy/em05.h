@@ -27,25 +27,7 @@ typedef struct Vars_Target {
     /* 62 */ u16 pieceCount;
 } Vars_Target;
 
-void em05DirChange(Entity *e);
-void explodeSet(Entity *e);
-void em08_seqSet(Entity *e, int a);
 
-void func_0208ae30(Entity *e);
-void func_020847f8(Entity *e);
-int func_020847b0(Entity *e);
-Entity *GetTamaWork(int id);
-void ObjPosCopy(Entity *e, Entity *other);
-Entity *GetEnemyWork(int id);
-void PutObjWork(Entity *e);
-void EmDivPosSet(Entity *e, Entity *a, Entity *b);
-void tenka(Entity *e);
-void searchCandle(Entity *e);
-int purupuru(Entity *e);
-void piyoriSet(Entity *e);
-void func_02084788(Entity *e);
-void func_02085a60(Entity *e, u16 a);
-void func_02089524(Entity *e);
 
 extern const EntityFunc data_020d1b94[];
 extern const EntityFunc data_020d1b84[];
