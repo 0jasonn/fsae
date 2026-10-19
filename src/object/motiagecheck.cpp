@@ -25,7 +25,7 @@ ARM int motiagecheck(Entity *e) {
     s32 mask;
     s32 count;
     mask = func_02084110();
-    count = func_02084600();
+    count = CountBits(mask);
     MOTIA_CHECK_PLAYER(0, 0x1)
     MOTIA_CHECK_PLAYER(1, 0x2)
     MOTIA_CHECK_PLAYER(2, 0x4)

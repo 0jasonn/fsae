@@ -472,4 +472,6 @@ void type2Move(Entity *e);
 void yukaRewCell(Entity *e);
 
 u8 ItemRegist(u8 type);
+u32 CountBits(u32 bits); // number of set bits (thumb, 0x02084600)
+s32 func_02085024(Entity *e, const u16 *entry, u8 area); // thumb
 #endif

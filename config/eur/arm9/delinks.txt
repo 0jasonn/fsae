@@ -798,6 +798,18 @@ src/object/set6b_2.cpp:
     complete
     .text       start:0x020613b4 end:0x02061494
 
+src/object/set07.cpp:
+    complete
+    .text       start:0x02061494 end:0x020614b0
+
+src/object/set07_2.cpp:
+    complete
+    .text       start:0x020617e4 end:0x02061818
+
+src/object/set07_3.cpp:
+    complete
+    .text       start:0x02061b88 end:0x02061be8
+
 src/object/set08.cpp:
     complete
     .text       start:0x02061be8 end:0x02061d0c
@@ -805,6 +817,30 @@ src/object/set08.cpp:
 src/object/door.cpp:
     complete
     .text       start:0x02061dc4 end:0x02061e44
+
+src/object/set09.cpp:
+    complete
+    .text       start:0x02062bb8 end:0x02062bd4
+
+src/object/set09_2.cpp:
+    complete
+    .text       start:0x02062ce4 end:0x02062e30
+
+src/object/setenemy.cpp:
+    complete
+    .text       start:0x02062f24 end:0x02062fcc
+
+src/object/rader.cpp:
+    complete
+    .text       start:0x0206305c end:0x020630cc
+
+src/object/rader_2.cpp:
+    complete
+    .text       start:0x02063400 end:0x02063450
+
+src/object/set11.cpp:
+    complete
+    .text       start:0x020635bc end:0x020635d8
 
 src/game/oplogo.cpp:
     complete
