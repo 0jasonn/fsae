@@ -16,3 +16,14 @@ per commit, ROM SHA1 verified.
   Entity 0x70..0x72 used as parent flags / direction step by several actors in 0x0204xxxx.
 - PlayerData byte at 0x05 (flag read by Entity_UpdateSubActionFromPlayers).
 - Function prefixes `Boss_` / `Enemy_` are generic and should become actor names once actors are identified.
+
+## Round 3 proposals (not applied yet)
+
+- `Entity.spriteSettings`: split `b8:6` into `b8:2` + `b10:4` (B, func_020417e8 writes bits 8-9 only); split `b2:2` into two 1-bit fields (C, func_02049dac copies bits 2 and 3 separately).
+- `Entity` 0x2c `unk_2c` -> `probeFlags` (A, func_02039f24 tests 0xe/0xe0/0xe00/0xe000 before wall probes).
+- `Entity` 0x64 -> `Entity *target` (B, func_02041f48); 0x3d `iframes` is read signed (B, D).
+- `PlayerData` 0x2c -> `Entity *shadow`, 0x0f -> `shadowFlags` (C, func_02049cdc/func_02049dac); 0x36 is a u16 flags word (A, B: bits 0x2, 0x10, 0x100); 0x05 blocks targeting (B).
+- `UnkStruct_0212c7c8`: unk_0 is the player count (A, B, D); +0x48 `trackIndex` (C); +0x8e track variant, struct must grow to >= 0x8f (A).
+- `data_0212c648`: u16 grid origin at +0x18/+0x1a (A, B), Entity* camera target at +0 (D).
+- `data_02104a20` is RAM, not const (D). `data_0211474c` is used as both a function table and a struct (D, needs checking).
+- New blocks seen: data_02134b48 (B), data_02134980, data_02134d3c (D), data_0217d36c/84/9c, data_0217d484, data_0216efbc, data_0210389c, data_0212c67c (C). Details in the implementers' file-local types.
