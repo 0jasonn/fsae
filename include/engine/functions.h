@@ -292,7 +292,6 @@ void func_02040e18(Entity *e);
 void func_02040f20(Entity *e);
 void ObjWorkPoolClear(void);
 Entity *func_0204bdb8(int kind);
-void func_0204be88(Entity *e);
 void func_0204f978(void);
 void ScriptJump(NPC_WORK_ *npc, const void *script);
 void func_02050390(Entity *child, Entity *e, int a, int b);

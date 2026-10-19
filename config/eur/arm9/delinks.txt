@@ -473,3 +473,71 @@ src/game/player_5.cpp:
 src/game/ranking.cpp:
     complete
     .text       start:0x02055170 end:0x02055194
+
+src/game/ranking_2.cpp:
+    complete
+    .text       start:0x020552c0 end:0x02055328
+
+src/game/ranking_3.cpp:
+    complete
+    .text       start:0x020554c8 end:0x020556c0
+
+src/game/ranking_4.cpp:
+    complete
+    .text       start:0x0205610c end:0x02056120
+
+src/game/backup.cpp:
+    complete
+    .text       start:0x02056120 end:0x020561d0
+
+src/game/backup_6.cpp:
+    complete
+    .text       start:0x02056564 end:0x0205657c
+
+src/game/backup_2.cpp:
+    complete
+    .text       start:0x020565e8 end:0x0205663c
+
+src/game/backup_5.cpp:
+    complete
+    .text       start:0x02056998 end:0x020569cc
+
+src/game/backup_3.cpp:
+    complete
+    .text       start:0x02056b40 end:0x02056b74
+
+src/game/backup_7.cpp:
+    complete
+    .text       start:0x02056d00 end:0x02056d44
+
+src/game/backup_8.cpp:
+    complete
+    .text       start:0x02056ddc end:0x02056e1c
+
+src/game/backup_4.cpp:
+    complete
+    .text       start:0x02056e1c end:0x02056ef0
+
+src/engine/scr.cpp:
+    complete
+    .text       start:0x02056ef0 end:0x02056f4c
+
+src/engine/scr_2.cpp:
+    complete
+    .text       start:0x0205747c end:0x02057494
+
+src/object/set.cpp:
+    complete
+    .text       start:0x02057ca8 end:0x02057cec
+
+src/object/set_2.cpp:
+    complete
+    .text       start:0x02057e4c end:0x02057e74
+
+src/object/set_3.cpp:
+    complete
+    .text       start:0x02057ef4 end:0x02057f40
+
+src/object/set_4.cpp:
+    complete
+    .text       start:0x02057fcc end:0x02058008
