@@ -805,3 +805,47 @@ src/object/set08.cpp:
 src/object/door.cpp:
     complete
     .text       start:0x02061dc4 end:0x02061e44
+
+src/game/oplogo.cpp:
+    complete
+    .text       start:0x02068044 end:0x020682ac
+
+src/game/oplogo_2.cpp:
+    complete
+    .text       start:0x02068314 end:0x02068428
+
+src/game/oplogo_3.cpp:
+    complete
+    .text       start:0x02068494 end:0x02068714
+
+src/game/oplogo_4.cpp:
+    complete
+    .text       start:0x020687dc end:0x0206884c
+
+src/game/oplogo_5.cpp:
+    complete
+    .text       start:0x020688d8 end:0x020688f4
+
+src/object/set29.cpp:
+    complete
+    .text       start:0x02068bd8 end:0x02068bf4
+
+src/object/set29_2.cpp:
+    complete
+    .text       start:0x02068d04 end:0x02068dd0
+
+src/object/set30.cpp:
+    complete
+    .text       start:0x02068dd0 end:0x02068e18
+
+src/object/motiagecheck.cpp:
+    complete
+    .text       start:0x020690a0 end:0x02069270
+
+src/object/door_silver.cpp:
+    complete
+    .text       start:0x02069270 end:0x020692a8
+
+src/object/door_silver_2.cpp:
+    complete
+    .text       start:0x0206930c end:0x02069378
