@@ -538,6 +538,10 @@ src/game/backup.cpp:
     complete
     .text       start:0x02056120 end:0x020561d0
 
+src/game/backup_9.cpp:
+    complete
+    .text       start:0x02056478 end:0x020564e4
+
 src/game/backup_6.cpp:
     complete
     .text       start:0x02056564 end:0x0205657c
@@ -546,6 +550,10 @@ src/game/backup_2.cpp:
     complete
     .text       start:0x020565e8 end:0x0205663c
 
+src/game/backup_10.cpp:
+    complete
+    .text       start:0x0205663c end:0x020566dc
+
 src/game/backup_5.cpp:
     complete
     .text       start:0x02056998 end:0x020569cc
@@ -553,6 +561,10 @@ src/game/backup_5.cpp:
 src/game/backup_3.cpp:
     complete
     .text       start:0x02056b40 end:0x02056b74
+
+src/game/backup_13.cpp:
+    complete
+    .text       start:0x02056c7c end:0x02056d00
 
 src/game/backup_7.cpp:
     complete
@@ -570,13 +582,29 @@ src/engine/scr.cpp:
     complete
     .text       start:0x02056ef0 end:0x02056f4c
 
+src/engine/scr_3.cpp:
+    complete
+    .text       start:0x020572b4 end:0x02057344
+
 src/engine/scr_2.cpp:
     complete
     .text       start:0x0205747c end:0x02057494
 
+src/object/setmove.cpp:
+    complete
+    .text       start:0x02057568 end:0x02057614
+
+src/object/set0a.cpp:
+    complete
+    .text       start:0x02057c64 end:0x02057ca8
+
 src/object/set.cpp:
     complete
     .text       start:0x02057ca8 end:0x02057cec
+
+src/object/set0a_2.cpp:
+    complete
+    .text       start:0x02057cec end:0x02057e4c
 
 src/object/set_2.cpp:
     complete
@@ -585,6 +613,10 @@ src/object/set_2.cpp:
 src/object/set_3.cpp:
     complete
     .text       start:0x02057ef4 end:0x02057f40
+
+src/object/set0b.cpp:
+    complete
+    .text       start:0x02057f40 end:0x02057fcc
 
 src/object/set_4.cpp:
     complete
