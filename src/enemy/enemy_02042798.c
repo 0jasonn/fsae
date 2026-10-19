@@ -17,11 +17,11 @@ ARM void Enemy_SelectActionFromParentBit(Entity *e) {
     }
 }
 
-// Enemy_FinishOnFlagWithTimer (0x020427d4): on an odd frame, finishes when func_02042cc8 succeeds and starts
+// Enemy_FinishOnFlagWithTimer (0x020427d4): on an odd frame, finishes when Enemy_SpawnPartPairWithSfx succeeds and starts
 // a 0x12c-frame delay.
 ARM void Enemy_FinishOnFlagWithTimer(Entity *e) {
     if (e->frame & 1) {
-        if (func_02042cc8(e) == 0) {
+        if (Enemy_SpawnPartPairWithSfx(e) == 0) {
             return;
         }
         e->action = 0xb;

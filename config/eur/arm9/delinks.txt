@@ -125,6 +125,22 @@ src/boss/boss_02039074.c:
     complete
     .text       start:0x02039074 end:0x02039e8c
 
+src/boss/boss_02039ed4.c:
+    complete
+    .text       start:0x02039ed4 end:0x0203a75c
+
+src/boss/boss_0203a8bc.c:
+    complete
+    .text       start:0x0203a8bc end:0x0203ab78
+
+src/boss/boss_0203ab78.c:
+    complete
+    .text       start:0x0203ab78 end:0x0203af20
+
+src/boss/boss_0203b02c.c:
+    complete
+    .text       start:0x0203b02c end:0x0203b384
+
 src/enemy/enemy_0204001c.c:
     complete
     .text       start:0x0204001c end:0x020404f4
@@ -169,13 +185,25 @@ src/enemy/enemy_02041774.c:
     complete
     .text       start:0x02041774 end:0x020417e8
 
+src/enemy/enemy_020417e8.c:
+    complete
+    .text       start:0x020417e8 end:0x0204198c
+
 src/enemy/enemy_0204198c.c:
     complete
     .text       start:0x0204198c end:0x02041a3c
 
+src/enemy/enemy_02041a3c.c:
+    complete
+    .text       start:0x02041a3c end:0x02042044
+
 src/enemy/enemy_020421f8.c:
     complete
     .text       start:0x020421f8 end:0x02042318
+
+src/enemy/enemy_02042318.c:
+    complete
+    .text       start:0x02042318 end:0x02042424
 
 src/enemy/enemy_02042424.c:
     complete
@@ -185,9 +213,41 @@ src/enemy/enemy_02042798.c:
     complete
     .text       start:0x02042798 end:0x02042818
 
+src/enemy/enemy_02042818.c:
+    complete
+    .text       start:0x02042818 end:0x0204294c
+
 src/enemy/enemy_0204294c.c:
     complete
     .text       start:0x0204294c end:0x020429c8
+
+src/enemy/enemy_020429c8.c:
+    complete
+    .text       start:0x020429c8 end:0x02042abc
+
+src/enemy/enemy_02042c18.c:
+    complete
+    .text       start:0x02042c18 end:0x02042dc8
+
+src/enemy/enemy_02042f30.c:
+    complete
+    .text       start:0x02042f30 end:0x020432dc
+
+src/enemy/enemy_020433dc.c:
+    complete
+    .text       start:0x020433dc end:0x02043428
+
+src/enemy/enemy_0204361c.c:
+    complete
+    .text       start:0x0204361c end:0x0204363c
+
+src/enemy/enemy_0204370c.c:
+    complete
+    .text       start:0x0204370c end:0x02043760
+
+src/enemy/enemy_02043cb8.c:
+    complete
+    .text       start:0x02043cb8 end:0x02043d28
 
 src/game/state_02048264.c:
     complete
@@ -204,6 +264,34 @@ src/game/state_020493e0.c:
 src/game/state_020497e4.c:
     complete
     .text       start:0x020497e4 end:0x020499c8
+
+src/engine/system_020499c8.c:
+    complete
+    .text       start:0x020499c8 end:0x02049a94
+
+src/engine/system_02049bd8.c:
+    complete
+    .text       start:0x02049bd8 end:0x02049cdc
+
+src/engine/system_02049ea8.c:
+    complete
+    .text       start:0x02049ea8 end:0x02049f38
+
+src/engine/system_0204a048.c:
+    complete
+    .text       start:0x0204a048 end:0x0204a110
+
+src/engine/system_0204a250.c:
+    complete
+    .text       start:0x0204a250 end:0x0204a258
+
+src/engine/system_0204a4b4.c:
+    complete
+    .text       start:0x0204a4b4 end:0x0204a5bc
+
+src/engine/system_0204a5e8.c:
+    complete
+    .text       start:0x0204a61c end:0x0204a624
 
 src/engine/misc_020502e0.c:
     complete
@@ -228,3 +316,31 @@ src/engine/misc_02050b08.c:
 src/engine/misc_0205193c.c:
     complete
     .text       start:0x0205193c end:0x02051994
+
+src/game/scene_02051b24.c:
+    complete
+    .text       start:0x02051b24 end:0x02051d84
+
+src/game/scene_02052688.c:
+    complete
+    .text       start:0x02052688 end:0x020527f0
+
+src/game/scene_020529fc.c:
+    complete
+    .text       start:0x020529fc end:0x02052a80
+
+src/game/scene_020531c8.c:
+    complete
+    .text       start:0x020531c8 end:0x02053428
+
+src/game/scene_02053428.c:
+    complete
+    .text       start:0x02053428 end:0x020535fc
+
+src/game/scene_020537bc.c:
+    complete
+    .text       start:0x020537bc end:0x02053ab8
+
+src/game/scene_02053bc8.c:
+    complete
+    .text       start:0x02053bc8 end:0x02053c6c

@@ -409,7 +409,7 @@ ARM void Boss_HandleContact(Entity *e) {
         return;
     }
     case 0x36:
-        func_02039ed4(e);
+        Boss_StartDying(e);
         return;
     case 0:
         break;
@@ -417,7 +417,7 @@ ARM void Boss_HandleContact(Entity *e) {
         if (e->action == 1) {
             e->zVelocity = 0x16000;
             VB(e)->launchTimer = 0x1e0;
-            func_0203a168(e);
+            Boss_StartAction3(e);
         }
         break;
     }
@@ -425,7 +425,7 @@ ARM void Boss_HandleContact(Entity *e) {
 }
 
 ARM void Boss_Destroy(Entity *e) {
-    func_02039f24(e);
+    Boss_CheckWallDeath(e);
     func_02084788(e);
 }
 
@@ -456,7 +456,7 @@ ARM void Boss_FloatAndTurn(Entity *e) {
 
 ARM void Boss_UpdateSubAction(Entity *e) {
     data_020d1d2c[e->subAction](e);
-    func_0203a07c(e);
+    Boss_UpdateLaunchWait(e);
 }
 
 ARM void Boss_InitMirrorPlayer(Entity *e) {
@@ -486,17 +486,17 @@ ARM void Boss_UpdatePose(Entity *e) {
         Entity *player = data_0212ceb0[e->type2].entity;
         e->unk_2c = *(const u16 *)(data_020d1cdc + (player->animationState & ~1));
     }
-    func_02039f24(e);
+    Boss_CheckWallDeath(e);
 }
 
 ARM void Boss_ClearMotion(Entity *e) {
-    func_0203a168(e);
+    Boss_StartAction3(e);
     e->unk_1a = 0;
 }
 
 ARM void Boss_UpdateGroundContact(Entity *e) {
     func_02086044(e, 0x2000);
-    if (func_0203a07c(e) == 0) {
+    if (Boss_UpdateLaunchWait(e) == 0) {
         return;
     }
     func_02089524(e);

@@ -3,10 +3,10 @@
 
 extern const u32 data_020cf9b8[];
 
-// Enemy_CheckFlagThenFinish (0x02042424): on an odd frame, finishes when func_02042cc8 succeeds.
+// Enemy_CheckFlagThenFinish (0x02042424): on an odd frame, finishes when Enemy_SpawnPartPairWithSfx succeeds.
 ARM void Enemy_CheckFlagThenFinish(Entity *e) {
     if (e->frame & 1) {
-        if (func_02042cc8(e) == 0) {
+        if (Enemy_SpawnPartPairWithSfx(e) == 0) {
             return;
         }
         e->action = 3;

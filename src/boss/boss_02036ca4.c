@@ -87,7 +87,7 @@ ARM void func_02036f54(Entity *e) {
     e->subAction = 0;
     e->timer = 8;
     e->spriteSettings.b0 = 1;
-    func_02049f0c(0x194);
+    Status_ResetWithValue(0x194);
 }
 
 ARM void func_02036fbc(Entity *e) {
@@ -102,7 +102,7 @@ ARM void func_02036fbc(Entity *e) {
         if ((data_0217d384 & 0x7f) != 6) {
             return;
         }
-        func_02049eb8();
+        Status_ArmIfEnabled();
         e->subAction = 1;
         return;
     }
@@ -255,7 +255,7 @@ ARM void func_020373d8(Entity *e) {
     }
     SoundReq(0x1af);
     data_0212c618 = 1;
-    func_0205396c();
+    Scene_ClearFlag5();
     func_02026720();
 }
 

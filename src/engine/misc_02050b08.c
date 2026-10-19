@@ -78,14 +78,14 @@ ARM void GameMode_Init(void) {
     func_0202a60c();
     func_0205b700();
     ((u8 *)&data_0212c7c8)[0x8e] = 0;
-    func_02049c34();
+    Global_AllocBlock();
     PaletteFade_Init();
     func_0204bbb8();
     func_0204bb9c();
     func_02080e58();
     func_02027dc4();
     func_0202a92c();
-    func_0204a048();
+    State_ClearWorkBuffers();
     func_0204f978();
     MIi_CpuClear16(0, data_021349c0, 0x28);
     func_02054b64();

@@ -114,7 +114,7 @@ ARM void func_02037d68(Entity *e) {
     if (e->unk_3c != 0) {
         e->unk_3c = 0;
         e->timer = 0xb4;
-        func_02053958();
+        Scene_SetFlag5();
         func_020266f8();
         SoundReq(0x80010000);
         SoundReq(0x2e);
@@ -147,7 +147,7 @@ ARM void func_02037d68(Entity *e) {
     e->timer = 0x20;
     InitAnimationForceUpdate(e, 0);
     func_0204625c(3, 0x10);
-    func_02049eb8();
+    Status_ArmIfEnabled();
     func_020384f8();
 }
 

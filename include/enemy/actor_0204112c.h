@@ -65,7 +65,7 @@ Entity *func_02084f98(Entity *e, int size, int align);
 void *func_0208da4c(void);
 int func_0208de54(void *a);
 u8 *func_02093b5c(void);
-int func_02042cc8(Entity *e);
+int Enemy_SpawnPartPairWithSfx(Entity *e);
 
 void func_0205063c(u16 *pos, Entity *e);
 void Enemy_TurnTowardTarget(Entity *e);

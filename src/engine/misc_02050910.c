@@ -13,9 +13,9 @@ ARM void PaletteFade_Update(Entity *e) {
     }
     fadeLevel &= 0xfff8;
     if (data_0216fcf8.fadeLevel != fadeLevel) {
-        func_02049c7c(fadeLevel << 8, fadeLevel << 8, (0x100 - fadeLevel) << 8);
+        Global_CopyToVram(fadeLevel << 8, fadeLevel << 8, (0x100 - fadeLevel) << 8);
         if (fadeLevel != 0) {
-            func_02049c7c(0, 0x10000, fadeLevel << 8);
+            Global_CopyToVram(0, 0x10000, fadeLevel << 8);
         }
         data_0216fcf8.fadeLevel = fadeLevel;
     }
