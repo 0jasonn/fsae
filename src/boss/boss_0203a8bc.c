@@ -2,21 +2,21 @@
 #include "global.h"
 
 // Function names (dsd -> name), also in scratch/agentA/renames.txt:
-// Boss_SubtimerStep Boss_SubtimerStep, Boss_InitFromParent Boss_InitFromParent, Boss_DeleteIfParentFree Boss_DeleteIfParentFree,
-// Boss_UpdateAnimFromDirection Boss_UpdateAnimFromDirection, Boss_UpdateAnimPair Boss_UpdateAnimPair, Boss_LaunchChild Boss_LaunchChild,
-// Boss_LaunchChildOnAction4 Boss_LaunchChildOnAction4, Boss_RunStateTable Boss_RunStateTable, Boss_DispatchAction3 Boss_DispatchAction3
+// em09_wait2 em09_wait2, em09_type2_init em09_type2_init, em09_type2_move em09_type2_move,
+// em09_seqSet em09_seqSet, seqMove seqMove, kuttsukiReset kuttsukiReset,
+// em09_kuttsuki_reset em09_kuttsuki_reset, Boss_RunStateTable Boss_RunStateTable, em10_normal em10_normal
 
-ARM void Boss_SubtimerStep(Entity *e) {
+ARM void em09_wait2(Entity *e) {
     u8 action;
     if (--e->subtimer == 0) {
         action = e->action;
         e->timer = 1;
         e->action = action - 2;
     }
-    Boss_UpdateAnimPair(e);
+    seqMove(e);
 }
 
-ARM void Boss_InitFromParent(Entity *e) {
+ARM void em09_type2_init(Entity *e) {
     Tbl3 table;
     e->spriteSettings.b20 = data_020d1d90[e->type];
     e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -32,14 +32,14 @@ ARM void Boss_InitFromParent(Entity *e) {
     e->action++;
 }
 
-ARM void Boss_DeleteIfParentFree(Entity *e) {
+ARM void em09_type2_move(Entity *e) {
     if (VPW(e->parent)->unk_04 == 0) {
-        DeleteEntity(e);
+        PutObjWork(e);
     }
 }
 
-ARM void Boss_UpdateAnimFromDirection(Entity *e) {
-    u8 anim = func_02045a8c(e->direction);
+ARM void em09_seqSet(Entity *e) {
+    u8 anim = EmCharDir2(e->direction);
     if (anim != 0xff && anim != e->animationState) {
         e->animationState = anim;
         InitAnimationForceUpdate(e, anim);
@@ -47,12 +47,12 @@ ARM void Boss_UpdateAnimFromDirection(Entity *e) {
     }
 }
 
-ARM void Boss_UpdateAnimPair(Entity *e) {
+ARM void seqMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     UpdateAnimationSingleFrame(e->parent);
 }
 
-ARM void Boss_LaunchChild(Entity *e) {
+ARM void kuttsukiReset(Entity *e) {
     data_0212ceb0[e->child->type].unk_02 = 0x41;
     data_0212ceb0[e->child->type].unk_0a[0] = 0;
     data_0212ceb0[e->child->type].unk_36 &= 0xffef;
@@ -70,9 +70,9 @@ ARM void Boss_LaunchChild(Entity *e) {
     }
 }
 
-ARM void Boss_LaunchChildOnAction4(Entity *e) {
+ARM void em09_kuttsuki_reset(Entity *e) {
     if (e->action == 4) {
-        Boss_LaunchChild(e);
+        kuttsukiReset(e);
     }
 }
 
@@ -80,6 +80,6 @@ ARM void Boss_RunStateTable(Entity *e) {
     EnemyFunctionHandler(e, data_020d1ec8);
 }
 
-ARM void Boss_DispatchAction3(Entity *e) {
+ARM void em10_normal(Entity *e) {
     data_020d1f48[e->action](e);
 }

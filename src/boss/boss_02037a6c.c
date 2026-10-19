@@ -1,7 +1,7 @@
 #include "boss/boss_02036ca4.h"
 #include "global.h"
 
-ARM void func_02037a6c(Entity *e) {
+ARM void em2f_stormSmashEnd(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -19,7 +19,7 @@ ARM void func_02037a6c(Entity *e) {
     e->spriteSettings.b14 = e->spriteSettings.b30;
 }
 
-ARM void func_02037af8(Entity *e) {
+ARM void em2f_fiveInitWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer == 0) {
         e->action = 0x1f;
@@ -27,7 +27,7 @@ ARM void func_02037af8(Entity *e) {
     }
 }
 
-ARM void func_02037b28(Entity *e) {
+ARM void em2f_fiveAttackMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((u16)(e->x.HALF.HI - 0x1f7) <= 2 && (u16)(e->y.HALF.HI - 0x1f7) <= 2) {
         e->action = 0x20;
@@ -38,13 +38,13 @@ ARM void func_02037b28(Entity *e) {
     }
     e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
     if ((data_0212c5bc & 7) == 0) {
-        func_02076a50(e, 1, 1, 0x14);
+        SetDisp(e, 1, 1, 0x14);
     }
-    ProcessMovement(e);
-    func_02060a70(e);
+    MoveDir(e);
+    GufuFuyusnd(e);
 }
 
-ARM void func_02037bd8(Entity *e) {
+ARM void em2f_fiveAttackWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -54,7 +54,7 @@ ARM void func_02037bd8(Entity *e) {
     V(e)->unk_6e = data_020d1440[Random() & 7];
 }
 
-ARM void func_02037c24(Entity *e) {
+ARM void em2f_fiveAttack(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer == 0) {
         if (V(e)->unk_6e != 0) {
@@ -63,36 +63,36 @@ ARM void func_02037c24(Entity *e) {
             return;
         }
         e->action = 0x22;
-        func_02038460(e);
+        getFiveMoveInfo(e);
         return;
     }
     if (e->timer != 0x78) {
         return;
     }
     if (V(e)->unk_6e == 0) {
-        Entity *child = CreateProjectile(0xa);
+        Entity *child = GetTamaWork(0xa);
         if (child != NULL) {
             child->type2 = 1;
             child->parent = e;
         }
     } else {
-        Entity *child = CreateProjectile(0xa);
+        Entity *child = GetTamaWork(0xa);
         if (child != NULL) {
             child->parent = e;
         }
     }
 }
 
-ARM void func_02037cb4(Entity *e) {
+ARM void em2f_fiveMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->timer != 0) {
         e->timer--;
         return;
     }
     if ((data_0212c5bc & 7) == 0) {
-        func_02076a50(e, 1, 1, 0x14);
+        SetDisp(e, 1, 1, 0x14);
     }
-    int result = func_020381ec(e);
+    int result = tblMove(e);
     if (result == 0) {
         if (--e->subtimer != 0) {
             e->action = 0x20;
@@ -110,12 +110,12 @@ ARM void func_02037cb4(Entity *e) {
     }
 }
 
-ARM void func_02037d68(Entity *e) {
+ARM void em2f_die(Entity *e) {
     if (e->unk_3c != 0) {
         e->unk_3c = 0;
         e->timer = 0xb4;
         Scene_SetFlag5();
-        func_020266f8();
+        CockpitOff();
         SoundReq(0x80010000);
         SoundReq(0x2e);
     }
@@ -146,20 +146,20 @@ ARM void func_02037d68(Entity *e) {
     e->action = 0x24;
     e->timer = 0x20;
     InitAnimationForceUpdate(e, 0);
-    func_0204625c(3, 0x10);
+    FadeSet(3, 0x10);
     Status_ArmIfEnabled();
-    func_020384f8();
+    gufuBindPls();
 }
 
-ARM void func_02037ed8(Entity *e) {
+ARM void em2f_dieWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->spriteSettings.b0 ^= 1;
-    func_020384f8();
+    gufuBindPls();
     if (e->timer != 0) {
         e->timer--;
         return;
     }
-    Entity *child = CreateFx(0x69, 0, 0);
+    Entity *child = GetSetWork(0x69, 0, 0);
     if (child == NULL) {
         return;
     }
@@ -168,7 +168,7 @@ ARM void func_02037ed8(Entity *e) {
     e->spriteSettings.b0 = 1;
 }
 
-ARM void func_02037f54(Entity *e) {
-    func_020547ec();
+ARM void em2f_dieDemo(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
 }

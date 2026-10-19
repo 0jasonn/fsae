@@ -22,7 +22,7 @@ typedef struct UnkStruct_0216fcf8 {
 } UnkStruct_0216fcf8;
 extern UnkStruct_0216fcf8 data_0216fcf8;
 
-// Blend request read by PaletteFade_Update and Effect_Update
+// Blend request read by title_resourceCtrlCallback and color_control
 typedef struct UnkStruct_0212c5ac_D {
     /* 00 */ u8 blendEnabled;
     /* 01 */ u8 blendMode; // 0..5, selects the sign of the weight
@@ -30,7 +30,7 @@ typedef struct UnkStruct_0212c5ac_D {
     /* 07 */ u8 blendColor;
     /* 08 */ s16 blendWeight;
     /* 0a */ u8 unk_a[2];
-    /* 0c */ s32 resetValue; // set to -1 by Effect_Start (guess)
+    /* 0c */ s32 resetValue; // set to -1 by op_demo_skip (guess)
 } UnkStruct_0212c5ac_D;
 extern UnkStruct_0212c5ac_D data_0212c5ac;
 
@@ -55,8 +55,8 @@ typedef struct UnkStruct_0212c75c {
     /* 2e */ u16 unk_2e;
     /* 30 */ u16 unk_30;
     /* 32 */ u8 unk_32[0x34];
-    /* 66 */ u16 reg66; // hardware value written by Effect_StepTimer
-    /* 68 */ u16 reg68; // hardware value written by Effect_StepTimer
+    /* 66 */ u16 reg66; // hardware value written by mist_effect
+    /* 68 */ u16 reg68; // hardware value written by mist_effect
 } UnkStruct_0212c75c;
 extern UnkStruct_0212c75c data_0212c75c;
 
@@ -69,13 +69,13 @@ extern UnkStruct_0212c648_D data_0212c648;
 
 // Effect state block. Kept as a byte array: a struct-typed declaration makes mwcc schedule the stores differently.
 enum {
-    EFFECT_STATE_SCENE = 0x00, // scene state machine of Scene_Update
-    EFFECT_STATE_TIMER = 0x04, // u16 countdown used by Scene_Update
+    EFFECT_STATE_SCENE = 0x00, // scene state machine of op_scene_00
+    EFFECT_STATE_TIMER = 0x04, // u16 countdown used by op_scene_00
     EFFECT_STATE_STEP_TIMER = 0x09, // counts down before the step index advances
     EFFECT_STATE_STEP_INDEX = 0x0a, // index into data_02104a58, 0xff at the end
     EFFECT_STATE_ACTIVE = 0x0b,
     EFFECT_STATE_LEVEL = 0x0c,
-    EFFECT_STATE_FLAG_E = 0x0e, // set to 2/3 by Scene_UpdateTransition, cleared by its last state
+    EFFECT_STATE_FLAG_E = 0x0e, // set to 2/3 by gufu_scene_02, cleared by its last state
 };
 extern u8 data_021349c0[];
 
@@ -123,66 +123,66 @@ extern s32 data_02134924;
 extern s32 data_02134914;
 extern const VoidFunc data_02104a24[];
 
-void Palette_BlendTowardColor(s32 color, s32 weight);
+void title_MakeFadeBuff256(s32 color, s32 weight);
 void PaletteFade_ClearBufferFlag(void);
-void PaletteFade_Update(Entity *e);
-void Effect_Update(void);
-void Effect_Start(void);
-void PaletteFade_Init(void);
-void GameMode_Update(void);
-void GameMode_Step(void);
-void Effect_StepTimer(void);
-void Global_CopyToVram(s32 a, s32 b, s32 c);
+void title_resourceCtrlCallback(Entity *e);
+void color_control(void);
+void op_demo_skip(void);
+void setupVirtualScreenCallback(void);
+void op_demo(void);
+void OpeningTask(void);
+void mist_effect(void);
+void refreshVirtualScreenData(s32 a, s32 b, s32 c);
 void func_020152c8(void);
 void func_020152ec(void);
-void Global_FreeBlock(void);
+void finalizeVirtualScreenData(void);
 void func_02082c54(void *fn);
 void func_02014c24(s32 a);
 void GX_TrySetBankForLCDC(s32 bank);
 void MIi_CpuCopyFast(const void *src, void *dst, s32 size);
-void *func_0208da4c(void);
-void *func_0208dde0(void *a, s32 *size, s32 id);
-u8 *func_0208ddcc(void *a, s32 id);
-void DeleteEntity(Entity *e);
+void *KnifeApp_getInstance(void);
+void *KnifeApp_getZeldaResource_08dde0(void *a, s32 *size, s32 id);
+u8 *KnifeApp_getZeldaResource_08ddcc(void *a, s32 id);
+void PutObjWork(Entity *e);
 void func_0208455c(void);
 void SoundReq(u32 a);
-void func_02029d0c(s32 a, s32 b);
-void func_0204625c(s32 a, s32 b);
-void func_020463f0(s32 a);
-void func_02029c60(s32 a, s32 b, s32 c);
+void SetCgColor(s32 a, s32 b);
+void FadeSet(s32 a, s32 b);
+void MakeFadeBuff256(s32 a);
+void CgPalletSet(s32 a, s32 b, s32 c);
 void func_020830ec(void);
-void func_02080ed4(void);
+void VGroupManager(void);
 
 void GX_DispOff(void);
 void GX_DispOn(void);
 void MIi_CpuClear16(u16 value, void *dst, u32 size);
-Entity *CreateFx(s32 a, s32 b, s32 c);
-void func_0202a60c(void);
-void func_0205b700(void);
-void Global_AllocBlock(void);
-void func_0204bbb8(void);
+Entity *GetSetWork(s32 a, s32 b, s32 c);
+void DispReset(void);
+void ZeldaFadeFinish(void);
+void initializeVirtualScreenData(void);
+void ObjMoveInit(void);
 void func_0204bb9c(void);
-void func_02080e58(void);
-void func_02027dc4(void);
-void func_0202a92c(void);
-void State_ClearWorkBuffers(void);
+void VGroupInit(void);
+void InitObjColor(void);
+void DemoBgBuffClear(void);
+void MessageInitialize(void);
 void func_0204f978(void);
-void func_02054b64(void);
-void func_02054c04(void);
-void func_02029b38(s32 a);
-void func_02029fe8(s32 a);
-void func_02027ec4(s32 a);
+void PlWorkClear(void);
+void PlWorkColorReset(void);
+void CgLoad(s32 a);
+void DataLoad(s32 a);
+void GetObjColor(s32 a);
 void func_02026774(void);
-void GameMode_Init(void);
+void op_init(void);
 Entity *func_02072554(s32 a);
-void func_020725d0(s32 a, s32 b, s32 c);
-void func_0204f994(s32 a, s32 b, s32 c);
-void Status_ResetWithValue(s32 a);
+void DemoLinkWalkSet(s32 a, s32 b, s32 c);
+void GetNPC(s32 a, s32 b, s32 c);
+void MessageRequest(s32 a);
 void Status_ArmIfEnabled(void);
 void func_0204fa70(void *a, const void *b);
-s32 func_0204fa78(void *a);
-void Scene_Update(void);
-void Scene_Begin(void);
-void Scene_UpdateTransition(void);
+s32 ScriptMove(void *a);
+void op_scene_00(void);
+void gufu_flash(void);
+void gufu_scene_02(void);
 
 #endif

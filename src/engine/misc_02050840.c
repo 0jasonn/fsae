@@ -2,7 +2,7 @@
 #include "global.h"
 
 // Sets the sub-action when the player-state flag at data_0212c5bc+0x12 is set or the player's flag is clear (guess).
-ARM void Entity_UpdateSubActionFromPlayers(Entity *e) {
+ARM void ObjHippariCheck(Entity *e) {
     if (data_0212c5bc[0x12] != 0) {
         e->subAction = 6;
     }

@@ -21,45 +21,45 @@ extern const EntityFunc data_020d0e8c[];
 extern const EntityFunc data_020d0e94[];
 extern const u8 data_020cfdd4[];
 
-void ProcessMovement(Entity *e);
-const u16 *func_0204d634(u8 a, u8 b);
-void func_02033174(Entity *e);
+void MoveDir(Entity *e);
+const u16 *GetInfoAdrs(u8 a, u8 b);
+void em2b_getNextInfo(Entity *e);
 
-ARM void func_02032edc(Entity *e) {
+ARM void Em2b(Entity *e) {
     if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
     data_020d0e8c[e->action](e);
 }
 
-ARM void func_02032f18(Entity *e) {
+ARM void em2b_init(Entity *e) {
     e->subtimer = Random();
     e->unk_2e = 6;
     e->hitbox = data_020cfdd4;
     V(e)->unk_7c = e->x.HALF.HI;
     V(e)->unk_7e = e->y.HALF.HI;
-    V(e)->unk_74 = V(e)->unk_70 = func_0204d634(e->unk_52, e->type2);
-    func_02033174(e);
+    V(e)->unk_74 = V(e)->unk_70 = GetInfoAdrs(e->unk_52, e->type2);
+    em2b_getNextInfo(e);
     InitAnimationForceUpdate(e, 0);
     e->action = 1;
     e->spriteSettings.b0 = 1;
 }
 
-ARM void func_02032f90(Entity *e) {
+ARM void em2b_move(Entity *e) {
     data_020d0e94[e->subAction](e);
 }
 
-ARM void func_02032fac(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_u(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_7a < e->y.HALF.HI) {
         return;
     }
     e->y.HALF.HI = V(e)->unk_7a;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_02032fd8(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_ur(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_7a < e->y.HALF.HI) {
         return;
     }
@@ -68,39 +68,39 @@ ARM void func_02032fd8(Entity *e) {
     }
     e->x.HALF.HI = V(e)->unk_78;
     e->y.HALF.HI = V(e)->unk_7a;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_02033018(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_r(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_78 > e->x.HALF.HI) {
         return;
     }
     e->x.HALF.HI = V(e)->unk_78;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_02033044(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_dr(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_7a > e->y.HALF.HI || V(e)->unk_78 > e->x.HALF.HI) {
         return;
     }
     e->x.HALF.HI = V(e)->unk_78;
     e->y.HALF.HI = V(e)->unk_7a;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_02033080(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_d(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_7a > e->y.HALF.HI) {
         return;
     }
     e->y.HALF.HI = V(e)->unk_7a;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_020330ac(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_dl(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_7a > e->y.HALF.HI) {
         return;
     }
@@ -109,36 +109,36 @@ ARM void func_020330ac(Entity *e) {
     }
     e->x.HALF.HI = V(e)->unk_78;
     e->y.HALF.HI = V(e)->unk_7a;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_020330ec(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_l(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_78 < e->x.HALF.HI) {
         return;
     }
     e->x.HALF.HI = V(e)->unk_78;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_02033118(Entity *e) {
-    ProcessMovement(e);
+ARM void em2b_move_ul(Entity *e) {
+    MoveDir(e);
     if (V(e)->unk_7a < e->y.HALF.HI || V(e)->unk_78 < e->x.HALF.HI) {
         return;
     }
     e->x.HALF.HI = V(e)->unk_78;
     e->y.HALF.HI = V(e)->unk_7a;
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_02033154(Entity *e) {
+ARM void em2b_move_wait(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
-    func_02033174(e);
+    em2b_getNextInfo(e);
 }
 
-ARM void func_02033174(Entity *e) {
+ARM void em2b_getNextInfo(Entity *e) {
     if (V(e)->unk_70[0] == 0xffff) {
         V(e)->unk_70 = V(e)->unk_74;
     }

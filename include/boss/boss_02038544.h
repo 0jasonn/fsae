@@ -22,17 +22,17 @@ int func_020849c8(Entity *e);
 int func_02084a30(Entity *e);
 void func_02084ab8(Entity *e, int a);
 void func_02083c84(Entity *e);
-void func_02038a88(Entity *e);
+void aibou_check(Entity *e);
 u8 func_02084fd0(Entity *e, Entity *target);
-void *func_0208da4c(void);
-int func_0208de54(void *a);
-u8 *func_02093b5c(void);
-u8 func_02045aa0(void);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *a);
+u8 *Knife_Single_SinglePlay_GetInstance(void);
+u8 EmCharDir4(void);
 void func_02084f54(Entity *e);
-void Boss_RandomizeDirection(Entity *e);
+void em05DirChange(Entity *e);
 Entity *func_02084f98(Entity *e, int a, int b);
-u8 func_02045a8c(u8 a);
-void CopyPosition(Entity *e, Entity *other);
+u8 EmCharDir2(u8 a);
+void ObjPosCopy(Entity *e, Entity *other);
 #ifdef __cplusplus
 }
 #endif

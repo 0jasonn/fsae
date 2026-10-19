@@ -3,10 +3,10 @@
 
 extern const u32 data_020cf9b8[];
 
-// Enemy_CheckFlagThenFinish (0x02042424): on an odd frame, finishes when Enemy_SpawnPartPairWithSfx succeeds.
-ARM void Enemy_CheckFlagThenFinish(Entity *e) {
+// type0_open (0x02042424): on an odd frame, finishes when setFlower succeeds.
+ARM void type0_open(Entity *e) {
     if (e->frame & 1) {
-        if (Enemy_SpawnPartPairWithSfx(e) == 0) {
+        if (setFlower(e) == 0) {
             return;
         }
         e->action = 3;
@@ -17,9 +17,9 @@ ARM void Enemy_CheckFlagThenFinish(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-// Enemy_UpdateParts (0x02042468): advances the two parts and this entity; when the timer runs out, sets
+// type0_blossom (0x02042468): advances the two parts and this entity; when the timer runs out, sets
 // the parts to their next animations.
-ARM void Enemy_UpdateParts(Entity *e) {
+ARM void type0_blossom(Entity *e) {
     UpdateAnimationSingleFrame(VP(e)->partA);
     UpdateAnimationSingleFrame(VP(e)->partB);
     UpdateAnimationSingleFrame(e);
@@ -32,9 +32,9 @@ ARM void Enemy_UpdateParts(Entity *e) {
     InitAnimationForceUpdate(VP(e)->partB, 5);
 }
 
-// Enemy_EndPartsOnFlag (0x020424cc): advances the parts; when the frame flag is set, clears the parent's flag and
+// type0_close (0x020424cc): advances the parts; when the frame flag is set, clears the parent's flag and
 // deletes both parts.
-ARM void Enemy_EndPartsOnFlag(Entity *e) {
+ARM void type0_close(Entity *e) {
     UpdateAnimationSingleFrame(VP(e)->partA);
     UpdateAnimationSingleFrame(VP(e)->partB);
     UpdateAnimationSingleFrame(e);
@@ -45,13 +45,13 @@ ARM void Enemy_EndPartsOnFlag(Entity *e) {
     e->unk_2e = 8;
     e->parent->unk_6c[4] = 0;
     InitAnimationForceUpdate(e, 0);
-    DeleteEntity(VP(e)->partA);
-    DeleteEntity(VP(e)->partB);
+    PutObjWork(VP(e)->partA);
+    PutObjWork(VP(e)->partB);
 }
 
-// Enemy_StepDirectionWithParent (0x02042530): once the parent's low flags are 3, steps the direction; at a
+// type0_suihei (0x02042530): once the parent's low flags are 3, steps the direction; at a
 // multiple of 0x40 it sets action 6 and marks the parent with a bit from data_020cf9b8.
-ARM void Enemy_StepDirectionWithParent(Entity *e) {
+ARM void type0_suihei(Entity *e) {
     Entity *parent = e->parent;
     if ((parent->unk_6c[4] & 3) != 3) {
         return;
@@ -65,9 +65,9 @@ ARM void Enemy_StepDirectionWithParent(Entity *e) {
     parent->unk_6c[4] |= (u8)data_020cf9b8[e->type2 + 2];
 }
 
-// Enemy_ActivateWhenParentClear (0x020425a4): when the parent's flag byte is clear, switches to action 7 and sets
+// type0_suiheiWait (0x020425a4): when the parent's flag byte is clear, switches to action 7 and sets
 // the sprite bits (b30 copied into b14).
-ARM void Enemy_ActivateWhenParentClear(Entity *e) {
+ARM void type0_suiheiWait(Entity *e) {
     if (e->parent->unk_6c[4] != 0) {
         return;
     }
@@ -77,9 +77,9 @@ ARM void Enemy_ActivateWhenParentClear(Entity *e) {
     e->unk_6c[5] = 2;
 }
 
-// Enemy_SnapToCardinalTurn (0x020425e8): steps the direction; when it reaches 0xc0 or 0x40 with the parent
+// type0_cercle (0x020425e8): steps the direction; when it reaches 0xc0 or 0x40 with the parent
 // flag set, switches to action 8 and toggles the parent's bit from data_020cf9b8.
-ARM void Enemy_SnapToCardinalTurn(Entity *e) {
+ARM void type0_cercle(Entity *e) {
     Entity *parent = e->parent;
     e->direction += (u8)(s8)e->unk_6c[5];
     if (parent->unk_6c[4] == 0) {

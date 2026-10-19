@@ -1,7 +1,7 @@
 #include "boss/boss_02038544.h"
 #include "global.h"
 
-ARM void func_02038ee8(Entity *e) {
+ARM void em05_land(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) == 0) {
         return;

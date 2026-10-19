@@ -1,7 +1,7 @@
 #include "boss/boss_02038544.h"
 #include "global.h"
 
-ARM void func_0203901c(Entity *e) {
+ARM void em05_jump1(Entity *e) {
     func_020847c8(e);
     UpdateGravity(e, 0x1400);
     UpdateAnimationSingleFrame(e);

@@ -1,18 +1,18 @@
 #include "enemy/enemy_020347dc.h"
 #include "global.h"
 
-ARM void func_02035ba4(Entity *e) {
+ARM void differentColSet(Entity *e) {
     if (V(e)->unk_70 == NULL) {
         return;
     }
-    if (func_0208de54(func_0208da4c()) == 0) {
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         return;
     }
     V(e)->unk_70->spriteSettings.b20 = data_020d119f[e->spriteSettings.b16][Random() % (data_0212c7c8.unk_0 - 1)];
     V(e)->unk_70->spriteSettings.b16 = V(e)->unk_70->spriteSettings.b20;
 }
 
-ARM void func_02035c3c(Entity *e) {
+ARM void openEndSet(Entity *e) {
     Entity *other = V(e)->unk_70;
     if (other == NULL) {
         return;
@@ -24,7 +24,7 @@ ARM void func_02035c3c(Entity *e) {
     V(e)->unk_70->unk_28 += Random() & 7;
 }
 
-ARM void func_02035c98(Entity *e) {
+ARM void closeInit(Entity *e) {
     Entity *other = V(e)->unk_70;
     e->unk_3f = 0x40;
     e->hitbox = data_020d119c;
@@ -35,7 +35,7 @@ ARM void func_02035c98(Entity *e) {
     InitAnimationForceUpdate(e, 6);
 }
 
-ARM void func_02035ce8(Entity *e) {
+ARM void closeEndSet(Entity *e) {
     V(e)->unk_6e &= 0x3f;
     e->spriteSettings.b20 = e->parent->spriteSettings.b16;
     e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -45,13 +45,13 @@ ARM void func_02035ce8(Entity *e) {
     InitAnimationForceUpdate(e, 3);
 }
 
-ARM BOOL func_02035d50(Entity *e) {
+ARM BOOL kukiSet(Entity *e) {
     Entity *a;
     Entity *b;
     Entity *c;
     Entity *d;
-    if ((a = func_0204bcc8()) != NULL && (b = func_0204bd00()) != NULL && (c = func_0204bd00()) != NULL &&
-        (d = func_0204bd00()) != NULL) {
+    if ((a = GetObjWork()) != NULL && (b = GetObjWork2()) != NULL && (c = GetObjWork2()) != NULL &&
+        (d = GetObjWork2()) != NULL) {
         a->unk_08 = 3;
         b->unk_08 = 3;
         c->unk_08 = 3;
@@ -74,14 +74,14 @@ ARM BOOL func_02035d50(Entity *e) {
         b->child = e;
         c->child = b;
         d->child = c;
-        CopyPosition(e, a);
-        CopyPosition(e, b);
-        CopyPosition(e, c);
-        CopyPosition(e, d);
-        func_0204c178(4, a);
-        func_0204c178(4, b);
-        func_0204c178(4, c);
-        func_0204c178(4, d);
+        ObjPosCopy(e, a);
+        ObjPosCopy(e, b);
+        ObjPosCopy(e, c);
+        ObjPosCopy(e, d);
+        RegistObjWork(4, a);
+        RegistObjWork(4, b);
+        RegistObjWork(4, c);
+        RegistObjWork(4, d);
         V(e)->unk_70 = a;
         if (e->type2 == 2) {
             b->timer = 0x1e;
@@ -110,30 +110,30 @@ ARM BOOL func_02035d50(Entity *e) {
     return FALSE;
 }
 
-ARM void func_02035f18(Entity *e) {
+ARM void flowerDie(Entity *e) {
     *V(e)->unk_74 = NULL;
     VCT(e->parent)->unk_7c--;
-    Entity *fx = CreateFx(0xf, 1, 0);
+    Entity *fx = GetSetWork(0xf, 1, 0);
     if (fx != NULL) {
-        CopyPosition(e, fx);
+        ObjPosCopy(e, fx);
     }
-    func_0203614c(e);
+    testiRupeeSet(e);
     e->action = 0x19;
     e->spriteSettings.b0 = 0;
     e->unk_3c &= 0x7f;
     e->health = 0;
     if (V(e)->unk_70 != NULL) {
-        DeleteEntity(V(e)->unk_70);
+        PutObjWork(V(e)->unk_70);
     }
 }
 
-ARM void func_02035f9c(Entity *e) {
-    Entity *proj = CreateProjectile(0xe);
+ARM void seedSet(Entity *e) {
+    Entity *proj = GetTamaWork(0xe);
     if (proj == NULL) {
         return;
     }
     proj->direction = e->animationState << 2;
-    PositionRelative(e, proj, data_020f2686[e->animationState * 2] << 16, data_020f2686[e->animationState * 2 + 1] << 16);
+    ObjPosCopyOfs32(e, proj, data_020f2686[e->animationState * 2] << 16, data_020f2686[e->animationState * 2 + 1] << 16);
     EnqueueSFX(0xa5);
 }
 

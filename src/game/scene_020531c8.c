@@ -1,49 +1,49 @@
 #include "game/scene_d.h"
 #include "global.h"
 
-// Scene_ResetPaletteA -> Scene_ResetPaletteA
-// Scene_ResetPaletteB -> Scene_ResetPaletteB
-// Scene_LoadBackground -> Scene_LoadBackground
-// Scene_FlushDirtyTiles -> Scene_FlushDirtyTiles
+// title_timeout -> title_timeout
+// title_back -> title_back
+// knife_title_dialogDisp -> knife_title_dialogDisp
+// knife_title_dialogDelete -> knife_title_dialogDelete
 // Region of the tile map to flush is data_0216fcf8 bytes [4..7]: x, y, width, height (tiles).
-ARM void Scene_ResetPaletteA(void) {
+ARM void title_timeout(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }
-    func_0202a60c();
+    DispReset();
     *(u16 *)0x05000000 = 0x6739;
     *(u16 *)&data_021355a0 = 0x6739;
-    Display_ConfigureControl();
-    func_02082ee0(7);
+    OpeningTaskFinalzie();
+    Task_Chain(7);
 }
 
-ARM void Scene_ResetPaletteB(void) {
+ARM void title_back(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }
-    func_0202a60c();
+    DispReset();
     *(u16 *)0x05000000 = 0x6739;
     *(u16 *)&data_021355a0 = 0x6739;
-    func_0204bbb8();
+    ObjMoveInit();
     func_0204bb9c();
-    Display_ConfigureControl();
+    OpeningTaskFinalzie();
 }
 
-ARM void Scene_LoadBackground(s32 index) {
+ARM void knife_title_dialogDisp(s32 index) {
     data_0212c75c.unk_c = 0;
-    Scene_FlushDirtyTiles();
-    *(u8 **)((u8 *)&data_02104a20 + 0xe8) = (u8 *)func_0208da4c() + 0x1bc;
+    knife_title_dialogDelete();
+    *(u8 **)((u8 *)&data_02104a20 + 0xe8) = (u8 *)KnifeApp_getInstance() + 0x1bc;
     *(u8 **)((u8 *)&data_02104a20 + 0xb8) = data_02170504;
     *(u8 **)((u8 *)&data_02104a20 + 0xb4) = data_021361a0 + data_0212c618[3] * 0x800;
     OSi_CpuClear32(0, data_021361a0, 0x800);
     OSi_CpuClear32(0, data_021369a0, 0x800);
-    func_0204c4bc((u16)index, data_02104ad4);
-    func_0204c3a4(data_0216fcfc, data_0216fcfd, data_0216fcfe, data_0216fcff, (u16)index, data_02104ad4);
+    knife_MakeMsgScreen((u16)index, data_02104ad4);
+    getDialogXYZWH(data_0216fcfc, data_0216fcfd, data_0216fcfe, data_0216fcff, (u16)index, data_02104ad4);
     func_020845b0(0x6014800, data_02170504, 0x1780);
     func_02026774();
 }
 
-ARM void Scene_FlushDirtyTiles(void) {
+ARM void knife_title_dialogDelete(void) {
     u8 *tileMap = data_021361a0 + data_0212c618[3] * 0x800;
     s32 height = ((s8 *)&data_0216fcf8)[7];
     u32 row;

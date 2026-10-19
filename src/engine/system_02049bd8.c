@@ -2,12 +2,12 @@
 #include "global.h"
 
 // Functions in this file (address -> name, pending reviewer apply to symbols.txt):
-//   Irq_VCountIrq -> Irq_VCountIrq
-//   Irq_VCountSetLine0 -> Irq_VCountSetLine0
+//   VCountIntr -> VCountIntr
+//   VCountIntr2 -> VCountIntr2
 //   Irq_Bit7Handler -> Irq_Bit7Handler
-//   Global_AllocBlock -> Global_AllocBlock
-//   Global_FreeBlock -> Global_FreeBlock
-//   Global_CopyToVram -> Global_CopyToVram
+//   initializeVirtualScreenData -> initializeVirtualScreenData
+//   finalizeVirtualScreenData -> finalizeVirtualScreenData
+//   refreshVirtualScreenData -> refreshVirtualScreenData
 //   Entity_RunAction -> Entity_RunAction
 
 // Hardware registers (volatile 16-bit I/O)
@@ -60,46 +60,46 @@ extern void CPi_RestoreContext(void *context);
 extern void *EL_GetGlobalAdr(u32 offset, u32 size);
 extern void func_0208e188(void *block);
 extern void func_0208cb74(u16 id);
-extern void func_0208cb94(u16 id);
-extern void func_0208cbe8(u16 id);
-extern void func_0204f694(void);
-extern void func_0204f7ac(void);
+extern void m4aLockWaveData(u16 id);
+extern void m4aUnlockWaveData(u16 id);
+extern void MultiSioVSync(void);
+extern void MultiSioIntr(void);
 extern void func_0208d5d4(void);
-extern void func_0209aa58(void);
-extern void func_02082c64(void);
-extern void func_02082aa8(void);
+extern void subtask_vblank(void);
+extern void ResourceCtrl(void);
+extern void DispCtrlSet(void);
 extern void func_02080ca4(void);
-extern void func_02029dd8(void);
-extern void func_02029eac(void);
+extern void CgTrans(void);
+extern void CgSubTrans(void);
 extern void func_020857c8(Entity *e);
 extern void func_0208ab14(Entity *e);
 extern void func_02085f98(Entity *e, u32 sfx);
-extern void DeleteEntity(Entity *e);
-extern void Irq_VBlankHandler(void);
-extern void Irq_VCountIrq(void);
-extern void Irq_VCountSetLine0(void);
+extern void PutObjWork(Entity *e);
+extern void VBlankIntr(void);
+extern void VCountIntr(void);
+extern void VCountIntr2(void);
 extern void Irq_Bit7Handler(void);
 
-ARM void Irq_VCountIrq(void) {
+ARM void VCountIntr(void) {
     OS_EnableIrqMask(5);
-    data_0212c67c.handler = Irq_VCountSetLine0;
+    data_0212c67c.handler = VCountIntr2;
 }
 
-ARM void Irq_VCountSetLine0(void) {
+ARM void VCountIntr2(void) {
     OS_EnableIrqMask(5);
     GX_SetVCountEqVal(0);
-    data_0212c67c.handler = Irq_VCountIrq;
+    data_0212c67c.handler = VCountIntr;
 }
 
 ARM void Irq_Bit7Handler(void) {
-    func_0204f7ac();
+    MultiSioIntr();
 }
 
-ARM void Global_AllocBlock(void) {
+ARM void initializeVirtualScreenData(void) {
     data_0210389c.block = EL_GetGlobalAdr(0x20000, 0x20);
 }
 
-ARM void Global_FreeBlock(void) {
+ARM void finalizeVirtualScreenData(void) {
     if (data_0210389c.block == NULL) {
         return;
     }
@@ -107,7 +107,7 @@ ARM void Global_FreeBlock(void) {
     data_0210389c.block = NULL;
 }
 
-ARM void Global_CopyToVram(u32 dstOffset, u32 srcOffset, u32 size) {
+ARM void refreshVirtualScreenData(u32 dstOffset, u32 srcOffset, u32 size) {
     MIi_CpuCopyFast(data_0210389c.block + srcOffset, (void *)(0x06004000 + dstOffset), size);
 }
 

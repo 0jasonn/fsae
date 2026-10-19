@@ -7,8 +7,8 @@
 //   Callback_Empty2 -> Callback_Empty2
 //   Callback_Empty3 -> Callback_Empty3
 //   Status_ArmIfEnabled -> Status_ArmIfEnabled
-//   Timer_ReleaseHold -> Timer_ReleaseHold
-//   Status_ResetWithValue -> Status_ResetWithValue
+//   TelopClose -> TelopClose
+//   MessageRequest -> MessageRequest
 
 // Work blocks in the bss, accessed by byte offset
 extern u8 data_0217d36c[];
@@ -37,7 +37,7 @@ ARM void Status_ArmIfEnabled(void) {
     }
 }
 
-ARM void Timer_ReleaseHold(void) {
+ARM void TelopClose(void) {
     u16 flags = *(u16 *)(data_0217d36c + 6);
     if (flags & 0x8000) {
         *(u16 *)(data_0217d36c + 6) = flags & 0x7fff;
@@ -45,7 +45,7 @@ ARM void Timer_ReleaseHold(void) {
     data_0217d484[0xe7] = 1;
 }
 
-ARM void Status_ResetWithValue(u16 value) {
+ARM void MessageRequest(u16 value) {
     MIi_CpuCopy32(data_020d7c38, data_0217d384, 0x18);
     *(u16 *)(data_0217d384 + 6) = value;
 }

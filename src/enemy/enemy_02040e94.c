@@ -1,13 +1,13 @@
 #include "enemy/actor_020407c8.h"
 #include "global.h"
 
-ARM void func_02040e94(Entity *e) {
+ARM void em27_move(Entity *e) {
     func_020847dc(e);
     UpdateAnimationSingleFrame(e);
     V(e)->unk_7e--;
     if (V(e)->unk_7e == 0) {
-        func_02040f00(e);
-        DeleteEntity(e);
+        cbubbleReset(e);
+        PutObjWork(e);
         return;
     }
     if (V(e)->unk_7e >= 0x2d) {
@@ -16,12 +16,12 @@ ARM void func_02040e94(Entity *e) {
     e->spriteSettings.b0 ^= 1;
 }
 
-ARM void func_02040f00(Entity *e) {
+ARM void cbubbleReset(Entity *e) {
     if (e->parent != NULL) {
         e->parent->parent = NULL;
         return;
     }
-    func_02040d00(e);
+    BubbleReset(e);
 }
 
 ARM void func_02040f20(Entity *e) {

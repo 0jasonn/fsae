@@ -1,13 +1,13 @@
 #include "engine/misc_d.h"
 #include "global.h"
 
-ARM void GameMode_Step(void) {
+ARM void OpeningTask(void) {
     Random();
     data_02104a24[data_0212c500]();
-    Effect_StepTimer();
+    mist_effect();
 }
 
-ARM s32 EntityList_HasTaggedType5(void) {
+ARM s32 OpeningTaskCanPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
     for (head = data_0212c6b0; head < data_0212c6f0; head++) {
@@ -25,7 +25,7 @@ ARM s32 EntityList_HasTaggedType5(void) {
 }
 
 // Marks type-0 tagged entities as subtimer 1, then deletes the type-5 tagged ones.
-ARM void EntityList_ProcessTaggedEntities(void) {
+ARM void OpeningTaskPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
     for (head = data_0212c6b0; head < data_0212c6f0; head++) {
@@ -50,7 +50,7 @@ ARM void EntityList_ProcessTaggedEntities(void) {
                 do {
                     if (((Entity *)m)->unk_08 == 6 && ((Entity *)m)->unk_09 == 0x28 && ((Entity *)m)->type == 5) {
                         p = m->prev;
-                        DeleteEntity((Entity *)m);
+                        PutObjWork((Entity *)m);
                         m = p;
                     }
                     m = m->next;
@@ -60,7 +60,7 @@ ARM void EntityList_ProcessTaggedEntities(void) {
     }
 }
 
-ARM void GameMode_Init(void) {
+ARM void op_init(void) {
     u32 bankValue = 0x80010000;
     s32 slotIndex;
     s32 setupIndexA;
@@ -75,28 +75,28 @@ ARM void GameMode_Init(void) {
     data_0212c4f8 = 0;
     SoundReq(bankValue);
     SoundReq(0x800b01ad);
-    func_0202a60c();
-    func_0205b700();
+    DispReset();
+    ZeldaFadeFinish();
     ((u8 *)&data_0212c7c8)[0x8e] = 0;
-    Global_AllocBlock();
-    PaletteFade_Init();
-    func_0204bbb8();
+    initializeVirtualScreenData();
+    setupVirtualScreenCallback();
+    ObjMoveInit();
     func_0204bb9c();
-    func_02080e58();
-    func_02027dc4();
-    func_0202a92c();
-    State_ClearWorkBuffers();
+    VGroupInit();
+    InitObjColor();
+    DemoBgBuffClear();
+    MessageInitialize();
     func_0204f978();
     MIi_CpuClear16(0, data_021349c0, 0x28);
-    func_02054b64();
-    func_02054c04();
+    PlWorkClear();
+    PlWorkColorReset();
     slotIndex = 0x17;
-    func_02029b38(slotIndex);
+    CgLoad(slotIndex);
     setupIndexA = 1;
-    func_02029fe8(setupIndexA);
+    DataLoad(setupIndexA);
     setupIndexB = 2;
-    func_02029fe8(setupIndexB);
-    func_02027ec4(0x12);
+    DataLoad(setupIndexB);
+    GetObjColor(0x12);
     {
         s32 valueA = setupIndexA + 0x218;
         s32 valueB = slotIndex + 0x670;
@@ -126,7 +126,7 @@ ARM void GameMode_Init(void) {
     }
     data_0212c75c.displayFlags |= 0x1b00;
     func_02026774();
-    ((u8 *)func_0208da4c())[0xcb0] = 0;
+    ((u8 *)KnifeApp_getInstance())[0xcb0] = 0;
     *(volatile u32 *)0x04000000 = (*(volatile u32 *)0x04000000 & 0xffcfffef) | 0x10;
     data_021349c0[EFFECT_STATE_STEP_TIMER] = 0xb4;
     data_021349c0[EFFECT_STATE_STEP_INDEX] = zero;
@@ -134,18 +134,18 @@ ARM void GameMode_Init(void) {
     data_021349c0[EFFECT_STATE_LEVEL] = zero;
     data_0212c5ac.resetValue = -1;
     PaletteFade_ClearBufferFlag();
-    func_0204625c(setupIndexB, 4);
+    FadeSet(setupIndexB, 4);
     data_0212c5ac.blendColor = 0x19;
-    func_020463f0(0x100);
-    Palette_BlendTowardColor(data_0212c5ac.blendColor, 0x100);
+    MakeFadeBuff256(0x100);
+    title_MakeFadeBuff256(data_0212c5ac.blendColor, 0x100);
     {
-        Entity *spawned = CreateFx(0x5a, setupIndexB, zero);
+        Entity *spawned = GetSetWork(0x5a, setupIndexB, zero);
         spawned->x.HALF.HI = 0x80;
         spawned->y.HALF.HI = 0xf0;
     }
     data_0212c500++;
     if (data_0212c4dc != 0) {
-        Effect_Start();
+        op_demo_skip();
     } else {
         GX_DispOn();
     }
@@ -153,7 +153,7 @@ ARM void GameMode_Init(void) {
 }
 
 // Steps the effect timer and scans data_02104a58 for the next value to write (guess: a 16-bit value table).
-ARM void Effect_StepTimer(void) {
+ARM void mist_effect(void) {
     u8 stepIndex;
     u16 stepValue;
     if (data_021349c0[EFFECT_STATE_ACTIVE] != 0) {
@@ -184,7 +184,7 @@ ARM void Effect_StepTimer(void) {
     data_021349c0[EFFECT_STATE_ACTIVE] = 1;
 }
 
-ARM void Effect_Update(void) {
+ARM void color_control(void) {
     u8 *base;
     if (data_021349c0[EFFECT_STATE_ACTIVE] == 0) {
         return;
@@ -193,14 +193,14 @@ ARM void Effect_Update(void) {
         return;
     }
     if ((data_0212c594 & 3) == 0) {
-        base = func_0208ddcc(func_0208da4c(), 0x3a);
-        func_02029c60((s32)(base + ((Random() & 3) << 5)), 0xf, 1);
+        base = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x3a);
+        CgPalletSet((s32)(base + ((Random() & 3) << 5)), 0xf, 1);
     }
-    func_020463f0(data_021349c0[EFFECT_STATE_LEVEL] << 4);
-    Palette_BlendTowardColor(data_0212c5ac.blendColor, data_021349c0[EFFECT_STATE_LEVEL] << 4);
+    MakeFadeBuff256(data_021349c0[EFFECT_STATE_LEVEL] << 4);
+    title_MakeFadeBuff256(data_0212c5ac.blendColor, data_021349c0[EFFECT_STATE_LEVEL] << 4);
 }
 
-ARM void Effect_Start(void) {
+ARM void op_demo_skip(void) {
     if (data_0212c500 != 1) {
         return;
     }
@@ -211,18 +211,18 @@ ARM void Effect_Start(void) {
     data_021349c0[EFFECT_STATE_STEP_INDEX] = 0xff;
     data_0212c500 = 2;
     data_0212c4dc = 0;
-    func_02029d0c(0, 0x6739);
-    func_0204625c(3, 0x20);
+    SetCgColor(0, 0x6739);
+    FadeSet(3, 0x20);
 }
 
-ARM s32 GameMode_IsRunning(void) {
+ARM s32 is_op_demo_end(void) {
     return data_0212c500 == 2;
 }
 
-ARM void GameMode_Update(void) {
+ARM void op_demo(void) {
     data_02104a40[data_0212c4dc]();
     data_0212c564();
     func_020830ec();
-    func_02080ed4();
-    Effect_Update();
+    VGroupManager();
+    color_control();
 }

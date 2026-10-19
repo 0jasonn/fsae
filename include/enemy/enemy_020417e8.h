@@ -83,18 +83,18 @@ extern UnkStruct_0212c6b0 data_0212c6b0;
 extern u8 data_0212c6c0[];          // list sentinel
 
 extern u16 data_0212c5bc;           // frame counter
-extern u16 data_0212c574[3];        // scroll arguments for func_0205063c
+extern u16 data_0212c574[3];        // scroll arguments for ObjAffineSet2
 
-void Enemy_SetDefaultAuxBytes(Entity *e);
-void func_0205063c(u16 *pos, Entity *e);
+void moveInit(Entity *e);
+void ObjAffineSet2(u16 *pos, Entity *e);
 void func_02085f98(Entity *e, int id);
 void func_02085cf8(Entity *e);
 void func_02085d34(Entity *e);
 void func_0204be88(Entity *e);
-void func_02042044(Entity *e);
-void Enemy_CheckTileThenSpawnFx(Entity *e);
-void func_02042dc8(Entity *e);
-void Enemy_SpawnRandomGroup(Entity *e);
+void plhikiyose(Entity *e);
+void breakSekichu(Entity *e);
+void damageCheck(Entity *e);
+void flowerTamaSet(Entity *e);
 void Enemy_SetSpriteFromTable(Entity *e);
 void func_02050390(Entity *child, Entity *e, int a, int b);
 void EnemyFunctionHandler(Entity *e, const void *funcs);
@@ -103,10 +103,10 @@ Entity *func_0204bdb8(int kind);
 extern const u8 data_020d34d2[];
 extern const u8 data_020d34ca[];
 extern const u8 data_020d34da[];
-int Enemy_SpawnPartPair(Entity *e);
-Entity *func_0204bcc8(void);
-Entity *func_0204bd00(void);
-void func_0204c178(int kind, Entity *e);
+int setUde(Entity *e);
+Entity *GetObjWork(void);
+Entity *GetObjWork2(void);
+void RegistObjWork(int kind, Entity *e);
 u32 func_0208455c(u32 value);
 extern const u8 data_020f26c0[];
 extern const u32 data_020cf9b8[];
@@ -144,26 +144,26 @@ extern UnkStruct_02134b48 data_02134b48;
 extern const u8 data_020f270c[];
 extern const u8 data_020f273c[];
 void func_02029a50(void *p, int size);
-void func_02043fec(Entity *e);
-void func_02043f70(Entity *e);
-void func_02043bf8(Entity *e, int a);
+void plbackinit(Entity *e);
+void plfrontinit(Entity *e);
+void housha0(Entity *e, int a);
 extern void (*const data_020d413c[])(void);
-void func_02044324(u8 *state);
+void nextset(u8 *state);
 extern const void *data_020d35f4[];
 u8 func_02086080(s16 x, s16 y, s16 dx, s16 dy);
 void Enemy_StartScript(Entity *e);
-void func_02043428(Entity *e);
-void Enemy_RunScriptCommand(Entity *e);
-void ProcessMovement(Entity *e);
+void honyaMove(Entity *e);
+void honyaGetInfo(Entity *e);
+void MoveDir(Entity *e);
 int UpdateGravity(Entity *e, int a);
-void *func_0208da4c(void);
-int func_0208de54(void *a);
-void func_02045f8c(Entity *e);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *a);
+void EmBossDropRupee(Entity *e);
 int func_020860dc(Entity *e);
 int func_02083ca8(u16 cell, u16 key);
-int func_02021c28(int id, u16 cell, u16 key);
-Entity *CopyPosition(Entity *src, Entity *dst);
-Entity *func_02045bd4(Entity *e, int kind, int flags);
+int RewCell(int id, u16 cell, u16 key);
+Entity *ObjPosCopy(Entity *src, Entity *dst);
+Entity *EmGetTama(Entity *e, int kind, int flags);
 void func_020852f8(Entity *e, int dist, int direction);
 
 

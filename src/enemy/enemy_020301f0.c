@@ -19,11 +19,11 @@ ARM void func_020301f0(Entity *e) {
     EnemyFunctionHandler(e, data_020d0828);
 }
 
-ARM void func_02030204(Entity *e) {
+ARM void em1e_normal(Entity *e) {
     data_020d0840[e->action](e);
 }
 
-ARM void func_02030220(Entity *e) {
+ARM void em1e_damage(Entity *e) {
     switch (e->contactFlags & 0x7f) {
         case 0:
             if (e->action == 3) {
@@ -51,7 +51,7 @@ ARM void func_02030220(Entity *e) {
     GenericKnockback(e, data_020d0828);
 }
 
-ARM void func_020302f8(Entity *e) {
+ARM void em1e_init(Entity *e) {
     e->action = 1;
     e->timer = 1;
     e->spriteSettings.b0 = 1;
@@ -61,7 +61,7 @@ ARM void func_020302f8(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState = e->direction >> 3);
 }
 
-ARM void func_02030354(Entity *e) {
+ARM void em1e_move(Entity *e) {
     if (func_02084ac8(e, 0xc) & 0x80) {
         e->action = 2;
         e->timer = 0x1e;
@@ -74,7 +74,7 @@ ARM void func_02030354(Entity *e) {
             if (Random() & 0x1f) {
                 e->direction = Random() & 0x18;
             } else {
-                e->direction = (GetFacingDirection(e, func_02045eb4()) + 4) & 0x18;
+                e->direction = (GetFacingDirection(e, EmGetAimPl()) + 4) & 0x18;
             }
             if ((e->direction >> 3) != e->animationState) {
                 InitAnimationForceUpdate(e, e->animationState = e->direction >> 3);
@@ -87,7 +87,7 @@ ARM void func_02030354(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void func_02030444(Entity *e) {
+ARM void em1e_dushinit(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -98,7 +98,7 @@ ARM void func_02030444(Entity *e) {
     InitAnimationForceUpdate(e, 8);
 }
 
-ARM void func_0203048c(Entity *e) {
+ARM void em1e_dush(Entity *e) {
     if (func_020847c8(e) == 0) {
         e->timer = 1;
     }
@@ -114,7 +114,7 @@ ARM void func_0203048c(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState + 4);
 }
 
-ARM void func_0203050c(Entity *e) {
+ARM void em1e_dushend(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -124,14 +124,14 @@ ARM void func_0203050c(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState);
 }
 
-ARM void func_02030544(Entity *e) {
+ARM void em1e_return(Entity *e) {
     if (UpdateGravity(e, 0x1800) == 0) {
         e->action = 1;
         e->timer = 1;
     }
 }
 
-ARM void func_02030568(Entity *e) {
+ARM void em1e_hikkurikaeri(Entity *e) {
     func_020847c8(e);
     switch (func_02086044(e, 0x1800)) {
         case 0:
@@ -143,7 +143,7 @@ ARM void func_02030568(Entity *e) {
     }
 }
 
-ARM void func_020305b0(Entity *e) {
+ARM void em1e_piyori(Entity *e) {
     if (--e->timer != 0) {
         if (e->timer >= 0x3c) {
             return;
@@ -162,14 +162,14 @@ ARM void func_020305b0(Entity *e) {
     EnqueueSFX(0x31);
 }
 
-ARM void func_02030630(Entity *e) {
+ARM void Em1f(Entity *e) {
     if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
     data_020d089c[e->action](e);
 }
 
-ARM void func_0203066c(Entity *e) {
+ARM void em1f_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->unk_2e = 5;
@@ -177,7 +177,7 @@ ARM void func_0203066c(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void func_020306a8(Entity *e) {
+ARM void em1f_wait(Entity *e) {
     u32 result = func_02084ac8(e, 0xa);
     if (result & 0x80) {
         e->action = 2;
@@ -195,7 +195,7 @@ ARM void func_020306a8(Entity *e) {
     InitAnimationForceUpdate(e, 1);
 }
 
-ARM void func_02030728(Entity *e) {
+ARM void em1f_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (func_020847a0(e) != 0) {
         if (e->speed < 0x110) {
@@ -207,7 +207,7 @@ ARM void func_02030728(Entity *e) {
     InitAnimationForceUpdate(e, 2);
 }
 
-ARM void func_02030770(Entity *e) {
+ARM void em1f_stop(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         e->action = 1;

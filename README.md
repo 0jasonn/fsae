@@ -45,3 +45,12 @@ version (TwlSDK 5.5) points at CodeWarrior for DSi 1.2, which is what `MWCC_VERS
   dsd found many 2-byte "functions" there and `init` needed `--allow-unknown-function-calls`. A few symbols were fixed
   by hand (`func_0208bcd4`, three non-local `.L_` labels).
 - `.rodata` isn't separated from `.text` yet.
+
+## Original names
+
+`config/eur/original_names.tsv` lists the original function names recovered from the Japanese debug build
+(KQ9J, built with profiling hooks that reference each function's mangled name). `tools/debugsyms.py` strips the
+hooks, matches the debug functions to retail ones (exact matches as anchors, then an order-preserving similarity
+alignment) and was checked against the call graph. The original code was C++; static functions that share a name
+across files get the owning file's prefix (`em09_seqSet`) or an address suffix. The debug ROM itself is not in the
+repository.

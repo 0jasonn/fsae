@@ -64,33 +64,33 @@ extern const u32 data_020cf9b8[];
 #ifdef __cplusplus
 extern "C" {
 #endif
-void *func_0208da4c(void);
-int func_0208de54(void *a);
-u8 *func_02093b5c(void);
-int func_02035d50(Entity *e);
-void CopyPosition(Entity *e, Entity *other);
-void PositionRelative(Entity *e, Entity *other, s32 a, s32 b);
-void func_020360c0(Entity *e);
-void func_02035a8c(Entity *e);
-void func_02036064(Entity *e);
-void func_02035c3c(Entity *e);
-BOOL func_020358c4(Entity *e);
-void func_02035f18(Entity *e);
-void func_02035c98(Entity *e);
-void func_02035ce8(Entity *e);
-Entity *func_02045eb4(void);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *a);
+u8 *Knife_Single_SinglePlay_GetInstance(void);
+int kukiSet(Entity *e);
+void ObjPosCopy(Entity *e, Entity *other);
+void ObjPosCopyOfs32(Entity *e, Entity *other, s32 a, s32 b);
+void cercleMoveC2(Entity *e);
+void openInit(Entity *e);
+void cercleMove2(Entity *e);
+void openEndSet(Entity *e);
+BOOL damagecheck(Entity *e);
+void flowerDie(Entity *e);
+void closeInit(Entity *e);
+void closeEndSet(Entity *e);
+Entity *EmGetAimPl(void);
 u8 func_02084fd0(Entity *e, Entity *target);
-void ProcessMovement(Entity *e);
-void func_02035f9c(Entity *e);
-void func_02035ba4(Entity *e);
-void func_02035ff8(Entity *e);
-Entity *func_0204bcc8(void);
-Entity *func_0204bd00(void);
-void func_0204c178(int list, Entity *e);
-void func_0203614c(Entity *e);
-void DeleteEntity(Entity *e);
+void MoveDir(Entity *e);
+void seedSet(Entity *e);
+void differentColSet(Entity *e);
+void cercleMoveC(Entity *e);
+Entity *GetObjWork(void);
+Entity *GetObjWork2(void);
+void RegistObjWork(int list, Entity *e);
+void testiRupeeSet(Entity *e);
+void PutObjWork(Entity *e);
 void SoundReq(int sfx);
-Entity *CreateProjectile(int id);
+Entity *GetTamaWork(int id);
 
 #ifdef __cplusplus
 }

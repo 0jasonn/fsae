@@ -61,15 +61,15 @@ extern GameStateC data_0212c7c8;
 extern "C" {
 #endif
 u32 func_020280e0(void);
-u8 *func_0208da4c(void);
-int func_0208de54(void);
-void func_02049f38(int a);
-u16 func_02048378(void);
+u8 *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void);
+void TelopRequest(int a);
+u16 get_time_bonus(void);
 #ifdef __cplusplus
 }
 #endif
 
-// Timer-like block written by func_020482e4
+// Timer-like block written by time_bonus
 typedef struct TimerC {
     /* 00 */ u8 unk_00[8];
     /* 08 */ u32 unk_08;

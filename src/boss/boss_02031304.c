@@ -1,14 +1,14 @@
 #include "boss/boss_02030a14.h"
 #include "global.h"
 
-ARM void func_02031304(Entity *e) {
-    func_02032e04(e);
+ARM void em2a_move(Entity *e) {
+    flashcheck(e);
     if (e->type == 2 && V(e)->unk_79 != 0xf) {
         return;
     }
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
-        ProcessMovement(e);
+        MoveDir(e);
         if (UpdateGravity(e, 0x2000) == 0) {
             e->unk_28 = 1;
             e->timer--;
@@ -20,7 +20,7 @@ ARM void func_02031304(Entity *e) {
                     e->direction = (e->direction + 8) & 0x1f;
                 }
             }
-            func_020329c8(e);
+            jumpefectSet(e);
             return;
         }
         if (e->zVelocity == 0) {
@@ -49,16 +49,16 @@ ARM void func_02031304(Entity *e) {
     }
     e->action = 0xc;
     e->timer = 0xff;
-    if ((e->timer = func_02032d34(e)) == 0xff) {
-        func_02032ac4(e);
+    if ((e->timer = move3search(e)) == 0xff) {
+        bigjumpinit(e);
         return;
     }
     e->subtimer = data_020d0a42[Random() & 7];
-    func_02032c2c(e);
+    move3Init(e);
 }
 
-ARM void func_02031498(Entity *e) {
-    func_02032e04(e);
+ARM void em2a_move3(Entity *e) {
+    flashcheck(e);
     if (e->type == 2 && V(e)->unk_79 != 0xf) {
         return;
     }
@@ -67,10 +67,10 @@ ARM void func_02031498(Entity *e) {
         V(e)->unk_70--;
     }
     if (e->frame == 0) {
-        ProcessMovement(e);
+        MoveDir(e);
         if (UpdateGravity(e, 0x2000) == 0) {
             e->unk_28 = 1;
-            func_020329c8(e);
+            jumpefectSet(e);
         } else if (e->zVelocity == 0) {
             e->unk_28 = 1;
         }
@@ -79,20 +79,20 @@ ARM void func_02031498(Entity *e) {
             if (e->type == 2) {
                 V(e)->unk_79 = 0;
             }
-            func_02032c2c(e);
+            move3Init(e);
         } else if (--e->subtimer != 0) {
             e->action = 0xd;
             V(e)->unk_70 = 0xb4;
             InitAnimationForceUpdate(e, (e->type - 1) * 10);
         } else {
-            func_02032ac4(e);
+            bigjumpinit(e);
         }
     }
-    func_02032cac(e);
+    em2a_areaCheck(e);
 }
 
-ARM void func_020315ac(Entity *e) {
-    func_02032e04(e);
+ARM void em2a_move3wait(Entity *e) {
+    flashcheck(e);
     if (V(e)->unk_70 != 0) {
         if (e->unk_23 != 0) {
             InitAnimationForceUpdate(e, (e->type - 1) * 10);
@@ -103,27 +103,27 @@ ARM void func_020315ac(Entity *e) {
         return;
     }
     e->action = 0xc;
-    if ((e->timer = func_02032d34(e)) == 0xff) {
-        func_02032ac4(e);
+    if ((e->timer = move3search(e)) == 0xff) {
+        bigjumpinit(e);
         return;
     }
     if (e->type == 2) {
         V(e)->unk_79 = 0;
     }
-    func_02032c2c(e);
+    move3Init(e);
 }
 
-ARM void func_02031650(Entity *e) {
-    func_02032e04(e);
+ARM void em2a_boyon(Entity *e) {
+    flashcheck(e);
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         e->action = V(e)->unk_72;
     }
 }
 
-ARM void func_02031678(Entity *e) {
+ARM void em2a_buttobi(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    ProcessMovement(e);
+    MoveDir(e);
     if (e->x.HALF.HI <= 0x184) {
         e->x.HALF.HI = 0x184;
     }
@@ -152,10 +152,10 @@ ARM void func_02031678(Entity *e) {
     InitAnimationForceUpdate(e, (e->type - 1) * 10 + 9);
     e->subtimer = 0x5a;
     e->action = 7;
-    func_020329c8(e);
+    jumpefectSet(e);
 }
 
-ARM void func_020317b0(Entity *e) {
+ARM void em2a_buttobiwait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->unk_75 != 0) {
         V(e)->unk_75--;
@@ -163,10 +163,10 @@ ARM void func_020317b0(Entity *e) {
     if (e->subtimer-- != 0) {
         return;
     }
-    func_02032ac4(e);
+    bigjumpinit(e);
 }
 
-ARM void func_020317ec(Entity *e) {
+ARM void em2a_ice(Entity *e) {
     UpdateGravity(e, 0x2000);
     if (e->contactFlags & 0x80) {
         switch (e->contactFlags & 0x7f) {
@@ -178,40 +178,40 @@ ARM void func_020317ec(Entity *e) {
             case 0x18:
                 e->health--;
                 e->iframes = 0xd0;
-                func_02032e5c(e);
+                efectset(e);
                 SoundReq(0x2d);
                 break;
         }
         e->contactFlags = 0;
         if (e->health == 0) {
             e->type++;
-            func_02081160(e);
+            PutVGroup(e);
             if (data_0212c7c8.unk_6 + 1 == e->type) {
                 e->type = 4;
             }
-            func_02032b48(e);
+            lifeset(e);
             if (e->type < 4) {
                 if (e->type == 2) {
-                    func_02027fe8(0x13);
-                    func_02081088(e, 8);
-                    e->spriteSettings.b20 = func_02027ec4(0x15);
+                    PutObjColor(0x13);
+                    GetVGroup(e, 8);
+                    e->spriteSettings.b20 = GetObjColor(0x15);
                     e->spriteSettings.b16 = e->spriteSettings.b20;
                     e->spriteSettings.b4 = 2;
                     e->hitbox = data_020d0a72;
                 } else {
-                    func_02027fe8(0x15);
-                    func_02081088(e, 9);
-                    e->spriteSettings.b20 = func_02027ec4(0x16);
+                    PutObjColor(0x15);
+                    GetVGroup(e, 9);
+                    e->spriteSettings.b20 = GetObjColor(0x16);
                     e->spriteSettings.b16 = e->spriteSettings.b20;
                     e->spriteSettings.b4 = 0;
                     e->hitbox = data_020d0a52;
                 }
-                func_02032ac4(e);
+                bigjumpinit(e);
                 return;
             }
-            func_02027fe8(0x16);
-            func_02081088(e, 7);
-            e->spriteSettings.b20 = func_02027ec4(0x17);
+            PutObjColor(0x16);
+            GetVGroup(e, 7);
+            e->spriteSettings.b20 = GetObjColor(0x17);
             e->spriteSettings.b16 = e->spriteSettings.b20;
             e->action = 0xf;
             e->unk_3c &= 0x7f;
@@ -226,18 +226,18 @@ ARM void func_020317ec(Entity *e) {
     }
     e->spriteSettings.b16 = e->spriteSettings.b20 - 1;
     e->spriteSettings.b20 = e->spriteSettings.b16;
-    func_02032ac4(e);
+    bigjumpinit(e);
 }
 
-ARM void func_02031a58(Entity *e) {
+ARM void em2a_coreapperwait(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->action = 9;
     InitAnimationForceUpdate(e, 0x1e);
-    func_0203263c(e);
-    func_020325f8(e);
+    coreSet(e);
+    coreSync(e);
 }
 
-ARM void func_02031a94(Entity *e) {
+ARM void em2a_coreapper(Entity *e) {
     e->spriteSettings.b0 = 1;
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
@@ -247,22 +247,22 @@ ARM void func_02031a94(Entity *e) {
         e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
         e->hitbox = data_020d0a4a;
     }
-    func_020325f8(e);
+    coreSync(e);
 }
 
-ARM void func_02031b04(Entity *e) {
+ARM void em2a_coredemomove(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    ProcessMovement(e);
+    MoveDir(e);
     if (e->timer != 0) {
         e->timer--;
     } else {
         e->action = 0xa;
         e->timer = 0;
     }
-    func_020325f8(e);
+    coreSync(e);
 }
 
-ARM void func_02031b40(Entity *e) {
+ARM void em2a_corewait(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -270,10 +270,10 @@ ARM void func_02031b40(Entity *e) {
     e->action = 0xb;
     e->timer = 0xf0;
     InitAnimationForceUpdate(e, 0x1f);
-    func_0203298c(e);
+    nearplcheck(e);
 }
 
-ARM void func_02031b80(Entity *e) {
+ARM void em2a_coremove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->timer != 0) {
         e->timer--;
@@ -294,10 +294,10 @@ ARM void func_02031b80(Entity *e) {
         e->timer = 0xf0;
         InitAnimationForceUpdate(e, 0x20);
     }
-    func_020325f8(e);
+    coreSync(e);
 }
 
-ARM void func_02031c58(Entity *e) {
+ARM void em2a_biribiri(Entity *e) {
     if (e->timer-- == 0) {
         e->action = 0xa;
         e->timer = 0xf0;
@@ -306,5 +306,5 @@ ARM void func_02031c58(Entity *e) {
     if (e->unk_23 != 0x20) {
         InitAnimationForceUpdate(e, 0x20);
     }
-    func_020325f8(e);
+    coreSync(e);
 }

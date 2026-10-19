@@ -2,21 +2,21 @@
 #include "engine/player.h"
 #include "global.h"
 
-ARM s32 func_020502e0(s16 a, s16 b) {
+ARM s32 fix_mul(s16 a, s16 b) {
     s32 p = a * b;
     s32 q = p >> 7;
     p += (u32)q >> 24;
     return (p << 8) >> 16;
 }
 
-ARM s16 func_020502f8(s32 a, s32 b) {
+ARM s16 fix_div(s32 a, s32 b) {
     if (b == 0) {
         return 0;
     }
     return func_0200d948(a << 8, b);
 }
 
-ARM Entity *CopyPosition(Entity *src, Entity *dst) {
+ARM Entity *ObjPosCopy(Entity *src, Entity *dst) {
     dst->x = src->x;
     dst->y = src->y;
     dst->z = src->z;
@@ -25,14 +25,14 @@ ARM Entity *CopyPosition(Entity *src, Entity *dst) {
     return func_0208ae78(dst);
 }
 
-ARM void func_02050354(Entity *src, Entity *dst) {
-    CopyPosition(src, dst);
+ARM void ObjPosCopy2(Entity *src, Entity *dst) {
+    ObjPosCopy(src, dst);
     if (dst->unk_5e.b0 < 3) {
         dst->unk_5e.b0++;
     }
 }
 
-ARM void PositionRelative(Entity *src, Entity *dst, s32 dx, s32 dy) {
+ARM void ObjPosCopyOfs32(Entity *src, Entity *dst, s32 dx, s32 dy) {
     dst->x.WORD = src->x.WORD + dx;
     dst->y.WORD = src->y.WORD + dy;
     dst->z = src->z;
@@ -41,14 +41,14 @@ ARM void PositionRelative(Entity *src, Entity *dst, s32 dx, s32 dy) {
     func_0208ae78(dst);
 }
 
-ARM void func_020503d0(s32 i, s32 value, s32 flags) {
+ARM void DropRupeeDir(s32 i, s32 value, s32 flags) {
     s32 idx;
     Entity *target;
     Entity *fx;
-    void *a = func_0208da4c();
+    void *a = KnifeApp_getInstance();
     target = data_0212ceb0[i].entity;
     if (data_0212c7d4[i] - value < 0) {
-        if (func_0208de54(a) != 0) {
+        if (KnifeApp_isWirelessMode(a) != 0) {
             return;
         }
         if (data_0212c7d4[i ^ 1] - value < 0) {
@@ -78,13 +78,13 @@ ARM void func_020503d0(s32 i, s32 value, s32 flags) {
         default:
             return;
     }
-    fx = CreateFx(0, idx, 1);
+    fx = GetSetWork(0, idx, 1);
     if (fx == NULL) {
         return;
     }
-    CopyPosition(data_0212ceb0[i].entity, fx);
+    ObjPosCopy(data_0212ceb0[i].entity, fx);
     fx->direction = flags | 0x80;
     fx->zVelocity = 0x20000;
     fx->z.HALF.HI -= 4;
-    func_020260c8(target, (s16)(-value));
+    AddRupee(target, (s16)(-value));
 }

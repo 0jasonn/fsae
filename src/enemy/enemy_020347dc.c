@@ -1,18 +1,18 @@
 #include "enemy/enemy_020347dc.h"
 #include "global.h"
 
-ARM void func_020347dc(Entity *e) {
+ARM void Em2d(Entity *e) {
     if (e->type == 0) {
         data_020d11e0[e->action](e);
         V(e)->unk_7f--;
     } else {
         data_020d11c0[e->action](e);
     }
-    if (func_0208de54(func_0208da4c()) != 0) {
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
         return;
     }
-    if (data_021348c0.unk_4 != *func_02093b5c()) {
-        data_021348c0.unk_4 = *func_02093b5c();
+    if (data_021348c0.unk_4 != *Knife_Single_SinglePlay_GetInstance()) {
+        data_021348c0.unk_4 = *Knife_Single_SinglePlay_GetInstance();
         data_021348c0.unk_0 = 0xb4;
     }
     if (data_021348c0.unk_0 != 0) {
@@ -20,8 +20,8 @@ ARM void func_020347dc(Entity *e) {
     }
 }
 
-ARM void func_02034878(Entity *e) {
-    if (func_02035d50(e) == 0) {
+ARM void em2c_type0_init_034878(Entity *e) {
+    if (kukiSet(e) == 0) {
         return;
     }
     switch (e->type2) {
@@ -40,9 +40,9 @@ ARM void func_02034878(Entity *e) {
             e->health = data_020f266b[data_0212c7c8.unk_6 - 1];
             V(e)->unk_7c = 0x10;
             InitAnimationForceUpdate(e, 3);
-            Entity *fx = CreateFx(0xf, 2, 0x20);
+            Entity *fx = GetSetWork(0xf, 2, 0x20);
             if (fx != NULL) {
-                CopyPosition(e, fx);
+                ObjPosCopy(e, fx);
             }
             break;
         }
@@ -54,9 +54,9 @@ ARM void func_02034878(Entity *e) {
             V(e)->unk_7c = 0x10;
             e->direction = Random() & 0x1f;
             InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
-            Entity *fx = CreateFx(0xf, 2, 0x20);
+            Entity *fx = GetSetWork(0xf, 2, 0x20);
             if (fx != NULL) {
-                CopyPosition(e, fx);
+                ObjPosCopy(e, fx);
             }
             EnqueueSFX(0x9e);
             break;
@@ -71,7 +71,7 @@ ARM void func_02034878(Entity *e) {
     data_021348c0.unk_4 = 0;
 }
 
-ARM void func_02034a64(Entity *e) {
+ARM void type0_1stDemo(Entity *e) {
     if (data_0212c7c8.unk_5 & 0x80) {
         return;
     }
@@ -82,7 +82,7 @@ ARM void func_02034a64(Entity *e) {
         InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 0x10) >> 5) & 7) + 0x14);
         EnqueueSFX(0x9e);
     }
-    PositionRelative(e->parent, e, (s16)((V(e)->unk_7c * data_020d7e58[e->direction]) >> 8) << 16,
+    ObjPosCopyOfs32(e->parent, e, (s16)((V(e)->unk_7c * data_020d7e58[e->direction]) >> 8) << 16,
                   (s16)(-4 - ((V(e)->unk_7c * data_020d7e58[e->direction + 0x40]) >> 8)) << 16);
     V(e)->unk_7c++;
     if (V(e)->unk_7c >= 0x40) {
@@ -91,7 +91,7 @@ ARM void func_02034a64(Entity *e) {
     }
 }
 
-ARM void func_02034b44(Entity *e) {
+ARM void em2c_type0_1stDemoWait_034b44(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -101,19 +101,19 @@ ARM void func_02034b44(Entity *e) {
     VE(e->parent)->unk_7d |= (u8)data_020cf9b8[V(e)->unk_7e];
 }
 
-ARM void func_02034bb4(Entity *e) {
-    func_020360c0(e);
+ARM void type0_1stWait(Entity *e) {
+    cercleMoveC2(e);
     if (--e->timer != 0) {
         return;
     }
     e->action = 4;
-    func_02035a8c(e);
+    openInit(e);
     V(e)->unk_70->spriteSettings.b20 = e->spriteSettings.b20;
     V(e)->unk_70->spriteSettings.b16 = V(e)->unk_70->spriteSettings.b20;
 }
 
-ARM void func_02034c2c(Entity *e) {
-    func_02036064(e);
+ARM void type0_1stOpen(Entity *e) {
+    cercleMove2(e);
     if (V(e)->unk_70 != NULL) {
         UpdateAnimationSingleFrame(V(e)->unk_70);
     }
@@ -123,30 +123,30 @@ ARM void func_02034c2c(Entity *e) {
     }
     e->action = 5;
     e->timer = 0x5a;
-    func_02035c3c(e);
+    openEndSet(e);
 }
 
-ARM void func_02034c78(Entity *e) {
-    if (func_020358c4(e) != 0 && e->health == 0) {
-        func_02035f18(e);
+ARM void type0_1stCercle(Entity *e) {
+    if (damagecheck(e) != 0 && e->health == 0) {
+        flowerDie(e);
         return;
     }
     if (e->timer == 0) {
         if (e->iframes == 0) {
             e->action = 6;
-            func_02035c98(e);
+            closeInit(e);
         }
     } else {
         e->timer--;
     }
-    func_02036064(e);
+    cercleMove2(e);
     if (V(e)->unk_70 != NULL) {
         UpdateAnimationSingleFrame(V(e)->unk_70);
     }
 }
 
-ARM void func_02034cf4(Entity *e) {
-    func_02036064(e);
+ARM void type0_1stClose(Entity *e) {
+    cercleMove2(e);
     if (V(e)->unk_70 != NULL) {
         UpdateAnimationSingleFrame(V(e)->unk_70);
     }
@@ -156,11 +156,11 @@ ARM void func_02034cf4(Entity *e) {
     }
     e->action = 3;
     e->timer = 0x3c;
-    func_02035ce8(e);
+    closeEndSet(e);
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void func_02034d64(Entity *e) {
+ARM void type0_2ndDemo(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -169,7 +169,7 @@ ARM void func_02034d64(Entity *e) {
     EnqueueSFX(0x9e);
 }
 
-ARM void func_02034db4(Entity *e) {
+ARM void type0_2ndGetdir(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -181,15 +181,15 @@ ARM void func_02034db4(Entity *e) {
     } else {
         e->speed = 0x100;
     }
-    if (func_0208de54(func_0208da4c()) == 0) {
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         if (data_021348c0.unk_0 == 0) {
-            V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].entity;
+            V(e)->unk_64 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         if (V(e)->unk_64 == NULL) {
-            V(e)->unk_64 = func_02045eb4();
+            V(e)->unk_64 = EmGetAimPl();
         }
     } else {
-        V(e)->unk_64 = func_02045eb4();
+        V(e)->unk_64 = EmGetAimPl();
     }
     if (V(e)->unk_64 == NULL) {
         return;
@@ -198,10 +198,10 @@ ARM void func_02034db4(Entity *e) {
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void func_02034ea0(Entity *e) {
+ARM void em2c_type0_2ndMove_034ea0(Entity *e) {
     if (V(e)->unk_6e & 0x80) {
         e->action = 0xb;
-        func_02035a8c(e);
+        openInit(e);
         return;
     }
     if (e->contactFlags & 0x80) {
@@ -218,23 +218,23 @@ ARM void func_02034ea0(Entity *e) {
                 InitAnimationForceUpdate(e, (e->animationState = anim) + 0x14);
             }
         }
-        ProcessMovement(e);
+        MoveDir(e);
     } else {
         e->action = 0xa;
     }
 }
 
-ARM void func_02034f74(Entity *e) {
+ARM void type0_2ndAttack(Entity *e) {
     if (V(e)->unk_6e & 0x80) {
         e->action = 0xb;
-        func_02035a8c(e);
-        CopyPosition(e->child, e);
+        openInit(e);
+        ObjPosCopy(e->child, e);
         return;
     }
     UpdateAnimationSingleFrame(e);
     if (e->frame & 1) {
         e->frame = 0;
-        func_02035f9c(e);
+        seedSet(e);
         return;
     }
     if (e->frame & 0x80) {
@@ -242,7 +242,7 @@ ARM void func_02034f74(Entity *e) {
     }
 }
 
-ARM void func_02034fd8(Entity *e) {
+ARM void type0_2ndOpen(Entity *e) {
     if (V(e)->unk_70 != NULL) {
         UpdateAnimationSingleFrame(V(e)->unk_70);
     }
@@ -252,29 +252,29 @@ ARM void func_02034fd8(Entity *e) {
     }
     e->action = 0xc;
     e->timer = 0xf0;
-    func_02035c3c(e);
+    openEndSet(e);
 }
 
-ARM void func_02035020(Entity *e) {
+ARM void type0_2ndBlossom(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
-        if (func_020358c4(e) == 0) {
+        if (damagecheck(e) == 0) {
             return;
         }
         if (e->health != 0) {
             return;
         }
-        func_02035f18(e);
+        flowerDie(e);
         return;
     }
     if (e->iframes != 0) {
         return;
     }
     e->action = 0xd;
-    func_02035c98(e);
+    closeInit(e);
 }
 
-ARM void func_0203507c(Entity *e) {
+ARM void type0_2ndClose(Entity *e) {
     if (V(e)->unk_70 != NULL) {
         UpdateAnimationSingleFrame(V(e)->unk_70);
     }
@@ -285,11 +285,11 @@ ARM void func_0203507c(Entity *e) {
     e->action = 8;
     e->timer = 0x1e;
     V(e)->unk_7c = 0x10;
-    func_02035ce8(e);
+    closeEndSet(e);
 }
 
-ARM void func_020350cc(Entity *e) {
-    ProcessMovement(e);
+ARM void type0_3rdDemo(Entity *e) {
+    MoveDir(e);
     if (--e->timer != 0) {
         return;
     }
@@ -299,19 +299,19 @@ ARM void func_020350cc(Entity *e) {
     VE(e->parent)->unk_7d |= (u8)data_020cf9b8[V(e)->unk_7e];
 }
 
-ARM void func_02035148(Entity *e) {
+ARM void type0_3rdCercle(Entity *e) {
     if ((V(e)->unk_6e & 0xc0) == 0xc0) {
         e->action = 0x10;
-        func_02035a8c(e);
-        func_02035ba4(e);
-        CopyPosition(e->child, e);
+        openInit(e);
+        differentColSet(e);
+        ObjPosCopy(e->child, e);
         return;
     }
     V(e)->unk_6e &= 0x3f;
-    func_02035ff8(e);
+    cercleMoveC(e);
 }
 
-ARM void func_02035194(Entity *e) {
+ARM void type0_3rdOpen(Entity *e) {
     if (V(e)->unk_70 != NULL) {
         UpdateAnimationSingleFrame(V(e)->unk_70);
     }
@@ -321,13 +321,13 @@ ARM void func_02035194(Entity *e) {
     }
     e->action = 0x11;
     e->timer = 0xf0;
-    func_02035c3c(e);
+    openEndSet(e);
 }
 
-ARM void func_020351dc(Entity *e) {
+ARM void type0_3rdBlossom(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
-        if (func_020358c4(e) == 0) {
+        if (damagecheck(e) == 0) {
             return;
         }
         if (e->health != 0) {
@@ -353,10 +353,10 @@ ARM void func_020351dc(Entity *e) {
     }
     e->action = 0x12;
     V(e)->unk_6e ^= 2;
-    func_02035c98(e);
+    closeInit(e);
 }
 
-ARM void func_020352c8(Entity *e) {
+ARM void type0_3rdClose(Entity *e) {
     if (V(e)->unk_70 != NULL) {
         UpdateAnimationSingleFrame(V(e)->unk_70);
     }
@@ -365,7 +365,7 @@ ARM void func_020352c8(Entity *e) {
         return;
     }
     V(e)->unk_7c = 0x10;
-    func_02035ce8(e);
+    closeEndSet(e);
     if (V(e)->unk_6e & 2) {
         e->action = 0x13;
         e->timer = 0x1e;
@@ -378,7 +378,7 @@ ARM void func_020352c8(Entity *e) {
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void func_02035370(Entity *e) {
+ARM void type0_3rdAimInit(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -386,33 +386,33 @@ ARM void func_02035370(Entity *e) {
     e->action = 0x14;
     e->timer = 0x78;
     e->speed = 0x120;
-    if (func_0208de54(func_0208da4c()) == 0) {
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         if (data_021348c0.unk_0 == 0) {
-            V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].entity;
+            V(e)->unk_64 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         if (V(e)->unk_64 == NULL) {
-            V(e)->unk_64 = func_02045eb4();
+            V(e)->unk_64 = EmGetAimPl();
         }
     } else {
-        V(e)->unk_64 = func_02045eb4();
+        V(e)->unk_64 = EmGetAimPl();
     }
     e->direction = func_02084fd0(e, V(e)->unk_64);
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void func_02035438(Entity *e) {
+ARM void type0_3rdAimMove(Entity *e) {
     if ((V(e)->unk_6e & 0xc0) == 0xc0) {
         e->action = 0x10;
-        func_02035a8c(e);
-        func_02035ba4(e);
-        CopyPosition(e->child, e);
+        openInit(e);
+        differentColSet(e);
+        ObjPosCopy(e->child, e);
         return;
     }
     V(e)->unk_6e &= 0x3f;
     if ((e->contactFlags & 0x80) && e->contactedEntity->type < 4) {
-        if (func_0208de54(func_0208da4c()) == 0) {
+        if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
             if (data_021348c0.unk_0 == 0) {
-                V(e)->unk_64 = data_0212ceb0[*func_02093b5c()].entity;
+                V(e)->unk_64 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
             }
             if (V(e)->unk_64 == NULL) {
                 V(e)->unk_64 = data_0212ceb0[e->contactedEntity->type].entity;
@@ -429,25 +429,25 @@ ARM void func_02035438(Entity *e) {
                 InitAnimationForceUpdate(e, (e->animationState = anim) + 0x14);
             }
         }
-        ProcessMovement(e);
+        MoveDir(e);
     } else {
         e->action = 0x15;
     }
 }
 
-ARM void func_02035588(Entity *e) {
+ARM void type0_3rdAttack(Entity *e) {
     if ((V(e)->unk_6e & 0xc0) == 0xc0) {
         e->action = 0x10;
-        func_02035a8c(e);
-        func_02035ba4(e);
-        CopyPosition(e->child, e);
+        openInit(e);
+        differentColSet(e);
+        ObjPosCopy(e->child, e);
         return;
     }
     V(e)->unk_6e &= 0x3f;
     UpdateAnimationSingleFrame(e);
     if (e->frame & 1) {
         e->frame = 0;
-        func_02035f9c(e);
+        seedSet(e);
         return;
     }
     if (e->frame & 0x80) {
@@ -455,7 +455,7 @@ ARM void func_02035588(Entity *e) {
     }
 }
 
-ARM void func_02035600(Entity *e) {
+ARM void type0_DieDemo0(Entity *e) {
     if (e->iframes != 0) {
         return;
     }
@@ -467,10 +467,10 @@ ARM void func_02035600(Entity *e) {
         e->direction = Random() & 0x1f;
         SoundReq(0x2e);
     }
-    ProcessMovement(e);
+    MoveDir(e);
 }
 
-ARM void func_02035658(Entity *e) {
+ARM void type0_DieDemo1(Entity *e) {
     e->x.HALF.HI += data_020f2675[e->timer & 3];
     if (++e->timer >= 0x3c) {
         e->timer = 0x1e;
@@ -478,14 +478,14 @@ ARM void func_02035658(Entity *e) {
     }
 }
 
-ARM void func_0203569c(Entity *e) {
+ARM void type0_DieDemo2(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
-    func_02035f18(e);
+    flowerDie(e);
 }
 
-ARM void func_020356bc(Entity *e) {
+ARM void em2c_type1_init_0356bc(Entity *e) {
     e->action = 1;
     e->health = 0xff;
     e->unk_3c &= 0x7f;
@@ -493,7 +493,7 @@ ARM void func_020356bc(Entity *e) {
     e->hitbox = data_020d11ac;
 }
 
-ARM void func_020356f4(Entity *e) {
+ARM void em2c_type1_wait_0356f4(Entity *e) {
     Entity *parent = e->parent;
     if (parent->type2 != 0 || VCT(parent->parent)->unk_7c != 1) {
         return;
@@ -505,7 +505,7 @@ ARM void func_020356f4(Entity *e) {
     e->timer = (Random() + 0x1e) & 0xf;
 }
 
-ARM void func_02035740(Entity *e) {
+ARM void type1_attackWait(Entity *e) {
     if (--e->timer == 0) {
         e->action = 3;
         InitAnimationForceUpdate(e, 9);
@@ -515,14 +515,14 @@ ARM void func_02035740(Entity *e) {
     }
 }
 
-ARM void func_02035780(Entity *e) {
+ARM void type1_attack(Entity *e) {
     e->z.HALF.HI = data_020f2671[(e->frame >> 4) & 3];
     e->parent->z.HALF.HI = e->z.HALF.HI;
     if (e->frame & 1) {
-        Entity *proj = CreateProjectile(0xd);
+        Entity *proj = GetTamaWork(0xd);
         if (proj != NULL) {
             proj->direction = GetFacingDirection(e, data_0212ceb0[Random() % data_0212c7c8.unk_0].entity);
-            CopyPosition(e, proj);
+            ObjPosCopy(e, proj);
             e->frame = 0;
             EnqueueSFX(0xa5);
         }
@@ -536,7 +536,7 @@ ARM void func_02035780(Entity *e) {
     }
 }
 
-ARM void func_02035860(Entity *e, Entity *src) {
+ARM void damageSet(Entity *e, Entity *src) {
     V(e)->unk_6e |= 1;
     u8 damage = src->contactedEntity->unk_44;
     if (e->health < damage) {
@@ -551,13 +551,13 @@ ARM void func_02035860(Entity *e, Entity *src) {
     EnqueueSFX(0x2d);
 }
 
-ARM BOOL func_020358c4(Entity *e) {
+ARM BOOL damagecheck(Entity *e) {
     Entity *other = V(e)->unk_70;
     if (other != NULL && other->spriteSettings.b20 == e->spriteSettings.b20) {
         if (e->contactFlags & 0x80) {
             if ((u16)(e->contactFlags - 0x84) <= 0x9f) {
                 if (e->spriteSettings.b20 - 7 == e->contactedEntity->type) {
-                    func_02035860(e, e);
+                    damageSet(e, e);
                     return TRUE;
                 }
             } else {
@@ -567,7 +567,7 @@ ARM BOOL func_020358c4(Entity *e) {
         } else if (other->contactFlags & 0x80) {
             if ((u16)(other->contactFlags - 0x84) <= 0x9f) {
                 if (other->spriteSettings.b20 - 7 == other->contactedEntity->type) {
-                    func_02035860(e, other);
+                    damageSet(e, other);
                     return TRUE;
                 }
             } else {
@@ -595,7 +595,7 @@ ARM BOOL func_020358c4(Entity *e) {
                 if (other != NULL && e->contactedEntity->unk_44 < other->contactedEntity->unk_44) {
                     src = other;
                 }
-                func_02035860(e, src);
+                damageSet(e, src);
                 return TRUE;
             }
             if ((flags & 3) == 0) {

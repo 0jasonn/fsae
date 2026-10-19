@@ -1,7 +1,7 @@
 #include "boss/boss_02036ca4.h"
 #include "global.h"
 
-ARM void func_020383bc(Entity *e) {
+ARM void getStormMoveInfo(Entity *e) {
     V(e)->unk_74 = data_020d1448[Random() & 1];
     V(e)->unk_78 = *V(e)->unk_74++;
     V(e)->unk_7a = *V(e)->unk_74++;

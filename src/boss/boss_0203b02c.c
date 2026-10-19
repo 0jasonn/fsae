@@ -2,16 +2,16 @@
 #include "global.h"
 
 // Function names (dsd -> name), also in scratch/agentA/renames.txt:
-// Boss_SnapDirection Boss_SnapDirection, Boss_EnterAction6 Boss_EnterAction6, Boss_TurnTowardTarget Boss_TurnTowardTarget,
-// Boss_RunStateTableB Boss_RunStateTableB, Boss_DispatchAction4 Boss_DispatchAction4, Boss_GenericKnockbackB Boss_GenericKnockbackB,
-// Boss_SetupAltHitbox Boss_SetupAltHitbox, Boss_TimerThenAnim Boss_TimerThenAnim, Boss_FrameWaitThenAnim Boss_FrameWaitThenAnim,
-// Boss_LaunchAtNearest Boss_LaunchAtNearest, Boss_AnimateUntilDone Boss_AnimateUntilDone, Boss_AnimFrameThenInit Boss_AnimFrameThenInit,
-// Boss_ResetIdleTimer Boss_ResetIdleTimer, Boss_RunStateTableC Boss_RunStateTableC, Boss_DispatchAction5 Boss_DispatchAction5
+// nextendmoveset nextendmoveset, sleepSet sleepSet, dirSet dirSet,
+// Boss_RunStateTableB Boss_RunStateTableB, em11_normal em11_normal, Boss_GenericKnockbackB Boss_GenericKnockbackB,
+// em11_init em11_init, em11_wait em11_wait, em11_look em11_look,
+// em11_tame em11_tame, em11_jump em11_jump, em11_land em11_land,
+// em11_waitSet em11_waitSet, Boss_RunStateTableC Boss_RunStateTableC, em12_normal em12_normal
 
-ARM void Boss_SnapDirection(Entity *e) {
+ARM void nextendmoveset(Entity *e) {
     if ((e->direction & 8) != 0) {
         if ((e->y.HALF.HI & 0xf) == 8) {
-            Boss_EnterAction6(e);
+            sleepSet(e);
             return;
         }
         if ((u32)(e->y.HALF.HI & 0xf) < 8) {
@@ -21,7 +21,7 @@ ARM void Boss_SnapDirection(Entity *e) {
         }
     } else {
         if ((e->x.HALF.HI & 0xf) == 8) {
-            Boss_EnterAction6(e);
+            sleepSet(e);
             return;
         }
         if ((u32)(e->x.HALF.HI & 0xf) < 8) {
@@ -34,13 +34,13 @@ ARM void Boss_SnapDirection(Entity *e) {
     InitAnimationForceUpdate(e, (e->direction & 0xff) >> 3);
 }
 
-ARM void Boss_EnterAction6(Entity *e) {
+ARM void sleepSet(Entity *e) {
     e->action = 6;
     InitAnimationForceUpdate(e, 5);
     EnqueueSFX(0x30);
 }
 
-ARM void Boss_TurnTowardTarget(Entity *e) {
+ARM void dirSet(Entity *e) {
     int r = func_02084fd0(e, VBP(e)->target);
     u8 dir = e->direction;
     if ((e->unk_2c & data_020d1eb8[dir >> 3]) != 0) {
@@ -71,7 +71,7 @@ ARM void Boss_RunStateTableB(Entity *e) {
     EnemyFunctionHandler(e, data_020d2044);
 }
 
-ARM void Boss_DispatchAction4(Entity *e) {
+ARM void em11_normal(Entity *e) {
     data_020d205c[e->action](e);
 }
 
@@ -79,14 +79,14 @@ ARM void Boss_GenericKnockbackB(Entity *e) {
     GenericKnockback(e, data_020d2044);
 }
 
-ARM void Boss_SetupAltHitbox(Entity *e) {
+ARM void em11_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
     e->hitbox = data_020d2000;
-    Boss_ResetIdleTimer(e);
+    em11_waitSet(e);
 }
 
-ARM void Boss_TimerThenAnim(Entity *e) {
+ARM void em11_wait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer == 0) {
         e->action = 2;
@@ -94,7 +94,7 @@ ARM void Boss_TimerThenAnim(Entity *e) {
     }
 }
 
-ARM void Boss_FrameWaitThenAnim(Entity *e) {
+ARM void em11_look(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) != 0) {
         e->action = 3;
@@ -102,18 +102,18 @@ ARM void Boss_FrameWaitThenAnim(Entity *e) {
     }
 }
 
-ARM void Boss_LaunchAtNearest(Entity *e) {
+ARM void em11_tame(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) != 0) {
         e->action = 4;
         e->zVelocity = 0x16000;
-        e->direction = GetFacingDirection(e, func_02045eb4());
+        e->direction = GetFacingDirection(e, EmGetAimPl());
         InitAnimationForceUpdate(e, 3);
         EnqueueSFX(0x31);
     }
 }
 
-ARM void Boss_AnimateUntilDone(Entity *e) {
+ARM void em11_jump(Entity *e) {
     if ((e->frame & 0x80) == 0) {
         UpdateAnimationSingleFrame(e);
     }
@@ -125,14 +125,14 @@ ARM void Boss_AnimateUntilDone(Entity *e) {
     InitAnimationForceUpdate(e, 4);
 }
 
-ARM void Boss_AnimFrameThenInit(Entity *e) {
+ARM void em11_land(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) != 0) {
-        Boss_ResetIdleTimer(e);
+        em11_waitSet(e);
     }
 }
 
-ARM void Boss_ResetIdleTimer(Entity *e) {
+ARM void em11_waitSet(Entity *e) {
     e->action = 1;
     e->timer = data_020d1ff4[Random() & 3];
     InitAnimationForceUpdate(e, 0);
@@ -142,6 +142,6 @@ ARM void Boss_RunStateTableC(Entity *e) {
     EnemyFunctionHandler(e, data_020d215c);
 }
 
-ARM void Boss_DispatchAction5(Entity *e) {
+ARM void em12_normal(Entity *e) {
     data_020d21dc[e->action](e);
 }

@@ -1,7 +1,7 @@
 #include "boss/boss_02038544.h"
 #include "global.h"
 
-ARM void func_02038c58(Entity *e) {
+ARM void em04_dush(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -20,6 +20,6 @@ ARM void func_02038cb0(Entity *e) {
     EnemyFunctionHandler(e, data_020d1a34);
 }
 
-ARM void func_02038cc4(Entity *e) {
+ARM void em05_normal(Entity *e) {
     data_020d19ec[e->type][e->action](e);
 }

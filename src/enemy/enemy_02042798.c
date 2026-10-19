@@ -3,9 +3,9 @@
 
 extern const u32 data_020cf9b8[];
 
-// Enemy_SelectActionFromParentBit (0x02042798): when the parent's low flags are clear, picks action 0xa or 0xd
+// type0_attackInit (0x02042798): when the parent's low flags are clear, picks action 0xa or 0xd
 // from the parent bit in data_020cf9b8.
-ARM void Enemy_SelectActionFromParentBit(Entity *e) {
+ARM void type0_attackInit(Entity *e) {
     u8 parentFlags = e->parent->unk_6c[4];
     if (parentFlags & 3) {
         return;
@@ -17,11 +17,11 @@ ARM void Enemy_SelectActionFromParentBit(Entity *e) {
     }
 }
 
-// Enemy_FinishOnFlagWithTimer (0x020427d4): on an odd frame, finishes when Enemy_SpawnPartPairWithSfx succeeds and starts
+// type0_attackOpen (0x020427d4): on an odd frame, finishes when setFlower succeeds and starts
 // a 0x12c-frame delay.
-ARM void Enemy_FinishOnFlagWithTimer(Entity *e) {
+ARM void type0_attackOpen(Entity *e) {
     if (e->frame & 1) {
-        if (Enemy_SpawnPartPairWithSfx(e) == 0) {
+        if (setFlower(e) == 0) {
             return;
         }
         e->action = 0xb;

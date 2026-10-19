@@ -8,17 +8,17 @@
 typedef struct GameSlotView {
     /* 00 */ u32 flags;
     /* 04 */ u8 unk_04;
-    /* 05 */ u8 fieldBits; // bitfield written by GameState_RaiseSlotField
+    /* 05 */ u8 fieldBits; // bitfield written by ClearKeyUpdate
     /* 06 */ u16 counter;
 } GameSlotView;
 
 typedef struct GameStateView {
     /* 00 */ u8 playerCount;
-    /* 01 */ u8 pickIndex;      // 0..3, rerolled by GameState_RerollPickIndex
+    /* 01 */ u8 pickIndex;      // 0..3, rerolled by shuffleStage
     /* 02 */ u8 active;         // nonzero while the phase machine runs
     /* 03 */ u8 phase;
     /* 04 */ u8 phaseTimer;
-    /* 05 */ u8 periodicFlag;   // 0x81 when set by GameState_UpdatePeriodicFlag
+    /* 05 */ u8 periodicFlag;   // 0x81 when set by isBossFloor
     /* 06 */ u8 difficulty;
     /* 07 */ u8 gameMode;       // 6 selects the alternate threshold table
     /* 08 */ u32 score;
@@ -50,7 +50,7 @@ typedef struct GameStateView {
 } GameStateView;
 
 // 8-byte per-player flags entry (data_0212c7f0, indexed by player). The entity type table is shared with
-// Entity_TypeHasFlag1/2 in state_02049020.c.
+// CheckKenBeam/2 in state_02049020.c.
 typedef struct PlayerFlags {
     /* 00 */ u32 flags;
     /* 04 */ u8 unk_04;

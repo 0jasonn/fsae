@@ -1,49 +1,49 @@
 #include "game/scene_d.h"
 #include "global.h"
 
-// Scene_SpawnPatternA -> Scene_SpawnPatternA
-// Scene_SpawnPatternB -> Scene_SpawnPatternB
-// Scene_SpawnPatternC -> Scene_SpawnPatternC
-// Scene_SpawnPatternD -> Scene_SpawnPatternD
-// Each pattern picks one of three spawn lists at random (func_0204e690 walks a 0xff terminated list).
-ARM void Scene_SpawnPatternA(Entity *e) {
+// knife_native_init_053428 -> knife_native_init_053428
+// knife_native_init_053484 -> knife_native_init_053484
+// knife_native_init_0534e0 -> knife_native_init_0534e0
+// Init_Kazan2A1 -> Init_Kazan2A1
+// Each pattern picks one of three spawn lists at random (RandomBlockSet walks a 0xff terminated list).
+ARM void knife_native_init_053428(Entity *e) {
     u8 roll = Random();
     if (roll < 0x55) {
-        func_0204e690(data_020d80e3, e);
+        RandomBlockSet(data_020d80e3, e);
     } else if (roll < 0xaa) {
-        func_0204e690(data_020d80e6, e);
+        RandomBlockSet(data_020d80e6, e);
     } else {
-        func_0204e690(data_020d80e0, e);
+        RandomBlockSet(data_020d80e0, e);
     }
 }
 
-ARM void Scene_SpawnPatternB(Entity *e) {
+ARM void knife_native_init_053484(Entity *e) {
     u8 roll = Random();
     if (roll < 0x55) {
-        func_0204e690(data_020d80ef, e);
+        RandomBlockSet(data_020d80ef, e);
     } else if (roll < 0xaa) {
-        func_0204e690(data_020d80f2, e);
+        RandomBlockSet(data_020d80f2, e);
     } else {
-        func_0204e690(data_020d80ec, e);
+        RandomBlockSet(data_020d80ec, e);
     }
 }
 
-ARM void Scene_SpawnPatternC(Entity *e) {
+ARM void knife_native_init_0534e0(Entity *e) {
     u8 roll = Random();
     if (roll < 0x55) {
-        func_0204e690(data_020d80f8, e);
+        RandomBlockSet(data_020d80f8, e);
     } else if (roll < 0xaa) {
-        func_0204e690(data_020d80fb, e);
+        RandomBlockSet(data_020d80fb, e);
     } else {
-        func_0204e690(data_020d80fe, e);
+        RandomBlockSet(data_020d80fe, e);
     }
 }
 
-ARM void Scene_SpawnPatternD(void) {
+ARM void Init_Kazan2A1(void) {
     if ((Random() & 1) != 0) {
-        func_0204e690(data_020d8104, (void *)1);
+        RandomBlockSet(data_020d8104, (void *)1);
     } else {
-        func_0204e690(data_020d8109, (void *)1);
+        RandomBlockSet(data_020d8109, (void *)1);
     }
 }
 

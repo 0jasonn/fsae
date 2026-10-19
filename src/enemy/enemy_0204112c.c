@@ -1,8 +1,8 @@
 #include "enemy/actor_0204112c.h"
 #include "global.h"
 
-// Enemy_PauseThenResume (0x0204112c): counts down the pause, saves the time spent, then resumes in action 3.
-ARM void Enemy_PauseThenResume(Entity *e) {
+// em28_move (0x0204112c): counts down the pause, saves the time spent, then resumes in action 3.
+ARM void em28_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     u8 contact;
     if (--e->timer != 0) {
@@ -18,8 +18,8 @@ ARM void Enemy_PauseThenResume(Entity *e) {
     e->timer = 0x1e;
 }
 
-// Enemy_TurnPhaseUpdate (0x02041180): steps through the subtimer phases of a turn.
-ARM void Enemy_TurnPhaseUpdate(Entity *e) {
+// em28_wait (0x02041180): steps through the subtimer phases of a turn.
+ARM void em28_wait(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -46,8 +46,8 @@ ARM void Enemy_TurnPhaseUpdate(Entity *e) {
     e->timer = restTime;
 }
 
-// Enemy_DelayThenRush (0x02041220): after the delay, switches to action 5 at speed 0x120.
-ARM void Enemy_DelayThenRush(Entity *e) {
+// em28_dushInit (0x02041220): after the delay, switches to action 5 at speed 0x120.
+ARM void em28_dushInit(Entity *e) {
     if (--e->timer == 0) {
         e->action = 5;
         e->speed = 0x120;

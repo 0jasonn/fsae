@@ -1,8 +1,8 @@
 #include "enemy/actor_020407c8.h"
 #include "global.h"
 
-ARM void func_02040d00(Entity *e) {
-    Entity *c = CreateEnemy(0x26);
+ARM void BubbleReset(Entity *e) {
+    Entity *c = GetEnemyWork(0x26);
     if (c == NULL) {
         return;
     }

@@ -15,7 +15,7 @@ typedef struct Vars_0204112c {
     /* 76 */ u8 turnStartDir;     // direction when the turn started
     /* 77 */ u8 retargetDelay;    // frames until the target is checked again
     /* 78 */ u16 turnTimeout;     // 0x12c frames
-    /* 7a */ u16 idleTimer;       // countdown for Enemy_IdleThenMove
+    /* 7a */ u16 idleTimer;       // countdown for em28_attackwait
 } Vars_0204112c;
 #define V(e) VARS(Vars_0204112c, e)
 
@@ -62,15 +62,15 @@ int GetFacingDirection(Entity *e, Entity *target);
 u8 func_02086220(s16 dx, s16 dy);
 int func_02083d4c(u16 a, u16 b);
 Entity *func_02084f98(Entity *e, int size, int align);
-void *func_0208da4c(void);
-int func_0208de54(void *a);
-u8 *func_02093b5c(void);
-int Enemy_SpawnPartPairWithSfx(Entity *e);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *a);
+u8 *Knife_Single_SinglePlay_GetInstance(void);
+int setFlower(Entity *e);
 
-void func_0205063c(u16 *pos, Entity *e);
+void ObjAffineSet2(u16 *pos, Entity *e);
 void Enemy_TurnTowardTarget(Entity *e);
-void Enemy_ScrollTowardLimit(Entity *e);
-void Enemy_IdleThenMove(Entity *e);
+void em29_kakudai(Entity *e);
+void em28_attackwait(Entity *e);
 int Enemy_UpdateHomingChase(Entity *e);
 int Enemy_IsPathClear(Entity *e, int dir);
 #ifdef __cplusplus

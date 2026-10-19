@@ -113,9 +113,9 @@ void InitAnimationForceUpdate(Entity *e, u8 anim);
 void EnqueueSFX(int sfx);
 int func_02086044(Entity *e, int a);
 void func_02086200(Entity *e, int a);
-Entity *func_02045eb4(void);
+Entity *EmGetAimPl(void);
 int GetFacingDirection(Entity *e, Entity *target);
-Entity *CreateFx(int id, int a, int b);
+Entity *GetSetWork(int id, int a, int b);
 #ifdef __cplusplus
 }
 #endif

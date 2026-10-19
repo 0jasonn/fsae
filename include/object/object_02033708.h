@@ -46,17 +46,17 @@ extern s32 data_021348b4;
 #ifdef __cplusplus
 extern "C" {
 #endif
-void DeleteEntity(Entity *e);
-Entity *CreateEnemy(int id);
-void ProcessMovement(Entity *e);
-void Entity_UpdateSubActionFromPlayers(Entity *e);
-void PositionRelative(Entity *e, Entity *other, s32 a, s32 b);
-void func_02033e10(Entity *e);
+void PutObjWork(Entity *e);
+Entity *GetEnemyWork(int id);
+void MoveDir(Entity *e);
+void ObjHippariCheck(Entity *e);
+void ObjPosCopyOfs32(Entity *e, Entity *other, s32 a, s32 b);
+void em2c_leverMove(Entity *e);
 void func_02085d78(Entity *e);
 void func_02089524(Entity *e);
-void func_020340a8(Entity *e);
-void *func_0208da4c(void);
-int func_0208de54(void *a);
+void em2c_setdist(Entity *e);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *a);
 #ifdef __cplusplus
 }
 #endif
@@ -80,12 +80,12 @@ extern const s16 data_020d7e58[];
 #ifdef __cplusplus
 extern "C" {
 #endif
-Entity *func_0204bcc8(void);
-Entity *func_0204bd00(void);
-void func_0204c178(int list, Entity *e);
-void CopyPosition(Entity *e, Entity *other);
+Entity *GetObjWork(void);
+Entity *GetObjWork2(void);
+void RegistObjWork(int list, Entity *e);
+void ObjPosCopy(Entity *e, Entity *other);
 u8 func_02086220(s16 dx, s16 dy);
-void func_0203464c(Entity *e, Entity *target, u16 dist);
+void kukiRangeSet(Entity *e, Entity *target, u16 dist);
 #ifdef __cplusplus
 }
 #endif

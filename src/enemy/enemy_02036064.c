@@ -1,13 +1,13 @@
 #include "enemy/enemy_020347dc.h"
 #include "global.h"
 
-ARM void func_02036064(Entity *e) {
+ARM void cercleMove2(Entity *e) {
     e->direction++;
     e->x.HALF.HI = e->parent->x.HALF.HI + ((V(e)->unk_7c * data_020d7e58[e->direction]) >> 8);
     e->y.HALF.HI = e->parent->y.HALF.HI - ((V(e)->unk_7c * data_020d7e58[e->direction + 0x40]) >> 8);
 }
 
-ARM void func_020360c0(Entity *e) {
+ARM void cercleMoveC2(Entity *e) {
     e->direction++;
     int anim = ((e->direction + 0x10) >> 5) & 7;
     if (e->animationState != anim) {
@@ -18,7 +18,7 @@ ARM void func_020360c0(Entity *e) {
     e->y.HALF.HI = e->parent->y.HALF.HI - ((V(e)->unk_7c * data_020d7e58[e->direction + 0x40]) >> 8);
 }
 
-ARM void func_0203614c(Entity *e) {
+ARM void testiRupeeSet(Entity *e) {
     if (e->type >= 2) {
         return;
     }
@@ -30,10 +30,10 @@ ARM void func_0203614c(Entity *e) {
     k = Random() & 3;
     table = &data_020d11d0[Random() & 0xc];
     for (i = 0; i < 4; i++) {
-        Entity *item = CreateFx(0, table[k], 1);
+        Entity *item = GetSetWork(0, table[k], 1);
         if (item != NULL) {
             item->direction = dir | 0x80;
-            CopyPosition(e, item);
+            ObjPosCopy(e, item);
         }
         dir = (dir + 2) & 0x1f;
         k = (k + 1) & 3;

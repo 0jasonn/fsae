@@ -2,8 +2,8 @@
 #include "global.h"
 
 // Functions in this file (address -> name, pending reviewer apply to symbols.txt):
-//   Track_RestartFromState -> Track_RestartFromState
-//   Track_QueueFromState -> Track_QueueFromState
+//   LoadTokiWave -> LoadTokiWave
+//   UnlockTokiWave -> UnlockTokiWave
 //   Irq_InitVBlank -> Irq_InitVBlank
 
 // Hardware registers (volatile 16-bit I/O)
@@ -56,41 +56,41 @@ extern void CPi_RestoreContext(void *context);
 extern void *EL_GetGlobalAdr(u32 offset, u32 size);
 extern void func_0208e188(void *block);
 extern void func_0208cb74(u16 id);
-extern void func_0208cb94(u16 id);
-extern void func_0208cbe8(u16 id);
-extern void func_0204f694(void);
-extern void func_0204f7ac(void);
+extern void m4aLockWaveData(u16 id);
+extern void m4aUnlockWaveData(u16 id);
+extern void MultiSioVSync(void);
+extern void MultiSioIntr(void);
 extern void func_0208d5d4(void);
-extern void func_0209aa58(void);
-extern void func_02082c64(void);
-extern void func_02082aa8(void);
+extern void subtask_vblank(void);
+extern void ResourceCtrl(void);
+extern void DispCtrlSet(void);
 extern void func_02080ca4(void);
-extern void func_02029dd8(void);
-extern void func_02029eac(void);
+extern void CgTrans(void);
+extern void CgSubTrans(void);
 extern void func_020857c8(Entity *e);
 extern void func_0208ab14(Entity *e);
 extern void func_02085f98(Entity *e, u32 sfx);
-extern void DeleteEntity(Entity *e);
-extern void Irq_VBlankHandler(void);
-extern void Irq_VCountIrq(void);
-extern void Irq_VCountSetLine0(void);
+extern void PutObjWork(Entity *e);
+extern void VBlankIntr(void);
+extern void VCountIntr(void);
+extern void VCountIntr2(void);
 extern void Irq_Bit7Handler(void);
-extern void Player_UpdateShadow(Entity *e);
+extern void magneMove(Entity *e);
 
 // Track id from the game state
-ARM void Track_RestartFromState(void) {
+ARM void LoadTokiWave(void) {
     func_0208cb74(data_021036c8[data_0212c7c8.unk_48]);
-    func_0208cb94(data_021036c8[data_0212c7c8.unk_48]);
+    m4aLockWaveData(data_021036c8[data_0212c7c8.unk_48]);
 }
 
-ARM void Track_QueueFromState(void) {
-    func_0208cbe8(data_021036b6[data_0212c7c8.unk_48]);
+ARM void UnlockTokiWave(void) {
+    m4aUnlockWaveData(data_021036b6[data_0212c7c8.unk_48]);
 }
 
 ARM void Irq_InitVBlank(void) {
     OS_SetIrqFunction(0x80, Irq_Bit7Handler);
-    OS_SetIrqFunction(1, Irq_VBlankHandler);
-    OS_SetIrqFunction(4, Irq_VCountIrq);
+    OS_SetIrqFunction(1, VBlankIntr);
+    OS_SetIrqFunction(4, VCountIntr);
     OS_EnableIrqMask(5);
     (void)REG_IME;
     REG_IME = 1;

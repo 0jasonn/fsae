@@ -1,22 +1,22 @@
 // Implementer B, round 3: functions of 0x020417e8 to 0x02048264 (matched, all 0 differ, 0 size mismatches).
 // Address -> name (also in scratch/agentB/renames.txt):
-//   Enemy_UpdateWithParentTrigger Enemy_UpdateWithParentTrigger    Enemy_InitAtSpawn Enemy_InitAtSpawn
-//   Enemy_FollowOrbitOffset Enemy_FollowOrbitOffset          Enemy_StepLimitsUp Enemy_StepLimitsUp
-//   Enemy_RampSpeedFromParent Enemy_RampSpeedFromParent        Enemy_StepLimitsDown Enemy_StepLimitsDown
-//   Enemy_CountdownThenHandOff Enemy_CountdownThenHandOff       Enemy_CheckTileThenSpawnFx Enemy_CheckTileThenSpawnFx
-//   Enemy_IsTargetable Enemy_IsTargetable               Enemy_InsertSegment Enemy_InsertSegment
-//   Enemy_InitFollower Enemy_InitFollower               Enemy_TimedTurnDirection Enemy_TimedTurnDirection
-//   Enemy_RunPartsTimeline Enemy_RunPartsTimeline           Enemy_UpdateWithChildSfx Enemy_UpdateWithChildSfx
-//   Enemy_InitAndUpdateChild Enemy_InitAndUpdateChild         Enemy_SpawnPartPair Enemy_SpawnPartPair
-//   Enemy_SpawnPartPairWithSfx Enemy_SpawnPartPairWithSfx       Enemy_SetSpriteFromTable Enemy_SetSpriteFromTable
-//   Enemy_SpawnRandomGroup Enemy_SpawnRandomGroup           Enemy_IsPartInSequence Enemy_IsPartInSequence
-//   Enemy_PartBSpriteIndex Enemy_PartBSpriteIndex           Enemy_RunHandlerTable Enemy_RunHandlerTable
-//   Enemy_DispatchAction Enemy_DispatchAction             Enemy_ReactToContact Enemy_ReactToContact
-//   Enemy_RemoveIfOffscreen Enemy_RemoveIfOffscreen          Enemy_StartScript Enemy_StartScript
-//   Enemy_ArmSharedState Enemy_ArmSharedState             Enemy_RunGlobalHandler Enemy_RunGlobalHandler
-//   Enemy_UpdateSlotA Enemy_UpdateSlotA                Enemy_UpdateSlotB Enemy_UpdateSlotB
-// Not matched (kept in scratch/agentB/nonmatching): func_02042044, func_020426e0, func_02042abc, func_02042dc8,
-// func_020432dc, func_02043428, Enemy_RunScriptCommand, func_0204363c.
+//   Em29 Em29    em29_init em29_init
+//   em29_move em29_move          em29_vacuumInit em29_vacuumInit
+//   em29_vacuum em29_vacuum        em29_vacuumEnd em29_vacuumEnd
+//   em29_die em29_die       breakSekichu breakSekichu
+//   movecheck movecheck               hikiyoseSet hikiyoseSet
+//   em30_type0_init em30_type0_init               em30_type0_wait em30_type0_wait
+//   type0_attackBlossom type0_attackBlossom           em30_type1 em30_type1
+//   em30_type2 em30_type2         setUde setUde
+//   setFlower setFlower       Enemy_SetSpriteFromTable Enemy_SetSpriteFromTable
+//   flowerTamaSet flowerTamaSet           Em30CheckAttack Em30CheckAttack
+//   Em30GetRightColor Em30GetRightColor           Enemy_RunHandlerTable Enemy_RunHandlerTable
+//   em31_normal em31_normal             em31_damage em31_damage
+//   em31_move em31_move          Enemy_StartScript Enemy_StartScript
+//   Enemy_ArmSharedState Enemy_ArmSharedState             Encounter Encounter
+//   plback plback                plfront plfront
+// Not matched (kept in scratch/agentB/nonmatching): plhikiyose, type0_kamae, em30_type3, damageCheck,
+// em31_init, honyaMove, honyaGetInfo, func_0204363c.
 
 #include "enemy/enemy_020417e8.h"
 #include "global.h"
@@ -33,9 +33,9 @@ extern const EntityFunc data_020d35e4[];
 extern const EntityFunc data_020d360c[];
 extern const u8 data_020d34e2[];
 
-// Enemy_UpdateWithParentTrigger (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
+// Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void Enemy_UpdateWithParentTrigger(Entity *e) {
+ARM void Em29(Entity *e) {
     if (e->type2 != 0) {
         Vars_Parent *parent = VARS(Vars_Parent, e->parent);
         if (parent->triggerFlags & 1) {
@@ -51,8 +51,8 @@ ARM void Enemy_UpdateWithParentTrigger(Entity *e) {
     if (e->type != 2) {
         return;
     }
-    func_02042044(e);
-    Enemy_CheckTileThenSpawnFx(e);
+    plhikiyose(e);
+    breakSekichu(e);
     W(e)->cycleTimer--;
     if (W(e)->cycleTimer != 0) {
         return;
@@ -61,10 +61,10 @@ ARM void Enemy_UpdateWithParentTrigger(Entity *e) {
     func_02085f98(e, 0x59);
 }
 
-// Enemy_InitAtSpawn (0x020418bc): sets the start action and offsets from the type, resets the cycle timer, then
+// em29_init (0x020418bc): sets the start action and offsets from the type, resets the cycle timer, then
 // centres the scroll position at (0x800, 0x600) and refreshes the scroll arguments.
 
-ARM void Enemy_InitAtSpawn(Entity *e) {
+ARM void em29_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->y.HALF.LO = 2 - e->type;
@@ -78,7 +78,7 @@ ARM void Enemy_InitAtSpawn(Entity *e) {
         e->spriteSettings.b14 = 1;
         e->spriteSettings.b30 = 1;
     }
-    Enemy_SetDefaultAuxBytes(e);
+    moveInit(e);
     InitAnimationForceUpdate(e, 0);
     func_02085cf8(e);
     W(e)->subPosX = 0x800;
@@ -86,9 +86,9 @@ ARM void Enemy_InitAtSpawn(Entity *e) {
     data_0212c574[0] = W(e)->subPosX;
     data_0212c574[1] = W(e)->subPosY;
     data_0212c574[2] = 0;
-    func_0205063c(data_0212c574, e);
+    ObjAffineSet2(data_0212c574, e);
 }
 
-// Enemy_FollowOrbitOffset (0x02041a3c): when the parent is in state 1 this switches to action 3. Otherwise a
+// em29_move (0x02041a3c): when the parent is in state 1 this switches to action 3. Otherwise a
 // follower copies the parent's position, while the first type nudges itself by the packed offset for this frame.
 // A child records the offset it has just moved by, in its own table.

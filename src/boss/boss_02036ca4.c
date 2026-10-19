@@ -8,7 +8,7 @@ ARM void func_02036ca4(Entity *e) {
     data_020d177c[e->action](e);
 }
 
-ARM void func_02036cdc(Entity *e) {
+ARM void em2f_init(Entity *e) {
     e->action = 1;
     e->timer = 0xb4;
     e->x.HALF.HI = 0x1f8;
@@ -19,7 +19,7 @@ ARM void func_02036cdc(Entity *e) {
     e->hitbox = data_020d1438;
     V(e)->unk_7c = Random();
     e->health = data_020d1428[data_0212c7c8.unk_3];
-    if (func_0208de54(func_0208da4c()) != 0) {
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
         switch (data_0212c7c8.unk_0) {
             case 2:
                 e->health = e->health + e->health / 5;
@@ -35,13 +35,13 @@ ARM void func_02036cdc(Entity *e) {
     e->unk_6a = 1;
     func_0208ae30(e);
     InitAnimationForceUpdate(e, 0);
-    func_020547ec();
+    BindPlayers();
     SoundReq(0x80080000);
     data_0212c7c8.unk_26 = 0xffff;
 }
 
-ARM void func_02036df4(Entity *e) {
-    func_020547ec();
+ARM void em2f_initWait(Entity *e) {
+    BindPlayers();
     u8 timer = --e->timer;
     if (timer == 0) {
         e->action = 2;
@@ -50,7 +50,7 @@ ARM void func_02036df4(Entity *e) {
         data_0212c648 = e;
         for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
             data_0212ceb0[i].entity->animationState = 0;
-            func_02076988(data_0212ceb0[i].entity, -8, -12);
+            BikkuriSet(data_0212ceb0[i].entity, -8, -12);
         }
         return;
     }
@@ -58,7 +58,7 @@ ARM void func_02036df4(Entity *e) {
         e->subtimer++;
         data_0212c5ac.unk_c = 0xfff0;
         data_0212c5ac.unk_7 = 0;
-        func_020463f0((e->subtimer >> 2) << 4);
+        MakeFadeBuff256((e->subtimer >> 2) << 4);
         data_0212c5ac.unk_c = -1;
         return;
     }
@@ -75,10 +75,10 @@ ARM void func_02036df4(Entity *e) {
     }
 }
 
-ARM void func_02036f54(Entity *e) {
-    func_020547ec();
+ARM void em2f_appear(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     e->z.WORD += 0x8000;
     if (e->z.HALF.HI != -0x30) {
         return;
@@ -87,13 +87,13 @@ ARM void func_02036f54(Entity *e) {
     e->subAction = 0;
     e->timer = 8;
     e->spriteSettings.b0 = 1;
-    Status_ResetWithValue(0x194);
+    MessageRequest(0x194);
 }
 
-ARM void func_02036fbc(Entity *e) {
-    func_020547ec();
+ARM void em2f_mesWait(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -115,45 +115,45 @@ ARM void func_02036fbc(Entity *e) {
     e->timer = 8;
     SoundReq(0x1f9);
     data_0212c5ac.unk_7 = 0x16;
-    func_020463f0(0x100);
+    MakeFadeBuff256(0x100);
 }
 
 ARM void func_02037094(Entity *e) {
 }
 
-ARM void func_02037098(Entity *e) {
-    func_02060a70(e);
-    func_020547ec();
+ARM void em2f_flash1(Entity *e) {
+    GufuFuyusnd(e);
+    BindPlayers();
     if (--e->timer != 0) {
         if (e->timer == 4) {
-            func_02021ec4(data_020d70c8, 1);
+            MapLoad(data_020d70c8, 1);
             data_02134914 = 0;
         }
         return;
     }
     e->action = 6;
     e->timer = 0x3e;
-    func_0204625c(2, 8);
+    FadeSet(2, 8);
 }
 
-ARM void func_02037108(Entity *e) {
-    func_020547ec();
+ARM void em2f_flashWait(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     if (--e->timer == 0) {
         e->action = 7;
         e->timer = 0x1e;
     }
 }
 
-ARM void func_02037148(Entity *e) {
-    func_020547ec();
+ARM void em2f_demoWait(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     if (--e->timer != 0) {
         return;
     }
-    Entity *child = CreateProjectile(0xa);
+    Entity *child = GetTamaWork(0xa);
     if (child == NULL) {
         return;
     }
@@ -163,28 +163,28 @@ ARM void func_02037148(Entity *e) {
     e->action = 8;
 }
 
-ARM void func_020371a4(Entity *e) {
-    func_020547ec();
+ARM void em2f_taiden(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     if (e->child->frame == 0) {
         return;
     }
-    Entity *child = CreateProjectile(0xb);
+    Entity *child = GetTamaWork(0xb);
     if (child == NULL) {
         return;
     }
-    CopyPosition(e, child);
+    ObjPosCopy(e, child);
     child->type2 = 1;
     child->direction = 0x10;
     e->child = child;
     e->action = 9;
 }
 
-ARM void func_0203720c(Entity *e) {
-    func_020547ec();
+ARM void em2f_plDown(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     if (e->child->z.HALF.HI < -2) {
         return;
     }
@@ -201,10 +201,10 @@ ARM void func_0203720c(Entity *e) {
     }
 }
 
-ARM void func_020372e4(Entity *e) {
-    func_020547ec();
+ARM void em2f_downWait(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     if (--e->timer != 0) {
         return;
     }
@@ -217,10 +217,10 @@ ARM void func_020372e4(Entity *e) {
     }
 }
 
-ARM void func_02037390(Entity *e) {
-    func_020547ec();
+ARM void em2f_demoMove(Entity *e) {
+    BindPlayers();
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     e->z.WORD += 0x8000;
     if (e->z.HALF.HI == -4) {
         e->action = 0xc;
@@ -229,9 +229,9 @@ ARM void func_02037390(Entity *e) {
     }
 }
 
-ARM void func_020373d8(Entity *e) {
+ARM void em2f_demoEnd(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    func_02060a70(e);
+    GufuFuyusnd(e);
     if (--e->timer != 0) {
         return;
     }
@@ -241,10 +241,10 @@ ARM void func_020373d8(Entity *e) {
     e->spriteSettings.b14 = 2;
     e->spriteSettings.b30 = 2;
     e->unk_5e.b0 = 2;
-    if (func_0208de54(func_0208da4c()) != 0) {
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
         data_0212c648 = data_0212ceb0[data_0212c504].entity;
     } else {
-        data_0212c648 = data_0212ceb0[*func_02093b5c()].entity;
+        data_0212c648 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
@@ -256,10 +256,10 @@ ARM void func_020373d8(Entity *e) {
     SoundReq(0x1af);
     data_0212c618 = 1;
     Scene_ClearFlag5();
-    func_02026720();
+    CockpitOn();
 }
 
-ARM void func_02037528(Entity *e) {
+ARM void em2f_change(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((u16)(e->x.HALF.HI - 0x1f7) <= 2 && (u16)(e->y.HALF.HI - 0x19f) <= 2) {
         e->x.HALF.HI = 0x1f8;
@@ -267,28 +267,28 @@ ARM void func_02037528(Entity *e) {
         if (--e->timer != 0) {
             return;
         }
-        func_02037f6c(e);
+        nextSet(e);
         return;
     }
     e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1a0);
-    ProcessMovement(e);
-    func_02060a70(e);
+    MoveDir(e);
+    GufuFuyusnd(e);
 }
 
-ARM void func_020375c8(Entity *e) {
+ARM void em2f_tsubomiInit(Entity *e) {
     if (e->frame & 1) {
-        if (func_0203808c(e) == 0) {
+        if (setTsubomi(e) == 0) {
             return;
         }
-        func_02038138(e);
-        e->speed = data_020d142c[func_020384b8(e)];
+        tsubomiCloseWaitSet(e);
+        e->speed = data_020d142c[gufuVitalCheck(e)];
         UpdateAnimationSingleFrame(e);
         return;
     }
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void func_02037620(Entity *e) {
+ARM void em2f_tsubomiCloseWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->unk_70 != 0) {
         return;
@@ -298,7 +298,7 @@ ARM void func_02037620(Entity *e) {
     e->timer = 0x3c;
 }
 
-ARM void func_02037654(Entity *e) {
+ARM void em2f_tsubomiSuihei(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->unk_70 != 0xf) {
         return;
@@ -309,14 +309,14 @@ ARM void func_02037654(Entity *e) {
     V(e)->unk_70 = 0;
     e->action = 0x11;
     e->speed = 0x100;
-    func_02038194(e);
+    getTsubomiMoveInfo(e);
     e->spriteSettings.b30 = 1;
     e->spriteSettings.b14 = e->spriteSettings.b30;
 }
 
-ARM void func_020376c4(Entity *e) {
+ARM void em2f_tsubomiCercle(Entity *e) {
     if (V(e)->unk_70 == 0) {
-        if (func_020381ec(e) == 0) {
+        if (tblMove(e) == 0) {
             V(e)->unk_70 = 7;
         }
     } else if (V(e)->unk_70 == 4) {
@@ -328,7 +328,7 @@ ARM void func_020376c4(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void func_02037730(Entity *e) {
+ARM void em2f_tsubomiKamae(Entity *e) {
     if (--e->timer == 0) {
         e->action = 0x13;
         e->timer = 0x3c;
@@ -337,7 +337,7 @@ ARM void func_02037730(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void func_02037768(Entity *e) {
+ARM void em2f_tsubomiAttackInit(Entity *e) {
     if (V(e)->unk_70 == 3 && --e->timer == 0) {
         V(e)->unk_70 = data_020cf9b8[V(e)->unk_71 + 2];
         e->action = 0x14;
@@ -345,16 +345,16 @@ ARM void func_02037768(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void func_020377b4(Entity *e) {
+ARM void em2f_tsubomiAttack(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->unk_70 == 0) {
         e->action = 0x15;
     }
 }
 
-ARM void func_020377d4(Entity *e) {
+ARM void em2f_tsubomiAttackEnd(Entity *e) {
     if (--e->subtimer != 0) {
-        func_02038138(e);
+        tsubomiCloseWaitSet(e);
         return;
     }
     e->action = 0x16;
@@ -362,7 +362,7 @@ ARM void func_020377d4(Entity *e) {
     InitAnimationForceUpdate(e, 4);
 }
 
-ARM void func_02037810(Entity *e) {
+ARM void em2f_tsubomiEnd(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
         return;
@@ -373,7 +373,7 @@ ARM void func_02037810(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void func_02037850(Entity *e) {
+ARM void em2f_stormInitWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -387,10 +387,10 @@ ARM void func_02037850(Entity *e) {
     e->spriteSettings.b14 = e->spriteSettings.b30;
 }
 
-ARM void func_020378c0(Entity *e) {
+ARM void em2f_stormGetTama(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 1) {
-        func_020382fc(e);
+        stormGetTama(e);
         e->type2 = 0;
         return;
     }
@@ -404,28 +404,28 @@ ARM void func_020378c0(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void func_02037930(Entity *e) {
+ARM void em2f_stormWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    func_02038414(e);
+    stormMove(e);
     if (--e->timer != 0) {
         return;
     }
     e->action = 0x1a;
-    func_020383bc(e);
+    getStormMoveInfo(e);
 }
 
-ARM void func_0203796c(Entity *e) {
+ARM void em2f_stormMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    func_02038414(e);
-    if (func_020381ec(e) != 0 && V(e)->unk_70 == 0) {
+    stormMove(e);
+    if (tblMove(e) != 0 && V(e)->unk_70 == 0) {
         return;
     }
     e->action = 0x1b;
 }
 
-ARM void func_020379a8(Entity *e) {
+ARM void em2f_stormSmashInit(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    func_02038414(e);
+    stormMove(e);
     if (V(e)->unk_6e == 0) {
         e->action = 0x1c;
         e->timer = 0x1e;

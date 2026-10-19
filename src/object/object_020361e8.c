@@ -28,25 +28,25 @@ typedef struct Vars_Flag {
     /* 70 */ s32 unk_70;
 } Vars_Flag;
 
-void func_020547ec(void);
-void ProcessMovement(Entity *e);
-Entity *CreateProjectile(int id);
+void BindPlayers(void);
+void MoveDir(Entity *e);
+Entity *GetTamaWork(int id);
 void SoundReq(int sfx);
-void func_02026720(void);
-void func_020266f8(void);
-void func_02036bd0(Entity *e);
-void func_02036b2c(Entity *e);
-void func_02036c64(Entity *e, u16 x, u16 y);
-void func_02045ac0(Entity *e);
+void CockpitOn(void);
+void CockpitOff(void);
+void atSelect(Entity *e);
+void gatherInit(Entity *e);
+void firepostSet(Entity *e, u16 x, u16 y);
+void EmDie(Entity *e);
 u8 CalculateDirectionTo(s16 x, s16 y, s16 tx, s16 ty);
-void *func_0208dde0(void *a, u32 *out, u32 b);
+void *KnifeApp_getZeldaResource_08dde0(void *a, u32 *out, u32 b);
 void func_020845b0(u32 dest, void *src, u16 size);
 u8 func_02085620(u32 a);
 int func_02085608(void);
 u8 func_02086078(Entity *e, Entity *target);
-void *func_0208da4c(void);
-int func_0208de54(void *a);
-u8 *func_02093b5c(void);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *a);
+u8 *Knife_Single_SinglePlay_GetInstance(void);
 
 ARM void func_020361e8(Entity *e) {
     data_020d1320[e->action](e);
@@ -59,7 +59,7 @@ ARM void func_020361e8(Entity *e) {
     if (data_0212ceb0[e->contactedEntity->type].unk_36 & 0x400) {
         return;
     }
-    Entity *obj = CreateFx(0x55, 1, 0);
+    Entity *obj = GetSetWork(0x55, 1, 0);
     if (obj == NULL) {
         return;
     }
@@ -67,7 +67,7 @@ ARM void func_020361e8(Entity *e) {
     data_0212ceb0[e->contactedEntity->type].unk_36 |= 0x400;
 }
 
-ARM void func_02036278(Entity *e) {
+ARM void em2e_init(Entity *e) {
     e->unk_50 = 0x4000;
     e->spriteSettings.b0 = 1;
     InitAnimationForceUpdate(e, 0);
@@ -75,19 +75,19 @@ ARM void func_02036278(Entity *e) {
     e->hitbox = data_020d1259;
     e->direction = 0xff;
     e->unk_6a = 1;
-    func_02036b2c(e);
+    gatherInit(e);
     e->subtimer = 0x3c;
     V(e)->unk_7b = 0x1e;
     e->child = data_0212c648;
     data_0212c648 = e;
-    func_020266f8();
+    CockpitOff();
     data_021348c8 = 0;
     V(e)->unk_6e = 0;
 }
 
-ARM void func_02036314(Entity *e) {
+ARM void em2e_gatherwait(Entity *e) {
     if (e->type == 0) {
-        func_020547ec();
+        BindPlayers();
         if (e->subtimer != 0) {
             e->subtimer--;
             return;
@@ -111,14 +111,14 @@ ARM void func_02036314(Entity *e) {
     if (e->zVelocity != 0) {
         UpdateAnimationSingleFrame(e);
         UpdateGravity(e, 0x2000);
-        ProcessMovement(e);
+        MoveDir(e);
         return;
     }
     if (V(e)->unk_78 != 0) {
         if (--V(e)->unk_78 % 4 != 0) {
             return;
         }
-        Entity *fx = CreateProjectile(0xf);
+        Entity *fx = GetTamaWork(0xf);
         if (fx == NULL) {
             return;
         }
@@ -157,7 +157,7 @@ ARM void func_02036314(Entity *e) {
     if (e->type == 0) {
         data_0212c648 = e->child;
         SoundReq(0x19c);
-        func_02026720();
+        CockpitOn();
     }
     e->health = 1;
     e->type = V(e)->unk_79;
@@ -169,10 +169,10 @@ ARM void func_02036314(Entity *e) {
         e->spriteSettings.b4 = 2;
         e->unk_3c |= 0x80;
     }
-    func_02036bd0(e);
+    atSelect(e);
 }
 
-ARM void func_02036580(Entity *e) {
+ARM void em2e_sign(Entity *e) {
     UpdateAnimationSingleFrame(e);
     UpdateGravity(e, 0x2000);
     switch (V(e)->unk_70) {
@@ -196,7 +196,7 @@ ARM void func_02036580(Entity *e) {
             }
             break;
         case 3:
-            ProcessMovement(e);
+            MoveDir(e);
             e->direction = (e->direction + 1) & 0x1f;
             break;
     }
@@ -206,9 +206,9 @@ ARM void func_02036580(Entity *e) {
             for (e->timer = data_0212c7c8.unk_0 << 2; e->timer != 0; e->timer--) {
                 int x = ((Random() & 0x1f) << 4) + 0x76;
                 int y = ((Random() & 0x1f) << 4) + 0xa8;
-                func_02036c64(e, x, y);
+                firepostSet(e, x, y);
             }
-            func_02036bd0(e);
+            atSelect(e);
             return;
         case 0:
             e->direction = Random() & 0x1f;
@@ -216,7 +216,7 @@ ARM void func_02036580(Entity *e) {
             e->action = 3;
             e->zVelocity = 0x20000;
             e->timer = 5;
-            func_02036c64(e, e->x.HALF.HI, e->y.HALF.HI);
+            firepostSet(e, e->x.HALF.HI, e->y.HALF.HI);
             return;
         case 1:
             e->direction = func_02086078(e, data_0212ceb0[func_02085608()].entity);
@@ -226,7 +226,7 @@ ARM void func_02036580(Entity *e) {
             e->zVelocity = 0x20000;
             return;
         case 2: {
-            Entity *fx = CreateProjectile(0xf);
+            Entity *fx = GetTamaWork(0xf);
             if (fx != NULL) {
                 fx->x.HALF.HI = e->x.HALF.HI;
                 fx->y.HALF.HI = e->y.HALF.HI;
@@ -234,11 +234,11 @@ ARM void func_02036580(Entity *e) {
                 fx->parent = e;
                 V(e)->unk_71 = 1;
             }
-            func_02036bd0(e);
+            atSelect(e);
             return;
         }
         case 3: {
-            Entity *fx = CreateProjectile(0xf);
+            Entity *fx = GetTamaWork(0xf);
             if (fx != NULL) {
                 fx->timer = func_02085608();
                 fx->x.HALF.HI = e->x.HALF.HI;
@@ -246,13 +246,13 @@ ARM void func_02036580(Entity *e) {
                 fx->type2 = 1;
                 fx->parent = e;
             }
-            func_02036bd0(e);
+            atSelect(e);
             return;
         }
     }
 }
 
-ARM void func_020367e0(Entity *e) {
+ARM void em2e_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     func_020852ec(e);
     if (UpdateGravity(e, 0x2000) != 0) {
@@ -268,18 +268,18 @@ ARM void func_020367e0(Entity *e) {
         e->zVelocity = 0x20000;
         if (V(e)->unk_70 == 0) {
             e->direction = Random() & 0x1f;
-        } else if (func_0208de54(func_0208da4c()) != 0) {
+        } else if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
             e->direction = func_02086078(e, data_0212ceb0[func_02085608()].entity);
         } else {
-            e->direction = func_02086078(e, data_0212ceb0[*func_02093b5c()].entity);
+            e->direction = func_02086078(e, data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity);
         }
-        func_02036c64(e, e->x.HALF.HI, e->y.HALF.HI);
+        firepostSet(e, e->x.HALF.HI, e->y.HALF.HI);
         return;
     }
-    func_02036bd0(e);
+    atSelect(e);
 }
 
-ARM void func_020368d8(Entity *e) {
+ARM void em2e_break(Entity *e) {
     if (e->type == 4 && data_021348c8 != 0) {
         e->action = 6;
         return;
@@ -292,7 +292,7 @@ ARM void func_020368d8(Entity *e) {
         }
         V(e)->unk_74 = 5;
         if (e->timer != 0) {
-            Entity *fx = CreateProjectile(0xf);
+            Entity *fx = GetTamaWork(0xf);
             if (fx != NULL) {
                 fx->x.HALF.HI = e->x.HALF.HI;
                 fx->y.HALF.HI = e->y.HALF.HI;
@@ -324,7 +324,7 @@ ARM void func_020368d8(Entity *e) {
     V(e)->unk_74 = 5;
 }
 
-ARM void func_02036a58(Entity *e) {
+ARM void em2e_hide(Entity *e) {
     Entity *target = e->child;
     e->x.HALF.HI = target->x.HALF.HI;
     e->y.HALF.HI = target->y.HALF.HI;
@@ -341,21 +341,21 @@ ARM void func_02036a58(Entity *e) {
     }
     e->spriteSettings.b0 ^= 1;
     InitAnimationForceUpdate(e, 0);
-    func_02036b2c(e);
+    gatherInit(e);
     e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
 }
 
-ARM void func_02036b14(Entity *e) {
-    func_02045ac0(e);
+ARM void em2e_die(Entity *e) {
+    EmDie(e);
     e->type = 5;
 }
 
-ARM void func_02036b2c(Entity *e) {
+ARM void gatherInit(Entity *e) {
     if (e->health == 0) {
         u8 level = e->type;
         if (level < 3 && level != 0) {
             u32 size;
-            void *data = func_0208dde0(func_0208da4c(), &size, data_020d126c[level - 1]);
+            void *data = KnifeApp_getZeldaResource_08dde0(KnifeApp_getInstance(), &size, data_020d126c[level - 1]);
             func_020845b0(0x6403000, data, size);
         }
     }
@@ -368,7 +368,7 @@ ARM void func_02036b2c(Entity *e) {
     V(e)->unk_7a = 0;
 }
 
-ARM void func_02036bd0(Entity *e) {
+ARM void atSelect(Entity *e) {
     if (V(e)->unk_70 != 2 && V(e)->unk_71 == 0) {
         V(e)->unk_70 = 2;
     } else {
@@ -386,11 +386,11 @@ ARM void func_02036bd0(Entity *e) {
     V(e)->unk_72 = e->x.HALF.HI;
 }
 
-ARM void func_02036c64(Entity *e, u16 x, u16 y) {
+ARM void firepostSet(Entity *e, u16 x, u16 y) {
     if (Random() & 1) {
         return;
     }
-    Entity *fx = CreateProjectile(0xf);
+    Entity *fx = GetTamaWork(0xf);
     if (fx != NULL) {
         fx->x.HALF.HI = x;
         fx->y.HALF.HI = y;

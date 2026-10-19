@@ -1,8 +1,8 @@
 #include "enemy/actor_020407c8.h"
 #include "global.h"
 
-ARM void func_02041064(Entity *e) {
-    Entity *c = func_0204bdf0(9);
+ARM void em28_init(Entity *e) {
+    Entity *c = GetTamaWork2(9);
     if (c == NULL) {
         return;
     }
@@ -19,7 +19,7 @@ ARM void func_02041064(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void func_020410e4(Entity *e) {
+ARM void em28_getdir(Entity *e) {
     e->action = 2;
     e->timer = 0x3c;
     e->unk_6c[8] = 0x3c;

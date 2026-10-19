@@ -20,21 +20,21 @@ typedef struct Vars_BossPart {
 #define VP(e) VARS(Vars_BossPart, e)
 
 extern const u8 *const data_020f2658[];
-int func_0205076c(Entity *e, int a, int b);
+int ObjNearPlCheck(Entity *e, int a, int b);
 extern const u8 data_020d0c84[][6];
-void CopyPosition(Entity *e, Entity *other);
+void ObjPosCopy(Entity *e, Entity *other);
 extern const u16 data_020d0ac2[];
 extern u8 data_0212c504;
-Entity *func_020769d4(Entity *e, u8 id);
-void *func_0208da4c(void);
-int func_0208de54(void *a);
-u8 *func_02093b5c(void);
+Entity *ItemSet(Entity *e, u8 id);
+void *KnifeApp_getInstance(void);
+int KnifeApp_isWirelessMode(void *a);
+u8 *Knife_Single_SinglePlay_GetInstance(void);
 
 
 extern const u8 data_020d0d40[][4];
 extern const u8 data_020d0d80[][4];
 
-ARM void func_0203224c(Entity *e) {
+ARM void em2a_shadowinit(Entity *e) {
     e->action++;
     e->spriteSettings.b0 = 1;
     Entity *parent = e->parent;
@@ -53,10 +53,10 @@ ARM void func_0203224c(Entity *e) {
         e->unk_5e.b2 = 2;
     }
     e->hitbox = data_020d0a72;
-    func_02032328(e);
+    shadowmoveset(e);
 }
 
-ARM void func_02032328(Entity *e) {
+ARM void shadowmoveset(Entity *e) {
     VH(e)->unk_74 = e->parent->x.HALF.HI + data_020d0ab2[VH(e)->unk_72 * 2];
     VH(e)->unk_76 = e->parent->y.HALF.HI + data_020d0ab2[VH(e)->unk_72 * 2 + 1];
     e->subtimer = 0;
@@ -65,19 +65,19 @@ ARM void func_02032328(Entity *e) {
     InitAnimationForceUpdate(e, 0xb);
 }
 
-ARM void func_02032388(Entity *e) {
+ARM void em2a_shadowmove(Entity *e) {
     Entity *parent = e->parent;
     if (parent->action == 6 || parent->action == 2) {
         if (e->timer != 0) {
             parent->x.WORD = e->x.WORD;
             e->parent->y.WORD = e->y.WORD;
         }
-        DeleteEntity(e);
+        PutObjWork(e);
         return;
     }
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
-        ProcessMovement(e);
+        MoveDir(e);
         s16 dx = e->x.HALF.HI - VH(e)->unk_74;
         s16 dy = e->y.HALF.HI - (s16)VH(e)->unk_76;
         if (dx <= 3 && dx >= -3) {
@@ -93,7 +93,7 @@ ARM void func_02032388(Entity *e) {
             if (UpdateGravity(e, 0x2000) == 0) {
                 e->unk_28 = 1;
                 if (e->timer != 0) {
-                    Entity *fx = CreateFx(0x60, 0, 0);
+                    Entity *fx = GetSetWork(0x60, 0, 0);
                     if (fx != NULL) {
                         fx->unk_1b = 0x81;
                         fx->unk_23 = 0xd;
@@ -121,21 +121,21 @@ ARM void func_02032388(Entity *e) {
     } else if (e->frame & 0x80) {
         if (V(e->parent)->unk_79 == 0) {
             VH(e)->unk_72 = (VH(e)->unk_72 + 1) & 7;
-            func_02032328(e);
+            shadowmoveset(e);
         }
     }
-    e->subtimer |= func_02032cac(e);
+    e->subtimer |= em2a_areaCheck(e);
 }
 
-ARM void func_020325f8(Entity *e) {
+ARM void coreSync(Entity *e) {
     VC(e)->unk_64->unk_21 = e->unk_21 + 0xf;
     VC(e)->unk_74->unk_21 = e->unk_21 + 0x1c;
     VC(e)->unk_78->unk_21 = e->unk_21 + 0x29;
     VC(e)->unk_7c->unk_21 = e->unk_21 + 0x36;
 }
 
-ARM void func_0203263c(Entity *e) {
-    if ((VC(e)->unk_64 = CreateEnemy(0x2a)) != NULL) {
+ARM void coreSet(Entity *e) {
+    if ((VC(e)->unk_64 = GetEnemyWork(0x2a)) != NULL) {
         VC(e)->unk_64->parent = e;
         VC(e)->unk_64->type = 1;
         VC(e)->unk_64->timer = 0;
@@ -144,7 +144,7 @@ ARM void func_0203263c(Entity *e) {
         VC(e)->unk_64->spriteSettings.b6 = e->spriteSettings.b6;
         VC(e)->unk_64->unk_20 = e->unk_20;
     }
-    if ((VC(e)->unk_74 = CreateEnemy(0x2a)) != NULL) {
+    if ((VC(e)->unk_74 = GetEnemyWork(0x2a)) != NULL) {
         VC(e)->unk_74->parent = e;
         VC(e)->unk_74->type = 1;
         VC(e)->unk_74->timer = 1;
@@ -153,7 +153,7 @@ ARM void func_0203263c(Entity *e) {
         VC(e)->unk_74->spriteSettings.b6 = e->spriteSettings.b6;
         VC(e)->unk_74->unk_20 = e->unk_20;
     }
-    if ((VC(e)->unk_78 = CreateEnemy(0x2a)) != NULL) {
+    if ((VC(e)->unk_78 = GetEnemyWork(0x2a)) != NULL) {
         VC(e)->unk_78->parent = e;
         VC(e)->unk_78->type = 1;
         VC(e)->unk_78->timer = 2;
@@ -162,7 +162,7 @@ ARM void func_0203263c(Entity *e) {
         VC(e)->unk_78->spriteSettings.b6 = e->spriteSettings.b6;
         VC(e)->unk_78->unk_20 = e->unk_20;
     }
-    if ((VC(e)->unk_7c = CreateEnemy(0x2a)) != NULL) {
+    if ((VC(e)->unk_7c = GetEnemyWork(0x2a)) != NULL) {
         VC(e)->unk_7c->parent = e;
         VC(e)->unk_7c->type = 1;
         VC(e)->unk_7c->timer = 3;
@@ -185,12 +185,12 @@ ARM void func_0203263c(Entity *e) {
     SoundReq(0xa3);
 }
 
-ARM void func_02032910(Entity *e) {
+ARM void shadowSet(Entity *e) {
     u8 i;
     u8 pick = Random() & 3;
     u8 flip = Random() & 1;
     for (i = 0; i < 4; i++) {
-        Entity *part = CreateEnemy(0x2a);
+        Entity *part = GetEnemyWork(0x2a);
         if (part != NULL) {
             part->type = 1;
             part->type2 = i | 0x40;
@@ -206,17 +206,17 @@ ARM void func_02032910(Entity *e) {
     SoundReq(0xa1);
 }
 
-ARM void func_0203298c(Entity *e) {
-    int target = func_0205076c(e, 0, 0);
+ARM void nearplcheck(Entity *e) {
+    int target = ObjNearPlCheck(e, 0, 0);
     e->subtimer = target;
     e->direction = func_02086078(data_0212ceb0[target].entity, e);
 }
 
-ARM void func_020329c8(Entity *e) {
+ARM void jumpefectSet(Entity *e) {
     if (e->type == 2 && e->spriteSettings.b0 == 0) {
         return;
     }
-    Entity *fx = CreateFx(0x60, 0, 0);
+    Entity *fx = GetSetWork(0x60, 0, 0);
     if (fx != NULL) {
         fx->unk_1b = 0x81;
         fx->unk_23 = (e->type - 1) * 10 + 3;
@@ -232,7 +232,7 @@ ARM void func_020329c8(Entity *e) {
     SoundReq(0xa7);
 }
 
-ARM void func_02032ac4(Entity *e) {
+ARM void bigjumpinit(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_3f = 0x3d;
     e->unk_3c |= 0x80;
@@ -249,11 +249,11 @@ ARM void func_02032ac4(Entity *e) {
     }
 }
 
-ARM void func_02032b48(Entity *e) {
+ARM void lifeset(Entity *e) {
     e->health = data_020f2658[data_0212c7c8.unk_0 - 1][e->type - 1];
 }
 
-ARM void func_02032b78(Entity *e) {
+ARM void em2a_ruppyset(Entity *e) {
     if (V(e)->unk_7c == 0) {
         return;
     }
@@ -261,7 +261,7 @@ ARM void func_02032b78(Entity *e) {
         V(e)->unk_74 = 4;
     }
     for (u8 i = 0; data_020d0c84[V(e)->unk_74][i] != 0xff; i++) {
-        Entity *debris = func_020769d4(e, data_020d0c84[V(e)->unk_74][i]);
+        Entity *debris = ItemSet(e, data_020d0c84[V(e)->unk_74][i]);
         if (debris != NULL) {
             debris->x.HALF.HI -= 8;
             debris->z.HALF.HI = -0x10;
@@ -271,7 +271,7 @@ ARM void func_02032b78(Entity *e) {
     }
 }
 
-ARM void func_02032c2c(Entity *e) {
+ARM void move3Init(Entity *e) {
     V(e)->unk_70 = data_020d0ac2[Random() & 7];
     e->direction = func_02086078(e, data_0212ceb0[e->timer].entity) & 0x18;
     e->speed = 0x100;
@@ -279,14 +279,14 @@ ARM void func_02032c2c(Entity *e) {
     InitAnimationForceUpdate(e, (e->type - 1) * 10 + 1);
 }
 
-ARM u8 func_02032cac(Entity *e) {
+ARM u8 em2a_areaCheck(Entity *e) {
     u8 result = 0;
     if (e->x.HALF.HI < 0x198) {
         e->x.HALF.HI = 0x198;
         result = 1;
     } else if (e->x.HALF.HI > 0x250) {
         if (!(e->type2 & 0x40) && e->z.WORD == 0) {
-            func_02032ac4(e);
+            bigjumpinit(e);
         }
         if (e->x.HALF.HI > 0x298) {
             e->x.HALF.HI = 0x298;
@@ -303,7 +303,7 @@ ARM u8 func_02032cac(Entity *e) {
     return result;
 }
 
-ARM u8 func_02032d34(Entity *e) {
+ARM u8 move3search(Entity *e) {
     u8 i;
     u8 best;
     u16 bestDist = 0xffff;
@@ -329,13 +329,13 @@ ARM u8 func_02032d34(Entity *e) {
     return best;
 }
 
-ARM void func_02032e04(Entity *e) {
+ARM void flashcheck(Entity *e) {
     if (e->type != 3) {
         return;
     }
     u8 player = data_0212c504;
-    if (func_0208de54(func_0208da4c()) == 0) {
-        player = *func_02093b5c();
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
+        player = *Knife_Single_SinglePlay_GetInstance();
     }
     if (player == V(e)->unk_78) {
         e->spriteSettings.b0 = 1;
@@ -344,15 +344,15 @@ ARM void func_02032e04(Entity *e) {
     }
 }
 
-ARM void func_02032e5c(Entity *e) {
+ARM void efectset(Entity *e) {
     for (u8 i = 0; i < 4; i++) {
-        Entity *fx = CreateFx(0xf, 0xd, 0x20);
+        Entity *fx = GetSetWork(0xf, 0xd, 0x20);
         if (fx != NULL) {
-            CopyPosition(e, fx);
+            ObjPosCopy(e, fx);
             fx->y.HALF.HI -= 0x10;
             fx->speed = (Random() & 0x1f) << 8;
             fx->direction = Random() & 0x1f;
-            ProcessMovement(fx);
+            MoveDir(fx);
         }
     }
 }

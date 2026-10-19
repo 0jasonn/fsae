@@ -1,11 +1,11 @@
 #include "game/scene_d.h"
 #include "global.h"
 
-// Scene_FinishStartup -> Scene_FinishStartup
+// title_wait -> title_wait
 // Scene_NoOp -> Scene_NoOp
-// Scene_ReleaseResources -> Scene_ReleaseResources
-// Scene_UpdatePlayerInput -> Scene_UpdatePlayerInput
-ARM void Scene_FinishStartup(void) {
+// title_move -> title_move
+// title_machiuke_joy -> title_machiuke_joy
+ARM void title_wait(void) {
     *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
     if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) != 0) {
         return;
@@ -14,14 +14,14 @@ ARM void Scene_FinishStartup(void) {
     GX_DispOn();
     data_0212c5ac.resetValue = -1;
     PaletteFade_ClearBufferFlag();
-    func_0204625c(2, 8);
+    FadeSet(2, 8);
     data_0212c4dc++;
 }
 
 ARM void Scene_NoOp(void) {
 }
 
-ARM void Scene_ReleaseResources(void) {
+ARM void title_move(void) {
     func_020909c8();
-    func_0208da4c();
+    KnifeApp_getInstance();
 }

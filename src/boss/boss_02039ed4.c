@@ -2,13 +2,13 @@
 #include "global.h"
 
 // Function names (dsd -> name), also in scratch/agentA/renames.txt:
-// Boss_StartDying Boss_StartDying, Boss_CheckWallDeath Boss_CheckWallDeath, Boss_UpdateLaunchWait Boss_UpdateLaunchWait,
-// Boss_StartAction3 Boss_StartAction3, Boss_UpdateContact Boss_UpdateContact, Boss_DispatchAction2 Boss_DispatchAction2,
-// Boss_UpdateTarget Boss_UpdateTarget, Boss_Release Boss_Release (tail-calls func_02084788),
-// Boss_SyncChildToParent Boss_SyncChildToParent, Boss_SpawnChild Boss_SpawnChild, Boss_OnAnimLoop Boss_OnAnimLoop,
-// Boss_AdvanceAfterLoop Boss_AdvanceAfterLoop, Boss_RetargetTick Boss_RetargetTick
+// tenka tenka, searchCandle searchCandle, purupuru purupuru,
+// piyoriSet piyoriSet, Em09 Em09, em09_normal em09_normal,
+// em09_damage em09_damage, Boss_Release Boss_Release (tail-calls func_02084788),
+// type2Move type2Move, em09_init em09_init, em09_wait em09_wait,
+// em09_appear em09_appear, em09_move em09_move
 
-ARM void Boss_StartDying(Entity *e) {
+ARM void tenka(Entity *e) {
     e->action = 4;
     e->iframes = 0xfc;
     VBD(e)->dying = 1;
@@ -16,11 +16,11 @@ ARM void Boss_StartDying(Entity *e) {
     e->zVelocity = 0x20000;
     e->unk_5c = 0x21ff;
     VBD(e)->dyingTimer = 0xf0;
-    Boss_SetAnimation(e, 2);
+    em08_seqSet(e, 2);
     EnqueueSFX(0x2a);
 }
 
-ARM void Boss_CheckWallDeath(Entity *e) {
+ARM void searchCandle(Entity *e) {
     int a;
     int b;
     if (VBD(e)->dying != 0) {
@@ -30,14 +30,14 @@ ARM void Boss_CheckWallDeath(Entity *e) {
         a = func_02083c74(e, 2, -6);
         b = func_02083c74(e, -2, -6);
         if (a == 0x10e || b == 0x10e) {
-            Boss_StartDying(e);
+            tenka(e);
             return;
         }
     } else if (e->unk_2c & 0xe0) {
         a = func_02083c74(e, 2, 6);
         b = func_02083c74(e, -2, 6);
         if (a == 0x10e || b == 0x10e) {
-            Boss_StartDying(e);
+            tenka(e);
             return;
         }
     }
@@ -45,7 +45,7 @@ ARM void Boss_CheckWallDeath(Entity *e) {
         a = func_02083c74(e, 8, 2);
         b = func_02083c74(e, 8, -2);
         if (a == 0x10e || b == 0x10e) {
-            Boss_StartDying(e);
+            tenka(e);
         }
         return;
     }
@@ -53,12 +53,12 @@ ARM void Boss_CheckWallDeath(Entity *e) {
         a = func_02083c74(e, -8, 2);
         b = func_02083c74(e, -8, -2);
         if (a == 0x10e || b == 0x10e) {
-            Boss_StartDying(e);
+            tenka(e);
         }
     }
 }
 
-ARM int Boss_UpdateLaunchWait(Entity *e) {
+ARM int purupuru(Entity *e) {
     VBL(e)->launchTimer--;
     if (VBL(e)->launchTimer == 0) {
         if (e->action == 2 && data_0212ceb0[e->type2].unk_02 != 0) {
@@ -71,7 +71,7 @@ ARM int Boss_UpdateLaunchWait(Entity *e) {
             e->unk_46 = 0xc;
             e->unk_3f = 0x10;
             e->unk_5c = 0x31ff;
-            Boss_SetAnimation(e, 0);
+            em08_seqSet(e, 0);
             e->unk_2e = 2;
             return 0;
         }
@@ -86,16 +86,16 @@ ARM int Boss_UpdateLaunchWait(Entity *e) {
     return 1;
 }
 
-ARM void Boss_StartAction3(Entity *e) {
+ARM void piyoriSet(Entity *e) {
     e->action = 3;
     e->unk_46 = 3;
     e->unk_3f = 0x47;
     e->unk_5c = 0x31ff;
-    Boss_SetAnimation(e, 4);
+    em08_seqSet(e, 4);
     e->unk_2e = 2;
 }
 
-ARM void Boss_UpdateContact(Entity *e) {
+ARM void Em09(Entity *e) {
     Entity *target;
     u8 index;
     if (e->type2 == 0) {
@@ -103,7 +103,7 @@ ARM void Boss_UpdateContact(Entity *e) {
         target = func_020849c8(e);
         if (target != NULL) {
             if (e->action == 4) {
-                Boss_LaunchChild(e);
+                kuttsukiReset(e);
             }
             func_02084ab8(e, target);
         } else {
@@ -111,15 +111,15 @@ ARM void Boss_UpdateContact(Entity *e) {
             data_020d1e14[index](e);
         }
     } else {
-        Boss_SyncChildToParent(e);
+        type2Move(e);
     }
 }
 
-ARM void Boss_DispatchAction2(Entity *e) {
+ARM void em09_normal(Entity *e) {
     data_020d1e2c[e->action](e);
 }
 
-ARM void Boss_UpdateTarget(Entity *e) {
+ARM void em09_damage(Entity *e) {
     if (e->unk_3f == 0x14) {
         e->unk_3f = 0x13;
         e->hitbox = data_020d1db4;
@@ -133,16 +133,16 @@ ARM void Boss_UpdateTarget(Entity *e) {
         InitAnimationForceUpdate(e, 2);
         e->parent->spriteSettings.b0 = 1;
         InitAnimationForceUpdate(e->parent, 5);
-        func_020768d8(e);
+        KemuriSet(e);
         if (e->contactedEntity->unk_08 == 8 || e->contactedEntity->unk_08 == 1) {
             e->child = data_0212ceb0[e->contactedEntity->type].entity;
         } else {
-            e->child = func_02045eb4();
+            e->child = EmGetAimPl();
         }
         return;
     }
     if (e->action == 4) {
-        Boss_LaunchChild(e);
+        kuttsukiReset(e);
     }
     if (e->contactedEntity->unk_08 == 1) {
         if ((data_0212ceb0[e->contactedEntity->type].unk_36 & 2) == 0) {
@@ -158,12 +158,12 @@ ARM void Boss_UpdateTarget(Entity *e) {
             e->subtimer = 0;
             VBT(e)->unk_7c = 0x2d;
         } else {
-            e->child = func_02045eb4();
+            e->child = EmGetAimPl();
         }
     } else if (e->contactedEntity->unk_08 == 8) {
         e->child = data_0212ceb0[e->contactedEntity->type].entity;
     } else {
-        e->child = func_02045eb4();
+        e->child = EmGetAimPl();
     }
     e->direction = GetFacingDirection(e, e->child);
 }
@@ -172,7 +172,7 @@ ARM void Boss_Release(Entity *e) {
     func_02084788(e);
 }
 
-ARM void Boss_SyncChildToParent(Entity *e) {
+ARM void type2Move(Entity *e) {
     Entity *parent = e->parent;
     e->x.HALF.HI = parent->x.HALF.HI;
     e->y.HALF.HI = parent->y.HALF.HI + 1;
@@ -182,10 +182,10 @@ ARM void Boss_SyncChildToParent(Entity *e) {
     data_020d1da4[e->action](e);
 }
 
-ARM void Boss_SpawnChild(Entity *e) {
+ARM void em09_init(Entity *e) {
     Entity *child;
     Tbl3 table;
-    child = CreateEnemy(9);
+    child = GetEnemyWork(9);
     if (child == NULL) {
         return;
     }
@@ -213,8 +213,8 @@ ARM void Boss_SpawnChild(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void Boss_OnAnimLoop(Entity *e) {
-    Boss_UpdateAnimPair(e);
+ARM void em09_wait(Entity *e) {
+    seqMove(e);
     if ((e->frame & 0x80) != 0) {
         InitAnimationForceUpdate(e, 0);
         InitAnimationForceUpdate(e->parent, 3);
@@ -222,8 +222,8 @@ ARM void Boss_OnAnimLoop(Entity *e) {
     }
 }
 
-ARM void Boss_AdvanceAfterLoop(Entity *e) {
-    Boss_UpdateAnimPair(e);
+ARM void em09_appear(Entity *e) {
+    seqMove(e);
     if ((e->frame & 0x80) != 0) {
         e->action++;
         e->timer = 8;
@@ -241,15 +241,15 @@ ARM void Boss_AdvanceAfterLoop(Entity *e) {
     }
 }
 
-ARM void Boss_RetargetTick(Entity *e) {
+ARM void em09_move(Entity *e) {
     if (--e->timer == 0) {
         e->timer = 8;
-        if (func_0208de54(func_0208da4c()) == 0) {
-            e->child = data_0212ceb0[*func_02093b5c()].entity;
+        if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
+            e->child = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         e->direction = func_02084fd0(e, e->child);
-        Boss_UpdateAnimFromDirection(e);
+        em09_seqSet(e);
     }
     func_020847a0(e);
-    Boss_UpdateAnimPair(e);
+    seqMove(e);
 }

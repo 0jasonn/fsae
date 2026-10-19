@@ -1,13 +1,13 @@
 #include "object/object_02033708.h"
 #include "global.h"
 
-ARM BOOL func_02034508(Entity *e) {
+ARM BOOL set3rd(Entity *e) {
     Entity *a;
     Entity *b;
     Entity *c;
     Entity *d;
-    if ((a = func_0204bcc8()) != NULL && (b = func_0204bd00()) != NULL && (c = func_0204bd00()) != NULL &&
-        (d = func_0204bd00()) != NULL) {
+    if ((a = GetObjWork()) != NULL && (b = GetObjWork2()) != NULL && (c = GetObjWork2()) != NULL &&
+        (d = GetObjWork2()) != NULL) {
         a->unk_08 = 3;
         b->unk_08 = 3;
         c->unk_08 = 3;
@@ -34,14 +34,14 @@ ARM BOOL func_02034508(Entity *e) {
         V(b)->unk_76 = 0x40;
         V(a)->unk_7c = c;
         V(b)->unk_7c = c;
-        CopyPosition(e, a);
-        CopyPosition(e, b);
-        CopyPosition(e, c);
-        CopyPosition(e, d);
-        func_0204c178(4, a);
-        func_0204c178(4, b);
-        func_0204c178(4, c);
-        func_0204c178(5, d);
+        ObjPosCopy(e, a);
+        ObjPosCopy(e, b);
+        ObjPosCopy(e, c);
+        ObjPosCopy(e, d);
+        RegistObjWork(4, a);
+        RegistObjWork(4, b);
+        RegistObjWork(4, c);
+        RegistObjWork(5, d);
         c->direction = 0x20;
         VCT(e)->unk_7d = 0;
         VCT(e)->unk_7c = 1;

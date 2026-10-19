@@ -1,10 +1,10 @@
 #include "game/scene_d.h"
 #include "global.h"
 
-// Scene_UpdateIntro -> Scene_UpdateIntro (guess: intro/opening state machine of the scene block)
-// Scene_UpdateSlotWait -> Scene_UpdateSlotWait
-// Scene_FollowCameraTarget -> Scene_FollowCameraTarget
-ARM void Scene_UpdateIntro(void) {
+// scene_03 -> scene_03 (guess: intro/opening state machine of the scene block)
+// fairy_talkmove -> fairy_talkmove
+// opdemo_scroll -> opdemo_scroll
+ARM void scene_03(void) {
     switch (data_021349c0[EFFECT_STATE_SCENE]) {
         case 0:
             *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
@@ -20,7 +20,7 @@ ARM void Scene_UpdateIntro(void) {
             break;
         }
         case 2:
-            Scene_FollowCameraTarget();
+            opdemo_scroll();
             *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
             if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) != 0) {
                 return;
@@ -28,15 +28,15 @@ ARM void Scene_UpdateIntro(void) {
             data_021349c0[EFFECT_STATE_SCENE]++;
             data_021349c0[EFFECT_STATE_FLAG_E] = 5;
             {
-                Entity *fx = CreateFx(0x5a, 1, 0x14);
+                Entity *fx = GetSetWork(0x5a, 1, 0x14);
                 fx->x.HALF.HI = data_0212ceb0[0].entity->x.HALF.HI - 8;
                 fx->y.HALF.HI = data_0212ceb0[0].entity->y.HALF.HI - 8;
             }
-            func_020725d0(0, 8, 8);
+            DemoLinkWalkSet(0, 8, 8);
             data_0212ceb0[0].unk_0c = 8;
             break;
         case 3:
-            Scene_FollowCameraTarget();
+            opdemo_scroll();
             *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = 0xb4;
             break;
         case 4:
@@ -75,7 +75,7 @@ ARM void Scene_UpdateIntro(void) {
 }
 
 // Waits until the scene control block is idle, then starts effect effectId in slot.
-ARM int Scene_UpdateSlotWait(s32 slot, s32 effectId) {
+ARM int fairy_talkmove(s32 slot, s32 effectId) {
     u8 mode = data_0217d384[SCENE_CTRL_MODE] & 0x7f;
     if (mode == 6) {
         Status_ArmIfEnabled();
@@ -87,7 +87,7 @@ ARM int Scene_UpdateSlotWait(s32 slot, s32 effectId) {
         if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) == 0) {
             data_021349c0[EFFECT_STATE_SCENE]++;
             *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = 0x1e;
-            Scene_StartSlotEffect(slot, effectId);
+            fairy_talkset(slot, effectId);
             return 1;
         }
     }

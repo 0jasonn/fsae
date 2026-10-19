@@ -1,20 +1,20 @@
 #include "boss/boss_02030a14.h"
 #include "global.h"
 
-ARM void func_02030a14(Entity *e) {
+ARM void em02_div(Entity *e) {
     s8 count = 0;
-    Entity *a = CreateEnemy(3);
+    Entity *a = GetEnemyWork(3);
     if (a != NULL) {
         count++;
         a->iframes = 0xf0;
     }
-    Entity *b = CreateEnemy(3);
+    Entity *b = GetEnemyWork(3);
     if (b != NULL) {
         b->x.HALF.HI -= 6;
         b->iframes = 0xf0;
         count++;
     }
-    func_02045c20(e, a, b);
+    EmDivPosSet(e, a, b);
     if (count == 2) {
         a->parent = b;
         b->parent = a;
@@ -23,13 +23,13 @@ ARM void func_02030a14(Entity *e) {
     if (counter != NULL) {
         VARS(Vars_Counter, counter)->unk_62 += count;
     }
-    Entity *fx = CreateFx(0xf, 2, 0);
+    Entity *fx = GetSetWork(0xf, 2, 0);
     if (fx != NULL) {
         fx->x.HALF.HI = e->x.HALF.HI - 4;
         fx->y.HALF.HI = e->y.HALF.HI;
         fx->unk_50 = e->unk_50;
     }
-    DeleteEntity(e);
+    PutObjWork(e);
 }
 
 ARM void func_02030ae4(int index) {
@@ -47,9 +47,9 @@ ARM void func_02030ae4(int index) {
     }
 }
 
-ARM void func_02030b70(Entity *e) {
+ARM void Em2a(Entity *e) {
     if (e->type2 & 0x80) {
-        func_02031cb0(e);
+        em2a_core(e);
         return;
     }
     if (e->type2 & 0x40) {
@@ -85,15 +85,15 @@ ARM void func_02030b70(Entity *e) {
         e->parent->action = 6;
         V(e->parent)->unk_74 = 0;
         V(e->parent)->unk_75 = 0x1e;
-        func_02032b78(e->parent);
+        em2a_ruppyset(e->parent);
         SoundReq(0xa6);
         SoundReq(0xa3);
-        DeleteEntity(e);
+        PutObjWork(e);
         return;
     }
     if (e->type >= 4) {
         if (e->health == 0) {
-            func_02045ac0(e);
+            EmDie(e);
             e->type = 5;
             return;
         }
@@ -119,7 +119,7 @@ ARM void func_02030b70(Entity *e) {
                         V(e)->unk_74 = 0;
                     }
                     V(e)->unk_75 = 0x1e;
-                    func_02032b78(e);
+                    em2a_ruppyset(e);
                     e->action = 6;
                     SoundReq(0xa6);
                 }
@@ -137,8 +137,8 @@ ARM void func_02030b70(Entity *e) {
     data_020d0dc0[e->action](e);
 }
 
-ARM void func_02030e90(Entity *e) {
-    Entity *child = CreateFx(0x65, 0, 0);
+ARM void em2a_init(Entity *e) {
+    Entity *child = GetSetWork(0x65, 0, 0);
     if (child != NULL) {
         child->parent = e;
     }
@@ -159,17 +159,17 @@ ARM void func_02030e90(Entity *e) {
     e->unk_3f = 0x48;
     e->child = data_0212c648;
     data_0212c648 = e;
-    func_020266f8();
+    CockpitOff();
 }
 
-ARM void func_02030f8c(Entity *e) {
+ARM void em2a_demowait(Entity *e) {
     if (e->subtimer != 0) {
         if (e->subtimer == 0x3c) {
             data_0212c648 = e->child;
         } else if (e->subtimer == 0x1e) {
-            func_02026720();
+            CockpitOn();
         }
-        func_020547ec();
+        BindPlayers();
         e->subtimer--;
     }
     if (!(e->contactFlags & 0x80)) {
@@ -189,12 +189,12 @@ ARM void func_02030f8c(Entity *e) {
     if (--e->timer == 0) {
         e->spriteSettings.b16 = e->spriteSettings.b20 - 1;
         e->spriteSettings.b20 = e->spriteSettings.b16;
-        func_02032ac4(e);
+        bigjumpinit(e);
     }
-    func_02032e5c(e);
+    efectset(e);
 }
 
-ARM void func_02031084(Entity *e) {
+ARM void em2a_jumpmove2(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
         return;
@@ -202,7 +202,7 @@ ARM void func_02031084(Entity *e) {
     if (e->frame & 0x40) {
         SoundReq(0xa8);
     }
-    ProcessMovement(e);
+    MoveDir(e);
     s16 dx = e->x.HALF.HI - 0x1f8;
     s16 dy = e->y.HALF.HI - 0x1f8;
     if (dx <= 3 && dx >= -3) {
@@ -225,15 +225,15 @@ ARM void func_02031084(Entity *e) {
         }
         e->action++;
         if (e->type != 0) {
-            CreateFx(0x61, 0, 0);
+            GetSetWork(0x61, 0, 0);
         } else {
             e->type = 1;
-            func_02032b48(e);
+            lifeset(e);
             SoundReq(0x19c);
         }
         InitAnimationForceUpdate(e, (e->type - 1) * 10 + 8);
-        func_020329c8(e);
-        func_0205747c(0x10, 3);
+        jumpefectSet(e);
+        YureSet(0x10, 3);
         return;
     }
     e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);

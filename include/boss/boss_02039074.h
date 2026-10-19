@@ -27,22 +27,22 @@ typedef struct Vars_Target {
     /* 62 */ u16 pieceCount;
 } Vars_Target;
 
-void Boss_RandomizeDirection(Entity *e);
-void Boss_Explode(Entity *e);
-void Boss_SetAnimation(Entity *e, int a);
+void em05DirChange(Entity *e);
+void explodeSet(Entity *e);
+void em08_seqSet(Entity *e, int a);
 
 void func_0208ae30(Entity *e);
 void func_020847f8(Entity *e);
 int func_020847b0(Entity *e);
-Entity *CreateProjectile(int id);
-void CopyPosition(Entity *e, Entity *other);
-Entity *CreateEnemy(int id);
-void DeleteEntity(Entity *e);
-void func_02045c20(Entity *e, Entity *a, Entity *b);
-void Boss_StartDying(Entity *e);
-void Boss_CheckWallDeath(Entity *e);
-int Boss_UpdateLaunchWait(Entity *e);
-void Boss_StartAction3(Entity *e);
+Entity *GetTamaWork(int id);
+void ObjPosCopy(Entity *e, Entity *other);
+Entity *GetEnemyWork(int id);
+void PutObjWork(Entity *e);
+void EmDivPosSet(Entity *e, Entity *a, Entity *b);
+void tenka(Entity *e);
+void searchCandle(Entity *e);
+int purupuru(Entity *e);
+void piyoriSet(Entity *e);
 void func_02084788(Entity *e);
 void func_02085a60(Entity *e, u16 a);
 void func_02089524(Entity *e);

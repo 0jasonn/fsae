@@ -1,18 +1,18 @@
 #include "game/scene_d.h"
 #include "global.h"
 
-// Scene_StartSlotEntity -> Scene_StartSlotEntity
-// Scene_StartSlotEffect -> Scene_StartSlotEffect
-// Scene_FollowCameraTarget -> Scene_FollowCameraTarget
-// Scene_UpdateStep -> Scene_UpdateStep
-ARM void Scene_StartSlotEntity(s32 slot, s32 index, s32 flags) {
-    func_0205069c(data_02134d3c[slot].entity, data_02104ab0[index], flags);
+// fairy_set -> fairy_set
+// fairy_talkset -> fairy_talkset
+// opdemo_scroll -> opdemo_scroll
+// op_title -> op_title
+ARM void fairy_set(s32 slot, s32 index, s32 flags) {
+    ObjAnimMoveSet(data_02134d3c[slot].entity, data_02104ab0[index], flags);
     data_02134d3c[slot].entity->action = 1;
     SoundReq(0x201);
 }
 
-ARM void Scene_StartSlotEffect(s32 slot, s32 effectId) {
-    Status_ResetWithValue(effectId);
+ARM void fairy_talkset(s32 slot, s32 effectId) {
+    MessageRequest(effectId);
     data_0217d384[SCENE_CTRL_SUBMODE_3] = (data_0217d384[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
     data_0217d384[SCENE_CTRL_SUBMODE_4] = (data_0217d384[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
     data_021349c0[EFFECT_STATE_ACTIVE_SLOT] = slot;
@@ -20,7 +20,7 @@ ARM void Scene_StartSlotEffect(s32 slot, s32 effectId) {
 }
 
 // Follows the camera target (data_0212c648) on y, clamping the camera x to 0..0xa0
-ARM void Scene_FollowCameraTarget(void) {
+ARM void opdemo_scroll(void) {
     s32 desired;
     s32 next;
     if (*(Entity **)&data_0212c648 == NULL) {
@@ -45,7 +45,7 @@ ARM void Scene_FollowCameraTarget(void) {
     data_0212c75c.scrollX = data_0212c75c.unk_30;
 }
 
-ARM void Scene_UpdateStep(void) {
+ARM void op_title(void) {
     data_021349c0[8] = data_0212c530 & 0xf;
     data_02104a90[data_0212c4dc]();
     data_0212c564();

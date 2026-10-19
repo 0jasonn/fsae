@@ -1,5 +1,5 @@
 // Functions in this file:
-//   GameState_UpdateMusic -> GameState_UpdateMusic
+//   BgmSet -> BgmSet
 //   GameState_SetTrackVariant -> GameState_SetTrackVariant
 #include "game/gamestateview_c.h"
 #include "global.h"
@@ -16,7 +16,7 @@ extern const u32 data_0210371c[];
 
 void SoundReq(u32 id);
 
-ARM void GameState_UpdateMusic(void) {
+ARM void BgmSet(void) {
     u32 trackId;
     u16 current;
     if (data_0212c7c8.unk_6e >= 2) {

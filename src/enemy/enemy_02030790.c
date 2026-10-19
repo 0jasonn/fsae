@@ -14,11 +14,11 @@ ARM void func_02030790(Entity *e) {
     EnemyFunctionHandler(e, data_020d08e4);
 }
 
-ARM void func_020307a4(Entity *e) {
+ARM void em02_normal(Entity *e) {
     data_020d08fc[e->action](e);
 }
 
-ARM void func_020307c0(Entity *e) {
+ARM void em02_damage(Entity *e) {
     if (e->health != 0 && VARS(Vars_02030790, e)->unk_7c != e->health) {
         e->action = 6;
         return;
@@ -26,7 +26,7 @@ ARM void func_020307c0(Entity *e) {
     GenericKnockback(e, data_020d08e4);
 }
 
-ARM void func_020307f0(Entity *e) {
+ARM void em02_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
     e->hitbox = data_020d08cc;
@@ -36,7 +36,7 @@ ARM void func_020307f0(Entity *e) {
     VARS(Vars_02030790, e)->unk_7c = e->health;
 }
 
-ARM void func_0203084c(Entity *e) {
+ARM void em02_wait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -47,7 +47,7 @@ ARM void func_0203084c(Entity *e) {
     InitAnimationForceUpdate(e, (e->direction >> 3) + 1);
 }
 
-ARM void func_020308a4(Entity *e) {
+ARM void em02_move(Entity *e) {
     if (--e->timer != 0) {
         if (e->frame == 0) {
             func_020852ec(e);
@@ -65,7 +65,7 @@ ARM void func_020308a4(Entity *e) {
     InitAnimationForceUpdate(e, 5);
 }
 
-ARM void func_02030930(Entity *e) {
+ARM void em02_vanish(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
         return;
@@ -79,7 +79,7 @@ ARM void func_02030930(Entity *e) {
     e->spriteSettings.b0 = 0;
 }
 
-ARM void func_02030980(Entity *e) {
+ARM void em02_vwait(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -88,7 +88,7 @@ ARM void func_02030980(Entity *e) {
     InitAnimationForceUpdate(e, 6);
 }
 
-ARM void func_020309c0(Entity *e) {
+ARM void em02_appear(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
         return;

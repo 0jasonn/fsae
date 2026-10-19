@@ -5,7 +5,7 @@
 void func_02083000(Entity *a, u8 *base);
 extern u8 data_0212dd90[];
 
-ARM void func_0205063c(Entity *a, Entity *e) {
+ARM void ObjAffineSet2(Entity *a, Entity *e) {
     u8 *base = data_0212dd90 + (e->spriteSettings.b24 >> 1) * 0x20;
     u8 *q;
     u8 *d;
