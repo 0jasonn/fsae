@@ -6,11 +6,11 @@
 
 // Em12 actor fields (file-local overlay for src/enemy/em12.c)
 typedef union Em12Word70 {
-    u32 typeBits; // ParseTypeBits(e->type), tested against data_02134954[e->unk_52]
+    u32 typeBits; // ParseTypeBits(e->type), tested against em12_typeMasks[e->unk_52]
     struct {
         u8 flag;   // set and cleared by em12_move / em12_return
         u8 inArea; // 0xff while a player stands inside the area box
-        u8 unk_72;
+        u8 walkState; // bit flags set by igoalWalk
         u8 unk_73;
     } b;
 } Em12Word70;
@@ -37,16 +37,16 @@ typedef struct UnkStruct_0212c648 {
 
 extern UnkStruct_0212c648 data_0212c648;
 extern u16 data_0212c5bc;          // frame counter
-extern u32 data_02134954[];
+extern u32 em12_typeMasks[];
 extern u16 data_0213492c[];
-extern u16 data_0213492e[];
-extern const u8 data_020d2088[];
-extern const s8 data_020d2114[];
-extern const s8 data_020d2124[];
+extern u16 em12_spawnOffsetY[];
+extern const u8 em12_hitbox[];
+extern const s8 em12_kemuriOffsets[];
+extern const s8 em12_walkOffsets[];
 extern const u16 data_020d2144[];
 extern u8 *data_02171e0c;
 extern u16 data_0212c584[4];
-extern const u8 data_020f26b8[];
+extern const u8 em12_colorByPlayer[];
 
 
 #endif

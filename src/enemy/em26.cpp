@@ -4,19 +4,19 @@
 
 ARM void Em26(Entity *e) {
     func_02084700(e);
-    Entity *target = func_020849c8(e);
-    if (target != NULL) {
+    Entity *partner = func_020849c8(e);
+    if (partner != NULL) {
         if (!(e->unk_3c & 0x80) && e->timer == 1) {
             BubbleReset(e);
         }
-        func_02084ab8(e, target);
+        func_02084ab8(e, partner);
         return;
     }
-    data_020d31b8[func_02084a30(e)](e);
+    em26_mainTable[func_02084a30(e)](e);
 }
 
 ARM void em26_normal(Entity *e) {
-    data_020d31a8[e->action](e);
+    em26_normalTable[e->action](e);
 }
 
 ARM void em26_damage(Entity *e) {
@@ -24,7 +24,7 @@ ARM void em26_damage(Entity *e) {
         e->action = 3;
         e->unk_42 = 0;
     }
-    GenericKnockback(e, data_020d31b8);
+    GenericKnockback(e, em26_mainTable);
 }
 
 ARM void em26_die(Entity *e) {

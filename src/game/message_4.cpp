@@ -11,12 +11,12 @@ ARM void Message(void) {
     u8 mode;
     u32 i;
 
-    if (data_0217d36c.active == 1) {
-        data_0217d36c.active = 0;
-        data_0217d484.state = 1;
+    if (telopRequest.active == 1) {
+        telopRequest.active = 0;
+        telopBox.state = 1;
     }
 
-    mode = data_0217d384[0];
+    mode = messageRequest[0];
     switch (mode) {
     case 1:
         data_0217d39c.lineChangeReq = 0;
@@ -33,8 +33,8 @@ ARM void Message(void) {
     }
 
     do {
-        i = data_0217d484.state;
-    } while (data_02103c18[i]() != 0);
+        i = telopBox.state;
+    } while (telopStates[i]() != 0);
 
     if (data_0217d39c.waitTimer != 0) {
         data_0217d39c.waitTimer--;
@@ -44,7 +44,7 @@ ARM void Message(void) {
     } else {
         do {
             i = data_0217d39c.state;
-        } while (data_02103c00[i]() != 0);
+        } while (messageStates[i]() != 0);
     }
 
     deleteWindow();

@@ -22,17 +22,17 @@
 #include "enemy/em29.h"
 #include "global.h"
 
-extern const EntityFunc data_020d34a4[];
-extern const u16 data_020d3486[];
-extern const s8 data_020d346c[];
-extern const s8 data_020d346f[];
-extern const u16 data_020d347a[];
-extern u8 data_021348ec[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
-extern const u8 data_020d34e2[];
+extern const EntityFunc em29_stateTable[];
+extern const u16 em29_scrollLimitsIn[];
+extern const s8 em29_restZ[];
+extern const s8 em29_sinkZ[];
+extern const u16 em29_scrollLimitsOut[];
+extern u8 encntSharedState[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
+extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
@@ -48,7 +48,7 @@ ARM void Em29(Entity *e) {
             parent->triggerFlags &= 0xfe;
         }
     }
-    data_020d34a4[e->action](e);
+    em29_stateTable[e->action](e);
     if (e->type != 2) {
         return;
     }
@@ -69,7 +69,7 @@ ARM void em29_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->y.HALF.LO = 2 - e->type;
-    e->z.HALF.HI = data_020d346c[e->type];
+    e->z.HALF.HI = em29_restZ[e->type];
     W(e)->cycleTimer = 0x1e;
     if (e->type != 0) {
         if (e->type == 1) {
@@ -84,10 +84,10 @@ ARM void em29_init(Entity *e) {
     func_02085cf8(e);
     W(e)->subPosX = 0x800;
     W(e)->subPosY = 0x600;
-    data_0212c574[0] = W(e)->subPosX;
-    data_0212c574[1] = W(e)->subPosY;
-    data_0212c574[2] = 0;
-    ObjAffineSet2((const KnifeObjAffineSrcData *)data_0212c574, e);
+    scrollArgs[0] = W(e)->subPosX;
+    scrollArgs[1] = W(e)->subPosY;
+    scrollArgs[2] = 0;
+    ObjAffineSet2((const KnifeObjAffineSrcData *)scrollArgs, e);
 }
 
 // em29_move (0x02041a3c): when the parent is in state 1 this switches to action 3. Otherwise a

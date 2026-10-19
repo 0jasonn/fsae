@@ -2,10 +2,10 @@
 #include "global.h"
 #include "engine/misc_d.h"
 
-// data_02134980 is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
+// pauseState is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
 // [0xe] reset flag, [0xf] set when the wireless session is being closed
 
-extern u8 data_02134980[];
+extern u8 pauseState[];
 extern u16 data_021355a0;
 extern u16 data_0212c58c[];
 extern u8 data_0212c4b8;
@@ -17,42 +17,42 @@ extern u16 data_0212c520;
 
 #define PL_ARR (*(PlWork (*)[4])data_0212ceb0)
 
-extern u16 data_0212c574[];
-extern u8 data_0212dd90[];
-extern u8 data_0212e190[];
+extern u16 scrollArgs[];
+extern u8 objAffineSet[];
+extern u8 objAffineSetAlt[];
 extern u8 data_0212c4e4;
 extern u16 data_0212c514;
 extern u16 data_0212c510;
 extern Entity *data_0212c534;
 extern u16 data_0212c584[];
-extern u8 data_0212c868[];
-extern const EntityFunc data_02115258[];
+extern u8 plScratchBuffer[];
+extern const EntityFunc entityDispatchTable[];
 
 
-extern u8 data_0217d36c[];
+extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 
 extern const s8 *const data_0211525c[];
 
-extern const VoidFunc data_02115268[];
-extern u8 data_0212c504;
+extern const VoidFunc rankingStepTable[];
+extern u8 localPlayerIndex;
 
 
 
 ARM void PlWorkColorReset(void) {
     u8 i;
     PlWork *end;
-    PlWork *p;
+    PlWork *plWork;
 
-    p = PL_ARR;
+    plWork = PL_ARR;
     end = (PlWork *)&data_0212ceb0[4];
     i = 0;
-    if (p < end) {
+    if (plWork < end) {
         do {
-            p->unk_8b = (p->unk_8b & ~0xc) | ((i & 3) << 2);
+            plWork->unk_8b = (plWork->unk_8b & ~0xc) | ((i & 3) << 2);
             i++;
-            p++;
-        } while (p < end);
+            plWork++;
+        } while (plWork < end);
     }
 }

@@ -20,7 +20,7 @@ typedef struct UnkStruct_0216fcf8 {
     /* 04 */ s32 unk_4;
     /* 08 */ s32 bufferSelect; // nonzero: data_0216fd04 is uploaded, zero: data_02170104
 } UnkStruct_0216fcf8;
-extern UnkStruct_0216fcf8 data_0216fcf8;
+extern UnkStruct_0216fcf8 paletteFade;
 
 // Blend request read by title_resourceCtrlCallback and color_control
 typedef struct UnkStruct_0212c5ac_D {
@@ -72,20 +72,20 @@ enum {
     EFFECT_STATE_SCENE = 0x00, // scene state machine of op_scene_00
     EFFECT_STATE_TIMER = 0x04, // u16 countdown used by op_scene_00
     EFFECT_STATE_STEP_TIMER = 0x09, // counts down before the step index advances
-    EFFECT_STATE_STEP_INDEX = 0x0a, // index into data_02104a58, 0xff at the end
+    EFFECT_STATE_STEP_INDEX = 0x0a, // index into mistStepTable, 0xff at the end
     EFFECT_STATE_ACTIVE = 0x0b,
     EFFECT_STATE_LEVEL = 0x0c,
     EFFECT_STATE_FLAG_E = 0x0e, // set to 2/3 by gufu_scene_02, cleared by its last state
 };
 extern u8 data_021349c0[];
 
-// Scene/actor control byte block (data_0217d384): low 7 bits of [0] are the mode, [3] and [4] hold 5-bit sub-modes
+// Scene/actor control byte block (messageRequest): low 7 bits of [0] are the mode, [3] and [4] hold 5-bit sub-modes
 enum {
     SCENE_CTRL_MODE = 0x00,
     SCENE_CTRL_SUBMODE_3 = 0x03,
     SCENE_CTRL_SUBMODE_4 = 0x04,
 };
-extern u8 data_0217d384[];
+extern u8 messageRequest[];
 
 // Scene control block (data_02134d30)
 typedef struct UnkStruct_02134d30 {
@@ -110,17 +110,17 @@ extern u8 data_0212c4dc;
 extern u16 data_0212c594;
 extern VoidFunc data_0212c564;
 extern const VoidFunc data_02104a40[];
-extern const u16 data_02104a58[];
-extern const u32 data_02104a20;
+extern const u16 mistStepTable[];
+extern const u32 titleDialogBlock;
 extern u8 data_0212c5bc[];
 extern u8 data_0212c4bc;
 extern u8 data_0212c4f8;
-extern u8 data_0212c504;
+extern u8 localPlayerIndex;
 extern u8 data_0212c618[];
 extern u8 data_021361a0[];
 extern const u8 data_020ce4d0[];
 extern s32 data_02134924;
-extern s32 data_02134914;
+extern s32 em2f_mapFlag;
 extern const VoidFunc data_02104a24[];
 
 

@@ -3,108 +3,108 @@
 #include "global.h"
 
 ARM void differentColSet(Entity *e) {
-    if (V(e)->unk_70 == NULL) {
+    if (V(e)->petal == NULL) {
         return;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         return;
     }
-    V(e)->unk_70->spriteSettings.b20 = data_020d119f[e->spriteSettings.b16][Random() % (data_0212c7c8.unk_0 - 1)];
-    V(e)->unk_70->spriteSettings.b16 = V(e)->unk_70->spriteSettings.b20;
+    V(e)->petal->spriteSettings.b20 = em2d_petalColors[e->spriteSettings.b16][Random() % (data_0212c7c8.unk_0 - 1)];
+    V(e)->petal->spriteSettings.b16 = V(e)->petal->spriteSettings.b20;
 }
 
 ARM void openEndSet(Entity *e) {
-    Entity *other = V(e)->unk_70;
+    Entity *other = V(e)->petal;
     if (other == NULL) {
         return;
     }
     e->unk_3f = 0x3f;
-    e->hitbox = data_020d11a4;
+    e->hitbox = em2d_openHitbox;
     other->unk_3c |= 0x80;
-    InitAnimationForceUpdate(V(e)->unk_70, 8);
-    V(e)->unk_70->unk_28 += Random() & 7;
+    InitAnimationForceUpdate(V(e)->petal, 8);
+    V(e)->petal->unk_28 += Random() & 7;
 }
 
 ARM void closeInit(Entity *e) {
-    Entity *other = V(e)->unk_70;
+    Entity *other = V(e)->petal;
     e->unk_3f = 0x40;
-    e->hitbox = data_020d119c;
+    e->hitbox = em2d_closeHitbox;
     if (other != NULL) {
         other->unk_3c &= 0x7f;
-        InitAnimationForceUpdate(V(e)->unk_70, 7);
+        InitAnimationForceUpdate(V(e)->petal, 7);
     }
     InitAnimationForceUpdate(e, 6);
 }
 
 ARM void closeEndSet(Entity *e) {
-    V(e)->unk_6e &= 0x3f;
+    V(e)->phaseFlags &= 0x3f;
     e->spriteSettings.b20 = e->parent->spriteSettings.b16;
     e->spriteSettings.b16 = e->spriteSettings.b20;
-    if (V(e)->unk_70 != NULL) {
-        V(e)->unk_70->spriteSettings.b0 = 0;
+    if (V(e)->petal != NULL) {
+        V(e)->petal->spriteSettings.b0 = 0;
     }
     InitAnimationForceUpdate(e, 3);
 }
 
 ARM BOOL kukiSet(Entity *e) {
-    Entity *a;
-    Entity *b;
-    Entity *c;
-    Entity *d;
-    if ((a = GetObjWork()) != NULL && (b = GetObjWork2(a)) != NULL && (c = GetObjWork2(b)) != NULL &&
-        (d = GetObjWork2(c)) != NULL) {
-        a->unk_08 = 3;
-        b->unk_08 = 3;
-        c->unk_08 = 3;
-        d->unk_08 = 3;
-        a->unk_09 = 0x2d;
-        b->unk_09 = 0x2c;
-        c->unk_09 = 0x2c;
-        d->unk_09 = 0x2c;
-        a->type = 1;
-        b->type = 2;
-        c->type = 2;
-        d->type = 2;
-        b->type2 = (e->type2 << 4) | 3;
-        c->type2 = (e->type2 << 4) | 2;
-        d->type2 = (e->type2 << 4) | 1;
-        a->parent = e;
-        b->parent = e;
-        c->parent = e;
-        d->parent = e;
-        b->child = e;
-        c->child = b;
-        d->child = c;
-        ObjPosCopy(e, a);
-        ObjPosCopy(e, b);
-        ObjPosCopy(e, c);
-        ObjPosCopy(e, d);
-        RegistObjWork(4, a);
-        RegistObjWork(4, b);
-        RegistObjWork(4, c);
-        RegistObjWork(4, d);
-        V(e)->unk_70 = a;
+    Entity *partA;
+    Entity *partB;
+    Entity *partC;
+    Entity *partD;
+    if ((partA = GetObjWork()) != NULL && (partB = GetObjWork2(partA)) != NULL && (partC = GetObjWork2(partB)) != NULL &&
+        (partD = GetObjWork2(partC)) != NULL) {
+        partA->unk_08 = 3;
+        partB->unk_08 = 3;
+        partC->unk_08 = 3;
+        partD->unk_08 = 3;
+        partA->unk_09 = 0x2d;
+        partB->unk_09 = 0x2c;
+        partC->unk_09 = 0x2c;
+        partD->unk_09 = 0x2c;
+        partA->type = 1;
+        partB->type = 2;
+        partC->type = 2;
+        partD->type = 2;
+        partB->type2 = (e->type2 << 4) | 3;
+        partC->type2 = (e->type2 << 4) | 2;
+        partD->type2 = (e->type2 << 4) | 1;
+        partA->parent = e;
+        partB->parent = e;
+        partC->parent = e;
+        partD->parent = e;
+        partB->child = e;
+        partC->child = partB;
+        partD->child = partC;
+        ObjPosCopy(e, partA);
+        ObjPosCopy(e, partB);
+        ObjPosCopy(e, partC);
+        ObjPosCopy(e, partD);
+        RegistObjWork(4, partA);
+        RegistObjWork(4, partB);
+        RegistObjWork(4, partC);
+        RegistObjWork(4, partD);
+        V(e)->petal = partA;
         if (e->type2 == 2) {
-            b->timer = 0x1e;
-            c->timer = 0x3c;
-            d->timer = 0x5a;
+            partB->timer = 0x1e;
+            partC->timer = 0x3c;
+            partD->timer = 0x5a;
         } else {
-            b->timer = 0xf;
-            c->timer = 0x1e;
-            d->timer = 0x2d;
+            partB->timer = 0xf;
+            partC->timer = 0x1e;
+            partD->timer = 0x2d;
         }
-        if (VS(e->child)->unk_70 == NULL) {
-            VS(e->child)->unk_70 = d;
-            V(e)->unk_74 = &VS(e->child)->unk_70;
+        if (VS(e->child)->segmentA == NULL) {
+            VS(e->child)->segmentA = partD;
+            V(e)->segmentSlot = &VS(e->child)->segmentA;
             return TRUE;
         }
-        if (VS(e->child)->unk_74 == NULL) {
-            VS(e->child)->unk_74 = d;
-            V(e)->unk_74 = &VS(e->child)->unk_74;
+        if (VS(e->child)->segmentB == NULL) {
+            VS(e->child)->segmentB = partD;
+            V(e)->segmentSlot = &VS(e->child)->segmentB;
             return TRUE;
         } else {
-            VS(e->child)->unk_78 = d;
-            V(e)->unk_74 = &VS(e->child)->unk_78;
+            VS(e->child)->segmentC = partD;
+            V(e)->segmentSlot = &VS(e->child)->segmentC;
             return TRUE;
         }
     }
@@ -112,8 +112,8 @@ ARM BOOL kukiSet(Entity *e) {
 }
 
 ARM void flowerDie(Entity *e) {
-    *V(e)->unk_74 = NULL;
-    VCT(e->parent)->unk_7c--;
+    *V(e)->segmentSlot = NULL;
+    VCT(e->parent)->flowerCount--;
     Entity *fx = GetSetWork(0xf, 1, 0);
     if (fx != NULL) {
         ObjPosCopy(e, fx);
@@ -123,8 +123,8 @@ ARM void flowerDie(Entity *e) {
     e->spriteSettings.b0 = 0;
     e->unk_3c &= 0x7f;
     e->health = 0;
-    if (V(e)->unk_70 != NULL) {
-        PutObjWork(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        PutObjWork(V(e)->petal);
     }
 }
 
@@ -134,7 +134,7 @@ ARM void seedSet(Entity *e) {
         return;
     }
     proj->direction = e->animationState << 2;
-    ObjPosCopyOfs32(e, proj, data_020f2686[e->animationState * 2] << 16, data_020f2686[e->animationState * 2 + 1] << 16);
+    ObjPosCopyOfs32(e, proj, em2d_seedOffsets[e->animationState * 2] << 16, em2d_seedOffsets[e->animationState * 2 + 1] << 16);
     EnqueueSFX(0xa5);
 }
 

@@ -5,13 +5,13 @@
 // Function names (dsd -> name), also in scratch/agentA/renames.txt:
 // em05_press em05_press, em05_move2 em05_move2, em05_nage em05_nage,
 // em05DirChange em05DirChange, em0d_die em0d_die, Em0d Em0d,
-// Em06 Em06, em06_normal em06_normal, Boss_Knockback Boss_Knockback,
-// em06_init em06_init, em06_move em06_move, Boss_HandleEnemyState Boss_HandleEnemyState,
+// Em06 Em06, em06_normal em06_normal, em06_knockback em06_knockback,
+// em06_init em06_init, em06_move em06_move, em07_main em07_main,
 // em07_normal em07_normal, em07_damage em07_damage, em07_init em07_init,
 // em07_moveInit em07_moveInit, em07_move em07_move, em07_tame em07_tame,
 // em07_jump em07_jump, em07_land em07_land, em07_vanish em07_vanish,
 // em07_hide em07_hide, em07_appear em07_appear, em07_div em07_div,
-// Boss_UpdateHitStates Boss_UpdateHitStates, em08_normal em08_normal, em08_damage em08_damage,
+// em08_main em08_main, em08_normal em08_normal, em08_damage em08_damage,
 // em08_buttobi em08_buttobi, em08_init em08_init, em08_move em08_move,
 // em08_lift em08_lift, em08_lift_init em08_lift_init, em08_lift_move em08_lift_move,
 // em08_lift_throw em08_lift_throw, em08_lift_end em08_lift_end, em08_piyori em08_piyori,
@@ -129,7 +129,7 @@ ARM void em0d_die(Entity *e) {
             break;
         }
         if (VB(e)->jumpTimer < 0x3c) {
-            e->x.HALF.HI += data_020d1998[VB(e)->jumpTimer & 3];
+            e->x.HALF.HI += em0d_dieSway[VB(e)->jumpTimer & 3];
         }
         break;
     case 2:
@@ -158,30 +158,30 @@ ARM void Em0d(Entity *e) {
     if (hitResult != 0) {
         func_02084ab8(e, hitResult);
     } else {
-        data_020d1a64[func_02084a30(e)](e);
+        em0d_noContactActions[func_02084a30(e)](e);
     }
 }
 
 ARM void Em06(Entity *e) {
     func_02084700(e);
-    data_020d1b94[func_02084a30(e)](e);
+    em06_actions[func_02084a30(e)](e);
     func_0208ae30(e);
     e->spriteSettings.b30 = 1;
     e->spriteSettings.b14 = 1;
 }
 
 ARM void em06_normal(Entity *e) {
-    data_020d1b84[e->action](e);
+    em06_normalActions[e->action](e);
 }
 
-ARM void Boss_Knockback(Entity *e) {
-    GenericKnockback(e, data_020d1b94);
+ARM void em06_knockback(Entity *e) {
+    GenericKnockback(e, em06_actions);
 }
 
 ARM void em06_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 0;
-    e->hitbox = data_020d1b8c;
+    e->hitbox = em06_hitbox;
     e->action++;
     e->direction = Random() & 0x1f;
     InitAnimationForceUpdate(e, 0);
@@ -195,15 +195,15 @@ ARM void em06_move(Entity *e) {
     } else {
         func_020847f8(e);
     }
-    e->z.HALF.HI = data_020d1b7c[e->frame];
+    e->z.HALF.HI = em06_heightByFrame[e->frame];
 }
 
-ARM void Boss_HandleEnemyState(Entity *e) {
-    EnemyFunctionHandler(e, data_020d1c20);
+ARM void em07_main(Entity *e) {
+    EnemyFunctionHandler(e, em07_actions);
 }
 
 ARM void em07_normal(Entity *e) {
-    data_020d1c7c[e->action](e);
+    em07_normalActions[e->action](e);
 }
 
 ARM void em07_damage(Entity *e) {
@@ -211,13 +211,13 @@ ARM void em07_damage(Entity *e) {
         e->action = 9;
         return;
     }
-    GenericKnockback(e, data_020d1c20);
+    GenericKnockback(e, em07_actions);
 }
 
 ARM void em07_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
-    e->hitbox = data_020d1bcc;
+    e->hitbox = em07_hitbox;
     VB(e)->lastHealth = e->health;
     InitAnimationForceUpdate(e, 0);
     e->action++;
@@ -237,7 +237,7 @@ ARM void em07_move(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
-    switch (data_020d1bd4[Random() & 7]) {
+    switch (em07_moveChoices[Random() & 7]) {
     case 0:
         e->timer = (Random() & 0x30) + 0x20;
         return;
@@ -361,12 +361,12 @@ ARM void em07_div(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void Boss_UpdateHitStates(Entity *e) {
-    EnemyFunctionHandler(e, data_020d1d40);
+ARM void em08_main(Entity *e) {
+    EnemyFunctionHandler(e, em08_actions);
 }
 
 ARM void em08_normal(Entity *e) {
-    data_020d1d58[e->action](e);
+    em08_normalActions[e->action](e);
     if (VB(e)->dyingTimer == 0) {
         return;
     }
@@ -401,7 +401,7 @@ ARM void em08_damage(Entity *e) {
             return;
         }
         u8 tableIndex = ((e->unk_3e + 4) & 0x18) >> 3;
-        func_02085a60(e, data_020d1ccc[tableIndex]);
+        func_02085a60(e, em08_hitParams[tableIndex]);
         if (e->action < 5) {
             em08_seqSet(e, 0);
         } else {
@@ -422,7 +422,7 @@ ARM void em08_damage(Entity *e) {
         }
         break;
     }
-    GenericKnockback(e, data_020d1d40);
+    GenericKnockback(e, em08_actions);
 }
 
 ARM void em08_buttobi(Entity *e) {
@@ -433,7 +433,7 @@ ARM void em08_buttobi(Entity *e) {
 ARM void em08_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
-    e->hitbox = data_020d1cd4;
+    e->hitbox = em08_hitbox;
     e->action++;
     e->timer = 1;
     e->animationState = 0;
@@ -456,7 +456,7 @@ ARM void em08_move(Entity *e) {
 }
 
 ARM void em08_lift(Entity *e) {
-    data_020d1d2c[e->subAction](e);
+    em08_liftActions[e->subAction](e);
     purupuru(e);
 }
 
@@ -485,7 +485,7 @@ ARM void em08_lift_throw(Entity *e) {
     if (VB(e)->poseLatched == 0) {
         VB(e)->poseLatched = 1;
         Entity *player = data_0212ceb0[e->type2].entity;
-        e->unk_2c = *(const u16 *)(data_020d1cdc + (player->animationState & ~1));
+        e->unk_2c = *(const u16 *)(em08_throwParams + (player->animationState & ~1));
     }
     searchCandle(e);
 }

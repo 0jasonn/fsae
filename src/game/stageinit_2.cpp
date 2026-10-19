@@ -7,77 +7,77 @@
 
 ARM void knife_native_init_0537bc(u8 param) {
     if ((Random() & 1) != 0) {
-        RandomBlockSet(data_02111741, param);
+        RandomBlockSet(spawnList_0537bc_set, param);
     } else {
-        RandomBlockSet(data_0211173c, param);
+        RandomBlockSet(spawnList_0537bc_clear, param);
     }
 }
 
 ARM void knife_native_init_0537f8(u8 param) {
     if ((Random() & 1) != 0) {
-        RandomBlockSet(data_020d8115, param);
+        RandomBlockSet(spawnList_0537f8_set, param);
     } else {
-        RandomBlockSet(data_020d8110, param);
+        RandomBlockSet(spawnList_0537f8_clear, param);
     }
 }
 
 ARM void knife_native_init_053834(u8 param) {
     if ((Random() & 1) != 0) {
-        RandomBlockSet(data_021119e3, param);
+        RandomBlockSet(spawnList_053834_set, param);
     } else {
-        RandomBlockSet(data_021119dc, param);
+        RandomBlockSet(spawnList_053834_clear, param);
     }
 }
 
 ARM void knife_native_init_053870(u8 param) {
     if ((Random() & 1) != 0) {
-        RandomBlockSet(data_020d8121, param);
+        RandomBlockSet(spawnList_053870_set, param);
     } else {
-        RandomBlockSet(data_020d811c, param);
+        RandomBlockSet(spawnList_053870_clear, param);
     }
 }
 
 ARM void knife_native_init_0538ac(u8 param) {
     if ((Random() & 1) != 0) {
-        RandomBlockSet(data_02111c9f, param);
+        RandomBlockSet(spawnList_0538ac_set, param);
     } else {
-        RandomBlockSet(data_02111c96, param);
+        RandomBlockSet(spawnList_0538ac_clear, param);
     }
 }
 
 ARM void knife_native_init_0538e8(u8 param) {
     if ((Random() & 1) != 0) {
-        RandomBlockSet(data_020d812d, param);
+        RandomBlockSet(spawnList_0538e8_set, param);
     } else {
-        RandomBlockSet(data_020d8128, param);
+        RandomBlockSet(spawnList_0538e8_clear, param);
     }
 }
 
 // Scene_ResetOverlayState -> Scene_ResetOverlayState
 ARM void Scene_ResetOverlayState(void) {
-    func_02029a50(data_02134980, 0x20);
-    func_020a1a1c(data_02171c84);
+    func_02029a50(pauseState, 0x20);
+    func_020a1a1c(pauseDialogWindow);
     data_0212c5bc[0x11] = 0;
 }
 
 // Scene_SetFlag5 -> Scene_SetFlag5, Scene_ClearFlag5 -> Scene_ClearFlag5
 ARM void Scene_SetFlag5(void) {
-    data_02134980[5] = 1;
+    pauseState[5] = 1;
 }
 
 ARM void Scene_ClearFlag5(void) {
-    data_02134980[5] = 0;
+    pauseState[5] = 0;
 }
 
 // Pause -> Pause
 ARM void Pause(void) {
-    data_0211474c[data_02134980[0]]();
+    pauseHandlerTable[pauseState[0]]();
 }
 
 // pause_init -> pause_init (guess)
 ARM void pause_init(void) {
     u8 i;
-    if (data_0212c5ac.blendEnabled != 0 || data_02134980[5] != 0) {
+    if (data_0212c5ac.blendEnabled != 0 || pauseState[5] != 0) {
         return;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {

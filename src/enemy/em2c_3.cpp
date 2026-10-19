@@ -2,25 +2,25 @@
 #include "enemy/em2c.h"
 #include "global.h"
 
-extern const u8 data_020d0eb8[];
-extern const u8 data_020d0ebe[];
-extern const s8 data_020d0ebc[];
+extern const u8 em2c_pushSpeeds[];
+extern const u8 em2c_pushMasks[];
+extern const s8 em2c_pushXOffsets[];
 extern u16 data_0212c584[];
 
 ARM void type1_appear(Entity *e) {
-    if (!(VE(e->parent)->unk_7d & data_020cf9b8[VL(V(e)->unk_7c)->unk_7e])) {
+    if (!(VE(e->parent)->eventFlags & flagBits[VL(V(e)->lockEntity)->lockBitIndex])) {
         return;
     }
     MoveDir(e);
     if (--e->timer == 0) {
         e->action = 3;
         e->speed = 0x20;
-        V(e)->unk_70 = e->x.HALF.HI;
+        V(e)->homeX = e->x.HALF.HI;
         V(e)->unk_73 = 0;
-        V(e)->unk_72 = 0;
+        V(e)->pushProgress = 0;
     }
-    if (data_021348b8[V(e)->unk_75] != 0) {
-        data_021348b8[V(e)->unk_75] = 0;
+    if (em2c_leverTimers[V(e)->side] != 0) {
+        em2c_leverTimers[V(e)->side] = 0;
     }
 }
 
@@ -28,55 +28,55 @@ ARM void type1_lift(Entity *e) {
     ObjHippariCheck(e);
     if (e->subAction == 5) {
         Entity *player = data_0212ceb0[e->type2].entity;
-        if (V(e)->unk_74 == 0) {
-            player->x.HALF.HI = e->x.HALF.HI + data_020d0f0a[player->animationState];
-            player->y.HALF.HI = e->y.HALF.HI + data_020d0f0a[player->animationState + 1];
-            V(e)->unk_74 = 1;
+        if (V(e)->leverState == 0) {
+            player->x.HALF.HI = e->x.HALF.HI + em2c_liftOffsets[player->animationState];
+            player->y.HALF.HI = e->y.HALF.HI + em2c_liftOffsets[player->animationState + 1];
+            V(e)->leverState = 1;
             e->subtimer = 2;
         }
-        if (V(e)->unk_75 * 2 + 1 == player->animationState >> 1 && player->frame != 0) {
+        if (V(e)->side * 2 + 1 == player->animationState >> 1 && player->frame != 0) {
             em2c_leverMove(e);
-            if (V(e)->unk_74 == 1) {
-                V(e)->unk_74 = 2;
+            if (V(e)->leverState == 1) {
+                V(e)->leverState = 2;
                 InitAnimationForceUpdate(e->parent, 0x1c);
                 EnqueueSFX(0xa4);
             }
         }
     } else {
-        if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0 || data_021348b8[V(e)->unk_75] == 0) {
+        if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0 || em2c_leverTimers[V(e)->side] == 0) {
             e->action = 3;
-            V(e)->unk_74 = 0;
+            V(e)->leverState = 0;
         } else {
-            data_021348b8[V(e)->unk_75]--;
-            VL(V(e)->unk_7c)->unk_6e |= V(e)->unk_76;
-            if (e->parent->action != 6 || (VL(V(e)->unk_7c)->unk_6e & 0xc0) == 0xc0) {
+            em2c_leverTimers[V(e)->side]--;
+            VL(V(e)->lockEntity)->lockFlags |= V(e)->lockBit;
+            if (e->parent->action != 6 || (VL(V(e)->lockEntity)->lockFlags & 0xc0) == 0xc0) {
                 e->action = 4;
                 e->timer = 0x3c;
-                e->x.HALF.HI += data_020d0f0a[V(e)->unk_75];
+                e->x.HALF.HI += em2c_liftOffsets[V(e)->side];
                 EnqueueSFX(0x12);
                 Entity *fx = GetSetWork(0xf, 3, 0x20);
                 if (fx != NULL) {
-                    ObjPosCopyOfs32(e, fx, data_020d0ec0[V(e)->unk_75] << 16, 0);
+                    ObjPosCopyOfs32(e, fx, em2c_fxXOffsets[V(e)->side] << 16, 0);
                 }
-                Entity *item = GetSetWork(0, data_020d0f02[Random() & 7], 1);
+                Entity *item = GetSetWork(0, em2c_itemDrops[Random() & 7], 1);
                 if (item != NULL) {
-                    item->direction = (((V(e)->unk_75 ^ 1) << 4) + 8) | 0x80;
-                    ObjPosCopyOfs32(e, item, data_020d0ec0[V(e)->unk_75] << 16, 0);
+                    item->direction = (((V(e)->side ^ 1) << 4) + 8) | 0x80;
+                    ObjPosCopyOfs32(e, item, em2c_fxXOffsets[V(e)->side] << 16, 0);
                 }
-                if (data_021348b8[V(e)->unk_75] != 0) {
-                    data_021348b8[V(e)->unk_75] = 0;
+                if (em2c_leverTimers[V(e)->side] != 0) {
+                    em2c_leverTimers[V(e)->side] = 0;
                 }
             }
         }
-        V(e)->unk_74 = 0;
+        V(e)->leverState = 0;
     }
     func_02085d78(e);
 }
 
 ARM void em2c_type1_move(Entity *e) {
     func_02089524(e);
-    if (V(e)->unk_72 != 0) {
-        e->direction = (V(e)->unk_75 << 4) + 8;
+    if (V(e)->pushProgress != 0) {
+        e->direction = (V(e)->side << 4) + 8;
         MoveDir(e);
         em2c_setdist(e);
     }
@@ -93,15 +93,15 @@ ARM void em2c_type1_vanish(Entity *e) {
 }
 
 ARM void em2c_type1_wait_033b38(Entity *e) {
-    if (VL(V(e)->unk_7c)->unk_7c != 0x10) {
+    if (VL(V(e)->lockEntity)->lockValue != 0x10) {
         return;
     }
     e->action = 1;
     e->timer = 0x20;
     e->speed = 0x80;
     e->spriteSettings.b0 = 1;
-    e->direction = ((V(e)->unk_75 ^ 1) << 4) + 8;
-    e->x.HALF.HI = e->parent->x.HALF.HI + data_020d0eba[V(e)->unk_75];
+    e->direction = ((V(e)->side ^ 1) << 4) + 8;
+    e->x.HALF.HI = e->parent->x.HALF.HI + em2c_restXOffsets[V(e)->side];
 }
 
 ARM void em2c_type2(Entity *e) {
@@ -113,7 +113,7 @@ ARM void em2c_type2(Entity *e) {
             InitAnimationForceUpdate(e, 0x13);
         }
         if (e->type2 >> 4) {
-            kukiRangeSet(e, e->child, VL(e->parent)->unk_7c);
+            kukiRangeSet(e, e->child, VL(e->parent)->lockValue);
             return;
         }
         u8 step = e->type2 & 0xf;
@@ -134,29 +134,29 @@ ARM void em2c_type3(Entity *e) {
     }
     BOOL alive = FALSE;
     if (e->type2 != 0) {
-        if (VC(e)->unk_70 != NULL) {
-            kukiMgr(e, VC(e)->unk_70);
+        if (VC(e)->chainA != NULL) {
+            kukiMgr(e, VC(e)->chainA);
             alive = TRUE;
         }
-        if (VC(e)->unk_74 != NULL) {
-            kukiMgr(e, VC(e)->unk_74);
+        if (VC(e)->chainB != NULL) {
+            kukiMgr(e, VC(e)->chainB);
             alive = TRUE;
         }
-        if (VC(e)->unk_78 != NULL) {
-            kukiMgr(e, VC(e)->unk_78);
+        if (VC(e)->chainC != NULL) {
+            kukiMgr(e, VC(e)->chainC);
             alive = TRUE;
         }
     } else {
-        if (VC(e)->unk_70 != NULL) {
-            ObjPosCopyOfs32(VC(e)->unk_70->parent, VC(VC(e)->unk_70->parent)->unk_70, 0, 1);
+        if (VC(e)->chainA != NULL) {
+            ObjPosCopyOfs32(VC(e)->chainA->parent, VC(VC(e)->chainA->parent)->chainA, 0, 1);
             alive = TRUE;
         }
-        if (VC(e)->unk_74 != NULL) {
-            ObjPosCopyOfs32(VC(e)->unk_74->parent, VC(VC(e)->unk_74->parent)->unk_70, 0, 1);
+        if (VC(e)->chainB != NULL) {
+            ObjPosCopyOfs32(VC(e)->chainB->parent, VC(VC(e)->chainB->parent)->chainA, 0, 1);
             alive = TRUE;
         }
-        if (VC(e)->unk_78 != NULL) {
-            ObjPosCopyOfs32(VC(e)->unk_78->parent, VC(VC(e)->unk_78->parent)->unk_70, 0, 1);
+        if (VC(e)->chainC != NULL) {
+            ObjPosCopyOfs32(VC(e)->chainC->parent, VC(VC(e)->chainC->parent)->chainA, 0, 1);
             alive = TRUE;
         }
     }
@@ -185,8 +185,8 @@ ARM void em2c_type4(Entity *e) {
 
 ARM void em2c_leverMove(Entity *e) {
     Entity *player = data_0212ceb0[e->type2].entity;
-    u8 speed = data_020d0eb8[V(e)->unk_75];
-    if (V(e)->unk_72 < 0x30) {
+    u8 speed = em2c_pushSpeeds[V(e)->side];
+    if (V(e)->pushProgress < 0x30) {
         s16 px = player->x.HALF.HI;
         s16 py = player->y.HALF.HI;
         func_020852f8(player, 0x40, speed);
@@ -194,19 +194,19 @@ ARM void em2c_leverMove(Entity *e) {
             return;
         }
         s16 dist;
-        if (V(e)->unk_75 != 0) {
+        if (V(e)->side != 0) {
             dist = player->x.HALF.HI - px;
         } else {
             dist = px - player->x.HALF.HI;
         }
         func_020852f8(e, dist << 8, speed);
         em2c_setdist(e);
-        if (V(e)->unk_72 >= 0x30) {
-            V(e)->unk_77 = 0;
-            if (data_021348b8[V(e)->unk_75] != 0) {
-                data_021348b8[V(e)->unk_75] = 0;
+        if (V(e)->pushProgress >= 0x30) {
+            V(e)->pushCount = 0;
+            if (em2c_leverTimers[V(e)->side] != 0) {
+                em2c_leverTimers[V(e)->side] = 0;
             }
-            data_021348b4 = 1;
+            em2c_leverDone = 1;
             return;
         }
         if (--e->subtimer == 0) {
@@ -215,41 +215,41 @@ ARM void em2c_leverMove(Entity *e) {
         }
         return;
     }
-    if (data_020d0ebe[V(e)->unk_75] & data_0212c584[e->type2]) {
-        if (V(e)->unk_77 < 0xf) {
-            V(e)->unk_77++;
-            if (data_021348b8[V(e)->unk_75] != 0) {
-                data_021348b8[V(e)->unk_75] = 0;
+    if (em2c_pushMasks[V(e)->side] & data_0212c584[e->type2]) {
+        if (V(e)->pushCount < 0xf) {
+            V(e)->pushCount++;
+            if (em2c_leverTimers[V(e)->side] != 0) {
+                em2c_leverTimers[V(e)->side] = 0;
             }
             return;
         }
-        VL(V(e)->unk_7c)->unk_6e |= V(e)->unk_76;
-        if (e->parent->action == 6 && (VL(V(e)->unk_7c)->unk_6e & 0xc0) != 0xc0) {
-            data_021348b8[V(e)->unk_75] = 0x4b0;
+        VL(V(e)->lockEntity)->lockFlags |= V(e)->lockBit;
+        if (e->parent->action == 6 && (VL(V(e)->lockEntity)->lockFlags & 0xc0) != 0xc0) {
+            em2c_leverTimers[V(e)->side] = 0x4b0;
             return;
         }
         e->action = 4;
         e->timer = 0x3c;
-        e->x.HALF.HI += data_020d0ebc[V(e)->unk_75];
+        e->x.HALF.HI += em2c_pushXOffsets[V(e)->side];
         EnqueueSFX(0x12);
         Entity *fx = GetSetWork(0xf, 3, 0x20);
         if (fx != NULL) {
-            ObjPosCopyOfs32(e, fx, data_020d0ec0[V(e)->unk_75] << 16, 0);
+            ObjPosCopyOfs32(e, fx, em2c_fxXOffsets[V(e)->side] << 16, 0);
         }
-        Entity *item = GetSetWork(0, data_020d0f02[Random() & 7], 1);
+        Entity *item = GetSetWork(0, em2c_itemDrops[Random() & 7], 1);
         if (item != NULL) {
-            item->direction = (((V(e)->unk_75 ^ 1) << 4) + 8) | 0x80;
-            ObjPosCopyOfs32(e, item, data_020d0ec0[V(e)->unk_75] << 16, 0);
+            item->direction = (((V(e)->side ^ 1) << 4) + 8) | 0x80;
+            ObjPosCopyOfs32(e, item, em2c_fxXOffsets[V(e)->side] << 16, 0);
         }
         return;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        V(e)->unk_77 = 0;
+        V(e)->pushCount = 0;
         return;
     }
-    if (data_021348b8[V(e)->unk_75] != 0) {
-        data_021348b8[V(e)->unk_75]--;
+    if (em2c_leverTimers[V(e)->side] != 0) {
+        em2c_leverTimers[V(e)->side]--;
     } else {
-        V(e)->unk_77 = 0;
+        V(e)->pushCount = 0;
     }
 }

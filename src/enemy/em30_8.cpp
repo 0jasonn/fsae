@@ -22,41 +22,41 @@
 #include "enemy/em29.h"
 #include "global.h"
 
-extern const EntityFunc data_020d34a4[];
-extern const u16 data_020d3486[];
-extern const s8 data_020d346c[];
-extern const s8 data_020d346f[];
-extern const u16 data_020d347a[];
-extern u8 data_021348ec[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
-extern const u8 data_020d34e2[];
+extern const EntityFunc em29_stateTable[];
+extern const u16 em29_scrollLimitsIn[];
+extern const s8 em29_restZ[];
+extern const s8 em29_sinkZ[];
+extern const u16 em29_scrollLimitsOut[];
+extern u8 encntSharedState[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
+extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
 ARM BOOL setUde(Entity *e) {
-    Entity *a;
-    Entity *b;
-    if ((a = GetObjWork()) != NULL && (b = GetObjWork2(a)) != NULL) {
-        a->unk_08 = 3;
-        b->unk_08 = 3;
-        a->unk_09 = 0x30;
-        b->unk_09 = 0x30;
-        a->type = 3;
-        b->type = 3;
-        a->type2 = 2;
-        b->type2 = 3;
-        a->parent = e->parent;
-        b->parent = e->parent;
-        a->child = e;
-        b->child = e;
-        b->unk_6c[4] = e->direction;
-        ObjPosCopy(e, a);
-        ObjPosCopy(e, b);
-        RegistObjWork(4, a);
-        RegistObjWork(4, b);
+    Entity *first;
+    Entity *second;
+    if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
+        first->unk_08 = 3;
+        second->unk_08 = 3;
+        first->unk_09 = 0x30;
+        second->unk_09 = 0x30;
+        first->type = 3;
+        second->type = 3;
+        first->type2 = 2;
+        second->type2 = 3;
+        first->parent = e->parent;
+        second->parent = e->parent;
+        first->child = e;
+        second->child = e;
+        second->unk_6c[4] = e->direction;
+        ObjPosCopy(e, first);
+        ObjPosCopy(e, second);
+        RegistObjWork(4, first);
+        RegistObjWork(4, second);
         return TRUE;
     }
     return FALSE;
@@ -66,35 +66,35 @@ ARM BOOL setUde(Entity *e) {
 // two parts in this entity's part slots and plays sound 0xa2.
 
 ARM int setFlower(Entity *e) {
-    Entity *a;
-    Entity *b;
-    if ((a = GetObjWork()) != NULL && (b = GetObjWork2(a)) != NULL) {
-        a->unk_08 = 3;
-        b->unk_08 = 3;
-        a->unk_09 = 0x30;
-        b->unk_09 = 0x30;
-        a->type = 1;
-        b->type = 2;
-        a->parent = e->parent;
-        b->parent = e->parent;
-        a->child = e;
-        b->child = e;
-        ObjPosCopy(e, a);
-        ObjPosCopy(e, b);
-        RegistObjWork(4, a);
-        RegistObjWork(4, b);
-        VPARTS(e)->partA = a;
-        VPARTS(e)->partB = b;
+    Entity *first;
+    Entity *second;
+    if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
+        first->unk_08 = 3;
+        second->unk_08 = 3;
+        first->unk_09 = 0x30;
+        second->unk_09 = 0x30;
+        first->type = 1;
+        second->type = 2;
+        first->parent = e->parent;
+        second->parent = e->parent;
+        first->child = e;
+        second->child = e;
+        ObjPosCopy(e, first);
+        ObjPosCopy(e, second);
+        RegistObjWork(4, first);
+        RegistObjWork(4, second);
+        VPARTS(e)->partA = first;
+        VPARTS(e)->partB = second;
         EnqueueSFX(0xa2);
         return 1;
     }
     return 0;
 }
-// Enemy_SetSpriteFromTable (0x02042d7c): picks the sprite index from data_020f26c3 by the child's state and this type,
+// Enemy_SetSpriteFromTable (0x02042d7c): picks the sprite index from em30_spriteTable by the child's state and this type,
 // and copies it into the second sprite index field.
 
 ARM void Enemy_SetSpriteFromTable(Entity *e) {
-    e->spriteSettings.b20 = data_020f26c3[e->child->unk_6c[7] + e->type - 1];
+    e->spriteSettings.b20 = em30_spriteTable[e->child->unk_6c[7] + e->type - 1];
     e->spriteSettings.b16 = e->spriteSettings.b20;
 }
 

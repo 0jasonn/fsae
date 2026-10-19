@@ -5,7 +5,7 @@
 // Functions in this file (original names from the debug build):
 //   TelopRequest
 
-// Telop request block (data_0217d36c)
+// Telop request block (telopRequest)
 typedef struct TelopWork {
     /* 00 */ u8 active;
     /* 01 */ u8 unk_01;
@@ -14,14 +14,14 @@ typedef struct TelopWork {
     /* 06 */ u16 requestId; // bit 15 is set while the telop is busy
 } TelopWork;
 
-extern TelopWork data_0217d36c;
+extern TelopWork telopRequest;
 
 
 typedef struct { u16 ids[8]; } TelopIdList;
-extern const TelopIdList data_020d7c50 = { { 1001, 1101, 1201, 1301, 1302, 1303, 1006, 1009 } };
+extern const TelopIdList telopIdList = { { 1001, 1101, 1201, 1301, 1302, 1303, 1006, 1009 } };
 
 ARM void TelopRequest(u16 telopId) {
-    TelopIdList list = data_020d7c50;
+    TelopIdList list = telopIdList;
 
     u32 i;
     int found = 0;
@@ -36,17 +36,17 @@ ARM void TelopRequest(u16 telopId) {
             }
         }
     }
-    if (data_0217d36c.requestId & 0x8000) {
+    if (telopRequest.requestId & 0x8000) {
         return;
     }
-    func_02029a50(&data_0217d36c, 0x18);
-    data_0217d36c.active = 1;
-    data_0217d36c.requestId = telopId;
-    data_0217d36c.flags = (data_0217d36c.flags & ~0xf) | 3;
+    func_02029a50(&telopRequest, 0x18);
+    telopRequest.active = 1;
+    telopRequest.requestId = telopId;
+    telopRequest.flags = (telopRequest.flags & ~0xf) | 3;
     telopId &= 0x7fff;
     if (found) {
         telopId = (u16)(telopId - 0x1f4);
     }
     bank = (u8)((s32)(telopId - 1000) / 100);
-    data_0217d36c.flags = (data_0217d36c.flags & ~0x30) | ((bank & 3) << 4);
+    telopRequest.flags = (telopRequest.flags & ~0x30) | ((bank & 3) << 4);
 }

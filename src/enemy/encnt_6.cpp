@@ -7,5 +7,5 @@
 ARM void nopos(EncntEntry *e, u16 index) {
     e->x = 0;
     e->y = 0;
-    data_02134b48.timer = 1;
+    encntState.timer = 1;
 }

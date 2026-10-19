@@ -3,9 +3,9 @@
 #include "global.h"
 
 ARM void em2c_type1(Entity *e) {
-    if (e->action != 0 && V(e)->unk_7c->health == 0) {
+    if (e->action != 0 && V(e)->lockEntity->health == 0) {
         PutObjWork(e);
         return;
     }
-    data_020d101c[e->action](e);
+    em2c_type1Actions[e->action](e);
 }

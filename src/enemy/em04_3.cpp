@@ -17,10 +17,10 @@ ARM void em04_dush(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState);
 }
 
-ARM void func_02038cb0(Entity *e) {
-    EnemyFunctionHandler(e, data_020d1a34);
+ARM void em05_main(Entity *e) {
+    EnemyFunctionHandler(e, em05_actions);
 }
 
 ARM void em05_normal(Entity *e) {
-    data_020d19ec[e->type][e->action](e);
+    em05_typeActions[e->type][e->action](e);
 }

@@ -3,20 +3,20 @@
 #include "global.h"
 
 ARM void em28_init(Entity *e) {
-    Entity *c = GetTamaWork2(9);
-    if (c == NULL) {
+    Entity *child = GetTamaWork2(9);
+    if (child == NULL) {
         return;
     }
-    c->parent = e;
-    e->child = c;
+    child->parent = e;
+    e->child = child;
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->unk_2e = 5;
     e->unk_3c |= 0x80;
-    e->hitbox = data_020d32d4;
+    e->hitbox = em28_hitbox;
     e->timer = 0x64;
-    data_021348cc.unk_0 = 0;
-    data_021348cc.unk_4 = 0;
+    em28_claim.claimed = 0;
+    em28_claim.unk_4 = 0;
     InitAnimationForceUpdate(e, 0);
 }
 

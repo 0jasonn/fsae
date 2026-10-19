@@ -2,16 +2,16 @@
 #include "enemy/em28.h"
 #include "global.h"
 
-extern const u32 data_020cf9b8[];
+extern const u32 flagBits[];
 
 // type0_attackInit (0x02042798): when the parent's low flags are clear, picks action 0xa or 0xd
-// from the parent bit in data_020cf9b8.
+// from the parent bit in flagBits.
 ARM void type0_attackInit(Entity *e) {
     u8 parentFlags = e->parent->unk_6c[4];
     if (parentFlags & 3) {
         return;
     }
-    if (parentFlags & data_020cf9b8[e->type2 + 2]) {
+    if (parentFlags & flagBits[e->type2 + 2]) {
         e->action = 0xa;
     } else {
         e->action = 0xd;

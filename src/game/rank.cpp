@@ -26,9 +26,9 @@ ARM int RankCheck(void) {
 }
 
 ARM BOOL CheckCubeKaitengiri(Entity *e) {
-    return (data_0212c7f0[e->type].flags & 2) != 0;
+    return (enemyTypeFlags[e->type].flags & 2) != 0;
 }
 
 ARM BOOL CheckKenBeam(Entity *e) {
-    return (data_0212c7f0[e->type].flags & 1) != 0;
+    return (enemyTypeFlags[e->type].flags & 1) != 0;
 }

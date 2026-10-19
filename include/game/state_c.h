@@ -66,6 +66,6 @@ typedef struct TimerC {
     /* 10 */ u32 unk_10;
     /* 14 */ u32 unk_14;
 } TimerC;
-extern TimerC data_0217d36c;
+extern TimerC telopRequest;
 
 #endif

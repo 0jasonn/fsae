@@ -2,10 +2,10 @@
 #include "game/state_c.h"
 #include "global.h"
 
-extern const u16 data_021037c8[];
-extern const u16 data_02103758[];
-extern const u16 *const data_021037d8[];
-extern const u16 *const data_021037ec[];
+extern const u16 timeBonusThresholds[];
+extern const u16 timeBonusThresholdsAlt[];
+extern const u16 *const timeBonusValues[];
+extern const u16 *const timeBonusValuesAlt[];
 
 ARM BOOL warp_check(void) {
     u8 i;
@@ -21,31 +21,31 @@ ARM BOOL warp_check(void) {
 }
 
 ARM void time_bonus(void) {
-    u32 t = data_0212c7c8.unk_1c / 60;
-    int n = data_0212c7c8.unk_0;
+    u32 seconds = data_0212c7c8.unk_1c / 60;
+    int playerCount = data_0212c7c8.unk_0;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        n = 1;
+        playerCount = 1;
     }
     TelopRequest(0x3ea);
-    data_0217d36c.unk_08 = (u16)(t / 60);
-    data_0217d36c.unk_0c = (u16)(t % 60);
-    data_0217d36c.unk_10 = get_time_bonus();
-    data_0217d36c.unk_14 = (u16)n;
+    telopRequest.unk_08 = (u16)(seconds / 60);
+    telopRequest.unk_0c = (u16)(seconds % 60);
+    telopRequest.unk_10 = get_time_bonus();
+    telopRequest.unk_14 = (u16)playerCount;
 }
 
 ARM u16 get_time_bonus(void) {
     u8 i;
-    u32 q = data_0212c7c8.unk_1c / 60;
-    const u16 *const *values = data_021037d8;
-    const u16 *thresholds = data_021037c8;
+    u32 seconds = data_0212c7c8.unk_1c / 60;
+    const u16 *const *bonusValues = timeBonusValues;
+    const u16 *bonusThresholds = timeBonusThresholds;
     if (data_0212c7c8.unk_7[0] == 6) {
-        thresholds = data_02103758;
-        values = data_021037ec;
+        bonusThresholds = timeBonusThresholdsAlt;
+        bonusValues = timeBonusValuesAlt;
     }
     for (i = 0; i < 7; i++) {
-        if (q < thresholds[i]) {
+        if (seconds < bonusThresholds[i]) {
             break;
         }
     }
-    return values[data_0212c7c8.unk_0][i];
+    return bonusValues[data_0212c7c8.unk_0][i];
 }

@@ -2,7 +2,7 @@
 #include "enemy/em28.h"
 #include "global.h"
 
-extern const u32 data_020cf9b8[];
+extern const u32 flagBits[];
 
 // type0_open (0x02042424): on an odd frame, finishes when setFlower succeeds.
 ARM void type0_open(Entity *e) {
@@ -51,7 +51,7 @@ ARM void type0_close(Entity *e) {
 }
 
 // type0_suihei (0x02042530): once the parent's low flags are 3, steps the direction; at a
-// multiple of 0x40 it sets action 6 and marks the parent with a bit from data_020cf9b8.
+// multiple of 0x40 it sets action 6 and marks the parent with a bit from flagBits.
 ARM void type0_suihei(Entity *e) {
     Entity *parent = e->parent;
     if ((parent->unk_6c[4] & 3) != 3) {
@@ -63,7 +63,7 @@ ARM void type0_suihei(Entity *e) {
     }
     e->action = 6;
     e->unk_6c[6] &= 0xfe;
-    parent->unk_6c[4] |= (u8)data_020cf9b8[e->type2 + 2];
+    parent->unk_6c[4] |= (u8)flagBits[e->type2 + 2];
 }
 
 // type0_suiheiWait (0x020425a4): when the parent's flag byte is clear, switches to action 7 and sets
@@ -79,7 +79,7 @@ ARM void type0_suiheiWait(Entity *e) {
 }
 
 // type0_cercle (0x020425e8): steps the direction; when it reaches 0xc0 or 0x40 with the parent
-// flag set, switches to action 8 and toggles the parent's bit from data_020cf9b8.
+// flag set, switches to action 8 and toggles the parent's bit from flagBits.
 ARM void type0_cercle(Entity *e) {
     Entity *parent = e->parent;
     e->direction += (u8)(s8)e->unk_6c[5];
@@ -90,7 +90,7 @@ ARM void type0_cercle(Entity *e) {
         e->action = 8;
         e->unk_6c[5] = 0xff;
         e->unk_6c[6] |= 1;
-        parent->unk_6c[4] ^= (u8)data_020cf9b8[e->type2];
+        parent->unk_6c[4] ^= (u8)flagBits[e->type2];
         e->spriteSettings.b30 = 2;
         e->spriteSettings.b14 = e->spriteSettings.b30;
         return;
@@ -99,7 +99,7 @@ ARM void type0_cercle(Entity *e) {
         e->action = 8;
         e->unk_6c[5] = 1;
         e->unk_6c[6] |= 1;
-        parent->unk_6c[4] ^= (u8)data_020cf9b8[e->type2];
+        parent->unk_6c[4] ^= (u8)flagBits[e->type2];
         e->spriteSettings.b30 = 2;
         e->spriteSettings.b14 = e->spriteSettings.b30;
     }

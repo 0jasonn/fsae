@@ -6,59 +6,59 @@
 // Event controller fields, see event_02033290.cpp
 typedef struct Vars_Event {
     /* 00 */ u8 unk_00[0x7d];
-    /* 7d */ u8 unk_7d;
+    /* 7d */ u8 eventFlags;
 } Vars_Event;
 #define VE(e) VARS(Vars_Event, e)
 
 typedef struct Vars_Lock {
     /* 00 */ u8 unk_00[0x6e];
-    /* 6e */ u16 unk_6e;
+    /* 6e */ u16 lockFlags;
     /* 70 */ u8 unk_70[0xc];
-    /* 7c */ u16 unk_7c;
-    /* 7e */ u8 unk_7e;
+    /* 7c */ u16 lockValue;
+    /* 7e */ u8 lockBitIndex;
 } Vars_Lock;
 #define VL(e) VARS(Vars_Lock, e)
 
 typedef struct Vars_02033708 {
     /* 00 */ u8 unk_00[0x70];
-    /* 70 */ u16 unk_70;
-    /* 72 */ u8 unk_72;
+    /* 70 */ u16 homeX;
+    /* 72 */ u8 pushProgress;
     /* 73 */ u8 unk_73;
-    /* 74 */ u8 unk_74;
-    /* 75 */ u8 unk_75; // side
-    /* 76 */ u8 unk_76;
-    /* 77 */ u8 unk_77;
+    /* 74 */ u8 leverState;
+    /* 75 */ u8 side; // 0 or 1
+    /* 76 */ u8 lockBit;
+    /* 77 */ u8 pushCount;
     /* 78 */ u8 unk_78[4];
-    /* 7c */ Entity *unk_7c;
+    /* 7c */ Entity *lockEntity;
 } Vars_02033708;
 #define V(e) VARS(Vars_02033708, e)
 
-extern const EntityFunc data_020d101c[];
-extern const s8 data_020d0eba[];
+extern const EntityFunc em2c_type1Actions[];
+extern const s8 em2c_restXOffsets[];
 extern const u8 data_020d0ef2[];
-extern const u32 data_020cf9b8[];
-extern const s8 data_020d0f0a[];
-extern const s8 data_020d0ec0[];
-extern const u8 data_020d0f02[];
-extern s32 data_021348b8[];
-extern s32 data_021348b4;
+extern const u32 flagBits[];
+extern const s8 em2c_liftOffsets[];
+extern const s8 em2c_fxXOffsets[];
+extern const u8 em2c_itemDrops[];
+extern s32 em2c_leverTimers[];
+extern s32 em2c_leverDone;
 
 
 typedef struct Vars_Chain {
     /* 00 */ u8 unk_00[0x70];
-    /* 70 */ Entity *unk_70;
-    /* 74 */ Entity *unk_74;
-    /* 78 */ Entity *unk_78;
+    /* 70 */ Entity *chainA;
+    /* 74 */ Entity *chainB;
+    /* 78 */ Entity *chainC;
 } Vars_Chain;
 #define VC(e) VARS(Vars_Chain, e)
 
 typedef struct Vars_Controller {
     /* 00 */ u8 unk_00[0x7c];
-    /* 7c */ u8 unk_7c;
-    /* 7d */ u8 unk_7d;
+    /* 7c */ u8 chainBuilt;
+    /* 7d */ u8 chainStep;
 } Vars_Controller;
 #define VCT(e) VARS(Vars_Controller, e)
 
-extern const s16 data_020d7e58[];
+extern const s16 trigTable[];
 
 #endif

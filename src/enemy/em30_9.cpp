@@ -26,17 +26,17 @@
 // Revisit once the real source shape is known (see docs/nonmatching/fake_random_arg.md).
 #define RANDOM_WITH_ARG(x) (((u32 (*)(u32))Random)((u32)(x)))
 
-extern const EntityFunc data_020d34a4[];
-extern const u16 data_020d3486[];
-extern const s8 data_020d346c[];
-extern const s8 data_020d346f[];
-extern const u16 data_020d347a[];
-extern u8 data_021348ec[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
-extern const u8 data_020d34e2[];
+extern const EntityFunc em29_stateTable[];
+extern const u16 em29_scrollLimitsIn[];
+extern const s8 em29_restZ[];
+extern const s8 em29_sinkZ[];
+extern const u16 em29_scrollLimitsOut[];
+extern u8 encntSharedState[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
+extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
@@ -144,16 +144,16 @@ ARM u8 Em30GetRightColor(Entity *e) {
     return VPARTS(e)->partB->spriteSettings.b20 - 7;
 }
 
-// Enemy_RunHandlerTable (0x020431b8): runs this entity's handler from data_020d360c.
+// Enemy_RunHandlerTable (0x020431b8): runs this entity's handler from em31_handlerTable.
 
 ARM void Enemy_RunHandlerTable(Entity *e) {
-    EnemyFunctionHandler(e, data_020d360c);
+    EnemyFunctionHandler(e, em31_handlerTable);
 }
 
-// em31_normal (0x020431cc): runs the handler for this entity's action from data_020d35e4.
+// em31_normal (0x020431cc): runs the handler for this entity's action from em31_stateTable.
 
 ARM void em31_normal(Entity *e) {
-    data_020d35e4[e->action](e);
+    em31_stateTable[e->action](e);
 }
 
 // em31_damage (0x020431e8): a contact byte from 0x84 up to 0x22 (wrapping past 0xff) sets the direction from
@@ -171,9 +171,9 @@ ARM void em31_damage(Entity *e) {
         e->speed = 0x480;
         u8 value;
         if (e->type != 0) {
-            value = data_020d35e0[e->type - 1];
+            value = em31_typeFx[e->type - 1];
         } else {
-            value = data_020d35fc[RANDOM_WITH_ARG(e->speed) & 0xf];
+            value = em31_randomFx[RANDOM_WITH_ARG(e->speed) & 0xf];
         }
         Entity *fx = GetSetWork(0, value, 1);
         if (fx != NULL) {
@@ -185,7 +185,7 @@ ARM void em31_damage(Entity *e) {
         u8 turned = e->direction + (u8)step;
         e->direction = turned & 0x1f;
     }
-    GenericKnockback(e, data_020d360c);
+    GenericKnockback(e, em31_handlerTable);
 }
 
 // em31_move (0x020433dc): animates, runs honyaMove, and removes the entity when it is outside the

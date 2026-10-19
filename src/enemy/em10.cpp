@@ -20,13 +20,13 @@ ARM void em10_damage(Entity *e) {
         e->direction = GetFacingDirection(e, e->contactedEntity);
         EnqueueSFX(0x30);
     }
-    GenericKnockback(e, data_020d1ec8);
+    GenericKnockback(e, em10_actions);
 }
 
 ARM void em10_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
-    e->hitbox = data_020d1ec0;
+    e->hitbox = em10_hitbox;
     InitAnimationForceUpdate(e, 4);
     e->action = 1;
     e->animationState = 0xff;
@@ -39,9 +39,9 @@ ARM void Boss_NoOp(Entity *e) {
 ARM void em10_awake(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
-        u8 t = ++e->timer;
-        if ((t & 1) != 0) {
-            e->x.HALF.HI += data_020d1eac[(t & 6) >> 1];
+        u8 wobbleTimer = ++e->timer;
+        if ((wobbleTimer & 1) != 0) {
+            e->x.HALF.HI += em10_awakeSway[(wobbleTimer & 6) >> 1];
         }
         return;
     }
@@ -49,19 +49,19 @@ ARM void em10_awake(Entity *e) {
         e->frame = 0;
         e->unk_5c = 0x21ff;
         e->unk_3f = 0x1c;
-        e->hitbox = data_020d1eb0;
+        e->hitbox = em10_awakeHitbox;
         attreset(e);
         return;
     }
     if ((e->frame & 0x80) != 0) {
         e->action = 3;
         e->subtimer = 0x10;
-        VBH(e)->unk_7c = 0x258;
+        VBH(e)->moveTimer = 0x258;
         {
-            int dir = func_02084fd0(e, VBP(e)->target);
-            int d = (dir + 4) & 0x18;
-            e->direction = d;
-            e->animationState = d >> 3;
+            int targetDir = func_02084fd0(e, VBP(e)->target);
+            int facing = (targetDir + 4) & 0x18;
+            e->direction = facing;
+            e->animationState = facing >> 3;
             InitAnimationForceUpdate(e, e->animationState);
         }
     }
@@ -81,7 +81,7 @@ ARM void em10_move(Entity *e) {
             }
         }
     }
-    if (--VBH(e)->unk_7c == 0) {
+    if (--VBH(e)->moveTimer == 0) {
         e->action = 4;
     }
 }
@@ -100,9 +100,9 @@ ARM void em10_endmove0(Entity *e) {
         return;
     }
     {
-        int dir = e->direction ^ 0x10;
-        e->direction = dir;
-        InitAnimationForceUpdate(e, (dir & 0xff) >> 3);
+        int reversedDir = e->direction ^ 0x10;
+        e->direction = reversedDir;
+        InitAnimationForceUpdate(e, (reversedDir & 0xff) >> 3);
     }
 }
 
@@ -120,9 +120,9 @@ ARM void em10_endmove1(Entity *e) {
         return;
     }
     {
-        int dir = e->direction ^ 0x10;
-        e->direction = dir;
-        InitAnimationForceUpdate(e, (dir & 0xff) >> 3);
+        int reversedDir = e->direction ^ 0x10;
+        e->direction = reversedDir;
+        InitAnimationForceUpdate(e, (reversedDir & 0xff) >> 3);
     }
 }
 
@@ -136,7 +136,7 @@ ARM void em10_sleep(Entity *e) {
         e->frame = 0;
         e->unk_5c = 0x2055;
         e->unk_3f = 1;
-        e->hitbox = data_020d1ec0;
+        e->hitbox = em10_hitbox;
         attset(e);
         return;
     }

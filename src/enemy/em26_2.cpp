@@ -3,8 +3,8 @@
 #include "global.h"
 
 ARM void em26_move(Entity *e) {
-    V(e)->unk_7e--;
-    if (V(e)->unk_7e == 0) {
+    V(e)->lifeTimer--;
+    if (V(e)->lifeTimer == 0) {
         KemuriSet(e);
         BubbleReset(e);
         PutObjWork(e);
@@ -18,25 +18,25 @@ ARM void em26_move(Entity *e) {
 }
 
 ARM void em26_div(Entity *e) {
-    Entity *a = GetObjWork();
-    if (a == NULL) {
+    Entity *leftPart = GetObjWork();
+    if (leftPart == NULL) {
         return;
     }
-    Entity *b = GetObjWork2(a);
-    if (b == NULL) {
+    Entity *rightPart = GetObjWork2(leftPart);
+    if (rightPart == NULL) {
         return;
     }
-    childInit(e, a);
-    a->x.HALF.HI -= 4;
-    a->parent = b;
-    a->direction = (e->unk_3e - 2) & 0x1f;
-    childInit(e, b);
-    b->x.HALF.HI += 4;
-    b->parent = a;
-    b->direction = (e->unk_3e + 2) & 0x1f;
-    Entity *other = GetSetWork(0xf, 2, 0);
-    if (other != NULL) {
-        ObjPosCopy(e, other);
+    childInit(e, leftPart);
+    leftPart->x.HALF.HI -= 4;
+    leftPart->parent = rightPart;
+    leftPart->direction = (e->unk_3e - 2) & 0x1f;
+    childInit(e, rightPart);
+    rightPart->x.HALF.HI += 4;
+    rightPart->parent = leftPart;
+    rightPart->direction = (e->unk_3e + 2) & 0x1f;
+    Entity *anchor = GetSetWork(0xf, 2, 0);
+    if (anchor != NULL) {
+        ObjPosCopy(e, anchor);
     }
     PutObjWork(e);
 }

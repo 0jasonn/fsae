@@ -10,7 +10,7 @@
 
 // Work blocks in the bss, accessed by byte offset
 extern u8 data_0217d39c[];
-extern u8 data_0217d484[];
+extern u8 telopBox[];
 
 
 // Scene state handlers: a table entry returns 0 when the state is done
@@ -28,7 +28,7 @@ ARM int msgOpen(void) {
 
 ARM int tlpOpen(void) {
     if (telopUpdate(-1) != 0) {
-        data_0217d484[0xd0] = 3;
+        telopBox[0xd0] = 3;
     }
     return 0;
 }
@@ -51,7 +51,7 @@ ARM int msgClose(void) {
 
 ARM int tlpClose(void) {
     if (telopUpdate(1) != 0) {
-        data_0217d484[0xd0] = 5;
+        telopBox[0xd0] = 5;
     }
     return 0;
 }

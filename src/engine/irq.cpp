@@ -17,7 +17,7 @@ typedef struct IrqState {
     u8 unk_00[8];
     void (*handler)(void); // 0x08
 } IrqState;
-extern IrqState data_0212c67c;
+extern IrqState irqState;
 
 typedef struct HBlankDmaState {
     u8 enabled; // 0x00
@@ -25,17 +25,17 @@ typedef struct HBlankDmaState {
     void *src;  // 0x04
     void *dst;  // 0x08
 } HBlankDmaState;
-extern HBlankDmaState data_0212c59c;
+extern HBlankDmaState hblankDma;
 
 typedef struct GlobalBuffer {
     u32 unk_00;
     u8 *block; // 0x04, returned by EL_GetGlobalAdr
 } GlobalBuffer;
-extern GlobalBuffer data_0210389c;
+extern GlobalBuffer globalBuffer;
 
-extern const u16 data_021036b6[];
-extern const u16 data_021036c8[];
-extern const EntityFunc data_02103be8[];
+extern const u16 tokiWaveUnlockIds[];
+extern const u16 tokiWaveLockIds[];
+extern const EntityFunc entityActionTable[];
 extern u8 data_0212c4b8;
 extern u8 data_0212c4c8;
 extern u8 data_0212c4e0;
@@ -49,12 +49,12 @@ extern void OS_SetIrqFunction(u32 mask, void (*func)(void));
 
 // Track id from the game state
 ARM void LoadTokiWave(void) {
-    func_0208cb74(data_021036c8[data_0212c7c8.unk_48]);
-    m4aLockWaveData(data_021036c8[data_0212c7c8.unk_48]);
+    func_0208cb74(tokiWaveLockIds[data_0212c7c8.unk_48]);
+    m4aLockWaveData(tokiWaveLockIds[data_0212c7c8.unk_48]);
 }
 
 ARM void UnlockTokiWave(void) {
-    m4aUnlockWaveData(data_021036b6[data_0212c7c8.unk_48]);
+    m4aUnlockWaveData(tokiWaveUnlockIds[data_0212c7c8.unk_48]);
 }
 
 ARM void Irq_InitVBlank(void) {

@@ -18,23 +18,23 @@ ARM void em09_wait2(Entity *e) {
 }
 
 ARM void em09_type2_init(Entity *e) {
-    Tbl3 table;
-    e->spriteSettings.b20 = data_020d1d90[e->type];
+    Tbl3 altPalette;
+    e->spriteSettings.b20 = em09_paletteByType[e->type];
     e->spriteSettings.b16 = e->spriteSettings.b20;
     if (*((u8 *)&data_0212c7c8 + 0x8e) == 2) {
-        table = *(Tbl3 *)data_020d1d88;
-        e->spriteSettings.b20 = table.v[e->type];
+        altPalette = *(Tbl3 *)em09_altPaletteB;
+        e->spriteSettings.b20 = altPalette.v[e->type];
         e->spriteSettings.b16 = e->spriteSettings.b20;
     }
     e->unk_2e = 0;
-    e->unk_20 = VBT(e->parent)->unk_7e;
-    e->spriteSettings.b6 = (VBT(e->parent)->unk_7e & 0xff00) >> 8;
+    e->unk_20 = VBT(e->parent)->savedAttr;
+    e->spriteSettings.b6 = (VBT(e->parent)->savedAttr & 0xff00) >> 8;
     e->unk_1b = 0x2c;
     e->action++;
 }
 
 ARM void em09_type2_move(Entity *e) {
-    if (VPW(e->parent)->unk_04 == 0) {
+    if (VPW(e->parent)->childAlive == 0) {
         PutObjWork(e);
     }
 }
@@ -61,7 +61,7 @@ ARM void kuttsukiReset(Entity *e) {
     e->child->unk_3c |= 0x80;
     e->child->iframes = 0xdc;
     e->child->z.HALF.HI = 0;
-    e->child->unk_2e = VBT(e)->unk_78;
+    e->child->unk_2e = VBT(e)->savedChildUnk2e;
     e->child->direction = e->child->animationState << 2;
     e->unk_5c = 0x21ff;
     e->action++;
@@ -78,9 +78,9 @@ ARM void em09_kuttsuki_reset(Entity *e) {
 }
 
 ARM void Boss_RunStateTable(Entity *e) {
-    EnemyFunctionHandler(e, data_020d1ec8);
+    EnemyFunctionHandler(e, em10_actions);
 }
 
 ARM void em10_normal(Entity *e) {
-    data_020d1f48[e->action](e);
+    em10_normalActions[e->action](e);
 }

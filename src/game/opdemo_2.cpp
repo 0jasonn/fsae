@@ -77,11 +77,11 @@ ARM void scene_03(void) {
 
 // Waits until the scene control block is idle, then starts effect effectId in slot.
 ARM int fairy_talkmove(u8 slot, u16 effectId) {
-    u8 mode = data_0217d384[SCENE_CTRL_MODE] & 0x7f;
+    u8 mode = messageRequest[SCENE_CTRL_MODE] & 0x7f;
     if (mode == 6) {
         Status_ArmIfEnabled();
     }
-    mode = data_0217d384[SCENE_CTRL_MODE] & 0x7f;
+    mode = messageRequest[SCENE_CTRL_MODE] & 0x7f;
     if (mode == 0) {
         data_021349c0[EFFECT_STATE_ACTIVE_SLOT] = 0xff;
         *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;

@@ -10,10 +10,10 @@ typedef struct MusicIndexEntry {
     /* 04 */ u32 unk_04;
 } MusicIndexEntry;
 
-extern const u32 data_021036dc[];
-extern const u32 data_021036f8[];
-extern const MusicIndexEntry *const data_02103da4[];
-extern const u32 data_0210371c[];
+extern const u32 bgmGameModeTracks[];
+extern const u32 bgmSpecialTracks[];
+extern const MusicIndexEntry *const bgmIndexTable[];
+extern const u32 bgmVariantTracks[];
 
 
 ARM void BgmSet(void) {
@@ -31,12 +31,12 @@ ARM void BgmSet(void) {
     }
     if (data_0212c7c8.pickIndex >= 5) {
         if (data_0212c7c8.pickIndex == 5) {
-            trackId = data_021036f8[data_0212c7c8.unk_48];
+            trackId = bgmSpecialTracks[data_0212c7c8.unk_48];
         } else {
-            trackId = data_0210371c[data_02103da4[data_0212c7c8.gameMode][data_0212c7c8.unk_48].table[1]];
+            trackId = bgmVariantTracks[bgmIndexTable[data_0212c7c8.gameMode][data_0212c7c8.unk_48].table[1]];
         }
     } else {
-        trackId = data_021036dc[data_0212c7c8.gameMode];
+        trackId = bgmGameModeTracks[data_0212c7c8.gameMode];
     }
     if (data_0212c7c8.unk_24 != 0) {
         trackId = 0x1a9;
@@ -62,7 +62,7 @@ ARM void GameState_SetTrackVariant(void) {
     if (data_0212c7c8.pickIndex < 5) {
         return;
     }
-    key = data_02103da4[data_0212c7c8.pickIndex][data_0212c7c8.unk_48].table[1];
+    key = bgmIndexTable[data_0212c7c8.pickIndex][data_0212c7c8.unk_48].table[1];
     switch (key) {
         case 7:
             data_0212c7c8.unk_8e = 1;

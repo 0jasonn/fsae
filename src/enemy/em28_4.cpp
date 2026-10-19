@@ -2,7 +2,7 @@
 #include "enemy/em28.h"
 #include "global.h"
 
-extern const void *data_020d341c[];
+extern const void *em28_swordHitboxes[];
 
 // swordMgr (0x02041774): picks the child's hitbox from the animation state and frame.
 ARM void swordMgr(Entity *e) {
@@ -15,5 +15,5 @@ ARM void swordMgr(Entity *e) {
         return;
     }
     e->child->unk_3c |= 0x80;
-    e->child->hitbox = data_020d341c[e->animationState * 5 + (e->frame & 7) - 1];
+    e->child->hitbox = em28_swordHitboxes[e->animationState * 5 + (e->frame & 7) - 1];
 }

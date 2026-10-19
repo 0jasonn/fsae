@@ -8,14 +8,14 @@
 
 // Telop box initialization: clears the work blocks and sets up the telop window; returns 0 (the telop states run next)
 ARM int tlpInit(void) {
-    MsgWork *telop = &data_0217d484;
+    MsgWork *telop = &telopBox;
     u32 idMask = 0x7fff;
     u8 initMode = 2;
     u32 flags;
 
-    func_02029a50(data_0216f000, 0x10);
+    func_02029a50(telopWindowSlots, 0x10);
     func_02029a50(telop, 0xe8);
-    MIi_CpuCopy32(&data_0217d36c, data_0217d490, 0x18);
+    MIi_CpuCopy32(&telopRequest, data_0217d490, 0x18);
     telop->layoutFlags = (telop->layoutFlags & ~0xf) | 1;
     telop->msgId &= idMask;
     Knife_MsgReadPtrFromID(data_0217d4a8, telop->msgId);
@@ -24,7 +24,7 @@ ARM int tlpInit(void) {
     SoundReq(0x79);
     telop->drawFlags = (telop->drawFlags & ~0x1f) | 0x18;
     telop->unk_2a = 0xa0;
-    telop->unk_25 = initMode;
+    telop->openMode = initMode;
     telop->state = initMode;
     Knife_msgFrameDma(telop, ((u32)telop->layoutFlags << 26) >> 30);
     telop->uiPtrA = (u8 *)KnifeApp_getInstance() + 0x144;
@@ -37,7 +37,7 @@ ARM int tlpInit(void) {
         *(u32 *)(data_0216efbc + 0x20) = 0;
         *(u32 *)(data_0216efbc + 8) = flags | 1;
     }
-    telop->unk_08 = data_0216efd4;
+    telop->windowData = data_0216efd4;
     *(MsgWork **)(data_0216efd4 + 4) = telop;
     return 0;
 }

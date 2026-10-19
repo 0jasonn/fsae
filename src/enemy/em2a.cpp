@@ -4,25 +4,25 @@
 
 ARM void em02_div(Entity *e) {
     s8 count = 0;
-    Entity *a = GetEnemyWork(3);
-    if (a != NULL) {
+    Entity *first = GetEnemyWork(3);
+    if (first != NULL) {
         count++;
-        a->iframes = 0xf0;
+        first->iframes = 0xf0;
     }
-    Entity *b = GetEnemyWork(3);
-    if (b != NULL) {
-        b->x.HALF.HI -= 6;
-        b->iframes = 0xf0;
+    Entity *second = GetEnemyWork(3);
+    if (second != NULL) {
+        second->x.HALF.HI -= 6;
+        second->iframes = 0xf0;
         count++;
     }
-    EmDivPosSet(e, a, b);
+    EmDivPosSet(e, first, second);
     if (count == 2) {
-        a->parent = b;
-        b->parent = a;
+        first->parent = second;
+        second->parent = first;
     }
-    Entity *counter = V(e)->unk_60;
+    Entity *counter = V(e)->linked;
     if (counter != NULL) {
-        VARS(Vars_Counter, counter)->unk_62 += count;
+        VARS(Vars_Counter, counter)->hitCount += count;
     }
     Entity *fx = GetSetWork(0xf, 2, 0);
     if (fx != NULL) {
@@ -38,9 +38,9 @@ ARM void func_02030ae4(int index) {
     data_0212ceb0[index].unk_38 = 1;
     PlayerData *other = NULL;
     if (data_0212ceb0[index].unk_1e & 0x80) {
-        other = V(data_0212ceb0[index].entity)->unk_64;
+        other = V(data_0212ceb0[index].entity)->playerData;
     } else if (data_0212ceb0[index].unk_1e & 0x20) {
-        other = (PlayerData *)V(data_0212ceb0[index].entity)->unk_60;
+        other = (PlayerData *)V(data_0212ceb0[index].entity)->linked;
     }
     if (other != NULL && other->unk_0c != 6 && other->entity->action != 6) {
         other->unk_0c = 6;
@@ -54,7 +54,7 @@ ARM void Em2a(Entity *e) {
         return;
     }
     if (e->type2 & 0x40) {
-        data_020d0a7c[e->action](e);
+        em2a_secondaryActions[e->action](e);
         if (e->timer == 0) {
             return;
         }
@@ -84,8 +84,8 @@ ARM void Em2a(Entity *e) {
         e->parent->direction = 8;
         InitAnimationForceUpdate(e->parent, 0xe);
         e->parent->action = 6;
-        V(e->parent)->unk_74 = 0;
-        V(e->parent)->unk_75 = 0x1e;
+        V(e->parent)->hitLevel = 0;
+        V(e->parent)->hitWindow = 0x1e;
         em2a_ruppyset(e->parent);
         SoundReq(0xa6);
         SoundReq(0xa3);
@@ -99,8 +99,8 @@ ARM void Em2a(Entity *e) {
             return;
         }
     } else {
-        if (V(e)->unk_7c != 0) {
-            V(e)->unk_7c--;
+        if (V(e)->effectTimer != 0) {
+            V(e)->effectTimer--;
         }
         if (e->action != 8 && e->z.WORD == 0 && e->type != 0 && (e->contactFlags & 0x80) && (e->contactFlags & 0x7f) != 0) {
             if ((e->contactFlags & 0x7f) == 0x10) {
@@ -114,12 +114,12 @@ ARM void Em2a(Entity *e) {
                     e->zVelocity = 0x18000;
                     e->direction = 8;
                     InitAnimationForceUpdate(e, (e->type - 1) * 10 + 4);
-                    if (V(e)->unk_75 != 0) {
-                        V(e)->unk_74++;
+                    if (V(e)->hitWindow != 0) {
+                        V(e)->hitLevel++;
                     } else {
-                        V(e)->unk_74 = 0;
+                        V(e)->hitLevel = 0;
                     }
-                    V(e)->unk_75 = 0x1e;
+                    V(e)->hitWindow = 0x1e;
                     em2a_ruppyset(e);
                     e->action = 6;
                     SoundReq(0xa6);
@@ -130,12 +130,12 @@ ARM void Em2a(Entity *e) {
             } else {
                 e->iframes = 0xd8;
                 InitAnimationForceUpdate(e, (e->type - 1) * 10 + 5);
-                V(e)->unk_72 = e->action;
+                V(e)->savedAction = e->action;
                 e->action = 5;
             }
         }
     }
-    data_020d0dc0[e->action](e);
+    em2a_actions[e->action](e);
 }
 
 ARM void em2a_init(Entity *e) {
@@ -150,12 +150,12 @@ ARM void em2a_init(Entity *e) {
     InitAnimationForceUpdate(e, 6);
     e->timer = data_0212c7c8.unk_0 * 3;
     e->subtimer = 0xb4;
-    V(e)->unk_7c = 0x2a30;
+    V(e)->effectTimer = 0x2a30;
     e->speed = 0x300;
     e->unk_2e = 8;
     e->spriteSettings.b4 = 3;
     e->unk_5e.b2 = 2;
-    e->hitbox = data_020d0a62;
+    e->hitbox = em2a_hitbox;
     e->unk_6a = 1;
     e->unk_3f = 0x48;
     e->child = data_0212c648;

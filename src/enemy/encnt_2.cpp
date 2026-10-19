@@ -22,32 +22,32 @@
 #include "enemy/em29.h"
 #include "global.h"
 
-extern const EntityFunc data_020d34a4[];
-extern const u16 data_020d3486[];
-extern const s8 data_020d346c[];
-extern const s8 data_020d346f[];
-extern const u16 data_020d347a[];
-extern u8 data_021348ec[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
-extern const u8 data_020d34e2[];
+extern const EntityFunc em29_stateTable[];
+extern const u16 em29_scrollLimitsIn[];
+extern const s8 em29_restZ[];
+extern const s8 em29_sinkZ[];
+extern const u16 em29_scrollLimitsOut[];
+extern u8 encntSharedState[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
+extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
 ARM void Enemy_ArmSharedState(void) {
-    data_021348ec[0] = 1;
+    encntSharedState[0] = 1;
     nextset();
 }
 
 // Encounter (0x02043728): when the byte at data_0212c5bc+0x12 is clear, runs the handler selected by the
-// state byte in data_02134b48.
+// state byte in encntState.
 
 ARM void Encounter(void) {
     if (((u8 *)&data_0212c5bc)[0x12] != 0) {
         return;
     }
-    data_020d413c[data_02134b48.state]();
+    encntStateFuncs[encntState.state]();
 }
 // plback (0x02043cb8): when byte 6 is clear, runs plbackinit. When byte 5 is clear, runs housha0.

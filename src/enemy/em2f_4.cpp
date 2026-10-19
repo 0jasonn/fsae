@@ -3,10 +3,10 @@
 #include "global.h"
 
 ARM void getStormMoveInfo(Entity *e) {
-    V(e)->unk_74 = data_020d1448[Random() & 1];
-    V(e)->unk_78 = *V(e)->unk_74++;
-    V(e)->unk_7a = *V(e)->unk_74++;
-    e->direction = *V(e)->unk_74++;
-    V(e)->unk_7e = 0x80;
+    V(e)->pathCursor = em2f_stormPaths[Random() & 1];
+    V(e)->targetX = *V(e)->pathCursor++;
+    V(e)->targetY = *V(e)->pathCursor++;
+    e->direction = *V(e)->pathCursor++;
+    V(e)->pathWait = 0x80;
 }
 

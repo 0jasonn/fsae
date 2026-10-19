@@ -4,17 +4,17 @@
 
 ARM void Em03(Entity *e) {
     func_02084700(e);
-    Entity *r = func_020849c8(e);
-    if (r != 0) {
+    Entity *partner = func_020849c8(e);
+    if (partner != 0) {
         if (!(e->unk_3c & 0x80) && e->timer == 1) {
             aibou_check(e);
         }
-        func_02084ab8(e, r);
+        func_02084ab8(e, partner);
     } else {
-        data_020d1868[func_02084a30(e)](e);
+        em03_noPartnerActions[func_02084a30(e)](e);
     }
 }
 
 ARM void em03_normal(Entity *e) {
-    data_020d1880[e->action](e);
+    em03_normalActions[e->action](e);
 }

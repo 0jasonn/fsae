@@ -22,17 +22,17 @@
 #include "enemy/em29.h"
 #include "global.h"
 
-extern const EntityFunc data_020d34a4[];
-extern const u16 data_020d3486[];
-extern const s8 data_020d346c[];
-extern const s8 data_020d346f[];
-extern const u16 data_020d347a[];
-extern u8 data_021348ec[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
-extern const u8 data_020d34e2[];
+extern const EntityFunc em29_stateTable[];
+extern const u16 em29_scrollLimitsIn[];
+extern const s8 em29_restZ[];
+extern const s8 em29_sinkZ[];
+extern const u16 em29_scrollLimitsOut[];
+extern u8 encntSharedState[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
+extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
@@ -67,19 +67,19 @@ ARM void em29_move(Entity *e) {
 ARM void em29_vacuumInit(Entity *e) {
     W(e)->subPosX += 8;
     W(e)->subPosY -= 8;
-    u16 limitX = data_020d3486[e->type * 2];
+    u16 limitX = em29_scrollLimitsIn[e->type * 2];
     u8 reached = 0;
     if (W(e)->subPosX >= limitX) {
         W(e)->subPosX = limitX;
         reached++;
     }
-    u16 limitY = data_020d3486[e->type * 2 + 1];
+    u16 limitY = em29_scrollLimitsIn[e->type * 2 + 1];
     if (W(e)->subPosY <= limitY) {
         W(e)->subPosY = limitY;
         reached++;
     }
     e->z.WORD -= 0x8000;
-    s16 limitZ = data_020d346f[e->type];
+    s16 limitZ = em29_sinkZ[e->type];
     if (limitZ >= e->z.HALF.HI) {
         e->z.HALF.HI = limitZ;
         if (reached == 2) {
@@ -87,10 +87,10 @@ ARM void em29_vacuumInit(Entity *e) {
             e->timer = 1;
         }
     }
-    data_0212c574[0] = W(e)->subPosX;
-    data_0212c574[1] = W(e)->subPosY;
-    data_0212c574[2] = 0;
-    ObjAffineSet2((const KnifeObjAffineSrcData *)data_0212c574, e);
+    scrollArgs[0] = W(e)->subPosX;
+    scrollArgs[1] = W(e)->subPosY;
+    scrollArgs[2] = 0;
+    ObjAffineSet2((const KnifeObjAffineSrcData *)scrollArgs, e);
     UpdateAnimationSingleFrame(e);
 }
 
@@ -117,29 +117,29 @@ ARM void em29_vacuum(Entity *e) {
 ARM void em29_vacuumEnd(Entity *e) {
     W(e)->subPosX -= 8;
     W(e)->subPosY += 8;
-    u16 limitX = data_020d347a[e->type * 2];
+    u16 limitX = em29_scrollLimitsOut[e->type * 2];
     u8 reached = 0;
     if (W(e)->subPosX <= limitX) {
         W(e)->subPosX = limitX;
         reached++;
     }
-    u16 limitY = data_020d347a[e->type * 2 + 1];
+    u16 limitY = em29_scrollLimitsOut[e->type * 2 + 1];
     if (W(e)->subPosY >= limitY) {
         W(e)->subPosY = limitY;
         reached++;
     }
     e->z.WORD += 0x8000;
-    s8 limitZ = data_020d346c[e->type];
+    s8 limitZ = em29_restZ[e->type];
     if (limitZ <= e->z.HALF.HI) {
         e->z.HALF.HI = limitZ;
         if (reached == 2) {
             e->action = 2;
         }
     }
-    data_0212c574[0] = W(e)->subPosX;
-    data_0212c574[1] = W(e)->subPosY;
-    data_0212c574[2] = 0;
-    ObjAffineSet2((const KnifeObjAffineSrcData *)data_0212c574, e);
+    scrollArgs[0] = W(e)->subPosX;
+    scrollArgs[1] = W(e)->subPosY;
+    scrollArgs[2] = 0;
+    ObjAffineSet2((const KnifeObjAffineSrcData *)scrollArgs, e);
     UpdateAnimationSingleFrame(e);
 }
 // em29_die (0x02041d30): clears the child's offset slot for this frame. While the timer runs, the
@@ -154,10 +154,10 @@ ARM void em29_die(Entity *e) {
     if (e->timer != 0) {
         W(e)->subPosX -= 4;
         W(e)->subPosY += 8;
-        data_0212c574[0] = W(e)->subPosX;
-        data_0212c574[1] = W(e)->subPosY;
-        data_0212c574[2] = 0;
-        ObjAffineSet2((const KnifeObjAffineSrcData *)data_0212c574, e);
+        scrollArgs[0] = W(e)->subPosX;
+        scrollArgs[1] = W(e)->subPosY;
+        scrollArgs[2] = 0;
+        ObjAffineSet2((const KnifeObjAffineSrcData *)scrollArgs, e);
         UpdateAnimationSingleFrame(e);
         return;
     }

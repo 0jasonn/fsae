@@ -26,17 +26,17 @@
 // Revisit once the real source shape is known (see docs/nonmatching/fake_random_arg.md).
 #define RANDOM_WITH_ARG(x) (((u32 (*)(u32))Random)((u32)(x)))
 
-extern const EntityFunc data_020d34a4[];
-extern const u16 data_020d3486[];
-extern const s8 data_020d346c[];
-extern const s8 data_020d346f[];
-extern const u16 data_020d347a[];
-extern u8 data_021348ec[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
-extern const u8 data_020d34e2[];
+extern const EntityFunc em29_stateTable[];
+extern const u16 em29_scrollLimitsIn[];
+extern const s8 em29_restZ[];
+extern const s8 em29_sinkZ[];
+extern const u16 em29_scrollLimitsOut[];
+extern u8 encntSharedState[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
+extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
@@ -51,7 +51,7 @@ ARM void em30_type0_init(Entity *e) {
     e->unk_5e.b2 = 3;
     e->unk_3c |= 0x80;
     e->unk_6c[4] = e->direction;
-    e->hitbox = data_020d34e2;
+    e->hitbox = em30_type0Hitbox;
     e->unk_6c[6] = 1;
     InitAnimationForceUpdate(e, 0);
 }
@@ -65,8 +65,8 @@ ARM void em30_type0_wait(Entity *e) {
     }
     int sign = (e->direction > 0x80) ? 1 : -1;
     e->unk_6c[5] = sign;
-    e->unk_6c[7] = ((u32)RANDOM_WITH_ARG(sign) % data_020f26c0[data_0212c7c8.unk_0 - 2]) << 1;
-    if (e->parent->unk_6c[4] & data_020cf9b8[e->type2]) {
+    e->unk_6c[7] = ((u32)RANDOM_WITH_ARG(sign) % em30_randRangeByPlayers[data_0212c7c8.unk_0 - 2]) << 1;
+    if (e->parent->unk_6c[4] & flagBits[e->type2]) {
         e->action = 2;
     } else {
         e->action = 5;

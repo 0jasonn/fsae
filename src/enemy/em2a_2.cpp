@@ -4,7 +4,7 @@
 
 ARM void em2a_move(Entity *e) {
     flashcheck(e);
-    if (e->type == 2 && V(e)->unk_79 != 0xf) {
+    if (e->type == 2 && V(e)->shadowLandMask != 0xf) {
         return;
     }
     UpdateAnimationSingleFrame(e);
@@ -33,12 +33,12 @@ ARM void em2a_move(Entity *e) {
         return;
     }
     if (e->type == 2) {
-        V(e)->unk_79 = 0;
+        V(e)->shadowLandMask = 0;
     }
     if (e->subtimer != 0) {
         if (e->timer == 0) {
-            if (V(e)->unk_73) {
-                V(e)->unk_73 = 0;
+            if (V(e)->extraHop) {
+                V(e)->extraHop = 0;
                 e->timer = 1;
             } else {
                 e->timer = 2;
@@ -54,18 +54,18 @@ ARM void em2a_move(Entity *e) {
         bigjumpinit(e);
         return;
     }
-    e->subtimer = data_020d0a42[Random() & 7];
+    e->subtimer = em2a_subtimers[Random() & 7];
     move3Init(e);
 }
 
 ARM void em2a_move3(Entity *e) {
     flashcheck(e);
-    if (e->type == 2 && V(e)->unk_79 != 0xf) {
+    if (e->type == 2 && V(e)->shadowLandMask != 0xf) {
         return;
     }
     UpdateAnimationSingleFrame(e);
-    if (V(e)->unk_70 != 0) {
-        V(e)->unk_70--;
+    if (V(e)->waitTimer != 0) {
+        V(e)->waitTimer--;
     }
     if (e->frame == 0) {
         MoveDir(e);
@@ -76,14 +76,14 @@ ARM void em2a_move3(Entity *e) {
             e->unk_28 = 1;
         }
     } else if (e->frame & 0x80) {
-        if (V(e)->unk_70 != 0) {
+        if (V(e)->waitTimer != 0) {
             if (e->type == 2) {
-                V(e)->unk_79 = 0;
+                V(e)->shadowLandMask = 0;
             }
             move3Init(e);
         } else if (--e->subtimer != 0) {
             e->action = 0xd;
-            V(e)->unk_70 = 0xb4;
+            V(e)->waitTimer = 0xb4;
             InitAnimationForceUpdate(e, (e->type - 1) * 10);
         } else {
             bigjumpinit(e);
@@ -94,13 +94,13 @@ ARM void em2a_move3(Entity *e) {
 
 ARM void em2a_move3wait(Entity *e) {
     flashcheck(e);
-    if (V(e)->unk_70 != 0) {
+    if (V(e)->waitTimer != 0) {
         if (e->unk_23 != 0) {
             InitAnimationForceUpdate(e, (e->type - 1) * 10);
         } else {
             UpdateAnimationSingleFrame(e);
         }
-        V(e)->unk_70--;
+        V(e)->waitTimer--;
         return;
     }
     e->action = 0xc;
@@ -109,7 +109,7 @@ ARM void em2a_move3wait(Entity *e) {
         return;
     }
     if (e->type == 2) {
-        V(e)->unk_79 = 0;
+        V(e)->shadowLandMask = 0;
     }
     move3Init(e);
 }
@@ -118,7 +118,7 @@ ARM void em2a_boyon(Entity *e) {
     flashcheck(e);
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
-        e->action = V(e)->unk_72;
+        e->action = V(e)->savedAction;
     }
 }
 
@@ -143,7 +143,7 @@ ARM void em2a_buttobi(Entity *e) {
         e->zVelocity = 0;
         e->spriteSettings.b16 = e->spriteSettings.b20 + 1;
         e->spriteSettings.b20 = e->spriteSettings.b16;
-        V(e)->unk_70 = 0x168;
+        V(e)->waitTimer = 0x168;
         SoundReq(0xa9);
         return;
     }
@@ -158,8 +158,8 @@ ARM void em2a_buttobi(Entity *e) {
 
 ARM void em2a_buttobiwait(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    if (V(e)->unk_75 != 0) {
-        V(e)->unk_75--;
+    if (V(e)->hitWindow != 0) {
+        V(e)->hitWindow--;
     }
     if (e->subtimer-- != 0) {
         return;
@@ -198,14 +198,14 @@ ARM void em2a_ice(Entity *e) {
                     e->spriteSettings.b20 = GetObjColor(0x15);
                     e->spriteSettings.b16 = e->spriteSettings.b20;
                     e->spriteSettings.b4 = 2;
-                    e->hitbox = data_020d0a72;
+                    e->hitbox = em2a_hitboxType2;
                 } else {
                     PutObjColor(0x15);
                     GetVGroup(e, 9);
                     e->spriteSettings.b20 = GetObjColor(0x16);
                     e->spriteSettings.b16 = e->spriteSettings.b20;
                     e->spriteSettings.b4 = 0;
-                    e->hitbox = data_020d0a52;
+                    e->hitbox = em2a_hitboxType1;
                 }
                 bigjumpinit(e);
                 return;
@@ -221,8 +221,8 @@ ARM void em2a_ice(Entity *e) {
             return;
         }
     }
-    V(e)->unk_70--;
-    if (V(e)->unk_70 != 0) {
+    V(e)->waitTimer--;
+    if (V(e)->waitTimer != 0) {
         return;
     }
     e->spriteSettings.b16 = e->spriteSettings.b20 - 1;
@@ -246,7 +246,7 @@ ARM void em2a_coreapper(Entity *e) {
         e->action = 0x10;
         e->timer = 0x20;
         e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
-        e->hitbox = data_020d0a4a;
+        e->hitbox = em2a_coreHitbox;
     }
     coreSync(e);
 }
@@ -279,13 +279,13 @@ ARM void em2a_coremove(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         func_020852ec(e);
-        if (e->unk_2c & data_020d0a5a[e->direction >> 3]) {
-            u8 target = func_02086078(data_0212ceb0[e->subtimer].entity, e);
-            if (e->direction != target) {
+        if (e->unk_2c & em2a_wallMasks[e->direction >> 3]) {
+            u8 targetDir = func_02086078(data_0212ceb0[e->subtimer].entity, e);
+            if (e->direction != targetDir) {
                 e->direction ^= 0x10;
             } else {
                 e->direction = (e->direction + 8) & 0x1f;
-                if (e->unk_2c & data_020d0a5a[e->direction >> 3]) {
+                if (e->unk_2c & em2a_wallMasks[e->direction >> 3]) {
                     e->direction = (e->direction - 0x10) & 0x1f;
                 }
             }

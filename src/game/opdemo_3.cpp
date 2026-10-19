@@ -7,17 +7,17 @@
 // opdemo_scroll -> opdemo_scroll
 // op_title -> op_title
 ARM void fairy_set(u8 slot, u8 index, u8 flags) {
-    ObjAnimMoveSet(data_02134d3c[slot].entity, data_02104ab0[index], flags);
-    data_02134d3c[slot].entity->action = 1;
+    ObjAnimMoveSet(fairySlots[slot].entity, fairyMoveTable[index], flags);
+    fairySlots[slot].entity->action = 1;
     SoundReq(0x201);
 }
 
 ARM void fairy_talkset(u8 slot, u16 effectId) {
     MessageRequest(effectId);
-    data_0217d384[SCENE_CTRL_SUBMODE_3] = (data_0217d384[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
-    data_0217d384[SCENE_CTRL_SUBMODE_4] = (data_0217d384[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
+    messageRequest[SCENE_CTRL_SUBMODE_3] = (messageRequest[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
+    messageRequest[SCENE_CTRL_SUBMODE_4] = (messageRequest[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
     data_021349c0[EFFECT_STATE_ACTIVE_SLOT] = slot;
-    data_02134d3c[slot].entity->action = 3;
+    fairySlots[slot].entity->action = 3;
 }
 
 // Follows the camera target (data_0212c648) on y, clamping the camera x to 0..0xa0
@@ -47,8 +47,8 @@ ARM void opdemo_scroll(void) {
 }
 
 ARM void op_title(void) {
-    data_021349c0[8] = data_0212c530 & 0xf;
-    data_02104a90[data_0212c4dc]();
+    data_021349c0[8] = opTitleState & 0xf;
+    opTitleTable[data_0212c4dc]();
     data_0212c564();
     func_020830ec();
 }

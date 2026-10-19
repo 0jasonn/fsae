@@ -29,22 +29,22 @@ typedef struct Vars_Target {
 
 
 
-extern const EntityFunc data_020d1b94[];
-extern const EntityFunc data_020d1b84[];
-extern const EntityFunc data_020d1c20[];
-extern const EntityFunc data_020d1c7c[];
-extern const EntityFunc data_020d1a64[];
-extern const EntityFunc data_020d1d40[];
-extern const EntityFunc data_020d1d58[];
-extern const EntityFunc data_020d1d2c[];
-extern const u8 data_020d1b8c[];
-extern const u8 data_020d1bcc[];
-extern const u8 data_020d1bd4[];
-extern const u8 data_020d1cd4[];
-extern const u8 data_020d1cdc[];
-extern const s8 data_020d1b7c[];
-extern const s8 data_020d1998[];
-extern const u16 data_020d1ccc[];
+extern const EntityFunc em06_actions[];
+extern const EntityFunc em06_normalActions[];
+extern const EntityFunc em07_actions[];
+extern const EntityFunc em07_normalActions[];
+extern const EntityFunc em0d_noContactActions[];
+extern const EntityFunc em08_actions[];
+extern const EntityFunc em08_normalActions[];
+extern const EntityFunc em08_liftActions[];
+extern const u8 em06_hitbox[];
+extern const u8 em07_hitbox[];
+extern const u8 em07_moveChoices[];
+extern const u8 em08_hitbox[];
+extern const u8 em08_throwParams[];
+extern const s8 em06_heightByFrame[];
+extern const s8 em0d_dieSway[];
+extern const u16 em08_hitParams[];
 extern u16 data_0212c540[];
 
 #endif

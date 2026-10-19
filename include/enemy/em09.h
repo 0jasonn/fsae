@@ -21,11 +21,11 @@ typedef struct Vars_BossLaunch {
 
 typedef struct Vars_BossTarget {
     /* 00 */ u8 unk_00[0x78];
-    /* 78 */ u8 unk_78;
+    /* 78 */ u8 savedChildUnk2e; // child's unk_2e, saved when it latches on
     /* 79 */ u8 unk_79[3];
-    /* 7c */ u8 unk_7c;
-    /* 7d */ u8 unk_7d;
-    /* 7e */ u16 unk_7e;
+    /* 7c */ u8 latchTimer; // set to 0x2d when the actor latches onto a player
+    /* 7d */ u8 savedPalette; // spriteSettings.b16 saved by em09_init
+    /* 7e */ u16 savedAttr; // unk_20 (low byte) and spriteSettings.b6 (high byte)
 } Vars_BossTarget;
 #define VBT(e) VARS(Vars_BossTarget, e)
 
@@ -33,26 +33,26 @@ typedef struct Tbl3 {
     u8 v[3];
 } Tbl3;
 
-extern const EntityFunc data_020d1da4[];
-extern const u8 data_020d1d90[];
-extern const u8 data_020d1d8c[];
-extern const u8 data_020d1d9b[];
+extern const EntityFunc em09_type2Actions[];
+extern const u8 em09_paletteByType[];
+extern const u8 em09_altPaletteA[];
+extern const u8 em09_hitbox[];
 extern const u16 data_0212c58c[];
 extern Entity *data_0212c7d4[];
 extern const s8 data_020d1d96[];
 extern const s8 data_020d1d93[];
-extern const u8 data_020d1d88[];
-extern const EntityFunc data_020d1ec8[];
-extern const EntityFunc data_020d1f48[];
-extern const u8 data_020d1ec0[];
-extern const u8 data_020d1eb0[];
-extern const s8 data_020d1eac[];
+extern const u8 em09_altPaletteB[];
+extern const EntityFunc em10_actions[];
+extern const EntityFunc em10_normalActions[];
+extern const u8 em10_hitbox[];
+extern const u8 em10_awakeHitbox[];
+extern const s8 em10_awakeSway[];
 extern UnkStruct_0212c7c8 data_0212c7c8;
-extern const u8 data_020d1db4[];
-extern const u16 data_020d1dac[];
-extern const EntityFunc data_020d1e14[];
-extern const EntityFunc data_020d1e2c[];
-extern const s8 data_020d1cbc[];
+extern const u8 em09_hurtHitbox[];
+extern const u16 em09_attrByChildType[];
+extern const EntityFunc em09_noPartnerActions[];
+extern const EntityFunc em09_normalActions[];
+extern const s8 em09_purupuruSway[];
 
 
 typedef struct UnkStruct_0212c648 {
@@ -61,13 +61,13 @@ typedef struct UnkStruct_0212c648 {
     /* 1a */ u16 unk_1a;
 } UnkStruct_0212c648;
 extern UnkStruct_0212c648 data_0212c648;
-extern const u16 data_020d1eb8[];
-extern const EntityFunc data_020d2044[];
-extern const EntityFunc data_020d205c[];
-extern const u8 data_020d2000[];
-extern const u8 data_020d1ff4[];
-extern const EntityFunc data_020d21dc[];
-extern const EntityFunc data_020d215c[];
+extern const u16 em11_blockMasks[];
+extern const EntityFunc em11_actions[];
+extern const EntityFunc em11_normalActions[];
+extern const u8 em11_hitbox[];
+extern const u8 em11_waitTimes[];
+extern const EntityFunc em12_normalActions[];
+extern const EntityFunc em12_actions[];
 
 typedef struct Vars_BossCell {
     /* 00 */ u8 unk_00[0x7a];
@@ -83,13 +83,13 @@ typedef struct Vars_BossPtr {
 
 typedef struct Vars_BossHalf {
     /* 00 */ u8 unk_00[0x7c];
-    /* 7c */ u16 unk_7c;
+    /* 7c */ u16 moveTimer; // counts down in em10_move until the actor switches state
 } Vars_BossHalf;
 #define VBH(e) VARS(Vars_BossHalf, e)
 
 typedef struct Vars_ParentWord {
     /* 00 */ u8 unk_00[4];
-    /* 04 */ s32 unk_04;
+    /* 04 */ s32 childAlive; // 0 means the linked child is removed
 } Vars_ParentWord;
 #define VPW(e) VARS(Vars_ParentWord, e)
 

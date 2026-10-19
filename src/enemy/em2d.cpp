@@ -4,20 +4,20 @@
 
 ARM void Em2d(Entity *e) {
     if (e->type == 0) {
-        data_020d11e0[e->action](e);
-        V(e)->unk_7f--;
+        em2d_type0Actions[e->action](e);
+        V(e)->cycleTimer--;
     } else {
-        data_020d11c0[e->action](e);
+        em2d_type1Actions[e->action](e);
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
         return;
     }
-    if (data_021348c0.unk_4 != *Knife_Single_SinglePlay_GetInstance()) {
-        data_021348c0.unk_4 = *Knife_Single_SinglePlay_GetInstance();
-        data_021348c0.unk_0 = 0xb4;
+    if (em2d_retargetState.lastPlayer != *Knife_Single_SinglePlay_GetInstance()) {
+        em2d_retargetState.lastPlayer = *Knife_Single_SinglePlay_GetInstance();
+        em2d_retargetState.retargetTimer = 0xb4;
     }
-    if (data_021348c0.unk_0 != 0) {
-        data_021348c0.unk_0--;
+    if (em2d_retargetState.retargetTimer != 0) {
+        em2d_retargetState.retargetTimer--;
     }
 }
 
@@ -31,15 +31,15 @@ ARM void em2c_type0_init_034878(Entity *e) {
             e->timer = 0x78;
             e->subtimer = 0x96;
             e->speed = 0x100;
-            e->health = data_020f266e[data_0212c7c8.unk_6 - 1];
-            V(e)->unk_7c = 0x10;
+            e->health = em2d_healthType0[data_0212c7c8.unk_6 - 1];
+            V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             break;
         case 1: {
             e->action = 7;
             e->timer = 0x3c;
-            e->health = data_020f266b[data_0212c7c8.unk_6 - 1];
-            V(e)->unk_7c = 0x10;
+            e->health = em2d_healthType1[data_0212c7c8.unk_6 - 1];
+            V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             Entity *fx = GetSetWork(0xf, 2, 0x20);
             if (fx != NULL) {
@@ -51,8 +51,8 @@ ARM void em2c_type0_init_034878(Entity *e) {
             e->action = 0xe;
             e->timer = 0x96;
             e->speed = 0x100;
-            e->health = data_020f2668[data_0212c7c8.unk_6 - 1];
-            V(e)->unk_7c = 0x10;
+            e->health = em2d_healthType2[data_0212c7c8.unk_6 - 1];
+            V(e)->orbitRadius = 0x10;
             e->direction = Random() & 0x1f;
             InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
             Entity *fx = GetSetWork(0xf, 2, 0x20);
@@ -66,10 +66,10 @@ ARM void em2c_type0_init_034878(Entity *e) {
     e->spriteSettings.b20 = e->parent->spriteSettings.b16;
     e->spriteSettings.b16 = e->spriteSettings.b20;
     e->spriteSettings.b0 = 1;
-    e->hitbox = data_020d119c;
-    V(e)->unk_7f = Random();
-    data_021348c0.unk_0 = 0;
-    data_021348c0.unk_4 = 0;
+    e->hitbox = em2d_closeHitbox;
+    V(e)->cycleTimer = Random();
+    em2d_retargetState.retargetTimer = 0;
+    em2d_retargetState.lastPlayer = 0;
 }
 
 ARM void type0_1stDemo(Entity *e) {
@@ -83,10 +83,10 @@ ARM void type0_1stDemo(Entity *e) {
         InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 0x10) >> 5) & 7) + 0x14);
         EnqueueSFX(0x9e);
     }
-    ObjPosCopyOfs32(e->parent, e, (s16)((V(e)->unk_7c * data_020d7e58[e->direction]) >> 8) << 16,
-                  (s16)(-4 - ((V(e)->unk_7c * data_020d7e58[e->direction + 0x40]) >> 8)) << 16);
-    V(e)->unk_7c++;
-    if (V(e)->unk_7c >= 0x40) {
+    ObjPosCopyOfs32(e->parent, e, (s16)((V(e)->orbitRadius * trigTable[e->direction]) >> 8) << 16,
+                  (s16)(-4 - ((V(e)->orbitRadius * trigTable[e->direction + 0x40]) >> 8)) << 16);
+    V(e)->orbitRadius++;
+    if (V(e)->orbitRadius >= 0x40) {
         e->action = 2;
         e->timer = 0x3c;
     }
@@ -98,8 +98,8 @@ ARM void em2c_type0_1stDemoWait_034b44(Entity *e) {
     }
     e->action = 3;
     e->timer = 0x5a;
-    e->speed = data_020f267a[data_0212c7c8.unk_6 - 1];
-    VE(e->parent)->unk_7d |= (u8)data_020cf9b8[V(e)->unk_7e];
+    e->speed = em2d_demoSpeeds[data_0212c7c8.unk_6 - 1];
+    VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
 
 ARM void type0_1stWait(Entity *e) {
@@ -109,14 +109,14 @@ ARM void type0_1stWait(Entity *e) {
     }
     e->action = 4;
     openInit(e);
-    V(e)->unk_70->spriteSettings.b20 = e->spriteSettings.b20;
-    V(e)->unk_70->spriteSettings.b16 = V(e)->unk_70->spriteSettings.b20;
+    V(e)->petal->spriteSettings.b20 = e->spriteSettings.b20;
+    V(e)->petal->spriteSettings.b16 = V(e)->petal->spriteSettings.b20;
 }
 
 ARM void type0_1stOpen(Entity *e) {
     cercleMove2(e);
-    if (V(e)->unk_70 != NULL) {
-        UpdateAnimationSingleFrame(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        UpdateAnimationSingleFrame(V(e)->petal);
     }
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
@@ -141,15 +141,15 @@ ARM void type0_1stCercle(Entity *e) {
         e->timer--;
     }
     cercleMove2(e);
-    if (V(e)->unk_70 != NULL) {
-        UpdateAnimationSingleFrame(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        UpdateAnimationSingleFrame(V(e)->petal);
     }
 }
 
 ARM void type0_1stClose(Entity *e) {
     cercleMove2(e);
-    if (V(e)->unk_70 != NULL) {
-        UpdateAnimationSingleFrame(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        UpdateAnimationSingleFrame(V(e)->petal);
     }
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
@@ -166,7 +166,7 @@ ARM void type0_2ndDemo(Entity *e) {
         return;
     }
     e->action = 8;
-    VE(e->parent)->unk_7d |= (u8)data_020cf9b8[V(e)->unk_7e];
+    VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
     EnqueueSFX(0x9e);
 }
 
@@ -183,24 +183,24 @@ ARM void type0_2ndGetdir(Entity *e) {
         e->speed = 0x100;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        if (data_021348c0.unk_0 == 0) {
-            V(e)->unk_64 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+        if (em2d_retargetState.retargetTimer == 0) {
+            V(e)->aimTarget = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
-        if (V(e)->unk_64 == NULL) {
-            V(e)->unk_64 = EmGetAimPl();
+        if (V(e)->aimTarget == NULL) {
+            V(e)->aimTarget = EmGetAimPl();
         }
     } else {
-        V(e)->unk_64 = EmGetAimPl();
+        V(e)->aimTarget = EmGetAimPl();
     }
-    if (V(e)->unk_64 == NULL) {
+    if (V(e)->aimTarget == NULL) {
         return;
     }
-    e->direction = func_02084fd0(e, V(e)->unk_64);
+    e->direction = func_02084fd0(e, V(e)->aimTarget);
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
 ARM void em2c_type0_2ndMove_034ea0(Entity *e) {
-    if (V(e)->unk_6e & 0x80) {
+    if (V(e)->phaseFlags & 0x80) {
         e->action = 0xb;
         openInit(e);
         return;
@@ -208,12 +208,12 @@ ARM void em2c_type0_2ndMove_034ea0(Entity *e) {
     if (e->contactFlags & 0x80) {
         u8 index = e->contactedEntity->type;
         if (index < 4) {
-            V(e)->unk_64 = data_0212ceb0[index].entity;
+            V(e)->aimTarget = data_0212ceb0[index].entity;
         }
     }
     if (--e->timer != 0) {
         if ((e->timer & 3) == 0) {
-            func_02086200(e, func_02084fd0(e, V(e)->unk_64));
+            func_02086200(e, func_02084fd0(e, V(e)->aimTarget));
             int anim = ((e->direction + 2) >> 2) & 7;
             if (anim != e->animationState) {
                 InitAnimationForceUpdate(e, (e->animationState = anim) + 0x14);
@@ -226,7 +226,7 @@ ARM void em2c_type0_2ndMove_034ea0(Entity *e) {
 }
 
 ARM void type0_2ndAttack(Entity *e) {
-    if (V(e)->unk_6e & 0x80) {
+    if (V(e)->phaseFlags & 0x80) {
         e->action = 0xb;
         openInit(e);
         ObjPosCopy(e->child, e);
@@ -244,8 +244,8 @@ ARM void type0_2ndAttack(Entity *e) {
 }
 
 ARM void type0_2ndOpen(Entity *e) {
-    if (V(e)->unk_70 != NULL) {
-        UpdateAnimationSingleFrame(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        UpdateAnimationSingleFrame(V(e)->petal);
     }
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
@@ -276,8 +276,8 @@ ARM void type0_2ndBlossom(Entity *e) {
 }
 
 ARM void type0_2ndClose(Entity *e) {
-    if (V(e)->unk_70 != NULL) {
-        UpdateAnimationSingleFrame(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        UpdateAnimationSingleFrame(V(e)->petal);
     }
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
@@ -285,7 +285,7 @@ ARM void type0_2ndClose(Entity *e) {
     }
     e->action = 8;
     e->timer = 0x1e;
-    V(e)->unk_7c = 0x10;
+    V(e)->orbitRadius = 0x10;
     closeEndSet(e);
 }
 
@@ -295,26 +295,26 @@ ARM void type0_3rdDemo(Entity *e) {
         return;
     }
     e->action = 0xf;
-    e->speed = data_020f2680[data_0212c7c8.unk_6 - 1];
-    V(e)->unk_6e = 1;
-    VE(e->parent)->unk_7d |= (u8)data_020cf9b8[V(e)->unk_7e];
+    e->speed = em2d_thirdDemoSpeeds[data_0212c7c8.unk_6 - 1];
+    V(e)->phaseFlags = 1;
+    VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
 
 ARM void type0_3rdCercle(Entity *e) {
-    if ((V(e)->unk_6e & 0xc0) == 0xc0) {
+    if ((V(e)->phaseFlags & 0xc0) == 0xc0) {
         e->action = 0x10;
         openInit(e);
         differentColSet(e);
         ObjPosCopy(e->child, e);
         return;
     }
-    V(e)->unk_6e &= 0x3f;
+    V(e)->phaseFlags &= 0x3f;
     cercleMoveC(e);
 }
 
 ARM void type0_3rdOpen(Entity *e) {
-    if (V(e)->unk_70 != NULL) {
-        UpdateAnimationSingleFrame(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        UpdateAnimationSingleFrame(V(e)->petal);
     }
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
@@ -339,35 +339,35 @@ ARM void type0_3rdBlossom(Entity *e) {
         e->timer = 0xb4;
         e->unk_3c &= 0x7f;
         e->unk_5e.b0 = 3;
-        if (V(e)->unk_70 != NULL) {
-            V(e)->unk_70->unk_3c &= 0x7f;
-            V(e)->unk_70->unk_5e.b0 = 3;
+        if (V(e)->petal != NULL) {
+            V(e)->petal->unk_3c &= 0x7f;
+            V(e)->petal->unk_5e.b0 = 3;
         }
         e->direction = Random() & 0xf;
         e->speed = 0x400;
-        V(e)->unk_7c = 0xf;
-        V(e->parent)->unk_6e = 0xffff;
+        V(e)->orbitRadius = 0xf;
+        V(e->parent)->phaseFlags = 0xffff;
         return;
     }
     if (e->iframes != 0) {
         return;
     }
     e->action = 0x12;
-    V(e)->unk_6e ^= 2;
+    V(e)->phaseFlags ^= 2;
     closeInit(e);
 }
 
 ARM void type0_3rdClose(Entity *e) {
-    if (V(e)->unk_70 != NULL) {
-        UpdateAnimationSingleFrame(V(e)->unk_70);
+    if (V(e)->petal != NULL) {
+        UpdateAnimationSingleFrame(V(e)->petal);
     }
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
         return;
     }
-    V(e)->unk_7c = 0x10;
+    V(e)->orbitRadius = 0x10;
     closeEndSet(e);
-    if (V(e)->unk_6e & 2) {
+    if (V(e)->phaseFlags & 2) {
         e->action = 0x13;
         e->timer = 0x1e;
         return;
@@ -388,43 +388,43 @@ ARM void type0_3rdAimInit(Entity *e) {
     e->timer = 0x78;
     e->speed = 0x120;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        if (data_021348c0.unk_0 == 0) {
-            V(e)->unk_64 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+        if (em2d_retargetState.retargetTimer == 0) {
+            V(e)->aimTarget = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
-        if (V(e)->unk_64 == NULL) {
-            V(e)->unk_64 = EmGetAimPl();
+        if (V(e)->aimTarget == NULL) {
+            V(e)->aimTarget = EmGetAimPl();
         }
     } else {
-        V(e)->unk_64 = EmGetAimPl();
+        V(e)->aimTarget = EmGetAimPl();
     }
-    e->direction = func_02084fd0(e, V(e)->unk_64);
+    e->direction = func_02084fd0(e, V(e)->aimTarget);
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
 ARM void type0_3rdAimMove(Entity *e) {
-    if ((V(e)->unk_6e & 0xc0) == 0xc0) {
+    if ((V(e)->phaseFlags & 0xc0) == 0xc0) {
         e->action = 0x10;
         openInit(e);
         differentColSet(e);
         ObjPosCopy(e->child, e);
         return;
     }
-    V(e)->unk_6e &= 0x3f;
+    V(e)->phaseFlags &= 0x3f;
     if ((e->contactFlags & 0x80) && e->contactedEntity->type < 4) {
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-            if (data_021348c0.unk_0 == 0) {
-                V(e)->unk_64 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+            if (em2d_retargetState.retargetTimer == 0) {
+                V(e)->aimTarget = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
             }
-            if (V(e)->unk_64 == NULL) {
-                V(e)->unk_64 = data_0212ceb0[e->contactedEntity->type].entity;
+            if (V(e)->aimTarget == NULL) {
+                V(e)->aimTarget = data_0212ceb0[e->contactedEntity->type].entity;
             }
         } else {
-            V(e)->unk_64 = data_0212ceb0[e->contactedEntity->type].entity;
+            V(e)->aimTarget = data_0212ceb0[e->contactedEntity->type].entity;
         }
     }
     if (--e->timer != 0) {
         if ((e->timer & 3) == 0) {
-            func_02086200(e, func_02084fd0(e, V(e)->unk_64));
+            func_02086200(e, func_02084fd0(e, V(e)->aimTarget));
             int anim = ((e->direction + 2) >> 2) & 7;
             if (anim != e->animationState) {
                 InitAnimationForceUpdate(e, (e->animationState = anim) + 0x14);
@@ -437,14 +437,14 @@ ARM void type0_3rdAimMove(Entity *e) {
 }
 
 ARM void type0_3rdAttack(Entity *e) {
-    if ((V(e)->unk_6e & 0xc0) == 0xc0) {
+    if ((V(e)->phaseFlags & 0xc0) == 0xc0) {
         e->action = 0x10;
         openInit(e);
         differentColSet(e);
         ObjPosCopy(e->child, e);
         return;
     }
-    V(e)->unk_6e &= 0x3f;
+    V(e)->phaseFlags &= 0x3f;
     UpdateAnimationSingleFrame(e);
     if (e->frame & 1) {
         e->frame = 0;
@@ -472,7 +472,7 @@ ARM void type0_DieDemo0(Entity *e) {
 }
 
 ARM void type0_DieDemo1(Entity *e) {
-    e->x.HALF.HI += data_020f2675[e->timer & 3];
+    e->x.HALF.HI += em2d_dieSway[e->timer & 3];
     if (++e->timer >= 0x3c) {
         e->timer = 0x1e;
         e->action = 0x18;
@@ -491,12 +491,12 @@ ARM void em2c_type1_init_0356bc(Entity *e) {
     e->health = 0xff;
     e->unk_3c &= 0x7f;
     e->unk_3f = 0x3f;
-    e->hitbox = data_020d11ac;
+    e->hitbox = em2d_type1Hitbox;
 }
 
 ARM void em2c_type1_wait_0356f4(Entity *e) {
     Entity *parent = e->parent;
-    if (parent->type2 != 0 || VCT(parent->parent)->unk_7c != 1) {
+    if (parent->type2 != 0 || VCT(parent->parent)->flowerCount != 1) {
         return;
     }
     if (!(e->unk_3c & 0x80)) {
@@ -517,7 +517,7 @@ ARM void type1_attackWait(Entity *e) {
 }
 
 ARM void type1_attack(Entity *e) {
-    e->z.HALF.HI = data_020f2671[(e->frame >> 4) & 3];
+    e->z.HALF.HI = em2d_attackZ[(e->frame >> 4) & 3];
     e->parent->z.HALF.HI = e->z.HALF.HI;
     if (e->frame & 1) {
         Entity *proj = GetTamaWork(0xd);
@@ -538,7 +538,7 @@ ARM void type1_attack(Entity *e) {
 }
 
 ARM void damageSet(Entity *e, Entity *src) {
-    V(e)->unk_6e |= 1;
+    V(e)->phaseFlags |= 1;
     u8 damage = src->contactedEntity->unk_44;
     if (e->health < damage) {
         e->health = 0;
@@ -546,14 +546,14 @@ ARM void damageSet(Entity *e, Entity *src) {
         e->health -= damage;
     }
     e->iframes = src->contactedEntity->unk_46 < 0 ? -0x10 - src->contactedEntity->unk_46 : src->contactedEntity->unk_46 + 0x10;
-    if (V(e)->unk_70 != NULL) {
-        V(e)->unk_70->iframes = e->iframes;
+    if (V(e)->petal != NULL) {
+        V(e)->petal->iframes = e->iframes;
     }
     EnqueueSFX(0x2d);
 }
 
 ARM BOOL damagecheck(Entity *e) {
-    Entity *other = V(e)->unk_70;
+    Entity *other = V(e)->petal;
     if (other != NULL && other->spriteSettings.b20 == e->spriteSettings.b20) {
         if (e->contactFlags & 0x80) {
             if ((u16)(e->contactFlags - 0x84) <= 0x9f) {
@@ -601,8 +601,8 @@ ARM BOOL damagecheck(Entity *e) {
             }
             if ((flags & 3) == 0) {
                 e->iframes = 0xf8;
-                if (V(e)->unk_70 != NULL) {
-                    V(e)->unk_70->iframes = 0xf8;
+                if (V(e)->petal != NULL) {
+                    V(e)->petal->iframes = 0xf8;
                 }
             }
         }

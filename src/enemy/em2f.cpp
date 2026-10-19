@@ -2,11 +2,11 @@
 #include "enemy/em2f.h"
 #include "global.h"
 
-ARM void func_02036ca4(Entity *e) {
+ARM void em2f_main(Entity *e) {
     if (e->health == 0 && e->action < 0x23) {
         e->action = 0x23;
     }
-    data_020d177c[e->action](e);
+    em2f_actions[e->action](e);
 }
 
 ARM void em2f_init(Entity *e) {
@@ -17,9 +17,9 @@ ARM void em2f_init(Entity *e) {
     e->z.HALF.HI = -0x70;
     e->spriteSettings.b4 = 2;
     e->unk_5e.b2 = 2;
-    e->hitbox = data_020d1438;
-    V(e)->unk_7c = Random();
-    e->health = data_020d1428[data_0212c7c8.unk_3];
+    e->hitbox = em2f_hitbox;
+    V(e)->attackSeed = Random();
+    e->health = em2f_healthByDifficulty[data_0212c7c8.unk_3];
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
         switch (data_0212c7c8.unk_0) {
             case 2:
@@ -100,7 +100,7 @@ ARM void em2f_mesWait(Entity *e) {
         return;
     }
     if (e->subAction == 0) {
-        if ((data_0217d384 & 0x7f) != 6) {
+        if ((messageRequest & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();
@@ -119,7 +119,7 @@ ARM void em2f_mesWait(Entity *e) {
     MakeFadeBuff256(0x100);
 }
 
-ARM void func_02037094(Entity *e) {
+ARM void em2f_noOp(Entity *e) {
 }
 
 ARM void em2f_flash1(Entity *e) {
@@ -127,8 +127,8 @@ ARM void em2f_flash1(Entity *e) {
     BindPlayers();
     if (--e->timer != 0) {
         if (e->timer == 4) {
-            MapLoad((u32 *)data_020d70c8, 1);
-            data_02134914 = 0;
+            MapLoad((u32 *)em2f_mapData, 1);
+            em2f_mapFlag = 0;
         }
         return;
     }
@@ -243,7 +243,7 @@ ARM void em2f_demoEnd(Entity *e) {
     e->spriteSettings.b30 = 2;
     e->unk_5e.b0 = 2;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        data_0212c648 = data_0212ceb0[data_0212c504].entity;
+        data_0212c648 = data_0212ceb0[localPlayerIndex].entity;
     } else {
         data_0212c648 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
@@ -282,7 +282,7 @@ ARM void em2f_tsubomiInit(Entity *e) {
             return;
         }
         tsubomiCloseWaitSet(e);
-        e->speed = data_020d142c[gufuVitalCheck(e)];
+        e->speed = em2f_tsubomiSpeeds[gufuVitalCheck(e)];
         UpdateAnimationSingleFrame(e);
         return;
     }
@@ -291,23 +291,23 @@ ARM void em2f_tsubomiInit(Entity *e) {
 
 ARM void em2f_tsubomiCloseWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    if (V(e)->unk_70 != 0) {
+    if (V(e)->subPhase != 0) {
         return;
     }
-    V(e)->unk_70 = 3;
+    V(e)->subPhase = 3;
     e->action = 0x10;
     e->timer = 0x3c;
 }
 
 ARM void em2f_tsubomiSuihei(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    if (V(e)->unk_70 != 0xf) {
+    if (V(e)->subPhase != 0xf) {
         return;
     }
     if (--e->timer != 0) {
         return;
     }
-    V(e)->unk_70 = 0;
+    V(e)->subPhase = 0;
     e->action = 0x11;
     e->speed = 0x100;
     getTsubomiMoveInfo(e);
@@ -316,11 +316,11 @@ ARM void em2f_tsubomiSuihei(Entity *e) {
 }
 
 ARM void em2f_tsubomiCercle(Entity *e) {
-    if (V(e)->unk_70 == 0) {
+    if (V(e)->subPhase == 0) {
         if (tblMove(e) == 0) {
-            V(e)->unk_70 = 7;
+            V(e)->subPhase = 7;
         }
-    } else if (V(e)->unk_70 == 4) {
+    } else if (V(e)->subPhase == 4) {
         e->action = 0x12;
         e->timer = 0x14;
         e->spriteSettings.b30 = 2;
@@ -333,14 +333,14 @@ ARM void em2f_tsubomiKamae(Entity *e) {
     if (--e->timer == 0) {
         e->action = 0x13;
         e->timer = 0x3c;
-        V(e)->unk_70 = 0;
+        V(e)->subPhase = 0;
     }
     UpdateAnimationSingleFrame(e);
 }
 
 ARM void em2f_tsubomiAttackInit(Entity *e) {
-    if (V(e)->unk_70 == 3 && --e->timer == 0) {
-        V(e)->unk_70 = data_020cf9b8[V(e)->unk_71 + 2];
+    if (V(e)->subPhase == 3 && --e->timer == 0) {
+        V(e)->subPhase = flagBits[V(e)->tsubomiSlot + 2];
         e->action = 0x14;
     }
     UpdateAnimationSingleFrame(e);
@@ -348,7 +348,7 @@ ARM void em2f_tsubomiAttackInit(Entity *e) {
 
 ARM void em2f_tsubomiAttack(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    if (V(e)->unk_70 == 0) {
+    if (V(e)->subPhase == 0) {
         e->action = 0x15;
     }
 }
@@ -359,7 +359,7 @@ ARM void em2f_tsubomiAttackEnd(Entity *e) {
         return;
     }
     e->action = 0x16;
-    V(e)->unk_70 = 0xff;
+    V(e)->subPhase = 0xff;
     InitAnimationForceUpdate(e, 4);
 }
 
@@ -380,8 +380,8 @@ ARM void em2f_stormInitWait(Entity *e) {
         return;
     }
     e->action = 0x18;
-    V(e)->unk_70 = 0;
-    V(e)->unk_72 = 0x20;
+    V(e)->subPhase = 0;
+    V(e)->stormTimer = 0x20;
     InitAnimationForceUpdate(e, 3);
     EnqueueSFX(0xb2);
     e->spriteSettings.b30 = 1;
@@ -400,8 +400,8 @@ ARM void em2f_stormGetTama(Entity *e) {
     }
     e->action = 0x19;
     e->timer = 0x3c;
-    V(e)->unk_6e = 0;
-    V(e)->unk_7d = (Random() & 1) ? 1 : -1;
+    V(e)->attackCounter = 0;
+    V(e)->stormDir = (Random() & 1) ? 1 : -1;
     InitAnimationForceUpdate(e, 0);
 }
 
@@ -418,7 +418,7 @@ ARM void em2f_stormWait(Entity *e) {
 ARM void em2f_stormMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     stormMove(e);
-    if (tblMove(e) != 0 && V(e)->unk_70 == 0) {
+    if (tblMove(e) != 0 && V(e)->subPhase == 0) {
         return;
     }
     e->action = 0x1b;
@@ -427,7 +427,7 @@ ARM void em2f_stormMove(Entity *e) {
 ARM void em2f_stormSmashInit(Entity *e) {
     UpdateAnimationSingleFrame(e);
     stormMove(e);
-    if (V(e)->unk_6e == 0) {
+    if (V(e)->attackCounter == 0) {
         e->action = 0x1c;
         e->timer = 0x1e;
     }

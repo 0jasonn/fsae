@@ -4,15 +4,15 @@
 
 ARM void Em27(Entity *e) {
     func_02084700(e);
-    data_020d322c[func_02084a30(e)](e);
+    em27_mainTable[func_02084a30(e)](e);
 }
 
 ARM void em27_normal(Entity *e) {
-    data_020d321c[e->action](e);
+    em27_normalTable[e->action](e);
 }
 
 ARM void func_02040e18(Entity *e) {
-    GenericKnockback(e, data_020d322c);
+    GenericKnockback(e, em27_mainTable);
 }
 
 ARM void em27_die(Entity *e) {

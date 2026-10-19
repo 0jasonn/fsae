@@ -38,7 +38,7 @@ ARM Entity *plCheck(Entity *e) {
         if (child != data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity) {
             return NULL;
         }
-        if (data_021348cc.unk_0 != 0) {
+        if (em28_claim.claimed != 0) {
             return NULL;
         }
     }

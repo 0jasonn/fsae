@@ -17,22 +17,22 @@ ARM void aibou_check(Entity *e) {
     if (e->unk_60 == 0) {
         return;
     }
-    Entity *n = e->parent;
-    if (n == 0) {
+    Entity *parentEntity = e->parent;
+    if (parentEntity == 0) {
         return;
     }
     if (e->type2 == 1) {
         e->unk_64[4] = 0;
-        n->type2 = 0;
+        parentEntity->type2 = 0;
     }
 }
 
-ARM void func_02038ab4(Entity *e) {
-    EnemyFunctionHandler(e, data_020d195c);
+ARM void em04_main(Entity *e) {
+    EnemyFunctionHandler(e, em04_actions);
 }
 
 ARM void em04_normal(Entity *e) {
-    data_020d18bc[e->action](e);
+    em04_normalActions[e->action](e);
 }
 
 ARM void em04_damage(Entity *e) {
@@ -41,13 +41,13 @@ ARM void em04_damage(Entity *e) {
         e->speed = 0x80;
         e->subtimer = 0x14;
     }
-    GenericKnockback(e, data_020d195c);
+    GenericKnockback(e, em04_actions);
 }
 
 ARM void em04_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
-    e->hitbox = data_020d18b4;
+    e->hitbox = em04_hitbox;
     InitAnimationForceUpdate(e, 0);
     e->animationState = 0;
     e->action++;

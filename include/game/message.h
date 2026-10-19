@@ -3,12 +3,12 @@
 
 #include "types.h"
 
-// Per-state function of the message box (data_02103c00) and the telop box (data_02103c18).
+// Per-state function of the message box (messageStates) and the telop box (telopStates).
 // A state returns 0 when it is finished for this frame.
 typedef int (*MsgStateFunc)(void);
 typedef void (*MsgVoidFunc)(void);
 
-// Telop request block (data_0217d36c, 0x18 bytes)
+// Telop request block (telopRequest, 0x18 bytes)
 typedef struct TelopWork {
     /* 00 */ u8 active;
     /* 01 */ u8 unk_01;
@@ -29,11 +29,11 @@ typedef struct WindowSlot {
     /* 07 */ u8 height;
 } WindowSlot;
 
-// Message box (data_0217d39c) and telop box (data_0217d484), both 0xe8 bytes with the same layout
+// Message box (data_0217d39c) and telop box (telopBox), both 0xe8 bytes with the same layout
 typedef struct MsgWork {
     /* 00 */ u8 *uiPtrA; // KnifeApp + 0x108 (msg) or + 0x144 (telop) (guess)
     /* 04 */ u8 *uiPtrB; // KnifeApp + 0x44 (msg) or + 0x180 (telop) (guess)
-    /* 08 */ u8 *unk_08; // data_0216efc8 (msg) or data_0216efd4 (telop) (guess)
+    /* 08 */ u8 *windowData; // data_0216efc8 (msg) or data_0216efd4 (telop) (guess)
     /* 0c */ u8 windowPhase; // window opening progress, compared with 1 and 6 in Message (guess)
     /* 0d */ u8 unk_0d;
     /* 0e */ u8 layoutFlags; // low nibble = 1 after msgInit/tlpInit, bits 4-5 = bank passed to Knife_msgFrameDma
@@ -42,14 +42,14 @@ typedef struct MsgWork {
     /* 11 */ u8 unk_11;
     /* 12 */ u16 msgId;
     /* 14 */ u8 unk_14[0x25 - 0x14];
-    /* 25 */ u8 unk_25;
+    /* 25 */ u8 openMode;
     /* 26 */ u8 unk_26[0x2a - 0x26];
     /* 2a */ u8 unk_2a; // set to 0xa0 by tlpInit (guess)
     /* 2b */ u8 unk_2b[0xac - 0x2b];
     /* ac */ u8 unk_ac[4]; // cleared when the window starts closing
     /* b0 */ u8 unk_b0[0xd0 - 0xb0];
     /* d0 */ u8 state; // index into the state table
-    /* d1 */ u8 subState; // index into the move table data_02103c34
+    /* d1 */ u8 subState; // index into the move table msgMoveTable
     /* d2 */ u8 waitTimer; // frames to wait before the state table runs again
     /* d3 */ u8 unk_d3[0xe0 - 0xd3];
     /* e0 */ u8 lineChangeReq; // set when the line change has to run (knife_msgLineChange)
@@ -59,11 +59,11 @@ typedef struct MsgWork {
     /* e7 */ u8 unk_e7;
 } MsgWork;
 
-extern TelopWork data_0217d36c;
+extern TelopWork telopRequest;
 extern MsgWork data_0217d39c;
-extern MsgWork data_0217d484;
+extern MsgWork telopBox;
 extern u8 data_0216efbc[];
-extern u8 data_0217d384[];
+extern u8 messageRequest[];
 extern u8 data_0217d3c0[];
 extern u8 data_0217d4a8[];
 extern u8 data_0217d358[];
@@ -74,10 +74,10 @@ extern u8 data_0216efd4[];
 extern u8 data_0211ed80[];
 extern u8 data_021371a0[];
 extern u8 data_021361a0[];
-extern MsgStateFunc data_02103c00[];
-extern MsgStateFunc data_02103c18[];
-extern MsgVoidFunc data_02103c34[];
-extern WindowSlot data_0216f000[];
+extern MsgStateFunc messageStates[];
+extern MsgStateFunc telopStates[];
+extern MsgVoidFunc msgMoveTable[];
+extern WindowSlot telopWindowSlots[];
 extern WindowSlot data_0216f010[];
 extern WindowSlot data_0216efe0[];
 extern WindowSlot data_0216eff0[];

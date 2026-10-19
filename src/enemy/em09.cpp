@@ -5,7 +5,7 @@
 // Function names (dsd -> name), also in scratch/agentA/renames.txt:
 // tenka tenka, searchCandle searchCandle, purupuru purupuru,
 // piyoriSet piyoriSet, Em09 Em09, em09_normal em09_normal,
-// em09_damage em09_damage, Boss_Release Boss_Release (tail-calls func_02084788),
+// em09_damage em09_damage, em09_release em09_release (tail-calls func_02084788),
 // type2Move type2Move, em09_init em09_init, em09_wait em09_wait,
 // em09_appear em09_appear, em09_move em09_move
 
@@ -22,38 +22,38 @@ ARM void tenka(Entity *e) {
 }
 
 ARM void searchCandle(Entity *e) {
-    int a;
-    int b;
+    int probeA; // tile codes at the two probe points; 0x10e makes the actor call tenka
+    int probeB;
     if (VBD(e)->dying != 0) {
         return;
     }
     if (e->unk_2c & 0xe) {
-        a = func_02083c74(e, 2, -6);
-        b = func_02083c74(e, -2, -6);
-        if (a == 0x10e || b == 0x10e) {
+        probeA = func_02083c74(e, 2, -6);
+        probeB = func_02083c74(e, -2, -6);
+        if (probeA == 0x10e || probeB == 0x10e) {
             tenka(e);
             return;
         }
     } else if (e->unk_2c & 0xe0) {
-        a = func_02083c74(e, 2, 6);
-        b = func_02083c74(e, -2, 6);
-        if (a == 0x10e || b == 0x10e) {
+        probeA = func_02083c74(e, 2, 6);
+        probeB = func_02083c74(e, -2, 6);
+        if (probeA == 0x10e || probeB == 0x10e) {
             tenka(e);
             return;
         }
     }
     if (e->unk_2c & 0xe000) {
-        a = func_02083c74(e, 8, 2);
-        b = func_02083c74(e, 8, -2);
-        if (a == 0x10e || b == 0x10e) {
+        probeA = func_02083c74(e, 8, 2);
+        probeB = func_02083c74(e, 8, -2);
+        if (probeA == 0x10e || probeB == 0x10e) {
             tenka(e);
         }
         return;
     }
     if (e->unk_2c & 0xe00) {
-        a = func_02083c74(e, -8, 2);
-        b = func_02083c74(e, -8, -2);
-        if (a == 0x10e || b == 0x10e) {
+        probeA = func_02083c74(e, -8, 2);
+        probeB = func_02083c74(e, -8, -2);
+        if (probeA == 0x10e || probeB == 0x10e) {
             tenka(e);
         }
     }
@@ -81,7 +81,7 @@ ARM int purupuru(Entity *e) {
             e->unk_1a = 2;
         }
         if (VBL(e)->launchTimer < 0x3c && (VBL(e)->launchTimer & 1) != 0) {
-            e->x.HALF.HI += data_020d1cbc[(VBL(e)->launchTimer & 6) >> 1];
+            e->x.HALF.HI += em09_purupuruSway[(VBL(e)->launchTimer & 6) >> 1];
         }
     }
     return 1;
@@ -97,19 +97,19 @@ ARM void piyoriSet(Entity *e) {
 }
 
 ARM void Em09(Entity *e) {
-    Entity *target;
-    u8 index;
+    Entity *partner;
+    u8 actionIndex;
     if (e->type2 == 0) {
         func_02084700(e);
-        target = func_020849c8(e);
-        if (target != NULL) {
+        partner = func_020849c8(e);
+        if (partner != NULL) {
             if (e->action == 4) {
                 kuttsukiReset(e);
             }
-            func_02084ab8(e, target);
+            func_02084ab8(e, partner);
         } else {
-            index = func_02084a30(e);
-            data_020d1e14[index](e);
+            actionIndex = func_02084a30(e);
+            em09_noPartnerActions[actionIndex](e);
         }
     } else {
         type2Move(e);
@@ -117,18 +117,18 @@ ARM void Em09(Entity *e) {
 }
 
 ARM void em09_normal(Entity *e) {
-    data_020d1e2c[e->action](e);
+    em09_normalActions[e->action](e);
 }
 
 ARM void em09_damage(Entity *e) {
     if (e->unk_3f == 0x14) {
         e->unk_3f = 0x13;
-        e->hitbox = data_020d1db4;
+        e->hitbox = em09_hurtHitbox;
         e->unk_3c &= 0x7f;
-        e->unk_20 = VBT(e)->unk_7e;
-        e->spriteSettings.b20 = VBT(e)->unk_7d;
+        e->unk_20 = VBT(e)->savedAttr;
+        e->spriteSettings.b20 = VBT(e)->savedPalette;
         e->spriteSettings.b16 = e->spriteSettings.b20;
-        e->spriteSettings.b6 = (VBT(e)->unk_7e & 0xff00) >> 8;
+        e->spriteSettings.b6 = (VBT(e)->savedAttr & 0xff00) >> 8;
         e->unk_1b = 0x2c;
         e->action++;
         InitAnimationForceUpdate(e, 2);
@@ -153,11 +153,11 @@ ARM void em09_damage(Entity *e) {
             }
             e->child = e->contactedEntity;
             e->child->unk_3c &= 0x7f;
-            VBT(e)->unk_78 = e->child->unk_2e;
-            e->unk_5c = data_020d1dac[e->child->type];
+            VBT(e)->savedChildUnk2e = e->child->unk_2e;
+            e->unk_5c = em09_attrByChildType[e->child->type];
             e->action = 4;
             e->subtimer = 0;
-            VBT(e)->unk_7c = 0x2d;
+            VBT(e)->latchTimer = 0x2d;
         } else {
             e->child = EmGetAimPl();
         }
@@ -169,7 +169,7 @@ ARM void em09_damage(Entity *e) {
     e->direction = GetFacingDirection(e, e->child);
 }
 
-ARM void Boss_Release(Entity *e) {
+ARM void em09_release(Entity *e) {
     func_02084788(e);
 }
 
@@ -180,12 +180,12 @@ ARM void type2Move(Entity *e) {
     e->z.HALF.HI = parent->z.HALF.HI - 1;
     e->spriteSettings.b30 = parent->spriteSettings.b30;
     e->spriteSettings.b14 = parent->spriteSettings.b14;
-    data_020d1da4[e->action](e);
+    em09_type2Actions[e->action](e);
 }
 
 ARM void em09_init(Entity *e) {
     Entity *child;
-    Tbl3 table;
+    Tbl3 altPalette;
     child = GetEnemyWork(9);
     if (child == NULL) {
         return;
@@ -194,19 +194,19 @@ ARM void em09_init(Entity *e) {
     child->parent = e;
     child->type = e->type;
     child->type2 = 1;
-    VBT(e)->unk_7d = e->spriteSettings.b16;
-    e->spriteSettings.b20 = data_020d1d90[e->type];
+    VBT(e)->savedPalette = e->spriteSettings.b16;
+    e->spriteSettings.b20 = em09_paletteByType[e->type];
     e->spriteSettings.b16 = e->spriteSettings.b20;
     if (*((u8 *)&data_0212c7c8 + 0x8e) == 2) {
-        table = *(Tbl3 *)data_020d1d8c;
-        e->spriteSettings.b20 = table.v[e->type];
+        altPalette = *(Tbl3 *)em09_altPaletteA;
+        e->spriteSettings.b20 = altPalette.v[e->type];
         e->spriteSettings.b16 = e->spriteSettings.b20;
     }
     e->unk_2e = 2;
     e->unk_3c |= 0x80;
-    e->hitbox = data_020d1d9b;
+    e->hitbox = em09_hitbox;
     e->spriteSettings.b0 = 1;
-    VBT(e)->unk_7e = e->unk_20 | (e->spriteSettings.b6 << 8);
+    VBT(e)->savedAttr = e->unk_20 | (e->spriteSettings.b6 << 8);
     e->unk_20 = 0x28;
     e->spriteSettings.b6 = 3;
     e->action++;

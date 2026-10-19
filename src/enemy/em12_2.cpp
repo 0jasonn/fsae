@@ -13,7 +13,7 @@ ARM void em12_wakeup(Entity *e) {
     e->unk_3c |= 0x80;
     V(e)->w70.b.inArea = 0;
     V(e)->w70.b.flag = 0;
-    V(e)->w70.b.unk_72 = 0;
+    V(e)->w70.b.walkState = 0;
     e->animationState = 2;
     InitAnimationForceUpdate(e, 2);
     yukaRewCell(e);
@@ -133,7 +133,7 @@ ARM void em12_return(Entity *e) {
             e->action = 4;
             V(e)->w70.b.inArea = 0;
             V(e)->w70.b.flag = 0;
-            V(e)->w70.b.unk_72 = 0;
+            V(e)->w70.b.walkState = 0;
             return;
         }
         if ((((e->direction + 4) & 0x18) >> 3) != e->animationState) {
@@ -161,22 +161,22 @@ ARM void em12_kemuriSet(Entity *e) {
     fx = GetSetWork(0xf, 2, 0);
     if (fx != NULL) {
         ObjPosCopy(e, fx);
-        fx->x.HALF.HI += data_020d2114[e->animationState * 4];
-        fx->y.HALF.HI += data_020d2114[e->animationState * 4 + 1];
+        fx->x.HALF.HI += em12_kemuriOffsets[e->animationState * 4];
+        fx->y.HALF.HI += em12_kemuriOffsets[e->animationState * 4 + 1];
     }
     fx = GetSetWork(0xf, 2, 0);
     if (fx != NULL) {
         ObjPosCopy(e, fx);
-        fx->x.HALF.HI += data_020d2114[e->animationState * 4 + 2];
-        fx->y.HALF.HI += data_020d2114[e->animationState * 4 + 3];
+        fx->x.HALF.HI += em12_kemuriOffsets[e->animationState * 4 + 2];
+        fx->y.HALF.HI += em12_kemuriOffsets[e->animationState * 4 + 3];
     }
 }
 
 ARM void igoalWalk(Entity *e) {
-    func_02089e34(e, 9, (u16)(e->x.HALF.HI + data_020d2124[e->animationState * 4]),
-                  (u16)(e->y.HALF.HI + data_020d2124[e->animationState * 4 + 1]));
-    func_02089e34(e, 9, (u16)(e->x.HALF.HI + data_020d2124[e->animationState * 4 + 2]),
-                  (u16)(e->y.HALF.HI + data_020d2124[e->animationState * 4 + 3]));
+    func_02089e34(e, 9, (u16)(e->x.HALF.HI + em12_walkOffsets[e->animationState * 4]),
+                  (u16)(e->y.HALF.HI + em12_walkOffsets[e->animationState * 4 + 1]));
+    func_02089e34(e, 9, (u16)(e->x.HALF.HI + em12_walkOffsets[e->animationState * 4 + 2]),
+                  (u16)(e->y.HALF.HI + em12_walkOffsets[e->animationState * 4 + 3]));
     if (V(e)->w70.b.inArea != 0) {
         u8 snapped = 0;
         if ((u32)(e->x.HALF.HI - (u16)V(e)->homeX + 2) <= 4) {
@@ -193,10 +193,10 @@ ARM void igoalWalk(Entity *e) {
         if (func_020847a0(e) != 0) {
             return;
         }
-        if ((V(e)->w70.b.unk_72 & 0x80) != 0) {
-            V(e)->w70.b.unk_72 |= 2;
+        if ((V(e)->w70.b.walkState & 0x80) != 0) {
+            V(e)->w70.b.walkState |= 2;
         }
-        V(e)->w70.b.unk_72 |= 1;
+        V(e)->w70.b.walkState |= 1;
     } else {
         func_020847a0(e);
     }

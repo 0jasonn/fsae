@@ -10,41 +10,41 @@
 ARM void knife_native_init_053428(u8 param) {
     u8 roll = Random();
     if (roll < 0x55) {
-        RandomBlockSet(data_020d80e3, param);
+        RandomBlockSet(spawnList_053428_set, param);
     } else if (roll < 0xaa) {
-        RandomBlockSet(data_020d80e6, param);
+        RandomBlockSet(spawnList_053428_mid, param);
     } else {
-        RandomBlockSet(data_020d80e0, param);
+        RandomBlockSet(spawnList_053428_high, param);
     }
 }
 
 ARM void knife_native_init_053484(u8 param) {
     u8 roll = Random();
     if (roll < 0x55) {
-        RandomBlockSet(data_020d80ef, param);
+        RandomBlockSet(spawnList_053484_set, param);
     } else if (roll < 0xaa) {
-        RandomBlockSet(data_020d80f2, param);
+        RandomBlockSet(spawnList_053484_mid, param);
     } else {
-        RandomBlockSet(data_020d80ec, param);
+        RandomBlockSet(spawnList_053484_high, param);
     }
 }
 
 ARM void knife_native_init_0534e0(u8 param) {
     u8 roll = Random();
     if (roll < 0x55) {
-        RandomBlockSet(data_020d80f8, param);
+        RandomBlockSet(spawnList_0534e0_set, param);
     } else if (roll < 0xaa) {
-        RandomBlockSet(data_020d80fb, param);
+        RandomBlockSet(spawnList_0534e0_mid, param);
     } else {
-        RandomBlockSet(data_020d80fe, param);
+        RandomBlockSet(spawnList_0534e0_high, param);
     }
 }
 
 ARM void Init_Kazan2A1(void) {
     if ((Random() & 1) != 0) {
-        RandomBlockSet(data_020d8104, 1);
+        RandomBlockSet(spawnList_kazan2a1_set, 1);
     } else {
-        RandomBlockSet(data_020d8109, 1);
+        RandomBlockSet(spawnList_kazan2a1_clear, 1);
     }
 }
 

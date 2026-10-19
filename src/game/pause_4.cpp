@@ -2,10 +2,10 @@
 #include "global.h"
 #include "engine/misc_d.h"
 
-// data_02134980 is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
+// pauseState is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
 // [0xe] reset flag, [0xf] set when the wireless session is being closed
 
-extern u8 data_02134980[];
+extern u8 pauseState[];
 extern u16 data_021355a0;
 extern u16 data_0212c58c[];
 extern u8 data_0212c4b8;
@@ -17,26 +17,26 @@ extern u16 data_0212c520;
 
 #define PL_ARR (*(PlWork (*)[4])data_0212ceb0)
 
-extern u16 data_0212c574[];
-extern u8 data_0212dd90[];
-extern u8 data_0212e190[];
+extern u16 scrollArgs[];
+extern u8 objAffineSet[];
+extern u8 objAffineSetAlt[];
 extern u8 data_0212c4e4;
 extern u16 data_0212c514;
 extern u16 data_0212c510;
 extern Entity *data_0212c534;
 extern u16 data_0212c584[];
-extern u8 data_0212c868[];
-extern const EntityFunc data_02115258[];
+extern u8 plScratchBuffer[];
+extern const EntityFunc entityDispatchTable[];
 
 
-extern u8 data_0217d36c[];
+extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 
 extern const s8 *const data_0211525c[];
 
-extern const VoidFunc data_02115268[];
-extern u8 data_0212c504;
+extern const VoidFunc rankingStepTable[];
+extern u8 localPlayerIndex;
 
 
 
@@ -51,7 +51,7 @@ ARM void pause_retry(void) {
     ObjMoveInit();
     MessageInitialize();
     TelopInitialize();
-    func_02029a50(data_02134980, 0x20);
+    func_02029a50(pauseState, 0x20);
     *((u8 *)&data_0212c7c8 + 0x8c) = 1;
     data_0212c4b8 = 1;
     data_0212c520 = 1;
@@ -75,7 +75,7 @@ ARM void keyDisable(void) {
 }
 
 ARM void Entity_DispatchByUnk09(Entity *e) {
-    data_02115258[e->unk_09](e);
+    entityDispatchTable[e->unk_09](e);
 }
 
 ARM void LinkControl(Entity *e) {
@@ -102,17 +102,17 @@ ARM void Entity_InitSpriteColor(Entity *e) {
     settings = *(u32 *)&e->spriteSettings;
     *(u32 *)&e->spriteSettings = (settings & ~0x300) | 0x200;
     func_02085cf8(e);
-    data_0212c574[0] = 0x100;
-    data_0212c574[1] = 0x100;
-    data_0212c574[2] = 0;
-    func_02083000(data_0212c574, data_0212dd90 + (((*(u32 *)&e->spriteSettings) << 2) >> 27) * 0x20);
-    func_02083000(data_0212c574, data_0212e190 + (((*(u32 *)&e->spriteSettings) << 2) >> 27) * 0x20);
+    scrollArgs[0] = 0x100;
+    scrollArgs[1] = 0x100;
+    scrollArgs[2] = 0;
+    func_02083000(scrollArgs, objAffineSet + (((*(u32 *)&e->spriteSettings) << 2) >> 27) * 0x20);
+    func_02083000(scrollArgs, objAffineSetAlt + (((*(u32 *)&e->spriteSettings) << 2) >> 27) * 0x20);
 }
 
 ARM void KobitoDemo(Entity *e) {
-    data_0212c574[0] = *(u32 *)&e->unk_6c[0xc];
-    data_0212c574[1] = *(u32 *)&e->unk_6c[0x10];
-    data_0212c574[2] = 0;
-    func_02083000(data_0212c574, data_0212dd90 + (e->spriteSettings.b24 >> 1) * 0x20);
-    func_02083000(data_0212c574, data_0212e190 + (e->spriteSettings.b24 >> 1) * 0x20);
+    scrollArgs[0] = *(u32 *)&e->unk_6c[0xc];
+    scrollArgs[1] = *(u32 *)&e->unk_6c[0x10];
+    scrollArgs[2] = 0;
+    func_02083000(scrollArgs, objAffineSet + (e->spriteSettings.b24 >> 1) * 0x20);
+    func_02083000(scrollArgs, objAffineSetAlt + (e->spriteSettings.b24 >> 1) * 0x20);
 }

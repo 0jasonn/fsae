@@ -5,7 +5,7 @@
 ARM void em05_stop(Entity *e) {
     func_02084f54(e);
     if (e->unk_43 == 0) {
-        e->unk_3f = V(e)->unk_7c;
+        e->unk_3f = V(e)->savedUnk3f;
     }
 }
 
@@ -15,8 +15,8 @@ ARM void em05_init(Entity *e) {
     }
     e->spriteSettings.b0 = 1;
     e->unk_2e = 6;
-    V(e)->unk_7d = e->health;
-    e->hitbox = data_020d19b8;
+    V(e)->initHealth = e->health;
+    e->hitbox = em05_hitbox;
     if (e->type == 3) {
         e->subtimer = (Random() & 0x7f) + 0x40;
     }

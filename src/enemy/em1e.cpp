@@ -2,13 +2,13 @@
 #include "engine/entity.h"
 #include "global.h"
 
-extern const EntityFunc data_020d0828[];
-extern const EntityFunc data_020d0840[];
-extern const u8 data_020d07c4[];
-extern const u8 data_020d0798[];
-extern const s8 data_020d07a0[];
-extern const EntityFunc data_020d089c[];
-extern const u8 data_020d0894[];
+extern const EntityFunc em1e_actions[];
+extern const EntityFunc em1e_normalActions[];
+extern const u8 em1e_hitbox[];
+extern const u8 em1e_moveTimers[];
+extern const s8 em1e_piyoriSway[];
+extern const EntityFunc em1f_actions[];
+extern const u8 em1f_hitbox[];
 
 typedef struct UnkStruct_0212c540 {
     u16 unk_0;
@@ -16,12 +16,12 @@ typedef struct UnkStruct_0212c540 {
 } UnkStruct_0212c540;
 extern UnkStruct_0212c540 data_0212c540;
 
-ARM void func_020301f0(Entity *e) {
-    EnemyFunctionHandler(e, data_020d0828);
+ARM void em1e_main(Entity *e) {
+    EnemyFunctionHandler(e, em1e_actions);
 }
 
 ARM void em1e_normal(Entity *e) {
-    data_020d0840[e->action](e);
+    em1e_normalActions[e->action](e);
 }
 
 ARM void em1e_damage(Entity *e) {
@@ -49,7 +49,7 @@ ARM void em1e_damage(Entity *e) {
             }
             break;
     }
-    GenericKnockback(e, data_020d0828);
+    GenericKnockback(e, em1e_actions);
 }
 
 ARM void em1e_init(Entity *e) {
@@ -57,7 +57,7 @@ ARM void em1e_init(Entity *e) {
     e->timer = 1;
     e->spriteSettings.b0 = 1;
     e->unk_2e = 5;
-    e->hitbox = data_020d07c4;
+    e->hitbox = em1e_hitbox;
     e->direction = Random() & 0x18;
     InitAnimationForceUpdate(e, e->animationState = e->direction >> 3);
 }
@@ -71,7 +71,7 @@ ARM void em1e_move(Entity *e) {
         InitAnimationForceUpdate(e, 8);
     } else {
         if (--e->timer == 0) {
-            e->timer = data_020d0798[Random() & 3];
+            e->timer = em1e_moveTimers[Random() & 3];
             if (Random() & 0x1f) {
                 e->direction = Random() & 0x18;
             } else {
@@ -152,7 +152,7 @@ ARM void em1e_piyori(Entity *e) {
         if ((e->timer & 1) == 0) {
             return;
         }
-        e->x.HALF.HI += data_020d07a0[(e->timer >> 1) & 3];
+        e->x.HALF.HI += em1e_piyoriSway[(e->timer >> 1) & 3];
         return;
     }
     e->action = 5;
@@ -167,14 +167,14 @@ ARM void Em1f(Entity *e) {
     if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
-    data_020d089c[e->action](e);
+    em1f_actions[e->action](e);
 }
 
 ARM void em1f_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->unk_2e = 5;
-    e->hitbox = data_020d0894;
+    e->hitbox = em1f_hitbox;
     InitAnimationForceUpdate(e, 0);
 }
 

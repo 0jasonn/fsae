@@ -4,37 +4,37 @@
 
 typedef struct Vars_02030790 {
     /* 00 */ u8 unk_00[0x7c];
-    /* 7c */ u8 unk_7c;
+    /* 7c */ u8 lastHealth; // health seen at the last hit check
 } Vars_02030790;
 
-extern const EntityFunc data_020d08e4[];
-extern const EntityFunc data_020d08fc[];
-extern const u8 data_020d08cc[];
+extern const EntityFunc em02_actions[];
+extern const EntityFunc em02_normalActions[];
+extern const u8 em02_hitbox[];
 
-ARM void func_02030790(Entity *e) {
-    EnemyFunctionHandler(e, data_020d08e4);
+ARM void em02_main(Entity *e) {
+    EnemyFunctionHandler(e, em02_actions);
 }
 
 ARM void em02_normal(Entity *e) {
-    data_020d08fc[e->action](e);
+    em02_normalActions[e->action](e);
 }
 
 ARM void em02_damage(Entity *e) {
-    if (e->health != 0 && VARS(Vars_02030790, e)->unk_7c != e->health) {
+    if (e->health != 0 && VARS(Vars_02030790, e)->lastHealth != e->health) {
         e->action = 6;
         return;
     }
-    GenericKnockback(e, data_020d08e4);
+    GenericKnockback(e, em02_actions);
 }
 
 ARM void em02_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
-    e->hitbox = data_020d08cc;
+    e->hitbox = em02_hitbox;
     InitAnimationForceUpdate(e, 0);
     e->action++;
     e->timer = (Random() + 0x1e) & 0x3c;
-    VARS(Vars_02030790, e)->unk_7c = e->health;
+    VARS(Vars_02030790, e)->lastHealth = e->health;
 }
 
 ARM void em02_wait(Entity *e) {

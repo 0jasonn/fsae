@@ -83,21 +83,21 @@ extern UnkStruct_0212c6b0 data_0212c6b0;
 extern u8 data_0212c6c0[];          // list sentinel
 
 extern u16 data_0212c5bc;           // frame counter
-extern u16 data_0212c574[3];        // scroll arguments for ObjAffineSet2
+extern u16 scrollArgs[3];        // scroll arguments for ObjAffineSet2
 
-extern const u8 data_020d34d2[];
-extern const u8 data_020d34ca[];
+extern const u8 em30_type1Hitbox[];
+extern const u8 em30_type2Hitbox[];
 extern const u8 data_020d34da[];
-extern const u8 data_020f26c0[];
-extern const u32 data_020cf9b8[];
-extern const u8 data_020f26c3[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
+extern const u8 em30_randRangeByPlayers[];
+extern const u32 flagBits[];
+extern const u8 em30_spriteTable[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
 extern const u16 data_020d35ec[];
-extern const u16 *data_02103800[];
-extern u8 data_021348ec[];
+extern const u16 *encntScripts[];
+extern u8 encntSharedState[];
 typedef struct RecordEntry {
     u16 a;
     u16 b;
@@ -120,10 +120,10 @@ typedef struct UnkStruct_02134b48 {
     /* 66 */ u8 recF;
     /* 67 */ u8 recG;
 } UnkStruct_02134b48;
-extern UnkStruct_02134b48 data_02134b48;
+extern UnkStruct_02134b48 encntState;
 extern const u8 data_020f270c[];
 extern const u8 data_020f273c[];
-extern void (*const data_020d413c[])(void);
+extern void (*const encntStateFuncs[])(void);
 extern const void *data_020d35f4[];
 
 

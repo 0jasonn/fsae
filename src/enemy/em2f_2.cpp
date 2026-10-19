@@ -52,14 +52,14 @@ ARM void em2f_fiveAttackWait(Entity *e) {
     }
     e->action = 0x21;
     e->timer = 0xd2;
-    V(e)->unk_6e = data_020d1440[Random() & 7];
+    V(e)->attackCounter = em2f_fiveAttackCounts[Random() & 7];
 }
 
 ARM void em2f_fiveAttack(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer == 0) {
-        if (V(e)->unk_6e != 0) {
-            V(e)->unk_6e--;
+        if (V(e)->attackCounter != 0) {
+            V(e)->attackCounter--;
             e->timer = 0xf0;
             return;
         }
@@ -70,7 +70,7 @@ ARM void em2f_fiveAttack(Entity *e) {
     if (e->timer != 0x78) {
         return;
     }
-    if (V(e)->unk_6e == 0) {
+    if (V(e)->attackCounter == 0) {
         Entity *child = GetTamaWork(0xa);
         if (child != NULL) {
             child->type2 = 1;

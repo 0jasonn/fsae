@@ -3,49 +3,49 @@
 #include "global.h"
 
 ARM BOOL set3rd(Entity *e) {
-    Entity *a;
-    Entity *b;
-    Entity *c;
-    Entity *d;
-    if ((a = GetObjWork()) != NULL && (b = GetObjWork2(a)) != NULL && (c = GetObjWork2(b)) != NULL &&
-        (d = GetObjWork2(c)) != NULL) {
-        a->unk_08 = 3;
-        b->unk_08 = 3;
-        c->unk_08 = 3;
-        d->unk_08 = 3;
-        a->unk_09 = 0x2c;
-        b->unk_09 = 0x2c;
-        c->unk_09 = 0x2d;
-        d->unk_09 = 0x2c;
-        a->type = 1;
-        b->type = 1;
-        d->type = 3;
-        c->type2 = 2;
-        d->type2 = 2;
-        a->parent = e;
-        b->parent = e;
-        c->parent = e;
-        d->parent = e;
-        a->child = d;
-        b->child = d;
-        c->child = d;
-        V(a)->unk_75 = 0;
-        V(b)->unk_75 = 1;
-        V(a)->unk_76 = 0x80;
-        V(b)->unk_76 = 0x40;
-        V(a)->unk_7c = c;
-        V(b)->unk_7c = c;
-        ObjPosCopy(e, a);
-        ObjPosCopy(e, b);
-        ObjPosCopy(e, c);
-        ObjPosCopy(e, d);
-        RegistObjWork(4, a);
-        RegistObjWork(4, b);
-        RegistObjWork(4, c);
-        RegistObjWork(5, d);
-        c->direction = 0x20;
-        VCT(e)->unk_7d = 0;
-        VCT(e)->unk_7c = 1;
+    Entity *partA;
+    Entity *partB;
+    Entity *partC;
+    Entity *partD;
+    if ((partA = GetObjWork()) != NULL && (partB = GetObjWork2(partA)) != NULL && (partC = GetObjWork2(partB)) != NULL &&
+        (partD = GetObjWork2(partC)) != NULL) {
+        partA->unk_08 = 3;
+        partB->unk_08 = 3;
+        partC->unk_08 = 3;
+        partD->unk_08 = 3;
+        partA->unk_09 = 0x2c;
+        partB->unk_09 = 0x2c;
+        partC->unk_09 = 0x2d;
+        partD->unk_09 = 0x2c;
+        partA->type = 1;
+        partB->type = 1;
+        partD->type = 3;
+        partC->type2 = 2;
+        partD->type2 = 2;
+        partA->parent = e;
+        partB->parent = e;
+        partC->parent = e;
+        partD->parent = e;
+        partA->child = partD;
+        partB->child = partD;
+        partC->child = partD;
+        V(partA)->side = 0;
+        V(partB)->side = 1;
+        V(partA)->lockBit = 0x80;
+        V(partB)->lockBit = 0x40;
+        V(partA)->lockEntity = partC;
+        V(partB)->lockEntity = partC;
+        ObjPosCopy(e, partA);
+        ObjPosCopy(e, partB);
+        ObjPosCopy(e, partC);
+        ObjPosCopy(e, partD);
+        RegistObjWork(4, partA);
+        RegistObjWork(4, partB);
+        RegistObjWork(4, partC);
+        RegistObjWork(5, partD);
+        partC->direction = 0x20;
+        VCT(e)->chainStep = 0;
+        VCT(e)->chainBuilt = 1;
         return TRUE;
     }
     return FALSE;

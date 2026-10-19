@@ -42,20 +42,20 @@ ARM void OpeningTaskPrepareFinalize(void) {
         }
     }
     {
-        EntityNode *h2;
-        EntityNode *m;
-        EntityNode *p;
-        for (h2 = data_0212c6b0; h2 < data_0212c6f0; h2++) {
-            m = h2->next;
-            if (m != h2) {
+        EntityNode *head2;
+        EntityNode *node2;
+        EntityNode *prevNode;
+        for (head2 = data_0212c6b0; head2 < data_0212c6f0; head2++) {
+            node2 = head2->next;
+            if (node2 != head2) {
                 do {
-                    if (((Entity *)m)->unk_08 == 6 && ((Entity *)m)->unk_09 == 0x28 && ((Entity *)m)->type == 5) {
-                        p = m->prev;
-                        PutObjWork((Entity *)m);
-                        m = p;
+                    if (((Entity *)node2)->unk_08 == 6 && ((Entity *)node2)->unk_09 == 0x28 && ((Entity *)node2)->type == 5) {
+                        prevNode = node2->prev;
+                        PutObjWork((Entity *)node2);
+                        node2 = prevNode;
                     }
-                    m = m->next;
-                } while (m != h2);
+                    node2 = node2->next;
+                } while (node2 != head2);
             }
         }
     }
@@ -103,7 +103,7 @@ ARM void op_init(void) {
         s32 valueB = slotIndex + 0x670;
         bankValue -= 0x80000010;
         data_02134924 = zero;
-        data_0212c504 = zero;
+        localPlayerIndex = zero;
         data_0212c618[0] = zero;
         data_0212c618[3] = zero;
         data_0212c75c.workBuffer = data_021361a0;
@@ -123,7 +123,7 @@ ARM void op_init(void) {
         data_0212c75c.unk_30 = 0xb0;
         data_0212c648.unk_20 = zero;
         data_0212c648.cameraX = 0xb0;
-        data_02134914 = zero;
+        em2f_mapFlag = zero;
     }
     data_0212c75c.displayFlags |= 0x1b00;
     func_02026774();
@@ -153,7 +153,7 @@ ARM void op_init(void) {
     *(volatile u32 *)0x04001000 |= 0x10000;
 }
 
-// Steps the effect timer and scans data_02104a58 for the next value to write (guess: a 16-bit value table).
+// Steps the effect timer and scans mistStepTable for the next value to write (guess: a 16-bit value table).
 ARM void mist_effect(void) {
     u8 stepIndex;
     u16 stepValue;
@@ -171,7 +171,7 @@ ARM void mist_effect(void) {
         return;
     }
     stepIndex = data_021349c0[EFFECT_STATE_STEP_INDEX];
-    stepValue = data_02104a58[stepIndex];
+    stepValue = mistStepTable[stepIndex];
     if (stepValue != 0xffff && stepIndex != 0xff) {
         data_021349c0[EFFECT_STATE_STEP_INDEX] = stepIndex + 1;
         data_0212c75c.reg68 = stepValue;

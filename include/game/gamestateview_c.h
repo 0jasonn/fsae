@@ -49,7 +49,7 @@ typedef struct GameStateView {
     /* 90 */ u8 unk_90;
 } GameStateView;
 
-// 8-byte per-player flags entry (data_0212c7f0, indexed by player). The entity type table is shared with
+// 8-byte per-player flags entry (enemyTypeFlags, indexed by player). The entity type table is shared with
 // CheckKenBeam/2 in state_02049020.c.
 typedef struct PlayerFlags {
     /* 00 */ u32 flags;
@@ -57,7 +57,7 @@ typedef struct PlayerFlags {
     /* 05 */ u8 unk_05;
     /* 06 */ u16 counter;
 } PlayerFlags;
-extern PlayerFlags data_0212c7f0[];
+extern PlayerFlags enemyTypeFlags[];
 
 // Same object as data_0212c7c8 in State_C.h; include only one of the two headers per file
 extern GameStateView data_0212c7c8;

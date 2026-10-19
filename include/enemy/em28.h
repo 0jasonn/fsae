@@ -45,12 +45,12 @@ typedef struct UnkStruct_0212c648 {
 extern UnkStruct_0212c648 data_0212c648;
 
 typedef struct UnkStruct_021348cc {
-    s32 unk_0;
+    s32 claimed;
     s32 unk_4;
 } UnkStruct_021348cc;
-extern UnkStruct_021348cc data_021348cc;
-extern const u16 data_020d347a[];
-extern u16 data_0212c574[3];
+extern UnkStruct_021348cc em28_claim;
+extern const u16 em29_scrollLimitsOut[];
+extern u16 scrollArgs[3];
 
 
 

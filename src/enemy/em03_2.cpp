@@ -6,11 +6,11 @@ ARM void em03_init(Entity *e) {
     e->unk_2e = 2;
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b4 = 1;
-    e->hitbox = data_020d1828;
+    e->hitbox = em03_hitbox;
     e->action++;
     e->timer = (Random() & 0x38) + 0x14;
-    V(e)->unk_64 = EmGetAimPl();
-    e->direction = GetFacingDirection(e, V(e)->unk_64);
+    V(e)->target = EmGetAimPl();
+    e->direction = GetFacingDirection(e, V(e)->target);
     InitAnimationForceUpdate(e, 0);
 }
 
@@ -35,10 +35,10 @@ ARM void em03_tame(Entity *e) {
     e->zVelocity = 0x18000;
     InitAnimationForceUpdate(e, 2);
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        u8 p = *Knife_Single_SinglePlay_GetInstance();
-        V(e)->unk_64 = data_0212ceb0[p].entity;
+        u8 playerIndex = *Knife_Single_SinglePlay_GetInstance();
+        V(e)->target = data_0212ceb0[playerIndex].entity;
     }
-    e->direction = func_02084fd0(e, V(e)->unk_64);
+    e->direction = func_02084fd0(e, V(e)->target);
     func_02083c84(e);
     e->subAction = 0;
 }

@@ -22,23 +22,23 @@
 #include "enemy/em29.h"
 #include "global.h"
 
-extern const EntityFunc data_020d34a4[];
-extern const u16 data_020d3486[];
-extern const s8 data_020d346c[];
-extern const s8 data_020d346f[];
-extern const u16 data_020d347a[];
-extern u8 data_021348ec[];
-extern const u8 data_020d35e0[];
-extern const u8 data_020d35fc[];
-extern const EntityFunc data_020d35e4[];
-extern const EntityFunc data_020d360c[];
-extern const u8 data_020d34e2[];
+extern const EntityFunc em29_stateTable[];
+extern const u16 em29_scrollLimitsIn[];
+extern const s8 em29_restZ[];
+extern const s8 em29_sinkZ[];
+extern const u16 em29_scrollLimitsOut[];
+extern u8 encntSharedState[];
+extern const u8 em31_typeFx[];
+extern const u8 em31_randomFx[];
+extern const EntityFunc em31_stateTable[];
+extern const EntityFunc em31_handlerTable[];
+extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
 ARM void Enemy_StartScript(Entity *e) {
-    VS(e)->script = data_02103800[e->type2];
+    VS(e)->script = encntScripts[e->type2];
     honyaGetInfo(e);
 }
 
-// Enemy_ArmSharedState (0x0204370c): sets the first byte of data_021348ec to 1 and passes that block to nextset.
+// Enemy_ArmSharedState (0x0204370c): sets the first byte of encntSharedState to 1 and passes that block to nextset.

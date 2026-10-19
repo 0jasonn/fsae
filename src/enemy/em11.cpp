@@ -42,48 +42,48 @@ ARM void sleepSet(Entity *e) {
 }
 
 ARM void dirSet(Entity *e) {
-    int r = func_02084fd0(e, VBP(e)->target);
-    u8 dir = e->direction;
-    if ((e->unk_2c & data_020d1eb8[dir >> 3]) != 0) {
-        if (((r + 4) & 0x18) == dir) {
-            if ((dir & 8) != 0) {
+    int desiredDir = func_02084fd0(e, VBP(e)->target);
+    u8 currentDir = e->direction;
+    if ((e->unk_2c & em11_blockMasks[currentDir >> 3]) != 0) {
+        if (((desiredDir + 4) & 0x18) == currentDir) {
+            if ((currentDir & 8) != 0) {
                 if (VBP(e)->target->y.HALF.HI > e->y.HALF.HI) {
-                    r = 0x10;
+                    desiredDir = 0x10;
                 } else if (VBP(e)->target->y.HALF.HI < e->y.HALF.HI) {
-                    r = 0;
+                    desiredDir = 0;
                 } else {
-                    r = Random() & 0x10;
+                    desiredDir = Random() & 0x10;
                 }
             } else {
                 if (VBP(e)->target->x.HALF.HI > e->x.HALF.HI) {
-                    r = 8;
+                    desiredDir = 8;
                 } else if (VBP(e)->target->x.HALF.HI < e->x.HALF.HI) {
-                    r = 0x18;
+                    desiredDir = 0x18;
                 } else {
-                    r = (u8)((Random() & 0x10) + 8);
+                    desiredDir = (u8)((Random() & 0x10) + 8);
                 }
             }
         }
     }
-    e->direction = (r + 4) & 0x18;
+    e->direction = (desiredDir + 4) & 0x18;
 }
 
 ARM void Boss_RunStateTableB(Entity *e) {
-    EnemyFunctionHandler(e, data_020d2044);
+    EnemyFunctionHandler(e, em11_actions);
 }
 
 ARM void em11_normal(Entity *e) {
-    data_020d205c[e->action](e);
+    em11_normalActions[e->action](e);
 }
 
 ARM void Boss_GenericKnockbackB(Entity *e) {
-    GenericKnockback(e, data_020d2044);
+    GenericKnockback(e, em11_actions);
 }
 
 ARM void em11_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
-    e->hitbox = data_020d2000;
+    e->hitbox = em11_hitbox;
     em11_waitSet(e);
 }
 
@@ -135,14 +135,14 @@ ARM void em11_land(Entity *e) {
 
 ARM void em11_waitSet(Entity *e) {
     e->action = 1;
-    e->timer = data_020d1ff4[Random() & 3];
+    e->timer = em11_waitTimes[Random() & 3];
     InitAnimationForceUpdate(e, 0);
 }
 
 ARM void Boss_RunStateTableC(Entity *e) {
-    EnemyFunctionHandler(e, data_020d215c);
+    EnemyFunctionHandler(e, em12_actions);
 }
 
 ARM void em12_normal(Entity *e) {
-    data_020d21dc[e->action](e);
+    em12_normalActions[e->action](e);
 }
