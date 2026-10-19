@@ -13,3 +13,5 @@ git -c user.name="Jason" -c user.email="matjas432@gmail.com" commit -q -m "$1
 
 Co-Authored-By: Claude Opus 5.5 (1M context) <noreply@anthropic.com>"
 echo "committed: $1"
+# Publish to GitHub (Jason asked on 2026-10-19 to push every integrated commit); retry on network errors.
+for delay in 0 2 4 8 16; do sleep $delay; git push -q origin main && break; done
