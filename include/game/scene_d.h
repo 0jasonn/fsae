@@ -46,7 +46,6 @@ extern const u16 data_021094d4[];
 extern const u16 data_021094dc[];
 void DispReset(void);
 void func_02050ac4(void);
-void func_0204bb9c(void);
 void ObjMoveInit(void);
 
 extern u8 data_0212ccb0[];

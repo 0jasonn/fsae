@@ -82,7 +82,7 @@ ARM void op_init(void) {
     initializeVirtualScreenData();
     setupVirtualScreenCallback();
     ObjMoveInit();
-    func_0204bb9c();
+    ObjWorkPoolClear();
     VGroupInit();
     InitObjColor();
     DemoBgBuffClear();

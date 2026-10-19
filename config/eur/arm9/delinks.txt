@@ -342,6 +342,50 @@ src/game/message_10.cpp:
     complete
     .text       start:0x0204aa00 end:0x0204aa84
 
+src/game/msgwin.cpp:
+    complete
+    .text       start:0x0204ac5c end:0x0204ad38
+
+src/game/msgwin_2.cpp:
+    complete
+    .text       start:0x0204b1b0 end:0x0204b1b4
+
+src/engine/objwork.cpp:
+    complete
+    .text       start:0x0204bb9c end:0x0204be88
+
+src/engine/objwork_2.cpp:
+    complete
+    .text       start:0x0204c108 end:0x0204c2cc
+
+src/game/msgdat.cpp:
+    complete
+    .text       start:0x0204c2cc end:0x0204c2e0
+
+src/engine/cell.cpp:
+    complete
+    .text       start:0x0204caf4 end:0x0204cb20
+
+src/game/native.cpp:
+    complete
+    .text       start:0x0204cd0c end:0x0204cd30
+
+src/engine/info.cpp:
+    complete
+    .text       start:0x0204d634 end:0x0204d650
+
+src/game/history.cpp:
+    complete
+    .text       start:0x0204d834 end:0x0204d950
+
+src/engine/maplevel.cpp:
+    complete
+    .text       start:0x0204daf4 end:0x0204db38
+
+src/game/npc.cpp:
+    complete
+    .text       start:0x0204fa60 end:0x0204fd40
+
 src/engine/objutil.cpp:
     complete
     .text       start:0x020502e0 end:0x02050504

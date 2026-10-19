@@ -47,7 +47,7 @@ ARM void pause_retry(void) {
     DispReset();
     *(u16 *)0x05000000 = 0;
     data_021355a0 = 0;
-    func_0204bb9c();
+    ObjWorkPoolClear();
     ObjMoveInit();
     MessageInitialize();
     TelopInitialize();

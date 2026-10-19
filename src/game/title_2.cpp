@@ -26,7 +26,7 @@ ARM void title_back(void) {
     *(u16 *)0x05000000 = 0x6739;
     *(u16 *)&data_021355a0 = 0x6739;
     ObjMoveInit();
-    func_0204bb9c();
+    ObjWorkPoolClear();
     OpeningTaskFinalzie();
 }
 

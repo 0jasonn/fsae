@@ -17,7 +17,7 @@ for path in sys.argv[1:]:
     r = subprocess.run([sys.executable, str(ROOT / "tools/trymatch.py"), path, "-q"], capture_output=True, text=True).stdout.strip()
     idx = [syms.index(a) for a in addrs]
     contiguous = idx == list(range(idx[0], idx[0] + len(idx)))
-    ok = f"{len(addrs)} match, 0 differ" in r
+    ok = f"{len(addrs)} match, 0 differ" in r and subprocess.run([sys.executable, str(ROOT / "tools/order_check.py"), path]).returncode == 0
     print(f"{path}: {len(addrs)} funcs {addrs[0]:#x}..{addrs[-1]:#x} match={ok} contiguous={contiguous}")
     if ok and contiguous:
         rel = Path(path).as_posix()

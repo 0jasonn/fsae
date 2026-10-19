@@ -13,6 +13,7 @@ struct ENCNT_;
 struct NPC_WORK_;
 
 extern "C" {
+void AfterPlayer(void);
 s32 _s32_div_f(s32 a, s32 b); // runtime signed divide
 void AddRupee(Entity *a, int b);
 void CP_SaveContext(void *context);
@@ -289,11 +290,11 @@ void func_02030ae4(int index);
 void func_0204048c(Entity *e);
 void func_02040e18(Entity *e);
 void func_02040f20(Entity *e);
-void func_0204bb9c(void);
+void ObjWorkPoolClear(void);
 Entity *func_0204bdb8(int kind);
 void func_0204be88(Entity *e);
 void func_0204f978(void);
-void func_0204fa70(void *a, const void *b);
+void ScriptJump(NPC_WORK_ *npc, const void *script);
 void func_02050390(Entity *child, Entity *e, int a, int b);
 void func_02050910(void);
 void func_02050ac4(void);
@@ -309,7 +310,6 @@ void func_02083c84(Entity *e);
 int func_02083c8c(int x, int y, u16 unk);
 int func_02083ca8(u16 cell, u16 key);
 int func_02083d4c(u16 a, u16 b);
-u32 func_0208455c(u32 value);
 void func_020845b0(u32 dest, void *src, u16 size);
 BOOL func_02084670(const u8 *bits, int index);
 void func_02084700(Entity *e);
