@@ -750,6 +750,10 @@ src/object/set01.cpp:
     complete
     .text       start:0x02058d50 end:0x02058e7c
 
+src/object/set01_2.cpp:
+    complete
+    .text       start:0x02058f18 end:0x02058fc0
+
 src/object/set1a.cpp:
     complete
     .text       start:0x020591a4 end:0x02059258
@@ -757,6 +761,46 @@ src/object/set1a.cpp:
 src/object/parasw.cpp:
     complete
     .text       start:0x02059258 end:0x02059294
+
+src/object/parasw_2.cpp:
+    complete
+    .text       start:0x02059294 end:0x02059678
+
+src/object/taimatsu.cpp:
+    complete
+    .text       start:0x02059678 end:0x02059694
+
+src/object/taimatsu_2.cpp:
+    complete
+    .text       start:0x02059804 end:0x02059b24
+
+src/object/matsuri.cpp:
+    complete
+    .text       start:0x02059b24 end:0x02059be4
+
+src/object/matsuri_2.cpp:
+    complete
+    .text       start:0x02059be4 end:0x02059d74
+
+src/object/block_neta.cpp:
+    complete
+    .text       start:0x02059d74 end:0x02059d90
+
+src/object/space_key.cpp:
+    complete
+    .text       start:0x02059e7c end:0x02059ee8
+
+src/object/idoyukaSp.cpp:
+    complete
+    .text       start:0x02059ee8 end:0x02059fbc
+
+src/object/set1f.cpp:
+    complete
+    .text       start:0x02059fbc end:0x02059fd8
+
+src/object/set02.cpp:
+    complete
+    .text       start:0x0205a090 end:0x0205a0d0
 
 src/object/set5e_2.cpp:
     complete
@@ -885,3 +929,19 @@ src/object/door_silver.cpp:
 src/object/door_silver_2.cpp:
     complete
     .text       start:0x0206930c end:0x02069378
+
+src/game/stagesel.cpp:
+    complete
+    .text       start:0x020781e8 end:0x0207822c
+
+src/game/stagesel_2.cpp:
+    complete
+    .text       start:0x02078394 end:0x020784d8
+
+src/game/stagesel_3.cpp:
+    complete
+    .text       start:0x02078f6c end:0x02079090
+
+src/game/stagesel_4.cpp:
+    complete
+    .text       start:0x02079c24 end:0x02079cc0
