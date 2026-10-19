@@ -633,3 +633,51 @@ src/object/set1a.cpp:
 src/object/parasw.cpp:
     complete
     .text       start:0x02059258 end:0x02059294
+
+src/object/set5e_2.cpp:
+    complete
+    .text       start:0x02060050 end:0x02060104
+
+src/object/set5f.cpp:
+    complete
+    .text       start:0x02060104 end:0x02060450
+
+src/object/set5f_2.cpp:
+    complete
+    .text       start:0x020605bc end:0x02060a70
+
+src/object/gufu.cpp:
+    complete
+    .text       start:0x02060a70 end:0x02060a9c
+
+src/object/set06.cpp:
+    complete
+    .text       start:0x02060a9c end:0x02060ab8
+
+src/object/set06_2.cpp:
+    complete
+    .text       start:0x02060bb0 end:0x02060de0
+
+src/object/set6a.cpp:
+    complete
+    .text       start:0x02060de0 end:0x020610b8
+
+src/object/mgr.cpp:
+    complete
+    .text       start:0x020610b8 end:0x0206127c
+
+src/object/set6b.cpp:
+    complete
+    .text       start:0x0206127c end:0x02061330
+
+src/object/set6b_2.cpp:
+    complete
+    .text       start:0x020613b4 end:0x02061494
+
+src/object/set08.cpp:
+    complete
+    .text       start:0x02061be8 end:0x02061d0c
+
+src/object/door.cpp:
+    complete
+    .text       start:0x02061dc4 end:0x02061e44
