@@ -13,6 +13,7 @@ struct ENCNT_;
 struct NPC_WORK_;
 
 extern "C" {
+BOOL EnemyInit(Entity *e);
 void AfterPlayer(void);
 s32 _s32_div_f(s32 a, s32 b); // runtime signed divide
 void AddRupee(Entity *a, int b);
@@ -470,4 +471,5 @@ void tsubomiCloseWaitSet(Entity *e);
 void type2Move(Entity *e);
 void yukaRewCell(Entity *e);
 
+u8 ItemRegist(u8 type);
 #endif

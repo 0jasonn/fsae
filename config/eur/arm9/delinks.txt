@@ -325,6 +325,42 @@ src/enemy/ending.cpp:
     complete
     .text       start:0x02044324 end:0x020443a0
 
+src/enemy/ending_2.cpp:
+    complete
+    .text       start:0x020443a0 end:0x02044700
+
+src/enemy/ending_3.cpp:
+    complete
+    .text       start:0x02044b44 end:0x020450e4
+
+src/enemy/ending_4.cpp:
+    complete
+    .text       start:0x02045308 end:0x020454a8
+
+src/enemy/ending_5.cpp:
+    complete
+    .text       start:0x020457a8 end:0x02045874
+
+src/enemy/enemycommon.cpp:
+    complete
+    .text       start:0x020458f8 end:0x02045cb0
+
+src/enemy/enemycommon_2.cpp:
+    complete
+    .text       start:0x0204602c end:0x02046130
+
+src/game/fade.cpp:
+    complete
+    .text       start:0x020461e0 end:0x0204625c
+
+src/game/fade_2.cpp:
+    complete
+    .text       start:0x020462c4 end:0x020463f0
+
+src/game/fade_native.cpp:
+    complete
+    .text       start:0x020464c0 end:0x020465ec
+
 src/game/warp.cpp:
     complete
     .text       start:0x02048264 end:0x020483f8
