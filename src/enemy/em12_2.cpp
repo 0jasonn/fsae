@@ -2,7 +2,7 @@
 #include "enemy/em12.h"
 #include "global.h"
 
-// Original names: em12_wakeup, em12_move, em12_return, em12_sleep, em12_kemuriSet, igoalWalk, tgtareacheck (igoalGetDir is in scratch/agentA/nonmatching/func_0203bca4.c)
+// Original names: em12_wakeup, em12_move, em12_return, em12_sleep, em12_kemuriSet, igoalWalk, tgtareacheck (igoalGetDir is in scratch/agentA/nonmatching/igoalGetDir.c)
 
 ARM void em12_wakeup(Entity *e) {
     UpdateAnimationSingleFrame(e);

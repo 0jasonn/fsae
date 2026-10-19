@@ -398,6 +398,10 @@ src/game/msgwin_2.cpp:
     complete
     .text       start:0x0204b1b0 end:0x0204b1b4
 
+src/game/knife_comm.cpp:
+    complete
+    .text       start:0x0204b7d8 end:0x0204b900
+
 src/engine/objwork.cpp:
     complete
     .text       start:0x0204bb9c end:0x0204be88
@@ -414,9 +418,17 @@ src/engine/cell.cpp:
     complete
     .text       start:0x0204caf4 end:0x0204cb20
 
+src/game/cell_random.cpp:
+    complete
+    .text       start:0x0204cb20 end:0x0204cd0c
+
 src/game/native.cpp:
     complete
     .text       start:0x0204cd0c end:0x0204cd30
+
+src/game/iroyuka.cpp:
+    complete
+    .text       start:0x0204d380 end:0x0204d3ac
 
 src/engine/info.cpp:
     complete
@@ -430,9 +442,53 @@ src/engine/maplevel.cpp:
     complete
     .text       start:0x0204daf4 end:0x0204db38
 
+src/game/randomset.cpp:
+    complete
+    .text       start:0x0204e58c end:0x0204e5d4
+
+src/game/jyouchuu.cpp:
+    complete
+    .text       start:0x0204e5d4 end:0x0204e634
+
+src/game/blockset.cpp:
+    complete
+    .text       start:0x0204e634 end:0x0204e690
+
+src/game/stopblock.cpp:
+    complete
+    .text       start:0x0204e70c end:0x0204e744
+
+src/game/stopblock_2.cpp:
+    complete
+    .text       start:0x0204e8e0 end:0x0204e958
+
+src/game/stopblock_3.cpp:
+    complete
+    .text       start:0x0204ebdc end:0x0204ec38
+
+src/object/set5c.cpp:
+    complete
+    .text       start:0x0204eca4 end:0x0204ed00
+
+src/game/npc_init.cpp:
+    complete
+    .text       start:0x0204f978 end:0x0204f994
+
+src/game/npc_2.cpp:
+    complete
+    .text       start:0x0204fa20 end:0x0204fa60
+
 src/game/npc.cpp:
     complete
     .text       start:0x0204fa60 end:0x0204fd40
+
+src/game/npc_3.cpp:
+    complete
+    .text       start:0x0204fd40 end:0x0204fd90
+
+src/engine/objutil_4.cpp:
+    complete
+    .text       start:0x0204fdf0 end:0x0204fdfc
 
 src/engine/objutil.cpp:
     complete

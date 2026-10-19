@@ -33,7 +33,7 @@ extern const u8 em13_hitbox[];
 extern const s8 wizWarpOffsets[];
 extern const s16 em13_randomCellOffsets[];
 extern u16 data_0213492c[];   // spawn offset x per area (shared, declared in enemy/em12.h)
-extern u16 em12_spawnOffsetY[];  // spawn offset y per area (data_0213492e)
+extern u16 em12_spawnOffsetY[];  // spawn offset y per area (em12_spawnOffsetY)
 
 void WizVanishInit(Entity *e);
 void WizWarpVanish(Entity *e);

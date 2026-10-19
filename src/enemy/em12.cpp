@@ -2,7 +2,7 @@
 #include "enemy/em12.h"
 #include "global.h"
 
-// Original names: em12_init, em12_wait (em12_wait2 is in scratch/agentA/nonmatching/func_0203b594.c)
+// Original names: em12_init, em12_wait (em12_wait2 is in scratch/agentA/nonmatching/em12_wait2.c)
 
 ARM void em12_init(Entity *e) {
     e->action = 1;

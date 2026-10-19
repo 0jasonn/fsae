@@ -19,7 +19,7 @@ extern const EntityFunc set5f_type0Actions[]; // set5f_type0Actions, indexed by 
 extern u8 messageRequest[];
 extern Entity *data_0212c648;
 extern s16 scrollArgs[3];
-extern const s16 data_020d7e58[];
+extern const s16 trigTable[];
 extern const s16 data_020d7f58[];
 extern const s8 data_020d90ac[];
 extern const s8 data_020d90c0[];
