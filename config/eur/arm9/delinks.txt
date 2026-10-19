@@ -5,139 +5,139 @@
     .data       start:0x020df5a0 end:0x02127280 kind:data align:32
     .bss        start:0x02127280 end:0x021870c0 kind:bss align:32
 
-src/enemy/enemy_020300b4.c:
+src/enemy/seqset.c:
     complete
     .text       start:0x020300b4 end:0x02030108
 
-src/enemy/enemy_020301f0.c:
+src/enemy/em1e.c:
     complete
     .text       start:0x020301f0 end:0x02030790
 
-src/enemy/enemy_02030790.c:
+src/enemy/em02.c:
     complete
     .text       start:0x02030790 end:0x02030a14
 
-src/boss/boss_02030a14.c:
+src/enemy/em2a.c:
     complete
     .text       start:0x02030a14 end:0x0203120c
 
-src/boss/boss_02031304.c:
+src/enemy/em2a_2.c:
     complete
     .text       start:0x02031304 end:0x02031cb0
 
-src/boss/boss_0203224c.c:
+src/enemy/em2a_3.c:
     complete
     .text       start:0x0203224c end:0x02032edc
 
-src/object/pathmover_02032edc.c:
+src/enemy/em2b.c:
     complete
     .text       start:0x02032edc end:0x02033290
 
-src/object/event_02033290.c:
+src/enemy/em2c.c:
     complete
     .text       start:0x02033290 end:0x02033708
 
-src/object/object_02033708.c:
+src/enemy/em2c_2.c:
     complete
     .text       start:0x02033708 end:0x02033744
 
-src/object/object_020337e4.c:
+src/enemy/em2c_3.c:
     complete
     .text       start:0x020337e4 end:0x020340a8
 
-src/object/object_02034508.c:
+src/enemy/em2c_4.c:
     complete
     .text       start:0x02034508 end:0x0203464c
 
-src/object/object_02034730.c:
+src/enemy/em2c_5.c:
     complete
     .text       start:0x02034730 end:0x020347dc
 
-src/enemy/enemy_020347dc.c:
+src/enemy/em2d.c:
     complete
     .text       start:0x020347dc end:0x02035a8c
 
-src/enemy/enemy_02035ba4.c:
+src/enemy/em2d_2.c:
     complete
     .text       start:0x02035ba4 end:0x02035ff8
 
-src/enemy/enemy_02036064.c:
+src/enemy/em2d_3.c:
     complete
     .text       start:0x02036064 end:0x020361e8
 
-src/object/object_020361e8.c:
+src/enemy/em2e.c:
     complete
     .text       start:0x020361e8 end:0x02036ca4
 
-src/boss/boss_02036ca4.c:
+src/enemy/em2f.c:
     complete
     .text       start:0x02036ca4 end:0x020379d8
 
-src/boss/boss_02037a6c.c:
+src/enemy/em2f_2.c:
     complete
     .text       start:0x02037a6c end:0x02037f6c
 
-src/boss/boss_0203808c.c:
+src/enemy/em2f_3.c:
     complete
     .text       start:0x0203808c end:0x020382fc
 
-src/boss/boss_020383bc.c:
+src/enemy/em2f_4.c:
     complete
     .text       start:0x020383bc end:0x02038414
 
-src/boss/boss_02038460.c:
+src/enemy/em2f_5.c:
     complete
     .text       start:0x02038460 end:0x02038544
 
-src/boss/boss_02038544.c:
+src/enemy/em03.c:
     complete
     .text       start:0x02038544 end:0x020385cc
 
-src/boss/boss_02038660.c:
+src/enemy/em03_2.c:
     complete
     .text       start:0x02038660 end:0x0203888c
 
-src/boss/boss_02038a34.c:
+src/enemy/em04.c:
     complete
     .text       start:0x02038a34 end:0x02038b68
 
-src/boss/boss_02038b68.c:
+src/enemy/em04_2.c:
     complete
     .text       start:0x02038b68 end:0x02038bbc
 
-src/boss/boss_02038c58.c:
+src/enemy/em04_3.c:
     complete
     .text       start:0x02038c58 end:0x02038ce8
 
-src/boss/boss_02038da4.c:
+src/enemy/em05.c:
     complete
     .text       start:0x02038da4 end:0x02038ee8
 
-src/boss/boss_02038ee8.c:
+src/enemy/em05_2.c:
     complete
     .text       start:0x02038ee8 end:0x02038f3c
 
-src/boss/boss_0203901c.c:
+src/enemy/em05_3.c:
     complete
     .text       start:0x0203901c end:0x02039074
 
-src/boss/boss_02039074.c:
+src/enemy/em05_4.c:
     complete
     .text       start:0x02039074 end:0x02039e8c
 
-src/boss/boss_02039ed4.c:
+src/enemy/em09.c:
     complete
     .text       start:0x02039ed4 end:0x0203a75c
 
-src/boss/boss_0203a8bc.c:
+src/enemy/em09_2.c:
     complete
     .text       start:0x0203a8bc end:0x0203ab78
 
-src/boss/boss_0203ab78.c:
+src/enemy/em10.c:
     complete
     .text       start:0x0203ab78 end:0x0203af20
 
-src/boss/boss_0203b02c.c:
+src/enemy/em11.c:
     complete
     .text       start:0x0203b02c end:0x0203b384
 
@@ -149,280 +149,280 @@ src/enemy/em12_2.c:
     complete
     .text       start:0x0203b638 end:0x0203bca4
 
-src/enemy/enemy_0204001c.c:
+src/enemy/em24.c:
     complete
     .text       start:0x0204001c end:0x020404f4
 
-src/enemy/enemy_02040548.c:
+src/enemy/em25.c:
     complete
     .text       start:0x02040548 end:0x020407c8
 
-src/enemy/enemy_020407c8.c:
+src/enemy/em26.c:
     complete
     .text       start:0x020407c8 end:0x020408ac
 
-src/enemy/enemy_02040ad8.c:
+src/enemy/em26_2.c:
     complete
     .text       start:0x02040ad8 end:0x02040be0
 
-src/enemy/enemy_02040d00.c:
+src/enemy/em26_3.c:
     complete
     .text       start:0x02040d00 end:0x02040d60
 
-src/enemy/enemy_02040dcc.c:
+src/enemy/em27.c:
     complete
     .text       start:0x02040dcc end:0x02040e44
 
-src/enemy/enemy_02040e94.c:
+src/enemy/em27_2.c:
     complete
     .text       start:0x02040e94 end:0x02040f34
 
-src/enemy/enemy_02041064.c:
+src/enemy/em28.c:
     complete
     .text       start:0x02041064 end:0x0204112c
 
-src/enemy/enemy_0204112c.c:
+src/enemy/em28_2.c:
     complete
     .text       start:0x0204112c end:0x02041244
 
-src/enemy/enemy_02041344.c:
+src/enemy/em28_3.c:
     complete
     .text       start:0x02041344 end:0x02041498
 
-src/enemy/enemy_02041774.c:
+src/enemy/em28_4.c:
     complete
     .text       start:0x02041774 end:0x020417e8
 
-src/enemy/enemy_020417e8.c:
+src/enemy/em29.c:
     complete
     .text       start:0x020417e8 end:0x0204198c
 
-src/enemy/enemy_0204198c.c:
+src/enemy/em29_2.c:
     complete
     .text       start:0x0204198c end:0x02041a3c
 
-src/enemy/enemy_02041a3c.c:
+src/enemy/em29_3.c:
     complete
     .text       start:0x02041a3c end:0x02042044
 
-src/enemy/enemy_020421f8.c:
+src/enemy/em30.c:
     complete
     .text       start:0x020421f8 end:0x02042318
 
-src/enemy/enemy_02042318.c:
+src/enemy/em30_2.c:
     complete
     .text       start:0x02042318 end:0x02042424
 
-src/enemy/enemy_02042424.c:
+src/enemy/em30_3.c:
     complete
     .text       start:0x02042424 end:0x020426e0
 
-src/enemy/enemy_02042798.c:
+src/enemy/em30_4.c:
     complete
     .text       start:0x02042798 end:0x02042818
 
-src/enemy/enemy_02042818.c:
+src/enemy/em30_5.c:
     complete
     .text       start:0x02042818 end:0x0204294c
 
-src/enemy/enemy_0204294c.c:
+src/enemy/em30_6.c:
     complete
     .text       start:0x0204294c end:0x020429c8
 
-src/enemy/enemy_020429c8.c:
+src/enemy/em30_7.c:
     complete
     .text       start:0x020429c8 end:0x02042abc
 
-src/enemy/enemy_02042c18.c:
+src/enemy/em30_8.c:
     complete
     .text       start:0x02042c18 end:0x02042dc8
 
-src/enemy/enemy_02042f30.c:
+src/enemy/em30_9.c:
     complete
     .text       start:0x02042f30 end:0x020432dc
 
-src/enemy/enemy_020433dc.c:
+src/enemy/em31.c:
     complete
     .text       start:0x020433dc end:0x02043428
 
-src/enemy/enemy_0204361c.c:
+src/enemy/encnt.c:
     complete
     .text       start:0x0204361c end:0x0204363c
 
-src/enemy/enemy_0204370c.c:
+src/enemy/encnt_2.c:
     complete
     .text       start:0x0204370c end:0x02043760
 
-src/enemy/encnt_02043760.c:
+src/enemy/encnt_3.c:
     complete
     .text       start:0x02043760 end:0x020438b4
 
-src/enemy/encnt_02043b54.c:
+src/enemy/encnt_4.c:
     complete
     .text       start:0x02043b54 end:0x02043bf8
 
-src/enemy/enemy_02043cb8.c:
+src/enemy/encnt_5.c:
     complete
     .text       start:0x02043cb8 end:0x02043d28
 
-src/enemy/encnt_02043da8.c:
+src/enemy/encnt_6.c:
     complete
     .text       start:0x02043da8 end:0x02043dc8
 
-src/enemy/encnt_02043f00.c:
+src/enemy/encnt_7.c:
     complete
     .text       start:0x02043f00 end:0x02043f70
 
-src/enemy/nextset_02044324.c:
+src/enemy/ending.c:
     complete
     .text       start:0x02044324 end:0x020443a0
 
-src/game/state_02048264.c:
+src/game/warp.c:
     complete
     .text       start:0x02048264 end:0x020483f8
 
-src/game/state_02049020.c:
+src/game/rank.c:
     complete
     .text       start:0x02049020 end:0x020490d8
 
-src/game/state_020493e0.c:
+src/game/stage.c:
     complete
     .text       start:0x020493e0 end:0x02049454
 
-src/game/state_020497e4.c:
+src/game/bgm.c:
     complete
     .text       start:0x020497e4 end:0x020499c8
 
-src/engine/system_020499c8.c:
+src/engine/irq.c:
     complete
     .text       start:0x020499c8 end:0x02049a94
 
-src/engine/system_02049bd8.c:
+src/engine/irq_2.c:
     complete
     .text       start:0x02049bd8 end:0x02049cdc
 
-src/engine/system_02049ea8.c:
+src/game/message.c:
     complete
     .text       start:0x02049ea8 end:0x02049f38
 
-src/game/message_02049f38.c:
+src/game/message_2.c:
     complete
     .text       start:0x02049f38 end:0x0204a048
     .rodata     start:0x020d7c50 end:0x020d7c60
 
-src/engine/system_0204a048.c:
+src/game/message_3.c:
     complete
     .text       start:0x0204a048 end:0x0204a110
 
-src/game/message_0204a110.c:
+src/game/message_4.c:
     complete
     .text       start:0x0204a110 end:0x0204a250
 
-src/engine/system_0204a250.c:
+src/game/message_5.c:
     complete
     .text       start:0x0204a250 end:0x0204a258
 
-src/game/telop_0204a370.c:
+src/game/message_6.c:
     complete
     .text       start:0x0204a370 end:0x0204a4b4
 
-src/engine/system_0204a4b4.c:
+src/game/message_7.c:
     complete
     .text       start:0x0204a4b4 end:0x0204a5bc
 
-src/game/message_0204a5bc.c:
+src/game/message_8.c:
     complete
     .text       start:0x0204a5bc end:0x0204a61c
 
-src/engine/system_0204a5e8.c:
+src/game/message_9.c:
     complete
     .text       start:0x0204a61c end:0x0204a624
 
-src/game/telop_0204aa00.c:
+src/game/message_10.c:
     complete
     .text       start:0x0204aa00 end:0x0204aa84
 
-src/engine/misc_020502e0.c:
+src/engine/objutil.c:
     complete
     .text       start:0x020502e0 end:0x02050504
 
-src/engine/misc_0205063c.c:
+src/engine/objutil_2.c:
     complete
     .text       start:0x0205063c end:0x0205069c
 
-src/engine/misc_02050840.c:
+src/engine/objutil_3.c:
     complete
     .text       start:0x02050840 end:0x02050880
 
-src/engine/misc_02050910.c:
+src/game/opening.c:
     complete
     .text       start:0x02050910 end:0x02050ac4
 
-src/engine/misc_02050b08.c:
+src/game/opening_2.c:
     complete
     .text       start:0x02050b08 end:0x0205114c
 
-src/engine/misc_0205193c.c:
+src/game/opdemo.c:
     complete
     .text       start:0x0205193c end:0x02051994
 
-src/game/scene_02051b24.c:
+src/game/opdemo_2.c:
     complete
     .text       start:0x02051b24 end:0x02051d84
 
-src/game/scene_02052688.c:
+src/game/opdemo_3.c:
     complete
     .text       start:0x02052688 end:0x020527f0
 
-src/game/scene_020529fc.c:
+src/game/title.c:
     complete
     .text       start:0x020529fc end:0x02052a80
 
-src/game/scene_020531c8.c:
+src/game/title_2.c:
     complete
     .text       start:0x020531c8 end:0x02053428
 
-src/game/scene_02053428.c:
+src/game/stageinit.c:
     complete
     .text       start:0x02053428 end:0x020535fc
 
-src/game/scene_020537bc.c:
+src/game/stageinit_2.c:
     complete
     .text       start:0x020537bc end:0x02053ab8
 
-src/game/scene_02053bc8.c:
+src/game/pause.c:
     complete
     .text       start:0x02053bc8 end:0x02053c6c
 
-src/game/pause.c:
+src/game/pause_2.c:
     complete
     .text       start:0x02053ebc end:0x02053f14
 
-src/game/pause_return.c:
+src/game/pause_3.c:
     complete
     .text       start:0x02054340 end:0x020543ac
 
-src/game/pl.c:
+src/game/pause_4.c:
     complete
     .text       start:0x02054510 end:0x02054788
 
-src/game/pl_bind.c:
+src/game/player.c:
     complete
     .text       start:0x020547ec end:0x02054894
 
-src/game/pl_reset.c:
+src/game/player_2.c:
     complete
     .text       start:0x02054a44 end:0x02054b64
 
-src/game/pl_colorreset.c:
+src/game/player_3.c:
     complete
     .text       start:0x02054c04 end:0x02054c4c
 
-src/game/pl_fire.c:
+src/game/player_4.c:
     complete
     .text       start:0x02054c4c end:0x02054ddc
 
-src/game/pl_sync.c:
+src/game/player_5.c:
     complete
     .text       start:0x02054f30 end:0x02054f64
 
