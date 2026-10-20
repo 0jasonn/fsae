@@ -7,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from trymatch import name_to_addr
 
 ROOT = Path(__file__).parent.parent
-DEF = re.compile(r'^ARM (?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$')
+DEF = re.compile(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$')
 syms = sorted(int(m.group(1), 16) for m in re.finditer(r"kind:function\S* addr:0x([0-9a-f]+)",
                                                          (ROOT / "config/eur/arm9/symbols.txt").read_text()))
 path = Path(sys.argv[1])

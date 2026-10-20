@@ -12,7 +12,7 @@ for l in (ROOT / "config/eur/arm9/symbols.txt").read_text().splitlines():
 syms.sort()
 for path in sys.argv[1:]:
     src = Path(path).read_text()
-    names = re.findall(r'^ARM (?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$', src, re.M)
+    names = re.findall(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$', src, re.M)
     addrs = sorted(a for a in (name_to_addr(n) for n in names) if a is not None)
     r = subprocess.run([sys.executable, str(ROOT / "tools/trymatch.py"), path, "-q"], capture_output=True, text=True).stdout.strip()
     idx = [syms.index(a) for a in addrs]

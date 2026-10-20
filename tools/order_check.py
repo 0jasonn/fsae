@@ -6,7 +6,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from trymatch import name_to_addr
 
-DEF = re.compile(r'^ARM (?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$', re.M)
+DEF = re.compile(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$', re.M)
 fix = "--fix" in sys.argv
 bad = 0
 for path in [Path(a) for a in sys.argv[1:] if a != "--fix"]:
