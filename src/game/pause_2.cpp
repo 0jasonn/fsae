@@ -42,7 +42,7 @@ extern u8 localPlayerIndex;
 
 ARM void pause_wait(void) {
     keyDisable();
-    if ((data_0212c5bc[0x11] & 3) == localPlayerIndex) {
+    if ((frameCounter[0x11] & 3) == localPlayerIndex) {
         pause_dialogUpdate();
     }
     if (--pauseState[2] == 0) {

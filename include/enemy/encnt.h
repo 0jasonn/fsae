@@ -79,7 +79,7 @@ extern const u8 data_0215afa4[];        // 64x64 occupancy grid
 extern const u8 data_02165fa8[];        // second 64x64 grid
 extern u8 data_02158fa0[];              // neighbour grid, read at cell + offset + 0x2004
 extern u8 data_02163fa4[];              // neighbour grid, same layout
-extern const s16 data_020cf91c[];       // four cell offsets for the neighbour test
+extern const s16 cellDeltaTable[];       // four cell offsets for the neighbour test
 extern const s8 data_020d4170[];        // step table, x and y per entry
 
 typedef struct GridOrigin {

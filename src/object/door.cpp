@@ -19,7 +19,7 @@ typedef struct SrchEntry {
     u16 fourth;
 } SrchEntry;
 
-extern const s16 data_020cf91c[]; // cell step per kind (x 4 kinds)
+extern const s16 cellDeltaTable[]; // cell step per kind (x 4 kinds)
 extern const SrchEntry data_020d9324[]; // cells to look for, per kind
 extern const u8 data_02165fa8[]; // terrain type per cell
 
@@ -28,7 +28,7 @@ int func_02083cdc(Entity *e);
 ARM BOOL DoorTypeCheck(Entity *e) {
     s16 offset;
 
-    offset = data_020cf91c[e->type2 & 3];
+    offset = cellDeltaTable[e->type2 & 3];
     return data_02165fa8[(u16)(VARS(Vars_Door, e)->cell + offset)] != 0x18;
 }
 

@@ -82,7 +82,7 @@ typedef struct UnkStruct_0212c6b0 {
 extern UnkStruct_0212c6b0 data_0212c6b0;
 extern u8 data_0212c6c0[];          // list sentinel
 
-extern u16 data_0212c5bc;           // frame counter
+extern u16 frameCounter;           // frame counter
 extern u16 scrollArgs[3];        // scroll arguments for ObjAffineSet2
 
 extern const u8 em30_type1Hitbox[];

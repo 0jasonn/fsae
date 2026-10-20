@@ -6,10 +6,10 @@
 // Set actor unit 8 (module set). Address -> name (original name):
 //   0x02057f40 set0b_move
 
-extern u16 data_0212c5bc; // frame counter
+extern u16 frameCounter; // frame counter
 
 ARM void set0b_move(Entity *e) {
-    if ((data_0212c5bc & 1) != 0) {
+    if ((frameCounter & 1) != 0) {
         e->z.HALF.HI--;
     }
     e->timer--;

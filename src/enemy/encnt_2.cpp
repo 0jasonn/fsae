@@ -41,11 +41,11 @@ ARM void Enemy_ArmSharedState(void) {
     nextset();
 }
 
-// Encounter (0x02043728): when the byte at data_0212c5bc+0x12 is clear, runs the handler selected by the
+// Encounter (0x02043728): when the byte at frameCounter+0x12 is clear, runs the handler selected by the
 // state byte in encntState.
 
 ARM void Encounter(void) {
-    if (((u8 *)&data_0212c5bc)[0x12] != 0) {
+    if (((u8 *)&frameCounter)[0x12] != 0) {
         return;
     }
     encntStateFuncs[encntState.state]();

@@ -112,7 +112,7 @@ extern VoidFunc data_0212c564;
 extern const VoidFunc data_02104a40[];
 extern const u16 mistStepTable[];
 extern const u32 titleDialogBlock;
-extern u8 data_0212c5bc[];
+extern u8 frameCounter[];
 extern u8 data_0212c4bc;
 extern u8 data_0212c4f8;
 extern u8 localPlayerIndex;

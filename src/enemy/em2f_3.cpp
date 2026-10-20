@@ -48,7 +48,7 @@ ARM int tblMove(Entity *e) {
     if (V(e)->pathWait != 0) {
         V(e)->pathWait--;
     }
-    if (!(em2f_moveGateMasks[V(e)->pathWait >> 4] & data_0212c5bc)) {
+    if (!(em2f_moveGateMasks[V(e)->pathWait >> 4] & frameCounter)) {
         func_02086200(e, CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, (s16)V(e)->targetX, (s16)V(e)->targetY));
     }
     MoveDir(e);

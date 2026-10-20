@@ -6,7 +6,7 @@
 extern EntityFunc set37Table[];        // set37Table, indexed by action
 extern const u8 set37Hitbox[];         // set37Hitbox
 extern const s8 set37BobTable[];       // set37BobTable, indexed by timer & 7
-extern u16 data_0212c5bc;              // frame counter
+extern u16 frameCounter;              // frame counter
 
 void adjust(Entity *e);
 

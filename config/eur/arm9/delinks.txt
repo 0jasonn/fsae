@@ -1014,6 +1014,10 @@ src/object/rader.cpp:
     complete
     .text       start:0x0206305c end:0x020630cc
 
+src/object/rader_3.cpp:
+    complete
+    .text       start:0x020630cc end:0x02063194
+
 src/object/rader_2.cpp:
     complete
     .text       start:0x02063400 end:0x02063450
@@ -1021,6 +1025,66 @@ src/object/rader_2.cpp:
 src/object/set11.cpp:
     complete
     .text       start:0x020635bc end:0x020635d8
+
+src/object/set11_2.cpp:
+    complete
+    .text       start:0x02063678 end:0x020637f4
+
+src/object/set12.cpp:
+    complete
+    .text       start:0x020637f4 end:0x02063870
+
+src/object/set12_2.cpp:
+    complete
+    .text       start:0x020639a8 end:0x02063bac
+
+src/object/yuka.cpp:
+    complete
+    .text       start:0x02063fd8 end:0x020644cc
+
+src/object/set13.cpp:
+    complete
+    .text       start:0x020644cc end:0x020644e8
+
+src/object/set13_2.cpp:
+    complete
+    .text       start:0x020645a4 end:0x0206461c
+
+src/object/set13_3.cpp:
+    complete
+    .text       start:0x02064690 end:0x02064770
+
+src/object/set14.cpp:
+    complete
+    .text       start:0x02064880 end:0x0206489c
+
+src/object/set15.cpp:
+    complete
+    .text       start:0x02064bd0 end:0x02064bf4
+
+src/object/set16.cpp:
+    complete
+    .text       start:0x02064bf4 end:0x02064c60
+
+src/object/set16_2.cpp:
+    complete
+    .text       start:0x02064e18 end:0x02064e74
+
+src/object/ido.cpp:
+    complete
+    .text       start:0x02064e74 end:0x02064f24
+
+src/object/ido_2.cpp:
+    complete
+    .text       start:0x020650a0 end:0x020650f4
+
+src/object/set17.cpp:
+    complete
+    .text       start:0x020654c0 end:0x020654dc
+
+src/object/set17_2.cpp:
+    complete
+    .text       start:0x02065548 end:0x02065588
 
 src/game/oplogo.cpp:
     complete

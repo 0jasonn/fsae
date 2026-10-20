@@ -57,7 +57,7 @@ ARM void knife_native_init_0538e8(u8 param) {
 ARM void Scene_ResetOverlayState(void) {
     func_02029a50(pauseState, 0x20);
     func_020a1a1c(pauseDialogWindow);
-    data_0212c5bc[0x11] = 0;
+    frameCounter[0x11] = 0;
 }
 
 // Scene_SetFlag5 -> Scene_SetFlag5, Scene_ClearFlag5 -> Scene_ClearFlag5

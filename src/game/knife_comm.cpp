@@ -26,7 +26,7 @@ typedef struct MsgLfFields {
 #define MSG_LF(msg) ((MsgLfFields *)(msg))
 
 extern u8 localPlayerIndex[];
-extern u8 data_0212c5bc[];
+extern u8 frameCounter[];
 extern u16 data_0212c58c[];
 
 // Line feed of the message: waits for the timer and the key flags, then starts the next line
@@ -36,7 +36,7 @@ ARM void knife_commDispLF(MsgWork *msg) {
     void *instance;
 
     if (msg->openMode == 2) {
-        state = data_0212c5bc[0x11];
+        state = frameCounter[0x11];
         if ((state & 0x80) != 0 && (state & 3) == localPlayerIndex[0]) {
             return;
         }

@@ -86,7 +86,7 @@ ARM void em12_return(Entity *e) {
     int diff;
 
     UpdateAnimationSingleFrame(e);
-    playerIndex = (data_0212c5bc & 3) % data_0212c7c8.unk_0;
+    playerIndex = (frameCounter & 3) % data_0212c7c8.unk_0;
     target = data_0212ceb0[playerIndex].entity;
     if ((u32)(target->x.HALF.HI - V(e)->areaX) <= V(e)->areaW &&
         (u32)(target->y.HALF.HI - V(e)->areaY) <= V(e)->areaH) {

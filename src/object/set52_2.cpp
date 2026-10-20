@@ -9,7 +9,7 @@
 
 extern const EntityFunc set52_actions[]; // indexed by e->action
 extern u8 data_0212cecb[]; // one byte per template entry: flags, read at index type * 0x94
-extern u16 data_0212c5bc;
+extern u16 frameCounter;
 
 ARM void set52_move(Entity *e) {
     Entity *tmpl;
@@ -18,7 +18,7 @@ ARM void set52_move(Entity *e) {
     func_0208ab14(e, tmpl);
     UpdateAnimationSingleFrame(e);
     if (data_0212cecb[e->type * 0x94] != 0) {
-        if ((data_0212c5bc & 3) != 0) {
+        if ((frameCounter & 3) != 0) {
             return;
         }
         e->spriteSettings.b16 ^= 7;

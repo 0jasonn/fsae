@@ -46,7 +46,7 @@ ARM void BindPlayers(void) {
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         BindPlayer(i);
     }
-    data_0212c5bc[0x13] = 1;
+    frameCounter[0x13] = 1;
 }
 
 ARM void WarpPlayer(void) {

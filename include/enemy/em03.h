@@ -30,7 +30,7 @@ extern u16 data_0212c58c[];
 extern u8 data_0212ceb2[];
 extern u8 data_0212ceca[];
 extern u8 data_0212cee4[];
-extern u16 data_0212c5bc;
+extern u16 frameCounter;
 extern const s8 data_020d1844[];
 
 #endif

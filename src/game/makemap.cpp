@@ -25,7 +25,7 @@ ARM void makemap_00(void) {
     data_021355a0 = 0;
     data_0212c4dc++;
     data_0216efa8 = 0;
-    *(u16 *)(data_0212c5bc + 2) = 0xa;
+    *(u16 *)(frameCounter + 2) = 0xa;
     SetCgColor(0, 0);
     SetCgColor(0xe, 0xffff);
     data_0212c75c.displayFlags = 0;

@@ -36,7 +36,7 @@ typedef struct UnkStruct_0212c648 {
 } UnkStruct_0212c648;
 
 extern UnkStruct_0212c648 data_0212c648;
-extern u16 data_0212c5bc;          // frame counter
+extern u16 frameCounter;          // frame counter
 extern u32 em12_typeMasks[];
 extern u16 data_0213492c[];
 extern u16 em12_spawnOffsetY[];

@@ -21,7 +21,7 @@ extern const EntityFunc data_020d91e4[]; // indexed by e->action
 extern u8 data_021349c0[];
 extern u32 em12_typeMasks[]; // one mask per area
 extern u32 flagBits[]; // one mask per type2
-extern u16 data_0212c5bc;
+extern u16 frameCounter;
 extern Entity *data_0212c648;
 
 void getDebu(Entity *e);
@@ -73,7 +73,7 @@ ARM void set6a_move(Entity *e) {
             SoundReq(0x800d01a7);
         }
         VARS(Vars_Set6a, e)->t78--;
-        if ((data_0212c5bc & 0xf) == 0) {
+        if ((frameCounter & 0xf) == 0) {
             getDebu(e);
         }
         VARS(Vars_Set6a, e)->counter72--;
@@ -84,7 +84,7 @@ ARM void set6a_move(Entity *e) {
         e->action = 2;
         getMgrInfo(e);
     } else {
-        if ((data_0212c5bc & 0xf) == 0) {
+        if ((frameCounter & 0xf) == 0) {
             getDebu(e);
         }
         VARS(Vars_Set6a, e)->counter72--;

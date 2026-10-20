@@ -66,7 +66,7 @@ ARM void keyDisable(void) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         return;
     }
-    playerCount = data_0212c5bc[0x11] & 3;
+    playerCount = frameCounter[0x11] & 3;
     for (i = 0; i < 4; i++) {
         if (i != playerCount) {
             data_0212c58c[i] = 0;

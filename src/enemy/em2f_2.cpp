@@ -38,7 +38,7 @@ ARM void em2f_fiveAttackMove(Entity *e) {
         return;
     }
     e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
-    if ((data_0212c5bc & 7) == 0) {
+    if ((frameCounter & 7) == 0) {
         SetDisp(e, 1, 1, 0x14);
     }
     MoveDir(e);
@@ -90,7 +90,7 @@ ARM void em2f_fiveMove(Entity *e) {
         e->timer--;
         return;
     }
-    if ((data_0212c5bc & 7) == 0) {
+    if ((frameCounter & 7) == 0) {
         SetDisp(e, 1, 1, 0x14);
     }
     int result = tblMove(e);

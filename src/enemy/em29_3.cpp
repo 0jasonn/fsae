@@ -49,14 +49,14 @@ ARM void em29_move(Entity *e) {
         e->y.HALF.HI = parent->y.HALF.HI;
     } else {
         u8 *offsets = W(e)->orbitOffsets;
-        u8 index = (data_0212c5bc + 1) & 7;
+        u8 index = (frameCounter + 1) & 7;
         e->x.HALF.HI += (offsets[index] & 0xf) - 8;
         e->y.HALF.HI += ((offsets[index] & 0xf0) >> 4) - 8;
     }
     if (e->child != NULL) {
         int dx = e->x.HALF.HI - oldX;
         int dy = e->y.HALF.HI - oldY;
-        W(e->child)->orbitOffsets[data_0212c5bc & 7] = ((dx + 8) & 0xf) | (((dy + 8) & 0xf) << 4);
+        W(e->child)->orbitOffsets[frameCounter & 7] = ((dx + 8) & 0xf) | (((dy + 8) & 0xf) << 4);
     }
     UpdateAnimationSingleFrame(e);
 }
@@ -148,7 +148,7 @@ ARM void em29_vacuumEnd(Entity *e) {
 
 ARM void em29_die(Entity *e) {
     if (e->child != NULL) {
-        W(e->child)->orbitOffsets[data_0212c5bc & 7] = 0x88;
+        W(e->child)->orbitOffsets[frameCounter & 7] = 0x88;
     }
     e->timer--;
     if (e->timer != 0) {

@@ -39,7 +39,7 @@ extern const u16 em2f_tsubomiSpeeds[];
 extern const u32 flagBits[];
 extern const s16 trigTable[];
 extern const u8 em2f_fiveAttackCounts[];
-extern u16 data_0212c5bc;
+extern u16 frameCounter;
 extern const u8 em2f_slotNext[][8];
 extern const u16 *const em2f_tsubomiPaths[];
 extern const u8 em2f_moveGateMasks[];
