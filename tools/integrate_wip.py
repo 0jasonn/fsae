@@ -30,8 +30,8 @@ moved = []
 for kind, ext in (("src", "*.cpp"), ("include", "*.h")):
     for f in sorted((ROOT / kind / "wip" / letter).glob(ext)):
         target = ROOT / kind / dest / f.name
-        if target.exists():
-            sys.exit(f"{target} already exists; rename {f} first")
+        if target.exists() or (kind == "src" and any(p for p in (ROOT / "src").glob(f"*/{f.name}") if "wip" not in p.parts)):
+            sys.exit(f"{f.name} already exists in src/ (dsd needs unique file names); rename {f} first")
         target.parent.mkdir(parents=True, exist_ok=True)
         f.rename(target)
         moved.append(target)
