@@ -862,6 +862,82 @@ src/object/set02.cpp:
     complete
     .text       start:0x0205a090 end:0x0205a0d0
 
+src/object/set02_2.cpp:
+    complete
+    .text       start:0x0205a1b0 end:0x0205a42c
+
+src/object/connect.cpp:
+    complete
+    .text       start:0x0205a42c end:0x0205a480
+
+src/object/set2a.cpp:
+    complete
+    .text       start:0x0205a4ec end:0x0205a508
+
+src/object/set2a_2.cpp:
+    complete
+    .text       start:0x0205a560 end:0x0205a594
+
+src/object/set2b.cpp:
+    complete
+    .text       start:0x0205a594 end:0x0205a73c
+
+src/object/set2c.cpp:
+    complete
+    .text       start:0x0205a73c end:0x0205a758
+
+src/object/set2c_2.cpp:
+    complete
+    .text       start:0x0205a798 end:0x0205a80c
+
+src/object/ashimoto.cpp:
+    complete
+    .text       start:0x0205a8e8 end:0x0205a9f8
+
+src/object/set2e.cpp:
+    complete
+    .text       start:0x0205a9f8 end:0x0205aae8
+
+src/object/set51.cpp:
+    complete
+    .text       start:0x0205ad24 end:0x0205ade8
+
+src/object/set51_2.cpp:
+    complete
+    .text       start:0x0205ae5c end:0x0205aed8
+
+src/object/set2f.cpp:
+    complete
+    .text       start:0x0205aed8 end:0x0205af04
+
+src/object/set2f_2.cpp:
+    complete
+    .text       start:0x0205afac end:0x0205b0bc
+
+src/object/set03.cpp:
+    complete
+    .text       start:0x0205b0bc end:0x0205b15c
+
+src/object/fumi.cpp:
+    complete
+    .text       start:0x0205b5bc end:0x0205b67c
+
+src/object/zeldafade.cpp:
+    complete
+    .text       start:0x0205b67c end:0x0205b700
+
+src/object/set3a.cpp:
+    complete
+    .text       start:0x0205b730 end:0x0205b768
+
+src/object/zfade.cpp:
+    complete
+    .text       start:0x0205b988 end:0x0205b9a4
+
+src/object/nameplate.cpp:
+    complete
+    .text       start:0x0205b9a4 end:0x0205b9c0
+
 src/object/set5e_2.cpp:
     complete
     .text       start:0x02060050 end:0x02060104
