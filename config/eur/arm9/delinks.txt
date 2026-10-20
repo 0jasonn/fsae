@@ -1366,6 +1366,14 @@ src/game/stagesel_2.cpp:
     complete
     .text       start:0x02078394 end:0x020784d8
 
+src/game/stagesel_5.cpp:
+    complete
+    .text       start:0x0207868c end:0x02078878
+
+src/game/stagesel_6.cpp:
+    complete
+    .text       start:0x02078c80 end:0x02078f6c
+
 src/game/stagesel_3.cpp:
     complete
     .text       start:0x02078f6c end:0x02079090
@@ -1373,6 +1381,66 @@ src/game/stagesel_3.cpp:
 src/game/stagesel_4.cpp:
     complete
     .text       start:0x02079c24 end:0x02079cc0
+
+src/game/stagesel_8.cpp:
+    complete
+    .text       start:0x0207a790 end:0x0207a8e4
+
+src/game/stagesel_10.cpp:
+    complete
+    .text       start:0x0207abb4 end:0x0207ad60
+
+src/object/sword.cpp:
+    complete
+    .text       start:0x0207af58 end:0x0207af94
+
+src/object/takara.cpp:
+    complete
+    .text       start:0x0207bcd4 end:0x0207bde0
+
+src/object/takara_2.cpp:
+    complete
+    .text       start:0x0207bff8 end:0x0207c040
+
+src/object/takara_3.cpp:
+    complete
+    .text       start:0x0207c0c8 end:0x0207c0f8
+
+src/object/takara_4.cpp:
+    complete
+    .text       start:0x0207c180 end:0x0207c228
+
+src/object/hane.cpp:
+    complete
+    .text       start:0x0207c5d8 end:0x0207c648
+
+src/object/tama00.cpp:
+    complete
+    .text       start:0x0207c7c8 end:0x0207c834
+
+src/object/tama00_2.cpp:
+    complete
+    .text       start:0x0207c898 end:0x0207c974
+
+src/object/tama0a.cpp:
+    complete
+    .text       start:0x0207c974 end:0x0207cb58
+
+src/object/tama0a_2.cpp:
+    complete
+    .text       start:0x0207cd40 end:0x0207cdb4
+
+src/object/tama0c.cpp:
+    complete
+    .text       start:0x0207ce40 end:0x0207cea8
+
+src/object/tama0d.cpp:
+    complete
+    .text       start:0x0207cea8 end:0x0207d10c
+
+src/object/tama04.cpp:
+    complete
+    .text       start:0x0207e5c0 end:0x0207e650
 
 src/object/tama11.cpp:
     complete
