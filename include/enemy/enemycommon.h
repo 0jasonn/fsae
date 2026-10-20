@@ -32,7 +32,7 @@ typedef struct ParseTypeTable {
 extern const ParseTypeTable data_020d42b4;       // copied to the stack by ParseTypeBits
 
 s32 RegistStopBlock(u16 *list, u8 a);
-void *func_02025d2c(u8 item);
+void *Cockpit_GetGfxAddr(u8 item);
 
 // Native init lists (rodata) used by the fade_native_init functions
 extern const u8 nativeInitListE[];   // nativeInitListE

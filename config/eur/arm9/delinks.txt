@@ -69,6 +69,86 @@ src/game/hit_5.cpp:
     complete
     .text       start:0x02025ce8 end:0x02025d2c
 
+src/game/item.cpp:
+    complete
+    .text       start:0x02025d2c end:0x02025d9c
+
+src/game/item_2.cpp:
+    complete
+    .text       start:0x020260ac end:0x020260c8
+
+src/game/item_3.cpp:
+    complete
+    .text       start:0x020262b4 end:0x02026308
+
+src/game/item_4.cpp:
+    complete
+    .text       start:0x0202639c end:0x02026474
+
+src/game/cockpit.cpp:
+    complete
+    .text       start:0x020266f8 end:0x02026720
+
+src/game/cockpit_2.cpp:
+    complete
+    .text       start:0x02026774 end:0x02026788
+
+src/game/cockpit_3.cpp:
+    complete
+    .text       start:0x020267d8 end:0x02026850
+
+src/game/cockpit_4.cpp:
+    complete
+    .text       start:0x02026cac end:0x02026e4c
+
+src/game/cockpit_5.cpp:
+    complete
+    .text       start:0x0202712c end:0x020272d8
+
+src/game/cockpit_6.cpp:
+    complete
+    .text       start:0x02027360 end:0x020273c0
+
+src/game/cockpit_7.cpp:
+    complete
+    .text       start:0x02027778 end:0x0202777c
+
+src/game/mathutil.cpp:
+    complete
+    .text       start:0x02029a44 end:0x02029a50
+
+src/enemy/em00.cpp:
+    complete
+    .text       start:0x0202bb4c end:0x0202bee8
+
+src/enemy/em0a_2.cpp:
+    complete
+    .text       start:0x0202c078 end:0x0202c224
+
+src/enemy/em0b.cpp:
+    complete
+    .text       start:0x0202c224 end:0x0202c260
+
+src/enemy/em0b_2.cpp:
+    complete
+    .text       start:0x0202c2b4 end:0x0202c350
+
+src/enemy/em0b_3.cpp:
+    complete
+    .text       start:0x0202c4a0 end:0x0202c5c0
+
+src/enemy/em0c.cpp:
+    complete
+    .text       start:0x0202c5c0 end:0x0202c5fc
+
+src/enemy/em0c_2.cpp:
+    complete
+    .text       start:0x0202c768 end:0x0202c80c
+
+src/enemy/em0e.cpp:
+    complete
+    .text       start:0x0202caf8 end:0x0202cb30
+
 src/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108

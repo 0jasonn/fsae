@@ -12,6 +12,6 @@ extern const s8 set1f_zTable[];           // set1f_zTable, 8 entries, z offsets 
 extern u16 data_0212c594; // frame counter
 
 // Unnamed callee (original address 0x02025d8c, size 0x10), returns a 4-bit value for spriteSettings.
-extern "C" u32 func_02025d8c(u8 type);
+extern "C" u32 Cockpit_GetTableByte(u8 type);
 
 #endif
