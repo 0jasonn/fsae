@@ -1286,6 +1286,74 @@ src/object/set37_2.cpp:
     complete
     .text       start:0x0206b730 end:0x0206b7d4
 
+src/object/set38.cpp:
+    complete
+    .text       start:0x0206b7d4 end:0x0206bbf4
+
+src/object/iroyuka_effect.cpp:
+    complete
+    .text       start:0x0206bbf4 end:0x0206bc60
+
+src/object/set39.cpp:
+    complete
+    .text       start:0x0206bc60 end:0x0206bce4
+
+src/object/set40.cpp:
+    complete
+    .text       start:0x0206bce4 end:0x0206bd70
+
+src/object/set40_2.cpp:
+    complete
+    .text       start:0x0206bec4 end:0x0206bf28
+
+src/object/heart_lift.cpp:
+    complete
+    .text       start:0x0206bf28 end:0x0206c068
+
+src/object/stick.cpp:
+    complete
+    .text       start:0x0206c068 end:0x0206c0b0
+
+src/object/nemoto.cpp:
+    complete
+    .text       start:0x0206c18c end:0x0206c1c8
+
+src/object/nemoto_2.cpp:
+    complete
+    .text       start:0x0206c328 end:0x0206c398
+
+src/object/set41.cpp:
+    complete
+    .text       start:0x0206c398 end:0x0206c3b4
+
+src/object/set41_2.cpp:
+    complete
+    .text       start:0x0206c4c0 end:0x0206c594
+
+src/object/set42.cpp:
+    complete
+    .text       start:0x0206c704 end:0x0206c720
+
+src/object/set42_2.cpp:
+    complete
+    .text       start:0x0206c850 end:0x0206c894
+
+src/object/set43.cpp:
+    complete
+    .text       start:0x0206c894 end:0x0206c8b0
+
+src/object/set43_2.cpp:
+    complete
+    .text       start:0x0206ca20 end:0x0206ca4c
+
+src/object/set43_3.cpp:
+    complete
+    .text       start:0x0206cac8 end:0x0206cb1c
+
+src/object/setwind.cpp:
+    complete
+    .text       start:0x0206cef8 end:0x0206cf74
+
 src/object/set50.cpp:
     complete
     .text       start:0x0207005c end:0x02070140
