@@ -149,6 +149,22 @@ src/enemy/em0e.cpp:
     complete
     .text       start:0x0202caf8 end:0x0202cb30
 
+src/enemy/em0e_2.cpp:
+    complete
+    .text       start:0x0202cb30 end:0x0202cfc4
+
+src/enemy/em0e_3.cpp:
+    complete
+    .text       start:0x0202cfc4 end:0x0202d290
+
+src/enemy/em0e_4.cpp:
+    complete
+    .text       start:0x0202d514 end:0x0202d5bc
+
+src/enemy/em0f.cpp:
+    complete
+    .text       start:0x0202dad8 end:0x0202de80
+
 src/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108
@@ -1018,6 +1034,30 @@ src/object/nameplate.cpp:
     complete
     .text       start:0x0205b9a4 end:0x0205b9c0
 
+src/object/nameplate_2.cpp:
+    complete
+    .text       start:0x0205ba4c end:0x0205bd60
+
+src/object/barmaster.cpp:
+    complete
+    .text       start:0x0205bd60 end:0x0205c03c
+
+src/object/option.cpp:
+    complete
+    .text       start:0x0205c03c end:0x0205c08c
+
+src/object/option_2.cpp:
+    complete
+    .text       start:0x0205c1c4 end:0x0205c204
+
+src/object/option_3.cpp:
+    complete
+    .text       start:0x0205c2d8 end:0x0205c4c4
+
+src/object/option_4.cpp:
+    complete
+    .text       start:0x0205c54c end:0x0205c7b0
+
 src/object/set5e_2.cpp:
     complete
     .text       start:0x02060050 end:0x02060104
@@ -1354,6 +1394,62 @@ src/object/setwind.cpp:
     complete
     .text       start:0x0206cef8 end:0x0206cf74
 
+src/object/set44.cpp:
+    complete
+    .text       start:0x0206cf74 end:0x0206d350
+
+src/object/nemoto_3.cpp:
+    complete
+    .text       start:0x0206d350 end:0x0206d3fc
+
+src/object/set45.cpp:
+    complete
+    .text       start:0x0206d3fc end:0x0206d418
+
+src/object/set45_2.cpp:
+    complete
+    .text       start:0x0206d4d0 end:0x0206d5c4
+
+src/object/set46.cpp:
+    complete
+    .text       start:0x0206d5c4 end:0x0206d610
+
+src/object/kumo_big.cpp:
+    complete
+    .text       start:0x0206d610 end:0x0206d704
+
+src/object/tenku_kumo.cpp:
+    complete
+    .text       start:0x0206d704 end:0x0206d7dc
+
+src/object/ss.cpp:
+    complete
+    .text       start:0x0206d898 end:0x0206da58
+
+src/object/effect_tuto0.cpp:
+    complete
+    .text       start:0x0206da58 end:0x0206da74
+
+src/object/effect_tuto0_2.cpp:
+    complete
+    .text       start:0x0206dadc end:0x0206db30
+
+src/object/effect_tori.cpp:
+    complete
+    .text       start:0x0206db30 end:0x0206dbe0
+
+src/object/effect_mori.cpp:
+    complete
+    .text       start:0x0206dbe0 end:0x0206dcc8
+
+src/object/effect_mori_2.cpp:
+    complete
+    .text       start:0x0206dd84 end:0x0206ddc8
+
+src/object/effect_cave2.cpp:
+    complete
+    .text       start:0x0206ddc8 end:0x0206de60
+
 src/object/set50.cpp:
     complete
     .text       start:0x0207005c end:0x02070140
@@ -1422,9 +1518,37 @@ src/object/set58_6.cpp:
     complete
     .text       start:0x02073a4c end:0x02073bbc
 
+src/object/set58_8.cpp:
+    complete
+    .text       start:0x02073bbc end:0x02073e18
+
+src/object/set58_9.cpp:
+    complete
+    .text       start:0x02073e18 end:0x020742cc
+
 src/object/set58_7.cpp:
     complete
     .text       start:0x020742cc end:0x0207432c
+
+src/object/set59.cpp:
+    complete
+    .text       start:0x0207432c end:0x02074418
+
+src/object/set60.cpp:
+    complete
+    .text       start:0x02074418 end:0x02074508
+
+src/object/gufu_2.cpp:
+    complete
+    .text       start:0x02074680 end:0x0207481c
+
+src/object/gufu_3.cpp:
+    complete
+    .text       start:0x0207481c end:0x02074934
+
+src/object/gufu_4.cpp:
+    complete
+    .text       start:0x02074934 end:0x02074c6c
 
 src/game/stagesel.cpp:
     complete
@@ -1506,6 +1630,10 @@ src/object/tama0d.cpp:
     complete
     .text       start:0x0207cea8 end:0x0207d10c
 
+src/object/tama01.cpp:
+    complete
+    .text       start:0x0207df5c end:0x0207e0b4
+
 src/object/tama04.cpp:
     complete
     .text       start:0x0207e5c0 end:0x0207e650
@@ -1549,6 +1677,10 @@ src/game/rupeelevel.cpp:
 src/game/yousei_4.cpp:
     complete
     .text       start:0x02082598 end:0x020825bc
+
+src/game/yousei_3.cpp:
+    complete
+    .text       start:0x020825bc end:0x020826b0
 
 src/engine/twl.cpp:
     complete

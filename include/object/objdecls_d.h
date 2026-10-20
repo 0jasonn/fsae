@@ -6,6 +6,5 @@
 #include "engine/entity.h"
 
 extern "C" s32 AddHeart(Entity *e, s32 amount); // original name AddHeart, unmangled
-extern "C" void ObjAnimMoveLine(Entity *e); // original name ObjAnimMoveLine, unmangled
 
 #endif
