@@ -1226,6 +1226,10 @@ src/object/set54.cpp:
     complete
     .text       start:0x02071a70 end:0x02071b00
 
+src/object/set55.cpp:
+    complete
+    .text       start:0x02071f4c end:0x020725d0
+
 src/object/set56.cpp:
     complete
     .text       start:0x02072608 end:0x02072684
@@ -1233,6 +1237,46 @@ src/object/set56.cpp:
 src/object/link.cpp:
     complete
     .text       start:0x02072704 end:0x02072c70
+
+src/object/link_2.cpp:
+    complete
+    .text       start:0x02072c70 end:0x02072fc8
+
+src/object/kenfuri.cpp:
+    complete
+    .text       start:0x0207303c end:0x020731f0
+
+src/object/set57.cpp:
+    complete
+    .text       start:0x020732f4 end:0x02073390
+
+src/object/set58.cpp:
+    complete
+    .text       start:0x02073390 end:0x020734a4
+
+src/object/set58_2.cpp:
+    complete
+    .text       start:0x02073588 end:0x02073780
+
+src/object/set58_3.cpp:
+    complete
+    .text       start:0x02073780 end:0x0207379c
+
+src/object/set58_4.cpp:
+    complete
+    .text       start:0x0207382c end:0x02073904
+
+src/object/set58_5.cpp:
+    complete
+    .text       start:0x02073984 end:0x02073a4c
+
+src/object/set58_6.cpp:
+    complete
+    .text       start:0x02073a4c end:0x02073bbc
+
+src/object/set58_7.cpp:
+    complete
+    .text       start:0x020742cc end:0x0207432c
 
 src/game/stagesel.cpp:
     complete
