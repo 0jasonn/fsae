@@ -189,6 +189,34 @@ src/enemy/em1b.cpp:
     complete
     .text       start:0x0202f098 end:0x0202f138
 
+src/enemy/em1b_2.cpp:
+    complete
+    .text       start:0x0202f29c end:0x0202f3e4
+
+src/enemy/em1b_3.cpp:
+    complete
+    .text       start:0x0202f498 end:0x0202f554
+
+src/enemy/em1c.cpp:
+    complete
+    .text       start:0x0202f5e0 end:0x0202f6cc
+
+src/enemy/em1c_2.cpp:
+    complete
+    .text       start:0x0202f9b4 end:0x0202f9f0
+
+src/enemy/em1c_3.cpp:
+    complete
+    .text       start:0x0202fa50 end:0x0202fa80
+
+src/enemy/em1c_4.cpp:
+    complete
+    .text       start:0x0202fae8 end:0x0202fb04
+
+src/enemy/em1d.cpp:
+    complete
+    .text       start:0x0202fb04 end:0x0202fc74
+
 src/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108
@@ -244,6 +272,10 @@ src/enemy/em2d.cpp:
 src/enemy/em2d_2.cpp:
     complete
     .text       start:0x02035ba4 end:0x02035ff8
+
+src/object/cercle.cpp:
+    complete
+    .text       start:0x02035ff8 end:0x02036064
 
 src/enemy/em2d_3.cpp:
     complete
@@ -352,6 +384,22 @@ src/enemy/em14.cpp:
 src/enemy/em15.cpp:
     complete
     .text       start:0x0203ccc8 end:0x0203cf18
+
+src/enemy/em16.cpp:
+    complete
+    .text       start:0x0203cfcc end:0x0203cffc
+
+src/enemy/em16_2.cpp:
+    complete
+    .text       start:0x0203d088 end:0x0203d1a4
+
+src/enemy/em16_3.cpp:
+    complete
+    .text       start:0x0203d29c end:0x0203d508
+
+src/enemy/em17.cpp:
+    complete
+    .text       start:0x0203d508 end:0x0203d5f0
 
 src/enemy/em24.cpp:
     complete
@@ -1110,6 +1158,10 @@ src/object/set3e.cpp:
     complete
     .text       start:0x0205d9d4 end:0x0205d9f0
 
+src/object/set3e_3.cpp:
+    complete
+    .text       start:0x0205dad8 end:0x0205dc1c
+
 src/object/set3e_2.cpp:
     complete
     .text       start:0x0205dc1c end:0x0205dc90
@@ -1122,9 +1174,17 @@ src/object/warphole.cpp:
     complete
     .text       start:0x0205de34 end:0x0205de50
 
+src/object/warphole_4.cpp:
+    complete
+    .text       start:0x0205dec8 end:0x0205e05c
+
 src/object/warphole_2.cpp:
     complete
     .text       start:0x0205e05c end:0x0205e078
+
+src/object/warphole_5.cpp:
+    complete
+    .text       start:0x0205e078 end:0x0205e114
 
 src/object/warphole_3.cpp:
     complete
@@ -1133,6 +1193,10 @@ src/object/warphole_3.cpp:
 src/object/set4a.cpp:
     complete
     .text       start:0x0205e18c end:0x0205e1a8
+
+src/object/set4a_2.cpp:
+    complete
+    .text       start:0x0205e204 end:0x0205e280
 
 src/object/set4b.cpp:
     complete
@@ -1813,6 +1877,18 @@ src/object/set69.cpp:
 src/object/set69_2.cpp:
     complete
     .text       start:0x02075ca0 end:0x02075e78
+
+src/object/set69_3.cpp:
+    complete
+    .text       start:0x02075ef0 end:0x02076620
+
+src/object/set69_4.cpp:
+    complete
+    .text       start:0x02076620 end:0x02076804
+
+src/object/setwork.cpp:
+    complete
+    .text       start:0x02076858 end:0x02076a20
 
 src/game/stagesel.cpp:
     complete

@@ -14,7 +14,6 @@ int fumiCheck2(Entity *e);                  // 0x0205b630, original fumiCheck2(O
 void func_0208366c(s32 a, u16 b, u16 c);    // 0x0208366c (C++ name func_0208366cltt)
 u16 func_0208367c(u16 cell, u16 layer);     // 0x0208367c (no original name yet)
 void func_0208365c(u8 a, u16 b, u16 c);     // 0x0208365c (no original name yet)
-int func_02084110(void);                    // 0x02084110, returns nonzero when an event is pending (callers pass the entity in r0)
 void StopEffectWindow(void);                // 0x0202b598, original StopEffectWindow()
 void MakeTriangleWindow(s16 a, s16 b, s16 c, s16 d); // 0x0202b828, original MakeTriangleWindow(short, short, short, short)
 void InitCircleWindow(u16 a, u16 b);       // 0x0202b5d4, original InitCircleWindow(unsigned short, unsigned short)

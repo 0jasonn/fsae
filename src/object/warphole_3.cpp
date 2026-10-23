@@ -7,7 +7,7 @@
 //   0x0205e114 warphole_exit (original name)
 
 ARM void warphole_exit(Entity *e) {
-    int players = func_02084110();
+    int players = func_02084110(e);
 
     if (players & 1) {
         pos_copy(e, data_0212ceb0[0].entity);

@@ -18,7 +18,7 @@ ARM int fumiCheck(Entity *e) {
     int result;
     int kind;
 
-    result = func_02084110();
+    result = func_02084110(e);
     if (result != 0) {
         VARS(Vars_Fumi, e)->cellEvent = 0xffff;
         return result;
@@ -35,7 +35,7 @@ ARM int fumiCheck(Entity *e) {
 ARM int fumiCheck2(Entity *e) {
     int result;
 
-    result = func_02084110();
+    result = func_02084110(e);
     if (result != 0) {
         return result;
     }

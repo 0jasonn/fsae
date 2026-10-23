@@ -476,4 +476,5 @@ u32 CountBits(u32 bits); // number of set bits (thumb, 0x02084600)
 s32 func_02085024(Entity *e, const u16 *entry, u8 area); // thumb
 int ObjAnimMoveLine(Entity *e); // nonzero when the move animation has ended
 void func_02084180(Entity *e); // thumb
+u8 func_02084110(Entity *e); // thumb: bit mask of the players touching e
 #endif

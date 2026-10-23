@@ -22,7 +22,6 @@ extern const u32 flagBits[];                  // indexed by e->type2
 int plStCheck(PlayerData *player);            // 0x0207553c, defined in set66_2.cpp
 int VGroupLoadWait(Entity *e);                // 0x020811a8, nonzero while the VRAM group load is pending
 void rr_poscopy(Entity *e, Entity *target);   // 0x02075528, defined in set66_2.cpp
-int func_02084110(Entity *e);                 // 0x02084110, thumb; returns the player mask (ROM symbol is void, see report)
 
 // File-local overlay. 0x53 selects the VRAM block for the character load, 0x60 is the rupee rush bitmask
 // (ParseTypeBits, one bit per spawn slot).
