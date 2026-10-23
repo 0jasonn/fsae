@@ -5,7 +5,6 @@
 // The reviewer moves the ones with an original name into functions.h.
 #include "engine/functions.h"
 
-void func_02084180(Entity *e);
 void func_020841b0(Entity *e);
 void func_02086168(Entity *e);
 

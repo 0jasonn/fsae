@@ -475,4 +475,5 @@ u8 ItemRegist(u8 type);
 u32 CountBits(u32 bits); // number of set bits (thumb, 0x02084600)
 s32 func_02085024(Entity *e, const u16 *entry, u8 area); // thumb
 int ObjAnimMoveLine(Entity *e); // nonzero when the move animation has ended
+void func_02084180(Entity *e); // thumb
 #endif

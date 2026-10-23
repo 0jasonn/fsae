@@ -34,7 +34,6 @@ void tama11_putObjWorkThunk(Entity *e);
 extern "C" void func_0208b658(Entity *e);
 int func_02083ed8(Entity *e, Entity *target);
 extern "C" void func_02089989_unk(PlayerData *pl);
-extern "C" void func_02084180(Entity *e);
 
 extern u8 data_0212c4b8;
 

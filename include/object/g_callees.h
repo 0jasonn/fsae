@@ -22,7 +22,6 @@ extern "C" int cellcheck(Entity *e);           // original cellcheck(OBJ_WORK_*)
 extern "C" void func_0208365c(u32 a, u16 index, u16 layer); // thumb, no original name
 
 extern "C" void func_02084200(Entity *e);
-extern "C" void func_02084180(Entity *e); // thumb label, no original name (also in include/object/arrow.h) // thumb label, no original name
 
 extern "C" void ido_yukaMove(Entity *e);   // original yukaMove(OBJ_WORK_*)
 extern "C" void ido_getNextInfo(Entity *e); // original getNextInfo(OBJ_WORK_*)

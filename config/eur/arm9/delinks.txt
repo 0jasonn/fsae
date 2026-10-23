@@ -1230,6 +1230,58 @@ src/object/set17_2.cpp:
     complete
     .text       start:0x02065548 end:0x02065588
 
+src/object/set18.cpp:
+    complete
+    .text       start:0x02065634 end:0x02065650
+
+src/object/set18_2.cpp:
+    complete
+    .text       start:0x02065764 end:0x02065834
+
+src/object/set19.cpp:
+    complete
+    .text       start:0x02065834 end:0x0206596c
+
+src/object/set20.cpp:
+    complete
+    .text       start:0x0206596c end:0x02065a78
+
+src/object/set22.cpp:
+    complete
+    .text       start:0x02065e94 end:0x02065eb0
+
+src/object/set22_2.cpp:
+    complete
+    .text       start:0x02065f5c end:0x02065f94
+
+src/object/set23.cpp:
+    complete
+    .text       start:0x02066190 end:0x020661ac
+
+src/object/set23_2.cpp:
+    complete
+    .text       start:0x020662b8 end:0x020664c8
+
+src/object/set24.cpp:
+    complete
+    .text       start:0x020664c8 end:0x020665c0
+
+src/object/set25.cpp:
+    complete
+    .text       start:0x020665c0 end:0x020665dc
+
+src/object/set25_2.cpp:
+    complete
+    .text       start:0x02066630 end:0x0206672c
+
+src/object/set26.cpp:
+    complete
+    .text       start:0x02067890 end:0x02067924
+
+src/object/itemget.cpp:
+    complete
+    .text       start:0x02067a3c end:0x02067a60
+
 src/game/oplogo.cpp:
     complete
     .text       start:0x02068044 end:0x020682ac

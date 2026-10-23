@@ -102,7 +102,6 @@ void tama00_hajikiInit(Entity *e);
 void tama04_hajikiInit(Entity *e);
 int CalcRupeeDiff(u8 index);
 void kabutowari(Entity *e);
-void func_02084180(Entity *e);
 void *zMalloc(u16 size);
 u8 GetRandomTakara(u8 **list, u8 type);
 void set_takara2(u8 kind, u16 value, Entity *e);
