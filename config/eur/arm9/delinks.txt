@@ -1658,6 +1658,10 @@ src/object/ssel_tobira.cpp:
     complete
     .text       start:0x0206f174 end:0x0206f190
 
+src/object/ssel_tobira_3.cpp:
+    complete
+    .text       start:0x0206f3e0 end:0x0206f3e4
+
 src/object/set48.cpp:
     complete
     .text       start:0x0206f3e4 end:0x0206f400
