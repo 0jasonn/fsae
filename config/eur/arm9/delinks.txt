@@ -1590,6 +1590,82 @@ src/object/effect_cave2.cpp:
     complete
     .text       start:0x0206ddc8 end:0x0206de60
 
+src/object/effect_kazan.cpp:
+    complete
+    .text       start:0x0206df1c end:0x0206dfe4
+
+src/object/effect_mori2.cpp:
+    complete
+    .text       start:0x0206dfe4 end:0x0206e054
+
+src/object/key_3.cpp:
+    complete
+    .text       start:0x0206e054 end:0x0206e210
+
+src/object/effect_tokishin.cpp:
+    complete
+    .text       start:0x0206e2c8 end:0x0206e2e4
+
+src/object/effect_tokishin_2.cpp:
+    complete
+    .text       start:0x0206e34c end:0x0206e3d0
+
+src/object/effect_syurenjyo.cpp:
+    complete
+    .text       start:0x0206e3d0 end:0x0206e3ec
+
+src/object/effect_syurenjyo_2.cpp:
+    complete
+    .text       start:0x0206e454 end:0x0206e4d8
+
+src/object/effect_thunder.cpp:
+    complete
+    .text       start:0x0206e4d8 end:0x0206e5fc
+
+src/object/effect_rock.cpp:
+    complete
+    .text       start:0x0206e5fc end:0x0206e688
+
+src/object/effect_omoideon.cpp:
+    complete
+    .text       start:0x0206e87c end:0x0206e93c
+
+src/object/effect_particle.cpp:
+    complete
+    .text       start:0x0206e93c end:0x0206e9ac
+
+src/object/effect_beam1.cpp:
+    complete
+    .text       start:0x0206eba0 end:0x0206ec68
+
+src/object/effect_beam2.cpp:
+    complete
+    .text       start:0x0206ecdc end:0x0206edbc
+
+src/object/effect_beam3.cpp:
+    complete
+    .text       start:0x0206ee40 end:0x0206ef08
+
+src/object/effect_pika.cpp:
+    complete
+    .text       start:0x0206ef6c end:0x0206f034
+
+src/object/effect_omoide_end.cpp:
+    complete
+    .text       start:0x0206f0a8 end:0x0206f174
+
+src/object/ssel_tobira.cpp:
+    complete
+    .text       start:0x0206f174 end:0x0206f190
+
+src/object/set48.cpp:
+    complete
+    .text       start:0x0206f3e4 end:0x0206f400
+
+src/object/set49.cpp:
+    complete
+    .text       start:0x0206f680 end:0x0206f69c
+
 src/object/set50.cpp:
     complete
     .text       start:0x0207005c end:0x02070140
