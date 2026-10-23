@@ -3427,14 +3427,14 @@ setVGroup kind:function(arm,size=0x6c) addr:0x0208121c
 createVGroup kind:function(arm,size=0x90) addr:0x02081288
 _Z15countVGroupLinet kind:function(arm,size=0x48) addr:0x02081318
 _Z13actorDispatchP9OBJ_WORK_ kind:function(arm,size=0x3c) addr:0x02081360
-wanwan_init kind:function(arm,size=0x2a4) addr:0x0208139c
+_Z11wanwan_initP9OBJ_WORK_ kind:function(arm,size=0x2a4) addr:0x0208139c
 wanwan_move kind:function(arm,size=0x44c) addr:0x02081640
 wanwan_rangeCk kind:function(arm,size=0xd8) addr:0x02081a8c
 func_02081b64 kind:function(arm,size=0x40) addr:0x02081b64
 _Z14YouseiDemoTaskv kind:function(arm,size=0xac) addr:0x02081ba4
 _Z12demolink_setv kind:function(arm,size=0xec) addr:0x02081c50
 yousei_init kind:function(arm,size=0x1d8) addr:0x02081d3c
-yousei_fade kind:function(arm,size=0xf4) addr:0x02081f14
+_Z11yousei_fadev kind:function(arm,size=0xf4) addr:0x02081f14
 _Z20yousei_msgFinishWaitv kind:function(arm,size=0x4c) addr:0x02082008
 _Z13getRupeeLevelv kind:function(arm,size=0x40) addr:0x02082054
 _Z11rupee_errort kind:function(arm,size=0x38) addr:0x02082094
@@ -3444,7 +3444,7 @@ _Z11yousei_exitv kind:function(arm,size=0xa0) addr:0x020825bc
 _Z10yousei_endv kind:function(arm,size=0x54) addr:0x0208265c
 ZeldaRamInitialize kind:function(arm,size=0xf8) addr:0x020826b0
 _Z13func_020827a8l kind:function(arm,size=0x90) addr:0x020827a8
-func_02082838 kind:function(arm,size=0x80) addr:0x02082838
+_Z20GetOwnerLanguageCodev kind:function(arm,size=0x80) addr:0x02082838
 _Z10BeforeTaskv kind:function(arm,size=0x1c) addr:0x020828b8
 _Z11twlInitVRAMv kind:function(arm,size=0x78) addr:0x020828d4
 _Z10twlInitAgbv kind:function(arm,size=0x48) addr:0x0208294c
@@ -3452,7 +3452,7 @@ _Z17twlInitSubDisplayv kind:function(arm,size=0x44) addr:0x02082994
 twlInit kind:function(arm,size=0xd0) addr:0x020829d8
 DispCtrlSet kind:function(arm,size=0x1ac) addr:0x02082aa8
 _Z13func_02082c54Pv kind:function(arm,size=0x10) addr:0x02082c54
-ResourceCtrl kind:function(arm,size=0x104) addr:0x02082c64
+_Z12ResourceCtrlv kind:function(arm,size=0x104) addr:0x02082c64
 bgTrans kind:function(arm,size=0x54) addr:0x02082d68
 Change_Buffer kind:function(arm,size=0x124) addr:0x02082dbc
 _Z10Task_Chainh kind:function(arm,size=0x5c) addr:0x02082ee0
@@ -3516,7 +3516,7 @@ func_020840c8 kind:function(thumb,size=0x1c) addr:0x020840c8
 func_020840e4 kind:function(thumb,size=0x1c) addr:0x020840e4
 func_02084100 kind:function(thumb,size=0x10) addr:0x02084100
 _Z13func_02084110v kind:function(thumb,size=0x154) addr:0x02084110
-func_02084180 kind:label(thumb) addr:0x02084180
+_Z13func_02084180P9OBJ_WORK_ kind:label(thumb) addr:0x02084180
 func_020841b0 kind:label(thumb) addr:0x020841b0
 func_02084200 kind:label(thumb) addr:0x02084200
 func_02084228 kind:label(thumb) addr:0x02084228
@@ -8280,7 +8280,7 @@ data_020dd8cc kind:data(any) addr:0x020dd8cc
 data_020dd8d4 kind:data(any) addr:0x020dd8d4
 data_020dd8ec kind:data(any) addr:0x020dd8ec
 actorStateTable kind:data(any) addr:0x020dd980
-data_020dd988 kind:data(any) addr:0x020dd988
+wanwan_hitbox kind:data(any) addr:0x020dd988
 data_020dd990 kind:data(any) addr:0x020dd990
 data_020dd99c kind:data(any) addr:0x020dd99c
 data_020dd9a0 kind:data(any) addr:0x020dd9a0

@@ -1690,9 +1690,17 @@ src/engine/vgroup_3.cpp:
     complete
     .text       start:0x02081318 end:0x0208139c
 
+src/game/wanwan.cpp:
+    complete
+    .text       start:0x0208139c end:0x02081640
+
 src/game/yousei.cpp:
     complete
     .text       start:0x02081b64 end:0x02081d3c
+
+src/game/yousei_5.cpp:
+    complete
+    .text       start:0x02081f14 end:0x02082054
 
 src/game/rupeelevel.cpp:
     complete
@@ -1706,6 +1714,10 @@ src/game/yousei_3.cpp:
     complete
     .text       start:0x020825bc end:0x020826b0
 
+src/game/owner.cpp:
+    complete
+    .text       start:0x02082838 end:0x020828b8
+
 src/engine/twl.cpp:
     complete
     .text       start:0x020828b8 end:0x020829d8
@@ -1713,6 +1725,18 @@ src/engine/twl.cpp:
 src/engine/callbackset.cpp:
     complete
     .text       start:0x02082c54 end:0x02082c64
+
+src/game/resource.cpp:
+    complete
+    .text       start:0x02082c64 end:0x02082d68
+
+src/game/task.cpp:
+    complete
+    .text       start:0x02082ee0 end:0x02082f3c
+
+src/game/knife_comm_2.cpp:
+    complete
+    .text       start:0x02082f3c end:0x02082f90
 
 src/engine/callback.cpp:
     complete
