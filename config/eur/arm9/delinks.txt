@@ -1894,13 +1894,57 @@ src/object/tama0d.cpp:
     complete
     .text       start:0x0207cea8 end:0x0207d10c
 
+src/object/tama0f.cpp:
+    complete
+    .text       start:0x0207db04 end:0x0207dc3c
+
+src/object/tama0f_2.cpp:
+    complete
+    .text       start:0x0207de68 end:0x0207df5c
+
 src/object/tama01.cpp:
     complete
     .text       start:0x0207df5c end:0x0207e0b4
 
+src/object/tama02.cpp:
+    complete
+    .text       start:0x0207e15c end:0x0207e220
+
+src/object/tama02_2.cpp:
+    complete
+    .text       start:0x0207e51c end:0x0207e5c0
+
 src/object/tama04.cpp:
     complete
     .text       start:0x0207e5c0 end:0x0207e650
+
+src/object/tama04_2.cpp:
+    complete
+    .text       start:0x0207e650 end:0x0207e76c
+
+src/object/tama05.cpp:
+    complete
+    .text       start:0x0207e834 end:0x0207ea14
+
+src/object/tama06.cpp:
+    complete
+    .text       start:0x0207ead4 end:0x0207f0cc
+
+src/object/tama06_2.cpp:
+    complete
+    .text       start:0x0207f120 end:0x0207f290
+
+src/object/tama07.cpp:
+    complete
+    .text       start:0x0207f488 end:0x0207f550
+
+src/object/tama07_2.cpp:
+    complete
+    .text       start:0x0207f830 end:0x0207f84c
+
+src/object/tama08.cpp:
+    complete
+    .text       start:0x0207f84c end:0x0207f8e0
 
 src/object/tama11.cpp:
     complete
