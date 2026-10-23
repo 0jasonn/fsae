@@ -1082,6 +1082,70 @@ src/object/option_4.cpp:
     complete
     .text       start:0x0205c54c end:0x0205c7b0
 
+src/object/option_5.cpp:
+    complete
+    .text       start:0x0205c9c8 end:0x0205caf0
+
+src/object/set3c.cpp:
+    complete
+    .text       start:0x0205caf0 end:0x0205ccf8
+
+src/object/set3d.cpp:
+    complete
+    .text       start:0x0205ceec end:0x0205cfac
+
+src/object/set3d_2.cpp:
+    complete
+    .text       start:0x0205d0a0 end:0x0205d0ec
+
+src/object/set3d_3.cpp:
+    complete
+    .text       start:0x0205d874 end:0x0205d940
+
+src/object/set3d_4.cpp:
+    complete
+    .text       start:0x0205d9c8 end:0x0205d9d4
+
+src/object/set3e.cpp:
+    complete
+    .text       start:0x0205d9d4 end:0x0205d9f0
+
+src/object/set3e_2.cpp:
+    complete
+    .text       start:0x0205dc1c end:0x0205dc90
+
+src/object/set3f.cpp:
+    complete
+    .text       start:0x0205dc90 end:0x0205dd0c
+
+src/object/warphole.cpp:
+    complete
+    .text       start:0x0205de34 end:0x0205de50
+
+src/object/warphole_2.cpp:
+    complete
+    .text       start:0x0205e05c end:0x0205e078
+
+src/object/warphole_3.cpp:
+    complete
+    .text       start:0x0205e114 end:0x0205e18c
+
+src/object/set4a.cpp:
+    complete
+    .text       start:0x0205e18c end:0x0205e1a8
+
+src/object/set4b.cpp:
+    complete
+    .text       start:0x0205e280 end:0x0205e29c
+
+src/object/set4c.cpp:
+    complete
+    .text       start:0x0205e3b8 end:0x0205e3d4
+
+src/object/set4d.cpp:
+    complete
+    .text       start:0x0205e558 end:0x0205e580
+
 src/object/set5e_2.cpp:
     complete
     .text       start:0x02060050 end:0x02060104
