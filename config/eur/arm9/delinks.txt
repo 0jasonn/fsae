@@ -1562,6 +1562,10 @@ src/object/set60.cpp:
     complete
     .text       start:0x02074418 end:0x02074508
 
+src/object/set61.cpp:
+    complete
+    .text       start:0x02074508 end:0x02074680
+
 src/object/gufu_2.cpp:
     complete
     .text       start:0x02074680 end:0x0207481c
@@ -1573,6 +1577,46 @@ src/object/gufu_3.cpp:
 src/object/gufu_4.cpp:
     complete
     .text       start:0x02074934 end:0x02074c6c
+
+src/object/offsw.cpp:
+    complete
+    .text       start:0x02074c6c end:0x02074cf8
+
+src/object/rr.cpp:
+    complete
+    .text       start:0x02074cf8 end:0x02074ee0
+
+src/object/set66.cpp:
+    complete
+    .text       start:0x0207502c end:0x02075240
+
+src/object/set66_2.cpp:
+    complete
+    .text       start:0x02075240 end:0x020752f8
+
+src/object/set66_3.cpp:
+    complete
+    .text       start:0x0207543c end:0x0207553c
+
+src/object/set67.cpp:
+    complete
+    .text       start:0x020755a4 end:0x020755c0
+
+src/object/set67_2.cpp:
+    complete
+    .text       start:0x02075604 end:0x02075610
+
+src/object/set68.cpp:
+    complete
+    .text       start:0x02075610 end:0x0207583c
+
+src/object/set69.cpp:
+    complete
+    .text       start:0x02075a60 end:0x02075c14
+
+src/object/set69_2.cpp:
+    complete
+    .text       start:0x02075ca0 end:0x02075e78
 
 src/game/stagesel.cpp:
     complete
