@@ -165,6 +165,30 @@ src/enemy/em0f.cpp:
     complete
     .text       start:0x0202dad8 end:0x0202de80
 
+src/enemy/em0f_2.cpp:
+    complete
+    .text       start:0x0202e0b8 end:0x0202e58c
+
+src/enemy/em0f_3.cpp:
+    complete
+    .text       start:0x0202e648 end:0x0202e708
+
+src/enemy/em01.cpp:
+    complete
+    .text       start:0x0202e904 end:0x0202ea2c
+
+src/enemy/em01_2.cpp:
+    complete
+    .text       start:0x0202eb2c end:0x0202eb88
+
+src/enemy/em1a.cpp:
+    complete
+    .text       start:0x0202eb88 end:0x0202ef7c
+
+src/enemy/em1b.cpp:
+    complete
+    .text       start:0x0202f098 end:0x0202f138
+
 src/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108
