@@ -9,9 +9,17 @@ src/engine/stub_init.cpp:
     complete
     .text       start:0x02004edc end:0x02004ee8
 
+src/engine/engine_free.cpp:
+    complete
+    .text       start:0x02005610 end:0x02005628
+
 src/engine/free_wrap.cpp:
     complete
     .text       start:0x02005628 end:0x0200563c
+
+src/engine/engine_abs.cpp:
+    complete
+    .text       start:0x020056a0 end:0x020056ac
 
 src/engine/stub_2.cpp:
     complete
@@ -20,6 +28,14 @@ src/engine/stub_2.cpp:
 src/engine/store_byte.cpp:
     complete
     .text       start:0x02005c90 end:0x02005ca4
+
+src/engine/engine_bytes.cpp:
+    complete
+    .text       start:0x02005dc0 end:0x02005de0
+
+src/engine/engine_bytes_2.cpp:
+    complete
+    .text       start:0x02005df4 end:0x02005e4c
 
 src/engine/stub_7.cpp:
     complete
@@ -68,6 +84,10 @@ src/game/beam.cpp:
 src/game/map.cpp:
     complete
     .text       start:0x02021b78 end:0x02021c28
+
+src/game/map_2.cpp:
+    complete
+    .text       start:0x02021ec4 end:0x02021fb0
 
 src/game/shikake.cpp:
     complete
