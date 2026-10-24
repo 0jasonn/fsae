@@ -3385,7 +3385,7 @@ _Z6Tama07P9OBJ_WORK_ kind:function(arm,size=0x28) addr:0x0207f488
 _Z13tama07_normalP9OBJ_WORK_ kind:function(arm,size=0x38) addr:0x0207f4b0
 _Z13tama07_damageP9OBJ_WORK_ kind:function(arm,size=0x68) addr:0x0207f4e8
 tama07_init kind:function(arm,size=0x9c) addr:0x0207f550
-tama07_move kind:function(arm,size=0x84) addr:0x0207f5ec
+_Z11tama07_moveP9OBJ_WORK_ kind:function(arm,size=0x84) addr:0x0207f5ec
 tama07_guruguru kind:function(arm,size=0x1c0) addr:0x0207f670
 _Z13tama07_removeP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0207f830
 _Z6Tama08P9OBJ_WORK_ kind:function(arm,size=0x28) addr:0x0207f84c
@@ -13856,8 +13856,8 @@ data_0216f82c kind:bss addr:0x0216f82c
 data_0216f834 kind:bss addr:0x0216f834
 data_0216f8b4 kind:bss addr:0x0216f8b4
 data_0216f934 kind:bss addr:0x0216f934
-data_0216fb34 kind:bss addr:0x0216fb34
-data_0216fb38 kind:bss addr:0x0216fb38
+multiSioFlags kind:bss addr:0x0216fb34
+multiSioWork kind:bss addr:0x0216fb38
 data_0216fb68 kind:bss addr:0x0216fb68
 data_0216fb84 kind:bss addr:0x0216fb84
 data_0216fba0 kind:bss addr:0x0216fba0
@@ -13889,7 +13889,7 @@ data_02171d44 kind:bss addr:0x02171d44
 data_02171d46 kind:bss addr:0x02171d46
 data_02171d58 kind:bss addr:0x02171d58
 data_02171d7c kind:bss addr:0x02171d7c
-data_02171df8 kind:bss addr:0x02171df8
+multiSioSelect kind:bss addr:0x02171df8
 data_02171e08 kind:bss addr:0x02171e08
 data_02171e0c kind:bss addr:0x02171e0c
 data_02171e10 kind:bss addr:0x02171e10
@@ -13899,8 +13899,8 @@ data_02171e1c kind:bss addr:0x02171e1c
 data_02171e20 kind:bss addr:0x02171e20
 data_02171e24 kind:bss addr:0x02171e24
 data_02171e2c kind:bss addr:0x02171e2c
-data_02171e3c kind:bss addr:0x02171e3c
-data_02171e44 kind:bss addr:0x02171e44
+multiSioRegs kind:bss addr:0x02171e3c
+multiSioCtrl kind:bss addr:0x02171e44
 data_02171e5c kind:bss addr:0x02171e5c
 data_02171e68 kind:bss addr:0x02171e68
 data_02171e74 kind:bss addr:0x02171e74

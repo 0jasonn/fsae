@@ -53,7 +53,7 @@ typedef struct SselPlayerFlags {
     /* 06 */ u16 unk_06;
 } SselPlayerFlags;
 
-// One save slot (data_021350b0, 0x50 bytes each); the slot index is data_02171df8[4]
+// One save slot (data_021350b0, 0x50 bytes each); the slot index is multiSioSelect[4]
 typedef struct SselSaveSlot {
     /* 00 */ u32 flags;
     /* 04 */ u8 unk_04;
@@ -63,7 +63,7 @@ typedef struct SselSaveSlot {
 } SselSaveSlot;
 extern u8 data_021350b0[];
 extern u32 data_0212c858[];
-extern u8 data_02171df8[];
+extern u8 multiSioSelect[];
 extern u8 data_02171d7c[];
 extern u16 data_0212c58c[];
 // Scroll table entries (data_020dc67c): two u16 per step, copied to the stack by stagesel_scroll

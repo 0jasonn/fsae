@@ -762,9 +762,21 @@ src/object/set5c.cpp:
     complete
     .text       start:0x0204eca4 end:0x0204ed00
 
+src/game/multisio.cpp:
+    complete
+    .text       start:0x0204edc4 end:0x0204ee64
+
+src/game/multisio_2.cpp:
+    complete
+    .text       start:0x0204f1c0 end:0x0204f4a8
+
 src/game/npc_init.cpp:
     complete
     .text       start:0x0204f978 end:0x0204f994
+
+src/game/getnpc.cpp:
+    complete
+    .text       start:0x0204f994 end:0x0204fa20
 
 src/game/npc_2.cpp:
     complete
@@ -2049,6 +2061,10 @@ src/object/tama06_4.cpp:
 src/object/tama07.cpp:
     complete
     .text       start:0x0207f488 end:0x0207f550
+
+src/object/tama07_3.cpp:
+    complete
+    .text       start:0x0207f5ec end:0x0207f670
 
 src/object/tama07_2.cpp:
     complete

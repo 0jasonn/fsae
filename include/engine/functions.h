@@ -109,7 +109,7 @@ void GenericKnockback(Entity *e, const void *funcs);
 Entity *GetEnemyWork(u16 id);
 u8 GetFacingDirection(Entity *e, Entity *target);
 const u8 *GetInfoAdrs(u8 area, u8 kind);
-void GetNPC(u8 a, u8 b, u8 c);
+u8 GetNPC(u8 a, u8 b, u8 c);
 u32 GetObjColor(u8 index);
 Entity *GetObjWork2(Entity *);
 Entity *GetTamaWork(u16 id);
