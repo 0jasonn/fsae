@@ -48,7 +48,7 @@ ARM void i_restoreGfxSettings(void) {
     ObjMoveInit();
     MessageInitialize();
     TelopInitialize();
-    func_02028024();
+    ComInitState();
     Task_Chain(7);
     subTask_game_start_reload();
     func_020827a8(3);

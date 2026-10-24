@@ -287,7 +287,7 @@ void func_02014c24(s32 a);
 void func_020152c8(void);
 void func_020152ec(void);
 void func_02026774(void);
-void func_02028024(void);
+void ComInitState(void);
 u32 func_020280e0(void);
 void func_02029a50(void *dst, u32 size);
 void func_02030ae4(int index);

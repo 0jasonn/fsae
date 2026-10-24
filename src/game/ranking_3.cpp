@@ -16,7 +16,7 @@ ARM void ranking_init(void) {
     ObjWorkPoolClear();
     ObjMoveInit();
     VGroupInit();
-    func_0202a5f4();
+    ClearWorkBuffer();
     func_02029a50(&data_021349c0, 0x28);
     ranking_noop();
     data_0212c4f8 = 0;

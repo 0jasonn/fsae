@@ -35,7 +35,7 @@ void StopBlockInit(void);
 void PlWorkReset(void);
 void FadeClear(void);
 void Knife_Single_SinglePlay_Initialize(void);
-void func_0202a5f4(void);
+void ClearWorkBuffer(void);
 void ShikakeInit(void);
 void LoadTokiWave(void);
 void Enemy_ArmSharedState(void);

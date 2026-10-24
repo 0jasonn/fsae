@@ -233,6 +233,10 @@ src/game/objcolor_2.cpp:
     complete
     .text       start:0x02027fe8 end:0x02028024
 
+src/game/comfinit.cpp:
+    complete
+    .text       start:0x02028024 end:0x02028068
+
 src/game/com.cpp:
     complete
     .text       start:0x02028068 end:0x020280d0
@@ -288,6 +292,10 @@ src/game/cgsubtrans.cpp:
 src/game/knifetbl.cpp:
     complete
     .text       start:0x02029f10 end:0x02029fe8
+
+src/game/clearbuf.cpp:
+    complete
+    .text       start:0x0202a5f4 end:0x0202a60c
 
 src/game/dispctrl.cpp:
     complete
@@ -396,6 +404,10 @@ src/enemy/em1b_3.cpp:
 src/enemy/em1c.cpp:
     complete
     .text       start:0x0202f5e0 end:0x0202f6cc
+
+src/enemy/em1c_5.cpp:
+    complete
+    .text       start:0x0202f6cc end:0x0202f9b4
 
 src/enemy/em1c_2.cpp:
     complete
@@ -565,6 +577,10 @@ src/enemy/em11.cpp:
     complete
     .text       start:0x0203b02c end:0x0203b384
 
+src/enemy/em12_3.cpp:
+    complete
+    .text       start:0x0203b384 end:0x0203b434
+
 src/enemy/em12.cpp:
     complete
     .text       start:0x0203b434 end:0x0203b594
@@ -612,6 +628,18 @@ src/enemy/em17.cpp:
 src/enemy/em17_2.cpp:
     complete
     .text       start:0x0203d5f0 end:0x0203d8f0
+
+src/enemy/em18.cpp:
+    complete
+    .text       start:0x0203dc84 end:0x0203dc98
+
+src/enemy/setaction.cpp:
+    complete
+    .text       start:0x0203e784 end:0x0203e7a0
+
+src/enemy/em20.cpp:
+    complete
+    .text       start:0x0203e840 end:0x0203e854
 
 src/enemy/em24.cpp:
     complete

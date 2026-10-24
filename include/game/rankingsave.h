@@ -11,7 +11,7 @@ s32 FX_Sqrt(s32 x);
 }
 
 void ComRequest(u8 request);
-void func_0202a5f4(void);
+void ClearWorkBuffer(void);
 void ranking_noop(void);
 void ranking_scroll(void);
 void CalcRanking(void);
