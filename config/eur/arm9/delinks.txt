@@ -2478,6 +2478,58 @@ src/engine/knife_sound_5.cpp:
     complete
     .text       start:0x02090634 end:0x02090708
 
+src/game/knife_comm_0.cpp:
+    complete
+    .text       start:0x0209a63c end:0x0209a65c
+
+src/game/knife_comm_a.cpp:
+    complete
+    .text       start:0x0209a660 end:0x0209a6cc
+
+src/game/knife_comm_a2.cpp:
+    complete
+    .text       start:0x0209a818 end:0x0209a890
+
+src/game/subtask_misc.cpp:
+    complete
+    .text       start:0x0209ad08 end:0x0209ad3c
+
+src/game/set_bg.cpp:
+    complete
+    .text       start:0x0209b394 end:0x0209b3d8
+
+src/game/set_bg_2.cpp:
+    complete
+    .text       start:0x0209b4c0 end:0x0209b508
+
+src/game/subtask_data.cpp:
+    complete
+    .text       start:0x0209b714 end:0x0209b734
+
+src/game/subtask_data_2.cpp:
+    complete
+    .text       start:0x0209b748 end:0x0209b78c
+
+src/game/eff.cpp:
+    complete
+    .text       start:0x0209b79c end:0x0209b8c0
+
+src/game/eff_2.cpp:
+    complete
+    .text       start:0x0209b90c end:0x0209b94c
+
+src/game/eff_3.cpp:
+    complete
+    .text       start:0x0209b9cc end:0x0209ba08
+
+src/game/eff_4.cpp:
+    complete
+    .text       start:0x0209ba50 end:0x0209ba94
+
+src/game/subtask_draw_a.cpp:
+    complete
+    .text       start:0x0209ca38 end:0x0209cd18
+
 src/game/subtask_draw.cpp:
     complete
     .text       start:0x0209cd18 end:0x0209ce48
