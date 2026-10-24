@@ -3,6 +3,17 @@
 #include "types.h"
 #include "engine/knife_file.h"
 
+// Knife::File::System is declared in engine/knife_file_2.h, which clashes with this file's KnifeFileEntity prototypes;
+// only the static yieldThread member is needed here.
+namespace Knife {
+namespace File {
+class System {
+public:
+    static void yieldThread(void);
+};
+}
+}
+
 // Knife::File::Entity constructor, destructors, the field accessors and sync, 0x0208c6b4 to 0x0208c7ac.
 // Provisional names in scratch/agentD/renames.txt: Knife_File_Entity_ctor, Knife_File_Entity_fwd_08c75c, Knife_File_Entity_getField54, Knife_File_Entity_getField58, Knife_File_Entity_isReadDone.
 
@@ -61,7 +72,7 @@ extern "C" void Knife_File_Entity_sync(KnifeFileEntity *self);
 ARM void Knife_File_Entity_sync(KnifeFileEntity *self) {
     if (self->readDone == 0) {
         do {
-            Knife_File_System_yieldThread();
+            Knife::File::System::yieldThread();
         } while (self->readDone == 0);
     }
 }
