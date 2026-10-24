@@ -2698,6 +2698,50 @@ src/game/nameentry_12.cpp:
     complete
     .text       start:0x020afc70 end:0x020afcbc
 
+src/game/groupselectuiview.cpp:
+    complete
+    .text       start:0x020afef4 end:0x020b0014
+
+src/game/groupselectuiview_2.cpp:
+    complete
+    .text       start:0x020b07bc end:0x020b0800
+
+src/game/groupselectuiview_7.cpp:
+    complete
+    .text       start:0x020b0a6c end:0x020b0b40
+
+src/game/groupselectuiview_8.cpp:
+    complete
+    .text       start:0x020b0b40 end:0x020b0c38
+
+src/game/groupselectuiview_3.cpp:
+    complete
+    .text       start:0x020b0d58 end:0x020b0d7c
+
+src/game/groupselect_scan.cpp:
+    complete
+    .text       start:0x020b0f8c end:0x020b0fe8
+
+src/game/groupselectuiview_4.cpp:
+    complete
+    .text       start:0x020b0fe8 end:0x020b10d4
+
+src/game/groupselectuiview_5.cpp:
+    complete
+    .text       start:0x020b11a0 end:0x020b11cc
+
+src/game/groupselectuiview_6.cpp:
+    complete
+    .text       start:0x020b11dc end:0x020b1224
+
+src/game/lobby_color.cpp:
+    complete
+    .text       start:0x020b2560 end:0x020b25c0
+
+src/game/exchange_savedata.cpp:
+    complete
+    .text       start:0x020b2a5c end:0x020b2b54
+
 src/game/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd2d8
