@@ -1,15 +1,15 @@
 {
  "decompiled": {
-  "functions": 1885,
-  "bytes": 187088
+  "functions": 1888,
+  "bytes": 187332
  },
  "library": {
   "functions": 622,
   "bytes": 65080
  },
  "remaining": {
-  "functions": 2954,
-  "bytes": 548644
+  "functions": 2951,
+  "bytes": 548400
  },
  "game": {
   "functions": 4839,

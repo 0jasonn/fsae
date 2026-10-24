@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "game/hud.h"
+#include "game/knife_hud.h"
 
 // Functions in this file (module cockpit, original names from the debug build):
 //   cockpit_call_check (cockpit_call_check()), cockpit_obj_trans (cockpit_obj_trans(unsigned char))
@@ -20,19 +20,19 @@ extern u8 data_0212c618[];
 // active player of the single play block; wireless play checks every player.
 ARM void cockpit_call_check(void) {
     void *knife;
-    void *hud;
+    Knife::Hud::HudManager *hud;
     u8 *single;
     u8 requestMode;
     s32 i;
 
     knife = KnifeApp_getInstance();
     single = Knife_Single_SinglePlay_GetInstance();
-    hud = (u8 *)knife + 0x1f8;
+    hud = (Knife::Hud::HudManager *)((u8 *)knife + 0x1f8);
     if (KnifeApp_isWirelessMode(knife) == 0) {
         if (single[1] == 0) {
-            Knife_Hud_HudManager_setActivePlayer(hud, single[0]);
+            hud->setActivePlayer(single[0]);
         } else {
-            Knife_Hud_HudManager_setActivePlayer(hud, -1);
+            hud->setActivePlayer(-1);
         }
         if ((data_0212c58c[0] & 0x400) == 0) {
             return;
@@ -44,7 +44,7 @@ ARM void cockpit_call_check(void) {
         if (data_0212ceec[single[0] * 0x94] != 0) {
             return;
         }
-        if (Knife_Hud_HudManager_startCallAnim(hud, single[0]) == 0) {
+        if (hud->startCallAnim(single[0]) == 0) {
             return;
         }
         SoundReq(0x232);
@@ -56,26 +56,26 @@ ARM void cockpit_call_check(void) {
         }
         if ((data_0212c584[i] & 0x1000) == 0 && frameCounter[0x14] == 0 && frameCounter[0x11] == 0 &&
             data_0212ceb0[i * 0x94 + 0x3c] == 0) {
-            if (Knife_Hud_HudManager_startCallAnim(hud, i) != 0) {
+            if (hud->startCallAnim(i) != 0) {
                 SoundReq(0x232);
             }
         }
     }
-    Knife_Hud_HudManager_setActivePlayer(hud, 0);
+    hud->setActivePlayer(0);
 }
 
 // cockpit_obj_trans (0x02027d44): runs the call check, advances the frame counter at data_0212c4a0 + 4 (modulo 0x30) and
 // sets the two HUD slots from the item indices, then updates the HUD with mode.
 ARM void cockpit_obj_trans(u8 mode) {
     void *knife;
-    void *hud;
+    Knife::Hud::HudManager *hud;
 
     knife = KnifeApp_getInstance();
     Knife_Single_SinglePlay_GetInstance();
     cockpit_call_check();
     *(u32 *)(data_0212c4a0 + 4) = (*(u32 *)(data_0212c4a0 + 4) + 1) % 0x30;
-    hud = (u8 *)knife + 0x1f8;
-    func_0209e788(hud, 0, data_0212c618[0xc]);
-    func_0209e788(hud, 1, data_0212c618[0x2c]);
-    Knife_Hud_HudManager_update(hud, mode);
+    hud = (Knife::Hud::HudManager *)((u8 *)knife + 0x1f8);
+    hud->setField70(0, data_0212c618[0xc]);
+    hud->setField70(1, data_0212c618[0x2c]);
+    hud->update(mode);
 }

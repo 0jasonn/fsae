@@ -45,9 +45,9 @@ _NAMES = None
 def name_to_addr(name):
     """Address of a function: from a func_XXXXXXXX name, symbols.txt, or a pending rename in scratch/agent*/renames.txt."""
     global _NAMES
-    mm = re.match(r"_Z(\d+)", name)  # C++ (Itanium) mangled name: use the plain function name
-    if mm:
-        name = name[len(mm.group(0)):len(mm.group(0)) + int(mm.group(1))]
+    if name.startswith("_Z"):  # C++ (Itanium) mangled name: use the plain function name (Class_method for members)
+        from cxx_symbols import plain_name
+        name = plain_name(name) or name
     m = re.fullmatch(r"func_([0-9a-fA-F]{8})(?:_unk)?", name)
     if m:
         return int(m.group(1), 16)
@@ -57,9 +57,10 @@ def name_to_addr(name):
             sm = re.match(r"(\S+) kind:function\S* addr:0x([0-9a-f]+)", line)
             if sm:
                 _NAMES[sm.group(1)] = int(sm.group(2), 16)
-                pm = re.match(r"_Z(\d+)", sm.group(1))  # also index C++ symbols by their plain name
-                if pm:
-                    _NAMES.setdefault(sm.group(1)[len(pm.group(0)):len(pm.group(0)) + int(pm.group(1))], int(sm.group(2), 16))
+                if sm.group(1).startswith("_Z"):  # also index C++ symbols by their plain name
+                    from cxx_symbols import plain_name
+                    if plain_name(sm.group(1)):
+                        _NAMES.setdefault(plain_name(sm.group(1)), int(sm.group(2), 16))
         for ren in (ROOT / "scratch").glob("agent*/renames.txt"):
             for line in ren.read_text().splitlines():
                 parts = line.split()

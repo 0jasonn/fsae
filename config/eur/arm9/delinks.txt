@@ -2326,6 +2326,18 @@ src/game/subtask_5.cpp:
     complete
     .text       start:0x0209dd44 end:0x0209de18
 
+src/game/set6c.cpp:
+    complete
+    .text       start:0x0209de18 end:0x0209dec0
+
+src/game/knife_canvas.cpp:
+    complete
+    .text       start:0x0209fcc4 end:0x0209fcdc
+
+src/game/knife_canvas_2.cpp:
+    complete
+    .text       start:0x0209ffb8 end:0x0209ffec
+
 src/game/uiobject.cpp:
     complete
     .text       start:0x020acca0 end:0x020acd1c

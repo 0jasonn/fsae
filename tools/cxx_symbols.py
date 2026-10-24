@@ -38,6 +38,19 @@ def elf_symbols(path):
 
 
 def plain_name(mangled):
+    """Plain symbols.txt name of an Itanium-mangled name: `_Z9em09_initP9OBJ_WORK_` -> `em09_init`; nested
+    (class or namespace) names join their parts with `_`: `_ZNK5Knife3Hud10HudManager9getStateEv` -> `Knife_Hud_HudManager_getState`."""
+    m = re.match(r"_ZN(?:K|V|r)*", mangled)
+    if m:
+        i, parts = len(m.group(0)), []
+        while i < len(mangled) and mangled[i].isdigit():
+            n = re.match(r"\d+", mangled[i:]).group(0)
+            i += len(n)
+            parts.append(mangled[i:i + int(n)])
+            i += int(n)
+        if parts and i < len(mangled) and mangled[i] == "E":
+            return "_".join(parts)
+        return None
     m = re.match(r"_Z(\d+)", mangled)
     if not m:
         return None
