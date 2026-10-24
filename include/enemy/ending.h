@@ -128,7 +128,7 @@ void selectEndingLink(void);
 void ending_link_init(void);
 void yousei_move(void);
 BOOL ending_msgFinishWait(void);
-void func_020ae280(void);
+void subTask_staffroll_setFlagOff(void);
 void CalcRanking(void);
 int ranking_getKey(u8 a);
 extern const u16 youseiBounds1[];

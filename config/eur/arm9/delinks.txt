@@ -2193,3 +2193,59 @@ src/game/subtask_4.cpp:
 src/game/subtask_5.cpp:
     complete
     .text       start:0x0209dd44 end:0x0209de18
+
+src/game/uiobject.cpp:
+    complete
+    .text       start:0x020acca0 end:0x020acd1c
+
+src/game/uiobject_2.cpp:
+    complete
+    .text       start:0x020acd74 end:0x020acd98
+
+src/game/baseduiview.cpp:
+    complete
+    .text       start:0x020acd98 end:0x020ad020
+
+src/game/fileselui.cpp:
+    complete
+    .text       start:0x020ad020 end:0x020ad070
+
+src/game/fileselui_2.cpp:
+    complete
+    .text       start:0x020ad668 end:0x020ad87c
+
+src/game/fileselui_3.cpp:
+    complete
+    .text       start:0x020ad954 end:0x020ad9a4
+
+src/game/fileselui_4.cpp:
+    complete
+    .text       start:0x020adac0 end:0x020adb04
+
+src/game/staffroll.cpp:
+    complete
+    .text       start:0x020ae280 end:0x020ae294
+
+src/game/staffroll_2.cpp:
+    complete
+    .text       start:0x020ae2b8 end:0x020ae318
+
+src/game/knifecomm.cpp:
+    complete
+    .text       start:0x020ae318 end:0x020ae3b0
+
+src/game/knifecomm_2.cpp:
+    complete
+    .text       start:0x020ae540 end:0x020ae558
+
+src/game/nameentry.cpp:
+    complete
+    .text       start:0x020ae558 end:0x020ae634
+
+src/game/nameentry_3.cpp:
+    complete
+    .text       start:0x020ae830 end:0x020ae968
+
+src/game/nameentry_2.cpp:
+    complete
+    .text       start:0x020afa1c end:0x020afa7c

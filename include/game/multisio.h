@@ -60,7 +60,7 @@ extern "C" void Knife_Comm_WirelessManager_reset(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getLinkLevel(void *manager);
 extern "C" int func_02091e7c(void *manager);
 extern "C" int func_02092234(void *manager, int a);
-extern "C" void func_020ae358(int index, void *flags);
+extern "C" void Knife_Comm_setPlayerBit(int index, void *flags);
 extern "C" void func_020ae3b0(int index, void *flags);
 extern "C" u16 MultiSioRecvDataCheck(void *a);
 extern "C" u32 MultiSioMain(void *a, s32 b);
