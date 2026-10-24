@@ -50,15 +50,15 @@ public:
 
 extern "C" {
 // Sound player and Handle calls used by WaveHandle (dsd names)
-void *func_020bf4e4(u8 playerType);
+void *SndChannel_Reserve(u8 playerType);
 s32 func_020bf540(void *player, NNSSndWaveFormat format, const void *data, s32 channel, s32 loopStart, s32 loopEnd,
                   s32 loopCount, s32 volume, s32 pitch, s32 pan);
-s32 func_020bf6f4(void *player);
-void func_020bf6a8(void *player, s32 volume);
-void func_020bf6d0(void *player, s32 pan);
-void func_020bf66c(void *player);
-void func_020bf750(void *player);
-void func_020bf528(void *player);
+s32 SndChannelRef_Update(void *player);
+void SndChannelRef_SetVolume(void *player, s32 volume);
+void SndChannelRef_SetPan(void *player, s32 pan);
+void SndChannelRef_Stop(void *player);
+void SndChannelRef_Wait(void *player);
+void SndChannel_UnlockIndex(void *player);
 void func_0208bee4(void *handle);
 }
 

@@ -63,7 +63,7 @@ ARM void Menu_UpdateView(MenuWork *menu, s32 flag) {
 }
 
 // Reads the rectangle (x, y, width, height) of the screen area into rect.
-ARM void Menu_GetRect(s16 *rect) {
+ARM void Menu_GetRect(s16 *rect, s32 unused) {
     s16 tmp[4];
 
     func_020b52f8(tmp);
@@ -107,7 +107,7 @@ ARM void Menu_SetActive(MenuList *list, s32 value) {
     list->active = value;
     if (value != 0) {
         Menu_ResetScroll(list);
-        func_020be750(list);
+        Menu_SyncListRect(list);
     }
 }
 

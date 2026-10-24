@@ -31,7 +31,7 @@ void Knife_i_restoreGfxSettings(void);
 void *Knife_GetPowerManager(void);
 void MI_CpuFill8(void *dst, u8 value, u32 size);
 void func_020c2c48(void *heap, void *block);
-void func_020bf06c(MenuWrapper *wrapper, void *arg);
+void Menu_ReleaseWrapper(MenuWrapper *wrapper, void *arg);
 }
 
 namespace Knife {

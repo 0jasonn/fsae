@@ -3074,6 +3074,10 @@ src/game/menu_3.cpp:
     complete
     .text       start:0x020bd2d8 end:0x020bd474
 
+src/game/menu_20.cpp:
+    complete
+    .text       start:0x020bd968 end:0x020bda3c
+
 src/game/menu_4.cpp:
     complete
     .text       start:0x020bda3c end:0x020bdb34
@@ -3081,6 +3085,10 @@ src/game/menu_4.cpp:
 src/game/menu_6.cpp:
     complete
     .text       start:0x020bdfc0 end:0x020be00c
+
+src/game/menu_21.cpp:
+    complete
+    .text       start:0x020be0c4 end:0x020be128
 
 src/game/menu_7.cpp:
     complete
@@ -3090,9 +3098,17 @@ src/game/menu_8.cpp:
     complete
     .text       start:0x020be2f8 end:0x020be518
 
+src/game/menu_25.cpp:
+    complete
+    .text       start:0x020be70c end:0x020be798
+
 src/game/menu_9.cpp:
     complete
     .text       start:0x020be854 end:0x020be8e8
+
+src/game/menu_22.cpp:
+    complete
+    .text       start:0x020be9e4 end:0x020be9f0
 
 src/game/menu_10.cpp:
     complete
@@ -3102,21 +3118,77 @@ src/game/menu_11.cpp:
     complete
     .text       start:0x020bec6c end:0x020bec80
 
+src/game/menu_28.cpp:
+    complete
+    .text       start:0x020bec80 end:0x020bed14
+
+src/game/menu_29.cpp:
+    complete
+    .text       start:0x020beda0 end:0x020bee6c
+
+src/game/menu_26.cpp:
+    complete
+    .text       start:0x020bee6c end:0x020beed4
+
+src/game/menu_30.cpp:
+    complete
+    .text       start:0x020beed4 end:0x020bef68
+
 src/game/menu_12.cpp:
     complete
     .text       start:0x020bef68 end:0x020befd0
+
+src/game/menu_23.cpp:
+    complete
+    .text       start:0x020befd0 end:0x020bf05c
 
 src/game/menu_14.cpp:
     complete
     .text       start:0x020bf05c end:0x020bf06c
 
+src/game/menu_24.cpp:
+    complete
+    .text       start:0x020bf06c end:0x020bf09c
+
+src/engine/sndsys.cpp:
+    complete
+    .text       start:0x020bf184 end:0x020bf230
+
 src/game/menu_15.cpp:
     complete
     .text       start:0x020bf230 end:0x020bf23c
 
+src/engine/sndmaster.cpp:
+    complete
+    .text       start:0x020bf23c end:0x020bf25c
+
 src/game/menu_16.cpp:
     complete
     .text       start:0x020bf40c end:0x020bf418
+
+src/engine/sndchannel.cpp:
+    complete
+    .text       start:0x020bf418 end:0x020bf540
+
+src/engine/sndchannel_2.cpp:
+    complete
+    .text       start:0x020bf66c end:0x020bf7c8
+
+src/engine/sndtable.cpp:
+    complete
+    .text       start:0x020bf7c8 end:0x020bf818
+
+src/engine/sndslot.cpp:
+    complete
+    .text       start:0x020bf89c end:0x020bf8fc
+
+src/game/menu_32.cpp:
+    complete
+    .text       start:0x020bf954 end:0x020bf9bc
+
+src/game/menu_33.cpp:
+    complete
+    .text       start:0x020bfa1c end:0x020bfa68
 
 src/game/menu_17.cpp:
     complete

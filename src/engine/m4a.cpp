@@ -39,7 +39,7 @@ ARM void m4aSoundInit(void) {
             list = (u16 *)reader.getDataBuffer(0);
             count = reader.getDataSize(0) >> 1;
             for (i = 0; i < count; i++) {
-                func_020bf800(i, list[i]);
+                SndTable_SetWord4(i, list[i]);
             }
             reader.finalize();
         } else {

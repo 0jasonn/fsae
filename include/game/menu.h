@@ -144,9 +144,9 @@ void func_020bc7b8(void *self, s32 value);
 void func_020bc3a8(s32 value);
 void func_020bbbfc(void *obj, s32 a, s32 b);
 void func_020bdd60(MenuWork *menu, const void *data, void *obj, s32 flag);
-s32 func_020be9e4(void *obj);
+s32 Menu_GetPosition(void *obj);
+void *Menu_AcquirePoolEntry(void *pool, s32 id, s32 value); // src/game/menu_29.cpp (pool is a MenuPool, see game/menu_wip.h)
 void func_020be518(void *obj, u8 a, u8 b);
-void func_020beda0(void *obj, s32 a, s32 b);
 void Menu_Finish(MenuWork *menu);
 void Menu_UpdateView(MenuWork *menu, s32 flag);
 void Menu_Step(MenuWork *menu, s32 flag);
@@ -171,7 +171,7 @@ s32 TP_CheckError(s32 mode);
 void G2x_SetBlendBrightness_(u32 reg, s32 plane, s32 value);
 void func_020b88dc(MenuView *view, s32 value);
 void Menu_SyncScroll(MenuList *list);
-void func_020be750(MenuList *list);
+void Menu_SyncListRect(MenuList *list);
 s32 Menu_CountItems(MenuList *list, s32 value);
 s32 func_020b52f8(s16 *out);
 }

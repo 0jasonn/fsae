@@ -13,7 +13,7 @@ ARM void Knife_RunMenuWrapper(void) {
     Menu_RunFromWrapper((MenuWrapper *)&data_0218704c);
 }
 
-// Knife_ForwardMenuWrapper (0x020c7e3c): forwards the manual wrapper to func_020bf06c
+// Knife_ForwardMenuWrapper (0x020c7e3c): forwards the manual wrapper to Menu_ReleaseWrapper
 ARM void Knife_ForwardMenuWrapper(void) {
-    func_020bf06c((MenuWrapper *)&data_0218704c, data_02187050);
+    Menu_ReleaseWrapper((MenuWrapper *)&data_0218704c, data_02187050);
 }

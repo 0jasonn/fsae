@@ -56,7 +56,7 @@ ARM s32 Menu_HandleInputB(MenuWork *menu, MenuInput *input) {
             break;
         case 0:
             if (input->flag5 != 0) {
-                func_020beda0(menu->unk_0fc, 5, 0x80);
+                Menu_AcquirePoolEntry(menu->unk_0fc, 5, 0x80);
             }
             break;
         }

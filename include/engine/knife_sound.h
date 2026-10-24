@@ -63,17 +63,17 @@ void func_0200c868(void *array, s32 count, u32 size, void *dtor);            // 
 void func_020c050c(void *p);
 void func_020bf9fc(void *player);
 void func_020bf9dc(void *player);
-void func_020bf994(void *player);
-void func_020bf89c(void *player, s32 a);
-void func_020bf8ec(void *player);
+void Menu_SetRefByte41(void *player);
+void SndSlot_ReleaseFirst(void *player, s32 a);
+void SndSlot_ResetFirst(void *player);
 extern char data_0211ab88[]; // MemoryArchive vtable
 extern char data_0211ab98[]; // SequenceHandle vtable
 s32 Knife_Sound_WaveHandle_isValid(void *handle);                           // Knife_Sound_WaveHandle_isValid
 void Knife_Sound_WaveHandle_finalize(void *handle);                          // Knife_Sound_WaveHandle_finalize
 void Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0(void *handle);           // Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0
 void Knife_Sound_WaveHandle_setFlagByte(void *handle, s32 flag);            // Knife_Sound_WaveHandle_setFlagByte
-void func_020bf184(void);
-void func_020bf200(void);
+void SndSys_Init(void);
+void SndSys_Shutdown(void);
 s32 func_020bf2b4(void);
 void func_020bf25c(void);
 void func_020bf388(s32 index, void *entry);

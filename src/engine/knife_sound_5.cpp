@@ -14,7 +14,7 @@ ARM void WaveHandle::setVolume(s32 volume) {
         return;
     }
     if (paused == 0) {
-        func_020bf6a8(player, volume);
+        SndChannelRef_SetVolume(player, volume);
     }
     this->volume = (u16)volume;
 }
@@ -24,7 +24,7 @@ ARM void WaveHandle::setPan(s32 pan) {
     if (isValid() == 0) {
         return;
     }
-    func_020bf6d0(player, pan);
+    SndChannelRef_SetPan(player, pan);
 }
 
 // WaveHandle::setStop (0x020906a4): stops the player
@@ -32,7 +32,7 @@ ARM void WaveHandle::setStop(void) {
     if (isValid() == 0) {
         return;
     }
-    func_020bf66c(player);
+    SndChannelRef_Stop(player);
 }
 
 // WaveHandle::setPause (0x020906cc): pauses the player (volume 0) or resumes it at the slot volume, and records the flag
@@ -46,7 +46,7 @@ ARM void WaveHandle::setPause(s32 pause) {
     if (pause == 0) {
         level = volume;
     }
-    func_020bf6a8(player, level);
+    SndChannelRef_SetVolume(player, level);
     paused = (u8)pause;
 }
 

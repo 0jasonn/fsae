@@ -48,9 +48,9 @@ ARM void m4aEnterManual(void) {
     m4aMPlayAllStop();
     Knife_Sound_System_update();
     Menu_SetMasterVolume(0x7f);
-    func_020bf7c8(0, 0x7f);
-    func_020bf7c8(1, 0x7f);
-    func_020bf23c(0);
+    SndTable_SetByte8(0, 0x7f);
+    SndTable_SetByte8(1, 0x7f);
+    SndMaster_SetPan(0);
 }
 
 // m4aEnterManualAlias (0x0208d9a8): alias of m4aEnterManual, tail call

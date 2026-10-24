@@ -26,7 +26,7 @@ ARM void i_initM2dLibrary(void) {
     for (i = 0; i < 3; i++) {
         slots[i] = (u8 *)data_02187070 + i * 8;
     }
-    func_020befd0(&data_0218704c, data_02187050, &config, data_021271ac, slots);
+    Menu_CreateEntryDefault(&data_0218704c, data_02187050, &config, data_021271ac, slots);
 }
 
 }

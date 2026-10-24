@@ -37,9 +37,9 @@ ARM void WaveHandle::finalize(void) {
     if (player == NULL) {
         return;
     }
-    func_020bf66c(player);
-    func_020bf750(player);
-    func_020bf528(player);
+    SndChannelRef_Stop(player);
+    SndChannelRef_Wait(player);
+    SndChannel_UnlockIndex(player);
     player = NULL;
     paused = 0;
 }
@@ -50,7 +50,7 @@ ARM s32 WaveHandle::isValid(void) const {
 
     result = 0;
     if (player != NULL) {
-        if (func_020bf6f4(player) != 0) {
+        if (SndChannelRef_Update(player) != 0) {
             result = 1;
         }
     }

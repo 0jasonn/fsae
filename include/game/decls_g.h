@@ -7,7 +7,7 @@
 #include "game/menu.h"
 
 // Knife manual helper (0x020befd0, unnamed wrapper of the menu object creation; five arguments)
-extern "C" void func_020befd0(void *a, void *b, void *c, void *d, void *e);
+extern "C" void Menu_CreateEntryDefault(void *a, void *b, void *c, void *d, void *e);
 
 // Knife manual data (provisional names are the dsd names; data_0212c4dc is also used by the result sequence)
 extern u8 data_021271ac[];
@@ -72,7 +72,7 @@ void Menu_Redraw(MenuWork *menu);
 void func_020bd128(MenuWork *menu, s32 a);
 s32 func_020bd474(MenuWork *menu, void *event);
 s32 func_020bd830(MenuWork *menu);
-s32 func_020bd968(MenuWork *menu);
+s32 Menu_DispatchKeys(MenuWork *menu);
 
 void func_020be9f0(void *obj);
 void func_020beb00(void *obj, MenuEvent *event);

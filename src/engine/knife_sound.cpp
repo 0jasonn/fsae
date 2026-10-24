@@ -172,7 +172,7 @@ ARM void *Knife_Sound_SequenceHandle_getPlayerField(KnifeSoundSequenceHandle *se
 
 extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c4dc(KnifeSoundSequenceHandle *self);
 ARM void Knife_Sound_SequenceHandle_fwdPlayer_08c4dc(KnifeSoundSequenceHandle *self) {
-    func_020bf994(&self->player);
+    Menu_SetRefByte41(&self->player);
 }
 
 extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c4ec(KnifeSoundSequenceHandle *self, s32 a);
@@ -182,17 +182,17 @@ ARM void Knife_Sound_SequenceHandle_fwdPlayer_08c4ec(KnifeSoundSequenceHandle *s
 
 extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c504(KnifeSoundSequenceHandle *self);
 ARM void Knife_Sound_SequenceHandle_fwdPlayer_08c504(KnifeSoundSequenceHandle *self) {
-    func_020bf89c(&self->player, 0);
+    SndSlot_ReleaseFirst(&self->player, 0);
 }
 
 extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c518(KnifeSoundSequenceHandle *self);
 ARM void Knife_Sound_SequenceHandle_fwdPlayer_08c518(KnifeSoundSequenceHandle *self) {
-    func_020bf8ec(&self->player);
+    SndSlot_ResetFirst(&self->player);
 }
 
 extern "C" void Knife_Sound_System_initialize(void);
 ARM void Knife_Sound_System_initialize(void) {
-    func_020bf184();
+    SndSys_Init();
     Knife_Sound_WaveHandle_setFlagByte(&data_02171e74[0], 0);
     Knife_Sound_WaveHandle_setFlagByte(&data_02171e74[1], 1);
 }
