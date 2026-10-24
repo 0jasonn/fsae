@@ -2450,6 +2450,10 @@ src/game/gameover.cpp:
     complete
     .text       start:0x020adb04 end:0x020adbb8
 
+src/game/staffroll_3.cpp:
+    complete
+    .text       start:0x020adfe4 end:0x020adff0
+
 src/game/staffroll.cpp:
     complete
     .text       start:0x020ae280 end:0x020ae294
@@ -2470,13 +2474,45 @@ src/game/nameentry.cpp:
     complete
     .text       start:0x020ae558 end:0x020ae634
 
+src/game/nameentry_13.cpp:
+    complete
+    .text       start:0x020ae824 end:0x020ae830
+
 src/game/nameentry_3.cpp:
     complete
     .text       start:0x020ae830 end:0x020ae968
 
+src/game/nameentry_5.cpp:
+    complete
+    .text       start:0x020af050 end:0x020af0b0
+
+src/game/nameentry_6.cpp:
+    complete
+    .text       start:0x020af104 end:0x020af1f4
+
+src/game/nameentry_7.cpp:
+    complete
+    .text       start:0x020af380 end:0x020af424
+
+src/game/nameentry_9.cpp:
+    complete
+    .text       start:0x020af4a0 end:0x020af548
+
+src/game/nameentry_10.cpp:
+    complete
+    .text       start:0x020af978 end:0x020afa1c
+
 src/game/nameentry_2.cpp:
     complete
     .text       start:0x020afa1c end:0x020afa7c
+
+src/game/nameentry_4.cpp:
+    complete
+    .text       start:0x020afa7c end:0x020afc60
+
+src/game/nameentry_12.cpp:
+    complete
+    .text       start:0x020afc70 end:0x020afcbc
 
 src/game/menu_2.cpp:
     complete
