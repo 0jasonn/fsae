@@ -13,7 +13,7 @@ public:
 extern "C" {
 // Sub-object calls used by the KnifeApp destructor (dsd names)
 void Knife_Hud_HudManager_dtor_HudManager_09e004(void *member);
-void func_0209a65c(void *member);
+void Knife_Comm_WirelessIcon_nop(void *member);
 }
 
 #endif

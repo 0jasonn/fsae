@@ -16,7 +16,7 @@ ARM KnifeApp *KnifeApp_dtor_KnifeApp(KnifeApp *self) {
     Knife_Message_TextTokenizer_dtor_TextTokenizer_08e3f8((u8 *)self + 0x1bc);
     Knife_Message_TextTokenizer_dtor_TextTokenizer_08e3f8((u8 *)self + 0x180);
     Knife_Message_TextTokenizer_dtor_TextTokenizer_08e3f8((u8 *)self + 0x44);
-    func_0209a65c((u8 *)self + 0x4);
+    Knife_Comm_WirelessIcon_nop((u8 *)self + 0x4);
     return self;
 }
 
