@@ -16,7 +16,7 @@ ARM s32 Menu_CountItems(MenuList *list, s32 value) {
 
     count = 0;
     if (list->active != 0) {
-        func_020b52f8(rect);
+        lobby_copyBounds(rect);
         span = (s16)(rect[3] - rect[1]);
         if (span < 0xae) {
             span = 0xae;

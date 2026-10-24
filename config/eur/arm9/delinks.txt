@@ -3030,6 +3030,10 @@ src/game/groupselectuiview_2.cpp:
     complete
     .text       start:0x020b07bc end:0x020b0800
 
+src/game/groupselectuiview_9.cpp:
+    complete
+    .text       start:0x020b0800 end:0x020b09f4
+
 src/game/groupselectuiview_7.cpp:
     complete
     .text       start:0x020b0a6c end:0x020b0b40
@@ -3041,6 +3045,10 @@ src/game/groupselectuiview_8.cpp:
 src/game/groupselectuiview_3.cpp:
     complete
     .text       start:0x020b0d58 end:0x020b0d7c
+
+src/game/groupselectuiview_10.cpp:
+    complete
+    .text       start:0x020b0d7c end:0x020b0e84
 
 src/game/groupselect_scan.cpp:
     complete
@@ -3058,13 +3066,41 @@ src/game/groupselectuiview_6.cpp:
     complete
     .text       start:0x020b11dc end:0x020b1224
 
+src/game/lobby_6.cpp:
+    complete
+    .text       start:0x020b1920 end:0x020b19d8
+
+src/game/lobby.cpp:
+    complete
+    .text       start:0x020b235c end:0x020b23fc
+
 src/game/lobby_color.cpp:
     complete
     .text       start:0x020b2560 end:0x020b25c0
 
+src/game/dialog_machiuke.cpp:
+    complete
+    .text       start:0x020b2898 end:0x020b292c
+
 src/game/exchange_savedata.cpp:
     complete
     .text       start:0x020b2a5c end:0x020b2b54
+
+src/game/lobby_8.cpp:
+    complete
+    .text       start:0x020b3ea0 end:0x020b3ea8
+
+src/game/lobby_4.cpp:
+    complete
+    .text       start:0x020b3fcc end:0x020b4044
+
+src/game/lobby_3.cpp:
+    complete
+    .text       start:0x020b4d68 end:0x020b4db0
+
+src/game/lobby_5.cpp:
+    complete
+    .text       start:0x020b4e60 end:0x020b4ecc
 
 src/game/menu_2.cpp:
     complete

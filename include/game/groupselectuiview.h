@@ -4,6 +4,10 @@
 // groupSelectUIView: the room list of the multiplayer group select screen. The list has four room slots inside the
 // view (0x20 bytes each, from 0x34). Each room has a UIObject in data_0217eb2c (indexed by RoomInfo::uiIndex) that
 // slides in and out of the screen with the list.
+//
+// Working copy of include/game/groupselectuiview.h for the implementer F round 16. It adds the members that the
+// game header does not declare yet (addRoomPane, viewWillApper) and names the bytes at 0x100 to 0x107. The reviewer
+// merges these into include/game/groupselectuiview.h.
 
 #include "types.h"
 #include "game/baseduiview.h"
@@ -33,6 +37,8 @@ public:
         u32 state;      // 0x1c: getNumOfRoom counts the leading rooms whose state is above 8
     };
 
+    void viewWillApper(void);
+    void addRoomPane(const u8 *id, const u16 *name, u32 nameBytes, u8 nameIndex, u32 sortKey);
     void move_in(void);
     void move_out(void);
     void move_return(void);
@@ -56,10 +62,15 @@ public:
     RoomInfo slots[4];    // 0x34: the room slots, see RoomInfo
     RoomInfo *rooms[5];   // 0xb4: room list, roomCount entries
     u32 roomCount;        // 0xc8
-    u8 unk_cc[0x102 - 0xcc];
+    s32 unk_cc;           // 0xcc: set to -1 by viewWillApper
+    u8 unk_d0[0x100 - 0xd0];
+    u16 unk_100;          // 0x100: cleared by viewWillApper
     u16 moveFrames;       // 0x102: frames of the room move, set by move_out and move_return
     s8 selectedRoom;      // 0x104: index of the room the wireless start works on (wirelessStartAsChild)
-    u8 unk_105[0x110 - 0x105];
+    u8 unk_105;
+    u8 unk_106;           // 0x106: set to 8 by viewWillApper when the flag at 0x107 is set, else cleared
+    u8 scanFlag;          // 0x107: set by viewWillApper when the lobby reports the scan state
+    u8 unk_108[0x110 - 0x108];
 };
 
 // Group select data (bss). data_0217f6dc is the slide object of the room list (a UIObject, its fields from 0x14 on
@@ -72,6 +83,10 @@ extern u8 data_0217e6f0[];       // shared UI block, the list panel start is at 
 extern u8 data_021806f0[];       // message and UI globals, the pointer at 0x554 leads to the text renderer buffer
 extern u8 data_021263cc[];       // text table, the pointer at 0x10 is the string of the room not found
 extern u8 data_021263dc[];       // four string pointers for the room names
+extern u8 data_021265e0[];       // Knife::Message::TextRenderSceneInfo of the group select text, message data at +0x48
+extern u8 data_02181660[];       // message resource used by data_021265e0
+extern u8 data_0217d30c[];       // one-shot flag, cleared by viewWillApper
+extern u8 data_0217d23c[];       // lobby state (see exchange_savedata.cpp), signed byte at +0xd2 read by viewWillApper
 
 // Layout constants (rodata)
 extern const s32 data_020de834;   // -32: y offset of the slide start
@@ -82,12 +97,22 @@ extern const s32 data_020de848;   // 20: frames of the room move
 extern const s32 data_020de84c[2]; // list panel position (x, y) in pixels
 extern const s32 data_020de864[2]; // slide position (x, y) in pixels
 
+// Eight u32 entries, the first four are the UIObject index of each room slot (addRoomPane copies the table to the stack)
+typedef struct RoomUiIndexTable {
+    u32 uiIndex[8];
+} RoomUiIndexTable;
+extern const RoomUiIndexTable data_020ded24;
+
 extern "C" u32 func_0208fc6c(const void *a);
 extern "C" void func_02091464(void *manager);
 extern "C" s32 func_02091d38(void *manager);
 extern "C" void *Knife_Comm_WirelessManager_getScanResult(void *manager, s32 index);
 extern "C" s32 Knife_Comm_WirelessManager_getState(void *manager);
 extern "C" void subTaskSendObjChar(void *buf, u32 offset, u32 size);
+extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
+extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
+extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
+extern "C" void Knife_Message_SetupTextRenderer(void *sceneInfo, s32 language, void *textGetter);
 
 // Text render target of a pane (Knife::Message render target, only the fields the room drawing reads)
 typedef struct TextRenderTarget {
@@ -104,6 +129,9 @@ typedef struct TextRenderTarget {
 
 extern "C" void func_020c6550(void *cell, s32 a1, s32 a2, s32 x, s32 y, s32 a5, s32 a6);
 extern "C" void *Knife_Message_GetRenderTarget(s32 pane);
+extern "C" s32 Knife_Comm_ParentInfo_getCurrentPlayers(void *info);
+extern "C" s32 Knife_Comm_ParentInfo_getUserGameInfoSize(void *info);
+extern "C" const u16 *Knife_Comm_ParentInfo_getUserGameInfo(void *info);
 
 // Palette link table (5 entries, rodata)
 typedef struct LinkPalTable {

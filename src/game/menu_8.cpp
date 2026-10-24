@@ -66,7 +66,7 @@ ARM void Menu_UpdateView(MenuWork *menu, s32 flag) {
 ARM void Menu_GetRect(s16 *rect, s32 unused) {
     s16 tmp[4];
 
-    func_020b52f8(tmp);
+    lobby_copyBounds(tmp);
     rect[0] = tmp[0];
     rect[1] = tmp[1];
     rect[2] = tmp[2];

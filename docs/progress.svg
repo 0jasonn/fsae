@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1064" width="960" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="100%" height="100%" fill="#0d1117" rx="6"/>
-<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 2319 / 4841 game functions decompiled (47.9%, 29.3% of code)</text>
+<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 2331 / 4841 game functions decompiled (48.2%, 29.5% of code)</text>
 <rect x="12" y="34" width="12" height="12" fill="#3fb950" rx="2"/><text x="29" y="44" fill="#8b949e" font-size="12">Decompiled (C++)</text>
 <rect x="202" y="34" width="12" height="12" fill="#58a6ff" rx="2"/><text x="219" y="44" fill="#8b949e" font-size="12">TwlSDK / runtime</text>
 <rect x="392" y="34" width="12" height="12" fill="#30363d" rx="2"/><text x="409" y="44" fill="#8b949e" font-size="12">Not decompiled yet</text>
@@ -1179,24 +1179,38 @@
 <rect x="715.35" y="868" width="24.86" height="12" fill="#3fb950"/>
 <rect x="740.21" y="868" width="167.10" height="12" fill="#30363d"/>
 <rect x="907.31" y="868" width="2.07" height="12" fill="#58a6ff"/>
-<rect x="909.38" y="868" width="5.87" height="12" fill="#3fb950"/>
-<rect x="915.25" y="868" width="44.75" height="12" fill="#30363d"/>
+<rect x="909.38" y="868" width="49.03" height="12" fill="#3fb950"/>
+<rect x="958.40" y="868" width="1.60" height="12" fill="#30363d"/>
 <rect x="0.00" y="882" width="8.76" height="12" fill="#30363d"/>
 <rect x="8.76" y="882" width="39.70" height="12" fill="#3fb950"/>
 <rect x="48.46" y="882" width="24.86" height="12" fill="#30363d"/>
-<rect x="73.32" y="882" width="3.11" height="12" fill="#3fb950"/>
-<rect x="76.43" y="882" width="45.57" height="12" fill="#30363d"/>
+<rect x="73.32" y="882" width="25.89" height="12" fill="#3fb950"/>
+<rect x="99.22" y="882" width="22.79" height="12" fill="#30363d"/>
 <rect x="122.00" y="882" width="28.31" height="12" fill="#3fb950"/>
 <rect x="150.31" y="882" width="17.61" height="12" fill="#30363d"/>
 <rect x="167.92" y="882" width="3.80" height="12" fill="#3fb950"/>
 <rect x="171.72" y="882" width="1.38" height="12" fill="#30363d"/>
 <rect x="173.10" y="882" width="6.21" height="12" fill="#3fb950"/>
-<rect x="179.31" y="882" width="425.00" height="12" fill="#30363d"/>
+<rect x="179.31" y="882" width="154.33" height="12" fill="#30363d"/>
+<rect x="333.64" y="882" width="15.88" height="12" fill="#3fb950"/>
+<rect x="349.52" y="882" width="210.26" height="12" fill="#30363d"/>
+<rect x="559.78" y="882" width="13.81" height="12" fill="#3fb950"/>
+<rect x="573.59" y="882" width="30.73" height="12" fill="#30363d"/>
 <rect x="604.32" y="882" width="8.29" height="12" fill="#3fb950"/>
-<rect x="612.60" y="882" width="101.85" height="12" fill="#30363d"/>
+<rect x="612.60" y="882" width="62.84" height="12" fill="#30363d"/>
+<rect x="675.44" y="882" width="12.77" height="12" fill="#3fb950"/>
+<rect x="688.21" y="882" width="26.24" height="12" fill="#30363d"/>
 <rect x="714.45" y="882" width="21.41" height="12" fill="#3fb950"/>
 <rect x="735.86" y="882" width="224.14" height="12" fill="#30363d"/>
-<rect x="0.00" y="896" width="960.00" height="12" fill="#30363d"/>
+<rect x="0.00" y="896" width="202.24" height="12" fill="#30363d"/>
+<rect x="202.24" y="896" width="0.69" height="12" fill="#3fb950"/>
+<rect x="202.93" y="896" width="25.20" height="12" fill="#30363d"/>
+<rect x="228.13" y="896" width="10.36" height="12" fill="#3fb950"/>
+<rect x="238.49" y="896" width="290.35" height="12" fill="#30363d"/>
+<rect x="528.85" y="896" width="6.21" height="12" fill="#3fb950"/>
+<rect x="535.06" y="896" width="15.19" height="12" fill="#30363d"/>
+<rect x="550.25" y="896" width="9.32" height="12" fill="#3fb950"/>
+<rect x="559.57" y="896" width="400.43" height="12" fill="#30363d"/>
 <rect x="0.00" y="910" width="198.24" height="12" fill="#30363d"/>
 <rect x="198.24" y="910" width="1.38" height="12" fill="#58a6ff"/>
 <rect x="199.62" y="910" width="760.38" height="12" fill="#30363d"/>

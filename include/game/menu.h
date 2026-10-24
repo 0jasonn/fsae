@@ -133,7 +133,7 @@ s32 func_020c2c34(MenuChecker *obj, s32 id);
 s32 func_020ba004(s32 value);
 s32 func_020ba9a4(void *obj, MenuEvent *event, MenuInput *input);
 s32 func_020b8554(void *obj, MenuEventB *event, MenuInput *input);
-s32 func_020b4e60(s32 value);
+s32 lobby_msgObj_init(s32 value);
 s32 func_020b8784(s32 value);
 s32 func_020bbb78(s32 value);
 s32 func_020bbf54(s32 value);
@@ -173,7 +173,7 @@ void func_020b88dc(MenuView *view, s32 value);
 void Menu_SyncScroll(MenuList *list);
 void Menu_SyncListRect(MenuList *list);
 s32 Menu_CountItems(MenuList *list, s32 value);
-s32 func_020b52f8(s16 *out);
+s32 lobby_copyBounds(s16 *out);
 }
 
 // Menu functions in this module. The unit that defines each one is named by the file in src/wip/G.
