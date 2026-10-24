@@ -317,7 +317,7 @@ int func_020847a0(Entity *e);
 int func_020847b0(Entity *e);
 int func_020847c8(Entity *e);
 int func_020847dc(Entity *e);
-void func_020847f8(Entity *e);
+int func_020847f8(Entity *e);
 Entity *func_020849c8(Entity *e);
 int func_02083d28(Entity *e);
 u8 func_02084a30(Entity *e);

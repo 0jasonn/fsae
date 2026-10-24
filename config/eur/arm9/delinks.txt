@@ -337,6 +337,10 @@ src/enemy/em0c_2.cpp:
     complete
     .text       start:0x0202c768 end:0x0202c80c
 
+src/enemy/areacheck_2.cpp:
+    complete
+    .text       start:0x0202c9a8 end:0x0202caa0
+
 src/enemy/em0e.cpp:
     complete
     .text       start:0x0202caf8 end:0x0202cb30
@@ -408,6 +412,14 @@ src/enemy/em1c_4.cpp:
 src/enemy/em1d.cpp:
     complete
     .text       start:0x0202fb04 end:0x0202fc74
+
+src/enemy/em1d_2.cpp:
+    complete
+    .text       start:0x0202fc74 end:0x0202fd78
+
+src/enemy/em1d_3.cpp:
+    complete
+    .text       start:0x0202fd78 end:0x0202fe98
 
 src/enemy/seqset.cpp:
     complete
@@ -544,6 +556,10 @@ src/enemy/em09_2.cpp:
 src/enemy/em10.cpp:
     complete
     .text       start:0x0203ab78 end:0x0203af20
+
+src/enemy/attset.cpp:
+    complete
+    .text       start:0x0203af20 end:0x0203afd0
 
 src/enemy/em11.cpp:
     complete
