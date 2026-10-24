@@ -35,7 +35,7 @@ extern "C" {
 s32 PM_GetLCDPower(void);
 s32 PM_SetLCDPower(s32 a);
 void func_0201d038(s32 a, s32 b, s32 c);
-void func_0208d9b4(void);
+void m4aSoundResume(void);
 s32 func_02012e58(void);
 void func_0200c574(void *obj, void (*destructor)(void *), void *dso);
 void Knife_PowerManager_PowerManager(void *self);

@@ -2446,17 +2446,61 @@ src/engine/knife_file_2.cpp:
     complete
     .text       start:0x0208c7ac end:0x0208ccc8
 
+src/engine/m4a_2.cpp:
+    complete
+    .text       start:0x0208d52c end:0x0208d5d0
+
 src/engine/m4a_vsync.cpp:
     complete
     .text       start:0x0208d5d0 end:0x0208d610
+
+src/engine/m4a_3.cpp:
+    complete
+    .text       start:0x0208d610 end:0x0208d6a8
+
+src/engine/m4a_4.cpp:
+    complete
+    .text       start:0x0208d790 end:0x0208d830
+
+src/engine/m4a_5.cpp:
+    complete
+    .text       start:0x0208d8a4 end:0x0208da4c
+
+src/engine/knife_app_2.cpp:
+    complete
+    .text       start:0x0208da4c end:0x0208daec
 
 src/engine/knife_app.cpp:
     complete
     .text       start:0x0208daec end:0x0208db60
 
+src/engine/knife_app_3.cpp:
+    complete
+    .text       start:0x0208db60 end:0x0208dc84
+
+src/engine/knife_app_4.cpp:
+    complete
+    .text       start:0x0208dc84 end:0x0208dde0
+
+src/engine/knife_app_5.cpp:
+    complete
+    .text       start:0x0208de38 end:0x0208dea0
+
+src/engine/knife_app_6.cpp:
+    complete
+    .text       start:0x0208dfa4 end:0x0208dfc8
+
+src/engine/gzfile.cpp:
+    complete
+    .text       start:0x0208e038 end:0x0208e05c
+
 src/engine/gz_memory.cpp:
     complete
     .text       start:0x0208e05c end:0x0208e1a4
+
+src/engine/kmsgfilereader_3.cpp:
+    complete
+    .text       start:0x0208e1a4 end:0x0208e1c4
 
 src/engine/kmsgfilereader.cpp:
     complete
@@ -2465,6 +2509,18 @@ src/engine/kmsgfilereader.cpp:
 src/engine/kmsgfilereader_2.cpp:
     complete
     .text       start:0x0208e294 end:0x0208e2a8
+
+src/engine/kmsgfilereader_6.cpp:
+    complete
+    .text       start:0x0208e2a8 end:0x0208e2dc
+
+src/engine/kmsgfilereader_7.cpp:
+    complete
+    .text       start:0x0208e2dc end:0x0208e33c
+
+src/engine/texttokenizer_2.cpp:
+    complete
+    .text       start:0x0208e3a0 end:0x0208e3f8
 
 src/engine/texttokenizer.cpp:
     complete

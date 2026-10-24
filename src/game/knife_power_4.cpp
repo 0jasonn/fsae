@@ -34,7 +34,7 @@ ARM void PowerManager::update(void) {
     view->lidJustOpened = view->lidClosed != 0 && lidClosed == 0;
     view->lidClosed = lidClosed;
     if (view->lidJustClosed != 0) {
-        func_0208d9b4();
+        m4aSoundResume();
         if (PM_GetLCDPower() == 1) {
             view->lcdWasOn = func_02012e58() != 0;
             PM_SetLCDPower(0);
@@ -47,7 +47,7 @@ ARM void PowerManager::update(void) {
         }
     }
     if (view->lidJustOpened != 0) {
-        func_0208d9b4();
+        m4aSoundResume();
     }
     if (view->lidClosed != 0) {
         return;

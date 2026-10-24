@@ -26,7 +26,7 @@ extern u8 data_02fe0000[];
 void Menu_RunFromWrapper(MenuWrapper *w);
 
 extern "C" {
-void func_0208d9a8(void);
+void m4aEnterManualAlias(void);
 void Knife_i_restoreGfxSettings(void);
 void *Knife_GetPowerManager(void);
 void MI_CpuFill8(void *dst, u8 value, u32 size);
