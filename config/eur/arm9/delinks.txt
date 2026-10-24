@@ -1438,13 +1438,93 @@ src/object/set4b.cpp:
     complete
     .text       start:0x0205e280 end:0x0205e29c
 
+src/object/set4b_2.cpp:
+    complete
+    .text       start:0x0205e300 end:0x0205e3b8
+
 src/object/set4c.cpp:
     complete
     .text       start:0x0205e3b8 end:0x0205e3d4
 
+src/object/set4c_2.cpp:
+    complete
+    .text       start:0x0205e47c end:0x0205e53c
+
+src/object/set4d_2.cpp:
+    complete
+    .text       start:0x0205e53c end:0x0205e558
+
 src/object/set4d.cpp:
     complete
     .text       start:0x0205e558 end:0x0205e580
+
+src/object/set4e_1.cpp:
+    complete
+    .text       start:0x0205e620 end:0x0205e63c
+
+src/object/set4e_2.cpp:
+    complete
+    .text       start:0x0205e714 end:0x0205e87c
+
+src/object/set4f.cpp:
+    complete
+    .text       start:0x0205e87c end:0x0205e914
+
+src/object/pot_1.cpp:
+    complete
+    .text       start:0x0205e9c0 end:0x0205e9dc
+
+src/object/grass_1.cpp:
+    complete
+    .text       start:0x0205ed90 end:0x0205edac
+
+src/object/pot_2.cpp:
+    complete
+    .text       start:0x0205ee78 end:0x0205ee7c
+
+src/object/pot_3.cpp:
+    complete
+    .text       start:0x0205f0a8 end:0x0205f0b4
+
+src/object/pot_4.cpp:
+    complete
+    .text       start:0x0205f0e0 end:0x0205f0f4
+
+src/object/op_fairy_1.cpp:
+    complete
+    .text       start:0x0205f448 end:0x0205f480
+
+src/object/ed_fairy_1.cpp:
+    complete
+    .text       start:0x0205f78c end:0x0205f7a8
+
+src/object/ed_fairy_2.cpp:
+    complete
+    .text       start:0x0205f848 end:0x0205f84c
+
+src/object/ed_fin_1.cpp:
+    complete
+    .text       start:0x0205f84c end:0x0205f868
+
+src/object/set5c_1.cpp:
+    complete
+    .text       start:0x0205f9b8 end:0x0205f9d4
+
+src/object/set5d_1.cpp:
+    complete
+    .text       start:0x0205fbd4 end:0x0205fd34
+
+src/object/set5d_4.cpp:
+    complete
+    .text       start:0x0205fd34 end:0x0205ff38
+
+src/object/set5d_5.cpp:
+    complete
+    .text       start:0x0205ff38 end:0x0205ffd4
+
+src/object/set5e_1.cpp:
+    complete
+    .text       start:0x0205ffd4 end:0x0205fff0
 
 src/object/set5e_2.cpp:
     complete
