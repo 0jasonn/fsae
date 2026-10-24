@@ -137,9 +137,85 @@ src/game/kinomi_2.cpp:
     complete
     .text       start:0x02027894 end:0x02027930
 
+src/game/kinomi.cpp:
+    complete
+    .text       start:0x02027930 end:0x02027a10
+
+src/game/make_item.cpp:
+    complete
+    .text       start:0x02027a10 end:0x02027bd0
+
+src/game/cockpit_8.cpp:
+    complete
+    .text       start:0x02027bd0 end:0x02027dc4
+
+src/game/objcolor.cpp:
+    complete
+    .text       start:0x02027dc4 end:0x02027ec4
+
+src/game/objcolor_2.cpp:
+    complete
+    .text       start:0x02027fe8 end:0x02028024
+
+src/game/com.cpp:
+    complete
+    .text       start:0x02028068 end:0x020280d0
+
+src/game/com_2.cpp:
+    complete
+    .text       start:0x020280e0 end:0x020281b0
+
+src/game/com_3.cpp:
+    complete
+    .text       start:0x020281b0 end:0x02028240
+
+src/game/com_4.cpp:
+    complete
+    .text       start:0x02028280 end:0x020284d4
+
+src/game/knifesave.cpp:
+    complete
+    .text       start:0x020284d4 end:0x020284fc
+
+src/game/com_5.cpp:
+    complete
+    .text       start:0x020286d4 end:0x0202877c
+
+src/game/frame_ack.cpp:
+    complete
+    .text       start:0x02028944 end:0x02028a64
+
+src/game/com_6.cpp:
+    complete
+    .text       start:0x02028b34 end:0x02028b58
+
 src/game/mathutil.cpp:
     complete
     .text       start:0x02029a44 end:0x02029a50
+
+src/game/coloradjust.cpp:
+    complete
+    .text       start:0x02029a50 end:0x02029ab8
+
+src/game/resid.cpp:
+    complete
+    .text       start:0x02029ab8 end:0x02029b38
+
+src/game/cgcolor.cpp:
+    complete
+    .text       start:0x02029d0c end:0x02029dd8
+
+src/game/cgsubtrans.cpp:
+    complete
+    .text       start:0x02029eac end:0x02029f10
+
+src/game/knifetbl.cpp:
+    complete
+    .text       start:0x02029f10 end:0x02029fe8
+
+src/game/dispctrl.cpp:
+    complete
+    .text       start:0x0202a700 end:0x0202a754
 
 src/enemy/em00.cpp:
     complete
