@@ -2710,6 +2710,10 @@ src/game/knife_hud_4.cpp:
     complete
     .text       start:0x0209ecbc end:0x0209ece8
 
+src/game/knife_hud_8.cpp:
+    complete
+    .text       start:0x0209ece8 end:0x0209ed4c
+
 src/game/knife_hud_5.cpp:
     complete
     .text       start:0x0209ed4c end:0x0209ed6c
@@ -2718,9 +2722,17 @@ src/game/knife_hud_6.cpp:
     complete
     .text       start:0x0209ed74 end:0x0209ed8c
 
+src/game/knife_interp_2.cpp:
+    complete
+    .text       start:0x0209faec end:0x0209fb00
+
 src/game/knife_interp.cpp:
     complete
     .text       start:0x0209fb40 end:0x0209fb58
+
+src/game/knife_interp_3.cpp:
+    complete
+    .text       start:0x0209fb58 end:0x0209fcc4
 
 src/game/knife_canvas.cpp:
     complete
@@ -2770,17 +2782,81 @@ src/game/knife_message_11.cpp:
     complete
     .text       start:0x020a1100 end:0x020a1110
 
+src/game/textrender.cpp:
+    complete
+    .text       start:0x020a11fc end:0x020a1244
+
 src/game/knife_message_12.cpp:
     complete
     .text       start:0x020a1330 end:0x020a1340
+
+src/game/textrender_2.cpp:
+    complete
+    .text       start:0x020a1340 end:0x020a1390
+
+src/game/textrender_3.cpp:
+    complete
+    .text       start:0x020a15e0 end:0x020a1600
 
 src/game/knife_message_13.cpp:
     complete
     .text       start:0x020a1600 end:0x020a1614
 
+src/game/textrender_4.cpp:
+    complete
+    .text       start:0x020a1614 end:0x020a1668
+
+src/game/knifeinfo.cpp:
+    complete
+    .text       start:0x020a1668 end:0x020a16c0
+
+src/game/textlength.cpp:
+    complete
+    .text       start:0x020a16c4 end:0x020a1704
+
+src/game/messageselect.cpp:
+    complete
+    .text       start:0x020a1838 end:0x020a1864
+
+src/game/selectiondialog.cpp:
+    complete
+    .text       start:0x020a1a1c end:0x020a1a88
+
+src/game/selectiondialog_2.cpp:
+    complete
+    .text       start:0x020a1d08 end:0x020a1d78
+
+src/game/selectiondialog_3.cpp:
+    complete
+    .text       start:0x020a20e0 end:0x020a2154
+
+src/game/selectiondialog_4.cpp:
+    complete
+    .text       start:0x020a2268 end:0x020a22cc
+
 src/game/knife_message_14.cpp:
     complete
     .text       start:0x020a237c end:0x020a23bc
+
+src/game/textreader.cpp:
+    complete
+    .text       start:0x020a23e8 end:0x020a2430
+
+src/game/textreader_2.cpp:
+    complete
+    .text       start:0x020a25f8 end:0x020a2634
+
+src/game/rendertarget.cpp:
+    complete
+    .text       start:0x020a2dd4 end:0x020a2df4
+
+src/game/rendertarget_2.cpp:
+    complete
+    .text       start:0x020a2efc end:0x020a2f1c
+
+src/game/rendertarget_3.cpp:
+    complete
+    .text       start:0x020a3134 end:0x020a31ac
 
 src/game/uiobject.cpp:
     complete

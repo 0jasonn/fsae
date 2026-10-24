@@ -39,7 +39,7 @@ void Knife_Message_selectionDialog_doModal(void *a, u16 index, s32 b, s32 c, s32
 void Knife_Message_selectionDialog_getFrameSize(void *a, s32 *x, s32 *y, s32 *z, s32 *w);
 void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *b);
 void Knife_Message_selectionDialog_setVisible(void *a, s32 b);
-void Knife_Message_selectionDialog_update(void *a);
+BOOL Knife_Message_selectionDialog_update(void *a);
 u8 *Knife_Single_SinglePlay_GetInstance(void);
 void MI_CpuFill(void *dst, u32 value, u32 size);
 void MI_HBlankDmaCopy16(u32 dmaNo, const void *src, void *dst, u32 size);
