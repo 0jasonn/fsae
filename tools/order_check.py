@@ -6,14 +6,26 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from trymatch import name_to_addr
 
-DEF = re.compile(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$', re.M)
+DEF = re.compile(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*&:<>]*?\b(~?\w+(?:::~?\w+)*)\s*\([^;\n]*$', re.M)
+
+
+def def_addr(name):
+    """Address of a definition name; `Class::method` maps to the symbol ending in Class_method, `~Class` to a dtor."""
+    flat = name.replace("::~", "_dtor_").replace("::", "_")
+    a = name_to_addr(flat)
+    if a is None:
+        import trymatch
+        hits = {v for k, v in (trymatch._NAMES or {}).items() if k.endswith("_" + flat)}
+        a = hits.pop() if len(hits) == 1 else None
+    return a
 fix = "--fix" in sys.argv
 bad = 0
 for path in [Path(a) for a in sys.argv[1:] if a != "--fix"]:
     lines = path.read_text(encoding="utf-8").split("\n")
     starts = [i for i, l in enumerate(lines) if DEF.match(l)]
-    addrs = [name_to_addr(DEF.match(lines[i]).group(1)) for i in starts]
-    if addrs == sorted(addrs, key=lambda a: a or 0):
+    addrs = [def_addr(DEF.match(lines[i]).group(1)) for i in starts]
+    known = [a for a in addrs if a is not None]  # names that cannot be resolved are not checked
+    if known == sorted(known):
         continue
     bad += 1
     print(f"{path}: functions out of address order")
