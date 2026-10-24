@@ -15,7 +15,10 @@ ROOT = Path(__file__).parent.parent
 letter, dest = sys.argv[1], sys.argv[2]
 py = sys.executable
 
+sys.path.insert(0, str(ROOT / "tools"))
+from cxx_symbols import plain_name
 names = {l.split(" ", 1)[0] for l in (ROOT / "config/eur/arm9/symbols.txt").read_text().splitlines()}
+names |= {plain_name(n) for n in names if n.startswith("_Z") and plain_name(n)}  # apply_renames handles mangled names
 ren = ROOT / f"scratch/agent{letter}/renames.txt"
 lines = [l for l in ren.read_text().splitlines() if len(l.split()) == 2 and l.split()[0] in names
          and l.split()[1] not in names] if ren.exists() else []

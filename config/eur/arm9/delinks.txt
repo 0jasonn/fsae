@@ -2545,3 +2545,51 @@ src/game/menu_13.cpp:
 src/game/menu_19.cpp:
     complete
     .text       start:0x020c2cb4 end:0x020c2cc0
+
+src/game/subtask_game_start.cpp:
+    complete
+    .text       start:0x020c70ac end:0x020c70c8
+
+src/game/subtask_game_start_2.cpp:
+    complete
+    .text       start:0x020c754c end:0x020c75a4
+
+src/game/knife_manual.cpp:
+    complete
+    .text       start:0x020c7c10 end:0x020c7c4c
+
+src/game/knife_manual_2.cpp:
+    complete
+    .text       start:0x020c7e28 end:0x020c7e58
+
+src/game/knife_manual_4.cpp:
+    complete
+    .text       start:0x020c7e58 end:0x020c7ed4
+
+src/game/knife_manual_5.cpp:
+    complete
+    .text       start:0x020c806c end:0x020c8094
+
+src/game/knife_manual_3.cpp:
+    complete
+    .text       start:0x020c8094 end:0x020c8104
+
+src/game/knife_power.cpp:
+    complete
+    .text       start:0x020c8158 end:0x020c81a0
+
+src/game/knife_power_2.cpp:
+    complete
+    .text       start:0x020c8314 end:0x020c836c
+
+src/game/bootinfo.cpp:
+    complete
+    .text       start:0x020c83b8 end:0x020c83dc
+
+src/game/terminateinfo.cpp:
+    complete
+    .text       start:0x020c8998 end:0x020c89bc
+
+src/game/subtask_ending.cpp:
+    complete
+    .text       start:0x020c8c60 end:0x020c8cfc

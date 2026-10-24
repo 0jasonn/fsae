@@ -56,9 +56,6 @@ void fileSelUIViewCtrl_addOamEntry_0ad9a4(FileSelUIViewCtrl *self, const void *e
 void fileSelUIViewCtrl_finalize(FileSelUIViewCtrl *self);
 void GXS_SetGraphicsMode(u32 mode);
 void UIObject_update(UIObject *self);
-void subTask_init_vram(int mode);
-void subTask_init_obj(int a, int b, int c, int d);
-void eff_fade_in_init(s32 a);
 void func_020a3778(u32 a);
 extern u8 data_0217a258[];
 void func_020c36fc(void *obj, const u32 *attrs, u16 count);

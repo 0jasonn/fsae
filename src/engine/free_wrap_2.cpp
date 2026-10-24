@@ -2,11 +2,10 @@
 #include "global.h"
 #include "types.h"
 
-// Same test as FreeIfSet_02005628 (dsd name FreeIfSet_0200c748); calls it for a non-null pointer.
+// operator delete (0x0200c748): frees a non-null block through FreeIfSet_02005628.
 extern "C" void FreeIfSet_02005628(void *block);
-extern "C" void FreeIfSet_0200c748(void *block); // plain name: the Knife sound and file units call it as C
 
-ARM void FreeIfSet_0200c748(void *block) {
+ARM void operator delete(void *block) {
     if (block == NULL) {
         return;
     }

@@ -33,7 +33,7 @@ ARM KnifeFileEntity *Knife_File_Entity_dtor_Entity_08c720(KnifeFileEntity *self)
     self->prev->next = self->next;
     self->prev = self;
     self->next = self;
-    FreeIfSet_0200c748(self);
+    operator delete(self);
     return self;
 }
 

@@ -50,6 +50,11 @@ def plain_name(mangled):
             i += int(n)
         if parts and i < len(mangled) and mangled[i] == "E":
             return "_".join(parts)
+        # Constructors and destructors, named like the debug build: Class_Class (ctor), Class_dtor_Class (deleting
+        # dtor), Class_dtorComplete_Class (complete dtor). Base-object variants (C2, D2) alias the complete ones.
+        special = {"C1": "_", "D0": "_dtor_", "D1": "_dtorComplete_"}.get(mangled[i:i + 2])
+        if parts and special and mangled[i + 2:i + 3] == "E":
+            return "_".join(parts) + special + parts[-1]
         return None
     m = re.match(r"_Z(\d+)", mangled)
     if not m:

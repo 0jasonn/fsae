@@ -2,6 +2,7 @@
 #include "game/rankingsave.h"
 #include "global.h"
 #include "game/savemedia.h"
+#include "game/knife_power.h"
 
 // Save media unit 10 (module backup). Address -> name:
 //   0x0205663c Knife_loadSaveFile (provisional, was Knife_loadSaveFile)
@@ -22,13 +23,13 @@ s32 Knife_readSaveFile(void *buffer, const char *path);
 
 ARM u32 Knife_loadSaveFile(u32 slot) {
     const char *path;
-    void *manager;
+    Knife::PowerManager *manager;
     u32 bootType;
     u32 result;
 
     bootType = OS_GetBootType();
     result = 0;
-    manager = func_020c8104();
+    manager = (Knife::PowerManager *)func_020c8104();
     if (bootType == 3) {
         if (slot == 1) {
             path = data_021152d4;
@@ -39,9 +40,9 @@ ARM u32 Knife_loadSaveFile(u32 slot) {
             return 0;
         }
         data_021152d0 = slot;
-        Knife_PowerManager_lockSleep(manager);
+        manager->lockSleep();
         result = Knife_readSaveFile((u8 *)KnifeApp_getInstance() + 0x4b0, path);
-        Knife_PowerManager_unlockSleep(manager);
+        manager->unlockSleep();
     }
     return result;
 }
