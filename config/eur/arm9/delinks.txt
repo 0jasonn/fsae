@@ -1490,6 +1490,10 @@ src/object/set4e_1.cpp:
     complete
     .text       start:0x0205e620 end:0x0205e63c
 
+src/object/set4e_init.cpp:
+    complete
+    .text       start:0x0205e63c end:0x0205e714
+
 src/object/set4e_2.cpp:
     complete
     .text       start:0x0205e714 end:0x0205e87c
@@ -1506,21 +1510,41 @@ src/object/grass_1.cpp:
     complete
     .text       start:0x0205ed90 end:0x0205edac
 
+src/object/grass_2.cpp:
+    complete
+    .text       start:0x0205edac end:0x0205ee78
+
 src/object/pot_2.cpp:
     complete
     .text       start:0x0205ee78 end:0x0205ee7c
+
+src/object/pot_9.cpp:
+    complete
+    .text       start:0x0205f084 end:0x0205f0a8
 
 src/object/pot_3.cpp:
     complete
     .text       start:0x0205f0a8 end:0x0205f0b4
 
+src/object/pot_7.cpp:
+    complete
+    .text       start:0x0205f0b4 end:0x0205f0e0
+
 src/object/pot_4.cpp:
     complete
     .text       start:0x0205f0e0 end:0x0205f0f4
 
+src/object/pot_8.cpp:
+    complete
+    .text       start:0x0205f224 end:0x0205f250
+
 src/object/op_fairy_1.cpp:
     complete
     .text       start:0x0205f448 end:0x0205f480
+
+src/object/op_fairy_2.cpp:
+    complete
+    .text       start:0x0205f524 end:0x0205f78c
 
 src/object/ed_fairy_1.cpp:
     complete
@@ -1534,9 +1558,25 @@ src/object/ed_fin_1.cpp:
     complete
     .text       start:0x0205f84c end:0x0205f868
 
+src/object/ed_fin_2.cpp:
+    complete
+    .text       start:0x0205f868 end:0x0205f928
+
+src/object/set5b.cpp:
+    complete
+    .text       start:0x0205f928 end:0x0205f9b8
+
 src/object/set5c_1.cpp:
     complete
     .text       start:0x0205f9b8 end:0x0205f9d4
+
+src/object/set5c_2.cpp:
+    complete
+    .text       start:0x0205f9d4 end:0x0205fadc
+
+src/object/set5c_3.cpp:
+    complete
+    .text       start:0x0205fb38 end:0x0205fb9c
 
 src/object/set5d_1.cpp:
     complete
@@ -1718,6 +1758,10 @@ src/object/set20.cpp:
     complete
     .text       start:0x0206596c end:0x02065a78
 
+src/object/set21.cpp:
+    complete
+    .text       start:0x02065a78 end:0x02065a94
+
 src/object/set22.cpp:
     complete
     .text       start:0x02065e94 end:0x02065eb0
@@ -1753,6 +1797,22 @@ src/object/set26.cpp:
 src/object/itemget.cpp:
     complete
     .text       start:0x02067a3c end:0x02067a60
+
+src/object/race_item_1.cpp:
+    complete
+    .text       start:0x02067b44 end:0x02067b60
+
+src/object/ss_2.cpp:
+    complete
+    .text       start:0x02067bdc end:0x02067bf8
+
+src/object/oplogo_1.cpp:
+    complete
+    .text       start:0x02067d68 end:0x02067ed0
+
+src/object/oplogo_sub.cpp:
+    complete
+    .text       start:0x02067ed0 end:0x02068044
 
 src/game/oplogo.cpp:
     complete

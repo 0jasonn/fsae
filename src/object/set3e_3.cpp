@@ -12,7 +12,7 @@ typedef struct Vars_Set3eWait {
 } Vars_Set3eWait;
 
 extern const s8 data_020d8c40[]; // (dx, dy) pairs for the four directions, indexed by direction >> 2
-extern const u8 data_021185aa[];
+extern const u8 pot_moveCheckTable[];
 
 ARM void set3e_wait(Entity *e) {
     s32 code = func_02083c84(e);
@@ -34,7 +34,7 @@ ARM void set3e_wait(Entity *e) {
         e->animationState = index;
         x = e->x.HALF.HI + data_020d8c40[(u8)e->direction >> 2];
         y = e->y.HALF.HI + data_020d8c40[((u8)e->direction >> 2) + 1];
-        if (func_02085890(e, data_021185aa, x, y) == 0) {
+        if (func_02085890(e, pot_moveCheckTable, x, y) == 0) {
             cell = ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6);
             RewCell(VARS(Vars_Set3eWait, e)->rewId, (u16)cell, e->layer);
             e->action = e->action + 1;
