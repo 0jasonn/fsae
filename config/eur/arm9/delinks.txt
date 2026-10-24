@@ -2113,3 +2113,19 @@ src/game/knife_comm_2.cpp:
 src/engine/callback.cpp:
     complete
     .text       start:0x02082fbc end:0x02083000
+
+src/engine/knife_sound.cpp:
+    complete
+    .text       start:0x0208c1c8 end:0x0208c554
+
+src/engine/knife_sound_2.cpp:
+    complete
+    .text       start:0x0208c5f0 end:0x0208c6b4
+
+src/engine/knife_file.cpp:
+    complete
+    .text       start:0x0208c6b4 end:0x0208c7ac
+
+src/engine/knife_sound_3.cpp:
+    complete
+    .text       start:0x02090510 end:0x02090518
