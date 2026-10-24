@@ -50,6 +50,7 @@ public:
     POS GetPrevLogPos(void) const;
     POS GetPosToInsert(u8 index) const;
     void ResetDistance(void);
+    void UpdateCurrentLogDistance(s16 distance);
 
     u8 current;  // 0x00
     u8 oldest;   // 0x01
