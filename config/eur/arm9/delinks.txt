@@ -2778,6 +2778,10 @@ src/game/knife_manual.cpp:
     complete
     .text       start:0x020c7c10 end:0x020c7c4c
 
+src/game/knife_manual_6.cpp:
+    complete
+    .text       start:0x020c7da0 end:0x020c7e28
+
 src/game/knife_manual_2.cpp:
     complete
     .text       start:0x020c7e28 end:0x020c7e58
@@ -2785,6 +2789,10 @@ src/game/knife_manual_2.cpp:
 src/game/knife_manual_4.cpp:
     complete
     .text       start:0x020c7e58 end:0x020c7ed4
+
+src/game/knife_manual_7.cpp:
+    complete
+    .text       start:0x020c7ed4 end:0x020c806c
 
 src/game/knife_manual_5.cpp:
     complete
