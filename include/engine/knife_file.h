@@ -20,7 +20,7 @@ void Knife_File_Entity_fwd_08c75c(KnifeFileEntity *self, s32 arg); // Knife_File
 void FS_InitFile(void *file);
 void func_02008280(void *a, s32 b);
 void func_0208ca28(void);
-void func_0200c748(void *block);
+void FreeIfSet_0200c748(void *block);
 extern char data_0211abbc[]; // Knife::File::Entity vtable
 extern char data_0211abcc[]; // vtable the dtors leave behind
 }

@@ -5,6 +5,54 @@
     .data       start:0x020df5a0 end:0x02127280 kind:data align:32
     .bss        start:0x02127280 end:0x021870c0 kind:bss align:32
 
+src/engine/stub_init.cpp:
+    complete
+    .text       start:0x02004edc end:0x02004ee8
+
+src/engine/free_wrap.cpp:
+    complete
+    .text       start:0x02005628 end:0x0200563c
+
+src/engine/stub_2.cpp:
+    complete
+    .text       start:0x020056e8 end:0x020056ec
+
+src/engine/store_byte.cpp:
+    complete
+    .text       start:0x02005c90 end:0x02005ca4
+
+src/engine/stub_7.cpp:
+    complete
+    .text       start:0x02008138 end:0x0200813c
+
+src/engine/stub_3.cpp:
+    complete
+    .text       start:0x0200a4d4 end:0x0200a4d8
+
+src/engine/stub_4.cpp:
+    complete
+    .text       start:0x0200b10c end:0x0200b12c
+
+src/engine/hook.cpp:
+    complete
+    .text       start:0x0200c550 end:0x0200c574
+
+src/engine/free_wrap_2.cpp:
+    complete
+    .text       start:0x0200c748 end:0x0200c75c
+
+src/engine/stub_5.cpp:
+    complete
+    .text       start:0x0200c8c4 end:0x0200c8dc
+
+src/engine/stub_8.cpp:
+    complete
+    .text       start:0x0200c8f8 end:0x0200c920
+
+src/engine/stub_6.cpp:
+    complete
+    .text       start:0x0200de04 end:0x0200de08
+
 src/object/arrow.cpp:
     complete
     .text       start:0x02020fc8 end:0x02021004
@@ -12,6 +60,10 @@ src/object/arrow.cpp:
 src/object/arrow_2.cpp:
     complete
     .text       start:0x020216d0 end:0x02021784
+
+src/game/beam.cpp:
+    complete
+    .text       start:0x020218a0 end:0x02021a10
 
 src/game/map.cpp:
     complete
@@ -28,6 +80,10 @@ src/game/shikake_2.cpp:
 src/game/shikake_3.cpp:
     complete
     .text       start:0x02022dfc end:0x02022e1c
+
+src/game/frontcheck_2.cpp:
+    complete
+    .text       start:0x0202357c end:0x02023608
 
 src/game/bganm.cpp:
     complete
