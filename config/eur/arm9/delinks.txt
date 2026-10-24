@@ -2446,6 +2446,14 @@ src/engine/knife_file_2.cpp:
     complete
     .text       start:0x0208c7ac end:0x0208ccc8
 
+src/engine/m4a.cpp:
+    complete
+    .text       start:0x0208cda4 end:0x0208d004
+
+src/engine/m4a_6.cpp:
+    complete
+    .text       start:0x0208d118 end:0x0208d260
+
 src/engine/m4a_2.cpp:
     complete
     .text       start:0x0208d52c end:0x0208d5d0
