@@ -29,7 +29,7 @@ ARM u32 Knife_loadSaveFile(u32 slot) {
 
     bootType = OS_GetBootType();
     result = 0;
-    manager = (Knife::PowerManager *)func_020c8104();
+    manager = (Knife::PowerManager *)Knife_GetPowerManager();
     if (bootType == 3) {
         if (slot == 1) {
             path = data_021152d4;

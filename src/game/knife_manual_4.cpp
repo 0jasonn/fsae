@@ -26,7 +26,7 @@ ARM void i_postprocManual(void) {
     func_0208d9a8();
     i_restoreGfxSettings();
     MI_CpuFill8(&data_0218704c, 0, 0x40);
-    ((PowerManager *)func_020c8104())->unlockSleep();
+    ((PowerManager *)Knife_GetPowerManager())->unlockSleep();
 }
 
 }

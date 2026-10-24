@@ -2794,9 +2794,17 @@ src/game/knife_manual_3.cpp:
     complete
     .text       start:0x020c8094 end:0x020c8104
 
+src/game/knife_power_3.cpp:
+    complete
+    .text       start:0x020c8104 end:0x020c8158
+
 src/game/knife_power.cpp:
     complete
     .text       start:0x020c8158 end:0x020c81a0
+
+src/game/knife_power_4.cpp:
+    complete
+    .text       start:0x020c81a0 end:0x020c8314
 
 src/game/knife_power_2.cpp:
     complete

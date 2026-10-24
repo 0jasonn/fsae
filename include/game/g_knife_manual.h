@@ -28,7 +28,7 @@ void Menu_RunFromWrapper(MenuWrapper *w);
 extern "C" {
 void func_0208d9a8(void);
 void Knife_i_restoreGfxSettings(void);
-void *func_020c8104(void);
+void *Knife_GetPowerManager(void);
 void MI_CpuFill8(void *dst, u8 value, u32 size);
 void func_020c2c48(void *heap, void *block);
 void func_020bf06c(MenuWrapper *wrapper, void *arg);

@@ -20,7 +20,7 @@ s32 Knife_mediaVerify(u16 slot, const u32 *data, s32 size); // 0x0205657c, parke
 
 extern "C" {
 u32 OS_GetBootType(void);
-void *func_020c8104(void); // returns the Knife::PowerManager object
+void *Knife_GetPowerManager(void); // returns the Knife::PowerManager object
 void FS_InitFile(FSFile *file);
 s32 func_02010b1c(FSFile *file, const char *path, s32 mode); // open
 u32 FS_GetFileLength(FSFile *file);

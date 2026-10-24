@@ -154,7 +154,7 @@ s32 func_020be154(MenuWork *menu);
 void func_0201500c(s32 a);
 void func_02015448(void);
 void MIi_CpuClearFast(u32 value, void *dst, u32 size);
-void func_020bce14(MenuWork *menu);
+void Menu_Run(MenuWork *menu);
 s32 func_020b8c00(s32 value);
 void SND_SetMasterVolume(s32 volume);
 void func_020c048c(s32 a, s32 b, s32 c, s32 d);
