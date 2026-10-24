@@ -2298,6 +2298,10 @@ src/game/fileselui_4.cpp:
     complete
     .text       start:0x020adac0 end:0x020adb04
 
+src/game/gameover.cpp:
+    complete
+    .text       start:0x020adb04 end:0x020adbb8
+
 src/game/staffroll.cpp:
     complete
     .text       start:0x020ae280 end:0x020ae294
