@@ -2249,3 +2249,71 @@ src/game/nameentry_3.cpp:
 src/game/nameentry_2.cpp:
     complete
     .text       start:0x020afa1c end:0x020afa7c
+
+src/game/menu_2.cpp:
+    complete
+    .text       start:0x020bd2c0 end:0x020bd2d8
+
+src/game/menu_3.cpp:
+    complete
+    .text       start:0x020bd2d8 end:0x020bd474
+
+src/game/menu_4.cpp:
+    complete
+    .text       start:0x020bda3c end:0x020bdb34
+
+src/game/menu_6.cpp:
+    complete
+    .text       start:0x020bdfc0 end:0x020be00c
+
+src/game/menu_7.cpp:
+    complete
+    .text       start:0x020be1f4 end:0x020be244
+
+src/game/menu_8.cpp:
+    complete
+    .text       start:0x020be2f8 end:0x020be518
+
+src/game/menu_9.cpp:
+    complete
+    .text       start:0x020be854 end:0x020be8e8
+
+src/game/menu_10.cpp:
+    complete
+    .text       start:0x020bea60 end:0x020beb00
+
+src/game/menu_11.cpp:
+    complete
+    .text       start:0x020bec6c end:0x020bec80
+
+src/game/menu_12.cpp:
+    complete
+    .text       start:0x020bef68 end:0x020befd0
+
+src/game/menu_14.cpp:
+    complete
+    .text       start:0x020bf05c end:0x020bf06c
+
+src/game/menu_15.cpp:
+    complete
+    .text       start:0x020bf230 end:0x020bf23c
+
+src/game/menu_16.cpp:
+    complete
+    .text       start:0x020bf40c end:0x020bf418
+
+src/game/menu_17.cpp:
+    complete
+    .text       start:0x020bfd1c end:0x020bfd28
+
+src/game/menu_18.cpp:
+    complete
+    .text       start:0x020c28b0 end:0x020c28bc
+
+src/game/menu_13.cpp:
+    complete
+    .text       start:0x020c2c34 end:0x020c2c48
+
+src/game/menu_19.cpp:
+    complete
+    .text       start:0x020c2cb4 end:0x020c2cc0
