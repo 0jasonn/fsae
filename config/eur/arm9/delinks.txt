@@ -2330,6 +2330,34 @@ src/game/set6c.cpp:
     complete
     .text       start:0x0209de18 end:0x0209dec0
 
+src/game/knife_hud.cpp:
+    complete
+    .text       start:0x0209e0ac end:0x0209e0c4
+
+src/game/knife_hud_2.cpp:
+    complete
+    .text       start:0x0209e788 end:0x0209e794
+
+src/game/knife_hud_3.cpp:
+    complete
+    .text       start:0x0209eb3c end:0x0209eb7c
+
+src/game/knife_hud_4.cpp:
+    complete
+    .text       start:0x0209ecbc end:0x0209ece8
+
+src/game/knife_hud_5.cpp:
+    complete
+    .text       start:0x0209ed4c end:0x0209ed6c
+
+src/game/knife_hud_6.cpp:
+    complete
+    .text       start:0x0209ed74 end:0x0209ed8c
+
+src/game/knife_interp.cpp:
+    complete
+    .text       start:0x0209fb40 end:0x0209fb58
+
 src/game/knife_canvas.cpp:
     complete
     .text       start:0x0209fcc4 end:0x0209fcdc
@@ -2337,6 +2365,30 @@ src/game/knife_canvas.cpp:
 src/game/knife_canvas_2.cpp:
     complete
     .text       start:0x0209ffb8 end:0x0209ffec
+
+src/game/knife_message.cpp:
+    complete
+    .text       start:0x020a0508 end:0x020a0564
+
+src/game/knife_message_2.cpp:
+    complete
+    .text       start:0x020a0564 end:0x020a0574
+
+src/game/knife_message_3.cpp:
+    complete
+    .text       start:0x020a0624 end:0x020a0640
+
+src/game/knife_message_4.cpp:
+    complete
+    .text       start:0x020a0814 end:0x020a0844
+
+src/game/knife_message_6.cpp:
+    complete
+    .text       start:0x020a08f0 end:0x020a0918
+
+src/game/knife_message_5.cpp:
+    complete
+    .text       start:0x020a0dac end:0x020a0dc0
 
 src/game/uiobject.cpp:
     complete
