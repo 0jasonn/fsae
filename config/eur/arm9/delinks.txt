@@ -2153,3 +2153,27 @@ src/engine/knife_file.cpp:
 src/engine/knife_sound_3.cpp:
     complete
     .text       start:0x02090510 end:0x02090518
+
+src/game/subtask_draw.cpp:
+    complete
+    .text       start:0x0209cd18 end:0x0209ce48
+
+src/game/subtask_draw_2.cpp:
+    complete
+    .text       start:0x0209ceb8 end:0x0209cf98
+
+src/game/subtask_2.cpp:
+    complete
+    .text       start:0x0209d690 end:0x0209d78c
+
+src/game/subtask_3.cpp:
+    complete
+    .text       start:0x0209d9cc end:0x0209daa0
+
+src/game/subtask_4.cpp:
+    complete
+    .text       start:0x0209dbc8 end:0x0209dc24
+
+src/game/subtask_5.cpp:
+    complete
+    .text       start:0x0209dd44 end:0x0209de18
