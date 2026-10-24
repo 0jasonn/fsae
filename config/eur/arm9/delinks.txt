@@ -49,6 +49,10 @@ src/object/boots.cpp:
     complete
     .text       start:0x02024498 end:0x020244d4
 
+src/game/check.cpp:
+    complete
+    .text       start:0x020247b8 end:0x020248f0
+
 src/game/hit.cpp:
     complete
     .text       start:0x020248f0 end:0x02024b20
@@ -64,6 +68,18 @@ src/game/hit_3.cpp:
 src/game/hit_4.cpp:
     complete
     .text       start:0x02025518 end:0x02025628
+
+src/game/hit_6.cpp:
+    complete
+    .text       start:0x02025628 end:0x02025808
+
+src/game/hit_7.cpp:
+    complete
+    .text       start:0x02025ac4 end:0x02025b28
+
+src/game/hit_8.cpp:
+    complete
+    .text       start:0x02025c18 end:0x02025ce8
 
 src/game/hit_5.cpp:
     complete
@@ -112,6 +128,14 @@ src/game/cockpit_6.cpp:
 src/game/cockpit_7.cpp:
     complete
     .text       start:0x02027778 end:0x0202777c
+
+src/game/kakera.cpp:
+    complete
+    .text       start:0x0202777c end:0x02027800
+
+src/game/kinomi_2.cpp:
+    complete
+    .text       start:0x02027894 end:0x02027930
 
 src/game/mathutil.cpp:
     complete
