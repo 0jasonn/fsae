@@ -61,7 +61,7 @@ extern "C" void Knife_File_Entity_sync(KnifeFileEntity *self);
 ARM void Knife_File_Entity_sync(KnifeFileEntity *self) {
     if (self->readDone == 0) {
         do {
-            func_0208ca28();
+            Knife_File_System_yieldThread();
         } while (self->readDone == 0);
     }
 }

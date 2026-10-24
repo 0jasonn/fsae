@@ -2326,9 +2326,37 @@ src/engine/knife_file.cpp:
     complete
     .text       start:0x0208c6b4 end:0x0208c7ac
 
+src/engine/m4a_vsync.cpp:
+    complete
+    .text       start:0x0208d5d0 end:0x0208d610
+
+src/engine/knife_app.cpp:
+    complete
+    .text       start:0x0208daec end:0x0208db60
+
+src/engine/gz_memory.cpp:
+    complete
+    .text       start:0x0208e05c end:0x0208e1a4
+
+src/engine/kmsgfilereader.cpp:
+    complete
+    .text       start:0x0208e1c4 end:0x0208e20c
+
+src/engine/kmsgfilereader_2.cpp:
+    complete
+    .text       start:0x0208e294 end:0x0208e2a8
+
+src/engine/texttokenizer.cpp:
+    complete
+    .text       start:0x0208e3f8 end:0x0208e450
+
 src/engine/knife_sound_3.cpp:
     complete
     .text       start:0x02090510 end:0x02090518
+
+src/engine/knife_sound_5.cpp:
+    complete
+    .text       start:0x02090634 end:0x02090708
 
 src/game/subtask_draw.cpp:
     complete
