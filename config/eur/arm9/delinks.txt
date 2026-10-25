@@ -3586,6 +3586,10 @@ src/game/rendertarget_4.cpp:
     complete
     .text       start:0x020a4e8c end:0x020a4ee0
 
+src/game/rendertarget_e.cpp:
+    complete
+    .text       start:0x020a4ee0 end:0x020a4f30
+
 src/game/textrender_10.cpp:
     complete
     .text       start:0x020a4f44 end:0x020a510c
@@ -3593,6 +3597,10 @@ src/game/textrender_10.cpp:
 src/game/textrender_11.cpp:
     complete
     .text       start:0x020a511c end:0x020a5138
+
+src/game/textrender_e.cpp:
+    complete
+    .text       start:0x020a5138 end:0x020a5340
 
 src/game/textrender_12.cpp:
     complete
@@ -3617,6 +3625,22 @@ src/game/datalink.cpp:
 src/game/datalink_2.cpp:
     complete
     .text       start:0x020a6398 end:0x020a6480
+
+src/game/radar_e.cpp:
+    complete
+    .text       start:0x020a6658 end:0x020a6830
+
+src/game/fs_e.cpp:
+    complete
+    .text       start:0x020a723c end:0x020a7370
+
+src/game/fs_e_2.cpp:
+    complete
+    .text       start:0x020a73ec end:0x020a7410
+
+src/game/fs_e_3.cpp:
+    complete
+    .text       start:0x020a7480 end:0x020a74fc
 
 src/game/resource_2.cpp:
     complete

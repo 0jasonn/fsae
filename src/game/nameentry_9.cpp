@@ -7,10 +7,10 @@
 
 extern "C" {
 void nameEntryUIView_moveOut(void *self);
-void func_020a7480(s32 a);
+void fsCreateFile(s32 a);
 void func_020ac038(s32 a, s32 b, s32 c, s32 d);
 void subtask_dialogDelete(void);
-void clearSaveData(s32 a);
+extern "C" void clearSaveData(s32 a);
 }
 
 extern u8 data_021806f0[];
@@ -26,7 +26,7 @@ ARM void nameEntryUIView_entry_regist(void *self) {
     obj = (u8 *)self;
     sel = data_021806f0[0x53d];
     if (obj[0x43] == 0xf) {
-        func_020a7480(sel);
+        fsCreateFile(sel);
     }
     timer = obj[0x43];
     obj[0x43] = timer - 1;
