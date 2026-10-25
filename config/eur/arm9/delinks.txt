@@ -3374,6 +3374,10 @@ src/engine/pane_d.cpp:
     complete
     .text       start:0x020b5ba4 end:0x020b5ba8
 
+src/engine/pane_f.cpp:
+    complete
+    .text       start:0x020b5c58 end:0x020b5d48
+
 src/game/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd2d8

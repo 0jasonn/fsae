@@ -84,6 +84,6 @@ extern "C" void lobby_releaseObj(void *heap, void *obj);
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void func_020c2c48(void *heap, void *block);
 extern "C" void *func_020b6bf8(void *self, void *spec, void *ctx);
-extern "C" void Window_allocItems(void *self, void *arg);
+extern "C" void Window_allocItems(Pane *self, void *owner, s32 count);
 
 #endif
