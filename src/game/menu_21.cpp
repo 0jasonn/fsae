@@ -16,7 +16,7 @@ ARM void Menu_Init(MenuWork *menu) {
     ref = menu;
     value = func_020be128(&ref);
     *(s32 *)((u8 *)menu + 0x348) = value;
-    func_020b8c78(value, data_02127178, (u8 *)menu + 0x40500, &ref);
+    RectSpan_callAndMore(value, data_02127178, (u8 *)menu + 0x40500, &ref);
     func_020ba948(menu->unk_358, *(s32 *)((u8 *)menu + 0x348));
     if (func_020bac20(menu->unk_358) != -1) {
         Menu_SetCursorPos(menu);

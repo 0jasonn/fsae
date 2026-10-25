@@ -75,7 +75,7 @@ extern u16 data_020df004[];
 
 extern "C" {
 s32 func_020be128(void *ref);
-void func_020b8c78(s32 value, void *data, void *obj, void *ref);
+void RectSpan_callAndMore(s32 value, void *data, void *obj, void *ref);
 void func_020ba948(void *obj, s32 value);
 void func_020bf09c(void *out, void *data, void *obj);
 void OS_GetOwnerInfoEx(void *info);

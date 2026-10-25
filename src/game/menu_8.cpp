@@ -59,7 +59,7 @@ ARM void Menu_UpdateView(MenuWork *menu, s32 flag) {
     pos[0] = view->posX;
     pos[1] = value / 2 + 0x12;
     view->SetPos(pos);
-    func_020b88dc(menu->unk_364, value);
+    RectObjPair_setOffsets(menu->unk_364, value);
 }
 
 // Reads the rectangle (x, y, width, height) of the screen area into rect.

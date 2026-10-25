@@ -4006,6 +4006,38 @@ src/engine/rect_obj_5.cpp:
     complete
     .text       start:0x020b8004 end:0x020b8078
 
+src/engine/rect_list.cpp:
+    complete
+    .text       start:0x020b8078 end:0x020b81a8
+
+src/engine/rect_list_2.cpp:
+    complete
+    .text       start:0x020b826c end:0x020b82f4
+
+src/engine/rect_list_3.cpp:
+    complete
+    .text       start:0x020b8384 end:0x020b8398
+
+src/engine/rect_hit.cpp:
+    complete
+    .text       start:0x020b8398 end:0x020b8408
+
+src/engine/rect_pair.cpp:
+    complete
+    .text       start:0x020b86b8 end:0x020b8784
+
+src/engine/rect_item.cpp:
+    complete
+    .text       start:0x020b88dc end:0x020b8a5c
+
+src/engine/rect_item_2.cpp:
+    complete
+    .text       start:0x020b8b68 end:0x020b8cbc
+
+src/engine/rect_list_4.cpp:
+    complete
+    .text       start:0x020b9284 end:0x020b9380
+
 src/game/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd2d8

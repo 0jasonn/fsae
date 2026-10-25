@@ -86,11 +86,11 @@ s32 Menu_HandleInput(MenuWork *menu, MenuInput *input);
 extern "C" {
 void func_020bed14(void *obj);
 s32 func_020be66c(void *obj, u8 *flag);
-void func_020b86f4(void *obj, s32 value);
-void func_020b895c(void *obj, s32 value);
+void RectObjPair_updateFlags(void *obj, s32 value);
+void RectObjPair_setValue(void *obj, s32 value);
 void func_020be798(void *obj);
-void func_020b8760(void *obj);
-void func_020b8964(void *obj, s32 value);
+void RectObjPair_countDownBoth(void *obj);
+void RectObjPair_updateChildren(void *obj, s32 value);
 void func_020bacb8(void *obj);
 void DC_FlushRange(void *base, u32 size);
 }
