@@ -3342,6 +3342,10 @@ src/game/lobby_5.cpp:
     complete
     .text       start:0x020b4e60 end:0x020b4ecc
 
+src/game/lobby_ptrarray.cpp:
+    complete
+    .text       start:0x020b51c8 end:0x020b5214
+
 src/game/lobby_10.cpp:
     complete
     .text       start:0x020b5214 end:0x020b5264
@@ -3349,6 +3353,26 @@ src/game/lobby_10.cpp:
 src/game/lobby_11.cpp:
     complete
     .text       start:0x020b52f8 end:0x020b5318
+
+src/engine/pane_a.cpp:
+    complete
+    .text       start:0x020b5578 end:0x020b5744
+
+src/engine/pane_b.cpp:
+    complete
+    .text       start:0x020b5840 end:0x020b5850
+
+src/engine/pane_c.cpp:
+    complete
+    .text       start:0x020b5944 end:0x020b5950
+
+src/engine/pane_e.cpp:
+    complete
+    .text       start:0x020b5950 end:0x020b5998
+
+src/engine/pane_d.cpp:
+    complete
+    .text       start:0x020b5ba4 end:0x020b5ba8
 
 src/game/menu_2.cpp:
     complete
