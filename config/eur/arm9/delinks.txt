@@ -3122,6 +3122,26 @@ src/engine/texttokenizer_3.cpp:
     complete
     .text       start:0x0208e5c4 end:0x0208e6bc
 
+src/engine/texttags.cpp:
+    complete
+    .text       start:0x0208e9ec end:0x0208ea6c
+
+src/engine/texttags_2.cpp:
+    complete
+    .text       start:0x0208eaf8 end:0x0208eb78
+
+src/engine/texttags_3.cpp:
+    complete
+    .text       start:0x0208ec90 end:0x0208ed0c
+
+src/engine/texttags_4.cpp:
+    complete
+    .text       start:0x0208ee24 end:0x0208f000
+
+src/engine/texttags_5.cpp:
+    complete
+    .text       start:0x0208f21c end:0x0208f29c
+
 src/engine/texttokenizer_5.cpp:
     complete
     .text       start:0x0208f29c end:0x0208f2a8
@@ -3193,6 +3213,14 @@ src/engine/comm_parentinfo_3.cpp:
 src/engine/comm_parentinfo_4.cpp:
     complete
     .text       start:0x020922f0 end:0x02092310
+
+src/engine/comm_childinfo.cpp:
+    complete
+    .text       start:0x02092310 end:0x02092330
+
+src/engine/comm_interrupt.cpp:
+    complete
+    .text       start:0x02093b00 end:0x02093b34
 
 src/engine/comm_dtors.cpp:
     complete
