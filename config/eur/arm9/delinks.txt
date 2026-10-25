@@ -4038,6 +4038,14 @@ src/engine/rect_list_4.cpp:
     complete
     .text       start:0x020b9284 end:0x020b9380
 
+src/engine/slider.cpp:
+    complete
+    .text       start:0x020b9720 end:0x020b9774
+
+src/engine/slider_2.cpp:
+    complete
+    .text       start:0x020b97d4 end:0x020b9844
+
 src/game/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd2d8
