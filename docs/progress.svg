@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1064" width="960" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="100%" height="100%" fill="#0d1117" rx="6"/>
-<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 2588 / 4841 game functions decompiled (53.5%, 31.4% of code)</text>
+<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 2600 / 4841 game functions decompiled (53.7%, 31.5% of code)</text>
 <rect x="12" y="34" width="12" height="12" fill="#3fb950" rx="2"/><text x="29" y="44" fill="#8b949e" font-size="12">Decompiled (C++)</text>
 <rect x="202" y="34" width="12" height="12" fill="#58a6ff" rx="2"/><text x="219" y="44" fill="#8b949e" font-size="12">TwlSDK / runtime</text>
 <rect x="392" y="34" width="12" height="12" fill="#30363d" rx="2"/><text x="409" y="44" fill="#8b949e" font-size="12">Not decompiled yet</text>
@@ -1035,7 +1035,17 @@
 <rect x="453.49" y="644" width="506.51" height="12" fill="#30363d"/>
 <rect x="0.00" y="658" width="960.00" height="12" fill="#30363d"/>
 <rect x="0.00" y="672" width="960.00" height="12" fill="#30363d"/>
-<rect x="0.00" y="686" width="530.56" height="12" fill="#30363d"/>
+<rect x="0.00" y="686" width="424.57" height="12" fill="#30363d"/>
+<rect x="424.57" y="686" width="4.83" height="12" fill="#3fb950"/>
+<rect x="429.40" y="686" width="15.88" height="12" fill="#30363d"/>
+<rect x="445.28" y="686" width="2.07" height="12" fill="#3fb950"/>
+<rect x="447.35" y="686" width="14.50" height="12" fill="#30363d"/>
+<rect x="461.85" y="686" width="3.11" height="12" fill="#3fb950"/>
+<rect x="464.96" y="686" width="1.73" height="12" fill="#30363d"/>
+<rect x="466.69" y="686" width="10.70" height="12" fill="#3fb950"/>
+<rect x="477.39" y="686" width="21.06" height="12" fill="#30363d"/>
+<rect x="498.45" y="686" width="1.73" height="12" fill="#3fb950"/>
+<rect x="500.18" y="686" width="30.38" height="12" fill="#30363d"/>
 <rect x="530.56" y="686" width="78.37" height="12" fill="#3fb950"/>
 <rect x="608.93" y="686" width="13.46" height="12" fill="#30363d"/>
 <rect x="622.39" y="686" width="151.22" height="12" fill="#3fb950"/>
