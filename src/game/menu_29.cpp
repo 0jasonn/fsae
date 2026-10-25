@@ -32,7 +32,7 @@ ARM void *Menu_AcquirePoolEntry(void *poolObj, s32 id, s32 value) {
         return 0;
     }
     SndSlot_ReleaseFirst(entry, 0);
-    func_020c1740(entry, 0, id);
+    SndState_StartEntryList(entry, 0, id);
     if (value != 0x80) {
         level = Menu_ClampValue(pool, value, 0, 0xff);
         func_020bf9dc(entry, 0xffff, level - 0x80);

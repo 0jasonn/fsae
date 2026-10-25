@@ -3838,6 +3838,10 @@ src/game/menu_17.cpp:
     complete
     .text       start:0x020bfd1c end:0x020bfd28
 
+src/engine/sndvoice.cpp:
+    complete
+    .text       start:0x020c0058 end:0x020c0130
+
 src/engine/sndentry.cpp:
     complete
     .text       start:0x020c0130 end:0x020c01a0
@@ -3850,9 +3854,21 @@ src/engine/sndentry_2.cpp:
     complete
     .text       start:0x020c020c end:0x020c02d0
 
+src/engine/sndstop.cpp:
+    complete
+    .text       start:0x020c02d0 end:0x020c0434
+
 src/engine/sndsys_6.cpp:
     complete
     .text       start:0x020c0434 end:0x020c050c
+
+src/engine/sndstate_get.cpp:
+    complete
+    .text       start:0x020c05dc end:0x020c05ec
+
+src/engine/sndstate_lookup.cpp:
+    complete
+    .text       start:0x020c0650 end:0x020c0844
 
 src/engine/sndstate.cpp:
     complete
@@ -3870,13 +3886,65 @@ src/engine/sndsys_7.cpp:
     complete
     .text       start:0x020c0c40 end:0x020c0c70
 
+src/engine/sndstate_acquire.cpp:
+    complete
+    .text       start:0x020c0d6c end:0x020c0e50
+
+src/engine/sndtable_payload.cpp:
+    complete
+    .text       start:0x020c1014 end:0x020c10b8
+
+src/engine/sndbank_acquire.cpp:
+    complete
+    .text       start:0x020c10b8 end:0x020c1268
+
 src/engine/sndbank.cpp:
     complete
     .text       start:0x020c1390 end:0x020c1490
 
+src/engine/sndbank_wave.cpp:
+    complete
+    .text       start:0x020c1490 end:0x020c14d8
+
+src/engine/sndstate_start.cpp:
+    complete
+    .text       start:0x020c16f8 end:0x020c1740
+
+src/engine/sndstate_startlist.cpp:
+    complete
+    .text       start:0x020c1740 end:0x020c17c0
+
+src/engine/sndtrack.cpp:
+    complete
+    .text       start:0x020c1a38 end:0x020c1a7c
+
+src/engine/sndtrack_2.cpp:
+    complete
+    .text       start:0x020c1b88 end:0x020c1c0c
+
+src/engine/sndtrack_finish.cpp:
+    complete
+    .text       start:0x020c1c0c end:0x020c1ca4
+
+src/engine/sndtrack_4.cpp:
+    complete
+    .text       start:0x020c1ca4 end:0x020c1d0c
+
+src/engine/sndtrack_3.cpp:
+    complete
+    .text       start:0x020c1d0c end:0x020c1dcc
+
 src/engine/sndlist.cpp:
     complete
     .text       start:0x020c1dcc end:0x020c1fa0
+
+src/engine/sndlink.cpp:
+    complete
+    .text       start:0x020c2004 end:0x020c2090
+
+src/engine/sndrange.cpp:
+    complete
+    .text       start:0x020c2090 end:0x020c2120
 
 src/game/menu_18.cpp:
     complete
