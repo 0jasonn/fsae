@@ -501,6 +501,10 @@ src/game/blockcopy.cpp:
     complete
     .text       start:0x0202a128 end:0x0202a190
 
+src/game/zmem.cpp:
+    complete
+    .text       start:0x0202a568 end:0x0202a5f4
+
 src/game/clearbuf.cpp:
     complete
     .text       start:0x0202a5f4 end:0x0202a60c
@@ -881,6 +885,10 @@ src/enemy/type0rock.cpp:
     complete
     .text       start:0x0203e038 end:0x0203e05c
 
+src/enemy/em19_6.cpp:
+    complete
+    .text       start:0x0203e05c end:0x0203e0ac
+
 src/enemy/em19.cpp:
     complete
     .text       start:0x0203e0ac end:0x0203e0c8
@@ -900,6 +908,10 @@ src/enemy/em19_2.cpp:
 src/enemy/em19_3.cpp:
     complete
     .text       start:0x0203e4e4 end:0x0203e59c
+
+src/enemy/bgobj_6.cpp:
+    complete
+    .text       start:0x0203e59c end:0x0203e63c
 
 src/enemy/bgobj.cpp:
     complete
@@ -964,6 +976,10 @@ src/enemy/em20_5.cpp:
 src/enemy/kamen.cpp:
     complete
     .text       start:0x0203ed14 end:0x0203ed84
+
+src/enemy/dushcheck.cpp:
+    complete
+    .text       start:0x0203ed84 end:0x0203ee28
 
 src/enemy/kamen_3.cpp:
     complete

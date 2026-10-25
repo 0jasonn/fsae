@@ -6456,7 +6456,7 @@ bgobj_moveTimerTable kind:data(any) addr:0x020d2982
 em19_poseTable kind:data(any) addr:0x020d2986
 em19_hitbox kind:data(any) addr:0x020d298a
 bgobj_poscopyTable kind:data(any) addr:0x020d2992
-data_020d299c kind:data(any) addr:0x020d299c
+em19_mainTable kind:data(any) addr:0x020d299c
 data_020d29a8 kind:data(any) addr:0x020d29a8
 data_020d29b4 kind:data(any) addr:0x020d29b4
 data_020d29c0 kind:data(any) addr:0x020d29c0
