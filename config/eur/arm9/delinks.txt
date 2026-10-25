@@ -2310,6 +2310,10 @@ src/object/set34.cpp:
     complete
     .text       start:0x0206ab6c end:0x0206ab88
 
+src/object/set34_2.cpp:
+    complete
+    .text       start:0x0206ae0c end:0x0206b000
+
 src/object/areacheck.cpp:
     complete
     .text       start:0x0206b000 end:0x0206b068
@@ -2401,6 +2405,10 @@ src/object/set43_2.cpp:
 src/object/set43_3.cpp:
     complete
     .text       start:0x0206cac8 end:0x0206cb1c
+
+src/object/getarea.cpp:
+    complete
+    .text       start:0x0206cb84 end:0x0206cc9c
 
 src/object/setwind.cpp:
     complete
@@ -2565,6 +2573,10 @@ src/object/singleplay.cpp:
 src/object/set54.cpp:
     complete
     .text       start:0x02071a70 end:0x02071b00
+
+src/object/rewdoor_knife.cpp:
+    complete
+    .text       start:0x02071c8c end:0x02071f4c
 
 src/object/set55.cpp:
     complete

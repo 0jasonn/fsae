@@ -9,7 +9,7 @@
 BOOL DoorTypeCheck(Entity *e);
 int func_02083d18(Entity *e, int dx, int dy);
 void func_0208366c(s32 layer, u16 index, u16 size);
-void knife_rewDoor(Entity *e, const u16 *table);
+extern "C" void knife_rewDoor(Entity *e, const u16 *table);
 void func_020859a0(Entity *e, u8 a, u8 b);
 void func_02085934(Entity *e, u8 mode);
 
