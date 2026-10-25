@@ -3118,6 +3118,10 @@ src/engine/texttokenizer.cpp:
     complete
     .text       start:0x0208e3f8 end:0x0208e450
 
+src/engine/texttokenizer_7.cpp:
+    complete
+    .text       start:0x0208e450 end:0x0208e4e0
+
 src/engine/texttokenizer_4.cpp:
     complete
     .text       start:0x0208e4e0 end:0x0208e5c4
@@ -3214,6 +3218,14 @@ src/engine/comm_parentinfo_3.cpp:
     complete
     .text       start:0x0209096c end:0x020909c8
 
+src/engine/wireless_manager.cpp:
+    complete
+    .text       start:0x020909c8 end:0x02090c88
+
+src/engine/wireless_manager_2.cpp:
+    complete
+    .text       start:0x02090ecc end:0x02090ed8
+
 src/engine/comm_parentinfo_4.cpp:
     complete
     .text       start:0x020922f0 end:0x02092310
@@ -3229,6 +3241,14 @@ src/engine/comm_interrupt.cpp:
 src/engine/comm_dtors.cpp:
     complete
     .text       start:0x02093b34 end:0x02093b5c
+
+src/engine/single_play.cpp:
+    complete
+    .text       start:0x02099550 end:0x020996a8
+
+src/engine/single_play_2.cpp:
+    complete
+    .text       start:0x02099cec end:0x02099da8
 
 src/game/knife_single_log.cpp:
     complete
