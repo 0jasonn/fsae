@@ -10,7 +10,7 @@
 // Replaces the partial class in engine/knife_tokenizer.h once integrated.
 
 extern "C" {
-void func_02005de0(void *dst, u32 value, u32 size);  // MI_CpuFill-like fill (dsd name), zeroes the pool
+void Mem_Set(void *dst, u32 value, u32 size);  // MI_CpuFill-like fill (dsd name), zeroes the pool
 void CopyBytes(void *dst, const void *src, u32 size); // memcpy (0x02005dc0)
 extern char data_0211ad5c[]; // TerminateToken vtable (4-byte token: just the vtable pointer)
 extern char data_021770b4[]; // default character encoding scheme object (UTF-16LE), bss

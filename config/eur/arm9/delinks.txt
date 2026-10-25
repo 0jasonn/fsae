@@ -9,6 +9,10 @@ src/engine/stub_init.cpp:
     complete
     .text       start:0x02004edc end:0x02004ee8
 
+src/engine/task_state.cpp:
+    complete
+    .text       start:0x02005488 end:0x020054f4
+
 src/engine/engine_free.cpp:
     complete
     .text       start:0x02005610 end:0x02005628
@@ -21,25 +25,77 @@ src/engine/engine_abs.cpp:
     complete
     .text       start:0x020056a0 end:0x020056ac
 
+src/engine/engine_assert.cpp:
+    complete
+    .text       start:0x020056ac end:0x020056e8
+
 src/engine/stub_2.cpp:
     complete
     .text       start:0x020056e8 end:0x020056ec
+
+src/engine/timer.cpp:
+    complete
+    .text       start:0x020056ec end:0x02005714
+
+src/engine/bits.cpp:
+    complete
+    .text       start:0x02005b1c end:0x02005bcc
+
+src/engine/codec.cpp:
+    complete
+    .text       start:0x02005c3c end:0x02005c90
 
 src/engine/store_byte.cpp:
     complete
     .text       start:0x02005c90 end:0x02005ca4
 
+src/engine/codec_2.cpp:
+    complete
+    .text       start:0x02005ca4 end:0x02005cc0
+
+src/engine/codec_3.cpp:
+    complete
+    .text       start:0x02005d48 end:0x02005dc0
+
 src/engine/engine_bytes.cpp:
     complete
     .text       start:0x02005dc0 end:0x02005de0
+
+src/engine/mem_set.cpp:
+    complete
+    .text       start:0x02005de0 end:0x02005df4
 
 src/engine/engine_bytes_2.cpp:
     complete
     .text       start:0x02005df4 end:0x02005e4c
 
+src/engine/mem.cpp:
+    complete
+    .text       start:0x02005e4c end:0x02005f38
+
+src/engine/stream.cpp:
+    complete
+    .text       start:0x02007ee8 end:0x02007f58
+
 src/engine/stub_7.cpp:
     complete
     .text       start:0x02008138 end:0x0200813c
+
+src/engine/str.cpp:
+    complete
+    .text       start:0x02008264 end:0x02008280
+
+src/engine/strchr.cpp:
+    complete
+    .text       start:0x02008398 end:0x020083d0
+
+src/engine/wstr.cpp:
+    complete
+    .text       start:0x0200a3ac end:0x0200a3c8
+
+src/engine/wstr_2.cpp:
+    complete
+    .text       start:0x0200a3e8 end:0x0200a41c
 
 src/engine/stub_3.cpp:
     complete
@@ -48,6 +104,14 @@ src/engine/stub_3.cpp:
 src/engine/stub_4.cpp:
     complete
     .text       start:0x0200b10c end:0x0200b12c
+
+src/engine/stub_ret0.cpp:
+    complete
+    .text       start:0x0200b1c0 end:0x0200b1c8
+
+src/engine/task_alias.cpp:
+    complete
+    .text       start:0x0200c544 end:0x0200c550
 
 src/engine/hook.cpp:
     complete
@@ -69,6 +133,14 @@ src/engine/stub_6.cpp:
     complete
     .text       start:0x0200de04 end:0x0200de08
 
+src/engine/stdconv_table_wrap.cpp:
+    complete
+    .text       start:0x0200df70 end:0x0200df7c
+
+src/engine/fatfs_wrap.cpp:
+    complete
+    .text       start:0x0200e214 end:0x0200e220
+
 src/engine/engine_word.cpp:
     complete
     .text       start:0x0200e568 end:0x0200e578
@@ -77,9 +149,37 @@ src/engine/engine_romword.cpp:
     complete
     .text       start:0x0200e5f8 end:0x0200e608
 
+src/engine/fs_wrap.cpp:
+    complete
+    .text       start:0x02010eec end:0x02010ef8
+
 src/engine/stdconv_wrap.cpp:
     complete
     .text       start:0x02010ffc end:0x02011024
+
+src/engine/stub_ret0_2.cpp:
+    complete
+    .text       start:0x020119bc end:0x020119c4
+
+src/engine/ret_code_alt.cpp:
+    complete
+    .text       start:0x02012250 end:0x02012264
+
+src/engine/fs_wrap_2.cpp:
+    complete
+    .text       start:0x0201247c end:0x02012488
+
+src/engine/obj_get24.cpp:
+    complete
+    .text       start:0x02012780 end:0x02012788
+
+src/engine/ret_const.cpp:
+    complete
+    .text       start:0x020128c0 end:0x020128e4
+
+src/engine/stub_empty_2.cpp:
+    complete
+    .text       start:0x02012c3c end:0x02012c40
 
 src/engine/engine_romhalf.cpp:
     complete
@@ -89,13 +189,45 @@ src/engine/vrambank.cpp:
     complete
     .text       start:0x020152c8 end:0x02015388
 
+src/engine/vram_disable.cpp:
+    complete
+    .text       start:0x02015448 end:0x0201545c
+
+src/engine/stub_empty.cpp:
+    complete
+    .text       start:0x02016c7c end:0x02016c80
+
+src/engine/os_wrap_2.cpp:
+    complete
+    .text       start:0x02016d08 end:0x02016d18
+
+src/engine/os_wrap_3.cpp:
+    complete
+    .text       start:0x02017238 end:0x02017248
+
+src/engine/os_wrap_4.cpp:
+    complete
+    .text       start:0x020172bc end:0x020172cc
+
 src/engine/cardbus_lock.cpp:
     complete
     .text       start:0x02017338 end:0x02017380
 
+src/engine/obj_get70.cpp:
+    complete
+    .text       start:0x02017ce0 end:0x02017ce8
+
 src/engine/irqcount.cpp:
     complete
     .text       start:0x02017dd0 end:0x02017e4c
+
+src/engine/ret_one.cpp:
+    complete
+    .text       start:0x02017fcc end:0x02017fd4
+
+src/engine/os_wrap.cpp:
+    complete
+    .text       start:0x02018530 end:0x0201853c
 
 src/engine/mpu.cpp:
     complete
@@ -109,6 +241,14 @@ src/engine/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
 
+src/engine/os_wrap_5.cpp:
+    complete
+    .text       start:0x02019e84 end:0x02019e94
+
+src/engine/engine_relay.cpp:
+    complete
+    .text       start:0x0201a064 end:0x0201a070
+
 src/engine/engine_block.cpp:
     complete
     .text       start:0x0201a468 end:0x0201a474
@@ -116,6 +256,10 @@ src/engine/engine_block.cpp:
 src/engine/mutex_wrap.cpp:
     complete
     .text       start:0x0201aff8 end:0x0201b020
+
+src/engine/obj_get38.cpp:
+    complete
+    .text       start:0x0201bdf4 end:0x0201bdfc
 
 src/engine/pmlist_wrap.cpp:
     complete

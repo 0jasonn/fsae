@@ -6,7 +6,7 @@
 //   DatalinkReader::initialize(void const*, unsigned long) (0x020a6398), DatalinkReader::finalize() (0x020a63d8),
 //   DatalinkReader::getDataBuffer(long) const (0x020a63f0), DatalinkReader::getDataSize(long) const (0x020a6438)
 
-extern "C" void func_020056ac(const char *file, const char *expr, const char *msg, s32 line); // assertion failure
+extern "C" void Engine_AssertFail(const char *file, const char *expr, const char *msg, s32 line); // assertion failure
 extern const char data_02124a88[];
 extern const char data_02124a94[];
 extern const char data_02124a71[];
@@ -38,7 +38,7 @@ ARM void DatalinkReader::finalize(void) {
 // DatalinkReader::getDataBuffer(long) const (0x020a63f0): the entry's data, at table + its offset
 ARM const void *DatalinkReader::getDataBuffer(s32 index) const {
     if (initialized == 0) {
-        func_020056ac(data_02124a88, data_02124a94, data_02124a71, 0x67);
+        Engine_AssertFail(data_02124a88, data_02124a94, data_02124a71, 0x67);
     }
     return (u8 *)table + *(u32 *)((u8 *)table + index * 8);
 }
@@ -46,7 +46,7 @@ ARM const void *DatalinkReader::getDataBuffer(s32 index) const {
 // DatalinkReader::getDataSize(long) const (0x020a6438): the size of the entry
 ARM s32 DatalinkReader::getDataSize(s32 index) const {
     if (initialized == 0) {
-        func_020056ac(data_02124aa8, data_02124ab4, data_02124a65, 0x6f);
+        Engine_AssertFail(data_02124aa8, data_02124ab4, data_02124a65, 0x6f);
     }
     return *(s32 *)((u8 *)table + index * 8 + 4);
 }

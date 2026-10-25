@@ -19,7 +19,7 @@ ARM void TextTokenizer::cleanupTokens(void) {
     for (i = 0; i < tokenCount; i++) {
         tokens[i]->dtorSlot();
     }
-    func_02005de0(poolBase, 0, poolSize);
+    Mem_Set(poolBase, 0, poolSize);
     poolUsed = 0;
     tokenCount = 0;
 }

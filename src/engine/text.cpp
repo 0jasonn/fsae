@@ -6,7 +6,7 @@
 // Knife::Message::Text, 0x0208f9c8 to 0x0208fb00 (the convert function follows): clear, the string constructor, set,
 // readFirstCharacter, readFirstCharacterAndStep and getLength. A Text is {character encoding scheme, data, size in bytes}.
 
-extern "C" s32 func_0200a3ac(const u16 *str); // wcslen (dsd name), returns the number of characters
+extern "C" s32 Wstr_Length(const u16 *str); // wcslen (dsd name), returns the number of characters
 
 namespace Knife {
 namespace Message {
@@ -25,7 +25,7 @@ ARM void Text::clear(void) {
 ARM Knife::Message::Text *Knife_Message_Text_Text(Knife::Message::Text *self, const u16 *str) {
     self->ces = (Knife::Message::ICharacterEncodingScheme *)data_021770b4;
     self->data = str;
-    self->size = func_0200a3ac(str) << 1;
+    self->size = Wstr_Length(str) << 1;
     return self;
 }
 

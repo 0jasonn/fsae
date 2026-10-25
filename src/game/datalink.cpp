@@ -5,7 +5,7 @@
 // Functions in this file (original names from the debug build):
 //   Datalink::verify(void const*, unsigned long) (0x020a6278), Datalink::crc(void const*, unsigned long) (0x020a6304)
 
-extern "C" s32 func_02005e4c(const void *a, const void *b, u32 size); // compares size bytes, zero when equal
+extern "C" s32 Mem_Compare(const void *a, const void *b, u32 size); // compares size bytes, zero when equal
 extern const u8 data_02124a80[]; // magic of a datalink block
 
 // Datalink::verify(void const*, unsigned long) (0x020a6278): checks the magic, the version, the size, the item count and the CRC
@@ -15,7 +15,7 @@ ARM BOOL Datalink::verify(const void *data, u32 size) {
     if (block == NULL) {
         return FALSE;
     }
-    if (func_02005e4c(block, data_02124a80, 4) != 0) {
+    if (Mem_Compare(block, data_02124a80, 4) != 0) {
         return FALSE;
     }
     if (block[4] != 1) {

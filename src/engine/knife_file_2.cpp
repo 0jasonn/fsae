@@ -75,7 +75,7 @@ ARM void System::threadFunction(void *arg) {
                 if (!empty) {
                     break;
                 }
-                func_02019e84(data_02172138.event, 1, 0);
+                Os_WaitEventExWrap(data_02172138.event, 1, 0);
                 OS_ClearEvent(data_02172138.event, 1);
             }
             OS_LockMutexFromWToR(data_02172138.mutex);
@@ -107,7 +107,7 @@ ARM void System::initialize(u32 flags) {
     OS_InitMutex(data_02172138.mutex);
     OS_InitEvent(data_02172138.event);
     OS_CreateThread(data_02172138.thread, System::threadFunction, 0, &data_02176238, 0x4000,
-                    func_02017ce0((void *)data_02129938[1]));
+                    Obj_GetField70((void *)data_02129938[1]));
     OS_WakeupThreadDirect(data_02172138.thread);
     func_02017c34();
 }

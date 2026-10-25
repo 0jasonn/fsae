@@ -9,7 +9,7 @@
 
 extern u8 frameCounter[];
 extern "C" void func_0201500c(u32 a);
-extern "C" void func_02015448(void);
+extern "C" void Vram_DisableBankTail(void);
 extern "C" void func_020148f0(u32 a);
 extern "C" void func_02014af4(u32 a);
 extern "C" void func_02015084(u32 a);
@@ -27,7 +27,7 @@ ARM void BeforeTask(void) {
 ARM void twlInitVRAM(void) {
     func_0201500c(0x1ff);
     MIi_CpuClearFast(0, (void *)0x6800000, 0xa4000);
-    func_02015448();
+    Vram_DisableBankTail();
     MIi_CpuClearFast(0xc0, (void *)0x7000000, 0x400);
     MIi_CpuClearFast(0, (void *)0x5000000, 0x400);
     MIi_CpuClearFast(0xc0, (void *)0x7000400, 0x400);

@@ -45,7 +45,7 @@ ARM void TextTokenizer::changeMemoryPool(void *pool, u32 size) {
     poolBase = pool;
     poolSize = size;
     poolUsed = 0;
-    func_02005de0(pool, 0, size);
+    Mem_Set(pool, 0, size);
     tokenCount = 0;
     tokens = (Token **)poolBase;
 }
