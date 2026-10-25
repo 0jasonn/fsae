@@ -36,7 +36,7 @@ ARM void title_resourceCtrlCallback(DISP_CTRL_ *ctrl) {
         }
     }
     paletteFade.fadeActive = data_0212c5ac.blendEnabled;
-    func_020152c8();
+    Vram_ResetMainBankA();
     GX_TrySetBankForLCDC(0x20);
     GX_TrySetBankForLCDC(0x40);
     MIi_CpuCopyFast(paletteFade.bufferSelect != 0 ? data_0216fd04 : data_02170104, (void *)0x06896000, 0x400);
@@ -48,7 +48,7 @@ ARM void setupVirtualScreenCallback(void) {
     void *copySource;
     func_02082c54((void *)title_resourceCtrlCallback);
     paletteFade.fadeLevel = 0xffff;
-    func_020152ec();
+    Vram_ResetMainBankB();
     copySource = KnifeApp_getZeldaResource_08dde0(KnifeApp_getInstance(), &copySize, 0x3b);
     MIi_CpuCopyFast(copySource, data_0216fd04, copySize);
     MIi_CpuCopyFast(copySource, data_02170104, copySize);

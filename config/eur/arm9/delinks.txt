@@ -69,6 +69,54 @@ src/engine/stub_6.cpp:
     complete
     .text       start:0x0200de04 end:0x0200de08
 
+src/engine/engine_word.cpp:
+    complete
+    .text       start:0x0200e568 end:0x0200e578
+
+src/engine/engine_romword.cpp:
+    complete
+    .text       start:0x0200e5f8 end:0x0200e608
+
+src/engine/stdconv_wrap.cpp:
+    complete
+    .text       start:0x02010ffc end:0x02011024
+
+src/engine/engine_romhalf.cpp:
+    complete
+    .text       start:0x02012e58 end:0x02012e68
+
+src/engine/cardbus_lock.cpp:
+    complete
+    .text       start:0x02017338 end:0x02017380
+
+src/engine/irqcount.cpp:
+    complete
+    .text       start:0x02017dd0 end:0x02017e4c
+
+src/engine/mpu.cpp:
+    complete
+    .text       start:0x02018c70 end:0x02018cf0
+
+src/engine/engine_halfb.cpp:
+    complete
+    .text       start:0x02018efc end:0x02018f0c
+
+src/engine/engine_halfc.cpp:
+    complete
+    .text       start:0x02019044 end:0x02019054
+
+src/engine/engine_block.cpp:
+    complete
+    .text       start:0x0201a468 end:0x0201a474
+
+src/engine/mutex_wrap.cpp:
+    complete
+    .text       start:0x0201aff8 end:0x0201b020
+
+src/engine/pmlist_wrap.cpp:
+    complete
+    .text       start:0x0201d6dc end:0x0201d70c
+
 src/object/arrow.cpp:
     complete
     .text       start:0x02020fc8 end:0x02021004

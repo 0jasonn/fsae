@@ -36,7 +36,7 @@ ARM void PowerManager::update(void) {
     if (view->lidJustClosed != 0) {
         m4aSoundResume();
         if (PM_GetLCDPower() == 1) {
-            view->lcdWasOn = func_02012e58() != 0;
+            view->lcdWasOn = Engine_ReadRomHalf() != 0;
             PM_SetLCDPower(0);
         }
     }
@@ -65,7 +65,7 @@ ARM void PowerManager::update(void) {
         if (PM_GetLCDPower() != 1) {
             return;
         }
-        view->lcdWasOn = func_02012e58() != 0;
+        view->lcdWasOn = Engine_ReadRomHalf() != 0;
         PM_SetLCDPower(0);
     }
 }
