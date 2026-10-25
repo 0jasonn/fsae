@@ -49,7 +49,7 @@ extern SubtaskFunc data_021271cc[];
 extern SubtaskFunc data_0212720c[];
 
 extern "C" {
-void func_020a3778(u32 a);
+void Knife_Message_setPendingPtr(u32 a);
 }
 
 #endif

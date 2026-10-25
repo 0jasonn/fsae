@@ -8,7 +8,7 @@ extern u8 data_02124984[];  // RenderTarget vtable
 extern u8 data_0217d56c[];  // render target pool: the array pointer is at +0x0c
 extern u8 data_0217d650[];  // render target array, 0x208 bytes per entry, 2 entries
 extern "C" void Knife_Message_RenderTarget_finalize(void *self);
-extern "C" void func_020a48cc(void *self);
+extern "C" void Knife_Message_PictogramRenderer_noop(void *self);
 extern "C" void func_0200c868(void *array, s32 count, u32 size, void *dtor);
 
 // i_IsExText(unsigned long) (0x020a3134): true for the character codes 0x2328 to 0x270f
@@ -32,5 +32,5 @@ ARM void *Knife_Message_RenderTarget_dtor_RenderTarget_0a3160(void *self) {
 // Knife_Message_i_FinalizeRenderTargets (name invented): destroys the two render targets of data_0217d650
 extern "C" void Knife_Message_i_FinalizeRenderTargets(void);
 ARM void Knife_Message_i_FinalizeRenderTargets(void) {
-    func_0200c868(data_0217d650, 2, 0x208, (void *)func_020a48cc);
+    func_0200c868(data_0217d650, 2, 0x208, (void *)Knife_Message_PictogramRenderer_noop);
 }

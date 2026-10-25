@@ -9,7 +9,7 @@ extern "C" void subTask_init_bg3(int a, int b, int c);
 extern "C" void subTask_init_bg2(int a, int b, int c);
 extern "C" void subTask_init_bg2_lang(int a, int b);
 extern "C" void subTask_init_obj_lang(int a, int b);
-extern "C" void func_020a3778(u32 a);
+extern "C" void Knife_Message_setPendingPtr(u32 a);
 void func_020827a8(s32 a); // C++ name _Z13func_020827a8l
 
 #endif

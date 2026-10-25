@@ -38,7 +38,7 @@ ARM void subTask_title_init(void) {
     subTask_init_vram(0);
     subTask_init_bg3(12, 13, 14);
     subTask_setupBuffer(0);
-    func_020a3778(0);
+    Knife_Message_setPendingPtr(0);
     app = (u8 *)KnifeApp_getInstance();
     *(s32 *)(app + 0x10) = 0;
     *(s32 *)(app + 0x14) = 0;
@@ -81,7 +81,7 @@ ARM void subTask_push_start_init(void) {
     subTask_init_obj(23, 26, -1, -1);
     subTask_init_obj_lang(1, 0x2000);
     subTask_setupBuffer(0);
-    func_020a3778(0x100);
+    Knife_Message_setPendingPtr(0x100);
     app = (u8 *)KnifeApp_getInstance();
     *(s32 *)(app + 0x10) = 0;
     *(s32 *)(app + 0x14) = 0;

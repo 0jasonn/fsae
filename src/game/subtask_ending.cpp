@@ -15,7 +15,7 @@ ARM void subTask_ending_init(void) {
     subTask_init_obj(0x2b, 0x2a, -1, -1);
     zero = 0;
     subTask_setupBuffer(zero);
-    func_020a3778(4);
+    Knife_Message_setPendingPtr(4);
     app = (u8 *)KnifeApp_getInstance();
     *(u32 *)(app + 0x10) = zero;
     *(u32 *)(app + 0x14) = zero;

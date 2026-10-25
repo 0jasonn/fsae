@@ -15,7 +15,7 @@ ARM void subTask_gameover_init(void) {
     subTask_init_obj(0x2b, 0x2a, -1, -1);
     zero = 0;
     subTask_setupBuffer(zero);
-    func_020a3778(4);
+    Knife_Message_setPendingPtr(4);
     dispCtrl = (u32 *)KnifeApp_getInstance();
     dispCtrl[4] = zero;
     dispCtrl[5] = zero;
