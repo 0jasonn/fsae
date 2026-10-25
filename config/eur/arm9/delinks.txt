@@ -3214,6 +3214,18 @@ src/game/rendertarget_4.cpp:
     complete
     .text       start:0x020a4e8c end:0x020a4ee0
 
+src/game/textrender_10.cpp:
+    complete
+    .text       start:0x020a4f44 end:0x020a510c
+
+src/game/textrender_11.cpp:
+    complete
+    .text       start:0x020a511c end:0x020a5138
+
+src/game/textrender_12.cpp:
+    complete
+    .text       start:0x020a5340 end:0x020a5384
+
 src/game/textrender_7.cpp:
     complete
     .text       start:0x020a58ac end:0x020a58b4
