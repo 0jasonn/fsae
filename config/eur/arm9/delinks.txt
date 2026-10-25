@@ -3102,6 +3102,14 @@ src/game/lobby_5.cpp:
     complete
     .text       start:0x020b4e60 end:0x020b4ecc
 
+src/game/lobby_10.cpp:
+    complete
+    .text       start:0x020b5214 end:0x020b5264
+
+src/game/lobby_11.cpp:
+    complete
+    .text       start:0x020b52f8 end:0x020b5318
+
 src/game/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd2d8
