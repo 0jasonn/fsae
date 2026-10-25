@@ -2874,6 +2874,10 @@ src/engine/texttokenizer.cpp:
     complete
     .text       start:0x0208e3f8 end:0x0208e450
 
+src/engine/texttokenizer_4.cpp:
+    complete
+    .text       start:0x0208e4e0 end:0x0208e5c4
+
 src/engine/texttokenizer_3.cpp:
     complete
     .text       start:0x0208e5c4 end:0x0208e6bc
@@ -2890,6 +2894,10 @@ src/engine/tokens_2.cpp:
     complete
     .text       start:0x0208f394 end:0x0208f434
 
+src/engine/texttoken.cpp:
+    complete
+    .text       start:0x0208f434 end:0x0208f9c8
+
 src/engine/text.cpp:
     complete
     .text       start:0x0208f9c8 end:0x0208faf4
@@ -2902,13 +2910,25 @@ src/engine/fullwidth.cpp:
     complete
     .text       start:0x0208fc84 end:0x0208fca8
 
+src/engine/message_localize.cpp:
+    complete
+    .text       start:0x0208fea4 end:0x0208ffbc
+
 src/engine/ces_3.cpp:
     complete
     .text       start:0x0208ffbc end:0x020900b4
 
+src/engine/ces_utf8.cpp:
+    complete
+    .text       start:0x02090164 end:0x02090398
+
 src/engine/ces_2.cpp:
     complete
     .text       start:0x02090398 end:0x020904b0
+
+src/engine/knife_sound_6.cpp:
+    complete
+    .text       start:0x020904b0 end:0x020904e0
 
 src/engine/knife_sound_4.cpp:
     complete
@@ -2917,6 +2937,26 @@ src/engine/knife_sound_4.cpp:
 src/engine/knife_sound_5.cpp:
     complete
     .text       start:0x02090634 end:0x02090708
+
+src/engine/comm_parentinfo.cpp:
+    complete
+    .text       start:0x020907a0 end:0x02090810
+
+src/engine/comm_parentinfo_2.cpp:
+    complete
+    .text       start:0x0209083c end:0x02090868
+
+src/engine/comm_parentinfo_3.cpp:
+    complete
+    .text       start:0x0209096c end:0x020909c8
+
+src/engine/comm_parentinfo_4.cpp:
+    complete
+    .text       start:0x020922f0 end:0x02092310
+
+src/engine/comm_dtors.cpp:
+    complete
+    .text       start:0x02093b34 end:0x02093b5c
 
 src/game/knife_single_log.cpp:
     complete

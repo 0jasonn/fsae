@@ -2,6 +2,7 @@
 #include "global.h"
 #include "game/uiobject.h"
 #include "game/groupselectuiview.h"
+#include "engine/comm_parentinfo.h"
 
 // Functions in this file (original names from the debug build):
 //   groupSelectUIView::updateScan (0x020b0d7c)
@@ -26,9 +27,9 @@ ARM void groupSelectUIView::updateScan(void) {
     for (scanIndex = 0; scanIndex < scanCount; scanIndex++) {
         scanResult = Knife_Comm_WirelessManager_getScanResult(manager, scanIndex);
         if (scanResult != NULL) {
-            players = Knife_Comm_ParentInfo_getCurrentPlayers(scanResult);
-            infoSize = Knife_Comm_ParentInfo_getUserGameInfoSize(scanResult);
-            info = Knife_Comm_ParentInfo_getUserGameInfo(scanResult);
+            players = ((const Knife::Comm::ParentInfo *)scanResult)->getCurrentPlayers();
+            infoSize = ((const Knife::Comm::ParentInfo *)scanResult)->getUserGameInfoSize();
+            info = (const u16 *)((const Knife::Comm::ParentInfo *)scanResult)->getUserGameInfo();
             addRoomPane((u8 *)scanResult + 8, info, infoSize, (u8)players, *(u32 *)((u8 *)scanResult + 0xc8) & 0xff);
         }
     }

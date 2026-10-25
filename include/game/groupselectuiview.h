@@ -129,9 +129,6 @@ typedef struct TextRenderTarget {
 
 extern "C" void func_020c6550(void *cell, s32 a1, s32 a2, s32 x, s32 y, s32 a5, s32 a6);
 extern "C" void *Knife_Message_GetRenderTarget(s32 pane);
-extern "C" s32 Knife_Comm_ParentInfo_getCurrentPlayers(void *info);
-extern "C" s32 Knife_Comm_ParentInfo_getUserGameInfoSize(void *info);
-extern "C" const u16 *Knife_Comm_ParentInfo_getUserGameInfo(void *info);
 
 // Palette link table (5 entries, rodata)
 typedef struct LinkPalTable {
