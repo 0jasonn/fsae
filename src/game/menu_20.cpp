@@ -21,12 +21,12 @@ ARM s32 Menu_DispatchKeys(MenuWork *menu) {
     keys = *(u16 *)((u8 *)menu + 0x403a0);
     if (keys & 0x20) {
         if (func_020bb450(menu->unk_358) != 0) {
-            func_020be154(menu);
+            Menu_SetCursorPos(menu);
             result = 1;
         }
     } else if (keys & 0x10) {
         if (func_020bb56c(menu->unk_358) != 0) {
-            func_020be154(menu);
+            Menu_SetCursorPos(menu);
             result = 1;
         }
     } else if (keys & 0x4) {

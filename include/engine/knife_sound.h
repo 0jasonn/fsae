@@ -55,7 +55,7 @@ void Knife_Sound_Handle_update(void *handle);                               // K
 void Knife_Sound_Handle_pause(void *handle, s32 pause);                     // Knife_Sound_Handle_pause
 void Knife_Sound_Handle_Handle(void *handle);                               // Knife_Sound_Handle_Handle
 void func_0208bee4(void *handle);                                                // base dtor of Handle
-void *func_020c09d8(void *base, u32 size);
+void *SndHeap_CreateRecord(void *base, u32 size);
 void func_0208bcd4(void *self);                                              // base ctor, sets the base vtable
 void func_0208bcfc(void *self);                                              // base dtor, empty
 KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self); // Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c
@@ -74,9 +74,9 @@ void Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0(void *handle);           // K
 void Knife_Sound_WaveHandle_setFlagByte(void *handle, s32 flag);            // Knife_Sound_WaveHandle_setFlagByte
 void SndSys_Init(void);
 void SndSys_Shutdown(void);
-s32 func_020bf2b4(void);
-void func_020bf25c(void);
-void func_020bf388(s32 index, void *entry);
+s32 SndSys_SwapDriverBuffer(void);
+void SndSys_StopAll(void);
+void SndSys_ReadChannelInfoCurrent(s32 index, void *entry);
 }
 
 extern "C" {

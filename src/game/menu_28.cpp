@@ -7,8 +7,8 @@
 //   Menu_InitPool (Menu_InitPool)
 
 extern "C" {
-s32 func_020c0874(s32 value);
-s32 func_020c0844(void);
+s32 SndState_GetEntryCount(s32 value);
+s32 SndState_GetBlockWord(void);
 void func_020c050c(void *obj, s32 value);
 void func_020c1660(s32 value);
 void SndSys_Init(void *obj);
@@ -36,7 +36,7 @@ ARM void Menu_InitPool(MenuPool *pool, s32 value) {
     *(s32 *)((u8 *)pool + 0x238) = -1;
     *(s32 *)((u8 *)pool + 0x23c) = 0;
     pool->current = 0;
-    pool->count = func_020c0874(0);
-    pool->unk_0c = func_020c0844();
+    pool->count = SndState_GetEntryCount(0);
+    pool->unk_0c = SndState_GetBlockWord();
     pool->ready = 1;
 }

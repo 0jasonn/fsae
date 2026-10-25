@@ -17,7 +17,7 @@ ARM void Knife_Sound_System_pause(s32 pause) {
 
 extern "C" void Knife_Sound_System_fwd_08c630(void);
 ARM void Knife_Sound_System_fwd_08c630(void) {
-    func_020bf25c();
+    SndSys_StopAll();
 }
 
 extern "C" KnifeSoundSequenceHandle *Knife_Sound_System_createHandle(void);

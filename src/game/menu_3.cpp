@@ -21,7 +21,7 @@ ARM s32 Menu_HandleInput(MenuWork *menu, MenuInput *input) {
             break;
         case 4:
         case 5:
-            func_020be154(menu);
+            Menu_SetCursorPos(menu);
             break;
         }
         if (input->flag5 != 0) {

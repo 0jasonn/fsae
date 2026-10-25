@@ -15,7 +15,7 @@ ARM void Menu_Step(MenuWork *menu, s32 flag) {
     if (result == -1) {
         return;
     }
-    func_020be154(menu);
+    Menu_SetCursorPos(menu);
 }
 
 // Marks the menu as finished (the flag at sub+0x621) and tells the object at 0x358.

@@ -13,11 +13,11 @@ s32 SND_RecvCommandReply(u32 tag);
 void SND_FlushCommand(u32 mode);
 void PM_PrependPostExitCallback(void *callback);
 void PM_AppendPostExitCallback(void *callback);
-void func_020bf3d4(void);
+void SndSys_ExitStopTimer(void);
 void func_020bfa68(void);
 void SndChannel_Reset(void);
 void func_020bfb1c(void);
-void func_020c02b0(void);
+void SndSys_ClearWords(void);
 void func_020c02d0(void);
 void func_020c1a7c(void);
 }
@@ -49,14 +49,14 @@ ARM void SndSys_Init(void) {
     }
     data_02181964.initializing = 1;
     SND_Init();
-    data_02181964.onExitA = (void *)func_020bf3d4;
+    data_02181964.onExitA = (void *)SndSys_ExitStopTimer;
     data_02181964.unk_14 = 0;
     data_02181964.onExitB = (void *)Menu_ForwardBf40c;
     data_02181964.unk_24 = 0;
     PM_PrependPostExitCallback(data_02181974);
     PM_AppendPostExitCallback(data_02181984);
     SndChannel_Reset();
-    func_020c02b0();
+    SndSys_ClearWords();
     func_020bfa68();
     data_02181964.status = -1;
     data_02181964.initialized = 1;

@@ -92,7 +92,7 @@ ARM void Knife_Sound_StaticObject_dtor(void *self) {
 
 extern "C" bool Knife_Sound_Heap_initialize(KnifeSoundHeap *self, void *memory, u32 size);
 ARM bool Knife_Sound_Heap_initialize(KnifeSoundHeap *self, void *memory, u32 size) {
-    self->base = func_020c09d8(memory, size);
+    self->base = SndHeap_CreateRecord(memory, size);
     return self->base != NULL;
 }
 
