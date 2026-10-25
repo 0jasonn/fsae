@@ -473,6 +473,10 @@ src/game/comm.cpp:
     complete
     .text       start:0x020296e8 end:0x02029828
 
+src/game/commerror.cpp:
+    complete
+    .text       start:0x02029828 end:0x02029968
+
 src/game/mathutil.cpp:
     complete
     .text       start:0x02029a44 end:0x02029a50
