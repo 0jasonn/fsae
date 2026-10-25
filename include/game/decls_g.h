@@ -37,7 +37,7 @@ s32 PM_SetLCDPower(s32 a);
 void func_0201d038(s32 a, s32 b, s32 c);
 void m4aSoundResume(void);
 s32 Engine_ReadRomHalf(void);
-void func_0200c574(void *obj, void (*destructor)(void *), void *dso);
+void Chain_Push(void *obj, void (*destructor)(void *), void *dso);
 void Knife_PowerManager_PowerManager(void *self);
 void Knife_PowerManager_dtorComplete_PowerManager(void *self);
 }

@@ -98,7 +98,7 @@ void OS_WakeupThreadDirect(void *thread);
 void OS_ExitThread(void);
 void OS_YieldThread(void);
 s32 Obj_GetField70(void *thread);
-void func_02017c34(void);
+void Stub_EmptyC(void);
 Knife::File::Entity *Knife_File_Entity_ctor(Knife::File::Entity *self, const char *name);
 u32 Knife_File_Entity_getField54(Knife::File::Entity *self);
 u8 Knife_File_Entity_isReadDone(Knife::File::Entity *self);

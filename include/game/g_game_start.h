@@ -35,7 +35,7 @@ void subTaskSetBG2Offset_reset(void);
 extern "C" {
 void GXS_SetGraphicsMode(u32 mode);
 void func_02015084(u32 a);
-void func_02015190(u32 a);
+void Vram_SetBankGroupB(u32 a);
 void *func_0208e148(u32 size);
 }
 

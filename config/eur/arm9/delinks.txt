@@ -77,6 +77,10 @@ src/engine/stream.cpp:
     complete
     .text       start:0x02007ee8 end:0x02007f58
 
+src/engine/str_format.cpp:
+    complete
+    .text       start:0x02008080 end:0x02008110
+
 src/engine/stub_7.cpp:
     complete
     .text       start:0x02008138 end:0x0200813c
@@ -93,6 +97,10 @@ src/engine/halfword.cpp:
     complete
     .text       start:0x02008440 end:0x02008478
 
+src/engine/wstr_format.cpp:
+    complete
+    .text       start:0x0200a2e4 end:0x0200a3ac
+
 src/engine/wstr.cpp:
     complete
     .text       start:0x0200a3ac end:0x0200a3c8
@@ -101,9 +109,17 @@ src/engine/wstr_2.cpp:
     complete
     .text       start:0x0200a3e8 end:0x0200a41c
 
+src/engine/decnum.cpp:
+    complete
+    .text       start:0x0200a41c end:0x0200a488
+
 src/engine/stub_3.cpp:
     complete
     .text       start:0x0200a4d4 end:0x0200a4d8
+
+src/engine/fp_sign.cpp:
+    complete
+    .text       start:0x0200ada4 end:0x0200adec
 
 src/engine/stub_4.cpp:
     complete
@@ -113,6 +129,30 @@ src/engine/stub_ret0.cpp:
     complete
     .text       start:0x0200b1c0 end:0x0200b1c8
 
+src/engine/range_table.cpp:
+    complete
+    .text       start:0x0200b2d0 end:0x0200b334
+
+src/engine/info_kind.cpp:
+    complete
+    .text       start:0x0200b43c end:0x0200b458
+
+src/engine/table_scan.cpp:
+    complete
+    .text       start:0x0200c09c end:0x0200c11c
+
+src/engine/node_write.cpp:
+    complete
+    .text       start:0x0200c358 end:0x0200c3b4
+
+src/engine/cleanup.cpp:
+    complete
+    .text       start:0x0200c4a8 end:0x0200c500
+
+src/engine/chain_drain.cpp:
+    complete
+    .text       start:0x0200c500 end:0x0200c544
+
 src/engine/task_alias.cpp:
     complete
     .text       start:0x0200c544 end:0x0200c550
@@ -120,6 +160,10 @@ src/engine/task_alias.cpp:
 src/engine/hook.cpp:
     complete
     .text       start:0x0200c550 end:0x0200c574
+
+src/engine/chain_push.cpp:
+    complete
+    .text       start:0x0200c574 end:0x0200c594
 
 src/engine/free_wrap_2.cpp:
     complete
@@ -129,9 +173,25 @@ src/engine/stub_5.cpp:
     complete
     .text       start:0x0200c8c4 end:0x0200c8dc
 
+src/engine/obj_delete.cpp:
+    complete
+    .text       start:0x0200c8dc end:0x0200c8f8
+
 src/engine/stub_8.cpp:
     complete
     .text       start:0x0200c8f8 end:0x0200c920
+
+src/engine/obj_delete_2.cpp:
+    complete
+    .text       start:0x0200c920 end:0x0200c93c
+
+src/engine/slot_restore.cpp:
+    complete
+    .text       start:0x0200c93c end:0x0200c998
+
+src/engine/packed_optional.cpp:
+    complete
+    .text       start:0x0200ca58 end:0x0200ca80
 
 src/engine/stub_6.cpp:
     complete
@@ -165,6 +225,10 @@ src/engine/stub_ret0_2.cpp:
     complete
     .text       start:0x020119bc end:0x020119c4
 
+src/engine/fs_archive_reset.cpp:
+    complete
+    .text       start:0x02011ffc end:0x0201202c
+
 src/engine/ret_code_alt.cpp:
     complete
     .text       start:0x02012250 end:0x02012264
@@ -172,6 +236,10 @@ src/engine/ret_code_alt.cpp:
 src/engine/fs_wrap_2.cpp:
     complete
     .text       start:0x0201247c end:0x02012488
+
+src/engine/fs_rom.cpp:
+    complete
+    .text       start:0x02012488 end:0x02012508
 
 src/engine/obj_get24.cpp:
     complete
@@ -189,6 +257,14 @@ src/engine/engine_romhalf.cpp:
     complete
     .text       start:0x02012e58 end:0x02012e68
 
+src/engine/field_kind.cpp:
+    complete
+    .text       start:0x02012f98 end:0x02012fd8
+
+src/engine/vram_bank_bits.cpp:
+    complete
+    .text       start:0x02015190 end:0x02015290
+
 src/engine/vrambank.cpp:
     complete
     .text       start:0x020152c8 end:0x02015388
@@ -197,6 +273,10 @@ src/engine/vram_disable.cpp:
     complete
     .text       start:0x02015448 end:0x0201545c
 
+src/engine/dma_conflict.cpp:
+    complete
+    .text       start:0x02015940 end:0x020159cc
+
 src/engine/stub_empty.cpp:
     complete
     .text       start:0x02016c7c end:0x02016c80
@@ -204,6 +284,10 @@ src/engine/stub_empty.cpp:
 src/engine/os_wrap_2.cpp:
     complete
     .text       start:0x02016d08 end:0x02016d18
+
+src/engine/os_kind_terminate.cpp:
+    complete
+    .text       start:0x02017008 end:0x02017054
 
 src/engine/os_wrap_3.cpp:
     complete
@@ -217,6 +301,26 @@ src/engine/cardbus_lock.cpp:
     complete
     .text       start:0x02017338 end:0x02017380
 
+src/engine/os_start_context.cpp:
+    complete
+    .text       start:0x02017970 end:0x020179c8
+
+src/engine/os_thread_exit.cpp:
+    complete
+    .text       start:0x02017a00 end:0x02017a5c
+
+src/engine/os_thread_link.cpp:
+    complete
+    .text       start:0x02017a5c end:0x02017aac
+
+src/engine/os_irq_flush.cpp:
+    complete
+    .text       start:0x02017b68 end:0x02017b84
+
+src/engine/stub_empty_c.cpp:
+    complete
+    .text       start:0x02017c34 end:0x02017c38
+
 src/engine/obj_get70.cpp:
     complete
     .text       start:0x02017ce0 end:0x02017ce8
@@ -224,6 +328,10 @@ src/engine/obj_get70.cpp:
 src/engine/irqcount.cpp:
     complete
     .text       start:0x02017dd0 end:0x02017e4c
+
+src/engine/device_flags.cpp:
+    complete
+    .text       start:0x02017f64 end:0x02017f9c
 
 src/engine/ret_one.cpp:
     complete
@@ -245,6 +353,18 @@ src/engine/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
 
+src/engine/pair_setup.cpp:
+    complete
+    .text       start:0x02019b00 end:0x02019b5c
+
+src/engine/pair_get.cpp:
+    complete
+    .text       start:0x02019ccc end:0x02019cf0
+
+src/engine/os_halt.cpp:
+    complete
+    .text       start:0x02019e54 end:0x02019e64
+
 src/engine/os_wrap_5.cpp:
     complete
     .text       start:0x02019e84 end:0x02019e94
@@ -265,9 +385,17 @@ src/engine/obj_get38.cpp:
     complete
     .text       start:0x0201bdf4 end:0x0201bdfc
 
+src/engine/pm_callback.cpp:
+    complete
+    .text       start:0x0201c854 end:0x0201c884
+
 src/engine/pmlist_wrap.cpp:
     complete
     .text       start:0x0201d6dc end:0x0201d70c
+
+src/engine/std_snprintf.cpp:
+    complete
+    .text       start:0x0201dc94 end:0x0201dcbc
 
 src/object/arrow.cpp:
     complete

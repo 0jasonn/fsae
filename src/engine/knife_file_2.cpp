@@ -109,7 +109,7 @@ ARM void System::initialize(u32 flags) {
     OS_CreateThread(data_02172138.thread, System::threadFunction, 0, &data_02176238, 0x4000,
                     Obj_GetField70((void *)data_02129938[1]));
     OS_WakeupThreadDirect(data_02172138.thread);
-    func_02017c34();
+    Stub_EmptyC();
 }
 
 // System::yieldThread (0x0208ca28): tail call to OS_YieldThread

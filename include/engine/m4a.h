@@ -107,7 +107,7 @@ extern "C" {
 void Knife_Comm_WirelessIcon_WirelessIcon(void *self);
 void Knife_Hud_HudManager_ctor(void *self);
 void Knife_Message_TextTokenizer_ctor_08e3b4(void *self);
-void func_0200c574(void *obj, void *dtor, void *handle);
+void Chain_Push(void *obj, void *dtor, void *handle);
 extern u32 data_021763dc;
 extern u8 data_021763ec[];
 extern u8 data_021763f0[];

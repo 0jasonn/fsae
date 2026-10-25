@@ -6,7 +6,7 @@
 
 // WirelessManager singleton (0x020909c8) and its initializer with the allocator (0x02090a1c, 0x26c bytes). The object
 // lives in bss at data_021770e0, its guard word is at data_021770bc + 4 (bit 0 set once constructed), and its
-// destructor (0x020923b4) is registered with func_0200c574.
+// destructor (0x020923b4) is registered with Chain_Push.
 
 extern u32 data_021770bc[]; // guard word at +4 (bss)
 extern u8 data_021770c4[];  // the handle passed to the exit registration (bss)
@@ -14,7 +14,7 @@ extern u8 data_021770e0[];  // the WirelessManager object (bss)
 
 extern "C" void *Knife_Comm_WirelessManager_WirelessManager(void *self);
 extern "C" void *Knife_Comm_WirelessManager_dtor_WirelessManager_0923b4(void *self);
-extern "C" void func_0200c574(void *object, void *dtor, void *handle);
+extern "C" void Chain_Push(void *object, void *dtor, void *handle);
 extern "C" void Knife_Comm_ChildInfo_cleanup(void *self);
 extern "C" void MI_CpuFill8(void *dst, u32 value, u32 size);
 extern "C" int WM_Init(void *sysWork, u32 dmaNo);
@@ -32,7 +32,7 @@ public:
 ARM void *func_020909c8(void) {
     if ((data_021770bc[1] & 1) == 0) {
         Knife_Comm_WirelessManager_WirelessManager(data_021770e0);
-        func_0200c574(data_021770e0, Knife_Comm_WirelessManager_dtor_WirelessManager_0923b4, data_021770c4);
+        Chain_Push(data_021770e0, Knife_Comm_WirelessManager_dtor_WirelessManager_0923b4, data_021770c4);
         data_021770bc[1] = data_021770bc[1] | 1;
     }
     return data_021770e0;

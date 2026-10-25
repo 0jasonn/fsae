@@ -21,7 +21,7 @@ ARM void *KnifeApp_getInstance(void) {
         Knife_Message_TextTokenizer_ctor_08e3b4(app + 0x1bc);
         Knife_Hud_HudManager_ctor(app + 0x1f8);
         *(u32 *)(app + 0x30) = 0;
-        func_0200c574(app, (void *)KnifeApp_dtor_KnifeApp, data_021763e0);
+        Chain_Push(app, (void *)KnifeApp_dtor_KnifeApp, data_021763e0);
         data_021763dc |= 1;
     }
     return data_021763ec;

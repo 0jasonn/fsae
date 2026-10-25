@@ -13,7 +13,7 @@ typedef struct TaskState {
 extern TaskState data_02127280;
 
 extern "C" void func_0200813c(s32 value);
-extern "C" void func_0200c500(void);
+extern "C" void Chain_Drain(void);
 extern "C" void Task_Dispatch(s32 flag);
 extern "C" void Task_Flush(s32 flag);
 extern "C" void Task_Start(void);
@@ -28,7 +28,7 @@ ARM void Task_Start(void) {
 // When the task is not active, runs the pending callback once; then dispatches the queue with flag.
 ARM void Task_Flush(s32 flag) {
     if (data_02127280.active == 0) {
-        func_0200c500();
+        Chain_Drain();
         if (data_02127280.callback != NULL) {
             data_02127280.callback();
             data_02127280.callback = NULL;
