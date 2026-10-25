@@ -31,9 +31,9 @@ ARM void SndVoice_SetPriority(SndVoice *voice, u8 priority) {
     func_020c2004(&data_02183eb8, voice);
     voice->priority = priority;
     if (list != 0) {
-        func_020bfe90(list, voice);
+        SndVoice_InsertSorted(list, voice);
     }
-    func_020bfee0(voice);
+    SndVoice_InsertGlobal(voice);
 }
 
 // SndVoice_ReleaseChannel: unlocks the voice's channel mask and clears it.

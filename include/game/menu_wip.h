@@ -85,7 +85,7 @@ MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag);
 void func_020bf9dc(void *obj, s32 a, s32 b);
 void SndState_StartEntryList(void *obj, s32 a, s32 b);
 void SndSlot_ReleaseFirst(void *obj, s32 value);
-void func_020b7080(void *buf);
+void Work21_clear(void *buf);
 void lobby_callWithZeroPos(s32 active, void *buf);
 void func_020bc6c4(void *obj);
 void func_020c2c48(void *arg, void *obj);

@@ -3890,13 +3890,25 @@ src/engine/window_subinfo.cpp:
     complete
     .text       start:0x020b7074 end:0x020b7080
 
+src/engine/work21_clear.cpp:
+    complete
+    .text       start:0x020b7080 end:0x020b70c0
+
 src/engine/level_table.cpp:
     complete
     .text       start:0x020b70c0 end:0x020b70e8
 
+src/engine/level_table_2.cpp:
+    complete
+    .text       start:0x020b70e8 end:0x020b70fc
+
 src/engine/packed_set.cpp:
     complete
     .text       start:0x020b70fc end:0x020b7154
+
+src/engine/rec_format.cpp:
+    complete
+    .text       start:0x020b7154 end:0x020b7218
 
 src/engine/rec_init.cpp:
     complete
@@ -3910,9 +3922,17 @@ src/engine/packed_reset.cpp:
     complete
     .text       start:0x020b7348 end:0x020b735c
 
+src/engine/packed_reset_2.cpp:
+    complete
+    .text       start:0x020b735c end:0x020b7378
+
 src/engine/tile_row.cpp:
     complete
     .text       start:0x020b7508 end:0x020b7528
+
+src/engine/tile_row_2.cpp:
+    complete
+    .text       start:0x020b7528 end:0x020b7570
 
 src/engine/tile_map.cpp:
     complete
@@ -3941,6 +3961,18 @@ src/engine/rect_obj.cpp:
 src/engine/rect_obj_2.cpp:
     complete
     .text       start:0x020b7cd0 end:0x020b7d08
+
+src/engine/rect_obj_3.cpp:
+    complete
+    .text       start:0x020b7d08 end:0x020b7db4
+
+src/engine/rect_obj_4.cpp:
+    complete
+    .text       start:0x020b7e48 end:0x020b7fec
+
+src/engine/rect_obj_5.cpp:
+    complete
+    .text       start:0x020b8004 end:0x020b8078
 
 src/game/menu_2.cpp:
     complete
@@ -4074,13 +4106,25 @@ src/game/menu_32.cpp:
     complete
     .text       start:0x020bf954 end:0x020bf9bc
 
+src/engine/sndvoice_3.cpp:
+    complete
+    .text       start:0x020bf9fc end:0x020bfa1c
+
 src/game/menu_33.cpp:
     complete
     .text       start:0x020bfa1c end:0x020bfa68
 
+src/engine/sndvoice_4.cpp:
+    complete
+    .text       start:0x020bfb1c end:0x020bfd1c
+
 src/game/menu_17.cpp:
     complete
     .text       start:0x020bfd1c end:0x020bfd28
+
+src/engine/sndvoice_2.cpp:
+    complete
+    .text       start:0x020bfd78 end:0x020c0058
 
 src/engine/sndvoice.cpp:
     complete
@@ -4117,6 +4161,10 @@ src/engine/sndstate_lookup.cpp:
 src/engine/sndstate.cpp:
     complete
     .text       start:0x020c0844 end:0x020c08cc
+
+src/engine/sndtable_read.cpp:
+    complete
+    .text       start:0x020c08cc end:0x020c0994
 
 src/engine/sndtable_2.cpp:
     complete

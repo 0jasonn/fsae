@@ -4,7 +4,7 @@
 
 extern "C" {
 u32 SndTable_GetWord10(u32 index);
-s32 func_020c08cc(s32 index, void *payload, u32 size, s32 flag);
+s32 SndTable_ReadBlock(s32 index, void *payload, u32 size, s32 flag);
 void *func_020c0b20(void *record, u32 size, void *callback, void *data, s32 index2);
 void DC_StoreRange(void *start, u32 size);
 }
@@ -27,7 +27,7 @@ ARM void *func_020c1014(s32 index, void *callback, void *data, s32 index2, void 
     if (payload == 0) {
         return 0;
     }
-    if (func_020c08cc(index, payload, size, 0) != (s32)size) {
+    if (SndTable_ReadBlock(index, payload, size, 0) != (s32)size) {
         return 0;
     }
     DC_StoreRange(payload, size);

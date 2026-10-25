@@ -16,7 +16,7 @@ void PM_AppendPostExitCallback(void *callback);
 void SndSys_ExitStopTimer(void);
 void func_020bfa68(void);
 void SndChannel_Reset(void);
-void func_020bfb1c(void);
+void SndVoice_UpdateList(void);
 void SndSys_ClearWords(void);
 void func_020c02d0(void);
 void func_020c1a7c(void);
@@ -68,7 +68,7 @@ extern "C" void SndSys_Shutdown(void);
 ARM void SndSys_Shutdown(void) {
     while (SND_RecvCommandReply(0) != 0) {
     }
-    func_020bfb1c();
+    SndVoice_UpdateList();
     func_020c02d0();
     func_020c1a7c();
     SND_FlushCommand(0);

@@ -17,7 +17,7 @@ ARM void Menu_CopyViewState(MenuList *list, MenuViewState *dst) {
     dst->unk_1c = list->active;
 }
 
-// Menu_SyncListRect (0x020be750): when the list is active, reads its rectangle (func_020b7080), copies the view state
+// Menu_SyncListRect (0x020be750): when the list is active, reads its rectangle (Work21_clear), copies the view state
 // and passes both to lobby_callWithZeroPos.
 extern "C" void Menu_SyncListRect(MenuList *list);
 ARM void Menu_SyncListRect(MenuList *list) {
@@ -26,7 +26,7 @@ ARM void Menu_SyncListRect(MenuList *list) {
     if (list->active == 0) {
         return;
     }
-    func_020b7080(&state);
+    Work21_clear(&state);
     Menu_CopyViewState(list, &state);
     lobby_callWithZeroPos(list->active, &state);
 }

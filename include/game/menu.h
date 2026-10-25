@@ -158,7 +158,7 @@ void Menu_Run(MenuWork *menu);
 s32 func_020b8c00(s32 value);
 void SND_SetMasterVolume(s32 volume);
 void SndSys_StartActiveTimer(s32 a, s32 b, s32 c, s32 d);
-void func_020bffd8(s32 a, s32 b, s32 c, s32 d);
+void SndVoice_Release(s32 a, s32 b, s32 c, s32 d);
 void func_020c219c(s32 a, s32 b, s32 c, s32 d);
 void func_020c2c78(s32 a, s32 b, s32 c, s32 d);
 

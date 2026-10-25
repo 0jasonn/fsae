@@ -11,15 +11,15 @@ extern u8 data_02183ec4[];
 extern u8 data_02184304[];
 
 extern "C" {
-void func_020bfd78(void *obj, s32 arg);
-void func_020bfdc8(void *obj, s32 arg);
+void SndVoice_Setup(void *obj, s32 arg);
+void SndVoice_SetPaused(void *obj, s32 arg);
 void *func_020c2064(void *head, void *node);
 }
 
 // SndSlot_ReleaseFirst (0x020bf89c): releases the object held in the first word of the slot.
 extern "C" void SndSlot_ReleaseFirst(void *slot, s32 arg);
 ARM void SndSlot_ReleaseFirst(void *slot, s32 arg) {
-    func_020bfd78(*(void **)slot, arg);
+    SndVoice_Setup(*(void **)slot, arg);
 }
 
 // SndSlot_ReleaseAll (0x020bf8ac): releases every slot whose flag at +0x2c is set.
@@ -31,7 +31,7 @@ ARM void SndSlot_ReleaseAll(s32 arg) {
     for (i = 0; i < 16; i++) {
         slot = data_02183ec4 + i * 0x44;
         if (slot[0x2c] != 0) {
-            func_020bfd78(slot, arg);
+            SndVoice_Setup(slot, arg);
         }
     }
 }
@@ -39,5 +39,5 @@ ARM void SndSlot_ReleaseAll(s32 arg) {
 // SndSlot_ResetFirst (0x020bf8ec): resets the object held in the first word of the slot.
 extern "C" void SndSlot_ResetFirst(void **slot, s32 arg);
 ARM void SndSlot_ResetFirst(void **slot, s32 arg) {
-    func_020bfdc8(*slot, arg);
+    SndVoice_SetPaused(*slot, arg);
 }

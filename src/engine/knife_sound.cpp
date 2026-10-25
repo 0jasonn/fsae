@@ -149,7 +149,7 @@ ARM s32 Knife_Sound_SequenceHandle_isValid(KnifeSoundSequenceHandle *self) {
 
 extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c4a0(KnifeSoundSequenceHandle *self);
 ARM void Knife_Sound_SequenceHandle_fwdPlayer_08c4a0(KnifeSoundSequenceHandle *self) {
-    func_020bf9fc(&self->player);
+    SndVoiceRef_SetTempo(&self->player);
 }
 
 extern "C" s32 Knife_Sound_SequenceHandle_getPlayerNumber(KnifeSoundSequenceHandle *self);

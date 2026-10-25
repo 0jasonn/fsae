@@ -61,7 +61,7 @@ void knifeSoundNop1(void *self);                                              //
 KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self); // Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c
 void func_0200c868(void *array, s32 count, u32 size, void *dtor);            // array destructor helper
 void func_020c050c(void *p);
-void func_020bf9fc(void *player);
+void SndVoiceRef_SetTempo(void *player);
 void func_020bf9dc(void *player);
 void Menu_SetRefByte41(void *player);
 void SndSlot_ReleaseFirst(void *player, s32 a);

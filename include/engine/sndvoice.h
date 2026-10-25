@@ -32,8 +32,8 @@ extern SndList data_02183eb8;
 void SndRecord_Free(SndRecord *record);
 void SndChannel_Unlock(u32 mask);
 void func_020c2004(void *list, void *node);
-void func_020bfe90(SndList *list, SndVoice *voice);
-void func_020bfee0(SndVoice *voice);
+void SndVoice_InsertSorted(SndList *list, SndVoice *voice);
+void SndVoice_InsertGlobal(SndVoice *voice);
 }
 
 extern "C" void func_020c0058(SndVoice *voice);
