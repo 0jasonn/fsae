@@ -12,6 +12,6 @@ void CommErrorCheck(u32 a);              // original CommErrorCheck(unsigned lon
 void key_update(u8 playerNo);            // original key_update(unsigned char)
 void frame_ack(void);                    // original frame_ack()
 void func_0202809c(void);                // dsd name (ComFinish(0)), C++ linkage as in stageseldecls.h
-extern "C" int func_020921b0(void *manager); // dsd name (0x020921b0), nonzero when the manager has finished
+extern "C" int Knife_Comm_WirelessManager_getFrameFlag(void *manager); // dsd name (0x020921b0), nonzero when the manager has finished
 
 #endif

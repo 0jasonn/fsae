@@ -3254,9 +3254,25 @@ src/engine/wireless_manager.cpp:
     complete
     .text       start:0x020909c8 end:0x02090c88
 
+src/engine/wirelessmgr_update.cpp:
+    complete
+    .text       start:0x02090c88 end:0x02090ea4
+
 src/engine/wireless_manager_2.cpp:
     complete
     .text       start:0x02090ecc end:0x02090ed8
+
+src/engine/wirelessmgr_scan.cpp:
+    complete
+    .text       start:0x02091464 end:0x020914a4
+
+src/engine/wirelessmgr_query.cpp:
+    complete
+    .text       start:0x02091d38 end:0x02091d40
+
+src/engine/wirelessmgr_aid.cpp:
+    complete
+    .text       start:0x020921b0 end:0x020921bc
 
 src/engine/comm_parentinfo_4.cpp:
     complete
@@ -3265,6 +3281,18 @@ src/engine/comm_parentinfo_4.cpp:
 src/engine/comm_childinfo.cpp:
     complete
     .text       start:0x02092310 end:0x02092330
+
+src/engine/wirelessmgr_state_empty0.cpp:
+    complete
+    .text       start:0x02092940 end:0x02092944
+
+src/engine/wirelessmgr_state_waitscan.cpp:
+    complete
+    .text       start:0x02092aac end:0x02092ad8
+
+src/engine/wirelessmgr_state_empty14.cpp:
+    complete
+    .text       start:0x020932f4 end:0x020932fc
 
 src/engine/comm_interrupt.cpp:
     complete

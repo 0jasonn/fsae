@@ -58,7 +58,7 @@ ARM void frame_ack(void) {
         MIi_CpuCopy16(data_0212c9ec, data_0212c9b8, 0x34);
         return;
     }
-    if (func_020921b0(manager) == 0) {
+    if (Knife_Comm_WirelessManager_getFrameFlag(manager) == 0) {
         *(u32 *)(data_0212c9a8 + 8) = 2;
         return;
     }

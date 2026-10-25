@@ -23,7 +23,7 @@ ARM void groupSelectUIView::updateScan(void) {
     for (i = 0; i < roomCount; i++) {
         rooms[i]->unk_0c = 0;
     }
-    scanCount = func_02091d38(manager);
+    scanCount = Knife_Comm_WirelessManager_getMaxParents(manager);
     for (scanIndex = 0; scanIndex < scanCount; scanIndex++) {
         scanResult = Knife_Comm_WirelessManager_getScanResult(manager, scanIndex);
         if (scanResult != NULL) {

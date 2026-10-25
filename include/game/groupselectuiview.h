@@ -104,8 +104,8 @@ typedef struct RoomUiIndexTable {
 extern const RoomUiIndexTable data_020ded24;
 
 extern "C" u32 Knife_Message_getCESObject_021770b4(const void *a);
-extern "C" void func_02091464(void *manager);
-extern "C" s32 func_02091d38(void *manager);
+extern "C" void Knife_Comm_WirelessManager_requestEndScan(void *manager);
+extern "C" s32 Knife_Comm_WirelessManager_getMaxParents(void *manager);
 extern "C" void *Knife_Comm_WirelessManager_getScanResult(void *manager, s32 index);
 extern "C" s32 Knife_Comm_WirelessManager_getState(void *manager);
 extern "C" void subTaskSendObjChar(void *buf, u32 offset, u32 size);

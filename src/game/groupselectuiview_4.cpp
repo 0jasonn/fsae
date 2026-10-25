@@ -12,7 +12,7 @@ ARM void groupSelectUIView::stopScan(void) {
     void *manager;
 
     manager = func_020909c8();
-    func_02091464(manager);
+    Knife_Comm_WirelessManager_requestEndScan(manager);
 }
 
 // groupSelectUIView::getText (0x020b0ff8): fills the text handle of a room (or of the not-found message)
