@@ -105,13 +105,13 @@ ARM KnifeSoundMemoryArchive *Knife_Sound_MemoryArchive_ctor(KnifeSoundMemoryArch
 
 extern "C" KnifeSoundMemoryArchive *Knife_Sound_MemoryArchive_dtor_MemoryArchive_08c3f8(KnifeSoundMemoryArchive *self);
 ARM KnifeSoundMemoryArchive *Knife_Sound_MemoryArchive_dtor_MemoryArchive_08c3f8(KnifeSoundMemoryArchive *self) {
-    func_0208bcfc(self);
+    knifeSoundNop1(self);
     return self;
 }
 
 extern "C" KnifeSoundMemoryArchive *Knife_Sound_MemoryArchive_dtor_MemoryArchive_08c40c(KnifeSoundMemoryArchive *self);
 ARM KnifeSoundMemoryArchive *Knife_Sound_MemoryArchive_dtor_MemoryArchive_08c40c(KnifeSoundMemoryArchive *self) {
-    func_0208bcfc(self);
+    knifeSoundNop1(self);
     operator delete(self);
     return self;
 }
@@ -131,13 +131,13 @@ ARM KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_ctor(KnifeSoundSequence
 
 extern "C" KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self);
 ARM KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self) {
-    func_0208bee4(self);
+    knifeSoundNop3(self);
     return self;
 }
 
 extern "C" KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c470(KnifeSoundSequenceHandle *self);
 ARM KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c470(KnifeSoundSequenceHandle *self) {
-    func_0208bee4(self);
+    knifeSoundNop3(self);
     operator delete(self);
     return self;
 }

@@ -156,7 +156,7 @@ void Scene_SetFlag5(void);
 void Scene_StoreTileIndices(const u16 *pos, u32 layer0, u32 layer1);
 s32 ScriptMove(NPC_WORK_ *a);
 void SetCgColor(u32 a, u32 b);
-void SetDisp(Entity *e, u8 a, u8 b, u8 c);
+Entity *SetDisp(Entity *e, u8 a, u8 b, u8 c);
 void SetTblSetWorks(const u8 *list);
 void Status_ArmIfEnabled(void);
 void Stub_IgnoreArg(int arg);

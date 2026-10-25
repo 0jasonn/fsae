@@ -2330,6 +2330,10 @@ src/object/set52_2.cpp:
     complete
     .text       start:0x02070658 end:0x02070758
 
+src/object/singleplay.cpp:
+    complete
+    .text       start:0x02070dbc end:0x02070dd0
+
 src/object/set54.cpp:
     complete
     .text       start:0x02071a70 end:0x02071b00
@@ -2470,9 +2474,37 @@ src/object/setwork.cpp:
     complete
     .text       start:0x02076858 end:0x02076a20
 
+src/object/setdisp.cpp:
+    complete
+    .text       start:0x02076a20 end:0x02076b24
+
 src/object/objdispatch.cpp:
     complete
     .text       start:0x02076b24 end:0x02076b50
+
+src/object/objdispatch_2.cpp:
+    complete
+    .text       start:0x02076b50 end:0x02076bf0
+
+src/object/sound.cpp:
+    complete
+    .text       start:0x02076f0c end:0x02076fe0
+
+src/object/takara_entry.cpp:
+    complete
+    .text       start:0x020772f0 end:0x02077368
+
+src/object/objfind.cpp:
+    complete
+    .text       start:0x020774cc end:0x0207758c
+
+src/object/rupeerush.cpp:
+    complete
+    .text       start:0x0207758c end:0x02077650
+
+src/object/sr.cpp:
+    complete
+    .text       start:0x02077810 end:0x02077834
 
 src/game/stagesel.cpp:
     complete
@@ -2509,6 +2541,10 @@ src/game/stagesel_10.cpp:
 src/object/sword.cpp:
     complete
     .text       start:0x0207af58 end:0x0207af94
+
+src/object/kabuto.cpp:
+    complete
+    .text       start:0x0207bc48 end:0x0207bcd4
 
 src/object/takara.cpp:
     complete

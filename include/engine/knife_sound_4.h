@@ -59,7 +59,7 @@ void SndChannelRef_SetPan(void *player, s32 pan);
 void SndChannelRef_Stop(void *player);
 void SndChannelRef_Wait(void *player);
 void SndChannel_UnlockIndex(void *player);
-void func_0208bee4(void *handle);
+void knifeSoundNop3(void *handle);
 }
 
 #endif

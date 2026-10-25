@@ -58,9 +58,9 @@ ARM void m4aSoundInit(void) {
     Knife_Sound_Heap_initialize(data_02176240, heapMemory, 0x8000);
     field54 = Knife_File_Entity_getField54(entity2);
     Knife_Sound_MemoryArchive_initialize(data_02176338, (void *)field54);
-    func_0208bdf8(data_02176244, data_02176338, 0, 0);
+    knifeSoundSetWordReturnOne(data_02176244, data_02176338, 0, 0);
     Knife_Sound_DataManager_loadGroup(data_02176244, 0, data_02176240);
-    func_0208bd24(data_02176239, data_02176240);
+    knifeSoundForwardHandle(data_02176239, data_02176240);
     Knife::File::System::release(entity2);
     Knife::File::System::allocGroup(0);
 }

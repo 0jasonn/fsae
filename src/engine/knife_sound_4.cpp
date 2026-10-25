@@ -11,14 +11,14 @@
 // WaveHandle::~WaveHandle, non-deleting dtor (0x020904e0): runs the Handle base dtor
 extern "C" void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0(void *self);
 ARM void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0(void *self) {
-    func_0208bee4(self);
+    knifeSoundNop3(self);
     return self;
 }
 
 // WaveHandle::~WaveHandle, deleting dtor (0x020904f4): runs the Handle base dtor and frees the block
 extern "C" void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904f4(void *self);
 ARM void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904f4(void *self) {
-    func_0208bee4(self);
+    knifeSoundNop3(self);
     operator delete(self);
     return self;
 }

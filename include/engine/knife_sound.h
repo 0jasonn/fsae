@@ -54,10 +54,10 @@ void Knife_Sound_Handle_reset(void *handle);                                // K
 void Knife_Sound_Handle_update(void *handle);                               // Knife_Sound_Handle_update
 void Knife_Sound_Handle_pause(void *handle, s32 pause);                     // Knife_Sound_Handle_pause
 void Knife_Sound_Handle_Handle(void *handle);                               // Knife_Sound_Handle_Handle
-void func_0208bee4(void *handle);                                                // base dtor of Handle
+void knifeSoundNop3(void *handle);                                                // base dtor of Handle
 void *SndHeap_CreateRecord(void *base, u32 size);
 void func_0208bcd4(void *self);                                              // base ctor, sets the base vtable
-void func_0208bcfc(void *self);                                              // base dtor, empty
+void knifeSoundNop1(void *self);                                              // base dtor, empty
 KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self); // Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c
 void func_0200c868(void *array, s32 count, u32 size, void *dtor);            // array destructor helper
 void func_020c050c(void *p);
