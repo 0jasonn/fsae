@@ -44,7 +44,7 @@ ARM BOOL groupSelectUIView::getText(KnifeMsgText *text, u32 textId, s32 language
         text->str = room->name;
         text->kind = 0xc;
     }
-    text->handle = func_0208fc6c(arg);
+    text->handle = Knife_Message_getCESObject_021770b4(arg);
     return TRUE;
 }
 

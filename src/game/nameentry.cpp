@@ -8,7 +8,7 @@
 //   nameEntryUIView::initialize() (0x020ae5bc)
 
 extern "C" {
-u32 func_0208fc6c(const void *a);
+u32 Knife_Message_getCESObject_021770b4(const void *a);
 const void *Knife_Comm_selectDataTable(s32 unused, s32 flag);
 }
 
@@ -59,11 +59,11 @@ ARM s32 nameEntryUIView_getText(void *self, KnifeMsgText *out, u32 index, s32 la
     obj = (u8 *)self;
     slot = (s32)index - 0x2328;
     if (slot >= 0 && slot < 6) {
-        handle = func_0208fc6c(self);
+        handle = Knife_Message_getCESObject_021770b4(self);
         str = (const u16 *)(obj + 0x34) + slot;
     } else {
         table = (const u16 *)Knife_Comm_selectDataTable((s32)self, (s8)obj[0x47]);
-        handle = func_0208fc6c(table);
+        handle = Knife_Message_getCESObject_021770b4(table);
         str = table + (slot - 6);
     }
     out->handle = handle;

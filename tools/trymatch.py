@@ -46,8 +46,15 @@ def name_to_addr(name):
     """Address of a function: from a func_XXXXXXXX name, symbols.txt, or a pending rename in scratch/agent*/renames.txt."""
     global _NAMES
     if name.startswith("_Z"):  # C++ (Itanium) mangled name: use the plain function name (Class_method for members)
+        if _NAMES is not None and name in _NAMES:  # exact mangled symbol first: overloads share a plain name
+            return _NAMES[name]
         from cxx_symbols import plain_name
+        exact = name
         name = plain_name(name) or name
+        if _NAMES is None:
+            name_to_addr("_load_names_")  # fills _NAMES
+        if exact in _NAMES:
+            return _NAMES[exact]
     m = re.fullmatch(r"func_([0-9a-fA-F]{8})(?:_unk)?", name)
     if m:
         return int(m.group(1), 16)

@@ -5,7 +5,15 @@
 
 // Knife::Message::KMsgFileReader::convertTextHeaderToLocalizedText (0x0208e2dc): copies the id of a text header and, for
 // each of its ten language entries, the default character encoding, the data address and the size.
-extern "C" void *Knife_Message_getDefaultCES(s32 language);
+// getDefaultCES is a C++ function (src/engine/ces.cpp); declared here without engine/text_tokenizer.h, whose
+// TextTokenizer clashes with engine/kmsgreader.h.
+namespace Knife {
+namespace Message {
+enum Language { LANGUAGE_COUNT_ = 10 };
+class ICharacterEncodingScheme;
+const ICharacterEncodingScheme *getDefaultCES(Language language);
+}
+}
 extern "C" void *Knife_Message_KMsgFileReader_offsetToAddress(Knife::Message::KMsgFileReader *self, u32 offset);
 extern "C" void Knife_Message_KMsgFileReader_convertTextHeaderToLocalizedText(Knife::Message::KMsgFileReader *self, void *dst, const void *header);
 ARM void Knife_Message_KMsgFileReader_convertTextHeaderToLocalizedText(Knife::Message::KMsgFileReader *self, void *dst, const void *header) {
@@ -19,7 +27,7 @@ ARM void Knife_Message_KMsgFileReader_convertTextHeaderToLocalizedText(Knife::Me
     *(u32 *)out = *(const u32 *)in;
     for (i = 0; i < 10; i++) {
         entry = out + i * 12;
-        *(void **)(entry + 0x4) = Knife_Message_getDefaultCES(i);
+        *(void **)(entry + 0x4) = (void *)Knife::Message::getDefaultCES((Knife::Message::Language)i);
         *(void **)(entry + 0x8) = Knife_Message_KMsgFileReader_offsetToAddress(self, ((const u32 *)in)[i * 2 + 1]);
         *(u32 *)(entry + 0xc) = ((const u32 *)in)[i * 2 + 2];
     }
