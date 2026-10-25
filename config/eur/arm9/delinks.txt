@@ -709,6 +709,14 @@ src/enemy/em19.cpp:
     complete
     .text       start:0x0203e0ac end:0x0203e0c8
 
+src/enemy/em19_4.cpp:
+    complete
+    .text       start:0x0203e0c8 end:0x0203e220
+
+src/enemy/em19_5.cpp:
+    complete
+    .text       start:0x0203e410 end:0x0203e468
+
 src/enemy/em19_2.cpp:
     complete
     .text       start:0x0203e4c0 end:0x0203e4e4
@@ -757,6 +765,10 @@ src/enemy/em20.cpp:
     complete
     .text       start:0x0203e840 end:0x0203e854
 
+src/enemy/em20_6.cpp:
+    complete
+    .text       start:0x0203e854 end:0x0203e8bc
+
 src/enemy/em20_3.cpp:
     complete
     .text       start:0x0203e950 end:0x0203e990
@@ -764,6 +776,10 @@ src/enemy/em20_3.cpp:
 src/enemy/em20_4.cpp:
     complete
     .text       start:0x0203e990 end:0x0203e9d4
+
+src/enemy/em20_7.cpp:
+    complete
+    .text       start:0x0203e9d4 end:0x0203eba4
 
 src/enemy/em20_5.cpp:
     complete
@@ -781,25 +797,57 @@ src/enemy/em21.cpp:
     complete
     .text       start:0x0203f1d0 end:0x0203f228
 
+src/enemy/em21_2.cpp:
+    complete
+    .text       start:0x0203f27c end:0x0203f614
+
+src/enemy/em21_3.cpp:
+    complete
+    .text       start:0x0203f740 end:0x0203f754
+
 src/enemy/em22.cpp:
     complete
     .text       start:0x0203f754 end:0x0203f7ac
+
+src/enemy/em22_2.cpp:
+    complete
+    .text       start:0x0203f7ac end:0x0203fa4c
+
+src/enemy/em23_6.cpp:
+    complete
+    .text       start:0x0203fa4c end:0x0203fac0
 
 src/enemy/em23.cpp:
     complete
     .text       start:0x0203fac0 end:0x0203fadc
 
+src/enemy/em23_4.cpp:
+    complete
+    .text       start:0x0203fadc end:0x0203fb88
+
 src/enemy/em23_3.cpp:
     complete
     .text       start:0x0203fb88 end:0x0203fbe8
+
+src/enemy/em23_5.cpp:
+    complete
+    .text       start:0x0203fbe8 end:0x0203fc98
 
 src/enemy/em23_2.cpp:
     complete
     .text       start:0x0203fc98 end:0x0203fcd8
 
+src/enemy/em24_4.cpp:
+    complete
+    .text       start:0x0203fe0c end:0x0203fe40
+
 src/enemy/em24_2.cpp:
     complete
     .text       start:0x0203fe40 end:0x0203fe7c
+
+src/enemy/em24_3.cpp:
+    complete
+    .text       start:0x0203fe7c end:0x0204001c
 
 src/enemy/em24.cpp:
     complete
@@ -3570,6 +3618,14 @@ src/engine/pane_e.cpp:
     complete
     .text       start:0x020b5950 end:0x020b5998
 
+src/engine/pane_calc.cpp:
+    complete
+    .text       start:0x020b5a70 end:0x020b5ae4
+
+src/engine/pane_calc_2.cpp:
+    complete
+    .text       start:0x020b5b30 end:0x020b5ba4
+
 src/engine/pane_d.cpp:
     complete
     .text       start:0x020b5ba4 end:0x020b5ba8
@@ -3614,6 +3670,14 @@ src/engine/tile_row.cpp:
     complete
     .text       start:0x020b7508 end:0x020b7528
 
+src/engine/tile_map.cpp:
+    complete
+    .text       start:0x020b7570 end:0x020b7578
+
+src/engine/tile_map_2.cpp:
+    complete
+    .text       start:0x020b75d0 end:0x020b75f0
+
 src/engine/tile_attr.cpp:
     complete
     .text       start:0x020b766c end:0x020b76bc
@@ -3625,6 +3689,14 @@ src/engine/pane_scale.cpp:
 src/engine/os_owner.cpp:
     complete
     .text       start:0x020b7b00 end:0x020b7b1c
+
+src/engine/rect_obj.cpp:
+    complete
+    .text       start:0x020b7c50 end:0x020b7c80
+
+src/engine/rect_obj_2.cpp:
+    complete
+    .text       start:0x020b7cd0 end:0x020b7d08
 
 src/game/menu_2.cpp:
     complete

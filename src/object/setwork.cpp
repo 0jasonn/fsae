@@ -70,7 +70,7 @@ ARM void HajikeSet(Entity *e) {
     ObjPosCopy(e, spawn);
 }
 
-ARM extern "C" void MizupochaSet(Entity *e) {
+ARM void MizupochaSet(Entity *e) {
     Entity *spawn;
 
     spawn = GetSetWork(0xf, 0xb, 0);
