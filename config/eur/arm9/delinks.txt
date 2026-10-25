@@ -629,17 +629,125 @@ src/enemy/em17_2.cpp:
     complete
     .text       start:0x0203d5f0 end:0x0203d8f0
 
+src/enemy/em17_3.cpp:
+    complete
+    .text       start:0x0203daac end:0x0203db0c
+
+src/enemy/em18_2.cpp:
+    complete
+    .text       start:0x0203dc68 end:0x0203dc84
+
 src/enemy/em18.cpp:
     complete
     .text       start:0x0203dc84 end:0x0203dc98
+
+src/enemy/em18_3.cpp:
+    complete
+    .text       start:0x0203dc98 end:0x0203dce4
+
+src/enemy/delprt.cpp:
+    complete
+    .text       start:0x0203dfa8 end:0x0203dfd0
+
+src/enemy/type0rock.cpp:
+    complete
+    .text       start:0x0203e038 end:0x0203e05c
+
+src/enemy/em19.cpp:
+    complete
+    .text       start:0x0203e0ac end:0x0203e0c8
+
+src/enemy/em19_2.cpp:
+    complete
+    .text       start:0x0203e4c0 end:0x0203e4e4
+
+src/enemy/em19_3.cpp:
+    complete
+    .text       start:0x0203e4e4 end:0x0203e59c
+
+src/enemy/bgobj.cpp:
+    complete
+    .text       start:0x0203e63c end:0x0203e658
+
+src/enemy/bgobj_2.cpp:
+    complete
+    .text       start:0x0203e658 end:0x0203e6a0
+
+src/enemy/bgobj_3.cpp:
+    complete
+    .text       start:0x0203e6a0 end:0x0203e6c8
+
+src/enemy/bgobj_4.cpp:
+    complete
+    .text       start:0x0203e6c8 end:0x0203e720
+
+src/enemy/bgobj_5.cpp:
+    complete
+    .text       start:0x0203e720 end:0x0203e764
+
+src/enemy/waitset.cpp:
+    complete
+    .text       start:0x0203e764 end:0x0203e784
 
 src/enemy/setaction.cpp:
     complete
     .text       start:0x0203e784 end:0x0203e7a0
 
+src/enemy/effectset.cpp:
+    complete
+    .text       start:0x0203e7a0 end:0x0203e7d8
+
+src/enemy/em20_2.cpp:
+    complete
+    .text       start:0x0203e7d8 end:0x0203e840
+
 src/enemy/em20.cpp:
     complete
     .text       start:0x0203e840 end:0x0203e854
+
+src/enemy/em20_3.cpp:
+    complete
+    .text       start:0x0203e950 end:0x0203e990
+
+src/enemy/em20_4.cpp:
+    complete
+    .text       start:0x0203e990 end:0x0203e9d4
+
+src/enemy/em20_5.cpp:
+    complete
+    .text       start:0x0203eba4 end:0x0203ebd4
+
+src/enemy/kamen.cpp:
+    complete
+    .text       start:0x0203ed14 end:0x0203ed84
+
+src/enemy/kamen_3.cpp:
+    complete
+    .text       start:0x0203eed4 end:0x0203ef24
+
+src/enemy/em21.cpp:
+    complete
+    .text       start:0x0203f1d0 end:0x0203f228
+
+src/enemy/em22.cpp:
+    complete
+    .text       start:0x0203f754 end:0x0203f7ac
+
+src/enemy/em23.cpp:
+    complete
+    .text       start:0x0203fac0 end:0x0203fadc
+
+src/enemy/em23_3.cpp:
+    complete
+    .text       start:0x0203fb88 end:0x0203fbe8
+
+src/enemy/em23_2.cpp:
+    complete
+    .text       start:0x0203fc98 end:0x0203fcd8
+
+src/enemy/em24_2.cpp:
+    complete
+    .text       start:0x0203fe40 end:0x0203fe7c
 
 src/enemy/em24.cpp:
     complete
