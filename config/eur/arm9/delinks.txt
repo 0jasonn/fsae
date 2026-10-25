@@ -89,6 +89,10 @@ src/engine/strchr.cpp:
     complete
     .text       start:0x02008398 end:0x020083d0
 
+src/engine/halfword.cpp:
+    complete
+    .text       start:0x02008440 end:0x02008478
+
 src/engine/wstr.cpp:
     complete
     .text       start:0x0200a3ac end:0x0200a3c8
@@ -3921,6 +3925,10 @@ src/engine/rec_format_2.cpp:
 src/engine/rec_half.cpp:
     complete
     .text       start:0x020b72e0 end:0x020b72ec
+
+src/engine/rec_format_3.cpp:
+    complete
+    .text       start:0x020b72ec end:0x020b7348
 
 src/engine/packed_reset.cpp:
     complete
