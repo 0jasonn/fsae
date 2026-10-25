@@ -3482,6 +3482,10 @@ src/game/knife_message_2.cpp:
     complete
     .text       start:0x020a0564 end:0x020a0574
 
+src/game/knife_message_8.cpp:
+    complete
+    .text       start:0x020a0574 end:0x020a0624
+
 src/game/knife_message_3.cpp:
     complete
     .text       start:0x020a0624 end:0x020a0640
@@ -3566,6 +3570,10 @@ src/game/textlength_2.cpp:
     complete
     .text       start:0x020a1704 end:0x020a1748
 
+src/game/textlength_4.cpp:
+    complete
+    .text       start:0x020a1748 end:0x020a17e8
+
 src/game/textlength_3.cpp:
     complete
     .text       start:0x020a17e8 end:0x020a1838
@@ -3573,6 +3581,10 @@ src/game/textlength_3.cpp:
 src/game/messageselect.cpp:
     complete
     .text       start:0x020a1838 end:0x020a1864
+
+src/game/messageselect_2.cpp:
+    complete
+    .text       start:0x020a18c4 end:0x020a1a1c
 
 src/game/selectiondialog.cpp:
     complete
@@ -3682,13 +3694,29 @@ src/game/datalink_2.cpp:
     complete
     .text       start:0x020a6398 end:0x020a6480
 
+src/game/radar_e_2.cpp:
+    complete
+    .text       start:0x020a650c end:0x020a6658
+
 src/game/radar_e.cpp:
     complete
     .text       start:0x020a6658 end:0x020a6830
 
+src/game/radar_e_3.cpp:
+    complete
+    .text       start:0x020a6830 end:0x020a6a50
+
+src/game/radar_e_4.cpp:
+    complete
+    .text       start:0x020a6cc0 end:0x020a6d68
+
 src/game/fs_e.cpp:
     complete
     .text       start:0x020a723c end:0x020a7370
+
+src/game/fs_e_4.cpp:
+    complete
+    .text       start:0x020a7370 end:0x020a73ec
 
 src/game/fs_e_2.cpp:
     complete
@@ -3697,6 +3725,18 @@ src/game/fs_e_2.cpp:
 src/game/fs_e_3.cpp:
     complete
     .text       start:0x020a7480 end:0x020a74fc
+
+src/game/fileselui_6.cpp:
+    complete
+    .text       start:0x020a78f4 end:0x020a7918
+
+src/game/fileselui_5.cpp:
+    complete
+    .text       start:0x020a8178 end:0x020a8198
+
+src/game/modeselui.cpp:
+    complete
+    .text       start:0x020a9054 end:0x020a9064
 
 src/game/resource_2.cpp:
     complete
