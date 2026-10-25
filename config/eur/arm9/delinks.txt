@@ -4386,9 +4386,21 @@ src/engine/sndrange.cpp:
     complete
     .text       start:0x020c2090 end:0x020c2120
 
+src/engine/sndrange_nodes.cpp:
+    complete
+    .text       start:0x020c219c end:0x020c2264
+
+src/engine/sndheap.cpp:
+    complete
+    .text       start:0x020c2694 end:0x020c2838
+
 src/game/menu_18.cpp:
     complete
     .text       start:0x020c28b0 end:0x020c28bc
+
+src/engine/sndheap_owner.cpp:
+    complete
+    .text       start:0x020c2b90 end:0x020c2c34
 
 src/game/menu_13.cpp:
     complete

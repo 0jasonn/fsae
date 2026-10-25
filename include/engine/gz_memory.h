@@ -19,9 +19,9 @@ extern "C" {
 void *OS_GetArenaLo(s32 arena);
 void *OS_GetArenaHi(s32 arena);
 void *OS_AllocFromArenaLo(s32 arena, u32 size, u32 align);
-void *func_020c2694(void *block, u32 size, s32 flags);
-void *func_020c26cc(void *heap, u32 size, u32 align);
-void func_020c26fc(void *heap, void *block, s32 flags);
+void *SndHeap_Create(void *block, u32 size, s32 flags);
+void *SndHeap_Allocate(void *heap, u32 size, u32 align);
+void SndHeap_Free(void *heap, void *block, s32 flags);
 void Gz_Memory_GzAllocator_init(Gz::Memory::GzAllocator *self, s32 unused);
 void *func_0208e148(u32 size);
 void func_0208e138(void *allocator);

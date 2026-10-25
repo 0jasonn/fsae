@@ -21,7 +21,7 @@ ARM void Gz_Memory_GzAllocator_init(Gz::Memory::GzAllocator *self, s32 unused) {
     arenaHi = OS_GetArenaHi(0);
     size = ((u32)arenaHi & ~0xf) - (((u32)arenaLo + 0xf) & ~0xf);
     block = OS_AllocFromArenaLo(0, size, 16);
-    self->heap = func_020c2694(block, size, 2);
+    self->heap = SndHeap_Create(block, size, 2);
 }
 
 // GzAllocator::alloc(unsigned long) (0x0208e0b0): allocates with alignment 4, with interrupts disabled around the call
@@ -32,7 +32,7 @@ ARM void *Gz_Memory_GzAllocator_alloc_08e0b0(Gz::Memory::GzAllocator *self, u32 
 
     ime = REG_IME;
     REG_IME = 0;
-    block = func_020c26cc(self->heap, size, 4);
+    block = SndHeap_Allocate(self->heap, size, 4);
     (void)REG_IME;
     REG_IME = ime;
     return block;
@@ -46,7 +46,7 @@ ARM void *Gz_Memory_GzAllocator_alloc_08e0e0(Gz::Memory::GzAllocator *self, u32 
 
     ime = REG_IME;
     REG_IME = 0;
-    block = func_020c26cc(self->heap, size, align);
+    block = SndHeap_Allocate(self->heap, size, align);
     (void)REG_IME;
     REG_IME = ime;
     return block;
@@ -59,7 +59,7 @@ ARM void Gz_Memory_GzAllocator_dealloc(Gz::Memory::GzAllocator *self, void *bloc
 
     ime = REG_IME;
     REG_IME = 0;
-    func_020c26fc(self->heap, block, 0);
+    SndHeap_Free(self->heap, block, 0);
     (void)REG_IME;
     REG_IME = ime;
 }

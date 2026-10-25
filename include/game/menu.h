@@ -159,7 +159,7 @@ s32 RectSpan_clear(s32 value);
 void SND_SetMasterVolume(s32 volume);
 void SndSys_StartActiveTimer(s32 a, s32 b, s32 c, s32 d);
 void SndVoice_Release(s32 a, s32 b, s32 c, s32 d);
-void func_020c219c(s32 a, s32 b, s32 c, s32 d);
+void SndRangeTree_Remove(s32 a, s32 b, s32 c, s32 d);
 void func_020c2c78(s32 a, s32 b, s32 c, s32 d);
 
 void TP_Init(void);
