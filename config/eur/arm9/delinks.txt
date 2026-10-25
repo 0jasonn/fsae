@@ -465,6 +465,10 @@ src/game/com_6.cpp:
     complete
     .text       start:0x02028b34 end:0x02028b58
 
+src/game/comm.cpp:
+    complete
+    .text       start:0x020296e8 end:0x02029828
+
 src/game/mathutil.cpp:
     complete
     .text       start:0x02029a44 end:0x02029a50
@@ -488,6 +492,10 @@ src/game/cgsubtrans.cpp:
 src/game/knifetbl.cpp:
     complete
     .text       start:0x02029f10 end:0x02029fe8
+
+src/game/blockcopy.cpp:
+    complete
+    .text       start:0x0202a128 end:0x0202a190
 
 src/game/clearbuf.cpp:
     complete
@@ -825,9 +833,21 @@ src/enemy/em17_2.cpp:
     complete
     .text       start:0x0203d5f0 end:0x0203d8f0
 
+src/enemy/em17_4.cpp:
+    complete
+    .text       start:0x0203d8f0 end:0x0203da28
+
 src/enemy/em17_3.cpp:
     complete
     .text       start:0x0203daac end:0x0203db0c
+
+src/enemy/em17_5.cpp:
+    complete
+    .text       start:0x0203db0c end:0x0203dc04
+
+src/enemy/em18_4.cpp:
+    complete
+    .text       start:0x0203dc04 end:0x0203dc68
 
 src/enemy/em18_2.cpp:
     complete
@@ -840,6 +860,14 @@ src/enemy/em18.cpp:
 src/enemy/em18_3.cpp:
     complete
     .text       start:0x0203dc98 end:0x0203dce4
+
+src/enemy/em18_5.cpp:
+    complete
+    .text       start:0x0203dce4 end:0x0203df14
+
+src/enemy/em18_6.cpp:
+    complete
+    .text       start:0x0203df14 end:0x0203dfa8
 
 src/enemy/delprt.cpp:
     complete
@@ -980,6 +1008,10 @@ src/enemy/em23_5.cpp:
 src/enemy/em23_2.cpp:
     complete
     .text       start:0x0203fc98 end:0x0203fcd8
+
+src/enemy/enrin.cpp:
+    complete
+    .text       start:0x0203fcd8 end:0x0203fe0c
 
 src/enemy/em24_4.cpp:
     complete
@@ -2754,6 +2786,10 @@ src/object/takara_4.cpp:
     complete
     .text       start:0x0207c180 end:0x0207c228
 
+src/game/heartlevel.cpp:
+    complete
+    .text       start:0x0207c334 end:0x0207c408
+
 src/object/hane.cpp:
     complete
     .text       start:0x0207c5d8 end:0x0207c648
@@ -2934,6 +2970,10 @@ src/engine/callback.cpp:
     complete
     .text       start:0x02082fbc end:0x02083000
 
+src/engine/knifesound_basevtbl.cpp:
+    complete
+    .text       start:0x0208bcd4 end:0x0208bce4
+
 src/engine/knifesound_stub_2.cpp:
     complete
     .text       start:0x0208bcfc end:0x0208bd34
@@ -2950,6 +2990,10 @@ src/engine/knifesound_stub_4.cpp:
     complete
     .text       start:0x0208becc end:0x0208bed0
 
+src/engine/knifesound_dtor.cpp:
+    complete
+    .text       start:0x0208bed0 end:0x0208bee4
+
 src/engine/knifesound_stub_5.cpp:
     complete
     .text       start:0x0208bee4 end:0x0208bef8
@@ -2961,6 +3005,10 @@ src/engine/knifesound_handle_2.cpp:
 src/engine/knifesound_handle_3.cpp:
     complete
     .text       start:0x0208c054 end:0x0208c068
+
+src/engine/knifesound_factory.cpp:
+    complete
+    .text       start:0x0208c188 end:0x0208c1c8
 
 src/engine/knife_sound.cpp:
     complete
