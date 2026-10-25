@@ -3878,6 +3878,10 @@ src/engine/sndtable_2.cpp:
     complete
     .text       start:0x020c0994 end:0x020c09d8
 
+src/engine/sndtable_3.cpp:
+    complete
+    .text       start:0x020c09d8 end:0x020c0a64
+
 src/engine/sndrecord.cpp:
     complete
     .text       start:0x020c0b88 end:0x020c0c28
