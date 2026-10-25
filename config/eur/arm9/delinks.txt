@@ -3914,6 +3914,10 @@ src/engine/rec_init.cpp:
     complete
     .text       start:0x020b7248 end:0x020b7268
 
+src/engine/rec_format_2.cpp:
+    complete
+    .text       start:0x020b7268 end:0x020b72e0
+
 src/engine/rec_half.cpp:
     complete
     .text       start:0x020b72e0 end:0x020b72ec
