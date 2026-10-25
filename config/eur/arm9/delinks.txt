@@ -85,6 +85,10 @@ src/engine/engine_romhalf.cpp:
     complete
     .text       start:0x02012e58 end:0x02012e68
 
+src/engine/vrambank.cpp:
+    complete
+    .text       start:0x020152c8 end:0x02015388
+
 src/engine/cardbus_lock.cpp:
     complete
     .text       start:0x02017338 end:0x02017380
