@@ -1822,6 +1822,10 @@ src/object/set14.cpp:
     complete
     .text       start:0x02064880 end:0x0206489c
 
+src/object/set14_2.cpp:
+    complete
+    .text       start:0x02064964 end:0x02064a20
+
 src/object/set15.cpp:
     complete
     .text       start:0x02064bd0 end:0x02064bf4
@@ -1837,6 +1841,10 @@ src/object/set16_2.cpp:
 src/object/ido.cpp:
     complete
     .text       start:0x02064e74 end:0x02064f24
+
+src/object/ido_3.cpp:
+    complete
+    .text       start:0x02064f24 end:0x020650a0
 
 src/object/ido_2.cpp:
     complete
@@ -1897,6 +1905,14 @@ src/object/set25.cpp:
 src/object/set25_2.cpp:
     complete
     .text       start:0x02066630 end:0x0206672c
+
+src/object/set25_3.cpp:
+    complete
+    .text       start:0x02066818 end:0x02066910
+
+src/object/set25_4.cpp:
+    complete
+    .text       start:0x02067770 end:0x02067890
 
 src/object/set26.cpp:
     complete
@@ -2402,6 +2418,10 @@ src/object/setwork.cpp:
     complete
     .text       start:0x02076858 end:0x02076a20
 
+src/object/objdispatch.cpp:
+    complete
+    .text       start:0x02076b24 end:0x02076b50
+
 src/game/stagesel.cpp:
     complete
     .text       start:0x020781e8 end:0x0207822c
@@ -2545,6 +2565,14 @@ src/object/tama07_2.cpp:
 src/object/tama08.cpp:
     complete
     .text       start:0x0207f84c end:0x0207f8e0
+
+src/object/tama08_2.cpp:
+    complete
+    .text       start:0x0207f9dc end:0x0207fb38
+
+src/object/tama11_2.cpp:
+    complete
+    .text       start:0x0207fe14 end:0x0207fe64
 
 src/object/tama11.cpp:
     complete
