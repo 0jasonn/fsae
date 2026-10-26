@@ -3826,9 +3826,17 @@ src/game/rendertarget_e.cpp:
     complete
     .text       start:0x020a4ee0 end:0x020a4f30
 
+src/game/textrender_setters_e.cpp:
+    complete
+    .text       start:0x020a4f30 end:0x020a4f44
+
 src/game/textrender_10.cpp:
     complete
     .text       start:0x020a4f44 end:0x020a510c
+
+src/game/textrender_setters_e_2.cpp:
+    complete
+    .text       start:0x020a510c end:0x020a511c
 
 src/game/textrender_11.cpp:
     complete
@@ -3918,9 +3926,41 @@ src/game/fileselui_5.cpp:
     complete
     .text       start:0x020a8178 end:0x020a8198
 
+src/game/fileselui_e.cpp:
+    complete
+    .text       start:0x020a88a8 end:0x020a8904
+
+src/game/fileselui_e_2.cpp:
+    complete
+    .text       start:0x020a8d78 end:0x020a8dbc
+
+src/game/fileselui_e_3.cpp:
+    complete
+    .text       start:0x020a8f7c end:0x020a8f80
+
+src/game/modeselui_e.cpp:
+    complete
+    .text       start:0x020a8ff0 end:0x020a9054
+
 src/game/modeselui.cpp:
     complete
     .text       start:0x020a9054 end:0x020a9064
+
+src/game/modeselui_e_2.cpp:
+    complete
+    .text       start:0x020a9494 end:0x020a94b4
+
+src/game/modeselui_e_3.cpp:
+    complete
+    .text       start:0x020aaaf8 end:0x020aab80
+
+src/game/playstyleselui_e.cpp:
+    complete
+    .text       start:0x020aacfc end:0x020aad08
+
+src/game/playstyleselui_e_2.cpp:
+    complete
+    .text       start:0x020ab520 end:0x020ab524
 
 src/game/groupcreateui_e.cpp:
     complete
