@@ -35,7 +35,7 @@ extern "C" BOOL RectObj_updateBoundsCheck(void *self, s16 *pos);
 extern "C" void Table_setValueB(void *owner, void *value, s32 kind);
 extern "C" void func_020bc2d0(void *owner, void *value, s32 x, s32 y);
 extern "C" void *func_020c2c34(void *heap, s32 size);
-extern "C" void func_020c2c48(void *heap, void *block);
+extern "C" void Heap_VirtualFree(void *heap, void *block);
 
 // RectObjList_init(self) (0x020b826c, provisional name): RectObj_init, the vtable data_02126dc4, the value -1 at
 // +0x14 and a zero count. Returns self.

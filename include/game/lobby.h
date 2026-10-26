@@ -59,7 +59,7 @@ extern u8 data_0212c514[];   // key state of the machine (u16)
 extern u8 data_0212c5ac[];   // stage change block, the word at +0xc is set to -1 by update_change_stage
 extern u8 data_0217a258[];   // OBJInfo block freed by subTask_lobby_end
 extern u8 data_02126a48[];   // vtable of the lobby message object (lobby_msgObj_init)
-extern "C" void func_020c2c48(void *heap, void *block); // frees a block of a heap
+extern "C" void Heap_VirtualFree(void *heap, void *block); // frees a block of a heap
 
 extern const s32 data_020ded8c[2]; // start position of the link object (x, y in pixels)
 

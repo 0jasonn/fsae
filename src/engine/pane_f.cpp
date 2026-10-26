@@ -58,5 +58,5 @@ ARM void Window_releaseItems(void *heap, PaneItem *items, u32 count) {
     for (i = 0; i < count; i++) {
         Pane_releaseItemNoop(&items[i], heap);
     }
-    func_020c2c48(*(void **)heap, items);
+    Heap_VirtualFree(*(void **)heap, items);
 }

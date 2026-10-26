@@ -4,7 +4,7 @@
 
 extern "C" {
 extern u8 *data_021848b0; // sound state pointer
-void *func_020c2878(void *base, u32 size, s32 flags);
+void *SndHeap_InitLinear(void *base, u32 size, s32 flags);
 void Menu_ForwardC28b0(void *heap);
 }
 

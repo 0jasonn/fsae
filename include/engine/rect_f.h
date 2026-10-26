@@ -35,12 +35,12 @@ extern "C" void *RectObjList_init(void *self);
 extern "C" void RectObjLink_init(void *self);
 extern "C" void RectObjLink_setGeometry(void *self, s16 *pos, s16 *size, s32 value);
 
-extern "C" void *func_020c2b38(s32 id);
-extern "C" s32 func_020c2e44(void *entry, void *owner);
+extern "C" void *Fs_GetDirFileOffset(s32 id);
+extern "C" s32 ResChunk_OpenKBEC(void *entry, void *owner);
 extern "C" s32 Menu_ForwardC2cb4(void *entry, void *owner);
-extern "C" s32 func_020c2f44(void *entry, void *owner);
-extern "C" s32 func_020c2fdc(void *entry, void *owner);
-extern "C" s32 func_020c3028(void *entry, void *owner);
+extern "C" s32 ResChunk_OpenRACH(void *entry, void *owner);
+extern "C" s32 ResChunk_OpenTTLP(void *entry, void *owner);
+extern "C" s32 ResChunk_GetNRCS(void *entry, void *owner);
 
 extern "C" void OS_WaitVBlankIntr(void);
 extern "C" void func_020c37c8(void *entry);

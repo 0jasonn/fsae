@@ -10,7 +10,7 @@ namespace Knife {
 // Knife::i_deallocate(void*) (0x020c8094): frees a block through the heap at data_02187050
 ARM void i_deallocate(void *block) {
     if (block != 0) {
-        func_020c2c48(data_02187050, block);
+        Heap_VirtualFree(data_02187050, block);
     }
 }
 

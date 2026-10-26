@@ -34,7 +34,7 @@ extern "C" BOOL RectObj_updateBoundsCheck(void *self, s16 *pos);
 extern "C" void Table_setValueB(void *owner, void *value, s32 kind);
 extern "C" void func_020bc2d0(void *owner, void *value, s32 x, s32 y);
 extern "C" void *func_020c2c34(void *heap, s32 size);
-extern "C" void func_020c2c48(void *heap, void *block);
+extern "C" void Heap_VirtualFree(void *heap, void *block);
 
 // RectObjList_countDown(self) (0x020b8384, provisional name): decrements the count when it is not zero
 extern "C" void RectObjList_countDown(RectObjList *self);

@@ -37,5 +37,5 @@ ARM void lobby_freeBlock(void *heap, void *block) {
     if (block == NULL) {
         return;
     }
-    func_020c2c48(*(void **)heap, block);
+    Heap_VirtualFree(*(void **)heap, block);
 }

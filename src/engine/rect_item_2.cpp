@@ -24,7 +24,7 @@ typedef struct RectSpan {
 
 extern "C" void RectItem_freeBlock(void *holder, void *block);
 extern "C" void RectItem_releaseBlocks(RectItem *self, void *holder);
-extern "C" void func_020c2c48(void *heap, void *block);
+extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void *func_020c2c34(void *heap, s32 size);
 
 // RectItem_allocPtrArray(holder, count) (0x020b8b68, provisional name): allocates count pointers (at least one) from
@@ -93,7 +93,7 @@ ARM void RectItem_freeArray(void *holder, RectItem *items, s32 count) {
     for (i = 0; i < (u32)count; i++) {
         RectItem_releaseBlocks(&items[i], holder);
     }
-    func_020c2c48(*(void **)holder, items);
+    Heap_VirtualFree(*(void **)holder, items);
 }
 
 // RectSpan_callAndMore(self, arg, obj, value) (0x020b8c78, provisional name): calls slot 3 of obj with the tag

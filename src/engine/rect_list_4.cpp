@@ -13,7 +13,7 @@ typedef struct RectGroup {
 } RectGroup;
 
 extern "C" void *func_020c2c34(void *heap, s32 size);
-extern "C" void func_020c2c48(void *heap, void *block);
+extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void RectObjList_releaseItems(void *self, void *holder);
 extern "C" void Group_freeBlock(void *holder, void *block);
 extern "C" void Group_freeBlock2(void *holder, void *block);
@@ -73,7 +73,7 @@ ARM void Group_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }
-    func_020c2c48(*(void **)holder, block);
+    Heap_VirtualFree(*(void **)holder, block);
 }
 
 // Group_freeBlock2(holder, block) (0x020b9368, provisional name): the same code as Group_freeBlock
@@ -81,5 +81,5 @@ ARM void Group_freeBlock2(void *holder, void *block) {
     if (block == NULL) {
         return;
     }
-    func_020c2c48(*(void **)holder, block);
+    Heap_VirtualFree(*(void **)holder, block);
 }

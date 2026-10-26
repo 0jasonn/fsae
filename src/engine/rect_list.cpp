@@ -35,7 +35,7 @@ extern "C" BOOL RectObj_updateBoundsCheck(void *self, s16 *pos);
 extern "C" void Table_setValueB(void *owner, void *value, s32 kind);
 extern "C" void func_020bc2d0(void *owner, void *value, s32 x, s32 y);
 extern "C" void *func_020c2c34(void *heap, s32 size);
-extern "C" void func_020c2c48(void *heap, void *block);
+extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void **RectObjList_allocPtrArray(void *holder, s32 count);
 extern "C" void RectObjList_freeBlock(void *holder, void *block);
 
@@ -95,5 +95,5 @@ ARM void RectObjList_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }
-    func_020c2c48(*(void **)holder, block);
+    Heap_VirtualFree(*(void **)holder, block);
 }

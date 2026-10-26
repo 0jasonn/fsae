@@ -4,9 +4,9 @@
 extern "C" {
 void *SndHeap_Allocate(u32 *heap, u32 size, s32 flag);
 void SndHeap_Free(u32 *heap, u8 *block);
-void *func_020c28bc(u32 heap, u32 size, u32 flag);
-void *func_020c2934(u32 heap, u32 size);
-void *func_020c2974(u32 heap);
+void *SndHeap_ReserveLinear(u32 heap, u32 size, u32 flag);
+void *SndHeapPool_Alloc(u32 heap, u32 size);
+void *SndHeapPool_Push(u32 heap);
 void *OS_AllocFromHeap(u32 heap, void *ptr, u32 size);
 void OS_FreeToHeap(u32 heap, void *ptr, u32 block);
 }
@@ -24,10 +24,10 @@ ARM void SndHeapOwner_Free(u32 *owner, u8 *block) {
     SndHeap_Free((u32 *)owner[1], block);
 }
 
-// Reserves size bytes at the owner's heap with its flag (through func_020c28bc).
+// Reserves size bytes at the owner's heap with its flag (through SndHeap_ReserveLinear).
 extern "C" void *SndHeapOwner_Reserve(u32 *owner, u32 size);
 ARM void *SndHeapOwner_Reserve(u32 *owner, u32 size) {
-    return func_020c28bc(owner[1], size, owner[2]);
+    return SndHeap_ReserveLinear(owner[1], size, owner[2]);
 }
 
 // Empty hook (no work).
@@ -35,7 +35,7 @@ extern "C" void SndHeapOwner_NoOp(void);
 ARM void SndHeapOwner_NoOp(void) {
 }
 
-// Reserves size bytes when the heap at the owner has room for them (through func_020c2934), otherwise returns 0.
+// Reserves size bytes when the heap at the owner has room for them (through SndHeapPool_Alloc), otherwise returns 0.
 extern "C" void *SndHeapOwner_TryReserve(u32 *owner, u32 size);
 ARM void *SndHeapOwner_TryReserve(u32 *owner, u32 size) {
     u32 *heap;
@@ -44,13 +44,13 @@ ARM void *SndHeapOwner_TryReserve(u32 *owner, u32 size) {
     if (size > heap[10]) {
         return 0;
     }
-    return func_020c2934((u32)heap, size);
+    return SndHeapPool_Alloc((u32)heap, size);
 }
 
-// Resets the owner's heap (through func_020c2974).
+// Resets the owner's heap (through SndHeapPool_Push).
 extern "C" void *SndHeapOwner_Reset(u32 *owner);
 ARM void *SndHeapOwner_Reset(u32 *owner) {
-    return func_020c2974(owner[1]);
+    return SndHeapPool_Push(owner[1]);
 }
 
 // Allocates from the operating system heap of the owner (OS_AllocFromHeap).

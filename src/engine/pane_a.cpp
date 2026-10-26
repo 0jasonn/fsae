@@ -68,7 +68,7 @@ ARM void Pane_freeBlock(void *heap, void *block) {
     if (block == NULL) {
         return;
     }
-    func_020c2c48(*(void **)heap, block);
+    Heap_VirtualFree(*(void **)heap, block);
 }
 
 // Pane_allocChildren(self, owner, capacity) (0x020b56b8, provisional name): allocates the child array and stores the capacity

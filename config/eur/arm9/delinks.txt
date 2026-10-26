@@ -4702,9 +4702,25 @@ src/engine/sndheap.cpp:
     complete
     .text       start:0x020c2694 end:0x020c2838
 
+src/engine/sndheap_linear.cpp:
+    complete
+    .text       start:0x020c2838 end:0x020c28b0
+
 src/game/menu_18.cpp:
     complete
     .text       start:0x020c28b0 end:0x020c28bc
+
+src/engine/sndheap_linear_2.cpp:
+    complete
+    .text       start:0x020c28bc end:0x020c2984
+
+src/engine/narc_check.cpp:
+    complete
+    .text       start:0x020c2984 end:0x020c29c8
+
+src/engine/fs_dirfile.cpp:
+    complete
+    .text       start:0x020c2b10 end:0x020c2b90
 
 src/engine/sndheap_owner.cpp:
     complete
@@ -4714,9 +4730,49 @@ src/game/menu_13.cpp:
     complete
     .text       start:0x020c2c34 end:0x020c2c48
 
+src/engine/heap_vcall.cpp:
+    complete
+    .text       start:0x020c2c48 end:0x020c2c5c
+
+src/engine/res_chunk_a.cpp:
+    complete
+    .text       start:0x020c2c5c end:0x020c2cb4
+
 src/game/menu_19.cpp:
     complete
     .text       start:0x020c2cb4 end:0x020c2cc0
+
+src/engine/res_chunk_b.cpp:
+    complete
+    .text       start:0x020c2e00 end:0x020c2e44
+
+src/engine/res_chunk_c.cpp:
+    complete
+    .text       start:0x020c2e44 end:0x020c2ea8
+
+src/engine/res_chunk_d.cpp:
+    complete
+    .text       start:0x020c2f44 end:0x020c30a0
+
+src/engine/res_table.cpp:
+    complete
+    .text       start:0x020c30a0 end:0x020c30e8
+
+src/engine/res_cursor.cpp:
+    complete
+    .text       start:0x020c31f8 end:0x020c323c
+
+src/engine/res_cursor_2.cpp:
+    complete
+    .text       start:0x020c33d0 end:0x020c3444
+
+src/engine/res_cursor_3.cpp:
+    complete
+    .text       start:0x020c349c end:0x020c34d0
+
+src/engine/slots.cpp:
+    complete
+    .text       start:0x020c3b04 end:0x020c3b94
 
 src/game/subtask_game_start.cpp:
     complete

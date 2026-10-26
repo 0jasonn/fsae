@@ -4,7 +4,7 @@
 #include "engine/sndlist.h"
 
 extern "C" {
-void *func_020c28bc(void *heap, s32 size, s32 align);
+void *SndHeap_ReserveLinear(void *heap, s32 size, s32 align);
 void SND_FlushCommand(u32 mode);
 void SND_WaitForCommandProc(u32 tag);
 u32 SND_GetCurrentCommandTag(void);
@@ -31,7 +31,7 @@ extern "C" s32 SndRecord_Alloc(SndRecord *record);
 ARM s32 SndRecord_Alloc(SndRecord *record) {
     void *entry;
 
-    entry = func_020c28bc(record->heap, 0x14, 4);
+    entry = SndHeap_ReserveLinear(record->heap, 0x14, 4);
     if (entry == 0) {
         return 0;
     }

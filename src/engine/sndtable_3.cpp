@@ -4,7 +4,7 @@
 
 extern "C" {
 extern u8 *data_021848b0; // sound state pointer
-void *func_020c2878(void *base, u32 size, s32 flags);
+void *SndHeap_InitLinear(void *base, u32 size, s32 flags);
 void Menu_ForwardC28b0(void *heap);
 }
 
@@ -28,7 +28,7 @@ ARM void *SndHeap_CreateRecord(void *base, s32 size) {
     if (avail < 0x10) {
         return 0;
     }
-    heap = func_020c2878((void *)(start + 0x10), avail - 0x10, 0);
+    heap = SndHeap_InitLinear((void *)(start + 0x10), avail - 0x10, 0);
     if (heap == 0) {
         return 0;
     }

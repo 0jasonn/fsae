@@ -32,7 +32,7 @@ typedef struct RectObjPair {
 } RectObjPair;
 
 extern "C" void RectObjLink_callB(RectObjF *self, void *arg);
-extern "C" void func_020c2c48(void *heap, void *block);
+extern "C" void Heap_VirtualFree(void *heap, void *block);
 
 // RectObjPair_setOffsets(self, value) (0x020b88dc, provisional name): the first child moves to -value / 2 + 6 and
 // the second to value - value / 2 - 6 (both through the offset slot of the child)
@@ -100,7 +100,7 @@ ARM void RectItem_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }
-    func_020c2c48(*(void **)holder, block);
+    Heap_VirtualFree(*(void **)holder, block);
 }
 
 // RectItem_freeBlock2(holder, block) (0x020b8a44, provisional name): the same code as RectItem_freeBlock
@@ -108,5 +108,5 @@ ARM void RectItem_freeBlock2(void *holder, void *block) {
     if (block == NULL) {
         return;
     }
-    func_020c2c48(*(void **)holder, block);
+    Heap_VirtualFree(*(void **)holder, block);
 }
