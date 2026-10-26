@@ -11,7 +11,7 @@ ARM void Menu_Step(MenuWork *menu, s32 flag) {
         Menu_Begin(menu);
         return;
     }
-    result = func_020bac20(menu->unk_358);
+    result = Ctrl_getSliderIndexA(menu->unk_358);
     if (result == -1) {
         return;
     }
@@ -20,7 +20,7 @@ ARM void Menu_Step(MenuWork *menu, s32 flag) {
 
 // Marks the menu as finished (the flag at sub+0x621) and tells the object at 0x358.
 ARM void Menu_Finish(MenuWork *menu) {
-    func_020bb70c(menu->unk_358);
+    Ctrl_setCounterA(menu->unk_358);
     menu->sub.unk_621 = 1;
 }
 

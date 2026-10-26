@@ -14,7 +14,7 @@ ARM s32 Menu_DispatchKeys(MenuWork *menu) {
     s32 result;
     u16 keys;
 
-    if (func_020bb730(menu->unk_358) != 0) {
+    if (Ctrl_isReady(menu->unk_358) != 0) {
         return 0;
     }
     result = 0;
@@ -30,12 +30,12 @@ ARM s32 Menu_DispatchKeys(MenuWork *menu) {
             result = 1;
         }
     } else if (keys & 0x4) {
-        result = func_020bb698(menu->unk_358, &step);
+        result = Ctrl_tryChange(menu->unk_358, &step);
         if (result != 0) {
             Menu_Step(menu, step);
         }
     } else if (keys & 0x1) {
-        Menu_UpdateView(menu, func_020bb6c8(menu->unk_358));
+        Menu_UpdateView(menu, Ctrl_updateAd(menu->unk_358));
         result = 1;
     } else if (keys & 0x8) {
         Menu_Finish(menu);

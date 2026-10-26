@@ -10,12 +10,12 @@
 extern u8 data_02126d84[];
 
 extern "C" void RectObj_init(RectObjF *self);
-extern "C" void func_020bc280(void *arg, s32 value, s32 scale);
+extern "C" void Table_setValueA(void *arg, s32 value, s32 scale);
 
-// RectObjLink_callB(self, arg) (0x020b8004, provisional name): func_020bc280(arg, field at +0x14, 0x1000)
+// RectObjLink_callB(self, arg) (0x020b8004, provisional name): Table_setValueA(arg, field at +0x14, 0x1000)
 extern "C" void RectObjLink_callB(RectObjF *self, void *arg);
 ARM void RectObjLink_callB(RectObjF *self, void *arg) {
-    func_020bc280(arg, self->unk_14, 0x1000);
+    Table_setValueA(arg, self->unk_14, 0x1000);
 }
 
 // RectObjLink2_init(self) (0x020b8020, provisional name): RectObj_init with the vtable data_02126d84, the field at +0x14

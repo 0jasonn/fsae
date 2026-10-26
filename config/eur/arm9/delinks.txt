@@ -4250,6 +4250,10 @@ src/engine/rect_hit.cpp:
     complete
     .text       start:0x020b8398 end:0x020b8408
 
+src/engine/rect_pair_init.cpp:
+    complete
+    .text       start:0x020b8440 end:0x020b8528
+
 src/engine/rect_pair.cpp:
     complete
     .text       start:0x020b86b8 end:0x020b8784
@@ -4262,9 +4266,17 @@ src/engine/rect_item_2.cpp:
     complete
     .text       start:0x020b8b68 end:0x020b8cbc
 
+src/engine/rect_slot.cpp:
+    complete
+    .text       start:0x020b8e28 end:0x020b8f68
+
 src/engine/rect_list_4.cpp:
     complete
     .text       start:0x020b9284 end:0x020b9380
+
+src/engine/slider_index.cpp:
+    complete
+    .text       start:0x020b9424 end:0x020b94ac
 
 src/engine/slider.cpp:
     complete
@@ -4273,6 +4285,70 @@ src/engine/slider.cpp:
 src/engine/slider_2.cpp:
     complete
     .text       start:0x020b97d4 end:0x020b9844
+
+src/engine/rect_group_slot.cpp:
+    complete
+    .text       start:0x020b9d30 end:0x020b9d58
+
+src/engine/slider_ctrl.cpp:
+    complete
+    .text       start:0x020bac20 end:0x020bacb8
+
+src/engine/ctrl_bits.cpp:
+    complete
+    .text       start:0x020bb1bc end:0x020bb208
+
+src/engine/ctrl_flags.cpp:
+    complete
+    .text       start:0x020bb660 end:0x020bb788
+
+src/engine/ctrl_state.cpp:
+    complete
+    .text       start:0x020bb85c end:0x020bb898
+
+src/engine/rect_slot2.cpp:
+    complete
+    .text       start:0x020bba00 end:0x020bba38
+
+src/engine/rect_geom_copy.cpp:
+    complete
+    .text       start:0x020bba38 end:0x020bba88
+
+src/engine/rect_slot3.cpp:
+    complete
+    .text       start:0x020bbb70 end:0x020bbbfc
+
+src/engine/ctrl_find.cpp:
+    complete
+    .text       start:0x020bbe50 end:0x020bbf54
+
+src/engine/ctrl_leaf.cpp:
+    complete
+    .text       start:0x020bc1fc end:0x020bc200
+
+src/engine/table_entry.cpp:
+    complete
+    .text       start:0x020bc260 end:0x020bc280
+
+src/engine/table_set.cpp:
+    complete
+    .text       start:0x020bc280 end:0x020bc2d0
+
+src/engine/ctrl_wrap.cpp:
+    complete
+    .text       start:0x020bc36c end:0x020bc3a8
+
+src/engine/gx_misc.cpp:
+    complete
+    .text       start:0x020bc3a8 end:0x020bc43c
+
+src/engine/ctrl_leaf_2.cpp:
+    complete
+    .text       start:0x020bc51c end:0x020bc528
+
+src/engine/ctrl_leaf_3.cpp:
+    complete
+    .text       start:0x020bc574 end:0x020bc588
 
 src/game/menu_2.cpp:
     complete

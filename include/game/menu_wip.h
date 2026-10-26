@@ -79,7 +79,7 @@ void RectSpan_callAndMore(s32 value, void *data, void *obj, void *ref);
 void func_020ba948(void *obj, s32 value);
 void func_020bf09c(void *out, void *data, void *obj);
 void OS_GetOwnerInfoEx(void *info);
-s32 func_020bb730(void *obj);
+extern "C" s32 Ctrl_isReady(void *obj);
 s32 func_020be5a4(MenuList *list, s32 delta);
 MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag);
 void func_020bf9dc(void *obj, s32 a, s32 b);
@@ -93,8 +93,8 @@ s32 func_020bc588(s32 value);
 void func_020bc84c(s32 obj, void *checker, void *a, void *b, void *c, u16 d);
 s32 func_020bb450(void *obj);
 s32 func_020bb56c(void *obj);
-s32 func_020bb698(void *obj, u8 *out);
-s32 func_020bb6c8(void *obj);
+s32 Ctrl_tryChange(void *obj, u8 *out);
+s32 Ctrl_updateAd(void *obj);
 }
 
 void Menu_GetRect(s16 *rect, s32 unused); // C++, src/game/menu_8.cpp

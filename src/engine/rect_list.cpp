@@ -32,7 +32,7 @@ extern u8 data_02126dc4[];
 extern "C" void RectObj_init(void *self);
 extern "C" void RectObj_noop(void *self, void *arg);
 extern "C" BOOL RectObj_updateBoundsCheck(void *self, s16 *pos);
-extern "C" void func_020bc2a8(void *owner, void *value, s32 kind);
+extern "C" void Table_setValueB(void *owner, void *value, s32 kind);
 extern "C" void func_020bc2d0(void *owner, void *value, s32 x, s32 y);
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void func_020c2c48(void *heap, void *block);

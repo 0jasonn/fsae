@@ -23,14 +23,14 @@ ARM void Menu_SetCursorPos(MenuWork *menu) {
     const void *data;
     s32 moved;
 
-    row = func_020bac20(menu->unk_358);
-    column = func_020bac58(menu->unk_358);
+    row = Ctrl_getSliderIndexA(menu->unk_358);
+    column = Ctrl_getSliderIndexB(menu->unk_358);
     entry = (MenuCursorEntry *)((u8 *)*(void **)*(void **)((u8 *)menu + 0x348) + (s16)row * 0x18);
     if (column == -1) {
         data = (const void *)entry->value;
     } else {
         table = entry->table;
-        data = (const void *)table[func_020bac58(menu->unk_358)];
+        data = (const void *)table[Ctrl_getSliderIndexB(menu->unk_358)];
     }
     packed = (u32)(row + 1) << 16 | (u32)(column + 1);
     moved = (s32)menu->sub.unk_608 > (s32)packed;
