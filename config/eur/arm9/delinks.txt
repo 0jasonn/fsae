@@ -3846,6 +3846,10 @@ src/game/textrender_7.cpp:
     complete
     .text       start:0x020a58ac end:0x020a58b4
 
+src/game/textrender_clear_e.cpp:
+    complete
+    .text       start:0x020a58b4 end:0x020a58d0
+
 src/game/textrender_8.cpp:
     complete
     .text       start:0x020a5a44 end:0x020a5a58
@@ -3878,6 +3882,10 @@ src/game/radar_e_4.cpp:
     complete
     .text       start:0x020a6cc0 end:0x020a6d68
 
+src/game/subtask_radar_e.cpp:
+    complete
+    .text       start:0x020a6f98 end:0x020a6ff0
+
 src/game/fs_e.cpp:
     complete
     .text       start:0x020a723c end:0x020a7370
@@ -3894,6 +3902,14 @@ src/game/fs_e_3.cpp:
     complete
     .text       start:0x020a7480 end:0x020a74fc
 
+src/game/fileselui_view_e.cpp:
+    complete
+    .text       start:0x020a761c end:0x020a76d0
+
+src/game/fileselui_status_e.cpp:
+    complete
+    .text       start:0x020a76d0 end:0x020a777c
+
 src/game/fileselui_6.cpp:
     complete
     .text       start:0x020a78f4 end:0x020a7918
@@ -3905,6 +3921,14 @@ src/game/fileselui_5.cpp:
 src/game/modeselui.cpp:
     complete
     .text       start:0x020a9054 end:0x020a9064
+
+src/game/groupcreateui_e.cpp:
+    complete
+    .text       start:0x020ab6cc end:0x020ab6d0
+
+src/game/baseduiview_e.cpp:
+    complete
+    .text       start:0x020ac014 end:0x020ac028
 
 src/game/resource_2.cpp:
     complete
