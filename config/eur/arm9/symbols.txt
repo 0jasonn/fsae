@@ -7998,9 +7998,9 @@ data_020dc600 kind:data(any) addr:0x020dc600
 data_020dc608 kind:data(any) addr:0x020dc608
 data_020dc610 kind:data(any) addr:0x020dc610
 data_020dc618 kind:data(any) addr:0x020dc618
-data_020dc620 kind:data(any) addr:0x020dc620
+rupeeRushSetId kind:data(any) addr:0x020dc620
 data_020dc623 kind:data(any) addr:0x020dc623
-data_020dc63b kind:data(any) addr:0x020dc63b
+rupeeRushCell kind:data(any) addr:0x020dc63b
 data_020dc65c kind:data(any) addr:0x020dc65c
 data_020dc668 kind:data(any) addr:0x020dc668
 data_020dc66c kind:data(any) addr:0x020dc66c
