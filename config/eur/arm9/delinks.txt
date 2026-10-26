@@ -2558,6 +2558,10 @@ src/object/getarea.cpp:
     complete
     .text       start:0x0206cb84 end:0x0206cc9c
 
+src/object/plmove_1.cpp:
+    complete
+    .text       start:0x0206cc9c end:0x0206cea0
+
 src/object/setwind.cpp:
     complete
     .text       start:0x0206cef8 end:0x0206cf74
@@ -2890,6 +2894,10 @@ src/object/rupeerush.cpp:
     complete
     .text       start:0x0207758c end:0x02077650
 
+src/object/sr_2.cpp:
+    complete
+    .text       start:0x02077684 end:0x02077810
+
 src/object/sr.cpp:
     complete
     .text       start:0x02077810 end:0x02077834
@@ -2929,6 +2937,10 @@ src/game/stagesel_10.cpp:
 src/object/sword.cpp:
     complete
     .text       start:0x0207af58 end:0x0207af94
+
+src/object/kabuto_2.cpp:
+    complete
+    .text       start:0x0207b400 end:0x0207b560
 
 src/object/kabuto.cpp:
     complete
