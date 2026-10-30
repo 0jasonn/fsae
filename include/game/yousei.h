@@ -7,7 +7,7 @@
 int yousei_msgFinishWait(void);              // 0x02082008, 1 while a player's message window is still open
 extern "C" int func_02081b64(void);           // 0x02081b64 (src/game/yousei.cpp), 1 when every player has bit 0x200
 extern "C" void ComRequest(u8 request);       // original ComRequest(unsigned char)
-void YouseiDemoLoad(void);                    // original YouseiDemoLoad()
+extern "C" void YouseiDemoLoad(void);                    // original YouseiDemoLoad()
 void demolink_set(void);                      // original demolink_set()
 void Knife_Single_SinglePlay_Initialize(void); // original Knife::Single::SinglePlay::Initialize()
 void BgInit(void);                            // original BgInit()

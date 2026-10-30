@@ -1504,7 +1504,7 @@ _Z9em05_initP9OBJ_WORK_ kind:function(arm,size=0x90) addr:0x02038dc4
 _Z10em05_move0P9OBJ_WORK_ kind:function(arm,size=0x48) addr:0x02038e54
 _Z10em05_jump0P9OBJ_WORK_ kind:function(arm,size=0x4c) addr:0x02038e9c
 _Z9em05_landP9OBJ_WORK_ kind:function(arm,size=0x54) addr:0x02038ee8
-em05_move1 kind:function(arm,size=0xe0) addr:0x02038f3c
+_Z10em05_move1P9OBJ_WORK_ kind:function(arm,size=0xe0) addr:0x02038f3c
 _Z10em05_jump1P9OBJ_WORK_ kind:function(arm,size=0x58) addr:0x0203901c
 _Z10em05_pressP9OBJ_WORK_ kind:function(arm,size=0x5c) addr:0x02039074
 _Z10em05_move2P9OBJ_WORK_ kind:function(arm,size=0x90) addr:0x020390d0
@@ -9443,7 +9443,7 @@ data_020fd7c8 kind:data(any) addr:0x020fd7c8
 data_020fd828 kind:data(any) addr:0x020fd828
 data_020fd90c kind:data(any) addr:0x020fd90c
 data_020fd918 kind:data(any) addr:0x020fd918
-data_020fd938 kind:data(any) addr:0x020fd938
+staffrollFrameInfo kind:data(any) addr:0x020fd938
 data_020fd950 kind:data(any) addr:0x020fd950
 data_020fd954 kind:data(any) addr:0x020fd954
 data_020fd974 kind:data(any) addr:0x020fd974
@@ -9935,7 +9935,7 @@ data_02103d00 kind:data(any) addr:0x02103d00
 data_02103d08 kind:data(any) addr:0x02103d08
 data_02103d10 kind:data(any) addr:0x02103d10
 data_02103d48 kind:data(any) addr:0x02103d48
-data_02103d58 kind:data(any) addr:0x02103d58
+youseiFrameTable kind:data(any) addr:0x02103d58
 data_02103d68 kind:data(any) addr:0x02103d68
 data_02103d78 kind:data(any) addr:0x02103d78
 data_02103d88 kind:data(any) addr:0x02103d88

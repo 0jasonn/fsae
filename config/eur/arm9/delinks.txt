@@ -913,6 +913,10 @@ src/enemy/em05_2.cpp:
     complete
     .text       start:0x02038ee8 end:0x02038f3c
 
+src/enemy/em05_6.cpp:
+    complete
+    .text       start:0x02038f3c end:0x0203901c
+
 src/enemy/em05_3.cpp:
     complete
     .text       start:0x0203901c end:0x02039074
@@ -1498,9 +1502,21 @@ src/game/iroyuka.cpp:
     complete
     .text       start:0x0204d380 end:0x0204d3ac
 
+src/game/yousei_6.cpp:
+    complete
+    .text       start:0x0204d50c end:0x0204d5a4
+
+src/game/staffroll_4.cpp:
+    complete
+    .text       start:0x0204d5a4 end:0x0204d634
+
 src/engine/info.cpp:
     complete
     .text       start:0x0204d634 end:0x0204d650
+
+src/game/takara_5.cpp:
+    complete
+    .text       start:0x0204d788 end:0x0204d834
 
 src/game/history.cpp:
     complete

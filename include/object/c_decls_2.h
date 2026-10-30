@@ -12,7 +12,7 @@ void func_020841b0(Entity *e);
 void CheckInit(void);
 void CheckPlsSet(void);
 void CockpitInit(void);
-void StaffrollLoad(void);
+extern "C" void StaffrollLoad(void);
 void initRupeeRush(void);
 void setupTreasureBox(void);
 u8 getRupeeRushDiceIndex(void);
