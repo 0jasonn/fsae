@@ -41,6 +41,10 @@ src/engine/timer_advance.cpp:
     complete
     .text       start:0x02005714 end:0x02005798
 
+src/engine/entry_update.cpp:
+    complete
+    .text       start:0x02005a38 end:0x02005b1c
+
 src/engine/bits.cpp:
     complete
     .text       start:0x02005b1c end:0x02005bcc

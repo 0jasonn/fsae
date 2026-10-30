@@ -22,7 +22,7 @@ typedef struct TaskLockThread {
 
 extern "C" {
 s32 OS_TryLockMutex(void *mutex);
-void Entry_Update(void *arg);
+s32 Entry_Update(u8 *entry);
 }
 
 // C++ linkage (mangled _Z16Forward_0200b10cv), defined in src/engine/stub_4.cpp.
