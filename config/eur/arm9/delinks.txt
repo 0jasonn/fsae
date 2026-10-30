@@ -3950,6 +3950,10 @@ src/game/textrender_12.cpp:
     complete
     .text       start:0x020a5340 end:0x020a5384
 
+src/game/textrender_count.cpp:
+    complete
+    .text       start:0x020a5384 end:0x020a54bc
+
 src/game/textrender_7.cpp:
     complete
     .text       start:0x020a58ac end:0x020a58b4
@@ -4053,6 +4057,10 @@ src/game/modeselui_e_2.cpp:
 src/game/modeselui_e_3.cpp:
     complete
     .text       start:0x020aaaf8 end:0x020aab80
+
+src/game/playstyleselui_init.cpp:
+    complete
+    .text       start:0x020aac30 end:0x020aacfc
 
 src/game/playstyleselui_e.cpp:
     complete
