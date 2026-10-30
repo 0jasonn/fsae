@@ -4186,6 +4186,10 @@ src/game/groupselectuiview.cpp:
     complete
     .text       start:0x020afef4 end:0x020b0014
 
+src/engine/os_blocking_mode.cpp:
+    complete
+    .text       start:0x020b07a4 end:0x020b07bc
+
 src/game/groupselectuiview_2.cpp:
     complete
     .text       start:0x020b07bc end:0x020b0800
@@ -4313,6 +4317,10 @@ src/engine/window_info.cpp:
 src/engine/tween.cpp:
     complete
     .text       start:0x020b6868 end:0x020b68c8
+
+src/engine/tcli_accessor.cpp:
+    complete
+    .text       start:0x020b69e4 end:0x020b69f4
 
 src/engine/window_subinfo.cpp:
     complete
@@ -4466,6 +4474,18 @@ src/engine/rect_group_slot.cpp:
     complete
     .text       start:0x020b9d30 end:0x020b9d58
 
+src/engine/ctrl_entry.cpp:
+    complete
+    .text       start:0x020b9fac end:0x020ba004
+
+src/engine/ctrl_release.cpp:
+    complete
+    .text       start:0x020ba80c end:0x020ba84c
+
+src/engine/ctrl_setlist.cpp:
+    complete
+    .text       start:0x020ba948 end:0x020ba9a4
+
 src/engine/slider_ctrl.cpp:
     complete
     .text       start:0x020bac20 end:0x020bacb8
@@ -4498,6 +4518,10 @@ src/engine/ctrl_find.cpp:
     complete
     .text       start:0x020bbe50 end:0x020bbf54
 
+src/engine/ctrl_init.cpp:
+    complete
+    .text       start:0x020bc0e4 end:0x020bc1fc
+
 src/engine/ctrl_leaf.cpp:
     complete
     .text       start:0x020bc1fc end:0x020bc200
@@ -4522,9 +4546,29 @@ src/engine/ctrl_leaf_2.cpp:
     complete
     .text       start:0x020bc51c end:0x020bc528
 
+src/engine/slot_group.cpp:
+    complete
+    .text       start:0x020bc528 end:0x020bc574
+
 src/engine/ctrl_leaf_3.cpp:
     complete
     .text       start:0x020bc574 end:0x020bc588
+
+src/engine/ctrl_free.cpp:
+    complete
+    .text       start:0x020bc78c end:0x020bc7b8
+
+src/engine/ctrl_free_virtual.cpp:
+    complete
+    .text       start:0x020bc7b8 end:0x020bc7ec
+
+src/engine/ctrl_free_2.cpp:
+    complete
+    .text       start:0x020bc7ec end:0x020bc818
+
+src/engine/ctrl_free_virtual_2.cpp:
+    complete
+    .text       start:0x020bc818 end:0x020bc84c
 
 src/game/menu_2.cpp:
     complete

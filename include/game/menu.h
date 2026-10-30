@@ -140,7 +140,7 @@ s32 func_020bbf54(s32 value);
 s32 Ctrl_getSliderIndexA(void *obj);
 s32 Ctrl_getSliderIndexB(void *obj);
 void Ctrl_setCounterA(void *obj);
-void func_020bc7b8(void *self, s32 value);
+void Ctrl_freeVirtualBlock(void *self, s32 value);
 void Gx_setBrightnessPair(s32 value);
 void func_020bbbfc(void *obj, s32 a, s32 b);
 void func_020bdd60(MenuWork *menu, const void *data, void *obj, s32 flag);

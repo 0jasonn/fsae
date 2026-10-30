@@ -12,7 +12,7 @@ ARM void Menu_Reset(MenuWork *menu) {
         return;
     }
     self = menu;
-    func_020bc7b8(&self, pending);
+    Ctrl_freeVirtualBlock(&self, pending);
     menu->sub.unk_39c = 0;
     Menu_SetActive((MenuList *)menu->sub.unk_370, 0);
 }
