@@ -2502,6 +2502,10 @@ src/object/set35.cpp:
     complete
     .text       start:0x0206b068 end:0x0206b124
 
+src/object/set35_2.cpp:
+    complete
+    .text       start:0x0206b124 end:0x0206b34c
+
 src/object/set36.cpp:
     complete
     .text       start:0x0206b34c end:0x0206b368
@@ -2554,6 +2558,10 @@ src/object/nemoto.cpp:
     complete
     .text       start:0x0206c18c end:0x0206c1c8
 
+src/object/nemoto_4.cpp:
+    complete
+    .text       start:0x0206c1c8 end:0x0206c328
+
 src/object/nemoto_2.cpp:
     complete
     .text       start:0x0206c328 end:0x0206c398
@@ -2565,6 +2573,10 @@ src/object/set41.cpp:
 src/object/set41_2.cpp:
     complete
     .text       start:0x0206c4c0 end:0x0206c594
+
+src/object/set41_3.cpp:
+    complete
+    .text       start:0x0206c594 end:0x0206c704
 
 src/object/set42.cpp:
     complete
