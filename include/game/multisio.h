@@ -58,7 +58,7 @@ extern "C" void MultiSioStop(void);
 // Not in functions.h yet (plain symbol names in the original)
 extern "C" void Knife_Comm_WirelessManager_reset(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getLinkLevel(void *manager);
-extern "C" int func_02091e7c(void *manager);
+extern "C" int Knife_Comm_WirelessManager_getParentFlag(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getConnectedAIDs(void *manager, int a);
 extern "C" void Knife_Comm_setPlayerBit(int index, void *flags);
 extern "C" void func_020ae3b0(int index, void *flags);

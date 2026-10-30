@@ -75,7 +75,7 @@ extern "C" void MI_CpuFill8(void *dst, u32 value, u32 size);
 extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern "C" s32 WM_GetDispersionScanPeriod(void);
 extern "C" s32 WM_StartScanEx(void *callback, void *param);
-extern "C" void func_020934dc(void *result);
+extern "C" void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result);
 extern "C" void WM_EndDataSharing(void *buf);
 extern "C" void OS_Terminate(void);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_Reset(void *arg);

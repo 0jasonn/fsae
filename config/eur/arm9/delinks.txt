@@ -3442,9 +3442,17 @@ src/engine/wirelessmgr_query.cpp:
     complete
     .text       start:0x02091d38 end:0x02091d40
 
+src/engine/wm_state.cpp:
+    complete
+    .text       start:0x02091e7c end:0x02091eb4
+
 src/engine/wirelessmgr_aid.cpp:
     complete
     .text       start:0x020921b0 end:0x020921bc
+
+src/engine/stub_noop_a.cpp:
+    complete
+    .text       start:0x020922ec end:0x020922f0
 
 src/engine/comm_parentinfo_4.cpp:
     complete
@@ -3453,6 +3461,18 @@ src/engine/comm_parentinfo_4.cpp:
 src/engine/comm_childinfo.cpp:
     complete
     .text       start:0x02092310 end:0x02092330
+
+src/engine/stub_noop_b.cpp:
+    complete
+    .text       start:0x02092330 end:0x02092334
+
+src/engine/wm_mp.cpp:
+    complete
+    .text       start:0x0209244c end:0x02092590
+
+src/engine/wm_result.cpp:
+    complete
+    .text       start:0x02092758 end:0x02092820
 
 src/engine/wirelessmgr_state_empty0.cpp:
     complete
@@ -3466,6 +3486,26 @@ src/engine/wirelessmgr_state_empty14.cpp:
     complete
     .text       start:0x020932f4 end:0x020932fc
 
+src/engine/wm_callbacks.cpp:
+    complete
+    .text       start:0x020932fc end:0x02093584
+
+src/engine/wm_measure.cpp:
+    complete
+    .text       start:0x02093584 end:0x02093690
+
+src/engine/wm_child.cpp:
+    complete
+    .text       start:0x02093690 end:0x020937c8
+
+src/engine/wm_connect_b.cpp:
+    complete
+    .text       start:0x020938e4 end:0x02093930
+
+src/engine/wm_connect.cpp:
+    complete
+    .text       start:0x02093a1c end:0x02093b00
+
 src/engine/comm_interrupt.cpp:
     complete
     .text       start:0x02093b00 end:0x02093b34
@@ -3474,13 +3514,29 @@ src/engine/comm_dtors.cpp:
     complete
     .text       start:0x02093b34 end:0x02093b5c
 
+src/engine/stub_zero_a.cpp:
+    complete
+    .text       start:0x020956ec end:0x020956f4
+
+src/engine/stub_zero_b.cpp:
+    complete
+    .text       start:0x02096e40 end:0x02096e48
+
 src/engine/single_play.cpp:
     complete
     .text       start:0x02099550 end:0x020996a8
 
+src/engine/single_cmd.cpp:
+    complete
+    .text       start:0x02099774 end:0x020997fc
+
 src/engine/single_play_2.cpp:
     complete
     .text       start:0x02099cec end:0x02099da8
+
+src/engine/single_target.cpp:
+    complete
+    .text       start:0x02099f5c end:0x02099fa4
 
 src/game/knife_single_log.cpp:
     complete
