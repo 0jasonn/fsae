@@ -12,7 +12,7 @@ extern "C" void func_0201500c(u32 a);
 extern "C" void Vram_DisableBankTail(void);
 extern "C" void func_020148f0(u32 a);
 extern "C" void func_02014af4(u32 a);
-extern "C" void func_02015084(u32 a);
+extern "C" void Vram_SetBankGroupA(u32 a);
 extern "C" void func_02015120(u32 a);
 extern "C" void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(void *self, u32 a, u32 b);
 extern "C" void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
@@ -49,7 +49,7 @@ ARM void twlInitAgb(void) {
 ARM void twlInitSubDisplay(void) {
     u8 *app;
 
-    func_02015084(4);
+    Vram_SetBankGroupA(4);
     func_02015120(8);
     app = (u8 *)KnifeApp_getInstance();
     Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(app + 4, 1, 0xf);

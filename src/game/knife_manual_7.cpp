@@ -27,7 +27,7 @@ ARM void i_restoreGfxSettings(void) {
     func_02014af4(2);
     GX_SetGraphicsMode(1, 0, 0);
     *(u32 *)0x04000000 = (*(u32 *)0x04000000 & 0xffcfffef) | 0x10;
-    func_02015084(4);
+    Vram_SetBankGroupA(4);
     func_02015120(8);
     TP_Init();
     if (TP_GetUserInfo(data_0212c57c) == 0) {

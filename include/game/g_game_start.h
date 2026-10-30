@@ -34,7 +34,7 @@ void subTaskSetBG2Offset_reset(void);
 // Calls the start subtask makes into other units (C linkage: no signature in original_names.tsv)
 extern "C" {
 void GXS_SetGraphicsMode(u32 mode);
-void func_02015084(u32 a);
+void Vram_SetBankGroupA(u32 a);
 void Vram_SetBankGroupB(u32 a);
 void *func_0208e148(u32 size);
 }

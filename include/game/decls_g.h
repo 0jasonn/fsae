@@ -22,7 +22,7 @@ extern "C" {
 void func_02012c40(void);
 void func_02014af4(s32 a);
 void func_020148f0(s32 a);
-void func_02015084(u32 a);
+void Vram_SetBankGroupA(u32 a);
 void func_02015120(s32 a);
 void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
 void OS_Terminate(void);

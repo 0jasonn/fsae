@@ -59,7 +59,7 @@ void UIObject_update(UIObject *self);
 void Knife_Message_setPendingPtr(u32 a);
 extern u8 data_0217a258[];
 void func_020c36fc(void *obj, const u32 *attrs, u16 count);
-void func_02015084(u32 a);
+void Vram_SetBankGroupA(u32 a);
 void fileSelUIViewCtrl_finalize(FileSelUIViewCtrl *self);
 void Vram_SetBankGroupB(u32 a);
 void *G2S_GetBG1ScrPtr(void);

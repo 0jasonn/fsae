@@ -15,7 +15,7 @@ typedef struct SubtaskPushStartWork {
 } SubtaskPushStartWork;
 
 extern "C" void GXS_SetGraphicsMode(u32 mode);
-extern "C" void func_02015084(u32 a);
+extern "C" void Vram_SetBankGroupA(u32 a);
 extern "C" void Vram_SetBankGroupB(u32 a);
 extern "C" void subTaskSetBG0Offset_reset(void);
 extern "C" void subTaskSetBG1Offset_reset(void);

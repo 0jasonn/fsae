@@ -20,7 +20,7 @@ ARM s32 Knife_readSaveFile(void *buffer, const char *path) {
     u32 length;
 
     FS_InitFile(&file);
-    opened = func_02010b1c(&file, path, 1);
+    opened = FsFile_OpenPath(&file, path, 1);
     if (opened == 0) {
         return FS_GetArchiveResultCode(path);
     }

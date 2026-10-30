@@ -197,6 +197,10 @@ src/engine/slot_restore.cpp:
     complete
     .text       start:0x0200c93c end:0x0200c998
 
+src/engine/packed_rec.cpp:
+    complete
+    .text       start:0x0200c998 end:0x0200ca38
+
 src/engine/packed_optional.cpp:
     complete
     .text       start:0x0200ca58 end:0x0200ca80
@@ -220,6 +224,10 @@ src/engine/engine_word.cpp:
 src/engine/engine_romword.cpp:
     complete
     .text       start:0x0200e5f8 end:0x0200e608
+
+src/engine/fs_open.cpp:
+    complete
+    .text       start:0x02010b1c end:0x02010ba0
 
 src/engine/fs_wrap.cpp:
     complete
@@ -253,6 +261,10 @@ src/engine/obj_get24.cpp:
     complete
     .text       start:0x02012780 end:0x02012788
 
+src/engine/fs_rom_cmd.cpp:
+    complete
+    .text       start:0x02012810 end:0x020128c0
+
 src/engine/ret_const.cpp:
     complete
     .text       start:0x020128c0 end:0x020128e4
@@ -268,6 +280,10 @@ src/engine/engine_romhalf.cpp:
 src/engine/field_kind.cpp:
     complete
     .text       start:0x02012f98 end:0x02012fd8
+
+src/engine/vram_group_a.cpp:
+    complete
+    .text       start:0x02015084 end:0x02015120
 
 src/engine/vram_bank_bits.cpp:
     complete
@@ -332,6 +348,10 @@ src/engine/stub_empty_c.cpp:
 src/engine/obj_get70.cpp:
     complete
     .text       start:0x02017ce0 end:0x02017ce8
+
+src/engine/os_sleep.cpp:
+    complete
+    .text       start:0x02017ce8 end:0x02017d88
 
 src/engine/irqcount.cpp:
     complete

@@ -22,7 +22,7 @@ extern "C" {
 u32 OS_GetBootType(void);
 void *Knife_GetPowerManager(void); // returns the Knife::PowerManager object
 void FS_InitFile(FSFile *file);
-s32 func_02010b1c(FSFile *file, const char *path, s32 mode); // open
+s32 FsFile_OpenPath(FSFile *file, const char *path, s32 mode); // open
 u32 FS_GetFileLength(FSFile *file);
 void FS_ReadFile(FSFile *file, void *buffer, u32 size);
 void FS_CloseFile(FSFile *file);
