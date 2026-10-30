@@ -4,7 +4,7 @@
 // Functions in this file (plain names from the debug build, C linkage):
 //   Knife::Message::MessageTextRender::initWithCanvas (0x020a0574, Knife_Message_MessageTextRender_initWithCanvas)
 
-extern "C" void func_020c5f1c(void *canvas, void *bits, s32 cellWidth, s32 cellHeight, s32 depth);
+extern "C" void Record_InitTable(void *canvas, void *bits, s32 cellWidth, s32 cellHeight, s32 depth);
 extern "C" void func_020c6008(void *buffer, s32 cellWidth, s32 cellHeight, s32 cellX, s32 cellY, s32 a, s32 b, s32 c);
 extern "C" void *KnifeApp_getInstance(void);
 extern "C" void *KnifeApp_getField20Address(void *app);
@@ -29,7 +29,7 @@ extern "C" void Knife_Message_MessageTextRender_initWithCanvas(void *a, void *bi
 ARM void Knife_Message_MessageTextRender_initWithCanvas(void *a, void *bits, void *buffer, u16 palette, u32 x, u32 y, u32 width, u32 height) {
     MessageTextRenderFields *self = (MessageTextRenderFields *)a;
 
-    func_020c5f1c(self->canvas, bits, width >> 3, height >> 3, 4);
+    Record_InitTable(self->canvas, bits, width >> 3, height >> 3, 4);
     self->field20 = KnifeApp_getField20Address(KnifeApp_getInstance());
     self->canvasRef = self->canvas;
     self->unk_2c = 1;

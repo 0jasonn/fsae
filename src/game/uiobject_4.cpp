@@ -6,7 +6,7 @@
 //   UIObject::init(unsigned char) (0x020acbf4), UIObject::update() (0x020acc2c), UIObject::updateTime(long) (0x020acc7c)
 
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void func_020c4064(void *anim, s32 c); // animation step, the same as game/subtask.h
+extern "C" void ResPlayer_AdvanceAndRefresh(void *anim, s32 c); // animation step, the same as game/subtask.h
 
 // UIObject::init(unsigned char) (0x020acbf4): clears the object, stores the kind, sets the active flags, liner curve
 extern "C" void UIObject_init(UIObject *self, u8 kind);
@@ -31,7 +31,7 @@ ARM void UIObject_update(UIObject *self) {
     if (self->unk_54 == NULL) {
         return;
     }
-    func_020c4064(self->unk_54, self->unk_50);
+    ResPlayer_AdvanceAndRefresh(self->unk_54, self->unk_50);
 }
 
 // UIObject::updateTime(long) (0x020acc7c): adds step to the elapsed time, returns TRUE once the duration is reached

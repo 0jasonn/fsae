@@ -20,7 +20,7 @@ ARM s32 subtask_draw_oam_link(s32 x, s32 y, NNSG2dCellAnimation *anim, GXOamAttr
     pos[0] = x;
     pos[1] = y;
     count = func_020c40a4(attr, 4, anim->cellRef, 0, pos, 0, 0);
-    func_020c4064(anim, c);
+    ResPlayer_AdvanceAndRefresh(anim, c);
     for (i = 0; i < count; i++) {
         attr[i].attr2 = (attr[i].attr2 & ~0xc00) | 0x400;
     }

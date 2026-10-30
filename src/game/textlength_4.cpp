@@ -16,8 +16,8 @@ public:
 }
 
 extern "C" void *KnifeApp_getField20Address(void *app);
-extern "C" s32 func_020c4ee4(void *font, u16 character);
-extern "C" void *func_020c4f2c(void *font, s32 index);
+extern "C" s32 TextBox_FindRange(void *font, u16 character);
+extern "C" void *TextBox_FindRangeEntry(void *font, s32 index);
 
 // Text length analyzer (Knife::Message::TextLengthAnalyzer). Only the fields the functions use are named.
 typedef struct KnifeTextLengthAnalyzer {
@@ -46,11 +46,11 @@ ARM void Knife_Message_TextLengthAnalyzer_onReadPlainText(void *a, const void *t
     copy.words[2] = ((const u32 *)text)[2];
     character = copy.readFirstCharacter(0);
     font = KnifeApp_getField20Address(KnifeApp_getInstance());
-    index = func_020c4ee4(font, (u16)character);
+    index = TextBox_FindRange(font, (u16)character);
     if (index == 0xffff) {
         index = *(u16 *)(*(u8 **)font + 2);
     }
-    width = *(s8 *)((u8 *)func_020c4f2c(font, index) + 2);
+    width = *(s8 *)((u8 *)TextBox_FindRangeEntry(font, index) + 2);
     self->counts[self->lineIndex] += (u16)width;
     self->charCount++;
 }

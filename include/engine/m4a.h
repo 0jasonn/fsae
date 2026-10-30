@@ -94,7 +94,7 @@ void KnifeApp_TextTokenizer_initWithData(void *self, void *data, u32 size);
 void m4aSoundInit(void);
 void Knife_Message_TextTokenizer_finalize(void *self);
 extern char data_0211af7c[];
-void func_020c4ec0(void *obj, void *buffer);
+void TextBox_SetDefaultHandler(void *obj, void *buffer);
 void Knife_Message_TextTokenizer_initialize(void *self, const void *data, u32 size, void *pool, u32 poolSize);
 void *loadFile(u32 *size, const char *path, s32 align);
 u8 *KnifeApp_getZeldaResource_08ddcc(void *a, s32 id);

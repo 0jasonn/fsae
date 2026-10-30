@@ -45,7 +45,7 @@ ARM void KnifeApp_loadField20(void *self) {
     if (buffer == NULL) {
         return;
     }
-    func_020c4ec0((u8 *)self + 0x20, buffer);
+    TextBox_SetDefaultHandler((u8 *)self + 0x20, buffer);
 }
 
 // KnifeApp::getZeldaResource (0x0208ddcc): the data of a resource, without its size

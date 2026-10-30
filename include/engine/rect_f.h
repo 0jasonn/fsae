@@ -47,8 +47,8 @@ extern "C" void func_020c37c8(void *entry);
 extern "C" void func_020c39c4(void *entry);
 
 extern "C" void *Table_getEntry58(u8 *self, s32 index);
-extern "C" void func_020c4064(void *entry, s32 value);
-extern "C" void func_020c4084(void *entry, s32 value);
+extern "C" void ResPlayer_AdvanceAndRefresh(void *entry, s32 value);
+extern "C" void ResPlayer_SeekAndRefresh(void *entry, s32 value);
 extern "C" void GXx_SetMasterBrightness_(void *reg, s32 value);
 extern "C" void G2x_SetBlendAlpha_(void *reg, s32 a, s32 b, s32 c, s32 d);
 extern "C" void GX_LoadBGPltt(void *src, s32 offset, s32 size);

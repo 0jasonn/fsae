@@ -79,6 +79,6 @@ void Knife_Message_CleanupTextRenderer(void);
 // Not named yet (dsd names, plain C linkage).
 extern "C" void func_0209bee4(void);
 extern "C" s32 func_020c40a4(void *oam, s32 a1, s32 a2, s32 a3, s32 *pos, s32 a5, s32 a6);
-extern "C" void func_020c4064(void *anim, s32 c);
+extern "C" void ResPlayer_AdvanceAndRefresh(void *anim, s32 c);
 
 #endif

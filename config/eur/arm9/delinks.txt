@@ -4938,6 +4938,50 @@ src/engine/slots.cpp:
     complete
     .text       start:0x020c3b04 end:0x020c3b94
 
+src/engine/res_player.cpp:
+    complete
+    .text       start:0x020c3ea4 end:0x020c40a4
+
+src/engine/obj_entry.cpp:
+    complete
+    .text       start:0x020c4408 end:0x020c4444
+
+src/engine/bg_palette.cpp:
+    complete
+    .text       start:0x020c46a0 end:0x020c4704
+
+src/engine/text_box.cpp:
+    complete
+    .text       start:0x020c4e90 end:0x020c5020
+
+src/engine/text_box_2.cpp:
+    complete
+    .text       start:0x020c5094 end:0x020c50ec
+
+src/engine/text_box_3.cpp:
+    complete
+    .text       start:0x020c5268 end:0x020c5284
+
+src/engine/record_init.cpp:
+    complete
+    .text       start:0x020c5dd8 end:0x020c5e00
+
+src/engine/record_init_table.cpp:
+    complete
+    .text       start:0x020c5f1c end:0x020c5f48
+
+src/engine/record_init_sized.cpp:
+    complete
+    .text       start:0x020c5fcc end:0x020c6008
+
+src/engine/text_stream.cpp:
+    complete
+    .text       start:0x020c6f2c end:0x020c6f40
+
+src/engine/text_stream_2.cpp:
+    complete
+    .text       start:0x020c7004 end:0x020c7018
+
 src/game/subtask_game_start.cpp:
     complete
     .text       start:0x020c70ac end:0x020c70c8
