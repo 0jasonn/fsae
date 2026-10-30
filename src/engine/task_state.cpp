@@ -6,7 +6,7 @@
 typedef struct TaskState {
     void (*pending)(void);    // 0x00: run and cleared by Task_Dispatch
     void (*callback)(void);    // 0x04: run once by Task_Flush while the task is not active
-    u32 queued;           // 0x08: entries waiting in the table at data_02127290
+    u32 queued;           // 0x08: entries waiting in the table at Task_QueueTable
     u32 active;           // 0x0c
 } TaskState;
 

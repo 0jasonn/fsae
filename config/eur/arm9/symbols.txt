@@ -47,9 +47,9 @@ AbsS32 kind:function(arm,size=0xc) addr:0x020056a0
 Engine_AssertFail kind:function(arm,size=0x3c) addr:0x020056ac
 _Z13Stub_020056e8v kind:function(arm,size=0x4) addr:0x020056e8
 Timer_Snapshot kind:function(arm,size=0x28) addr:0x020056ec
-func_02005714 kind:function(arm,size=0x84) addr:0x02005714
+Timer_Advance kind:function(arm,size=0x84) addr:0x02005714
 func_02005798 kind:function(arm,size=0x2a0) addr:0x02005798
-func_02005a38 kind:function(arm,size=0xe4) addr:0x02005a38
+Entry_Update kind:function(arm,size=0xe4) addr:0x02005a38
 Bits_PopCount64 kind:function(arm,size=0x94) addr:0x02005b1c
 Fp_SignBit kind:function(arm,size=0x1c) addr:0x02005bb0
 func_02005bcc kind:function(arm,size=0x70) addr:0x02005bcc
@@ -794,7 +794,7 @@ PMi_RunCallback kind:function(arm,size=0x30) addr:0x0201c854
 PMi_WaitVBlank kind:function(arm,size=0x34) addr:0x0201c884
 func_0201c8b8 kind:function(arm,size=0xa0) addr:0x0201c8b8
 func_0201c958 kind:function(arm,size=0x120) addr:0x0201c958
-func_0201ca78 kind:function(arm,size=0x84) addr:0x0201ca78
+PMi_StartSendBlock kind:function(arm,size=0x84) addr:0x0201ca78
 PMi_TryToSendPxiDataTillSuccess kind:function(arm,size=0xc4) addr:0x0201cafc
 PMi_SendSleepStart kind:function(arm,size=0x8c) addr:0x0201cbc0
 PM_SendUtilityCommandAsync kind:function(arm,size=0x48) addr:0x0201cc4c
@@ -13406,10 +13406,10 @@ data_021271d4 kind:data(any) addr:0x021271d4
 data_0212720c kind:data(any) addr:0x0212720c
 data_02127214 kind:data(any) addr:0x02127214
 data_02127280 kind:bss addr:0x02127280
-data_02127290 kind:bss addr:0x02127290
-data_02127390 kind:bss addr:0x02127390
-data_021273b4 kind:bss addr:0x021273b4
-data_021273d8 kind:bss addr:0x021273d8
+Task_QueueTable kind:bss addr:0x02127290
+Task_LockOwnerTag kind:bss addr:0x02127390
+Task_LockDepth kind:bss addr:0x021273b4
+Task_LockMutex kind:bss addr:0x021273d8
 data_02127420 kind:bss addr:0x02127420
 data_02127480 kind:bss addr:0x02127480
 data_021274b0 kind:bss addr:0x021274b0
