@@ -3970,6 +3970,18 @@ src/game/textrender_9.cpp:
     complete
     .text       start:0x020a5d38 end:0x020a5d44
 
+src/game/textrender_tags.cpp:
+    complete
+    .text       start:0x020a5f14 end:0x020a5f8c
+
+src/game/textrender_tags_2.cpp:
+    complete
+    .text       start:0x020a5fd4 end:0x020a6110
+
+src/game/textrender_tags_3.cpp:
+    complete
+    .text       start:0x020a611c end:0x020a6134
+
 src/game/datalink.cpp:
     complete
     .text       start:0x020a6278 end:0x020a636c
