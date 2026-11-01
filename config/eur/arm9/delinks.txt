@@ -4314,6 +4314,10 @@ src/game/nameentry.cpp:
     complete
     .text       start:0x020ae558 end:0x020ae634
 
+src/game/nameentry_align.cpp:
+    complete
+    .text       start:0x020ae7a8 end:0x020ae824
+
 src/game/nameentry_13.cpp:
     complete
     .text       start:0x020ae824 end:0x020ae830
