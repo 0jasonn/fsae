@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/fileselui_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   fileSelUIView_viewDidDisapper (0x020a78f4)
@@ -15,7 +16,6 @@ typedef struct FileSelUIViewRefs {
 
 // fileSelUIView::viewDidDisapper() (0x020a78f4): calls the virtual slot 4 of the focused object, then cleans up the
 // text renderer
-extern "C" void fileSelUIView_viewDidDisapper(void *a);
 void fileSelUIView_viewDidDisapper(void *a) {
     FileSelUIViewRefs *self = (FileSelUIViewRefs *)a;
     void *obj;

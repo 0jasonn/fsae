@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "game/opdemo_c.h"
 #include "global.h"
+#include "game/plcheck_api.h"
 
 // Four-byte mask table (rodata at data_020d813c), indexed by the mask index of PlCheckMochiage.
 typedef struct MochiageMask {
@@ -9,7 +10,6 @@ typedef struct MochiageMask {
 extern const MochiageMask data_020d813c;
 
 // PlCheckMochiage (0x0205501c): returns FALSE when one of the two players stands in a lift-up position over the other.
-extern "C" int PlCheckMochiage(Entity *a, Entity *b);
 
 int PlCheckMochiage(Entity *a, Entity *b) {
     MochiageMask masks = data_020d813c;

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "game/com_sio.h"
 #include "global.h"
+#include "game/demo_api.h"
 
 // Demo module (demo): DemoTask runs the demo phase machine (phase byte data_0212c4dc), demoWaitCk counts down the
 // phase timer, DemoBgBuffClear clears the two neighbour grids.
@@ -26,9 +27,6 @@ extern u16 data_0212c510;               // nonzero ends the phase wait early
 extern DemoDisplayShadow data_0212c75c; // display shadow block
 extern DemoEffectState data_021349c0;   // effect state block
 extern u16 data_021355a0;
-
-extern "C" void DemoTask(void);
-extern "C" int demoWaitCk(void);
 
 // DemoTask (0x0202a78c): phase 0 loads the demo graphics and palette, starts the display and waits;
 // 1 starts the link and waits for the timer, then fades; 2 leaves phase 3 when the blend is done;

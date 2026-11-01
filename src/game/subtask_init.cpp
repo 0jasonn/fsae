@@ -2,6 +2,7 @@
 #include "game/subtask_d.h"
 #include "global.h"
 #include "types.h"
+#include "game/subtask_init_api.h"
 
 // subTaskInit_lang (0x0209bbb4): frees the block of the previous language, loads the compressed subtask file of the
 // language (ten entries, "./subtask_<region>_<lang>.cmp"), decompresses it into a new global buffer and keeps the
@@ -9,7 +10,6 @@
 
 extern void *data_0212c560;
 
-extern "C" void subTaskInit_lang(int language);
 void subTaskInit_lang(int language) {
     u32 size;
     void *file;

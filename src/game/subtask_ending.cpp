@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/g_game_start.h"
+#include "game/subtask_ending_api.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_ending_init (0x020c8c60), subTask_ending_end (0x020c8cc4), subTask_ending_stub (empty stub)
@@ -35,6 +36,5 @@ void subTask_ending_end(void) {
 }
 
 // subTask_ending_stub (0x020c8cf8): empty stub
-extern "C" void subTask_ending_stub(void);
 void subTask_ending_stub(void) {
 }

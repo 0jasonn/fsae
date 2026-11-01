@@ -1,13 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/fp_compare_api.h"
 
 // Double-precision compares of the soft-float runtime. They read the flags (mrs / msr cpsr) to set or clear the
 // overflow bit for unordered operands, which C cannot express, so the bodies are instructions. Arguments: a in r0/r1,
 // b in r2/r3 (low word first).
-extern "C" s32 Fp_DoubleLess(u64 a, u64 b);
-extern "C" s32 Fp_DoubleEqual(u64 a, u64 b);
-extern "C" s32 Fp_DoubleNotEqual(u64 a, u64 b);
 
 // 0x0200d544: a < b (unordered sets the overflow flag and returns 0).
 asm s32 Fp_DoubleLess(u64 a, u64 b) {

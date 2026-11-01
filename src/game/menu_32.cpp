@@ -2,6 +2,7 @@
 #include "global.h"
 #include "game/menu.h"
 #include "game/menu_wip.h"
+#include "game/menu_api.h"
 
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_ClearRef (Menu_ClearRef), Menu_ReleaseRef (Menu_ReleaseRef), Menu_GetSlotWord (Menu_GetSlotWord),
@@ -39,7 +40,6 @@ void Menu_SetRefByte41(void * volatile *ref, u8 value) {
 }
 
 // Menu_SetRefByte40 (0x020bf9a8): sets the byte at +0x40 of the object in the reference, when there is one.
-extern "C" void Menu_SetRefByte40(void * volatile *ref, u8 value);
 void Menu_SetRefByte40(void * volatile *ref, u8 value) {
     if (*ref != 0) {
         *(u8 *)((u8 *)*ref + 0x40) = value;

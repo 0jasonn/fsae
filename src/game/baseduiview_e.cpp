@@ -1,13 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/baseduiview.h"
+#include "game/baseduiview_e_api.h"
 
 // Functions in this file (no original names in the debug build, so plain C linkage):
 //   groupCreateUIView_vfunc2 (0x020ac014): empty slot 2 of the groupCreateUIView vtable
 //   basedUIView_leave (0x020ac018), basedUIView_enter (0x020ac01c), basedUIView_vfunc2 (0x020ac020),
 //   basedUIView_vfunc1 (0x020ac024): the empty default slots of the basedUIView vtable at data_02124b40
 
-extern "C" void groupCreateUIView_vfunc2(void *self);
 extern "C" void basedUIView_leave(basedUIView *self);
 extern "C" void basedUIView_enter(basedUIView *self);
 extern "C" void basedUIView_vfunc2(basedUIView *self);

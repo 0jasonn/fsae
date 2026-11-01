@@ -2,6 +2,8 @@
 #include "global.h"
 #include "types.h"
 #include "engine/wm_d.h"
+#include "engine/single_cmd_api.h"
+#include "engine/single_play_api.h"
 
 // Knife::Single::SinglePlay move requests and the pending command, 0x02099704 to 0x02099864. The object is the SinglePlay
 // singleton; the fields are read at their offsets, with the width of the original access.
@@ -9,15 +11,8 @@
 #define SP_S16(self, off) (*(s16 *)((u8 *)(self) + (off)))
 #define SP_PTR(self, off) (*(void **)((u8 *)(self) + (off)))
 
-extern "C" void Knife_Single_SinglePlay_ChangeContPlayerDirect(void *self);
-extern "C" void Knife_Single_SinglePlay_SetContNoDirect(void *self, u8 no);
-extern "C" void Knife_Single_SinglePlay_SetFormationNoDirect(void *self, u8 no);
-extern "C" void Knife_Single_SinglePlay_ChangeFormationNoDirect(void *self);
-extern "C" void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, void *obj, u8 player, s32 delta, u8 dir);
-
 // SinglePlay::SetObjMoveReqNo (0x02099774): for the controlling player (contNo), moves obj by delta in the direction
 // given by bits 3 and 4 of dir (x or y, plus or minus). Records obj at 0x30 whenever the move is applied.
-extern "C" void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, void *obj, u8 player, s32 delta, u8 dir);
 void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, void *obj, u8 player, s32 delta, u8 dir) {
     if (delta == 0) {
         return;

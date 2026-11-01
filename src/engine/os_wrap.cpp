@@ -2,8 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/sdk_wrap.h"
-
-extern "C" u32 Os_InitCommonWrap(u32 a, u32 b, u32 c, u32 d);
+#include "engine/os_wrap_api.h"
 
 // Tail call to OSi_InitCommon.
 u32 Os_InitCommonWrap(u32 a, u32 b, u32 c, u32 d) {

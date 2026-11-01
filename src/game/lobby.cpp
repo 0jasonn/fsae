@@ -2,13 +2,13 @@
 #include "global.h"
 #include "types.h"
 #include "game/lobby.h"
+#include "game/lobby_api.h"
 
 // Functions in this file (original names from the debug build, or provisional names for the others):
 //   lobby_setRecvParam (0x020b235c, provisional), getReciveParam (0x020b23b8)
 
 // lobby_setRecvParam(index, flag, value) (0x020b235c, provisional name): ORs the nibble of a player into the receive
 // word of the lobby. The nibble is flag << 2 | (value & 3), shifted to the position of the player index
-extern "C" void lobby_setRecvParam(s32 index, s32 flag, s32 value);
 void lobby_setRecvParam(s32 index, s32 flag, s32 value) {
     U32Table4 shift;
     LobbyState *lobby;

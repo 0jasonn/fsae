@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_obj_f.h"
+#include "engine/rect_item_api.h"
 
 // rect_item: functions RectObjPair_setOffsets (0x020b88dc), RectObjPair_setValue (0x020b895c),
 // RectObjPair_updateChildren (0x020b8964), RectItem_clear (0x020b89e4), RectItem_releaseBlocks (0x020b8a04),
@@ -87,8 +88,6 @@ void RectItem_clear(RectItem *self) {
 }
 
 // RectItem_releaseBlocks(self, holder) (0x020b8a04, provisional name): frees both pointer arrays of the item
-extern "C" void RectItem_freeBlock(void *holder, void *block);
-extern "C" void RectItem_freeBlock2(void *holder, void *block);
 extern "C" void RectItem_releaseBlocks(RectItem *self, void *holder);
 void RectItem_releaseBlocks(RectItem *self, void *holder) {
     RectItem_freeBlock2(holder, self->block0c);

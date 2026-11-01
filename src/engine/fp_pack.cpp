@@ -1,11 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/fp_pack_api.h"
 
 // Packs an unsigned 32-bit integer into a soft-float bit pattern: the value is normalised (clz), the exponent is
 // 0x9e minus the shift, and the low byte is rounded to nearest-even. Zero returns zero. The clz instruction has no
 // C form here, so the whole sequence is written in ARM assembly.
-extern "C" u32 Fp_PackU32ToFloat(u32 value);
 
 // 0x0200d6f8
 asm u32 Fp_PackU32ToFloat(u32 value) {

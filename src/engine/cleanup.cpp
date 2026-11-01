@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/cleanup_api.h"
 
 // Object with a payload pointer at +0 and a cleanup callback at +8, called as callback(payload, -1).
 typedef struct CleanupObj {
@@ -11,7 +12,6 @@ typedef struct CleanupObj {
 
 // Entries of the init table at 0x020df56c (dsd name .p__sinit_020df208), ended by a zero entry.
 extern "C" void Cleanup_Invoke(CleanupObj *self);
-extern "C" void StaticInit_RunTable(void);
 
 // Cleanup_Invoke(self) (0x0200c4a8): when both the payload and the callback are set, calls the callback with the payload
 // and -1.

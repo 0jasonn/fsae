@@ -1,9 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u8 Bits_PopCount64(u64 x);
-extern "C" s32 Fp_SignBit(f64 x);
+#include "engine/bits_api.h"
 
 // Number of set bits in a 64-bit value (the classic SWAR popcount), returned as a byte.
 u8 Bits_PopCount64(u64 x) {

@@ -1,17 +1,16 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/fs_dirfile_api.h"
+#include "engine/obj_get24_api.h"
 
 extern "C" void FS_InitFile(void *file);
 extern "C" BOOL FS_FindDir(void *file, void *path);
 extern "C" void FS_CloseFile(void *file);
-extern "C" u32 Obj_GetField24(void *file);
 extern "C" u32 Fs_UnmountArchiveWrap(u32 archive);
-extern "C" void func_0200fe08(void *archive);
 
 // Fs_ReleaseArchive (Fs_ReleaseArchive, provisional name): unmounts the archive. When the unmount succeeds it runs
 // func_0200fe08 on the archive and returns 1, otherwise 0.
-extern "C" s32 Fs_ReleaseArchive(void *archive);
 s32 Fs_ReleaseArchive(void *archive) {
     if (Fs_UnmountArchiveWrap((u32)archive) == 0) {
         return 0;

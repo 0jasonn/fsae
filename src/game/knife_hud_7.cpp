@@ -2,6 +2,7 @@
 #include "global.h"
 #include "game/knife_hud.h"
 #include "game/knife_hud_layout.h"
+#include "game/knife_hud_api.h"
 
 // Functions in this file (original names from the debug build, or invented where marked):
 //   Knife::Interp<VecFx32>::Interp (0x0209dfc4), empty dtor of the Interp array (0x0209dfe0, name invented),
@@ -9,9 +10,7 @@
 //   HudManager::HudManager (0x0209df50, name invented), HudManager::~HudManager (0x0209e004 and 0x0209e054)
 
 extern "C" void Knife_Interp_VecFx32__Interp(KnifeHudInterp *self);
-extern "C" void Knife_Interp_VecFx32_emptyDtor(void *self);
 extern "C" void Knife_Hud_HudManager_StatusUpMarker_StatusUpMarker(KnifeHudStatusUpMarker *self);
-extern "C" void Knife_Hud_HudManager_StatusUpMarker_emptyDtor(void *self);
 extern "C" Knife::Hud::HudManager *Knife_Hud_HudManager_ctor(Knife::Hud::HudManager *self);
 extern "C" Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e004(Knife::Hud::HudManager *self);
 extern "C" Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e054(Knife::Hud::HudManager *self);

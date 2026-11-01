@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u32 Str_Length(const u8 *str);
+#include "engine/str_api.h"
 
 // Length of a NUL-terminated byte string (not counting the terminator).
 u32 Str_Length(const u8 *str) {

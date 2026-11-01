@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/rect_list_api.h"
 
 // rect_list_4: functions Group_allocU16Array (0x020b9284), Group_allocU32Array (0x020b92d0), Group_release (0x020b931c),
 // Group_freeBlock (0x020b9350) and Group_freeBlock2 (0x020b9368), all matching.
@@ -15,12 +16,9 @@ typedef struct RectGroup {
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void RectObjList_releaseItems(void *self, void *holder);
-extern "C" void Group_freeBlock(void *holder, void *block);
-extern "C" void Group_freeBlock2(void *holder, void *block);
 
 // Group_allocU16Array(holder, count) (0x020b9284, provisional name): allocates count halfwords (at least one) from the
 // heap of holder and clears them. Returns NULL when the allocation fails.
-extern "C" u16 *Group_allocU16Array(void *holder, s32 count);
 u16 *Group_allocU16Array(void *holder, s32 count) {
     u16 *array;
     u16 *slot;
@@ -41,7 +39,6 @@ u16 *Group_allocU16Array(void *holder, s32 count) {
 
 // Group_allocU32Array(holder, count) (0x020b92d0, provisional name): allocates count words (at least one) from the
 // heap of holder and clears them. Returns NULL when the allocation fails.
-extern "C" u32 *Group_allocU32Array(void *holder, s32 count);
 u32 *Group_allocU32Array(void *holder, s32 count) {
     u32 *array;
     u32 *slot;

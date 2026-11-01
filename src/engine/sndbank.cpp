@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sndbank_api.h"
 
 extern "C" {
 u32 OS_DisableInterrupts(void);
@@ -17,7 +18,6 @@ extern "C" void SndTable_SetWord14(s32 index, u32 value);
 
 // SndBank_Detach: when data is not null, disables interrupts, exchanges the default flag with data, and clears the table
 // entry at index when it belongs to obj. Then the flag is restored and the interrupts too.
-extern "C" void SndBank_Detach(void *obj, void *data, s32 index);
 void SndBank_Detach(void *obj, void *data, s32 index) {
     u32 saved;
     u32 irq;
@@ -58,7 +58,6 @@ void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index) {
 }
 
 // SndBank_ReleaseWaveArc: detaches obj and destroys its wave archive (the second argument is not used).
-extern "C" void SndBank_ReleaseWaveArc(void *obj, s32 unused, void *data, s32 index);
 void SndBank_ReleaseWaveArc(void *obj, s32 unused, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
     SND_DestroyWaveArc(obj);

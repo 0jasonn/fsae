@@ -2,8 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/sdk_wrap.h"
-
-extern "C" u32 Os_IrqCallbackWrap(u32 unused, u32 b, u32 c, u32 d);
+#include "engine/os_wrap_api.h"
 
 // Calls OSi_IrqCallback with a zero first argument.
 u32 Os_IrqCallbackWrap(u32 unused, u32 b, u32 c, u32 d) {

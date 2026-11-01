@@ -1,16 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/messageselect_api.h"
+#include "game/selectiondialog_api.h"
 
 // Functions in this file (original names from the debug build):
 //   selectionDialog::update_close (0x020a2268)
 
-extern "C" void Knife_Message_MessageSelect_init(void *self);
-extern "C" void Knife_Message_selectionDialog_dispFrame(void *self);
-extern "C" void Knife_Message_selectionDialog_clearFrame(void *self);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
-extern "C" void Knife_Message_selectionDialog_dispMessage(void *self);
-extern "C" BOOL Knife_Message_selectionDialog_update_move(void *self);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 
@@ -38,7 +35,6 @@ typedef struct KnifeSelectDialog {
 
 // selectionDialog::update_close() (0x020a2268): clears the frame buffer, closes the dialog step by step, returns true
 // once it is fully closed
-extern "C" BOOL Knife_Message_selectionDialog_update_close(void *a);
 BOOL Knife_Message_selectionDialog_update_close(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 

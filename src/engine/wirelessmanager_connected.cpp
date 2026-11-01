@@ -3,6 +3,7 @@
 #include "types.h"
 #include "engine/wm_d.h"
 #include "engine/wm_irq.h"
+#include "engine/wirelessmanager_connected_api.h"
 
 // Knife::Comm::WirelessManager connected-AID and link level queries, 0x02092234 to 0x020922ec.
 
@@ -20,7 +21,6 @@ s32 Knife_Comm_WirelessManager_getLinkLevel(void *self) {
 }
 
 // WM_GetLinkLevel wrapper (0x020922e0, invented name): a tail call to the SDK function.
-extern "C" u16 Knife_Comm_WirelessManager_sdkGetLinkLevel(void);
 u16 Knife_Comm_WirelessManager_sdkGetLinkLevel(void) {
     return WM_GetLinkLevel();
 }

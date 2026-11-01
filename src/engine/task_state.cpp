@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/task_state_api.h"
 
 // Task state record at data_02127280 (bss).
 typedef struct TaskState {
@@ -12,11 +13,7 @@ typedef struct TaskState {
 
 extern TaskState data_02127280;
 
-extern "C" void TaskSlot_Release(s32 value);
 extern "C" void Chain_Drain(void);
-extern "C" void Task_Dispatch(s32 flag);
-extern "C" void Task_Flush(s32 flag);
-extern "C" void Task_Start(void);
 
 // Marks the task active and flushes it with flag 1.
 void Task_Start(void) {

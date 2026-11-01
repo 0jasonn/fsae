@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/rect_list_api.h"
 
 // rect_list: functions RectObjList_setItems (0x020b8078), RectObjList_allocPtrArray (0x020b80ec), RectObjList_releaseItems
 // (0x020b8138) and RectObjList_freeBlock (0x020b8190), all matching.
@@ -36,8 +37,6 @@ extern "C" void Table_setValueB(void *owner, void *value, s32 kind);
 extern "C" void RectBufTable_setup(void *owner, void *value, s32 x, s32 y);
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void Heap_VirtualFree(void *heap, void *block);
-extern "C" void **RectObjList_allocPtrArray(void *holder, s32 count);
-extern "C" void RectObjList_freeBlock(void *holder, void *block);
 
 // RectObjList_setItems(self, holder, src, count, pos, size) (0x020b8078, provisional name): allocates the item array
 // of count pointers, copies src into it, and sets the offset from pos and the size from size
@@ -78,7 +77,6 @@ void **RectObjList_allocPtrArray(void *holder, s32 count) {
 
 // RectObjList_releaseItems(self, holder) (0x020b8138, provisional name): deletes every item, frees the array, then
 // calls RectObj_noop
-extern "C" void func_020b81a8(void *holder, void *obj);
 extern "C" void RectObjList_releaseItems(RectObjList *self, void *holder);
 void RectObjList_releaseItems(RectObjList *self, void *holder) {
     s32 i;

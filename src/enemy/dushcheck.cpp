@@ -13,7 +13,6 @@ typedef struct GridOrigin {
 extern GridOrigin data_0212c648;
 extern const u8 cellDeltaTable[];
 
-extern "C" int func_02084f2c(u16 cell, u16 layer, s32 flags); // thumb label, nonzero when the cell is blocked
 int func_02083d4c(u16 cell, u16 layer);                       // thumb helper, C++ linkage (_Z13func_02083d4ctt)
 
 // dushInitCheck (0x0203ed84): 1 when none of the four cells ahead is blocked.

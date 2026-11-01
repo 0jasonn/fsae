@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u32 Obj_GetField24(void *obj);
+#include "engine/obj_get24_api.h"
 
 // Returns the word at +0x24 of the object.
 u32 Obj_GetField24(void *obj) {

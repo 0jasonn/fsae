@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textrender_api.h"
 
 // Functions in this file (original names from the debug build, or invented where marked):
 //   TextRender::setCenteringParam (0x020a1614), setField83 (0x020a1644, name invented), clearCanvas(int) (0x020a164c)
@@ -34,7 +35,6 @@ typedef struct KnifeTextRender {
 } KnifeTextRender;
 
 // TextRender::setCenteringParam(long, unsigned short const*) (0x020a1614): copies count centring values
-extern "C" void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values);
 void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values) {
     KnifeTextRender *self = (KnifeTextRender *)a;
     s32 i;
@@ -45,7 +45,6 @@ void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *v
 }
 
 // Sets flag83 (0x020a1644, name invented)
-extern "C" void Knife_Message_TextRender_setField83(void *a, u8 value);
 void Knife_Message_TextRender_setField83(void *a, u8 value) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 
@@ -53,7 +52,6 @@ void Knife_Message_TextRender_setField83(void *a, u8 value) {
 }
 
 // TextRender::clearCanvas(int) (0x020a164c): clears the canvas with the low four bits of mode through the hook
-extern "C" void Knife_Message_TextRender_clearCanvas(void *a, s32 mode);
 void Knife_Message_TextRender_clearCanvas(void *a, s32 mode) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 

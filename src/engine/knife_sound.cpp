@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/knife_sound.h"
+#include "engine/knife_sound_api.h"
 
 // Knife::Sound::HandleFactory, Knife::Sound::Heap, the static object, MemoryArchive, SequenceHandle and System::initialize,
 // 0x0208c1c8 to 0x0208c530. Knife_Sound_System_update (0x0208c554) is nonmatching, see scratch/agentD/nonmatching.
@@ -81,12 +82,10 @@ void Knife_Sound_HandleFactory_pause(KnifeSoundHandleFactory *self, s32 pause) {
 }
 
 // Static object used by the sound code: its constructor clears the first word, its destructor does nothing
-extern "C" void Knife_Sound_StaticObject_clear(u32 *self);
 void Knife_Sound_StaticObject_clear(u32 *self) {
     *self = 0;
 }
 
-extern "C" void Knife_Sound_StaticObject_dtor(void *self);
 void Knife_Sound_StaticObject_dtor(void *self) {
 }
 

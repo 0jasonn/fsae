@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u8 *Str_FindChar(const u8 *str, s32 value);
+#include "engine/strchr_api.h"
 
 // Finds the first byte equal to value in a NUL-terminated string. A zero value finds the terminator; otherwise NULL
 // is returned when the byte is not present.

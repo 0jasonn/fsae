@@ -2,11 +2,11 @@
 #include "global.h"
 #include "types.h"
 #include "engine/wm_d.h"
+#include "engine/wm_mp_api.h"
 
 // WirelessManager::allocMPBuffer (0x0209244c, invented name): frees the buffers, then allocates the send buffer (size from
 // WM_GetMPSendBufferSize, at most 0x200) and the receive buffer (at most 0x400), both aligned to 0x20. FALSE on any failure
 // (buffers freed again, OS_Terminate on an allocation failure).
-extern "C" BOOL Knife_Comm_WirelessManager_allocMPBuffer(void *self);
 BOOL Knife_Comm_WirelessManager_allocMPBuffer(void *self) {
     WmDWork *wm;
     WmAllocatorIface *allocator;

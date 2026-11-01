@@ -2,6 +2,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/wm_callbacks_api.h"
+#include "engine/wm_child_api.h"
 
 // Knife::Comm::WirelessManager state update functions (plain names, self is the manager). The state machine is kept in
 // WmDWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).
@@ -11,18 +13,12 @@ extern char data_0211b1b4[];
 extern char data_0211b1c0[];
 
 extern "C" u16 WM_GetAllowedChannel(void);
-extern "C" u32 WM_PowerOn(void *callback);
 extern "C" u32 WM_PowerOff(void *callback);
-extern "C" u32 WM_Disable(void *callback);
-extern "C" void Knife_Comm_WirelessManager_callback_WM_Enable(void *result);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
-extern "C" void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result);
 extern "C" BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);
 extern "C" void Knife_Comm_ChildInfo_cleanup(void *child);
 
 // update_parent2idle: step 1 ends the parent (WM_EndParent) and step 3 clears the child entries, like update_reset.
-extern "C" u32 WM_EndParent(void *callback);
-extern "C" void Knife_Comm_WirelessManager_callback_WM_StepTimer3(void *result);
 extern "C" void Knife_Comm_WirelessManager_deleteMPBuffer(void *self);
 extern "C" void Knife_Comm_WirelessManager_internalReset(void *self);
 extern char data_0211b244[];

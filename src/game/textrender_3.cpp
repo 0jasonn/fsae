@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textrender_api.h"
 
 // Functions in this file (original names from the debug build, or invented where marked):
 //   TextRender::onReadBlankTag(int) (0x020a15e0), setFlag83On (0x020a15f4, name invented)
@@ -34,7 +35,6 @@ typedef struct KnifeTextRender {
 } KnifeTextRender;
 
 // TextRender::onReadBlankTag(int) (0x020a15e0): moves the start x by the (signed 16-bit) value
-extern "C" void Knife_Message_TextRender_onReadBlankTag(void *a, s32 value);
 void Knife_Message_TextRender_onReadBlankTag(void *a, s32 value) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 
@@ -42,7 +42,6 @@ void Knife_Message_TextRender_onReadBlankTag(void *a, s32 value) {
 }
 
 // Sets flag83 to 1 (0x020a15f4, name invented)
-extern "C" void Knife_Message_TextRender_setFlag83On(void *a);
 void Knife_Message_TextRender_setFlag83On(void *a) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 

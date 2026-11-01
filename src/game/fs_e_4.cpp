@@ -1,13 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/fs_e_api.h"
 
 // Functions in this file (original names from the debug build):
 //   fsCopyFile(unsigned char, unsigned char) (0x020a7370)
 
-extern "C" void fsSaveBegin(void);
-extern "C" void fsSaveEnd(void);
-extern "C" void fsUpdateStatus(u8 slot);
-extern "C" void fsCopyFile(u8 srcSlot, u8 dstSlot);
 s32 Knife_writeMediaFlagged(u8 slot, const u32 *data); // C++, defined in backup.cpp
 
 extern u8 data_021350b0[];   // slot block, 0x50 bytes per slot

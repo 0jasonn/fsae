@@ -12,10 +12,6 @@ typedef struct RectBufSet {
     void *bufB;        // 0x14
 } RectBufSet;
 
-extern "C" void func_020bc8bc(void *self, s32 arg);
-extern "C" void *func_020b7b1c(void *source, void *self, s32 size, s32 flag);
-extern "C" void func_020bc99c(void *self, void *bufA, s32 bufB, s32 arg5, u16 arg6);
-
 // RectBufSet_init(self, arg1, sourceA, sourceB, arg5, arg6) (0x020bc84c, provisional name): initialises the set with
 // func_020bc8bc, makes bufA from sourceA (size 4) and bufB from sourceB (size 0x20), then calls func_020bc99c with
 // bufA, bufB rounded up to 0x20 and the two other arguments

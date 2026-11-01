@@ -3,6 +3,7 @@
 #include "types.h"
 #include "engine/m4a.h"
 #include "engine/knife_sound_4.h"
+#include "engine/m4a_api.h"
 
 // m4a sound driver front end: m4aSoundInit and pauseWavePlayer (0x0208cda4 to 0x0208d004). m4aSoundMain (0x0208d004)
 // is parked in scratch/agentD/nonmatching.
@@ -66,7 +67,6 @@ void m4aSoundInit(void) {
 }
 
 // pauseWavePlayer (0x0208cf88): pauses or resumes each playing wave handle and records the flag in the slot table
-extern "C" void pauseWavePlayer(s32 pause);
 void pauseWavePlayer(s32 pause) {
     s32 i;
 

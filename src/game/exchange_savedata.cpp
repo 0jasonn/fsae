@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "game/exchange_savedata_api.h"
 
 // Functions in this file (original names from the debug build):
 //   exchange_savedata (0x020b2a5c), is_exchange_savedata_end (0x020b2a90), lobby_noop (0x020b2aac, renamed from
@@ -14,11 +15,8 @@ extern u8 data_0217d23c[];
 
 void ComRequest(unsigned char request);
 void MachiukeStop(void);
-extern "C" BOOL Knife_Comm_WirelessManager_endParent(void *manager);
-extern "C" BOOL Knife_Comm_WirelessManager_disconnect(void *manager);
 
 // exchange_savedata() (0x020b2a5c): clears the exchange buffer and starts the exchange request
-extern "C" void exchange_savedata(void);
 void exchange_savedata(void) {
     OSi_CpuClear32(0, enemyTypeFlags, 0x20);
     ComRequest(3);
@@ -26,7 +24,6 @@ void exchange_savedata(void) {
 }
 
 // is_exchange_savedata_end() (0x020b2a90): TRUE when the exchange has ended
-extern "C" BOOL is_exchange_savedata_end(void);
 BOOL is_exchange_savedata_end(void) {
     if (*(u32 *)(data_0212c9a8 + 8) == 1) {
         return TRUE;
@@ -39,7 +36,6 @@ void lobby_noop(void) {
 }
 
 // leaveLobby() (0x020b2ab0): leaves the wireless group (or disconnects) and resets the lobby block
-extern "C" void leaveLobby(void);
 void leaveLobby(void) {
     void *manager;
     BOOL result;

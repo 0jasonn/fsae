@@ -2,14 +2,10 @@
 #include "global.h"
 #include "types.h"
 #include "engine/callees.h"
+#include "engine/vrambank_api.h"
 
 // VRAM bank reset helpers. Each clears one display control bit (main DISPCNT at 0x04000000, sub DISPCNT at
 // 0x04001000) and then resets one bank record in the 0x02129864 table through resetBankForX_.
-
-extern "C" void Vram_ResetBankC(void);
-extern "C" void Vram_ResetBankD(void);
-extern "C" void Vram_ResetSubBankA(void);
-extern "C" void Vram_ResetSubBankB(void);
 
 void Vram_ResetMainBankA(void) {
     *(volatile u32 *)0x4000000 &= ~0x40000000;

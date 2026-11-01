@@ -2,12 +2,12 @@
 #include "global.h"
 #include "types.h"
 #include "engine/pane.h"
+#include "game/lobby_ptrarray_api.h"
 
 // lobby_ptrarray.cpp: function lobby_allocPtrArray (0x020b51c8), matching.
 
 // lobby_allocPtrArray(owner, count) (0x020b51c8, provisional name): allocates count pointers (at least one) from the
 // allocator of owner and clears them. Returns NULL when the allocation fails.
-extern "C" void **lobby_allocPtrArray(void *owner, s32 count);
 void **lobby_allocPtrArray(void *owner, s32 count) {
     void **array;
     void **slot;

@@ -1,6 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/packed_set_api.h"
+#include "engine/std_snprintf_api.h"
 
 // rec_format: functions Rec_formatStrU32 (0x020b7154) and Rec_formatStrU32S16 (0x020b71ac), matching. The formatters of the record class of rec_init.cpp. The name is the string at +4, the output buffer is
 // the 0x7f bytes at +0x83, and the halfword at +0x102 selects the variant that also prints a packed halfword.
@@ -10,9 +12,6 @@
 extern u8 data_02126bf0[];
 extern u8 data_02126bfc[];
 
-extern "C" void Packed_setU32BE(void *self, u32 value);
-extern "C" void Packed_setS16(void *self, s32 value);
-extern "C" s32 func_0201dc94(void *dst, s32 size, const u8 *format, ...);
 extern "C" s32 Fs_GetDirFileOffset(void *dst);
 
 // Rec_formatStrU32(dst, size, name, value, arg) (0x020b7154, provisional name): formats dst from data_02126bf0 with the

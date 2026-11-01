@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/wm_d.h"
+#include "engine/wm_callbacks_api.h"
 
 // Callbacks of the WirelessManager's SDK calls. Each one takes the WM callback result, gets the manager singleton and
 // moves the timer (0x1cd8) or the state according to the error code.
@@ -23,7 +24,6 @@ void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result) {
 }
 
 // WirelessManager::callback_WM_ResetStep (0x02093340): on success the timer counts up, on error it is set to -999.
-extern "C" void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result) {
     WmDWork *wm;
 
@@ -40,7 +40,6 @@ void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result) {
 
 // WirelessManager::callback_WM_Enable (0x0209338c): on success stores the allowed channels (WM_GetAllowedChannel); if no
 // channel is allowed the timer is set to 5. The timer counts up in both cases.
-extern "C" void Knife_Comm_WirelessManager_callback_WM_Enable(void *result);
 void Knife_Comm_WirelessManager_callback_WM_Enable(void *result) {
     WmDWork *wm;
 

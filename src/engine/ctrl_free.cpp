@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/ctrl_free_api.h"
 
 // ctrl_free: functions Ctrl_freeBlock (0x020bc78c) and Ctrl_freeVirtualBlock (0x020bc7b8), provisional names.
 
@@ -14,7 +15,6 @@ typedef void (*CtrlBlockFn)(void *block, void *holder);
 
 // Ctrl_freeBlock(holder, block) (0x020bc78c, provisional name): does nothing for a NULL block; otherwise calls the
 // hook Ctrl_noopA with (block, holder) and frees the block from the heap at the first word of holder
-extern "C" void Ctrl_freeBlock(void *holder, void *block);
 void Ctrl_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;

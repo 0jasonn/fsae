@@ -5,7 +5,6 @@
 // each of the four BG entries that have a flag and a pointer set, then copies the buffer that is not current
 // (objAffineSet) to VRAM 0x07000000 when its flag in data_0212c50c is set.
 
-extern "C" void bgTrans(void *bg); // bgTrans, parked (scratch/agentB/nonmatching), unmangled
 extern u32 data_02171e20[];
 extern u8 data_0212c4c8; // current buffer index
 extern u8 data_0212c50c[];

@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/pane.h"
+#include "engine/tween_api.h"
 
 // tween: functions TweenTable_noopA (0x020b6868), TweenTable_noopB (0x020b686c), Tween_init (0x020b6870) and
 // Tween_initWithTable (0x020b6898), all matching. The table data_020deed4 is the table that TweenTable_noopA and
@@ -21,12 +22,10 @@ typedef struct TweenEntry {
 } TweenEntry;
 
 // TweenTable_noopA() (0x020b6868, provisional name): slot 1 of the table, does nothing
-extern "C" void TweenTable_noopA(void);
 void TweenTable_noopA(void) {
 }
 
 // TweenTable_noopB() (0x020b686c, provisional name): slot 2 of the table, does nothing
-extern "C" void TweenTable_noopB(void);
 void TweenTable_noopB(void) {
 }
 

@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/fs_e_api.h"
 
 // Functions in this file (original names from the debug build):
 //   fsUpdateStatus (0x020a723c, invented name), clearSaveData(unsigned char) (0x020a72b0), fsFileCount() (0x020a72f0),
@@ -7,9 +8,7 @@
 
 // Save slot table (data_021350b0, 0x50 bytes per slot, 3 slots). The byte arrays below are the fields the file functions
 // read, each indexed by slot * 0x50.
-extern "C" s32 fsFileCheck(u8 slot);
 extern "C" void clearSaveData(u8 slot);
-extern "C" u8 fsFileCount(void);
 
 s32 Knife_readMediaFlagged(u8 slot, u32 *block); // C++, defined in savemedia code
 
@@ -21,7 +20,6 @@ extern s8 data_021350f7[];   // +0x47 of the slot block (status byte)
 
 // fsUpdateStatus(unsigned char) (0x020a723c, invented name): reads the file status of a slot into the status byte,
 // clearing the slot for the statuses 3, 4, 6 and 8
-extern "C" void fsUpdateStatus(u8 slot);
 void fsUpdateStatus(u8 slot) {
     s32 status;
     s32 offset;

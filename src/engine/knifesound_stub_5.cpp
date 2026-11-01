@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/knifesound_stub_api.h"
 
 // Knife::Sound leaf slot functions (the one-instruction bodies of the Handle and Archive classes). They take the object
 // as self; the vtable pointer is written by the constructors, which are not in this unit.
@@ -13,7 +14,6 @@ void knifeSoundNop3(void *self) {
 }
 
 // 0x0208bee8: slot that reports 0
-extern "C" int knifeSoundReturnZero(void *self);
 int knifeSoundReturnZero(void *self) {
     return 0;
 }

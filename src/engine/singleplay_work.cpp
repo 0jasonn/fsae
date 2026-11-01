@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/player.h"
+#include "engine/singleplay_work_api.h"
 
 // Knife::Single::SinglePlay::SinglePlayWork (the warp pair work item, not the controller singleton), 0x02099da8 to
 // 0x02099ed8 and PlayerChange: the constructor, Initialize and PlayerChange. The fields are the two player pointers,
@@ -42,7 +43,6 @@ extern u8 data_0212caf0[];
 extern u8 data_0212cb60[];
 
 // SinglePlayWork::SinglePlayWork() (0x02099da8): clears the pointers, then the halfword and byte fields
-extern "C" void Knife_Single_SinglePlay_SinglePlayWork_SinglePlayWork(void *self);
 void Knife_Single_SinglePlay_SinglePlayWork_SinglePlayWork(void *self) {
     SpWorkPair *w;
 

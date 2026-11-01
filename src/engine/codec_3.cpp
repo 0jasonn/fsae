@@ -3,8 +3,6 @@
 #include "types.h"
 #include "engine/codec.h"
 
-extern "C" void Str_CopyN(u8 *dst, const u8 *src, u32 count);
-
 // Encodes the NUL-terminated wide string src into dst, at most max bytes. Each character is encoded through the
 // codec into a small temporary and copied out. The terminator is written when the source ends. Returns the number
 // of bytes written.

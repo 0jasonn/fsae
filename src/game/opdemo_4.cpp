@@ -2,10 +2,10 @@
 #include "engine/misc_d.h"
 #include "game/opdemo_c.h"
 #include "global.h"
+#include "game/opdemo_api.h"
 
 // op_scene_01 (symbol op_scene_01, original scene_01()): the first opening scene. The step index is
 // data_021349c0[EFFECT_STATE_SCENE] and the countdown is the u16 at EFFECT_STATE_TIMER.
-extern "C" void op_scene_01(void);
 
 void op_scene_01(void) {
     switch (data_021349c0[EFFECT_STATE_SCENE]) {

@@ -2,13 +2,13 @@
 #include "global.h"
 #include "types.h"
 #include "game/lobby.h"
+#include "game/lobby_api.h"
 
 // Functions in this file (no original names, provisional names from what they do):
 //   lobby_msgObj_init (lobby_msgObj_init), lobby_msgObj_release (lobby_msgObj_release), lobby_freeBlock (lobby_freeBlock)
 // lobby_releaseObj (lobby_releaseObj) is parked in scratch/agentF/nonmatching/lobby_releaseObj.cpp
 
 extern "C" void lobby_releaseObj(void *heap, void *obj);
-extern "C" void lobby_freeBlock(void *heap, void *block);
 
 // lobby_msgObj_init(self) (0x020b4e60, provisional name): sets the vtable of the message object and clears its fields
 extern "C" void lobby_msgObj_init(void *self);
@@ -26,7 +26,6 @@ void lobby_msgObj_init(void *self) {
 }
 
 // lobby_msgObj_release(obj, heap) (0x020b4e8c, provisional name): releases the two blocks of a message object
-extern "C" void lobby_msgObj_release(void *obj, void *heap);
 void lobby_msgObj_release(void *obj, void *heap) {
     lobby_releaseObj(heap, *(void **)((u8 *)obj + 4));
     lobby_freeBlock(heap, *(void **)((u8 *)obj + 0x18));

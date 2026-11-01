@@ -2,12 +2,12 @@
 #include "global.h"
 #include "types.h"
 #include "engine/m4a.h"
+#include "engine/m4a_api.h"
 
 // m4a song stop helpers, 0x0208d52c to 0x0208d5d0 (the m4a_vsync pair follows at 0x0208d5d0).
 
 // m4aSongNumStop (0x0208d52c): stops the song with the given number. Numbers 0x1ea to 0x1f3 stop both wave slots;
 // other numbers stop their handle, and clear the pending wave id when the handle has no player number.
-extern "C" void m4aSongNumStop(u16 songNum);
 void m4aSongNumStop(u16 songNum) {
     s32 i;
     void *handle;

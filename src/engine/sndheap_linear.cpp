@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sndheap_linear_api.h"
 
 // Linear heap cursors (provisional): the words of a heap are indexed as u32. heap[6] is the region start (+18), heap[7]
 // the region end (+1c), heap[8] the flag word (+20), heap[9] the low cursor (+24), heap[10] the high cursor or pool block
@@ -9,7 +10,6 @@ extern "C" void *SndHeap_AllocLow(u32 *heap, u32 size, u32 align);
 extern "C" void *SndHeap_AllocHigh(u32 *heap, u32 size, u32 align);
 
 // SndHeap_Rewind: moves the low cursor back to the region start and clears the first word of the high chain.
-extern "C" void SndHeap_Rewind(u32 *heap);
 void SndHeap_Rewind(u32 *heap) {
     heap[9] = heap[6];
     heap[11] = 0;
@@ -17,7 +17,6 @@ void SndHeap_Rewind(u32 *heap) {
 
 // SndHeap_ResetHigh: points the prev word of every node in the high chain at the region end, then sets the high cursor to
 // the region end.
-extern "C" void SndHeap_ResetHigh(u32 *heap);
 void SndHeap_ResetHigh(u32 *heap) {
     u32 *node;
 

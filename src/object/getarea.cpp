@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/getarea_api.h"
 
 // getarea (0x0206cb84): searches the area table from e->areaTable in one direction chosen by e->type (records
 // 0x40 bytes or 1 byte apart), stores the distance as (distance >> 2) - 8 or (distance << 4) - 8, and keeps its high
@@ -14,8 +15,6 @@ typedef struct Vars_Getarea {
     /* 7c */ u16 scaledOffset;  // (distance << 4) - 8, used by cases 1 and 3
     /* 7e */ u16 shiftedOffset; // (distance >> 2) - 8, used by cases 0 and 2
 } Vars_Getarea;
-
-extern "C" void getarea(Entity *e);
 
 void getarea(Entity *e) {
     u8 *p;

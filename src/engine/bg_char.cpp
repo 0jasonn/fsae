@@ -5,8 +5,6 @@
 
 extern "C" void DC_FlushRange(void *base, u32 size);
 extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
-extern "C" void MIi_DmaCopy16(u32 dmaNo, const void *src, void *dst, u32 size, u32 flag);
-extern "C" void func_020c7018(u32 *widthTiles, u32 *heightTiles, s32 screen);
 extern "C" void BgRect_ClipCopy(u8 *dstVram, BgLoadInfo *src, s32 srcX, s32 srcY, s32 dstX, s32 dstY, s32 dstWidth,
                                 s32 dstHeight, s32 width, s32 height);
 extern "C" u16 *data_020df1a4[];

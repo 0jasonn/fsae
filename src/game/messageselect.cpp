@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/messageselect_api.h"
 
 // Functions in this file (original names from the debug build):
 //   Knife::Message::MessageSelect::init() (0x020a1838). MessageSelect::setup (0x020a1864) is parked in
@@ -25,7 +26,6 @@ typedef struct KnifeMessageSelect {
 } KnifeMessageSelect;
 
 // MessageSelect::init() (0x020a1838): clears the list
-extern "C" void Knife_Message_MessageSelect_init(void *a);
 void Knife_Message_MessageSelect_init(void *a) {
     KnifeMessageSelect *self = (KnifeMessageSelect *)a;
 

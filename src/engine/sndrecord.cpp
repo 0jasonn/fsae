@@ -2,6 +2,7 @@
 #include "global.h"
 #include "engine/sndrecord.h"
 #include "engine/sndlist.h"
+#include "engine/sndrecord_api.h"
 
 extern "C" {
 void *SndHeap_ReserveLinear(void *heap, s32 size, s32 align);
@@ -11,7 +12,6 @@ u32 SND_GetCurrentCommandTag(void);
 }
 
 // SndList_Reset: resets the count of a list (it is SndList_Init with a count of zero).
-extern "C" void SndList_Reset(void *list);
 void SndList_Reset(void *list) {
     SndList_Init((SndList *)list, 0);
 }
@@ -41,7 +41,6 @@ s32 SndRecord_Alloc(SndRecord *record) {
 }
 
 // SndSys_FlushAndWait: takes the current command tag, flushes the command queue and waits for that command.
-extern "C" void SndSys_FlushAndWait(void);
 void SndSys_FlushAndWait(void) {
     u32 tag;
 

@@ -2,13 +2,13 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_f.h"
+#include "engine/rect_geom_copy_api.h"
 
 // rect_geom_copy: function RectObjList_setGeometryCopy (0x020bba38), provisional name.
 
 // RectObjList_setGeometryCopy(self, pos, size, value, a20, a24) (0x020bba38, provisional name): copies the size and the
 // position (two halfwords each) into locals, calls RectObjList_setGeometry with them and value, then stores a20 at +0x20
 // and a24 at +0x24. The last two arguments are on the stack.
-extern "C" void RectObjList_setGeometryCopy(void *self, s16 *pos, s16 *size, s32 value, s32 a20, s32 a24);
 void RectObjList_setGeometryCopy(void *self, s16 *pos, s16 *size, s32 value, s32 a20, s32 a24) {
     s16 posCopy[2];
     s16 sizeCopy[2];

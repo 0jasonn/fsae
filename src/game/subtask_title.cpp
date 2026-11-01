@@ -2,6 +2,7 @@
 #include "global.h"
 #include "game/subtask_init.h"
 #include "game/eff.h"
+#include "game/subtask_title_api.h"
 
 // subtask title and push start functions, 0x0209c6c0 to 0x0209c88c.
 
@@ -12,17 +13,14 @@ extern u8 data_0217d23c[];
 extern u8 data_0217a258[];
 
 // subTask_empty_0 (0x0209c6c0): empty function, a table entry
-extern "C" void subTask_empty_0(void);
 void subTask_empty_0(void) {
 }
 
 // subTask_empty_1 (0x0209c6c4): empty function, a table entry
-extern "C" void subTask_empty_1(void);
 void subTask_empty_1(void) {
 }
 
 // subTask_nop() (0x0209c6c8)
-extern "C" void subTask_nop(void);
 void subTask_nop(void) {
     if (*(s32 *)(data_0217c23c + 0xf50) <= 0) {
         func_020827a8(data_0212c508);
@@ -30,7 +28,6 @@ void subTask_nop(void) {
 }
 
 // subTask_title_init() (0x0209c6f4)
-extern "C" void subTask_title_init(void);
 void subTask_title_init(void) {
     u8 *app;
 
@@ -47,14 +44,12 @@ void subTask_title_init(void) {
 }
 
 // subTask_title_end() (0x0209c75c)
-extern "C" void subTask_title_end(void);
 void subTask_title_end(void) {
     func_0209bee4();
     eff_white_out_init(0x1000);
 }
 
 // subTask_title() (0x0209c770): counts up to 0x5a, then moves to subtask 2
-extern "C" void subTask_title(void);
 void subTask_title(void) {
     s32 timer = *(s32 *)(data_0217a23c + 0xfc);
 
@@ -67,7 +62,6 @@ void subTask_title(void) {
 }
 
 // subTask_push_start_init() (0x0209c79c)
-extern "C" void subTask_push_start_init(void);
 void subTask_push_start_init(void) {
     u8 *work;
     u8 *app;
@@ -90,7 +84,6 @@ void subTask_push_start_init(void) {
 }
 
 // subTask_push_start_end() (0x0209c84c)
-extern "C" void subTask_push_start_end(void);
 void subTask_push_start_end(void) {
     u32 i;
 

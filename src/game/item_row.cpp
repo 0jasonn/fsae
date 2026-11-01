@@ -1,11 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "game/item_row_api.h"
 
 // Functions in this file (names given here; the ROM has no symbols for them):
 //   ItemRow_layout -> ItemRow_layout (0x020b6cc4)
-
-extern "C" void func_020b57c8(void *self, s32 arg, s16 *pos);
 
 // One entry of the row: 8 bytes in the table at +0x34 of ItemRow
 typedef struct ItemRowEntry {
@@ -28,7 +27,6 @@ typedef struct ItemRow {
 
 // ItemRow_layout(self, arg, pos) (0x020b6cc4): copies pos and passes it to func_020b57c8, then computes the largest
 // minX and the total width of the entries with the gap between them
-extern "C" void ItemRow_layout(void *selfv, s32 arg, s16 *pos);
 void ItemRow_layout(void *selfv, s32 arg, s16 *pos) {
     ItemRow *self = (ItemRow *)selfv;
     s16 copy[2];

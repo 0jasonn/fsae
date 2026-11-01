@@ -1,10 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/res_cursor_api.h"
 
 // ResCursor_Seek (ResCursor_Seek, provisional name): moves the cursor to entry index of its table (table pointer at +0x1c,
 // count at +0, entries of 8 bytes from +0xc). Sets the first position and, when the entry's halfword at +4 is not zero,
 // the second one too. Returns 1 when the index is in range, otherwise 0.
-extern "C" s32 ResCursor_Seek(u8 *cursor, u32 index);
 s32 ResCursor_Seek(u8 *cursor, u32 index) {
     u8 *table;
     u8 *entry;
@@ -22,7 +22,6 @@ s32 ResCursor_Seek(u8 *cursor, u32 index) {
 }
 
 // ResRef_GetWord (ResRef_GetWord, provisional name): the word at the address held in +4.
-extern "C" u32 ResRef_GetWord(u8 *ref);
 u32 ResRef_GetWord(u8 *ref) {
     return *(u32 *)*(u8 **)(ref + 4);
 }

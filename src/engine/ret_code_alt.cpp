@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u32 Obj_CodeForArgAlt(u32 unused, u32 arg);
+#include "engine/ret_code_alt_api.h"
 
 // Returns 4 when arg is 1, otherwise 0x102 (the second argument is in r1).
 u32 Obj_CodeForArgAlt(u32 unused, u32 arg) {

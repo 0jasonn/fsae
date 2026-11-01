@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/knife_sound.h"
+#include "engine/knife_sound_api.h"
 
 // Knife::Sound::System pause and the sequence handle helpers, 0x0208c5f0 to 0x0208c6b4.
 // Provisional names in scratch/agentD/renames.txt: Knife_Sound_System_fwd_08c630 to Knife_Sound_System_destroyWaveHandles.
@@ -40,7 +41,6 @@ KnifeSoundWaveHandle *Knife_Sound_System_getWaveHandle(s32 index) {
     return &data_02171e74[index];
 }
 
-extern "C" void Knife_Sound_System_destroyWaveHandles(void);
 void Knife_Sound_System_destroyWaveHandles(void) {
     Frame_LoopC868(data_02171e74, 2, sizeof(KnifeSoundWaveHandle), (void *)Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0);
 }

@@ -1,13 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/res_chunk_a_api.h"
+#include "engine/res_chunk_d_api.h"
 
 extern "C" u8 data_020df02c[];
-extern "C" void *ResChunk_Find(u8 *base, u32 magic);
-extern "C" void func_020c2cc0(u8 *body);
 
 // ObjRes_Init (ObjRes_Init, provisional name): stores the class table at +0 and the two words a and b at +4 and +8,
 // and clears the word at +0xc.
-extern "C" void ObjRes_Init(u8 *self, u32 a, u32 b);
 void ObjRes_Init(u8 *self, u32 a, u32 b) {
     *(u8 **)self = data_020df02c;
     *(u32 *)(self + 4) = a;

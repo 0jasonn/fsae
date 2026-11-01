@@ -4,6 +4,7 @@
 #include "global.h"
 #include "types.h"
 #include "enemy/knife_msgsys.h"
+#include "game/knife_message_api.h"
 
 // Functions in this file (module knife_comm, the message box dispatch):
 //   knife_commDispInit (0x0204b2f0)
@@ -11,8 +12,6 @@
 extern u8 pauseDialogBuffer[]; // pause dialog buffer
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
-extern "C" void Knife_Message_MessageTextRender_initWithCanvas(void *self, void *a, void *b, u16 c, u32 d, u32 e, u32 f, u32 g);
-
 
 // messageRequest byte 5: the width of the message in cells (5 bits)
 typedef struct MsgRequestWidth {

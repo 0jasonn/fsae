@@ -2,8 +2,7 @@
 #include "engine/pair_block.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u64 Pair_GetIfEnabled(void);
+#include "engine/pair_get_api.h"
 
 // Pair_GetIfEnabled() (0x02019ccc): returns the 64-bit pair at the pointer in the block when bit 0 of its flags is set,
 // otherwise 0.

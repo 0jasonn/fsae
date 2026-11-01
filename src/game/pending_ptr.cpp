@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/pending_ptr_api.h"
 
 // Functions in this file (names invented, the debug build has none; the role of data_0217da60 is not known yet):
 //   Knife_Message_setPendingPtr (setter), Knife_Message_getPendingPtr (getter)
@@ -13,7 +14,6 @@ void Knife_Message_setPendingPtr(void *p) {
 }
 
 // Returns data_0217da60 (0x020a3788, name invented)
-extern "C" void *Knife_Message_getPendingPtr(void);
 void *Knife_Message_getPendingPtr(void) {
     return data_0217da60;
 }

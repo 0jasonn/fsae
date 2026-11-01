@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sndbank_acquire_api.h"
 
 extern "C" {
 u32 SndTable_GetWord14(s32 index);
@@ -59,7 +60,6 @@ void *SndBank_AcquireSeqDataB(s32 index, void *record, s32 flag) {
 }
 
 // SndBank_AcquireBank (SndBank_AcquireBank).
-extern "C" void *SndBank_AcquireBank(s32 index, void *record, s32 flag);
 void *SndBank_AcquireBank(s32 index, void *record, s32 flag) {
     void *result;
     void *data;
@@ -80,7 +80,6 @@ void *SndBank_AcquireBank(s32 index, void *record, s32 flag) {
 }
 
 // SndBank_AcquireWave (SndBank_AcquireWave).
-extern "C" void *SndBank_AcquireWave(s32 index, void *record, s32 flag);
 void *SndBank_AcquireWave(s32 index, void *record, s32 flag) {
     void *result;
     void *data;

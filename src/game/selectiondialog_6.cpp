@@ -1,13 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/selectiondialog_api.h"
 
 // Functions in this file (original names from the debug build):
 //   selectionDialog::update (0x020a22cc)
 
-extern "C" BOOL Knife_Message_selectionDialog_update_open(void *self);
-extern "C" void Knife_Message_selectionDialog_dispMessage(void *self);
-extern "C" BOOL Knife_Message_selectionDialog_update_move(void *self);
-extern "C" BOOL Knife_Message_selectionDialog_update_close(void *self);
 extern u8 messageRequest[];
 
 // Selection dialog (Knife::Message::selectionDialog). Same layout as the other selectiondialog units.

@@ -1,12 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/os_switch_api.h"
 
-extern "C" void *OS_SelectThread(void);
-extern "C" u32 OS_SaveContext(void *thread);
 extern "C" void OS_LoadContext(void *thread);
-extern "C" u32 OS_GetProcMode(void);
-extern "C" void Os_ThreadSwitch(void);
 
 // Scheduler record at data_0212991c: the switch callback at +0, a busy word at +4, the pointer to the current thread
 // (a pointer to a thread pointer) at +8, a ready half-word at +0x1e and the thread switched to at +0x20.

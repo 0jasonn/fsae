@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/os_blocking_mode_api.h"
 
 // os_blocking_mode: function OS_GetPrintBlockingMode (0x020b07a4), keeps its symbol name.
 
@@ -11,7 +12,6 @@ public:
 };
 
 // OS_GetPrintBlockingMode(self) (0x020b07a4): non-zero when groupSelectUIView::getNumOfRoom of self is non-zero
-extern "C" s32 OS_GetPrintBlockingMode(void *self);
 s32 OS_GetPrintBlockingMode(void *self) {
     return ((groupSelectUIView *)self)->getNumOfRoom() != 0;
 }

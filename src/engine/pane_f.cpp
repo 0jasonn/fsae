@@ -2,12 +2,12 @@
 #include "global.h"
 #include "types.h"
 #include "engine/pane.h"
+#include "engine/pane_d_api.h"
 
 // pane_f.cpp: functions Window_allocItems (0x020b5c58), PaneItem_allocArray (0x020b5c84), Window_release (0x020b5cd4),
 // Window_releaseItems (0x020b5d00), all matching.
 
 extern "C" void Pane_releaseChildren(Pane *self, void *heap);
-extern "C" void Pane_releaseItemNoop(void *item, void *heap);
 extern "C" void Window_releaseItems(void *heap, PaneItem *items, u32 count);
 
 // Window_allocItems(self, owner, count) (0x020b5c58, provisional name): allocates the item array of the window

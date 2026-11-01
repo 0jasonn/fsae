@@ -3,16 +3,15 @@
 #include "types.h"
 #include "engine/player.h"
 #include "engine/objwork.h"
+#include "engine/singleplay_check_api.h"
 
 // Knife::Single::SinglePlay hit checks, 0x02094b64 to 0x02094d08: CheckBane (the OBJ_WORK_* overload and the helper
 // overload), CheckTsubuAtari (two overloads) and CheckShell. The Thumb helper func_02083c8c (functions.h) takes an x, a y
 // and a layer and returns a value that the checks compare.
 
 extern "C" BOOL Knife_Single_SinglePlay_CheckBane_094b94(void *self, s16 x, s16 y, u16 layer);
-extern "C" BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(void *self, u8 kind, u32 mask, s16 x, s16 y, u16 layer);
 
 // SinglePlay::CheckBane(OBJ_WORK_*, short, short) (0x02094b64): checks at the entity's position plus the offset
-extern "C" BOOL Knife_Single_SinglePlay_CheckBane_094b64(void *self, Entity *e, s16 x, s16 y);
 BOOL Knife_Single_SinglePlay_CheckBane_094b64(void *self, Entity *e, s16 x, s16 y) {
     return Knife_Single_SinglePlay_CheckBane_094b94(self, (s16)(e->x.HALF.HI + x), (s16)(e->y.HALF.HI + y), e->layer);
 }
@@ -32,7 +31,6 @@ BOOL Knife_Single_SinglePlay_CheckBane_094b94(void *self, s16 x, s16 y, u16 laye
 }
 
 // SinglePlay::CheckTsubuAtari(unsigned char, unsigned long, OBJ_WORK_*, short, short) (0x02094bc4)
-extern "C" BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094bc4(void *self, u8 kind, u32 mask, Entity *e, s16 x, s16 y);
 BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094bc4(void *self, u8 kind, u32 mask, Entity *e, s16 x, s16 y) {
     return Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(self, kind, mask, (s16)(x + e->x.HALF.HI),
                                                            (s16)(y + e->y.HALF.HI), e->layer);
@@ -67,7 +65,6 @@ BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(void *self, u8 kind, u32 mas
 
 // SinglePlay::CheckShell(OBJ_WORK_*, unsigned char) (0x02094ca0): the first entity of the list (SearchWork and
 // SearchWorkNext, list 2) whose type byte differs from the entity's, or NULL
-extern "C" Entity *Knife_Single_SinglePlay_CheckShell(void *self, Entity *e, u8 kind);
 Entity *Knife_Single_SinglePlay_CheckShell(void *self, Entity *e, u8 kind) {
     Entity *found;
 

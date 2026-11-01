@@ -4,12 +4,8 @@
 
 // ctrl_setlist: function Ctrl_setItemList (0x020ba948), provisional name.
 
-extern "C" void Slider_setupItems(void *slider, s32 count);
-extern "C" void func_020bafb4(void *self);
 extern "C" void Ctrl_setSliderIndexA(void *self, s32 value);
-extern "C" void func_020bb898(void *self, s32 flag);
 extern "C" void func_020bb148(void *self);
-extern "C" void func_020bb208(void *self);
 
 // Item list at +0x14 (item array and count, see ctrl_entry.cpp)
 typedef struct CtrlSetItems {

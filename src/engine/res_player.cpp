@@ -1,16 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
-
-extern "C" u32 ResRef_GetWord(u8 *ref);
-extern "C" u8 *ResTable_GetEntryAt(u8 *table, u32 index);
-extern "C" s32 func_020c323c(u8 *cursor);
-extern "C" s32 ResCursor_SeekAndReset(u8 *cursor, u32 index);
-extern "C" s32 ResCursor_SetTableAndInit(u8 *cursor, u8 *table);
-extern "C" void ResPlayer_Init(u8 *player);
-extern "C" void ObjEntry_Setup(u32 index, u32 a, u32 b);
+#include "engine/obj_entry_api.h"
+#include "engine/res_chunk_c_api.h"
+#include "engine/res_cursor_api.h"
+#include "engine/res_player_api.h"
 
 // ResDraw_SetSize (provisional name): stores the two halfwords at +0xc/+0xe and sets flag 8 at +0x12 when the state at +0 is 1.
-extern "C" void ResDraw_SetSize(u8 *draw, s32 width, s32 height);
 void ResDraw_SetSize(u8 *draw, s32 width, s32 height) {
     u16 flags;
 
@@ -23,7 +18,6 @@ void ResDraw_SetSize(u8 *draw, s32 width, s32 height) {
 }
 
 // ResDraw_SetPriority (provisional name): stores the halfword at +0x10 and sets flag 4 at +0x12 when the state at +0 is 1.
-extern "C" void ResDraw_SetPriority(u8 *draw, u32 value);
 void ResDraw_SetPriority(u8 *draw, u32 value) {
     u16 flags;
 
@@ -35,7 +29,6 @@ void ResDraw_SetPriority(u8 *draw, u32 value) {
 }
 
 // ResDraw_SetPos (provisional name): stores the words at +4 and +8 and sets flag 2 at +0x12 when the state at +0 is 1.
-extern "C" void ResDraw_SetPos(u8 *draw, u32 x, u32 y);
 void ResDraw_SetPos(u8 *draw, u32 x, u32 y) {
     u16 flags;
 
@@ -48,17 +41,14 @@ void ResDraw_SetPos(u8 *draw, u32 x, u32 y) {
 }
 
 // ResDraw_Reset is defined below ResDraw_SetModeAndReset.
-extern "C" void ResDraw_Reset(u8 *draw);
 
 // ResDraw_SetModeAndReset (provisional name): stores the state at +0 and resets the draw record.
-extern "C" void ResDraw_SetModeAndReset(u8 *draw, u32 mode);
 void ResDraw_SetModeAndReset(u8 *draw, u32 mode) {
     *(u32 *)draw = mode;
     ResDraw_Reset(draw);
 }
 
 // ResDraw_Reset (provisional name): clears the 0x18 bytes from +4 and sets the two words at +4 and +8 to 0x1000.
-extern "C" void ResDraw_Reset(u8 *draw);
 void ResDraw_Reset(u8 *draw) {
     MIi_CpuClear16(0, draw + 4, 0x18);
     *(u32 *)(draw + 4) = 0x1000;
@@ -68,7 +58,6 @@ void ResDraw_Reset(u8 *draw) {
 // ResPlayer_Refresh (provisional name): when the count at the record of +4 is non-zero, takes the entry from the cursor
 // (ResRef_GetWord), stores the table lookup at +0x30, sets the draw state from the entry according to the mode of the
 // current record at +0x1c, and, when the table has a sub table and the slot at +0x38 is valid, runs ObjEntry_Setup.
-extern "C" void ResPlayer_Refresh(u8 *player);
 void ResPlayer_Refresh(u8 *player) {
     u8 *entry;
     u8 *table;
@@ -113,11 +102,9 @@ void ResPlayer_Refresh(u8 *player) {
 }
 
 // ResPlayer_SetCursorTableAndRefresh is defined below ResPlayer_Start.
-extern "C" void ResPlayer_SetCursorTableAndRefresh(u8 *player, u8 *cursorTable);
 
 // ResPlayer_Start (provisional name): stores the entry table at +0x34, the slot -1 at +0x38, sets the draw mode to 1,
 // initialises the player and sets the cursor table and refreshes.
-extern "C" void ResPlayer_Start(u8 *player, u8 *cursorTable, u8 *entryTable);
 void ResPlayer_Start(u8 *player, u8 *cursorTable, u8 *entryTable) {
     *(u8 **)(player + 0x34) = entryTable;
     *(s32 *)(player + 0x38) = -1;
@@ -127,7 +114,6 @@ void ResPlayer_Start(u8 *player, u8 *cursorTable, u8 *entryTable) {
 }
 
 // ResPlayer_SetCursorTableAndRefresh (provisional name): ResCursor_SetTableAndInit on the player, then ResPlayer_Refresh.
-extern "C" void ResPlayer_SetCursorTableAndRefresh(u8 *player, u8 *cursorTable);
 void ResPlayer_SetCursorTableAndRefresh(u8 *player, u8 *cursorTable) {
     ResCursor_SetTableAndInit(player, cursorTable);
     ResPlayer_Refresh(player);

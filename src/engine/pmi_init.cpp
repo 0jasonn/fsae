@@ -4,10 +4,7 @@
 #include "engine/pmi_send.h"
 
 extern "C" void Engine_Relay0201a070(void);
-extern "C" s32 PXI_IsCallbackReady(u32 fifo, u32 kind);
 extern "C" void PXI_SetFifoRecvCallback(u32 fifo, void (*callback)(u32, u32, s32));
-extern "C" void WaitByLoop(u32 count);
-extern "C" void func_0201c958(u32 tag, u32 data, s32 err);
 extern "C" void PMi_InitSend(void);
 
 // PMi_InitSend() (0x0201c8b8): once only (the ready flag is 0), clears the busy flag and the parameter, calls

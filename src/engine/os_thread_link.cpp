@@ -3,9 +3,9 @@
 #include "global.h"
 #include "types.h"
 #include "engine/os_thread.h"
+#include "engine/os_switch_api.h"
 
 extern "C" void OSi_InsertLinkToQueue(OsThreadRec *thread, OsThreadRec *queue);
-extern "C" void Os_ThreadSwitch(void);
 extern "C" void Os_LinkThreadAndFlush(OsThreadRec *thread);
 
 // Os_LinkThreadAndFlush(thread) (0x02017a5c): with interrupts off, links thread to the current thread's queue (when thread

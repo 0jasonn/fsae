@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/knifesound_stub_api.h"
 
 // Knife::Sound leaf slot functions (the one-instruction bodies of the Handle and Archive classes). They take the object
 // as self; the vtable pointer is written by the constructors, which are not in this unit.
@@ -15,7 +16,6 @@ void knifeSoundNop1(void *self) {
 // 0x0208bd00: applies the archive's random seed when the field at +4 is not already the one returned by func_020c05dc
 extern "C" void *func_020c05dc(void *self);
 extern "C" void CRYPTOi__r_rand_set_default_init_flag(void *p);
-extern "C" void Knife_Sound_Archive_apply(void *self);
 void Knife_Sound_Archive_apply(void *self) {
     if (func_020c05dc(self) == (void *)((u8 *)self + 4)) {
         return;

@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/objfind_api.h"
 
 // Object list search (module objfind): data_0212c6b0 holds one circular list head per object group (8 bytes each,
 // the list runs through next at +4) and data_0212c6f0 is the end of the heads.
@@ -40,7 +41,6 @@ int getNumberOfObj(u8 kind, u8 id) {
 }
 
 // findObj (0x0207752c): the first object with the given kind and id, or NULL
-extern "C" Entity *findObj(u8 kind, u8 id);
 Entity *findObj(u8 kind, u8 id) {
     ObjListHead *head;
     ObjListNode *node;

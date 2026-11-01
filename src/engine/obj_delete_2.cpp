@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" void *Obj_DeletePassthrough(void *self);
+#include "engine/obj_delete_api.h"
 
 void operator delete(void *block);
 int Passthrough_0200c8f8(int value);

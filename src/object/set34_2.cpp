@@ -2,6 +2,7 @@
 #include "global.h"
 #include "object/cellcalls.h"
 #include "object/set34_2.h"
+#include "object/set34_api.h"
 
 // Set34 family, move unit (module set34). Address -> name:
 //   0x0206ae0c set34_move (original name)
@@ -14,7 +15,6 @@ typedef struct Vars_Set34 {
 } Vars_Set34;
 
 // set34_move, 0x0206ae0c: unless heart_areaCheck reports the actor, marks the cells around it with cellMode
-extern "C" void set34_move(Entity *e);
 
 void set34_move(Entity *e) {
     if (heart_areaCheck(e) != 0) {

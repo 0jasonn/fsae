@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_obj_f.h"
+#include "engine/rect_item_api.h"
 
 // rect_item_2: functions RectItem_allocPtrArray (0x020b8b68), RectItem_allocPtrArray2 (0x020b8bb4), RectSpan_clear
 // (0x020b8c00), RectSpan_freeItems (0x020b8c10), RectItem_freeArray (0x020b8c2c) and RectSpan_callAndMore (0x020b8c78).
@@ -22,14 +23,12 @@ typedef struct RectSpan {
     u16 count;         // 0x04
 } RectSpan;
 
-extern "C" void RectItem_freeBlock(void *holder, void *block);
 extern "C" void RectItem_releaseBlocks(RectItem *self, void *holder);
 extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void *func_020c2c34(void *heap, s32 size);
 
 // RectItem_allocPtrArray(holder, count) (0x020b8b68, provisional name): allocates count pointers (at least one) from
 // the heap of holder and clears them. Returns NULL when the allocation fails.
-extern "C" void **RectItem_allocPtrArray(void *holder, s32 count);
 void **RectItem_allocPtrArray(void *holder, s32 count) {
     void **array;
     void **slot;
@@ -49,7 +48,6 @@ void **RectItem_allocPtrArray(void *holder, s32 count) {
 }
 
 // RectItem_allocPtrArray2(holder, count) (0x020b8bb4, provisional name): the same code as RectItem_allocPtrArray
-extern "C" void **RectItem_allocPtrArray2(void *holder, s32 count);
 void **RectItem_allocPtrArray2(void *holder, s32 count) {
     void **array;
     void **slot;

@@ -1,12 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/res_cursor_api.h"
 
-extern "C" s32 ResCursor_Seek(u8 *cursor, u32 index);
-extern "C" s32 func_020c323c(u8 *cursor);
 extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 
 // ResCursor_SeekAndReset (ResCursor_SeekAndReset, provisional name): ResCursor_Seek, and on success clears the word at +0x10.
-extern "C" s32 ResCursor_SeekAndReset(u8 *cursor, u32 index);
 s32 ResCursor_SeekAndReset(u8 *cursor, u32 index) {
     s32 found;
 
@@ -18,8 +16,6 @@ s32 ResCursor_SeekAndReset(u8 *cursor, u32 index) {
 }
 
 // ResPlayer_Init (ResPlayer_Init, provisional name): clears the cursor at +0x20 and sets the fields of the player record.
-extern "C" void ResCursor_Clear(u8 *cursor);
-extern "C" void ResPlayer_Init(u8 *player);
 void ResPlayer_Init(u8 *player) {
     ResCursor_Clear(player + 0x20);
     *(u32 *)player = 0;
@@ -33,7 +29,6 @@ void ResPlayer_Init(u8 *player) {
 }
 
 // ResCursor_Clear (ResCursor_Clear, provisional name): zeroes the two positions, the entry and the halfword at +0xc.
-extern "C" void ResCursor_Clear(u8 *cursor);
 void ResCursor_Clear(u8 *cursor) {
     *(u32 *)cursor = 0;
     *(u32 *)(cursor + 4) = 0;

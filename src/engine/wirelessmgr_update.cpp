@@ -2,11 +2,11 @@
 #include "global.h"
 #include "types.h"
 #include "engine/wirelessmgr_d.h"
+#include "engine/wirelessmgr_update_api.h"
 
 // Knife::Comm::WirelessManager::update() (0x02090c88): runs with interrupts disabled. Dispatches on the state index
 // (0 to 15) to the state functions, then decrements the TTL of the 16 parent entries while connected.
 
-extern "C" void Knife_Comm_WirelessManager_update(void *self);
 void Knife_Comm_WirelessManager_update(void *self) {
     WmInterruptSection section;
     WirelessManagerWork *wm;

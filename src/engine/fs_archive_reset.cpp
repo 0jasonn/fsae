@@ -9,7 +9,6 @@ typedef struct FsWork {
 } FsWork;
 
 extern "C" void Fs_ResetArchiveSlots(FsWork *self);
-extern "C" s32 FS_IsArchiveTableLoaded(void);
 
 // Fs_ResetArchiveSlots(self) (0x02011ffc): checks the archive table, then clears the seven slot words.
 void Fs_ResetArchiveSlots(FsWork *self) {

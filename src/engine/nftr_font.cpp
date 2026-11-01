@@ -1,10 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/nftr_font_api.h"
 
 // NftrFont_Relocate (provisional name, NftrFont_Relocate): relocates the NFTR font block at base. The records start at +0xc
 // (halfword) and their count is at +0xe; each record has its tag at +0 and its stride at +4. Pointers of the FINF, CWDH and
 // CMAP records are offsets from base and get base added (the zero ones stay zero where the record marks them optional).
-extern "C" void NftrFont_Relocate(u8 *base);
 void NftrFont_Relocate(u8 *base) {
     u8 *rec;
     s32 i;

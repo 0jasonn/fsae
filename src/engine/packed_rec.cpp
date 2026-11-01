@@ -28,8 +28,6 @@ typedef struct PackedRec {
     u8 flag6c;               // 0x6c: bit 0x80 of the first byte
 } PackedRec;
 
-extern "C" const u8 *func_0200b24c(const u8 *src, u32 *value);
-
 extern "C" void PackedRec_Parse(PackedRec *self, PackedSrc *src);
 
 // Parses one record. The flags at +0x6a, +0x6b and +0x6c are the 0x20, 0x40 and 0x80 bits as 0 or 1.

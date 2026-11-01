@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_f.h"
+#include "engine/rect_slot_api.h"
 
 // rect_slot: functions RectItem_allocArray (0x020b8e28), RectObjList_findHit2 (0x020b8e88), RectSlot_status (0x020b8ef8)
 // and RectSlot_init (0x020b8f0c), provisional names.
@@ -71,7 +72,6 @@ RectSlotItem *RectItem_allocArray(void *holder, u32 count) {
 
 // RectObjList_findHit2(items, count, pos) (0x020b8e88, provisional name): index of the first item that RectObj_hitTest
 // accepts at pos, or -1 when none does (the same code as RectObjList_findHit)
-extern "C" s32 RectObjList_findHit2(void **items, s32 count, s16 *pos);
 s32 RectObjList_findHit2(void **items, s32 count, s16 *pos) {
     s16 point[2];
     s16 i;

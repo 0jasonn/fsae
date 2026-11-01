@@ -1,10 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sndheap_linear_api.h"
 
 extern "C" void *SndHeap_AllocLow(u32 *heap, u32 size, u32 align);
 extern "C" void *SndHeap_AllocHigh(u32 *heap, u32 size, u32 align);
-extern "C" void SndHeap_Rewind(u32 *heap);
-extern "C" void SndHeap_ResetHigh(u32 *heap);
 
 // SndHeap_ReserveLinear: reserves size bytes from the linear heap (a zero size becomes 1 byte, the size is rounded up to 4).
 // A flag of zero or more takes the block from the low cursor with that alignment, a negative flag from the high cursor.
@@ -21,7 +20,6 @@ void *SndHeap_ReserveLinear(u32 *heap, u32 size, s32 flag) {
 }
 
 // SndHeap_ResetFlags: bit 0 of flags rewinds the low cursor, bit 1 resets the high cursor.
-extern "C" void SndHeap_ResetFlags(u32 *heap, u32 flags);
 void SndHeap_ResetFlags(u32 *heap, u32 flags) {
     if (flags & 1) {
         SndHeap_Rewind(heap);
@@ -32,7 +30,6 @@ void SndHeap_ResetFlags(u32 *heap, u32 flags) {
 }
 
 // SndHeapPool_Pop: takes the first block of a free list whose next word is at +0; returns the block or 0.
-extern "C" void *SndHeapPool_Pop(void **head);
 void *SndHeapPool_Pop(void **head) {
     void *block;
 

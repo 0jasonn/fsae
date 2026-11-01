@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
+#include "object/getarea_api.h"
 
 // plmove (0x0206cc9c): the actor moves with the player-hit test against each of the four players. Vars hold the
 // base point (0x78, 0x7a) and the half-range (0x7c, 0x7e) of the actor.
@@ -11,9 +12,6 @@ typedef struct Vars_PlMove {
     u16 rangeX;
     u16 rangeY;
 } Vars_PlMove;
-
-extern "C" void getarea(Entity *e);
-extern "C" int func_02086120(Entity *e);
 
 // plmove (0x0206cc9c)
 void plmove(Entity *e) {

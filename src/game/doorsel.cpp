@@ -1,11 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/doorsel_api.h"
 
 // Door select module (doorsel): DoorSelTask runs the current door select step (table data_020f25f0, indexed by the
 // screen state data_0212c500).
 //   DoorSelTask (0x0202a968)
-
-extern "C" void DoorSelTask(void);
 
 extern u8 data_0212c500;
 extern void (*data_0212c564)(void);

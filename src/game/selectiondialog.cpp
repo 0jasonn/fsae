@@ -1,16 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/messageselect_api.h"
 
 // Functions in this file (original names from the debug build):
 //   func_020a1a1c (0x020a1a1c, C++ symbol _Z13func_020a1a1cPv, declared in functions.h), selectionDialog::initWithMsgScrn (0x020a1a30)
 
-extern "C" void Knife_Message_MessageSelect_init(void *self);
-extern "C" void Knife_Message_selectionDialog_dispFrame(void *self);
-extern "C" void Knife_Message_selectionDialog_clearFrame(void *self);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
-extern "C" void Knife_Message_selectionDialog_dispMessage(void *self);
-extern "C" BOOL Knife_Message_selectionDialog_update_move(void *self);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 

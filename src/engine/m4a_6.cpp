@@ -3,13 +3,13 @@
 #include "types.h"
 #include "engine/m4a.h"
 #include "engine/knife_sound_4.h"
+#include "engine/m4a_api.h"
 
 // m4aSongNumStart (0x0208d118). The function after it (func_0208d260) is not matched yet.
 
 // m4aSongNumStart (0x0208d118): starts the song with the given number. Numbers 0x190 to 0x1f3 go to func_0208d260. The
 // other numbers index the loaded-song bitmap; a loaded song is played through the handle that already exists, otherwise
 // a new sequence handle is created and tagged with the number.
-extern "C" void pauseWavePlayer(s32 pause);
 extern "C" u32 func_0208d260(u32 songNum);
 extern "C" u32 m4aSongNumStart(u16 songNum);
 u32 m4aSongNumStart(u16 songNum) {

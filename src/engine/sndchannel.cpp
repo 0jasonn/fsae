@@ -2,6 +2,7 @@
 #include "global.h"
 #include "game/menu.h"
 #include "game/menu_wip.h"
+#include "engine/sndchannel_api.h"
 
 // Functions in this file (provisional names; the bitmasks are the sound channel book-keeping at data_02183d60):
 //   SndChannel_TryLock (SndChannel_TryLock), SndChannel_Unlock (SndChannel_Unlock), SndChannel_ClearWord0 (SndChannel_ClearWord0),
@@ -32,7 +33,6 @@ extern SndChannelEntry data_02183d6c[];
 
 // SndChannel_TryLock (0x020bf418): locks the channels of the mask unless one of them is already locked. Zero is
 // accepted without locking.
-extern "C" s32 SndChannel_TryLock(u32 mask);
 s32 SndChannel_TryLock(u32 mask) {
     if (mask == 0) {
         return 1;

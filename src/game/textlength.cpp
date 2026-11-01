@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textlength_api.h"
 
 // Functions in this file (original names from the debug build):
 //   Knife::Message::TextLengthAnalyzer::TextLengthAnalyzer() (0x020a16c4)
@@ -18,7 +19,6 @@ typedef struct KnifeTextLengthAnalyzer {
 } KnifeTextLengthAnalyzer;
 
 // TextLengthAnalyzer::TextLengthAnalyzer() (0x020a16c4): sets the vtable and clears the counts
-extern "C" void Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(void *a);
 void Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(void *a) {
     KnifeTextLengthAnalyzer *self = (KnifeTextLengthAnalyzer *)a;
     s32 i;

@@ -24,7 +24,6 @@ typedef struct Vars_Setenemy_Child {
     /* 72 */ u8 type2Copy;
 } Vars_Setenemy_Child;
 
-extern "C" s32 func_02084634(u16 a);
 extern const u32 flagBits[];
 
 void set6b_setenemy(Entity *e, u8 index) {

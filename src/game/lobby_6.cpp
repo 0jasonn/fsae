@@ -3,6 +3,7 @@
 #include "types.h"
 #include "game/subtask.h"
 #include "game/lobby.h"
+#include "game/lobby_api.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_lobby_end (0x020b1920)
@@ -10,7 +11,6 @@
 // subTask_lobby_end() (0x020b1920): ends the lobby subtask. Deletes the title dialog, frees the four lobby blocks and
 // the object info blocks, stops the room and the fade, and clears the wireless flag of the exchange state when the
 // device is in wireless mode
-extern "C" void subTask_lobby_end(void);
 void subTask_lobby_end(void) {
     u32 slot;
 

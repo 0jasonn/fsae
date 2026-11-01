@@ -10,7 +10,6 @@ typedef struct WordTable {
     u8 *data;
 } WordTable;
 
-extern "C" s32 func_0200c594(void *self, u32 value, u32 *out);
 extern "C" s32 WordTable_Scan(void *self, WordTable *table);
 
 // WordTable_Scan(self, table) (0x0200c09c): passes each little-endian word of the table to func_0200c594 with a stack word

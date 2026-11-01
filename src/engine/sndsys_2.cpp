@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sndsys_api.h"
 
 extern "C" {
 void SND_StopTimer(u32 mask, u32 a, u32 b, u32 c);
@@ -27,8 +28,6 @@ typedef struct SndDriverBufferState {
 
 extern "C" SndDriverBufferState data_02181964;
 extern "C" u8 data_021819a0[]; // the two driver buffers, 0x11e0 bytes each
-
-extern "C" void SndSys_StopActiveTimer(void);
 
 #define SND_DRIVER_BUFFER_SIZE 0x11e0
 

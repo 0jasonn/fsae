@@ -1,12 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/fileselui_e.h"
+#include "game/fileselui_status_e_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   fileSelUIView_checkSaveStatus (0x020a76d0)
 
 void Task_Chain(u8 index);
-extern "C" s32 fileSelUIView_checkSaveStatus(void *self);
 extern "C" void func_020ac038(s32 a, s32 b, s32 c, s32 d);
 extern u8 data_021350b0[];
 

@@ -1,9 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/mem_api.h"
 
 extern "C" s32 Mem_Compare(const u8 *left, const u8 *right, u32 count);
-extern "C" void Mem_SetCore(void *dst, s32 value, u32 size);
 
 // Compares count bytes: 0 when equal, -1 when the first differing byte of left is lower, 1 otherwise.
 s32 Mem_Compare(const u8 *left, const u8 *right, u32 count) {

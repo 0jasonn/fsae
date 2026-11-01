@@ -2,13 +2,10 @@
 #include "engine/pair_block.h"
 #include "global.h"
 #include "types.h"
+#include "engine/pair_restore_api.h"
 
 extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" u16 GetCRC16(u16 crc, const void *data, u32 size);
-extern "C" s32 OS_IsValidDeliverArg(u32 arg);
-extern "C" void OS_DisableMainExArena(void);
-extern "C" s32 Pair_Restore(u32 arg);
 
 // The pair buffer is re-read from the block at every use (the original keeps no local copy of the pointer).
 #define PAIR_BUF ((u8 *)data_02129cac.pair)

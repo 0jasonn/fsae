@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/subtask.h"
+#include "game/radar_e_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   draw_radar_goal_pos (0x020a6cc0)
@@ -19,7 +20,6 @@ extern const u16 data_020df03c[][4];   // sprite heights, [size][shape]
 extern "C" void func_020c36fc(void *obj, const void *attrs, u16 count);
 
 // draw_radar_goal_pos(long, long) (0x020a6cc0): the goal marker, one OAM entry centred on (x + 0x38, y + 0x10)
-extern "C" void draw_radar_goal_pos(s32 x, s32 y);
 void draw_radar_goal_pos(s32 x, s32 y) {
     GXOamShape shape = (GXOamShape)0;
     u16 width;

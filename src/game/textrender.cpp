@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textrender_api.h"
 
 // Functions in this file (original names from the debug build):
 //   TextRender::setup() (0x020a11fc)
@@ -34,7 +35,6 @@ typedef struct KnifeTextRender {
 } KnifeTextRender;
 
 // TextRender::setup() (0x020a11fc): resets the centre index and computes the start x from the centring value
-extern "C" void Knife_Message_TextRender_setup(void *a);
 void Knife_Message_TextRender_setup(void *a) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 

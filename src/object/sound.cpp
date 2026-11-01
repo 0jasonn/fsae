@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/sound_api.h"
 
 // Sound module, 0x02076f0c to 0x02076fe0: the volume state, its init, and the song request with the player's id.
 //   volumeSet (0x02076f0c), SoundInit (0x02076f40), PlSoundReq (0x02076f6c). SoundReq (0x02076fe0) is in the next unit.
@@ -17,7 +18,6 @@ extern u8 localPlayerIndex; // player index used by PlSoundReq when the game is 
 extern "C" void m4aSongNumSetParam(u16 value, u16 mask, s32 current);
 
 // volumeSet (0x02076f0c)
-extern "C" void volumeSet(u32 volume);
 void volumeSet(u32 volume) {
     if (soundVolumeState.enabled == 0) {
         return;

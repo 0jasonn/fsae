@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sndsys_api.h"
 
 extern "C" {
 void SND_StopTimer(u32 timer, u32 unk1, u32 mask, u32 unk3);
@@ -31,7 +32,6 @@ extern "C" SndStopState data_0218485c;
 
 // SndSys_StopActiveTimer: when the stop state is active, stops its timer (the channel's bit, or none when the index is
 // negative), then flushes the command queue and waits for the last command.
-extern "C" void SndSys_StopActiveTimer(void);
 void SndSys_StopActiveTimer(void) {
     SndStopState *state;
     s32 index;

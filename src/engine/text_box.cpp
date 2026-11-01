@@ -1,13 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/text_box_api.h"
 
-extern "C" void func_020c6c30(u8 *obj, u8 *self);
 extern "C" void TextStream_ReadU16(void);
 extern "C" u32 TextBox_LookupEntry(u8 *entry, u32 value);
 extern "C" u32 data_020df104[];
 
 // TextBox_SetKindHandler (provisional name): TextBox_Init-style call on the record, then the handler at data_020df104 indexed by the kind byte at +7 of the info record at +0.
-extern "C" void TextBox_SetKindHandler(u8 *self, u8 *arg);
 void TextBox_SetKindHandler(u8 *self, u8 *arg) {
     func_020c6c30(arg, self);
     *(u32 *)(self + 4) = data_020df104[*(u8 *)(*(u8 **)self + 7)];
@@ -57,7 +56,6 @@ u8 *TextBox_FindRangeEntry(u8 *self, u32 value) {
 // TextBox_MeasureSegment (provisional name): reads characters with the reader at +4 until a newline (0xa) or the end. Each
 // character adds base plus the signed width from its range entry. outState receives the reader state on a newline and 0 at the
 // end. The result is the total minus one base, or the total when it is not positive.
-extern "C" s32 TextBox_MeasureSegment(u8 *self, s32 base, u32 state, u32 *outState);
 s32 TextBox_MeasureSegment(u8 *self, s32 base, u32 state, u32 *outState) {
     u32 localState;
     s32 total;

@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "game/com_sio.h"
+#include "game/com_api.h"
 
 // Functions in this file (module com, original names from the debug build):
 //   func_020280e0 (dsd name, declared in functions.h), MachiukeStart (MachiukeStart()), MachiukeStop (MachiukeStop()),
@@ -62,8 +63,6 @@ void ComUpdate(void) {
 }
 
 // Empty functions (dsd names kept, plain symbols).
-extern "C" void func_020281a8(void);
-extern "C" void func_020281ac(void);
 
 void func_020281a8(void) {
 }

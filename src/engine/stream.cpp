@@ -1,12 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/stream_api.h"
 
-extern "C" s32 func_02005798(u32 a, u32 b, u32 c, u32 d);
 extern "C" void *CopyBytes(void *dst, const void *src, u32 count);
 
 // Calls func_02005798 with (b, 1, c, a) and returns a when the result equals c, otherwise 0.
-extern "C" s32 Sub_CallChecked(s32 a, s32 b, s32 c);
 
 s32 Sub_CallChecked(s32 a, s32 b, s32 c) {
     s32 result;

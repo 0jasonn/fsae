@@ -2,12 +2,12 @@
 #include "global.h"
 #include "types.h"
 #include "engine/m4a.h"
+#include "engine/m4a_api.h"
 
 // m4a song parameter helpers, 0x0208d790 to 0x0208d830.
 
 // m4aSongNumSetPlayerValue (0x0208d790): forwards a value to the sequence player of a song that is not a wave slot
 // (numbers 0x1ea to 0x1f3 do nothing)
-extern "C" void m4aSongNumSetPlayerValue(u16 songNum, s32 value);
 void m4aSongNumSetPlayerValue(u16 songNum, s32 value) {
     void *handle;
 

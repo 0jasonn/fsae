@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/entity.h"
+#include "object/objdispatch_api.h"
 
 // Second unit of the object dispatch module (objdispatch.cpp has objDispatchClearContact, 0x02076b24).
 //   objDispatchPutWork (0x02076b50): returns the work to the pool (tail call to PutObjWork).
@@ -16,13 +17,11 @@ typedef struct ObjDispatchVars {
 } ObjDispatchVars;
 
 // objDispatchPutWork (0x02076b50)
-extern "C" void objDispatchPutWork(Entity *e);
 void objDispatchPutWork(Entity *e) {
     PutObjWork(e);
 }
 
 // objDispatchAction (0x02076b5c)
-extern "C" void objDispatchAction(Entity *e);
 void objDispatchAction(Entity *e) {
     if (e->action != 0) {
         if (data_0212c4b8 == 0) {

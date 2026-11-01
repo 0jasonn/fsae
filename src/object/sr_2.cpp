@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/misc_d.h"
 #include "global.h"
+#include "object/sr_api.h"
 
 // Rupee rush (module sr): setupRupeeRush places the rupee rush object (kind 3, id 9) on a free cell of the
 // board. Dice index and cell tables are read by getRupeeRushDiceIndex (0x02077650, parked).
@@ -12,7 +13,6 @@ extern const u8 rupeeRushCell[];   // rupeeRushCell: (x, y) cell pairs
 extern EntityNode data_0212c6d0;   // end sentinel of the object list (the head itself is data_0212c6b0[4])
 
 // setupRupeeRush (0x02077684)
-extern "C" void setupRupeeRush(int reuseEnemy);
 void setupRupeeRush(int reuseEnemy) {
     Entity *obj;
     Entity *cur;

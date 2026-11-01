@@ -3,6 +3,7 @@
 #include "game/subtask_d.h"
 #include "global.h"
 #include "types.h"
+#include "game/subtask_hex_api.h"
 
 // hex_ascii_chg0(int, int, unsigned long, void*) (0x0209ad3c): clears the 16-byte buffer dst, formats the value c
 // into it with Str_Sprintf and returns the number of characters written. The format is one of two templates copied
@@ -10,7 +11,6 @@
 
 extern "C" void *FindByteForward(void *buf, u8 value, u32 size);
 
-extern "C" int hex_ascii_chg0(int a, int b, unsigned long c, void *d);
 int hex_ascii_chg0(int a, int b, unsigned long c, void *d) {
     char fmtWide[5] = "%02d";
     char fmtNarrow[4] = "%2d";

@@ -6,7 +6,6 @@
 
 extern "C" void OS_InitContext(OsThreadRec *context, void (*func)(void), u32 stack);
 extern "C" void OS_LoadContext(OsThreadRec *context);
-extern "C" void func_020179c8(u32 arg);
 extern "C" void Os_StartContext(OsThreadRec *context, u32 arg);
 
 // Os_StartContext(context, arg) (0x02017970): when the scheduler block has an initial stack, sets the context up on it to

@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/knife_sound.h"
+#include "engine/knife_sound_api.h"
 
 // Knife::Sound::WaveHandle constructor (0x020904b0, no name in the debug build): runs the Handle constructor, then sets
 // the vtable (data_0211b080), clears the sound pointer at +0x18 and the bytes at +0x1e and +0x1f. Written as a plain
@@ -20,7 +21,6 @@ typedef struct WaveHandleFields {
 
 extern char data_0211b080[]; // WaveHandle vtable (rodata)
 
-extern "C" void *Knife_Sound_WaveHandle_WaveHandle(void *self);
 void *Knife_Sound_WaveHandle_WaveHandle(void *self) {
     WaveHandleFields *wave;
 

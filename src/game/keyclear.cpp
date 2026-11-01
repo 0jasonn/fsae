@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "game/comm.h"
 #include "global.h"
+#include "game/keyclear_api.h"
 
 // Key and window module: keyClear clears the two key word tables and requests comm mode 5. StopEffectWindow and
 // InitCircleWindow drive the circle window through display flags and the window register mirror hblankDma.
@@ -30,8 +31,6 @@ extern WindowState hblankDma;
 extern WindowDisplay data_0212c75c;
 
 extern "C" void keyClear(void);
-extern "C" void CircleWindowHook(void);
-extern "C" void EffectWindowHook(void);
 
 // keyClear (0x0202b54c)
 void keyClear(void) {

@@ -1,9 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/dma_conflict_api.h"
 
 extern "C" void OS_Terminate(void);
-extern "C" void Dma_CheckConflict(s32 skip, u32 mode);
 
 // Dma_CheckConflict(skip, mode) (0x02015940): looks at the control words of the three DMA channels (0x040000b8 + 12 * i,
 // except channel skip). An enabled channel whose transfer mode is not compatible with mode ends the program. A channel

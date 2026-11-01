@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u32 Stub_ReturnOne(void);
+#include "engine/ret_one_api.h"
 
 // Returns 1.
 u32 Stub_ReturnOne(void) {

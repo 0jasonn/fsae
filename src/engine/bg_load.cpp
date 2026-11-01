@@ -3,7 +3,6 @@
 #include "engine/bg_load.h"
 
 extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
-extern "C" void BgPalette_LoadAuto(s32 screen, u8 *palette, u8 *flagTable, u8 *loadTable);
 extern "C" void BgChar_Load(s32 screen, void *charData, void *rect);
 extern "C" void BgScreen_Load(s32 screen, BgLoadInfo *info);
 

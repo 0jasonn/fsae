@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/rupeerush_api.h"
 
 // Rupee rush dice (module rupeerush): rupeeRushState holds the dice cursor (+0) and the level (+1), rupeeRushDice is the
 // 15-cell shuffled table the cursor walks through.
@@ -14,7 +15,6 @@ extern RupeeRushState rupeeRushState; // rupeeRushState
 extern u8 rupeeRushDice[15];          // rupeeRushDice
 
 // changeRupeeRushLevel (0x0207758c): sets the level and starts the dice at a random cursor
-extern "C" void changeRupeeRushLevel(u8 level);
 void changeRupeeRushLevel(u8 level) {
     rupeeRushState.level = level;
     rupeeRushState.diceIndex = Random() % 15;

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/os_sleep_api.h"
 
 // Current-thread record: the thread pointer sits at +8 of data_0212991c and points at the record whose +0xb0 holds the
 // sleep alarm.
@@ -11,16 +12,12 @@ typedef struct OsSleepOwner {
 
 extern OsSleepOwner data_0212991c;
 
-extern "C" void OS_CreateAlarm(void *alarm);
 extern "C" u32 OS_DisableInterrupts(void);
 extern "C" void OS_RestoreInterrupts(u32 state);
-extern "C" void OSi_SleepAlarmCallback(void);
-extern "C" void func_0201918c(void *alarm, u32 lo, u32 hi, void *callback, void *arg);
 extern "C" void Os_LinkThreadAndFlush(s32 flag);
 
 // Sleeps for count units (scaled by 0x82ea and divided by 64 into a 64-bit tick count): the current thread's alarm at
 // +0xb0 is armed and the caller waits until the callback clears the thread pointer.
-extern "C" void Os_SleepAlarm(u32 count);
 
 void Os_SleepAlarm(u32 count) {
     u8 alarm[0x2c];

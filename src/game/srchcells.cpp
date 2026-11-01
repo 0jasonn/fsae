@@ -2,11 +2,10 @@
 #include "global.h"
 #include "types.h"
 #include "enemy/decls_b2.h"
+#include "game/srchcells_api.h"
 
 // Functions in this file (module srchCells, original name from the debug build): srchCells
 //   (srchCells(unsigned short, unsigned short, unsigned short))
-
-extern "C" u16 *srchCells(u16 start, u16 width, u16 height);
 
 // srchCells (0x0204e3e0): allocates a list of width * height cell ids (count in the first halfword). Each row holds
 // the ids from the start id on, and the row starts 64 - width ids further on. The list is then shuffled.

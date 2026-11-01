@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/pane.h"
+#include "engine/pane_a_api.h"
 
 // pane_a: functions Pane_init, Pane_initFromSpec, Pane_clearLinks, Pane_releaseChildren, Pane_freeBlock, Pane_allocChildren, Pane_allocPtrArray, Pane_appendChild (0x020b5578 to 0x020b5728), all matching.
 
@@ -52,7 +53,6 @@ void Pane_clearLinks(Pane *self) {
 }
 
 // Pane_releaseChildren(self, heap) (0x020b5654, provisional name): releases every child object, then the child array
-extern "C" void Pane_freeBlock(void *heap, void *block);
 extern "C" void Pane_releaseChildren(Pane *self, void *heap);
 void Pane_releaseChildren(Pane *self, void *heap) {
     s32 i;
@@ -72,7 +72,6 @@ void Pane_freeBlock(void *heap, void *block) {
 }
 
 // Pane_allocChildren(self, owner, capacity) (0x020b56b8, provisional name): allocates the child array and stores the capacity
-extern "C" void **Pane_allocPtrArray(void *owner, s32 count);
 extern "C" void Pane_allocChildren(Pane *self, void *owner, s32 capacity);
 void Pane_allocChildren(Pane *self, void *owner, s32 capacity) {
     self->children = (Pane **)Pane_allocPtrArray(owner, capacity);

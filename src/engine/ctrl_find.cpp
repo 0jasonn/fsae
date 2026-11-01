@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_f.h"
+#include "engine/ctrl_find_api.h"
 
 // ctrl_find: functions Ctrl_findEntryA (0x020bbe50) to Ctrl_findEntryE (0x020bbf20), provisional names. Each looks the id
 // up with Fs_GetDirFileOffset and returns the entry when its check (a different function per entry) accepts it, otherwise 0.
@@ -49,7 +50,6 @@ void *Ctrl_findEntryC(void *self, s32 id) {
 }
 
 // Ctrl_findEntryD(self, id) (0x020bbeec, provisional name): the same with ResChunk_OpenTTLP
-extern "C" void *Ctrl_findEntryD(void *self, s32 id);
 void *Ctrl_findEntryD(void *self, s32 id) {
     void *entry;
 
@@ -63,7 +63,6 @@ void *Ctrl_findEntryD(void *self, s32 id) {
 }
 
 // Ctrl_findEntryE(self, id) (0x020bbf20, provisional name): the same with ResChunk_GetNRCS
-extern "C" void *Ctrl_findEntryE(void *self, s32 id);
 void *Ctrl_findEntryE(void *self, s32 id) {
     void *entry;
 

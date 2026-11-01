@@ -1,17 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/messageselect_api.h"
+#include "game/selectiondialog_api.h"
 
 // Functions in this file (original names from the debug build):
 //   selectionDialog::stop (0x020a20e0), close (0x020a2108), setVisible (0x020a2138)
 
-extern "C" BOOL Knife_Message_selectionDialog_isModal(const void *a);
-extern "C" void Knife_Message_MessageSelect_init(void *self);
-extern "C" void Knife_Message_selectionDialog_dispFrame(void *self);
-extern "C" void Knife_Message_selectionDialog_clearFrame(void *self);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
-extern "C" void Knife_Message_selectionDialog_dispMessage(void *self);
-extern "C" BOOL Knife_Message_selectionDialog_update_move(void *self);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 
@@ -38,7 +34,6 @@ typedef struct KnifeSelectDialog {
 } KnifeSelectDialog;
 
 // selectionDialog::stop() (0x020a20e0): clears the frame and the state when the dialog is shown
-extern "C" void Knife_Message_selectionDialog_stop(void *a);
 void Knife_Message_selectionDialog_stop(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 
@@ -52,7 +47,6 @@ void Knife_Message_selectionDialog_stop(void *a) {
 
 // selectionDialog::close() (0x020a2108): moves the dialog to the closing state (5), and plays the close sound when the
 // dialog was modal and is visible
-extern "C" void Knife_Message_selectionDialog_close(void *a);
 void Knife_Message_selectionDialog_close(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 

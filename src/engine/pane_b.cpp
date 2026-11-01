@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/pane.h"
+#include "engine/pane_b_api.h"
 
 // pane_b: functions Pane_visitNoop, Pane_getClassInfo (0x020b5840 to 0x020b5844), all matching.
 
@@ -11,7 +12,6 @@ void Pane_visitNoop(Pane *self, void *arg) {
 }
 
 // Pane_getClassInfo() (0x020b5844, provisional name): vtable slot 0 of Pane, returns the class info of Pane
-extern "C" void *Pane_getClassInfo(void);
 void *Pane_getClassInfo(void) {
     return data_02126a60;
 }

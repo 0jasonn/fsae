@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/sr_api.h"
 
 // Staffroll step machine (module sr): StaffrollTask runs the step at data_0212c500 of srStepTable, sr_wait waits for the
 // communication to report that the step is complete. data_0212c4dc is the phase inside the wait.
@@ -16,7 +17,6 @@ extern "C" s32 WXC_GetStateCode(void);
 void ComRequest(u8 request); // C++ name _Z10ComRequesth
 
 // StaffrollTask (0x02077810)
-extern "C" void StaffrollTask(void);
 void StaffrollTask(void) {
     srStepTable[data_0212c500]();
 }

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/ctrl_init_api.h"
 
 // ctrl_init: functions Ctrl_initA (0x020bc0e4) and Ctrl_initB (0x020bc170), provisional names. They differ in the
 // clear flag, the final mode and the three data tables.
@@ -12,8 +13,6 @@ extern u8 data_021270a4[];
 extern u8 data_021270c8[];
 extern u8 data_021270ec[];
 
-extern "C" void func_020c35a4(void *dst, s32 value, s32 size, s32 flag);
-extern "C" void func_020c3b94(void *a, s32 b, s32 c, s32 *d);
 extern "C" void *Ctrl_findEntryA(void *self, void *id);
 extern "C" void *Ctrl_findEntryB(void *self, void *id);
 extern "C" void *Ctrl_findEntryC(void *self, void *id);
@@ -29,7 +28,6 @@ typedef struct CtrlInit {
 
 // Ctrl_initA(self, arg) (0x020bc0e4, provisional name): stores arg, clears 0x80 bytes of the block at +0x2c18 (flag 0),
 // finds the entries A (+0xc) and B (+0x10) and the record C, clears three slots and calls func_020c3b94 with mode 1
-extern "C" void Ctrl_initA(void *selfv, void *arg);
 void Ctrl_initA(void *selfv, void *arg) {
     CtrlInit *self = (CtrlInit *)selfv;
     void *record;
@@ -45,7 +43,6 @@ void Ctrl_initA(void *selfv, void *arg) {
 }
 
 // Ctrl_initB(self, arg) (0x020bc170, provisional name): as Ctrl_initA with clear flag 1, other tables and mode 2
-extern "C" void Ctrl_initB(void *selfv, void *arg);
 void Ctrl_initB(void *selfv, void *arg) {
     CtrlInit *self = (CtrlInit *)selfv;
     void *record;

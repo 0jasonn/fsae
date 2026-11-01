@@ -1,16 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/fs_e_api.h"
 
 // Functions in this file (invented name for fsCreateFile, original names for the rest):
 //   fsCreateFile (0x020a7480), fsSaveBegin (0x020a74cc, empty hook), fsSaveEnd (0x020a74d0, empty hook),
 //   fsLoadFiles() (0x020a74d4)
 
-extern "C" void fsUpdateStatus(u8 slot);
 extern "C" s32 Save4SwordsFile(u8 flags);
 extern "C" void fsCreateFile(u8 slot);
-extern "C" void fsSaveBegin(void);
-extern "C" void fsSaveEnd(void);
-extern "C" void fsLoadFiles(void);
 
 extern u8 data_021350dc[];   // +0x2c of the slot block
 extern u8 data_021350dd[];   // +0x2d of the slot block

@@ -1,11 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/subtask.h"
+#include "game/subtask_radar_e_api.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_radar_end (0x020a6f98)
-
-extern "C" void subTask_radar_end(void);
 
 extern u8 data_0212c7c8[];
 extern u8 frameCounter[];

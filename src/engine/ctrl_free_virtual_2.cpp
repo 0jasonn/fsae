@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/ctrl_free_virtual_api.h"
 
 // ctrl_free_virtual_2: function Ctrl_freeVirtualBlockB (0x020bc818), provisional name, the same code as Ctrl_freeVirtualBlock.
 
@@ -15,7 +16,6 @@ public:
 
 // Ctrl_freeVirtualBlockB(holder, block) (0x020bc818, provisional name): does nothing for a NULL block; otherwise calls
 // the first virtual of block with holder and frees the block from the heap at the first word of holder
-extern "C" void Ctrl_freeVirtualBlockB(void *holder, void *block);
 void Ctrl_freeVirtualBlockB(void *holder, void *block) {
     if (block == NULL) {
         return;

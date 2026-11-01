@@ -3,6 +3,7 @@
 #include "types.h"
 #include "engine/comm_parentinfo.h"
 #include "engine/wireless_manager_d.h"
+#include "engine/wireless_manager_api.h"
 
 // WirelessManager singleton (0x020909c8) and its initializer with the allocator (0x02090a1c, 0x26c bytes). The object
 // lives in bss at data_021770e0, its guard word is at data_021770bc + 4 (bit 0 set once constructed), and its
@@ -12,12 +13,9 @@ extern u32 data_021770bc[]; // guard word at +4 (bss)
 extern u8 data_021770c4[];  // the handle passed to the exit registration (bss)
 extern u8 data_021770e0[];  // the WirelessManager object (bss)
 
-extern "C" void *Knife_Comm_WirelessManager_WirelessManager(void *self);
-extern "C" void *Knife_Comm_WirelessManager_dtor_WirelessManager_0923b4(void *self);
 extern "C" void Chain_Push(void *object, void *dtor, void *handle);
 extern "C" void Knife_Comm_ChildInfo_cleanup(void *self);
 extern "C" void MI_CpuFill8(void *dst, u32 value, u32 size);
-extern "C" int WM_Init(void *sysWork, u32 dmaNo);
 
 // The allocator the manager is initialized with (WirelessAllocator): slot 0 allocates, slot 1 frees. Pure virtual so
 // no vtable is emitted.
@@ -41,7 +39,6 @@ void *func_020909c8(void) {
 // WirelessManager::init(WirelessAllocator*, unsigned long) (0x02090a1c, no original name): stores the allocator, allocates
 // the two buffers (0xf00 and 0x400 bytes, aligned to 0x20), starts the WM library with dmaNo and clears the manager
 // state. FALSE on any failure, with the buffers freed.
-extern "C" BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo);
 BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo) {
     WirelessManagerWork *wm;
     WirelessAllocatorIface *allocator;

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/slot_group_api.h"
 
 // slot_group: function Ctrl_isSlotGroup (0x020bc528), provisional name.
 
@@ -8,7 +9,6 @@ extern s32 data_020dfb80;
 
 // Ctrl_isSlotGroup() (0x020bc528, provisional name): reads the word data_020dfb80. Returns 1 when it is 0..3, or 4..7
 // (after subtracting 4), otherwise 0. The goto labels keep the branch shape of the original.
-extern "C" s32 Ctrl_isSlotGroup(void);
 s32 Ctrl_isSlotGroup(void) {
     s32 v = data_020dfb80;
     s32 t = -1;

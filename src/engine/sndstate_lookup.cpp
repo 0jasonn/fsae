@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sndstate_lookup_api.h"
 
 extern "C" {
 extern u8 *data_021848b0; // sound state pointer
@@ -45,7 +46,6 @@ u8 *func_020c0650(s32 index) {
 }
 
 // SndState_LookupAt10: lookup through the block table at +0x10.
-extern "C" u8 *SndState_LookupAt10(s32 index);
 u8 *SndState_LookupAt10(s32 index) {
     u8 *state;
     u8 *table;
@@ -80,7 +80,6 @@ u8 *SndState_LookupAt10(s32 index) {
 }
 
 // SndState_LookupAt14: lookup through the block table at +0x14.
-extern "C" u8 *SndState_LookupAt14(s32 index);
 u8 *SndState_LookupAt14(s32 index) {
     u8 *state;
     u8 *table;
@@ -115,7 +114,6 @@ u8 *SndState_LookupAt14(s32 index) {
 }
 
 // SndState_LookupAt18: lookup through the block table at +0x18.
-extern "C" u8 *SndState_LookupAt18(s32 index);
 u8 *SndState_LookupAt18(s32 index) {
     u8 *state;
     u8 *table;

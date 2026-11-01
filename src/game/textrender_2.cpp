@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textrender_api.h"
 
 // Functions in this file (original names from the debug build):
 //   TextRender::onReadSelectTag() (0x020a1340)
@@ -34,7 +35,6 @@ typedef struct KnifeTextRender {
 } KnifeTextRender;
 
 // TextRender::onReadSelectTag() (0x020a1340): records the position of the next select entry, in cells
-extern "C" void Knife_Message_TextRender_onReadSelectTag(void *a);
 void Knife_Message_TextRender_onReadSelectTag(void *a) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 

@@ -18,10 +18,6 @@ typedef struct FsRomCmdState {
 
 extern FsRomCmdState data_021297b8;
 
-extern "C" s32 FSi_IsUnreadableRomOffset(u32 offset, u32 romOffset);
-extern "C" void CARD_LockRom(u16 value);
-extern "C" void G3C_Direct1(u16 value);
-
 // FsRom_Command(ctx, cmd) (0x02012810): cmd 1 gives 4; cmd 7 gives 9 for an unreadable offset and 0x101 otherwise;
 // cmd 9 and 10 lock the ROM or switch to direct mode with the value and give 0. Other values give 0x102.
 extern "C" s32 FsRom_Command(FsRomCmdCtx *ctx, s32 cmd);

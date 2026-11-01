@@ -1,9 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/task_state_api.h"
 
-extern "C" void func_02007f58(const char *format, u32 a, u32 b, u32 c, u32 d);
-extern "C" void Task_Start(void);
 extern "C" void Engine_AssertFail(u32 a, u32 b, u32 c, u32 d);
 extern const char data_020df6c0[];
 

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sndlist.h"
+#include "engine/sndsys_api.h"
 
 extern "C" {
 void *func_020c0b20(void *a, void *b, void *callback, s32 c, s32 d);
@@ -20,7 +21,6 @@ typedef struct SndStartEntry {
 
 // SndSys_StartSlot: creates an entry (callback func_020c0058), fills in the slot index, takes a handle from
 // SndHeap_CreateRecord and registers the entry in slot slotIndex of data_02184304. Returns 1 on success, 0 otherwise.
-extern "C" s32 SndSys_StartSlot(s32 slotIndex, void *arg1, void *arg2);
 s32 SndSys_StartSlot(s32 slotIndex, void *arg1, void *arg2) {
     SndStartEntry *entry;
     void *handle;

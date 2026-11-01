@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/knife_message_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   Knife::Message::MessageTextRender::initWithCanvas (0x020a0574, Knife_Message_MessageTextRender_initWithCanvas)
@@ -25,7 +26,6 @@ typedef struct MessageTextRenderFields {
 
 // MessageTextRender::initWithCanvas(void*, void*, unsigned short, unsigned long, unsigned long, unsigned long, unsigned long)
 // (0x020a0574): sets up the canvas from the pixel size (cells are 8 pixels), links the application field and clears the offset
-extern "C" void Knife_Message_MessageTextRender_initWithCanvas(void *a, void *bits, void *buffer, u16 palette, u32 x, u32 y, u32 width, u32 height);
 void Knife_Message_MessageTextRender_initWithCanvas(void *a, void *bits, void *buffer, u16 palette, u32 x, u32 y, u32 width, u32 height) {
     MessageTextRenderFields *self = (MessageTextRenderFields *)a;
 

@@ -1,5 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/clamp_api.h"
+#include "game/messageselect_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   MessageSelect update (0x020a18c4)
@@ -7,8 +9,6 @@
 extern u16 data_0212c510;
 extern u8 localPlayerIndex;
 extern u16 data_0212c58c[];
-extern "C" void clamp_s8(signed char &value, signed char low, signed char high);
-extern "C" void Knife_Message_MessageSelect_update(void *self);
 
 // Selection dialog (Knife::Message::selectionDialog) as MessageSelect update sees it
 typedef struct KnifeSelectMenu {
@@ -24,7 +24,6 @@ typedef struct KnifeSelectMenu {
 
 // MessageSelect update (0x020a18c4): reads the keys (the player's own in a wireless session), moves the state on and
 // the selection with the up and down keys, and plays the cursor sound when the selection changes
-extern "C" void Knife_Message_MessageSelect_update(void *self);
 void Knife_Message_MessageSelect_update(void *self) {
     KnifeSelectMenu *menu = (KnifeSelectMenu *)self;
     u16 keys;

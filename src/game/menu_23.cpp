@@ -2,11 +2,10 @@
 #include "global.h"
 #include "game/menu.h"
 #include "game/menu_wip.h"
+#include "game/menu_api.h"
 
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_CreateEntryDefault (Menu_CreateEntryDefault), Menu_CreateEntryEx (Menu_CreateEntryEx)
-
-extern "C" void Menu_CreateEntryEx(void *out, void *checker, void *a, void *b, void *c, u16 d);
 
 // Menu_CreateEntryDefault (0x020befd0): Menu_CreateEntryEx with a zero sixth argument.
 extern "C" void Menu_CreateEntryDefault(void *out, void *checker, void *a, void *b, void *c);
@@ -16,7 +15,6 @@ void Menu_CreateEntryDefault(void *out, void *checker, void *a, void *b, void *c
 
 // Menu_CreateEntryEx (0x020beff4): looks up the object for id 0x40628 in the checker (func_020c2c34), makes it with
 // func_020bc588 when the lookup found something, then creates the entry with RectBufSet_init and stores it in *out.
-extern "C" void Menu_CreateEntryEx(void *out, void *checker, void *a, void *b, void *c, u16 d);
 void Menu_CreateEntryEx(void *out, void *checker, void *a, void *b, void *c, u16 d) {
     s32 result;
 

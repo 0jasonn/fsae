@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textlength_api.h"
 
 // Functions in this file (original names from the debug build):
 //   TextLengthAnalyzer::onReadNewLine() (0x020a17e8)
@@ -15,9 +16,7 @@ typedef struct KnifeTextLengthAnalyzer {
     s16 unk_4c;
 } KnifeTextLengthAnalyzer;
 
-
 // TextLengthAnalyzer::onReadNewLine() (0x020a17e8): closes the current line and counts it as empty or not
-extern "C" void Knife_Message_TextLengthAnalyzer_onReadNewLine(void *a);
 void Knife_Message_TextLengthAnalyzer_onReadNewLine(void *a) {
     KnifeTextLengthAnalyzer *self = (KnifeTextLengthAnalyzer *)a;
 

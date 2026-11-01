@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/wm_d.h"
+#include "engine/wm_child_api.h"
 
 // ChildInfo entries of the WirelessManager (15 entries of 0x28 bytes at 0x1a04).
 extern "C" void Knife_Comm_ChildInfo_setup(void *child, u16 aid, const u8 *a, const u8 *b);
@@ -21,7 +22,6 @@ typedef struct WmChildCallback {
 
 // WirelessManager::callback_WM_ChildEntry (0x02093690, invented name): an error code 1 sets the timer to -999. Kind 0
 // counts the timer up, kind 7 sets up child entry (index - 1) and kinds 9 and 26 clean it up. Other kinds do nothing.
-extern "C" void Knife_Comm_WirelessManager_callback_WM_ChildEntry(void *result);
 void Knife_Comm_WirelessManager_callback_WM_ChildEntry(void *result) {
     WmDWork *wm;
     WmChildCallback *cb;
@@ -56,7 +56,6 @@ void Knife_Comm_WirelessManager_callback_WM_ChildEntry(void *result) {
 }
 
 // WirelessManager callback at 0x0209377c (invented name): on success the timer counts up, on error it is set to -999.
-extern "C" void Knife_Comm_WirelessManager_callback_WM_StepTimer3(void *result);
 void Knife_Comm_WirelessManager_callback_WM_StepTimer3(void *result) {
     WmDWork *wm;
 

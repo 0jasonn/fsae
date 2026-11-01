@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textreader_api.h"
 
 // Functions in this file (original names from the debug build):
 //   TextReader::~TextReader() (0x020a23e8, base, and 0x020a2408, deleting)
@@ -33,7 +34,6 @@ void *Knife_Message_TextReader_dtor_TextReader_0a23e8(void *self) {
 }
 
 // TextReader::~TextReader() (0x020a2408): the deleting destructor, as 0x020a23e8 and then operator delete
-extern "C" void *Knife_Message_TextReader_dtor_TextReader_0a2408(void *self);
 void *Knife_Message_TextReader_dtor_TextReader_0a2408(void *self) {
     KnifeTextReader *reader = (KnifeTextReader *)self;
 

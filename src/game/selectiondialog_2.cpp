@@ -1,16 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/messageselect_api.h"
+#include "game/selectiondialog_api.h"
 
 // Functions in this file (original names from the debug build):
 //   selectionDialog::isModal (0x020a1d08), getResult (0x020a1d20), update_open (0x020a1d34)
 
-extern "C" void Knife_Message_MessageSelect_init(void *self);
-extern "C" void Knife_Message_selectionDialog_dispFrame(void *self);
-extern "C" void Knife_Message_selectionDialog_clearFrame(void *self);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
-extern "C" void Knife_Message_selectionDialog_dispMessage(void *self);
-extern "C" BOOL Knife_Message_selectionDialog_update_move(void *self);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 
@@ -37,7 +34,6 @@ typedef struct KnifeSelectDialog {
 } KnifeSelectDialog;
 
 // selectionDialog::isModal() const (0x020a1d08): true unless the dialog is idle or finished
-extern "C" BOOL Knife_Message_selectionDialog_isModal(const void *a);
 BOOL Knife_Message_selectionDialog_isModal(const void *a) {
     const KnifeSelectDialog *self = (const KnifeSelectDialog *)a;
 
@@ -59,7 +55,6 @@ u8 Knife_Message_selectionDialog_getResult(const void *a) {
 }
 
 // selectionDialog::update_open() (0x020a1d34): opens the dialog by 0x200 per frame, returns true when it is fully open
-extern "C" BOOL Knife_Message_selectionDialog_update_open(void *a);
 BOOL Knife_Message_selectionDialog_update_open(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 

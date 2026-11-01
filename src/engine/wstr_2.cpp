@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-
-extern "C" u16 *Wstr_FindChar(const u16 *str, s32 value);
+#include "engine/wstr_api.h"
 
 // Finds the first halfword equal to value in a NUL-terminated string; a zero value finds the terminator. NULL when
 // absent.

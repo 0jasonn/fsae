@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/slots_api.h"
 
 // Cursor_GetSpan (Cursor_GetSpan, provisional name): when the count at +8 is at most the last index at +6 plus one and the
 // halfword at +4 is not above the last index, returns last - count + 1; otherwise 0.
@@ -34,7 +35,6 @@ void Slots_ClearThree(s32 *slots) {
 }
 
 // Slots_Set (Slots_Set, provisional name): slots[index] = value.
-extern "C" void Slots_Set(s32 *slots, u32 index, u32 value);
 void Slots_Set(s32 *slots, u32 index, u32 value) {
     slots[index] = value;
 }
@@ -50,7 +50,6 @@ void Slots_ClearThreeAt8(u8 *self) {
 }
 
 // Slots_SetAt8 (Slots_SetAt8, provisional name): the word at +8 + index * 4 is set to value.
-extern "C" void Slots_SetAt8(u8 *self, u32 index, u32 value);
 void Slots_SetAt8(u8 *self, u32 index, u32 value) {
     *(u32 *)(self + 8 + index * 4) = value;
 }
