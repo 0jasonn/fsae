@@ -2,15 +2,11 @@
 #include "engine/player.h"
 #include "global.h"
 #include "object/setmisc.h"
+#include "object/set5f.h"
 
 // Set5f actor, second unit (module set5f). Address -> name:
 //   0x020605bc type0_kudake, 0x02060670 type0_plBackJump
 //   0x020607c4 set5f_type1, 0x02060864 set5f_type2, 0x020608cc set5f_plset (original names)
-
-typedef struct Vars_Set5f {
-    /* 00 */ u8 unk_00[0x7c];
-    /* 7c */ u16 messageId; // message shown by type0_meswait
-} Vars_Set5f;
 
 extern const s8 data_020d90ac[];
 extern const s8 data_020d90c0[];

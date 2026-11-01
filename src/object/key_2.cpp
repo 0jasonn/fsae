@@ -1,13 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/objdecls_a.h"
+#include "object/key.h"
 
 extern u8 data_021349c0[];
 void key_pos_set(Entity *e);
-typedef struct Vars_Key {
-    /* 00 */ u8 unk_00[0x60];
-    /* 60 */ u8 posIndex;
-} Vars_Key;
 
 // key_move, 0x02069930
 void key_move(Entity *e) {

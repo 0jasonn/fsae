@@ -2,6 +2,7 @@
 #include "game/subtask_d.h"
 #include "global.h"
 #include "types.h"
+#include "game/subtask_init_bg.h"
 
 // subTask_init_bg3 (0x0209c02c) and subTask_init_bg2 (0x0209c1d0): load the background chunks of the three
 // subtask slots (a, b, c) for the language data at data_0212c55c. Each slot keeps its base (the loaded block) and its
@@ -19,20 +20,6 @@ typedef struct SubtaskBgChunkBlock {
     void *cBase;     // 0x10
     void *cObj;      // 0x14
 } SubtaskBgChunkBlock;
-
-// Chunk object as opened by ResChunk_OpenRACH2 (slot a): size at 0x10, data at 0x14.
-typedef struct SubtaskRachChunk {
-    u8 unk_00[0x10];
-    u32 size;
-    void *ptr;
-} SubtaskRachChunk;
-
-// Chunk object as opened by ResChunk_OpenTTLP / ResChunk_GetNRCS (slots b and c): size at 0x08, data at 0x0c.
-typedef struct SubtaskNrcsChunk {
-    u8 unk_00[0x8];
-    u32 size;
-    void *ptr;
-} SubtaskNrcsChunk;
 
 extern "C" void subTask_init_bg3(int a, int b, int c);
 void subTask_init_bg3(int a, int b, int c) {

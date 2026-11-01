@@ -2,6 +2,7 @@
 #include "game/subtask_d.h"
 #include "global.h"
 #include "types.h"
+#include "game/subtask_init_bg.h"
 
 // subTask_init_obj(int, int, int, int) (0x0209c41c): switches the sub display control register (0x04001000) to the
 // subtask layout, then for each of the four slots (c, d, a, b, in that code order) with an index above -1 loads its
@@ -22,18 +23,6 @@ typedef struct SubtaskObjBlock {
     void *dObj;      // 0x24
     u8 unk_28[0x24]; // 0x28: cleared by Slots_ClearThree
 } SubtaskObjBlock;
-
-typedef struct SubtaskRachChunk {
-    u8 unk_00[0x10];
-    u32 size;
-    void *ptr;
-} SubtaskRachChunk;
-
-typedef struct SubtaskNrcsChunk {
-    u8 unk_00[0x8];
-    u32 size;
-    void *ptr;
-} SubtaskNrcsChunk;
 
 void subTask_init_obj(int a, int b, int c, int d) {
     SubtaskObjBlock *blk;

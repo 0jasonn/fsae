@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/fdecls.h"
+#include "object/nameplate.h"
 
 // Name plate actor, second unit (module nameplate). Address -> name:
 //   0x0205ba4c namePlate_appear, 0x0205bb1c namePlate_move, 0x0205bc48 namePlate_entry
@@ -14,12 +15,6 @@ enum {
     NP_SLOT_B = 0x1f,  // slot index of the second plate
     NP_FLAG_24 = 0x24, // nonzero: plate is drawn at the second position
 };
-
-typedef struct Vars_NamePlate {
-    /* 00 */ u8 unk_00[0x64];
-    /* 64 */ u8 unk_64[3];
-    /* 67 */ u8 hideMask; // set to 0xff on init
-} Vars_NamePlate;
 
 extern u8 data_021349c0[];
 extern u8 multiSioSelect[];

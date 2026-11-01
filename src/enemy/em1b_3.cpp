@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/entity.h"
 #include "global.h"
+#include "enemy/em1b.h"
 
 // Second unit of actor em1b (type 0 movement, type 1). Vars_Em1b matches src/enemy/em1b.cpp plus the 0x7d field.
 typedef struct Vars_Em1b {
@@ -14,15 +15,6 @@ typedef struct Vars_Em1b {
 } Vars_Em1b;
 
 extern const s8 em1b_dirDeltaTable[]; // em1b_dirDeltaTable, two entries (-1, +1)
-
-// Type 1 (trailing segments). trail[] holds one packed (dx, dy) byte per frame slot, each nibble offset by 8.
-typedef struct Vars_Em1bType1 {
-    /* 00 */ u8 unk_00[0x70];
-    /* 70 */ u16 savedX;
-    /* 72 */ u16 savedY;
-    /* 74 */ u8 trail[8];
-    /* 7c */ u32 frameAnims; // one animation nibble per trail slot
-} Vars_Em1bType1;
 
 extern u16 frameCounter;
 void ofsset(Entity *e); // em1b_2 is not the unit that defines it, see the note in the report

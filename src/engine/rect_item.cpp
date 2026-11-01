@@ -3,6 +3,7 @@
 #include "types.h"
 #include "engine/rect_obj_f.h"
 #include "engine/rect_item_api.h"
+#include "engine/rect_item.h"
 
 // rect_item: functions RectObjPair_setOffsets (0x020b88dc), RectObjPair_setValue (0x020b895c),
 // RectObjPair_updateChildren (0x020b8964), RectItem_clear (0x020b89e4), RectItem_releaseBlocks (0x020b8a04),
@@ -11,16 +12,6 @@
 // Calls through slot n of the vtable of an object (slot 0 is at +0)
 typedef void (*RectSlotFn)(void *self, void *arg);
 #define RECT_SLOT(obj, n) (((RectSlotFn *)(*(void **)(obj)))[n])
-
-// Item of a RectObjPair group (stride 0x18): three pointers, two heap blocks and a count
-typedef struct RectItem {
-    void *unk_00;      // 0x00
-    void *unk_04;      // 0x04
-    void *unk_08;      // 0x08
-    void **block0c;   // 0x0c: pointer array, freed by RectItem_releaseBlocks
-    void **block10;   // 0x10: pointer array, freed by RectItem_releaseBlocks
-    u16 count;        // 0x14
-} RectItem;
 
 // Pair of RectObj children with a value and a limit (the children are RectObjF pointers at +0x14)
 typedef struct RectObjPair {

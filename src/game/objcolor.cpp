@@ -1,19 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "game/objcolor.h"
 
 // Functions in this file (module objcolor, original names from the debug build):
 //   InitObjColor, GetResTranslateID2 (GetResTranslateID2(unsigned short, ResIDTranslate2 const*, long)), registOC,
 //   GetObjColor, PutObjColor
-
-// One record of the object colour table at set58_bodyState: 16 records of 4 bytes. refCount counts the users of the
-// slot, id is the colour id it holds (0xff when empty) and count is the number of slots the colour takes.
-typedef struct OC_CTRL_ {
-    u8 refCount;
-    u8 id;
-    u8 count;
-    u8 unk_3;
-} OC_CTRL_;
 
 // Translation of a resource id by the game state (one entry of data_020cf8d4 per id; value[] for states 1..5)
 typedef struct ResIDTranslate2 {

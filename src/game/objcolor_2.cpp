@@ -1,16 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "game/objcolor.h"
 
 // Functions in this file (module objcolor, original names from the debug build): PutObjColor (PutObjColor(unsigned char))
-
-// One record of the object colour table at set58_bodyState (see objcolor.cpp)
-typedef struct OC_CTRL_ {
-    u8 refCount;
-    u8 id;
-    u8 count;
-    u8 unk_3;
-} OC_CTRL_;
 
 extern u8 set58_bodyState[];
 extern u8 data_02134ae8[];

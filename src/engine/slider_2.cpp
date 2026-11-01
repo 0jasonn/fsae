@@ -2,15 +2,10 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_obj_f.h"
+#include "engine/slider.h"
 
 // slider: functions Slider_setPosition (0x020b9720), Slider_setPositionChecked (0x020b9740) and Slider_updateFlags
 // (0x020b97d4), all matching. The slider keeps two children at +0x14 (see rect_pair.cpp for the child layout).
-
-typedef struct SliderChild {
-    void *vtable;          // 0x00
-    u8 unk_04[0xc];
-    RectFlagBits flags;    // 0x10
-} SliderChild;
 
 typedef struct Slider {
     u8 unk_00[0x14];

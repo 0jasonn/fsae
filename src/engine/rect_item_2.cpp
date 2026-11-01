@@ -3,19 +3,10 @@
 #include "types.h"
 #include "engine/rect_obj_f.h"
 #include "engine/rect_item_api.h"
+#include "engine/rect_item.h"
 
 // rect_item_2: functions RectItem_allocPtrArray (0x020b8b68), RectItem_allocPtrArray2 (0x020b8bb4), RectSpan_clear
 // (0x020b8c00), RectSpan_freeItems (0x020b8c10), RectItem_freeArray (0x020b8c2c) and RectSpan_callAndMore (0x020b8c78).
-
-// Item of a RectObjPair group (stride 0x18), see rect_item.cpp
-typedef struct RectItem {
-    void *unk_00;      // 0x00
-    void *unk_04;      // 0x04
-    void *unk_08;      // 0x08
-    void **block0c;    // 0x0c
-    void **block10;    // 0x10
-    u16 count;         // 0x14
-} RectItem;
 
 // Span of items: the array and its count (count at +4)
 typedef struct RectSpan {

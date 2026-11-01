@@ -37,9 +37,3 @@ void fileSelUIView_errorFileInit(void *self) {
     Knife_mediaWrite();
 }
 
-// Text record written by getText (the layout of Knife::Message::Text used by the file list)
-typedef struct FileSelText {
-    u32 handle;
-    u8 *str;
-    u32 kind;
-} FileSelText;

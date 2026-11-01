@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/entity.h"
 #include "global.h"
+#include "engine/irq.h"
 
 // Functions in this file (address -> name, pending reviewer apply to symbols.txt):
 //   VCountIntr -> VCountIntr
@@ -17,24 +18,10 @@ typedef volatile u16 vu16;
 #define REG_DISPSTAT (*(vu16 *)0x04000004)
 #define REG_DIVCNT (*(vu16 *)0x04000280)
 
-typedef struct IrqState {
-    u8 unk_00[8];
-    void (*handler)(void); // 0x08
-} IrqState;
 extern IrqState irqState;
 
-typedef struct HBlankDmaState {
-    u8 enabled; // 0x00
-    u8 unk_01[3];
-    void *src;  // 0x04
-    void *dst;  // 0x08
-} HBlankDmaState;
 extern HBlankDmaState hblankDma;
 
-typedef struct GlobalBuffer {
-    u32 unk_00;
-    u8 *block; // 0x04, returned by EL_GetGlobalAdr
-} GlobalBuffer;
 extern GlobalBuffer globalBuffer;
 
 extern const u16 tokiWaveUnlockIds[];

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "enemy/attset.h"
 
 // Functions in this file (original names attset, attreset):
 //   attset, attreset
@@ -12,11 +13,6 @@ typedef struct Vars_Attset {
 } Vars_Attset;
 #define VAtt(e) VARS(Vars_Attset, e)
 
-typedef struct GridOrigin {
-    u8 unk_00[0x18];
-    u16 originX;
-    u16 originY;
-} GridOrigin;
 extern GridOrigin data_0212c648;
 
 // Attset: saves the attribute byte of the cell under the entity in the layer and marks it with 0x0f.

@@ -2,17 +2,13 @@
 #include "engine/player.h"
 #include "global.h"
 #include "object/setmisc.h"
+#include "object/set5f.h"
 
 // Set5f actor (module set5f). Address -> name:
 //   0x02060104 Set5f (original name)
 //   0x02060120 set5f_type0, 0x02060140 set5f_type0_init, 0x020601ec type0_initWait
 //   0x02060280 type0_plEntrance, 0x020602f8 type0_meswait, 0x02060404 type0_fall
 //   (type0_tenmetsu at 0x02060450 is in scratch/agentG/nonmatching; the rest is in set5f_2.cpp)
-
-typedef struct Vars_Set5f {
-    /* 00 */ u8 unk_00[0x7c];
-    /* 7c */ u16 messageId; // message shown by type0_meswait
-} Vars_Set5f;
 
 extern const EntityFunc set5f_typeHandlers[]; // set5f_typeHandlers, indexed by e->type
 extern const EntityFunc set5f_type0Actions[]; // set5f_type0Actions, indexed by e->action

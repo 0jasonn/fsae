@@ -1,23 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/set2f.h"
 
 // Set2f actor and its lever helper (module set2f). Address -> name:
 //   0x0205aed8 Set2f (original name), dispatches through set2f_actions
 //   set2f_init at 0x0205af04 is in scratch/agentF/nonmatching/set2f_init.c
 //   0x0205afac set2f_move (original name)
 //   0x0205b024 rewlever (original name)
-
-typedef struct Vars_Set2f {
-    /* 00 */ u8 unk_00[0x64];
-    /* 64 */ u8 triggered; // set once set2f_move has flipped the actor
-} Vars_Set2f;
-
-// data_0212c648 as read by rewlever: grid origin of the map cells.
-typedef struct Set2fGridOrigin {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 originX;
-    /* 1a */ u16 originY;
-} Set2fGridOrigin;
 
 extern const EntityFunc set2f_actions[]; // set2f_actions, indexed by e->action
 extern const u8 data_020d8a54[];         // hitbox of the lever

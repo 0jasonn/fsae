@@ -1,12 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "enemy/loader_decls.h"
-
-typedef struct TakaraEntry {
-    u16 id;
-    u8 handlerIndex;
-    u8 flags;
-} TakaraEntry;
+#include "game/takara.h"
 
 extern TakaraEntry data_02134c30[32];
 extern "C" void takara_set(u8 *records, FRAME_INFO_ *frame, u8 kind);

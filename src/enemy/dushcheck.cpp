@@ -1,14 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "enemy/attset.h"
 
 // Dash checks (em20 dash): dushInitCheck (0x0203ed84) walks the four cells ahead of the entity. Both use the grid origin data_0212c648 and the per-direction cell step table
 // cellDeltaTable (0x020cf91c).
-
-typedef struct GridOrigin {
-    u8 unk_00[0x18];
-    u16 originX; // 18
-    u16 originY; // 1a
-} GridOrigin;
 
 extern GridOrigin data_0212c648;
 extern const u8 cellDeltaTable[];

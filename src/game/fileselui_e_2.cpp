@@ -12,12 +12,6 @@ void Knife_InitialSaveFile(u8 index);
 void Knife_mediaWrite(void);
 extern u8 data_021350b0[];
 
-typedef struct FileSelText {
-    u32 handle;
-    u8 *str;
-    u32 kind;
-} FileSelText;
-
 // fileSelUIView::getText(Knife::Message::Text*, unsigned long, Knife::Message::Language) (0x020a8d78): fills the text
 // record for the save entry textId (entries of 0x50 bytes from 9000)
 s32 fileSelUIView_getText(void *self, void *text, u32 textId, s32 language) {

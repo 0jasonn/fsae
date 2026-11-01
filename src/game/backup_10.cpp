@@ -3,16 +3,11 @@
 #include "global.h"
 #include "game/savemedia.h"
 #include "game/knife_power.h"
+#include "game/backup.h"
 
 // Save media unit 10 (module backup). Address -> name:
 //   0x0205663c Knife_loadSaveFile (provisional, was Knife_loadSaveFile)
 
-// data_02171d10: save load state. +04 set once a file is in the save buffer, +08 its length.
-typedef struct SaveLoadState {
-    void *unk_00;
-    u32 loaded;
-    u32 fileLength;
-} SaveLoadState;
 #define SAVE_LOAD_STATE (*(SaveLoadState *)&data_02171d10)
 
 extern u32 data_021152d0; // slot whose file was loaded last

@@ -2,21 +2,12 @@
 #include "game/rankingsave.h"
 #include "global.h"
 #include "game/savemedia.h"
+#include "object/set0a.h"
 
 // Set actor unit 6 (module set). Address -> name (original names where listed in symbols.txt):
 //   0x02057cec set0a_move
 //   0x02057d58 set0a_moveset
 //   0x02057dec set0a_setenemy
-
-// File-local fields of the set actors (Entity bytes from 0x6c on).
-typedef struct SetVars {
-    /* 00 */ u8 unk_00[0x6c];
-    /* 6c */ u16 retainFlag;
-    /* 6e */ u8 unk_6e[2];
-    /* 70 */ u8 setKind;
-    /* 71 */ u8 setParam1;
-    /* 72 */ u8 setParam2;
-} SetVars;
 
 extern const u8 data_020d87a0[];
 

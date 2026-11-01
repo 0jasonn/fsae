@@ -38,4 +38,11 @@ void fileSelUIView_viewWillApper(FileSelUIView *self);
 void fileSelUIView_setupTextRender(FileSelUIView *self);
 }
 
+// Text record written by getText (the layout of Knife::Message::Text used by the file list)
+typedef struct FileSelText {
+    u32 handle;
+    u8 *str;
+    u32 kind;
+} FileSelText;
+
 #endif

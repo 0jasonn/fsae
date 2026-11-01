@@ -1,21 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/set2f.h"
 
 // Set2f actor, second unit (module set2f). Address -> name:
 //   0x0205afac set2f_move (original name)
 //   0x0205b024 rewlever (original name)
-
-typedef struct Vars_Set2f {
-    /* 00 */ u8 unk_00[0x64];
-    /* 64 */ u8 triggered; // set once set2f_move has flipped the actor
-} Vars_Set2f;
-
-// data_0212c648 as read by rewlever: grid origin of the map cells.
-typedef struct Set2fGridOrigin {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 originX;
-    /* 1a */ u16 originY;
-} Set2fGridOrigin;
 
 extern u32 em12_typeMasks[];
 extern const u32 flagBits[]; // flagBits, indexed by e->type

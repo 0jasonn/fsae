@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
+#include "enemy/em1e.h"
 
 typedef struct Vars_PathMover {
     /* 00 */ u8 unk_00[0x70];
@@ -13,15 +14,10 @@ typedef struct Vars_PathMover {
 } Vars_PathMover;
 #define V(e) VARS(Vars_PathMover, e)
 
-typedef struct UnkStruct_0212c540 {
-    u16 unk_0;
-    u16 unk_2;
-} UnkStruct_0212c540;
 extern UnkStruct_0212c540 data_0212c540;
 extern const EntityFunc em2b_actions[];
 extern const EntityFunc em2b_moveActions[];
 extern const u8 em2b_hitbox[];
-
 
 void Em2b(Entity *e) {
     if (data_0212c540.unk_2 > 1) {

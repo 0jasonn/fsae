@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/objdecls_a.h"
+#include "object/key.h"
 
 extern EntityFunc plateTable[];        // plateTable
 extern EntityFunc kumo0Table[];        // kumo0Table
@@ -14,12 +15,6 @@ extern u16 data_0212c594[];
 extern u8 data_021349c0[];
 
 void key_pos_set(Entity *e);
-
-// Actor fields of the key family, file-local.
-typedef struct Vars_Key {
-    /* 00 */ u8 unk_00[0x60];
-    /* 60 */ u8 posIndex; // index into trigTable for the position on the key's circle
-} Vars_Key;
 
 // key_silver, 0x020695c8
 void key_silver(Entity *e) {

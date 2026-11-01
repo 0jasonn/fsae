@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/entity.h"
 #include "global.h"
+#include "enemy/em1e.h"
 
 extern const EntityFunc em1e_actions[];
 extern const EntityFunc em1e_normalActions[];
@@ -10,10 +11,6 @@ extern const s8 em1e_piyoriSway[];
 extern const EntityFunc em1f_actions[];
 extern const u8 em1f_hitbox[];
 
-typedef struct UnkStruct_0212c540 {
-    u16 unk_0;
-    u16 unk_2;
-} UnkStruct_0212c540;
 extern UnkStruct_0212c540 data_0212c540;
 
 void em1e_main(Entity *e) {

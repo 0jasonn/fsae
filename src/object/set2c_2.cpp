@@ -1,14 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "object/set2c.h"
 
 // Set2c actor, second unit (module set2c). Address -> name:
 //   0x0205a798 set2c_wait (original name)
-
-typedef struct Vars_Set2c {
-    /* 00 */ u8 unk_00[0x60];
-    /* 60 */ u32 typeBits; // ParseTypeBits(e->type2), tested against em12_typeMasks[e->areaIndex]
-    /* 64 */ u32 flagMask; // flagBits[e->type], set or cleared in em12_typeMasks
-} Vars_Set2c;
 
 extern u32 em12_typeMasks[];
 

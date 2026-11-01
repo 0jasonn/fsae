@@ -1,15 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/setmisc.h"
+#include "object/set06.h"
 
 // Set06 actor, second unit (module set06). Address -> name:
 //   0x02060bb0 set06_move, 0x02060ccc set06_die (original names)
 //   0x02060dbc posAdd (original name)
-
-typedef struct WWORK {
-    s16 x; // offset added to the entity's x (integer half)
-    s16 y; // offset added to the entity's y (integer half)
-} WWORK;
 
 typedef struct Vars_Set06 {
     /* 00 */ u8 unk_00[0x60];
@@ -18,12 +14,6 @@ typedef struct Vars_Set06 {
     /* 68 */ WWORK posBack; // offset applied when the set moves back
     /* 6c */ u16 cellId; // id passed to RewCell
 } Vars_Set06;
-
-typedef struct UnkStruct_0212c648_S {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-} UnkStruct_0212c648_S;
 
 extern UnkStruct_0212c648_S data_0212c648;
 extern const EntityFunc data_02115a20[]; // indexed by e->action
