@@ -39,7 +39,7 @@ void make_item_char(void) {
     if (data_0212c618[0xc] == 0) {
         return;
     }
-    useAltResource = data_0212c7c8[0x8e] == 1 || data_0212c7c8[0x8e] == 4;
+    useAltResource = data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4;
     if (useAltResource) {
         graphics = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x287);
     } else {
@@ -56,7 +56,7 @@ void make_item_char_2p(void) {
     if (data_0212c618[0x2c] == 0) {
         return;
     }
-    useAltResource = data_0212c7c8[0x8e] == 1 || data_0212c7c8[0x8e] == 4;
+    useAltResource = data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4;
     if (useAltResource) {
         graphics = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x287);
     } else {

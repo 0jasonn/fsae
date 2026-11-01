@@ -148,7 +148,7 @@ void em2a_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     InitAnimationForceUpdate(e, 6);
-    e->timer = data_0212c7c8.unk_0 * 3;
+    e->timer = data_0212c7c8.playerCount * 3;
     e->subtimer = 0xb4;
     V(e)->effectTimer = 0x2a30;
     e->speed = 0x300;

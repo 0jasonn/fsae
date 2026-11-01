@@ -61,7 +61,7 @@ void type0_plBackJump(Entity *e) {
             tama->layer = 0x8000;
         }
     }
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         data_0212ceb0[i].state = 0xf;
         data_0212ceb0[i].stateTimer = 0xb4;
         data_0212ceb0[i].motionId = 0xc;
@@ -132,7 +132,7 @@ void set5f_type2(Entity *e) {
     data_0212ceb0[i].entity->animationState = 0;
 
 void set5f_plset(Entity *e) {
-    switch (data_0212c7c8.unk_0) {
+    switch (data_0212c7c8.playerCount) {
     case 2:
         SET5F_PLAYER_POS(0, 0x1e80000, 0x2780000);
         SET5F_PLAYER_POS(1, 0x2080000, 0x2780000);

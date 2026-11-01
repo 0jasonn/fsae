@@ -13,12 +13,12 @@ void rupeeUpdate(void) {
     s32 current;
     u8 value;
 
-    value = data_0212c7c8[0x24] & 0x7f;
+    value = data_0212c7c8.unk_24 & 0x7f;
     if (data_0212c618[0xd] != value) {
         data_0212c618[0xd] = value;
         data_0212c618[2] = 1;
     }
-    target = *(s32 *)(data_0212c7c8 + 8);
+    target = (s32)data_0212c7c8.score;
     diff = abs_s32(target - *(s32 *)(data_0212c618 + 0x10));
     if (diff == 0) {
         return;

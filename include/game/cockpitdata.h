@@ -3,11 +3,10 @@
 
 // Data and helpers shared by the E units (not in functions.h yet).
 #include "engine/functions.h"
+#include "engine/player.h"
 
-// Game state block (UnkStruct_0212c7c8 in engine/player.h): byte 0 is the player count, 0x24 a sound/telop flag.
-extern u8 data_0212c7c8[];
+// Game state block (GameState in engine/player.h): byte 0 is the player count, 0x24 a sound/telop flag.
 // PlayerData[4], 0x94 bytes each. Field offsets: 0x03+4 flags, 0x28 entity pointer, 0x3c state byte.
-extern u8 data_0212ceb0[];
 // Per-type halfword flags (4 entries).
 extern u16 data_0212c584[];
 // Per-type health (current) and per-type maximum (in hearts) bytes.
@@ -43,8 +42,8 @@ extern u8 data_0212c830[];
 extern u16 data_0212c63c[];
 extern u8 telopRequest[];
 
-#define GS_U8(off) (*(u8 *)(data_0212c7c8 + (off)))
-#define GS_S32(off) (*(s32 *)(data_0212c7c8 + (off)))
+#define GS_U8(off) (*((u8 *)&data_0212c7c8 + (off)))
+#define GS_S32(off) (*(s32 *)((u8 *)&data_0212c7c8 + (off)))
 #define RUPEE_U8(off) (*(u8 *)(data_0212c618 + (off)))
 #define RUPEE_U16(off) (*(u16 *)(data_0212c618 + (off)))
 #define RUPEE_S32(off) (*(s32 *)(data_0212c618 + (off)))
@@ -58,7 +57,7 @@ extern u16 data_020cf810[];
 
 #define KAKERA_U32(off) (*(u32 *)(telopRequest + (off)))
 
-#define PL_BYTE(i, off) (data_0212ceb0[(i) * 0x94 + (off)])
-#define PL_ENTITY(i) (*(Entity **)(data_0212ceb0 + (i) * 0x94 + 0x28))
+#define PL_BYTE(i, off) (((u8 *)&data_0212ceb0[i])[off])
+#define PL_ENTITY(i) (data_0212ceb0[i].entity)
 
 #endif

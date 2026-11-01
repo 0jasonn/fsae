@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 void BindPlayers(void) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         BindPlayer(i);
     }
     frameCounter[0x13] = 1;
@@ -49,7 +49,7 @@ void BindPlayers(void) {
 void WarpPlayer(void) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         data_0212ceb0[i].entity->action = 0x14;
         data_0212ceb0[i].entity->subAction = 0;
     }

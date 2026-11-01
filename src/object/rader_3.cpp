@@ -19,7 +19,7 @@ void rp_init(Entity *e) {
     }
     spawned = 0;
     knife = KnifeApp_getInstance();
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if (!(i == localPlayerIndex && KnifeApp_isWirelessMode(knife))) {
             child = GetSetWork(0x10, 1, (u8)i);
             if (child != NULL) {

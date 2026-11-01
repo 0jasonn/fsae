@@ -13,7 +13,7 @@ u8 *Cockpit_GetGfxAddr(s32 index) {
     u8 *block;
     s32 isBig = 1;
 
-    if (data_0212c7c8[0x8e] != 1 && data_0212c7c8[0x8e] != 4) {
+    if (data_0212c7c8.unk_8e != 1 && data_0212c7c8.unk_8e != 4) {
         isBig = 0;
     }
     if (isBig) {

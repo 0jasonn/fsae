@@ -27,9 +27,9 @@ int func_02081b64(void) {
     s32 i;
     s32 count;
 
-    count = data_0212c7c8.unk_0;
+    count = data_0212c7c8.playerCount;
     for (i = 0; i < count; i++) {
-        if ((*(u32 *)((u8 *)&data_0212c7c8 + i * 8 + 0x28) & 0x200) == 0) {
+        if ((data_0212c7c8.slots[i].flags & 0x200) == 0) {
             return 0;
         }
     }
@@ -70,7 +70,7 @@ void demolink_set(void) {
 
     pos = GetTablePlNum(demolinkPosTable, 0);
     i = 0;
-    while (i < data_0212c7c8.unk_0) {
+    while (i < data_0212c7c8.playerCount) {
         e = func_02072554(i);
         e->x.HALF.HI = pos[0];
         e->y.HALF.HI = 0x178;

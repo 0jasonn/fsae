@@ -68,7 +68,7 @@ void type0_wait0(Entity *e) {
     }
     e->action = 5;
     e->timer = 0x3c;
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         data_0212ceb0[i].entity->animationState = 4;
     }
 }

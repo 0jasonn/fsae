@@ -67,7 +67,7 @@ void em0f_init(Entity *e) {
     e->unk_6a = 1;
     VARS(Vars_Em0f, e)->aimTarget = EmGetAimPl();
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        switch (data_0212c7c8.unk_0) {
+        switch (data_0212c7c8.playerCount) {
             case 2:
                 e->health = 0x4c;
                 break;
@@ -86,7 +86,7 @@ void em0f_init(Entity *e) {
 void em0f_eyeopen(Entity *e) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         PlayerData *player = &data_0212ceb0[i];
         if (player->entity->z.HALF.HI == 0) {
             player->motionId = 0;
@@ -119,7 +119,7 @@ void em0f_meswait(Entity *e) {
         e->subAction = 1;
         return;
     }
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if (data_0212c584[i] & 0x1000) {
             return;
         }

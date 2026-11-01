@@ -27,7 +27,7 @@ void set51_parent(Entity *e) {
 
     e->action++;
     CalcRanking();
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         child = GetSetWork(0x51, 1, ranking_getKey(i));
         if (child != NULL) {
             child->contactedEntity = data_0212ceb0[i].entity;

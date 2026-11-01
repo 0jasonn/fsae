@@ -19,7 +19,7 @@ void setupRupeeRush(int reuseEnemy) {
     u8 cell;
     u8 found;
 
-    if (reuseEnemy != 0 && getNumberOfObj(3, 9) <= data_0212c7c8.unk_0 * 2 + 1) {
+    if (reuseEnemy != 0 && getNumberOfObj(3, 9) <= data_0212c7c8.playerCount * 2 + 1) {
         obj = GetEnemyWork(9);
         if (obj != 0) {
             obj->type = rupeeRushState[1];

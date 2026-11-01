@@ -197,7 +197,7 @@ void em09_init(Entity *e) {
     VBT(e)->savedPalette = e->spriteSettings.b16;
     e->spriteSettings.b20 = em09_paletteByType[e->type];
     e->spriteSettings.b16 = e->spriteSettings.b20;
-    if (*((u8 *)&data_0212c7c8 + 0x8e) == 2) {
+    if (data_0212c7c8.unk_8e == 2) {
         altPalette = *(Tbl3 *)em09_altPaletteA;
         e->spriteSettings.b20 = altPalette.v[e->type];
         e->spriteSettings.b16 = e->spriteSettings.b20;

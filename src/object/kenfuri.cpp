@@ -53,7 +53,7 @@ void union_move(Entity *e) {
     e->timer = 0x3c;
     if (e->type == 0) {
         e->spriteSettings.b0 = 1;
-        e->spriteSettings.b16 = (*((u8 *)&data_0212c7c8 + 0x53) + 7) & 0xf;
+        e->spriteSettings.b16 = (data_0212c7c8.unk_50[3] + 7) & 0xf;
         e->spriteSettings.b20 = e->spriteSettings.b16;
         SoundReq(0x208);
     } else {

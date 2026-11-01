@@ -7,7 +7,7 @@
 //   0x02076620 rr_plset (original name plset; places each player's entity for the rupee rush start)
 
 void rr_plset(Entity *e) {
-    switch (data_0212c7c8.unk_0) {
+    switch (data_0212c7c8.playerCount) {
     case 1:
         data_0212ceb0[0].entity->x.HALF.HI = 0x1f8;
         data_0212ceb0[0].entity->y.HALF.HI = 0x1c8;

@@ -23,13 +23,13 @@ void WizGetTarget(Entity *e) {
     b = data_0212ceb0[1].entity;
     c = data_0212ceb0[2].entity;
     d = data_0212ceb0[3].entity;
-    if (data_0212c7c8.unk_0 == 2) {
+    if (data_0212c7c8.playerCount == 2) {
         goto pass1;
     }
-    if (data_0212c7c8.unk_0 == 3) {
+    if (data_0212c7c8.playerCount == 3) {
         goto pass2;
     }
-    if (data_0212c7c8.unk_0 != 4) {
+    if (data_0212c7c8.playerCount != 4) {
         goto choose;
     }
     if (a->health > b->health) { swap = a; a = b; b = swap; }
@@ -41,7 +41,7 @@ pass2:
 pass1:
     if (a->health > b->health) { swap = a; a = b; b = swap; }
 choose:
-    choice = data_020d2400[(data_0212c7c8.unk_0 - 1) * 8 + (Random() & 7)];
+    choice = data_020d2400[(data_0212c7c8.playerCount - 1) * 8 + (Random() & 7)];
     if (choice == 1) {
         goto pickB;
     }

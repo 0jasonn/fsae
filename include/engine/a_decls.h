@@ -4,6 +4,7 @@
 // Callees and data used by the implementer A files (src/wip/A/) that engine/functions.h does not declare yet.
 // The reviewer moves the ones with an original name into functions.h.
 #include "engine/functions.h"
+#include "engine/player.h"
 
 // Grid origin used to turn a world position into a map cell (data_0212c648, bss). Its u16 pair sits at 0x18 / 0x1a.
 typedef struct GridOrigin {
@@ -34,8 +35,7 @@ extern "C" void EffectSet(Entity *e, int kind, int arg);
 void RewCellOne(u16 cell, u16 x, u16 y);
 void PuyoAnkyo(u16 x, u16 y);
 
-// Game state block (UnkStruct_0212c7c8 in engine/player.h): byte 1 is the mode, byte 0x48 an index.
-extern u8 data_0212c7c8[];
+// Game state block (GameState in engine/player.h): byte 1 is the mode, byte 0x48 an index.
 
 // One 8-byte entry of the per-mode tables at bgmIndexTable: the first word points at a byte table (+1 is tested).
 typedef struct RewCellEntry {
@@ -62,7 +62,6 @@ typedef struct BG_BUFF_ BG_BUFF_;
 
 // Cockpit block and player blocks (PlayerData[4], 0x94 bytes each; entity pointer at 0x28).
 extern u8 data_0212c618[];
-extern u8 data_0212ceb0[];
 extern u8 data_0212c82c[];
 extern u8 *data_0212c53c; // current player block
 

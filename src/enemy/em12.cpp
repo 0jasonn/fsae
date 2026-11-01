@@ -18,7 +18,7 @@ void em12_init(Entity *e) {
     e->y.HALF.HI = data_0212c648.unk_1a + (e->timer << 4) + em12_spawnOffsetY[e->areaIndex * 2];
     V(e)->homeY = e->y.HALF.HI;
     func_0208ae30(e);
-    e->spriteSettings.b20 = GetObjColor(em12_colorByPlayer[data_0212c7c8.unk_1[0]]);
+    e->spriteSettings.b20 = GetObjColor(em12_colorByPlayer[data_0212c7c8.unk_01]);
     e->spriteSettings.b16 = e->spriteSettings.b20;
 }
 

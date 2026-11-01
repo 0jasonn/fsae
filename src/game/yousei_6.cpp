@@ -7,7 +7,7 @@ extern "C" void YouseiDemoLoad(void);
 void YouseiDemoLoad(void) {
     FRAME_INFO_ *frame;
 
-    frame = youseiFrameTable[data_0212c7c8.unk_1[0]];
+    frame = youseiFrameTable[data_0212c7c8.unk_01];
     data_02134968[0] = frame->infoRows;
     MultiRoomInit(frame->roomNo);
     FrameSet(frame->frameNo);

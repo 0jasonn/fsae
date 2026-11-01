@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/player.h"
 
 // Functions in this file (module resid, original names from the debug build): GetResTranslateID
 // (GetResTranslateID(unsigned short, ResIDTranslate const*, long)). Kept under its plain name, because src/engine/vgroup.cpp
@@ -12,7 +13,6 @@ typedef struct ResIDTranslate {
     u16 value[5];
 } ResIDTranslate;
 
-extern u8 data_0212c7c8[];
 
 extern "C" u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count);
 
@@ -26,7 +26,7 @@ u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count) {
     for (i = 0; i < count; i++) {
         entry = &table[i];
         if (id == entry->id) {
-            state = data_0212c7c8[0x8e];
+            state = data_0212c7c8.unk_8e;
             if (state == 1) {
                 return entry->value[0];
             }

@@ -34,7 +34,7 @@ void jumpInit(Entity *e) {
     } else {
         found = -1;
         if (VJT(e)->target->health == 0) {
-            count = data_0212c7c8.unk_0;
+            count = data_0212c7c8.playerCount;
             for (i = 0; i < count; i++) {
                 if (data_0212ceb0[i].entity->health != 0) {
                     found = i;

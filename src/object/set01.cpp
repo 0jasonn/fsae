@@ -35,7 +35,7 @@ void set01_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     if (e->timer != 0xff) {
-        e->timer = (u32)e->timer % data_0212c7c8.unk_0; // unsigned divide in the original
+        e->timer = (u32)e->timer % data_0212c7c8.playerCount; // unsigned divide in the original
     }
     InitAnimationForceUpdate(e, 0);
     EnqueueSFX(5);

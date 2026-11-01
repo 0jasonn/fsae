@@ -74,7 +74,7 @@ void type0_rockon(Entity *e) {
         }
     }
     if (e->child == NULL) {
-        e->child = data_0212ceb0[Random() % data_0212c7c8.unk_0].entity;
+        e->child = data_0212ceb0[Random() % data_0212c7c8.playerCount].entity;
     }
     e->action = 2;
     e->timer = 0xf;

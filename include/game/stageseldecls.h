@@ -45,7 +45,7 @@ typedef struct SselObjTable {
 } SselObjTable;
 extern SselObjTable data_02171d58;
 
-// Per-player flags, 8 bytes each, starting right after UnkStruct_0212c7c8 (enemyTypeFlags)
+// Per-player flags, 8 bytes each, starting right after GameState (enemyTypeFlags)
 typedef struct SselPlayerFlags {
     /* 00 */ u32 flags;
     /* 04 */ u8 unk_04;

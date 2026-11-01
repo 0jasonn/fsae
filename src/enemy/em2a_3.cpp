@@ -172,7 +172,7 @@ void coreSet(Entity *e) {
     VC(e)->corePart2->type2 = em2a_corePartTypes[formation][2] | 0x80;
     VC(e)->corePart3->type2 = em2a_corePartTypes[formation][3] | 0x80;
     u8 rnd = Random() & 3;
-    u8 idx = rnd + (data_0212c7c8.unk_0 - 1) * 4;
+    u8 idx = rnd + (data_0212c7c8.playerCount - 1) * 4;
     VP(VC(e)->corePart0)->pattern = em2a_corePatterns[idx][VC(e)->corePart0->type2 & 0xf];
     VP(VC(e)->corePart1)->pattern = em2a_corePatterns[idx][VC(e)->corePart1->type2 & 0xf];
     VP(VC(e)->corePart2)->pattern = em2a_corePatterns[idx][VC(e)->corePart2->type2 & 0xf];
@@ -245,7 +245,7 @@ void bigjumpinit(Entity *e) {
 }
 
 void lifeset(Entity *e) {
-    e->health = em2a_healthTable[data_0212c7c8.unk_0 - 1][e->type - 1];
+    e->health = em2a_healthTable[data_0212c7c8.playerCount - 1][e->type - 1];
 }
 
 void em2a_ruppyset(Entity *e) {
@@ -303,7 +303,7 @@ u8 move3search(Entity *e) {
     u8 best;
     u16 bestDist = 0xffff;
     best = 0xff;
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if (e->timer != i) {
             Entity *player = data_0212ceb0[i].entity;
             if (player->x.HALF.HI < 0x250) {

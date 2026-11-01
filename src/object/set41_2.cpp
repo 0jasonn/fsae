@@ -19,7 +19,7 @@ void set41_wait(Entity *e) {
 
     if (e->type == 1) {
         for (i = 0; i < 4; i++) {
-            if (data_0212c7c8[0x5c + i] != 0) {
+            if (data_0212c7c8.unk_5c[i] != 0) {
                 appear(e);
                 return;
             }

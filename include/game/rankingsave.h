@@ -5,6 +5,7 @@
 #include "engine/functions.h"
 #include "engine/entity.h"
 #include "game/gamestateview_c.h"
+#include "engine/player.h"
 
 extern "C" {
 s32 FX_Sqrt(s32 x);
@@ -76,15 +77,6 @@ typedef struct RankEffectState {
 } RankEffectState;
 extern RankEffectState data_021349c0;
 
-// data_0212ceb0: per-player slots, 0x94 bytes each (same bytes as PlayerData in engine/player.h)
-typedef struct RankPlayerSlot {
-    /* 00 */ u8 unk_00[0x0c];
-    /* 0c */ u8 unk_0c;
-    /* 0d */ u8 unk_0d[0x1b];
-    /* 28 */ Entity *entity;
-    /* 2c */ u8 unk_2c[0x94 - 0x2c];
-} RankPlayerSlot;
-extern RankPlayerSlot data_0212ceb0[4];
 
 typedef void (*RankVoidFunc)(void);
 extern RankVoidFunc data_0212c564; // per-frame handler called by ranking_calc

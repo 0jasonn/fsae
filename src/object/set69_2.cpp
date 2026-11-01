@@ -17,7 +17,7 @@ void type0_waitkamae(Entity *e) {
     e->action = 7;
     e->timer = 0x96;
     em12_typeMasks[0] = 0;
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         spawn = GetSetWork(0x68, 0, 0);
         if (spawn != NULL) {
             ObjPosCopyOfs32(data_0212ceb0[i].entity, spawn, 0xa0000, -0x100000);
@@ -36,7 +36,7 @@ void type0_wait2(Entity *e) {
     e->action = 8;
     e->timer = 0x3c;
     em12_typeMasks[0] = 1;
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         spawn = GetSetWork(0x68, 1, i);
         if (spawn != NULL) {
             ObjPosCopyOfs32(data_0212ceb0[i].entity, spawn, 0xa0000, -0x100000);

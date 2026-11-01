@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "game/cellcommon.h"
+#include "engine/player.h"
 
 // Functions in this file (original names from the debug build):
 //   random_baneyuka_set
@@ -25,7 +26,6 @@ void random_baneyuka_set(u16 key, u16 index) {
 
 // Table of pointers (bgmIndexTable) indexed by the game state; each entry is a record table of 8-byte rows
 extern u32 bgmIndexTable[];
-extern u8 data_0212c7c8[];
 
 // Places the ochiba tile at the cell of key, chosen at random (the 0x8000 variant is used for key 0xcb)
 void random_ochiba_set(u16 key, u16 index) {
@@ -33,12 +33,12 @@ void random_ochiba_set(u16 key, u16 index) {
     u8 *row;
     u16 tile;
 
-    state = data_0212c7c8[1];
+    state = data_0212c7c8.unk_01;
     if (state != 3) {
         if (state < 5) {
             return;
         }
-        row = *(u8 **)((u8 *)bgmIndexTable[state] + data_0212c7c8[0x48] * 8);
+        row = *(u8 **)((u8 *)bgmIndexTable[state] + data_0212c7c8.unk_48 * 8);
         if (row[1] != 2 && row[1] != 0xc) {
             return;
         }
@@ -61,7 +61,7 @@ void random_rupeemizu_set(u16 key, u16 index) {
     u8 *row;
     u16 tile;
 
-    state = data_0212c7c8[1];
+    state = data_0212c7c8.unk_01;
     if (state == 3 || state == 0) {
         if (key == 0x82) {
             tile = (Random() & 0xff) < 0x7f ? 0x81 : 0x80;
@@ -72,7 +72,7 @@ void random_rupeemizu_set(u16 key, u16 index) {
     if (state < 5) {
         return;
     }
-    row = *(u8 **)((u8 *)bgmIndexTable[state] + data_0212c7c8[0x48] * 8);
+    row = *(u8 **)((u8 *)bgmIndexTable[state] + data_0212c7c8.unk_48 * 8);
     if (row[1] != 2 && row[1] != 1 && row[1] != 8 && row[1] != 9 && row[1] != 0xc) {
         if (row[1] != 0xb) {
             return;

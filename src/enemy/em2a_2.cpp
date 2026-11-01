@@ -187,7 +187,7 @@ void em2a_ice(Entity *e) {
         if (e->health == 0) {
             e->type++;
             PutVGroup(e);
-            if (data_0212c7c8.stage + 1 == e->type) {
+            if (data_0212c7c8.level + 1 == e->type) {
                 e->type = 4;
             }
             lifeset(e);

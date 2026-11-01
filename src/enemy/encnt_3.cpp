@@ -14,9 +14,9 @@ void encnt_move(void) {
     if (encntState.timer == 0) {
         if (GetVgRemain() >= 8 && encntSpawnCount <= 4) {
             if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-                encntState.entity = data_0212ceb0[(Random() % data_0212c7c8.unk_0) & 3].entity;
+                encntState.entity = data_0212ceb0[(Random() % data_0212c7c8.playerCount) & 3].entity;
             } else {
-                u32 idx = (Random() % data_0212c7c8.unk_0) & 3;
+                u32 idx = (Random() % data_0212c7c8.playerCount) & 3;
                 if (data_0212c584[idx] & 0x1000) {
                     idx ^= 1;
                 }

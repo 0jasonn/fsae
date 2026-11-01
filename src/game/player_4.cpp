@@ -78,7 +78,7 @@ void PlWeaponFireCheck(Entity *e) {
 void PlayerTrans(void) {
     s32 i;
 
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         data_0212ceb0[i].entity->y.HALF.HI += data_0212ceb0[i].yOffset;
         if ((u8)(data_0212ceb0[i].specialState + 0xfd) <= 1) {
             if (*(Entity **)&data_0212ceb0[i].entity->unk_6c[0] != 0 && (*(Entity **)&data_0212ceb0[i].entity->unk_6c[0])->child != 0) {

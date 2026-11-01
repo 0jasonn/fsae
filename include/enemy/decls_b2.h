@@ -2,6 +2,7 @@
 #define WIP_B_DECLS_B2_H
 
 #include "engine/entity.h"
+#include "engine/player.h"
 
 // Declarations used by the wip/B files that include/engine/functions.h does not have yet.
 
@@ -36,8 +37,6 @@ extern u8 data_0212de50[];
 extern u8 data_021361a0[];
 extern u8 objAffineSet[];
 extern u8 hblankDma;
-extern u8 data_0212c7c8[];   // game state, byte 0x8e is the game state
-extern u8 data_0212ceb0[];   // PlayerData array, stride 0x94
 
 
 // em28 module callees (src/enemy/em28_3.cpp, em28_4.cpp, em1c and em26 headers hold the other declarations)

@@ -24,7 +24,7 @@ int gufuVitalCheck(Entity *e) {
 }
 
 void gufuBindPls(void) {
-    for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
         data_0212ceb0[i].unk_14 = 1;
     }
     BindPlayers();

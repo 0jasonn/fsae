@@ -194,14 +194,14 @@ void homingMoveSet(Entity *e) {
     u32 pick;
     u8 targetIndex;
 
-    switch (data_0212c7c8.unk_0) {
+    switch (data_0212c7c8.playerCount) {
         case 1:
             vars->aimTarget = data_0212ceb0[0].entity;
             break;
         case 2:
         case 3:
         case 4:
-            pick = Random() % (data_0212c7c8.unk_0 - 1);
+            pick = Random() % (data_0212c7c8.playerCount - 1);
             targetIndex = (em0f_aimPlayerTable + vars->aimTarget->type * 3)[pick];
             vars->aimTarget = data_0212ceb0[targetIndex].entity;
             break;

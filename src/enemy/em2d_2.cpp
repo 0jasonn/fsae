@@ -9,7 +9,7 @@ void differentColSet(Entity *e) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         return;
     }
-    V(e)->petal->spriteSettings.b20 = em2d_petalColors[e->spriteSettings.b16][Random() % (data_0212c7c8.unk_0 - 1)];
+    V(e)->petal->spriteSettings.b20 = em2d_petalColors[e->spriteSettings.b16][Random() % (data_0212c7c8.playerCount - 1)];
     V(e)->petal->spriteSettings.b16 = V(e)->petal->spriteSettings.b20;
 }
 

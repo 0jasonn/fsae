@@ -31,14 +31,14 @@ void em2c_type0_init_034878(Entity *e) {
             e->timer = 0x78;
             e->subtimer = 0x96;
             e->speed = 0x100;
-            e->health = em2d_healthType0[data_0212c7c8.stage - 1];
+            e->health = em2d_healthType0[data_0212c7c8.level - 1];
             V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             break;
         case 1: {
             e->action = 7;
             e->timer = 0x3c;
-            e->health = em2d_healthType1[data_0212c7c8.stage - 1];
+            e->health = em2d_healthType1[data_0212c7c8.level - 1];
             V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             Entity *fx = GetSetWork(0xf, 2, 0x20);
@@ -51,7 +51,7 @@ void em2c_type0_init_034878(Entity *e) {
             e->action = 0xe;
             e->timer = 0x96;
             e->speed = 0x100;
-            e->health = em2d_healthType2[data_0212c7c8.stage - 1];
+            e->health = em2d_healthType2[data_0212c7c8.level - 1];
             V(e)->orbitRadius = 0x10;
             e->direction = Random() & 0x1f;
             InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
@@ -73,7 +73,7 @@ void em2c_type0_init_034878(Entity *e) {
 }
 
 void type0_1stDemo(Entity *e) {
-    if (data_0212c7c8.unk_5 & 0x80) {
+    if (data_0212c7c8.periodicFlag & 0x80) {
         return;
     }
     if (e->timer != 0) {
@@ -98,7 +98,7 @@ void em2c_type0_1stDemoWait_034b44(Entity *e) {
     }
     e->action = 3;
     e->timer = 0x5a;
-    e->speed = em2d_demoSpeeds[data_0212c7c8.stage - 1];
+    e->speed = em2d_demoSpeeds[data_0212c7c8.level - 1];
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
 
@@ -177,7 +177,7 @@ void type0_2ndGetdir(Entity *e) {
     }
     e->action = 9;
     e->timer = (Random() & 0x3f) + 0xb4;
-    if (data_0212c7c8.unk_0 != 2) {
+    if (data_0212c7c8.playerCount != 2) {
         e->speed = 0x120;
     } else {
         e->speed = 0x100;
@@ -295,7 +295,7 @@ void type0_3rdDemo(Entity *e) {
         return;
     }
     e->action = 0xf;
-    e->speed = em2d_thirdDemoSpeeds[data_0212c7c8.stage - 1];
+    e->speed = em2d_thirdDemoSpeeds[data_0212c7c8.level - 1];
     V(e)->phaseFlags = 1;
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
@@ -522,7 +522,7 @@ void type1_attack(Entity *e) {
     if (e->frame & 1) {
         Entity *proj = GetTamaWork(0xd);
         if (proj != NULL) {
-            proj->direction = GetFacingDirection(e, data_0212ceb0[Random() % data_0212c7c8.unk_0].entity);
+            proj->direction = GetFacingDirection(e, data_0212ceb0[Random() % data_0212c7c8.playerCount].entity);
             ObjPosCopy(e, proj);
             e->frame = 0;
             EnqueueSFX(0xa5);

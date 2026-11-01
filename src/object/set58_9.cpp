@@ -53,7 +53,7 @@ void kougyoku_init(Entity *e) {
     e->direction = 0x10;
     rank = RankCheck();
     if (rank == 3) {
-        rank = (u8)(rank + data_0212c7c8.unk_1[0]);
+        rank = (u8)(rank + data_0212c7c8.unk_01);
     }
     e->spriteSettings.b20 = set58_kougyokuTable[rank];
     e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -72,7 +72,7 @@ void kougyoku_move(Entity *e) {
     if (e->parent->y.HALF.HI + 0x18 != e->y.HALF.HI) {
         return;
     }
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         child = GetSetWork(0x58, 9, 1);
         if (child != NULL) {
             ObjPosCopy(e, child);

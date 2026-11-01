@@ -14,7 +14,7 @@ void goto_nextdemo(void);
 int getRupeeLevel(void) {
     u32 rupees;
 
-    rupees = *(u32 *)((u8 *)&data_0212c7c8 + 8);
+    rupees = data_0212c7c8.score;
     if (rupees < 1000) {
         return 0;
     }

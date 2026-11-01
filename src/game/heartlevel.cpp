@@ -20,7 +20,7 @@ void CalcHeartLevel(void) {
     u8 tier;
     const u8 *row;
 
-    level = data_0212c7c8.difficulty - 1;
+    level = data_0212c7c8.level - 1;
     playerCount = data_0212c7c8.playerCount;
     i = 0;
     while (i < playerCount) {
@@ -50,6 +50,6 @@ void CalcHeartLevel(void) {
         tier = 3;
     }
 
-    row = data_02117a0c[data_0212c7c8.pickIndex] + level * 4;
+    row = data_02117a0c[data_0212c7c8.unk_01] + level * 4;
     data_0212c7c8.unk_49[4] = row[tier];
 }

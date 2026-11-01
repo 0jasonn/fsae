@@ -94,7 +94,7 @@ void type0_1stMove(Entity *e) {
             }
             return;
         }
-        if (data_0212c7c8.stage != 1) {
+        if (data_0212c7c8.level != 1) {
             if (set2nd(e) == 0) {
                 return;
             }

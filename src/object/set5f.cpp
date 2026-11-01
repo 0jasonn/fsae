@@ -62,7 +62,7 @@ void type0_initWait(Entity *e) {
         return;
     }
     e->action = 2;
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         data_0212ceb0[i].state = 0xf;
         data_0212ceb0[i].motionId = 4;
         data_0212ceb0[i].stateTimer = 0xff;
@@ -80,7 +80,7 @@ void type0_plEntrance(Entity *e) {
     }
     e->action = 3;
     e->timer = 0x3c;
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         data_0212ceb0[i].entity->timer = 1;
     }
 }
@@ -112,7 +112,7 @@ void type0_meswait(Entity *e) {
         e->subAction = 1;
         return;
     }
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if (data_0212c584[i] & 0x1000) {
             return;
         }

@@ -29,8 +29,8 @@ void BgmSet(void) {
     if (current == 0x1a1) {
         return;
     }
-    if (data_0212c7c8.pickIndex >= 5) {
-        if (data_0212c7c8.pickIndex == 5) {
+    if (data_0212c7c8.unk_01 >= 5) {
+        if (data_0212c7c8.unk_01 == 5) {
             trackId = bgmSpecialTracks[data_0212c7c8.unk_48];
         } else {
             trackId = bgmVariantTracks[bgmIndexTable[data_0212c7c8.gameMode][data_0212c7c8.unk_48].table[1]];
@@ -59,10 +59,10 @@ void BgmSet(void) {
 void GameState_SetTrackVariant(void) {
     u8 key;
     data_0212c7c8.unk_8e = 0;
-    if (data_0212c7c8.pickIndex < 5) {
+    if (data_0212c7c8.unk_01 < 5) {
         return;
     }
-    key = bgmIndexTable[data_0212c7c8.pickIndex][data_0212c7c8.unk_48].table[1];
+    key = bgmIndexTable[data_0212c7c8.unk_01][data_0212c7c8.unk_48].table[1];
     switch (key) {
         case 7:
             data_0212c7c8.unk_8e = 1;

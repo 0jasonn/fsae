@@ -8,7 +8,7 @@
 #include "global.h"
 
 int RankCheck(void) {
-    switch (data_0212c7c8.difficulty) {
+    switch (data_0212c7c8.level) {
         case 1:
             if (data_0212c7c8.score >= 0x3e8) {
                 return 1;

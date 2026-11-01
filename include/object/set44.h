@@ -6,6 +6,7 @@
 #include "game/gamestateview_c.h"
 #include "object/cellcalls.h"
 #include "object/nemoto_3.h"
+#include "engine/player.h"
 
 // Tables and data of the Set44 family (file-local, from the original code).
 typedef struct BgmIndexEntry {
@@ -21,10 +22,9 @@ extern const s16 set44MoveOffsets[];      // set44MoveOffsets, (dx, dy) pairs in
 extern const s16 cellDeltaTable[];        // cellDeltaTable, indexed by direction >> 3
 extern const u32 flagBits[];              // flagBits, indexed by playerCount - 1
 extern const BgmIndexEntry *const bgmIndexTable[];
-extern u8 data_0212ceb0[];                // PlayerData block array, 0x94 bytes per player
 
 // Entity of player i (PlayerData.entity at +0x28 in each 0x94-byte block)
-#define PLAYER_ENTITY(i) (*(Entity **)(data_0212ceb0 + (i) * 0x94 + 0x28))
+#define PLAYER_ENTITY(i) (data_0212ceb0[i].entity)
 
 void Set44(Entity *e);
 void set44_init(Entity *e);

@@ -9,9 +9,9 @@ extern const u16 *const timeBonusValuesAlt[];
 
 BOOL warp_check(void) {
     u8 i;
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
-        if (!(data_0212ceb0[i].unk_36 & 1)) {
-            if (data_0212ceb0[i].unk_28->health != 0) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
+        if (!(data_0212ceb0[i].statusFlags & 1)) {
+            if (data_0212ceb0[i].entity->health != 0) {
                 continue;
             }
         }
@@ -21,8 +21,8 @@ BOOL warp_check(void) {
 }
 
 void time_bonus(void) {
-    u32 seconds = data_0212c7c8.unk_1c / 60;
-    int playerCount = data_0212c7c8.unk_0;
+    u32 seconds = data_0212c7c8.frameCount / 60;
+    int playerCount = data_0212c7c8.playerCount;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         playerCount = 1;
     }
@@ -35,10 +35,10 @@ void time_bonus(void) {
 
 u16 get_time_bonus(void) {
     u8 i;
-    u32 seconds = data_0212c7c8.unk_1c / 60;
+    u32 seconds = data_0212c7c8.frameCount / 60;
     const u16 *const *bonusValues = timeBonusValues;
     const u16 *bonusThresholds = timeBonusThresholds;
-    if (data_0212c7c8.unk_7[0] == 6) {
+    if (data_0212c7c8.gameMode == 6) {
         bonusThresholds = timeBonusThresholdsAlt;
         bonusValues = timeBonusValuesAlt;
     }
@@ -47,5 +47,5 @@ u16 get_time_bonus(void) {
             break;
         }
     }
-    return bonusValues[data_0212c7c8.unk_0][i];
+    return bonusValues[data_0212c7c8.playerCount][i];
 }

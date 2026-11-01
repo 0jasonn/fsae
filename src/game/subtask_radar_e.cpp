@@ -2,11 +2,11 @@
 #include "global.h"
 #include "game/subtask.h"
 #include "game/subtask_radar_e_api.h"
+#include "engine/player.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_radar_end (0x020a6f98)
 
-extern u8 data_0212c7c8[];
 extern u8 frameCounter[];
 extern u8 data_0217a258[];
 
@@ -19,7 +19,7 @@ void subTask_radar_end(void) {
         subTask_free_slot(i);
     }
     subTask_free_objinfo((OBJInfo *)data_0217a258);
-    if (data_0212c7c8[0x8c] == 0 && frameCounter[0x11] == 0) {
+    if (data_0212c7c8.unk_8c == 0 && frameCounter[0x11] == 0) {
         eff_fade_out_init(0x1000);
     }
 }

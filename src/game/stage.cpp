@@ -11,10 +11,10 @@ BOOL isBossFloor(void) {
 }
 
 void shuffleStage(void) {
-    u8 oldIndex = data_0212c7c8.pickIndex;
+    u8 oldIndex = data_0212c7c8.unk_01;
     u8 newIndex;
     do {
         newIndex = Random() & 3;
-        data_0212c7c8.pickIndex = newIndex;
+        data_0212c7c8.unk_01 = newIndex;
     } while (newIndex == oldIndex);
 }

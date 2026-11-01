@@ -2,6 +2,7 @@
 #define WIP_A_SET41_H
 
 #include "engine/functions.h"
+#include "engine/player.h"
 
 // Actor fields of the Set41 family (file-local overlay).
 typedef struct Vars_Set41 {
@@ -19,7 +20,6 @@ extern const EntityFunc set41Table[];       // set41Table, indexed by action
 extern "C" void func_02085fac(Entity *e);
 extern const u8 set41Hitbox[];              // set41Hitbox
 extern u32 em12_typeMasks[];
-extern u8 data_0212c7c8[];                  // flag bytes at 0x5c, read by set41_wait
 extern const Set41TimerList set41Timers; // set41Timers
 
 #endif

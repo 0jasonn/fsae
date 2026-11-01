@@ -23,9 +23,9 @@ s32 PinchCheck(void) {
     s32 result;
 
     result = 0;
-    for (i = 0; i < data_0212c7c8[0]; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if (PL_ENTITY(i)->health != 0 && PL_ENTITY(i)->health <= 0x10) {
-            if (func_020867cc() > (u32)*(s32 *)(data_0212c7c8 + 8)) {
+            if (func_020867cc() > data_0212c7c8.score) {
                 result = 1;
             }
         }
@@ -36,13 +36,13 @@ s32 PinchCheck(void) {
 // Starts or stops the pinch music and the pinch telop, then updates the background music.
 void pinch_bgm_check(void) {
     if (PinchCheck() != 0) {
-        if (data_0212c7c8[0x51] == 0) {
-            data_0212c7c8[0x51] = 1;
+        if (data_0212c7c8.unk_50[0x1] == 0) {
+            data_0212c7c8.unk_50[0x1] = 1;
             TelopRequest(0x4b4);
             KAKERA_U32(0x10) = (u16)func_020867cc();
         }
     } else {
-        data_0212c7c8[0x51] = 0;
+        data_0212c7c8.unk_50[0x1] = 0;
     }
     BgmSet();
 }

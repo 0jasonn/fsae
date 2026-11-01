@@ -48,7 +48,7 @@ void type0_wait5(Entity *e) {
         e->subAction = 1;
         return;
     }
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if (data_0212c584[i] & 0x1000) {
             return;
         }

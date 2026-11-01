@@ -7,7 +7,7 @@
 
 void set42_move(Entity *e) {
     if (e->timer == 0) {
-        data_0212c7c8[0x6e] = 4;
+        data_0212c7c8.unk_6e = 4;
     } else {
         e->timer--;
     }

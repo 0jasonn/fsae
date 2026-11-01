@@ -66,17 +66,54 @@ typedef struct PL_WORK_ { // original name PL_WORK_
 } PlayerData; // size 0x94
 
 extern PlayerData data_0212ceb0[4];
-typedef struct UnkStruct_0212c7c8 {
-    /* 00 */ u8 unk_0; // number of players
-    /* 01 */ u8 unk_1[2];
-    /* 03 */ u8 difficulty;
-    /* 04 */ u8 unk_4;
-    /* 05 */ u8 unk_5;
-    /* 06 */ u8 stage;
-    /* 07 */ u8 unk_7[0x1f];
+// One 8-byte record per player inside the game state (enemyTypeFlags points at the first one)
+typedef struct GameSlot {
+    /* 00 */ u32 flags;
+    /* 04 */ u8 unk_04;
+    /* 05 */ u8 fieldBits; // bitfield written by ClearKeyUpdate
+    /* 06 */ u16 counter;
+} GameSlot;
+
+// Game state block (data_0212c7c8). Other symbols point inside it: data_0212c7d4 (+0x0c), enemyTypeFlags (+0x28),
+// keyTypeFlags (+0x2d), data_0212c7f6 (+0x2e), data_0212c810 (+0x48).
+typedef struct GameState {
+    /* 00 */ u8 playerCount;
+    /* 01 */ u8 unk_01;       // 0..3 rerolled by shuffleStage; also compared with 2 and 5 (mode) and indexes youseiFrameTable
+    /* 02 */ u8 active;       // nonzero while the phase machine runs
+    /* 03 */ u8 difficulty;   // indexes em2f_healthByDifficulty; get_maplevel uses difficulty + 3 in mode 2 (guess)
+    /* 04 */ u8 phaseTimer;
+    /* 05 */ u8 periodicFlag; // 0x81 when set by isBossFloor
+    /* 06 */ u8 level;        // 1..3: indexes the per-level health and speed tables; heart level and rank use it
+    /* 07 */ u8 gameMode;     // 6 selects the alternate threshold table
+    /* 08 */ u32 score;
+    /* 0c */ u32 playerCounters[4];
+    /* 1c */ u32 frameCount;
+    /* 20 */ u32 unk_20;
+    /* 24 */ u8 unk_24;
+    /* 25 */ u8 unk_25;
     /* 26 */ u16 unk_26;
-} UnkStruct_0212c7c8;
-extern UnkStruct_0212c7c8 data_0212c7c8;
+    /* 28 */ GameSlot slots[4];
+    /* 48 */ u8 unk_48;
+    /* 49 */ u8 unk_49[5];
+    /* 4e */ u8 usedPickMask; // bit per unk_01 value already used
+    /* 4f */ u8 phaseFlags;
+    /* 50 */ u8 unk_50[8];
+    /* 58 */ u8 playerTimer58[4];
+    /* 5c */ u8 unk_5c[4];
+    /* 60 */ u8 playerTimer60[4];
+    /* 64 */ u8 unk_64[4];
+    /* 68 */ u8 playerFlag68[4];
+    /* 6c */ u8 unk_6c;
+    /* 6d */ u8 unk_6d;
+    /* 6e */ u8 unk_6e;
+    /* 6f */ u8 unk_6f;
+    /* 70 */ u8 unk_70[0x1c];
+    /* 8c */ u8 unk_8c;
+    /* 8d */ u8 unk_8d;
+    /* 8e */ u8 unk_8e;       // game state byte
+    /* 8f */ u8 unk_8f;
+} GameState;
+extern GameState data_0212c7c8;
 extern u16 data_0212c584[4];
 
 #endif

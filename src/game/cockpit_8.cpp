@@ -48,7 +48,7 @@ void cockpit_call_check(void) {
         SoundReq(0x232);
         return;
     }
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if ((data_0212c58c[i] & 0x400) == 0) {
             continue;
         }

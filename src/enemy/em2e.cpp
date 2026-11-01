@@ -76,7 +76,7 @@ void em2e_gatherwait(Entity *e) {
         }
     }
     if (e->health == 0) {
-        if (data_0212c7c8.stage == e->type) {
+        if (data_0212c7c8.level == e->type) {
             V(e)->displayType = 4;
         } else {
             V(e)->displayType = e->type + 1;
@@ -185,7 +185,7 @@ void em2e_sign(Entity *e) {
     e->x.HALF.HI = V(e)->homeX;
     switch (V(e)->mode) {
         case 4:
-            for (e->timer = data_0212c7c8.unk_0 << 2; e->timer != 0; e->timer--) {
+            for (e->timer = data_0212c7c8.playerCount << 2; e->timer != 0; e->timer--) {
                 int spawnX = ((Random() & 0x1f) << 4) + 0x76;
                 int spawnY = ((Random() & 0x1f) << 4) + 0xa8;
                 firepostSet(e, spawnX, spawnY);

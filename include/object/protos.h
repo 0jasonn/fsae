@@ -4,6 +4,7 @@
 // Prototypes and shared data used by src/wip/F/*.cpp that engine/functions.h does not declare yet
 // (to be moved there by the reviewer).
 #include "engine/functions.h"
+#include "engine/player.h"
 
 // 0x02085890 (thumb), returns nonzero when the spot is blocked; (entity, table, x, y)
 int func_02085890(Entity *e, const u8 *table, u16 x, u16 y);
@@ -27,7 +28,6 @@ typedef struct WipGridOrigin {
 } WipGridOrigin;
 extern WipGridOrigin data_0212c648;
 
-// Byte view of data_0212c7c8 (game state; UnkStruct_0212c7c8 in engine/player.h only names its first bytes)
-extern u8 data_0212c7c8[];
+// Byte view of data_0212c7c8 (game state; GameState in engine/player.h only names its first bytes)
 
 #endif

@@ -39,7 +39,7 @@ void CheckInit(void) {
     data_0212e590[13].flag = 0;
     data_0212e590[14].flag = 0;
     data_0212e590[15].flag = 0;
-    switch (data_0212c7c8.unk_0) {
+    switch (data_0212c7c8.playerCount) {
     case 2:
         saved = data_0212e590[0].link;
         data_0212e590[0].link = data_0212e590[1].link;

@@ -81,7 +81,7 @@ void pause_init(void) {
         return;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        for (i = 0; i < data_0212c7c8.unk_0; i++) {
+        for (i = 0; i < data_0212c7c8.playerCount; i++) {
             if ((data_0212c58c[i] & 0x8) != 0 && (data_0212c584[i] & 0x1000) == 0
                 && (s8)data_0212ceb0[i].entity->iframes >= 0) {
                 pause_req(i);

@@ -48,7 +48,7 @@ void pause_retry(void) {
     MessageInitialize();
     TelopInitialize();
     func_02029a50(pauseState, 0x20);
-    *((u8 *)&data_0212c7c8 + 0x8c) = 1;
+    data_0212c7c8.unk_8c = 1;
     data_0212c4b8 = 1;
     data_0212c520 = 1;
     data_0212c500 = 1;

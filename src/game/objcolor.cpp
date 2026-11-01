@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "game/objcolor.h"
+#include "engine/player.h"
 
 // Functions in this file (module objcolor, original names from the debug build):
 //   InitObjColor, GetResTranslateID2 (GetResTranslateID2(unsigned short, ResIDTranslate2 const*, long)), registOC,
@@ -17,7 +18,6 @@ extern u8 set58_bodyState[];
 extern u8 data_02134ae8[];
 extern u8 data_02134ad4[];
 extern u8 data_02134ae4[];
-extern u8 data_0212c7c8[];
 extern const u32 data_020dd8ec[];
 extern const ResIDTranslate2 data_020cf8d4[];
 
@@ -52,7 +52,7 @@ u16 GetResTranslateID2(u16 id, const ResIDTranslate2 *table, s32 count) {
     for (i = 0; i < count; i++) {
         entry = &table[i];
         if (id == entry->id) {
-            state = data_0212c7c8[0x8e];
+            state = data_0212c7c8.unk_8e;
             if (state == 1) {
                 return entry->value[0];
             }

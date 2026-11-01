@@ -16,7 +16,7 @@ void warphole_wait(Entity *e) {
             return;
         }
         resource = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x9a);
-        kind = data_0212c7c8[1];
+        kind = data_0212c7c8.unk_01;
         if (kind >= 5) {
             if (kind == 5) {
                 func_020845b0(0x6400000 + ((e->unk_53 + 1) << 9), resource + 0x400, 0x100);
@@ -37,7 +37,7 @@ void warphole_move(Entity *e) {
     u8 playerMask;
 
     UpdateAnimationSingleFrame(e);
-    if (data_0212c7c8[0x6e] >= 2) {
+    if (data_0212c7c8.unk_6e >= 2) {
         e->action = e->action + 1;
         return;
     }
@@ -46,12 +46,12 @@ void warphole_move(Entity *e) {
         playerMask = 1;
     }
     if (CountBits(playerMask) == 1) {
-        if (e->type2 != data_0212c7c8[0x4f]) {
-            data_0212c7c8[0x6f] = 0;
-            data_0212c7c8[0x4f] = e->type2;
+        if (e->type2 != data_0212c7c8.phaseFlags) {
+            data_0212c7c8.unk_6f = 0;
+            data_0212c7c8.phaseFlags = e->type2;
         }
-        data_0212c7c8[0x6f] |= playerMask;
-        Knife_Single_SinglePlay_SetWarpInfo(Knife_Single_SinglePlay_GetInstance(), data_0212c7c8[0x6f], data_0212c7c8[0x4f]);
+        data_0212c7c8.unk_6f |= playerMask;
+        Knife_Single_SinglePlay_SetWarpInfo(Knife_Single_SinglePlay_GetInstance(), data_0212c7c8.unk_6f, data_0212c7c8.phaseFlags);
         if (e->subtimer == 0) {
             EnqueueSFX(0x18);
             e->spriteSettings.b16 = 1;

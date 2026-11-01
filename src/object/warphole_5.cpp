@@ -10,7 +10,7 @@ void warphole_wait2(Entity *e) {
     u8 flag;
     Entity *target;
 
-    if (data_0212c7c8[0x6e] >= 3 && data_0212c7c8[0x4f] == e->type2) {
+    if (data_0212c7c8.unk_6e >= 3 && data_0212c7c8.phaseFlags == e->type2) {
         flag = 0;
         e->action = e->action + 1;
         e->spriteSettings.b16 = 1;

@@ -37,7 +37,7 @@ void yousei_fade(void) {
         }
         data_0212c500 = data_0212c500 + 1;
         data_0212c4dc = 0;
-        for (i = 0; i < data_0212c7c8.unk_0; i++) {
+        for (i = 0; i < data_0212c7c8.playerCount; i++) {
             data_0212ceb0[i].state = 3;
         }
         ZeldaFadeFinish();
@@ -49,7 +49,7 @@ void yousei_fade(void) {
 int yousei_msgFinishWait(void) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.unk_0; i++) {
+    for (i = 0; i < data_0212c7c8.playerCount; i++) {
         if (data_0212c584[i] & 0x1000) {
             return 1;
         }

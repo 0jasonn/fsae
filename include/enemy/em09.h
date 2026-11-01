@@ -47,7 +47,7 @@ extern const EntityFunc em10_normalActions[];
 extern const u8 em10_hitbox[];
 extern const u8 em10_awakeHitbox[];
 extern const s8 em10_awakeSway[];
-extern UnkStruct_0212c7c8 data_0212c7c8;
+extern GameState data_0212c7c8;
 extern const u8 em09_hurtHitbox[];
 extern const u16 em09_attrByChildType[];
 extern const EntityFunc em09_noPartnerActions[];

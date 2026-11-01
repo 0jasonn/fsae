@@ -55,9 +55,9 @@ void stagesel_init0(void) {
         if ((enemyTypeFlags[localPlayerIndex].flags & 0x1000) != 0) {
             *(u32 *)(data_0212c9a8 + 0x3c) = 1;
         }
-        for (i = 0; i < data_0212c7c8.unk_0; i++) {
+        for (i = 0; i < data_0212c7c8.playerCount; i++) {
             if (*(u32 *)(data_0212c9a8 + i * 0x34 + 0xa4) == 1) {
-                *(u32 *)((u8 *)&data_0212c7c8 + i * 8 + 0x28) |= 0x1000;
+                data_0212c7c8.slots[i].flags |= 0x1000;
             }
         }
         timer = *(u16 *)(data_021349c0 + 4);

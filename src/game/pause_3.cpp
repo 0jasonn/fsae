@@ -40,7 +40,7 @@ void pause_return(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }
-    if (data_0212c7c8.unk_1[0] == 5) {
+    if (data_0212c7c8.unk_01 == 5) {
         UnlockTokiWave();
     }
     DispReset();

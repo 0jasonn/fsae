@@ -20,7 +20,7 @@ void ranking_init(void) {
     func_02029a50(&data_021349c0, 0x28);
     ranking_noop();
     data_0212c4f8 = 0;
-    if (data_0212c7c8.pickIndex == 5) {
+    if (data_0212c7c8.unk_01 == 5) {
         data_0212c7c8.unk_8e = 0;
         CgLoad(2);
     }
