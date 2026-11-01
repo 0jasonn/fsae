@@ -4557,6 +4557,10 @@ src/engine/tcli_accessor.cpp:
     complete
     .text       start:0x020b69e4 end:0x020b69f4
 
+src/game/item_row.cpp:
+    complete
+    .text       start:0x020b6cc4 end:0x020b6d74
+
 src/engine/window_subinfo.cpp:
     complete
     .text       start:0x020b7074 end:0x020b7080
@@ -5033,6 +5037,10 @@ src/engine/sndsys_7.cpp:
     complete
     .text       start:0x020c0c40 end:0x020c0c70
 
+src/engine/sndstate_entries.cpp:
+    complete
+    .text       start:0x020c0c70 end:0x020c0d6c
+
 src/engine/sndstate_acquire.cpp:
     complete
     .text       start:0x020c0d6c end:0x020c0e50
@@ -5060,6 +5068,10 @@ src/engine/sndstate_start.cpp:
 src/engine/sndstate_startlist.cpp:
     complete
     .text       start:0x020c1740 end:0x020c17c0
+
+src/engine/sndstate_start_ex.cpp:
+    complete
+    .text       start:0x020c17c0 end:0x020c186c
 
 src/engine/sndtrack.cpp:
     complete
@@ -5185,9 +5197,21 @@ src/engine/bg_palette.cpp:
     complete
     .text       start:0x020c46a0 end:0x020c4704
 
+src/engine/bg_char.cpp:
+    complete
+    .text       start:0x020c4774 end:0x020c491c
+
 src/engine/bg_load.cpp:
     complete
     .text       start:0x020c4bac end:0x020c4c74
+
+src/engine/bg_clip.cpp:
+    complete
+    .text       start:0x020c4c74 end:0x020c4dc8
+
+src/engine/textbox_lookup.cpp:
+    complete
+    .text       start:0x020c4dc8 end:0x020c4e90
 
 src/engine/text_box.cpp:
     complete
@@ -5212,6 +5236,10 @@ src/engine/record_init_table.cpp:
 src/engine/record_init_sized.cpp:
     complete
     .text       start:0x020c5fcc end:0x020c6008
+
+src/engine/nftr_font.cpp:
+    complete
+    .text       start:0x020c6df4 end:0x020c6ecc
 
 src/engine/text_stream.cpp:
     complete

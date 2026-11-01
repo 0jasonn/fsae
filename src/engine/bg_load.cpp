@@ -4,8 +4,8 @@
 
 extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 extern "C" void BgPalette_LoadAuto(s32 screen, u8 *palette, u8 *flagTable, u8 *loadTable);
-extern "C" void func_020c4774(s32 screen, void *charData, void *rect);
-extern "C" void func_020c4850(s32 screen, BgLoadInfo *info);
+extern "C" void BgChar_Load(s32 screen, void *charData, void *rect);
+extern "C" void BgScreen_Load(s32 screen, BgLoadInfo *info);
 
 // BgRect_Copy16 (provisional name): copies rowCount rows of copyCount halfwords from the BG load block into dstBase. Source
 // rows are widthPx >> 3 halfwords apart and destination rows are dstPitch halfwords apart; the copy starts at (dstX, dstY)
@@ -46,9 +46,9 @@ ARM void BgLoad_Resources(s32 screen, BgLoadInfo *info, void *charData, u8 *pale
         BgPalette_LoadAuto(screen, palette, (u8 *)info, loadTable);
     }
     if (charData != NULL) {
-        func_020c4774(screen, charData, rect);
+        BgChar_Load(screen, charData, rect);
     }
     if (info != NULL) {
-        func_020c4850(screen, info);
+        BgScreen_Load(screen, info);
     }
 }

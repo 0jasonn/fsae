@@ -3,7 +3,7 @@
 
 extern "C" void func_020c6c30(u8 *obj, u8 *self);
 extern "C" void TextStream_ReadU16(void);
-extern "C" u32 func_020c4dc8(u8 *entry, u32 value);
+extern "C" u32 TextBox_LookupEntry(u8 *entry, u32 value);
 extern "C" u32 data_020df104[];
 
 // TextBox_SetKindHandler (provisional name): TextBox_Init-style call on the record, then the handler at data_020df104 indexed by the kind byte at +7 of the info record at +0.
@@ -21,7 +21,7 @@ ARM void TextBox_SetDefaultHandler(u8 *self, u8 *arg) {
 }
 
 // TextBox_FindRange (provisional name): walks the list at +0x10 of the head record for the entry whose inclusive halfword range
-// holds value and returns func_020c4dc8 on it; 0xffff when none matches.
+// holds value and returns TextBox_LookupEntry on it; 0xffff when none matches.
 extern "C" u32 TextBox_FindRange(u8 *self, u32 value);
 ARM u32 TextBox_FindRange(u8 *self, u32 value) {
     u8 *entry;
@@ -29,7 +29,7 @@ ARM u32 TextBox_FindRange(u8 *self, u32 value) {
     entry = *(u8 **)(*(u8 **)self + 0x10);
     while (entry != 0) {
         if (*(u16 *)entry <= value && value <= *(u16 *)(entry + 2)) {
-            return func_020c4dc8(entry, value);
+            return TextBox_LookupEntry(entry, value);
         }
         entry = *(u8 **)(entry + 8);
     }
