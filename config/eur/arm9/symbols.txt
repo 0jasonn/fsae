@@ -13778,7 +13778,7 @@ data_02135da0 kind:bss addr:0x02135da0
 data_021361a0 kind:bss addr:0x021361a0
 data_021369a0 kind:bss addr:0x021369a0
 data_021371a0 kind:bss addr:0x021371a0
-data_021387a0 kind:bss addr:0x021387a0
+triangleTable kind:bss addr:0x021387a0
 data_02138fa0 kind:bss addr:0x02138fa0
 data_0213a7a0 kind:bss addr:0x0213a7a0
 data_0213cfa0 kind:bss addr:0x0213cfa0

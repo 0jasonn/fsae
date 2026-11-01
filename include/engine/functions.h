@@ -21,7 +21,7 @@ s32 FS_IsArchiveTableLoaded(void);
 s32 FSi_IsUnreadableRomOffset(u32 offset, u32 romOffset);
 void G3C_Direct1(u16 value);
 u16 GetCRC16(u16 crc, const void *data, u32 size);
-void GetCellsInRandomSet(u16 cell, u16 w, u16 h);
+void *GetCellsInRandomSet(u16 cell, u16 w, u16 h); // returns the matched or new table entry, NULL on failure
 void *Knife_Comm_WirelessManager_WirelessManager(void *self);
 BOOL Knife_Comm_WirelessManager_disconnect(void *manager);
 void *Knife_Comm_WirelessManager_dtor_WirelessManager_0923b4(void *self);
