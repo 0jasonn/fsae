@@ -2866,6 +2866,10 @@ src/object/tame.cpp:
     complete
     .text       start:0x020701b8 end:0x020702c8
 
+src/object/tame_2.cpp:
+    complete
+    .text       start:0x020702c8 end:0x02070598
+
 src/object/set52_2.cpp:
     complete
     .text       start:0x02070658 end:0x02070758
@@ -3602,9 +3606,25 @@ src/engine/wirelessmgr_state_empty0.cpp:
     complete
     .text       start:0x02092940 end:0x02092944
 
+src/engine/wirelessmgr_states.cpp:
+    complete
+    .text       start:0x02092944 end:0x02092aac
+
 src/engine/wirelessmgr_state_waitscan.cpp:
     complete
     .text       start:0x02092aac end:0x02092ad8
+
+src/engine/wirelessmgr_states_2.cpp:
+    complete
+    .text       start:0x02092be0 end:0x02092c0c
+
+src/engine/wirelessmgr_states_3.cpp:
+    complete
+    .text       start:0x02092f24 end:0x02092fd8
+
+src/engine/wirelessmgr_states_4.cpp:
+    complete
+    .text       start:0x02093200 end:0x020932f4
 
 src/engine/wirelessmgr_state_empty14.cpp:
     complete
@@ -3706,6 +3726,12 @@ src/game/subtask_misc.cpp:
     complete
     .text       start:0x0209ad08 end:0x0209ad3c
 
+src/game/subtask_hex.cpp:
+    complete
+    .text       start:0x0209ad3c end:0x0209ae98
+    .rodata     start:0x020ddba0 end:0x020ddbac
+    .data       start:0x0211c5bc end:0x0211c5c4
+
 src/game/subtask_work_hex.cpp:
     complete
     .text       start:0x0209ae98 end:0x0209aeb8
@@ -3758,13 +3784,26 @@ src/game/eff_4.cpp:
     complete
     .text       start:0x0209ba50 end:0x0209ba94
 
+src/game/subtask_init.cpp:
+    complete
+    .text       start:0x0209bbb4 end:0x0209bcf4
+    .data       start:0x0211c5c4 end:0x0211c68c
+
 src/game/subtask_cell.cpp:
     complete
     .text       start:0x0209bee4 end:0x0209bf00
 
+src/game/subtask_init_bg.cpp:
+    complete
+    .text       start:0x0209c02c end:0x0209c384
+
 src/engine/subtask_init_bg2_lang.cpp:
     complete
     .text       start:0x0209c384 end:0x0209c41c
+
+src/game/subtask_init_obj.cpp:
+    complete
+    .text       start:0x0209c41c end:0x0209c62c
 
 src/engine/subtask_init_obj_lang.cpp:
     complete
