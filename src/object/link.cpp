@@ -33,8 +33,8 @@ void link_init_072704(Entity *e) {
         knife_event_check(e);
     }
     e->unk_23 = 0xff;
-    if (data_0212ceb0[e->type].unk_08 == 0) {
-        data_0212ceb0[e->type].unk_08 = 0;
+    if (data_0212ceb0[e->type].motionId == 0) {
+        data_0212ceb0[e->type].motionId = 0;
     }
 }
 
@@ -42,7 +42,7 @@ void link_nop(Entity *e) {
 }
 
 void link_stand(Entity *e) {
-    data_0212ceb0[e->type].unk_08 = 0;
+    data_0212ceb0[e->type].motionId = 0;
 }
 
 void link_walk(Entity *e) {
@@ -51,7 +51,7 @@ void link_walk(Entity *e) {
 
 void link_walk_init(Entity *e) {
     e->subAction++;
-    data_0212ceb0[e->type].unk_08 = 4;
+    data_0212ceb0[e->type].motionId = 4;
 }
 
 void link_walk_move(Entity *e) {
@@ -80,7 +80,7 @@ void link_itemget(Entity *e) {
 
 void itemget_init(Entity *e) {
     e->subAction++;
-    data_0212ceb0[e->type].unk_08 = 0xad;
+    data_0212ceb0[e->type].motionId = 0xad;
 }
 
 void itemget_move(Entity *e) {
@@ -105,7 +105,7 @@ void link_dead(Entity *e) {
 
 void dead_init(Entity *e) {
     e->subAction++;
-    data_0212ceb0[e->type].unk_08 = 0x1af;
+    data_0212ceb0[e->type].motionId = 0x1af;
 }
 
 void dead_move(Entity *e) {
@@ -131,7 +131,7 @@ void link_jitabata(Entity *e) {
 
 void jitabata_init(Entity *e) {
     e->subAction++;
-    data_0212ceb0[e->type].unk_08 = 0x250;
+    data_0212ceb0[e->type].motionId = 0x250;
 }
 
 void link_setMode(Entity *e) {
@@ -146,7 +146,7 @@ void walkback_init(Entity *e) {
     e->subAction++;
     e->direction = ((e->animationState + 4) & 7) << 2;
     e->speed = 0x80;
-    data_0212ceb0[e->type].unk_08 = 4;
+    data_0212ceb0[e->type].motionId = 4;
 }
 
 void walkback_move(Entity *e) {
@@ -164,7 +164,7 @@ void link_buttobi(Entity *e) {
 
 void buttobi_init(Entity *e) {
     e->subAction++;
-    data_0212ceb0[e->type].unk_08 = 0xae;
+    data_0212ceb0[e->type].motionId = 0xae;
     e->direction = 9;
     e->speed = 0x400;
 }
@@ -178,7 +178,7 @@ void buttobi_kurukuru(Entity *e) {
     }
     e->x.HALF.HI = 0xb8;
     e->subAction++;
-    data_0212ceb0[e->type].unk_08 = 0x1af;
+    data_0212ceb0[e->type].motionId = 0x1af;
     e->animationState = 2;
     SoundReq(0x1fc);
 }
@@ -197,7 +197,7 @@ void link_standup(Entity *e) {
 void standup_init(Entity *e) {
     e->subAction++;
     e->zVelocity = 0x20000;
-    data_0212ceb0[e->type].unk_08 = 0xc;
+    data_0212ceb0[e->type].motionId = 0xc;
     SoundReq(0xd);
 }
 

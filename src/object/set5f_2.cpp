@@ -64,7 +64,7 @@ void type0_plBackJump(Entity *e) {
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         data_0212ceb0[i].state = 0xf;
         data_0212ceb0[i].stateTimer = 0xb4;
-        data_0212ceb0[i].unk_08 = 0xc;
+        data_0212ceb0[i].motionId = 0xc;
         data_0212ceb0[i].unk_02 = 0x41;
         data_0212ceb0[i].entity->direction = 0x10;
         data_0212ceb0[i].entity->animationState = 0;

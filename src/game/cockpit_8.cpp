@@ -39,7 +39,7 @@ void cockpit_call_check(void) {
         if (requestMode != 0 || frameCounter[0x14] != 0 || frameCounter[0x11] != 0) {
             return;
         }
-        if (data_0212ceb0[single[0]].unk_3c != 0) {
+        if (data_0212ceb0[single[0]].callState != 0) {
             return;
         }
         if (hud->startCallAnim(single[0]) == 0) {
@@ -53,7 +53,7 @@ void cockpit_call_check(void) {
             continue;
         }
         if ((data_0212c584[i] & 0x1000) == 0 && frameCounter[0x14] == 0 && frameCounter[0x11] == 0 &&
-            data_0212ceb0[i].unk_3c == 0) {
+            data_0212ceb0[i].callState == 0) {
             if (hud->startCallAnim(i) != 0) {
                 SoundReq(0x232);
             }

@@ -56,7 +56,7 @@ void rr_type0_wait(Entity *e) {
     Scene_SetFlag5();
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         data_0212ceb0[i].state = 0xf;
-        data_0212ceb0[i].unk_08 = 0xc3;
+        data_0212ceb0[i].motionId = 0xc3;
         data_0212ceb0[i].stateTimer = 0xb4;
         data_0212ceb0[i].unk_39 = 1;
         data_0212ceb0[i].entity->animationState = 4;

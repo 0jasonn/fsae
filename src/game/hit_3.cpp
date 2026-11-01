@@ -18,7 +18,7 @@ typedef struct Vars_PlHit {
 
 // Jelly hit: ignored (only t loses its status bit) when the type's flags have 0x60 set, otherwise e takes the knockback.
 BOOL hit_jelly(Entity *e, Entity *t, u8 unused) {
-    if (data_0212ceb0[e->type].unk_1e & 0x60) {
+    if (data_0212ceb0[e->type].hitFlags & 0x60) {
         t->statusFlags &= 0x7f;
     } else {
         e->unk_42 = *(u8 *)&t->attackKnockback;

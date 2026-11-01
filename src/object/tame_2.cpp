@@ -34,12 +34,12 @@ void tame_move(Entity *e) {
     }
     e->z.HALF.HI = target->z.HALF.HI;
     if (e->type2 != 0) {
-        if (data_0212ceb0[e->type].unk_21 >= 0x14) {
+        if (data_0212ceb0[e->type].tameState >= 0x14) {
             e->spriteSettings.b0 = 1;
             offsets = data_020db588;
-            kind = data_0212ceb0[e->type].unk_21;
+            kind = data_0212ceb0[e->type].tameState;
         } else {
-            if (data_0212ceb0[e->type].unk_21 != 0) {
+            if (data_0212ceb0[e->type].tameState != 0) {
                 e->spriteSettings.b0 = 0;
                 return;
             }

@@ -89,7 +89,7 @@ void em0f_eyeopen(Entity *e) {
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
         if (player->entity->z.HALF.HI == 0) {
-            player->unk_08 = 0;
+            player->motionId = 0;
             player->entity->direction = 0xff;
         }
     }

@@ -64,7 +64,7 @@ void type0_initWait(Entity *e) {
     e->action = 2;
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         data_0212ceb0[i].state = 0xf;
-        data_0212ceb0[i].unk_08 = 4;
+        data_0212ceb0[i].motionId = 4;
         data_0212ceb0[i].stateTimer = 0xff;
         data_0212ceb0[i].entity->direction = 0;
         data_0212ceb0[i].entity->animationState = 0;

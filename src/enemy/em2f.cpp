@@ -194,7 +194,7 @@ void em2f_plDown(Entity *e) {
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
         player->state = 0xf;
-        player->unk_08 = 0x1af;
+        player->motionId = 0x1af;
         player->stateTimer = 0xb4;
         player->unk_39 = 0;
         player->entity->direction = CalculateDirectionTo(0x1f8, 0x1c0, player->entity->x.HALF.HI, player->entity->y.HALF.HI);
@@ -249,7 +249,7 @@ void em2f_demoEnd(Entity *e) {
     }
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         PlayerData *player = &data_0212ceb0[i];
-        player->unk_08 = 0xc;
+        player->motionId = 0xc;
         player->stateTimer = 1;
         player->unk_02 = 0x41;
         player->entity->zVelocity = 0x20000;

@@ -128,7 +128,7 @@ void em2f_die(Entity *e) {
     u8 count = data_0212c7c8.unk_0;
     for (u32 i = 0; i < count; i++) {
         PlayerData *player = &data_0212ceb0[i];
-        if ((player->statusFlags & 1) || player->unk_3c != 0) {
+        if ((player->statusFlags & 1) || player->callState != 0) {
             return;
         }
         if (player->entity->health == 0) {

@@ -28,11 +28,11 @@ void kenfuri_init(Entity *e) {
         e->speed = 0x140;
         e->animationState = 0;
         e->timer = 0x1e;
-        data_0212ceb0[e->type].unk_08 = 4;
+        data_0212ceb0[e->type].motionId = 4;
     } else {
         e->subAction = 4;
         e->animationState = 4;
-        data_0212ceb0[e->type].unk_08 = 0x1b1;
+        data_0212ceb0[e->type].motionId = 0x1b1;
         e->spriteSettings.b30 = data_0212ceb0[0].entity->spriteSettings.b30;
         e->spriteSettings.b14 = data_0212ceb0[0].entity->spriteSettings.b14;
         e->spriteSettings.b0 = 0;
@@ -66,7 +66,7 @@ void kenfuri_walk1(Entity *e) {
     }
     e->x.HALF.HI = 0x80;
     e->animationState = 4;
-    data_0212ceb0[e->type].unk_08 = 0;
+    data_0212ceb0[e->type].motionId = 0;
     e->timer = 0x3c;
     e->subAction++;
 }
@@ -77,7 +77,7 @@ void kenfuri_kenfuri(Entity *e) {
         if (e->timer != 0) {
             return;
         }
-        data_0212ceb0[e->type].unk_08 = 0x1b1;
+        data_0212ceb0[e->type].motionId = 0x1b1;
         SoundReq(0x228);
         data_02134924 |= 2;
         return;
@@ -111,7 +111,7 @@ void kenfuri_bunshin(Entity *e) {
     if ((data_02134924 & 0x10) == 0) {
         return;
     }
-    data_0212ceb0[e->type].unk_08 = 0;
+    data_0212ceb0[e->type].motionId = 0;
     e->subAction++;
     e->spriteSettings.b0 = 1;
 }

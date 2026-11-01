@@ -13,7 +13,7 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 05 */ u8 specialState; // 3 or 4 while the player is in a special state, 0 otherwise
     /* 06 */ u8 unk_06;
     /* 07 */ u8 unk_07; // bit 7 is a flag, see BindPlayer
-    /* 08 */ u16 unk_08;
+    /* 08 */ u16 motionId; // animation/motion code set per Link action (walk 4, stand-up 0xc, item get 0xad, dead 0x1af)
     /* 0a */ u8 unk_0a;
     /* 0b */ u8 unk_0b; // bit 7 is cleared by set38
     /* 0c */ u8 state;
@@ -34,10 +34,10 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 1b */ u8 actionFlags; // bits 0x01, 0x08, 0x20, 0x40 and 0xc0 are tested by the sword and tame code
     /* 1c */ u8 unk_1c;
     /* 1d */ u8 unk_1d;
-    /* 1e */ u8 unk_1e; // bits 0x80 and 0x20 are tested by em2a
+    /* 1e */ u8 hitFlags; // bits 0x80 and 0x20 are tested by em2a, 0x60 by hit_jelly
     /* 1f */ u8 unk_1f;
     /* 20 */ u8 unk_20;
-    /* 21 */ u8 unk_21; // compared with 0x14 by tame_move
+    /* 21 */ u8 tameState; // nonzero while tame is active; >= 0x14 selects the second tame table
     /* 22 */ u16 unk_22;
     /* 24 */ u16 unk_24;
     /* 26 */ u8 unk_26;
@@ -55,13 +55,13 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 39 */ u8 unk_39;
     /* 3a */ u8 unk_3a;
     /* 3b */ u8 unk_3b;
-    /* 3c */ u8 unk_3c;
+    /* 3c */ u8 callState; // nonzero blocks the cockpit call animation
     /* 3d */ u8 unk_3d;
     /* 3e */ u8 unk_3e;
     /* 3f */ s8 yOffset;
     /* 40 */ u8 unk_40[0x4a];
     /* 8a */ u8 unk_8a;
-    /* 8b */ u8 paletteBits; // bits 2..3 hold a color/palette index, see PlWorkColorReset
+    /* 8b */ u8 paletteBits; // bits 2..3 hold a color/palette index (PlWorkColorReset); bits 4..6 are tested by set11
     /* 8c */ u8 unk_8c[8];
 } PlayerData; // size 0x94
 

@@ -12,7 +12,7 @@ int ido_yukaPlMoveCheck(PlayerData *player) {
     if ((((u32)((u8 *)player)[0x8b]) << 25) >> 29) {
         return 1;
     }
-    if (player->unk_08 == 0x1ac) {
+    if (player->motionId == 0x1ac) {
         return 1;
     }
     if (player->unk_02 != 0 && player->unk_02 != 0x25) {

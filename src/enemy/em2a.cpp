@@ -37,9 +37,9 @@ void func_02030ae4(int index) {
     data_0212ceb0[index].state = 6;
     data_0212ceb0[index].stateTimer = 1;
     PlayerData *other = NULL;
-    if (data_0212ceb0[index].unk_1e & 0x80) {
+    if (data_0212ceb0[index].hitFlags & 0x80) {
         other = V(data_0212ceb0[index].entity)->playerData;
-    } else if (data_0212ceb0[index].unk_1e & 0x20) {
+    } else if (data_0212ceb0[index].hitFlags & 0x20) {
         other = (PlayerData *)V(data_0212ceb0[index].entity)->linked;
     }
     if (other != NULL && other->state != 6 && other->entity->action != 6) {

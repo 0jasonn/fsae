@@ -55,7 +55,7 @@ void PlWorkReset(void) {
             player->specialState = 0;
             player->unk_06 = 0;
             player->unk_07 = 0;
-            player->unk_08 = 0;
+            player->motionId = 0;
             player->unk_0a = 0;
             player->unk_0b = 0;
             player->state = 0;
@@ -68,10 +68,10 @@ void PlWorkReset(void) {
             player->unk_13 = 0;
             player->unk_14 = 0;
             player->actionFlags = 0;
-            player->unk_1e = 0;
+            player->hitFlags = 0;
             player->unk_1f = 0;
             player->unk_20 = 0;
-            player->unk_21 = 0;
+            player->tameState = 0;
             player->unk_22 = 0;
             player->unk_24 = 0;
             player->unk_34 = 0;
@@ -80,7 +80,7 @@ void PlWorkReset(void) {
             player->stateTimer = 0;
             player->unk_39 = 0;
             player->unk_3a = 0;
-            player->unk_3c = 0;
+            player->callState = 0;
             player->unk_3d = 0;
             player->unk_26 = 0;
             player->yOffset = 0;
