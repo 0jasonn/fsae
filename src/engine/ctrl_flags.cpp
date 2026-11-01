@@ -40,11 +40,11 @@ typedef struct CtrlRef {
 } CtrlRef;
 
 
-// Ctrl_updateAc(self) (0x020bb660, provisional name): func_020bb980 with 1 when flagAc is zero (otherwise 0), then
+// Ctrl_updateAc(self) (0x020bb660, provisional name): RectFlagPair_setFlag with 1 when flagAc is zero (otherwise 0), then
 // Menu_AcquirePoolEntry on the pointer at +0x1c with 2 and 0x80; returns flagAc
 extern "C" u8 Ctrl_updateAc(CtrlFlags *self);
 ARM u8 Ctrl_updateAc(CtrlFlags *self) {
-    func_020bb980(self, (self->flagAc == 0) ? 1 : 0);
+    RectFlagPair_setFlag(self, (self->flagAc == 0) ? 1 : 0);
     Menu_AcquirePoolEntry(self->unk_1c, 2, 0x80);
     return self->flagAc;
 }

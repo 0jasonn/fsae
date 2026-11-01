@@ -90,7 +90,7 @@ void lobby_callWithZeroPos(s32 active, void *buf);
 void func_020bc6c4(void *obj);
 void Heap_VirtualFree(void *arg, void *obj);
 s32 func_020bc588(s32 value);
-void func_020bc84c(s32 obj, void *checker, void *a, void *b, void *c, u16 d);
+void RectBufSet_init(s32 obj, void *checker, void *a, void *b, void *c, u16 d);
 s32 func_020bb450(void *obj);
 s32 func_020bb56c(void *obj);
 s32 Ctrl_tryChange(void *obj, u8 *out);

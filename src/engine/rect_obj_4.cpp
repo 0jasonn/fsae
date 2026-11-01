@@ -15,7 +15,7 @@ extern "C" void RectObj_init(RectObjF *self);
 extern "C" BOOL RectObj_hitTest(RectObjF *self, s16 *pos);
 extern "C" void RectObj_calcTopLeft(s16 *out, RectObjF *self);
 extern "C" BOOL RectObj_updateBoundsCheck(RectObjF *self, s16 *pos);
-extern "C" void func_020bc2d0(void *owner, s32 value, s32 x, s32 y);
+extern "C" void RectBufTable_setup(void *owner, s32 value, s32 x, s32 y);
 
 // RectObj_setOffset(self, pos) (0x020b7e48, provisional name): the offset is the position
 extern "C" void RectObj_setOffset(RectObjF *self, s16 *pos);
@@ -104,7 +104,7 @@ ARM void RectObjLink_setGeometry(RectObjF *self, s16 *pos, s16 *size, s32 value)
 }
 
 // RectObjLink_updateAndCall(self, owner, pos) (0x020b7fa0, provisional name): when RectObj_updateBoundsCheck is TRUE,
-// calls func_020bc2d0 with the owner, the field at +0x14 and the bounds in 8.8 fixed point
+// calls RectBufTable_setup with the owner, the field at +0x14 and the bounds in 8.8 fixed point
 extern "C" void RectObjLink_updateAndCall(RectObjF *self, void **owner, s16 *pos);
 ARM void RectObjLink_updateAndCall(RectObjF *self, void **owner, s16 *pos) {
     s16 point[2];
@@ -114,5 +114,5 @@ ARM void RectObjLink_updateAndCall(RectObjF *self, void **owner, s16 *pos) {
     if (RectObj_updateBoundsCheck(self, point) == FALSE) {
         return;
     }
-    func_020bc2d0(*owner, self->unk_14, self->boundX << 12, self->boundY << 12);
+    RectBufTable_setup(*owner, self->unk_14, self->boundX << 12, self->boundY << 12);
 }

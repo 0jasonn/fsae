@@ -33,7 +33,7 @@ extern "C" void RectObj_init(void *self);
 extern "C" void RectObj_noop(void *self, void *arg);
 extern "C" BOOL RectObj_updateBoundsCheck(void *self, s16 *pos);
 extern "C" void Table_setValueB(void *owner, void *value, s32 kind);
-extern "C" void func_020bc2d0(void *owner, void *value, s32 x, s32 y);
+extern "C" void RectBufTable_setup(void *owner, void *value, s32 x, s32 y);
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void **RectObjList_allocPtrArray(void *holder, s32 count);

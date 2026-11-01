@@ -3498,6 +3498,10 @@ src/engine/wirelessmgr_aid.cpp:
     complete
     .text       start:0x020921b0 end:0x020921bc
 
+src/engine/wirelessmanager_connected.cpp:
+    complete
+    .text       start:0x020922d0 end:0x020922ec
+
 src/engine/stub_noop_a.cpp:
     complete
     .text       start:0x020922ec end:0x020922f0
@@ -4538,6 +4542,10 @@ src/engine/rect_pair.cpp:
     complete
     .text       start:0x020b86b8 end:0x020b8784
 
+src/engine/rect_pair_links.cpp:
+    complete
+    .text       start:0x020b87b4 end:0x020b88b0
+
 src/engine/rect_item.cpp:
     complete
     .text       start:0x020b88dc end:0x020b8a5c
@@ -4557,6 +4565,10 @@ src/engine/rect_list_4.cpp:
 src/engine/slider_index.cpp:
     complete
     .text       start:0x020b9424 end:0x020b94ac
+
+src/engine/rect_group_update.cpp:
+    complete
+    .text       start:0x020b9688 end:0x020b9720
 
 src/engine/slider.cpp:
     complete
@@ -4598,6 +4610,10 @@ src/engine/ctrl_state.cpp:
     complete
     .text       start:0x020bb85c end:0x020bb898
 
+src/engine/rect_flag_pair.cpp:
+    complete
+    .text       start:0x020bb980 end:0x020bba00
+
 src/engine/rect_slot2.cpp:
     complete
     .text       start:0x020bba00 end:0x020bba38
@@ -4629,6 +4645,10 @@ src/engine/table_entry.cpp:
 src/engine/table_set.cpp:
     complete
     .text       start:0x020bc280 end:0x020bc2d0
+
+src/engine/rect_buf_table.cpp:
+    complete
+    .text       start:0x020bc2d0 end:0x020bc36c
 
 src/engine/ctrl_wrap.cpp:
     complete
@@ -4665,6 +4685,10 @@ src/engine/ctrl_free_2.cpp:
 src/engine/ctrl_free_virtual_2.cpp:
     complete
     .text       start:0x020bc818 end:0x020bc84c
+
+src/engine/rect_buf_init.cpp:
+    complete
+    .text       start:0x020bc84c end:0x020bc8bc
 
 src/game/menu_2.cpp:
     complete
