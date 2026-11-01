@@ -133,7 +133,7 @@ typedef struct KnifeObjAffineSrcData { u16 data[3]; } KnifeObjAffineSrcData; // 
 void ObjAffineSet2(const KnifeObjAffineSrcData *pos, Entity *e);
 void ObjAnimMoveSet(Entity *e, const u16 *bounds, u8 flags);
 void ObjHippariCheck(Entity *e);
-void ObjLiftPrioCheck(Entity *e);
+int ObjLiftPrioCheck(Entity *e);
 void ObjMoveInit(void);
 void ObjPosCopyOfs32(Entity *e, Entity *target, s32 a, s32 b);
 void OpeningTask(void);
