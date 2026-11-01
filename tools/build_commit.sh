@@ -2,6 +2,8 @@
 # Rebuilds, checks the ROM still matches, and commits everything with the given message.
 set -e
 cd "$(dirname "$0")/.."
+# Join split files of one module whose gap has been filled (failed merges are remembered in scratch/merge_failed.txt).
+python tools/merge_units.py | tail -1
 python tools/configure.py eur > /dev/null
 # Compile first (linking may fail on new C++ names), give symbols.txt the mangled names, then build for real.
 PATH=/c/tools/bin:$PATH ninja -k 0 > scratch/ninja.log 2>&1 || true

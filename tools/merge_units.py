@@ -90,6 +90,17 @@ def func_count(paths):
     return n
 
 
+# chains that did not merge, with a hash of their files, so unchanged ones are not retried at every integration
+FAILED = ROOT / "scratch/merge_failed.txt"
+failed = set(FAILED.read_text().split(chr(10))) if FAILED.exists() else set()
+
+
+def key(paths):
+    import hashlib
+    h = hashlib.sha1("".join((ROOT / p).read_text(encoding="utf-8") for p in paths).encode()).hexdigest()[:12]
+    return "+".join(paths) + " " + h
+
+
 done = 0
 for chain in chains():
     paths = [u[2] for u in chain]
@@ -100,9 +111,13 @@ for chain in chains():
         print(f"{' + '.join(paths)} -> {target}")
         done += 1
         continue
+    if key(paths) in failed:
+        continue
     count = func_count(paths)
     if count is None:
         print(f"skip {paths[0]}: a piece does not match on its own")
+        failed.add(key(paths))
+        FAILED.write_text(chr(10).join(sorted(failed)))
         continue
     saved = {p: (ROOT / p).read_text(encoding="utf-8") for p in paths}
     text = merged_text(paths)
@@ -114,18 +129,16 @@ for chain in chains():
         for p, t in saved.items():
             (ROOT / p).write_text(t, encoding="utf-8", newline="\n")
         print(f"undone {target}: merged file does not compile or match")
+        failed.add(key(paths))
+        FAILED.write_text(chr(10).join(sorted(failed)))
         continue
     d = DELINKS.read_text()
-    first = True
-    for p in paths:
-        m = re.search(rf"^{re.escape(p)}:\n(?:    .*\n)+\n?", d, re.M)
-        if first:
-            d = d.replace(m.group(0), f"{target}:\n    complete\n    .text       start:{chain[0][0]:#010x} "
-                                      f"end:{chain[-1][1]:#010x}\n\n", 1)
-            first = False
-        else:
-            d = d.replace(m.group(0), "", 1)
-    DELINKS.write_text(d, newline="\n")
+    pos = re.search(rf"^{re.escape(paths[0])}:\n", d, re.M).start()
+    unit = f"{target}:\n    complete\n    .text       start:{chain[0][0]:#010x} end:{chain[-1][1]:#010x}\n\n"
+    d = d[:pos] + "\x00" + d[pos:]  # marks where the merged unit goes
+    for p in paths:  # remove every piece first, the target name included, then insert the merged unit
+        d = re.sub(rf"^{re.escape(p)}:\n(?:    .*\n)+\n?", "", d, count=1, flags=re.M)
+    DELINKS.write_text(d.replace("\x00", unit), newline="\n")
     done += 1
     print(f"{' + '.join(paths)} -> {target}")
 print(f"{done} chains merged")
