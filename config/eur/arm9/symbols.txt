@@ -3298,7 +3298,7 @@ _Z15GetRandomTakaraPPhh kind:function(arm,size=0x2c) addr:0x0207c1fc
 CalcRupeeDiff kind:function(arm,size=0x44) addr:0x0207c228
 CalcItemLevel kind:function(arm,size=0xc8) addr:0x0207c26c
 CalcHeartLevel kind:function(arm,size=0xd4) addr:0x0207c334
-func_0207c408 kind:function(arm,size=0x1d0) addr:0x0207c408
+Set_TrySpawnChild kind:function(arm,size=0x1d0) addr:0x0207c408
 _Z7haneSetP9OBJ_WORK_ kind:function(arm,size=0x70) addr:0x0207c5d8
 func_0207c648 kind:function(arm,size=0x180) addr:0x0207c648
 _Z6Tama00P9OBJ_WORK_ kind:function(arm,size=0x28) addr:0x0207c7c8
@@ -11996,9 +11996,9 @@ data_0211678c kind:data(any) addr:0x0211678c
 data_021167c4 kind:data(any) addr:0x021167c4
 data_021167fc kind:data(any) addr:0x021167fc
 data_02116800 kind:data(any) addr:0x02116800
-data_02116824 kind:data(any) addr:0x02116824
-data_0211682c kind:data(any) addr:0x0211682c
-data_02116834 kind:data(any) addr:0x02116834
+Set_SpawnChanceTable kind:data(any) addr:0x02116824
+Set_Kind11Threshold kind:data(any) addr:0x0211682c
+Set_Kind12Threshold kind:data(any) addr:0x02116834
 data_0211683c kind:data(any) addr:0x0211683c
 data_0211684c kind:data(any) addr:0x0211684c
 data_0211685c kind:data(any) addr:0x0211685c
@@ -12144,7 +12144,7 @@ data_02117978 kind:data(any) addr:0x02117978
 data_02117998 kind:data(any) addr:0x02117998
 data_021179b8 kind:data(any) addr:0x021179b8
 data_021179d8 kind:data(any) addr:0x021179d8
-data_021179f8 kind:data(any) addr:0x021179f8
+Set_KindTables kind:data(any) addr:0x021179f8
 data_02117a0c kind:data(any) addr:0x02117a0c
 data_02117a28 kind:data(any) addr:0x02117a28
 data_02117a48 kind:data(any) addr:0x02117a48
@@ -12152,11 +12152,11 @@ data_02117a68 kind:data(any) addr:0x02117a68
 data_02117a88 kind:data(any) addr:0x02117a88
 data_02117aa0 kind:data(any) addr:0x02117aa0
 data_02117abc kind:data(any) addr:0x02117abc
-data_02117ad4 kind:data(any) addr:0x02117ad4
-data_02117aec kind:data(any) addr:0x02117aec
-data_02117af0 kind:data(any) addr:0x02117af0
-data_02117af4 kind:data(any) addr:0x02117af4
-data_02117b08 kind:data(any) addr:0x02117b08
+Set_KindRecords kind:data(any) addr:0x02117ad4
+Set_Record11Miss kind:data(any) addr:0x02117aec
+Set_Record12Miss kind:data(any) addr:0x02117af0
+Set_Record12Hit kind:data(any) addr:0x02117af4
+Set_Record11Hit kind:data(any) addr:0x02117b08
 data_02117b20 kind:data(any) addr:0x02117b20
 data_02117b90 kind:data(any) addr:0x02117b90
 data_02117ba0 kind:data(any) addr:0x02117ba0

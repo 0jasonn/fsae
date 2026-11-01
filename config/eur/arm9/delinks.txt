@@ -3010,6 +3010,10 @@ src/game/heartlevel.cpp:
     complete
     .text       start:0x0207c334 end:0x0207c408
 
+src/actor/object/setspawn.cpp:
+    complete
+    .text       start:0x0207c408 end:0x0207c5d8
+
 src/actor/object/hane.cpp:
     complete
     .text       start:0x0207c5d8 end:0x0207c648

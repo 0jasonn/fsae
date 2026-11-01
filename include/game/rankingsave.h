@@ -112,7 +112,7 @@ s32 VerifySaveBufferDword(u16 index, u16 *data);
 const SaveEepInfo *getEepInfo(u8 slot);
 s32 Knife_WriteToMedia(u8 slot, const u32 *data);
 s32 ReadFromMedia(u8 slot, u32 *data);
-void Knife_mediaWrite(void);
+s32 Knife_mediaWrite(void); // returns the FSResult
 void func_020569cc(const void *buffer, u16 value, s32 size);
 
 extern "C" {
