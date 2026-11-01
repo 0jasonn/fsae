@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
-#include "object/template.h"
+#include "actor/object/template.h"
 #include "game/hit_6.h"
 
 // Hit handlers, second hit unit (module hit). Original names from the debug build:

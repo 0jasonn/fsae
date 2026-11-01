@@ -5,7 +5,7 @@
 // ones in config/eur/arm9/symbols.txt. Class members with plain names take the object as the first argument.
 
 #include "engine/functions.h"
-#include "game/message_e.h"
+#include "ui/message_e.h"
 
 // Layout of Knife::Message::RenderTarget as the text drawing reads it (message_e.h names only part of it)
 typedef struct RenderTargetLayout {

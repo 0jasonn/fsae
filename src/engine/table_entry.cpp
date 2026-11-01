@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/rect_f.h"
+#include "ui/widget/rect_f.h"
 
 // table_entry: function Table_getEntry58 (0x020bc260), provisional name.
 

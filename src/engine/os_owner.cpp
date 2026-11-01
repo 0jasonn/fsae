@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/pane.h"
+#include "ui/widget/pane.h"
 #include "engine/os_owner_api.h"
 
 // os_owner: function OS_getOwnerFlag (0x020b7b00), matching. It reads the owner information block (0x54 bytes) and

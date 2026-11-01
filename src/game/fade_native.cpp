@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "enemy/enemycommon.h"
+#include "actor/enemy/enemycommon.h"
 #include "global.h"
 
 // Implementer B, round 6: fade_native_init_0464c0 (0x020464c0), fade_native_init_046538 (0x02046538).

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "game/comm.h"
+#include "knife/comm/comm.h"
 
 // Functions in this file (module com, original names from the debug build): frame_ack (frame_ack())
 

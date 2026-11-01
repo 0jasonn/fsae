@@ -2,7 +2,7 @@
 """Moves structs that several source files define identically into one module header.
 
 For each `typedef struct Name { ... } Name;` found identically (ignoring comments and spacing) in two or more files,
-the definition goes into include/<dir>/<module>.h (created if missing; <module> is the first file's name without its
+the definition goes into include/<dirs>/<module>.h (created if missing; <module> is the first file's name without its
 _N suffix) and every file includes that header instead. Each move is checked with trymatch on the files it touches
 and undone if any of them stops compiling or matching.
 usage: hoist_structs.py [--skip FILE ...]
@@ -26,7 +26,7 @@ def matches(path):
 
 
 found = collections.defaultdict(list)
-for p in sorted((ROOT / "src").glob("*/*.cpp")):
+for p in sorted(q for q in (ROOT / "src").rglob("*.cpp") if "wip" not in q.parts):
     if p.relative_to(ROOT).as_posix() in skip:
         continue
     for m in STRUCT.finditer(p.read_text(encoding="utf-8")):
@@ -38,13 +38,14 @@ for name, defs in sorted(found.items()):
         continue
     first = defs[0][0]
     module = re.sub(r"_\d+$", "", first.stem)
-    header = ROOT / "include" / first.parent.name / f"{module}.h"
-    inc = f'#include "{first.parent.name}/{module}.h"'
+    rel = first.parent.relative_to(ROOT / "src").as_posix()
+    header = ROOT / "include" / rel / f"{module}.h"
+    inc = f'#include "{rel}/{module}.h"'
     saved = {p: p.read_text(encoding="utf-8") for p, _ in defs}
     saved_h = header.read_text(encoding="utf-8") if header.exists() else None
     best = max((d for _, d in defs), key=len)  # the copy with the most comments
     if saved_h is None:
-        guard = f"{first.parent.name}_{module}_H".upper()
+        guard = re.sub(r"\W", "_", f"{rel}_{module}_H").upper()
         text = f'#ifndef {guard}\n#define {guard}\n\n#include "engine/entity.h"\n\n{best}\n#endif\n'
     else:
         text = saved_h[:saved_h.rindex("#endif")].rstrip("\n") + "\n\n" + best + "\n#endif\n"

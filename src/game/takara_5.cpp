@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "enemy/loader_decls.h"
+#include "actor/enemy/loader_decls.h"
 #include "game/takara.h"
 
 extern TakaraEntry data_02134c30[32];

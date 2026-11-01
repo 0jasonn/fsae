@@ -2,7 +2,7 @@
 #include "game/rankingsave.h"
 #include "global.h"
 #include "game/savemedia.h"
-#include "game/knife_power.h"
+#include "knife/app/knife_power.h"
 #include "game/backup.h"
 
 // Save media (backup) unit 2. Address -> name:

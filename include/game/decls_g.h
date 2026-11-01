@@ -4,7 +4,7 @@
 // Declarations used by the G units that are not in engine/functions.h yet. The reviewer moves the shared ones there.
 
 #include "types.h"
-#include "game/menu.h"
+#include "ui/widget/menu.h"
 
 // Knife manual helper (0x020befd0, unnamed wrapper of the menu object creation; five arguments)
 extern "C" void Menu_CreateEntryDefault(void *a, void *b, void *c, void *d, void *e);

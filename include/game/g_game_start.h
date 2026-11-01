@@ -5,7 +5,7 @@
 // that data_02186fdc points at (its storage is data_02186fe0, 0x6c bytes).
 
 #include "engine/functions.h"
-#include "game/subtask.h"
+#include "knife/subtask/subtask.h"
 
 // Work block of the game start subtask. The first 0x24 bytes are an OBJInfo (freed by subTask_free_objinfo).
 typedef struct GameStartWork {

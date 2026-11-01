@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/fileselui.h"
+#include "ui/fileselui.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_gameover_init (0x020adb04), subTask_gameover_end (0x020adb68)

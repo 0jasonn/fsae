@@ -6,7 +6,7 @@
 
 #include "types.h"
 #include "engine/functions.h"
-#include "game/menu.h"
+#include "ui/widget/menu.h"
 
 // Global object of the Knife manual mode (the menu wrapper at data_0218704c): a pointer at +0x14, three block
 // pointers at +0x18 and a flag byte at +0x3c. Size 0x40 (cleared by Knife::i_postprocManual).

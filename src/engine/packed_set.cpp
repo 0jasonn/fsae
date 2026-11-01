@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/pane.h"
+#include "ui/widget/pane.h"
 #include "engine/packed_set_api.h"
 
 // packed_set: functions Packed_noop (0x020b70fc), Obj_initVtableB (0x020b7100), Packed_setU32BE (0x020b7110) and

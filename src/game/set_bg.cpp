@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/subtask.h"
+#include "knife/subtask/subtask.h"
 
 // Background cell writer, 0x0209b394 (set_bg_char_8_8 is 0x44 bytes; set_bg_char_16_16 is parked in between).
 

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/rect_f.h"
+#include "ui/widget/rect_f.h"
 
 // table_set: functions Table_setValueA (0x020bc280) and Table_setValueB (0x020bc2a8), provisional names. Each looks the
 // index up with Table_getEntry58 and passes value to its own setter (ResPlayer_AdvanceAndRefresh and ResPlayer_SeekAndRefresh).

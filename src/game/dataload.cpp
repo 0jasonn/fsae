@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "enemy/decls_b2.h"
+#include "actor/enemy/decls_b2.h"
 
 // Functions in this file (module dataload, original names from the debug build): DataLoad (DataLoad(unsigned short))
 //

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/rect_f.h"
+#include "ui/widget/rect_f.h"
 #include "engine/gx_misc_api.h"
 
 // gx_misc: functions Gx_setBrightnessPair (0x020bc3a8), Gx_setBlendAlpha (0x020bc3d4) and Gx_loadPalette (0x020bc3fc),

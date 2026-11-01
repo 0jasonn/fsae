@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "object/tama11.h"
+#include "actor/object/tama11.h"
 
 // mdma module, 0x02080d18 to 0x02080e58. Command records in data_0212ccb0: a 4-byte source, a 4-byte destination and a
 // 2-byte size (little endian), 10 bytes in all; each function takes a record and returns the record after it.

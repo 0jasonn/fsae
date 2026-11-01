@@ -5,7 +5,7 @@
 
 #include "engine/functions.h"
 #include "engine/player.h"
-#include "enemy/ending.h"
+#include "actor/enemy/ending.h"
 
 extern "C" {
 void MultiWorkInit(void);

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Moves an implementer's finished work into the tree and adds the units.
 
-usage: integrate_wip.py LETTER DEST   (DEST is enemy, object, game or engine)
+usage: integrate_wip.py LETTER DEST   (DEST is a folder under src/, e.g. actor/enemy, actor/object, game, ui, knife/message, engine)
 
 - applies the lines of scratch/agent<L>/renames.txt whose old name still exists in symbols.txt
 - moves src/wip/<L>/*.cpp to src/<DEST>/ and include/wip/<L>/*.h to include/<DEST>/ (refuses to overwrite)
@@ -33,7 +33,7 @@ moved = []
 for kind, ext in (("src", "*.cpp"), ("include", "*.h")):
     for f in sorted((ROOT / kind / "wip" / letter).glob(ext)):
         target = ROOT / kind / dest / f.name
-        if target.exists() or (kind == "src" and any(p for p in (ROOT / "src").glob(f"*/{f.name}") if "wip" not in p.parts)):
+        if target.exists() or (kind == "src" and any(p for p in (ROOT / "src").rglob(f.name) if "wip" not in p.parts)):
             sys.exit(f"{f.name} already exists in src/ (dsd needs unique file names); rename {f} first")
         target.parent.mkdir(parents=True, exist_ok=True)
         f.rename(target)

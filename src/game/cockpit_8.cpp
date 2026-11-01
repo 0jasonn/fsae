@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "types.h"
-#include "game/knife_hud.h"
+#include "knife/app/knife_hud.h"
 
 // Functions in this file (module cockpit, original names from the debug build):
 //   cockpit_call_check (cockpit_call_check()), cockpit_obj_trans (cockpit_obj_trans(unsigned char))

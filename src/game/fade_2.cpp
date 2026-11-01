@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "enemy/ending.h"
+#include "actor/enemy/ending.h"
 #include "global.h"
 
 // Implementer B, round 6: FadeMain (0x020462c4), fade_in (0x020462f4), fade_out (0x0204636c).

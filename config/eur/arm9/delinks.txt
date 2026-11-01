@@ -113,15 +113,15 @@ src/engine/decnum_round_2.cpp:
     complete
     .text       start:0x02009274 end:0x02009388
 
-src/engine/wstr_format.cpp:
+src/knife/message/wstr_format.cpp:
     complete
     .text       start:0x0200a2e4 end:0x0200a3ac
 
-src/engine/wstr.cpp:
+src/knife/message/wstr.cpp:
     complete
     .text       start:0x0200a3ac end:0x0200a3c8
 
-src/engine/wstr_2.cpp:
+src/knife/message/wstr_2.cpp:
     complete
     .text       start:0x0200a3e8 end:0x0200a41c
 
@@ -505,11 +505,11 @@ src/engine/std_snprintf.cpp:
     complete
     .text       start:0x0201dc94 end:0x0201dcbc
 
-src/object/arrow.cpp:
+src/actor/object/arrow.cpp:
     complete
     .text       start:0x02020fc8 end:0x02021004
 
-src/object/arrow_2.cpp:
+src/actor/object/arrow_2.cpp:
     complete
     .text       start:0x020216d0 end:0x02021784
 
@@ -545,19 +545,19 @@ src/game/bganm.cpp:
     complete
     .text       start:0x02023b50 end:0x02023d78
 
-src/object/bomb_2.cpp:
+src/actor/object/bomb_2.cpp:
     complete
     .text       start:0x02023d78 end:0x02023f58
 
-src/object/bomb.cpp:
+src/actor/object/bomb.cpp:
     complete
     .text       start:0x0202406c end:0x02024234
 
-src/object/bomb_3.cpp:
+src/actor/object/bomb_3.cpp:
     complete
     .text       start:0x02024400 end:0x02024498
 
-src/object/boots.cpp:
+src/actor/object/boots.cpp:
     complete
     .text       start:0x02024498 end:0x020244d4
 
@@ -653,35 +653,35 @@ src/game/objcolor_2.cpp:
     complete
     .text       start:0x02027fe8 end:0x02028024
 
-src/game/comfinit.cpp:
+src/knife/comm/comfinit.cpp:
     complete
     .text       start:0x02028024 end:0x02028068
 
-src/game/com.cpp:
+src/knife/comm/com.cpp:
     complete
     .text       start:0x02028068 end:0x020280d0
 
-src/game/wxc.cpp:
+src/knife/comm/wxc.cpp:
     complete
     .text       start:0x020280d0 end:0x020280e0
 
-src/game/com_2.cpp:
+src/knife/comm/com_2.cpp:
     complete
     .text       start:0x020280e0 end:0x020281b0
 
-src/game/com_3.cpp:
+src/knife/comm/com_3.cpp:
     complete
     .text       start:0x020281b0 end:0x02028240
 
-src/game/com_4.cpp:
+src/knife/comm/com_4.cpp:
     complete
     .text       start:0x02028280 end:0x020284d4
 
-src/game/knifesave.cpp:
+src/knife/app/knifesave.cpp:
     complete
     .text       start:0x020284d4 end:0x020284fc
 
-src/game/com_5.cpp:
+src/knife/comm/com_5.cpp:
     complete
     .text       start:0x020286d4 end:0x0202877c
 
@@ -689,15 +689,15 @@ src/game/frame_ack.cpp:
     complete
     .text       start:0x02028944 end:0x02028a64
 
-src/game/com_6.cpp:
+src/knife/comm/com_6.cpp:
     complete
     .text       start:0x02028b34 end:0x02028b58
 
-src/game/comm.cpp:
+src/knife/comm/comm.cpp:
     complete
     .text       start:0x020296e8 end:0x02029828
 
-src/game/commerror.cpp:
+src/knife/comm/commerror.cpp:
     complete
     .text       start:0x02029828 end:0x02029968
 
@@ -721,7 +721,7 @@ src/game/cgsubtrans.cpp:
     complete
     .text       start:0x02029eac end:0x02029f10
 
-src/game/knifetbl.cpp:
+src/knife/app/knifetbl.cpp:
     complete
     .text       start:0x02029f10 end:0x02029fe8
 
@@ -749,15 +749,15 @@ src/game/demo.cpp:
     complete
     .text       start:0x0202a78c end:0x0202a968
 
-src/game/doorsel.cpp:
+src/ui/doorsel.cpp:
     complete
     .text       start:0x0202a968 end:0x0202a9a0
 
-src/game/doorsel_2.cpp:
+src/ui/doorsel_2.cpp:
     complete
     .text       start:0x0202ab90 end:0x0202abb8
 
-src/game/doorsel_3.cpp:
+src/ui/doorsel_3.cpp:
     complete
     .text       start:0x0202adc8 end:0x0202aee4
 
@@ -765,643 +765,643 @@ src/game/keyclear.cpp:
     complete
     .text       start:0x0202b54c end:0x0202b620
 
-src/enemy/em00.cpp:
+src/actor/enemy/em00.cpp:
     complete
     .text       start:0x0202bb4c end:0x0202bee8
 
-src/enemy/em0a_2.cpp:
+src/actor/enemy/em0a_2.cpp:
     complete
     .text       start:0x0202c078 end:0x0202c224
 
-src/enemy/em0b.cpp:
+src/actor/enemy/em0b.cpp:
     complete
     .text       start:0x0202c224 end:0x0202c260
 
-src/enemy/em0b_2.cpp:
+src/actor/enemy/em0b_2.cpp:
     complete
     .text       start:0x0202c2b4 end:0x0202c350
 
-src/enemy/em0b_3.cpp:
+src/actor/enemy/em0b_3.cpp:
     complete
     .text       start:0x0202c4a0 end:0x0202c5c0
 
-src/enemy/em0c.cpp:
+src/actor/enemy/em0c.cpp:
     complete
     .text       start:0x0202c5c0 end:0x0202c5fc
 
-src/enemy/em0c_2.cpp:
+src/actor/enemy/em0c_2.cpp:
     complete
     .text       start:0x0202c768 end:0x0202c80c
 
-src/enemy/areacheck_2.cpp:
+src/actor/enemy/areacheck_2.cpp:
     complete
     .text       start:0x0202c9a8 end:0x0202caa0
 
-src/enemy/em0e.cpp:
+src/actor/enemy/em0e.cpp:
     complete
     .text       start:0x0202caf8 end:0x0202cb30
 
-src/enemy/em0e_2.cpp:
+src/actor/enemy/em0e_2.cpp:
     complete
     .text       start:0x0202cb30 end:0x0202cfc4
 
-src/enemy/em0e_3.cpp:
+src/actor/enemy/em0e_3.cpp:
     complete
     .text       start:0x0202cfc4 end:0x0202d290
 
-src/enemy/em0e_4.cpp:
+src/actor/enemy/em0e_4.cpp:
     complete
     .text       start:0x0202d514 end:0x0202d5bc
 
-src/enemy/em0f.cpp:
+src/actor/enemy/em0f.cpp:
     complete
     .text       start:0x0202dad8 end:0x0202de80
 
-src/enemy/em0f_2.cpp:
+src/actor/enemy/em0f_2.cpp:
     complete
     .text       start:0x0202e0b8 end:0x0202e58c
 
-src/enemy/em0f_3.cpp:
+src/actor/enemy/em0f_3.cpp:
     complete
     .text       start:0x0202e648 end:0x0202e708
 
-src/enemy/em01.cpp:
+src/actor/enemy/em01.cpp:
     complete
     .text       start:0x0202e904 end:0x0202ea2c
 
-src/enemy/em01_2.cpp:
+src/actor/enemy/em01_2.cpp:
     complete
     .text       start:0x0202eb2c end:0x0202eb88
 
-src/enemy/em1a.cpp:
+src/actor/enemy/em1a.cpp:
     complete
     .text       start:0x0202eb88 end:0x0202ef7c
 
-src/enemy/em1b.cpp:
+src/actor/enemy/em1b.cpp:
     complete
     .text       start:0x0202f098 end:0x0202f138
 
-src/enemy/em1b_2.cpp:
+src/actor/enemy/em1b_2.cpp:
     complete
     .text       start:0x0202f29c end:0x0202f3e4
 
-src/enemy/em1b_3.cpp:
+src/actor/enemy/em1b_3.cpp:
     complete
     .text       start:0x0202f498 end:0x0202f554
 
-src/enemy/em1c.cpp:
+src/actor/enemy/em1c.cpp:
     complete
     .text       start:0x0202f5e0 end:0x0202f6cc
 
-src/enemy/em1c_5.cpp:
+src/actor/enemy/em1c_5.cpp:
     complete
     .text       start:0x0202f6cc end:0x0202f9b4
 
-src/enemy/em1c_2.cpp:
+src/actor/enemy/em1c_2.cpp:
     complete
     .text       start:0x0202f9b4 end:0x0202f9f0
 
-src/enemy/em1c_3.cpp:
+src/actor/enemy/em1c_3.cpp:
     complete
     .text       start:0x0202fa50 end:0x0202fa80
 
-src/enemy/em1c_4.cpp:
+src/actor/enemy/em1c_4.cpp:
     complete
     .text       start:0x0202fae8 end:0x0202fb04
 
-src/enemy/em1d.cpp:
+src/actor/enemy/em1d.cpp:
     complete
     .text       start:0x0202fb04 end:0x0202fc74
 
-src/enemy/em1d_2.cpp:
+src/actor/enemy/em1d_2.cpp:
     complete
     .text       start:0x0202fc74 end:0x0202fd78
 
-src/enemy/em1d_3.cpp:
+src/actor/enemy/em1d_3.cpp:
     complete
     .text       start:0x0202fd78 end:0x0202fe98
 
-src/enemy/seqset.cpp:
+src/actor/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108
 
-src/enemy/em1e.cpp:
+src/actor/enemy/em1e.cpp:
     complete
     .text       start:0x020301f0 end:0x02030790
 
-src/enemy/em02.cpp:
+src/actor/enemy/em02.cpp:
     complete
     .text       start:0x02030790 end:0x02030a14
 
-src/enemy/em2a.cpp:
+src/actor/enemy/em2a.cpp:
     complete
     .text       start:0x02030a14 end:0x0203120c
 
-src/enemy/em2a_2.cpp:
+src/actor/enemy/em2a_2.cpp:
     complete
     .text       start:0x02031304 end:0x02031cb0
 
-src/enemy/em2a_3.cpp:
+src/actor/enemy/em2a_3.cpp:
     complete
     .text       start:0x0203224c end:0x02032edc
 
-src/enemy/em2b.cpp:
+src/actor/enemy/em2b.cpp:
     complete
     .text       start:0x02032edc end:0x02033290
 
-src/enemy/em2c.cpp:
+src/actor/enemy/em2c.cpp:
     complete
     .text       start:0x02033290 end:0x02033708
 
-src/enemy/em2c_2.cpp:
+src/actor/enemy/em2c_2.cpp:
     complete
     .text       start:0x02033708 end:0x02033744
 
-src/enemy/em2c_3.cpp:
+src/actor/enemy/em2c_3.cpp:
     complete
     .text       start:0x020337e4 end:0x020340a8
 
-src/enemy/em2c_4.cpp:
+src/actor/enemy/em2c_4.cpp:
     complete
     .text       start:0x02034508 end:0x0203464c
 
-src/enemy/em2c_5.cpp:
+src/actor/enemy/em2c_5.cpp:
     complete
     .text       start:0x02034730 end:0x020347dc
 
-src/enemy/em2d.cpp:
+src/actor/enemy/em2d.cpp:
     complete
     .text       start:0x020347dc end:0x02035a8c
 
-src/enemy/em2d_2.cpp:
+src/actor/enemy/em2d_2.cpp:
     complete
     .text       start:0x02035ba4 end:0x02035ff8
 
-src/object/cercle.cpp:
+src/actor/object/cercle.cpp:
     complete
     .text       start:0x02035ff8 end:0x02036064
 
-src/enemy/em2d_3.cpp:
+src/actor/enemy/em2d_3.cpp:
     complete
     .text       start:0x02036064 end:0x020361e8
 
-src/enemy/em2e.cpp:
+src/actor/enemy/em2e.cpp:
     complete
     .text       start:0x020361e8 end:0x02036ca4
 
-src/enemy/em2f.cpp:
+src/actor/enemy/em2f.cpp:
     complete
     .text       start:0x02036ca4 end:0x020379d8
 
-src/enemy/em2f_2.cpp:
+src/actor/enemy/em2f_2.cpp:
     complete
     .text       start:0x02037a6c end:0x02037f6c
 
-src/enemy/em2f_3.cpp:
+src/actor/enemy/em2f_3.cpp:
     complete
     .text       start:0x0203808c end:0x020382fc
 
-src/enemy/em2f_4.cpp:
+src/actor/enemy/em2f_4.cpp:
     complete
     .text       start:0x020383bc end:0x02038414
 
-src/enemy/em2f_5.cpp:
+src/actor/enemy/em2f_5.cpp:
     complete
     .text       start:0x02038460 end:0x02038544
 
-src/enemy/em03.cpp:
+src/actor/enemy/em03.cpp:
     complete
     .text       start:0x02038544 end:0x020385cc
 
-src/enemy/em03_2.cpp:
+src/actor/enemy/em03_2.cpp:
     complete
     .text       start:0x02038660 end:0x0203888c
 
-src/enemy/em04.cpp:
+src/actor/enemy/em04.cpp:
     complete
     .text       start:0x02038a34 end:0x02038bbc
 
-src/enemy/em04_3.cpp:
+src/actor/enemy/em04_3.cpp:
     complete
     .text       start:0x02038c58 end:0x02038ce8
 
-src/enemy/em05.cpp:
+src/actor/enemy/em05.cpp:
     complete
     .text       start:0x02038da4 end:0x02038ee8
 
-src/enemy/em05_2.cpp:
+src/actor/enemy/em05_2.cpp:
     complete
     .text       start:0x02038ee8 end:0x02038f3c
 
-src/enemy/em05_6.cpp:
+src/actor/enemy/em05_6.cpp:
     complete
     .text       start:0x02038f3c end:0x0203901c
 
-src/enemy/em05_3.cpp:
+src/actor/enemy/em05_3.cpp:
     complete
     .text       start:0x0203901c end:0x02039074
 
-src/enemy/em05_4.cpp:
+src/actor/enemy/em05_4.cpp:
     complete
     .text       start:0x02039074 end:0x02039e8c
 
-src/enemy/em09.cpp:
+src/actor/enemy/em09.cpp:
     complete
     .text       start:0x02039ed4 end:0x0203a75c
 
-src/enemy/em09_3.cpp:
+src/actor/enemy/em09_3.cpp:
     complete
     .text       start:0x0203a75c end:0x0203a8bc
 
-src/enemy/em09_2.cpp:
+src/actor/enemy/em09_2.cpp:
     complete
     .text       start:0x0203a8bc end:0x0203ab78
 
-src/enemy/em10.cpp:
+src/actor/enemy/em10.cpp:
     complete
     .text       start:0x0203ab78 end:0x0203af20
 
-src/enemy/attset.cpp:
+src/actor/enemy/attset.cpp:
     complete
     .text       start:0x0203af20 end:0x0203afd0
 
-src/enemy/em11.cpp:
+src/actor/enemy/em11.cpp:
     complete
     .text       start:0x0203b02c end:0x0203b384
 
-src/enemy/em12.cpp:
+src/actor/enemy/em12.cpp:
     complete
     .text       start:0x0203b384 end:0x0203b594
 
-src/enemy/em12_2.cpp:
+src/actor/enemy/em12_2.cpp:
     complete
     .text       start:0x0203b638 end:0x0203bca4
 
-src/enemy/rewcell.cpp:
+src/actor/enemy/rewcell.cpp:
     complete
     .text       start:0x0203c044 end:0x0203c208
 
-src/enemy/em13.cpp:
+src/actor/enemy/em13.cpp:
     complete
     .text       start:0x0203c208 end:0x0203c27c
 
-src/enemy/em13_2.cpp:
+src/actor/enemy/em13_2.cpp:
     complete
     .text       start:0x0203c36c end:0x0203c570
 
-src/enemy/em13_getpos.cpp:
+src/actor/enemy/em13_getpos.cpp:
     complete
     .text       start:0x0203c570 end:0x0203c694
 
-src/enemy/em13_3.cpp:
+src/actor/enemy/em13_3.cpp:
     complete
     .text       start:0x0203c694 end:0x0203c7f8
 
-src/enemy/em14.cpp:
+src/actor/enemy/em14.cpp:
     complete
     .text       start:0x0203c7f8 end:0x0203ca40
 
-src/enemy/wiztarget.cpp:
+src/actor/enemy/wiztarget.cpp:
     complete
     .text       start:0x0203ca40 end:0x0203cbe4
 
-src/enemy/em15.cpp:
+src/actor/enemy/em15.cpp:
     complete
     .text       start:0x0203ccc8 end:0x0203cf18
 
-src/enemy/em16.cpp:
+src/actor/enemy/em16.cpp:
     complete
     .text       start:0x0203cfcc end:0x0203cffc
 
-src/enemy/em16_2.cpp:
+src/actor/enemy/em16_2.cpp:
     complete
     .text       start:0x0203d088 end:0x0203d1a4
 
-src/enemy/em16_3.cpp:
+src/actor/enemy/em16_3.cpp:
     complete
     .text       start:0x0203d29c end:0x0203d508
 
-src/enemy/em17.cpp:
+src/actor/enemy/em17.cpp:
     complete
     .text       start:0x0203d508 end:0x0203d5f0
 
-src/enemy/em17_2.cpp:
+src/actor/enemy/em17_2.cpp:
     complete
     .text       start:0x0203d5f0 end:0x0203d8f0
 
-src/enemy/em17_4.cpp:
+src/actor/enemy/em17_4.cpp:
     complete
     .text       start:0x0203d8f0 end:0x0203da28
 
-src/enemy/em17_3.cpp:
+src/actor/enemy/em17_3.cpp:
     complete
     .text       start:0x0203daac end:0x0203dc04
 
-src/enemy/em18_4.cpp:
+src/actor/enemy/em18_4.cpp:
     complete
     .text       start:0x0203dc04 end:0x0203dc68
 
-src/enemy/em18_2.cpp:
+src/actor/enemy/em18_2.cpp:
     complete
     .text       start:0x0203dc68 end:0x0203dc84
 
-src/enemy/em18.cpp:
+src/actor/enemy/em18.cpp:
     complete
     .text       start:0x0203dc84 end:0x0203dc98
 
-src/enemy/em18_3.cpp:
+src/actor/enemy/em18_3.cpp:
     complete
     .text       start:0x0203dc98 end:0x0203dce4
 
-src/enemy/em18_5.cpp:
+src/actor/enemy/em18_5.cpp:
     complete
     .text       start:0x0203dce4 end:0x0203df14
 
-src/enemy/em18_6.cpp:
+src/actor/enemy/em18_6.cpp:
     complete
     .text       start:0x0203df14 end:0x0203dfa8
 
-src/enemy/delprt.cpp:
+src/actor/enemy/delprt.cpp:
     complete
     .text       start:0x0203dfa8 end:0x0203dfd0
 
-src/enemy/type0rock.cpp:
+src/actor/enemy/type0rock.cpp:
     complete
     .text       start:0x0203e038 end:0x0203e05c
 
-src/enemy/em19_6.cpp:
+src/actor/enemy/em19_6.cpp:
     complete
     .text       start:0x0203e05c end:0x0203e0ac
 
-src/enemy/em19.cpp:
+src/actor/enemy/em19.cpp:
     complete
     .text       start:0x0203e0ac end:0x0203e0c8
 
-src/enemy/em19_4.cpp:
+src/actor/enemy/em19_4.cpp:
     complete
     .text       start:0x0203e0c8 end:0x0203e220
 
-src/enemy/em19_5.cpp:
+src/actor/enemy/em19_5.cpp:
     complete
     .text       start:0x0203e410 end:0x0203e468
 
-src/enemy/em19_2.cpp:
+src/actor/enemy/em19_2.cpp:
     complete
     .text       start:0x0203e4c0 end:0x0203e59c
 
-src/enemy/bgobj.cpp:
+src/actor/enemy/bgobj.cpp:
     complete
     .text       start:0x0203e59c end:0x0203e764
 
-src/enemy/waitset.cpp:
+src/actor/enemy/waitset.cpp:
     complete
     .text       start:0x0203e764 end:0x0203e784
 
-src/enemy/setaction.cpp:
+src/actor/enemy/setaction.cpp:
     complete
     .text       start:0x0203e784 end:0x0203e7a0
 
-src/enemy/effectset.cpp:
+src/actor/enemy/effectset.cpp:
     complete
     .text       start:0x0203e7a0 end:0x0203e7d8
 
-src/enemy/em20_2.cpp:
+src/actor/enemy/em20_2.cpp:
     complete
     .text       start:0x0203e7d8 end:0x0203e840
 
-src/enemy/em20.cpp:
+src/actor/enemy/em20.cpp:
     complete
     .text       start:0x0203e840 end:0x0203e854
 
-src/enemy/em20_6.cpp:
+src/actor/enemy/em20_6.cpp:
     complete
     .text       start:0x0203e854 end:0x0203e8bc
 
-src/enemy/em20_3.cpp:
+src/actor/enemy/em20_3.cpp:
     complete
     .text       start:0x0203e950 end:0x0203e990
 
-src/enemy/em20_4.cpp:
+src/actor/enemy/em20_4.cpp:
     complete
     .text       start:0x0203e990 end:0x0203e9d4
 
-src/enemy/em20_7.cpp:
+src/actor/enemy/em20_7.cpp:
     complete
     .text       start:0x0203e9d4 end:0x0203eba4
 
-src/enemy/em20_5.cpp:
+src/actor/enemy/em20_5.cpp:
     complete
     .text       start:0x0203eba4 end:0x0203ebd4
 
-src/enemy/kamen.cpp:
+src/actor/enemy/kamen.cpp:
     complete
     .text       start:0x0203ed14 end:0x0203ed84
 
-src/enemy/dushcheck.cpp:
+src/actor/enemy/dushcheck.cpp:
     complete
     .text       start:0x0203ed84 end:0x0203ee28
 
-src/enemy/kamen_3.cpp:
+src/actor/enemy/kamen_3.cpp:
     complete
     .text       start:0x0203eed4 end:0x0203ef24
 
-src/enemy/em21.cpp:
+src/actor/enemy/em21.cpp:
     complete
     .text       start:0x0203f1d0 end:0x0203f228
 
-src/enemy/em21_2.cpp:
+src/actor/enemy/em21_2.cpp:
     complete
     .text       start:0x0203f27c end:0x0203f614
 
-src/enemy/em21_3.cpp:
+src/actor/enemy/em21_3.cpp:
     complete
     .text       start:0x0203f740 end:0x0203f754
 
-src/enemy/em22.cpp:
+src/actor/enemy/em22.cpp:
     complete
     .text       start:0x0203f754 end:0x0203f7ac
 
-src/enemy/em22_2.cpp:
+src/actor/enemy/em22_2.cpp:
     complete
     .text       start:0x0203f7ac end:0x0203fa4c
 
-src/enemy/em23.cpp:
+src/actor/enemy/em23.cpp:
     complete
     .text       start:0x0203fa4c end:0x0203fcd8
 
-src/enemy/enrin.cpp:
+src/actor/enemy/enrin.cpp:
     complete
     .text       start:0x0203fcd8 end:0x0203fe0c
 
-src/enemy/em24_4.cpp:
+src/actor/enemy/em24_4.cpp:
     complete
     .text       start:0x0203fe0c end:0x0203fe40
 
-src/enemy/em24_2.cpp:
+src/actor/enemy/em24_2.cpp:
     complete
     .text       start:0x0203fe40 end:0x0203fe7c
 
-src/enemy/em24_3.cpp:
+src/actor/enemy/em24_3.cpp:
     complete
     .text       start:0x0203fe7c end:0x0204001c
 
-src/enemy/em24.cpp:
+src/actor/enemy/em24.cpp:
     complete
     .text       start:0x0204001c end:0x020404f4
 
-src/enemy/em25.cpp:
+src/actor/enemy/em25.cpp:
     complete
     .text       start:0x02040548 end:0x020407c8
 
-src/enemy/em26.cpp:
+src/actor/enemy/em26.cpp:
     complete
     .text       start:0x020407c8 end:0x020408ac
 
-src/enemy/em26_2.cpp:
+src/actor/enemy/em26_2.cpp:
     complete
     .text       start:0x02040ad8 end:0x02040be0
 
-src/enemy/jumpinit.cpp:
+src/actor/enemy/jumpinit.cpp:
     complete
     .text       start:0x02040be0 end:0x02040d00
 
-src/enemy/em26_3.cpp:
+src/actor/enemy/em26_3.cpp:
     complete
     .text       start:0x02040d00 end:0x02040d60
 
-src/enemy/em27.cpp:
+src/actor/enemy/em27.cpp:
     complete
     .text       start:0x02040dcc end:0x02040e44
 
-src/enemy/em27_2.cpp:
+src/actor/enemy/em27_2.cpp:
     complete
     .text       start:0x02040e94 end:0x02040f34
 
-src/enemy/em28_5.cpp:
+src/actor/enemy/em28_5.cpp:
     complete
     .text       start:0x02040f34 end:0x02040ff8
 
-src/enemy/em28.cpp:
+src/actor/enemy/em28.cpp:
     complete
     .text       start:0x02041064 end:0x0204112c
 
-src/enemy/em28_2.cpp:
+src/actor/enemy/em28_2.cpp:
     complete
     .text       start:0x0204112c end:0x02041244
 
-src/enemy/em28_3.cpp:
+src/actor/enemy/em28_3.cpp:
     complete
     .text       start:0x02041344 end:0x02041498
 
-src/enemy/em28_4.cpp:
+src/actor/enemy/em28_4.cpp:
     complete
     .text       start:0x02041774 end:0x020417e8
 
-src/enemy/em29.cpp:
+src/actor/enemy/em29.cpp:
     complete
     .text       start:0x020417e8 end:0x0204198c
 
-src/enemy/em29_2.cpp:
+src/actor/enemy/em29_2.cpp:
     complete
     .text       start:0x0204198c end:0x02041a3c
 
-src/enemy/em29_3.cpp:
+src/actor/enemy/em29_3.cpp:
     complete
     .text       start:0x02041a3c end:0x02042044
 
-src/enemy/em30.cpp:
+src/actor/enemy/em30.cpp:
     complete
     .text       start:0x020421f8 end:0x02042318
 
-src/enemy/em30_2.cpp:
+src/actor/enemy/em30_2.cpp:
     complete
     .text       start:0x02042318 end:0x02042424
 
-src/enemy/em30_3.cpp:
+src/actor/enemy/em30_3.cpp:
     complete
     .text       start:0x02042424 end:0x020426e0
 
-src/enemy/em30_4.cpp:
+src/actor/enemy/em30_4.cpp:
     complete
     .text       start:0x02042798 end:0x02042818
 
-src/enemy/em30_5.cpp:
+src/actor/enemy/em30_5.cpp:
     complete
     .text       start:0x02042818 end:0x0204294c
 
-src/enemy/em30_6.cpp:
+src/actor/enemy/em30_6.cpp:
     complete
     .text       start:0x0204294c end:0x020429c8
 
-src/enemy/em30_7.cpp:
+src/actor/enemy/em30_7.cpp:
     complete
     .text       start:0x020429c8 end:0x02042abc
 
-src/enemy/em30_8.cpp:
+src/actor/enemy/em30_8.cpp:
     complete
     .text       start:0x02042c18 end:0x02042dc8
 
-src/enemy/em30_9.cpp:
+src/actor/enemy/em30_9.cpp:
     complete
     .text       start:0x02042f30 end:0x020432dc
 
-src/enemy/em31.cpp:
+src/actor/enemy/em31.cpp:
     complete
     .text       start:0x020433dc end:0x02043428
 
-src/enemy/encnt.cpp:
+src/actor/enemy/encnt.cpp:
     complete
     .text       start:0x0204361c end:0x0204363c
 
-src/enemy/encnt_2.cpp:
+src/actor/enemy/encnt_2.cpp:
     complete
     .text       start:0x0204370c end:0x02043760
 
-src/enemy/encnt_3.cpp:
+src/actor/enemy/encnt_3.cpp:
     complete
     .text       start:0x02043760 end:0x020438b4
 
-src/enemy/encnt_4.cpp:
+src/actor/enemy/encnt_4.cpp:
     complete
     .text       start:0x02043b54 end:0x02043bf8
 
-src/enemy/encnt_5.cpp:
+src/actor/enemy/encnt_5.cpp:
     complete
     .text       start:0x02043cb8 end:0x02043d28
 
-src/enemy/encnt_6.cpp:
+src/actor/enemy/encnt_6.cpp:
     complete
     .text       start:0x02043da8 end:0x02043dc8
 
-src/enemy/encnt_7.cpp:
+src/actor/enemy/encnt_7.cpp:
     complete
     .text       start:0x02043f00 end:0x02043f70
 
-src/enemy/ending.cpp:
+src/actor/enemy/ending.cpp:
     complete
     .text       start:0x02044324 end:0x020443a0
 
-src/enemy/ending_2.cpp:
+src/actor/enemy/ending_2.cpp:
     complete
     .text       start:0x020443a0 end:0x02044700
 
-src/enemy/ending_3.cpp:
+src/actor/enemy/ending_3.cpp:
     complete
     .text       start:0x02044b44 end:0x020450e4
 
-src/enemy/ending_4.cpp:
+src/actor/enemy/ending_4.cpp:
     complete
     .text       start:0x02045308 end:0x020454a8
 
-src/enemy/ending_5.cpp:
+src/actor/enemy/ending_5.cpp:
     complete
     .text       start:0x020457a8 end:0x02045874
 
-src/enemy/enemycommon.cpp:
+src/actor/enemy/enemycommon.cpp:
     complete
     .text       start:0x020458f8 end:0x02045cb0
 
-src/enemy/enemycommon_2.cpp:
+src/actor/enemy/enemycommon_2.cpp:
     complete
     .text       start:0x0204602c end:0x02046130
 
@@ -1465,68 +1465,68 @@ src/engine/irq_2.cpp:
     complete
     .text       start:0x02049bd8 end:0x02049cdc
 
-src/game/message.cpp:
+src/ui/message.cpp:
     complete
     .text       start:0x02049ea8 end:0x02049f38
 
-src/game/message_2.cpp:
+src/ui/message_2.cpp:
     complete
     .text       start:0x02049f38 end:0x0204a048
     .rodata     start:0x020d7c50 end:0x020d7c60
 
-src/game/message_3.cpp:
+src/ui/message_3.cpp:
     complete
     .text       start:0x0204a048 end:0x0204a110
 
-src/game/message_4.cpp:
+src/ui/message_4.cpp:
     complete
     .text       start:0x0204a110 end:0x0204a250
 
-src/game/message_5.cpp:
+src/ui/message_5.cpp:
     complete
     .text       start:0x0204a250 end:0x0204a258
 
-src/game/message_6.cpp:
+src/ui/message_6.cpp:
     complete
     .text       start:0x0204a370 end:0x0204a4b4
 
-src/game/message_7.cpp:
+src/ui/message_7.cpp:
     complete
     .text       start:0x0204a4b4 end:0x0204a5bc
 
-src/game/message_8.cpp:
+src/ui/message_8.cpp:
     complete
     .text       start:0x0204a5bc end:0x0204a61c
 
-src/game/message_9.cpp:
+src/ui/message_9.cpp:
     complete
     .text       start:0x0204a61c end:0x0204a624
 
-src/game/message_10.cpp:
+src/ui/message_10.cpp:
     complete
     .text       start:0x0204aa00 end:0x0204aa84
 
-src/game/msgwin.cpp:
+src/ui/msgwin.cpp:
     complete
     .text       start:0x0204ac5c end:0x0204ad38
 
-src/game/msgwin_2.cpp:
+src/ui/msgwin_2.cpp:
     complete
     .text       start:0x0204b1b0 end:0x0204b1b4
 
-src/game/knife_comm_disp_3.cpp:
+src/knife/comm/knife_comm_disp_3.cpp:
     complete
     .text       start:0x0204b2f0 end:0x0204b488
 
-src/game/knife_comm_disp.cpp:
+src/knife/comm/knife_comm_disp.cpp:
     complete
     .text       start:0x0204b4dc end:0x0204b7d8
 
-src/game/knife_comm.cpp:
+src/knife/comm/knife_comm.cpp:
     complete
     .text       start:0x0204b7d8 end:0x0204b900
 
-src/game/knife_comm_disp_2.cpp:
+src/knife/comm/knife_comm_disp_2.cpp:
     complete
     .text       start:0x0204b900 end:0x0204bb9c
 
@@ -1538,11 +1538,11 @@ src/engine/objwork_2.cpp:
     complete
     .text       start:0x0204c108 end:0x0204c2cc
 
-src/game/msgdat.cpp:
+src/ui/msgdat.cpp:
     complete
     .text       start:0x0204c2cc end:0x0204c2e0
 
-src/game/knife_font.cpp:
+src/knife/message/knife_font.cpp:
     complete
     .text       start:0x0204c2e0 end:0x0204c3a4
 
@@ -1566,7 +1566,7 @@ src/game/yousei_6.cpp:
     complete
     .text       start:0x0204d50c end:0x0204d5a4
 
-src/game/staffroll_4.cpp:
+src/ui/staffroll_4.cpp:
     complete
     .text       start:0x0204d5a4 end:0x0204d634
 
@@ -1618,15 +1618,15 @@ src/game/stopblock_3.cpp:
     complete
     .text       start:0x0204ebdc end:0x0204ec38
 
-src/object/set5c.cpp:
+src/actor/object/set5c.cpp:
     complete
     .text       start:0x0204eca4 end:0x0204ed00
 
-src/game/multisio.cpp:
+src/knife/comm/multisio.cpp:
     complete
     .text       start:0x0204edc4 end:0x0204ee64
 
-src/game/multisio_2.cpp:
+src/knife/comm/multisio_2.cpp:
     complete
     .text       start:0x0204f1c0 end:0x0204f4a8
 
@@ -1654,7 +1654,7 @@ src/engine/objutil_4.cpp:
     complete
     .text       start:0x0204fdf0 end:0x0204fdfc
 
-src/object/objprio.cpp:
+src/actor/object/objprio.cpp:
     complete
     .text       start:0x0204ff68 end:0x02050200
 
@@ -1670,35 +1670,35 @@ src/engine/objutil_3.cpp:
     complete
     .text       start:0x02050840 end:0x02050880
 
-src/game/opening.cpp:
+src/ui/opening.cpp:
     complete
     .text       start:0x02050910 end:0x02050ac4
 
-src/game/opening_2.cpp:
+src/ui/opening_2.cpp:
     complete
     .text       start:0x02050b08 end:0x0205114c
 
-src/game/opdemo.cpp:
+src/ui/opdemo.cpp:
     complete
     .text       start:0x02051508 end:0x02051994
 
-src/game/opdemo_2.cpp:
+src/ui/opdemo_2.cpp:
     complete
     .text       start:0x02051b24 end:0x02051d84
 
-src/game/opdemo_5.cpp:
+src/ui/opdemo_5.cpp:
     complete
     .text       start:0x020521dc end:0x02052244
 
-src/game/opdemo_3.cpp:
+src/ui/opdemo_3.cpp:
     complete
     .text       start:0x02052688 end:0x020527f0
 
-src/game/title.cpp:
+src/ui/title.cpp:
     complete
     .text       start:0x020529fc end:0x02052a80
 
-src/game/title_2.cpp:
+src/ui/title_2.cpp:
     complete
     .text       start:0x020531c8 end:0x02053428
 
@@ -1810,1199 +1810,1199 @@ src/engine/scr_2.cpp:
     complete
     .text       start:0x0205747c end:0x02057494
 
-src/object/setmove.cpp:
+src/actor/object/setmove.cpp:
     complete
     .text       start:0x02057568 end:0x02057614
 
-src/object/set0a.cpp:
+src/actor/object/set0a.cpp:
     complete
     .text       start:0x02057c64 end:0x02057ca8
 
-src/object/set.cpp:
+src/actor/object/set.cpp:
     complete
     .text       start:0x02057ca8 end:0x02057cec
 
-src/object/set0a_2.cpp:
+src/actor/object/set0a_2.cpp:
     complete
     .text       start:0x02057cec end:0x02057e4c
 
-src/object/set_2.cpp:
+src/actor/object/set_2.cpp:
     complete
     .text       start:0x02057e4c end:0x02057e74
 
-src/object/set_3.cpp:
+src/actor/object/set_3.cpp:
     complete
     .text       start:0x02057ef4 end:0x02057f40
 
-src/object/set0b.cpp:
+src/actor/object/set0b.cpp:
     complete
     .text       start:0x02057f40 end:0x02057fcc
 
-src/object/set_4.cpp:
+src/actor/object/set_4.cpp:
     complete
     .text       start:0x02057fcc end:0x02058008
 
-src/object/set0c.cpp:
+src/actor/object/set0c.cpp:
     complete
     .text       start:0x02058078 end:0x020580a4
 
-src/object/set0c_2.cpp:
+src/actor/object/set0c_2.cpp:
     complete
     .text       start:0x0205819c end:0x020581b8
 
-src/object/crystal.cpp:
+src/actor/object/crystal.cpp:
     complete
     .text       start:0x020581b8 end:0x020583e4
 
-src/object/plate.cpp:
+src/actor/object/plate.cpp:
     complete
     .text       start:0x02058684 end:0x020586e8
 
-src/object/rupee.cpp:
+src/actor/object/rupee.cpp:
     complete
     .text       start:0x020586e8 end:0x02058890
 
-src/object/coin.cpp:
+src/actor/object/coin.cpp:
     complete
     .text       start:0x02058890 end:0x020588ac
 
-src/object/coin_2.cpp:
+src/actor/object/coin_2.cpp:
     complete
     .text       start:0x02058948 end:0x02058aa0
 
-src/object/center.cpp:
+src/actor/object/center.cpp:
     complete
     .text       start:0x02058c04 end:0x02058c54
 
-src/object/set01.cpp:
+src/actor/object/set01.cpp:
     complete
     .text       start:0x02058d50 end:0x02058e7c
 
-src/object/set01_2.cpp:
+src/actor/object/set01_2.cpp:
     complete
     .text       start:0x02058f18 end:0x02058fc0
 
-src/object/set1a.cpp:
+src/actor/object/set1a.cpp:
     complete
     .text       start:0x020591a4 end:0x02059258
 
-src/object/parasw.cpp:
+src/actor/object/parasw.cpp:
     complete
     .text       start:0x02059258 end:0x02059294
 
-src/object/parasw_2.cpp:
+src/actor/object/parasw_2.cpp:
     complete
     .text       start:0x02059294 end:0x02059678
 
-src/object/taimatsu.cpp:
+src/actor/object/taimatsu.cpp:
     complete
     .text       start:0x02059678 end:0x02059694
 
-src/object/taimatsu_2.cpp:
+src/actor/object/taimatsu_2.cpp:
     complete
     .text       start:0x02059804 end:0x02059b24
 
-src/object/matsuri.cpp:
+src/actor/object/matsuri.cpp:
     complete
     .text       start:0x02059b24 end:0x02059d74
 
-src/object/block_neta.cpp:
+src/actor/object/block_neta.cpp:
     complete
     .text       start:0x02059d74 end:0x02059d90
 
-src/object/space_key.cpp:
+src/actor/object/space_key.cpp:
     complete
     .text       start:0x02059e7c end:0x02059ee8
 
-src/object/idoyukaSp.cpp:
+src/actor/object/idoyukaSp.cpp:
     complete
     .text       start:0x02059ee8 end:0x02059fbc
 
-src/object/set1f.cpp:
+src/actor/object/set1f.cpp:
     complete
     .text       start:0x02059fbc end:0x02059fd8
 
-src/object/set02.cpp:
+src/actor/object/set02.cpp:
     complete
     .text       start:0x0205a090 end:0x0205a0d0
 
-src/object/set02_2.cpp:
+src/actor/object/set02_2.cpp:
     complete
     .text       start:0x0205a1b0 end:0x0205a42c
 
-src/object/connect.cpp:
+src/actor/object/connect.cpp:
     complete
     .text       start:0x0205a42c end:0x0205a480
 
-src/object/set2a.cpp:
+src/actor/object/set2a.cpp:
     complete
     .text       start:0x0205a4ec end:0x0205a508
 
-src/object/set2a_2.cpp:
+src/actor/object/set2a_2.cpp:
     complete
     .text       start:0x0205a560 end:0x0205a594
 
-src/object/set2b.cpp:
+src/actor/object/set2b.cpp:
     complete
     .text       start:0x0205a594 end:0x0205a73c
 
-src/object/set2c.cpp:
+src/actor/object/set2c.cpp:
     complete
     .text       start:0x0205a73c end:0x0205a758
 
-src/object/set2c_2.cpp:
+src/actor/object/set2c_2.cpp:
     complete
     .text       start:0x0205a798 end:0x0205a80c
 
-src/object/ashimoto.cpp:
+src/actor/object/ashimoto.cpp:
     complete
     .text       start:0x0205a8e8 end:0x0205a9f8
 
-src/object/set2e.cpp:
+src/actor/object/set2e.cpp:
     complete
     .text       start:0x0205a9f8 end:0x0205aae8
 
-src/object/set51.cpp:
+src/actor/object/set51.cpp:
     complete
     .text       start:0x0205ad24 end:0x0205ade8
 
-src/object/set51_2.cpp:
+src/actor/object/set51_2.cpp:
     complete
     .text       start:0x0205ae5c end:0x0205aed8
 
-src/object/set2f.cpp:
+src/actor/object/set2f.cpp:
     complete
     .text       start:0x0205aed8 end:0x0205af04
 
-src/object/set2f_2.cpp:
+src/actor/object/set2f_2.cpp:
     complete
     .text       start:0x0205afac end:0x0205b0bc
 
-src/object/set03.cpp:
+src/actor/object/set03.cpp:
     complete
     .text       start:0x0205b0bc end:0x0205b15c
 
-src/object/fumi.cpp:
+src/actor/object/fumi.cpp:
     complete
     .text       start:0x0205b5bc end:0x0205b67c
 
-src/object/zeldafade.cpp:
+src/actor/object/zeldafade.cpp:
     complete
     .text       start:0x0205b67c end:0x0205b700
 
-src/object/set3a.cpp:
+src/actor/object/set3a.cpp:
     complete
     .text       start:0x0205b730 end:0x0205b768
 
-src/object/zfade.cpp:
+src/actor/object/zfade.cpp:
     complete
     .text       start:0x0205b988 end:0x0205b9a4
 
-src/object/nameplate.cpp:
+src/actor/object/nameplate.cpp:
     complete
     .text       start:0x0205b9a4 end:0x0205b9c0
 
-src/object/nameplate_2.cpp:
+src/actor/object/nameplate_2.cpp:
     complete
     .text       start:0x0205ba4c end:0x0205bd60
 
-src/object/barmaster.cpp:
+src/actor/object/barmaster.cpp:
     complete
     .text       start:0x0205bd60 end:0x0205c03c
 
-src/object/option.cpp:
+src/actor/object/option.cpp:
     complete
     .text       start:0x0205c03c end:0x0205c08c
 
-src/object/option_2.cpp:
+src/actor/object/option_2.cpp:
     complete
     .text       start:0x0205c1c4 end:0x0205c204
 
-src/object/option_3.cpp:
+src/actor/object/option_3.cpp:
     complete
     .text       start:0x0205c2d8 end:0x0205c4c4
 
-src/object/option_4.cpp:
+src/actor/object/option_4.cpp:
     complete
     .text       start:0x0205c54c end:0x0205c7b0
 
-src/object/option_5.cpp:
+src/actor/object/option_5.cpp:
     complete
     .text       start:0x0205c9c8 end:0x0205caf0
 
-src/object/set3c.cpp:
+src/actor/object/set3c.cpp:
     complete
     .text       start:0x0205caf0 end:0x0205ccf8
 
-src/object/set3d.cpp:
+src/actor/object/set3d.cpp:
     complete
     .text       start:0x0205ceec end:0x0205cfac
 
-src/object/set3d_2.cpp:
+src/actor/object/set3d_2.cpp:
     complete
     .text       start:0x0205d0a0 end:0x0205d0ec
 
-src/object/set3d_3.cpp:
+src/actor/object/set3d_3.cpp:
     complete
     .text       start:0x0205d874 end:0x0205d940
 
-src/object/set3d_4.cpp:
+src/actor/object/set3d_4.cpp:
     complete
     .text       start:0x0205d9c8 end:0x0205d9d4
 
-src/object/set3e.cpp:
+src/actor/object/set3e.cpp:
     complete
     .text       start:0x0205d9d4 end:0x0205d9f0
 
-src/object/set3e_3.cpp:
+src/actor/object/set3e_3.cpp:
     complete
     .text       start:0x0205dad8 end:0x0205dc90
 
-src/object/set3f.cpp:
+src/actor/object/set3f.cpp:
     complete
     .text       start:0x0205dc90 end:0x0205dd0c
 
-src/object/warphole.cpp:
+src/actor/object/warphole.cpp:
     complete
     .text       start:0x0205de34 end:0x0205de50
 
-src/object/warphole_4.cpp:
+src/actor/object/warphole_4.cpp:
     complete
     .text       start:0x0205dec8 end:0x0205e18c
 
-src/object/set4a.cpp:
+src/actor/object/set4a.cpp:
     complete
     .text       start:0x0205e18c end:0x0205e1a8
 
-src/object/set4a_2.cpp:
+src/actor/object/set4a_2.cpp:
     complete
     .text       start:0x0205e204 end:0x0205e280
 
-src/object/set4b.cpp:
+src/actor/object/set4b.cpp:
     complete
     .text       start:0x0205e280 end:0x0205e29c
 
-src/object/set4b_2.cpp:
+src/actor/object/set4b_2.cpp:
     complete
     .text       start:0x0205e300 end:0x0205e3b8
 
-src/object/set4c.cpp:
+src/actor/object/set4c.cpp:
     complete
     .text       start:0x0205e3b8 end:0x0205e3d4
 
-src/object/set4c_2.cpp:
+src/actor/object/set4c_2.cpp:
     complete
     .text       start:0x0205e47c end:0x0205e53c
 
-src/object/set4d.cpp:
+src/actor/object/set4d.cpp:
     complete
     .text       start:0x0205e53c end:0x0205e580
 
-src/object/set4e_1.cpp:
+src/actor/object/set4e_1.cpp:
     complete
     .text       start:0x0205e620 end:0x0205e63c
 
-src/object/set4e_init.cpp:
+src/actor/object/set4e_init.cpp:
     complete
     .text       start:0x0205e63c end:0x0205e714
 
-src/object/set4e_2.cpp:
+src/actor/object/set4e_2.cpp:
     complete
     .text       start:0x0205e714 end:0x0205e87c
 
-src/object/set4f.cpp:
+src/actor/object/set4f.cpp:
     complete
     .text       start:0x0205e87c end:0x0205e914
 
-src/object/pot_1.cpp:
+src/actor/object/pot_1.cpp:
     complete
     .text       start:0x0205e9c0 end:0x0205e9dc
 
-src/object/grass_1.cpp:
+src/actor/object/grass_1.cpp:
     complete
     .text       start:0x0205ed90 end:0x0205ee78
 
-src/object/pot_2.cpp:
+src/actor/object/pot_2.cpp:
     complete
     .text       start:0x0205ee78 end:0x0205ee7c
 
-src/object/pot_throw.cpp:
+src/actor/object/pot_throw.cpp:
     complete
     .text       start:0x0205ef50 end:0x0205f084
 
-src/object/pot_9.cpp:
+src/actor/object/pot_9.cpp:
     complete
     .text       start:0x0205f084 end:0x0205f0f4
 
-src/object/pot_8.cpp:
+src/actor/object/pot_8.cpp:
     complete
     .text       start:0x0205f224 end:0x0205f250
 
-src/object/op_fairy_1.cpp:
+src/actor/object/op_fairy_1.cpp:
     complete
     .text       start:0x0205f448 end:0x0205f480
 
-src/object/op_fairy_2.cpp:
+src/actor/object/op_fairy_2.cpp:
     complete
     .text       start:0x0205f524 end:0x0205f78c
 
-src/object/ed_fairy_1.cpp:
+src/actor/object/ed_fairy_1.cpp:
     complete
     .text       start:0x0205f78c end:0x0205f7a8
 
-src/object/ed_fairy_2.cpp:
+src/actor/object/ed_fairy_2.cpp:
     complete
     .text       start:0x0205f848 end:0x0205f84c
 
-src/object/ed_fin_1.cpp:
+src/actor/object/ed_fin_1.cpp:
     complete
     .text       start:0x0205f84c end:0x0205f868
 
-src/object/ed_fin_2.cpp:
+src/actor/object/ed_fin_2.cpp:
     complete
     .text       start:0x0205f868 end:0x0205f928
 
-src/object/set5b.cpp:
+src/actor/object/set5b.cpp:
     complete
     .text       start:0x0205f928 end:0x0205f9b8
 
-src/object/set5c_1.cpp:
+src/actor/object/set5c_1.cpp:
     complete
     .text       start:0x0205f9b8 end:0x0205f9d4
 
-src/object/set5c_2.cpp:
+src/actor/object/set5c_2.cpp:
     complete
     .text       start:0x0205f9d4 end:0x0205fadc
 
-src/object/set5c_3.cpp:
+src/actor/object/set5c_3.cpp:
     complete
     .text       start:0x0205fb38 end:0x0205fb9c
 
-src/object/set5d_1.cpp:
+src/actor/object/set5d_1.cpp:
     complete
     .text       start:0x0205fbd4 end:0x0205fd34
 
-src/object/set5d_4.cpp:
+src/actor/object/set5d_4.cpp:
     complete
     .text       start:0x0205fd34 end:0x0205ff38
 
-src/object/set5d_5.cpp:
+src/actor/object/set5d_5.cpp:
     complete
     .text       start:0x0205ff38 end:0x0205ffd4
 
-src/object/set5e_1.cpp:
+src/actor/object/set5e_1.cpp:
     complete
     .text       start:0x0205ffd4 end:0x0205fff0
 
-src/object/set5e_2.cpp:
+src/actor/object/set5e_2.cpp:
     complete
     .text       start:0x02060050 end:0x02060104
 
-src/object/set5f.cpp:
+src/actor/object/set5f.cpp:
     complete
     .text       start:0x02060104 end:0x02060450
 
-src/object/set5f_2.cpp:
+src/actor/object/set5f_2.cpp:
     complete
     .text       start:0x020605bc end:0x02060a70
 
-src/object/gufu.cpp:
+src/actor/object/gufu.cpp:
     complete
     .text       start:0x02060a70 end:0x02060a9c
 
-src/object/set06.cpp:
+src/actor/object/set06.cpp:
     complete
     .text       start:0x02060a9c end:0x02060ab8
 
-src/object/set06_2.cpp:
+src/actor/object/set06_2.cpp:
     complete
     .text       start:0x02060bb0 end:0x02060de0
 
-src/object/set6a.cpp:
+src/actor/object/set6a.cpp:
     complete
     .text       start:0x02060de0 end:0x020610b8
 
-src/object/mgr.cpp:
+src/actor/object/mgr.cpp:
     complete
     .text       start:0x020610b8 end:0x0206127c
 
-src/object/set6b.cpp:
+src/actor/object/set6b.cpp:
     complete
     .text       start:0x0206127c end:0x02061330
 
-src/object/set6b_2.cpp:
+src/actor/object/set6b_2.cpp:
     complete
     .text       start:0x020613b4 end:0x02061494
 
-src/object/set07.cpp:
+src/actor/object/set07.cpp:
     complete
     .text       start:0x02061494 end:0x020614b0
 
-src/object/set07_2.cpp:
+src/actor/object/set07_2.cpp:
     complete
     .text       start:0x020617e4 end:0x02061818
 
-src/object/set07_3.cpp:
+src/actor/object/set07_3.cpp:
     complete
     .text       start:0x02061b88 end:0x02061be8
 
-src/object/set08.cpp:
+src/actor/object/set08.cpp:
     complete
     .text       start:0x02061be8 end:0x02061d0c
 
-src/object/door.cpp:
+src/actor/object/door.cpp:
     complete
     .text       start:0x02061dc4 end:0x02061e44
 
-src/object/set09.cpp:
+src/actor/object/set09.cpp:
     complete
     .text       start:0x02062bb8 end:0x02062bd4
 
-src/object/set09_2.cpp:
+src/actor/object/set09_2.cpp:
     complete
     .text       start:0x02062ce4 end:0x02062e30
 
-src/object/setenemy.cpp:
+src/actor/object/setenemy.cpp:
     complete
     .text       start:0x02062f24 end:0x02062fcc
 
-src/object/rader.cpp:
+src/actor/object/rader.cpp:
     complete
     .text       start:0x0206305c end:0x02063194
 
-src/object/rader_2.cpp:
+src/actor/object/rader_2.cpp:
     complete
     .text       start:0x02063400 end:0x02063450
 
-src/object/set11.cpp:
+src/actor/object/set11.cpp:
     complete
     .text       start:0x020635bc end:0x020635d8
 
-src/object/set11_2.cpp:
+src/actor/object/set11_2.cpp:
     complete
     .text       start:0x02063678 end:0x020637f4
 
-src/object/set12.cpp:
+src/actor/object/set12.cpp:
     complete
     .text       start:0x020637f4 end:0x02063870
 
-src/object/set12_2.cpp:
+src/actor/object/set12_2.cpp:
     complete
     .text       start:0x020639a8 end:0x02063bac
 
-src/object/yuka.cpp:
+src/actor/object/yuka.cpp:
     complete
     .text       start:0x02063fd8 end:0x020644cc
 
-src/object/set13.cpp:
+src/actor/object/set13.cpp:
     complete
     .text       start:0x020644cc end:0x020644e8
 
-src/object/set13_2.cpp:
+src/actor/object/set13_2.cpp:
     complete
     .text       start:0x020645a4 end:0x0206461c
 
-src/object/set13_3.cpp:
+src/actor/object/set13_3.cpp:
     complete
     .text       start:0x02064690 end:0x02064770
 
-src/object/set14.cpp:
+src/actor/object/set14.cpp:
     complete
     .text       start:0x02064880 end:0x0206489c
 
-src/object/set14_2.cpp:
+src/actor/object/set14_2.cpp:
     complete
     .text       start:0x02064964 end:0x02064a20
 
-src/object/set15.cpp:
+src/actor/object/set15.cpp:
     complete
     .text       start:0x02064bd0 end:0x02064bf4
 
-src/object/set16.cpp:
+src/actor/object/set16.cpp:
     complete
     .text       start:0x02064bf4 end:0x02064c60
 
-src/object/set16_2.cpp:
+src/actor/object/set16_2.cpp:
     complete
     .text       start:0x02064e18 end:0x02064e74
 
-src/object/ido.cpp:
+src/actor/object/ido.cpp:
     complete
     .text       start:0x02064e74 end:0x020650f4
 
-src/object/set17.cpp:
+src/actor/object/set17.cpp:
     complete
     .text       start:0x020654c0 end:0x020654dc
 
-src/object/set17_2.cpp:
+src/actor/object/set17_2.cpp:
     complete
     .text       start:0x02065548 end:0x02065588
 
-src/object/set18.cpp:
+src/actor/object/set18.cpp:
     complete
     .text       start:0x02065634 end:0x02065650
 
-src/object/set18_2.cpp:
+src/actor/object/set18_2.cpp:
     complete
     .text       start:0x02065764 end:0x02065834
 
-src/object/set19.cpp:
+src/actor/object/set19.cpp:
     complete
     .text       start:0x02065834 end:0x0206596c
 
-src/object/set20.cpp:
+src/actor/object/set20.cpp:
     complete
     .text       start:0x0206596c end:0x02065a78
 
-src/object/set21.cpp:
+src/actor/object/set21.cpp:
     complete
     .text       start:0x02065a78 end:0x02065a94
 
-src/object/set22.cpp:
+src/actor/object/set22.cpp:
     complete
     .text       start:0x02065e94 end:0x02065eb0
 
-src/object/set22_2.cpp:
+src/actor/object/set22_2.cpp:
     complete
     .text       start:0x02065f5c end:0x02065f94
 
-src/object/set23.cpp:
+src/actor/object/set23.cpp:
     complete
     .text       start:0x02066190 end:0x020661ac
 
-src/object/set23_2.cpp:
+src/actor/object/set23_2.cpp:
     complete
     .text       start:0x020662b8 end:0x020664c8
 
-src/object/set24.cpp:
+src/actor/object/set24.cpp:
     complete
     .text       start:0x020664c8 end:0x020665c0
 
-src/object/set25.cpp:
+src/actor/object/set25.cpp:
     complete
     .text       start:0x020665c0 end:0x020665dc
 
-src/object/set25_2.cpp:
+src/actor/object/set25_2.cpp:
     complete
     .text       start:0x02066630 end:0x0206672c
 
-src/object/set25_3.cpp:
+src/actor/object/set25_3.cpp:
     complete
     .text       start:0x02066818 end:0x02066910
 
-src/object/set25_4.cpp:
+src/actor/object/set25_4.cpp:
     complete
     .text       start:0x02067770 end:0x02067890
 
-src/object/set26.cpp:
+src/actor/object/set26.cpp:
     complete
     .text       start:0x02067890 end:0x02067924
 
-src/object/itemget.cpp:
+src/actor/object/itemget.cpp:
     complete
     .text       start:0x02067a3c end:0x02067a60
 
-src/object/race_item_1.cpp:
+src/actor/object/race_item_1.cpp:
     complete
     .text       start:0x02067b44 end:0x02067b60
 
-src/object/ss_2.cpp:
+src/actor/object/ss_2.cpp:
     complete
     .text       start:0x02067bdc end:0x02067bf8
 
-src/object/oplogo_1.cpp:
+src/actor/object/oplogo_1.cpp:
     complete
     .text       start:0x02067d68 end:0x02067ed0
 
-src/object/oplogo_sub.cpp:
+src/actor/object/oplogo_sub.cpp:
     complete
     .text       start:0x02067ed0 end:0x02068044
 
-src/game/oplogo.cpp:
+src/ui/oplogo.cpp:
     complete
     .text       start:0x02068044 end:0x020682ac
 
-src/game/oplogo_2.cpp:
+src/ui/oplogo_2.cpp:
     complete
     .text       start:0x02068314 end:0x02068428
 
-src/game/oplogo_3.cpp:
+src/ui/oplogo_3.cpp:
     complete
     .text       start:0x02068494 end:0x02068714
 
-src/game/oplogo_4.cpp:
+src/ui/oplogo_4.cpp:
     complete
     .text       start:0x020687dc end:0x0206884c
 
-src/game/oplogo_5.cpp:
+src/ui/oplogo_5.cpp:
     complete
     .text       start:0x020688d8 end:0x020688f4
 
-src/object/set29.cpp:
+src/actor/object/set29.cpp:
     complete
     .text       start:0x02068bd8 end:0x02068bf4
 
-src/object/set29_2.cpp:
+src/actor/object/set29_2.cpp:
     complete
     .text       start:0x02068d04 end:0x02068dd0
 
-src/object/set30.cpp:
+src/actor/object/set30.cpp:
     complete
     .text       start:0x02068dd0 end:0x02068e18
 
-src/object/motiagecheck.cpp:
+src/actor/object/motiagecheck.cpp:
     complete
     .text       start:0x020690a0 end:0x02069270
 
-src/object/door_silver.cpp:
+src/actor/object/door_silver.cpp:
     complete
     .text       start:0x02069270 end:0x020692a8
 
-src/object/door_silver_2.cpp:
+src/actor/object/door_silver_2.cpp:
     complete
     .text       start:0x0206930c end:0x02069378
 
-src/object/door_silver_3.cpp:
+src/actor/object/door_silver_3.cpp:
     complete
     .text       start:0x020693fc end:0x0206942c
 
-src/object/cursor.cpp:
+src/actor/object/cursor.cpp:
     complete
     .text       start:0x0206942c end:0x020695c8
 
-src/object/key.cpp:
+src/actor/object/key.cpp:
     complete
     .text       start:0x020695c8 end:0x0206983c
 
-src/object/key_2.cpp:
+src/actor/object/key_2.cpp:
     complete
     .text       start:0x02069930 end:0x020699a4
 
-src/object/lever.cpp:
+src/actor/object/lever.cpp:
     complete
     .text       start:0x020699a4 end:0x02069c20
 
-src/object/lr_cursor.cpp:
+src/actor/object/lr_cursor.cpp:
     complete
     .text       start:0x02069c20 end:0x02069d64
 
-src/object/mapmarker.cpp:
+src/actor/object/mapmarker.cpp:
     complete
     .text       start:0x02069d64 end:0x02069e0c
 
-src/object/set32.cpp:
+src/actor/object/set32.cpp:
     complete
     .text       start:0x02069e0c end:0x02069f5c
 
-src/object/marker.cpp:
+src/actor/object/marker.cpp:
     complete
     .text       start:0x02069f5c end:0x0206a0c8
 
-src/object/set33.cpp:
+src/actor/object/set33.cpp:
     complete
     .text       start:0x0206a0c8 end:0x0206a0e4
 
-src/object/set33_2.cpp:
+src/actor/object/set33_2.cpp:
     complete
     .text       start:0x0206a8e4 end:0x0206a964
 
-src/object/set34.cpp:
+src/actor/object/set34.cpp:
     complete
     .text       start:0x0206ab6c end:0x0206ab88
 
-src/object/set34_2.cpp:
+src/actor/object/set34_2.cpp:
     complete
     .text       start:0x0206ae0c end:0x0206b000
 
-src/object/areacheck.cpp:
+src/actor/object/areacheck.cpp:
     complete
     .text       start:0x0206b000 end:0x0206b068
 
-src/object/set35.cpp:
+src/actor/object/set35.cpp:
     complete
     .text       start:0x0206b068 end:0x0206b124
 
-src/object/set35_2.cpp:
+src/actor/object/set35_2.cpp:
     complete
     .text       start:0x0206b124 end:0x0206b34c
 
-src/object/set36.cpp:
+src/actor/object/set36.cpp:
     complete
     .text       start:0x0206b34c end:0x0206b368
 
-src/object/set36_2.cpp:
+src/actor/object/set36_2.cpp:
     complete
     .text       start:0x0206b404 end:0x0206b460
 
-src/object/setrupee.cpp:
+src/actor/object/setrupee.cpp:
     complete
     .text       start:0x0206b4dc end:0x0206b5b8
 
-src/object/set37.cpp:
+src/actor/object/set37.cpp:
     complete
     .text       start:0x0206b5b8 end:0x0206b5d4
 
-src/object/set37_2.cpp:
+src/actor/object/set37_2.cpp:
     complete
     .text       start:0x0206b730 end:0x0206b7d4
 
-src/object/set38.cpp:
+src/actor/object/set38.cpp:
     complete
     .text       start:0x0206b7d4 end:0x0206bbf4
 
-src/object/iroyuka_effect.cpp:
+src/actor/object/iroyuka_effect.cpp:
     complete
     .text       start:0x0206bbf4 end:0x0206bc60
 
-src/object/set39.cpp:
+src/actor/object/set39.cpp:
     complete
     .text       start:0x0206bc60 end:0x0206bce4
 
-src/object/set40.cpp:
+src/actor/object/set40.cpp:
     complete
     .text       start:0x0206bce4 end:0x0206bd70
 
-src/object/set40_2.cpp:
+src/actor/object/set40_2.cpp:
     complete
     .text       start:0x0206bec4 end:0x0206bf28
 
-src/object/heart_lift.cpp:
+src/actor/object/heart_lift.cpp:
     complete
     .text       start:0x0206bf28 end:0x0206c068
 
-src/object/stick.cpp:
+src/actor/object/stick.cpp:
     complete
     .text       start:0x0206c068 end:0x0206c0b0
 
-src/object/nemoto.cpp:
+src/actor/object/nemoto.cpp:
     complete
     .text       start:0x0206c18c end:0x0206c398
 
-src/object/set41.cpp:
+src/actor/object/set41.cpp:
     complete
     .text       start:0x0206c398 end:0x0206c3b4
 
-src/object/set41_2.cpp:
+src/actor/object/set41_2.cpp:
     complete
     .text       start:0x0206c4c0 end:0x0206c704
 
-src/object/set42.cpp:
+src/actor/object/set42.cpp:
     complete
     .text       start:0x0206c704 end:0x0206c720
 
-src/object/set42_2.cpp:
+src/actor/object/set42_2.cpp:
     complete
     .text       start:0x0206c850 end:0x0206c894
 
-src/object/set43.cpp:
+src/actor/object/set43.cpp:
     complete
     .text       start:0x0206c894 end:0x0206c8b0
 
-src/object/set43_2.cpp:
+src/actor/object/set43_2.cpp:
     complete
     .text       start:0x0206ca20 end:0x0206ca4c
 
-src/object/set43_3.cpp:
+src/actor/object/set43_3.cpp:
     complete
     .text       start:0x0206cac8 end:0x0206cb1c
 
-src/object/getarea.cpp:
+src/actor/object/getarea.cpp:
     complete
     .text       start:0x0206cb84 end:0x0206cc9c
 
-src/object/plmove_1.cpp:
+src/actor/object/plmove_1.cpp:
     complete
     .text       start:0x0206cc9c end:0x0206cea0
 
-src/object/setwind.cpp:
+src/actor/object/setwind.cpp:
     complete
     .text       start:0x0206cef8 end:0x0206cf74
 
-src/object/set44.cpp:
+src/actor/object/set44.cpp:
     complete
     .text       start:0x0206cf74 end:0x0206d350
 
-src/object/nemoto_3.cpp:
+src/actor/object/nemoto_3.cpp:
     complete
     .text       start:0x0206d350 end:0x0206d3fc
 
-src/object/set45.cpp:
+src/actor/object/set45.cpp:
     complete
     .text       start:0x0206d3fc end:0x0206d418
 
-src/object/set45_2.cpp:
+src/actor/object/set45_2.cpp:
     complete
     .text       start:0x0206d4d0 end:0x0206d5c4
 
-src/object/set46.cpp:
+src/actor/object/set46.cpp:
     complete
     .text       start:0x0206d5c4 end:0x0206d610
 
-src/object/kumo_big.cpp:
+src/actor/object/kumo_big.cpp:
     complete
     .text       start:0x0206d610 end:0x0206d704
 
-src/object/tenku_kumo.cpp:
+src/actor/object/tenku_kumo.cpp:
     complete
     .text       start:0x0206d704 end:0x0206d7dc
 
-src/object/ss.cpp:
+src/actor/object/ss.cpp:
     complete
     .text       start:0x0206d898 end:0x0206da58
 
-src/object/effect_tuto0.cpp:
+src/actor/object/effect_tuto0.cpp:
     complete
     .text       start:0x0206da58 end:0x0206da74
 
-src/object/effect_tuto0_2.cpp:
+src/actor/object/effect_tuto0_2.cpp:
     complete
     .text       start:0x0206dadc end:0x0206db30
 
-src/object/effect_tori.cpp:
+src/actor/object/effect_tori.cpp:
     complete
     .text       start:0x0206db30 end:0x0206dbe0
 
-src/object/effect_mori.cpp:
+src/actor/object/effect_mori.cpp:
     complete
     .text       start:0x0206dbe0 end:0x0206dcc8
 
-src/object/effect_mori_2.cpp:
+src/actor/object/effect_mori_2.cpp:
     complete
     .text       start:0x0206dd84 end:0x0206ddc8
 
-src/object/effect_cave2.cpp:
+src/actor/object/effect_cave2.cpp:
     complete
     .text       start:0x0206ddc8 end:0x0206de60
 
-src/object/effect_kazan.cpp:
+src/actor/object/effect_kazan.cpp:
     complete
     .text       start:0x0206df1c end:0x0206dfe4
 
-src/object/effect_mori2.cpp:
+src/actor/object/effect_mori2.cpp:
     complete
     .text       start:0x0206dfe4 end:0x0206e054
 
-src/object/key_3.cpp:
+src/actor/object/key_3.cpp:
     complete
     .text       start:0x0206e054 end:0x0206e210
 
-src/object/effect_tokishin.cpp:
+src/actor/object/effect_tokishin.cpp:
     complete
     .text       start:0x0206e2c8 end:0x0206e2e4
 
-src/object/effect_tokishin_2.cpp:
+src/actor/object/effect_tokishin_2.cpp:
     complete
     .text       start:0x0206e34c end:0x0206e3d0
 
-src/object/effect_syurenjyo.cpp:
+src/actor/object/effect_syurenjyo.cpp:
     complete
     .text       start:0x0206e3d0 end:0x0206e3ec
 
-src/object/effect_syurenjyo_2.cpp:
+src/actor/object/effect_syurenjyo_2.cpp:
     complete
     .text       start:0x0206e454 end:0x0206e4d8
 
-src/object/effect_thunder.cpp:
+src/actor/object/effect_thunder.cpp:
     complete
     .text       start:0x0206e4d8 end:0x0206e5fc
 
-src/object/effect_rock.cpp:
+src/actor/object/effect_rock.cpp:
     complete
     .text       start:0x0206e5fc end:0x0206e688
 
-src/object/effect_rock_2.cpp:
+src/actor/object/effect_rock_2.cpp:
     complete
     .text       start:0x0206e688 end:0x0206e87c
 
-src/object/effect_omoideon.cpp:
+src/actor/object/effect_omoideon.cpp:
     complete
     .text       start:0x0206e87c end:0x0206e93c
 
-src/object/effect_particle.cpp:
+src/actor/object/effect_particle.cpp:
     complete
     .text       start:0x0206e93c end:0x0206e9ac
 
-src/object/effect_beam1.cpp:
+src/actor/object/effect_beam1.cpp:
     complete
     .text       start:0x0206eba0 end:0x0206ec68
 
-src/object/effect_beam2.cpp:
+src/actor/object/effect_beam2.cpp:
     complete
     .text       start:0x0206ecdc end:0x0206edbc
 
-src/object/effect_beam3.cpp:
+src/actor/object/effect_beam3.cpp:
     complete
     .text       start:0x0206ee40 end:0x0206ef08
 
-src/object/effect_pika.cpp:
+src/actor/object/effect_pika.cpp:
     complete
     .text       start:0x0206ef6c end:0x0206f034
 
-src/object/effect_omoide_end.cpp:
+src/actor/object/effect_omoide_end.cpp:
     complete
     .text       start:0x0206f0a8 end:0x0206f174
 
-src/object/ssel_tobira.cpp:
+src/actor/object/ssel_tobira.cpp:
     complete
     .text       start:0x0206f174 end:0x0206f190
 
-src/object/ssel_tobira_3.cpp:
+src/actor/object/ssel_tobira_3.cpp:
     complete
     .text       start:0x0206f3e0 end:0x0206f3e4
 
-src/object/set48.cpp:
+src/actor/object/set48.cpp:
     complete
     .text       start:0x0206f3e4 end:0x0206f400
 
-src/object/set49.cpp:
+src/actor/object/set49.cpp:
     complete
     .text       start:0x0206f680 end:0x0206f69c
 
-src/object/set50.cpp:
+src/actor/object/set50.cpp:
     complete
     .text       start:0x0207005c end:0x02070140
 
-src/object/set50_2.cpp:
+src/actor/object/set50_2.cpp:
     complete
     .text       start:0x02070194 end:0x020701b8
 
-src/object/tame.cpp:
+src/actor/object/tame.cpp:
     complete
     .text       start:0x020701b8 end:0x020702c8
 
-src/object/tame_2.cpp:
+src/actor/object/tame_2.cpp:
     complete
     .text       start:0x020702c8 end:0x02070598
 
-src/object/set52_2.cpp:
+src/actor/object/set52_2.cpp:
     complete
     .text       start:0x02070658 end:0x02070758
 
-src/object/singleplay.cpp:
+src/actor/object/singleplay.cpp:
     complete
     .text       start:0x02070dbc end:0x02070dd0
 
-src/object/set54.cpp:
+src/actor/object/set54.cpp:
     complete
     .text       start:0x02071a70 end:0x02071b00
 
-src/object/rewdoor_knife.cpp:
+src/actor/object/rewdoor_knife.cpp:
     complete
     .text       start:0x02071c8c end:0x02071f4c
 
-src/object/set55.cpp:
+src/actor/object/set55.cpp:
     complete
     .text       start:0x02071f4c end:0x020725d0
 
-src/object/set56.cpp:
+src/actor/object/set56.cpp:
     complete
     .text       start:0x02072608 end:0x02072684
 
-src/object/link.cpp:
+src/actor/object/link.cpp:
     complete
     .text       start:0x02072704 end:0x02072c70
 
-src/object/link_2.cpp:
+src/actor/object/link_2.cpp:
     complete
     .text       start:0x02072c70 end:0x02072fc8
 
-src/object/kenfuri.cpp:
+src/actor/object/kenfuri.cpp:
     complete
     .text       start:0x0207303c end:0x020731f0
 
-src/object/set57.cpp:
+src/actor/object/set57.cpp:
     complete
     .text       start:0x020732f4 end:0x02073390
 
-src/object/set58.cpp:
+src/actor/object/set58.cpp:
     complete
     .text       start:0x02073390 end:0x020734a4
 
-src/object/set58_2.cpp:
+src/actor/object/set58_2.cpp:
     complete
     .text       start:0x02073588 end:0x0207379c
 
-src/object/set58_4.cpp:
+src/actor/object/set58_4.cpp:
     complete
     .text       start:0x0207382c end:0x02073904
 
-src/object/set58_5.cpp:
+src/actor/object/set58_5.cpp:
     complete
     .text       start:0x02073984 end:0x02073a4c
 
-src/object/set58_6.cpp:
+src/actor/object/set58_6.cpp:
     complete
     .text       start:0x02073a4c end:0x02073bbc
 
-src/object/set58_8.cpp:
+src/actor/object/set58_8.cpp:
     complete
     .text       start:0x02073bbc end:0x02073e18
 
-src/object/set58_9.cpp:
+src/actor/object/set58_9.cpp:
     complete
     .text       start:0x02073e18 end:0x020742cc
 
-src/object/set58_7.cpp:
+src/actor/object/set58_7.cpp:
     complete
     .text       start:0x020742cc end:0x0207432c
 
-src/object/set59.cpp:
+src/actor/object/set59.cpp:
     complete
     .text       start:0x0207432c end:0x02074418
 
-src/object/set60.cpp:
+src/actor/object/set60.cpp:
     complete
     .text       start:0x02074418 end:0x02074508
 
-src/object/set61.cpp:
+src/actor/object/set61.cpp:
     complete
     .text       start:0x02074508 end:0x02074680
 
-src/object/gufu_2.cpp:
+src/actor/object/gufu_2.cpp:
     complete
     .text       start:0x02074680 end:0x0207481c
 
-src/object/gufu_3.cpp:
+src/actor/object/gufu_3.cpp:
     complete
     .text       start:0x0207481c end:0x02074934
 
-src/object/gufu_4.cpp:
+src/actor/object/gufu_4.cpp:
     complete
     .text       start:0x02074934 end:0x02074c6c
 
-src/object/offsw.cpp:
+src/actor/object/offsw.cpp:
     complete
     .text       start:0x02074c6c end:0x02074cf8
 
-src/object/rr.cpp:
+src/actor/object/rr.cpp:
     complete
     .text       start:0x02074cf8 end:0x02074ee0
 
-src/object/set66.cpp:
+src/actor/object/set66.cpp:
     complete
     .text       start:0x0207502c end:0x020752f8
 
-src/object/set66_3.cpp:
+src/actor/object/set66_3.cpp:
     complete
     .text       start:0x0207543c end:0x0207553c
 
-src/object/set67.cpp:
+src/actor/object/set67.cpp:
     complete
     .text       start:0x020755a4 end:0x020755c0
 
-src/object/set67_2.cpp:
+src/actor/object/set67_2.cpp:
     complete
     .text       start:0x02075604 end:0x02075610
 
-src/object/set68.cpp:
+src/actor/object/set68.cpp:
     complete
     .text       start:0x02075610 end:0x0207583c
 
-src/object/set69.cpp:
+src/actor/object/set69.cpp:
     complete
     .text       start:0x02075a60 end:0x02075c14
 
-src/object/set69_2.cpp:
+src/actor/object/set69_2.cpp:
     complete
     .text       start:0x02075ca0 end:0x02075e78
 
-src/object/set69_3.cpp:
+src/actor/object/set69_3.cpp:
     complete
     .text       start:0x02075ef0 end:0x02076804
 
-src/object/setwork.cpp:
+src/actor/object/setwork.cpp:
     complete
     .text       start:0x02076858 end:0x02076a20
 
-src/object/setdisp.cpp:
+src/actor/object/setdisp.cpp:
     complete
     .text       start:0x02076a20 end:0x02076b24
 
-src/object/objdispatch.cpp:
+src/actor/object/objdispatch.cpp:
     complete
     .text       start:0x02076b24 end:0x02076bf0
 
-src/object/sound.cpp:
+src/actor/object/sound.cpp:
     complete
     .text       start:0x02076f0c end:0x02076fe0
 
-src/object/takara_entry.cpp:
+src/actor/object/takara_entry.cpp:
     complete
     .text       start:0x020772f0 end:0x02077368
 
-src/object/objfind.cpp:
+src/actor/object/objfind.cpp:
     complete
     .text       start:0x020774cc end:0x0207758c
 
-src/object/rupeerush.cpp:
+src/actor/object/rupeerush.cpp:
     complete
     .text       start:0x0207758c end:0x02077650
 
-src/object/sr_2.cpp:
+src/actor/object/sr_2.cpp:
     complete
     .text       start:0x02077684 end:0x02077810
 
-src/object/sr.cpp:
+src/actor/object/sr.cpp:
     complete
     .text       start:0x02077810 end:0x02077834
 
-src/game/stagesel.cpp:
+src/ui/stagesel.cpp:
     complete
     .text       start:0x020781e8 end:0x0207822c
 
-src/game/stagesel_2.cpp:
+src/ui/stagesel_2.cpp:
     complete
     .text       start:0x02078394 end:0x020784d8
 
-src/game/stagesel_5.cpp:
+src/ui/stagesel_5.cpp:
     complete
     .text       start:0x0207868c end:0x02078878
 
-src/game/stagesel_6.cpp:
+src/ui/stagesel_6.cpp:
     complete
     .text       start:0x02078c80 end:0x02078f6c
 
-src/game/stagesel_3.cpp:
+src/ui/stagesel_3.cpp:
     complete
     .text       start:0x02078f6c end:0x02079090
 
-src/game/stagesel_4.cpp:
+src/ui/stagesel_4.cpp:
     complete
     .text       start:0x02079c24 end:0x02079cc0
 
-src/game/stagesel_8.cpp:
+src/ui/stagesel_8.cpp:
     complete
     .text       start:0x0207a790 end:0x0207a8e4
 
-src/game/stagesel_10.cpp:
+src/ui/stagesel_10.cpp:
     complete
     .text       start:0x0207abb4 end:0x0207ad60
 
-src/object/sword.cpp:
+src/actor/object/sword.cpp:
     complete
     .text       start:0x0207af58 end:0x0207af94
 
-src/object/kabuto_2.cpp:
+src/actor/object/kabuto_2.cpp:
     complete
     .text       start:0x0207b400 end:0x0207b560
 
-src/object/kabuto.cpp:
+src/actor/object/kabuto.cpp:
     complete
     .text       start:0x0207bc48 end:0x0207bcd4
 
-src/object/takara.cpp:
+src/actor/object/takara.cpp:
     complete
     .text       start:0x0207bcd4 end:0x0207bde0
 
-src/object/takara_2.cpp:
+src/actor/object/takara_2.cpp:
     complete
     .text       start:0x0207bff8 end:0x0207c040
 
-src/object/takara_3.cpp:
+src/actor/object/takara_3.cpp:
     complete
     .text       start:0x0207c0c8 end:0x0207c0f8
 
-src/object/takara_4.cpp:
+src/actor/object/takara_4.cpp:
     complete
     .text       start:0x0207c180 end:0x0207c228
 
@@ -3010,111 +3010,111 @@ src/game/heartlevel.cpp:
     complete
     .text       start:0x0207c334 end:0x0207c408
 
-src/object/hane.cpp:
+src/actor/object/hane.cpp:
     complete
     .text       start:0x0207c5d8 end:0x0207c648
 
-src/object/tama00.cpp:
+src/actor/object/tama00.cpp:
     complete
     .text       start:0x0207c7c8 end:0x0207c834
 
-src/object/tama00_2.cpp:
+src/actor/object/tama00_2.cpp:
     complete
     .text       start:0x0207c898 end:0x0207c974
 
-src/object/tama0a.cpp:
+src/actor/object/tama0a.cpp:
     complete
     .text       start:0x0207c974 end:0x0207cb58
 
-src/object/tama0a_2.cpp:
+src/actor/object/tama0a_2.cpp:
     complete
     .text       start:0x0207cd40 end:0x0207cdb4
 
-src/object/tama0c.cpp:
+src/actor/object/tama0c.cpp:
     complete
     .text       start:0x0207ce40 end:0x0207cea8
 
-src/object/tama0d.cpp:
+src/actor/object/tama0d.cpp:
     complete
     .text       start:0x0207cea8 end:0x0207d10c
 
-src/object/tama0f.cpp:
+src/actor/object/tama0f.cpp:
     complete
     .text       start:0x0207db04 end:0x0207dc3c
 
-src/object/tama0f_2.cpp:
+src/actor/object/tama0f_2.cpp:
     complete
     .text       start:0x0207de68 end:0x0207df5c
 
-src/object/tama01.cpp:
+src/actor/object/tama01.cpp:
     complete
     .text       start:0x0207df5c end:0x0207e0b4
 
-src/object/tama02.cpp:
+src/actor/object/tama02.cpp:
     complete
     .text       start:0x0207e15c end:0x0207e220
 
-src/object/tama02_2.cpp:
+src/actor/object/tama02_2.cpp:
     complete
     .text       start:0x0207e51c end:0x0207e5c0
 
-src/object/tama04.cpp:
+src/actor/object/tama04.cpp:
     complete
     .text       start:0x0207e5c0 end:0x0207e650
 
-src/object/tama04_2.cpp:
+src/actor/object/tama04_2.cpp:
     complete
     .text       start:0x0207e650 end:0x0207e76c
 
-src/object/tama05.cpp:
+src/actor/object/tama05.cpp:
     complete
     .text       start:0x0207e834 end:0x0207ea14
 
-src/object/tama06.cpp:
+src/actor/object/tama06.cpp:
     complete
     .text       start:0x0207ead4 end:0x0207f0cc
 
-src/object/tama06_2.cpp:
+src/actor/object/tama06_2.cpp:
     complete
     .text       start:0x0207f120 end:0x0207f290
 
-src/object/tama06_3.cpp:
+src/actor/object/tama06_3.cpp:
     complete
     .text       start:0x0207f31c end:0x0207f37c
 
-src/object/tama06_4.cpp:
+src/actor/object/tama06_4.cpp:
     complete
     .text       start:0x0207f3f0 end:0x0207f488
 
-src/object/tama07.cpp:
+src/actor/object/tama07.cpp:
     complete
     .text       start:0x0207f488 end:0x0207f550
 
-src/object/tama07_3.cpp:
+src/actor/object/tama07_3.cpp:
     complete
     .text       start:0x0207f5ec end:0x0207f670
 
-src/object/tama07_2.cpp:
+src/actor/object/tama07_2.cpp:
     complete
     .text       start:0x0207f830 end:0x0207f84c
 
-src/object/tama08.cpp:
+src/actor/object/tama08.cpp:
     complete
     .text       start:0x0207f84c end:0x0207f8e0
 
-src/object/tama08_2.cpp:
+src/actor/object/tama08_2.cpp:
     complete
     .text       start:0x0207f9dc end:0x0207fb38
 
-src/object/tama11_2.cpp:
+src/actor/object/tama11_2.cpp:
     complete
     .text       start:0x0207fe14 end:0x0207fe64
 
-src/object/tama11.cpp:
+src/actor/object/tama11.cpp:
     complete
     .text       start:0x02080008 end:0x02080320
 
-src/object/throwinit.cpp:
+src/actor/object/throwinit.cpp:
     complete
     .text       start:0x02080b54 end:0x02080b60
 
@@ -3162,7 +3162,7 @@ src/game/owner.cpp:
     complete
     .text       start:0x02082838 end:0x020828b8
 
-src/engine/twl.cpp:
+src/knife/app/twl.cpp:
     complete
     .text       start:0x020828b8 end:0x020829d8
 
@@ -3178,7 +3178,7 @@ src/game/task.cpp:
     complete
     .text       start:0x02082ee0 end:0x02082f3c
 
-src/game/knife_comm_2.cpp:
+src/knife/comm/knife_comm_2.cpp:
     complete
     .text       start:0x02082f3c end:0x02082f90
 
@@ -3186,123 +3186,123 @@ src/engine/callback.cpp:
     complete
     .text       start:0x02082fbc end:0x02083000
 
-src/engine/knifesound_basevtbl.cpp:
+src/knife/sound/knifesound_basevtbl.cpp:
     complete
     .text       start:0x0208bcd4 end:0x0208bce4
 
-src/engine/knifesound_archive.cpp:
+src/knife/sound/knifesound_archive.cpp:
     complete
     .text       start:0x0208bce4 end:0x0208bcfc
 
-src/engine/knifesound_stub_2.cpp:
+src/knife/sound/knifesound_stub_2.cpp:
     complete
     .text       start:0x0208bcfc end:0x0208bd34
 
-src/engine/knifesound_seq.cpp:
+src/knife/sound/knifesound_seq.cpp:
     complete
     .text       start:0x0208bd34 end:0x0208bdec
 
-src/engine/knifesound_stub_3.cpp:
+src/knife/sound/knifesound_stub_3.cpp:
     complete
     .text       start:0x0208bdec end:0x0208be04
 
-src/engine/knifesound_load.cpp:
+src/knife/sound/knifesound_load.cpp:
     complete
     .text       start:0x0208be04 end:0x0208beac
 
-src/engine/knifesound_handle.cpp:
+src/knife/sound/knifesound_handle.cpp:
     complete
     .text       start:0x0208beac end:0x0208becc
 
-src/engine/knifesound_stub_4.cpp:
+src/knife/sound/knifesound_stub_4.cpp:
     complete
     .text       start:0x0208becc end:0x0208bed0
 
-src/engine/knifesound_dtor.cpp:
+src/knife/sound/knifesound_dtor.cpp:
     complete
     .text       start:0x0208bed0 end:0x0208bee4
 
-src/engine/knifesound_stub_5.cpp:
+src/knife/sound/knifesound_stub_5.cpp:
     complete
     .text       start:0x0208bee4 end:0x0208bef8
 
-src/engine/knifesound_handle_2.cpp:
+src/knife/sound/knifesound_handle_2.cpp:
     complete
     .text       start:0x0208bef8 end:0x0208bf60
 
-src/engine/knifesound_handle_3.cpp:
+src/knife/sound/knifesound_handle_3.cpp:
     complete
     .text       start:0x0208c054 end:0x0208c068
 
-src/engine/knifesound_factory.cpp:
+src/knife/sound/knifesound_factory.cpp:
     complete
     .text       start:0x0208c188 end:0x0208c1c8
 
-src/engine/knife_sound.cpp:
+src/knife/sound/knife_sound.cpp:
     complete
     .text       start:0x0208c1c8 end:0x0208c554
 
-src/engine/knife_sound_2.cpp:
+src/knife/sound/knife_sound_2.cpp:
     complete
     .text       start:0x0208c5f0 end:0x0208c6b4
 
-src/engine/knife_file.cpp:
+src/knife/app/knife_file.cpp:
     complete
     .text       start:0x0208c6b4 end:0x0208c7ac
 
-src/engine/knife_file_2.cpp:
+src/knife/app/knife_file_2.cpp:
     complete
     .text       start:0x0208c7ac end:0x0208ccc8
 
-src/engine/m4a.cpp:
+src/engine/sound/m4a.cpp:
     complete
     .text       start:0x0208cda4 end:0x0208d004
 
-src/engine/m4a_6.cpp:
+src/engine/sound/m4a_6.cpp:
     complete
     .text       start:0x0208d118 end:0x0208d260
 
-src/engine/m4a_2.cpp:
+src/engine/sound/m4a_2.cpp:
     complete
     .text       start:0x0208d52c end:0x0208d5d0
 
-src/engine/m4a_vsync.cpp:
+src/engine/sound/m4a_vsync.cpp:
     complete
     .text       start:0x0208d5d0 end:0x0208d610
 
-src/engine/m4a_3.cpp:
+src/engine/sound/m4a_3.cpp:
     complete
     .text       start:0x0208d610 end:0x0208d6a8
 
-src/engine/m4a_4.cpp:
+src/engine/sound/m4a_4.cpp:
     complete
     .text       start:0x0208d790 end:0x0208d830
 
-src/engine/m4a_5.cpp:
+src/engine/sound/m4a_5.cpp:
     complete
     .text       start:0x0208d8a4 end:0x0208da4c
 
-src/engine/knife_app_2.cpp:
+src/knife/app/knife_app_2.cpp:
     complete
     .text       start:0x0208da4c end:0x0208daec
 
-src/engine/knife_app.cpp:
+src/knife/app/knife_app.cpp:
     complete
     .text       start:0x0208daec end:0x0208db60
 
-src/engine/knife_app_3.cpp:
+src/knife/app/knife_app_3.cpp:
     complete
     .text       start:0x0208db60 end:0x0208dc84
 
-src/engine/knife_app_4.cpp:
+src/knife/app/knife_app_4.cpp:
     complete
     .text       start:0x0208dc84 end:0x0208dde0
 
-src/engine/knife_app_5.cpp:
+src/knife/app/knife_app_5.cpp:
     complete
     .text       start:0x0208de38 end:0x0208dea0
 
-src/engine/knife_app_6.cpp:
+src/knife/app/knife_app_6.cpp:
     complete
     .text       start:0x0208dfa4 end:0x0208dfc8
 
@@ -3314,159 +3314,159 @@ src/engine/gz_memory.cpp:
     complete
     .text       start:0x0208e05c end:0x0208e1a4
 
-src/engine/kmsgfilereader.cpp:
+src/knife/message/kmsgfilereader.cpp:
     complete
     .text       start:0x0208e1a4 end:0x0208e20c
 
-src/engine/kmsgfilereader_2.cpp:
+src/knife/message/kmsgfilereader_2.cpp:
     complete
     .text       start:0x0208e294 end:0x0208e2a8
 
-src/engine/kmsgfilereader_6.cpp:
+src/knife/message/kmsgfilereader_6.cpp:
     complete
     .text       start:0x0208e2a8 end:0x0208e2dc
 
-src/engine/kmsgfilereader_7.cpp:
+src/knife/message/kmsgfilereader_7.cpp:
     complete
     .text       start:0x0208e2dc end:0x0208e33c
 
-src/engine/texttokenizer_2.cpp:
+src/knife/message/texttokenizer_2.cpp:
     complete
     .text       start:0x0208e3a0 end:0x0208e3f8
 
-src/engine/texttokenizer.cpp:
+src/knife/message/texttokenizer.cpp:
     complete
     .text       start:0x0208e3f8 end:0x0208e450
 
-src/engine/texttokenizer_7.cpp:
+src/knife/message/texttokenizer_7.cpp:
     complete
     .text       start:0x0208e450 end:0x0208e4e0
 
-src/engine/texttokenizer_4.cpp:
+src/knife/message/texttokenizer_4.cpp:
     complete
     .text       start:0x0208e4e0 end:0x0208e5c4
 
-src/engine/texttokenizer_3.cpp:
+src/knife/message/texttokenizer_3.cpp:
     complete
     .text       start:0x0208e5c4 end:0x0208e6bc
 
-src/engine/texttags.cpp:
+src/knife/message/texttags.cpp:
     complete
     .text       start:0x0208e9ec end:0x0208ea6c
 
-src/engine/texttags_2.cpp:
+src/knife/message/texttags_2.cpp:
     complete
     .text       start:0x0208eaf8 end:0x0208eb78
 
-src/engine/texttags_3.cpp:
+src/knife/message/texttags_3.cpp:
     complete
     .text       start:0x0208ec90 end:0x0208ed0c
 
-src/engine/texttags_4.cpp:
+src/knife/message/texttags_4.cpp:
     complete
     .text       start:0x0208ee24 end:0x0208f000
 
-src/engine/texttags_5.cpp:
+src/knife/message/texttags_5.cpp:
     complete
     .text       start:0x0208f21c end:0x0208f29c
 
-src/engine/texttokenizer_5.cpp:
+src/knife/message/texttokenizer_5.cpp:
     complete
     .text       start:0x0208f29c end:0x0208f2a8
 
-src/engine/texttokenizer_6.cpp:
+src/knife/message/texttokenizer_6.cpp:
     complete
     .text       start:0x0208f32c end:0x0208f394
 
-src/engine/tokens_2.cpp:
+src/knife/message/tokens_2.cpp:
     complete
     .text       start:0x0208f394 end:0x0208f434
 
-src/engine/texttoken.cpp:
+src/knife/message/texttoken.cpp:
     complete
     .text       start:0x0208f434 end:0x0208f9c8
 
-src/engine/text.cpp:
+src/knife/message/text.cpp:
     complete
     .text       start:0x0208f9c8 end:0x0208faf4
 
-src/engine/ces.cpp:
+src/knife/message/ces.cpp:
     complete
     .text       start:0x0208fb94 end:0x0208fc84
 
-src/engine/fullwidth.cpp:
+src/knife/message/fullwidth.cpp:
     complete
     .text       start:0x0208fc84 end:0x0208fca8
 
-src/engine/message_localize.cpp:
+src/knife/message/message_localize.cpp:
     complete
     .text       start:0x0208fea4 end:0x0208ffbc
 
-src/engine/ces_3.cpp:
+src/knife/message/ces_3.cpp:
     complete
     .text       start:0x0208ffbc end:0x020900b4
 
-src/engine/ces_utf8.cpp:
+src/knife/message/ces_utf8.cpp:
     complete
     .text       start:0x02090164 end:0x02090398
 
-src/engine/ces_2.cpp:
+src/knife/message/ces_2.cpp:
     complete
     .text       start:0x02090398 end:0x020904b0
 
-src/engine/knife_sound_6.cpp:
+src/knife/sound/knife_sound_6.cpp:
     complete
     .text       start:0x020904b0 end:0x020904e0
 
-src/engine/knife_sound_4.cpp:
+src/knife/sound/knife_sound_4.cpp:
     complete
     .text       start:0x020904e0 end:0x02090578
 
-src/engine/knife_sound_5.cpp:
+src/knife/sound/knife_sound_5.cpp:
     complete
     .text       start:0x02090634 end:0x02090708
 
-src/engine/comm_parentinfo.cpp:
+src/knife/comm/comm_parentinfo.cpp:
     complete
     .text       start:0x020907a0 end:0x02090810
 
-src/engine/comm_parentinfo_2.cpp:
+src/knife/comm/comm_parentinfo_2.cpp:
     complete
     .text       start:0x0209083c end:0x02090868
 
-src/engine/comm_parentinfo_3.cpp:
+src/knife/comm/comm_parentinfo_3.cpp:
     complete
     .text       start:0x0209096c end:0x020909c8
 
-src/engine/wireless_manager.cpp:
+src/knife/comm/wireless_manager.cpp:
     complete
     .text       start:0x020909c8 end:0x02090c88
 
-src/engine/wirelessmgr_update.cpp:
+src/knife/comm/wirelessmgr_update.cpp:
     complete
     .text       start:0x02090c88 end:0x02090ea4
 
-src/engine/wireless_manager_2.cpp:
+src/knife/comm/wireless_manager_2.cpp:
     complete
     .text       start:0x02090ecc end:0x02090ed8
 
-src/engine/wirelessmgr_scan.cpp:
+src/knife/comm/wirelessmgr_scan.cpp:
     complete
     .text       start:0x02091464 end:0x020914a4
 
-src/engine/wirelessmgr_query.cpp:
+src/knife/comm/wirelessmgr_query.cpp:
     complete
     .text       start:0x02091d38 end:0x02091d40
 
-src/engine/wm_state.cpp:
+src/knife/comm/wm_state.cpp:
     complete
     .text       start:0x02091e7c end:0x02091eb4
 
-src/engine/wirelessmgr_aid.cpp:
+src/knife/comm/wirelessmgr_aid.cpp:
     complete
     .text       start:0x020921b0 end:0x020921bc
 
-src/engine/wirelessmanager_connected.cpp:
+src/knife/comm/wirelessmanager_connected.cpp:
     complete
     .text       start:0x020922d0 end:0x020922ec
 
@@ -3474,11 +3474,11 @@ src/engine/stub_noop_a.cpp:
     complete
     .text       start:0x020922ec end:0x020922f0
 
-src/engine/comm_parentinfo_4.cpp:
+src/knife/comm/comm_parentinfo_4.cpp:
     complete
     .text       start:0x020922f0 end:0x02092310
 
-src/engine/comm_childinfo.cpp:
+src/knife/comm/comm_childinfo.cpp:
     complete
     .text       start:0x02092310 end:0x02092330
 
@@ -3486,95 +3486,95 @@ src/engine/stub_noop_b.cpp:
     complete
     .text       start:0x02092330 end:0x02092334
 
-src/engine/wirelessmanager.cpp:
+src/knife/comm/wirelessmanager.cpp:
     complete
     .text       start:0x02092334 end:0x0209244c
 
-src/engine/wm_mp.cpp:
+src/knife/comm/wm_mp.cpp:
     complete
     .text       start:0x0209244c end:0x02092590
 
-src/engine/wirelessmanager_2.cpp:
+src/knife/comm/wirelessmanager_2.cpp:
     complete
     .text       start:0x02092590 end:0x020925e8
 
-src/engine/wm_result.cpp:
+src/knife/comm/wm_result.cpp:
     complete
     .text       start:0x02092758 end:0x02092820
 
-src/engine/wirelessmgr_state_empty0.cpp:
+src/knife/comm/wirelessmgr_state_empty0.cpp:
     complete
     .text       start:0x02092940 end:0x02092944
 
-src/engine/wirelessmgr_states.cpp:
+src/knife/comm/wirelessmgr_states.cpp:
     complete
     .text       start:0x02092944 end:0x02092aac
 
-src/engine/wirelessmgr_state_waitscan.cpp:
+src/knife/comm/wirelessmgr_state_waitscan.cpp:
     complete
     .text       start:0x02092aac end:0x02092ad8
 
-src/engine/wirelessmgr_states_2.cpp:
+src/knife/comm/wirelessmgr_states_2.cpp:
     complete
     .text       start:0x02092be0 end:0x02092c0c
 
-src/engine/wirelessmanager_10.cpp:
+src/knife/comm/wirelessmanager_10.cpp:
     complete
     .text       start:0x02092e0c end:0x02092f24
 
-src/engine/wirelessmgr_states_3.cpp:
+src/knife/comm/wirelessmgr_states_3.cpp:
     complete
     .text       start:0x02092f24 end:0x02092fd8
 
-src/engine/wirelessmanager_4.cpp:
+src/knife/comm/wirelessmanager_4.cpp:
     complete
     .text       start:0x02092fd8 end:0x02093200
 
-src/engine/wirelessmgr_states_4.cpp:
+src/knife/comm/wirelessmgr_states_4.cpp:
     complete
     .text       start:0x02093200 end:0x020932f4
 
-src/engine/wirelessmgr_state_empty14.cpp:
+src/knife/comm/wirelessmgr_state_empty14.cpp:
     complete
     .text       start:0x020932f4 end:0x020932fc
 
-src/engine/wm_callbacks.cpp:
+src/knife/comm/wm_callbacks.cpp:
     complete
     .text       start:0x020932fc end:0x02093584
 
-src/engine/wm_measure.cpp:
+src/knife/comm/wm_measure.cpp:
     complete
     .text       start:0x02093584 end:0x02093690
 
-src/engine/wm_child.cpp:
+src/knife/comm/wm_child.cpp:
     complete
     .text       start:0x02093690 end:0x020937c8
 
-src/engine/wm_connect_b.cpp:
+src/knife/comm/wm_connect_b.cpp:
     complete
     .text       start:0x020938e4 end:0x02093930
 
-src/engine/wm_connect.cpp:
+src/knife/comm/wm_connect.cpp:
     complete
     .text       start:0x02093a1c end:0x02093b00
 
-src/engine/comm_interrupt.cpp:
+src/knife/comm/comm_interrupt.cpp:
     complete
     .text       start:0x02093b00 end:0x02093b34
 
-src/engine/comm_dtors.cpp:
+src/knife/comm/comm_dtors.cpp:
     complete
     .text       start:0x02093b34 end:0x02093b5c
 
-src/engine/singleplay_init.cpp:
+src/knife/comm/singleplay_init.cpp:
     complete
     .text       start:0x02093bbc end:0x02093c48
 
-src/engine/singleplay_check.cpp:
+src/knife/comm/singleplay_check.cpp:
     complete
     .text       start:0x02094b64 end:0x02094d08
 
-src/engine/singleplay_warp.cpp:
+src/knife/comm/singleplay_warp.cpp:
     complete
     .text       start:0x020954f0 end:0x0209554c
 
@@ -3586,65 +3586,65 @@ src/engine/stub_zero_b.cpp:
     complete
     .text       start:0x02096e40 end:0x02096e48
 
-src/engine/single_play.cpp:
+src/knife/comm/single_play.cpp:
     complete
     .text       start:0x02099550 end:0x020996a8
 
-src/engine/single_cmd.cpp:
+src/knife/comm/single_cmd.cpp:
     complete
     .text       start:0x02099774 end:0x020997fc
 
-src/engine/single_play_2.cpp:
+src/knife/comm/single_play_2.cpp:
     complete
     .text       start:0x02099cec end:0x02099da8
 
-src/engine/singleplay_work.cpp:
+src/knife/comm/singleplay_work.cpp:
     complete
     .text       start:0x02099da8 end:0x02099e18
 
-src/engine/single_target.cpp:
+src/knife/comm/single_target.cpp:
     complete
     .text       start:0x02099f5c end:0x02099fa4
 
-src/game/knife_single_log.cpp:
+src/knife/comm/knife_single_log.cpp:
     complete
     .text       start:0x02099fa4 end:0x0209a084
 
-src/game/knife_single_log_3.cpp:
+src/knife/comm/knife_single_log_3.cpp:
     complete
     .text       start:0x0209a2e0 end:0x0209a480
 
-src/game/knife_comm_0.cpp:
+src/knife/comm/knife_comm_0.cpp:
     complete
     .text       start:0x0209a63c end:0x0209a65c
 
-src/game/knife_comm_wireless_nop.cpp:
+src/knife/comm/knife_comm_wireless_nop.cpp:
     complete
     .text       start:0x0209a65c end:0x0209a660
 
-src/game/knife_comm_a.cpp:
+src/knife/comm/knife_comm_a.cpp:
     complete
     .text       start:0x0209a660 end:0x0209a6cc
 
-src/game/knife_comm_a2.cpp:
+src/knife/comm/knife_comm_a2.cpp:
     complete
     .text       start:0x0209a818 end:0x0209a890
 
-src/game/subtask_misc.cpp:
+src/knife/subtask/subtask_misc.cpp:
     complete
     .text       start:0x0209ad08 end:0x0209ad3c
 
-src/game/subtask_hex.cpp:
+src/knife/subtask/subtask_hex.cpp:
     complete
     .text       start:0x0209ad3c end:0x0209ae98
     .rodata     start:0x020ddba0 end:0x020ddbac
     .data       start:0x0211c5bc end:0x0211c5c4
 
-src/game/subtask_work_hex.cpp:
+src/knife/subtask/subtask_work_hex.cpp:
     complete
     .text       start:0x0209ae98 end:0x0209aeb8
 
-src/game/subtask_char_tile.cpp:
+src/knife/subtask/subtask_char_tile.cpp:
     complete
     .text       start:0x0209aeb8 end:0x0209b078
 
@@ -3656,7 +3656,7 @@ src/game/set_bg_2.cpp:
     complete
     .text       start:0x0209b4c0 end:0x0209b508
 
-src/game/subtask_data.cpp:
+src/knife/subtask/subtask_data.cpp:
     complete
     .text       start:0x0209b700 end:0x0209b78c
 
@@ -3680,64 +3680,64 @@ src/game/eff_4.cpp:
     complete
     .text       start:0x0209ba50 end:0x0209ba94
 
-src/game/subtask_init.cpp:
+src/knife/subtask/subtask_init.cpp:
     complete
     .text       start:0x0209bbb4 end:0x0209bcf4
     .data       start:0x0211c5c4 end:0x0211c68c
 
-src/game/subtask_cell.cpp:
+src/knife/subtask/subtask_cell.cpp:
     complete
     .text       start:0x0209bee4 end:0x0209bf00
 
-src/game/subtask_init_bg.cpp:
+src/knife/subtask/subtask_init_bg.cpp:
     complete
     .text       start:0x0209c02c end:0x0209c384
 
-src/engine/subtask_init_bg2_lang.cpp:
+src/knife/subtask/subtask_init_bg2_lang.cpp:
     complete
     .text       start:0x0209c384 end:0x0209c41c
 
-src/game/subtask_init_obj.cpp:
+src/knife/subtask/subtask_init_obj.cpp:
     complete
     .text       start:0x0209c41c end:0x0209c62c
 
-src/engine/subtask_init_obj_lang.cpp:
+src/knife/subtask/subtask_init_obj_lang.cpp:
     complete
     .text       start:0x0209c62c end:0x0209c6c0
 
-src/game/subtask_title.cpp:
+src/knife/subtask/subtask_title.cpp:
     complete
     .text       start:0x0209c6c0 end:0x0209c88c
 
-src/game/subtask_push_start.cpp:
+src/knife/subtask/subtask_push_start.cpp:
     complete
     .text       start:0x0209c88c end:0x0209ca38
 
-src/game/subtask_draw_a.cpp:
+src/knife/subtask/subtask_draw_a.cpp:
     complete
     .text       start:0x0209ca38 end:0x0209cd18
 
-src/game/subtask_draw.cpp:
+src/knife/subtask/subtask_draw.cpp:
     complete
     .text       start:0x0209cd18 end:0x0209ce48
 
-src/game/subtask_draw_2.cpp:
+src/knife/subtask/subtask_draw_2.cpp:
     complete
     .text       start:0x0209ceb8 end:0x0209cf98
 
-src/game/subtask_2.cpp:
+src/knife/subtask/subtask_2.cpp:
     complete
     .text       start:0x0209d690 end:0x0209d78c
 
-src/game/subtask_3.cpp:
+src/knife/subtask/subtask_3.cpp:
     complete
     .text       start:0x0209d9cc end:0x0209daa0
 
-src/game/subtask_4.cpp:
+src/knife/subtask/subtask_4.cpp:
     complete
     .text       start:0x0209dbc8 end:0x0209dc24
 
-src/game/subtask_5.cpp:
+src/knife/subtask/subtask_5.cpp:
     complete
     .text       start:0x0209dd44 end:0x0209de18
 
@@ -3745,163 +3745,163 @@ src/game/set6c.cpp:
     complete
     .text       start:0x0209de18 end:0x0209dec0
 
-src/game/knife_hud.cpp:
+src/knife/app/knife_hud.cpp:
     complete
     .text       start:0x0209df50 end:0x0209e0c4
 
-src/game/knife_hud_9.cpp:
+src/knife/app/knife_hud_9.cpp:
     complete
     .text       start:0x0209e26c end:0x0209e31c
 
-src/game/knife_hud_2.cpp:
+src/knife/app/knife_hud_2.cpp:
     complete
     .text       start:0x0209e788 end:0x0209e794
 
-src/game/knife_hud_3.cpp:
+src/knife/app/knife_hud_3.cpp:
     complete
     .text       start:0x0209eb3c end:0x0209eb7c
 
-src/game/knife_hud_4.cpp:
+src/knife/app/knife_hud_4.cpp:
     complete
     .text       start:0x0209ecbc end:0x0209ede0
 
-src/game/knife_interp_2.cpp:
+src/knife/app/knife_interp_2.cpp:
     complete
     .text       start:0x0209faec end:0x0209fb00
 
-src/game/knife_interp.cpp:
+src/knife/app/knife_interp.cpp:
     complete
     .text       start:0x0209fb40 end:0x0209fcc4
 
-src/game/knife_canvas.cpp:
+src/knife/message/knife_canvas.cpp:
     complete
     .text       start:0x0209fcc4 end:0x0209fcdc
 
-src/game/knife_canvas_2.cpp:
+src/knife/message/knife_canvas_2.cpp:
     complete
     .text       start:0x0209ffb8 end:0x0209ffec
 
-src/game/knife_message.cpp:
+src/knife/message/knife_message.cpp:
     complete
     .text       start:0x020a0508 end:0x020a0640
 
-src/game/knife_message_4.cpp:
+src/knife/message/knife_message_4.cpp:
     complete
     .text       start:0x020a0814 end:0x020a0844
 
-src/game/knife_message_15.cpp:
+src/knife/message/knife_message_15.cpp:
     complete
     .text       start:0x020a0898 end:0x020a089c
 
-src/game/knife_message_6.cpp:
+src/knife/message/knife_message_6.cpp:
     complete
     .text       start:0x020a08f0 end:0x020a0918
 
-src/game/knife_message_5.cpp:
+src/knife/message/knife_message_5.cpp:
     complete
     .text       start:0x020a0dac end:0x020a0dfc
 
-src/game/knife_message_10.cpp:
+src/knife/message/knife_message_10.cpp:
     complete
     .text       start:0x020a0ed4 end:0x020a0edc
 
-src/game/knife_message_11.cpp:
+src/knife/message/knife_message_11.cpp:
     complete
     .text       start:0x020a1100 end:0x020a1110
 
-src/game/textrender.cpp:
+src/knife/message/textrender.cpp:
     complete
     .text       start:0x020a11fc end:0x020a12e0
 
-src/game/knife_message_12.cpp:
+src/knife/message/knife_message_12.cpp:
     complete
     .text       start:0x020a1330 end:0x020a1340
 
-src/game/textrender_2.cpp:
+src/knife/message/textrender_2.cpp:
     complete
     .text       start:0x020a1340 end:0x020a1394
 
-src/game/textrender_3.cpp:
+src/knife/message/textrender_3.cpp:
     complete
     .text       start:0x020a15e0 end:0x020a1600
 
-src/game/knife_message_13.cpp:
+src/knife/message/knife_message_13.cpp:
     complete
     .text       start:0x020a1600 end:0x020a1614
 
-src/game/textrender_4.cpp:
+src/knife/message/textrender_4.cpp:
     complete
     .text       start:0x020a1614 end:0x020a1668
 
-src/game/knifeinfo.cpp:
+src/knife/app/knifeinfo.cpp:
     complete
     .text       start:0x020a1668 end:0x020a16c0
 
-src/game/knife_message_16.cpp:
+src/knife/message/knife_message_16.cpp:
     complete
     .text       start:0x020a16c0 end:0x020a16c4
 
-src/game/textlength.cpp:
+src/knife/message/textlength.cpp:
     complete
     .text       start:0x020a16c4 end:0x020a1838
 
-src/game/messageselect.cpp:
+src/ui/messageselect.cpp:
     complete
     .text       start:0x020a1838 end:0x020a1864
 
-src/game/messageselect_2.cpp:
+src/ui/messageselect_2.cpp:
     complete
     .text       start:0x020a18c4 end:0x020a1a1c
 
-src/game/selectiondialog.cpp:
+src/ui/selectiondialog.cpp:
     complete
     .text       start:0x020a1a1c end:0x020a1a88
 
-src/game/selectiondialog_2.cpp:
+src/ui/selectiondialog_2.cpp:
     complete
     .text       start:0x020a1d08 end:0x020a1d78
 
-src/game/selectiondialog_3.cpp:
+src/ui/selectiondialog_3.cpp:
     complete
     .text       start:0x020a20e0 end:0x020a2154
 
-src/game/selectiondialog_4.cpp:
+src/ui/selectiondialog_4.cpp:
     complete
     .text       start:0x020a2268 end:0x020a237c
 
-src/game/knife_message_14.cpp:
+src/knife/message/knife_message_14.cpp:
     complete
     .text       start:0x020a237c end:0x020a23bc
 
-src/game/textreader_3.cpp:
+src/knife/message/textreader_3.cpp:
     complete
     .text       start:0x020a23bc end:0x020a23e8
 
-src/game/textreader.cpp:
+src/knife/message/textreader.cpp:
     complete
     .text       start:0x020a23e8 end:0x020a2430
 
-src/game/textreader_2.cpp:
+src/knife/message/textreader_2.cpp:
     complete
     .text       start:0x020a25f8 end:0x020a2634
 
-src/game/textreader_params.cpp:
+src/knife/message/textreader_params.cpp:
     complete
     .text       start:0x020a2978 end:0x020a29e8
 
-src/game/textreader_param.cpp:
+src/knife/message/textreader_param.cpp:
     complete
     .text       start:0x020a2a2c end:0x020a2b14
 
-src/game/rendertarget.cpp:
+src/knife/message/rendertarget.cpp:
     complete
     .text       start:0x020a2dd4 end:0x020a2df4
 
-src/game/rendertarget_2.cpp:
+src/knife/message/rendertarget_2.cpp:
     complete
     .text       start:0x020a2efc end:0x020a2f1c
 
-src/game/rendertarget_3.cpp:
+src/knife/message/rendertarget_3.cpp:
     complete
     .text       start:0x020a3134 end:0x020a31ac
 
@@ -3909,107 +3909,107 @@ src/game/pending_ptr.cpp:
     complete
     .text       start:0x020a3778 end:0x020a3798
 
-src/game/pictogram_init.cpp:
+src/knife/message/pictogram_init.cpp:
     complete
     .text       start:0x020a4888 end:0x020a48cc
 
-src/game/pictogram_noop.cpp:
+src/knife/message/pictogram_noop.cpp:
     complete
     .text       start:0x020a48cc end:0x020a48d0
 
-src/game/pictogram.cpp:
+src/knife/message/pictogram.cpp:
     complete
     .text       start:0x020a48d0 end:0x020a49c4
 
-src/game/pictogram_ctor.cpp:
+src/knife/message/pictogram_ctor.cpp:
     complete
     .text       start:0x020a4ad8 end:0x020a4af0
 
-src/game/rendertarget_4.cpp:
+src/knife/message/rendertarget_4.cpp:
     complete
     .text       start:0x020a4e8c end:0x020a4ee0
 
-src/game/rendertarget_e.cpp:
+src/knife/message/rendertarget_e.cpp:
     complete
     .text       start:0x020a4ee0 end:0x020a4f30
 
-src/game/textrender_setters_e.cpp:
+src/knife/message/textrender_setters_e.cpp:
     complete
     .text       start:0x020a4f30 end:0x020a4f44
 
-src/game/textrender_10.cpp:
+src/knife/message/textrender_10.cpp:
     complete
     .text       start:0x020a4f44 end:0x020a510c
 
-src/game/textrender_setters_e_2.cpp:
+src/knife/message/textrender_setters_e_2.cpp:
     complete
     .text       start:0x020a510c end:0x020a511c
 
-src/game/textrender_11.cpp:
+src/knife/message/textrender_11.cpp:
     complete
     .text       start:0x020a511c end:0x020a5138
 
-src/game/textrender_e.cpp:
+src/knife/message/textrender_e.cpp:
     complete
     .text       start:0x020a5138 end:0x020a5340
 
-src/game/textrender_12.cpp:
+src/knife/message/textrender_12.cpp:
     complete
     .text       start:0x020a5340 end:0x020a5384
 
-src/game/textrender_count.cpp:
+src/knife/message/textrender_count.cpp:
     complete
     .text       start:0x020a5384 end:0x020a54bc
 
-src/game/textrender_width.cpp:
+src/knife/message/textrender_width.cpp:
     complete
     .text       start:0x020a54bc end:0x020a5570
 
-src/game/textrender_7.cpp:
+src/knife/message/textrender_7.cpp:
     complete
     .text       start:0x020a58ac end:0x020a58b4
 
-src/game/textrender_clear_e.cpp:
+src/knife/message/textrender_clear_e.cpp:
     complete
     .text       start:0x020a58b4 end:0x020a58d0
 
-src/game/textrender_screenaddr.cpp:
+src/knife/message/textrender_screenaddr.cpp:
     complete
     .text       start:0x020a590c end:0x020a59ac
 
-src/game/textrender_screen.cpp:
+src/knife/message/textrender_screen.cpp:
     complete
     .text       start:0x020a59ac end:0x020a5a44
 
-src/game/textrender_8.cpp:
+src/knife/message/textrender_8.cpp:
     complete
     .text       start:0x020a5a44 end:0x020a5a58
 
-src/game/textrender_9.cpp:
+src/knife/message/textrender_9.cpp:
     complete
     .text       start:0x020a5d38 end:0x020a5d44
 
-src/game/textrender_plain.cpp:
+src/knife/message/textrender_plain.cpp:
     complete
     .text       start:0x020a5e28 end:0x020a5f14
 
-src/game/textrender_tags.cpp:
+src/knife/message/textrender_tags.cpp:
     complete
     .text       start:0x020a5f14 end:0x020a5f8c
 
-src/game/textrender_tags_2.cpp:
+src/knife/message/textrender_tags_2.cpp:
     complete
     .text       start:0x020a5fd4 end:0x020a6110
 
-src/game/textrender_tags_3.cpp:
+src/knife/message/textrender_tags_3.cpp:
     complete
     .text       start:0x020a611c end:0x020a6134
 
-src/game/datalink.cpp:
+src/knife/comm/datalink.cpp:
     complete
     .text       start:0x020a6278 end:0x020a636c
 
-src/game/datalink_2.cpp:
+src/knife/comm/datalink_2.cpp:
     complete
     .text       start:0x020a6398 end:0x020a6480
 
@@ -4021,7 +4021,7 @@ src/game/radar_e_4.cpp:
     complete
     .text       start:0x020a6cc0 end:0x020a6d68
 
-src/game/subtask_radar_e.cpp:
+src/knife/subtask/subtask_radar_e.cpp:
     complete
     .text       start:0x020a6f98 end:0x020a6ff0
 
@@ -4041,83 +4041,83 @@ src/game/fs_e_3.cpp:
     complete
     .text       start:0x020a7480 end:0x020a74fc
 
-src/game/fileselui_view_e.cpp:
+src/ui/fileselui_view_e.cpp:
     complete
     .text       start:0x020a761c end:0x020a76d0
 
-src/game/fileselui_status_e.cpp:
+src/ui/fileselui_status_e.cpp:
     complete
     .text       start:0x020a76d0 end:0x020a777c
 
-src/game/fileselui_6.cpp:
+src/ui/fileselui_6.cpp:
     complete
     .text       start:0x020a78f4 end:0x020a7918
 
-src/game/fileselui_move.cpp:
+src/ui/fileselui_move.cpp:
     complete
     .text       start:0x020a8138 end:0x020a8158
 
-src/game/fileselui_move_2.cpp:
+src/ui/fileselui_move_2.cpp:
     complete
     .text       start:0x020a8168 end:0x020a8178
 
-src/game/fileselui_5.cpp:
+src/ui/fileselui_5.cpp:
     complete
     .text       start:0x020a8178 end:0x020a8198
 
-src/game/fileselui_e.cpp:
+src/ui/fileselui_e.cpp:
     complete
     .text       start:0x020a88a8 end:0x020a8904
 
-src/game/fileselui_e_2.cpp:
+src/ui/fileselui_e_2.cpp:
     complete
     .text       start:0x020a8d78 end:0x020a8dbc
 
-src/game/fileselui_e_3.cpp:
+src/ui/fileselui_e_3.cpp:
     complete
     .text       start:0x020a8f7c end:0x020a8f80
 
-src/game/modeselui_e.cpp:
+src/ui/modeselui_e.cpp:
     complete
     .text       start:0x020a8ff0 end:0x020a9054
 
-src/game/modeselui.cpp:
+src/ui/modeselui.cpp:
     complete
     .text       start:0x020a9054 end:0x020a9064
 
-src/game/modeselui_e_2.cpp:
+src/ui/modeselui_e_2.cpp:
     complete
     .text       start:0x020a9494 end:0x020a94b4
 
-src/game/modeselui_e_3.cpp:
+src/ui/modeselui_e_3.cpp:
     complete
     .text       start:0x020aaaf8 end:0x020aab80
 
-src/game/playstyleselui_init.cpp:
+src/ui/playstyleselui_init.cpp:
     complete
     .text       start:0x020aac30 end:0x020aacfc
 
-src/game/playstyleselui_e.cpp:
+src/ui/playstyleselui_e.cpp:
     complete
     .text       start:0x020aacfc end:0x020aad08
 
-src/game/playstyleselui_e_2.cpp:
+src/ui/playstyleselui_e_2.cpp:
     complete
     .text       start:0x020ab520 end:0x020ab524
 
-src/game/groupcreateui_e.cpp:
+src/ui/groupcreateui_e.cpp:
     complete
     .text       start:0x020ab6cc end:0x020ab6d0
 
-src/game/subtask_dialog_wait.cpp:
+src/knife/subtask/subtask_dialog_wait.cpp:
     complete
     .text       start:0x020abf5c end:0x020ac014
 
-src/game/baseduiview_e.cpp:
+src/ui/widget/baseduiview_e.cpp:
     complete
     .text       start:0x020ac014 end:0x020ac028
 
-src/game/subtask_dialog.cpp:
+src/knife/subtask/subtask_dialog.cpp:
     complete
     .text       start:0x020ac308 end:0x020ac3d0
 
@@ -4145,39 +4145,39 @@ src/game/clamp.cpp:
     complete
     .text       start:0x020ac898 end:0x020ac8b4
 
-src/game/uiobject_3.cpp:
+src/ui/widget/uiobject_3.cpp:
     complete
     .text       start:0x020acab4 end:0x020acbf4
 
-src/game/uiobject_4.cpp:
+src/ui/widget/uiobject_4.cpp:
     complete
     .text       start:0x020acbf4 end:0x020acca0
 
-src/game/uiobject.cpp:
+src/ui/widget/uiobject.cpp:
     complete
     .text       start:0x020acca0 end:0x020acd1c
 
-src/game/uiobject_2.cpp:
+src/ui/widget/uiobject_2.cpp:
     complete
     .text       start:0x020acd74 end:0x020acd98
 
-src/game/baseduiview.cpp:
+src/ui/widget/baseduiview.cpp:
     complete
     .text       start:0x020acd98 end:0x020ad020
 
-src/game/fileselui.cpp:
+src/ui/fileselui.cpp:
     complete
     .text       start:0x020ad020 end:0x020ad070
 
-src/game/fileselui_2.cpp:
+src/ui/fileselui_2.cpp:
     complete
     .text       start:0x020ad668 end:0x020ad87c
 
-src/game/fileselui_3.cpp:
+src/ui/fileselui_3.cpp:
     complete
     .text       start:0x020ad954 end:0x020ad9a4
 
-src/game/fileselui_4.cpp:
+src/ui/fileselui_4.cpp:
     complete
     .text       start:0x020adac0 end:0x020adb04
 
@@ -4185,71 +4185,71 @@ src/game/gameover.cpp:
     complete
     .text       start:0x020adb04 end:0x020adbb8
 
-src/game/staffroll_3.cpp:
+src/ui/staffroll_3.cpp:
     complete
     .text       start:0x020adfe4 end:0x020adff0
 
-src/game/staffroll.cpp:
+src/ui/staffroll.cpp:
     complete
     .text       start:0x020ae280 end:0x020ae294
 
-src/game/staffroll_2.cpp:
+src/ui/staffroll_2.cpp:
     complete
     .text       start:0x020ae2b8 end:0x020ae318
 
-src/game/knifecomm.cpp:
+src/knife/comm/knifecomm.cpp:
     complete
     .text       start:0x020ae318 end:0x020ae3b0
 
-src/game/knifecomm_2.cpp:
+src/knife/comm/knifecomm_2.cpp:
     complete
     .text       start:0x020ae540 end:0x020ae558
 
-src/game/nameentry.cpp:
+src/ui/nameentry.cpp:
     complete
     .text       start:0x020ae558 end:0x020ae634
 
-src/game/nameentry_align.cpp:
+src/ui/nameentry_align.cpp:
     complete
     .text       start:0x020ae7a8 end:0x020ae824
 
-src/game/nameentry_13.cpp:
+src/ui/nameentry_13.cpp:
     complete
     .text       start:0x020ae824 end:0x020ae968
 
-src/game/nameentry_5.cpp:
+src/ui/nameentry_5.cpp:
     complete
     .text       start:0x020af050 end:0x020af0b0
 
-src/game/nameentry_6.cpp:
+src/ui/nameentry_6.cpp:
     complete
     .text       start:0x020af104 end:0x020af1f4
 
-src/game/nameentry_7.cpp:
+src/ui/nameentry_7.cpp:
     complete
     .text       start:0x020af380 end:0x020af424
 
-src/game/nameentry_9.cpp:
+src/ui/nameentry_9.cpp:
     complete
     .text       start:0x020af4a0 end:0x020af548
 
-src/game/nameentry_10.cpp:
+src/ui/nameentry_10.cpp:
     complete
     .text       start:0x020af978 end:0x020afa1c
 
-src/game/nameentry_2.cpp:
+src/ui/nameentry_2.cpp:
     complete
     .text       start:0x020afa1c end:0x020afa7c
 
-src/game/nameentry_4.cpp:
+src/ui/nameentry_4.cpp:
     complete
     .text       start:0x020afa7c end:0x020afc60
 
-src/game/nameentry_12.cpp:
+src/ui/nameentry_12.cpp:
     complete
     .text       start:0x020afc70 end:0x020afcbc
 
-src/game/groupselectuiview.cpp:
+src/ui/groupselectuiview.cpp:
     complete
     .text       start:0x020afef4 end:0x020b0014
 
@@ -4257,47 +4257,47 @@ src/engine/os_blocking_mode.cpp:
     complete
     .text       start:0x020b07a4 end:0x020b07bc
 
-src/game/groupselectuiview_2.cpp:
+src/ui/groupselectuiview_2.cpp:
     complete
     .text       start:0x020b07bc end:0x020b09f4
 
-src/game/groupselectuiview_7.cpp:
+src/ui/groupselectuiview_7.cpp:
     complete
     .text       start:0x020b0a6c end:0x020b0c38
 
-src/game/groupselectuiview_3.cpp:
+src/ui/groupselectuiview_3.cpp:
     complete
     .text       start:0x020b0d58 end:0x020b0e84
 
-src/game/groupselect_scan.cpp:
+src/ui/groupselect_scan.cpp:
     complete
     .text       start:0x020b0f8c end:0x020b0fe8
 
-src/game/groupselectuiview_4.cpp:
+src/ui/groupselectuiview_4.cpp:
     complete
     .text       start:0x020b0fe8 end:0x020b10d4
 
-src/game/groupselectuiview_5.cpp:
+src/ui/groupselectuiview_5.cpp:
     complete
     .text       start:0x020b11a0 end:0x020b11cc
 
-src/game/groupselectuiview_6.cpp:
+src/ui/groupselectuiview_6.cpp:
     complete
     .text       start:0x020b11dc end:0x020b1224
 
-src/game/lobby_6.cpp:
+src/ui/lobby_6.cpp:
     complete
     .text       start:0x020b1920 end:0x020b19d8
 
-src/game/lobby.cpp:
+src/ui/lobby.cpp:
     complete
     .text       start:0x020b235c end:0x020b23fc
 
-src/game/lobby_color.cpp:
+src/ui/lobby_color.cpp:
     complete
     .text       start:0x020b2560 end:0x020b25c0
 
-src/game/dialog_machiuke.cpp:
+src/ui/dialog_machiuke.cpp:
     complete
     .text       start:0x020b2898 end:0x020b292c
 
@@ -4305,67 +4305,67 @@ src/game/exchange_savedata.cpp:
     complete
     .text       start:0x020b2a5c end:0x020b2b54
 
-src/game/lobby_8.cpp:
+src/ui/lobby_8.cpp:
     complete
     .text       start:0x020b3ea0 end:0x020b3ea8
 
-src/game/lobby_4.cpp:
+src/ui/lobby_4.cpp:
     complete
     .text       start:0x020b3fcc end:0x020b4044
 
-src/game/lobby_3.cpp:
+src/ui/lobby_3.cpp:
     complete
     .text       start:0x020b4d68 end:0x020b4db0
 
-src/game/lobby_5.cpp:
+src/ui/lobby_5.cpp:
     complete
     .text       start:0x020b4e60 end:0x020b4ecc
 
-src/game/lobby_ptrarray.cpp:
+src/ui/lobby_ptrarray.cpp:
     complete
     .text       start:0x020b51c8 end:0x020b5214
 
-src/game/lobby_10.cpp:
+src/ui/lobby_10.cpp:
     complete
     .text       start:0x020b5214 end:0x020b5264
 
-src/game/lobby_11.cpp:
+src/ui/lobby_11.cpp:
     complete
     .text       start:0x020b52f8 end:0x020b5318
 
-src/engine/pane_a.cpp:
+src/ui/widget/pane_a.cpp:
     complete
     .text       start:0x020b5578 end:0x020b5744
 
-src/engine/pane_b.cpp:
+src/ui/widget/pane_b.cpp:
     complete
     .text       start:0x020b5840 end:0x020b5850
 
-src/engine/pane_c.cpp:
+src/ui/widget/pane_c.cpp:
     complete
     .text       start:0x020b5944 end:0x020b5950
 
-src/engine/pane_e.cpp:
+src/ui/widget/pane_e.cpp:
     complete
     .text       start:0x020b5950 end:0x020b5998
 
-src/engine/pane_calc.cpp:
+src/ui/widget/pane_calc.cpp:
     complete
     .text       start:0x020b5a70 end:0x020b5ae4
 
-src/engine/pane_calc_2.cpp:
+src/ui/widget/pane_calc_2.cpp:
     complete
     .text       start:0x020b5b30 end:0x020b5ba4
 
-src/engine/pane_d.cpp:
+src/ui/widget/pane_d.cpp:
     complete
     .text       start:0x020b5ba4 end:0x020b5ba8
 
-src/engine/pane_f.cpp:
+src/ui/widget/pane_f.cpp:
     complete
     .text       start:0x020b5c58 end:0x020b5d48
 
-src/engine/window_info.cpp:
+src/ui/widget/window_info.cpp:
     complete
     .text       start:0x020b64f0 end:0x020b64fc
 
@@ -4377,7 +4377,7 @@ src/engine/tcli_accessor.cpp:
     complete
     .text       start:0x020b69e4 end:0x020b69f4
 
-src/engine/tcl_text.cpp:
+src/knife/message/tcl_text.cpp:
     complete
     .text       start:0x020b6b3c end:0x020b6bf8
 
@@ -4385,7 +4385,7 @@ src/game/item_row.cpp:
     complete
     .text       start:0x020b6cc4 end:0x020b6d74
 
-src/engine/window_subinfo.cpp:
+src/ui/widget/window_subinfo.cpp:
     complete
     .text       start:0x020b7074 end:0x020b7080
 
@@ -4429,27 +4429,27 @@ src/engine/packed_reset_2.cpp:
     complete
     .text       start:0x020b735c end:0x020b7378
 
-src/engine/tilebuf.cpp:
+src/ui/widget/tilebuf.cpp:
     complete
     .text       start:0x020b73b8 end:0x020b7488
 
-src/engine/tile_row.cpp:
+src/ui/widget/tile_row.cpp:
     complete
     .text       start:0x020b7508 end:0x020b7570
 
-src/engine/tile_map.cpp:
+src/ui/widget/tile_map.cpp:
     complete
     .text       start:0x020b7570 end:0x020b7578
 
-src/engine/tile_map_2.cpp:
+src/ui/widget/tile_map_2.cpp:
     complete
     .text       start:0x020b75d0 end:0x020b75f0
 
-src/engine/tile_attr.cpp:
+src/ui/widget/tile_attr.cpp:
     complete
     .text       start:0x020b766c end:0x020b76bc
 
-src/engine/pane_scale.cpp:
+src/ui/widget/pane_scale.cpp:
     complete
     .text       start:0x020b76bc end:0x020b771c
 
@@ -4457,151 +4457,151 @@ src/engine/os_owner.cpp:
     complete
     .text       start:0x020b7b00 end:0x020b7b1c
 
-src/engine/rect_obj.cpp:
+src/ui/widget/rect_obj.cpp:
     complete
     .text       start:0x020b7c50 end:0x020b7c80
 
-src/engine/rect_obj_2.cpp:
+src/ui/widget/rect_obj_2.cpp:
     complete
     .text       start:0x020b7cd0 end:0x020b7d08
 
-src/engine/rect_obj_3.cpp:
+src/ui/widget/rect_obj_3.cpp:
     complete
     .text       start:0x020b7d08 end:0x020b7db4
 
-src/engine/rect_obj_4.cpp:
+src/ui/widget/rect_obj_4.cpp:
     complete
     .text       start:0x020b7e48 end:0x020b7fec
 
-src/engine/rect_obj_5.cpp:
+src/ui/widget/rect_obj_5.cpp:
     complete
     .text       start:0x020b8004 end:0x020b8078
 
-src/engine/rect_list.cpp:
+src/ui/widget/rect_list.cpp:
     complete
     .text       start:0x020b8078 end:0x020b81a8
 
-src/engine/rect_list_2.cpp:
+src/ui/widget/rect_list_2.cpp:
     complete
     .text       start:0x020b826c end:0x020b82f4
 
-src/engine/rect_list_3.cpp:
+src/ui/widget/rect_list_3.cpp:
     complete
     .text       start:0x020b8384 end:0x020b8398
 
-src/engine/rect_hit.cpp:
+src/ui/widget/rect_hit.cpp:
     complete
     .text       start:0x020b8398 end:0x020b8408
 
-src/engine/rect_pair_init.cpp:
+src/ui/widget/rect_pair_init.cpp:
     complete
     .text       start:0x020b8440 end:0x020b8528
 
-src/engine/rect_pair.cpp:
+src/ui/widget/rect_pair.cpp:
     complete
     .text       start:0x020b86b8 end:0x020b8784
 
-src/engine/rect_pair_links.cpp:
+src/ui/widget/rect_pair_links.cpp:
     complete
     .text       start:0x020b87b4 end:0x020b88b0
 
-src/engine/rect_item.cpp:
+src/ui/widget/rect_item.cpp:
     complete
     .text       start:0x020b88dc end:0x020b8a5c
 
-src/engine/rect_item_2.cpp:
+src/ui/widget/rect_item_2.cpp:
     complete
     .text       start:0x020b8b68 end:0x020b8cbc
 
-src/engine/rect_slot.cpp:
+src/ui/widget/rect_slot.cpp:
     complete
     .text       start:0x020b8e28 end:0x020b8f68
 
-src/engine/rect_list_4.cpp:
+src/ui/widget/rect_list_4.cpp:
     complete
     .text       start:0x020b9284 end:0x020b9380
 
-src/engine/slider_index.cpp:
+src/ui/widget/slider_index.cpp:
     complete
     .text       start:0x020b9424 end:0x020b94ac
 
-src/engine/rect_group_update.cpp:
+src/ui/widget/rect_group_update.cpp:
     complete
     .text       start:0x020b9688 end:0x020b9720
 
-src/engine/slider.cpp:
+src/ui/widget/slider.cpp:
     complete
     .text       start:0x020b9720 end:0x020b9774
 
-src/engine/slider_2.cpp:
+src/ui/widget/slider_2.cpp:
     complete
     .text       start:0x020b97d4 end:0x020b9844
 
-src/engine/rect_group_slot.cpp:
+src/ui/widget/rect_group_slot.cpp:
     complete
     .text       start:0x020b9d30 end:0x020b9d58
 
-src/engine/ctrl_entry.cpp:
+src/ui/widget/ctrl_entry.cpp:
     complete
     .text       start:0x020b9fac end:0x020ba004
 
-src/engine/ctrl_release.cpp:
+src/ui/widget/ctrl_release.cpp:
     complete
     .text       start:0x020ba80c end:0x020ba84c
 
-src/engine/ctrl_setlist.cpp:
+src/ui/widget/ctrl_setlist.cpp:
     complete
     .text       start:0x020ba948 end:0x020ba9a4
 
-src/engine/slider_ctrl.cpp:
+src/ui/widget/slider_ctrl.cpp:
     complete
     .text       start:0x020bac20 end:0x020bacb8
 
-src/engine/menu_scroll.cpp:
+src/ui/widget/menu_scroll.cpp:
     complete
     .text       start:0x020baef4 end:0x020bafb4
 
-src/engine/ctrl_refresh.cpp:
+src/ui/widget/ctrl_refresh.cpp:
     complete
     .text       start:0x020bafb4 end:0x020bb080
 
-src/engine/ctrl_bits.cpp:
+src/ui/widget/ctrl_bits.cpp:
     complete
     .text       start:0x020bb1bc end:0x020bb208
 
-src/engine/ctrl_flags.cpp:
+src/ui/widget/ctrl_flags.cpp:
     complete
     .text       start:0x020bb660 end:0x020bb788
 
-src/engine/ctrl_state.cpp:
+src/ui/widget/ctrl_state.cpp:
     complete
     .text       start:0x020bb85c end:0x020bb898
 
-src/engine/rect_flag_pair.cpp:
+src/ui/widget/rect_flag_pair.cpp:
     complete
     .text       start:0x020bb980 end:0x020bba00
 
-src/engine/rect_slot2.cpp:
+src/ui/widget/rect_slot2.cpp:
     complete
     .text       start:0x020bba00 end:0x020bba38
 
-src/engine/rect_geom_copy.cpp:
+src/ui/widget/rect_geom_copy.cpp:
     complete
     .text       start:0x020bba38 end:0x020bba88
 
-src/engine/rect_slot3.cpp:
+src/ui/widget/rect_slot3.cpp:
     complete
     .text       start:0x020bbb70 end:0x020bbbfc
 
-src/engine/ctrl_find.cpp:
+src/ui/widget/ctrl_find.cpp:
     complete
     .text       start:0x020bbe50 end:0x020bbf54
 
-src/engine/ctrl_init.cpp:
+src/ui/widget/ctrl_init.cpp:
     complete
     .text       start:0x020bc0e4 end:0x020bc1fc
 
-src/engine/ctrl_leaf.cpp:
+src/ui/widget/ctrl_leaf.cpp:
     complete
     .text       start:0x020bc1fc end:0x020bc200
 
@@ -4613,11 +4613,11 @@ src/engine/table_set.cpp:
     complete
     .text       start:0x020bc280 end:0x020bc2d0
 
-src/engine/rect_buf_table.cpp:
+src/ui/widget/rect_buf_table.cpp:
     complete
     .text       start:0x020bc2d0 end:0x020bc36c
 
-src/engine/ctrl_wrap.cpp:
+src/ui/widget/ctrl_wrap.cpp:
     complete
     .text       start:0x020bc36c end:0x020bc3a8
 
@@ -4625,7 +4625,7 @@ src/engine/gx_misc.cpp:
     complete
     .text       start:0x020bc3a8 end:0x020bc43c
 
-src/engine/ctrl_leaf_2.cpp:
+src/ui/widget/ctrl_leaf_2.cpp:
     complete
     .text       start:0x020bc51c end:0x020bc528
 
@@ -4633,275 +4633,275 @@ src/engine/slot_group.cpp:
     complete
     .text       start:0x020bc528 end:0x020bc574
 
-src/engine/ctrl_leaf_3.cpp:
+src/ui/widget/ctrl_leaf_3.cpp:
     complete
     .text       start:0x020bc574 end:0x020bc588
 
-src/engine/menu_release.cpp:
+src/ui/widget/menu_release.cpp:
     complete
     .text       start:0x020bc6c4 end:0x020bc78c
 
-src/engine/ctrl_free.cpp:
+src/ui/widget/ctrl_free.cpp:
     complete
     .text       start:0x020bc78c end:0x020bc7b8
 
-src/engine/ctrl_free_virtual.cpp:
+src/ui/widget/ctrl_free_virtual.cpp:
     complete
     .text       start:0x020bc7b8 end:0x020bc7ec
 
-src/engine/ctrl_free_2.cpp:
+src/ui/widget/ctrl_free_2.cpp:
     complete
     .text       start:0x020bc7ec end:0x020bc818
 
-src/engine/ctrl_free_virtual_2.cpp:
+src/ui/widget/ctrl_free_virtual_2.cpp:
     complete
     .text       start:0x020bc818 end:0x020bc84c
 
-src/engine/rect_buf_init.cpp:
+src/ui/widget/rect_buf_init.cpp:
     complete
     .text       start:0x020bc84c end:0x020bc8bc
 
-src/game/menu_2.cpp:
+src/ui/widget/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd474
 
-src/game/menu_20.cpp:
+src/ui/widget/menu_20.cpp:
     complete
     .text       start:0x020bd968 end:0x020bdb34
 
-src/game/menu_6.cpp:
+src/ui/widget/menu_6.cpp:
     complete
     .text       start:0x020bdfc0 end:0x020be00c
 
-src/game/menu_21.cpp:
+src/ui/widget/menu_21.cpp:
     complete
     .text       start:0x020be0c4 end:0x020be128
 
-src/game/menu_31.cpp:
+src/ui/widget/menu_31.cpp:
     complete
     .text       start:0x020be154 end:0x020be244
 
-src/game/menu_8.cpp:
+src/ui/widget/menu_8.cpp:
     complete
     .text       start:0x020be2f8 end:0x020be518
 
-src/game/menu_25.cpp:
+src/ui/widget/menu_25.cpp:
     complete
     .text       start:0x020be70c end:0x020be798
 
-src/game/menu_9.cpp:
+src/ui/widget/menu_9.cpp:
     complete
     .text       start:0x020be854 end:0x020be8e8
 
-src/game/menu_22.cpp:
+src/ui/widget/menu_22.cpp:
     complete
     .text       start:0x020be9e4 end:0x020be9f0
 
-src/game/menu_10.cpp:
+src/ui/widget/menu_10.cpp:
     complete
     .text       start:0x020bea60 end:0x020beb00
 
-src/game/menu_11.cpp:
+src/ui/widget/menu_11.cpp:
     complete
     .text       start:0x020bec6c end:0x020bed14
 
-src/game/menu_29.cpp:
+src/ui/widget/menu_29.cpp:
     complete
     .text       start:0x020beda0 end:0x020bf09c
 
-src/engine/sndsys.cpp:
+src/engine/sound/sndsys.cpp:
     complete
     .text       start:0x020bf184 end:0x020bf230
 
-src/game/menu_15.cpp:
+src/ui/widget/menu_15.cpp:
     complete
     .text       start:0x020bf230 end:0x020bf23c
 
-src/engine/sndmaster.cpp:
+src/engine/sound/sndmaster.cpp:
     complete
     .text       start:0x020bf23c end:0x020bf25c
 
-src/engine/sndsys_2.cpp:
+src/engine/sound/sndsys_2.cpp:
     complete
     .text       start:0x020bf25c end:0x020bf40c
 
-src/game/menu_16.cpp:
+src/ui/widget/menu_16.cpp:
     complete
     .text       start:0x020bf40c end:0x020bf418
 
-src/engine/sndchannel.cpp:
+src/engine/sound/sndchannel.cpp:
     complete
     .text       start:0x020bf418 end:0x020bf540
 
-src/engine/sndchannel_2.cpp:
+src/engine/sound/sndchannel_2.cpp:
     complete
     .text       start:0x020bf66c end:0x020bf7c8
 
-src/engine/sndtable.cpp:
+src/engine/sound/sndtable.cpp:
     complete
     .text       start:0x020bf7c8 end:0x020bf818
 
-src/engine/sndsys_3.cpp:
+src/engine/sound/sndsys_3.cpp:
     complete
     .text       start:0x020bf818 end:0x020bf89c
 
-src/engine/sndslot.cpp:
+src/engine/sound/sndslot.cpp:
     complete
     .text       start:0x020bf89c end:0x020bf8fc
 
-src/game/menu_32.cpp:
+src/ui/widget/menu_32.cpp:
     complete
     .text       start:0x020bf954 end:0x020bf9bc
 
-src/engine/sndvoice_3.cpp:
+src/engine/sound/sndvoice_3.cpp:
     complete
     .text       start:0x020bf9fc end:0x020bfa1c
 
-src/game/menu_33.cpp:
+src/ui/widget/menu_33.cpp:
     complete
     .text       start:0x020bfa1c end:0x020bfa68
 
-src/engine/sndvoice_4.cpp:
+src/engine/sound/sndvoice_4.cpp:
     complete
     .text       start:0x020bfb1c end:0x020bfd1c
 
-src/game/menu_17.cpp:
+src/ui/widget/menu_17.cpp:
     complete
     .text       start:0x020bfd1c end:0x020bfd28
 
-src/engine/sndvoice.cpp:
+src/engine/sound/sndvoice.cpp:
     complete
     .text       start:0x020bfd78 end:0x020c0130
 
-src/engine/sndentry.cpp:
+src/engine/sound/sndentry.cpp:
     complete
     .text       start:0x020c0130 end:0x020c02d0
 
-src/engine/sndstop.cpp:
+src/engine/sound/sndstop.cpp:
     complete
     .text       start:0x020c02d0 end:0x020c0434
 
-src/engine/sndsys_6.cpp:
+src/engine/sound/sndsys_6.cpp:
     complete
     .text       start:0x020c0434 end:0x020c050c
 
-src/engine/sndstate_get.cpp:
+src/engine/sound/sndstate_get.cpp:
     complete
     .text       start:0x020c05dc end:0x020c05ec
 
-src/engine/sndstate_lookup.cpp:
+src/engine/sound/sndstate_lookup.cpp:
     complete
     .text       start:0x020c0650 end:0x020c0844
 
-src/engine/sndstate.cpp:
+src/engine/sound/sndstate.cpp:
     complete
     .text       start:0x020c0844 end:0x020c08cc
 
-src/engine/sndtable_read.cpp:
+src/engine/sound/sndtable_read.cpp:
     complete
     .text       start:0x020c08cc end:0x020c0994
 
-src/engine/sndtable_2.cpp:
+src/engine/sound/sndtable_2.cpp:
     complete
     .text       start:0x020c0994 end:0x020c09d8
 
-src/engine/sndtable_3.cpp:
+src/engine/sound/sndtable_3.cpp:
     complete
     .text       start:0x020c09d8 end:0x020c0a64
 
-src/engine/sndrecord.cpp:
+src/engine/sound/sndrecord.cpp:
     complete
     .text       start:0x020c0b88 end:0x020c0c28
 
-src/engine/sndsys_7.cpp:
+src/engine/sound/sndsys_7.cpp:
     complete
     .text       start:0x020c0c40 end:0x020c0c70
 
-src/engine/sndstate_entries.cpp:
+src/engine/sound/sndstate_entries.cpp:
     complete
     .text       start:0x020c0c70 end:0x020c0d6c
 
-src/engine/sndstate_acquire.cpp:
+src/engine/sound/sndstate_acquire.cpp:
     complete
     .text       start:0x020c0d6c end:0x020c0e50
 
-src/engine/sndtable_payload.cpp:
+src/engine/sound/sndtable_payload.cpp:
     complete
     .text       start:0x020c1014 end:0x020c10b8
 
-src/engine/sndbank_acquire.cpp:
+src/engine/sound/sndbank_acquire.cpp:
     complete
     .text       start:0x020c10b8 end:0x020c1268
 
-src/engine/sndbank.cpp:
+src/engine/sound/sndbank.cpp:
     complete
     .text       start:0x020c1390 end:0x020c1490
 
-src/engine/sndbank_wave.cpp:
+src/engine/sound/sndbank_wave.cpp:
     complete
     .text       start:0x020c1490 end:0x020c14d8
 
-src/engine/sndstate_start.cpp:
+src/engine/sound/sndstate_start.cpp:
     complete
     .text       start:0x020c16f8 end:0x020c1740
 
-src/engine/sndstate_startlist.cpp:
+src/engine/sound/sndstate_startlist.cpp:
     complete
     .text       start:0x020c1740 end:0x020c17c0
 
-src/engine/sndstate_start_ex.cpp:
+src/engine/sound/sndstate_start_ex.cpp:
     complete
     .text       start:0x020c17c0 end:0x020c186c
 
-src/engine/sndtrack.cpp:
+src/engine/sound/sndtrack.cpp:
     complete
     .text       start:0x020c1a38 end:0x020c1a7c
 
-src/engine/sndtrack_2.cpp:
+src/engine/sound/sndtrack_2.cpp:
     complete
     .text       start:0x020c1b88 end:0x020c1c0c
 
-src/engine/sndtrack_finish.cpp:
+src/engine/sound/sndtrack_finish.cpp:
     complete
     .text       start:0x020c1c0c end:0x020c1ca4
 
-src/engine/sndtrack_4.cpp:
+src/engine/sound/sndtrack_4.cpp:
     complete
     .text       start:0x020c1ca4 end:0x020c1d0c
 
-src/engine/sndtrack_3.cpp:
+src/engine/sound/sndtrack_3.cpp:
     complete
     .text       start:0x020c1d0c end:0x020c1dcc
 
-src/engine/sndlist.cpp:
+src/engine/sound/sndlist.cpp:
     complete
     .text       start:0x020c1dcc end:0x020c1fa0
 
-src/engine/sndlink.cpp:
+src/engine/sound/sndlink.cpp:
     complete
     .text       start:0x020c2004 end:0x020c2090
 
-src/engine/sndrange.cpp:
+src/engine/sound/sndrange.cpp:
     complete
     .text       start:0x020c2090 end:0x020c2120
 
-src/engine/sndrange_nodes.cpp:
+src/engine/sound/sndrange_nodes.cpp:
     complete
     .text       start:0x020c219c end:0x020c2264
 
-src/engine/sndheap.cpp:
+src/engine/sound/sndheap.cpp:
     complete
     .text       start:0x020c2694 end:0x020c2838
 
-src/engine/sndheap_linear.cpp:
+src/engine/sound/sndheap_linear.cpp:
     complete
     .text       start:0x020c2838 end:0x020c28b0
 
-src/game/menu_18.cpp:
+src/ui/widget/menu_18.cpp:
     complete
     .text       start:0x020c28b0 end:0x020c28bc
 
-src/engine/sndheap_linear_2.cpp:
+src/engine/sound/sndheap_linear_2.cpp:
     complete
     .text       start:0x020c28bc end:0x020c2984
 
@@ -4913,11 +4913,11 @@ src/engine/fs_dirfile.cpp:
     complete
     .text       start:0x020c2b10 end:0x020c2b90
 
-src/engine/sndheap_owner.cpp:
+src/engine/sound/sndheap_owner.cpp:
     complete
     .text       start:0x020c2b90 end:0x020c2c34
 
-src/game/menu_13.cpp:
+src/ui/widget/menu_13.cpp:
     complete
     .text       start:0x020c2c34 end:0x020c2c48
 
@@ -4929,7 +4929,7 @@ src/engine/res_chunk_a.cpp:
     complete
     .text       start:0x020c2c5c end:0x020c2cb4
 
-src/game/menu_19.cpp:
+src/ui/widget/menu_19.cpp:
     complete
     .text       start:0x020c2cb4 end:0x020c2cc0
 
@@ -4997,19 +4997,19 @@ src/engine/bg_clip.cpp:
     complete
     .text       start:0x020c4c74 end:0x020c4dc8
 
-src/engine/textbox_lookup.cpp:
+src/knife/message/textbox_lookup.cpp:
     complete
     .text       start:0x020c4dc8 end:0x020c4e90
 
-src/engine/text_box.cpp:
+src/knife/message/text_box.cpp:
     complete
     .text       start:0x020c4e90 end:0x020c5020
 
-src/engine/text_box_2.cpp:
+src/knife/message/text_box_2.cpp:
     complete
     .text       start:0x020c5094 end:0x020c50ec
 
-src/engine/text_box_3.cpp:
+src/knife/message/text_box_3.cpp:
     complete
     .text       start:0x020c5268 end:0x020c5284
 
@@ -5029,58 +5029,58 @@ src/engine/nftr_font.cpp:
     complete
     .text       start:0x020c6df4 end:0x020c6ecc
 
-src/engine/text_stream.cpp:
+src/knife/message/text_stream.cpp:
     complete
     .text       start:0x020c6f2c end:0x020c6f40
 
-src/engine/text_stream_2.cpp:
+src/knife/message/text_stream_2.cpp:
     complete
     .text       start:0x020c7004 end:0x020c7018
 
-src/game/subtask_game_start.cpp:
+src/knife/subtask/subtask_game_start.cpp:
     complete
     .text       start:0x020c70ac end:0x020c70c8
 
-src/game/subtask_game_start_2.cpp:
+src/knife/subtask/subtask_game_start_2.cpp:
     complete
     .text       start:0x020c754c end:0x020c75a4
 
-src/game/knife_manual.cpp:
+src/knife/app/knife_manual.cpp:
     complete
     .text       start:0x020c7c10 end:0x020c7c4c
 
-src/game/knife_manual_6.cpp:
+src/knife/app/knife_manual_6.cpp:
     complete
     .text       start:0x020c7da0 end:0x020c8104
 
-src/game/knife_power_3.cpp:
+src/knife/app/knife_power_3.cpp:
     complete
     .text       start:0x020c8104 end:0x020c8158
 
-src/game/knife_power.cpp:
+src/knife/app/knife_power.cpp:
     complete
     .text       start:0x020c8158 end:0x020c81a0
 
-src/game/knife_power_4.cpp:
+src/knife/app/knife_power_4.cpp:
     complete
     .text       start:0x020c81a0 end:0x020c8314
 
-src/game/knife_power_2.cpp:
+src/knife/app/knife_power_2.cpp:
     complete
     .text       start:0x020c8314 end:0x020c836c
 
-src/game/knife_power_5.cpp:
+src/knife/app/knife_power_5.cpp:
     complete
     .text       start:0x020c83a0 end:0x020c83b8
 
-src/game/bootinfo.cpp:
+src/knife/app/bootinfo.cpp:
     complete
     .text       start:0x020c83b8 end:0x020c83dc
 
-src/game/terminateinfo.cpp:
+src/knife/app/terminateinfo.cpp:
     complete
     .text       start:0x020c8998 end:0x020c89bc
 
-src/game/subtask_ending.cpp:
+src/knife/subtask/subtask_ending.cpp:
     complete
     .text       start:0x020c8c60 end:0x020c8cfc

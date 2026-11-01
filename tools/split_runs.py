@@ -54,7 +54,7 @@ for r_i, run in enumerate(runs):
     if r_i == 0:
         out = path
     else:
-        while any(path.parent.parent.glob(f"*/{stem}_{n}.cpp")):
+        while any((Path(__file__).parent.parent / "src").rglob(f"{stem}_{n}.cpp")):
             n += 1
         out = path.with_name(f"{stem}_{n}.cpp")
         n += 1

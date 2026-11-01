@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "object/template.h"
+#include "actor/object/template.h"
 #include "game/hitdecls.h"
 
 // Hit handlers (module hit, second unit). Original names from the debug build:

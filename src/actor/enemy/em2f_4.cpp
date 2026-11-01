@@ -1,0 +1,12 @@
+#include "engine/functions.h"
+#include "actor/enemy/em2f.h"
+#include "global.h"
+
+void getStormMoveInfo(Entity *e) {
+    V(e)->pathCursor = em2f_stormPaths[Random() & 1];
+    V(e)->targetX = *V(e)->pathCursor++;
+    V(e)->targetY = *V(e)->pathCursor++;
+    e->direction = *V(e)->pathCursor++;
+    V(e)->pathWait = 0x80;
+}
+

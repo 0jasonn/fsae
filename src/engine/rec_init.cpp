@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/pane.h"
+#include "ui/widget/pane.h"
 #include "engine/packed_set_api.h"
 #include "engine/rec_init_api.h"
 

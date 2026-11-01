@@ -57,7 +57,7 @@ for h in sorted((ROOT / "include").rglob("*.h")):
             hdecl[m["name"]][key] = rel
 
 removed = 0
-for p in sorted((ROOT / "src").glob("*/*.cpp")):
+for p in sorted(q for q in (ROOT / "src").rglob("*.cpp") if "wip" not in q.parts):
     lines = p.read_text(encoding="utf-8").split("\n")
     if any(l.startswith("namespace") for l in lines):
         continue

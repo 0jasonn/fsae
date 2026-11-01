@@ -61,7 +61,7 @@ def norm(ret, params):
     return " ".join(re.findall(r"[A-Za-z_]\w*|\*|&", ret)) + "(" + ",".join(out) + ")"
 
 
-sources = sorted(p for p in (ROOT / "src").glob("*/*.cpp") if p.parent.name != "wip")
+sources = sorted(p for p in (ROOT / "src").rglob("*.cpp") if "wip" not in p.parts)
 definer = {}
 for p in sources:
     for _, n in defs.def_starts(p.read_text(encoding="utf-8").split("\n")):
@@ -103,7 +103,7 @@ for name, ds in sorted(decls.items()):
     src = definer.get(name)
     if src is not None:
         module = re.sub(r"_\d+$", "", src.stem)
-        header = f"{src.parent.name}/{module}_api.h"
+        header = f"{src.parent.relative_to(ROOT / 'src').as_posix()}/{module}_api.h"
     else:
         header = "engine/functions.h"
     headers[header].append(ds[0][2])

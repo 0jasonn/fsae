@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/comm.h"
+#include "knife/comm/comm.h"
 #include "global.h"
 #include "game/keyclear_api.h"
 

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/pane.h"
+#include "ui/widget/pane.h"
 #include "engine/level_table_api.h"
 
 // level_table: functions Level_getEntry (0x020b70c0) and Level_noop (0x020b70e4), both matching.

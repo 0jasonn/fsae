@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/m4a.h"
+#include "engine/sound/m4a.h"
 
 // GzFile thunks, 0x0208e038 to 0x0208e05c: each one forwards to a TwlSDK file function (FS_CloseFile, FS_GetFileLength,
 // FS_ReadFile). Provisional names are in scratch/agentD/renames.txt.

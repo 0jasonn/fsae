@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "object/tama11.h"
+#include "actor/object/tama11.h"
 
 // Command queue runner, 0x02080ca4. The queue lives in data_0212ccb0 at a half selected by data_0212c4c8; each byte of
 // the queue names a handler in queueHandlerTable, which takes the cursor and returns the next one. Handlers run until the

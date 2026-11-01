@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/pane.h"
+#include "ui/widget/pane.h"
 #include "engine/tween_api.h"
 
 // tween: functions TweenTable_noopA (0x020b6868), TweenTable_noopB (0x020b686c), Tween_init (0x020b6870) and

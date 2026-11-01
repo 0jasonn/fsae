@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/vgroup.h"
-#include "object/tama11.h"
+#include "actor/object/tama11.h"
 
 // VGroup module, continued: 0x02081160 (PutVGroup) to 0x02081360.
 //   PutVGroup (0x02081160): releases the object's group: each slot of the group loses one link.

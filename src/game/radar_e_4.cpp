@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/subtask.h"
+#include "knife/subtask/subtask.h"
 #include "game/radar_e_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):

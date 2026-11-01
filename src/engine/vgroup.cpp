@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "object/tama11.h"
+#include "actor/object/tama11.h"
 
 // VGroup module (vgroup), 0x02080e58 onward. A VGroup slot is four bytes; the table holds 0x40 of them.
 //   VGroupInit (0x02080e58): clears the slot table and the request queue, then marks slots 0-7 and 0x2b-0x3f free.

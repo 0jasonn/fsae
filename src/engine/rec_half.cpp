@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/pane.h"
+#include "ui/widget/pane.h"
 #include "engine/rec_half_api.h"
 
 // rec_half: function Rec_setHalf102 (0x020b72e0), matching.

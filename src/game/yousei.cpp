@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "object/tama11.h"
+#include "actor/object/tama11.h"
 
 // yousei module (fairy demo), 0x02081b64 onward.
 //   YouseiDemoTask (0x02081ba4): runs the current demo step (table yousei_demoTable), then the frame's shared update.
