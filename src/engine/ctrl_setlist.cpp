@@ -30,7 +30,7 @@ void Ctrl_setItemList(void *selfv, CtrlSetItems *list) {
 
     self->itemList = list;
     Slider_setupItems(self->sliderA, list->count);
-    func_020bafb4(self);
+    Ctrl_refreshItemRing(self);
     if (self->itemList->count != 0) {
         Ctrl_setSliderIndexA(self, 0);
         func_020bb898(self, 1);

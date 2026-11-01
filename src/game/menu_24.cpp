@@ -6,14 +6,14 @@
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_ReleaseWrapper (Menu_ReleaseWrapper)
 
-// Menu_ReleaseWrapper (0x020bf06c): releases the menu held by the wrapper (func_020bc6c4), notifies Heap_VirtualFree and
+// Menu_ReleaseWrapper (0x020bf06c): releases the menu held by the wrapper (Menu_releaseBlocks), notifies Heap_VirtualFree and
 // clears the wrapper pointer. Called by Knife_ForwardMenuWrapper.
 extern "C" void Menu_ReleaseWrapper(MenuWrapper *wrapper, void *arg);
 void Menu_ReleaseWrapper(MenuWrapper *wrapper, void *arg) {
     MenuWork *menu;
 
     menu = wrapper->ptr;
-    func_020bc6c4(menu);
+    Menu_releaseBlocks(menu);
     Heap_VirtualFree(arg, menu);
     wrapper->ptr = 0;
 }

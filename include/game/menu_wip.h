@@ -87,7 +87,7 @@ void SndState_StartEntryList(void *obj, s32 a, s32 b);
 void SndSlot_ReleaseFirst(void *obj, s32 value);
 void Work21_clear(void *buf);
 void lobby_callWithZeroPos(s32 active, void *buf);
-void func_020bc6c4(void *obj);
+void Menu_releaseBlocks(void *obj);
 void Heap_VirtualFree(void *arg, void *obj);
 s32 func_020bc588(s32 value);
 void RectBufSet_init(s32 obj, void *checker, void *a, void *b, void *c, u16 d);

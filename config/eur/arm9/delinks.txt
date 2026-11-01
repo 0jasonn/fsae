@@ -1622,6 +1622,10 @@ src/game/msgdat.cpp:
     complete
     .text       start:0x0204c2cc end:0x0204c2e0
 
+src/game/knife_font_2.cpp:
+    complete
+    .text       start:0x0204c2e0 end:0x0204c34c
+
 src/game/knife_font.cpp:
     complete
     .text       start:0x0204c34c end:0x0204c3a4
@@ -1669,6 +1673,10 @@ src/engine/maplevel.cpp:
 src/game/srchcells.cpp:
     complete
     .text       start:0x0204e3e0 end:0x0204e49c
+
+src/game/randomset_2.cpp:
+    complete
+    .text       start:0x0204e49c end:0x0204e58c
 
 src/game/randomset.cpp:
     complete
@@ -2249,6 +2257,10 @@ src/object/grass_2.cpp:
 src/object/pot_2.cpp:
     complete
     .text       start:0x0205ee78 end:0x0205ee7c
+
+src/object/pot_throw.cpp:
+    complete
+    .text       start:0x0205ef50 end:0x0205f084
 
 src/object/pot_9.cpp:
     complete
@@ -3666,9 +3678,17 @@ src/engine/stub_noop_b.cpp:
     complete
     .text       start:0x02092330 end:0x02092334
 
+src/engine/wirelessmanager.cpp:
+    complete
+    .text       start:0x02092334 end:0x0209244c
+
 src/engine/wm_mp.cpp:
     complete
     .text       start:0x0209244c end:0x02092590
+
+src/engine/wirelessmanager_2.cpp:
+    complete
+    .text       start:0x02092590 end:0x020925e8
 
 src/engine/wm_result.cpp:
     complete
@@ -3690,9 +3710,17 @@ src/engine/wirelessmgr_states_2.cpp:
     complete
     .text       start:0x02092be0 end:0x02092c0c
 
+src/engine/wirelessmanager_10.cpp:
+    complete
+    .text       start:0x02092e0c end:0x02092f24
+
 src/engine/wirelessmgr_states_3.cpp:
     complete
     .text       start:0x02092f24 end:0x02092fd8
+
+src/engine/wirelessmanager_4.cpp:
+    complete
+    .text       start:0x02092fd8 end:0x02093200
 
 src/engine/wirelessmgr_states_4.cpp:
     complete
@@ -3729,6 +3757,10 @@ src/engine/comm_interrupt.cpp:
 src/engine/comm_dtors.cpp:
     complete
     .text       start:0x02093b34 end:0x02093b5c
+
+src/engine/singleplay_init.cpp:
+    complete
+    .text       start:0x02093bbc end:0x02093c48
 
 src/engine/singleplay_check.cpp:
     complete
@@ -4649,6 +4681,10 @@ src/engine/tcli_accessor.cpp:
     complete
     .text       start:0x020b69e4 end:0x020b69f4
 
+src/engine/tcl_text.cpp:
+    complete
+    .text       start:0x020b6b3c end:0x020b6bf8
+
 src/game/item_row.cpp:
     complete
     .text       start:0x020b6cc4 end:0x020b6d74
@@ -4700,6 +4736,10 @@ src/engine/packed_reset.cpp:
 src/engine/packed_reset_2.cpp:
     complete
     .text       start:0x020b735c end:0x020b7378
+
+src/engine/tilebuf.cpp:
+    complete
+    .text       start:0x020b73b8 end:0x020b7488
 
 src/engine/tile_row.cpp:
     complete
@@ -4829,6 +4869,14 @@ src/engine/slider_ctrl.cpp:
     complete
     .text       start:0x020bac20 end:0x020bacb8
 
+src/engine/menu_scroll.cpp:
+    complete
+    .text       start:0x020baef4 end:0x020bafb4
+
+src/engine/ctrl_refresh.cpp:
+    complete
+    .text       start:0x020bafb4 end:0x020bb080
+
 src/engine/ctrl_bits.cpp:
     complete
     .text       start:0x020bb1bc end:0x020bb208
@@ -4900,6 +4948,10 @@ src/engine/slot_group.cpp:
 src/engine/ctrl_leaf_3.cpp:
     complete
     .text       start:0x020bc574 end:0x020bc588
+
+src/engine/menu_release.cpp:
+    complete
+    .text       start:0x020bc6c4 end:0x020bc78c
 
 src/engine/ctrl_free.cpp:
     complete

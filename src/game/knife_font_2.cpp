@@ -1,0 +1,18 @@
+#include "engine/functions.h"
+#include "game/knife_font.h"
+#include "game/textlength.h"
+#include "game/textlength_api.h"
+#include "game/knifeapp_b.h"
+
+// knife_GetFontStrWidth (0x0204c2e0): measures the text of a message index with a TextLengthAnalyzer. flag 0 returns the
+// longest line; otherwise the packed line counts are returned.
+u32 knife_GetFontStrWidth_04c2e0(s32 index, u8 flag, void *tokenizer) {
+    KnifeTextLengthAnalyzer analyzer;
+
+    Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(&analyzer);
+    KnifeApp_MessageRequest(KnifeApp_getInstance(), index, tokenizer, &analyzer, 0);
+    if (flag == 0) {
+        return analyzer.maxLength;
+    }
+    return analyzer.maxLength | ((analyzer.emptyLines << 24) | (analyzer.nonEmptyLines << 16));
+}
