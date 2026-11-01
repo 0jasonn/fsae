@@ -50,11 +50,9 @@ void GX_LoadOAM(const void *src, u32 offset, u32 size);
 void GXS_LoadOAM(const void *src, u32 offset, u32 size);
 void MIi_DmaFill32(u32 dmaNo, void *dst, u32 value, u32 size, s32 flag);
 
-void OamRing_ResetAll(void *oam);
-s32 OamRing_Alloc(OamRing *ring, u32 start, u32 count, u32 bank);
-s32 OamRing_Push(OamRing *ring, const OamRecord *records, s32 count);
-void OamRing_Flush(OamRing *ring);
-void OamRing_Clear(OamRing *ring);
+// OamRing_ResetAll and OamRing_Alloc are declared in engine/functions.h. Real signatures of the others (not matched
+// yet): s32 OamRing_Alloc(OamRing *, u32 start, u32 count, u32 bank); s32 OamRing_Push(OamRing *, const OamRecord *,
+// s32 count); void OamRing_Flush(OamRing *); void OamRing_Clear(OamRing *).
 }
 
 #endif

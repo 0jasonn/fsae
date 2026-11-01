@@ -3973,6 +3973,10 @@ src/knife/message/textrender_clear_e.cpp:
     complete
     .text       start:0x020a58b4 end:0x020a58d0
 
+src/knife/message/textrenderer_bg.cpp:
+    complete
+    .text       start:0x020a58d0 end:0x020a590c
+
 src/knife/message/textrender_screenaddr.cpp:
     complete
     .text       start:0x020a590c end:0x020a59ac
@@ -4968,6 +4972,10 @@ src/engine/res_cursor_2.cpp:
 src/engine/res_cursor_3.cpp:
     complete
     .text       start:0x020c349c end:0x020c34d0
+
+src/engine/oam_ring.cpp:
+    complete
+    .text       start:0x020c34d0 end:0x020c35a4
 
 src/engine/slots.cpp:
     complete
