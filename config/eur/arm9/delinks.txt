@@ -985,6 +985,10 @@ src/enemy/em09.cpp:
     complete
     .text       start:0x02039ed4 end:0x0203a75c
 
+src/enemy/em09_3.cpp:
+    complete
+    .text       start:0x0203a75c end:0x0203a8bc
+
 src/enemy/em09_2.cpp:
     complete
     .text       start:0x0203a8bc end:0x0203ab78
@@ -1025,6 +1029,10 @@ src/enemy/em13_2.cpp:
     complete
     .text       start:0x0203c36c end:0x0203c570
 
+src/enemy/em13_getpos.cpp:
+    complete
+    .text       start:0x0203c570 end:0x0203c694
+
 src/enemy/em13_3.cpp:
     complete
     .text       start:0x0203c694 end:0x0203c7f8
@@ -1032,6 +1040,10 @@ src/enemy/em13_3.cpp:
 src/enemy/em14.cpp:
     complete
     .text       start:0x0203c7f8 end:0x0203ca40
+
+src/enemy/wiztarget.cpp:
+    complete
+    .text       start:0x0203ca40 end:0x0203cbe4
 
 src/enemy/em15.cpp:
     complete
@@ -1276,6 +1288,10 @@ src/enemy/em26.cpp:
 src/enemy/em26_2.cpp:
     complete
     .text       start:0x02040ad8 end:0x02040be0
+
+src/enemy/jumpinit.cpp:
+    complete
+    .text       start:0x02040be0 end:0x02040d00
 
 src/enemy/em26_3.cpp:
     complete
@@ -1526,9 +1542,21 @@ src/game/msgwin_2.cpp:
     complete
     .text       start:0x0204b1b0 end:0x0204b1b4
 
+src/game/knife_comm_disp_3.cpp:
+    complete
+    .text       start:0x0204b2f0 end:0x0204b488
+
+src/game/knife_comm_disp.cpp:
+    complete
+    .text       start:0x0204b6f4 end:0x0204b7d8
+
 src/game/knife_comm.cpp:
     complete
     .text       start:0x0204b7d8 end:0x0204b900
+
+src/game/knife_comm_disp_2.cpp:
+    complete
+    .text       start:0x0204b900 end:0x0204ba1c
 
 src/engine/objwork.cpp:
     complete

@@ -1559,7 +1559,7 @@ _Z9em09_initP9OBJ_WORK_ kind:function(arm,size=0x158) addr:0x0203a4b0
 _Z9em09_waitP9OBJ_WORK_ kind:function(arm,size=0x44) addr:0x0203a608
 _Z11em09_appearP9OBJ_WORK_ kind:function(arm,size=0x90) addr:0x0203a64c
 _Z9em09_moveP9OBJ_WORK_ kind:function(arm,size=0x80) addr:0x0203a6dc
-em09_kuttsuki kind:function(arm,size=0x160) addr:0x0203a75c
+_Z13em09_kuttsukiP9OBJ_WORK_ kind:function(arm,size=0x160) addr:0x0203a75c
 _Z10em09_wait2P9OBJ_WORK_ kind:function(arm,size=0x30) addr:0x0203a8bc
 _Z15em09_type2_initP9OBJ_WORK_ kind:function(arm,size=0xf0) addr:0x0203a8ec
 _Z15em09_type2_moveP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0203a9dc
@@ -2047,13 +2047,13 @@ _Z10dispCursorv kind:function(arm,size=0x90) addr:0x0204b120
 _Z14Stub_IgnoreArgi kind:function(arm,size=0x4) addr:0x0204b1b0
 _Z17Knife_msgFrameDmaP7MsgWorkm kind:function(arm,size=0x9c) addr:0x0204b1b4
 _Z19knife_msgLineChangeP7MsgWorkl kind:function(arm,size=0xa0) addr:0x0204b250
-knife_commDispInit kind:function(arm,size=0x198) addr:0x0204b2f0
+_Z18knife_commDispInitP12KNIFE_MSGSYS kind:function(arm,size=0x198) addr:0x0204b2f0
 isSkipAvailable kind:function(arm,size=0x54) addr:0x0204b488
 knife_commDispMove kind:function(arm,size=0x218) addr:0x0204b4dc
-knife_commDispWait kind:function(arm,size=0xe4) addr:0x0204b6f4
+_Z18knife_commDispWaitP12KNIFE_MSGSYS kind:function(arm,size=0xe4) addr:0x0204b6f4
 _Z17knife_commDispDieP7MsgWork kind:function(arm,size=0x24) addr:0x0204b7d8
 _Z16knife_commDispLFP7MsgWork kind:function(arm,size=0x104) addr:0x0204b7fc
-knife_commDispRoll kind:function(arm,size=0x11c) addr:0x0204b900
+_Z18knife_commDispRollP12KNIFE_MSGSYS kind:function(arm,size=0x11c) addr:0x0204b900
 knife_commDispEnq kind:function(arm,size=0x180) addr:0x0204ba1c
 _Z16ObjWorkPoolClearv kind:function(arm,size=0x1c) addr:0x0204bb9c
 _Z11ObjMoveInitv kind:function(arm,size=0x54) addr:0x0204bbb8
@@ -3696,7 +3696,7 @@ func_0208900c kind:label(thumb) addr:0x0208900c
 func_02089030 kind:label(thumb) addr:0x02089030
 func_02089084 kind:function(thumb,size=0x118) addr:0x02089084
 func_0208908c kind:label(thumb) addr:0x0208908c
-func_0208919c kind:function(thumb,size=0x14) addr:0x0208919c
+_Z13func_0208919cP9OBJ_WORK_ kind:function(thumb,size=0x14) addr:0x0208919c
 func_020891b0 kind:function(thumb,size=0x38) addr:0x020891b0
 func_020891e8 kind:function(thumb,size=0x0,unknown) addr:0x020891e8
 func_020891ec kind:function(thumb,size=0x1e) addr:0x020891ec
