@@ -23,7 +23,7 @@ asm void Ctx_RestoreRegsJump(void *context, u32 unused, void (*target)(void)) {
 }
 
 // Saves r4-r11, sp and lr into a 0x70-byte frame on the stack (zeroing three words at its base), then tail-calls
-// func_0200c3b4 with the frame address in r0.
+// RecordCursor_Fetch with the frame address in r0.
 
 // 0x0200cab0
 asm void Ctx_SaveFrameThenCall(void) {
@@ -45,5 +45,5 @@ asm void Ctx_SaveFrameThenCall(void) {
     str ip, [sp, #0x4]
     str ip, [sp, #0x8]
     mov r0, sp
-    b func_0200c3b4
+    b RecordCursor_Fetch
 }

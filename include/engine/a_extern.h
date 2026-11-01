@@ -13,7 +13,7 @@ void GX_VRAMCNT_SetLCDC_(u32 mask);
 void DC_InvalidateRange(void *start, u32 size);
 void FATFSi_InitRequest(void);
 void FATFSi_SyncInitialization(u32 arg);
-void func_0200c3b4(void *context);
+void RecordCursor_Fetch(void *context);
 }
 
 extern u16 data_02129864;
