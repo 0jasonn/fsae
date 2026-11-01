@@ -13,9 +13,7 @@ extern u8 data_0212c4d4;
 extern u16 data_0212c520;
 
 
-#include "game/pl.h"
-
-#define PL_ARR (*(PlWork (*)[4])data_0212ceb0)
+#include "engine/player.h"
 
 extern u16 scrollArgs[];
 extern u8 objAffineSet[];
@@ -42,17 +40,17 @@ extern u8 localPlayerIndex;
 
 void PlWorkColorReset(void) {
     u8 i;
-    PlWork *end;
-    PlWork *plWork;
+    PlayerData *end;
+    PlayerData *player;
 
-    plWork = PL_ARR;
-    end = (PlWork *)&data_0212ceb0[4];
+    player = data_0212ceb0;
+    end = &data_0212ceb0[4];
     i = 0;
-    if (plWork < end) {
+    if (player < end) {
         do {
-            plWork->unk_8b = (plWork->unk_8b & ~0xc) | ((i & 3) << 2);
+            player->paletteBits = (player->paletteBits & ~0xc) | ((i & 3) << 2);
             i++;
-            plWork++;
-        } while (plWork < end);
+            player++;
+        } while (player < end);
     }
 }

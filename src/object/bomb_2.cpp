@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/hitdecls.h"
+#include "engine/player.h"
 
 // Bomb main (module bomb, second unit). Named Bomb (Bomb renamed in scratch/agentE/renames.txt).
 
@@ -12,7 +13,6 @@ typedef struct Vars_Bomb {
 
 extern const EntityFunc data_020ce50c[]; // state handlers, indexed by e->action
 extern const u8 data_020ce4fc[]; // hitbox of the bomb after it was set off
-extern u8 data_0212ceb5[]; // one byte per template entry (0x94 apart), cleared when a carried bomb is dropped
 extern u8 data_0212c4b8; // non-zero while the object update is frozen
 extern KnifeObjAffineSrcData scrollArgs;
 extern const u8 bomb_hitbox[]; // hitbox of a bomb (bomb_hitbox) // affine source for the flash: scale 0x100, 0x100, angle 0
@@ -46,7 +46,7 @@ void Bomb(Entity *e) {
                         e->subtimer--;
                         if (e->subtimer == 0) {
                             if (e->action == 2 && e->subAction == 1) {
-                                *(u8 *)(data_0212ceb5 + e->type2 * 0x94) = 0;
+                                data_0212ceb0[e->type2].specialState = 0;
                             }
                             func_02085d34(e);
                             e->action = 3;

@@ -1,17 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/player.h"
 
 // Set2b actor (module set2b). Address -> name:
 //   0x0205a594 Set2b (original name)
-
-// One 0x94-byte entry per type in data_0212ced8.
-typedef struct Set2bTypeEntry {
-    /* 00 */ Entity *templ; // template Entity of the type, its sprite state is toggled every cycle
-    /* 04 */ u8 unk_04[0x0a];
-    /* 0e */ u16 spawnedFlags; // bit 1 is set once the type has been used
-    /* 10 */ u8 unk_10[0x84];
-} Set2bTypeEntry;
-extern Set2bTypeEntry data_0212ced8[];
 
 typedef struct Vars_Set2b {
     /* 00 */ u8 unk_00[0x64];
@@ -19,7 +11,7 @@ typedef struct Vars_Set2b {
 } Vars_Set2b;
 
 void Set2b(Entity *e) {
-    Entity *templ = data_0212ced8[e->type].templ;
+    Entity *templ = data_0212ceb0[e->type].entity;
     u16 lifeTimer;
     u8 timer;
     u8 subtimer;
@@ -67,7 +59,7 @@ void Set2b(Entity *e) {
                     child->y.HALF.HI = templ->y.HALF.HI + offset;
                 }
             }
-            data_0212ced8[e->type].spawnedFlags |= 2;
+            data_0212ceb0[e->type].statusFlags |= 2;
             templ->unk_40 = 0xf;
             templ->attackKnockback = 0xc;
         } else {

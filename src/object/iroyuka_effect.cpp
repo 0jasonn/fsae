@@ -1,10 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/set38.h"
+#include "engine/player.h"
 
 // IroyukaEffectSet, 0x0206bbf4 (unmangled in the original, so C linkage).
-// Places the effect object made by GetSetWork(0x39) at the cell packed in the 0x94-byte table entry for e->type.
-extern u8 data_0212ced2[];
+// Places the effect object made by GetSetWork(0x39) at the cell packed in PlayerData.unk_22 of the slot for e->type.
 
 extern "C" void IroyukaEffectSet(Entity *e) {
     Entity *effect;
@@ -14,7 +14,7 @@ extern "C" void IroyukaEffectSet(Entity *e) {
     if (effect == NULL) {
         return;
     }
-    cell = ((u32)*(u16 *)(data_0212ced2 + e->type * 0x94) << 15) >> 16;
+    cell = ((u32)data_0212ceb0[e->type].unk_22 << 15) >> 16;
     effect->x.HALF.HI = ((cell & 0x3f) << 4) | 8;
     effect->y.HALF.HI = ((cell & 0xfc0) >> 2) | 8;
     effect->layer = e->layer;

@@ -7,14 +7,6 @@
 //   0x02060bb0 set06_move, 0x02060ccc set06_die (original names)
 //   0x02060dbc posAdd (original name)
 
-typedef struct Vars_Set06 {
-    /* 00 */ u8 unk_00[0x60];
-    /* 60 */ u32 bits; // one bit per type group covered by this set (set06_init)
-    /* 64 */ WWORK posStep; // offset applied when the set moves forward
-    /* 68 */ WWORK posBack; // offset applied when the set moves back
-    /* 6c */ u16 cellId; // id passed to RewCell
-} Vars_Set06;
-
 extern UnkStruct_0212c648_S data_0212c648;
 extern const EntityFunc data_02115a20[]; // indexed by e->action
 extern const s16 data_02115a2c[];

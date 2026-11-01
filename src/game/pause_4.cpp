@@ -13,10 +13,6 @@ extern u8 data_0212c4d4;
 extern u16 data_0212c520;
 
 
-#include "game/pl.h"
-
-#define PL_ARR (*(PlWork (*)[4])data_0212ceb0)
-
 extern u16 scrollArgs[];
 extern u8 objAffineSet[];
 extern u8 objAffineSetAlt[];

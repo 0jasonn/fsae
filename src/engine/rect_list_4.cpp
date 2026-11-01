@@ -2,16 +2,10 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_list_api.h"
+#include "engine/rect_group.h"
 
 // rect_list_4: functions Group_allocU16Array (0x020b9284), Group_allocU32Array (0x020b92d0), Group_release (0x020b931c),
 // Group_freeBlock (0x020b9350) and Group_freeBlock2 (0x020b9368), all matching.
-
-// Group with two heap blocks at +0x30 and +0x34 and the list at +0x14 (see rect_list.cpp)
-typedef struct RectGroup {
-    u8 unk_00[0x30];
-    void *block30;     // 0x30
-    void *block34;     // 0x34
-} RectGroup;
 
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void Heap_VirtualFree(void *heap, void *block);

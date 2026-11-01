@@ -1,21 +1,20 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
 
 // Hit and damage helpers (module hit). Original names from the debug build:
 //   decVital, shiledCheck, nakamaCheckTgtOnly, nakamaCheck, setKokin
 
-extern u8 data_0212ceb0[]; // one 0x94-byte entry per type (template data), read at offset 0x3e
-
 // Damage of a hit on e from t: deals the damage to the health (or heart), plays the hit sound for some kinds and returns
 // the damage left when it is positive.
 u8 decVital(Entity *e, Entity *t) {
     s32 damage;
-    u8 *typeEntry;
+    PlayerData *player;
 
     if (e->objKind == 1) {
-        typeEntry = data_0212ceb0 + e->type * 0x94;
-        damage = t->attackDamage - (s32)((u32)(typeEntry[0x3e] << 28) >> 30);
+        player = &data_0212ceb0[e->type];
+        damage = t->attackDamage - (s32)((u32)(player->unk_3e << 28) >> 30);
         if (damage <= 1) {
             damage = 1;
         }

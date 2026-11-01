@@ -16,10 +16,6 @@
 //   0x02072ae0 link_buttobi, 0x02072afc buttobi_init, 0x02072b38 buttobi_kurukuru, 0x02072bac buttobi_batari (original names)
 //   0x02072bc8 link_standup, 0x02072be4 standup_init, 0x02072c24 standup_move_072c24 (original names)
 
-extern u8 data_0212cebc[]; // indexed by e->type * 0x94
-extern u8 data_0212ceb8[]; // u16 entries, indexed by e->type * 0x94
-extern u8 data_0212cee8[]; // indexed by e->type * 0x94
-
 void knife_event_check(Entity *e);
 
 extern const EntityFunc link_walkSubActions[]; // indexed by e->subAction
@@ -33,12 +29,12 @@ extern const EntityFunc link_standupSubActions[]; // indexed by e->subAction
 void link_init_072704(Entity *e) {
     e->action++;
     e->unk_1b = 0;
-    if (data_0212cebc[e->type * 0x94] != 0) {
+    if (data_0212ceb0[e->type].state != 0) {
         knife_event_check(e);
     }
     e->unk_23 = 0xff;
-    if (*(u16 *)&data_0212ceb8[e->type * 0x94] == 0) {
-        *(u16 *)&data_0212ceb8[e->type * 0x94] = 0;
+    if (data_0212ceb0[e->type].unk_08 == 0) {
+        data_0212ceb0[e->type].unk_08 = 0;
     }
 }
 
@@ -46,7 +42,7 @@ void link_nop(Entity *e) {
 }
 
 void link_stand(Entity *e) {
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 0;
+    data_0212ceb0[e->type].unk_08 = 0;
 }
 
 void link_walk(Entity *e) {
@@ -55,7 +51,7 @@ void link_walk(Entity *e) {
 
 void link_walk_init(Entity *e) {
     e->subAction++;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 4;
+    data_0212ceb0[e->type].unk_08 = 4;
 }
 
 void link_walk_move(Entity *e) {
@@ -71,7 +67,7 @@ void link_walk_move(Entity *e) {
             MoveDir(e);
             e->timer--;
             if (e->timer == 0) {
-                data_0212cebc[e->type * 0x94] = 2;
+                data_0212ceb0[e->type].state = 2;
             }
         }
     }
@@ -84,14 +80,14 @@ void link_itemget(Entity *e) {
 
 void itemget_init(Entity *e) {
     e->subAction++;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 0xad;
+    data_0212ceb0[e->type].unk_08 = 0xad;
 }
 
 void itemget_move(Entity *e) {
     if (e->timer != 0xff) {
         e->timer--;
         if (e->timer == 0) {
-            data_0212cebc[e->type * 0x94] = 2;
+            data_0212ceb0[e->type].state = 2;
         }
     }
     if (e->frame & 0x80) {
@@ -109,18 +105,18 @@ void link_dead(Entity *e) {
 
 void dead_init(Entity *e) {
     e->subAction++;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 0x1af;
+    data_0212ceb0[e->type].unk_08 = 0x1af;
 }
 
 void dead_move(Entity *e) {
-    if (data_0212cee8[e->type * 0x94] != 0) {
+    if (data_0212ceb0[e->type].stateTimer != 0) {
         if (!(e->frame & 0x80)) {
             do {
                 UpdateAnimationSingleFrame(e);
             } while (!(e->frame & 0x80));
         }
         func_02085934(e, e->unk_1b);
-        data_0212cee8[e->type * 0x94] = 0;
+        data_0212ceb0[e->type].stateTimer = 0;
         return;
     }
     if (e->frame & 0x80) {
@@ -135,7 +131,7 @@ void link_jitabata(Entity *e) {
 
 void jitabata_init(Entity *e) {
     e->subAction++;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 0x250;
+    data_0212ceb0[e->type].unk_08 = 0x250;
 }
 
 void link_setMode(Entity *e) {
@@ -150,7 +146,7 @@ void walkback_init(Entity *e) {
     e->subAction++;
     e->direction = ((e->animationState + 4) & 7) << 2;
     e->speed = 0x80;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 4;
+    data_0212ceb0[e->type].unk_08 = 4;
 }
 
 void walkback_move(Entity *e) {
@@ -158,7 +154,7 @@ void walkback_move(Entity *e) {
     func_02085934(e, e->unk_1b);
     e->timer--;
     if (e->timer == 0) {
-        data_0212cebc[e->type * 0x94] = 2;
+        data_0212ceb0[e->type].state = 2;
     }
 }
 
@@ -168,7 +164,7 @@ void link_buttobi(Entity *e) {
 
 void buttobi_init(Entity *e) {
     e->subAction++;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 0xae;
+    data_0212ceb0[e->type].unk_08 = 0xae;
     e->direction = 9;
     e->speed = 0x400;
 }
@@ -182,7 +178,7 @@ void buttobi_kurukuru(Entity *e) {
     }
     e->x.HALF.HI = 0xb8;
     e->subAction++;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 0x1af;
+    data_0212ceb0[e->type].unk_08 = 0x1af;
     e->animationState = 2;
     SoundReq(0x1fc);
 }
@@ -201,7 +197,7 @@ void link_standup(Entity *e) {
 void standup_init(Entity *e) {
     e->subAction++;
     e->zVelocity = 0x20000;
-    *(u16 *)&data_0212ceb8[e->type * 0x94] = 0xc;
+    data_0212ceb0[e->type].unk_08 = 0xc;
     SoundReq(0xd);
 }
 
@@ -211,5 +207,5 @@ void standup_move_072c24(Entity *e) {
         return;
     }
     SoundReq(0xe);
-    data_0212cebc[e->type * 0x94] = 2;
+    data_0212ceb0[e->type].state = 2;
 }

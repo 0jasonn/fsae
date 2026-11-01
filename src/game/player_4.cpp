@@ -13,9 +13,7 @@ extern u8 data_0212c4d4;
 extern u16 data_0212c520;
 
 
-#include "game/pl.h"
-
-#define PL_ARR (*(PlWork (*)[4])data_0212ceb0)
+#include "engine/player.h"
 
 extern u16 scrollArgs[];
 extern u8 objAffineSet[];
@@ -81,17 +79,17 @@ void PlayerTrans(void) {
     s32 i;
 
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
-        PL_ARR[i].entity->y.HALF.HI += PL_ARR[i].yOffset;
-        if ((u8)(PL_ARR[i].state + 0xfd) <= 1) {
-            if (*(Entity **)&PL_ARR[i].entity->unk_6c[0] != 0 && (*(Entity **)&PL_ARR[i].entity->unk_6c[0])->child != 0) {
-                PlLiftSync(PL_ARR[i].entity);
+        data_0212ceb0[i].entity->y.HALF.HI += data_0212ceb0[i].yOffset;
+        if ((u8)(data_0212ceb0[i].specialState + 0xfd) <= 1) {
+            if (*(Entity **)&data_0212ceb0[i].entity->unk_6c[0] != 0 && (*(Entity **)&data_0212ceb0[i].entity->unk_6c[0])->child != 0) {
+                PlLiftSync(data_0212ceb0[i].entity);
             }
         }
-        if (PL_ARR[i].unk_36 & 4) {
-            func_0208a95c(PL_ARR[i].entity);
+        if (data_0212ceb0[i].statusFlags & 4) {
+            func_0208a95c(data_0212ceb0[i].entity);
         }
-        if (PL_ARR[i].weapon != 0) {
-            PlWeaponSync(PL_ARR[i].entity, PL_ARR[i].weapon);
+        if (data_0212ceb0[i].weapon != 0) {
+            PlWeaponSync(data_0212ceb0[i].entity, data_0212ceb0[i].weapon);
         }
     }
 }

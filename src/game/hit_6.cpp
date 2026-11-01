@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
 #include "game/hit_6.h"
@@ -9,8 +10,8 @@
 #define HIT_KNOCKBACK_FRAMES(k) (((k) & 0x80) ? ((s8)(k) + (s8)(k) / 4) : -((s8)(k) + (s8)(k) / 4))
 // Knockback frames of a hit on the fire and ice objects: -16 - sk for negative knockback, else sk + 16.
 #define HIT_KNOCKBACK_FRAMES_SHORT(k) (((k) & 0x80) ? (-16 - (s8)(k)) : ((s8)(k) + 16))
-// The damage object of an entity type, stored at PlayerData stride 0x94.
-#define HIT_DAMAGE_OBJECT(e) (*(Entity **)&data_0212ced8[(e)->type * 0x94])
+// The damage object of an entity type: PlayerData.entity of data_0212ceb0[type].
+#define HIT_DAMAGE_OBJECT(e) (data_0212ceb0[(e)->type].entity)
 
 BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
@@ -41,11 +42,11 @@ BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
 BOOL hit_firerobe(Entity *e, Entity *t, u8 mode) {
     Entity *fire;
 
-    if ((*(u16 *)&data_0212cee6[e->type * 0x94] & 0x1401) == 0) {
+    if ((data_0212ceb0[e->type].statusFlags & 0x1401) == 0) {
         fire = GetSetWork(0x55, 1, 0);
         if (fire != NULL) {
             fire->child = e;
-            *(u16 *)&data_0212cee6[e->type * 0x94] = 0x400;
+            data_0212ceb0[e->type].statusFlags = 0x400;
             e->animationState = (mode ^ 0x10) >> 2;
         }
     }

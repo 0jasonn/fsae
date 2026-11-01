@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "global.h"
 #include "types.h"
 #include "game/knife_hud.h"
@@ -8,11 +9,8 @@
 
 extern u16 data_0212c58c[]; // flags per player, bit 0x400 set while the player is active
 extern u16 data_0212c584[]; // flags per player, bit 0x1000 blocks the call animation
-extern u8 data_0212ceb0[];  // PlayerData block, 0x94 bytes per player, state byte at +0x3c
-extern u8 data_0212ceec[];  // the same state bytes, a separate symbol at data_0212ceb0 + 0x3c
 extern u8 messageRequest[];
 extern u8 frameCounter[];
-extern u8 data_0212c7c8[];
 extern u8 data_0212c4a0[];
 extern u8 data_0212c618[];
 
@@ -41,7 +39,7 @@ void cockpit_call_check(void) {
         if (requestMode != 0 || frameCounter[0x14] != 0 || frameCounter[0x11] != 0) {
             return;
         }
-        if (data_0212ceec[single[0] * 0x94] != 0) {
+        if (data_0212ceb0[single[0]].unk_3c != 0) {
             return;
         }
         if (hud->startCallAnim(single[0]) == 0) {
@@ -50,12 +48,12 @@ void cockpit_call_check(void) {
         SoundReq(0x232);
         return;
     }
-    for (i = 0; i < data_0212c7c8[0]; i++) {
+    for (i = 0; i < data_0212c7c8.unk_0; i++) {
         if ((data_0212c58c[i] & 0x400) == 0) {
             continue;
         }
         if ((data_0212c584[i] & 0x1000) == 0 && frameCounter[0x14] == 0 && frameCounter[0x11] == 0 &&
-            data_0212ceb0[i * 0x94 + 0x3c] == 0) {
+            data_0212ceb0[i].unk_3c == 0) {
             if (hud->startCallAnim(i) != 0) {
                 SoundReq(0x232);
             }

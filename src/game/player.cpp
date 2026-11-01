@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "global.h"
 #include "engine/misc_d.h"
 
@@ -12,10 +13,6 @@ extern u8 data_0212c4b8;
 extern u8 data_0212c4d4;
 extern u16 data_0212c520;
 
-
-#include "game/pl.h"
-
-#define PL_ARR (*(PlWork (*)[4])data_0212ceb0)
 
 extern u16 scrollArgs[];
 extern u8 objAffineSet[];
@@ -53,7 +50,7 @@ void WarpPlayer(void) {
     u8 i;
 
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
-        PL_ARR[i].entity->action = 0x14;
-        PL_ARR[i].entity->subAction = 0;
+        data_0212ceb0[i].entity->action = 0x14;
+        data_0212ceb0[i].entity->subAction = 0;
     }
 }

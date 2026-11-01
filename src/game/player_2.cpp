@@ -13,9 +13,7 @@ extern u8 data_0212c4d4;
 extern u16 data_0212c520;
 
 
-#include "game/pl.h"
-
-#define PL_ARR (*(PlWork (*)[4])data_0212ceb0)
+#include "engine/player.h"
 
 extern u16 scrollArgs[];
 extern u8 objAffineSet[];
@@ -41,57 +39,57 @@ extern u8 localPlayerIndex;
 
 
 void PlWorkReset(void) {
-    PlWork *end;
-    PlWork *plWork;
+    PlayerData *end;
+    PlayerData *player;
 
-    plWork = PL_ARR;
-    end = (PlWork *)&data_0212ceb0[4];
-    if (plWork < end) {
+    player = data_0212ceb0;
+    end = &data_0212ceb0[4];
+    if (player < end) {
         do {
             *((u8 *)&data_0212c594 + 4) = 0;
-            plWork->unk_00 = 0;
-            plWork->unk_01 = 0;
-            plWork->unk_02 = 0;
-            plWork->unk_03 = 0;
-            plWork->unk_04 = 0;
-            plWork->state = 0;
-            plWork->unk_06 = 0;
-            plWork->unk_07 = 0;
-            plWork->unk_08 = 0;
-            plWork->unk_0a = 0;
-            plWork->unk_0b = 0;
-            plWork->unk_0c = 0;
-            plWork->unk_0d = 0;
-            plWork->unk_0e = 0;
-            plWork->unk_0f = 0;
-            plWork->unk_10 = 0;
-            plWork->unk_11 = 0;
-            plWork->unk_12 = 0;
-            plWork->unk_13 = 0;
-            plWork->unk_14 = 0;
-            plWork->unk_1b = 0;
-            plWork->unk_1e = 0;
-            plWork->unk_1f = 0;
-            plWork->unk_20 = 0;
-            plWork->unk_21 = 0;
-            plWork->unk_22 = 0;
-            plWork->unk_24 = 0;
-            plWork->unk_34 = 0;
-            plWork->unk_35 = 0;
-            plWork->unk_36 = 0;
-            plWork->unk_38 = 0;
-            plWork->unk_39 = 0;
-            plWork->unk_3a = 0;
-            plWork->unk_3c = 0;
-            plWork->unk_3d = 0;
-            plWork->unk_26 = 0;
-            plWork->yOffset = 0;
-            plWork->unk_3e = (s32)plWork->unk_3e & ~0xc0;
-            plWork->weapon = 0;
-            plWork->unk_8b = (u8)(plWork->unk_8b & ~3) & ~0x70;
-            OSi_CpuClear32(0xffffffff, plWork->unk_40, 0x40);
-            plWork++;
-        } while (plWork < end);
+            player->unk_00 = 0;
+            player->unk_01 = 0;
+            player->unk_02 = 0;
+            player->unk_03 = 0;
+            player->inUse = 0;
+            player->specialState = 0;
+            player->unk_06 = 0;
+            player->unk_07 = 0;
+            player->unk_08 = 0;
+            player->unk_0a = 0;
+            player->unk_0b = 0;
+            player->state = 0;
+            player->unk_0d = 0;
+            player->unk_0e = 0;
+            player->unk_0f = 0;
+            player->unk_10 = 0;
+            player->unk_11 = 0;
+            player->unk_12 = 0;
+            player->unk_13 = 0;
+            player->unk_14 = 0;
+            player->actionFlags = 0;
+            player->unk_1e = 0;
+            player->unk_1f = 0;
+            player->unk_20 = 0;
+            player->unk_21 = 0;
+            player->unk_22 = 0;
+            player->unk_24 = 0;
+            player->unk_34 = 0;
+            player->unk_35 = 0;
+            player->statusFlags = 0;
+            player->stateTimer = 0;
+            player->unk_39 = 0;
+            player->unk_3a = 0;
+            player->unk_3c = 0;
+            player->unk_3d = 0;
+            player->unk_26 = 0;
+            player->yOffset = 0;
+            player->unk_3e = (s32)player->unk_3e & ~0xc0;
+            player->weapon = 0;
+            player->paletteBits = (u8)(player->paletteBits & ~3) & ~0x70;
+            OSi_CpuClear32(0xffffffff, player->unk_40, 0x40);
+            player++;
+        } while (player < end);
     }
     OSi_CpuClear32(0, plScratchBuffer, 0x140);
 }

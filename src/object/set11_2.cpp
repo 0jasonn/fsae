@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/player.h"
 #include "object/setcommon.h"
 #include "object/g_callees.h"
 
@@ -8,7 +9,6 @@
 
 extern u16 scrollArgs[];                 // scale x, scale y, rotation for ObjAffineSet2
 extern const s16 set11_scaleTable[];     // (x, y) pairs indexed by subtimer, was set11_scaleTable
-extern u8 data_0212cebf[];               // byte of the player table, stride 0x94
 
 void set11_move(Entity *e) {
     Entity *other;
@@ -25,9 +25,8 @@ void set11_move(Entity *e) {
         }
         other = e->contactedEntity;
         if (other != NULL && other->objKind == 1) {
-            s32 offset = other->type * 0x94;
-            u8 *player = (u8 *)data_0212ceb0 + offset;
-            if ((((u32)player[0x8b] << 25) >> 29) != 0 && data_0212cebf[offset] == 0) {
+            PlayerData *player = &data_0212ceb0[other->type];
+            if ((((u32)player->paletteBits << 25) >> 29) != 0 && data_0212ceb0[other->type].unk_0f == 0) {
                 goto timer_step;
             }
         }

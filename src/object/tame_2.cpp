@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/player.h"
 
 // Tame actor, second unit (module tame). Address -> name (original names from symbols.txt):
 //   0x020702c8 tame_move
@@ -15,10 +16,6 @@ typedef struct Vars_TameMove {
 extern "C" Entity *EffectSet(Entity *e, int kind, int arg);
 extern const s8 data_020db580[];
 extern const s8 data_020db588[];
-extern u8 data_0212ceb4[];
-extern u8 data_0212cecb[];
-extern u8 data_0212ced1[];
-extern u8 data_0212ced8[];
 extern u16 frameCounter;
 
 // tame_move, 0x020702c8. Follows the player slot of e->type (stride 0x94): copies its height and its sprite layer,
@@ -30,19 +27,19 @@ void tame_move(Entity *e) {
     s32 step;
     Entity *effect;
 
-    target = *(Entity **)&data_0212ced8[e->type * 0x94];
-    if (data_0212ceb4[e->type * 0x94] == 0) {
+    target = data_0212ceb0[e->type].entity;
+    if (data_0212ceb0[e->type].inUse == 0) {
         PutObjWork(e);
         return;
     }
     e->z.HALF.HI = target->z.HALF.HI;
     if (e->type2 != 0) {
-        if (data_0212ced1[e->type * 0x94] >= 0x14) {
+        if (data_0212ceb0[e->type].unk_21 >= 0x14) {
             e->spriteSettings.b0 = 1;
             offsets = data_020db588;
-            kind = data_0212ced1[e->type * 0x94];
+            kind = data_0212ceb0[e->type].unk_21;
         } else {
-            if (data_0212ced1[e->type * 0x94] != 0) {
+            if (data_0212ceb0[e->type].unk_21 != 0) {
                 e->spriteSettings.b0 = 0;
                 return;
             }
@@ -50,9 +47,9 @@ void tame_move(Entity *e) {
             return;
         }
     } else {
-        if ((data_0212cecb[e->type * 0x94] & 1) != 0) {
+        if ((data_0212ceb0[e->type].actionFlags & 1) != 0) {
             offsets = data_020db580;
-            kind = data_0212cecb[e->type * 0x94];
+            kind = data_0212ceb0[e->type].actionFlags;
         } else {
             PutObjWork(e);
             return;
@@ -114,7 +111,7 @@ void tame_move(Entity *e) {
         }
         MoveDir(e);
         if (e->type2 == 0) {
-            if ((data_0212cecb[e->type * 0x94] & 0x40) != 0) {
+            if ((data_0212ceb0[e->type].actionFlags & 0x40) != 0) {
                 e->action++;
             }
         }

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/template.h"
+#include "engine/player.h"
 
 // Set52 actor, second unit (module set52). Address -> name:
 //   0x02070658 set52_move, 0x02070718 set52_end (original names)
@@ -8,7 +9,6 @@
 //   set52_init (0x02070598) is in scratch/agentD/nonmatching/set52_init.cpp
 
 extern const EntityFunc set52_actions[]; // indexed by e->action
-extern u8 data_0212cecb[]; // one byte per template entry: flags, read at index type * 0x94
 extern u16 frameCounter;
 
 void set52_move(Entity *e) {
@@ -17,7 +17,7 @@ void set52_move(Entity *e) {
     tmpl = OBJ_TEMPLATE(e->type);
     func_0208ab14(e, tmpl);
     UpdateAnimationSingleFrame(e);
-    if (data_0212cecb[e->type * 0x94] != 0) {
+    if (data_0212ceb0[e->type].actionFlags != 0) {
         if ((frameCounter & 3) != 0) {
             return;
         }

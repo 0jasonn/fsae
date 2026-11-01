@@ -9,7 +9,6 @@ extern u16 data_0212c584[];       // per-player flag halfwords, bit 12 tested
 extern u8 data_0212c4f4;          // counter compared against 0x70 before the spawn
 extern u8 frameCounter[];         // u16 frame counter at 0, read as halfword
 extern const s8 data_02115d38[];  // direction jitter table, indexed by Random() & 7
-extern u8 data_0212cebf[];        // PlayerData byte 0x0f (0x94 stride)
 
 typedef struct Vars_Set35 {
     /* 00 */ u8 unk_00[0x60];
@@ -28,7 +27,7 @@ void set35_move(Entity *e) {
     if (e->contactFlags & 0x80) {
         if (!(KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0 && e->contactedEntity->objKind == 1 &&
               (data_0212c584[e->contactedEntity->type] & 0x1000) != 0 &&
-              data_0212cebf[e->contactedEntity->type * 0x94] == 0)) {
+              data_0212ceb0[e->contactedEntity->type].unk_0f == 0)) {
             timerStart = 0x1e;
             e->timer = timerStart;
             contacted = e->contactedEntity;

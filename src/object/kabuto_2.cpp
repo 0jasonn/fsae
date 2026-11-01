@@ -1,29 +1,25 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/c_decls_2.h"
-
-extern u8 data_0212ced8[];
-extern u8 data_0212cedc[];
-extern u8 data_0212ceb2[];
-extern u8 data_0212ceb4[];
+#include "engine/player.h"
 
 extern "C" void kabutowari(Entity *e);
 void kabutowari(Entity *e) {
     Entity *other;
 
-    other = *(Entity **)&data_0212ced8[e->type * 0x94];
-    if (*(Entity **)&data_0212cedc[e->type * 0x94] != e) {
+    other = data_0212ceb0[e->type].entity;
+    if (data_0212ceb0[e->type].weapon != e) {
         func_020841b0(e);
         zFree((void *)e->hitbox);
         PutObjWork(e);
     }
-    if (data_0212ceb4[e->type * 0x94] == 0) {
+    if (data_0212ceb0[e->type].inUse == 0) {
         goto clear_c3;
     }
-    if (data_0212ceb2[e->type * 0x94] != 0) {
+    if (data_0212ceb0[e->type].unk_02 != 0) {
         goto normal_n1;
     }
-    *(Entity **)&data_0212cedc[e->type * 0x94] = 0;
+    data_0212ceb0[e->type].weapon = 0;
     func_020841b0(e);
     zFree((void *)e->hitbox);
     PutObjWork(e);
@@ -32,7 +28,7 @@ normal_n1:
     if ((other->frame & 0x80) == 0) {
         goto normal_n2;
     }
-    *(Entity **)&data_0212cedc[e->type * 0x94] = 0;
+    data_0212ceb0[e->type].weapon = 0;
     func_020841b0(e);
     zFree((void *)e->hitbox);
     PutObjWork(e);
@@ -53,7 +49,7 @@ normal_n2:
     kabutoEvent(e);
     return;
 clear_c3:
-    *(Entity **)&data_0212cedc[e->type * 0x94] = 0;
+    data_0212ceb0[e->type].weapon = 0;
     func_020841b0(e);
     zFree((void *)e->hitbox);
     PutObjWork(e);

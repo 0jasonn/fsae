@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "game/multiplay.h"
 #include "global.h"
 
@@ -16,7 +17,7 @@ void makemap_00(void) {
     func_02029a50(data_0212caf0, 0x1c0);
     PlWorkReset();
     for (i = 0; i < 4; i++) {
-        PLAYER_BYTE(i, 0x1c) = GS_U8(0x58 + i);
+        data_0212ceb0[i].unk_1c = GS_U8(0x58 + i);
     }
     GS_U8(0x8e) = 0;
     CgLoad(2);

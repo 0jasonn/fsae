@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
 #include "game/hit_6.h"
@@ -15,7 +16,7 @@ BOOL hit_wisp(Entity *e, Entity *t, u8 unused) {
     u8 knockback;
 
     timer = 0x258;
-    data_0212ceca[e->type * 0x94] = 1;
+    data_0212ceb0[e->type].unk_1a = 1;
     VARS(WispVars, e)->wispTimer = timer;
     e->unk_42 = *(u8 *)&t->attackKnockback;
     knockback = *(u8 *)&t->attackKnockback;

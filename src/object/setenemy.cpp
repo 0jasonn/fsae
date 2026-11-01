@@ -1,19 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/setcommon.h"
+#include "object/set09.h"
 
 // Spawns an enemy from the Set09 table (module set09 helper). Address -> name:
 //   0x02062f24 set6b_setenemy (original name setenemy)
-
-typedef struct Vars_Set09 {
-    /* 00 */ u8 unk_00[0x62];
-    /* 62 */ u16 spawnCount; // number of spawned objects
-    /* 64 */ u16 unk_64; // bit word, OR-ed with flagBits[slot]
-    /* 66 */ u8 unk_66[2];
-    /* 68 */ u32 typeBits;
-    /* 6c */ u8 unk_6c[4];
-    /* 70 */ const u16 *info; // table from GetInfoAdrs, 8-byte entries
-} Vars_Set09;
 
 typedef struct Vars_Setenemy_Child {
     /* 00 */ u8 unk_00[0x68];

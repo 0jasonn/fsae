@@ -48,5 +48,4 @@ typedef struct SselDialogRow {
     u16 sfxId;
 } SselDialogRow;
 
-
 #endif

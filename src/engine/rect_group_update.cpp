@@ -2,21 +2,13 @@
 #include "global.h"
 #include "types.h"
 #include "engine/rect_links.h"
+#include "engine/rect_group.h"
 
 // rect_group_update: function RectGroup_updateItems (0x020b9688), provisional name.
 
 // Calls through slot n of the vtable of an object (slot 0 is at +0), with a 32-bit argument
 typedef void (*RectGroupSlotFn)(void *self, s32 arg);
 #define RECT_GROUP_SLOT(obj, n) (((RectGroupSlotFn *)(*(void **)(obj)))[n])
-
-// Group of four items at +0x14 (the first two are updated by the first loop, the last two by the second loop) and the
-// item count at +0x28
-typedef struct RectGroup {
-    u8 unk_00[0x14];   // 0x00
-    void **items;      // 0x14
-    u8 unk_18[0x10];   // 0x18
-    u16 count;         // 0x28
-} RectGroup;
 
 // Item of a group: the flag byte at +0x10 (bit 1 is set by the second loop)
 typedef struct RectGroupItem {

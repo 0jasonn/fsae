@@ -1,20 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/textlength_api.h"
+#include "game/textlength.h"
 
 // Functions in this file (original names from the debug build):
 //   TextLengthAnalyzer::onReadNewLine() (0x020a17e8)
-
-// Text length analyzer (Knife::Message::TextLengthAnalyzer), same layout as in textlength.cpp
-typedef struct KnifeTextLengthAnalyzer {
-    void *vtbl;             // 0x00
-    s16 maxLength;          // 0x04
-    s16 nonEmptyLines;      // 0x06: lines with a count
-    s16 emptyLines;         // 0x08: lines without a count
-    s16 lineIndex;          // 0x0a: index into counts
-    u16 counts[0x20];       // 0x0c: one count per line
-    s16 unk_4c;
-} KnifeTextLengthAnalyzer;
 
 // TextLengthAnalyzer::onReadNewLine() (0x020a17e8): closes the current line and counts it as empty or not
 void Knife_Message_TextLengthAnalyzer_onReadNewLine(void *a) {

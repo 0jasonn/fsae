@@ -6,15 +6,6 @@
 //   0x0205d874 set3d_wait, 0x0205d898 set3d_back, 0x0205d8e4 settail (original name)
 //   0x0205d9c8 set3d_setWaitOne (renamed from set3d_setWaitOne)
 
-typedef struct Vars_Set3d {
-    /* 00 */ u8 unk_00[0x1c];
-    /* 1c */ u32 settingsWord; // sprite settings word, bit 2 is set by set3dyure
-    /* 20 */ u8 unk_20[0x64 - 0x20];
-    /* 64 */ u16 timer64;
-    /* 66 */ u8 unk_66[2];
-    /* 68 */ u32 waitCount;
-} Vars_Set3d;
-
 extern u32 data_0212c54c; // cleared by set3d_back
 
 void set3d_wait(Entity *e) {

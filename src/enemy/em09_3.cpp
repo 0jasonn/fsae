@@ -1,11 +1,10 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "enemy/em09.h"
 #include "global.h"
 
 // Functions in this file (module em09, the kuttsuki partner of the boss):
 //   em09_kuttsuki (0x0203a75c)
-
-extern u8 data_0212ceca[]; // PlayerData field at +0x1a, stride 0x94 (flags of the linked player)
 
 // em09_kuttsuki(OBJ_WORK_*): the boss holds its child (the partner player's kuttsuki); while the child is alive and
 // its time limit (subtimer) has not run out, the child is positioned and the rupee drop counts down, otherwise the
@@ -36,7 +35,7 @@ void em09_kuttsuki(Entity *e) {
         return;
     }
     func_0208919c(e->child);
-    data_0212ceca[e->child->type * 0x94] |= 0x80;
+    data_0212ceb0[e->child->type].unk_1a |= 0x80;
     ObjPosCopyOfs32(e, e->child, 0, 1);
     e->child->z.HALF.HI = data_020d1d96[e->frame & 7];
     e->child->unk_2e = 0;

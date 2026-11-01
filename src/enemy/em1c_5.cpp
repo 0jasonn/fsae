@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/player.h"
 #include "global.h"
 #include "types.h"
 #include "enemy/em1c.h"
@@ -8,11 +9,6 @@
 
 extern const u8 data_020d04ec[];   // lengths indexed by timer >> 4
 extern const u8 data_020d04f4[];   // timers indexed by Random() & 3
-typedef struct Em1cKnifeSlot {
-    Entity *first;                  // pointer used when no grabbed object is found (0x94 bytes per slot)
-    u8 unk_04[0x90];
-} Em1cKnifeSlot;
-extern Em1cKnifeSlot data_0212ced8[];
 
 // Wait: counts the shared timer and the own timer down. When the timer ends the actor picks a new timer and direction;
 // while it waits it looks for an object to hold (and keeps the shared state updated when the Knife state changes).
@@ -45,7 +41,7 @@ void em1c_wait(Entity *e) {
         u8 size = data_020d04ec[e->timer >> 4];
         VARS(Vars_Em1c, e)->grabbed = func_02084f98(e, size, size);
         if (VARS(Vars_Em1c, e)->grabbed == NULL || em1c_sharedState.timer == 0) {
-            VARS(Vars_Em1c, e)->grabbed = data_0212ced8[*Knife_Single_SinglePlay_GetInstance()].first;
+            VARS(Vars_Em1c, e)->grabbed = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         if (VARS(Vars_Em1c, e)->grabbed != NULL) {
             e->direction = (GetFacingDirection(e, VARS(Vars_Em1c, e)->grabbed) + 4) & 0x18;

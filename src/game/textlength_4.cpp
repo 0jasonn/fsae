@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "game/textlength.h"
 
 // Functions in this file (original names from the debug build):
 //   Knife::Message::TextLengthAnalyzer::onReadPlainText(Knife::Message::Text const*) (0x020a1748)
@@ -18,17 +19,6 @@ public:
 extern "C" void *KnifeApp_getField20Address(void *app);
 extern "C" s32 TextBox_FindRange(void *font, u16 character);
 extern "C" void *TextBox_FindRangeEntry(void *font, s32 index);
-
-// Text length analyzer (Knife::Message::TextLengthAnalyzer). Only the fields the functions use are named.
-typedef struct KnifeTextLengthAnalyzer {
-    void *vtbl;             // 0x00
-    s16 maxLength;          // 0x04
-    s16 unk_06;
-    s16 unk_08;
-    s16 lineIndex;          // 0x0a: index into counts
-    u16 counts[0x20];       // 0x0c: one count per line
-    u16 charCount;          // 0x4c
-} KnifeTextLengthAnalyzer;
 
 // TextLengthAnalyzer::onReadPlainText(Text const*) (0x020a1748): adds the width of the first character of the text to the
 // current line and counts the character

@@ -3,22 +3,11 @@
 #include "types.h"
 #include "game/com_sio.h"
 #include "game/com_api.h"
+#include "game/com.h"
 
 // Functions in this file (module com, original names from the debug build):
 //   func_020280e0 (dsd name, declared in functions.h), MachiukeStart (MachiukeStart()), MachiukeStop (MachiukeStop()),
 //   ComMain (ComMain()), ComUpdate (ComUpdate()), func_020281a8 and func_020281ac (empty functions)
-
-// Communication state block at data_0212c9a8 (see com.cpp for the first fields).
-typedef struct ComWork {
-    /* 00 */ u8 request;      // request code, index into data_020f258c in ComMain
-    /* 01 */ u8 phase;
-    /* 02 */ u8 unk_02[1];
-    /* 03 */ u8 status;       // returned by func_020280e0, cleared by MachiukeStart and MachiukeStop
-    /* 04 */ u32 requestFlag;
-    /* 08 */ u32 finishArg;
-    /* 0c */ u16 unk_0c;
-    /* 0e */ u8 machiukeActive; // set to 1 by MachiukeStart
-} ComWork;
 
 #define COM_WORK ((ComWork *)data_0212c9a8)
 

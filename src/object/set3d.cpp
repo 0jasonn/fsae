@@ -8,11 +8,6 @@
 
 extern const EntityFunc data_020d8c24[]; // state table indexed by e->action
 
-typedef struct Vars_Set3d {
-    /* 00 */ u8 unk_00[0x68];
-    /* 68 */ u32 waitCount;
-} Vars_Set3d;
-
 void Set3d(Entity *e) {
     u32 b14;
     u32 b30;

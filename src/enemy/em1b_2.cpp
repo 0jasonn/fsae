@@ -3,17 +3,6 @@
 #include "global.h"
 #include "enemy/em1b.h"
 
-// Second unit of actor em1b (type 0 movement, type 1). Vars_Em1b matches src/enemy/em1b.cpp plus the 0x7d field.
-typedef struct Vars_Em1b {
-    /* 00 */ u8 unk_00[0x70];
-    /* 70 */ u16 savedX;
-    /* 72 */ u16 savedY;
-    /* 74 */ Entity *child1;
-    /* 78 */ Entity *child2;
-    /* 7c */ u8 unk_7c;
-    /* 7d */ s8 dirDelta;   // added to e->direction every 4 frames, picked from em1b_dirDeltaTable
-} Vars_Em1b;
-
 extern const s8 em1b_dirDeltaTable[]; // em1b_dirDeltaTable, two entries (-1, +1)
 
 extern u16 frameCounter;
