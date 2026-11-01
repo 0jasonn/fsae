@@ -4137,6 +4137,10 @@ src/game/textreader_params.cpp:
     complete
     .text       start:0x020a2978 end:0x020a29e8
 
+src/game/textreader_param.cpp:
+    complete
+    .text       start:0x020a2a2c end:0x020a2b14
+
 src/game/rendertarget.cpp:
     complete
     .text       start:0x020a2dd4 end:0x020a2df4
@@ -4152,6 +4156,10 @@ src/game/rendertarget_3.cpp:
 src/game/pending_ptr.cpp:
     complete
     .text       start:0x020a3778 end:0x020a3798
+
+src/game/pictogram_init.cpp:
+    complete
+    .text       start:0x020a4888 end:0x020a48cc
 
 src/game/pictogram_noop.cpp:
     complete
@@ -4301,6 +4309,14 @@ src/game/fileselui_6.cpp:
     complete
     .text       start:0x020a78f4 end:0x020a7918
 
+src/game/fileselui_move.cpp:
+    complete
+    .text       start:0x020a8138 end:0x020a8158
+
+src/game/fileselui_move_2.cpp:
+    complete
+    .text       start:0x020a8168 end:0x020a8178
+
 src/game/fileselui_5.cpp:
     complete
     .text       start:0x020a8178 end:0x020a8198
@@ -4348,6 +4364,10 @@ src/game/playstyleselui_e_2.cpp:
 src/game/groupcreateui_e.cpp:
     complete
     .text       start:0x020ab6cc end:0x020ab6d0
+
+src/game/subtask_dialog_wait.cpp:
+    complete
+    .text       start:0x020abf5c end:0x020ac014
 
 src/game/baseduiview_e.cpp:
     complete
