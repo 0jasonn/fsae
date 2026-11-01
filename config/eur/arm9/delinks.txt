@@ -5253,6 +5253,10 @@ src/engine/res_chunk_c.cpp:
     complete
     .text       start:0x020c2e44 end:0x020c2ea8
 
+src/engine/res_table_reloc.cpp:
+    complete
+    .text       start:0x020c2ea8 end:0x020c2f44
+
 src/engine/res_chunk_d.cpp:
     complete
     .text       start:0x020c2f44 end:0x020c30a0
@@ -5260,6 +5264,10 @@ src/engine/res_chunk_d.cpp:
 src/engine/res_table.cpp:
     complete
     .text       start:0x020c30a0 end:0x020c30e8
+
+src/engine/res_cursor_advance.cpp:
+    complete
+    .text       start:0x020c30e8 end:0x020c31f8
 
 src/engine/res_cursor.cpp:
     complete
@@ -5392,6 +5400,10 @@ src/game/knife_power_4.cpp:
 src/game/knife_power_2.cpp:
     complete
     .text       start:0x020c8314 end:0x020c836c
+
+src/game/knife_power_5.cpp:
+    complete
+    .text       start:0x020c83a0 end:0x020c83b8
 
 src/game/bootinfo.cpp:
     complete

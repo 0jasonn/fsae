@@ -3,7 +3,7 @@
 #include "engine/res_chunk_c_api.h"
 #include "engine/res_chunk_d_api.h"
 
-// ResChunk_OpenKBEC (ResChunk_OpenKBEC, provisional name): as ResChunk_OpenKNBA for the KBEC chunk, with func_020c2ea8 as the
+// ResChunk_OpenKBEC (ResChunk_OpenKBEC, provisional name): as ResChunk_OpenKNBA for the KBEC chunk, with ResTable_RelocateKbec as the
 // setup of the body.
 extern "C" s32 ResChunk_OpenKBEC(u8 *base, u8 **out);
 s32 ResChunk_OpenKBEC(u8 *base, u8 **out) {
@@ -14,7 +14,7 @@ s32 ResChunk_OpenKBEC(u8 *base, u8 **out) {
         *out = 0;
         return 0;
     }
-    func_020c2ea8(chunk + 8);
+    ResTable_RelocateKbec(chunk + 8);
     *out = chunk + 8;
     return 1;
 }

@@ -87,7 +87,7 @@ void func_020bc8bc(void *self, s32 arg);
 void func_020bc99c(void *self, void *bufA, s32 bufB, s32 arg5, u16 arg6);
 s32 func_020c0f90(u32 word, u32 byte, u32 a1, u32 one, u32 zero);
 void func_020c2cc0(u8 *body);
-void func_020c2ea8(u8 *body);
+void ResTable_RelocateKbec(u8 *body);
 s32 func_020c323c(u8 *cursor);
 void func_020c34d0(void *oam);
 void func_020c35a4(void *dst, s32 value, s32 size, s32 flag);
