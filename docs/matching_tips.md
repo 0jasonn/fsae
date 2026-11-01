@@ -6,7 +6,7 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 ## Workflow
 
 - `python tools/asm.py START [END]` prints dsd's disassembly for a function or address range.
-- `python tools/trymatch.py file.cpp -d` compiles a file (`.c` as C99) and diffs every `func_XXXXXXXX` against the base ROM,
+- `python tools/trymatch.py file.cpp -d` compiles a file (as C++) and diffs every `func_XXXXXXXX` against the base ROM,
   ignoring relocated bits. `-v dsi/1.1 dsi/1.6sp2 ...` compares compiler versions.
 - `python tools/add_unit.py src/... FIRST LAST` adds a complete unit to `delinks.txt`; a unit must be contiguous and
   every function in it must match. Split around non-matching functions and keep the attempt in `docs/nonmatching/`.
