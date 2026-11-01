@@ -40,8 +40,8 @@ extern "C" s32 ResChunk_OpenTTLP(void *entry, void *owner);
 extern "C" s32 ResChunk_GetNRCS(void *entry, void *owner);
 
 extern "C" void OS_WaitVBlankIntr(void);
-extern "C" void func_020c37c8(void *entry);
-extern "C" void func_020c39c4(void *entry);
+extern "C" void OamRing_Flush(void *entry);
+extern "C" void OamRing_Clear(void *entry);
 
 extern "C" void *Table_getEntry58(u8 *self, s32 index);
 extern "C" void ResPlayer_AdvanceAndRefresh(void *entry, s32 value);

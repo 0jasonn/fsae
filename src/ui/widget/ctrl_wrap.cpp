@@ -7,11 +7,11 @@
 // ctrl_wrap: functions Ctrl_updateSlotsA (0x020bc36c), Ctrl_getConst (0x020bc390) and Ctrl_waitVBlank (0x020bc39c),
 // provisional names.
 
-// Ctrl_updateSlotsA(self) (0x020bc36c, provisional name): func_020c37c8 and then func_020c39c4 on the record at +0x2c18
+// Ctrl_updateSlotsA(self) (0x020bc36c, provisional name): OamRing_Flush and then OamRing_Clear on the record at +0x2c18
 void Ctrl_updateSlotsA(void *self) {
     u8 *base = (u8 *)self;
-    func_020c37c8(base + 0x18 + 0x2c00);
-    func_020c39c4(base + 0x18 + 0x2c00);
+    OamRing_Flush(base + 0x18 + 0x2c00);
+    OamRing_Clear(base + 0x18 + 0x2c00);
 }
 
 // Ctrl_getConst() (0x020bc390, provisional name): the constant 0x100010

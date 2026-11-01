@@ -38,6 +38,6 @@ s32 _get_subtask_data_size_lang(s32 index) {
 
 // InitOamManager(NNSG2dOamManagerInstance*) (0x0209b768)
 void InitOamManager(NNSG2dOamManagerInstance *manager) {
-    func_020c34d0(manager);
-    func_020c35a4(manager, 4, 0x7c, 1);
+    OamRing_ResetAll(manager);
+    OamRing_Alloc(manager, 4, 0x7c, 1);
 }

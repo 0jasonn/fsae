@@ -8,11 +8,11 @@ extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 extern "C" void BgRect_ClipCopy(u8 *dstVram, BgLoadInfo *src, s32 srcX, s32 srcY, s32 dstX, s32 dstY, s32 dstWidth,
                                 s32 dstHeight, s32 width, s32 height);
 extern "C" u16 *data_020df1a4[];
-extern "C" s32 data_020dfb80;
+extern "C" s32 OamRing_dmaNo;
 
 // BgChar_Load (provisional name): copies the character data to the character base of the BG of the screen (screen 0..3 main
 // engine, 4..7 sub engine), starting after rect->widthTiles * rect->heightTiles tiles of 0x40 bytes (colour mode 4) or
-// 0x20 bytes. The DMA channel data_020dfb80 is used when it holds 0..3, otherwise a CPU copy.
+// 0x20 bytes. The DMA channel OamRing_dmaNo is used when it holds 0..3, otherwise a CPU copy.
 extern "C" void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect);
 void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect) {
     u32 dstOffset;
@@ -41,7 +41,7 @@ void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect) {
         vramBase = 0x06000000 + ((*(u32 *)0x04000000 & 0x7000000) >> 24) * 0x10000;
     }
     dst = (u8 *)vramBase + charBlock * 0x4000;
-    dmaNo = data_020dfb80;
+    dmaNo = OamRing_dmaNo;
     if ((u32)dmaNo > 3) {
         dmaNo = -1;
     }

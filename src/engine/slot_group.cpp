@@ -5,12 +5,12 @@
 
 // slot_group: function Ctrl_isSlotGroup (0x020bc528), provisional name.
 
-extern s32 data_020dfb80;
+extern s32 OamRing_dmaNo;
 
-// Ctrl_isSlotGroup() (0x020bc528, provisional name): reads the word data_020dfb80. Returns 1 when it is 0..3, or 4..7
+// Ctrl_isSlotGroup() (0x020bc528, provisional name): reads the word OamRing_dmaNo. Returns 1 when it is 0..3, or 4..7
 // (after subtracting 4), otherwise 0. The goto labels keep the branch shape of the original.
 s32 Ctrl_isSlotGroup(void) {
-    s32 v = data_020dfb80;
+    s32 v = OamRing_dmaNo;
     s32 t = -1;
 
     if ((u32)v <= 3) {

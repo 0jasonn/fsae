@@ -23,7 +23,7 @@ typedef struct RectBufTable {
 extern "C" void *Table_getEntry58(u8 *self, s32 index);
 extern "C" s32 func_020c40a4(void *dst, s32 size, s32 limit, s32 zero, s32 *pair, s32 zero2, s32 zero3);
 extern "C" s32 Cursor_GetSpan(void *dst);
-extern "C" void func_020c36fc(void *dst, void *src, s32 count);
+extern "C" void OamRing_Push(void *dst, void *src, s32 count);
 
 // RectBufTable_setup(self, index, arg2, arg3) (0x020bc2d0, provisional name): looks up the table entry for index, and if
 // it has a limit fills the pair (arg2, arg3) with func_020c40a4 into the second block, then copies count bytes from
@@ -44,7 +44,7 @@ BOOL RectBufTable_setup(RectBufTable *self, s32 index, s32 arg2, s32 arg3) {
         count = func_020c40a4(self->unk_2c34, 0x80, limit, 0, pair, 0, 0);
         capacity = Cursor_GetSpan(self->unk_2c18);
         if (count < capacity) {
-            func_020c36fc(self->unk_2c18, self->unk_2c34, count);
+            OamRing_Push(self->unk_2c18, self->unk_2c34, count);
             return TRUE;
         }
     }

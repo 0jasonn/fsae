@@ -34,7 +34,7 @@ void Ctrl_initA(void *selfv, void *arg) {
     s32 slots[9];
 
     self->arg = arg;
-    func_020c35a4((u8 *)self + 0x2c18, 0, 0x80, 0);
+    OamRing_Alloc((u8 *)self + 0x2c18, 0, 0x80, 0);
     self->entryA = Ctrl_findEntryA((u8 *)self + 0xc, data_02127050);
     self->entryB = Ctrl_findEntryB((u8 *)self + 0x10, data_0212706c);
     Ctrl_findEntryC(&record, data_02127088);
@@ -49,7 +49,7 @@ void Ctrl_initB(void *selfv, void *arg) {
     s32 slots[9];
 
     self->arg = arg;
-    func_020c35a4((u8 *)self + 0x2c18, 0, 0x80, 1);
+    OamRing_Alloc((u8 *)self + 0x2c18, 0, 0x80, 1);
     self->entryA = Ctrl_findEntryA((u8 *)self + 0xc, data_021270a4);
     self->entryB = Ctrl_findEntryB((u8 *)self + 0x10, data_021270c8);
     Ctrl_findEntryC(&record, data_021270ec);
