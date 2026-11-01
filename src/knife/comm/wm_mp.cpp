@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "knife/comm/wm_mp_api.h"
 
 // WirelessManager::allocMPBuffer (0x0209244c, invented name): frees the buffers, then allocates the send buffer (size from

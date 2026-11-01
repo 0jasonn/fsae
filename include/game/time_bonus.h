@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_C_STATE_C_H
-#define UNKNOWN_C_STATE_C_H
+#ifndef GAME_TIME_BONUS_H
+#define GAME_TIME_BONUS_H
 
 #include "engine/entity.h"
 

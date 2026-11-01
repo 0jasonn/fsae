@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/e_decls.h"
+#include "game/bg_info.h"
 
 extern "C" void initBgWithLoadVram(BGInfo *bg, u32 layer, s32 charIndex, s32 palIndex, s32 scrIndex, u32 flags);
 

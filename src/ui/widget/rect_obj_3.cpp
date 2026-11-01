@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_obj_f.h"
+#include "ui/widget/rect_obj_view.h"
 
 // rect_obj_3: functions RectObj_isOnScreen (0x020b7d08) and RectObj_updateBoundsCheck (0x020b7d74), both matching.
 // They follow RectObj_updateBounds (rect_obj_2.cpp). RectObj_calcTopLeft (0x020b7ef8) is in rect_obj_4.cpp.

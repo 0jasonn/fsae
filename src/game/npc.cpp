@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/misc_d.h"
+#include "engine/misc.h"
 #include "game/npc.h"
 #include "global.h"
 #include "types.h"

@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Race item actor, per-type dispatch (module race_item). Address -> name:
 //   0x02067b44 race_item_dispatch (per-type handler table data_02115b38 indexed by e->type)

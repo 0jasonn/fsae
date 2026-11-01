@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "knife/comm/wm_mp_api.h"
 #include "knife/comm/wirelessmanager.h"
 

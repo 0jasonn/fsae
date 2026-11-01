@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 
 // Knife::Comm::WirelessManager state helpers. Each one saves REG_IME, clears it, reads the state at 0x1cc4 and restores
 // REG_IME before returning. The state values used here: 8 (parent) and 11 (child).

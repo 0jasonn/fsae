@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/scene_d.h"
+#include "game/scene.h"
 #include "global.h"
 
 // fairy_set -> fairy_set

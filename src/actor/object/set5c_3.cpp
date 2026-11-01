@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Set5c actor, per-frame update and helpers (module set5c). Address -> name:
 //   0x0205fb38 set5c_update (per-frame update: event check, state table, zelda_disp)

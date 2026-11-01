@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "knife/subtask/subtask_a.h"
+#include "knife/subtask/subtask_work.h"
 #include "ui/opening_api.h"
 
 // subTask_push_start() (0x0209c88c): the "push start" screen. A blink counter toggles the screen mode every 45 frames,

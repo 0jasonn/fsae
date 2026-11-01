@@ -1,5 +1,5 @@
-#ifndef WIP_C_OPDEMO_C_H
-#define WIP_C_OPDEMO_C_H
+#ifndef UI_OPDEMO_H
+#define UI_OPDEMO_H
 
 // Opening-demo helpers used by the C units that the shared header does not declare yet.
 #include "engine/functions.h"

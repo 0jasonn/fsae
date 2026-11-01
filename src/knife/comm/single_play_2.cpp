@@ -2,7 +2,7 @@
 #include "global.h"
 #include "engine/player.h"
 #include "types.h"
-#include "knife/comm/single_play_d.h"
+#include "knife/comm/single_play.h"
 #include "knife/comm/single_play_api.h"
 
 // Knife::Single::SinglePlay initializers and the warp info setter, 0x02099cec to 0x02099da8. The log list is the C++

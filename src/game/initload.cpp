@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/e_decls.h"
+#include "game/bg_info.h"
 
 extern "C" void initScrWithLoad(BGInfo *bg, u32 unused, s32 index);
 

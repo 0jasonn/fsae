@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // Tama00 actor family, second unit. Address -> name (original names from symbols.txt):
 //   0x0207c898 tama00_move, 0x0207c8f8 tama00_hajiki, 0x0207c92c tama00_hajikiInit

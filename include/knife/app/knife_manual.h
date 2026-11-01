@@ -1,5 +1,5 @@
-#ifndef WIP_G_KNIFE_MANUAL_H
-#define WIP_G_KNIFE_MANUAL_H
+#ifndef KNIFE_APP_KNIFE_MANUAL_H
+#define KNIFE_APP_KNIFE_MANUAL_H
 
 // Knife manual-mode functions (0x020c7c10 to 0x020c8104). The Knife::* functions are static (no this): they
 // are written as namespace functions, which mangle to the same names.

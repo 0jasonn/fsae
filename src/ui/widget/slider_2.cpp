@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_obj_f.h"
+#include "ui/widget/rect_obj_view.h"
 #include "ui/widget/slider.h"
 
 // slider: functions Slider_setPosition (0x020b9720), Slider_setPositionChecked (0x020b9740) and Slider_updateFlags

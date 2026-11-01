@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/message_e.h"
+#include "knife/message/message_classes.h"
 
 // Functions in this file (plain names from the debug build, C linkage; the first argument is the TextRenderer):
 //   Knife_Message_TextRenderer_onReadNewLine (0x020a5f14)

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "knife/comm/wm_child_api.h"
 
 // ChildInfo entries of the WirelessManager (15 entries of 0x28 bytes at 0x1a04).

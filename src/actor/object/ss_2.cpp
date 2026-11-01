@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Shutter actor (module ss). Address -> name:
 //   0x02067bdc shutter_set (original name, state table data_02115b1c indexed by e->action)

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_obj_f.h"
+#include "ui/widget/rect_obj_view.h"
 #include "ui/widget/rect_item_api.h"
 #include "ui/widget/rect_item.h"
 

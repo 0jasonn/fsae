@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/scene_d.h"
+#include "game/scene.h"
 #include "global.h"
 
 // title_wait -> title_wait

@@ -2,7 +2,7 @@
 #define WIP_D_WIRELESSMANAGER_H
 
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "knife/comm/wm_irq.h"
 
 // Knife::Comm::WirelessManager prototypes of the wip units; functions.h is not included by the units that define functions

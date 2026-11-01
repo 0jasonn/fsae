@@ -1,7 +1,7 @@
-#ifndef WIP_D_MISC_D_RANGE_H
-#define WIP_D_MISC_D_RANGE_H
+#ifndef GAME_SCENE_H
+#define GAME_SCENE_H
 
-#include "engine/misc_d.h"
+#include "engine/misc.h"
 
 // Effect state block (data_021349c0) entries used only by the functions in this range
 #define EFFECT_STATE_ACTIVE_SLOT 0x0f // slot of the running effect, 0xff when none (guess)

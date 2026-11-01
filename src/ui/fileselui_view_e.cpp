@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/fileselui_e.h"
+#include "ui/fileselui_view.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   fileSelUIView_viewWillApper (0x020a761c)

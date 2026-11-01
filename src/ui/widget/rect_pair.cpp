@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_obj_f.h"
+#include "ui/widget/rect_obj_view.h"
 
 // rect_pair: functions RectObjPair_setHitFlags (0x020b86b8), RectObjPair_updateFlags (0x020b86f4) and
 // RectObjPair_countDownBoth (0x020b8760). The pair keeps its two children at +0x14 (child 0 at +0, child 1 at +4).

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_obj_f.h"
+#include "ui/widget/rect_obj_view.h"
 
 // rect_obj_5: functions RectObjLink_callB (0x020b8004), RectObjLink2_init (0x020b8020) and RectObjLink2_initCopy
 // (0x020b804c), all matching. RectObjLink_callA (0x020b7fec) is parked in scratch/agentF/nonmatching.

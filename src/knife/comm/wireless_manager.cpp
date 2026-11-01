@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "knife/comm/comm_parentinfo.h"
-#include "knife/comm/wireless_manager_d.h"
+#include "knife/comm/wireless_manager.h"
 #include "knife/comm/wireless_manager_api.h"
 
 // WirelessManager singleton (0x020909c8) and its initializer with the allocator (0x02090a1c, 0x26c bytes). The object

@@ -4,7 +4,7 @@
 // Implementer D: declarations shared by the D files that functions.h does not have yet (the reviewer moves them).
 #include "engine/functions.h"
 #include "engine/entity.h"
-#include "game/gamestateview_c.h"
+#include "game/player_flags.h"
 #include "engine/player.h"
 
 extern "C" {

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/single_play_d.h"
+#include "knife/comm/single_play.h"
 #include "knife/comm/single_play_api.h"
 
 // Knife::Single::SinglePlay controller and formation requests, 0x02099550 to 0x02099704. The object is the SinglePlay

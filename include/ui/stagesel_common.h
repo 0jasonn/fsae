@@ -1,5 +1,5 @@
-#ifndef WIP_C_DECLS_H
-#define WIP_C_DECLS_H
+#ifndef UI_STAGESEL_COMMON_H
+#define UI_STAGESEL_COMMON_H
 
 // Declarations shared by the implementer C files (src/wip/C/*.cpp) that are not in engine/functions.h yet.
 
@@ -8,7 +8,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/stagesel.h"
-#include "engine/misc_d.h"
+#include "engine/misc.h"
 
 extern "C" s32 WXC_GetStateCode(void);
 int CommFrameSync(void);

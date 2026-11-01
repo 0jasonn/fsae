@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "engine/misc_d.h"
+#include "engine/misc.h"
 
 // pauseState is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
 // [0xe] reset flag, [0xf] set when the wireless session is being closed

@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // haneSet, 0x0207c5d8. Creates the wing object (type 0x24) at the position of e, linked to e, and marks it as a
 // child when e has the layer bit 0x4000.

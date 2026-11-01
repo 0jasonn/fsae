@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/message_e.h"
+#include "knife/message/message_classes.h"
 
 // Functions in this file (original names from the debug build):
 //   TextRenderer::countTotalLines (0x020a5384)

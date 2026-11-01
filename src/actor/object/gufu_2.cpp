@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/misc_d.h"
+#include "engine/misc.h"
 #include "global.h"
 #include "actor/object/d_decls.h"
 #include "engine/callback_api.h"

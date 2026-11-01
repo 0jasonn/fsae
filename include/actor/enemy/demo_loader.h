@@ -1,5 +1,5 @@
-#ifndef WIP_B_LOADER_DECLS_H
-#define WIP_B_LOADER_DECLS_H
+#ifndef ACTOR_ENEMY_DEMO_LOADER_H
+#define ACTOR_ENEMY_DEMO_LOADER_H
 
 // Declarations for the demo and staff roll loaders (YouseiDemoLoad, StaffrollLoad) of implementer B.
 // Linkage follows the symbol names in config/eur/arm9/symbols.txt: plain names are extern "C", mangled ones are C++.

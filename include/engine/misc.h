@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_D_MISC_D_H
-#define UNKNOWN_D_MISC_D_H
+#ifndef ENGINE_MISC_H
+#define ENGINE_MISC_H
 
 #include "engine/entity.h"
 #include "engine/player.h"

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "knife/comm/single_target_api.h"
 
 // SinglePlay work item (the SinglePlayWork of single_play_d.h) fields used by SetTargetPos, read at their widths.

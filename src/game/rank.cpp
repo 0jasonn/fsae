@@ -3,7 +3,7 @@
 //   RankCheck -> RankCheck
 //   CheckCubeKaitengiri -> CheckCubeKaitengiri
 //   CheckKenBeam -> CheckKenBeam
-#include "game/gamestateview_c.h"
+#include "game/player_flags.h"
 #include "engine/entity.h"
 #include "global.h"
 

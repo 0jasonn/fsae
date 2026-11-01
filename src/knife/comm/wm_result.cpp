@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 
 // WirelessManager::handleResult (0x02092758): handles the result of a WM call with code (the WM status) and flag. Codes
 // 3, 4 and 6 reset the manager (internalReset), code 8 moves the state to 15 with the timer cleared, code 1 resets only

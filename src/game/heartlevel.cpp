@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/gamestateview_c.h"
+#include "game/player_flags.h"
 #include "global.h"
 #include "types.h"
 

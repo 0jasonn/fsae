@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // Treasure chest module, second unit. Address -> name (dsd names without an original name):
 //   0x0207bff8 takara_setFromWork, 0x0207c014 takara_spawnRandom

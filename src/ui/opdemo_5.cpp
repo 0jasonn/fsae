@@ -1,7 +1,7 @@
 #include "engine/functions.h"
-#include "engine/misc_d.h"
-#include "game/scene_d.h"
-#include "ui/opdemo_c.h"
+#include "engine/misc.h"
+#include "game/scene.h"
+#include "ui/opdemo.h"
 #include "global.h"
 #include "ui/opdemo_api.h"
 

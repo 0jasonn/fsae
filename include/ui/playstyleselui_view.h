@@ -1,5 +1,5 @@
-#ifndef WIP_E_PLAYSTYLESELUI_E_H
-#define WIP_E_PLAYSTYLESELUI_E_H
+#ifndef UI_PLAYSTYLESELUI_VIEW_H
+#define UI_PLAYSTYLESELUI_VIEW_H
 
 // playStyleSelUIView: the play style select screen. Derives from basedUIView; slot 0 of its vtable (data_02124af8) is
 // initialize, slot 1 update, slot 2 an empty function, slot 3 viewWillApper and slot 4 leave. Only the fields the

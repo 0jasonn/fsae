@@ -1,5 +1,5 @@
-#ifndef WIP_F_RECT_OBJ_F_H
-#define WIP_F_RECT_OBJ_F_H
+#ifndef UI_WIDGET_RECT_OBJ_VIEW_H
+#define UI_WIDGET_RECT_OBJ_VIEW_H
 
 // RectObj record of rect_obj.cpp, with the field at +0x14 used by the RectObjLink classes (vtable data_02126d48, data_02126d84)
 

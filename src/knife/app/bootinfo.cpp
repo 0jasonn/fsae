@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/g_game_start.h"
+#include "knife/subtask/game_start.h"
 
 // Functions in this file (original names from the debug build):
 //   BootErrorInfoTask (0x020c83b8)

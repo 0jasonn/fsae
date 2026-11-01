@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Pot actor, throw end (module pot). Address -> name:
 //   0x0205f084 pot_throw_end (original name throw_end): clashes with the player that threw the pot

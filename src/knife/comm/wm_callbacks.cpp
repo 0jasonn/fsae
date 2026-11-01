@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "knife/comm/wm_callbacks_api.h"
 
 // Callbacks of the WirelessManager's SDK calls. Each one takes the WM callback result, gets the manager singleton and

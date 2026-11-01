@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_C_GAMESTATEVIEW_C_H
-#define UNKNOWN_C_GAMESTATEVIEW_C_H
+#ifndef GAME_PLAYER_FLAGS_H
+#define GAME_PLAYER_FLAGS_H
 
 #include "types.h"
 

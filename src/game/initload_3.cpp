@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/e_decls.h"
+#include "game/bg_info.h"
 
 // Object block (OBJInfo) of the cell animation loader: two buffers and their resource chunks
 typedef struct ObjCellInfo {

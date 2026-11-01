@@ -1,5 +1,5 @@
-#ifndef WIP_G_GAME_START_H
-#define WIP_G_GAME_START_H
+#ifndef KNIFE_SUBTASK_GAME_START_H
+#define KNIFE_SUBTASK_GAME_START_H
 
 // Game start subtask (subTask_game_start_*, 0x020c70ac to 0x020c75a4). Provisional names for the work block
 // that data_02186fdc points at (its storage is data_02186fe0, 0x6c bytes).

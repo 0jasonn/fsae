@@ -2,7 +2,7 @@
 // Functions in this file:
 //   isBossFloor -> isBossFloor
 //   shuffleStage -> shuffleStage
-#include "game/gamestateview_c.h"
+#include "game/player_flags.h"
 #include "global.h"
 
 BOOL isBossFloor(void) {

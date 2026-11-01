@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Opening logo actors, title and sub title (module oplogo). Address -> name:
 //   0x02067d68 oplogo_typeDispatch (per-type handler table data_02115bac indexed by e->type)

@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // Tama0c actor family, fourth unit. Address -> name (original names from symbols.txt; dsd name without one):
 //   0x0207ce40 tama0c_fall, 0x0207ce9c tama0c_remove

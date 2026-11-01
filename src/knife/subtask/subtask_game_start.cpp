@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/subtask/subtask.h"
-#include "game/g_game_start.h"
+#include "knife/subtask/game_start.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_game_start_reload (0x020c70ac). subTask_game_start_init_vram (0x020c70c8) is parked in scratch/agentG/nonmatching.

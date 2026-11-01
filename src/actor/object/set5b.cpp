@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Set5b actor (module set5b). Address -> name:
 //   0x0205f928 Set5b (name from symbols.txt)

@@ -1,5 +1,5 @@
-#ifndef WIP_D_SINGLE_PLAY_D_H
-#define WIP_D_SINGLE_PLAY_D_H
+#ifndef KNIFE_COMM_SINGLE_PLAY_H
+#define KNIFE_COMM_SINGLE_PLAY_H
 
 #include "types.h"
 

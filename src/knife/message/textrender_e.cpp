@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/message_e.h"
+#include "knife/message/message_classes.h"
 
 // Functions in this file (original names from the debug build, plus one plain helper):
 //   TextRenderer::renderText x3 (0x020a5138, 0x020a5184, 0x020a51c8), setTokenListAndAnalyze (0x020a520c, plain name),

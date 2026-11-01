@@ -1,6 +1,6 @@
 #include "engine/functions.h"
-#include "engine/misc_d.h"
-#include "game/scene_d.h"
+#include "engine/misc.h"
+#include "game/scene.h"
 #include "global.h"
 #include "types.h"
 #include "ui/stagesel.h"

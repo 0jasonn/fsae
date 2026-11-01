@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Ending fin actor, init and move (module ed_fin). Address -> name:
 //   0x0205f868 fin_init (name from symbols.txt)

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "engine/stub_noop_a_api.h"
 #include "engine/stub_noop_b_api.h"
 #include "knife/comm/comm_parentinfo_api.h"

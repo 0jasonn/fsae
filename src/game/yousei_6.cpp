@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "actor/enemy/loader_decls.h"
+#include "actor/enemy/demo_loader.h"
 
 // YouseiDemoLoad (0x0204d50c): loads the frame record of the current demo, then the room, the events and the frame.
 extern "C" void YouseiDemoLoad(void);

@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // stagesel_message, 0x0207a790. Stage select message sequence: data_0212c4dc 0 opens the message, 1 waits for the
 // message frames to finish and then starts the selection. Runs once per frame.

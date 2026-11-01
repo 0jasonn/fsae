@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/scene_d.h"
+#include "game/scene.h"
 #include "global.h"
 
 // scene_03 -> scene_03 (guess: intro/opening state machine of the scene block)

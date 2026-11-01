@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/scene_d.h"
+#include "game/scene.h"
 #include "global.h"
 
 // knife_native_init_0537bc -> knife_native_init_0537bc, ... knife_native_init_0538e8 -> knife_native_init_0538e8: same shape as Init_Kazan2A1

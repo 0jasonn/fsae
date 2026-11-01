@@ -1,5 +1,5 @@
-#ifndef WIP_E_FILESELUI_E_H
-#define WIP_E_FILESELUI_E_H
+#ifndef UI_FILESELUI_VIEW_H
+#define UI_FILESELUI_VIEW_H
 
 // fileSelUIView: the file select screen (the view that owns the file list). Layout of the fields the functions use is
 // named as they are matched; the view derives from basedUIView, so +0x0c is viewStack (the objects) and +0x2c the

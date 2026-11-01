@@ -1,5 +1,5 @@
-#ifndef WIP_E_E_DECLS_H
-#define WIP_E_E_DECLS_H
+#ifndef GAME_BG_INFO_H
+#define GAME_BG_INFO_H
 
 #include "types.h"
 

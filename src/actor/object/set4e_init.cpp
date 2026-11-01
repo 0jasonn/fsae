@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Set4e actor, init (module set4e). Address -> name:
 //   0x0205e63c set4e_init (name from symbols.txt)

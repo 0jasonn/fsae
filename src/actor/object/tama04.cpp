@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // Tama03 and Tama04 actor families. Address -> name (original names from symbols.txt; dsd names without one):
 //   0x0207e5c0 Tama03, 0x0207e5dc tama03_nop, 0x0207e5e0 tama03_nop2, 0x0207e5e4 Tama04,

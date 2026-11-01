@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/state_c.h"
+#include "game/time_bonus.h"
 #include "global.h"
 
 extern const u16 timeBonusThresholds[];

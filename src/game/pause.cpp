@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/scene_d.h"
+#include "game/scene.h"
 #include "global.h"
 
 // pause_dialogDisp -> pause_dialogDisp (guess): clears the 0x800 byte buffer pauseDialogBuffer and sets up the

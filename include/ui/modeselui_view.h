@@ -1,5 +1,5 @@
-#ifndef WIP_E_MODESELUI_E_H
-#define WIP_E_MODESELUI_E_H
+#ifndef UI_MODESELUI_VIEW_H
+#define UI_MODESELUI_VIEW_H
 
 // modeSelUIView: the mode select screen (new / copy / remove). Only the fields the matched functions use are named.
 // The view derives from basedUIView (vtable at data_02124af8 is the playStyleSelUIView one; the modeSel vtable is at

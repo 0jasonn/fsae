@@ -2,7 +2,7 @@
 #define WIP_D_WIRELESSMGR_D_H
 
 #include "types.h"
-#include "knife/comm/wireless_manager_d.h"
+#include "knife/comm/wireless_manager.h"
 #include "knife/comm/comm_parentinfo.h"
 
 // REG_IME, the interrupt master enable.

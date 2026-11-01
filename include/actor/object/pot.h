@@ -1,5 +1,5 @@
-#ifndef WIP_C_DECLS_H
-#define WIP_C_DECLS_H
+#ifndef ACTOR_OBJECT_POT_H
+#define ACTOR_OBJECT_POT_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

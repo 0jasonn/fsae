@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/playstyleselui_e.h"
+#include "ui/playstyleselui_view.h"
 #include "ui/playstyleselui_e_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):

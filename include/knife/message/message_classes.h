@@ -1,5 +1,5 @@
-#ifndef WIP_E_MESSAGE_E_H
-#define WIP_E_MESSAGE_E_H
+#ifndef KNIFE_MESSAGE_MESSAGE_CLASSES_H
+#define KNIFE_MESSAGE_MESSAGE_CLASSES_H
 
 // Knife::Message classes used by the implementer E units (text renderer, text reader, selection dialog, pictogram).
 // Layouts follow the matched code; only the fields the functions use are named. The types here are file-independent

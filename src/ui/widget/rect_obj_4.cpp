@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_obj_f.h"
+#include "ui/widget/rect_obj_view.h"
 
 // rect_obj_4: functions RectObj_setOffset (0x020b7e48), RectObj_setSize (0x020b7e5c), RectObj_setEnabled (0x020b7e70),
 // RectObj_updateHitFlag (0x020b7e94), RectObj_calcTopLeft (0x020b7ef8), RectObjLink_init (0x020b7f28),

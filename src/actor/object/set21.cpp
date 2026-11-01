@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Set21 actor, dispatcher (module set21). Address -> name:
 //   0x02065a78 Set21 (state table data_02115ad0 indexed by e->action)

@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/message_e.h"
+#include "knife/message/message_classes.h"
 
 // Functions in this file (original names from the debug build):
 //   RenderTarget::getNumberOfUsingOBJ() const (0x020a4ee0)

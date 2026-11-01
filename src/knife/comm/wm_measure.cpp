@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wm_d.h"
+#include "knife/comm/wm_work.h"
 #include "knife/comm/wm_measure_api.h"
 
 // WirelessManager callback at 0x02093584 (invented name, the same shape as callback_WM_PowerOffStep): on success the timer

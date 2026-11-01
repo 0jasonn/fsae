@@ -1,5 +1,5 @@
-#ifndef WIP_D_WM_D_H
-#define WIP_D_WM_D_H
+#ifndef KNIFE_COMM_WM_WORK_H
+#define KNIFE_COMM_WM_WORK_H
 
 #include "global.h"
 #include "types.h"

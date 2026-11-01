@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // Sword, 0x0207af58. Sword actor: runs the action of the current state while data_0212c4b8 is zero, then the
 // common update.

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/subtask/subtask.h"
-#include "game/g_game_start.h"
+#include "knife/subtask/game_start.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_game_start_end (0x020c754c)

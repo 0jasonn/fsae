@@ -2,7 +2,7 @@
 // Functions in this file:
 //   BgmSet -> BgmSet
 //   GameState_SetTrackVariant -> GameState_SetTrackVariant
-#include "game/gamestateview_c.h"
+#include "game/player_flags.h"
 #include "global.h"
 
 typedef struct MusicIndexEntry {

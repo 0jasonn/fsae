@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "ui/stageseldecls.h"
+#include "ui/stagesel_common.h"
 
 // effect_char_load, 0x02078c80. Loads the graphics of stage select character index (first call sets up the
 // buffer pointers), then creates the character's stage select objects and plays its sound unless mode is nonzero.

@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Opening logo actors, sub title and sword (module oplogo). Address -> name:
 //   0x02067ed0 oplogo_sub_title (original name, state table data_02115b60 indexed by e->action)

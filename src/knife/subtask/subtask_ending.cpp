@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/g_game_start.h"
+#include "knife/subtask/game_start.h"
 #include "knife/subtask/subtask_ending_api.h"
 
 // Functions in this file (original names from the debug build):

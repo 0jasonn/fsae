@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls.h"
+#include "actor/object/pot.h"
 
 // Opening fairy actor, init and states (module op_fairy). Address -> name:
 //   (op_fairy_init at 0x0205f480 is parked in scratch/agentC/nonmatching)

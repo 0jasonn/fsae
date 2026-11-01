@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/g_knife_manual.h"
+#include "knife/app/knife_manual.h"
 #include "knife/app/knife_manual_api.h"
 #include "game/decls_g.h"
 #include "knife/app/knife_power.h"
