@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/wip_a_decls.h"
+#include "engine/entry_update_api.h"
 
 // Processes one entry: NULL walks the whole table through Entries_ProcessAll. A finished or mode-less entry fails with
 // -1; kind 1 is done; state 1 runs the timer step and retires the entry, the other states settle to 0. A failing timer

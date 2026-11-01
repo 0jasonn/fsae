@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/rect_f.h"
+#include "ui/widget/slider_index_api.h"
 
 // slider_index: functions Slider_setIndex (0x020b9424) and Slider_setPositionFromIndex (0x020b9478), provisional names.
 // Slider_setupItems (0x020b9380) is parked in scratch/agentF/nonmatching.

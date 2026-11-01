@@ -32,7 +32,6 @@ void Irq_InitVBlank(void);
 
 // Calls made by Knife::PowerManager::update and the PowerManager accessor (dsd or TwlSDK names)
 extern "C" {
-s32 PM_GetLCDPower(void);
 s32 PM_SetLCDPower(s32 a);
 void func_0201d038(s32 a, s32 b, s32 c);
 void m4aSoundResume(void);
@@ -52,7 +51,6 @@ extern u32 data_021870b0;
 extern const u32 data_020df200[];
 
 // Title and save-error screen data and calls (savefile_error_*, terminateInfo_*)
-s32 Knife_getSaveBuffer(void);
 extern u8 data_021271cc[];
 extern u8 data_021271d4[];
 extern u8 data_0212c75c[];
@@ -74,7 +72,6 @@ s32 func_020bd474(MenuWork *menu, void *event);
 s32 func_020bd830(MenuWork *menu);
 s32 Menu_DispatchKeys(MenuWork *menu);
 
-void func_020be9f0(void *obj);
 void func_020beb00(void *obj, MenuEvent *event);
 void func_020be244(MenuWork *menu);
 }
@@ -84,14 +81,10 @@ s32 Menu_HandleInput(MenuWork *menu, MenuInput *input);
 
 // Menu redraw calls (dsd names; the signatures follow the calls in Menu_Redraw)
 extern "C" {
-void func_020bed14(void *obj);
-s32 func_020be66c(void *obj, u8 *flag);
 void RectObjPair_updateFlags(void *obj, s32 value);
 void RectObjPair_setValue(void *obj, s32 value);
-void func_020be798(void *obj);
 void RectObjPair_countDownBoth(void *obj);
 void RectObjPair_updateChildren(void *obj, s32 value);
-void func_020bacb8(void *obj);
 void DC_FlushRange(void *base, u32 size);
 }
 

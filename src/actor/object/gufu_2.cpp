@@ -2,6 +2,7 @@
 #include "engine/misc_d.h"
 #include "global.h"
 #include "actor/object/d_decls.h"
+#include "engine/callback_api.h"
 
 // Gufu hand and body actors (module gufu, second unit). Address -> name:
 //   0x02074680 gufu_typeDispatch (provisional name; dispatches on e->type)

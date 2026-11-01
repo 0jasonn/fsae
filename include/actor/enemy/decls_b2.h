@@ -7,7 +7,6 @@
 // Declarations used by the wip/B files that include/engine/functions.h does not have yet.
 
 // dispctrl.cpp (module disp), C++ linkage
-void DispCtrlClear(void);
 
 // comm module (src/game/comm*.cpp, dsd names below are the original mangled names)
 int CommFrameSync(void);
@@ -37,7 +36,6 @@ extern u8 data_0212de50[];
 extern u8 data_021361a0[];
 extern u8 objAffineSet[];
 extern u8 hblankDma;
-
 
 // em28 module callees (src/enemy/em28_3.cpp, em28_4.cpp, em1c and em26 headers hold the other declarations)
 Entity *plCheck(Entity *e);

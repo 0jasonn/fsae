@@ -14,7 +14,6 @@ void CheckPlsSet(void);
 void CockpitInit(void);
 extern "C" void StaffrollLoad(void);
 void initRupeeRush(void);
-void setupTreasureBox(void);
 u8 getRupeeRushDiceIndex(void);
 u32 getNumberOfObj(u8 kind, u8 id);
 void kabutoEvent(Entity *e);

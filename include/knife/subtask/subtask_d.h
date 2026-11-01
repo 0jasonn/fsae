@@ -10,7 +10,6 @@ extern "C" void MI_UncompressLZ16(const void *src, void *dst);
 extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void DC_FlushRange(void *base, u32 size);
-extern "C" void OS_EnableDTCM(void);
 extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
 
 extern "C" s32 ResChunk_OpenRACH2(void *entry, void *owner);

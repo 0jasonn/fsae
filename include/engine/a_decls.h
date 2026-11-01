@@ -18,10 +18,8 @@ extern u8 data_021180a8[];
 extern u8 data_0211857c[];
 
 // Thumb labels without an original name (dsd names kept).
-extern "C" int func_020899bc(u16 value, const u8 *table);
 extern "C" void func_02086168(Entity *e);
 extern "C" void func_020841b0(Entity *e);
-extern "C" int func_02089e28(Entity *e, int kind);
 
 // Callees with a mangled original name (C++ linkage).
 int func_02083cdc(Entity *e);
@@ -33,7 +31,6 @@ extern "C" void EffectSet(Entity *e, int kind, int arg);
 
 // Map cell helpers (src/wip/A/map_2.cpp uses them; PuyoAnkyo and RewCellOne are defined in src/game/map.cpp, RewCellOne in src/wip/E).
 void RewCellOne(u16 cell, u16 x, u16 y);
-void PuyoAnkyo(u16 x, u16 y);
 
 // Game state block (GameState in engine/player.h): byte 1 is the mode, byte 0x48 an index.
 

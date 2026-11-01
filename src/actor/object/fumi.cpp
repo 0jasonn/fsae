@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/objdecls_f.h"
+#include "actor/object/fumi_api.h"
 
 // Fumi (step switch) check, module fumi. Address -> name:
 //   0x0205b5bc fumiCheck (original name)

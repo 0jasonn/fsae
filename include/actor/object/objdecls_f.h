@@ -9,8 +9,6 @@ extern "C" void PlStartPosSet(Entity *e); // 0x02054fe4, original name PlStartPo
 extern "C" int abs_s32(int a);      // 0x02029a44, returns |a| (no original name yet)
 void CalcRanking(void);                   // 0x02055f18, original name CalcRanking()
 u32 ranking_getKey(u8 index);             // 0x0205610c, original name ranking_getKey(unsigned char)
-int fumiCheck(Entity *e);                   // 0x0205b5bc, original fumiCheck(OBJ_WORK_*)
-int fumiCheck2(Entity *e);                  // 0x0205b630, original fumiCheck2(OBJ_WORK_*)
 void func_0208366c(s32 a, u16 b, u16 c);    // 0x0208366c (C++ name func_0208366cltt)
 u16 func_0208367c(u16 cell, u16 layer);     // 0x0208367c (no original name yet)
 void func_0208365c(u8 a, u16 b, u16 c);     // 0x0208365c (no original name yet)

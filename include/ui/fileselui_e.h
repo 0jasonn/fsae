@@ -28,8 +28,6 @@ extern "C" {
 void fileSelUIView_errorFileInit(void *self);
 void fileSelUIView_serialize(FileSelUIView *self, u8 **buf);
 void fileSelUIView_deserialize(FileSelUIView *self, u8 **buf);
-void fileSelUIView_vfunc2(void *self);
-s32 fileSelUIView_getText(void *self, void *text, u32 textId, s32 language);
 }
 
 extern "C" {

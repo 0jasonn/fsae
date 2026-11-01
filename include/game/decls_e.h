@@ -28,7 +28,6 @@ typedef struct RenderTargetLayout {
 extern "C" {
 // TextRenderer members with plain names (C linkage, self first)
 s32 Knife_Message_TextRenderer_calcTextWidth(const Knife::Message::TextRenderer *self, const Knife::Message::Text *text);
-s32 Knife_Message_TextRenderer_getBgMode(s32 isBg);                  // 0x020a58d0
 s32 Knife_Message_TextRenderer_getTableValue(s32 index, s32 bgMode); // 0x020a5a44
 s32 Knife_Message_TextRenderer_getScreenWidth(s32 isBg, s32 index);  // 0x020a5a58
 void *Knife_Message_TextRenderer_getScreenAddress(const Knife::Message::TextRenderer *self, s32 isBg, s32 index,
@@ -36,10 +35,7 @@ void *Knife_Message_TextRenderer_getScreenAddress(const Knife::Message::TextRend
 void *func_020a59ac(Knife::Message::TextRenderer *self, s32 isBg, s32 index);
 // Draw helpers of the BG and OBJ text (0x020c6008 and up)
 s32 func_020c6008(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-s32 func_020c60b8(void *screen, s32 a, s32 b, s32 c, s32 d);
-s32 func_020c6198(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e);
 s32 func_020c6550(void *cell, s32 a, s32 b, s32 c, s32 d, s32 flag, s32 e);
-s32 func_020c6250(void *cell, s32 a, s32 b, s32 c, s32 d, s32 flag, s32 e, s32 sel);
 void OS_Terminate(void);
 // KnifeApp_getField20Address (0x0208dfc0): the object at field 0x20 of the application
 void *KnifeApp_getField20Address(void *app);
@@ -49,7 +45,6 @@ s32 func_020c5e00(void *font, void *canvas, s32 x, s32 y, s32 palette, s32 ch);
 s32 Knife_Message_TextReader_readParam_U16(void *self);       // 0x020a29e8
 void Knife_Message_TextReader_readParam_Str(void *self, void *out); // 0x020a2a2c
 void Knife_Message_RenderTarget_finalize(void *self);  // 0x020a4e8c
-void Knife_Message_TextRenderer_finalize(void *self);  // 0x020a507c
 }
 
 #endif

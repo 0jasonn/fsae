@@ -11,7 +11,6 @@ extern "C" {
 void func_0208af0c(Entity *e);
 void func_0208b668(Entity *e);
 u8 ObjGetDir2(Entity *e, Entity *target, s32 a, s32 b); // 0x0204fdfc, unmangled
-int func_02085764(Entity *a, Entity *b, s32 c, s32 d); // 0x02085764, thumb, returns a flag
 }
 
 typedef struct TamaTelopIds { u16 ids[3]; } TamaTelopIds;

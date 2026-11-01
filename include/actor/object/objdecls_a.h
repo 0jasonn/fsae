@@ -17,6 +17,5 @@ void func_0208366c(s32 a, u16 b, u16 c);                // _Z13func_0208366cltt 
 extern "C" void func_0208af0c(Entity *e);               // plain dsd name, 0x0208af0c
 
 extern "C" void AddHeart(Entity *e, int amount);        // plain name, no original parameters listed (0x02025d9c)
-void AddHeartUtsuwa(u8 type, s8 amount);                // AddHeartUtsuwa(unsigned char, signed char), 0x0202604c
 
 #endif

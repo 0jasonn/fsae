@@ -20,12 +20,8 @@ extern "C" void Vram_SetBankGroupB(u32 a);
 extern "C" void subTaskSetBG0Offset_reset(void);
 extern "C" void subTaskSetBG1Offset_reset(void);
 extern "C" void subTaskSetBG2Offset_reset(void);
-extern "C" void subTaskSetBG3Offset_reset(void);
 // Hex text helpers of the subtask screens (0x0209ae98 integrated in src/game/subtask_work_hex.cpp; the tile mapping in
 // src/wip/A/subtask_char_tile.cpp). subtask_hex_ascii_work returns the digit count written by hex_ascii_chg0.
 extern "C" s32 subtask_hex_ascii_work(s32 a, s32 b, u32 c);
-extern "C" u32 subtask_char_tile_num(u32 c);
-extern "C" u32 subtask_char_tile_num_alt(u32 c);
-int is_op_demo_end(void); // C++ name _Z14is_op_demo_endv, 0x020510f0
 
 #endif

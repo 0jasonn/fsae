@@ -20,13 +20,7 @@ typedef struct TaskLockThread {
     u32 lockTag;             // 0x6c: identifies the owner of the task lock
 } TaskLockThread;
 
-extern "C" {
-s32 OS_TryLockMutex(void *mutex);
-s32 Entry_Update(u8 *entry);
-}
-
 // C++ linkage (mangled _Z16Forward_0200b10cv), defined in src/engine/stub_4.cpp.
-void Forward_0200b10c(void);
 
 // Timer record used by Timer_Advance (src/wip/A/timer_advance.cpp). Offsets match TimerSnapshot in src/engine/timer.cpp.
 typedef struct TimerAdvanceRec {

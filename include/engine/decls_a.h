@@ -5,7 +5,6 @@
 // Unmangled originals are extern "C"; the reviewer moves the rest into functions.h.
 #include "engine/functions.h"
 
-extern "C" void MI_UncompressLZ8(const void *src, void *dst);
 extern "C" void MI_UncompressLZ16(const void *src, void *dst);
 extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 
@@ -13,8 +12,6 @@ extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 extern "C" u32 KnifeApp_getZelmapResource(void *app, u32 id);
 
 // Block helpers of the bganm module (src/game/bganm.cpp, C++ linkage).
-BOOL Check1BlockOshiYoyaku(u16 a, u16 b);
-void Set1BlockOshiYoyaku(u16 a, u16 b);
 
 // Shared map and player-block data used by the front check code.
 extern const s16 cellDeltaTable[]; // cell offsets indexed by mode >> 3

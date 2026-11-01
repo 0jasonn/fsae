@@ -7,11 +7,9 @@
 #include "types.h"
 
 extern "C" {
-void TP_RequestAutoSamplingStopAsync(void);
 void TP_WaitBusy(s32 mode);
 s32 TP_CheckError(s32 mode);
 void SndSys_StopAll(void);
-void GX_SetDefaultDMA(s32 dma);
 s32 Fs_ReleaseArchive(void *archive);
 void func_0218a860(s32 arg);
 void func_02012c40(void);

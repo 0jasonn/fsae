@@ -7,7 +7,6 @@
 // symbols.txt name, so they are extern "C" (see the linkage rule in scratch/agent_brief.md).
 extern "C" {
 // Knife::Message::KMsgFileReader::initialize(void const*, unsigned long) (0x0208e20c, parked)
-BOOL Knife_Message_KMsgFileReader_initialize(void *self, const void *data, u32 size);
 }
 
 #endif

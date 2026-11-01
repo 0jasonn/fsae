@@ -5,6 +5,5 @@
 #include "engine/entity.h"
 
 int RankCheck(void); // original name RankCheck(), defined in src/game/rank.cpp
-void CallbackForJpeg(void *a, void *b); // defined in src/engine/callback.cpp
 
 #endif

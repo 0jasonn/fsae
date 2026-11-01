@@ -44,7 +44,6 @@ void pot_clash(Entity *e, Entity *other);
 void throw_holdoff(Entity *e); // 0x0205f0e0 (pot_4.cpp)
 extern "C" u16 GX_GetSizeOfOBJ(void);
 extern "C" void m4aMusicSetVolume(u16 a, u16 b); // 0x0208d944
-extern "C" void func_0208aea0(Entity *e); // thumb, unmangled
 int func_02085ccc(Entity *e); // thumb, nonzero when the cell is held (cellcalls.h)
 void kanaamiRew(Entity *e, u16 index); // 0x0205e758 (set4e_2.cpp)
 void set4e_move(Entity *e); // 0x0205e714 (set4e_2.cpp)
@@ -53,7 +52,6 @@ extern u8 data_0212c594[]; // u16 flag word at 0 (read by oplogo), byte at 4 set
 void MultiEventSet(u16 *a, u8 b, u8 c, u8 d); // 0x0204602c, not yet in functions.h
 void RewCellOne(u16 a, u16 b, u16 c);
 extern "C" void RewCellBack(int cell, int layer);
-extern "C" int func_0208583c(void); // thumb, unmangled
 void set5c_event_check(Entity *e);
 void zelda_disp(Entity *e);
 extern const EntityFunc data_020d9028[]; // set5c update state table indexed by e->action

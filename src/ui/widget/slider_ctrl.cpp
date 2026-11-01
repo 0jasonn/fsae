@@ -2,6 +2,9 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/rect_f.h"
+#include "ui/widget/rect_slot3_api.h"
+#include "ui/widget/slider_ctrl_api.h"
+#include "ui/widget/slider_index_api.h"
 
 // slider_ctrl: functions Ctrl_getSliderIndexA (0x020bac20), Ctrl_setSliderIndexA (0x020bac2c), Ctrl_getSliderIndexB
 // (0x020bac58), Ctrl_setSliderIndexB (0x020bac64) and Ctrl_setFlagAndUpdate (0x020bac98), provisional names.

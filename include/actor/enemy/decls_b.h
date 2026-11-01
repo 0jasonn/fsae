@@ -4,7 +4,6 @@
 // Functions used by the implementer B files that are not in engine/functions.h yet.
 #include "engine/functions.h"
 
-void shadowSet(Entity *e);              // original shadowSet(OBJ_WORK_*)
 void func_02084a20(Entity *e);          // thumb helper, dsd name
 extern "C" void AddHeart(Entity *e, s32 amount); // original AddHeart (unmangled)
 

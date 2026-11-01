@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/subtask/subtask_a.h"
+#include "ui/opening_api.h"
 
 // subTask_push_start() (0x0209c88c): the "push start" screen. A blink counter toggles the screen mode every 45 frames,
 // then after the first 30 frames the press sets the phase and the phase steps through the fade-out sequence.

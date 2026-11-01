@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/rect_f.h"
+#include "ui/widget/slider_ctrl_api.h"
 
 // ctrl_flags: functions Ctrl_updateAc (0x020bb660), Ctrl_tryChange (0x020bb698), Ctrl_updateAd (0x020bb6c8) and
 // Ctrl_setCounterA (0x020bb70c), provisional names. The controller record is the one of slider_ctrl.cpp, with the

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/subtask/subtask_a.h"
+#include "knife/subtask/subtask_char_tile_api.h"
 
 // Character code to tile number helpers for the subtask text, 0x0209aeb8 and 0x0209af98. Both map 'a' to 'f' (0x61..0x66)
 // to c + 3 and ' ' to 0, '-' to 0x55. The digits map to c - 0x1a (subtask_char_tile_num) or c + 0x26 (the _alt variant).

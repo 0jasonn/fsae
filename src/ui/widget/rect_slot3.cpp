@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/rect_f.h"
+#include "ui/widget/rect_slot3_api.h"
 
 // rect_slot3: functions RectSlot2_setFlag (0x020bbb70), RectSlot3_init (0x020bbb78) and RectSlot3_setGeometry
 // (0x020bbba0), provisional names.

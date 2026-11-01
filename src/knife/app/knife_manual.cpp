@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/g_knife_manual.h"
+#include "knife/app/knife_manual_api.h"
 
 // Functions in this file (original names from the debug build):
 //   Knife::runManual (0x020c7c10), Knife_GetManualFlag (0x020c7c3c, provisional name)

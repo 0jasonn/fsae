@@ -140,6 +140,42 @@ void RegistObjWork(int list, Entity *e);
 void RewCell(int id, u16 cell, u16 flag);
 void SoundReq(u32 a);
 void YureSet(int a, int b);
+void func_0208aea0(Entity *e); // thumb, unmangled
+int func_0208583c(void); // thumb, unmangled
+void setupTreasureBox(void);
+void hidari_writecell(Entity *e);   // original writecell(OBJ_WORK_*)
+int cellcheck(Entity *e);           // original cellcheck(OBJ_WORK_*)
+int func_02085764(Entity *a, Entity *b, s32 c, s32 d); // 0x02085764, thumb, returns a flag
+int func_020899bc(u16 value, const u8 *table);
+int func_02089e28(Entity *e, int kind);
+void MI_UncompressLZ8(const void *src, void *dst);
+void TP_RequestAutoSamplingStopAsync(void);
+void GX_SetDefaultDMA(s32 dma);
+s32 OS_TryLockMutex(void *mutex);
+s32 Knife_Message_TextRenderer_getBgMode(s32 isBg);                  // 0x020a58d0
+s32 func_020c60b8(void *screen, s32 a, s32 b, s32 c, s32 d);
+s32 func_020c6198(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e);
+s32 func_020c6250(void *cell, s32 a, s32 b, s32 c, s32 d, s32 flag, s32 e, s32 sel);
+void Knife_Message_TextRenderer_finalize(void *self);  // 0x020a507c
+s32 PM_GetLCDPower(void);
+void func_020be9f0(void *obj);
+void func_020bed14(void *obj);
+s32 func_020be66c(void *obj, u8 *flag);
+void func_020be798(void *obj);
+void func_020bacb8(void *obj);
+void KnifeApp_MessageRequest(void *self, s32 index, void *tokenizer, void *analyzer, s32 flag);
+s32 WM_GetDispersionScanPeriod(void);
+s32 WM_StartScanEx(void *callback, void *param);
+s32 WM_StartDataSharing(void *buf, s32 kind, u16 mask, u16 param, s32 flag);
+BOOL Knife_Message_KMsgFileReader_initialize(void *self, const void *data, u32 size);
+void subTaskSetBG3Offset_reset(void);
+void OS_EnableDTCM(void);
+void func_020855bc(Entity *e); // dsd name (thumb label 0x020855bc), takes the player entity
+void make_hyosyo(void);    // plain symbol, 0x020558c0 (ranking screen setup)
+void GameState_UpdatePhase(void); // plain symbol, 0x02049454, no arguments
+void ranking_hyosyo(void);   // plain symbol; parked in scratch/agentC/nonmatching (ranking_hyosyo)
+u8 ClearKeyCheck(void);
+void G2x_SetBlendAlpha_(void *reg, s32 a, s32 b, s32 c, s32 d);
 }
 
 void BikkuriSet(Entity *e, s32 a, s32 b);
@@ -562,4 +598,11 @@ s32 func_02085024(Entity *e, const u16 *entry, u8 area); // thumb
 int ObjAnimMoveLine(Entity *e); // nonzero when the move animation has ended
 void func_02084180(Entity *e); // thumb
 u8 func_02084110(Entity *e); // thumb: bit mask of the players touching e
+void AddHeartUtsuwa(u8 type, s8 amount);                // AddHeartUtsuwa(unsigned char, signed char), 0x0202604c
+
+
+void sword_move(Entity *e);
+
+int CalcRupeeDiff(u8 index);
+
 #endif

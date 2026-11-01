@@ -2,6 +2,7 @@
 #include "global.h"
 #include "actor/object/setcommon.h"
 #include "actor/object/g_callees.h"
+#include "actor/object/yuka_api.h"
 
 // Yuka (player and wall checks, module yuka). Address -> name:
 //   0x02063fd8 rc_yukaPlMoveCheck, 0x0206402c yukaCheck, 0x0206412c ue_bgcheck, 0x02064214 shita_bgcheck,

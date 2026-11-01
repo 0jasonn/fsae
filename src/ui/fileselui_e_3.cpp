@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/fileselui_e.h"
+#include "ui/fileselui_e_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   fileSelUIView_errorFileInit (0x020a88a8), fileSelUIView_getText (0x020a8d78), fileSelUIView_vfunc2 (0x020a8f7c)
