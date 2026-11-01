@@ -32,19 +32,10 @@ typedef struct MsgTokenList {
     s32 count;         // 0x24
 } MsgTokenList;
 
-// Fields of the message box that KNIFE_MSGSYS does not name yet
-typedef struct MsgMoveFields {
-    /* 00 */ u8 unk_00[0x0e];
-    /* 0e */ u8 speedSetting : 4; // picks the step in data_020d7c18
-    /* 0f */ u8 unk_0f[0xda - 0x0f];
-    /* da */ s8 moveAccum;    // text move accumulator: steps are added until it is positive
-} MsgMoveFields;
-
 // Moves the message text. The accumulator moveAccum is reduced by the speed (1, 2 or 5), then the steps of the speed
 // setting are added until it is positive; that many steps run, and each analyzes one part of the token list.
 void knife_commDispMove(KNIFE_MSGSYS *msg) {
     s16 steps;
-    MsgMoveFields *fields = (MsgMoveFields *)msg;
     MsgTokenList *tokenList;
     MsgToken *token;
     void *instance;
@@ -79,15 +70,15 @@ void knife_commDispMove(KNIFE_MSGSYS *msg) {
             return;
         }
     }
-    fields->moveAccum -= speed;
-    if (fields->moveAccum > 0) {
+    msg->moveAccum -= speed;
+    if (msg->moveAccum > 0) {
         return;
     }
     steps = 0;
     do {
         steps = steps + 1;
-        fields->moveAccum += data_020d7c18[fields->speedSetting];
-    } while (fields->moveAccum <= 0);
+        msg->moveAccum += data_020d7c18[msg->speedSetting];
+    } while (msg->moveAccum <= 0);
 
     ((Knife::Message::MessageTextRender *)msg->renderer)->clearField36();
     speed = 2;
@@ -112,7 +103,7 @@ void knife_commDispMove(KNIFE_MSGSYS *msg) {
         if (((Knife::Message::MessageTextRender *)msg->renderer)->getField36() == 0) {
             return;
         }
-        if (msg->unk_dd != 0 || msg->unk_d2[0] != 0) {
+        if (msg->unk_dd != 0 || msg->waitTimer != 0) {
             return;
         }
         if (msg->noTelopWait != 0) {

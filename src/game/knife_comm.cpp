@@ -7,30 +7,20 @@
 //   knife_commDispDie, knife_commDispLF
 
 // Advances the message to its next state and clears the sub state; a finished message box (openMode 2) also clears unk_e7
-void knife_commDispDie(MsgWork *msg) {
+void knife_commDispDie(KNIFE_MSGSYS *msg) {
     msg->state++;
     msg->subState = 0;
     if (msg->openMode == 2) {
-        msg->unk_e7 = 0;
+        msg->noTelopWait = 0;
     }
 }
-
-// Fields of the message box that game/message.h does not name yet
-typedef struct MsgLfFields {
-    /* 00 */ u8 unk_00[0xdc];
-    /* dc */ u8 timer; // frames until the line feed is finished
-    /* dd */ u8 unk_dd[0xe4 - 0xdd];
-    /* e4 */ u8 counter; // frames the arrow has been shown
-} MsgLfFields;
-
-#define MSG_LF(msg) ((MsgLfFields *)(msg))
 
 extern u8 localPlayerIndex[];
 extern u8 frameCounter[];
 extern u16 data_0212c58c[];
 
 // Line feed of the message: waits for the timer and the key flags, then starts the next line
-void knife_commDispLF(MsgWork *msg) {
+void knife_commDispLF(KNIFE_MSGSYS *msg) {
     u8 index;
     u8 state;
     void *instance;
@@ -41,14 +31,14 @@ void knife_commDispLF(MsgWork *msg) {
             return;
         }
     }
-    if (MSG_LF(msg)->timer != 0) {
-        MSG_LF(msg)->timer--;
-        if (MSG_LF(msg)->timer != 0) {
+    if (msg->stepTimer != 0) {
+        msg->stepTimer--;
+        if (msg->stepTimer != 0) {
             return;
         }
         msg->subState = 5;
-        msg->unk_ac[2] = 0;
-        msg->unk_ac[3] = 0;
+        msg->lineQueue[2] = 0;
+        msg->lineQueue[3] = 0;
         knife_msgLineChange(msg, 0);
         msg->subState = 1;
         return;
@@ -59,15 +49,15 @@ void knife_commDispLF(MsgWork *msg) {
         index = Knife_Single_SinglePlay_GetInstance()[0];
     }
     if ((data_0212c58c[index] & 1) == 0) {
-        MSG_LF(msg)->counter++;
+        msg->cursorState++;
         return;
     }
     SoundReq(0x42);
-    MSG_LF(msg)->counter = 0;
+    msg->cursorState = 0;
     msg->subState = 5;
-    msg->unk_ac[2] = 0;
-    msg->unk_ac[3] = 0;
+    msg->lineQueue[2] = 0;
+    msg->lineQueue[3] = 0;
     knife_msgLineChange(msg, 0);
     msg->subState = 1;
-    msg->unk_e7 = 0;
+    msg->noTelopWait = 0;
 }

@@ -29,7 +29,7 @@ void knife_commDispRoll(KNIFE_MSGSYS *msg) {
         ((Knife::Message::MessageTextRender *)msg->renderer)->setOffset(0, 0);
     } else {
         if (msg->lineQueue[2] == 0) {
-            knife_msgLineChange((MsgWork *)msg, 2);
+            knife_msgLineChange(msg, 2);
         }
         msg->lineChangeReq = 1;
         data_0217d358[8] -= 2;
@@ -37,6 +37,6 @@ void knife_commDispRoll(KNIFE_MSGSYS *msg) {
         data_0217d358[10] -= 2;
         data_0217d358[11] -= 2;
     }
-    Knife_palletChange((MsgWork *)msg, msg->palletBits | 0x40);
+    Knife_palletChange(msg, msg->palletBits | 0x40);
     msg->subState = 1;
 }

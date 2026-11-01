@@ -38,7 +38,7 @@ void knife_commDispInit(KNIFE_MSGSYS *msg) {
         ((Knife::Message::MessageTextRender *)msg->renderer)->setField35(2);
         ((Knife::Message::MessageTextRender *)msg->renderer)->setField34(0x10);
         msg->renderer->canvasOps->clear(&msg->renderer->canvas, 0xf);
-        knife_msgLineChange((MsgWork *)msg, 0);
+        knife_msgLineChange(msg, 0);
         msgId = *(u16 *)(messageRequest + 6);
     } else {
         Knife_Message_MessageTextRender_initWithCanvas(msg->renderer, (void *)0x6014bc0, (void *)((u8 *)pauseDialogBuffer + 0x5c0), 0x305e,
@@ -46,7 +46,7 @@ void knife_commDispInit(KNIFE_MSGSYS *msg) {
         ((Knife::Message::MessageTextRender *)msg->renderer)->setSceneInfo(msg);
         ((Knife::Message::MessageTextRender *)msg->renderer)->setField35(2);
         msg->renderer->canvasOps->clear(&msg->renderer->canvas, 0xf);
-        Knife_palletChange((MsgWork *)msg, 0x71);
+        Knife_palletChange(msg, 0x71);
         msgId = msg->msgId;
     }
     app = KnifeApp_getInstance();

@@ -8,7 +8,7 @@
 
 // Telop box initialization: clears the work blocks and sets up the telop window; returns 0 (the telop states run next)
 int tlpInit(void) {
-    MsgWork *telop = &telopBox;
+    KNIFE_MSGSYS *telop = &telopBox;
     u32 idMask = 0x7fff;
     u8 initMode = 2;
     u32 flags;
@@ -27,8 +27,8 @@ int tlpInit(void) {
     telop->openMode = initMode;
     telop->state = initMode;
     Knife_msgFrameDma(telop, ((u32)telop->layoutFlags << 26) >> 30);
-    telop->uiPtrA = (u8 *)KnifeApp_getInstance() + 0x144;
-    telop->uiPtrB = (u8 *)KnifeApp_getInstance() + 0x180;
+    telop->renderer = (struct MsgRendererView *)((u8 *)KnifeApp_getInstance() + 0x144);
+    telop->tokenizer = (Knife::Message::TextTokenizer *)((u8 *)KnifeApp_getInstance() + 0x180);
     Knife_palletChange(telop, 0x71);
     flags = *(u32 *)(data_0216efbc + 8);
     if ((flags & 1) == 0) {
@@ -37,7 +37,7 @@ int tlpInit(void) {
         *(u32 *)(data_0216efbc + 0x20) = 0;
         *(u32 *)(data_0216efbc + 8) = flags | 1;
     }
-    telop->windowData = data_0216efd4;
-    *(MsgWork **)(data_0216efd4 + 4) = telop;
+    telop->appInfo = data_0216efd4;
+    *(KNIFE_MSGSYS **)(data_0216efd4 + 4) = telop;
     return 0;
 }

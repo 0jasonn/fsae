@@ -30,38 +30,68 @@ typedef struct WindowSlot {
 } WindowSlot;
 
 // Message box (data_0217d39c) and telop box (telopBox), both 0xe8 bytes with the same layout
-typedef struct MsgWork {
-    /* 00 */ u8 *uiPtrA; // KnifeApp + 0x108 (msg) or + 0x144 (telop) (guess)
-    /* 04 */ u8 *uiPtrB; // KnifeApp + 0x44 (msg) or + 0x180 (telop) (guess)
-    /* 08 */ u8 *windowData; // data_0216efc8 (msg) or data_0216efd4 (telop) (guess)
+// Original name Knife::Message::KNIFE_MSGSYS. The renderer and tokenizer types are defined in enemy/knife_msgsys.h.
+struct MsgRendererView;
+namespace Knife {
+namespace Message {
+class TextTokenizer;
+
+typedef struct KNIFE_MSGSYS {
+    /* 00 */ struct MsgRendererView *renderer;
+    /* 04 */ TextTokenizer *tokenizer;
+    /* 08 */ const void *appInfo; // IAppInfoGetter passed to the tokenizer
     /* 0c */ u8 windowPhase; // window opening progress, compared with 1 and 6 in Message (guess)
     /* 0d */ u8 unk_0d;
-    /* 0e */ u8 layoutFlags; // low nibble = 1 after msgInit/tlpInit, bits 4-5 = bank passed to Knife_msgFrameDma
-    /* 0f */ u8 unk_0f;
-    /* 10 */ u8 drawFlags; // low 5 bits set to 0x18 by tlpInit (guess)
-    /* 11 */ u8 unk_11;
-    /* 12 */ u16 msgId;
+    /* 0e */ union {
+        u8 layoutFlags; // 1 after msgInit/tlpInit
+        struct {
+            u8 speedSetting : 4; // text speed, indexes the step table data_020d7c18
+            u8 frameBank : 2;    // bank passed to Knife_msgFrameDma
+            u8 slotBank : 2;     // window slot bank
+        };
+    };
+    /* 0f */ u8 originBits; // low 5 bits: tile origin x of the window
+    /* 10 */ u8 drawFlags;  // low 5 bits set to 0x18 by tlpInit
+    /* 11 */ u8 sizeBits;   // low 5 bits: width step, bits 5-7: height step
+    /* 12 */ u16 msgId;     // text id of the message
     /* 14 */ u8 unk_14[0x25 - 0x14];
-    /* 25 */ u8 openMode;
+    /* 25 */ u8 openMode; // 2 while the message box is closing
     /* 26 */ u8 unk_26[0x2a - 0x26];
-    /* 2a */ u8 unk_2a; // set to 0xa0 by tlpInit (guess)
-    /* 2b */ u8 unk_2b[0xac - 0x2b];
-    /* ac */ u8 unk_ac[4]; // cleared when the window starts closing
+    /* 2a */ u8 unk_2a; // set to 0xa0 by tlpInit
+    /* 2b */ u8 unk_2b[0x30 - 0x2b];
+    /* 30 */ s16 tokenIndex;
+    /* 32 */ s16 tokenSub;
+    /* 34 */ u8 cellRows[4][0x1e]; // attribute cells of four text rows, 30 bytes each; shifted up by the roll
+    /* ac */ u8 lineQueue[4];      // line changes waiting to run; cleared when the window starts closing
     /* b0 */ u8 unk_b0[0xd0 - 0xb0];
-    /* d0 */ u8 state; // index into the state table
-    /* d1 */ u8 subState; // index into the move table msgMoveTable
+    /* d0 */ u8 state;     // index into the state table
+    /* d1 */ u8 subState;  // index into the move table msgMoveTable
     /* d2 */ u8 waitTimer; // frames to wait before the state table runs again
-    /* d3 */ u8 unk_d3[0xe0 - 0xd3];
+    /* d3 */ u8 unk_d3[0xd6 - 0xd3];
+    /* d6 */ u8 unk_d6;     // nonzero makes the wait state return early
+    /* d7 */ u8 palletBits; // palette bits passed to Knife_palletChange with 0x40
+    /* d8 */ u8 unk_d8[0xda - 0xd8];
+    /* da */ s8 moveAccum; // text move accumulator: steps are added until it is positive
+    /* db */ u8 unk_db;
+    /* dc */ u8 stepTimer; // frames left in the wait state / until the line feed is finished
+    /* dd */ u8 unk_dd;
+    /* de */ s8 unk_de;
+    /* df */ u8 unk_df;
     /* e0 */ u8 lineChangeReq; // set when the line change has to run (knife_msgLineChange)
     /* e1 */ u8 unk_e1[2];
-    /* e3 */ u8 windowMode; // 1 while the window opens, 3 while it closes
-    /* e4 */ u8 unk_e4[0xe7 - 0xe4];
-    /* e7 */ u8 unk_e7;
-} MsgWork;
+    /* e3 */ u8 windowMode;  // 1 while the window opens, 3 while it closes
+    /* e4 */ u8 cursorState; // frames the line feed arrow has been shown; bit 4: cursor drawn (dispCursor)
+    /* e5 */ s8 sizeStep;    // window size progress 0..8: msgOpen adds 1, msgClose subtracts 1
+    /* e6 */ u8 unk_e6;
+    /* e7 */ u8 noTelopWait; // nonzero: the wait does not depend on the telop request
+} KNIFE_MSGSYS;
+} // namespace Message
+} // namespace Knife
+typedef Knife::Message::KNIFE_MSGSYS KNIFE_MSGSYS;
 
 extern TelopWork telopRequest;
-extern MsgWork data_0217d39c;
-extern MsgWork telopBox;
+extern KNIFE_MSGSYS data_0217d39c;
+extern KNIFE_MSGSYS telopBox;
 extern u8 data_0216efbc[];
 extern u8 messageRequest[];
 extern u8 data_0217d3c0[];
@@ -83,8 +113,8 @@ extern WindowSlot data_0216efe0[];
 extern WindowSlot data_0216eff0[];
 extern u8 data_0212c618[];
 
-extern void knife_msgLineChange(MsgWork *msg, s32 lines);
-extern void Knife_msgFrameDma(MsgWork *msg, u32 bank);
-extern void Knife_palletChange(MsgWork *msg, u8 pallet);
+extern void knife_msgLineChange(KNIFE_MSGSYS *msg, s32 lines);
+extern void Knife_msgFrameDma(KNIFE_MSGSYS *msg, u32 bank);
+extern void Knife_palletChange(KNIFE_MSGSYS *msg, u8 pallet);
 
 #endif
