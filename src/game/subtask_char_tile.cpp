@@ -6,7 +6,6 @@
 // to c + 3 and ' ' to 0, '-' to 0x55. The digits map to c - 0x1a (subtask_char_tile_num) or c + 0x26 (the _alt variant).
 
 // subtask_char_tile_num (0x0209aeb8)
-extern "C" u32 subtask_char_tile_num(u32 c);
 u32 subtask_char_tile_num(u32 c) {
     switch (c) {
     case 0x20:
@@ -37,7 +36,6 @@ u32 subtask_char_tile_num(u32 c) {
 }
 
 // subtask_char_tile_num_alt (0x0209af98)
-extern "C" u32 subtask_char_tile_num_alt(u32 c);
 u32 subtask_char_tile_num_alt(u32 c) {
     switch (c) {
     case 0x20:

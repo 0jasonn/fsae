@@ -15,7 +15,6 @@ void SndEntry_Start(SndEntry *entry) {
 }
 
 // SndEntry_StopIfPending: stops the entry when its release is pending (bit 0).
-extern "C" void SndEntry_StopIfPending(SndEntry *entry);
 void SndEntry_StopIfPending(SndEntry *entry) {
     if (((s32)(entry->flags << 31) >> 31) != 0) {
         SndEntry_Stop(entry);

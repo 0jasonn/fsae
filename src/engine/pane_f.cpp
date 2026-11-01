@@ -12,7 +12,6 @@ extern "C" void Window_releaseItems(void *heap, PaneItem *items, u32 count);
 
 // Window_allocItems(self, owner, count) (0x020b5c58, provisional name): allocates the item array of the window
 extern "C" PaneItem *PaneItem_allocArray(void *owner, s32 count);
-extern "C" void Window_allocItems(Pane *self, void *owner, s32 count);
 void Window_allocItems(Pane *self, void *owner, s32 count) {
     self->itemCount = 0;
     self->items = PaneItem_allocArray(owner, count);

@@ -11,7 +11,6 @@ s32 Menu_WrapInto(void *self, s32 value, s32 a, s32 b);
 // Menu_AllocPoolEntry (0x020beed4): moves the current index of the pool on by one (wrapped into 0..15) and looks for an
 // entry that is not in use, starting there. The first free entry becomes current and is returned. When none is free and
 // flag is set, the entry at the current index is returned (otherwise 0).
-extern "C" MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag);
 MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag) {
     u32 i;
     s32 zero;

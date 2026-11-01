@@ -25,7 +25,6 @@ u32 KnifeApp_getZelmapResource(void *app, u32 id) {
 
 // KnifeApp::isWirelessMode (0x0208de54): true when the wireless mode flag is set, or when the wireless manager has a
 // state other than zero
-extern "C" int KnifeApp_isWirelessMode(void *a);
 int KnifeApp_isWirelessMode(void *a) {
     u8 *manager;
 

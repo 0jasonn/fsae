@@ -11,7 +11,6 @@ extern char data_0211b1a8[];
 extern char data_0211b1b4[];
 extern char data_0211b1c0[];
 
-extern "C" u16 WM_GetAllowedChannel(void);
 extern "C" u32 WM_PowerOff(void *callback);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
 extern "C" BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);

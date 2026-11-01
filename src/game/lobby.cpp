@@ -19,7 +19,6 @@ void lobby_setRecvParam(s32 index, s32 flag, s32 value) {
 }
 
 // getReciveParam(signed char) (0x020b23b8): the nibble of a player in the received parameter word
-extern "C" s32 getReciveParam(s32 index);
 s32 getReciveParam(s32 index) {
     U32Table4 shift;
 

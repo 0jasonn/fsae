@@ -31,7 +31,6 @@ BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, con
 
 // WirelessManager::checkCallbackResult (0x020927c0): checks a callback result. Error codes 3, 4 and 6 set the timer to
 // -999 and return FALSE; code 8 sets it to -1000 and returns FALSE; any other code returns TRUE and leaves the timer.
-extern "C" BOOL Knife_Comm_WirelessManager_checkCallbackResult(void *self, void *result);
 BOOL Knife_Comm_WirelessManager_checkCallbackResult(void *self, void *result) {
     WmDWork *wm;
     WmCallbackHead *head;

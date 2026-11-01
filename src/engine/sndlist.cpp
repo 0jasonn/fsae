@@ -10,7 +10,6 @@ typedef struct SndListOwner {
 } SndListOwner;
 
 // SndList_GetEntryCount: the number of entries of the owner.
-extern "C" s32 SndList_GetEntryCount(void *owner);
 s32 SndList_GetEntryCount(void *owner) {
     return ((SndListOwner *)owner)->entryCount;
 }
@@ -36,7 +35,6 @@ void *SndList_GetEntry(void *owner, s32 index) {
 }
 
 // SndList_Clear: clears the list.
-extern "C" void SndList_Clear(SndList *list);
 void SndList_Clear(SndList *list) {
     list->last = 0;
     list->first = 0;
@@ -46,7 +44,6 @@ void SndList_Clear(SndList *list) {
 
 // SndList_Setup: sets the list up with the given last node and capacity. The first node is the position the list
 // has before the fields are written.
-extern "C" void SndList_Setup(SndList *list, u8 *last, u32 capacity);
 void SndList_Setup(SndList *list, u8 *last, u32 capacity) {
     list->first = SndList_GetCurrent(list);
     list->last = last;
@@ -56,7 +53,6 @@ void SndList_Setup(SndList *list, u8 *last, u32 capacity) {
 
 // SndList_GetCurrent: the node at the list's current position: last when the count has reached the capacity, otherwise the
 // first node advanced by count / capacity of the span from first to last.
-extern "C" u8 *SndList_GetCurrent(SndList *list);
 u8 *SndList_GetCurrent(SndList *list) {
     s32 count;
     s32 capacity;
@@ -72,7 +68,6 @@ u8 *SndList_GetCurrent(SndList *list) {
 }
 
 // SndList_Advance: advances the count when it is below the capacity.
-extern "C" void SndList_Advance(SndList *list);
 void SndList_Advance(SndList *list) {
     s32 count;
 
@@ -83,13 +78,11 @@ void SndList_Advance(SndList *list) {
 }
 
 // SndList_IsFull: returns 1 when the count has reached the capacity.
-extern "C" s32 SndList_IsFull(SndList *list);
 s32 SndList_IsFull(SndList *list) {
     return *(s32 *)&list->count >= (s32)list->capacity;
 }
 
 // SndList_Init: empties the list and sets its node stride.
-extern "C" void SndList_Init(SndList *list, s32 stride);
 void SndList_Init(SndList *list, s32 stride) {
     list->first = 0;
     list->last = 0;
@@ -98,7 +91,6 @@ void SndList_Init(SndList *list, s32 stride) {
 }
 
 // SndList_AddFirst: adds the first node. Its link words (at the stride) are cleared.
-extern "C" void SndList_AddFirst(SndList *list, u8 *node);
 void SndList_AddFirst(SndList *list, u8 *node) {
     u16 stride;
     u16 count;
@@ -113,7 +105,6 @@ void SndList_AddFirst(SndList *list, u8 *node) {
 }
 
 // SndList_Append: appends a node after the last one (the first node when the list is empty).
-extern "C" void SndList_Append(SndList *list, u8 *node);
 void SndList_Append(SndList *list, u8 *node) {
     u16 stride;
     u8 *last;
@@ -134,7 +125,6 @@ void SndList_Append(SndList *list, u8 *node) {
 }
 
 // SndList_Prepend: puts a node before the first one (the first node when the list is empty).
-extern "C" void SndList_Prepend(SndList *list, u8 *node);
 void SndList_Prepend(SndList *list, u8 *node) {
     u16 stride;
     u16 count;

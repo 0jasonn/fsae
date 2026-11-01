@@ -5,8 +5,6 @@
 #include "engine/m4a_api.h"
 
 // m4aSongNumStartOrContinue (0x0208d610): continues the song when it is already playing, otherwise starts it
-extern "C" u32 m4aSongNumContinue(u32 songNum, u32 arg);
-extern "C" u32 m4aSongNumIsPlaying(u16 songNum);
 u32 m4aSongNumStartOrContinue(u16 songNum) {
     if (m4aSongNumIsPlaying(songNum) != 0) {
         return m4aSongNumContinue(songNum, 0);

@@ -10,8 +10,6 @@
 // m4aSongNumStart (0x0208d118): starts the song with the given number. Numbers 0x190 to 0x1f3 go to func_0208d260. The
 // other numbers index the loaded-song bitmap; a loaded song is played through the handle that already exists, otherwise
 // a new sequence handle is created and tagged with the number.
-extern "C" u32 func_0208d260(u32 songNum);
-extern "C" u32 m4aSongNumStart(u16 songNum);
 u32 m4aSongNumStart(u16 songNum) {
     s32 index;
     s32 flag;

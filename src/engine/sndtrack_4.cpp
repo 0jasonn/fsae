@@ -5,7 +5,6 @@
 
 // SndTrack_Stop: for an active track, releases its counter, calls its stop callback, removes its pending nodes from the
 // two track lists (the second one at the list of data_021848f0 + 0x10e0 when that is set) and resets it.
-extern "C" void SndTrack_Stop(SndTrack *track);
 void SndTrack_Stop(SndTrack *track) {
     if (((s32)(track->flags << 31) >> 31) == 0) {
         return;

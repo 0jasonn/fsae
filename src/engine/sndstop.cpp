@@ -44,7 +44,6 @@ void func_020c02d0(void) {
 
 // func_020c0350: stops the stop state's timer (on its channel when the index is not negative), drains the message
 // queue, releases the channel bits and clears the active flag. Mode 1 also resets the output selector.
-extern "C" void func_020c0350(void);
 void func_020c0350(void) {
     SndStopState *state;
     u32 mask;

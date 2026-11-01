@@ -21,7 +21,6 @@ typedef struct RectSlot3 {
 } RectSlot3;
 
 // RectSlot2_setFlag(self, flag) (0x020bbb70, provisional name): stores the flag byte at +0x28
-extern "C" void RectSlot2_setFlag(void *self, s32 flag);
 void RectSlot2_setFlag(void *self, s32 flag) {
     ((u8 *)self)[0x28] = (u8)flag;
 }

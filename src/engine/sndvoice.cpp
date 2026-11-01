@@ -37,7 +37,6 @@ void SndVoice_SetPriority(SndVoice *voice, u8 priority) {
 }
 
 // SndVoice_ReleaseChannel: unlocks the voice's channel mask and clears it.
-extern "C" void SndVoice_ReleaseChannel(SndVoice *voice);
 void SndVoice_ReleaseChannel(SndVoice *voice) {
     if (voice->channelMask != 0) {
         SndChannel_Unlock(voice->channelMask);

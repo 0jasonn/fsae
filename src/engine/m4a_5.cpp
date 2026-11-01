@@ -6,7 +6,6 @@
 
 // m4aSongNumIsPlaying (0x0208d8a4): whether the song with the given number is playing. Wave numbers 0x1ea to 0x1f3 check
 // the first wave slot.
-extern "C" u32 m4aSongNumIsPlaying(u16 songNum);
 u32 m4aSongNumIsPlaying(u16 songNum) {
     Knife::Sound::WaveHandle *wave;
     void *handle;
@@ -43,7 +42,6 @@ void m4aMusicSetVolume(u16 a, u16 b) {
 
 // m4aEnterManual (0x0208d968): stops the music, updates the sound system and sets the master volume and both wave
 // volumes to the maximum
-extern "C" void m4aEnterManual(void);
 void m4aEnterManual(void) {
     m4aMPlayAllStop();
     Knife_Sound_System_update();
@@ -67,7 +65,6 @@ void m4aSoundResume(void) {
 
 // loadFile (0x0208d9c4): reads a whole file into memory from the EL global area, aligned as given. The size goes to *size;
 // returns the block, or NULL when the file cannot be opened or read in full.
-extern "C" void *loadFile(u32 *size, const char *path, s32 align);
 void *loadFile(u32 *size, const char *path, s32 align) {
     u8 file[0x48];
     u32 length;

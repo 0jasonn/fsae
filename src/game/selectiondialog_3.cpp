@@ -7,7 +7,6 @@
 //   selectionDialog::stop (0x020a20e0), close (0x020a2108), setVisible (0x020a2138)
 
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 
@@ -59,7 +58,6 @@ void Knife_Message_selectionDialog_close(void *a) {
 }
 
 // selectionDialog::setVisible(bool) (0x020a2138): stores the request and the visible flag
-extern "C" void Knife_Message_selectionDialog_setVisible(void *a, s32 visible);
 void Knife_Message_selectionDialog_setVisible(void *a, s32 visible) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 

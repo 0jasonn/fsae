@@ -52,7 +52,6 @@ SndRecord *SndVoicePool_Acquire(s32 group, SndVoiceOwner *owner) {
 }
 
 // SndVoice_Reset: clears the voice's flags and tag, then sets up its sub-list.
-extern "C" void SndVoice_Reset(SndVoice *voice);
 void SndVoice_Reset(SndVoice *voice) {
     SndVoiceFull *v = (SndVoiceFull *)voice;
 
@@ -69,7 +68,6 @@ void SndVoice_Reset(SndVoice *voice) {
 
 // SndVoice_InsertSorted: queues a voice into a list before the first node of a lower priority (the node's priority
 // is compared with the voice's), then links the voice to the list.
-extern "C" void SndVoice_InsertSorted(SndList *list, SndVoice *voice);
 void SndVoice_InsertSorted(SndList *list, SndVoice *voice) {
     u8 *node;
 
@@ -85,7 +83,6 @@ void SndVoice_InsertSorted(SndList *list, SndVoice *voice) {
 }
 
 // SndVoice_InsertGlobal: the same sorted insert into the global voice list.
-extern "C" void SndVoice_InsertGlobal(SndVoice *voice);
 void SndVoice_InsertGlobal(SndVoice *voice) {
     u8 *node;
 
@@ -100,7 +97,6 @@ void SndVoice_InsertGlobal(SndVoice *voice) {
 }
 
 // SndVoice_Stop: lowers the volume of a voice in state 2, stops its sequence and releases it.
-extern "C" void SndVoice_Stop(SndVoice *voice);
 void SndVoice_Stop(SndVoice *voice) {
     SndVoiceFull *v = (SndVoiceFull *)voice;
 
@@ -113,7 +109,6 @@ void SndVoice_Stop(SndVoice *voice) {
 
 // SndVoice_Allocate: takes a voice for the given priority. It comes from the free list, or else the first voice of
 // the global list is stopped when its priority is not above the new one. The voice then goes into the global list.
-extern "C" SndVoice *SndVoice_Allocate(s32 priority);
 SndVoice *SndVoice_Allocate(s32 priority) {
     SndVoiceFull *node;
 

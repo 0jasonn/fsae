@@ -6,7 +6,6 @@
 //   func_020a1a1c (0x020a1a1c, C++ symbol _Z13func_020a1a1cPv, declared in functions.h), selectionDialog::initWithMsgScrn (0x020a1a30)
 
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 
@@ -38,7 +37,6 @@ void func_020a1a1c(void *a) {
 }
 
 // selectionDialog::initWithMsgScrn(KNIFE_MSGSCRN const*) (0x0209a1a30): resets the state and copies the message screen
-extern "C" void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *msgScrn);
 void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *msgScrn) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 

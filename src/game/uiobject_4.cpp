@@ -9,7 +9,6 @@ extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void ResPlayer_AdvanceAndRefresh(void *anim, s32 c); // animation step, the same as game/subtask.h
 
 // UIObject::init(unsigned char) (0x020acbf4): clears the object, stores the kind, sets the active flags, liner curve
-extern "C" void UIObject_init(UIObject *self, u8 kind);
 void UIObject_init(UIObject *self, u8 kind) {
     MI_CpuFill8(self, 0, sizeof(UIObject));
     self->kind = kind;

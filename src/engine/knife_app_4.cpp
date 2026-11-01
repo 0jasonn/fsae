@@ -6,7 +6,6 @@
 // KnifeApp::TextTokenizer_initWithData (0x0208dc84): takes the message data and its size, frees a previous buffer and
 // initializes the three text tokenizers (at +0x1bc, +0x44 and +0x180) with the data and a pool each. The pools (0x400,
 // 0x1000 and 0x400 bytes) are allocated the first time.
-extern "C" void KnifeApp_TextTokenizer_initWithData(void *self, void *data, u32 size);
 void KnifeApp_TextTokenizer_initWithData(void *self, void *data, u32 size) {
     u8 *app;
 

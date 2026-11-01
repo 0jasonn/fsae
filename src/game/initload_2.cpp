@@ -2,8 +2,6 @@
 #include "global.h"
 #include "game/e_decls.h"
 
-extern "C" void initBgCharWithLoadVram(BGInfo *bg, u32 layer, s32 index, u32 offset, u32 freeFlag);
-
 // initBgCharWithLoadVram (0x020ac594): loads character data of a resource, sends it to VRAM, optionally frees it
 void initBgCharWithLoadVram(BGInfo *bg, u32 layer, s32 index, u32 offset, u32 freeFlag) {
     u32 size;

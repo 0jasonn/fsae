@@ -7,7 +7,6 @@
 //   selectionDialog::update_close (0x020a2268)
 
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 

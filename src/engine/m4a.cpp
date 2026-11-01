@@ -10,7 +10,6 @@
 
 // m4aSoundInit (0x0208cda4): clears the sound globals and the wave tables, opens the two data files, sets up the
 // sound heap and the archive, loads the first sound group and starts the wave table.
-extern "C" void m4aSoundInit(void);
 void m4aSoundInit(void) {
     Knife::File::Entity *entity;
     Knife::File::Entity *entity2;

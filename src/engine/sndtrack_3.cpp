@@ -13,7 +13,6 @@ void SndPending_AppendLocked(u8 *node);
 }
 
 // SndTrack_ReleaseCounted: decrements the track's counter and releases its channel when the counter reaches zero.
-extern "C" void SndTrack_ReleaseCounted(SndTrack *track);
 void SndTrack_ReleaseCounted(SndTrack *track) {
     if (track->counter == 0) {
         return;
@@ -27,7 +26,6 @@ void SndTrack_ReleaseCounted(SndTrack *track) {
 
 // SndList_MoveMatching: with interrupts off, unlinks every node of the list whose key at +8 equals key and queues it on
 // the pending list.
-extern "C" void SndList_MoveMatching(SndList *list, s32 key);
 void SndList_MoveMatching(SndList *list, s32 key) {
     u32 irq;
     u8 *node;

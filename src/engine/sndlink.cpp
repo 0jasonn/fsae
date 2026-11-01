@@ -31,7 +31,6 @@ void func_020c2004(void *list, void *node) {
 }
 
 // func_020c2064: the node after node, or the first node when node is null.
-extern "C" u8 *func_020c2064(SndList *list, u8 *node);
 u8 *func_020c2064(SndList *list, u8 *node) {
     if (node == 0) {
         return list->first;
@@ -40,7 +39,6 @@ u8 *func_020c2064(SndList *list, u8 *node) {
 }
 
 // SndList_GetPrev: the node before node, or the last node when node is null.
-extern "C" u8 *SndList_GetPrev(SndList *list, u8 *node);
 u8 *SndList_GetPrev(SndList *list, u8 *node) {
     if (node == 0) {
         return list->last;

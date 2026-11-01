@@ -45,7 +45,6 @@ BOOL Knife_Comm_WirelessManager_allocMPBuffer(void *self) {
 
 // WirelessManager::deleteMPBuffer (0x02092528): frees the send and receive buffers through the allocator (slot 1) and
 // clears their pointers and sizes.
-extern "C" void Knife_Comm_WirelessManager_deleteMPBuffer(void *self);
 void Knife_Comm_WirelessManager_deleteMPBuffer(void *self) {
     WmDWork *wm;
     void *recv;

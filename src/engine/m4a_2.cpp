@@ -30,7 +30,6 @@ void m4aSongNumStop(u16 songNum) {
 }
 
 // m4aMPlayAllStop (0x0208d5b4): stops every sound and clears the pending wave id
-extern "C" void m4aMPlayAllStop(void);
 void m4aMPlayAllStop(void) {
     Knife_Sound_System_fwd_08c630();
     ((M4aSoundTable *)&data_02176238)->waveId = 0;

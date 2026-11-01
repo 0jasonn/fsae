@@ -23,7 +23,6 @@ void m4aSongNumSetPlayerValue(u16 songNum, s32 value) {
 
 // m4aSongNumSetParam (0x0208d7c8): sets the parameter of both wave slots (numbers 0x1ea to 0x1f3) or of the song handle.
 // The second argument is not read.
-extern "C" void m4aSongNumSetParam(u16 songNum, u16 unused, s32 param);
 void m4aSongNumSetParam(u16 songNum, u16 unused, s32 param) {
     s32 i;
     void *handle;

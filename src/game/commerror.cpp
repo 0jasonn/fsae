@@ -64,7 +64,6 @@ int CommStatusSync(u8 status) {
 }
 
 // comerror_error_check (0x020298d0): as CommStatusSync, and the connection bits must equal the matched players.
-extern "C" int comerror_error_check(u8 value);
 int comerror_error_check(u8 value) {
     u8 matched = 0;
     u8 expected;

@@ -7,7 +7,6 @@
 //   selectionDialog::isModal (0x020a1d08), getResult (0x020a1d20), update_open (0x020a1d34)
 
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void MI_CpuFill(void *dst, u32 value, u32 size);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 

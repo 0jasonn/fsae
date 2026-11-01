@@ -27,7 +27,6 @@ s32 SndRecord_Create(SndRecord *record, void *heap) {
 
 // SndRecord_Alloc: allocates a 0x14-byte entry from the record's heap, resets it and adds it to the list. Returns 1 when
 // the entry was allocated, 0 otherwise.
-extern "C" s32 SndRecord_Alloc(SndRecord *record);
 s32 SndRecord_Alloc(SndRecord *record) {
     void *entry;
 

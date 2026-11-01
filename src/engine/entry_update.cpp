@@ -6,7 +6,6 @@
 // Processes one entry: NULL walks the whole table through Entries_ProcessAll. A finished or mode-less entry fails with
 // -1; kind 1 is done; state 1 runs the timer step and retires the entry, the other states settle to 0. A failing timer
 // step marks the entry finished and returns -1.
-extern "C" s32 Entry_Update(u8 *entry);
 
 s32 Entry_Update(u8 *entry) {
     EntryRec *rec;

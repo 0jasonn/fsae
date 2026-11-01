@@ -4,7 +4,6 @@
 #include "engine/sndtrack.h"
 
 // SndTrack_Reset: releases the track's handle word and clears flag bits 0 to 2.
-extern "C" void SndTrack_Reset(SndTrack *track);
 void SndTrack_Reset(SndTrack *track) {
     if (track->handle != 0) {
         *track->handle = 0;
@@ -17,7 +16,6 @@ void SndTrack_Reset(SndTrack *track) {
 
 // SndTrack_Update: when the track is running and count is not zero, sets up its list with count entries and sets flag
 // bit 3. Otherwise it only calls SndTrack_Finish with the running flag (0 or -1).
-extern "C" void SndTrack_Update(SndTrack *track, s32 count);
 void SndTrack_Update(SndTrack *track, s32 count) {
     s32 running;
 

@@ -6,7 +6,6 @@
 // Advances a timer record: delta = snapshot - lastValue. When delta is nonzero it is stored, the empty stub is called
 // unless flag bit 12 is set, the callback runs and its nonzero result is returned, otherwise delta is added to the live
 // value. Timer_Snapshot runs in every path.
-extern "C" s32 Timer_Advance(TimerAdvanceRec *rec, s32 *deltaOut);
 
 s32 Timer_Advance(TimerAdvanceRec *rec, s32 *deltaOut) {
     s32 *out = deltaOut;

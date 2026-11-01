@@ -19,7 +19,6 @@ void Menu_CopyViewState(MenuList *list, MenuViewState *dst) {
 
 // Menu_SyncListRect (0x020be750): when the list is active, reads its rectangle (Work21_clear), copies the view state
 // and passes both to lobby_callWithZeroPos.
-extern "C" void Menu_SyncListRect(MenuList *list);
 void Menu_SyncListRect(MenuList *list) {
     MenuViewState state;
 

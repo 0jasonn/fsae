@@ -15,7 +15,6 @@ KnifeSoundHandleFactory *Knife_Sound_HandleFactory_dtor_HandleFactory(KnifeSound
     return self;
 }
 
-extern "C" void Knife_Sound_HandleFactory_update(KnifeSoundHandleFactory *self);
 void Knife_Sound_HandleFactory_update(KnifeSoundHandleFactory *self) {
     int i;
     for (i = 0; i < 16; i++) {
@@ -30,7 +29,6 @@ void Knife_Sound_HandleFactory_update(KnifeSoundHandleFactory *self) {
     }
 }
 
-extern "C" KnifeSoundSequenceHandle *Knife_Sound_HandleFactory_create(KnifeSoundHandleFactory *self);
 KnifeSoundSequenceHandle *Knife_Sound_HandleFactory_create(KnifeSoundHandleFactory *self) {
     int i;
     for (i = 0; i < 16; i++) {
@@ -43,7 +41,6 @@ KnifeSoundSequenceHandle *Knife_Sound_HandleFactory_create(KnifeSoundHandleFacto
     return NULL;
 }
 
-extern "C" void Knife_Sound_HandleFactory_release(KnifeSoundHandleFactory *self, KnifeSoundSequenceHandle *handle);
 void Knife_Sound_HandleFactory_release(KnifeSoundHandleFactory *self, KnifeSoundSequenceHandle *handle) {
     int i;
     for (i = 0; i < 16; i++) {
@@ -54,7 +51,6 @@ void Knife_Sound_HandleFactory_release(KnifeSoundHandleFactory *self, KnifeSound
     }
 }
 
-extern "C" KnifeSoundSequenceHandle *Knife_Sound_HandleFactory_find(KnifeSoundHandleFactory *self, u32 id);
 KnifeSoundSequenceHandle *Knife_Sound_HandleFactory_find(KnifeSoundHandleFactory *self, u32 id) {
     int i;
     for (i = 0; i < 16; i++) {
@@ -68,7 +64,6 @@ KnifeSoundSequenceHandle *Knife_Sound_HandleFactory_find(KnifeSoundHandleFactory
     return NULL;
 }
 
-extern "C" void Knife_Sound_HandleFactory_pause(KnifeSoundHandleFactory *self, s32 pause);
 void Knife_Sound_HandleFactory_pause(KnifeSoundHandleFactory *self, s32 pause) {
     int i;
     for (i = 0; i < 16; i++) {
@@ -128,7 +123,6 @@ KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_ctor(KnifeSoundSequenceHand
     return self;
 }
 
-extern "C" KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self);
 KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self) {
     knifeSoundNop3(self);
     return self;

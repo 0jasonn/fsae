@@ -4,7 +4,6 @@
 #include "game/cockpit.h"
 
 // Empty function (dsd name func_02027778, plain symbol): returns at once.
-extern "C" void func_02027778(void);
 
 void func_02027778(void) {
 }
