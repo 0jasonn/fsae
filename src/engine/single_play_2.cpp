@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/player.h"
 #include "types.h"
 #include "engine/single_play_d.h"
 #include "engine/single_play_api.h"
@@ -7,7 +8,6 @@
 // Knife::Single::SinglePlay initializers and the warp info setter, 0x02099cec to 0x02099da8. The log list is the C++
 // member SinglePlayLogList::Initialize at 0x0209a060 (mangled in symbols.txt).
 
-extern u8 data_0212ceb0[]; // PL_WORK array of the players (bss); the controlled player's fields 0x30 and 0xc4 are cleared
 
 // SinglePlay::InitializeFormation() (0x02099cec): clears the formation state and initializes the log list
 void Knife_Single_SinglePlay_InitializeFormation(void *self) {
@@ -39,8 +39,8 @@ void Knife_Single_SinglePlay_InitializeCont(void *self) {
     sp->unk_20 = 0xffff;
     sp->unk_0f = 0;
     ((Knife::Single::SinglePlay::SinglePlayLogList *)sp->unk_34)->Initialize();
-    data_0212ceb0[0x30] = 0;
-    data_0212ceb0[0xc4] = 0;
+    data_0212ceb0[0].unk_30 = 0;
+    data_0212ceb0[1].unk_30 = 0;
     sp->unk_2e = 0;
     sp->unk_2c = 0;
     sp->unk_30 = NULL;

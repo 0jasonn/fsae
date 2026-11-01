@@ -1,15 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/player.h"
 #include "object/template.h"
 #include "object/objdecls_a.h"
 
-// Target position block at data_0212c7c8 + 0x80 (x and y of the heart's target), file-local view.
-typedef struct HeartMarkerTarget {
-    /* 00 */ u8 unk_00[0x80];
-    /* 80 */ s16 targetX;
-    /* 82 */ s16 targetY;
-} HeartMarkerTarget;
-extern HeartMarkerTarget data_0212c7c8;
 
 // light_marker, 0x02069f5c: follows the actor template of its type2 (OBJ_TEMPLATE) and the animation.
 void light_marker(Entity *e) {

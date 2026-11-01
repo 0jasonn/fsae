@@ -107,7 +107,10 @@ typedef struct GameState {
     /* 6d */ u8 unk_6d;
     /* 6e */ u8 unk_6e;
     /* 6f */ u8 unk_6f;
-    /* 70 */ u8 unk_70[0x1c];
+    /* 70 */ u8 unk_70[0x10];
+    /* 80 */ s16 targetX; // target position of the heart marker (light_marker)
+    /* 82 */ s16 targetY;
+    /* 84 */ u8 unk_84[8];
     /* 8c */ u8 unk_8c;
     /* 8d */ u8 unk_8d;
     /* 8e */ u8 unk_8e;       // game state byte

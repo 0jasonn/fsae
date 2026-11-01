@@ -2,7 +2,6 @@
 #include "global.h"
 #include "object/objdecls_a.h"
 
-extern u8 data_0212ceb0[];             // PlayerData array, byte flags at 0x39, 0xcd, 0x161, 0x1f5
 extern u16 set33SpeedTable[];          // set33SpeedTable, per type
 extern u8 set33Unk2eTable[];           // set33Unk2eTable, per type
 

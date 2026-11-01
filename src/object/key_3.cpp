@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/player.h"
 #include "object/ss.h"
 #include "object/key_3.h"
 
@@ -14,11 +15,6 @@ extern const u8 keyTypeUnk21Table[];   // keyTypeUnk21Table
 extern const u8 keyTypeBankTable[];    // keyTypeBankTable, indexed by bank value or cb0 + 4
 extern u8 keyTypeFlags[];              // keyTypeFlags, rows of 8 indexed by type2
 
-// Player count is the first byte of data_0212c7c8
-typedef struct KeyPlayerState {
-    u8 playerCount;
-} KeyPlayerState;
-extern KeyPlayerState data_0212c7c8;
 
 void key_frame(Entity *e) {
     u8 action = e->action;
