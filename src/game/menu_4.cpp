@@ -36,7 +36,7 @@ ARM void Menu_SetTable(MenuWork *menu, void *const *table) {
 
 // Clears the video memory (BG and OBJ VRAM, palettes) before the menu starts.
 ARM void Menu_ClearVram(void) {
-    func_0201500c(0x1ff);
+    Vram_SetLcdcBits(0x1ff);
     MIi_CpuClearFast(0, (void *)0x6800000, 0xa4000);
     Vram_DisableBankTail();
     MIi_CpuClearFast(0xc0, (void *)0x7000000, 0x400);

@@ -8,7 +8,7 @@
 //   twlInitSubDisplay (0x02082994): sets up the sub display and the KnifeApp settings block.
 
 extern u8 frameCounter[];
-extern "C" void func_0201500c(u32 a);
+extern "C" void Vram_SetLcdcBits(u32 a);
 extern "C" void Vram_DisableBankTail(void);
 extern "C" void func_020148f0(u32 a);
 extern "C" void func_02014af4(u32 a);
@@ -25,7 +25,7 @@ ARM void BeforeTask(void) {
 
 // twlInitVRAM (0x020828d4)
 ARM void twlInitVRAM(void) {
-    func_0201500c(0x1ff);
+    Vram_SetLcdcBits(0x1ff);
     MIi_CpuClearFast(0, (void *)0x6800000, 0xa4000);
     Vram_DisableBankTail();
     MIi_CpuClearFast(0xc0, (void *)0x7000000, 0x400);

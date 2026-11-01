@@ -151,7 +151,7 @@ void Menu_Finish(MenuWork *menu);
 void Menu_UpdateView(MenuWork *menu, s32 flag);
 void Menu_Step(MenuWork *menu, s32 flag);
 void Menu_SetCursorPos(MenuWork *menu);
-void func_0201500c(s32 a);
+void Vram_SetLcdcBits(s32 a);
 void Vram_DisableBankTail(void);
 void MIi_CpuClearFast(u32 value, void *dst, u32 size);
 void Menu_Run(MenuWork *menu);

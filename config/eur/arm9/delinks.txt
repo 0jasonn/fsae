@@ -145,6 +145,10 @@ src/engine/info_kind.cpp:
     complete
     .text       start:0x0200b43c end:0x0200b458
 
+src/engine/frame_asm.cpp:
+    complete
+    .text       start:0x0200bf40 end:0x0200bf48
+
 src/engine/table_scan.cpp:
     complete
     .text       start:0x0200c09c end:0x0200c11c
@@ -205,6 +209,14 @@ src/engine/packed_optional.cpp:
     complete
     .text       start:0x0200ca58 end:0x0200ca80
 
+src/engine/ctx_asm.cpp:
+    complete
+    .text       start:0x0200ca80 end:0x0200cafc
+
+src/engine/fp_pack.cpp:
+    complete
+    .text       start:0x0200d6f8 end:0x0200d740
+
 src/engine/stub_6.cpp:
     complete
     .text       start:0x0200de04 end:0x0200de08
@@ -220,6 +232,10 @@ src/engine/fatfs_wrap.cpp:
 src/engine/engine_word.cpp:
     complete
     .text       start:0x0200e568 end:0x0200e578
+
+src/engine/fatfs_init.cpp:
+    complete
+    .text       start:0x0200e578 end:0x0200e5f8
 
 src/engine/engine_romword.cpp:
     complete
@@ -281,6 +297,10 @@ src/engine/field_kind.cpp:
     complete
     .text       start:0x02012f98 end:0x02012fd8
 
+src/engine/vram_lcdc.cpp:
+    complete
+    .text       start:0x0201500c end:0x02015030
+
 src/engine/vram_group_a.cpp:
     complete
     .text       start:0x02015084 end:0x02015120
@@ -300,6 +320,18 @@ src/engine/vram_disable.cpp:
 src/engine/dma_conflict.cpp:
     complete
     .text       start:0x02015940 end:0x020159cc
+
+src/engine/region_check.cpp:
+    complete
+    .text       start:0x020159cc end:0x02015a3c
+
+src/engine/frame_asm_2.cpp:
+    complete
+    .text       start:0x02016440 end:0x02016448
+
+src/engine/frame_asm_3.cpp:
+    complete
+    .text       start:0x02016af4 end:0x02016af8
 
 src/engine/stub_empty.cpp:
     complete
@@ -380,6 +412,10 @@ src/engine/engine_halfb.cpp:
 src/engine/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
+
+src/engine/frame_asm_4.cpp:
+    complete
+    .text       start:0x02019980 end:0x02019988
 
 src/engine/pair_setup.cpp:
     complete

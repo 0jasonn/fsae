@@ -16,7 +16,7 @@ ARM void i_restoreGfxSettings(void) {
     func_02012c40();
     GX_DispOff();
     *(u32 *)0x04001000 = *(u32 *)0x04001000 & ~0x10000;
-    func_0201500c(0x1ff);
+    Vram_SetLcdcBits(0x1ff);
     MIi_CpuClearFast(0, (void *)0x06800000, 0xa4000);
     Vram_DisableBankTail();
     MIi_CpuClearFast(0xc0, (void *)0x07000000, 0x400);
