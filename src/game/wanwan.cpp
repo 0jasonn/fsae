@@ -71,7 +71,7 @@ void wanwan_init(Entity *e) {
             e->child->type2 = e->type2 + 1;
             if (e->type2 == 4) {
                 e->child->type2 |= 0x80;
-                data_0212ceb0[e->type].unk_3d[0] = 1;
+                data_0212ceb0[e->type].unk_3d = 1;
             }
             RegistObjWork(6, e->child);
         }

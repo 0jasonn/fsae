@@ -84,7 +84,7 @@ void em0e_type0_nop(Entity *e) {
 
 void type0_motiage(Entity *e) {
     ObjHippariCheck(e);
-    if (data_0212ceb0[e->type2].unk_03[2] == 0) {
+    if (data_0212ceb0[e->type2].specialState == 0) {
         e->subAction = 6;
     }
     em0e_type0_motiageStates[e->subAction - 5](e);
@@ -94,11 +94,11 @@ void motiage0_move(Entity *e) {
     PlayerData *player = &data_0212ceb0[e->type2];
     Entity *playerEntity = player->entity;
 
-    if (player->unk_03[2] != 0) {
+    if (player->specialState != 0) {
         VARS(Vars_Em0e, e->parent)->partFlags |= (u8)((e->type2 + 4) & 0xff);
         if (playerEntity->frame != 0) {
             if ((playerEntity->animationState & 2) == 0) {
-                player->unk_03[2] = 0;
+                player->specialState = 0;
                 playerEntity->iframes = 0xfe;
                 playerEntity->unk_42 = 2;
                 playerEntity->baseDirection = (playerEntity->animationState ^ 4) << 2;
@@ -143,11 +143,11 @@ void motiage1_move(Entity *e) {
     PlayerData *player = &data_0212ceb0[e->type2];
     Entity *playerEntity = player->entity;
 
-    if (player->unk_03[2] != 0) {
+    if (player->specialState != 0) {
         VARS(Vars_Em0e, e->parent)->partFlags |= (u8)(((e->type2 + 4) << 4) & 0xff);
         if (playerEntity->frame != 0) {
             if ((playerEntity->animationState & 2) == 0) {
-                player->unk_03[2] = 0;
+                player->specialState = 0;
                 playerEntity->iframes = 0xfe;
                 playerEntity->unk_42 = 2;
                 playerEntity->baseDirection = (playerEntity->animationState ^ 4) << 2;

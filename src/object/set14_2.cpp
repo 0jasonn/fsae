@@ -21,16 +21,16 @@ void set14_move(Entity *e) {
     VARS(Vars_Set14Move, e)->prevFrame = e->frame;
     UpdateAnimationSingleFrame(e);
     result = 0;
-    if ((data_0212ceb0[0].unk_0d[2] & 3) == 3) {
+    if ((data_0212ceb0[0].unk_0f & 3) == 3) {
         result |= plkaiten(e, data_0212ceb0[0].entity);
     }
-    if ((data_0212ceb0[1].unk_0d[2] & 3) == 3) {
+    if ((data_0212ceb0[1].unk_0f & 3) == 3) {
         result |= plkaiten(e, data_0212ceb0[1].entity);
     }
-    if ((data_0212ceb0[2].unk_0d[2] & 3) == 3) {
+    if ((data_0212ceb0[2].unk_0f & 3) == 3) {
         result |= plkaiten(e, data_0212ceb0[2].entity);
     }
-    if ((data_0212ceb0[3].unk_0d[2] & 3) == 3) {
+    if ((data_0212ceb0[3].unk_0f & 3) == 3) {
         result |= plkaiten(e, data_0212ceb0[3].entity);
     }
     VARS(Vars_Set14Move, e)->turnMask &= result;

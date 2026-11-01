@@ -55,7 +55,7 @@ void seqMove(Entity *e) {
 
 void kuttsukiReset(Entity *e) {
     data_0212ceb0[e->child->type].unk_02 = 0x41;
-    data_0212ceb0[e->child->type].unk_0a[0] = 0;
+    data_0212ceb0[e->child->type].unk_0a = 0;
     data_0212ceb0[e->child->type].statusFlags &= 0xffef;
     e->child->zVelocity = 0x18000;
     e->child->statusFlags |= 0x80;

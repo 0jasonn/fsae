@@ -29,7 +29,7 @@ void set41_move(Entity *e) {
         app = KnifeApp_getInstance();
         if (KnifeApp_isWirelessMode(app) == 0 && e->unk_47 == 2) {
             if (*Knife_Single_SinglePlay_GetInstance() == 0) {
-                data_0212ceb0[e->unk_47 - 1].unk_0a[1] = 0;
+                data_0212ceb0[e->unk_47 - 1].unk_0b = 0;
                 e->unk_47 = 0;
                 return;
             }

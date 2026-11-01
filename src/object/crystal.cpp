@@ -22,7 +22,7 @@ void cry0_init(Entity *e) {
     e->spriteSettings.b14 = 3;
     e->action = action + 1;
     e->spriteSettings.b30 = 3;
-    e->spriteSettings.b16 = 8 + ((PlFlagsByte *)&data_0212ceb0[e->type2].unk_3d[0x4e])->b2;
+    e->spriteSettings.b16 = 8 + ((PlFlagsByte *)&data_0212ceb0[e->type2].paletteBits)->b2;
     VCRY(e)->spriteWord = (VCRY(e)->spriteWord & ~0xc00) | 0x400;
     e->x.HALF.HI = TEMPLATE_OF(e->type2)->x.HALF.HI;
     e->y.HALF.HI = TEMPLATE_OF(e->type2)->y.HALF.HI + 0x18;

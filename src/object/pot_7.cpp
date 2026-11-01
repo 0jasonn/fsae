@@ -8,7 +8,7 @@
 
 void throw_hold(Entity *e) {
     // PlayerData byte at 0x05 (unk_03[2]) of the player that holds the pot: nonzero means it is still held
-    if (data_0212ceb0[e->type2].unk_03[2] != 0) {
+    if (data_0212ceb0[e->type2].specialState != 0) {
         return;
     }
     throw_holdoff(e);

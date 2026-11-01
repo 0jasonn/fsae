@@ -68,7 +68,7 @@ void set38_move(Entity *e) {
                 func_02085fd0(e);
             }
         }
-        data_0212ceb0[e->unk_47 - 1].unk_0a[1] &= 0x7f;
+        data_0212ceb0[e->unk_47 - 1].unk_0b &= 0x7f;
         e->unk_47 = 0;
     } else {
         if (e->timer != 0) {

@@ -201,7 +201,7 @@ BOOL movecheck(Entity *e) {
         if (data_0212ceb0[e->type].statusFlags & 0x100) {
             return FALSE;
         }
-        if (data_0212ceb0[e->type].unk_03[2] == 1) {
+        if (data_0212ceb0[e->type].specialState == 1) {
             return FALSE;
         }
         return e->action != 6;

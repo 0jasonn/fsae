@@ -7,7 +7,7 @@ void ObjHippariCheck(Entity *e) {
     if (frameCounter[0x12] != 0) {
         e->subAction = 6;
     }
-    if (data_0212ceb0[e->type2].unk_03[2] == 0) {
+    if (data_0212ceb0[e->type2].specialState == 0) {
         e->subAction = 6;
     }
 }

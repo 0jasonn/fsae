@@ -21,7 +21,7 @@ void tama02_init(Entity *e) {
         player->state = 0xe;
         player->stateTimer = 0xc1;
         player->unk_39 = 2;
-        player->unk_3a[0] = 0xff;
+        player->unk_3a = 0xff;
         VARS(Vars_Tama02, e)->partner->animationState = 0;
     } else if (VARS(Vars_Tama02, e)->partner->objKind == 8 && VARS(Vars_Tama02, e)->partner->objId == 4) {
         VARS(Vars_Tama02, e)->partner->unk_1a = (VARS(Vars_Tama02, e)->partner->unk_1a & 0xf0) | 6;
