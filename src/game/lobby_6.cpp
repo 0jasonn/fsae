@@ -11,7 +11,7 @@
 // the object info blocks, stops the room and the fade, and clears the wireless flag of the exchange state when the
 // device is in wireless mode
 extern "C" void subTask_lobby_end(void);
-ARM void subTask_lobby_end(void) {
+void subTask_lobby_end(void) {
     u32 slot;
 
     knife_title_dialogDelete();

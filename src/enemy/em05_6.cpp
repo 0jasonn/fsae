@@ -2,7 +2,7 @@
 #include "global.h"
 
 // em05_move1 (0x02038f3c): em05 walks in one direction for a while, then turns to a target found by func_02084f98
-ARM void em05_move1(Entity *e) {
+void em05_move1(Entity *e) {
     Entity *target;
     u8 facing;
 

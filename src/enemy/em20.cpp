@@ -8,6 +8,6 @@
 extern const u8 em20_stateTable[]; // knockback function table of em20
 
 // Knockback: passes the entity to the generic knockback with the em20 table.
-ARM void em20_knockback(Entity *e) {
+void em20_knockback(Entity *e) {
     GenericKnockback(e, em20_stateTable);
 }

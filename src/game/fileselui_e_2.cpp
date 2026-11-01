@@ -20,7 +20,7 @@ typedef struct FileSelText {
 
 // fileSelUIView::getText(Knife::Message::Text*, unsigned long, Knife::Message::Language) (0x020a8d78): fills the text
 // record for the save entry textId (entries of 0x50 bytes from 9000)
-ARM s32 fileSelUIView_getText(void *self, void *text, u32 textId, s32 language) {
+s32 fileSelUIView_getText(void *self, void *text, u32 textId, s32 language) {
     FileSelText *msg = (FileSelText *)text;
 
     msg->handle = (u32)Knife_Message_getCESObject_021770b4();

@@ -8,7 +8,7 @@
 
 void kanaamiRew(Entity *e, u16 index); // 0x0205e758, not yet in functions.h
 
-ARM void set4e_move(Entity *e) {
+void set4e_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         kanaamiRew(e, 0xcd);
@@ -31,7 +31,7 @@ extern KanaamiScroll data_0212c648; // scroll origin of the current map
 #define KANAAMI_CELL(dx, dy)                                                                              \
     ((u16)(((e->x.HALF.HI + (dx) - data_0212c648.scrollX) >> 4) | (((e->y.HALF.HI + (dy) - data_0212c648.scrollY) >> 4) << 6)))
 
-ARM void kanaamiRew(Entity *e, u16 index) {
+void kanaamiRew(Entity *e, u16 index) {
     RewCell(index, KANAAMI_CELL(-0x10, -0x10), 0x8000);
     RewCell((u16)(index + 1), KANAAMI_CELL(0, -0x10), 0x8000);
     RewCell((u16)(index + 2), KANAAMI_CELL(-0x10, 0), 0x8000);

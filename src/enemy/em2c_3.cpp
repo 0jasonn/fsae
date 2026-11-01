@@ -7,7 +7,7 @@ extern const u8 em2c_pushMasks[];
 extern const s8 em2c_pushXOffsets[];
 extern u16 data_0212c584[];
 
-ARM void type1_appear(Entity *e) {
+void type1_appear(Entity *e) {
     if (!(VE(e->parent)->eventFlags & flagBits[VL(V(e)->lockEntity)->lockBitIndex])) {
         return;
     }
@@ -24,7 +24,7 @@ ARM void type1_appear(Entity *e) {
     }
 }
 
-ARM void type1_lift(Entity *e) {
+void type1_lift(Entity *e) {
     ObjHippariCheck(e);
     if (e->subAction == 5) {
         Entity *player = data_0212ceb0[e->type2].entity;
@@ -73,7 +73,7 @@ ARM void type1_lift(Entity *e) {
     func_02085d78(e);
 }
 
-ARM void em2c_type1_move(Entity *e) {
+void em2c_type1_move(Entity *e) {
     func_02089524(e);
     if (V(e)->pushProgress != 0) {
         e->direction = (V(e)->side << 4) + 8;
@@ -83,7 +83,7 @@ ARM void em2c_type1_move(Entity *e) {
     func_02085d78(e);
 }
 
-ARM void em2c_type1_vanish(Entity *e) {
+void em2c_type1_vanish(Entity *e) {
     if (--e->timer == 0) {
         e->action = 5;
         e->spriteSettings.b0 = 0;
@@ -92,7 +92,7 @@ ARM void em2c_type1_vanish(Entity *e) {
     e->spriteSettings.b0 ^= 1;
 }
 
-ARM void em2c_type1_wait_033b38(Entity *e) {
+void em2c_type1_wait_033b38(Entity *e) {
     if (VL(V(e)->lockEntity)->lockValue != 0x10) {
         return;
     }
@@ -104,7 +104,7 @@ ARM void em2c_type1_wait_033b38(Entity *e) {
     e->x.HALF.HI = e->parent->x.HALF.HI + em2c_restXOffsets[V(e)->side];
 }
 
-ARM void em2c_type2(Entity *e) {
+void em2c_type2(Entity *e) {
     if (e->parent->health != 0) {
         if (e->action == 0) {
             e->action = 1;
@@ -126,7 +126,7 @@ ARM void em2c_type2(Entity *e) {
     }
 }
 
-ARM void em2c_type3(Entity *e) {
+void em2c_type3(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->unk_5e.b0 = 1;
@@ -165,7 +165,7 @@ ARM void em2c_type3(Entity *e) {
     }
 }
 
-ARM void em2c_type4(Entity *e) {
+void em2c_type4(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 1;
@@ -183,7 +183,7 @@ ARM void em2c_type4(Entity *e) {
 }
 
 
-ARM void em2c_leverMove(Entity *e) {
+void em2c_leverMove(Entity *e) {
     Entity *player = data_0212ceb0[e->type2].entity;
     u8 speed = em2c_pushSpeeds[V(e)->side];
     if (V(e)->pushProgress < 0x30) {

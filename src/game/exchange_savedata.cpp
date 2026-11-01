@@ -19,7 +19,7 @@ extern "C" BOOL Knife_Comm_WirelessManager_disconnect(void *manager);
 
 // exchange_savedata() (0x020b2a5c): clears the exchange buffer and starts the exchange request
 extern "C" void exchange_savedata(void);
-ARM void exchange_savedata(void) {
+void exchange_savedata(void) {
     OSi_CpuClear32(0, enemyTypeFlags, 0x20);
     ComRequest(3);
     data_0212c9a8[0x0e] = 1;
@@ -27,7 +27,7 @@ ARM void exchange_savedata(void) {
 
 // is_exchange_savedata_end() (0x020b2a90): TRUE when the exchange has ended
 extern "C" BOOL is_exchange_savedata_end(void);
-ARM BOOL is_exchange_savedata_end(void) {
+BOOL is_exchange_savedata_end(void) {
     if (*(u32 *)(data_0212c9a8 + 8) == 1) {
         return TRUE;
     }
@@ -35,12 +35,12 @@ ARM BOOL is_exchange_savedata_end(void) {
 }
 
 // lobby_noop() (0x020b2aac): empty
-ARM void lobby_noop(void) {
+void lobby_noop(void) {
 }
 
 // leaveLobby() (0x020b2ab0): leaves the wireless group (or disconnects) and resets the lobby block
 extern "C" void leaveLobby(void);
-ARM void leaveLobby(void) {
+void leaveLobby(void) {
     void *manager;
     BOOL result;
     s32 i;

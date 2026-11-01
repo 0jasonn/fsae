@@ -6,7 +6,7 @@
 #include "enemy/encnt.h"
 #include "global.h"
 
-ARM void encnt_move(void) {
+void encnt_move(void) {
     if (encntSharedState[0] == 0) {
         return;
     }

@@ -9,7 +9,7 @@ namespace Knife {
 namespace Hud {
 
 // HudManager::initialize() (0x0209e0ac): resets the manager and marks it initialized
-ARM void HudManager::initialize(void) {
+void HudManager::initialize(void) {
     finalize();
     initialized = 1;
 }

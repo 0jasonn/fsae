@@ -7,7 +7,7 @@
 //   groupSelectUIView::moveOutRoom (0x020afef4), moveReturnRoom (0x020aff84)
 
 // groupSelectUIView::moveOutRoom (0x020afef4): every room slides to x = -128 and is redrawn at its new position
-ARM void groupSelectUIView::moveOutRoom(void) {
+void groupSelectUIView::moveOutRoom(void) {
     u32 i;
     UIObject *obj;
 
@@ -19,7 +19,7 @@ ARM void groupSelectUIView::moveOutRoom(void) {
 }
 
 // groupSelectUIView::moveReturnRoom (0x020aff84): every room slides to x = 384 and is redrawn at its new position
-ARM void groupSelectUIView::moveReturnRoom(void) {
+void groupSelectUIView::moveReturnRoom(void) {
     u32 i;
     UIObject *obj;
 

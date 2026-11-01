@@ -9,7 +9,7 @@ extern PlayerData *data_0212c53c;     // current player slot pointer
 void set6c_move(Entity *e);
 
 // set6c_init(OBJ_WORK_*) (0x0209de18): attaches the object to the current player's entity
-ARM void set6c_init(Entity *e) {
+void set6c_init(Entity *e) {
     if (e->type == 0) {
         e->spriteSettings.b0 = 1;
         e->spriteSettings.b16 = data_0212c53c->entity->type + 7;

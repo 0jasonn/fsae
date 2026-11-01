@@ -5,7 +5,7 @@
 // Implementer B, round 6: fade_native_init_0464c0 (0x020464c0), fade_native_init_046538 (0x02046538).
 // Both are the native init routines of a fade-table entry; they fill random block lists.
 
-ARM void fade_native_init_0464c0(u8 param) {
+void fade_native_init_0464c0(u8 param) {
     u8 roll = Random();
     if (Random() & 1) {
         RandomBlockSet(nativeInitListA, 0);
@@ -21,7 +21,7 @@ ARM void fade_native_init_0464c0(u8 param) {
     }
 }
 
-ARM void fade_native_init_046538(u8 param) {
+void fade_native_init_046538(u8 param) {
     u32 m = Random() % 3;
     switch (m) {
     case 0:

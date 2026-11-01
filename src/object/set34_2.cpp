@@ -16,7 +16,7 @@ typedef struct Vars_Set34 {
 // set34_move, 0x0206ae0c: unless heart_areaCheck reports the actor, marks the cells around it with cellMode
 extern "C" void set34_move(Entity *e);
 
-ARM void set34_move(Entity *e) {
+void set34_move(Entity *e) {
     if (heart_areaCheck(e) != 0) {
         return;
     }

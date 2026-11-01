@@ -22,7 +22,7 @@ extern "C" void Knife_Comm_ChildInfo_cleanup(void *child);
 
 // update_scan2idle: the scan step (timer 1) returns to idle with state 2 and clears the flag.
 extern "C" void Knife_Comm_WirelessManager_update_scan2idle(void *self);
-ARM void Knife_Comm_WirelessManager_update_scan2idle(void *self) {
+void Knife_Comm_WirelessManager_update_scan2idle(void *self) {
     WmDWork *w = (WmDWork *)self;
 
     if (w->timer != 0) {

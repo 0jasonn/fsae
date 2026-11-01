@@ -5,7 +5,7 @@
 // Set41 family (module set41), 0x0206c4c0 .. 0x0206c594.
 // Address -> name: 0x0206c4c0 appear, 0x0206c4e0 set41_wait, 0x0206c558 set41_appear
 
-ARM void appear(Entity *e) {
+void appear(Entity *e) {
     u8 next;
     next = e->action + 1;
     e->timer = 0x14;
@@ -13,7 +13,7 @@ ARM void appear(Entity *e) {
     KemuriSet(e);
 }
 
-ARM void set41_wait(Entity *e) {
+void set41_wait(Entity *e) {
     Vars_Set41 *v = VARS(Vars_Set41, e);
     u8 i;
 
@@ -31,7 +31,7 @@ ARM void set41_wait(Entity *e) {
     }
 }
 
-ARM void set41_appear(Entity *e) {
+void set41_appear(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;

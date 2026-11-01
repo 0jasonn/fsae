@@ -12,11 +12,11 @@ extern "C" void Knife_Message_TextRenderer_setField64(void *self, s32 value);
 extern "C" void Knife_Message_TextRenderer_setField68(void *self, s32 value);
 
 // TextRenderer +0x64 (0x020a510c)
-ARM void Knife_Message_TextRenderer_setField64(void *self, s32 value) {
+void Knife_Message_TextRenderer_setField64(void *self, s32 value) {
     *(s32 *)((u8 *)self + 0x64) = value;
 }
 
 // TextRenderer +0x68 (0x020a5114)
-ARM void Knife_Message_TextRenderer_setField68(void *self, s32 value) {
+void Knife_Message_TextRenderer_setField68(void *self, s32 value) {
     *(s32 *)((u8 *)self + 0x68) = value;
 }

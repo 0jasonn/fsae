@@ -8,7 +8,7 @@
 // m4aSongNumStop (0x0208d52c): stops the song with the given number. Numbers 0x1ea to 0x1f3 stop both wave slots;
 // other numbers stop their handle, and clear the pending wave id when the handle has no player number.
 extern "C" void m4aSongNumStop(u16 songNum);
-ARM void m4aSongNumStop(u16 songNum) {
+void m4aSongNumStop(u16 songNum) {
     s32 i;
     void *handle;
 
@@ -31,7 +31,7 @@ ARM void m4aSongNumStop(u16 songNum) {
 
 // m4aMPlayAllStop (0x0208d5b4): stops every sound and clears the pending wave id
 extern "C" void m4aMPlayAllStop(void);
-ARM void m4aMPlayAllStop(void) {
+void m4aMPlayAllStop(void) {
     Knife_Sound_System_fwd_08c630();
     ((M4aSoundTable *)&data_02176238)->waveId = 0;
 }

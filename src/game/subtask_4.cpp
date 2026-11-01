@@ -9,7 +9,7 @@ extern u8 data_0217c23c[];
 extern u8 data_0217d23c[];
 
 // subTaskSendStop (0x0209dbc8): clears the transfer queues and the two status words.
-ARM void subTaskSendStop(void) {
+void subTaskSendStop(void) {
     u32 i;
 
     for (i = 0; i < 4; i++) {

@@ -5,7 +5,7 @@
 // SndVoice_Setup: an active voice (state nonzero) with a flag gets its sub-list set up with that capacity, its
 // priority cleared and its state set to 2. A zero flag stops the voice instead.
 extern "C" void SndVoice_Setup(SndVoice *voice, s32 flag);
-ARM void SndVoice_Setup(SndVoice *voice, s32 flag) {
+void SndVoice_Setup(SndVoice *voice, s32 flag) {
     SndVoiceFull *v = (SndVoiceFull *)voice;
 
     if (v == 0 || v->state == 0) {
@@ -22,7 +22,7 @@ ARM void SndVoice_Setup(SndVoice *voice, s32 flag) {
 
 // SndVoice_SetPaused: pauses or resumes the voice's sequence when the flag differs from the stored one.
 extern "C" void SndVoice_SetPaused(SndVoice *voice, s32 paused);
-ARM void SndVoice_SetPaused(SndVoice *voice, s32 paused) {
+void SndVoice_SetPaused(SndVoice *voice, s32 paused) {
     SndVoiceFull *v = (SndVoiceFull *)voice;
 
     if (v == 0 || paused == v->paused) {
@@ -35,7 +35,7 @@ ARM void SndVoice_SetPaused(SndVoice *voice, s32 paused) {
 // SndVoicePool_Acquire: takes a voice from the free list of a pool group, links it to the owner and returns its
 // record (cleared). Returns 0 when the free list is empty.
 extern "C" SndRecord *SndVoicePool_Acquire(s32 group, SndVoiceOwner *owner);
-ARM SndRecord *SndVoicePool_Acquire(s32 group, SndVoiceOwner *owner) {
+SndRecord *SndVoicePool_Acquire(s32 group, SndVoiceOwner *owner) {
     u8 *pool;
     SndVoiceFull *node;
 
@@ -53,7 +53,7 @@ ARM SndRecord *SndVoicePool_Acquire(s32 group, SndVoiceOwner *owner) {
 
 // SndVoice_Reset: clears the voice's flags and tag, then sets up its sub-list.
 extern "C" void SndVoice_Reset(SndVoice *voice);
-ARM void SndVoice_Reset(SndVoice *voice) {
+void SndVoice_Reset(SndVoice *voice) {
     SndVoiceFull *v = (SndVoiceFull *)voice;
 
     v->paused = 0;
@@ -70,7 +70,7 @@ ARM void SndVoice_Reset(SndVoice *voice) {
 // SndVoice_InsertSorted: queues a voice into a list before the first node of a lower priority (the node's priority
 // is compared with the voice's), then links the voice to the list.
 extern "C" void SndVoice_InsertSorted(SndList *list, SndVoice *voice);
-ARM void SndVoice_InsertSorted(SndList *list, SndVoice *voice) {
+void SndVoice_InsertSorted(SndList *list, SndVoice *voice) {
     u8 *node;
 
     node = func_020c2064(list, 0);
@@ -86,7 +86,7 @@ ARM void SndVoice_InsertSorted(SndList *list, SndVoice *voice) {
 
 // SndVoice_InsertGlobal: the same sorted insert into the global voice list.
 extern "C" void SndVoice_InsertGlobal(SndVoice *voice);
-ARM void SndVoice_InsertGlobal(SndVoice *voice) {
+void SndVoice_InsertGlobal(SndVoice *voice) {
     u8 *node;
 
     node = func_020c2064(&data_02183eb8, 0);
@@ -101,7 +101,7 @@ ARM void SndVoice_InsertGlobal(SndVoice *voice) {
 
 // SndVoice_Stop: lowers the volume of a voice in state 2, stops its sequence and releases it.
 extern "C" void SndVoice_Stop(SndVoice *voice);
-ARM void SndVoice_Stop(SndVoice *voice) {
+void SndVoice_Stop(SndVoice *voice) {
     SndVoiceFull *v = (SndVoiceFull *)voice;
 
     if (v->state == 2) {
@@ -114,7 +114,7 @@ ARM void SndVoice_Stop(SndVoice *voice) {
 // SndVoice_Allocate: takes a voice for the given priority. It comes from the free list, or else the first voice of
 // the global list is stopped when its priority is not above the new one. The voice then goes into the global list.
 extern "C" SndVoice *SndVoice_Allocate(s32 priority);
-ARM SndVoice *SndVoice_Allocate(s32 priority) {
+SndVoice *SndVoice_Allocate(s32 priority) {
     SndVoiceFull *node;
 
     node = (SndVoiceFull *)func_020c2064(&data_02183eac, 0);
@@ -134,7 +134,7 @@ ARM SndVoice *SndVoice_Allocate(s32 priority) {
 // SndVoice_Release: unlinks the voice from its list and the global list, clears its record's link and returns it to
 // the free list. The voice's record goes back to its group's list.
 extern "C" void SndVoice_Release(SndVoice *voice);
-ARM void SndVoice_Release(SndVoice *voice) {
+void SndVoice_Release(SndVoice *voice) {
     SndVoiceFull *v = (SndVoiceFull *)voice;
     SndList *list;
     SndRecord *record;

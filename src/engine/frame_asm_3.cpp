@@ -10,7 +10,7 @@ extern "C" void Frame_PopR3ToR7Return(void);
 extern "C" u32 Bits_CountLeadingZeros(u32 value);
 
 // 0x02016af4: epilogue, restores r3-r7 and returns.
-ARM asm void Frame_PopR3ToR7Return(void) {
+asm void Frame_PopR3ToR7Return(void) {
     ldmia sp!, {r3, r4, r5, r6, r7, pc}
 }
 

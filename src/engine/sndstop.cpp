@@ -18,7 +18,7 @@ void func_020c0350(void);
 // func_020c02d0: while the stop state is active in mode 0, advances the volume curve and, when the curve is
 // full (if fullCheck is set), finishes the stop. Otherwise the timer channel gets the new volume when it changed.
 extern "C" void func_020c02d0(void);
-ARM void func_020c02d0(void) {
+void func_020c02d0(void) {
     SndStopState *state;
     s32 volume;
 
@@ -45,7 +45,7 @@ ARM void func_020c02d0(void) {
 // func_020c0350: stops the stop state's timer (on its channel when the index is not negative), drains the message
 // queue, releases the channel bits and clears the active flag. Mode 1 also resets the output selector.
 extern "C" void func_020c0350(void);
-ARM void func_020c0350(void) {
+void func_020c0350(void) {
     SndStopState *state;
     u32 mask;
     u32 tag;

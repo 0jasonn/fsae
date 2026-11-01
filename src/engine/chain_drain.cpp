@@ -5,7 +5,7 @@
 
 // Chain_Drain() (0x0200c500): takes the entries off the chain at data_021277d0 one by one, unlinking each before its
 // callback is called with (arg, -1).
-ARM void Chain_Drain(void) {
+void Chain_Drain(void) {
     ChainNode *node;
     void (*callback)(void *, s32);
 

@@ -7,7 +7,7 @@
 
 // Action 6: when the timer runs out, it attacks the target with speed 0x200 and knockback 0x14 (action 8),
 // or drops its child and goes to action 6 when there is no target.
-ARM void em16_kiran(Entity *e) {
+void em16_kiran(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->timer--;
     if (e->timer != 0) {
@@ -27,7 +27,7 @@ ARM void em16_kiran(Entity *e) {
 
 // Action 7 (throw): with frame bit 0x80 set, returns to kyoroSet or starts the child's action 7. Otherwise, when the
 // frame counter is set, it fires a new projectile (EmGetTama kind 7) and gives it the actor's direction.
-ARM void em16_nage(Entity *e) {
+void em16_nage(Entity *e) {
     Entity *tama;
 
     UpdateAnimationSingleFrame(e);
@@ -56,7 +56,7 @@ ARM void em16_nage(Entity *e) {
 }
 
 // Action 8 (watch): with a child, and a target, the actor starts the attack (speed 0x200, knockback 0x14).
-ARM void em16_watch(Entity *e) {
+void em16_watch(Entity *e) {
     if (e->child != NULL) {
         if (V(e)->target == NULL) {
             return;
@@ -71,7 +71,7 @@ ARM void em16_watch(Entity *e) {
 }
 
 // Dash: once the actor is not blocked (func_020847a0 is zero), it turns around and moves with speed 0x80.
-ARM void em16_dush(Entity *e) {
+void em16_dush(Entity *e) {
     func_02085990(e);
     if (func_020847a0(e) != 0) {
         return;
@@ -83,7 +83,7 @@ ARM void em16_dush(Entity *e) {
 }
 
 // Starts the walk: action 1, no target, the animation for the current direction (index + 4).
-ARM void kyoroSet(Entity *e) {
+void kyoroSet(Entity *e) {
     e->action = 1;
     V(e)->target = NULL;
     e->animationState = e->direction >> 3;
@@ -92,7 +92,7 @@ ARM void kyoroSet(Entity *e) {
 
 // Returns 1 while the wait timer runs or the direction does not match func_02084ac8(e, 0xc). Otherwise it spawns a
 // 0x38-byte child (the target, when there is one), starts action 5 and returns 0.
-ARM BOOL frontCheck(Entity *e) {
+BOOL frontCheck(Entity *e) {
     Entity *child;
 
     if (V(e)->waitTimer == 0) {

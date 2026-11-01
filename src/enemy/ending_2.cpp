@@ -5,7 +5,7 @@
 // Implementer B, round 6: ending_init (0x020443a0), ending_link_init (0x02044530), ending_rescue (0x02044638),
 // ending_msgFinishWait (0x020446b4).
 
-ARM void ending_init(void) {
+void ending_init(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }
@@ -45,7 +45,7 @@ ARM void ending_init(void) {
     data_021349c0.frames = 0;
 }
 
-ARM void ending_link_init(void) {
+void ending_link_init(void) {
     u8 i;
     selectEndingLink();
     for (i = 0; i < GAME_STATE_U8(0) ; i++) {
@@ -68,7 +68,7 @@ ARM void ending_link_init(void) {
     }
 }
 
-ARM void ending_rescue(void) {
+void ending_rescue(void) {
     if (CommFrameSync() == 0) {
         return;
     }
@@ -86,7 +86,7 @@ ARM void ending_rescue(void) {
     CommFrameUpdate();
 }
 
-ARM BOOL ending_msgFinishWait(void) {
+BOOL ending_msgFinishWait(void) {
     u8 i;
     for (i = 0; i < GAME_STATE_U8(0); i++) {
         if (data_0212c584[i] & 0x1000) {

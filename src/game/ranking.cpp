@@ -40,6 +40,6 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void RankingTask(void) {
+void RankingTask(void) {
     rankingStepTable[data_0212c500]();
 }

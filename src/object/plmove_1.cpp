@@ -16,7 +16,7 @@ extern "C" void getarea(Entity *e);
 extern "C" int func_02086120(Entity *e);
 
 // plmove (0x0206cc9c)
-ARM void plmove(Entity *e) {
+void plmove(Entity *e) {
     Vars_PlMove *vars;
     s32 x;
     s32 y;

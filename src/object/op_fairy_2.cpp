@@ -23,7 +23,7 @@ typedef struct Vars_Fairy {
     /* 62 */ s16 homeY;
 } Vars_Fairy;
 
-ARM void fairy_move(Entity *e) {
+void fairy_move(Entity *e) {
     Vars_Fairy *v = VARS(Vars_Fairy, e);
 
     UpdateAnimationSingleFrame(e);
@@ -35,7 +35,7 @@ ARM void fairy_move(Entity *e) {
     v->homeY = e->y.HALF.HI;
 }
 
-ARM void fairy_fuwafuwa_05f560(Entity *e) {
+void fairy_fuwafuwa_05f560(Entity *e) {
     Vars_Fairy *v = VARS(Vars_Fairy, e);
     u8 timer;
 
@@ -50,7 +50,7 @@ ARM void fairy_fuwafuwa_05f560(Entity *e) {
     e->timer = timer + 1;
 }
 
-ARM void fairy_talk(Entity *e) {
+void fairy_talk(Entity *e) {
     u8 timer;
 
     UpdateAnimationSingleFrame(e);
@@ -63,7 +63,7 @@ ARM void fairy_talk(Entity *e) {
     }
 }
 
-ARM void op_bikkuri(Entity *e) {
+void op_bikkuri(Entity *e) {
     switch (e->action) {
     case 0:
         e->spriteSettings.b0 = 1;
@@ -86,7 +86,7 @@ ARM void op_bikkuri(Entity *e) {
     }
 }
 
-ARM void op_sword(Entity *e) {
+void op_sword(Entity *e) {
     switch (e->action) {
     case 0:
         e->spriteSettings.b0 = 1;

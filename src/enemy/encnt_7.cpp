@@ -5,7 +5,7 @@
 #include "enemy/encnt.h"
 #include "global.h"
 
-ARM void plbackatt(EncntEntry *e, u16 index) {
+void plbackatt(EncntEntry *e, u16 index) {
     if (e->initialised == 0) {
         plbackinit(e, index);
     }
@@ -14,7 +14,7 @@ ARM void plbackatt(EncntEntry *e, u16 index) {
     }
 }
 
-ARM void plfrontatt(EncntEntry *e, u16 index) {
+void plfrontatt(EncntEntry *e, u16 index) {
     if (e->initialised == 0) {
         plfrontinit(e, index);
     }

@@ -24,12 +24,12 @@ void func_02084460(void);
 #define ENTITY_POOL_STRIDE 0x80
 
 // Clears the whole entity pool (0x5000 bytes)
-ARM void ObjWorkPoolClear(void) {
+void ObjWorkPoolClear(void) {
     OSi_CpuClear32(0, data_0212f890, 0x5000);
 }
 
 // Resets every list head to point at itself and clears the three list counters
-ARM void ObjMoveInit(void) {
+void ObjMoveInit(void) {
     EntityNode *end;
     EntityNode *node;
 
@@ -49,7 +49,7 @@ ARM void ObjMoveInit(void) {
 
 // Runs the per-kind update function of every entity in every list. data_0212c52c follows the walk so that an entity
 // removed by its own update does not break the loop.
-ARM void ObjMove(void) {
+void ObjMove(void) {
     EntityNode *node;
     EntityNode *end;
     EntityNode *list;
@@ -79,7 +79,7 @@ ARM void ObjMove(void) {
 }
 
 // First free entity in the main pool (its link word is 0), or NULL
-ARM Entity *GetObjWork(void) {
+Entity *GetObjWork(void) {
     u8 *p;
     u8 *end;
 
@@ -97,7 +97,7 @@ ARM Entity *GetObjWork(void) {
 }
 
 // Next free entity after start, searching up to data_02134890
-ARM Entity *GetObjWork2(Entity *start) {
+Entity *GetObjWork2(Entity *start) {
     u8 *p;
     u8 *end;
 
@@ -118,7 +118,7 @@ ARM Entity *GetObjWork2(Entity *start) {
 }
 
 // First free entity of the special pool (data_02134290..data_02134890)
-ARM Entity *GetObjWorkSp(void) {
+Entity *GetObjWorkSp(void) {
     u8 *p;
     u8 *end;
 
@@ -136,7 +136,7 @@ ARM Entity *GetObjWorkSp(void) {
 }
 
 // Takes a free entity for an enemy with the given id and registers it in list 4
-ARM Entity *GetEnemyWork(u16 id) {
+Entity *GetEnemyWork(u16 id) {
     Entity *e;
 
     e = GetObjWork();
@@ -150,7 +150,7 @@ ARM Entity *GetEnemyWork(u16 id) {
 }
 
 // Takes a free entity for a shot with the given id and registers it in list 5
-ARM Entity *GetTamaWork(u16 id) {
+Entity *GetTamaWork(u16 id) {
     Entity *e;
 
     e = GetObjWork();
@@ -164,7 +164,7 @@ ARM Entity *GetTamaWork(u16 id) {
 }
 
 // Takes a free entity for a shot with the given id and registers it in list 3
-ARM Entity *GetTamaWork2(u16 id) {
+Entity *GetTamaWork2(u16 id) {
     Entity *e;
 
     e = GetObjWork();
@@ -178,7 +178,7 @@ ARM Entity *GetTamaWork2(u16 id) {
 }
 
 // Allocates a child of parent (same kind and list), copies its type and position data and registers it
-ARM Entity *GetChildWork(Entity *parent, u8 type, u8 type2) {
+Entity *GetChildWork(Entity *parent, u8 type, u8 type2) {
     Entity *child;
     u8 kind;
 

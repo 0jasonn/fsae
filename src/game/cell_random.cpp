@@ -10,7 +10,7 @@
 extern const u16 data_020d7d92[];
 
 // Places the baneyuka tile at the cell of key, in layer 0 or 0x20 (picked at random)
-ARM void random_baneyuka_set(u16 key, u16 index) {
+void random_baneyuka_set(u16 key, u16 index) {
     s32 cell;
 
     cell = SearchCellTbl(data_020d7d92, key);
@@ -28,7 +28,7 @@ extern u32 bgmIndexTable[];
 extern u8 data_0212c7c8[];
 
 // Places the ochiba tile at the cell of key, chosen at random (the 0x8000 variant is used for key 0xcb)
-ARM void random_ochiba_set(u16 key, u16 index) {
+void random_ochiba_set(u16 key, u16 index) {
     u8 state;
     u8 *row;
     u16 tile;
@@ -56,7 +56,7 @@ ARM void random_ochiba_set(u16 key, u16 index) {
 }
 
 // Places the rupeemizu tile at the cell of key 0x82, chosen at random between two tiles
-ARM void random_rupeemizu_set(u16 key, u16 index) {
+void random_rupeemizu_set(u16 key, u16 index) {
     u8 state;
     u8 *row;
     u16 tile;

@@ -9,7 +9,7 @@ extern const EntityFunc data_020dca78[]; // Tama0b action table for type != 0
 extern const EntityFunc data_020dca60[]; // Tama0b action table for type 0
 
 // Tama0a, 0x0207c974. Runs the action while the parent is alive (its health byte is nonzero), otherwise removes it.
-ARM void Tama0a(Entity *e) {
+void Tama0a(Entity *e) {
     if (e->parent->health != 0) {
         data_020dc9ec[e->action](e);
     } else {
@@ -18,7 +18,7 @@ ARM void Tama0a(Entity *e) {
 }
 
 // tama0a_init, 0x0207c9a8. Copies the parent's sprite settings and position, then starts the first action.
-ARM void tama0a_init(Entity *e) {
+void tama0a_init(Entity *e) {
     Entity *parent = e->parent;
     e->action = 1;
     e->spriteSettings.b0 = 1;
@@ -32,7 +32,7 @@ ARM void tama0a_init(Entity *e) {
 
 // tama0a_move, 0x0207ca34. Follows the parent, runs the animation and, when the frame bit 0 is set on a type 0
 // actor, spawns or moves the matching child. Removes the actor when frame bit 7 is set.
-ARM void tama0a_move(Entity *e) {
+void tama0a_move(Entity *e) {
     Entity *other;
     ObjPosCopyOfs32(e->parent, e, 0, 1);
     UpdateAnimationSingleFrame(e);
@@ -66,7 +66,7 @@ ARM void tama0a_move(Entity *e) {
 }
 
 // Tama0b, 0x0207cb1c. Runs the action of the table for its type.
-ARM void Tama0b(Entity *e) {
+void Tama0b(Entity *e) {
     if (e->type != 0) {
         data_020dca78[e->action](e);
     } else {

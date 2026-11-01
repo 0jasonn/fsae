@@ -28,11 +28,11 @@ void srchDoor(Entity *e);
 void rewHalf(Entity *e);
 void set6b_rewDoor(Entity *e);
 
-ARM void Set08(Entity *e) {
+void Set08(Entity *e) {
     data_020d92c0[e->action](e);
 }
 
-ARM void set08_init(Entity *e) {
+void set08_init(Entity *e) {
     e->action = 1;
     e->timer = 0x18;
     VARS(Vars_Set08, e)->typeBits = ParseTypeBits(e->type);
@@ -41,7 +41,7 @@ ARM void set08_init(Entity *e) {
     doorCheck(e);
 }
 
-ARM void set08_wait(Entity *e) {
+void set08_wait(Entity *e) {
     u32 bits;
 
     if (e->type2 & 0x80) {
@@ -57,7 +57,7 @@ ARM void set08_wait(Entity *e) {
     srchDoor(e);
 }
 
-ARM void set08_open(Entity *e) {
+void set08_open(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action = 3;
@@ -70,7 +70,7 @@ ARM void set08_open(Entity *e) {
     func_02085f98(e, 0x11);
 }
 
-ARM void set08_move(Entity *e) {
+void set08_move(Entity *e) {
     set6b_rewDoor(e);
     PutObjWork(e);
 }

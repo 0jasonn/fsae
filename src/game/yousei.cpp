@@ -23,7 +23,7 @@ extern "C" int func_02081b64(void);
 
 // func_02081b64 (0x02081b64): true when every player in the game state has bit 9 set in its status word.
 // Unmangled: implementer D's set58 calls it through extern "C".
-ARM int func_02081b64(void) {
+int func_02081b64(void) {
     s32 i;
     s32 count;
 
@@ -37,7 +37,7 @@ ARM int func_02081b64(void) {
 }
 
 // YouseiDemoTask (0x02081ba4)
-ARM void YouseiDemoTask(void) {
+void YouseiDemoTask(void) {
     switch (data_0212c500) {
     case 0:
     case 4:
@@ -63,7 +63,7 @@ ARM void YouseiDemoTask(void) {
 }
 
 // demolink_set (0x02081c50): places each player's demo object at its table position and sets the player's demo state.
-ARM void demolink_set(void) {
+void demolink_set(void) {
     u8 i;
     s16 *pos;
     Entity *e;

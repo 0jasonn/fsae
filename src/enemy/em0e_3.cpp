@@ -34,7 +34,7 @@ extern EntityFunc em0e_type3_actions[];
 extern s8 em0e_type3_moveOffsets[];
 extern u16 scrollArgs[3];
 
-ARM void type2_damage(Entity *e) {
+void type2_damage(Entity *e) {
     Vars_Em0e *vars;
 
     if (e->action == 1) {
@@ -61,7 +61,7 @@ ARM void type2_damage(Entity *e) {
     GenericKnockback(e, em0e_type2_actions);
 }
 
-ARM void type2_buttobi(Entity *e) {
+void type2_buttobi(Entity *e) {
     Vars_Em0e *vars;
     s32 y;
 
@@ -82,7 +82,7 @@ ARM void type2_buttobi(Entity *e) {
     vars->partFlags = 0;
 }
 
-ARM void type2_die(Entity *e) {
+void type2_die(Entity *e) {
     Entity *spawn;
 
     func_02085d34(e);
@@ -101,7 +101,7 @@ ARM void type2_die(Entity *e) {
     EmDie(e);
 }
 
-ARM void em0e_type2_init(Entity *e) {
+void em0e_type2_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 6;
     e->statusFlags |= 0x80;
@@ -113,7 +113,7 @@ ARM void em0e_type2_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em0e_type2_move(Entity *e) {
+void em0e_type2_move(Entity *e) {
     if (e->animationState == 2) {
         e->poseId = 0x18;
         e->hitbox = (const void *)em0e_template[38];

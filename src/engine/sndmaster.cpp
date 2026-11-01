@@ -13,7 +13,7 @@ void SND_ResetMasterPan(void);
 
 // SndMaster_SetPan (0x020bf23c): sets the master pan to the centre when the flag is set, otherwise resets it.
 extern "C" void SndMaster_SetPan(s32 enable);
-ARM void SndMaster_SetPan(s32 enable) {
+void SndMaster_SetPan(s32 enable) {
     if (enable != 0) {
         SND_SetMasterPan(0x40);
     } else {

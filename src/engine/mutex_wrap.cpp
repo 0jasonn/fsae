@@ -7,10 +7,10 @@
 extern "C" void Mutex_LockGlobal(void);
 extern "C" void Mutex_UnlockGlobal(void);
 
-ARM void Mutex_LockGlobal(void) {
+void Mutex_LockGlobal(void) {
     OS_LockMutexFromWToR(data_02129d94);
 }
 
-ARM void Mutex_UnlockGlobal(void) {
+void Mutex_UnlockGlobal(void) {
     OS_UnlockMutex(data_02129d94);
 }

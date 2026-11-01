@@ -6,5 +6,5 @@
 
 // TextRender::onReadNop() (0x020a1390): an empty tag handler
 extern "C" void Knife_Message_TextRender_onReadNop(void *a);
-ARM void Knife_Message_TextRender_onReadNop(void *a) {
+void Knife_Message_TextRender_onReadNop(void *a) {
 }

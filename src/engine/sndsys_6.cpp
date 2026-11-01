@@ -32,7 +32,7 @@ extern "C" SndStopState data_0218485c;
 // SndSys_StopActiveTimer: when the stop state is active, stops its timer (the channel's bit, or none when the index is
 // negative), then flushes the command queue and waits for the last command.
 extern "C" void SndSys_StopActiveTimer(void);
-ARM void SndSys_StopActiveTimer(void) {
+void SndSys_StopActiveTimer(void) {
     SndStopState *state;
     s32 index;
     u32 mask;
@@ -53,7 +53,7 @@ ARM void SndSys_StopActiveTimer(void) {
 // SndSys_StartActiveTimer: when the stop state is active, clears and flushes its two buffers, then starts its timer on the
 // channel's bit (or none when the index is negative).
 extern "C" void SndSys_StartActiveTimer(void);
-ARM void SndSys_StartActiveTimer(void) {
+void SndSys_StartActiveTimer(void) {
     SndStopState *state;
     u32 mask;
 

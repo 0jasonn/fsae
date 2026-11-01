@@ -13,7 +13,7 @@ namespace Knife {
 namespace Message {
 
 // TextTokenizer::onReadRubyEndTag() (0x0208f21c)
-ARM void TextTokenizer::onReadRubyEndTag(void) {
+void TextTokenizer::onReadRubyEndTag(void) {
     BOOL ok;
     u32 freeBytes;
     u8 *token;

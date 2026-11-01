@@ -9,7 +9,7 @@ namespace Knife {
 namespace Message {
 
 // MessageTextRender::onReadTextSETag(Voice) (0x020a08f0): stores the voice of the speech tag (voices 0 to 3 only)
-ARM void MessageTextRender::onReadTextSETag(Voice voice) {
+void MessageTextRender::onReadTextSETag(Voice voice) {
     switch (voice) {
     case VOICE_0:
     case VOICE_1:

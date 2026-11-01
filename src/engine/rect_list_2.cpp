@@ -40,7 +40,7 @@ extern "C" void Heap_VirtualFree(void *heap, void *block);
 // RectObjList_init(self) (0x020b826c, provisional name): RectObj_init, the vtable data_02126dc4, the value -1 at
 // +0x14 and a zero count. Returns self.
 extern "C" void *RectObjList_init(RectObjList *self);
-ARM void *RectObjList_init(RectObjList *self) {
+void *RectObjList_init(RectObjList *self) {
     RectObj_init(self);
     self->vtable = data_02126dc4;
     self->field14 = (void *)-1;
@@ -50,7 +50,7 @@ ARM void *RectObjList_init(RectObjList *self) {
 
 // RectObjList_init2(self) (0x020b829c, provisional name): the same code as RectObjList_init
 extern "C" void *RectObjList_init2(RectObjList *self);
-ARM void *RectObjList_init2(RectObjList *self) {
+void *RectObjList_init2(RectObjList *self) {
     RectObj_init(self);
     self->vtable = data_02126dc4;
     self->field14 = (void *)-1;
@@ -61,7 +61,7 @@ ARM void *RectObjList_init2(RectObjList *self) {
 // RectObjList_setGeometry(self, pos, size, value) (0x020b82cc, provisional name): the same code as
 // RectObjLink_setGeometry
 extern "C" void RectObjList_setGeometry(RectObjList *self, s16 *pos, s16 *size, s32 value);
-ARM void RectObjList_setGeometry(RectObjList *self, s16 *pos, s16 *size, s32 value) {
+void RectObjList_setGeometry(RectObjList *self, s16 *pos, s16 *size, s32 value) {
     self->offsetX = pos[0];
     self->offsetY = pos[1];
     self->sizeX = size[0];

@@ -8,7 +8,7 @@
 // value. Timer_Snapshot runs in every path.
 extern "C" s32 Timer_Advance(TimerAdvanceRec *rec, s32 *deltaOut);
 
-ARM s32 Timer_Advance(TimerAdvanceRec *rec, s32 *deltaOut) {
+s32 Timer_Advance(TimerAdvanceRec *rec, s32 *deltaOut) {
     s32 *out = deltaOut;
     TimerAdvanceRec *timer = rec;
     s32 result;

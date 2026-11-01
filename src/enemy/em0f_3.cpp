@@ -4,7 +4,7 @@
 #include "global.h"
 #include "enemy/em0f_2.h"
 
-ARM void vacuumSet(Entity *e) {
+void vacuumSet(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     e->action = 0xa;
@@ -14,7 +14,7 @@ ARM void vacuumSet(Entity *e) {
 }
 
 
-ARM void thunderSet(Entity *e) {
+void thunderSet(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
     Entity *tama;
 
@@ -28,7 +28,7 @@ ARM void thunderSet(Entity *e) {
 }
 
 
-ARM void homingSet(Entity *e) {
+void homingSet(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     e->action = 6;

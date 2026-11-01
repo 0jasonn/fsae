@@ -16,7 +16,7 @@ extern "C" void Os_ExitCurrentThread(void);
 
 // Os_ExitCurrentThread() (0x02017a00): takes the current thread off its queues and mutexes, marks it as state 2, wakes its
 // wait object and terminates the thread for good.
-ARM void Os_ExitCurrentThread(void) {
+void Os_ExitCurrentThread(void) {
     OsThreadRec *thread;
 
     thread = *data_0212991c.curHolder;

@@ -17,7 +17,7 @@ namespace Knife {
 
 // Knife::i_initM2dLibrary() (0x020c7da0): copies the configuration block, builds three slot pointers into
 // data_02187070 (8 bytes apart) and passes them with the manual object to the library setup
-ARM void i_initM2dLibrary(void) {
+void i_initM2dLibrary(void) {
     void *slots[3];
     KnifeM2dConfig config;
     s32 i;

@@ -27,7 +27,7 @@ extern "C" void Knife_Comm_WirelessManager_deleteMPBuffer(void *self);
 extern "C" void Knife_Comm_WirelessManager_internalReset(void *self);
 extern char data_0211b244[];
 extern "C" void Knife_Comm_WirelessManager_update_parent2idle(void *self);
-ARM void Knife_Comm_WirelessManager_update_parent2idle(void *self) {
+void Knife_Comm_WirelessManager_update_parent2idle(void *self) {
     WmDWork *w = (WmDWork *)self;
     u32 code;
     s32 i;

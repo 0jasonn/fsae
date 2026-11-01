@@ -28,7 +28,7 @@ typedef struct SubtaskBgChunkObj {
 } SubtaskBgChunkObj;
 
 extern "C" void subTask_init_bg2_lang(int a, int b);
-ARM void subTask_init_bg2_lang(int a, int b) {
+void subTask_init_bg2_lang(int a, int b) {
     SubtaskLangBgBlock *blk;
     SubtaskBgChunkObj *obj;
     s32 size;

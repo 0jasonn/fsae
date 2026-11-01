@@ -14,7 +14,7 @@ extern "C" void Knife_Message_MessageTextRender_changePalette(MessageTextRender 
 // MessageTextRender::onReadColorTag(ColorType) (0x020a0dcc): clears the colour reset flag and sets the palette of the
 // colour given by the two tables
 extern "C" void Knife_Message_MessageTextRender_onReadColorTag(MessageTextRender *self, s32 colorType);
-ARM void Knife_Message_MessageTextRender_onReadColorTag(MessageTextRender *self, s32 colorType) {
+void Knife_Message_MessageTextRender_onReadColorTag(MessageTextRender *self, s32 colorType) {
     u8 index;
     u8 palette;
 

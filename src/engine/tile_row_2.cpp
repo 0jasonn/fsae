@@ -12,7 +12,7 @@ extern "C" void func_020b7578(void *self, void **src);
 // TileMap_setupFromSrc(self, src) (0x020b7528, provisional name): sets up self from the record that src points to
 // through its pointer. Returns self.
 extern "C" void *TileMap_setupFromSrc(void *self, void **src);
-ARM void *TileMap_setupFromSrc(void *self, void **src) {
+void *TileMap_setupFromSrc(void *self, void **src) {
     TileRecord *rec;
 
     rec = *(TileRecord **)*src;

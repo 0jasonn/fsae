@@ -14,7 +14,7 @@ typedef struct KnifeInfoGetter {
 // KnifeInfoGetter::getVariable(int) const (0x020a1668): the variable index (0 to 3) of the info block, or 0 for other
 // indexes; the fallback value while there is no info block
 extern "C" s32 Knife_Message_KnifeInfoGetter_getVariable(const void *a, s32 index);
-ARM s32 Knife_Message_KnifeInfoGetter_getVariable(const void *a, s32 index) {
+s32 Knife_Message_KnifeInfoGetter_getVariable(const void *a, s32 index) {
     const KnifeInfoGetter *self = (const KnifeInfoGetter *)a;
     s32 value = 0;
 

@@ -7,7 +7,7 @@
 
 // TextRenderer::onReadPlainText(Text const*) (0x020a5e28): when the text is only measured (flag95) the width is added to
 // unk_a8, otherwise every character is drawn at unk_b0 and the position advances by its width plus the spacing
-ARM extern "C" void Knife_Message_TextRenderer_onReadPlainText(Knife::Message::TextRenderer *self,
+extern "C" void Knife_Message_TextRenderer_onReadPlainText(Knife::Message::TextRenderer *self,
                                                            const Knife::Message::Text *text) {
     Knife::Message::Text copy;
     void *app;

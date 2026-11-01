@@ -12,7 +12,7 @@ extern "C" void BgScreen_Load(s32 screen, BgLoadInfo *info);
 // in the destination and at row srcRow of the source.
 extern "C" void BgRect_Copy16(u16 *dstBase, BgLoadInfo *src, u32 srcOffset, s32 srcRow, u32 dstX, u32 dstY, u32 dstPitch,
                               u32 copyCount, s32 rowCount);
-ARM void BgRect_Copy16(u16 *dstBase, BgLoadInfo *src, u32 srcOffset, s32 srcRow, u32 dstX, u32 dstY, u32 dstPitch,
+void BgRect_Copy16(u16 *dstBase, BgLoadInfo *src, u32 srcOffset, s32 srcRow, u32 dstX, u32 dstY, u32 dstPitch,
                        u32 copyCount, s32 rowCount) {
     u32 stride;
     s32 row;
@@ -41,7 +41,7 @@ ARM void BgRect_Copy16(u16 *dstBase, BgLoadInfo *src, u32 srcOffset, s32 srcRow,
 // BgLoad_Resources (provisional name): loads the palette when both the palette and the load block are given, the character
 // data when charData is given, and the BG screen when the load block is given.
 extern "C" void BgLoad_Resources(s32 screen, BgLoadInfo *info, void *charData, u8 *palette, void *rect, u8 *loadTable);
-ARM void BgLoad_Resources(s32 screen, BgLoadInfo *info, void *charData, u8 *palette, void *rect, u8 *loadTable) {
+void BgLoad_Resources(s32 screen, BgLoadInfo *info, void *charData, u8 *palette, void *rect, u8 *loadTable) {
     if (palette != NULL && info != NULL) {
         BgPalette_LoadAuto(screen, palette, (u8 *)info, loadTable);
     }

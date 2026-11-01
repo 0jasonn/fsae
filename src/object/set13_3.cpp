@@ -7,7 +7,7 @@
 // Set13 actor, third unit (module set13). Address -> name:
 //   0x02064690 set13_move1 (original name)
 
-ARM void set13_move1(Entity *e) {
+void set13_move1(Entity *e) {
     if (cellcheck(e)) {
         return;
     }

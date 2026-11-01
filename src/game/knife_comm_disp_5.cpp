@@ -24,7 +24,7 @@ typedef struct KnifeChoiceBlock {
 
 // Enqueues the choice of the message box: the A or B keys select the message of the current state, the direction keys
 // move to the next state of the row table. The block is saved and cleared when the choice is taken.
-ARM void knife_commDispEnq(KNIFE_MSGSYS *msg) {
+void knife_commDispEnq(KNIFE_MSGSYS *msg) {
     KnifeChoiceBlock *choice = (KnifeChoiceBlock *)data_0217d358;
     void *instance;
     u8 playerIndex;

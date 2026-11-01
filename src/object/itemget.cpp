@@ -7,7 +7,7 @@
 //   0x02067a3c itemget_type1_init
 
 // Init of a type 1 item: advances the action and stores the type bits of the entity.
-ARM void itemget_type1_init(Entity *e) {
+void itemget_type1_init(Entity *e) {
     u8 action;
 
     action = e->action;

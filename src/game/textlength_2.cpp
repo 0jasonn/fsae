@@ -17,7 +17,7 @@ typedef struct KnifeTextLengthAnalyzer {
 
 // TextLengthAnalyzer::onTerminate() (0x020a1704): the same count step as onReadNewLine, without the zero test
 extern "C" void Knife_Message_TextLengthAnalyzer_onTerminate(void *a);
-ARM void Knife_Message_TextLengthAnalyzer_onTerminate(void *a) {
+void Knife_Message_TextLengthAnalyzer_onTerminate(void *a) {
     KnifeTextLengthAnalyzer *self = (KnifeTextLengthAnalyzer *)a;
 
     if (self->counts[self->lineIndex] > self->maxLength) {

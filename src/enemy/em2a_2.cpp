@@ -2,7 +2,7 @@
 #include "enemy/em2a.h"
 #include "global.h"
 
-ARM void em2a_move(Entity *e) {
+void em2a_move(Entity *e) {
     flashcheck(e);
     if (e->type == 2 && V(e)->shadowLandMask != 0xf) {
         return;
@@ -58,7 +58,7 @@ ARM void em2a_move(Entity *e) {
     move3Init(e);
 }
 
-ARM void em2a_move3(Entity *e) {
+void em2a_move3(Entity *e) {
     flashcheck(e);
     if (e->type == 2 && V(e)->shadowLandMask != 0xf) {
         return;
@@ -92,7 +92,7 @@ ARM void em2a_move3(Entity *e) {
     em2a_areaCheck(e);
 }
 
-ARM void em2a_move3wait(Entity *e) {
+void em2a_move3wait(Entity *e) {
     flashcheck(e);
     if (V(e)->waitTimer != 0) {
         if (e->unk_23 != 0) {
@@ -114,7 +114,7 @@ ARM void em2a_move3wait(Entity *e) {
     move3Init(e);
 }
 
-ARM void em2a_boyon(Entity *e) {
+void em2a_boyon(Entity *e) {
     flashcheck(e);
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
@@ -122,7 +122,7 @@ ARM void em2a_boyon(Entity *e) {
     }
 }
 
-ARM void em2a_buttobi(Entity *e) {
+void em2a_buttobi(Entity *e) {
     UpdateAnimationSingleFrame(e);
     MoveDir(e);
     if (e->x.HALF.HI <= 0x184) {
@@ -156,7 +156,7 @@ ARM void em2a_buttobi(Entity *e) {
     jumpefectSet(e);
 }
 
-ARM void em2a_buttobiwait(Entity *e) {
+void em2a_buttobiwait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->hitWindow != 0) {
         V(e)->hitWindow--;
@@ -167,7 +167,7 @@ ARM void em2a_buttobiwait(Entity *e) {
     bigjumpinit(e);
 }
 
-ARM void em2a_ice(Entity *e) {
+void em2a_ice(Entity *e) {
     UpdateGravity(e, 0x2000);
     if (e->contactFlags & 0x80) {
         switch (e->contactFlags & 0x7f) {
@@ -230,7 +230,7 @@ ARM void em2a_ice(Entity *e) {
     bigjumpinit(e);
 }
 
-ARM void em2a_coreapperwait(Entity *e) {
+void em2a_coreapperwait(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->action = 9;
     InitAnimationForceUpdate(e, 0x1e);
@@ -238,7 +238,7 @@ ARM void em2a_coreapperwait(Entity *e) {
     coreSync(e);
 }
 
-ARM void em2a_coreapper(Entity *e) {
+void em2a_coreapper(Entity *e) {
     e->spriteSettings.b0 = 1;
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
@@ -251,7 +251,7 @@ ARM void em2a_coreapper(Entity *e) {
     coreSync(e);
 }
 
-ARM void em2a_coredemomove(Entity *e) {
+void em2a_coredemomove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     MoveDir(e);
     if (e->timer != 0) {
@@ -263,7 +263,7 @@ ARM void em2a_coredemomove(Entity *e) {
     coreSync(e);
 }
 
-ARM void em2a_corewait(Entity *e) {
+void em2a_corewait(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -274,7 +274,7 @@ ARM void em2a_corewait(Entity *e) {
     nearplcheck(e);
 }
 
-ARM void em2a_coremove(Entity *e) {
+void em2a_coremove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->timer != 0) {
         e->timer--;
@@ -298,7 +298,7 @@ ARM void em2a_coremove(Entity *e) {
     coreSync(e);
 }
 
-ARM void em2a_biribiri(Entity *e) {
+void em2a_biribiri(Entity *e) {
     if (e->timer-- == 0) {
         e->action = 0xa;
         e->timer = 0xf0;

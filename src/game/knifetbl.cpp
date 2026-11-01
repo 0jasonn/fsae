@@ -15,7 +15,7 @@ extern KnifeDataLoadEntry *data_0210392c[]; // 0x2b table heads
 
 // Knife_DataLoad_Tbl_Init (0x02029f10): for each table head, fills in the missing sizes of its entries. The entries of
 // one table continue while bit 31 of the key is set.
-ARM void Knife_DataLoad_Tbl_Init(void) {
+void Knife_DataLoad_Tbl_Init(void) {
     u32 i;
     KnifeDataLoadEntry *entry;
     u32 more;
@@ -45,7 +45,7 @@ typedef struct KnifeObjVramEntry {
 extern KnifeObjVramEntry *vgroupRequestTable[]; // 0x92 table heads
 
 // Knife_objvram_init (0x02029f7c): the same as Knife_DataLoad_Tbl_Init for the 0x92 objvram tables of 8-byte entries.
-ARM void Knife_objvram_init(void) {
+void Knife_objvram_init(void) {
     u32 i;
     KnifeObjVramEntry *entry;
     u32 key;

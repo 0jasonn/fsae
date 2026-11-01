@@ -2,7 +2,7 @@
 #include "object/set29.h"
 #include "global.h"
 
-ARM void set29_move(Entity *e) {
+void set29_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         InitAnimationForceUpdate(e, 0);
@@ -14,7 +14,7 @@ ARM void set29_move(Entity *e) {
     PutObjWork(e);
 }
 
-ARM BOOL test(Entity *e, u16 a, u16 b) {
+BOOL test(Entity *e, u16 a, u16 b) {
     Entity *enemy;
     if ((Random() & 0x3f) < 2) {
         enemy = GetEnemyWork(9);

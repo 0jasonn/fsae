@@ -23,7 +23,7 @@ typedef struct Vars_Yuka {
         }                                                                    \
     } while (0)
 
-ARM int rc_yukaPlMoveCheck(PlayerData *player) {
+int rc_yukaPlMoveCheck(PlayerData *player) {
     if ((((u32)((u8 *)player)[0x8b]) << 25) >> 29) {
         return 1;
     }
@@ -36,7 +36,7 @@ ARM int rc_yukaPlMoveCheck(PlayerData *player) {
     return func_020860dc(player->entity) != 0;
 }
 
-ARM void yukaCheck(Entity *e) {
+void yukaCheck(Entity *e) {
     func_02084228(e);
     if (VARS(Vars_Yuka, e)->yukaFlags & 1) {
         if (rc_yukaPlMoveCheck(&data_0212ceb0[0])) {
@@ -68,28 +68,28 @@ ARM void yukaCheck(Entity *e) {
     }
 }
 
-ARM void ue_bgcheck(Entity *e) {
+void ue_bgcheck(Entity *e) {
     BG_PROBE(-21, -25, 0x2);
     BG_PROBE(-5, -25, 0x2);
     BG_PROBE(4, -25, 0x4);
     BG_PROBE(20, -25, 0x4);
 }
 
-ARM void shita_bgcheck(Entity *e) {
+void shita_bgcheck(Entity *e) {
     BG_PROBE(-21, 24, 0x20);
     BG_PROBE(-5, 24, 0x20);
     BG_PROBE(4, 24, 0x40);
     BG_PROBE(20, 24, 0x40);
 }
 
-ARM void migi_bgcheck(Entity *e) {
+void migi_bgcheck(Entity *e) {
     BG_PROBE(24, -21, 0x2000);
     BG_PROBE(24, -5, 0x2000);
     BG_PROBE(24, 4, 0x4000);
     BG_PROBE(24, 20, 0x4000);
 }
 
-ARM void hidari_bgcheck(Entity *e) {
+void hidari_bgcheck(Entity *e) {
     BG_PROBE(-25, -21, 0x200);
     BG_PROBE(-25, -5, 0x200);
     BG_PROBE(-25, 4, 0x400);

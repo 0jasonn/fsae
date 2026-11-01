@@ -9,7 +9,7 @@
 // Menu_Init (0x020be0c4): stores the result of func_020be128 in the menu and runs the setup calls; begins the menu
 // when Ctrl_getSliderIndexA reports -1, otherwise runs Menu_SetCursorPos.
 extern "C" void Menu_Init(MenuWork *menu);
-ARM void Menu_Init(MenuWork *menu) {
+void Menu_Init(MenuWork *menu) {
     MenuWork *ref;
     s32 value;
 

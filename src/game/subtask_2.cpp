@@ -7,7 +7,7 @@
 extern u32 data_0217a2b8[];
 
 // subTask_free_slot (0x0209d690): frees the two pointer slots of entry index (each slot is a pointer and a size word)
-ARM void subTask_free_slot(s32 index) {
+void subTask_free_slot(s32 index) {
     u32 *slot = data_0217a2b8 + index * 8;
 
     if (slot[0] != 0) {
@@ -33,7 +33,7 @@ ARM void subTask_free_slot(s32 index) {
 }
 
 // subTask_free_objinfo (0x0209d714)
-ARM void subTask_free_objinfo(OBJInfo *info) {
+void subTask_free_objinfo(OBJInfo *info) {
     if (info->block00 != 0) {
         func_0208e188(info->block00);
         info->block00 = 0;

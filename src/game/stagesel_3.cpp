@@ -64,7 +64,7 @@ extern u32 data_02134900;
 //   start_select, set_please_wait, del_please_wait
 
 // Starts the stage select screen for mode: loads the character effect, creates the cursor work and the please wait
-ARM void start_select(int mode) {
+void start_select(int mode) {
     Entity *cursor;
 
     effect_char_load(*((u8 *)KnifeApp_getInstance() + 0xcb0), mode);
@@ -82,7 +82,7 @@ ARM void start_select(int mode) {
 }
 
 // Shows the please wait message object (once) with the three waiting text sprites
-ARM void set_please_wait(void) {
+void set_please_wait(void) {
     Entity *work;
 
     if (data_02171d58.pleaseWait != 0) {
@@ -97,7 +97,7 @@ ARM void set_please_wait(void) {
 }
 
 // Removes the please wait message object, if one is shown
-ARM void del_please_wait(void) {
+void del_please_wait(void) {
     if (data_02171d58.pleaseWait == 0) {
         return;
     }

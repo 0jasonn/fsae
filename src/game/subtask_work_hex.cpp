@@ -7,7 +7,7 @@ extern u8 data_0217d23c[];
 extern "C" int hex_ascii_chg0(int a, int b, unsigned long c, void *d);
 
 extern "C" void subtask_hex_ascii_work(int a, int b, unsigned long c);
-ARM void subtask_hex_ascii_work(int a, int b, unsigned long c) {
+void subtask_hex_ascii_work(int a, int b, unsigned long c) {
     u8 *work = *(u8 **)(data_0217d23c + 0x10c);
 
     hex_ascii_chg0(a, b, c, work + 0x938);

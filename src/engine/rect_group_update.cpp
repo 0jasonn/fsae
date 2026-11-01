@@ -27,7 +27,7 @@ typedef struct RectGroupItem {
 // RectGroup_updateItems(self) (0x020b9688, provisional name): calls slot 4 of the first two items with the flag (count
 // >= 2), then calls slot 4 of the items 2 and 3 with the same flag and sets bit 1 of their flags
 extern "C" void RectGroup_updateItems(RectGroup *self);
-ARM void RectGroup_updateItems(RectGroup *self) {
+void RectGroup_updateItems(RectGroup *self) {
     s32 flag;
     u16 i;
 

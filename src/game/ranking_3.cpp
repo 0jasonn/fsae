@@ -6,7 +6,7 @@
 //   0x02055650 ranking_scroll (matches)
 //   0x020554c8 ranking_init (matches)
 
-ARM void ranking_init(void) {
+void ranking_init(void) {
     if (data_0212c5ac != 0) {
         return;
     }
@@ -54,7 +54,7 @@ ARM void ranking_init(void) {
     data_0212c500++;
 }
 
-ARM void ranking_scroll(void) {
+void ranking_scroll(void) {
     s32 wanted;
     s16 cameraX;
 

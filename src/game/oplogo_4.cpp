@@ -8,11 +8,11 @@ typedef struct OplogoShadowBlock {
 extern OplogoShadowBlock data_0212c75c;
 extern u8 data_0212c4dc;
 
-ARM void oplogo_fadeOff(Entity *e) {
+void oplogo_fadeOff(Entity *e) {
     e->spriteSettings.b0 = 0;
 }
 
-ARM void oplogo_info(Entity *e) {
+void oplogo_info(Entity *e) {
     s16 offset = data_0212c75c.scrollOffset;
     e->action = 1;
     if (data_0212c4dc == 4) {

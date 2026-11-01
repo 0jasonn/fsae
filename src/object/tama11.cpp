@@ -10,7 +10,7 @@
 //   Throw (0x020802e4): dispatches on subAction through Throw_stateTable unless the game is paused, then runs func_020857c8.
 
 // tama11_move1 (0x02080008)
-ARM void tama11_move1(Entity *e) {
+void tama11_move1(Entity *e) {
     if (VARS(Tama11Vars, e)->expireTimer != 0) {
         VARS(Tama11Vars, e)->expireTimer--;
         if (VARS(Tama11Vars, e)->expireTimer == 0) {
@@ -47,7 +47,7 @@ ARM void tama11_move1(Entity *e) {
 }
 
 // prtDamage (0x020801a0)
-ARM void prtDamage(Entity *e) {
+void prtDamage(Entity *e) {
     u8 damage;
 
     e->parent->contactFlags = 0xff;
@@ -71,7 +71,7 @@ ARM void prtDamage(Entity *e) {
 }
 
 // fiveMove (0x02080238)
-ARM void fiveMove(Entity *e) {
+void fiveMove(Entity *e) {
     VARS(Tama11Vars, e)->fiveMoveTimer--;
     if (e->type2 & 1) {
         if (VARS(Tama11Vars, e)->fiveMoveTimer == 0) {
@@ -99,7 +99,7 @@ ARM void fiveMove(Entity *e) {
 }
 
 // Throw (0x020802e4)
-ARM void Throw(Entity *e) {
+void Throw(Entity *e) {
     if (data_0212c4b8 == 0) {
         Throw_stateTable[e->subAction](e);
     }

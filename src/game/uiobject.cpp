@@ -7,7 +7,7 @@
 // UIObject::updateMovePos (0x020acd1c) is parked in scratch/agentF/nonmatching/UIObject_updateMovePos.cpp
 
 // UIObject::movePos (0x020acca0): starts a move from the current position to (x, y) over duration frames
-ARM void UIObject_movePos(UIObject *self, s32 x, s32 y, s32 duration, AnimationCurve curve) {
+void UIObject_movePos(UIObject *self, s32 x, s32 y, s32 duration, AnimationCurve curve) {
     self->fromX = self->pos.x;
     self->fromY = self->pos.y;
     self->toX = x;

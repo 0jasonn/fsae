@@ -11,7 +11,7 @@ extern const MochiageMask data_020d813c;
 // PlCheckMochiage (0x0205501c): returns FALSE when one of the two players stands in a lift-up position over the other.
 extern "C" int PlCheckMochiage(Entity *a, Entity *b);
 
-ARM int PlCheckMochiage(Entity *a, Entity *b) {
+int PlCheckMochiage(Entity *a, Entity *b) {
     MochiageMask masks = data_020d813c;
     Entity *pair[2];
     u8 index;

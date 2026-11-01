@@ -37,11 +37,11 @@ extern Set03GridOrigin data_0212c648;
 // Clears the player bit when that player is busy (statusFlags & 0x90) or stands on another cell than the actor.
 #define SET03_PRUNE_PLAYER(k, bit, keep)                                                        if ((flags & (bit)) != 0) {                                                                     if ((data_0212ceb0[k].statusFlags & 0x90) != 0 ||                                               VARS(Vars_Set03, e)->cellPlain != SET03_PLAYER_CELL(k)) {                                   flags &= (keep);                                                                        }                                                                                       }
 
-ARM void Set03(Entity *e) {
+void Set03(Entity *e) {
     set03_actions[e->action](e);
 }
 
-ARM void set03_init(Entity *e) {
+void set03_init(Entity *e) {
     e->action++;
     e->statusFlags = 0;
     e->hitbox = data_020d8a5c;

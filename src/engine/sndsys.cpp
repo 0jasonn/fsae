@@ -43,7 +43,7 @@ extern u8 data_02181984[];
 // SndSys_Init (0x020bf184): sets up the sound system once: SND_Init, the two post exit callbacks, the channel
 // bookkeeping (SndChannel_Reset) and the sound helpers.
 extern "C" void SndSys_Init(void);
-ARM void SndSys_Init(void) {
+void SndSys_Init(void) {
     if (data_02181964.initializing != 0) {
         return;
     }
@@ -65,7 +65,7 @@ ARM void SndSys_Init(void) {
 // SndSys_Shutdown (0x020bf200): waits until the sound command replies are received, runs the shutdown helpers and
 // flushes the command queue.
 extern "C" void SndSys_Shutdown(void);
-ARM void SndSys_Shutdown(void) {
+void SndSys_Shutdown(void) {
     while (SND_RecvCommandReply(0) != 0) {
     }
     SndVoice_UpdateList();

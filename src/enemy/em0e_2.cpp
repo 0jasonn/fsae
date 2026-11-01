@@ -31,7 +31,7 @@ extern EntityFunc em0e_type2_normalActions[];
 extern EntityFunc em0e_type2_actions[];
 extern u8 em0e_dieSpawnTypes[];
 
-ARM void em0e_type0_init(Entity *e) {
+void em0e_type0_init(Entity *e) {
     Entity *motiage1;
     Entity *center;
     Entity *part3;
@@ -79,10 +79,10 @@ ARM void em0e_type0_init(Entity *e) {
     InitAnimationForceUpdate(e, 3);
 }
 
-ARM void em0e_type0_nop(Entity *e) {
+void em0e_type0_nop(Entity *e) {
 }
 
-ARM void type0_motiage(Entity *e) {
+void type0_motiage(Entity *e) {
     ObjHippariCheck(e);
     if (data_0212ceb0[e->type2].unk_03[2] == 0) {
         e->subAction = 6;
@@ -90,7 +90,7 @@ ARM void type0_motiage(Entity *e) {
     em0e_type0_motiageStates[e->subAction - 5](e);
 }
 
-ARM void motiage0_move(Entity *e) {
+void motiage0_move(Entity *e) {
     PlayerData *player = &data_0212ceb0[e->type2];
     Entity *playerEntity = player->entity;
 
@@ -112,15 +112,15 @@ ARM void motiage0_move(Entity *e) {
     }
 }
 
-ARM void em0e_type0_actionDec(Entity *e) {
+void em0e_type0_actionDec(Entity *e) {
     e->action--;
 }
 
-ARM void em0e_type1(Entity *e) {
+void em0e_type1(Entity *e) {
     em0e_type1_actions[e->action](e);
 }
 
-ARM void em0e_type1_init(Entity *e) {
+void em0e_type1_init(Entity *e) {
     e->spriteSettings.b0 = 0;
     e->unk_2e = 0;
     e->speed = 0x80;
@@ -131,15 +131,15 @@ ARM void em0e_type1_init(Entity *e) {
     InitAnimationForceUpdate(e, 4);
 }
 
-ARM void em0e_type1_nop(Entity *e) {
+void em0e_type1_nop(Entity *e) {
 }
 
-ARM void type1_motiage(Entity *e) {
+void type1_motiage(Entity *e) {
     ObjHippariCheck(e);
     em0e_type1_motiageStates[e->subAction - 5](e);
 }
 
-ARM void motiage1_move(Entity *e) {
+void motiage1_move(Entity *e) {
     PlayerData *player = &data_0212ceb0[e->type2];
     Entity *playerEntity = player->entity;
 
@@ -161,11 +161,11 @@ ARM void motiage1_move(Entity *e) {
     }
 }
 
-ARM void em0e_type2_actionDec(Entity *e) {
+void em0e_type2_actionDec(Entity *e) {
     e->action--;
 }
 
-ARM void em0e_type2(Entity *e) {
+void em0e_type2(Entity *e) {
     Entity *other;
 
     func_02084700(e);
@@ -182,7 +182,7 @@ ARM void em0e_type2(Entity *e) {
     em0e_type2_actions[func_02084a30(e)](e);
 }
 
-ARM void type2_normal(Entity *e) {
+void type2_normal(Entity *e) {
     Vars_Em0e *vars;
     s32 y;
 

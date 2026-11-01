@@ -6,11 +6,11 @@
 //   0x02059b24 matsuri (provisional, matsuri_actions[e->action](e))
 //   0x02059b40 matsuri_init (original name)
 
-ARM void matsuri(Entity *e) {
+void matsuri(Entity *e) {
     matsuri_actions[e->action](e);
 }
 
-ARM void matsuri_init(Entity *e) {
+void matsuri_init(Entity *e) {
     u32 bits;
 
     VMATSURI(e)->typeBits = ParseTypeBits(e->type);

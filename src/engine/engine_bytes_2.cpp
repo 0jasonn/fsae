@@ -8,7 +8,7 @@
 extern "C" u8 *FindByteForward(const u8 *buf, int value, u32 count);
 extern "C" u8 *FindByteBackward(const u8 *buf, int value, u32 count);
 
-ARM u8 *FindByteForward(const u8 *buf, int value, u32 count) {
+u8 *FindByteForward(const u8 *buf, int value, u32 count) {
     u8 wanted;
     u8 byte;
 
@@ -25,7 +25,7 @@ ARM u8 *FindByteForward(const u8 *buf, int value, u32 count) {
     return NULL;
 }
 
-ARM u8 *FindByteBackward(const u8 *buf, int value, u32 count) {
+u8 *FindByteBackward(const u8 *buf, int value, u32 count) {
     u8 wanted;
     u8 byte;
 

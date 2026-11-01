@@ -3,7 +3,7 @@
 
 // effect_char_load, 0x02078c80. Loads the graphics of stage select character index (first call sets up the
 // buffer pointers), then creates the character's stage select objects and plays its sound unless mode is nonzero.
-ARM void effect_char_load(u8 index, int mode) {
+void effect_char_load(u8 index, int mode) {
     if ((data_02171d58.loadFlags & 1) == 0) {
         *(u32 *)(data_02116720 + 0xa4) = (u32)data_02148fa0 + 0x2000;
         *(u32 *)(data_02116720 + 0xac) = (u32)data_02140fa0 + 0x4000;

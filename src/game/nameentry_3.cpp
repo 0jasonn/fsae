@@ -21,7 +21,7 @@ const void *Knife_Comm_selectDataTable(s32 unused, s32 flag);
 
 // nameEntryUIView::getPosFromSelIndex (0x020ae830): position of the selected entry; the index is at offset 0x46 when set,
 // otherwise the entry at offset 0x4a
-ARM UIPos2 nameEntryUIView_getPosFromSelIndex(void *self) {
+UIPos2 nameEntryUIView_getPosFromSelIndex(void *self) {
     u8 *obj;
     s32 sel;
     s32 idx;
@@ -42,7 +42,7 @@ ARM UIPos2 nameEntryUIView_getPosFromSelIndex(void *self) {
 }
 
 // nameEntryUIView::getPosFromNameIndex (0x020ae8c0): screen position of the name entry at the index in offset 0x42
-ARM UIPos2 nameEntryUIView_getPosFromNameIndex(void *self) {
+UIPos2 nameEntryUIView_getPosFromNameIndex(void *self) {
     u8 *obj;
     u8 *item;
     UIPos2 pos;
@@ -56,7 +56,7 @@ ARM UIPos2 nameEntryUIView_getPosFromNameIndex(void *self) {
 
 // nameEntryUIView::getTextFromIndex (0x020ae908): the character of the entry; the first six are in the view, the others
 // come from the table of the language flag
-ARM u16 nameEntryUIView_getTextFromIndex(void *self, s32 index) {
+u16 nameEntryUIView_getTextFromIndex(void *self, s32 index) {
     u8 *obj;
     s32 id;
     const void *table;
@@ -71,6 +71,6 @@ ARM u16 nameEntryUIView_getTextFromIndex(void *self, s32 index) {
 }
 
 // nameEntryUIView_getSelectedText (0x020ae954): the character at the cursor (offset 0x4a, biased by 6)
-ARM u16 nameEntryUIView_getSelectedText(void *self) {
+u16 nameEntryUIView_getSelectedText(void *self) {
     return nameEntryUIView_getTextFromIndex(self, (s16)*(s16 *)((u8 *)self + 0x4a) + 6);
 }

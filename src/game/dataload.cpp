@@ -21,7 +21,7 @@ extern const u16 data_020cf948[];
 extern u8 data_021348d8;
 
 // DataLoad (0x02029fe8)
-ARM void DataLoad(u16 index) {
+void DataLoad(u16 index) {
     DataLoadEntry *entry = (DataLoadEntry *)data_0210392c[index];
     u32 kind;
     u32 send;

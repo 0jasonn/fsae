@@ -8,16 +8,16 @@
 //   0x02059f28 idoyukaSp_wait (original name)
 //   0x02059f90 idoyukaSp_wait2 (original name)
 
-ARM void idoyukaSp(Entity *e) {
+void idoyukaSp(Entity *e) {
     idoyukaSp_actions[e->action](e);
 }
 
-ARM void idoyukaSp_init(Entity *e) {
+void idoyukaSp_init(Entity *e) {
     VIDOYUKA(e)->typeBits = ParseTypeBits(e->type2);
     e->action++;
 }
 
-ARM void idoyukaSp_wait(Entity *e) {
+void idoyukaSp_wait(Entity *e) {
     Entity *child;
 
     if ((VIDOYUKA(e)->typeBits & em12_typeMasks[e->areaIndex]) != VIDOYUKA(e)->typeBits) {
@@ -32,7 +32,7 @@ ARM void idoyukaSp_wait(Entity *e) {
     e->action++;
 }
 
-ARM void idoyukaSp_wait2(Entity *e) {
+void idoyukaSp_wait2(Entity *e) {
     if (VIDOYUKA(e)->typeBits != (VIDOYUKA(e)->typeBits & em12_typeMasks[e->areaIndex])) {
         e->action--;
     }

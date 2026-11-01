@@ -8,7 +8,7 @@
 
 // Areacheck: 0 when one of the players (in table order, stopping at the first missing one) is inside the box, else 1.
 // The box is the one around e: x offset 0x18 with width 0x30, y offset 0x12 with height 0x24.
-ARM BOOL areacheck(Entity *e) {
+BOOL areacheck(Entity *e) {
     Entity *target;
     s32 dx;
     s32 dy;

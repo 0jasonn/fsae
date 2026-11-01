@@ -6,7 +6,7 @@
 //   subTask_gameover_init (0x020adb04), subTask_gameover_end (0x020adb68)
 
 // subTask_gameover_init (0x020adb04): starts the game over screen: VRAM and object setup, a clear of the sub display control, then a fade in
-ARM void subTask_gameover_init(void) {
+void subTask_gameover_init(void) {
     u32 *dispCtrl;
     u32 *reg;
     s32 zero;
@@ -25,7 +25,7 @@ ARM void subTask_gameover_init(void) {
 }
 
 // subTask_gameover_end (0x020adb68): releases the four slots and the object, then fades out unless the screen is already done
-ARM void subTask_gameover_end(void) {
+void subTask_gameover_end(void) {
     u32 i;
 
     for (i = 0; i < 4; i++) {

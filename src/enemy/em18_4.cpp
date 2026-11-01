@@ -6,7 +6,7 @@
 
 // Entry of the actor: type 0 runs its own handler, the other types pick the state from the dispatch table and set
 // the sprite bits b30 and b14.
-ARM void Em18(Entity *e) {
+void Em18(Entity *e) {
     if (e->type != 0) {
         func_02084700(e);
         data_020d2968[func_02084a30(e)](e);

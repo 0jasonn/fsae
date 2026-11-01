@@ -6,7 +6,7 @@
 // Scene_NoOp -> Scene_NoOp
 // title_move -> title_move
 // title_machiuke_joy -> title_machiuke_joy
-ARM void title_wait(void) {
+void title_wait(void) {
     *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
     if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) != 0) {
         return;
@@ -19,10 +19,10 @@ ARM void title_wait(void) {
     data_0212c4dc++;
 }
 
-ARM void Scene_NoOp(void) {
+void Scene_NoOp(void) {
 }
 
-ARM void title_move(void) {
+void title_move(void) {
     func_020909c8();
     KnifeApp_getInstance();
 }

@@ -26,16 +26,16 @@ extern const s8 data_020d90c0[];
 
 void set5f_plset(Entity *e);
 
-ARM void Set5f(Entity *e) {
+void Set5f(Entity *e) {
     set5f_typeHandlers[e->type](e);
 }
 
-ARM void set5f_type0(Entity *e) {
+void set5f_type0(Entity *e) {
     set5f_type0Actions[e->action](e);
     BindPlayers();
 }
 
-ARM void set5f_type0_init(Entity *e) {
+void set5f_type0_init(Entity *e) {
     Entity *child;
 
     child = GetSetWork(0x5f, 1, 0);
@@ -58,7 +58,7 @@ ARM void set5f_type0_init(Entity *e) {
     ScrPosSet(e->x.HALF.HI, e->y.HALF.HI);
 }
 
-ARM void type0_initWait(Entity *e) {
+void type0_initWait(Entity *e) {
     u8 i;
 
     GufuFuyusnd(e);
@@ -75,7 +75,7 @@ ARM void type0_initWait(Entity *e) {
     }
 }
 
-ARM void type0_plEntrance(Entity *e) {
+void type0_plEntrance(Entity *e) {
     u8 i;
 
     GufuFuyusnd(e);
@@ -89,7 +89,7 @@ ARM void type0_plEntrance(Entity *e) {
     }
 }
 
-ARM void type0_meswait(Entity *e) {
+void type0_meswait(Entity *e) {
     u16 i;
 
     UpdateAnimationSingleFrame(e);
@@ -124,7 +124,7 @@ ARM void type0_meswait(Entity *e) {
     e->action++;
 }
 
-ARM void type0_fall(Entity *e) {
+void type0_fall(Entity *e) {
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
     e->z.WORD += 0x8000;

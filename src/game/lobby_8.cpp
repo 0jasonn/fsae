@@ -8,6 +8,6 @@
 
 // lobby_updateNone() (0x020b3ea0, provisional name): update step without work, returns 0
 extern "C" s32 lobby_updateNone(void);
-ARM s32 lobby_updateNone(void) {
+s32 lobby_updateNone(void) {
     return 0;
 }

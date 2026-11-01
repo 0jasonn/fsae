@@ -10,7 +10,7 @@ extern "C" void Knife_Sound_Handle_reset(void *self);
 
 // Knife_Sound_Handle_pause (0x0208c054): calls the vtable slot 6 of the handle with the pause flag
 extern "C" void Knife_Sound_Handle_pause(void *self, s32 pause);
-ARM void Knife_Sound_Handle_pause(void *self, s32 pause) {
+void Knife_Sound_Handle_pause(void *self, s32 pause) {
     void **vtbl;
 
     vtbl = *(void ***)self;

@@ -41,7 +41,7 @@ typedef struct KnifeTextRenderPlain {
 } KnifeTextRenderPlain;
 
 extern "C" void Knife_Message_TextRender_onReadPlainText(void *a, const void *text);
-ARM void Knife_Message_TextRender_onReadPlainText(void *a, const void *text) {
+void Knife_Message_TextRender_onReadPlainText(void *a, const void *text) {
     KnifeTextRenderPlain *self = (KnifeTextRenderPlain *)a;
     const KnifeMsgTextPlain *src = (const KnifeMsgTextPlain *)text;
     KnifeMsgTextPlain copy;

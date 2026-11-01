@@ -8,7 +8,7 @@
 // lobby_allocPtrArray(owner, count) (0x020b51c8, provisional name): allocates count pointers (at least one) from the
 // allocator of owner and clears them. Returns NULL when the allocation fails.
 extern "C" void **lobby_allocPtrArray(void *owner, s32 count);
-ARM void **lobby_allocPtrArray(void *owner, s32 count) {
+void **lobby_allocPtrArray(void *owner, s32 count) {
     void **array;
     void **slot;
     u32 i;

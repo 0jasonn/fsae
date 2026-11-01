@@ -5,7 +5,7 @@
 // (halfword) and their count is at +0xe; each record has its tag at +0 and its stride at +4. Pointers of the FINF, CWDH and
 // CMAP records are offsets from base and get base added (the zero ones stay zero where the record marks them optional).
 extern "C" void NftrFont_Relocate(u8 *base);
-ARM void NftrFont_Relocate(u8 *base) {
+void NftrFont_Relocate(u8 *base) {
     u8 *rec;
     s32 i;
     s32 count;

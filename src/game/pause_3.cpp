@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void pause_return(void) {
+void pause_return(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }

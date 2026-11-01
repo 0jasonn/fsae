@@ -8,7 +8,7 @@
 extern const u8 wanwan_hitbox[]; // wanwan_hitbox, rename in renames.txt
 
 // wanwan_init (0x0208139c)
-ARM void wanwan_init(Entity *e) {
+void wanwan_init(Entity *e) {
     Entity *owner;
     Entity *child;
     void *resource;

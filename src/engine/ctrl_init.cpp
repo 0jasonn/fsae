@@ -30,7 +30,7 @@ typedef struct CtrlInit {
 // Ctrl_initA(self, arg) (0x020bc0e4, provisional name): stores arg, clears 0x80 bytes of the block at +0x2c18 (flag 0),
 // finds the entries A (+0xc) and B (+0x10) and the record C, clears three slots and calls func_020c3b94 with mode 1
 extern "C" void Ctrl_initA(void *selfv, void *arg);
-ARM void Ctrl_initA(void *selfv, void *arg) {
+void Ctrl_initA(void *selfv, void *arg) {
     CtrlInit *self = (CtrlInit *)selfv;
     void *record;
     s32 slots[9];
@@ -46,7 +46,7 @@ ARM void Ctrl_initA(void *selfv, void *arg) {
 
 // Ctrl_initB(self, arg) (0x020bc170, provisional name): as Ctrl_initA with clear flag 1, other tables and mode 2
 extern "C" void Ctrl_initB(void *selfv, void *arg);
-ARM void Ctrl_initB(void *selfv, void *arg) {
+void Ctrl_initB(void *selfv, void *arg) {
     CtrlInit *self = (CtrlInit *)selfv;
     void *record;
     s32 slots[9];

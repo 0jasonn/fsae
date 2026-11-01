@@ -7,7 +7,7 @@
 
 void FadeClear(void);
 
-ARM void FadeInit(void) {
+void FadeInit(void) {
     u32 size = 0x10;
     func_02029a50(&data_0212c5ac, size);
     FadeClear();
@@ -15,7 +15,7 @@ ARM void FadeInit(void) {
     data_0212c5ac.fadeRunning = 1;
 }
 
-ARM void FadeClear(void) {
+void FadeClear(void) {
     if (data_0212c5ac.fadeRunning == 0) {
         data_0212c75c.unk_66 = 0;
         return;

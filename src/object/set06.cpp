@@ -36,6 +36,6 @@ void posAdd(Entity *e, WWORK *offset);
 #define SET06_CELL(e)                                                                                   \
     ((u16)((((e)->x.HALF.HI - data_0212c648.scrollX) >> 4) | ((((e)->y.HALF.HI - data_0212c648.scrollY) >> 4) << 6)))
 
-ARM void Set06(Entity *e) {
+void Set06(Entity *e) {
     data_02115a20[e->action](e);
 }

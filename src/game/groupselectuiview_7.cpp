@@ -8,7 +8,7 @@
 //   groupSelectUIView::writeOamBuffer (0x020b0a6c)
 
 // groupSelectUIView::writeOamBuffer (0x020b0a6c): writes the OAM cells of the two panes of a room at its position
-ARM void groupSelectUIView::writeOamBuffer(RoomInfo *room, s32 index) {
+void groupSelectUIView::writeOamBuffer(RoomInfo *room, s32 index) {
     TextRenderTarget *target;
     UIObject *obj;
 

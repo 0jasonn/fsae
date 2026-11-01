@@ -27,7 +27,7 @@ u16 getanmcnt(u32 *time);
 void SendBgAnmData(u32 *records);
 
 // Advances every active slot by one frame and loads the next entry when the timer runs out.
-ARM void BgAnm(void) {
+void BgAnm(void) {
     u8 advanced;
     BgAnmSlot *slot;
     u16 count;
@@ -63,7 +63,7 @@ ARM void BgAnm(void) {
 }
 
 // Frame time of a script entry: the low half-word, or for a random time (bit 31) one of the table values.
-ARM u16 getanmcnt(u32 *time) {
+u16 getanmcnt(u32 *time) {
     if ((*time & 0x80000000) == 0) {
         return (u16)*time;
     }
@@ -72,7 +72,7 @@ ARM u16 getanmcnt(u32 *time) {
 
 // Sends the transfer records at a script entry (until the record with bit 31 clear): a character block to VRAM or a
 // palette, depending on bit 28 of the first word.
-ARM void SendBgAnmData(u32 *records) {
+void SendBgAnmData(u32 *records) {
     u32 *rec;
     u8 *resource;
     s32 count;
@@ -96,7 +96,7 @@ ARM void SendBgAnmData(u32 *records) {
 }
 
 // Starts the animation slots from a list of script ids, ended by 0xffff.
-ARM void BgAnmInit(u16 *ids) {
+void BgAnmInit(u16 *ids) {
     BgAnmSlot *slot;
     BgAnmEntry *entry;
     u16 index;
@@ -117,7 +117,7 @@ ARM void BgAnmInit(u16 *ids) {
 }
 
 // Sets the block at (a, b) with the block kind 0x401e when the cell kind is 0, 1, 2, 3 or 0x23.
-ARM void Set1BlockOshiYoyaku(u16 a, u16 b) {
+void Set1BlockOshiYoyaku(u16 a, u16 b) {
     int kind;
 
     kind = func_02083e54(func_02083ca8(a, b));
@@ -128,6 +128,6 @@ ARM void Set1BlockOshiYoyaku(u16 a, u16 b) {
 }
 
 // Whether the cell at (a, b) is of block kind 0x401e.
-ARM BOOL Check1BlockOshiYoyaku(u16 a, u16 b) {
+BOOL Check1BlockOshiYoyaku(u16 a, u16 b) {
     return func_02083e54(func_02083ca8(a, b)) == 0x401e;
 }

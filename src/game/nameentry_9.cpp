@@ -18,7 +18,7 @@ extern u8 data_021350f7[];
 
 // nameEntryUIView::entry_regist (0x020af4a0): counts down the registration timer at 0x43; at zero it clears the
 // selected slot when it holds a name (state 6) or leaves the screen (state 7)
-ARM void nameEntryUIView_entry_regist(void *self) {
+void nameEntryUIView_entry_regist(void *self) {
     u8 *obj;
     u8 sel;
     u8 timer;

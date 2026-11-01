@@ -5,7 +5,7 @@
 extern "C" u32 Str_Length(const u8 *str);
 
 // Length of a NUL-terminated byte string (not counting the terminator).
-ARM u32 Str_Length(const u8 *str) {
+u32 Str_Length(const u8 *str) {
     u32 length;
 
     length = -1;

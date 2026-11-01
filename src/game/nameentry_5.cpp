@@ -8,7 +8,7 @@
 
 // nameEntryUIView_getCursorGroup (0x020af050): maps the index r2 of the entry to a group 1 to 4 when the mode is 5,
 // otherwise returns the value of the mode field at offset 0x46
-ARM s32 nameEntryUIView_getCursorGroup(void *self, s32 mode, s32 index) {
+s32 nameEntryUIView_getCursorGroup(void *self, s32 mode, s32 index) {
     if (mode == 5) {
         if (index >= 0 && index <= 2) {
             return 1;

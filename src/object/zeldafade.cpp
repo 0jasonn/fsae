@@ -25,7 +25,7 @@ extern const ZeldaFadeEntry zeldaFadeTable[]; // zeldaFadeTable, indexed by the 
 extern u8 data_02171d1c;                      // 1 while no fade partner is active (see ZeldaFadeFlagGet)
 extern FadeWorkZelda data_0212c5ac;
 
-ARM void ZeldaFadeSet(Entity *e, u32 index) {
+void ZeldaFadeSet(Entity *e, u32 index) {
     Entity *child;
     const ZeldaFadeEntry *entry;
 
@@ -41,6 +41,6 @@ ARM void ZeldaFadeSet(Entity *e, u32 index) {
     FadeSet(entry->paletteA & 0xff, entry->paletteB & 0xff);
 }
 
-ARM u8 ZeldaFadeFlagGet(void) {
+u8 ZeldaFadeFlagGet(void) {
     return data_02171d1c;
 }

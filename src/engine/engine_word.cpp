@@ -7,6 +7,6 @@ extern u32 data_02128920;
 
 extern "C" u32 Engine_ReadWordA(void);
 
-ARM u32 Engine_ReadWordA(void) {
+u32 Engine_ReadWordA(void) {
     return data_02128920;
 }

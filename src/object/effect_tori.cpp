@@ -5,7 +5,7 @@
 // effect_tori family (module effect_tori), 0x0206db30 .. 0x0206dbe0.
 // Address -> name: 0x0206db30 effect_tori, 0x0206db6c effect_tori_init, 0x0206dbb0 effect_tori_move
 
-ARM void effect_tori(Entity *e) {
+void effect_tori(Entity *e) {
     effectToriTable[e->action](e);
     if (e->type2 == KNIFE_CURSOR_INDEX()) {
         return;
@@ -13,7 +13,7 @@ ARM void effect_tori(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void effect_tori_init(Entity *e) {
+void effect_tori_init(Entity *e) {
     u32 settings = *(u32 *)&e->spriteSettings;
     u8 action = e->action;
     int nextAction;
@@ -28,7 +28,7 @@ ARM void effect_tori_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void effect_tori_move(Entity *e) {
+void effect_tori_move(Entity *e) {
     u8 timer;
 
     MoveDir(e);

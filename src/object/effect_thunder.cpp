@@ -16,11 +16,11 @@ typedef struct ThunderOffsetList {
 extern const ThunderOffsetList thunderOffsetX; // thunderOffsetX
 extern const ThunderOffsetList thunderOffsetY; // thunderOffsetY
 
-ARM void effect_thunder(Entity *e) {
+void effect_thunder(Entity *e) {
     effectThunderTable[e->action](e);
 }
 
-ARM void effect_thunder_init(Entity *e) {
+void effect_thunder_init(Entity *e) {
     u8 action = e->action;
     ThunderOffsetList xs;
     ThunderOffsetList ys;
@@ -37,7 +37,7 @@ ARM void effect_thunder_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void effect_thunder_move(Entity *e) {
+void effect_thunder_move(Entity *e) {
     e->unk_1b = 0xb1;
     e->spriteSettings.b20 = 7;
     e->spriteSettings.b16 = e->spriteSettings.b20;

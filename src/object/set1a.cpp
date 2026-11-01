@@ -9,24 +9,24 @@
 //   0x020591e8 check_flag (original name)
 //   0x02059224 check_next (original name)
 
-ARM void Set1a(Entity *e) {
+void Set1a(Entity *e) {
     set1a_actions[e->action](e);
 }
 
-ARM void set1a_noop0(Entity *e) {
+void set1a_noop0(Entity *e) {
 }
 
-ARM void set1a_noop1(Entity *e) {
+void set1a_noop1(Entity *e) {
 }
 
-ARM void set1a_noop2(Entity *e) {
+void set1a_noop2(Entity *e) {
 }
 
-ARM void set1a_typeDispatch(Entity *e) {
+void set1a_typeDispatch(Entity *e) {
     set1a_typeActions[e->type](e);
 }
 
-ARM int check_flag(unsigned long mask, unsigned char start, unsigned char count) {
+int check_flag(unsigned long mask, unsigned char start, unsigned char count) {
     int result = 1;
     int end = start + count;
     unsigned char i = start;
@@ -41,7 +41,7 @@ ARM int check_flag(unsigned long mask, unsigned char start, unsigned char count)
     return result;
 }
 
-ARM int check_next(unsigned long mask, unsigned char start, unsigned char count) {
+int check_next(unsigned long mask, unsigned char start, unsigned char count) {
     int end = start + count;
     unsigned char i;
     for (i = start; i < end; i++) {

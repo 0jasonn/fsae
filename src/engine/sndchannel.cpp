@@ -33,7 +33,7 @@ extern SndChannelEntry data_02183d6c[];
 // SndChannel_TryLock (0x020bf418): locks the channels of the mask unless one of them is already locked. Zero is
 // accepted without locking.
 extern "C" s32 SndChannel_TryLock(u32 mask);
-ARM s32 SndChannel_TryLock(u32 mask) {
+s32 SndChannel_TryLock(u32 mask) {
     if (mask == 0) {
         return 1;
     }
@@ -47,7 +47,7 @@ ARM s32 SndChannel_TryLock(u32 mask) {
 
 // SndChannel_Unlock (0x020bf45c): unlocks the channels of the mask.
 extern "C" void SndChannel_Unlock(u32 mask);
-ARM void SndChannel_Unlock(u32 mask) {
+void SndChannel_Unlock(u32 mask) {
     if (mask == 0) {
         return;
     }
@@ -57,19 +57,19 @@ ARM void SndChannel_Unlock(u32 mask) {
 
 // SndChannel_ClearWord0 (0x020bf48c): clears the bits of the mask in word 0.
 extern "C" void SndChannel_ClearWord0(u32 mask);
-ARM void SndChannel_ClearWord0(u32 mask) {
+void SndChannel_ClearWord0(u32 mask) {
     data_02183d60.word0 &= ~mask;
 }
 
 // SndChannel_ClearWord4 (0x020bf4a8): clears the bit of the channel index in word 4.
 extern "C" void SndChannel_ClearWord4(u32 index);
-ARM void SndChannel_ClearWord4(u32 index) {
+void SndChannel_ClearWord4(u32 index) {
     data_02183d60.word4 &= ~(1 << index);
 }
 
 // SndChannel_Reset (0x020bf4c8): clears the three book-keeping words.
 extern "C" void SndChannel_Reset(void);
-ARM void SndChannel_Reset(void) {
+void SndChannel_Reset(void) {
     data_02183d60.locked = 0;
     data_02183d60.word0 = 0;
     data_02183d60.word4 = 0;
@@ -78,7 +78,7 @@ ARM void SndChannel_Reset(void) {
 // SndChannel_Reserve (0x020bf4e4): locks the channel of the index and returns its reservation entry (0 when the
 // channel is busy).
 extern "C" SndChannelEntry *SndChannel_Reserve(u32 index);
-ARM SndChannelEntry *SndChannel_Reserve(u32 index) {
+SndChannelEntry *SndChannel_Reserve(u32 index) {
     SndChannelEntry *entry;
 
     if (SndChannel_TryLock(1 << index) == 0) {
@@ -92,6 +92,6 @@ ARM SndChannelEntry *SndChannel_Reserve(u32 index) {
 
 // SndChannel_UnlockIndex (0x020bf528): unlocks the channel whose index is the first word of the argument.
 extern "C" void SndChannel_UnlockIndex(u32 *ref);
-ARM void SndChannel_UnlockIndex(u32 *ref) {
+void SndChannel_UnlockIndex(u32 *ref) {
     SndChannel_Unlock(1 << *ref);
 }

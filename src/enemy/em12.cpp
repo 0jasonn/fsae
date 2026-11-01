@@ -4,7 +4,7 @@
 
 // Original names: em12_init, em12_wait (em12_wait2 is in scratch/agentA/nonmatching/em12_wait2.c)
 
-ARM void em12_init(Entity *e) {
+void em12_init(Entity *e) {
     e->action = 1;
     e->unk_2e = 0xe;
     e->hitbox = em12_hitbox;
@@ -22,7 +22,7 @@ ARM void em12_init(Entity *e) {
     e->spriteSettings.b16 = e->spriteSettings.b20;
 }
 
-ARM void em12_wait(Entity *e) {
+void em12_wait(Entity *e) {
     if ((V(e)->w70.typeBits & em12_typeMasks[e->areaIndex]) == V(e)->w70.typeBits) {
         e->action = 2;
     }

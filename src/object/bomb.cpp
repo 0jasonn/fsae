@@ -7,7 +7,7 @@
 //   bomb_end
 
 // Clears the timer and sets subtimer 1 once the bomb is no longer carried, then runs the shared object update.
-ARM void bomb_move(Entity *e) {
+void bomb_move(Entity *e) {
     if (VARS(BombVars, e)->carrierLink != 0) {
         e->timer = 0;
         e->subtimer = 1;
@@ -16,14 +16,14 @@ ARM void bomb_move(Entity *e) {
 }
 
 // Lifted: forgets the carrier and runs the handler for the current subaction.
-ARM void bomb_lift(Entity *e) {
+void bomb_lift(Entity *e) {
     VARS(BombVars, e)->carrierLink = 0;
     bomb_liftTable[e->subAction](e);
 }
 
 // Throw start: advances the subaction; on the first frame (timer and subtimer both 0) sets the bomb's flying state and
 // spawns its child object, then runs the shared update with the template of type2.
-ARM void bomb_throw_init(Entity *e) {
+void bomb_throw_init(Entity *e) {
     Entity *tmpl;
     Entity *child;
 
@@ -59,17 +59,17 @@ ARM void bomb_throw_init(Entity *e) {
 }
 
 // Clears the throw flag (unk_2e), set when the bomb is not thrown.
-ARM void bomb_clearThrowFlag(Entity *e) {
+void bomb_clearThrowFlag(Entity *e) {
     e->unk_2e = 0;
 }
 
 // Sets the throw flag (unk_2e) to 4 when the throw starts.
-ARM void bomb_setThrowFlag4(Entity *e) {
+void bomb_setThrowFlag4(Entity *e) {
     e->unk_2e = 4;
 }
 
 // End of a throw: steps the action back, resets the subaction and caps the timer at 0x3c.
-ARM void bomb_throw_end(Entity *e) {
+void bomb_throw_end(Entity *e) {
     e->action--;
     e->subAction = 0;
     if (e->timer > 0x3c) {
@@ -78,12 +78,12 @@ ARM void bomb_throw_end(Entity *e) {
 }
 
 // Removes the bomb from the object list.
-ARM void bomb_delete(Entity *e) {
+void bomb_delete(Entity *e) {
     PutObjWork(e);
 }
 
 // Counts the timer down; the bomb is removed when it runs out.
-ARM void bomb_end(Entity *e) {
+void bomb_end(Entity *e) {
     if (e->timer-- == 0) {
         PutObjWork(e);
     }

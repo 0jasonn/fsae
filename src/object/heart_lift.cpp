@@ -5,7 +5,7 @@
 // heart_lift family (module heart_lift), 0x0206bf28 .. 0x0206c068.
 // Address -> name: 0x0206bf28 heart_lift_move (original lift_move), 0x0206c02c heart_lift_end (original lift_end)
 
-ARM void heart_lift_move(Entity *e) {
+void heart_lift_move(Entity *e) {
     Vars_HeartLift *v = VARS(Vars_HeartLift, e);
     Entity *player = data_0212ceb0[e->type2].entity;
     u16 x;
@@ -38,7 +38,7 @@ ARM void heart_lift_move(Entity *e) {
     }
 }
 
-ARM void heart_lift_end(Entity *e) {
+void heart_lift_end(Entity *e) {
     Vars_HeartLift *v = VARS(Vars_HeartLift, e);
 
     v->phase = 0;

@@ -8,5 +8,5 @@
 
 // Ctrl_noopA() (0x020bc1fc, provisional name): does nothing
 extern "C" void Ctrl_noopA(void);
-ARM void Ctrl_noopA(void) {
+void Ctrl_noopA(void) {
 }

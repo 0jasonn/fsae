@@ -13,5 +13,5 @@ void Knife_mediaWrite(void);
 extern u8 data_021350b0[];
 
 // fileSelUIView slot 2 (0x020a8f7c): empty
-ARM void fileSelUIView_vfunc2(void *self) {
+void fileSelUIView_vfunc2(void *self) {
 }

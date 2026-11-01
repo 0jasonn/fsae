@@ -6,7 +6,7 @@
 // Uses the kyoroSet / frontCheck helpers of unit 3 (declared in wip/B/em16.h).
 
 // Init: sets the sprite priority, the unk_2e value and the hitbox, picks a random direction and starts kyoroSet.
-ARM void em16_init(Entity *e) {
+void em16_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 5;
     e->hitbox = em16_hitbox;
@@ -16,7 +16,7 @@ ARM void em16_init(Entity *e) {
 
 // Action 2: on animation frame 0 of the walk cycle, a nearby child that is ahead of the actor becomes its target.
 // Once the frame bit 0x80 is set, the actor goes to action 2 for 0x1e frames.
-ARM void em16_kyoro(Entity *e) {
+void em16_kyoro(Entity *e) {
     Entity *child;
 
     UpdateAnimationSingleFrame(e);
@@ -56,7 +56,7 @@ ARM void em16_kyoro(Entity *e) {
 }
 
 // Action 3: counts the timer down and goes to action 3 when it runs out.
-ARM void em16_wait(Entity *e) {
+void em16_wait(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action = 3;

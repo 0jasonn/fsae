@@ -14,7 +14,7 @@ typedef struct NpcSlot {
 extern u8 data_02134d30[];
 
 // GetNPC (0x0204f994)
-ARM u8 GetNPC(u8 a, u8 b, u8 c) {
+u8 GetNPC(u8 a, u8 b, u8 c) {
     NpcSlot *end;
     NpcSlot *slot;
     Entity *created;

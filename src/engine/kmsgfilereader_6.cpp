@@ -8,7 +8,7 @@
 extern "C" BOOL Knife_Message_KMsgFileReader_findLocalizedTextByTextID(Knife::Message::KMsgFileReader *self, u32 textId, void *out);
 extern "C" void *Knife_Message_KMsgFileReader_findTextHeaderByTextID(Knife::Message::KMsgFileReader *self, u32 textId);
 extern "C" void Knife_Message_KMsgFileReader_convertTextHeaderToLocalizedText(Knife::Message::KMsgFileReader *self, void *out, void *header);
-ARM BOOL Knife_Message_KMsgFileReader_findLocalizedTextByTextID(Knife::Message::KMsgFileReader *self, u32 textId, void *out) {
+BOOL Knife_Message_KMsgFileReader_findLocalizedTextByTextID(Knife::Message::KMsgFileReader *self, u32 textId, void *out) {
     void *header;
 
     header = Knife_Message_KMsgFileReader_findTextHeaderByTextID(self, textId);

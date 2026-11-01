@@ -10,12 +10,12 @@ namespace Knife {
 namespace Message {
 
 // MessageTextRender::setField35 (0x020a0564): stores the byte at +0x35
-ARM void MessageTextRender::setField35(u8 value) {
+void MessageTextRender::setField35(u8 value) {
     field35 = value;
 }
 
 // MessageTextRender::setField34 (0x020a056c): stores the byte at +0x34
-ARM void MessageTextRender::setField34(u8 value) {
+void MessageTextRender::setField34(u8 value) {
     field34 = value;
 }
 

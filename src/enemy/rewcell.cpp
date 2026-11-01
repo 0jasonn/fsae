@@ -10,7 +10,7 @@ extern u8 data_0212c648[]; // base position of the cell grid: u16 at 0x18 (x) an
 
 // yukaRewCell (0x0203c044): rewrites the same four cells as igoalRewCell, with the ids and flag of the layer kind
 // (layer >> 14 == 2 uses 0x7b..0x7e with flag 0x8000, otherwise 0x52..0x55 with flag 0x4000).
-ARM void yukaRewCell(Entity *e) {
+void yukaRewCell(Entity *e) {
     s32 x;
     s32 y;
     s32 cell;
@@ -34,7 +34,7 @@ ARM void yukaRewCell(Entity *e) {
 
 // igoalRewCell (0x0203c158): rewrites the four cells covered by the 16x16 object at the entity position, one id each
 // (0x152 to 0x155, the second row of ids starts 0x40 cells down), with the entity's layer.
-ARM void igoalRewCell(Entity *e) {
+void igoalRewCell(Entity *e) {
     s32 x;
     s32 y;
     s32 cell;

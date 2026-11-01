@@ -15,7 +15,7 @@ extern u8 data_0212c560[]; // pointer to the table of the subtask data (language
 
 // getResourceData(unsigned long, unsigned char) (0x020ac3d0): pointer to the entry in the table
 extern "C" void *getResourceData(u32 id, u8 lang);
-ARM void *getResourceData(u32 id, u8 lang) {
+void *getResourceData(u32 id, u8 lang) {
     if (lang != 0) {
         return (u8 *)*(u32 *)data_0212c560 + _get_subtask_data_lang(id);
     }
@@ -24,7 +24,7 @@ ARM void *getResourceData(u32 id, u8 lang) {
 
 // getResourceSize(unsigned long, unsigned char) (0x020ac40c): size of the entry, language table when lang is set
 extern "C" s32 getResourceSize(u32 id, u8 lang);
-ARM s32 getResourceSize(u32 id, u8 lang) {
+s32 getResourceSize(u32 id, u8 lang) {
     if (lang != 0) {
         return _get_subtask_data_size_lang(id);
     }

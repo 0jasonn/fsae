@@ -23,7 +23,7 @@ extern "C" void *KnifeApp_getField20Address(void *app);
 
 // TextRenderer::onReadPictTag(Pictogram) (0x020a5fd4): a picture while the text is measured adds its width, otherwise it
 // is drawn and its width is added to the line
-ARM void Knife_Message_TextRenderer_onReadPictTag(Knife::Message::TextRenderer *self, s32 pictogram) {
+void Knife_Message_TextRenderer_onReadPictTag(Knife::Message::TextRenderer *self, s32 pictogram) {
     if (self->flag94 != 0) {
         return;
     }
@@ -40,7 +40,7 @@ ARM void Knife_Message_TextRenderer_onReadPictTag(Knife::Message::TextRenderer *
 }
 
 // TextRenderer::onReadButtonTag(Button) (0x020a602c): as onReadPictTag, with the button's picture index
-ARM void Knife_Message_TextRenderer_onReadButtonTag(Knife::Message::TextRenderer *self, s32 button) {
+void Knife_Message_TextRenderer_onReadButtonTag(Knife::Message::TextRenderer *self, s32 button) {
     if (self->flag94 != 0) {
         return;
     }
@@ -57,7 +57,7 @@ ARM void Knife_Message_TextRenderer_onReadButtonTag(Knife::Message::TextRenderer
 }
 
 // TextRenderer::onReadBlankTag(int) (0x020a6084): adds a blank of the given width to the measured or line position
-ARM void Knife_Message_TextRenderer_onReadBlankTag(Knife::Message::TextRenderer *self, s32 width) {
+void Knife_Message_TextRenderer_onReadBlankTag(Knife::Message::TextRenderer *self, s32 width) {
     if (self->flag94 != 0) {
         return;
     }
@@ -69,7 +69,7 @@ ARM void Knife_Message_TextRenderer_onReadBlankTag(Knife::Message::TextRenderer 
 }
 
 // TextRenderer::onReadCenterTag() (0x020a60b4): centres the current line: half of the target width minus the line width
-ARM void Knife_Message_TextRenderer_onReadCenterTag(Knife::Message::TextRenderer *self) {
+void Knife_Message_TextRenderer_onReadCenterTag(Knife::Message::TextRenderer *self) {
     if (self->flag94 != 0 || self->flag95 != 0) {
         return;
     }
@@ -77,7 +77,7 @@ ARM void Knife_Message_TextRenderer_onReadCenterTag(Knife::Message::TextRenderer
 }
 
 // TextRenderer::onReadRightTag() (0x020a60e8): aligns the current line to the right edge of the target
-ARM void Knife_Message_TextRenderer_onReadRightTag(Knife::Message::TextRenderer *self) {
+void Knife_Message_TextRenderer_onReadRightTag(Knife::Message::TextRenderer *self) {
     if (self->flag94 == 0 && self->flag95 == 0) {
         self->unk_b0 = self->target->unk_38 * 8 - self->unk_a8;
     }

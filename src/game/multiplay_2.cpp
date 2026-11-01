@@ -2,7 +2,7 @@
 #include "game/multiplay.h"
 #include "global.h"
 
-ARM void multiplay_sync(void) {
+void multiplay_sync(void) {
     switch (data_0212c4dc) {
     case 0:
         ComRequest(4);
@@ -19,6 +19,6 @@ ARM void multiplay_sync(void) {
     }
 }
 
-ARM void multiplay_makemap(void) {
+void multiplay_makemap(void) {
     multiplayMakemapTable[data_0212c4dc]();
 }

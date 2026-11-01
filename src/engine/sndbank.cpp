@@ -18,7 +18,7 @@ extern "C" void SndTable_SetWord14(s32 index, u32 value);
 // SndBank_Detach: when data is not null, disables interrupts, exchanges the default flag with data, and clears the table
 // entry at index when it belongs to obj. Then the flag is restored and the interrupts too.
 extern "C" void SndBank_Detach(void *obj, void *data, s32 index);
-ARM void SndBank_Detach(void *obj, void *data, s32 index) {
+void SndBank_Detach(void *obj, void *data, s32 index) {
     u32 saved;
     u32 irq;
 
@@ -36,14 +36,14 @@ ARM void SndBank_Detach(void *obj, void *data, s32 index) {
 
 // SndBank_ReleaseSeqData: detaches obj, then invalidates its sequence data for size bytes.
 extern "C" void SndBank_ReleaseSeqData(void *obj, u32 size, void *data, s32 index);
-ARM void SndBank_ReleaseSeqData(void *obj, u32 size, void *data, s32 index) {
+void SndBank_ReleaseSeqData(void *obj, u32 size, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
     SND_InvalidateSeqData(obj, (u8 *)obj + size);
 }
 
 // SndBank_ReleaseBank: detaches obj, invalidates its bank data for size bytes and destroys the bank.
 extern "C" void SndBank_ReleaseBank(void *obj, u32 size, void *data, s32 index);
-ARM void SndBank_ReleaseBank(void *obj, u32 size, void *data, s32 index) {
+void SndBank_ReleaseBank(void *obj, u32 size, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
     SND_InvalidateBankData(obj, (u8 *)obj + size);
     SND_DestroyBank(obj);
@@ -51,7 +51,7 @@ ARM void SndBank_ReleaseBank(void *obj, u32 size, void *data, s32 index) {
 
 // SndBank_ReleaseWave: detaches obj, invalidates its wave data for size bytes and destroys the wave archive.
 extern "C" void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index);
-ARM void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index) {
+void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
     SND_InvalidateWaveData(obj, (u8 *)obj + size);
     SND_DestroyWaveArc(obj);
@@ -59,7 +59,7 @@ ARM void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index) {
 
 // SndBank_ReleaseWaveArc: detaches obj and destroys its wave archive (the second argument is not used).
 extern "C" void SndBank_ReleaseWaveArc(void *obj, s32 unused, void *data, s32 index);
-ARM void SndBank_ReleaseWaveArc(void *obj, s32 unused, void *data, s32 index) {
+void SndBank_ReleaseWaveArc(void *obj, s32 unused, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
     SND_DestroyWaveArc(obj);
 }

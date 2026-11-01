@@ -11,7 +11,7 @@ extern const s8 em17_shakeOffsetTable[];
 // Shaking step: counts the shake timer down. When it runs out the actor stops (action 7, unless the player of its type
 // is still in the lift state) and returns 0. While it shakes, the timer at 0x3c sets the flag 2 and odd timer values
 // below 0x3c move the actor sideways. Returns 1 while the actor is still shaking.
-ARM int buruburu(Entity *e) {
+int buruburu(Entity *e) {
     V(e)->field70.shakeTimer--;
     if (V(e)->field70.shakeTimer == 0) {
         if (e->action == 2 && data_0212ceb0[e->type2].unk_02 != 0) {

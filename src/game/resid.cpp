@@ -18,7 +18,7 @@ extern "C" u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count)
 
 // GetResTranslateID (0x02029ab8): the value of the entry with id for the current game state (byte 0x8e of data_0212c7c8),
 // or id itself when it is not in the table or the state is not 1..5.
-ARM u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count) {
+u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count) {
     const ResIDTranslate *entry;
     s32 i;
     u8 state;

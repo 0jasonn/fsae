@@ -15,7 +15,7 @@ typedef struct CalcPos2 {
 
 // Linear interpolation of from and to by ratio (0x1000 is the end)
 extern "C" CalcPos2 calc_liner(const s32 *from, const s32 *to, s32 ratio);
-ARM CalcPos2 calc_liner(const s32 *from, const s32 *to, s32 ratio) {
+CalcPos2 calc_liner(const s32 *from, const s32 *to, s32 ratio) {
     CalcPos2 result;
     s32 weight = ratio >> 3;
     s32 toX = to[0];
@@ -28,7 +28,7 @@ ARM CalcPos2 calc_liner(const s32 *from, const s32 *to, s32 ratio) {
 
 // Ease-in curve: the ratio is pulled back by the table value, then interpolated as in calc_liner
 extern "C" CalcPos2 calc_easeIn(const s32 *from, const s32 *to, s32 ratio);
-ARM CalcPos2 calc_easeIn(const s32 *from, const s32 *to, s32 ratio) {
+CalcPos2 calc_easeIn(const s32 *from, const s32 *to, s32 ratio) {
     CalcPos2 result;
     s32 weight;
 
@@ -41,7 +41,7 @@ ARM CalcPos2 calc_easeIn(const s32 *from, const s32 *to, s32 ratio) {
 
 // Ease-out curve: the same as calc_easeIn with the table value added
 extern "C" CalcPos2 calc_easeOut(const s32 *from, const s32 *to, s32 ratio);
-ARM CalcPos2 calc_easeOut(const s32 *from, const s32 *to, s32 ratio) {
+CalcPos2 calc_easeOut(const s32 *from, const s32 *to, s32 ratio) {
     CalcPos2 result;
     s32 weight;
 

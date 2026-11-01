@@ -6,11 +6,11 @@
 // Address -> name: 0x0206d610 kumo_big0, 0x0206d62c kumo_big0_init, 0x0206d678 kumo_big0_move,
 // 0x0206d6b0 kumo_big1, 0x0206d6cc kumo_big1_move
 
-ARM void kumo_big0(Entity *e) {
+void kumo_big0(Entity *e) {
     kumoBig0Table[e->action](e);
 }
 
-ARM void kumo_big0_init(Entity *e) {
+void kumo_big0_init(Entity *e) {
     u8 nextAction = e->action + 1;
 
     e->action = nextAction;
@@ -22,7 +22,7 @@ ARM void kumo_big0_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void kumo_big0_move(Entity *e) {
+void kumo_big0_move(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -34,11 +34,11 @@ ARM void kumo_big0_move(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void kumo_big1(Entity *e) {
+void kumo_big1(Entity *e) {
     kumoBig1Table[e->action](e);
 }
 
-ARM void kumo_big1_move(Entity *e) {
+void kumo_big1_move(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;

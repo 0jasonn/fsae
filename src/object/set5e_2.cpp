@@ -10,7 +10,7 @@ typedef struct Vars_Set5e {
     /* 7c */ const u16 *valuePtr; // points at the value to compare against
 } Vars_Set5e;
 
-ARM void set5e_move(Entity *e) {
+void set5e_move(Entity *e) {
     Entity *obj;
 
     if (VARS(Vars_Set5e, e)->lastValue == *VARS(Vars_Set5e, e)->valuePtr) {

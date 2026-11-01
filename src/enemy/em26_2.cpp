@@ -2,7 +2,7 @@
 #include "enemy/em26.h"
 #include "global.h"
 
-ARM void em26_move(Entity *e) {
+void em26_move(Entity *e) {
     V(e)->lifeTimer--;
     if (V(e)->lifeTimer == 0) {
         KemuriSet(e);
@@ -17,7 +17,7 @@ ARM void em26_move(Entity *e) {
     }
 }
 
-ARM void em26_div(Entity *e) {
+void em26_div(Entity *e) {
     Entity *leftPart = GetObjWork();
     if (leftPart == NULL) {
         return;

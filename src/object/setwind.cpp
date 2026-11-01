@@ -7,7 +7,7 @@
 extern const s8 setwindOffsetTable[];  // setwindOffsetTable, dx/dy pairs by type
 extern const u16 setwindSpeedTable[];  // setwindSpeedTable, indexed by subtimer
 
-ARM void setwind(Entity *e) {
+void setwind(Entity *e) {
     Entity *wind;
 
     wind = GetSetWork(0x4a, 0, 0);

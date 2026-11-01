@@ -12,7 +12,7 @@ typedef struct HeartMarkerTarget {
 extern HeartMarkerTarget data_0212c7c8;
 
 // light_marker, 0x02069f5c: follows the actor template of its type2 (OBJ_TEMPLATE) and the animation.
-ARM void light_marker(Entity *e) {
+void light_marker(Entity *e) {
     u8 action = e->action;
     Entity *target;
     u8 nextAction;
@@ -32,7 +32,7 @@ ARM void light_marker(Entity *e) {
 }
 
 // heart_marker, 0x02069ffc
-ARM void heart_marker(Entity *e) {
+void heart_marker(Entity *e) {
     u8 action = e->action;
     u8 nextAction;
     if (action == 0) {

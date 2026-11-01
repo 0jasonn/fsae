@@ -7,7 +7,7 @@
 //   em0b_return, trapAttBitCheck
 
 // Return: when the check of the state is clear the action goes back two steps and the speed is doubled.
-ARM void em0b_return(Entity *e) {
+void em0b_return(Entity *e) {
     if (func_020847a0(e) != 0) {
         return;
     }
@@ -16,7 +16,7 @@ ARM void em0b_return(Entity *e) {
 }
 
 // Checks the two map points next to the entity (by the direction) for a trap; returns 1 when one of them blocks.
-ARM BOOL trapAttBitCheck(Entity *e) {
+BOOL trapAttBitCheck(Entity *e) {
     u8 index;
     u16 px;
     u16 py;

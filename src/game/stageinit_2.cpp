@@ -5,7 +5,7 @@
 // knife_native_init_0537bc -> knife_native_init_0537bc, ... knife_native_init_0538e8 -> knife_native_init_0538e8: same shape as Init_Kazan2A1
 // with an entity argument: one of two lists chosen by bit 0 of Random().
 
-ARM void knife_native_init_0537bc(u8 param) {
+void knife_native_init_0537bc(u8 param) {
     if ((Random() & 1) != 0) {
         RandomBlockSet(spawnList_0537bc_set, param);
     } else {
@@ -13,7 +13,7 @@ ARM void knife_native_init_0537bc(u8 param) {
     }
 }
 
-ARM void knife_native_init_0537f8(u8 param) {
+void knife_native_init_0537f8(u8 param) {
     if ((Random() & 1) != 0) {
         RandomBlockSet(spawnList_0537f8_set, param);
     } else {
@@ -21,7 +21,7 @@ ARM void knife_native_init_0537f8(u8 param) {
     }
 }
 
-ARM void knife_native_init_053834(u8 param) {
+void knife_native_init_053834(u8 param) {
     if ((Random() & 1) != 0) {
         RandomBlockSet(spawnList_053834_set, param);
     } else {
@@ -29,7 +29,7 @@ ARM void knife_native_init_053834(u8 param) {
     }
 }
 
-ARM void knife_native_init_053870(u8 param) {
+void knife_native_init_053870(u8 param) {
     if ((Random() & 1) != 0) {
         RandomBlockSet(spawnList_053870_set, param);
     } else {
@@ -37,7 +37,7 @@ ARM void knife_native_init_053870(u8 param) {
     }
 }
 
-ARM void knife_native_init_0538ac(u8 param) {
+void knife_native_init_0538ac(u8 param) {
     if ((Random() & 1) != 0) {
         RandomBlockSet(spawnList_0538ac_set, param);
     } else {
@@ -45,7 +45,7 @@ ARM void knife_native_init_0538ac(u8 param) {
     }
 }
 
-ARM void knife_native_init_0538e8(u8 param) {
+void knife_native_init_0538e8(u8 param) {
     if ((Random() & 1) != 0) {
         RandomBlockSet(spawnList_0538e8_set, param);
     } else {
@@ -54,28 +54,28 @@ ARM void knife_native_init_0538e8(u8 param) {
 }
 
 // Scene_ResetOverlayState -> Scene_ResetOverlayState
-ARM void Scene_ResetOverlayState(void) {
+void Scene_ResetOverlayState(void) {
     func_02029a50(pauseState, 0x20);
     func_020a1a1c(pauseDialogWindow);
     frameCounter[0x11] = 0;
 }
 
 // Scene_SetFlag5 -> Scene_SetFlag5, Scene_ClearFlag5 -> Scene_ClearFlag5
-ARM void Scene_SetFlag5(void) {
+void Scene_SetFlag5(void) {
     pauseState[5] = 1;
 }
 
-ARM void Scene_ClearFlag5(void) {
+void Scene_ClearFlag5(void) {
     pauseState[5] = 0;
 }
 
 // Pause -> Pause
-ARM void Pause(void) {
+void Pause(void) {
     pauseHandlerTable[pauseState[0]]();
 }
 
 // pause_init -> pause_init (guess)
-ARM void pause_init(void) {
+void pause_init(void) {
     u8 i;
     if (data_0212c5ac.blendEnabled != 0 || pauseState[5] != 0) {
         return;

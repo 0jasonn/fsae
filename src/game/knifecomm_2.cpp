@@ -10,7 +10,7 @@ extern const u8 data_020dec1c[];
 extern const u8 data_020deca0[];
 
 // Knife_Comm_selectDataTable (0x020ae540): returns data_020deca0 when flag is set, data_020dec1c otherwise
-ARM const void *Knife_Comm_selectDataTable(s32 unused, s32 flag) {
+const void *Knife_Comm_selectDataTable(s32 unused, s32 flag) {
     const void *table;
 
     table = data_020dec1c;

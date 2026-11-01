@@ -13,7 +13,7 @@ namespace Knife {
 namespace Message {
 
 // TextTokenizer::onReadPlayerNameTag(int) (0x0208ee24): slot 1 of the app info fills a text for the value
-ARM void TextTokenizer::onReadPlayerNameTag(s32 value) {
+void TextTokenizer::onReadPlayerNameTag(s32 value) {
     Text text;
 
     text.clear();
@@ -23,7 +23,7 @@ ARM void TextTokenizer::onReadPlayerNameTag(s32 value) {
 
 // TextTokenizer::onReadSPSwitchTag(int, Text const*, Text const*) (0x0208ee74): the second text when the number
 // given by slot 0 is plural, the first otherwise
-ARM void TextTokenizer::onReadSPSwitchTag(s32 value, const Text *first, const Text *second) {
+void TextTokenizer::onReadSPSwitchTag(s32 value, const Text *first, const Text *second) {
     Text text;
     s32 number;
 
@@ -38,7 +38,7 @@ ARM void TextTokenizer::onReadSPSwitchTag(s32 value, const Text *first, const Te
 }
 
 // TextTokenizer::onReadCenterTag() (0x0208ef00)
-ARM void TextTokenizer::onReadCenterTag(void) {
+void TextTokenizer::onReadCenterTag(void) {
     BOOL ok;
     u32 freeBytes;
     u8 *token;
@@ -66,7 +66,7 @@ ARM void TextTokenizer::onReadCenterTag(void) {
 }
 
 // TextTokenizer::onReadRightTag() (0x0208ef80)
-ARM void TextTokenizer::onReadRightTag(void) {
+void TextTokenizer::onReadRightTag(void) {
     BOOL ok;
     u32 freeBytes;
     u8 *token;

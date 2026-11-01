@@ -14,7 +14,7 @@ typedef struct SaveLoadState {
 } SaveLoadState;
 #define SAVE_LOAD_STATE (*(SaveLoadState *)&data_02171d10)
 
-ARM s32 Knife_readSaveFile(void *buffer, const char *path) {
+s32 Knife_readSaveFile(void *buffer, const char *path) {
     FSFile file;
     s32 opened;
     u32 length;

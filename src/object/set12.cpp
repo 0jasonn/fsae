@@ -7,7 +7,7 @@
 // Set12 actor (module set12). Address -> name:
 //   0x020637f4 Set12 (original name)
 
-ARM void Set12(Entity *e) {
+void Set12(Entity *e) {
     if (VARS(Vars_Set12, e)->isPresent != 0) {
         if (!(flagBits[e->type & 0x1f] & em12_typeMasks[e->areaIndex])) {
             VARS(Vars_Set12, e)->isPresent = 0;

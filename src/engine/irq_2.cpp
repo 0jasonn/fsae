@@ -51,26 +51,26 @@ extern u8 data_02fe0000[];
 
 extern void OS_SetIrqFunction(u32 mask, void (*func)(void));
 
-ARM void VCountIntr(void) {
+void VCountIntr(void) {
     OS_EnableIrqMask(5);
     irqState.handler = VCountIntr2;
 }
 
-ARM void VCountIntr2(void) {
+void VCountIntr2(void) {
     OS_EnableIrqMask(5);
     GX_SetVCountEqVal(0);
     irqState.handler = VCountIntr;
 }
 
-ARM void Irq_Bit7Handler(void) {
+void Irq_Bit7Handler(void) {
     MultiSioIntr();
 }
 
-ARM void initializeVirtualScreenData(void) {
+void initializeVirtualScreenData(void) {
     globalBuffer.block = (u8 *)EL_GetGlobalAdr(0x20000, 0x20);
 }
 
-ARM void finalizeVirtualScreenData(void) {
+void finalizeVirtualScreenData(void) {
     if (globalBuffer.block == NULL) {
         return;
     }
@@ -78,11 +78,11 @@ ARM void finalizeVirtualScreenData(void) {
     globalBuffer.block = NULL;
 }
 
-ARM void refreshVirtualScreenData(u32 dstOffset, u32 srcOffset, u32 size) {
+void refreshVirtualScreenData(u32 dstOffset, u32 srcOffset, u32 size) {
     MIi_CpuCopyFast(globalBuffer.block + srcOffset, (void *)(0x06004000 + dstOffset), size);
 }
 
-ARM void Entity_RunAction(Entity *e) {
+void Entity_RunAction(Entity *e) {
     if (data_0212c4b8 == 0) {
         entityActionTable[e->action](e);
     }

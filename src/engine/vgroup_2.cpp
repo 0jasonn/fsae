@@ -16,7 +16,7 @@ extern u8 data_0212c4b8;
 extern const EntityFunc actorStateTable[];
 
 // PutVGroup (0x02081160)
-ARM void PutVGroup(Entity *e) {
+void PutVGroup(Entity *e) {
     VGROUP_ *slot;
     u8 id;
 
@@ -37,12 +37,12 @@ ARM void PutVGroup(Entity *e) {
 }
 
 // VGroupLoadWait (0x020811a8)
-ARM u32 VGroupLoadWait(Entity *e) {
+u32 VGroupLoadWait(Entity *e) {
     return vgroupSlots[e->unk_53].state & 0x40;
 }
 
 // GetVgRemain (0x020811c0)
-ARM u32 GetVgRemain(void) {
+u32 GetVgRemain(void) {
     VGROUP_ *line;
     u32 best;
     u8 run;

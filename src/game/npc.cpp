@@ -11,14 +11,14 @@
 //   script_message_close
 
 // Writes the value through the entity pointer in unk_60, when there is one
-ARM void ObjSetTargetWord(Entity *e, u16 value) {
+void ObjSetTargetWord(Entity *e, u16 value) {
     if (e->linkedEntity != 0) {
         *(u16 *)e->linkedEntity = value;
     }
 }
 
 // Moves the script position of npc to target
-ARM void ScriptJump(NPC_WORK_ *npc, const void *target) {
+void ScriptJump(NPC_WORK_ *npc, const void *target) {
     npc->script = (u16 *)target;
 }
 
@@ -27,7 +27,7 @@ extern NpcScriptFunc data_021049e4[];
 extern const u32 flagBits[];
 
 // Runs script opcodes until one of them asks to wait (returns non-zero)
-ARM s32 ScriptMove(NPC_WORK_ *npc) {
+s32 ScriptMove(NPC_WORK_ *npc) {
     if (npc->script == 0 || npc->script[0] == 0xffff) {
         return 1;
     }
@@ -41,26 +41,26 @@ ARM s32 ScriptMove(NPC_WORK_ *npc) {
 }
 
 // Opcodes that do nothing and only report 0
-ARM s32 script_nop(NPC_WORK_ *npc) {
+s32 script_nop(NPC_WORK_ *npc) {
     return 0;
 }
 
 // Sets the script argument and steps over the opcode
-ARM s32 script_request(NPC_WORK_ *npc) {
+s32 script_request(NPC_WORK_ *npc) {
     npc->scriptArg = npc->script[1];
     npc->script += 2;
     return 0;
 }
 
 // Sets the sequence number and steps over the opcode
-ARM s32 script_seqset(NPC_WORK_ *npc) {
+s32 script_seqset(NPC_WORK_ *npc) {
     npc->unk_00 = npc->script[1];
     npc->script += 2;
     return 0;
 }
 
 // Shows a message (id in the argument) and steps over the opcode
-ARM s32 script_message(NPC_WORK_ *npc) {
+s32 script_message(NPC_WORK_ *npc) {
     MessageRequest(npc->script[1]);
     messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
     messageRequest[4] = (messageRequest[4] & ~0x1f) | ((u8)npc->script[2] & 0x1f);
@@ -69,14 +69,14 @@ ARM s32 script_message(NPC_WORK_ *npc) {
 }
 
 // Plays the sound given by the two argument words
-ARM s32 script_sound(NPC_WORK_ *npc) {
+s32 script_sound(NPC_WORK_ *npc) {
     SoundReq(((u32)npc->script[1] << 16) | npc->script[2]);
     npc->script += 3;
     return 1;
 }
 
 // Starts a move: the NPC gets the mode 3 and the direction argument
-ARM s32 script_move(NPC_WORK_ *npc) {
+s32 script_move(NPC_WORK_ *npc) {
     npc->scriptArg = 3;
     npc->dirArg = npc->script[1];
     npc->entity->direction = npc->script[2];
@@ -87,7 +87,7 @@ ARM s32 script_move(NPC_WORK_ *npc) {
 }
 
 // Waits while the NPC is moving
-ARM s32 script_wait_moved(NPC_WORK_ *npc) {
+s32 script_wait_moved(NPC_WORK_ *npc) {
     if (npc->waitFlag == 0) {
         npc->script += 1;
     }
@@ -95,14 +95,14 @@ ARM s32 script_wait_moved(NPC_WORK_ *npc) {
 }
 
 // Sets the timer from the argument and steps over the opcode
-ARM s32 script_wait_timer(NPC_WORK_ *npc) {
+s32 script_wait_timer(NPC_WORK_ *npc) {
     npc->timer = npc->script[1];
     npc->script += 2;
     return 0;
 }
 
 // Waits until the flag in the argument is set
-ARM s32 script_wait_flag(NPC_WORK_ *npc) {
+s32 script_wait_flag(NPC_WORK_ *npc) {
     if (data_02134924 & flagBits[npc->script[1]]) {
         npc->script += 2;
     }
@@ -110,32 +110,32 @@ ARM s32 script_wait_flag(NPC_WORK_ *npc) {
 }
 
 // Sets the flag in the argument
-ARM s32 script_flagset(NPC_WORK_ *npc) {
+s32 script_flagset(NPC_WORK_ *npc) {
     data_02134924 |= flagBits[npc->script[1]];
     npc->script += 2;
     return 0;
 }
 
 // Calls ScriptJump with the two argument words as one value
-ARM s32 script_branch(NPC_WORK_ *npc) {
+s32 script_branch(NPC_WORK_ *npc) {
     ScriptJump(npc, (const void *)(((u32)npc->script[1] << 16) | npc->script[2]));
     return 0;
 }
 
 // Turns the entity to the direction given in the argument
-ARM s32 script_chardir(NPC_WORK_ *npc) {
+s32 script_chardir(NPC_WORK_ *npc) {
     npc->entity->animationState = (u8)npc->script[1];
     npc->script += 2;
     return 0;
 }
 
 // Opcode that does nothing and only reports 0
-ARM s32 script_nop2(NPC_WORK_ *npc) {
+s32 script_nop2(NPC_WORK_ *npc) {
     return 0;
 }
 
 // Waits until the message box is idle (state 0 or 6)
-ARM s32 script_message_wait(NPC_WORK_ *npc) {
+s32 script_message_wait(NPC_WORK_ *npc) {
     u8 state;
 
     state = messageRequest[0] & 0x7f;
@@ -146,7 +146,7 @@ ARM s32 script_message_wait(NPC_WORK_ *npc) {
 }
 
 // Closes the message box
-ARM s32 script_message_close(NPC_WORK_ *npc) {
+s32 script_message_close(NPC_WORK_ *npc) {
     Status_ArmIfEnabled();
     npc->script += 1;
     return 0;

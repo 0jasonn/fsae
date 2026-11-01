@@ -8,6 +8,6 @@
 extern u8 data_02126b1c[];
 
 extern "C" void *Window_getSubClassInfo(void);
-ARM void *Window_getSubClassInfo(void) {
+void *Window_getSubClassInfo(void) {
     return data_02126b1c;
 }

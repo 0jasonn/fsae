@@ -9,7 +9,7 @@
 // Menu_DispatchKeys (0x020bd968): dispatches the key bits of the input word at sub+0x3a0 (0x20, 0x10, 0x04, 0x01,
 // 0x08) to the menu actions. Returns 1 when an action ran, 0 when nothing was done.
 extern "C" s32 Menu_DispatchKeys(MenuWork *menu);
-ARM s32 Menu_DispatchKeys(MenuWork *menu) {
+s32 Menu_DispatchKeys(MenuWork *menu) {
     u8 step;
     s32 result;
     u16 keys;

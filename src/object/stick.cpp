@@ -11,7 +11,7 @@ typedef struct Vars_StickParent {
     /* 7c */ u16 stickPos; // encoded position: (stickPos - 8) & 7 is the sub-cell offset, (stickPos - 8) >> 4 the anim
 } Vars_StickParent;
 
-ARM void stick_init(Entity *e) {
+void stick_init(Entity *e) {
     e->action = 1;
     e->unk_5e.b0 = 0;
     e->y.HALF.HI -= 1;

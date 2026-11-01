@@ -5,11 +5,11 @@
 // effect_cave2 family (module effect_cave2), 0x0206ddc8 .. 0x0206de60.
 // Address -> name: 0x0206ddc8 effect_cave2, 0x0206dde4 effect_cave2_move
 
-ARM void effect_cave2(Entity *e) {
+void effect_cave2(Entity *e) {
     effectCave2Table[e->action](e);
 }
 
-ARM void effect_cave2_move(Entity *e) {
+void effect_cave2_move(Entity *e) {
     u8 timer;
 
     if (e->subtimer == 0) {

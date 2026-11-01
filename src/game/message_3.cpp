@@ -19,7 +19,7 @@ extern u8 data_0216f010[];
 extern u8 data_0217d350[];
 
 
-ARM void MessageInitialize(void) {
+void MessageInitialize(void) {
     func_02029a50(messageRequest, 0x18);
     func_02029a50(data_0217d39c, 0xe8);
     func_02029a50(data_0216efe0, 0x10);
@@ -28,7 +28,7 @@ ARM void MessageInitialize(void) {
     data_0216efbc[0] = 0;
 }
 
-ARM void TelopInitialize(void) {
+void TelopInitialize(void) {
     func_02029a50(telopRequest, 0x18);
     func_02029a50(telopBox, 0xe8);
     func_02029a50(telopWindowSlots, 0x10);

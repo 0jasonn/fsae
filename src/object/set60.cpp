@@ -9,17 +9,17 @@
 
 extern const EntityFunc set60_actions[]; // set60_actions, indexed by e->action
 
-ARM void Set60(Entity *e) {
+void Set60(Entity *e) {
     set60_actions[e->action](e);
 }
 
-ARM void set60_init(Entity *e) {
+void set60_init(Entity *e) {
     e->action++;
     e->spriteSettings.b0 = 1;
     InitAnimationForceUpdate(e, e->unk_23);
 }
 
-ARM void set60_move(Entity *e) {
+void set60_move(Entity *e) {
     Entity *child;
 
     if (e->type == 0) {

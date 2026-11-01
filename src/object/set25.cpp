@@ -7,6 +7,6 @@
 //   0x020665c0 Set25 (dispatcher)
 
 // Dispatcher: runs the handler for the current action.
-ARM void Set25(Entity *e) {
+void Set25(Entity *e) {
     set25_stateTable[e->action](e);
 }

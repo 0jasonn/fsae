@@ -10,7 +10,7 @@ extern u8 data_0212ceb0[]; // PL_WORK array of the players (bss); the controlled
 
 // SinglePlay::InitializeFormation() (0x02099cec): clears the formation state and initializes the log list
 extern "C" void Knife_Single_SinglePlay_InitializeFormation(void *self);
-ARM void Knife_Single_SinglePlay_InitializeFormation(void *self) {
+void Knife_Single_SinglePlay_InitializeFormation(void *self) {
     SinglePlayWork *sp;
 
     sp = (SinglePlayWork *)self;
@@ -27,7 +27,7 @@ ARM void Knife_Single_SinglePlay_InitializeFormation(void *self) {
 
 // SinglePlay::InitializeCont() (0x02099d28): clears the controller state, the log list and the player fields
 extern "C" void Knife_Single_SinglePlay_InitializeCont(void *self);
-ARM void Knife_Single_SinglePlay_InitializeCont(void *self) {
+void Knife_Single_SinglePlay_InitializeCont(void *self) {
     SinglePlayWork *sp;
 
     sp = (SinglePlayWork *)self;
@@ -51,7 +51,7 @@ ARM void Knife_Single_SinglePlay_InitializeCont(void *self) {
 // SinglePlay::SetWarpInfo(unsigned char, unsigned char) (0x02099d88): stores the pair when none is set yet or the
 // player bit of the controller matches the first value
 extern "C" void Knife_Single_SinglePlay_SetWarpInfo(void *self, u8 first, u8 second);
-ARM void Knife_Single_SinglePlay_SetWarpInfo(void *self, u8 first, u8 second) {
+void Knife_Single_SinglePlay_SetWarpInfo(void *self, u8 first, u8 second) {
     SinglePlayWork *sp;
 
     sp = (SinglePlayWork *)self;

@@ -14,7 +14,7 @@ typedef struct Vars_Set16 {
     /* 70 */ s32 counter; // frames left before the actor is removed
 } Vars_Set16;
 
-ARM void Set16(Entity *e) {
+void Set16(Entity *e) {
     if (VARS(Vars_Set16, e)->counter != 0) {
         VARS(Vars_Set16, e)->counter = VARS(Vars_Set16, e)->counter - 1;
         if (VARS(Vars_Set16, e)->counter == 0) {

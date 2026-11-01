@@ -7,7 +7,7 @@
 extern u8 data_0212ca20[]; // group info block, the member table is at +0x30
 
 // GetMyPlayerNo (0x02082f3c)
-ARM s32 GetMyPlayerNo(void) {
+s32 GetMyPlayerNo(void) {
     void *manager;
     s32 state;
     u8 *groupInfo;

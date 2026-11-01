@@ -11,7 +11,7 @@ typedef struct Vars_Ido {
     /* 74 */ u16 targetPos; // position the actor is moving to along the axis
 } Vars_Ido;
 
-ARM void ido_up(Entity *e) {
+void ido_up(Entity *e) {
     ido_yukaMove(e);
     if ((s32)VARS(Vars_Ido, e)->targetPos < (s32)e->y.HALF.HI) {
         return;
@@ -20,7 +20,7 @@ ARM void ido_up(Entity *e) {
     ido_getNextInfo(e);
 }
 
-ARM void ido_right(Entity *e) {
+void ido_right(Entity *e) {
     ido_yukaMove(e);
     if ((s32)VARS(Vars_Ido, e)->targetPos > (s32)e->x.HALF.HI) {
         return;
@@ -29,7 +29,7 @@ ARM void ido_right(Entity *e) {
     ido_getNextInfo(e);
 }
 
-ARM void ido_down(Entity *e) {
+void ido_down(Entity *e) {
     ido_yukaMove(e);
     if ((s32)VARS(Vars_Ido, e)->targetPos > (s32)e->y.HALF.HI) {
         return;
@@ -38,7 +38,7 @@ ARM void ido_down(Entity *e) {
     ido_getNextInfo(e);
 }
 
-ARM void ido_left(Entity *e) {
+void ido_left(Entity *e) {
     ido_yukaMove(e);
     if ((s32)VARS(Vars_Ido, e)->targetPos < (s32)e->x.HALF.HI) {
         return;

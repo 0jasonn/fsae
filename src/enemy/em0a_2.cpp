@@ -7,7 +7,7 @@
 //   em0a_jump -> em0a_jump, em0a_wait -> em0a_wait
 
 // Jump: gravity, and when the actor is falling close to the floor it starts the next state with 30 frames.
-ARM void em0a_jump(Entity *e) {
+void em0a_jump(Entity *e) {
     UpdateGravity(e, 0x2800);
     if (e->zVelocity >= 0) {
         return;
@@ -21,7 +21,7 @@ ARM void em0a_jump(Entity *e) {
 }
 
 // Wait: counts the timer, then the subtimer with the frame bit; at the end the direction is set and the smoke starts.
-ARM void em0a_wait(Entity *e) {
+void em0a_wait(Entity *e) {
     if (e->timer != 0) {
         e->timer -= 1;
         e->subtimer = 0xc;
@@ -43,7 +43,7 @@ ARM void em0a_wait(Entity *e) {
 
 // Move: animation and the wall check; a hit on a wall copies the position and plays the sound, otherwise the map cell
 // under the actor decides whether the actor keeps moving.
-ARM void em0a_move(Entity *e) {
+void em0a_move(Entity *e) {
     Entity *work;
     u16 cell;
     u16 kind;

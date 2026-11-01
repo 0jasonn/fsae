@@ -13,7 +13,7 @@ extern "C" SndVolumeDesc data_02184794[];
 // SndEntry_ApplyVolumes: stores the volume base and sets the volume of each of the entry's channels from the base plus the
 // channel's offset.
 extern "C" void SndEntry_ApplyVolumes(SndEntry *entry, s32 volumeBase);
-ARM void SndEntry_ApplyVolumes(SndEntry *entry, s32 volumeBase) {
+void SndEntry_ApplyVolumes(SndEntry *entry, s32 volumeBase) {
     u8 channel;
     s32 i;
     s32 volume;

@@ -20,7 +20,7 @@ extern u8 localPlayerIndex;
 extern s32 em2c_leverDone;
 
 
-ARM void Em2c(Entity *e) {
+void Em2c(Entity *e) {
     EnemyFunctionHandler(e, em2c_actions);
     if (!(e->contactFlags & 0x80)) {
         return;
@@ -32,15 +32,15 @@ ARM void Em2c(Entity *e) {
     data_0212ceb0[e->contactedEntity->type].stateTimer = 1;
 }
 
-ARM void em2c_normal(Entity *e) {
+void em2c_normal(Entity *e) {
     em2c_typeActions[e->type](e);
 }
 
-ARM void em2c_knockback(Entity *e) {
+void em2c_knockback(Entity *e) {
     GenericKnockback(e, em2c_actions);
 }
 
-ARM void em2c_type0(Entity *e) {
+void em2c_type0(Entity *e) {
     em2c_type0Actions[e->action](e);
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 1)) {
@@ -50,7 +50,7 @@ ARM void em2c_type0(Entity *e) {
     e->unk_28 += Random() & 0x38;
 }
 
-ARM void em2c_type0_init_033378(Entity *e) {
+void em2c_type0_init_033378(Entity *e) {
     BindPlayers();
     if (set1st(e) == 0) {
         return;
@@ -66,7 +66,7 @@ ARM void em2c_type0_init_033378(Entity *e) {
     CockpitOff();
 }
 
-ARM void em2c_type0_1stDemoWait_0333f0(Entity *e) {
+void em2c_type0_1stDemoWait_0333f0(Entity *e) {
     BindPlayers();
     if (V(e)->demoStep != 7) {
         return;
@@ -86,7 +86,7 @@ ARM void em2c_type0_1stDemoWait_0333f0(Entity *e) {
     CockpitOn();
 }
 
-ARM void type0_1stMove(Entity *e) {
+void type0_1stMove(Entity *e) {
     if (V(e)->movePhase == 0) {
         if (e->timer != 0) {
             if (--e->timer == 0x5a) {
@@ -121,14 +121,14 @@ ARM void type0_1stMove(Entity *e) {
     TelopRequest(0x3f3);
 }
 
-ARM void type0_2ndDemoWait(Entity *e) {
+void type0_2ndDemoWait(Entity *e) {
     if (V(e)->demoStep == 3) {
         e->action = 4;
         e->timer = 0xb4;
     }
 }
 
-ARM void em2c_type0_2ndMove_0335b0(Entity *e) {
+void em2c_type0_2ndMove_0335b0(Entity *e) {
     if (V(e)->movePhase == 0) {
         if (e->timer != 0) {
             if (--e->timer == 0x5a) {
@@ -159,13 +159,13 @@ ARM void em2c_type0_2ndMove_0335b0(Entity *e) {
     TelopRequest(0x3f4);
 }
 
-ARM void type0_3rdDemoWait(Entity *e) {
+void type0_3rdDemoWait(Entity *e) {
     if (V(e)->demoStep == 1) {
         e->action = 6;
     }
 }
 
-ARM void type0_3rdMove(Entity *e) {
+void type0_3rdMove(Entity *e) {
     if (V(e)->movePhase == 0) {
         e->action = 7;
         e->timer = 0x96;
@@ -179,7 +179,7 @@ ARM void type0_3rdMove(Entity *e) {
     TelopRequest(0x3f6);
 }
 
-ARM void type0_Die(Entity *e) {
+void type0_Die(Entity *e) {
     if (--e->timer == 0) {
         e->health = 0;
         e->statusFlags &= 0x7f;

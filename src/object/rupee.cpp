@@ -11,13 +11,13 @@
 //   0x02058834 rupee1000 (original name)
 //   0x02058860 rupee10000 (original name)
 
-ARM void rupee_init(Entity *e) {
+void rupee_init(Entity *e) {
     e->action++;
     e->spriteSettings.b14 = 0;
     e->spriteSettings.b30 = 0;
 }
 
-ARM void rupee_move(Entity *e, s8 dx, u32 divisor) {
+void rupee_move(Entity *e, s8 dx, u32 divisor) {
     e->spriteSettings.b0 = 2;
     e->x.HALF.HI = e->parent->x.HALF.HI + dx - 1;
     e->y.HALF.HI = e->parent->y.HALF.HI + 4;
@@ -30,35 +30,35 @@ ARM void rupee_move(Entity *e, s8 dx, u32 divisor) {
     }
 }
 
-ARM void rupee1(Entity *e) {
+void rupee1(Entity *e) {
     if (e->action == 0) {
         rupee_init(e);
     }
     rupee_move(e, 0xc, 1);
 }
 
-ARM void rupee10(Entity *e) {
+void rupee10(Entity *e) {
     if (e->action == 0) {
         rupee_init(e);
     }
     rupee_move(e, 0x6, 10);
 }
 
-ARM void rupee100(Entity *e) {
+void rupee100(Entity *e) {
     if (e->action == 0) {
         rupee_init(e);
     }
     rupee_move(e, 0, 100);
 }
 
-ARM void rupee1000(Entity *e) {
+void rupee1000(Entity *e) {
     if (e->action == 0) {
         rupee_init(e);
     }
     rupee_move(e, -6, 1000);
 }
 
-ARM void rupee10000(Entity *e) {
+void rupee10000(Entity *e) {
     if (e->action == 0) {
         rupee_init(e);
     }

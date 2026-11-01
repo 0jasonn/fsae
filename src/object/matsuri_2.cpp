@@ -8,7 +8,7 @@
 //   0x02059c58 matsuri_ma2 (original name)
 //   0x02059c78 matsuri_move (original name)
 
-ARM void matsuri_wait(Entity *e) {
+void matsuri_wait(Entity *e) {
     if ((VMATSURI(e)->typeBits & em12_typeMasks[e->areaIndex]) != VMATSURI(e)->typeBits) {
         return;
     }
@@ -17,7 +17,7 @@ ARM void matsuri_wait(Entity *e) {
     e->timer = 0x3c;
 }
 
-ARM void matsuri_ma(Entity *e) {
+void matsuri_ma(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action++;
@@ -25,14 +25,14 @@ ARM void matsuri_ma(Entity *e) {
     }
 }
 
-ARM void matsuri_ma2(Entity *e) {
+void matsuri_ma2(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action++;
     }
 }
 
-ARM void matsuri_move(Entity *e) {
+void matsuri_move(Entity *e) {
     Entity *child;
     u16 count;
     u16 rangeX;

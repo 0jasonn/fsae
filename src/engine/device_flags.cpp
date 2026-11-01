@@ -14,7 +14,7 @@ extern "C" u32 OSi_DetectDeviceType(void);
 extern "C" void Device_InitFlags(void);
 
 // Device_InitFlags() (0x02017f64): on the first call sets the flags to 0x1800004 and ors in the detected device type.
-ARM void Device_InitFlags(void) {
+void Device_InitFlags(void) {
     if (data_020dfb9c.flags != 0xffffffff) {
         return;
     }

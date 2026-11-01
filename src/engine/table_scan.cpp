@@ -15,7 +15,7 @@ extern "C" s32 WordTable_Scan(void *self, WordTable *table);
 
 // WordTable_Scan(self, table) (0x0200c09c): passes each little-endian word of the table to func_0200c594 with a stack word
 // as the out argument. The first nonzero result stops the scan and is returned as 1; otherwise 0.
-ARM s32 WordTable_Scan(void *self, WordTable *table) {
+s32 WordTable_Scan(void *self, WordTable *table) {
     u8 *entry;
     u32 i;
     u32 value;

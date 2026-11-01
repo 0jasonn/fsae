@@ -15,7 +15,7 @@ extern "C" void Os_TerminateByKind(u32 unused, u32 code);
 
 // Os_TerminateByKind(unused, code) (0x02017008): takes the kind from bits 8 to 14 of code. Kind 0x10 sets the first flag and
 // returns; kind 0x20 sets the second flag and terminates; any other kind terminates.
-ARM void Os_TerminateByKind(u32 unused, u32 code) {
+void Os_TerminateByKind(u32 unused, u32 code) {
     u32 kind;
 
     kind = ((code & 0x7f00) << 8) >> 16;

@@ -7,7 +7,7 @@
 
 extern const s8 data_021154f4[]; // (dx, dy) pairs, indexed by subtimer, moved to the child each frame
 
-ARM void set01_boss(Entity *e) {
+void set01_boss(Entity *e) {
     Entity *child;
 
     if (e->timer == 0) {

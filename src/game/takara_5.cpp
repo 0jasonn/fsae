@@ -11,7 +11,7 @@ typedef struct TakaraEntry {
 extern TakaraEntry data_02134c30[32];
 extern "C" void takara_set(u8 *records, FRAME_INFO_ *frame, u8 kind);
 
-ARM void takara_set(u8 *records, FRAME_INFO_ *frame, u8 kind) {
+void takara_set(u8 *records, FRAME_INFO_ *frame, u8 kind) {
     TakaraEntry *entry;
     u8 i;
     u8 *frameOffsets;

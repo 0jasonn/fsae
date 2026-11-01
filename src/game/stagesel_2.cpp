@@ -64,7 +64,7 @@ extern u32 data_02134900;
 //   stagesel_dialogDelete, ssel_pause_dialogDisp
 
 // Closes the stage select dialog: stops the dialog sound and loads the stage select screen data again
-ARM void stagesel_dialogDelete(void) {
+void stagesel_dialogDelete(void) {
     if (data_021349c0[0x16] != 0) {
         data_021349c0[0x16] = 0;
         SoundReq(0x80050000);
@@ -74,7 +74,7 @@ ARM void stagesel_dialogDelete(void) {
 }
 
 // Shows the pause dialog (index, mode value) on the stage select screen
-ARM void ssel_pause_dialogDisp(u32 index, s32 unused, u8 value) {
+void ssel_pause_dialogDisp(u32 index, s32 unused, u8 value) {
     u16 layoutBase;
     u16 *palette;
 

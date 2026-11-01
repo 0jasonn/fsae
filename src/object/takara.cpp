@@ -5,14 +5,14 @@
 //   0x0207bcd4 takara_resetFlags
 
 // takara_resetFlags, 0x0207bcd4. Clears the opened-chest flags and the 0x80-byte chest table.
-ARM void takara_resetFlags(void) {
+void takara_resetFlags(void) {
     data_0213491c = 0;
     OSi_CpuClear32(0xffffffff, data_02134c30, 0x80);
 }
 
 // TakaraOpen, 0x0207bd00. Opens the chest with this id: the first time, plays the sound, sets its flag, runs the
 // handler of its table entry and, if the cell reports the expected state, rewrites the cell.
-ARM void TakaraOpen(Entity *e, u16 id, u16 key) {
+void TakaraOpen(Entity *e, u16 id, u16 key) {
     u8 index = 0;
     TakaraEntry *entry = data_02134c30;
     do {

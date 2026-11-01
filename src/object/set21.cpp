@@ -8,6 +8,6 @@
 
 extern EntityFunc data_02115ad0[]; // state table indexed by e->action
 
-ARM void Set21(Entity *e) {
+void Set21(Entity *e) {
     data_02115ad0[e->action](e);
 }

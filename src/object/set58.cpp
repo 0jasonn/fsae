@@ -10,15 +10,15 @@
 //   0x020733c8 body_init (original name)
 //   0x020734a4 body_sazanami is in scratch/agentD/nonmatching (near miss)
 
-ARM void Set58(Entity *e) {
+void Set58(Entity *e) {
     set58_typeActions[e->type](e);
 }
 
-ARM void set58_body(Entity *e) {
+void set58_body(Entity *e) {
     set58_bodyActions[e->action](e);
 }
 
-ARM void body_init(Entity *e) {
+void body_init(Entity *e) {
     set58_actionInit(e);
     set58_bodyState[0x30] = 0xff;
     set58_bodyState[0x31] = 0xff;

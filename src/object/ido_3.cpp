@@ -20,7 +20,7 @@ typedef struct Vars_IdoWait {
     /* 78 */ u16 *nextInfo; // next record of the movement script
 } Vars_IdoWait;
 
-ARM void ido_wait(Entity *e) {
+void ido_wait(Entity *e) {
     u8 mask;
     u32 playerIndex;
 
@@ -47,7 +47,7 @@ ARM void ido_wait(Entity *e) {
 // Reads the next record of the movement script. A record is four u16 words: a control word (bit 15 = wait record,
 // otherwise the low byte is the direction and bits 3-7 the sub action), an operand and a speed (or the speed of
 // the no-movement records in the second word).
-ARM void ido_getNextInfo(Entity *e) {
+void ido_getNextInfo(Entity *e) {
     u16 *record;
     u16 *speedRecord;
     s32 target;

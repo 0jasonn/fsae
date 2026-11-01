@@ -40,7 +40,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void flowerTamaSet(Entity *e) {
+void flowerTamaSet(Entity *e) {
     Entity *spawned;
     switch (RANDOM_WITH_ARG((u32)e) % 3) {
     case 0:
@@ -126,7 +126,7 @@ ARM void flowerTamaSet(Entity *e) {
 }
 // Em30CheckAttack (0x02043148): true for a part (tags 3/0x30, type 0, action 0xb) whose phase timer is past 0x5a.
 
-ARM BOOL Em30CheckAttack(Entity *e) {
+BOOL Em30CheckAttack(Entity *e) {
     if (e->objKind == 3 && e->objId == 0x30 && e->type == 0 && e->action == 0xb) {
         if (W(e)->phaseTimer > 0x5a) {
             return TRUE;
@@ -137,7 +137,7 @@ ARM BOOL Em30CheckAttack(Entity *e) {
 
 // Em30GetRightColor (0x02043184): the sprite index of part B for a part with tags 3/0x30, or 0xff otherwise.
 
-ARM u8 Em30GetRightColor(Entity *e) {
+u8 Em30GetRightColor(Entity *e) {
     if (e->objKind != 3 || e->objId != 0x30) {
         return 0xff;
     }
@@ -146,13 +146,13 @@ ARM u8 Em30GetRightColor(Entity *e) {
 
 // Enemy_RunHandlerTable (0x020431b8): runs this entity's handler from em31_handlerTable.
 
-ARM void Enemy_RunHandlerTable(Entity *e) {
+void Enemy_RunHandlerTable(Entity *e) {
     EnemyFunctionHandler(e, em31_handlerTable);
 }
 
 // em31_normal (0x020431cc): runs the handler for this entity's action from em31_stateTable.
 
-ARM void em31_normal(Entity *e) {
+void em31_normal(Entity *e) {
     em31_stateTable[e->action](e);
 }
 
@@ -160,7 +160,7 @@ ARM void em31_normal(Entity *e) {
 // unk_3e, may flip bit 2 of the sprite settings, and spawns an effect at this entity. Contact 0x80 turns this entity by
 // two steps. Then the generic knockback handler runs.
 
-ARM void em31_damage(Entity *e) {
+void em31_damage(Entity *e) {
     u8 contact = e->contactFlags;
     u8 offset = contact - 0x84;
     if (offset <= 0x9e) {

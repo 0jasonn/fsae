@@ -10,7 +10,7 @@ namespace Knife {
 
 // Knife::i_restoreGfxSettings() (0x020c7ed4): resets the display and the VRAM banks, sets up the touch panel, the
 // wireless icon and the task state, and clears the menu state bytes of the application object
-ARM void i_restoreGfxSettings(void) {
+void i_restoreGfxSettings(void) {
     u8 *app;
 
     func_02012c40();

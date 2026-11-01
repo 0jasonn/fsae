@@ -11,7 +11,7 @@ namespace Knife {
 namespace Message {
 
 // convertToFullWidth(int) (0x0208fc84)
-ARM s32 convertToFullWidth(s32 character) {
+s32 convertToFullWidth(s32 character) {
     u32 index;
 
     if (character >= 0x7f) {

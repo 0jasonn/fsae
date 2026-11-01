@@ -9,6 +9,6 @@ extern const s8 set37BobTable[];       // set37BobTable, indexed by timer & 7
 extern u16 frameCounter;              // frame counter
 
 // Set37, 0x0206b5b8: runs the state function for the current action.
-ARM void set37(Entity *e) {
+void set37(Entity *e) {
     set37Table[e->action](e);
 }

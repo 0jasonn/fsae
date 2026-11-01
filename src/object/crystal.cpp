@@ -12,11 +12,11 @@
 //   0x020583a4 cry1_move (original name)
 //   0x020583c8 cry1_plate (original name)
 
-ARM void crystal0(Entity *e) {
+void crystal0(Entity *e) {
     crystal0_actions[e->action](e);
 }
 
-ARM void cry0_init(Entity *e) {
+void cry0_init(Entity *e) {
     u8 action = e->action;
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b14 = 3;
@@ -30,7 +30,7 @@ ARM void cry0_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void set_crystal_child(Entity *e) {
+void set_crystal_child(Entity *e) {
     Entity *child;
     if (e->unk_16 != 0) {
         return;
@@ -48,17 +48,17 @@ ARM void set_crystal_child(Entity *e) {
     child->parent = e;
 }
 
-ARM void cry0_move(Entity *e) {
+void cry0_move(Entity *e) {
     e->x.HALF.HI = TEMPLATE_OF(e->type2)->x.HALF.HI;
     e->y.HALF.HI = TEMPLATE_OF(e->type2)->y.HALF.HI + 0x18;
     set_crystal_child(e);
 }
 
-ARM void crystal1(Entity *e) {
+void crystal1(Entity *e) {
     crystal1_actions[e->action](e);
 }
 
-ARM void cry1_init(Entity *e) {
+void cry1_init(Entity *e) {
     u8 action = e->action;
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b14 = 3;
@@ -70,12 +70,12 @@ ARM void cry1_init(Entity *e) {
     InitAnimationForceUpdate(e, 1);
 }
 
-ARM void cry1_move(Entity *e) {
+void cry1_move(Entity *e) {
     e->x.HALF.HI = e->parent->x.HALF.HI;
     e->y.HALF.HI = e->parent->y.HALF.HI + 0x40;
     set_crystal_child(e);
 }
 
-ARM void cry1_plate(Entity *e) {
+void cry1_plate(Entity *e) {
     cry1_plate_actions[e->action](e);
 }

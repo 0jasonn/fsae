@@ -10,7 +10,7 @@ extern u8 data_0217a258[];
 
 // subTask_game_start_end (0x020c754c): frees the four subtask slots, the object info blocks and the two cell blocks
 // of the game start work.
-ARM void subTask_game_start_end(void) {
+void subTask_game_start_end(void) {
     u32 i;
 
     for (i = 0; i < 4; i++) {

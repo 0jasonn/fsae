@@ -12,7 +12,7 @@ void DC_StoreRange(void *start, u32 size);
 // func_020c1014: makes a payload of the table size at index (word at +0x10 of the table entry) in the record. The record
 // is the last argument. Returns the payload, or 0 when the size or the record is missing or the payload cannot be set up.
 extern "C" void *func_020c1014(s32 index, void *callback, void *data, s32 index2, void *record);
-ARM void *func_020c1014(s32 index, void *callback, void *data, s32 index2, void *record) {
+void *func_020c1014(s32 index, void *callback, void *data, s32 index2, void *record) {
     u32 size;
     void *payload;
 

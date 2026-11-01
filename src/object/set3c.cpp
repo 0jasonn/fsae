@@ -19,7 +19,7 @@ extern const u32 flagBits[];         // flag bit for each type2
 extern const EntityFunc data_020d8c18[]; // state table indexed by e->action
 extern const u8 data_020d8c04[];     // hitbox of the set3c actor
 
-ARM void Set3c(Entity *e) {
+void Set3c(Entity *e) {
     if (func_02085ccc(e)) {
         if (e->type2 == 0xff) {
             return;
@@ -30,7 +30,7 @@ ARM void Set3c(Entity *e) {
     data_020d8c18[e->action](e);
 }
 
-ARM void set3c_init(Entity *e) {
+void set3c_init(Entity *e) {
     Vars_Set3c *vars = VARS(Vars_Set3c, e);
 
     if (e->type == 0xff) {
@@ -51,7 +51,7 @@ ARM void set3c_init(Entity *e) {
     vars->lastDirection = e->direction;
 }
 
-ARM void set3c_wait(Entity *e) {
+void set3c_wait(Entity *e) {
     Vars_Set3c *vars = VARS(Vars_Set3c, e);
 
     if ((vars->typeBits & em12_typeMasks[e->areaIndex]) != vars->typeBits) {
@@ -63,7 +63,7 @@ ARM void set3c_wait(Entity *e) {
     SKemuriSet(e);
 }
 
-ARM void set3c_move(Entity *e) {
+void set3c_move(Entity *e) {
     Vars_Set3c *vars = VARS(Vars_Set3c, e);
 
     if (e->contactFlags & 0x80) {

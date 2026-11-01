@@ -11,7 +11,7 @@ extern const u16 data_020d7d7c[];
 extern u16 data_0216f82c[];
 
 // Rewrites the cell of every table entry whose key matches b
-ARM void set5c_changeiroankyo(u16 cell, u16 key) {
+void set5c_changeiroankyo(u16 cell, u16 key) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
@@ -22,6 +22,6 @@ ARM void set5c_changeiroankyo(u16 cell, u16 key) {
 }
 
 // Placeholder that always reports 0
-ARM int set5c_returnZero(void) {
+int set5c_returnZero(void) {
     return 0;
 }

@@ -6,6 +6,6 @@
 extern u32 data_02171e20;
 
 // func_02082c54 (0x02082c54)
-ARM void func_02082c54(void *fn) {
+void func_02082c54(void *fn) {
     data_02171e20 = (u32)fn;
 }

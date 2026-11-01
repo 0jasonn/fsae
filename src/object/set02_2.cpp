@@ -20,7 +20,7 @@ extern u8 data_021349c0[]; // byte 0x14: nonzero when the actor should be put ba
 extern const s8 data_0211565c[]; // vertical bob table, indexed by timer & 0xf
 extern u16 data_0212c594;  // frame counter, the bob timer advances when its low 5 bits are zero
 
-ARM void set02_move(Entity *e) {
+void set02_move(Entity *e) {
     switch (e->type) {
     case 0:
         e->x.HALF.HI = 0x58 - data_0212c75c.scrollX;

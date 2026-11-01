@@ -29,7 +29,7 @@ typedef struct CtrlSetList {
 // resets slider A to index 0 and calls func_020bb898 when the list is not empty, otherwise calls func_020bb148; finally
 // calls func_020bb208
 extern "C" void Ctrl_setItemList(void *selfv, CtrlSetItems *list);
-ARM void Ctrl_setItemList(void *selfv, CtrlSetItems *list) {
+void Ctrl_setItemList(void *selfv, CtrlSetItems *list) {
     CtrlSetList *self = (CtrlSetList *)selfv;
 
     self->itemList = list;

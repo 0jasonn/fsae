@@ -3,7 +3,7 @@
 
 // TextStream_ReadU16 (provisional name): the halfword at the cursor; the cursor moves two bytes on.
 extern "C" u16 TextStream_ReadU16(u8 *self);
-ARM u16 TextStream_ReadU16(u8 *self) {
+u16 TextStream_ReadU16(u8 *self) {
     u8 *cursor;
     u16 value;
 

@@ -13,7 +13,7 @@ extern EntityNode data_0212c6d0;   // end sentinel of the object list (the head 
 
 // setupRupeeRush (0x02077684)
 extern "C" void setupRupeeRush(int reuseEnemy);
-ARM void setupRupeeRush(int reuseEnemy) {
+void setupRupeeRush(int reuseEnemy) {
     Entity *obj;
     Entity *cur;
     u8 cell;

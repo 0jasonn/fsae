@@ -8,7 +8,7 @@
 
 // Counts the four contact timers and the subtimer down. When the contacted entity touches this one, the timer of its type
 // is checked and vitaldec is called when it has run out.
-ARM void set25_move(Entity *e) {
+void set25_move(Entity *e) {
     if (VARS(Vars_Set25, e)->timers[0] != 0) {
         VARS(Vars_Set25, e)->timers[0]--;
     }

@@ -7,7 +7,7 @@
 //   0x02073984 youseidama_up (original name)
 //   0x02073a18 youseidama_move (original name)
 
-ARM void youseidama_up(Entity *e) {
+void youseidama_up(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->z.WORD -= 0x8000;
     if (e->z.HALF.HI == -20) {
@@ -28,7 +28,7 @@ ARM void youseidama_up(Entity *e) {
     e->subtimer = 1;
 }
 
-ARM void youseidama_move(Entity *e) {
+void youseidama_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     setYouseiEffect(e);
     if (em12_typeMasks & 1) {

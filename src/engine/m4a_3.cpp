@@ -7,7 +7,7 @@
 extern "C" u32 m4aSongNumContinue(u32 songNum, u32 arg);
 extern "C" u32 m4aSongNumIsPlaying(u16 songNum);
 extern "C" u32 m4aSongNumStartOrContinue(u16 songNum);
-ARM u32 m4aSongNumStartOrContinue(u16 songNum) {
+u32 m4aSongNumStartOrContinue(u16 songNum) {
     if (m4aSongNumIsPlaying(songNum) != 0) {
         return m4aSongNumContinue(songNum, 0);
     }
@@ -17,7 +17,7 @@ ARM u32 m4aSongNumStartOrContinue(u16 songNum) {
 // m4aSongNumSetVolume (0x0208d63c): sets the level of the song with the given number (both wave slots for numbers
 // 0x1ea to 0x1f3, otherwise its handle). The level is scaled by 16 and kept to 16 bits.
 extern "C" void m4aSongNumSetVolume(u16 songNum, u16 volume);
-ARM void m4aSongNumSetVolume(u16 songNum, u16 volume) {
+void m4aSongNumSetVolume(u16 songNum, u16 volume) {
     u16 level;
     s32 i;
     void *handle;

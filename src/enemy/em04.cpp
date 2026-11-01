@@ -2,7 +2,7 @@
 #include "enemy/em03.h"
 #include "global.h"
 
-ARM void em03_release(Entity *e) {
+void em03_release(Entity *e) {
     func_020847a0(e);
     if (UpdateGravity(e, 0x2000) != 0) {
         return;
@@ -13,7 +13,7 @@ ARM void em03_release(Entity *e) {
     InitAnimationForceUpdate(e, 4);
 }
 
-ARM void aibou_check(Entity *e) {
+void aibou_check(Entity *e) {
     if (e->linkedEntity == 0) {
         return;
     }
@@ -27,15 +27,15 @@ ARM void aibou_check(Entity *e) {
     }
 }
 
-ARM void em04_main(Entity *e) {
+void em04_main(Entity *e) {
     EnemyFunctionHandler(e, em04_actions);
 }
 
-ARM void em04_normal(Entity *e) {
+void em04_normal(Entity *e) {
     em04_normalActions[e->action](e);
 }
 
-ARM void em04_damage(Entity *e) {
+void em04_damage(Entity *e) {
     if (e->action == 3) {
         e->action = 1;
         e->speed = 0x80;
@@ -44,7 +44,7 @@ ARM void em04_damage(Entity *e) {
     GenericKnockback(e, em04_actions);
 }
 
-ARM void em04_init(Entity *e) {
+void em04_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
     e->hitbox = em04_hitbox;

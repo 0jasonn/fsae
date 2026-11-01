@@ -9,7 +9,7 @@
 #define HIT_KNOCKBACK_FRAMES(k) (((k) & 0x80) ? ((s8)(k) + (s8)(k) / 4) : -((s8)(k) + (s8)(k) / 4))
 
 // Original-side tate hit: e takes the knockback of t and the frames of t, the template and t are given invincibility.
-ARM BOOL hit_tateorghajiki(Entity *e, Entity *t, u8 unused) {
+BOOL hit_tateorghajiki(Entity *e, Entity *t, u8 unused) {
     e->unk_42 = *(u8 *)&t->attackKnockback;
     e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
     if (OBJ_TEMPLATE(e->type)->iframes == 0) {
@@ -24,7 +24,7 @@ ARM BOOL hit_tateorghajiki(Entity *e, Entity *t, u8 unused) {
 }
 
 // Target-side tate hit: t takes the knockback of e and the frames of e; the template and e are given invincibility.
-ARM BOOL hit_tatetgthajiki(Entity *e, Entity *t, u8 unused) {
+BOOL hit_tatetgthajiki(Entity *e, Entity *t, u8 unused) {
     t->unk_42 = *(u8 *)&e->attackKnockback;
     t->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&e->attackKnockback);
     if (OBJ_TEMPLATE(t->type)->iframes == 0) {

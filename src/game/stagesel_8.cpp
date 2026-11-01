@@ -3,7 +3,7 @@
 
 // stagesel_message, 0x0207a790. Stage select message sequence: data_0212c4dc 0 opens the message, 1 waits for the
 // message frames to finish and then starts the selection. Runs once per frame.
-ARM void stagesel_message(void) {
+void stagesel_message(void) {
     SselMessageTimes times = data_020dc690;
     if (CommFrameSync() == 0) {
         return;

@@ -4,7 +4,7 @@
 
 // Wraps the value into the range between a and b (the lower end is the smaller of the two): a value below the lower
 // end gains the range, a value at or above the upper end loses it. The first argument is the caller object (unused).
-ARM s32 Menu_WrapInto(void *self, s32 value, s32 a, s32 b) {
+s32 Menu_WrapInto(void *self, s32 value, s32 a, s32 b) {
     s32 range;
     s32 swap;
 
@@ -24,7 +24,7 @@ ARM s32 Menu_WrapInto(void *self, s32 value, s32 a, s32 b) {
 }
 
 // Clamps the value into [low, high].
-ARM s32 Menu_ClampValue(void *self, s32 value, s32 low, s32 high) {
+s32 Menu_ClampValue(void *self, s32 value, s32 low, s32 high) {
     if (value < low) {
         value = low;
     } else if (value > high) {
@@ -34,7 +34,7 @@ ARM s32 Menu_ClampValue(void *self, s32 value, s32 low, s32 high) {
 }
 
 // Nonzero when low <= value < high.
-ARM s32 Menu_InRange(void *self, s32 value, s32 low, s32 high) {
+s32 Menu_InRange(void *self, s32 value, s32 low, s32 high) {
     if (value >= low && value < high) {
         return 1;
     }

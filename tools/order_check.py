@@ -6,7 +6,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from trymatch import name_to_addr
 
-DEF = re.compile(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*&:<>]*?\b(~?\w+(?:::~?\w+)*)\s*\([^;\n]*$', re.M)
+import defs
 
 
 def def_addr(name):
@@ -22,8 +22,9 @@ fix = "--fix" in sys.argv
 bad = 0
 for path in [Path(a) for a in sys.argv[1:] if a != "--fix"]:
     lines = path.read_text(encoding="utf-8").split("\n")
-    starts = [i for i, l in enumerate(lines) if DEF.match(l)]
-    addrs = [def_addr(DEF.match(lines[i]).group(1)) for i in starts]
+    found = defs.def_starts(lines)
+    starts = [i for i, _ in found]
+    addrs = [def_addr(n) for _, n in found]
     known = [a for a in addrs if a is not None]  # names that cannot be resolved are not checked
     if known == sorted(known):
         continue

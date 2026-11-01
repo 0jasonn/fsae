@@ -11,7 +11,7 @@ extern "C" void clearSaveData(u8 slot);
 extern "C" void fsDeleteFile(u8 slot);
 
 // fsDeleteFile(unsigned char) (0x020a73ec): deletes the file of a slot and clears the slot
-ARM void fsDeleteFile(u8 slot) {
+void fsDeleteFile(u8 slot) {
     fsSaveBegin();
     DeleteSaveFile(slot);
     clearSaveData(slot);

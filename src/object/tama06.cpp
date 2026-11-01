@@ -7,7 +7,7 @@
 
 // Tama06, 0x0207ead4. Removes the actor when its parent is dead; otherwise runs the state of its type, copies the
 // parent's layer and sprite priority bits, and sets the sprite flag depending on the child and the frame counter.
-ARM void Tama06(Entity *e) {
+void Tama06(Entity *e) {
     if (e->parent->health != 0) {
         data_020dce2c[e->type](e);
         e->spriteSettings.b30 = e->parent->spriteSettings.b30;
@@ -27,12 +27,12 @@ ARM void Tama06(Entity *e) {
 }
 
 // tama06_type0, 0x0207eba0. Runs the action of the current state.
-ARM void tama06_type0(Entity *e) {
+void tama06_type0(Entity *e) {
     data_020dce94[e->action](e);
 }
 
 // tama06_init, 0x0207ebbc. Makes the three pieces (kinds 1 to 3) as objects linked to this actor and registers them.
-ARM void tama06_init(Entity *e) {
+void tama06_init(Entity *e) {
     Entity *piece1;
     Entity *piece2;
     Entity *piece3;
@@ -84,7 +84,7 @@ ARM void tama06_init(Entity *e) {
 
 // tama06_move, 0x0207ecfc. While the parent's subtimer is odd and the direction matches the parent's animation it
 // turns the piece toward the parent's position with speed 0x700; otherwise it only steps the direction back.
-ARM void tama06_move(Entity *e) {
+void tama06_move(Entity *e) {
     Entity *parent;
     parent = e->parent;
     if ((parent->subtimer & 1) != 0 && ((parent->animationState - 1) & 3) << 3 == e->direction) {
@@ -102,7 +102,7 @@ ARM void tama06_move(Entity *e) {
 
 // tama06_attackInit, 0x0207ed7c. Starts the attack: aims at the spot in front of the parent (a table offset from its
 // position) and dashes when the direction to the parent matches its animation; the parent's subtimer gets bit 1.
-ARM void tama06_attackInit(Entity *e) {
+void tama06_attackInit(Entity *e) {
     s16 targetX;
     s16 targetY;
     type0AttackPosSet(e);
@@ -127,7 +127,7 @@ ARM void tama06_attackInit(Entity *e) {
 
 // tama06_attack, 0x0207ee74. Aims the piece at the parent's direction and slows it down; when the speed drops below
 // 0x440 it changes to action 4 with a timer of 0x18.
-ARM void tama06_attack(Entity *e) {
+void tama06_attack(Entity *e) {
     type0AttackPosSet(e);
     func_02086200(e, (u8)(e->parent->animationState << 3));
     func_02086200(e, (u8)(e->parent->animationState << 3));
@@ -143,7 +143,7 @@ ARM void tama06_attack(Entity *e) {
 
 // tama06_attackWait, 0x0207ef0c. Counts the timer down; at zero it changes to action 5 with speed 0x400 and sets bit 1
 // of the parent's subtimer.
-ARM void tama06_attackWait(Entity *e) {
+void tama06_attackWait(Entity *e) {
     type0AttackPosSet(e);
     e->timer = e->timer - 1;
     if (e->timer != 0) {
@@ -157,7 +157,7 @@ ARM void tama06_attackWait(Entity *e) {
 // tama06_attackEnd, 0x0207ef50. Speeds the piece up to 0x800 and steers it back to the parent's animation direction.
 // When it is within 8 pixels of its old position it changes to action 6 and sets bit 7 of the parent's subtimer;
 // otherwise it turns toward the position it moved to and keeps moving.
-ARM void tama06_attackEnd(Entity *e) {
+void tama06_attackEnd(Entity *e) {
     u16 oldX;
     u16 oldY;
     if (e->speed < 0x800) {
@@ -183,7 +183,7 @@ ARM void tama06_attackEnd(Entity *e) {
 
 // tama06_rlittle, 0x0207f010. Turns the piece by a step of the timer, counts the timer down and, when it is nearly out,
 // waits in action 7 with the sound 0x30.
-ARM void tama06_rlittle(Entity *e) {
+void tama06_rlittle(Entity *e) {
     u8 timer;
     type0PosSetR(e, e->timer >> 1);
     e->direction = (e->direction - 1) & 0x1f;
@@ -201,7 +201,7 @@ ARM void tama06_rlittle(Entity *e) {
 }
 
 // tama06_wait, 0x0207f088. Counts the timer down; at zero it changes to action 8 and sets bit 7 of the flags.
-ARM void tama06_wait(Entity *e) {
+void tama06_wait(Entity *e) {
     type0WaitPosSet(e);
     e->timer = e->timer - 1;
     if (e->timer != 0) {

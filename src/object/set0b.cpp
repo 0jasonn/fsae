@@ -8,7 +8,7 @@
 
 extern u16 frameCounter; // frame counter
 
-ARM void set0b_move(Entity *e) {
+void set0b_move(Entity *e) {
     if ((frameCounter & 1) != 0) {
         e->z.HALF.HI--;
     }

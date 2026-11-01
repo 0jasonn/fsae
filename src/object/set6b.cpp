@@ -11,12 +11,12 @@ extern s16 scrollArgs[3];
 void func_02085934(Entity *e, u8 mode);
 void func_020859a0(Entity *e, u8 a, u8 b);
 
-ARM void Set6b(Entity *e) {
+void Set6b(Entity *e) {
     data_02115a4c[e->action](e);
 }
 
 
-ARM void set6b_init(Entity *e) {
+void set6b_init(Entity *e) {
     u8 action;
 
     action = e->action;

@@ -8,12 +8,12 @@
 
 extern const EntityFunc set15_stateTable[]; // indexed by e->action (was set15_stateTable)
 
-ARM void Set15(Entity *e) {
+void Set15(Entity *e) {
     set15_stateTable[e->action](e);
 }
 
-ARM void set15_nop0(Entity *e) {
+void set15_nop0(Entity *e) {
 }
 
-ARM void set15_nop1(Entity *e) {
+void set15_nop1(Entity *e) {
 }

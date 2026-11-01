@@ -7,7 +7,7 @@
 
 // MultiEventSet (0x0204602c): walks a list of 8-byte event records until the 0xffff terminator. Each record is
 // registered as a stop block; the matching actors get their area and item bookkeeping updated.
-ARM void MultiEventSet(u16 *list, u8 a, u8 b, u8 c) {
+void MultiEventSet(u16 *list, u8 a, u8 b, u8 c) {
     Entity *e;
     if (list[0] == 0xffff) {
         return;
@@ -36,7 +36,7 @@ ARM void MultiEventSet(u16 *list, u8 a, u8 b, u8 c) {
 }
 
 // ParseTypeBits (0x020460e8): the bit for a type code, taken from the table in data_020d42b4.
-ARM u32 ParseTypeBits(u8 type) {
+u32 ParseTypeBits(u8 type) {
     ParseTypeTable table = data_020d42b4;
     return table.bits[(type & 0xe0) >> 5] << (type & 0x1f);
 }

@@ -22,7 +22,7 @@ extern "C" void Knife_Message_TextRenderer_onReadNewLine(Knife::Message::TextRen
 extern "C" void *KnifeApp_getField20Address(void *app);
 
 // TextRenderer::onReadColorTag(ColorType) (0x020a611c): stores the colour only when the text is drawn
-ARM void Knife_Message_TextRenderer_onReadColorTag(Knife::Message::TextRenderer *self, s32 color) {
+void Knife_Message_TextRenderer_onReadColorTag(Knife::Message::TextRenderer *self, s32 color) {
     if (self->flag94 == 0 && self->flag95 == 0) {
         self->unk_b8 = color;
     }

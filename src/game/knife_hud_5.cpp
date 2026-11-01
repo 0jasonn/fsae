@@ -12,7 +12,7 @@ namespace Knife {
 namespace Hud {
 
 // HudManager::getPlayerDir(int) const (0x0209ed4c): half the animation value of the player's entity
-ARM int HudManager::getPlayerDir(int player) const {
+int HudManager::getPlayerDir(int player) const {
     PlayerData *pl = &data_0212ceb0[player];
 
     return pl->entity->animationState >> 1;

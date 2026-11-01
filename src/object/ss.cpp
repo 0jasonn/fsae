@@ -5,7 +5,7 @@
 // ss family (module ss), 0x0206d898 .. 0x0206da58.
 // Address -> name: 0x0206d898 ss_panel, 0x0206d8f0 ss_cursor, 0x0206d90c ss_cur_init, 0x0206d9a8 ss_cur_move
 
-ARM void ss_panel(Entity *e) {
+void ss_panel(Entity *e) {
     if (e->action == 0) {
         u8 nextAction = e->action + 1;
 
@@ -20,11 +20,11 @@ ARM void ss_panel(Entity *e) {
     }
 }
 
-ARM void ss_cursor(Entity *e) {
+void ss_cursor(Entity *e) {
     ssCursorTable[e->action](e);
 }
 
-ARM void ss_cur_init(Entity *e) {
+void ss_cur_init(Entity *e) {
     u8 nextAction = e->action + 1;
 
     e->action = nextAction;
@@ -40,7 +40,7 @@ ARM void ss_cur_init(Entity *e) {
     e->child->parent = e;
 }
 
-ARM void ss_cur_move(Entity *e) {
+void ss_cur_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->spriteSettings.b0 = 1;
     if (e->unk_16 != KNIFE_CURSOR_INDEX()) {

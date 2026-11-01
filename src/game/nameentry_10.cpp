@@ -15,7 +15,7 @@ u16 nameEntryUIView_HandakuonConvert(void *self, u16 ch);
 
 // nameEntryUIView::jpMojiCheck (0x020af978): when the character is the voiced (0x309b) or semi-voiced (0x309c) sound
 // mark, combines it with the last character of the name; other characters are returned unchanged
-ARM u16 nameEntryUIView_jpMojiCheck(void *self, u16 ch) {
+u16 nameEntryUIView_jpMojiCheck(void *self, u16 ch) {
     u8 *obj;
     u16 last;
     u16 result;

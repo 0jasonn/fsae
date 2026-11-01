@@ -21,7 +21,7 @@ extern u8 data_02135640[];
 extern u8 data_02135840[];
 extern u32 em2f_mapFlag;
 
-ARM void MultiRoomSet(void) {
+void MultiRoomSet(void) {
     MIi_CpuCopy32(data_02158fa4, data_0215bfa4, 0x2000);
     MIi_CpuCopy32(data_02163fa8, data_02166fa8, 0x2000);
     MakeMapScreen(data_02140fa0, data_02158fa0);

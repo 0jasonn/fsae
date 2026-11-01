@@ -12,7 +12,7 @@ extern u32 data_0212c570;
 extern const QueueHandler queueHandlerTable[];
 
 // func_02080ca4 (0x02080ca4)
-ARM void func_02080ca4(void) {
+void func_02080ca4(void) {
     u8 *cursor;
     u8 cmd;
 

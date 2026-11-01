@@ -10,11 +10,11 @@ extern const EntityFunc set2e_actions[]; // set2e_actions, indexed by e->action
 extern PlayerData *data_0212c53c;        // current player slot pointer (see game/multiplay.h)
 void set2e_move(Entity *e);
 
-ARM void Set2e(Entity *e) {
+void Set2e(Entity *e) {
     set2e_actions[e->action](e);
 }
 
-ARM void set2e_init(Entity *e) {
+void set2e_init(Entity *e) {
     PlayerData *player;
 
     if (e->type == 0) {

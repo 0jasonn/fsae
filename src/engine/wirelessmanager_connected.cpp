@@ -15,12 +15,12 @@ extern "C" u16 Knife_Comm_WirelessManager_getConnectedAIDs(void *self);
 
 // WirelessManager::getLinkLevel() const (0x020922d0): the number of set bits in the connected AIDs.
 extern "C" s32 Knife_Comm_WirelessManager_getLinkLevel(void *self);
-ARM s32 Knife_Comm_WirelessManager_getLinkLevel(void *self) {
+s32 Knife_Comm_WirelessManager_getLinkLevel(void *self) {
     return MATH_CountPopulation(Knife_Comm_WirelessManager_getConnectedAIDs(self));
 }
 
 // WM_GetLinkLevel wrapper (0x020922e0, invented name): a tail call to the SDK function.
 extern "C" u16 Knife_Comm_WirelessManager_sdkGetLinkLevel(void);
-ARM u16 Knife_Comm_WirelessManager_sdkGetLinkLevel(void) {
+u16 Knife_Comm_WirelessManager_sdkGetLinkLevel(void) {
     return WM_GetLinkLevel();
 }

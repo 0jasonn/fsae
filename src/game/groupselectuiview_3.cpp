@@ -7,7 +7,7 @@
 //   groupSelectUIView::clearRoom (0x020b0d58)
 
 // groupSelectUIView::clearRoom (0x020b0d58): forgets all rooms
-ARM void groupSelectUIView::clearRoom(void) {
+void groupSelectUIView::clearRoom(void) {
     u32 i;
 
     roomCount = 0;

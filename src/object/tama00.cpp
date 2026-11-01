@@ -8,18 +8,18 @@ extern const EntityFunc data_020dc9c4[]; // Tama00 action table (indexed by the 
 extern const EntityFunc data_020dc970[]; // tama00_normal action table, indexed by e->action
 
 // Tama00, 0x0207c7c8. Runs the state of the kind returned by func_02085294.
-ARM void Tama00(Entity *e) {
+void Tama00(Entity *e) {
     data_020dc9c4[func_02085294()](e);
 }
 
 // tama00_normal, 0x0207c7f0. Runs the current action.
-ARM void tama00_normal(Entity *e) {
+void tama00_normal(Entity *e) {
     data_020dc970[e->action](e);
 }
 
 // tama00_damage, 0x0207c80c. Removes the object when it is marked as dead (contact flag 0x80), otherwise starts the
 // hajiki (flick) motion with the saved base direction.
-ARM void tama00_damage(Entity *e) {
+void tama00_damage(Entity *e) {
     if (e->contactFlags == 0x80) {
         PutObjWork(e);
         return;

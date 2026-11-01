@@ -15,7 +15,7 @@ extern KnifeSaveWords enemyTypeFlags[]; // one pair per save slot
 extern u8 data_0212c858[];  // one byte per save slot, at slot * 4
 
 // setKnifeSaveData4S (0x020284d4): stores the two words of save slot index and the byte c of its entry.
-ARM void setKnifeSaveData4S(u8 index, u32 a, u32 b, u8 c) {
+void setKnifeSaveData4S(u8 index, u32 a, u32 b, u8 c) {
     KnifeSaveWords *slot;
 
     enemyTypeFlags[index].a = a;

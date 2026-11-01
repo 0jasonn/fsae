@@ -11,7 +11,7 @@
 extern const u8 *const data_02117a0c[];
 
 extern "C" void CalcHeartLevel(void);
-ARM void CalcHeartLevel(void) {
+void CalcHeartLevel(void) {
     u8 playerCount;
     u8 level;
     u8 i;

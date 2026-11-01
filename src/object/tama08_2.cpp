@@ -14,7 +14,7 @@ typedef struct Vars_Tama09 {
 } Vars_Tama09;
 
 // Moves the actor, or bounces it off the wall when it is blocked
-ARM void tama08_move(Entity *e) {
+void tama08_move(Entity *e) {
     if (func_0208b668(e) == 0) {
         e->action = 3;
         e->timer = 0x1e;
@@ -26,7 +26,7 @@ ARM void tama08_move(Entity *e) {
 }
 
 // Counts the timer down and removes the actor when it runs out
-ARM void tama08_sasari(Entity *e) {
+void tama08_sasari(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->timer = e->timer - 1;
     if (e->timer != 0) {
@@ -36,7 +36,7 @@ ARM void tama08_sasari(Entity *e) {
 }
 
 // Moves the actor with gravity and removes it once it lands
-ARM void tama08_kokin(Entity *e) {
+void tama08_kokin(Entity *e) {
     MoveDir(e);
     UpdateAnimationSingleFrame(e);
     if (UpdateGravity(e, 0x1800) != 0) {
@@ -47,7 +47,7 @@ ARM void tama08_kokin(Entity *e) {
 
 // Tama09, first frame copies the parent's object id and kind; then it follows the parent until the parent's
 // contact flag is set, which makes the parent lose a little invincibility time
-ARM void Tama09(Entity *e) {
+void Tama09(Entity *e) {
     Entity *parent;
 
     parent = e->parent;
@@ -70,7 +70,7 @@ ARM void Tama09(Entity *e) {
 }
 
 // Runs the state table entry of the actor and removes it when its parent is gone (health 0)
-ARM void tama09_dispatch(Entity *e) {
+void tama09_dispatch(Entity *e) {
     data_020dcf90[e->action](e);
     if (e->parent->health != 0) {
         return;

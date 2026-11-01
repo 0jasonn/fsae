@@ -10,7 +10,7 @@ extern "C" void Frame_PopR3ToR7Return(void);
 extern "C" u32 Bits_CountLeadingZeros(u32 value);
 
 // 0x02016440: atomic exchange of value with *target (swp).
-ARM asm u32 Swp_Exchange(u32 value, u32 *target) {
+asm u32 Swp_Exchange(u32 value, u32 *target) {
     swp r0, r0, [r1]
     bx lr
 }

@@ -17,7 +17,7 @@
 //   0x020595e4 ps02_end (original name)
 //   0x0205965c parasw_typeDispatch (provisional, parasw_typeActions[e->type](e))
 
-ARM void ps00_start(Entity *e) {
+void ps00_start(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -27,14 +27,14 @@ ARM void ps00_start(Entity *e) {
     }
 }
 
-ARM void ps00_wait(Entity *e) {
+void ps00_wait(Entity *e) {
     if (check_next(em12_typeMasks[e->areaIndex], e->subtimer, 3)) {
         e->timer = 0x14;
         e->action++;
     }
 }
 
-ARM void ps00_check(Entity *e) {
+void ps00_check(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action = 0;
@@ -49,7 +49,7 @@ ARM void ps00_check(Entity *e) {
     SoundReq(8);
 }
 
-ARM void ps00_end(Entity *e) {
+void ps00_end(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action = 0;
@@ -64,11 +64,11 @@ ARM void ps00_end(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void parasw_01(Entity *e) {
+void parasw_01(Entity *e) {
     parasw01_actions[e->action](e);
 }
 
-ARM void ps01_end(Entity *e) {
+void ps01_end(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action = 0;
@@ -83,17 +83,17 @@ ARM void ps01_end(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void parasw_02(Entity *e) {
+void parasw_02(Entity *e) {
     parasw02_actions[e->action](e);
 }
 
-ARM void ps02_init(Entity *e) {
+void ps02_init(Entity *e) {
     e->timer = 0x14;
     e->subtimer = 2;
     e->action++;
 }
 
-ARM void ps02_start(Entity *e) {
+void ps02_start(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -103,14 +103,14 @@ ARM void ps02_start(Entity *e) {
     }
 }
 
-ARM void ps02_wait(Entity *e) {
+void ps02_wait(Entity *e) {
     if (check_next(em12_typeMasks[e->areaIndex], e->subtimer, 2)) {
         e->timer = 0x14;
         e->action++;
     }
 }
 
-ARM void ps02_check(Entity *e) {
+void ps02_check(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action = 0;
@@ -125,7 +125,7 @@ ARM void ps02_check(Entity *e) {
     SoundReq(8);
 }
 
-ARM void ps02_end(Entity *e) {
+void ps02_end(Entity *e) {
     e->timer--;
     if (e->timer == 0) {
         e->action = 0;
@@ -140,6 +140,6 @@ ARM void ps02_end(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void parasw_typeDispatch(Entity *e) {
+void parasw_typeDispatch(Entity *e) {
     parasw_typeActions[e->type](e);
 }

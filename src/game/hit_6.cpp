@@ -12,7 +12,7 @@
 // The damage object of an entity type, stored at PlayerData stride 0x94.
 #define HIT_DAMAGE_OBJECT(e) (*(Entity **)&data_0212ced8[(e)->type * 0x94])
 
-ARM BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
+BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         if (Knife_Single_SinglePlay_GetInstance()[1] != 0) {
             if (t->objKind == 1 && e->objKind == 8 && e->type < 2) {
@@ -38,7 +38,7 @@ ARM BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
     return 1;
 }
 
-ARM BOOL hit_firerobe(Entity *e, Entity *t, u8 mode) {
+BOOL hit_firerobe(Entity *e, Entity *t, u8 mode) {
     Entity *fire;
 
     if ((*(u16 *)&data_0212cee6[e->type * 0x94] & 0x1401) == 0) {

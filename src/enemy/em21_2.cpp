@@ -6,7 +6,7 @@
 // Functions in this file: em21_die (0x0203f27c), em21_init (0x0203f2d8), em21_revivalwait (0x0203f3c4),
 // em21_move (0x0203f428), em21_jumpInit (0x0203f4d8), em21_jump (0x0203f548), em21_jumpEnd (0x0203f5b4).
 
-ARM void em21_die(Entity *e) {
+void em21_die(Entity *e) {
     Entity *child = GetEnemyWork(0x21);
     if (child != NULL) {
         ObjPosCopy(e, child);
@@ -19,7 +19,7 @@ ARM void em21_die(Entity *e) {
     EmDie(e);
 }
 
-ARM void em21_init(Entity *e) {
+void em21_init(Entity *e) {
     int dir;
     e->unk_2e = 5;
     e->hitbox = em21_hitbox;
@@ -46,7 +46,7 @@ ARM void em21_init(Entity *e) {
     }
 }
 
-ARM void em21_revivalwait(Entity *e) {
+void em21_revivalwait(Entity *e) {
     if (e->type == 1) {
         return;
     }
@@ -62,7 +62,7 @@ ARM void em21_revivalwait(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em21_move(Entity *e) {
+void em21_move(Entity *e) {
     int dir;
     u8 result;
     result = em21_crossCheck(e);
@@ -89,7 +89,7 @@ ARM void em21_move(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState);
 }
 
-ARM void em21_jumpInit(Entity *e) {
+void em21_jumpInit(Entity *e) {
     u8 anim;
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
@@ -105,7 +105,7 @@ ARM void em21_jumpInit(Entity *e) {
     MizupochaSet(e);
 }
 
-ARM void em21_jump(Entity *e) {
+void em21_jump(Entity *e) {
     UpdateAnimationSingleFrame(e);
     func_02084828(e);
     if (UpdateGravity(e, 0x1800) != 0) {
@@ -120,7 +120,7 @@ ARM void em21_jump(Entity *e) {
     MizupochaSet(e);
 }
 
-ARM void em21_jumpEnd(Entity *e) {
+void em21_jumpEnd(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;

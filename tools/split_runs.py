@@ -4,7 +4,7 @@ are not inside a function (includes, types, declarations, namespace lines, also 
 piece compiles on its own.
 
 usage: split_runs.py src/game/file.cpp     (writes file.cpp with the first run and file_N.cpp for the others)
-A function block is its `ARM ` definition line through the brace that closes it, plus the comment and extern "C"
+A function block is its definition line through the brace that closes it, plus the comment and extern "C"
 lines directly above it.
 """
 import re, sys
@@ -12,17 +12,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import integrate  # noqa: E402  (method_addr, syms)
 
-DEF = re.compile(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*&:<>]*?\b(~?\w+(?:::~?\w+)*)\s*\([^;\n]*$')
+import defs  # noqa: E402
 path = Path(sys.argv[1])
 lines = path.read_text(encoding="utf-8").rstrip("\n").split("\n")
 owner = [None] * len(lines)  # index of the function block a line belongs to
 names = []
-for i, l in enumerate(lines):
-    m = DEF.match(l)
-    if not m:
-        continue
+for i, name in defs.def_starts(lines):
     k = len(names)
-    names.append(m.group(1))
+    names.append(name)
     j = i
     while j > 0 and owner[j - 1] is None and (lines[j - 1].startswith("//") or lines[j - 1].startswith('extern "C"')):
         j -= 1

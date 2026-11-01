@@ -8,7 +8,7 @@
 // step marks the entry finished and returns -1.
 extern "C" s32 Entry_Update(u8 *entry);
 
-ARM s32 Entry_Update(u8 *entry) {
+s32 Entry_Update(u8 *entry) {
     EntryRec *rec;
     s32 timerResult;
 

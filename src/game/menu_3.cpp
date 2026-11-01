@@ -3,7 +3,7 @@
 #include "game/menu.h"
 
 // Handles one input request: the event kind picks an action, then flag5 sets the state and flag6 clears it.
-ARM s32 Menu_HandleInput(MenuWork *menu, MenuInput *input) {
+s32 Menu_HandleInput(MenuWork *menu, MenuInput *input) {
     MenuEvent event;
     s32 handled;
 
@@ -36,7 +36,7 @@ ARM s32 Menu_HandleInput(MenuWork *menu, MenuInput *input) {
 }
 
 // Second input handler: kind 0 with flag5 starts the timer block at 0xfc, kind 1 sets the active state, and flag6 clears it.
-ARM s32 Menu_HandleInputB(MenuWork *menu, MenuInput *input) {
+s32 Menu_HandleInputB(MenuWork *menu, MenuInput *input) {
     MenuEventB event;
     s32 handled;
 

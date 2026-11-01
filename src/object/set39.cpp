@@ -7,11 +7,11 @@
 
 extern const EntityFunc set39Table[]; // set39Table, indexed by action
 
-ARM void Set39(Entity *e) {
+void Set39(Entity *e) {
     set39Table[e->action](e);
 }
 
-ARM void set39_init(Entity *e) {
+void set39_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b14 = 3;
     e->action++;
@@ -19,7 +19,7 @@ ARM void set39_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void set39_move(Entity *e) {
+void set39_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->timer--;
     if (e->timer != 0) {

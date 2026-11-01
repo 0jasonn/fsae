@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void em31_move(Entity *e) {
+void em31_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     honyaMove(e);
     if ((u16)(e->x.HALF.HI - 0x168) < 0x120) {

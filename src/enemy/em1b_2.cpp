@@ -31,7 +31,7 @@ extern const u8 em1b_type1Hitbox[];      // em1b_type1Hitbox, used when type == 
 extern const u8 em1b_otherHitbox[];      // em1b_otherHitbox, used for the other types
 
 // Type 0 wander: turns the enemy every few frames and updates the walk animation.
-ARM void em1b_type0_move(Entity *e) {
+void em1b_type0_move(Entity *e) {
     Vars_Em1b *vars = VARS(Vars_Em1b, e);
     u8 nextAnim;
 
@@ -57,7 +57,7 @@ ARM void em1b_type0_move(Entity *e) {
 }
 
 // Type 1 wrapper: runs the action table, then copies the parent's sprite flags and layer.
-ARM void em1b_type1(Entity *e) {
+void em1b_type1(Entity *e) {
     if (*(u32 *)&e->parent->unk_00[4] != 0) {
         em1b_type1Actions[e->action](e);
         e->spriteSettings.b30 = e->parent->spriteSettings.b30;

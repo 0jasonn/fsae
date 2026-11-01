@@ -30,7 +30,7 @@ extern "C" void *func_020c2c34(void *heap, s32 size);
 // RectItem_allocPtrArray(holder, count) (0x020b8b68, provisional name): allocates count pointers (at least one) from
 // the heap of holder and clears them. Returns NULL when the allocation fails.
 extern "C" void **RectItem_allocPtrArray(void *holder, s32 count);
-ARM void **RectItem_allocPtrArray(void *holder, s32 count) {
+void **RectItem_allocPtrArray(void *holder, s32 count) {
     void **array;
     void **slot;
     u32 i;
@@ -50,7 +50,7 @@ ARM void **RectItem_allocPtrArray(void *holder, s32 count) {
 
 // RectItem_allocPtrArray2(holder, count) (0x020b8bb4, provisional name): the same code as RectItem_allocPtrArray
 extern "C" void **RectItem_allocPtrArray2(void *holder, s32 count);
-ARM void **RectItem_allocPtrArray2(void *holder, s32 count) {
+void **RectItem_allocPtrArray2(void *holder, s32 count) {
     void **array;
     void **slot;
     u32 i;
@@ -70,7 +70,7 @@ ARM void **RectItem_allocPtrArray2(void *holder, s32 count) {
 
 // RectSpan_clear(self) (0x020b8c00, provisional name)
 extern "C" void RectSpan_clear(RectSpan *self);
-ARM void RectSpan_clear(RectSpan *self) {
+void RectSpan_clear(RectSpan *self) {
     self->items = NULL;
     self->count = 0;
 }
@@ -78,13 +78,13 @@ ARM void RectSpan_clear(RectSpan *self) {
 // RectSpan_freeItems(self, holder) (0x020b8c10, provisional name): frees the items of the span (tail call)
 extern "C" void RectItem_freeArray(void *holder, RectItem *items, s32 count);
 extern "C" void RectSpan_freeItems(RectSpan *self, void *holder);
-ARM void RectSpan_freeItems(RectSpan *self, void *holder) {
+void RectSpan_freeItems(RectSpan *self, void *holder) {
     RectItem_freeArray(holder, self->items, self->count);
 }
 
 // RectItem_freeArray(holder, items, count) (0x020b8c2c, provisional name): releases the blocks of each item, then the
 // array itself. Does nothing when items is NULL.
-ARM void RectItem_freeArray(void *holder, RectItem *items, s32 count) {
+void RectItem_freeArray(void *holder, RectItem *items, s32 count) {
     u32 i;
 
     if (items == NULL) {
@@ -100,7 +100,7 @@ ARM void RectItem_freeArray(void *holder, RectItem *items, s32 count) {
 // 'cmtn' and arg, and when that returns a value, forwards it to func_020b8cbc with value
 extern "C" s32 func_020b8cbc(RectSpan *self, void *result, s32 value);
 extern "C" s32 RectSpan_callAndMore(RectSpan *self, void *arg, void *obj, s32 value);
-ARM s32 RectSpan_callAndMore(RectSpan *self, void *arg, void *obj, s32 value) {
+s32 RectSpan_callAndMore(RectSpan *self, void *arg, void *obj, s32 value) {
     s32 result;
 
     result = ((s32 (*)(void *, s32, void *))(((void **)(*(void **)obj))[3]))(obj, 0x6e746d63, arg);

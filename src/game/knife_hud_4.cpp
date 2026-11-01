@@ -9,17 +9,17 @@ namespace Knife {
 namespace Hud {
 
 // HudManager::setStateThree (0x0209ecbc, name guessed): sets the game-over state to 3
-ARM void HudManager::setStateThree(void) {
+void HudManager::setStateThree(void) {
     state170 = 3;
 }
 
 // HudManager::setStateNone (0x0209ecc8, name guessed): clears the game-over state
-ARM void HudManager::setStateNone(void) {
+void HudManager::setStateNone(void) {
     state170 = 0;
 }
 
 // HudManager::isGameoverMode() const (0x0209ecd4): true while the game-over state is set
-ARM BOOL HudManager::isGameoverMode(void) const {
+BOOL HudManager::isGameoverMode(void) const {
     return state170 != 0;
 }
 

@@ -9,11 +9,11 @@
 // Action table of effect_omoideon, effectOmoideonTable
 extern const EntityFunc effectOmoideonTable[];
 
-ARM void effect_omoideon(Entity *e) {
+void effect_omoideon(Entity *e) {
     effectOmoideonTable[e->action](e);
 }
 
-ARM void effect_omoideon_init(Entity *e) {
+void effect_omoideon_init(Entity *e) {
     u8 action = e->action;
 
     e->action = action + 1;
@@ -25,7 +25,7 @@ ARM void effect_omoideon_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void effect_omoideon_move(Entity *e) {
+void effect_omoideon_move(Entity *e) {
     e->unk_1b = 0xb0;
     e->spriteSettings.b20 = 6;
     e->spriteSettings.b16 = e->spriteSettings.b20;

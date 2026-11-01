@@ -14,7 +14,7 @@ typedef struct Vars_Set33 {
 } Vars_Set33;
 
 // set33_throw, 0x0206a8e4
-ARM void set33_throw(Entity *e) {
+void set33_throw(Entity *e) {
     u8 nextAction;
     func_020847c8(e);
     func_0208af0c(e);

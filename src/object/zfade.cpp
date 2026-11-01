@@ -63,6 +63,6 @@ extern const EntityFunc zfade_typeHandlers[]; // zfade_typeHandlers, indexed by 
 
 void zfade_move(Entity *e);
 
-ARM void zfadeDispatch(Entity *e) {
+void zfadeDispatch(Entity *e) {
     zfade_typeHandlers[e->type](e);
 }

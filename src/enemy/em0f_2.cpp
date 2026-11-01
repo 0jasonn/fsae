@@ -4,7 +4,7 @@
 #include "global.h"
 #include "enemy/em0f_2.h"
 
-ARM void em0f_wait(Entity *e) {
+void em0f_wait(Entity *e) {
     if (--e->timer == 0) {
         e->unk_2e = 0;
         homingSet(e);
@@ -13,7 +13,7 @@ ARM void em0f_wait(Entity *e) {
 }
 
 
-ARM void em0f_homingMove(Entity *e) {
+void em0f_homingMove(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     vars->homingTimer--;
@@ -32,7 +32,7 @@ ARM void em0f_homingMove(Entity *e) {
 }
 
 
-ARM void em0f_homingMoveEnd(Entity *e) {
+void em0f_homingMoveEnd(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     if (--e->timer == 0) {
@@ -44,7 +44,7 @@ ARM void em0f_homingMoveEnd(Entity *e) {
 }
 
 
-ARM void em0f_move2center(Entity *e) {
+void em0f_move2center(Entity *e) {
     e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
     func_020847f8(e);
     if ((u16)(e->x.HALF.HI - 0x1f7) <= 2) {
@@ -57,7 +57,7 @@ ARM void em0f_move2center(Entity *e) {
 }
 
 
-ARM void em0f_centerwait(Entity *e) {
+void em0f_centerwait(Entity *e) {
     if (--e->timer == 0) {
         if (Random() & 1) {
             vacuumSet(e);
@@ -69,7 +69,7 @@ ARM void em0f_centerwait(Entity *e) {
 }
 
 
-ARM void em0f_vacuumInit(Entity *e) {
+void em0f_vacuumInit(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     e->z.WORD -= 0xb000;
@@ -81,7 +81,7 @@ ARM void em0f_vacuumInit(Entity *e) {
 }
 
 
-ARM void em0f_vacuum(Entity *e) {
+void em0f_vacuum(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     UpdateAnimationSingleFrame(e);
@@ -98,7 +98,7 @@ ARM void em0f_vacuum(Entity *e) {
 }
 
 
-ARM void em0f_vacuumEnd(Entity *e) {
+void em0f_vacuumEnd(Entity *e) {
     e->z.WORD += 0xb000;
     if (e->z.HALF.HI == -0x40) {
         e->action = 0xd;
@@ -108,7 +108,7 @@ ARM void em0f_vacuumEnd(Entity *e) {
 }
 
 
-ARM void em0f_vacuumWait(Entity *e) {
+void em0f_vacuumWait(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     if (--e->timer == 0) {
@@ -136,7 +136,7 @@ ARM void em0f_vacuumWait(Entity *e) {
 }
 
 
-ARM void em0f_thunder(Entity *e) {
+void em0f_thunder(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         e->action = 0xf;
@@ -146,7 +146,7 @@ ARM void em0f_thunder(Entity *e) {
 }
 
 
-ARM void em0f_thunderWait(Entity *e) {
+void em0f_thunderWait(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     if (--e->timer == 0) {
@@ -174,7 +174,7 @@ ARM void em0f_thunderWait(Entity *e) {
 }
 
 
-ARM void em0f_piyori(Entity *e) {
+void em0f_piyori(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     UpdateAnimationSingleFrame(e);
@@ -189,7 +189,7 @@ ARM void em0f_piyori(Entity *e) {
 }
 
 
-ARM void homingMoveSet(Entity *e) {
+void homingMoveSet(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
     u32 pick;
     u8 targetIndex;

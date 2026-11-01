@@ -25,11 +25,11 @@ typedef struct Vars_Set4f {
     /* 7c */ u8 *statePtr; // byte in the background buffer that drives this actor
 } Vars_Set4f;
 
-ARM void Set4f(Entity *e) {
+void Set4f(Entity *e) {
     set4f_states[e->action](e);
 }
 
-ARM void set4f_init(Entity *e) {
+void set4f_init(Entity *e) {
     Vars_Set4f *v = VARS(Vars_Set4f, e);
     s32 base;
 
@@ -40,7 +40,7 @@ ARM void set4f_init(Entity *e) {
     v->statePtr = (u8 *)(base + 4 + 0x2000 + v->cell);
 }
 
-ARM void set4f_wait(Entity *e) {
+void set4f_wait(Entity *e) {
     Vars_Set4f *v = VARS(Vars_Set4f, e);
     u8 state = *v->statePtr;
 

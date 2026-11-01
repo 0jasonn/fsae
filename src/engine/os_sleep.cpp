@@ -22,7 +22,7 @@ extern "C" void Os_LinkThreadAndFlush(s32 flag);
 // +0xb0 is armed and the caller waits until the callback clears the thread pointer.
 extern "C" void Os_SleepAlarm(u32 count);
 
-ARM void Os_SleepAlarm(u32 count) {
+void Os_SleepAlarm(u32 count) {
     u8 alarm[0x2c];
     void *waiter;
     u64 ticks;

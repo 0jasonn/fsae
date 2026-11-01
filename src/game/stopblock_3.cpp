@@ -7,7 +7,7 @@
 //   sbKemuriSet
 
 // Places the smoke (kemuri) object at the stop block's cell, in the layer bits of the key
-ARM void sbKemuriSet(STOPBLOCK_WORK_ *block) {
+void sbKemuriSet(STOPBLOCK_WORK_ *block) {
     Entity *e;
 
     e = GetSetWork(0xf, 2, 0);

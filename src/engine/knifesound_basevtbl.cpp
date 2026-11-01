@@ -7,6 +7,6 @@
 extern u8 data_0211aad8[];
 
 extern "C" void func_0208bcd4(void *self);
-ARM void func_0208bcd4(void *self) {
+void func_0208bcd4(void *self) {
     *(void **)self = data_0211aad8;
 }

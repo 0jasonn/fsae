@@ -6,7 +6,7 @@ extern EntityFunc set32Table[];        // set32Table, indexed by type
 extern u8 data_0212c618[];             // game state; byte 5 is a flag
 
 // Set32, 0x02069e0c
-ARM void Set32(Entity *e) {
+void Set32(Entity *e) {
     if (data_0212c618[5] == 0) {
         PutObjWork(e);
         return;
@@ -15,7 +15,7 @@ ARM void Set32(Entity *e) {
 }
 
 // triangle_marker, 0x02069e44
-ARM void triangle_marker(Entity *e) {
+void triangle_marker(Entity *e) {
     u8 nextAction;
     if (e->action == 0) {
         nextAction = e->action + 1;
@@ -33,7 +33,7 @@ ARM void triangle_marker(Entity *e) {
 extern Entity *data_0212c54c;          // pointer to the marker's target entity
 
 // ghost_marker, 0x02069ea0
-ARM void ghost_marker(Entity *e) {
+void ghost_marker(Entity *e) {
     u8 nextAction;
     if (e->action == 0) {
         nextAction = e->action + 1;

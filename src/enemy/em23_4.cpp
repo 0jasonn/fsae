@@ -5,7 +5,7 @@
 
 // Functions in this file: em23_damage (0x0203fadc).
 
-ARM void em23_damage(Entity *e) {
+void em23_damage(Entity *e) {
     if (e->type != 0) {
         e->action = 1;
     } else {

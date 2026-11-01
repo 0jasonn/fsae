@@ -13,7 +13,7 @@ typedef struct Vars_Em1d {
 extern EntityFunc em1d_actions[];         // em1d_actions, indexed by func_02084a30(e)
 extern EntityFunc em1d_normalActions[];   // em1d_normalActions, indexed by e->action
 
-ARM void Em1d(Entity *e) {
+void Em1d(Entity *e) {
     u8 actionIndex;
 
     func_02084700(e);
@@ -29,11 +29,11 @@ ARM void Em1d(Entity *e) {
     }
 }
 
-ARM void em1d_normal(Entity *e) {
+void em1d_normal(Entity *e) {
     em1d_normalActions[e->action](e);
 }
 
-ARM void em1d_damage(Entity *e) {
+void em1d_damage(Entity *e) {
     Vars_Em1d *vars = VARS(Vars_Em1d, e);
     Entity *hitter;
     PlayerData *player;

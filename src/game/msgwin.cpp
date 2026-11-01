@@ -21,7 +21,7 @@ typedef struct MsgBoxFields {
 extern u8 data_021361a0[];
 
 // Draws the frame of the current window slot and copies it into the saved slot
-ARM void createWindow(void) {
+void createWindow(void) {
     u8 slotIndex;
     u16 attr;
     u8 *tiles;

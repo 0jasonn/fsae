@@ -17,7 +17,7 @@ typedef struct RandomSetWork {
 extern RandomSetWork data_02134ae8[];
 
 // Clears the eight random set records
-ARM void RandomSetInit(void) {
+void RandomSetInit(void) {
     u16 i;
 
     for (i = 0; i < 8; i++) {

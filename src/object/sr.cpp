@@ -17,6 +17,6 @@ void ComRequest(u8 request); // C++ name _Z10ComRequesth
 
 // StaffrollTask (0x02077810)
 extern "C" void StaffrollTask(void);
-ARM void StaffrollTask(void) {
+void StaffrollTask(void) {
     srStepTable[data_0212c500]();
 }

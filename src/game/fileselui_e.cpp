@@ -14,7 +14,7 @@ extern u8 data_021350b0[];
 
 // fileSelUIView::errorFileInit() (0x020a88a8): the save entries in state 6 (initial file, then clear) and 8 (clear)
 // are cleared to idle, then the media is written
-ARM void fileSelUIView_errorFileInit(void *self) {
+void fileSelUIView_errorFileInit(void *self) {
     u8 *base;
     u32 i;
     u8 *entry;

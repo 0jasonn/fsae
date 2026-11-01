@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void pause_wait(void) {
+void pause_wait(void) {
     keyDisable();
     if ((frameCounter[0x11] & 3) == localPlayerIndex) {
         pause_dialogUpdate();

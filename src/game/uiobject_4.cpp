@@ -10,7 +10,7 @@ extern "C" void ResPlayer_AdvanceAndRefresh(void *anim, s32 c); // animation ste
 
 // UIObject::init(unsigned char) (0x020acbf4): clears the object, stores the kind, sets the active flags, liner curve
 extern "C" void UIObject_init(UIObject *self, u8 kind);
-ARM void UIObject_init(UIObject *self, u8 kind) {
+void UIObject_init(UIObject *self, u8 kind) {
     MI_CpuFill8(self, 0, sizeof(UIObject));
     self->kind = kind;
     self->unk_02[1] = 1;
@@ -20,7 +20,7 @@ ARM void UIObject_init(UIObject *self, u8 kind) {
 
 // UIObject::update() (0x020acc2c): advances the move, the frame counter (wraps after 0x77) and the attached animation
 extern "C" void UIObject_update(UIObject *self);
-ARM void UIObject_update(UIObject *self) {
+void UIObject_update(UIObject *self) {
     if (self->durationFP != 0) {
         UIObject_updateMovePos(self, 0x1000);
     }
@@ -35,7 +35,7 @@ ARM void UIObject_update(UIObject *self) {
 }
 
 // UIObject::updateTime(long) (0x020acc7c): adds step to the elapsed time, returns TRUE once the duration is reached
-ARM BOOL UIObject_updateTime(UIObject *self, s32 step) {
+BOOL UIObject_updateTime(UIObject *self, s32 step) {
     self->elapsed += step;
     if (self->elapsed >= self->durationFP) {
         self->elapsed = self->durationFP;

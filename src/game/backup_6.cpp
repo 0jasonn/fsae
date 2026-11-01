@@ -10,6 +10,6 @@
 //   0x02056188 ReadCartInfo (original name)
 //   0x020561a4 DeleteSaveFile (original name)
 
-ARM const SaveEepInfo *getEepInfo(u8 slot) {
+const SaveEepInfo *getEepInfo(u8 slot) {
     return &data_020d8550[slot & 7];
 }

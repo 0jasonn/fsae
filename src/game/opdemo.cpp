@@ -2,7 +2,7 @@
 #include "engine/misc_d.h"
 #include "global.h"
 
-ARM void gufu_flash(void) {
+void gufu_flash(void) {
     *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = 0x14;
     data_021349c0[EFFECT_STATE_SCENE]++;
     data_021349c0[EFFECT_STATE_LEVEL] = 0;

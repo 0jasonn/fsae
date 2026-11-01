@@ -4,7 +4,7 @@
 // Cursor_GetSpan (Cursor_GetSpan, provisional name): when the count at +8 is at most the last index at +6 plus one and the
 // halfword at +4 is not above the last index, returns last - count + 1; otherwise 0.
 extern "C" u16 Cursor_GetSpan(u8 *self);
-ARM u16 Cursor_GetSpan(u8 *self) {
+u16 Cursor_GetSpan(u8 *self) {
     u16 last;
     u16 count;
     u32 valid;
@@ -25,7 +25,7 @@ ARM u16 Cursor_GetSpan(u8 *self) {
 
 // Slots_ClearThree (Slots_ClearThree, provisional name): sets the three slots of the array to -1.
 extern "C" void Slots_ClearThree(s32 *slots);
-ARM void Slots_ClearThree(s32 *slots) {
+void Slots_ClearThree(s32 *slots) {
     s32 i;
 
     for (i = 0; i < 3; i++) {
@@ -35,13 +35,13 @@ ARM void Slots_ClearThree(s32 *slots) {
 
 // Slots_Set (Slots_Set, provisional name): slots[index] = value.
 extern "C" void Slots_Set(s32 *slots, u32 index, u32 value);
-ARM void Slots_Set(s32 *slots, u32 index, u32 value) {
+void Slots_Set(s32 *slots, u32 index, u32 value) {
     slots[index] = value;
 }
 
 // Slots_ClearThreeAt8 (Slots_ClearThreeAt8, provisional name): sets the three words starting at +8 to -1.
 extern "C" void Slots_ClearThreeAt8(u8 *self);
-ARM void Slots_ClearThreeAt8(u8 *self) {
+void Slots_ClearThreeAt8(u8 *self) {
     s32 i;
 
     for (i = 0; i < 3; i++) {
@@ -51,6 +51,6 @@ ARM void Slots_ClearThreeAt8(u8 *self) {
 
 // Slots_SetAt8 (Slots_SetAt8, provisional name): the word at +8 + index * 4 is set to value.
 extern "C" void Slots_SetAt8(u8 *self, u32 index, u32 value);
-ARM void Slots_SetAt8(u8 *self, u32 index, u32 value) {
+void Slots_SetAt8(u8 *self, u32 index, u32 value) {
     *(u32 *)(self + 8 + index * 4) = value;
 }

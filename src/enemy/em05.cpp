@@ -2,14 +2,14 @@
 #include "enemy/em03.h"
 #include "global.h"
 
-ARM void em05_stop(Entity *e) {
+void em05_stop(Entity *e) {
     func_02084f54(e);
     if (e->unk_43 == 0) {
         e->poseId = V(e)->savedUnk3f;
     }
 }
 
-ARM void em05_init(Entity *e) {
+void em05_init(Entity *e) {
     if (e->type != 0) {
         e->poseId = 9;
     }
@@ -27,7 +27,7 @@ ARM void em05_init(Entity *e) {
     em05DirChange(e);
 }
 
-ARM void em05_move0(Entity *e) {
+void em05_move0(Entity *e) {
     if (--e->timer == 0) {
         e->timer = (Random() & 0x1c) + 0x1e;
         em05DirChange(e);
@@ -36,7 +36,7 @@ ARM void em05_move0(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em05_jump0(Entity *e) {
+void em05_jump0(Entity *e) {
     func_020847c8(e);
     UpdateAnimationSingleFrame(e);
     if (UpdateGravity(e, 0x1100) != 0) {

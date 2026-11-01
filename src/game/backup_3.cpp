@@ -8,7 +8,7 @@
 //   0x02056ddc ProgramSaveBufferDwordEx
 // The save buffer is the u16 table at KnifeApp + 0x4b0, four halfwords per dword index.
 
-ARM s32 NAND_CreateDirectory(const char *path) {
+s32 NAND_CreateDirectory(const char *path) {
     if (FS_CreateDirectoryAuto(path, 3) != 0) {
         return 1;
     }

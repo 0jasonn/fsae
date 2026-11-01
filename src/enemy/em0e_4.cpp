@@ -34,17 +34,17 @@ extern EntityFunc em0e_type3_actions[];
 extern s8 em0e_type3_moveOffsets[];
 extern u16 scrollArgs[3];
 
-ARM void em0e_type3(Entity *e) {
+void em0e_type3(Entity *e) {
     em0e_type3_actions[e->action](e);
 }
 
-ARM void type3_init(Entity *e) {
+void type3_init(Entity *e) {
     e->spriteSettings.b0 = 0;
     e->action++;
     InitAnimationForceUpdate(e, 5);
 }
 
-ARM void type3_move(Entity *e) {
+void type3_move(Entity *e) {
     Entity *parent = e->parent;
 
     if (parent->health != 0) {

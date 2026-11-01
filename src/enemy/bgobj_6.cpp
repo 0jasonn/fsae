@@ -15,7 +15,7 @@ typedef struct BgobjVars {
 } BgobjVars;
 
 // bgobj_init (0x0203e59c): creates the child object (GetEnemyWork(0x19)) and links the two.
-ARM void bgobj_init(Entity *e) {
+void bgobj_init(Entity *e) {
     Entity *child;
 
     child = GetEnemyWork(0x19);
@@ -38,7 +38,7 @@ ARM void bgobj_init(Entity *e) {
 }
 
 // bgobj_move (0x0203e610): runs the moving object (func_02089524) while the entity and its parent are alive.
-ARM void bgobj_move(Entity *e) {
+void bgobj_move(Entity *e) {
     if (e->health != 0 && e->parent->health != 0) {
         func_02089524(e);
         return;

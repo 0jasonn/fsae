@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void em29_move(Entity *e) {
+void em29_move(Entity *e) {
     Entity *parent = e->parent;
     if (VARS(Vars_Parent, parent)->state == 1) {
         e->action = 3;
@@ -64,7 +64,7 @@ ARM void em29_move(Entity *e) {
 // em29_vacuumInit (0x02041b18): steps the scroll position by +8 in x and -8 in y, clamps each to its limit,
 // and sinks z. When both limits are reached and z has reached its limit, goes to action 4 after one frame.
 
-ARM void em29_vacuumInit(Entity *e) {
+void em29_vacuumInit(Entity *e) {
     W(e)->subPosX += 8;
     W(e)->subPosY -= 8;
     u16 limitX = em29_scrollLimitsIn[e->type * 2];
@@ -97,7 +97,7 @@ ARM void em29_vacuumInit(Entity *e) {
 // em29_vacuum (0x02041c00): with the parent's state at 0 this sets action 5 and stops. Otherwise it
 // counts the timer down and, when it reaches 0, resets it and adds 0x30 to the speed.
 
-ARM void em29_vacuum(Entity *e) {
+void em29_vacuum(Entity *e) {
     if (VARS(Vars_Parent, e->parent)->state == 0) {
         e->action = 5;
         e->speed = 0;
@@ -114,7 +114,7 @@ ARM void em29_vacuum(Entity *e) {
 // em29_vacuumEnd (0x02041c50): the mirror of em29_vacuumInit: steps -8 in x and +8 in y, sinks z the
 // other way, and goes to action 2 when both limits are reached and z has reached its limit.
 
-ARM void em29_vacuumEnd(Entity *e) {
+void em29_vacuumEnd(Entity *e) {
     W(e)->subPosX -= 8;
     W(e)->subPosY += 8;
     u16 limitX = em29_scrollLimitsOut[e->type * 2];
@@ -146,7 +146,7 @@ ARM void em29_vacuumEnd(Entity *e) {
 // entity moves up and right on the scroll position. When it ends, the child takes this entity's place under the
 // parent, copies the parent's position, and the entity is removed.
 
-ARM void em29_die(Entity *e) {
+void em29_die(Entity *e) {
     if (e->child != NULL) {
         W(e->child)->orbitOffsets[frameCounter & 7] = 0x88;
     }
@@ -180,7 +180,7 @@ ARM void em29_die(Entity *e) {
 // breakSekichu (0x02041e58): converts the position into a 64-column cell index relative to
 // data_0212c648. When the cell check returns 0x138, spawns effect 0xf on this entity and reports the cell.
 
-ARM void breakSekichu(Entity *e) {
+void breakSekichu(Entity *e) {
     u16 cell = ((e->x.HALF.HI - data_0212c648.unk_18) >> 4) | (((e->y.HALF.HI - data_0212c648.unk_1a) >> 4) << 6);
     if (func_02083ca8(cell, e->layer) != 0x138) {
         return;
@@ -196,7 +196,7 @@ ARM void breakSekichu(Entity *e) {
 // movecheck (0x02041edc): true when the entity is active, its player slot has no blocking flags, and the
 // entity is not in action 6.
 
-ARM BOOL movecheck(Entity *e) {
+BOOL movecheck(Entity *e) {
     if (func_020860dc(e) != 0) {
         if (data_0212ceb0[e->type].statusFlags & 0x100) {
             return FALSE;
@@ -212,7 +212,7 @@ ARM BOOL movecheck(Entity *e) {
 // hikiyoseSet (0x02041f48): when the leader is close enough and free, creates a new segment between the
 // leader and this segment and returns TRUE. Otherwise nudges the leader with func_020852f8 and returns FALSE.
 
-ARM BOOL hikiyoseSet(Entity *segment, Entity *leader, u16 speed) {
+BOOL hikiyoseSet(Entity *segment, Entity *leader, u16 speed) {
     if (leader->child != NULL) {
         if (leader->child->objKind == 4 && leader->child->objId == 2) {
             return FALSE;

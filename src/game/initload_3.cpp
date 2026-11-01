@@ -15,7 +15,7 @@ extern "C" void initCellAnimation(ObjCellInfo *obj, s32 index1, s32 index2);
 
 // initCellAnimation (0x020ac7dc): loads the cell data of two resources. index1 takes a 16-bit id, index2 a 31-bit id;
 // the top bit of each selects the second resource table. -1 skips a resource.
-ARM void initCellAnimation(ObjCellInfo *obj, s32 index1, s32 index2) {
+void initCellAnimation(ObjCellInfo *obj, s32 index1, s32 index2) {
     if (index1 != -1) {
         u32 size;
         u8 kind;

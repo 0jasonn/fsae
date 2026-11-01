@@ -14,6 +14,6 @@ typedef struct Vars_Set3e {
 extern const EntityFunc data_020d8c50[]; // state table indexed by e->action
 extern const u8 data_020d8c48[];         // hitbox of the set3e actor
 
-ARM void Set3e(Entity *e) {
+void Set3e(Entity *e) {
     data_020d8c50[e->action](e);
 }

@@ -18,13 +18,13 @@ void *func_020c2064(void *head, void *node);
 
 // SndSlot_ReleaseFirst (0x020bf89c): releases the object held in the first word of the slot.
 extern "C" void SndSlot_ReleaseFirst(void *slot, s32 arg);
-ARM void SndSlot_ReleaseFirst(void *slot, s32 arg) {
+void SndSlot_ReleaseFirst(void *slot, s32 arg) {
     SndVoice_Setup(*(void **)slot, arg);
 }
 
 // SndSlot_ReleaseAll (0x020bf8ac): releases every slot whose flag at +0x2c is set.
 extern "C" void SndSlot_ReleaseAll(s32 arg);
-ARM void SndSlot_ReleaseAll(s32 arg) {
+void SndSlot_ReleaseAll(s32 arg) {
     s32 i;
     u8 *slot;
 
@@ -38,6 +38,6 @@ ARM void SndSlot_ReleaseAll(s32 arg) {
 
 // SndSlot_ResetFirst (0x020bf8ec): resets the object held in the first word of the slot.
 extern "C" void SndSlot_ResetFirst(void **slot, s32 arg);
-ARM void SndSlot_ResetFirst(void **slot, s32 arg) {
+void SndSlot_ResetFirst(void **slot, s32 arg) {
     SndVoice_SetPaused(*slot, arg);
 }

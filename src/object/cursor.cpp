@@ -12,11 +12,11 @@ typedef struct Vars_Cursor {
     /* 60 */ u16 circleRadius; // grows by 4 per frame while the circle window opens
 } Vars_Cursor;
 
-ARM void door_cursor(Entity *e) {
+void door_cursor(Entity *e) {
     cursorTable[e->action](e);
 }
 
-ARM void cursor_init(Entity *e) {
+void cursor_init(Entity *e) {
     u8 nextAction = e->action + 1;
     u8 *init;
     e->action = nextAction;
@@ -28,7 +28,7 @@ ARM void cursor_init(Entity *e) {
     InitAnimationForceUpdate(e, init[2]);
 }
 
-ARM void cursor_move(Entity *e) {
+void cursor_move(Entity *e) {
     u32 flag;
     if (data_021349c0[2] == e->type2) {
         flag = 2;
@@ -42,7 +42,7 @@ ARM void cursor_move(Entity *e) {
     }
 }
 
-ARM void cursor_effect(Entity *e) {
+void cursor_effect(Entity *e) {
     Vars_Cursor *v = VARS(Vars_Cursor, e);
     UpdateAnimationSingleFrame(e);
     switch (e->subAction) {
@@ -67,7 +67,7 @@ ARM void cursor_effect(Entity *e) {
     }
 }
 
-ARM void cursor_wait(Entity *e) {
+void cursor_wait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (data_021349c0[8] < 2) {
         return;

@@ -20,7 +20,7 @@ extern "C" void CheckInit(void);
 extern "C" void CheckPlsSet(void);
 
 // Clears the flag of all 16 slots, then rotates the link words by the player count (swaps for 2, rotations for 3 and 4).
-ARM void CheckInit(void) {
+void CheckInit(void) {
     u32 saved;
 
     data_0212e590[0].flag = 0;
@@ -62,7 +62,7 @@ ARM void CheckInit(void) {
 }
 
 // Passes the entities of players 1 to 3 to func_02084180 while they exist, after setting up the list head of data_0212e590.
-ARM void CheckPlsSet(void) {
+void CheckPlsSet(void) {
     Entity *first;
 
     func_02029a50(data_0212e590, 0x900);

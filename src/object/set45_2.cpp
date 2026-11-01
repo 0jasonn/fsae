@@ -5,7 +5,7 @@
 // Set45 family (module set45), 0x0206d4d0 .. 0x0206d5c4 (set45_init at 0x0206d418 is parked in scratch/agentA/nonmatching).
 // Address -> name: 0x0206d4d0 set45_move, 0x0206d530 set45_jigoshori, 0x0206d584 set45_die
 
-ARM void set45_move(Entity *e) {
+void set45_move(Entity *e) {
     Vars_NemotoCell *v = VARS(Vars_NemotoCell, e);
     int cellResult;
 
@@ -24,7 +24,7 @@ ARM void set45_move(Entity *e) {
     InitAnimationForceUpdate(e, 4);
 }
 
-ARM void set45_jigoshori(Entity *e) {
+void set45_jigoshori(Entity *e) {
     Vars_NemotoCell *v = VARS(Vars_NemotoCell, e);
 
     UpdateAnimationSingleFrame(e);
@@ -38,7 +38,7 @@ ARM void set45_jigoshori(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set45_die(Entity *e) {
+void set45_die(Entity *e) {
     e->spriteSettings.b0 ^= 1;
     e->timer--;
     if (e->timer != 0) {

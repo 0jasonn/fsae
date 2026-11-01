@@ -6,7 +6,7 @@
 // Front check (module frontcheck, second unit). Original names from the debug build: setmoveblock, openDoor.
 
 // Sets the move block at cell for the kind/mode pair: kinds 0x131..0x135 each take one mode value (or any mode).
-ARM void SetMoveBlockByKind(Entity *e, u8 mode, s32 kind, u16 cell) {
+void SetMoveBlockByKind(Entity *e, u8 mode, s32 kind, u16 cell) {
     switch (kind) {
     case 0x131:
         setmoveblock(e, cell, mode);

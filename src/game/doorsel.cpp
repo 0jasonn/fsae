@@ -12,7 +12,7 @@ extern void (*data_0212c564)(void);
 extern void (*const data_020f25f0[])(void);
 
 // DoorSelTask (0x0202a968): runs the current door select step, then the frame's shared update.
-ARM void DoorSelTask(void) {
+void DoorSelTask(void) {
     data_020f25f0[data_0212c500]();
     data_0212c564();
     func_020830ec();

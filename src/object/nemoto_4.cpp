@@ -19,7 +19,7 @@ typedef struct Vars_NemotoLever {
     /* 7c */ u16 target;
 } Vars_NemotoLever;
 
-ARM void nemoto_leverMove(Entity *e) {
+void nemoto_leverMove(Entity *e) {
     Vars_NemotoLever *v = VARS(Vars_NemotoLever, e);
     Entity *player;
     u8 dir;

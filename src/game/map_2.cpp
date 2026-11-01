@@ -12,7 +12,7 @@ extern u8 data_02165fa8[];
 
 // Loads the map resource list, one 12-byte entry at a time, waiting for each VBlank. Entry: { id (bit 31 = another entry
 // follows), destination, flags (bit 31 = LZ compressed) }. A zero destination loads a character graphic (CgLoad) instead.
-ARM void MapLoad(u32 *entries, u8 mode) {
+void MapLoad(u32 *entries, u8 mode) {
     u32 *entry;
     void *src;
 

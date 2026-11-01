@@ -4,7 +4,7 @@
 
 // Implementer B, round 6: ending_scene_01 (0x02044b44).
 
-ARM void ending_scene_01(void) {
+void ending_scene_01(void) {
     u8 phase = data_021349c0.phase;
     u8 i;
     switch (phase) {
@@ -127,7 +127,7 @@ ARM void ending_scene_01(void) {
 }
 
 // ending_scene_02 (0x02044edc): sets up the display, then fades out and hands over to the task chain.
-ARM void ending_scene_02(void) {
+void ending_scene_02(void) {
     u32 dispcnt;
     switch (data_021349c0.phase) {
     case 0:
@@ -169,7 +169,7 @@ ARM void ending_scene_02(void) {
 }
 
 // bikkuri (0x02045030): spawns the flag actor at the top right and sets its timer.
-ARM void bikkuri(void) {
+void bikkuri(void) {
     Entity *e = GetSetWork(0x5a, 1, 0x32);
     e->timer = 1;
     e->x.HALF.HI = 0x1f8;
@@ -177,7 +177,7 @@ ARM void bikkuri(void) {
 }
 
 // ending_finale (0x02045060): runs the phase handler, then recolours a palette row once the flags allow it.
-ARM void ending_finale(void) {
+void ending_finale(void) {
     u8 *palette;
     endingFinaleTable[data_0212c4dc]();
     if (em12_typeMasks & 0x10) {

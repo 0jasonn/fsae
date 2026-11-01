@@ -9,11 +9,11 @@
 // Action table of effect_omoide_end, effectOmoideEndTable
 extern const EntityFunc effectOmoideEndTable[];
 
-ARM void effect_omoide_end(Entity *e) {
+void effect_omoide_end(Entity *e) {
     effectOmoideEndTable[e->action](e);
 }
 
-ARM void effect_omoide_end_init(Entity *e) {
+void effect_omoide_end_init(Entity *e) {
     u8 action = e->action;
 
     e->action = action + 1;
@@ -26,7 +26,7 @@ ARM void effect_omoide_end_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void effect_omoide_end_move(Entity *e) {
+void effect_omoide_end_move(Entity *e) {
     u8 timer;
 
     e->unk_1b = 0xb0;

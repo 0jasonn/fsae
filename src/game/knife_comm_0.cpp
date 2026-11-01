@@ -10,7 +10,7 @@ extern "C" void Knife_Comm_WirelessIcon_finalize(WirelessIcon *self);
 
 // WirelessIcon::WirelessIcon() (0x0209a63c)
 extern "C" WirelessIcon *Knife_Comm_WirelessIcon_WirelessIcon(WirelessIcon *self);
-ARM WirelessIcon *Knife_Comm_WirelessIcon_WirelessIcon(WirelessIcon *self) {
+WirelessIcon *Knife_Comm_WirelessIcon_WirelessIcon(WirelessIcon *self) {
     *(u8 **)self = data_0211c140;
     Knife_Comm_WirelessIcon_finalize(self);
     return self;

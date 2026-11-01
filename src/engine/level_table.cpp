@@ -8,7 +8,7 @@
 // Level_getEntry(self, level) (0x020b70c0, provisional name): returns entry 2 of the table at +0x18 when level is below
 // 0x10, entry 1 when it is exactly 0x10 and entry 0 above it
 extern "C" void *Level_getEntry(void *self, u32 level);
-ARM void *Level_getEntry(void *self, u32 level) {
+void *Level_getEntry(void *self, u32 level) {
     u32 index;
     void **table;
 
@@ -26,5 +26,5 @@ ARM void *Level_getEntry(void *self, u32 level) {
 
 // Level_noop(self) (0x020b70e4, provisional name): does nothing
 extern "C" void Level_noop(void *self);
-ARM void Level_noop(void *self) {
+void Level_noop(void *self) {
 }

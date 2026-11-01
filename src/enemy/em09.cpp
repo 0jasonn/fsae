@@ -9,7 +9,7 @@
 // type2Move type2Move, em09_init em09_init, em09_wait em09_wait,
 // em09_appear em09_appear, em09_move em09_move
 
-ARM void tenka(Entity *e) {
+void tenka(Entity *e) {
     e->action = 4;
     e->iframes = 0xfc;
     VBD(e)->dying = 1;
@@ -21,7 +21,7 @@ ARM void tenka(Entity *e) {
     EnqueueSFX(0x2a);
 }
 
-ARM void searchCandle(Entity *e) {
+void searchCandle(Entity *e) {
     int probeA; // tile codes at the two probe points; 0x10e makes the actor call tenka
     int probeB;
     if (VBD(e)->dying != 0) {
@@ -59,7 +59,7 @@ ARM void searchCandle(Entity *e) {
     }
 }
 
-ARM int purupuru(Entity *e) {
+int purupuru(Entity *e) {
     VBL(e)->launchTimer--;
     if (VBL(e)->launchTimer == 0) {
         if (e->action == 2 && data_0212ceb0[e->type2].unk_02 != 0) {
@@ -87,7 +87,7 @@ ARM int purupuru(Entity *e) {
     return 1;
 }
 
-ARM void piyoriSet(Entity *e) {
+void piyoriSet(Entity *e) {
     e->action = 3;
     e->attackKnockback = 3;
     e->poseId = 0x47;
@@ -96,7 +96,7 @@ ARM void piyoriSet(Entity *e) {
     e->unk_2e = 2;
 }
 
-ARM void Em09(Entity *e) {
+void Em09(Entity *e) {
     Entity *partner;
     u8 actionIndex;
     if (e->type2 == 0) {
@@ -116,11 +116,11 @@ ARM void Em09(Entity *e) {
     }
 }
 
-ARM void em09_normal(Entity *e) {
+void em09_normal(Entity *e) {
     em09_normalActions[e->action](e);
 }
 
-ARM void em09_damage(Entity *e) {
+void em09_damage(Entity *e) {
     if (e->poseId == 0x14) {
         e->poseId = 0x13;
         e->hitbox = em09_hurtHitbox;
@@ -169,11 +169,11 @@ ARM void em09_damage(Entity *e) {
     e->direction = GetFacingDirection(e, e->child);
 }
 
-ARM void em09_release(Entity *e) {
+void em09_release(Entity *e) {
     func_02084788(e);
 }
 
-ARM void type2Move(Entity *e) {
+void type2Move(Entity *e) {
     Entity *parent = e->parent;
     e->x.HALF.HI = parent->x.HALF.HI;
     e->y.HALF.HI = parent->y.HALF.HI + 1;
@@ -183,7 +183,7 @@ ARM void type2Move(Entity *e) {
     em09_type2Actions[e->action](e);
 }
 
-ARM void em09_init(Entity *e) {
+void em09_init(Entity *e) {
     Entity *child;
     Tbl3 altPalette;
     child = GetEnemyWork(9);
@@ -214,7 +214,7 @@ ARM void em09_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em09_wait(Entity *e) {
+void em09_wait(Entity *e) {
     seqMove(e);
     if ((e->frame & 0x80) != 0) {
         InitAnimationForceUpdate(e, 0);
@@ -223,7 +223,7 @@ ARM void em09_wait(Entity *e) {
     }
 }
 
-ARM void em09_appear(Entity *e) {
+void em09_appear(Entity *e) {
     seqMove(e);
     if ((e->frame & 0x80) != 0) {
         e->action++;
@@ -242,7 +242,7 @@ ARM void em09_appear(Entity *e) {
     }
 }
 
-ARM void em09_move(Entity *e) {
+void em09_move(Entity *e) {
     if (--e->timer == 0) {
         e->timer = 8;
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {

@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void pause_retry(void) {
+void pause_retry(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }
@@ -59,7 +59,7 @@ ARM void pause_retry(void) {
     data_0212c4dc = 0;
 }
 
-ARM void keyDisable(void) {
+void keyDisable(void) {
     u8 i;
     u8 playerCount;
 
@@ -74,11 +74,11 @@ ARM void keyDisable(void) {
     }
 }
 
-ARM void Entity_DispatchByUnk09(Entity *e) {
+void Entity_DispatchByUnk09(Entity *e) {
     entityDispatchTable[e->objId](e);
 }
 
-ARM void LinkControl(Entity *e) {
+void LinkControl(Entity *e) {
     u16 savedA;
     u16 savedB;
     u8 mode;
@@ -96,7 +96,7 @@ ARM void LinkControl(Entity *e) {
     data_0212c510 = savedB;
 }
 
-ARM void Entity_InitSpriteColor(Entity *e) {
+void Entity_InitSpriteColor(Entity *e) {
     u32 settings;
 
     settings = *(u32 *)&e->spriteSettings;
@@ -109,7 +109,7 @@ ARM void Entity_InitSpriteColor(Entity *e) {
     func_02083000(scrollArgs, objAffineSetAlt + (((*(u32 *)&e->spriteSettings) << 2) >> 27) * 0x20);
 }
 
-ARM void KobitoDemo(Entity *e) {
+void KobitoDemo(Entity *e) {
     scrollArgs[0] = *(u32 *)&e->unk_6c[0xc];
     scrollArgs[1] = *(u32 *)&e->unk_6c[0x10];
     scrollArgs[2] = 0;

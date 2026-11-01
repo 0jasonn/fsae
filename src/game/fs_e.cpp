@@ -22,7 +22,7 @@ extern s8 data_021350f7[];   // +0x47 of the slot block (status byte)
 // fsUpdateStatus(unsigned char) (0x020a723c, invented name): reads the file status of a slot into the status byte,
 // clearing the slot for the statuses 3, 4, 6 and 8
 extern "C" void fsUpdateStatus(u8 slot);
-ARM void fsUpdateStatus(u8 slot) {
+void fsUpdateStatus(u8 slot) {
     s32 status;
     s32 offset;
 
@@ -41,7 +41,7 @@ ARM void fsUpdateStatus(u8 slot) {
 }
 
 // clearSaveData(unsigned char) (0x020a72b0): clears a slot (masked to 0 to 7) and sets its two flags
-ARM void clearSaveData(u8 slot) {
+void clearSaveData(u8 slot) {
     s32 offset;
 
     slot &= 7;
@@ -52,7 +52,7 @@ ARM void clearSaveData(u8 slot) {
 }
 
 // fsFileCount() (0x020a72f0): number of saved files (the three slot checks summed, truncated to a byte)
-ARM u8 fsFileCount(void) {
+u8 fsFileCount(void) {
     u8 count;
 
     count = fsFileCheck(0) + fsFileCheck(1);
@@ -60,7 +60,7 @@ ARM u8 fsFileCount(void) {
 }
 
 // fsFileCheck(unsigned char) (0x020a7324): 1 when the slot (below 3) holds a file, 0 otherwise
-ARM s32 fsFileCheck(u8 slot) {
+s32 fsFileCheck(u8 slot) {
     s32 offset;
     s8 status;
 

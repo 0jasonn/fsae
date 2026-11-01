@@ -5,5 +5,5 @@
 extern "C" void Stub_EmptyB(void);
 
 // Empty function (returns at once).
-ARM void Stub_EmptyB(void) {
+void Stub_EmptyB(void) {
 }

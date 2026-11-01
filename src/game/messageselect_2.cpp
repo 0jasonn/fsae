@@ -25,7 +25,7 @@ typedef struct KnifeSelectMenu {
 // MessageSelect update (0x020a18c4): reads the keys (the player's own in a wireless session), moves the state on and
 // the selection with the up and down keys, and plays the cursor sound when the selection changes
 extern "C" void Knife_Message_MessageSelect_update(void *self);
-ARM void Knife_Message_MessageSelect_update(void *self) {
+void Knife_Message_MessageSelect_update(void *self) {
     KnifeSelectMenu *menu = (KnifeSelectMenu *)self;
     u16 keys;
     u8 oldSelected;

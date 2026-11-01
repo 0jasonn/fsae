@@ -21,7 +21,7 @@ extern const char data_021152f0[]; // file path of slot 2
 
 s32 Knife_readSaveFile(void *buffer, const char *path);
 
-ARM u32 Knife_loadSaveFile(u32 slot) {
+u32 Knife_loadSaveFile(u32 slot) {
     const char *path;
     Knife::PowerManager *manager;
     u32 bootType;

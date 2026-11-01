@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void PlWorkReset(void) {
+void PlWorkReset(void) {
     PlWork *end;
     PlWork *plWork;
 

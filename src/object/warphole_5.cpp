@@ -6,7 +6,7 @@
 //   0x0205e078 warphole_wait2 (original name)
 //   (pos_copy at 0x0205e05c is in warphole_2.cpp; warphole_exit at 0x0205e114 is in warphole_3.cpp)
 
-ARM void warphole_wait2(Entity *e) {
+void warphole_wait2(Entity *e) {
     u8 flag;
     Entity *target;
 

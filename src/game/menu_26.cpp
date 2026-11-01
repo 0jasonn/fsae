@@ -10,7 +10,7 @@
 // Menu_InRange). Returns 0 when there is none.
 s32 Menu_InRange(void *self, s32 value, s32 low, s32 high);
 extern "C" MenuPoolEntry *Menu_FindPoolEntry(MenuPool *pool, s32 id);
-ARM MenuPoolEntry *Menu_FindPoolEntry(MenuPool *pool, s32 id) {
+MenuPoolEntry *Menu_FindPoolEntry(MenuPool *pool, s32 id) {
     u32 i;
     s32 offset;
     u8 *entry;

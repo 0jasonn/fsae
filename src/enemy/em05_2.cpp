@@ -2,7 +2,7 @@
 #include "enemy/em03.h"
 #include "global.h"
 
-ARM void em05_land(Entity *e) {
+void em05_land(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) == 0) {
         return;

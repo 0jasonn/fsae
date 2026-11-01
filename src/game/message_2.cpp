@@ -20,7 +20,7 @@ extern TelopWork telopRequest;
 typedef struct { u16 ids[8]; } TelopIdList;
 extern const TelopIdList telopIdList = { { 1001, 1101, 1201, 1301, 1302, 1303, 1006, 1009 } };
 
-ARM void TelopRequest(u16 telopId) {
+void TelopRequest(u16 telopId) {
     TelopIdList list = telopIdList;
 
     u32 i;

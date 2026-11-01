@@ -23,7 +23,7 @@ extern "C" void *KnifeApp_getField20Address(void *app);
 
 // TextRenderer::onReadNewLine() (0x020a5f14): counts a line break while measuring; otherwise it ends the line, takes the
 // target's line position and adds the line spacing of the current app settings
-ARM void Knife_Message_TextRenderer_onReadNewLine(Knife::Message::TextRenderer *self) {
+void Knife_Message_TextRenderer_onReadNewLine(Knife::Message::TextRenderer *self) {
     if (self->flag94 != 0) {
         self->unk_a0++;
         return;

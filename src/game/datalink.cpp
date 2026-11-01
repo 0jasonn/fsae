@@ -9,7 +9,7 @@ extern "C" s32 Mem_Compare(const void *a, const void *b, u32 size); // compares 
 extern const u8 data_02124a80[]; // magic of a datalink block
 
 // Datalink::verify(void const*, unsigned long) (0x020a6278): checks the magic, the version, the size, the item count and the CRC
-ARM BOOL Datalink::verify(const void *data, u32 size) {
+BOOL Datalink::verify(const void *data, u32 size) {
     const u8 *block = (const u8 *)data;
 
     if (block == NULL) {
@@ -31,7 +31,7 @@ ARM BOOL Datalink::verify(const void *data, u32 size) {
 }
 
 // Datalink::crc(void const*, unsigned long) (0x020a6304): CRC-16 (reflected polynomial 0x8408), inverted at the end
-ARM u16 Datalink::crc(const void *data, u32 size) {
+u16 Datalink::crc(const void *data, u32 size) {
     const u8 *bytes = (const u8 *)data;
     u32 value = 0xffff;
     u32 i;

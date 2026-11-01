@@ -29,7 +29,7 @@ extern "C" void func_020c36fc(void *dst, void *src, s32 count);
 // it has a limit fills the pair (arg2, arg3) with func_020c40a4 into the second block, then copies count bytes from
 // the second block to the first when count is below the capacity Cursor_GetSpan returns. Returns TRUE when it copied
 extern "C" BOOL RectBufTable_setup(RectBufTable *self, s32 index, s32 arg2, s32 arg3);
-ARM BOOL RectBufTable_setup(RectBufTable *self, s32 index, s32 arg2, s32 arg3) {
+BOOL RectBufTable_setup(RectBufTable *self, s32 index, s32 arg2, s32 arg3) {
     RectBufTableEntry *entry;
     s32 pair[2];
     u32 count;

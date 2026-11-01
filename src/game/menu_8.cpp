@@ -3,7 +3,7 @@
 #include "game/menu.h"
 
 // Clears the three slot values and the extra value at 0x61c.
-ARM void Menu_ClearSlots(MenuWork *menu) {
+void Menu_ClearSlots(MenuWork *menu) {
     s32 i;
 
     for (i = 0; i < 3; i++) {
@@ -14,7 +14,7 @@ ARM void Menu_ClearSlots(MenuWork *menu) {
 
 // Sets the blend brightness of the main screen (0x04000050) and the sub screen (0x04001050). The main screen is
 // skipped when the object at 0x358 has its flag byte set.
-ARM void Menu_SetBrightness(MenuWork *menu, s32 value) {
+void Menu_SetBrightness(MenuWork *menu, s32 value) {
     if (menu->unk_358->flagAd == 0) {
         G2x_SetBlendBrightness_(0x4000050, 0x28, value);
     }
@@ -24,7 +24,7 @@ ARM void Menu_SetBrightness(MenuWork *menu, s32 value) {
 // Sets the alpha blend of the two screens from a signed level: a positive level sets the fade, zero or negative
 // levels set the target. The main screen registers are written only when the flag byte of the object at 0x358 is
 // clear.
-ARM void Menu_SetBlendLevel(MenuWork *menu, s32 level) {
+void Menu_SetBlendLevel(MenuWork *menu, s32 level) {
     s32 target;
     s32 fade;
     s32 value;
@@ -49,7 +49,7 @@ ARM void Menu_SetBlendLevel(MenuWork *menu, s32 level) {
 }
 
 // Moves the view: the position is derived from the value (0xae or 0x142 when the flag is clear).
-ARM void Menu_UpdateView(MenuWork *menu, s32 flag) {
+void Menu_UpdateView(MenuWork *menu, s32 flag) {
     MenuView *view;
     s16 pos[2];
     s32 value;
@@ -63,7 +63,7 @@ ARM void Menu_UpdateView(MenuWork *menu, s32 flag) {
 }
 
 // Reads the rectangle (x, y, width, height) of the screen area into rect.
-ARM void Menu_GetRect(s16 *rect, s32 unused) {
+void Menu_GetRect(s16 *rect, s32 unused) {
     s16 tmp[4];
 
     lobby_copyBounds(tmp);
@@ -74,7 +74,7 @@ ARM void Menu_GetRect(s16 *rect, s32 unused) {
 }
 
 // Clears the list state.
-ARM void Menu_ClearList(MenuList *list) {
+void Menu_ClearList(MenuList *list) {
     list->unk_00 = 0;
     list->active = 0;
     list->unk_08 = 0;
@@ -94,16 +94,16 @@ ARM void Menu_ClearList(MenuList *list) {
 }
 
 // Empty hook (no work).
-ARM void Menu_NoOp(void) {
+void Menu_NoOp(void) {
 }
 
 // Stores one word.
-ARM void Menu_SetWord(s32 *dst, s32 value) {
+void Menu_SetWord(s32 *dst, s32 value) {
     *dst = value;
 }
 
 // Sets the active flag and, when it is set, resets the scroll state of the list.
-ARM void Menu_SetActive(MenuList *list, s32 value) {
+void Menu_SetActive(MenuList *list, s32 value) {
     list->active = value;
     if (value != 0) {
         Menu_ResetScroll(list);
@@ -112,7 +112,7 @@ ARM void Menu_SetActive(MenuList *list, s32 value) {
 }
 
 // Resets the scroll position of the list.
-ARM void Menu_ResetScroll(MenuList *list) {
+void Menu_ResetScroll(MenuList *list) {
     list->unk_20 = 0;
     Menu_SyncScroll(list);
     list->unk_1c = list->unk_20;

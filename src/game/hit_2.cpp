@@ -8,7 +8,7 @@
 // The invincibility given by a hit depends on the attack knockback k: -16 - k when k is negative, k + 16 otherwise.
 
 // Original-side hit: the attacker e takes its damage from t and gets the knockback of t.
-ARM BOOL hit_orgdamage(Entity *e, Entity *t, u8 unused) {
+BOOL hit_orgdamage(Entity *e, Entity *t, u8 unused) {
     e->health = decVital(e, t);
     e->unk_42 = (*(u8 *)&t->attackKnockback);
     if ((*(u8 *)&t->attackKnockback) & 0x80) {
@@ -23,7 +23,7 @@ ARM BOOL hit_orgdamage(Entity *e, Entity *t, u8 unused) {
 }
 
 // Target-side hit: t takes its damage from e and the knockback of e.
-ARM BOOL hit_tgtdamage(Entity *e, Entity *t, u8 unused) {
+BOOL hit_tgtdamage(Entity *e, Entity *t, u8 unused) {
     t->health = decVital(t, e);
     t->unk_42 = (*(u8 *)&e->attackKnockback);
     if ((*(u8 *)&t->attackKnockback) & 0x80) {
@@ -38,7 +38,7 @@ ARM BOOL hit_tgtdamage(Entity *e, Entity *t, u8 unused) {
 }
 
 // Both sides take the hit: e from t and t from e.
-ARM BOOL hit_damage(Entity *e, Entity *t, u8 unused) {
+BOOL hit_damage(Entity *e, Entity *t, u8 unused) {
     s32 frames;
 
     e->health = decVital(e, t);
@@ -64,7 +64,7 @@ ARM BOOL hit_damage(Entity *e, Entity *t, u8 unused) {
 
 // Original-side hajiki hit: from the wireless check, kind 1 against kind 8 with a type below 2 is ignored; otherwise the
 // hit applies the knockback of t to e and then e's knockback to t.
-ARM BOOL hit_orghajiki(Entity *e, Entity *t, u8 unused) {
+BOOL hit_orghajiki(Entity *e, Entity *t, u8 unused) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0 && Knife_Single_SinglePlay_GetInstance()[1] != 0) {
         if (e->objKind == 1 && t->objKind == 8 && t->type < 2) {
             return 0;
@@ -82,7 +82,7 @@ ARM BOOL hit_orghajiki(Entity *e, Entity *t, u8 unused) {
 
 // Target-side hajiki hit: from the wireless check, kind 1 against kind 8 with a type below 2 is ignored; otherwise t
 // takes the knockback of e and e gets the nakama check.
-ARM BOOL hit_tgthajiki(Entity *e, Entity *t, u8 unused) {
+BOOL hit_tgthajiki(Entity *e, Entity *t, u8 unused) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0 && Knife_Single_SinglePlay_GetInstance()[1] != 0) {
         if (t->objKind == 1 && e->objKind == 8 && t->type < 2) {
             return 0;
@@ -99,7 +99,7 @@ ARM BOOL hit_tgthajiki(Entity *e, Entity *t, u8 unused) {
 
 // Hajiki hit between two kind 8 objects with the same id: ignored for ids 1 to 3, otherwise both sides take the other's
 // knockback and the nakama check runs.
-ARM BOOL hit_hajiki(Entity *e, Entity *t, u8 unused) {
+BOOL hit_hajiki(Entity *e, Entity *t, u8 unused) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0 && Knife_Single_SinglePlay_GetInstance()[1] != 0) {
         if (e->objKind == 8 && t->objKind == 8 && t->objId == e->objId) {
             if ((u8)(t->objId + 0xff) <= 2) {
@@ -117,7 +117,7 @@ ARM BOOL hit_hajiki(Entity *e, Entity *t, u8 unused) {
 
 // Item hit: an item (kind 6, id 0) that hits the player is cleared of its flag and adds its item, otherwise t is cleared
 // and the item of e's type is added.
-ARM BOOL hit_item(Entity *e, Entity *t, u8 unused) {
+BOOL hit_item(Entity *e, Entity *t, u8 unused) {
     if (e->objKind == 6 && e->objId == 0) {
         e->statusFlags &= 0x7f;
         SetItemAdd(e, OBJ_TEMPLATE(t->type));
@@ -129,7 +129,7 @@ ARM BOOL hit_item(Entity *e, Entity *t, u8 unused) {
 }
 
 // Kokin hit: e takes the frames of t's knockback and t those of e, then the kokin object is set between them.
-ARM BOOL hit_kokin(Entity *e, Entity *t, u8 unused) {
+BOOL hit_kokin(Entity *e, Entity *t, u8 unused) {
     e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
     t->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&e->attackKnockback);
     setKokin(e, t);
@@ -137,7 +137,7 @@ ARM BOOL hit_kokin(Entity *e, Entity *t, u8 unused) {
 }
 
 // Original-side kokin hit: e takes the knockback of t as its damage knockback and the frames of both.
-ARM BOOL hit_orgkokin(Entity *e, Entity *t, u8 unused) {
+BOOL hit_orgkokin(Entity *e, Entity *t, u8 unused) {
     e->unk_42 = *(u8 *)&t->attackKnockback;
     e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
     t->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&e->attackKnockback);
@@ -146,7 +146,7 @@ ARM BOOL hit_orgkokin(Entity *e, Entity *t, u8 unused) {
 }
 
 // Target-side kokin hit: t takes the knockback of e as its damage knockback and the frames of both.
-ARM BOOL hit_tgtkokin(Entity *e, Entity *t, u8 unused) {
+BOOL hit_tgtkokin(Entity *e, Entity *t, u8 unused) {
     t->unk_42 = *(u8 *)&e->attackKnockback;
     t->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&e->attackKnockback);
     e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
@@ -155,7 +155,7 @@ ARM BOOL hit_tgtkokin(Entity *e, Entity *t, u8 unused) {
 }
 
 // Hajiki kokin hit: both sides take the knockback of the other as damage knockback and frames, then the kokin is set.
-ARM BOOL hit_hajikikokin(Entity *e, Entity *t, u8 unused) {
+BOOL hit_hajikikokin(Entity *e, Entity *t, u8 unused) {
     e->unk_42 = *(u8 *)&t->attackKnockback;
     e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
     t->unk_42 = *(u8 *)&e->attackKnockback;
@@ -165,13 +165,13 @@ ARM BOOL hit_hajikikokin(Entity *e, Entity *t, u8 unused) {
 }
 
 // Hit that does nothing but its call (0x02085e08) with the same arguments.
-ARM BOOL hit_orghosei(Entity *e, Entity *t, u8 unused) {
+BOOL hit_orghosei(Entity *e, Entity *t, u8 unused) {
     func_02085e08(e, t);
     return 0;
 }
 
 // Stale hit: t is set to the stale state for 0xf4 frames; e is given the invincibility when it has none.
-ARM BOOL hit_stalescape(Entity *e, Entity *t, u8 unused) {
+BOOL hit_stalescape(Entity *e, Entity *t, u8 unused) {
     t->subAction = 0xff;
     t->iframes = 0xf4;
     if (e->iframes == 0) {

@@ -35,7 +35,7 @@ typedef struct SliderIndex {
 
 // Slider_setIndex(self, value) (0x020b9424, provisional name): returns 0 when value is already the index and the flag is
 // set; otherwise sets the flag, updates both sides through func_020b9774 around the new index and returns 1
-ARM s32 Slider_setIndex(void *selfv, s32 value) {
+s32 Slider_setIndex(void *selfv, s32 value) {
     SliderIndex *self = (SliderIndex *)selfv;
     if (self->index == value) {
         if (self->flag != 0) {
@@ -51,7 +51,7 @@ ARM s32 Slider_setIndex(void *selfv, s32 value) {
 
 // Slider_setPositionFromIndex(self) (0x020b9478, provisional name): returns 0 while the index is -1, otherwise sets the
 // position from the index divided by the count
-ARM s32 Slider_setPositionFromIndex(void *selfv) {
+s32 Slider_setPositionFromIndex(void *selfv) {
     SliderIndex *self = (SliderIndex *)selfv;
     if (self->index == -1) {
         return 0;

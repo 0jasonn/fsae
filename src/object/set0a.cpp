@@ -18,7 +18,7 @@ typedef struct SetVars {
 extern const EntityFunc data_020d8794[];
 extern u8 encntSharedState;
 
-ARM void Set0a(Entity *e) {
+void Set0a(Entity *e) {
     if (VARS(SetVars, e)->retainFlag != 0 && encntSharedState == 0) {
         PutObjWork(e);
         return;

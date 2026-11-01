@@ -8,7 +8,7 @@ extern u8 data_0211ab64[]; // Knife::Sound::Handle vtable
 
 extern "C" void Knife_Sound_Handle_reset(void *self);
 
-ARM void Knife_Sound_Handle_reset(void *self) {
+void Knife_Sound_Handle_reset(void *self) {
     u8 *h;
 
     h = (u8 *)self;

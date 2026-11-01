@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void plback(ENCNT_ *encnt, u16 index) {
+void plback(ENCNT_ *encnt, u16 index) {
     if (encnt->initialised == 0) {
         plbackinit(encnt, index);
     }
@@ -47,7 +47,7 @@ ARM void plback(ENCNT_ *encnt, u16 index) {
 
 // plfront (0x02043cf0): the same as plback with plfrontinit in place of plbackinit.
 
-ARM void plfront(ENCNT_ *encnt, u16 index) {
+void plfront(ENCNT_ *encnt, u16 index) {
     if (encnt->initialised == 0) {
         plfrontinit(encnt, index);
     }

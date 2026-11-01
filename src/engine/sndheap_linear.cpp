@@ -10,7 +10,7 @@ extern "C" void *SndHeap_AllocHigh(u32 *heap, u32 size, u32 align);
 
 // SndHeap_Rewind: moves the low cursor back to the region start and clears the first word of the high chain.
 extern "C" void SndHeap_Rewind(u32 *heap);
-ARM void SndHeap_Rewind(u32 *heap) {
+void SndHeap_Rewind(u32 *heap) {
     heap[9] = heap[6];
     heap[11] = 0;
 }
@@ -18,7 +18,7 @@ ARM void SndHeap_Rewind(u32 *heap) {
 // SndHeap_ResetHigh: points the prev word of every node in the high chain at the region end, then sets the high cursor to
 // the region end.
 extern "C" void SndHeap_ResetHigh(u32 *heap);
-ARM void SndHeap_ResetHigh(u32 *heap) {
+void SndHeap_ResetHigh(u32 *heap) {
     u32 *node;
 
     node = (u32 *)heap[11];
@@ -34,7 +34,7 @@ ARM void SndHeap_ResetHigh(u32 *heap) {
 // SndHeap_InitLinear: aligns the region [base, base + size) to 4 bytes at both ends and initialises it through
 // SndHeap_InitRegion. Returns 0 when the region is empty or smaller than 0x30 bytes.
 extern "C" void *SndHeap_InitLinear(u32 base, u32 size, u32 b);
-ARM void *SndHeap_InitLinear(u32 base, u32 size, u32 b) {
+void *SndHeap_InitLinear(u32 base, u32 size, u32 b) {
     u32 start;
     u32 end;
 

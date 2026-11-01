@@ -22,6 +22,6 @@ extern "C" void GetCellsInRandomSet(u16 cell, u16 w, u16 h);
 void BgmSet(void);
 void set6b_setenemy(Entity *e, u8 index);
 
-ARM void Set09(Entity *e) {
+void Set09(Entity *e) {
     data_020d9f38[e->action](e);
 }

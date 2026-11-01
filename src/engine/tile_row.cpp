@@ -9,7 +9,7 @@
 // TileBuffer_getRow(self, index) (0x020b7508, provisional name): pointer to the entry at index, the index wraps at
 // the row count
 extern "C" u16 *TileBuffer_getRow(void *self, u32 index);
-ARM u16 *TileBuffer_getRow(void *self, u32 index) {
+u16 *TileBuffer_getRow(void *self, u32 index) {
     s16 rowCount;
     s16 rowWidth;
     u16 *base;

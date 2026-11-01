@@ -6,7 +6,7 @@ extern "C" void initBgWithLoadVram(BGInfo *bg, u32 layer, s32 charIndex, s32 pal
 
 // initBgWithLoadVram (0x020ac428): loads the character (through initBgCharWithLoadVram), palette and screen data of
 // a BG layer. flags bit 1 frees the palette buffer, bit 2 the screen buffer (bit 1 of the character load frees the character).
-ARM void initBgWithLoadVram(BGInfo *bg, u32 layer, s32 charIndex, s32 palIndex, s32 scrIndex, u32 flags) {
+void initBgWithLoadVram(BGInfo *bg, u32 layer, s32 charIndex, s32 palIndex, s32 scrIndex, u32 flags) {
     if (charIndex != -1) {
         initBgCharWithLoadVram(bg, layer, charIndex, 0, flags);
     }

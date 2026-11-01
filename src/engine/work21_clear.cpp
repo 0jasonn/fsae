@@ -24,7 +24,7 @@ typedef struct Work21 {
 
 // Work21_clear(self) (0x020b7080, provisional name): zeroes the record
 extern "C" void Work21_clear(void *self);
-ARM void Work21_clear(void *self) {
+void Work21_clear(void *self) {
     Work21 *work;
 
     work = (Work21 *)self;

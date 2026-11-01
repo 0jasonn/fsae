@@ -8,11 +8,11 @@
 // em16_move 0x0203d218.
 
 // Entry of the actor: runs the state handler for the current action.
-ARM void Em16(Entity *e) {
+void Em16(Entity *e) {
     EnemyFunctionHandler(e, em16_stateTable);
 }
 
 // Runs the handler for the current action.
-ARM void em16_normal(Entity *e) {
+void em16_normal(Entity *e) {
     em16_actionTable[e->action](e);
 }

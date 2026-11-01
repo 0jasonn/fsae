@@ -5,7 +5,7 @@
 // Wireless link (MultiSio) functions: MultiSioStart and MultiSioStop. MultiSioInit and MultiSioMain are parked in scratch/agentC/nonmatching.
 
 // MultiSioStart (0x0204edc4)
-ARM void MultiSioStart(void) {
+void MultiSioStart(void) {
     void *manager;
 
     manager = func_020909c8();
@@ -18,7 +18,7 @@ ARM void MultiSioStart(void) {
 }
 
 // MultiSioStop (0x0204ee08)
-ARM void MultiSioStop(void) {
+void MultiSioStop(void) {
     void *manager;
 
     manager = func_020909c8();

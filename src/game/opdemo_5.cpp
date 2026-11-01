@@ -7,7 +7,7 @@
 // bunshin_set (symbol bunshin_set): sets the animation bounds of the four player entities and plays sound 0x205.
 extern "C" void bunshin_set(void);
 
-ARM void bunshin_set(void) {
+void bunshin_set(void) {
     u8 i;
     data_02134924 |= 8;
     i = 0;

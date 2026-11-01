@@ -8,7 +8,7 @@
 
 // WirelessManager::getParentFlag (0x02091e7c, invented name): the byte at 0x1ccc while the state is 8, otherwise 0.
 extern "C" u8 Knife_Comm_WirelessManager_getParentFlag(void *self);
-ARM u8 Knife_Comm_WirelessManager_getParentFlag(void *self) {
+u8 Knife_Comm_WirelessManager_getParentFlag(void *self) {
     u16 savedIme;
     s32 state;
     u8 flag;

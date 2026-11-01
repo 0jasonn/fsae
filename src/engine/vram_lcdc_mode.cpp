@@ -18,7 +18,7 @@ extern "C" void GX_VRAMCNT_SetLCDC_(u16 bits);
 // func_02014c24(mode) (0x02014c24): the bits of the previous mode are merged into the bank bits and the new mode's
 // bits are removed; then the display control register (0x04000000) and the LCDC registers (0x04000244..0x04000246)
 // are set for the mode. Finally the bank bits are passed to GX_VRAMCNT_SetLCDC_.
-ARM void func_02014c24(s32 mode) {
+void func_02014c24(s32 mode) {
     data_02129864.bits = (data_02129864.bits | data_02129864.displayMode) & ~mode;
     data_02129864.displayMode = mode;
     switch (mode) {

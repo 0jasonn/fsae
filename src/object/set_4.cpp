@@ -12,7 +12,7 @@
 //   0x02057fcc set0b_lift (original name)
 //   0x02057fec Set0c (original name)
 
-ARM void set0b_lift(Entity *e) {
+void set0b_lift(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -20,6 +20,6 @@ ARM void set0b_lift(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void Set0c(Entity *e) {
+void Set0c(Entity *e) {
     data_020d8860[e->action](e);
 }

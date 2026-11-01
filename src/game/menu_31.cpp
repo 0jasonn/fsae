@@ -14,7 +14,7 @@ typedef struct MenuCursorEntry {
 // Looks up the cell at (row, column) of the cursor table, packs the cell as (row + 1) << 16 | (column + 1), and
 // updates the cursor state of the menu sub-object. The data passed to func_020bdd60 is the table value for the
 // column, or the entry's own value when the column is -1.
-ARM void Menu_SetCursorPos(MenuWork *menu) {
+void Menu_SetCursorPos(MenuWork *menu) {
     s32 row;
     s32 column;
     u32 packed;

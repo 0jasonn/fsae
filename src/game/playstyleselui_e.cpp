@@ -7,6 +7,6 @@
 //   playStyleSelUIView_vfunc2 (0x020ab520): empty slot 2
 
 // playStyleSelUIView leave (0x020aacfc): tail-calls knife_title_dialogDelete
-ARM void playStyleSelUIView_leave(void *self) {
+void playStyleSelUIView_leave(void *self) {
     knife_title_dialogDelete();
 }

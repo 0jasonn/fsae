@@ -15,7 +15,7 @@ typedef void (*CtrlBlockFn)(void *block, void *holder);
 // Ctrl_freeBlock(holder, block) (0x020bc78c, provisional name): does nothing for a NULL block; otherwise calls the
 // hook Ctrl_noopA with (block, holder) and frees the block from the heap at the first word of holder
 extern "C" void Ctrl_freeBlock(void *holder, void *block);
-ARM void Ctrl_freeBlock(void *holder, void *block) {
+void Ctrl_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }

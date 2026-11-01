@@ -28,14 +28,14 @@ void getDebu(Entity *e);
 void getMgrInfo(Entity *e);
 void mgrMove(Entity *e);
 
-ARM void Set6a(Entity *e) {
+void Set6a(Entity *e) {
     if (data_021349c0[1] != 0 && e->objId != 0x72) {
         return;
     }
     data_020d91e4[e->action](e);
 }
 
-ARM void set6a_init(Entity *e) {
+void set6a_init(Entity *e) {
     if (e->objId == 0x72) {
         e->action = 1;
         e->x.HALF.HI = 0x1f8;
@@ -52,7 +52,7 @@ ARM void set6a_init(Entity *e) {
     }
 }
 
-ARM void set6a_move(Entity *e) {
+void set6a_move(Entity *e) {
     u32 bits;
 
     if (e->objId == 0x72) {
@@ -97,7 +97,7 @@ ARM void set6a_move(Entity *e) {
     }
 }
 
-ARM void set6a_move2(Entity *e) {
+void set6a_move2(Entity *e) {
     if (e->objId == 0x72) {
         if (VARS(Vars_Set6a, e)->t78 != 0) {
             VARS(Vars_Set6a, e)->t78--;
@@ -132,5 +132,5 @@ ARM void set6a_move2(Entity *e) {
     }
 }
 
-ARM void set6a_noop(Entity *e) {
+void set6a_noop(Entity *e) {
 }

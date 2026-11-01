@@ -8,14 +8,14 @@
 //   0x02066424 set23_close, 0x02066488 set23_close2open
 
 // Waits for the type bits to show up in the area mask, then advances.
-ARM void set23_wait(Entity *e) {
+void set23_wait(Entity *e) {
     if (VARS(Vars_Set23, e)->typeBits == (VARS(Vars_Set23, e)->typeBits & em12_typeMasks[e->areaIndex])) {
         e->action++;
     }
 }
 
 // Waits for the animation to end (frame bit 0x80), then switches to the opening state and sets the status flag.
-ARM void set23_wait2move(Entity *e) {
+void set23_wait2move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) == 0) {
         return;
@@ -27,7 +27,7 @@ ARM void set23_wait2move(Entity *e) {
 }
 
 // Moves while the contacted entity keeps the same direction. Sets the area mask bit of the type and plays a sound.
-ARM void set23_move(Entity *e) {
+void set23_move(Entity *e) {
     if (e->contactFlags != 0x95) {
         return;
     }
@@ -41,7 +41,7 @@ ARM void set23_move(Entity *e) {
 }
 
 // Animation step of the closing move. The timer comes from the wireless mode, or from the timer of the entity.
-ARM void set23_move2close(Entity *e) {
+void set23_move2close(Entity *e) {
     u8 anim;
 
     UpdateAnimationSingleFrame(e);
@@ -63,7 +63,7 @@ ARM void set23_move2close(Entity *e) {
 }
 
 // Counts the close timer down, then clears the area mask bit of the type and advances.
-ARM void set23_close(Entity *e) {
+void set23_close(Entity *e) {
     if (e->timer == 0) {
         return;
     }
@@ -75,7 +75,7 @@ ARM void set23_close(Entity *e) {
 }
 
 // Waits for the animation to end, then goes back one state and sets the status flag.
-ARM void set23_close2open(Entity *e) {
+void set23_close2open(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) == 0) {
         return;

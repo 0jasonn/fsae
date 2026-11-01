@@ -13,7 +13,7 @@ extern const u16 data_02103cd4[];
 extern const u16 data_02103cd8[];
 
 // Adds entry to the recent list unless it is already there; returns 1 when it was added
-ARM int historyCheck(void *entry) {
+int historyCheck(void *entry) {
     u8 i;
     u8 count;
 
@@ -36,7 +36,7 @@ ARM int historyCheck(void *entry) {
 }
 
 // Returns 0 when entry is in the past list, 1 when the list has room left, 0 when it is full
-ARM int pasthistoryCheck(void *entry) {
+int pasthistoryCheck(void *entry) {
     u8 i;
 
     i = 0;
@@ -53,7 +53,7 @@ ARM int pasthistoryCheck(void *entry) {
 }
 
 // Returns 0 when (frame, value) is one of the two listed pairs, 1 otherwise
-ARM int checkSingleErrorFrame(u8 frame, u16 value) {
+int checkSingleErrorFrame(u8 frame, u16 value) {
     u32 i;
 
     for (i = 0; i < 2; i += 2) {
@@ -65,7 +65,7 @@ ARM int checkSingleErrorFrame(u8 frame, u16 value) {
 }
 
 // Same as checkSingleErrorFrame for the parts table
-ARM int checkSingleErrorParts(u8 part, u16 value) {
+int checkSingleErrorParts(u8 part, u16 value) {
     u32 i;
 
     for (i = 0; i < 2; i += 2) {

@@ -6,7 +6,7 @@
 
 // Checks the 3x3 cells around the bomb (offsets of 0x10 in both directions) and, where a cell has kind 0x3c, spawns
 // an object of type 0x49 at that cell.
-ARM void BombWallCk(Entity *e) {
+void BombWallCk(Entity *e) {
     s16 y;
     s32 offX;
     s32 offY;

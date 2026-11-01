@@ -7,7 +7,7 @@
 
 extern u8 localPlayerIndex; // player index that is shown as the wireless partner
 
-ARM void rp_init(Entity *e) {
+void rp_init(Entity *e) {
     Entity *child;
     s32 k;
     void *knife;

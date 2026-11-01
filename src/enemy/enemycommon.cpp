@@ -7,7 +7,7 @@
 
 typedef int (*GetVGroupResultFunc)(Entity *, u16);
 
-ARM BOOL EnemyInit(Entity *e) {
+BOOL EnemyInit(Entity *e) {
     const u16 *row;
     if (e->unk_19 & 1) {
         return FALSE;
@@ -59,7 +59,7 @@ ARM BOOL EnemyInit(Entity *e) {
 }
 
 // EmCharDir2 (0x02045a8c): the high nibble of a direction byte, or 0xff when the low nibble is clear.
-ARM u8 EmCharDir2(u8 a) {
+u8 EmCharDir2(u8 a) {
     if ((a & 0xf) != 0) {
         return (u8)(a >> 4);
     }
@@ -67,7 +67,7 @@ ARM u8 EmCharDir2(u8 a) {
 }
 
 // EmCharDir4 (0x02045aa0): quarter direction of a byte, 0xff for the value 4 in the low three bits.
-ARM u8 EmCharDir4(u8 a) {
+u8 EmCharDir4(u8 a) {
     if ((a & 7) != 4) {
         return (u8)(((a + 4) & 0x1f) >> 3);
     }
@@ -75,7 +75,7 @@ ARM u8 EmCharDir4(u8 a) {
 }
 
 // EmDie (0x02045ac0): spawns the death child of the enemy (or marks an existing one) and puts the enemy away.
-ARM void EmDie(Entity *e) {
+void EmDie(Entity *e) {
     Entity *child;
     if (e->unk_6a != 0) {
         if (e->unk_6a & 0x80) {
@@ -104,7 +104,7 @@ ARM void EmDie(Entity *e) {
 }
 
 // EmPalamCopy (0x02045b74): copies the placement and scroll fields of src into dst.
-ARM void EmPalamCopy(Entity *src, Entity *dst) {
+void EmPalamCopy(Entity *src, Entity *dst) {
     dst->unk_19 = src->unk_19 & 0xfe;
     dst->x = src->x;
     dst->y = src->y;
@@ -119,7 +119,7 @@ ARM void EmPalamCopy(Entity *src, Entity *dst) {
 }
 
 // EmGetTama (0x02045bd4): takes a free object, sets it up as a bullet of this enemy and registers it.
-ARM Entity *EmGetTama(Entity *e, u8 kind, u8 flags) {
+Entity *EmGetTama(Entity *e, u8 kind, u8 flags) {
     Entity *tama = GetObjWork();
     if (tama != NULL) {
         tama->objKind = 4;
@@ -132,7 +132,7 @@ ARM Entity *EmGetTama(Entity *e, u8 kind, u8 flags) {
 }
 
 // EmDivPosSet (0x02045c20): copies the enemy's position to two pieces and nudges them apart by 6 units.
-ARM void EmDivPosSet(Entity *e, Entity *first, Entity *second) {
+void EmDivPosSet(Entity *e, Entity *first, Entity *second) {
     if (first != NULL) {
         EmPalamCopy(e, first);
         if (func_02083d18(first, 6, 0) == 0) {

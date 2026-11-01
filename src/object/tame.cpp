@@ -16,11 +16,11 @@ typedef struct Vars_Tame {
 extern const EntityFunc tame_actions[]; // indexed by e->action
 void tame_move(Entity *e);
 
-ARM void tame_dispatch(Entity *e) {
+void tame_dispatch(Entity *e) {
     tame_actions[e->action](e);
 }
 
-ARM void tame_init(Entity *e) {
+void tame_init(Entity *e) {
     Entity *tmpl;
 
     tmpl = OBJ_TEMPLATE(e->type);

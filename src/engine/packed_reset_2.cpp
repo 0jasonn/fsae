@@ -9,7 +9,7 @@ extern "C" void Packed_noop(void *self);
 
 // Packed_deletingDtor(self) (0x020b735c, provisional name): deleting destructor of the Packed class, returns self
 extern "C" void *Packed_deletingDtor(void *self);
-ARM void *Packed_deletingDtor(void *self) {
+void *Packed_deletingDtor(void *self) {
     Packed_noop(self);
     operator delete(self);
     return self;

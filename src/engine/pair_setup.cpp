@@ -16,7 +16,7 @@ extern "C" void Pair_Setup(void *buf, s32 n);
 
 // Pair_Setup(buf, n) (0x02019b00): clears the 0x300 byte buffer and sets the pair block up on it with flags 3.
 // The cursor starts at the record (+0x14), and the field at +0xc is 0x2ec - n.
-ARM void Pair_Setup(void *buf, s32 n) {
+void Pair_Setup(void *buf, s32 n) {
     data_02129cac.pair = buf;
     MI_CpuFill8(buf, 0, 0x300);
     data_02129cac.flags = 3;

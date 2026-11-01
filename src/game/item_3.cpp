@@ -6,7 +6,7 @@
 // Module item (original names from the debug build): AddKey
 
 // Adds one key of the entity's type and links the entity to the key work. Plays the key sound.
-ARM void AddKey(Entity *e) {
+void AddKey(Entity *e) {
     Entity *keyWork;
 
     keyWork = GetSetWork(0x4b, 0, 0);

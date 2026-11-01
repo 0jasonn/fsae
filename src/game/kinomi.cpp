@@ -20,7 +20,7 @@ void kinomi_write_sub(u16 *dst, u8 mode, u16 value);
 
 // kinomi_write (0x02027930): three kinomi tile pairs in the block selected by data_0212c618[3] (0x800 bytes each). Each
 // pair takes its mode from one of the 2-bit fields of the byte at +0x3e of the block pointed to by data_0212c53c.
-ARM void kinomi_write(void) {
+void kinomi_write(void) {
     kinomi_write_sub((u16 *)(data_021361a0 + (data_0212c618[3] << 11) + 0x8e + 0x100), KINOMI_MODES(data_0212c53c)->modeLow, 0x2e);
     kinomi_write_sub((u16 *)(data_021361a0 + (data_0212c618[3] << 11) + 0x4e + 0x200), KINOMI_MODES(data_0212c53c)->modeMid, 0x102d);
     kinomi_write_sub((u16 *)(data_021361a0 + (data_0212c618[3] << 11) + 0xe + 0x300), KINOMI_MODES(data_0212c53c)->modeHigh, 0x202c);
@@ -28,7 +28,7 @@ ARM void kinomi_write(void) {
 
 // Writes two tile words at dst: mode 0 blanks both with tile 0xc, mode 1 writes value then 0xc, any other mode writes
 // value twice.
-ARM void kinomi_write_sub(u16 *dst, u8 mode, u16 value) {
+void kinomi_write_sub(u16 *dst, u8 mode, u16 value) {
     switch (mode) {
     case 0:
         dst[0] = 0xc;

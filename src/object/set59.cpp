@@ -12,11 +12,11 @@
 extern const EntityFunc set59_actions[]; // set59_actions, indexed by e->action
 extern const u16 set59_colorTable[];     // set59_colorTable, indexed by rank
 
-ARM void Set59(Entity *e) {
+void Set59(Entity *e) {
     set59_actions[e->action](e);
 }
 
-ARM void set59_init(Entity *e) {
+void set59_init(Entity *e) {
     s32 rank;
 
     e->spriteSettings.b0 = 1;
@@ -33,7 +33,7 @@ ARM void set59_init(Entity *e) {
     InitAnimationForceUpdate(e, data_0212c7c8.unk_1[0]);
 }
 
-ARM void set59_move(Entity *e) {
+void set59_move(Entity *e) {
     em12_typeMasks |= 0x80;
     if (em12_typeMasks & 0x100) {
         PutObjWork(e);

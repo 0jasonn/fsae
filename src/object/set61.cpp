@@ -7,7 +7,7 @@
 
 // Spawner for the Tama object of each connected player. Puts a fresh object work on
 // the player's position and jitters it twice along x every 30 frames.
-ARM void Set61(Entity *e) {
+void Set61(Entity *e) {
     u8 action;
     u8 i;
     Entity *tama;

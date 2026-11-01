@@ -4,7 +4,7 @@
 #include "enemy/encnt.h"
 #include "global.h"
 
-ARM void encnt_getpos(void) {
+void encnt_getpos(void) {
     if (encntSharedState[0] == 0) {
         nextset();
         return;

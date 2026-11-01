@@ -8,7 +8,7 @@
 
 // WirelessManager::callback_WM_EnableStep (0x020932fc): on success the timer counts up, on error it is set to 5.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
@@ -24,7 +24,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result) {
 
 // WirelessManager::callback_WM_ResetStep (0x02093340): on success the timer counts up, on error it is set to -999.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
@@ -41,7 +41,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result) {
 // WirelessManager::callback_WM_Enable (0x0209338c): on success stores the allowed channels (WM_GetAllowedChannel); if no
 // channel is allowed the timer is set to 5. The timer counts up in both cases.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_Enable(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_Enable(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_Enable(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
@@ -61,7 +61,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_Enable(void *result) {
 
 // WirelessManager::callback_WM_PowerOffStep (0x020933fc): same shape as callback_WM_ResetStep.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
@@ -78,7 +78,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result) {
 // WirelessManager::callback_WM_Reset (0x02093448): by error code: 0 counts the timer up (or sets it to 9999 in state 13),
 // 1 sets it to -999, 8 sets it to -1000, anything else terminates the program.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_Reset(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_Reset(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_Reset(void *result) {
     WmDWork *wm;
     u16 errCode;
 
@@ -119,7 +119,7 @@ typedef struct WmScanCallback {
 } WmScanCallback;
 
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result) {
     WmDWork *wm;
     WmScanCallback *scan;
     s32 count;

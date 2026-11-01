@@ -7,6 +7,6 @@
 //   0x02065e94 Set22 (dispatcher)
 
 // Dispatcher: runs the handler for the current action.
-ARM void Set22(Entity *e) {
+void Set22(Entity *e) {
     set22_stateTable[e->action](e);
 }

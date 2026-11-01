@@ -6,7 +6,7 @@
 // Set57 actor, second unit (module set57). Address -> name:
 //   0x020732f4 set57_move (original name)
 
-ARM void set57_move(Entity *e) {
+void set57_move(Entity *e) {
     if (V57(e)->tileIndex == *V57(e)->cellPtr) {
         UpdateAnimationSingleFrame(e);
         if ((e->frame & 0x80) == 0) {

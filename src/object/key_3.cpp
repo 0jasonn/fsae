@@ -20,7 +20,7 @@ typedef struct KeyPlayerState {
 } KeyPlayerState;
 extern KeyPlayerState data_0212c7c8;
 
-ARM void key_frame(Entity *e) {
+void key_frame(Entity *e) {
     u8 action = e->action;
 
     switch (action) {
@@ -45,7 +45,7 @@ ARM void key_frame(Entity *e) {
     }
 }
 
-ARM void key_child(Entity *e) {
+void key_child(Entity *e) {
     u8 action = e->action;
 
     switch (action) {
@@ -66,7 +66,7 @@ ARM void key_child(Entity *e) {
     key_type_set(e);
 }
 
-ARM void key_child_set(Entity *e) {
+void key_child_set(Entity *e) {
     u8 i;
 
     for (i = 0; i < data_0212c7c8.playerCount; i++) {

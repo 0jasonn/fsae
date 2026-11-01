@@ -29,7 +29,7 @@ extern u8 localPlayerIndex;
 extern const u8 em2a_corePartTypes[][4];
 extern const u8 em2a_corePatterns[][4];
 
-ARM void em2a_shadowinit(Entity *e) {
+void em2a_shadowinit(Entity *e) {
     e->action++;
     e->spriteSettings.b0 = 1;
     Entity *parent = e->parent;
@@ -51,7 +51,7 @@ ARM void em2a_shadowinit(Entity *e) {
     shadowmoveset(e);
 }
 
-ARM void shadowmoveset(Entity *e) {
+void shadowmoveset(Entity *e) {
     VH(e)->targetX = e->parent->x.HALF.HI + em2a_shadowOffsets[VH(e)->shadowStep * 2];
     VH(e)->targetY = e->parent->y.HALF.HI + em2a_shadowOffsets[VH(e)->shadowStep * 2 + 1];
     e->subtimer = 0;
@@ -60,7 +60,7 @@ ARM void shadowmoveset(Entity *e) {
     InitAnimationForceUpdate(e, 0xb);
 }
 
-ARM void em2a_shadowmove(Entity *e) {
+void em2a_shadowmove(Entity *e) {
     Entity *parent = e->parent;
     if (parent->action == 6 || parent->action == 2) {
         if (e->timer != 0) {
@@ -122,14 +122,14 @@ ARM void em2a_shadowmove(Entity *e) {
     e->subtimer |= em2a_areaCheck(e);
 }
 
-ARM void coreSync(Entity *e) {
+void coreSync(Entity *e) {
     VC(e)->corePart0->unk_21 = e->unk_21 + 0xf;
     VC(e)->corePart1->unk_21 = e->unk_21 + 0x1c;
     VC(e)->corePart2->unk_21 = e->unk_21 + 0x29;
     VC(e)->corePart3->unk_21 = e->unk_21 + 0x36;
 }
 
-ARM void coreSet(Entity *e) {
+void coreSet(Entity *e) {
     if ((VC(e)->corePart0 = GetEnemyWork(0x2a)) != NULL) {
         VC(e)->corePart0->parent = e;
         VC(e)->corePart0->type = 1;
@@ -180,7 +180,7 @@ ARM void coreSet(Entity *e) {
     SoundReq(0xa3);
 }
 
-ARM void shadowSet(Entity *e) {
+void shadowSet(Entity *e) {
     u8 i;
     u8 pick = Random() & 3;
     u8 flip = Random() & 1;
@@ -201,13 +201,13 @@ ARM void shadowSet(Entity *e) {
     SoundReq(0xa1);
 }
 
-ARM void nearplcheck(Entity *e) {
+void nearplcheck(Entity *e) {
     int playerIndex = ObjNearPlCheck(e, 0, 0);
     e->subtimer = playerIndex;
     e->direction = func_02086078(data_0212ceb0[playerIndex].entity, e);
 }
 
-ARM void jumpefectSet(Entity *e) {
+void jumpefectSet(Entity *e) {
     if (e->type == 2 && e->spriteSettings.b0 == 0) {
         return;
     }
@@ -227,7 +227,7 @@ ARM void jumpefectSet(Entity *e) {
     SoundReq(0xa7);
 }
 
-ARM void bigjumpinit(Entity *e) {
+void bigjumpinit(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->poseId = 0x3d;
     e->statusFlags |= 0x80;
@@ -244,11 +244,11 @@ ARM void bigjumpinit(Entity *e) {
     }
 }
 
-ARM void lifeset(Entity *e) {
+void lifeset(Entity *e) {
     e->health = em2a_healthTable[data_0212c7c8.unk_0 - 1][e->type - 1];
 }
 
-ARM void em2a_ruppyset(Entity *e) {
+void em2a_ruppyset(Entity *e) {
     if (V(e)->effectTimer == 0) {
         return;
     }
@@ -266,7 +266,7 @@ ARM void em2a_ruppyset(Entity *e) {
     }
 }
 
-ARM void move3Init(Entity *e) {
+void move3Init(Entity *e) {
     V(e)->waitTimer = em2a_waitTimes[Random() & 7];
     e->direction = func_02086078(e, data_0212ceb0[e->timer].entity) & 0x18;
     e->speed = 0x100;
@@ -274,7 +274,7 @@ ARM void move3Init(Entity *e) {
     InitAnimationForceUpdate(e, (e->type - 1) * 10 + 1);
 }
 
-ARM u8 em2a_areaCheck(Entity *e) {
+u8 em2a_areaCheck(Entity *e) {
     u8 result = 0;
     if (e->x.HALF.HI < 0x198) {
         e->x.HALF.HI = 0x198;
@@ -298,7 +298,7 @@ ARM u8 em2a_areaCheck(Entity *e) {
     return result;
 }
 
-ARM u8 move3search(Entity *e) {
+u8 move3search(Entity *e) {
     u8 i;
     u8 best;
     u16 bestDist = 0xffff;
@@ -324,7 +324,7 @@ ARM u8 move3search(Entity *e) {
     return best;
 }
 
-ARM void flashcheck(Entity *e) {
+void flashcheck(Entity *e) {
     if (e->type != 3) {
         return;
     }
@@ -339,7 +339,7 @@ ARM void flashcheck(Entity *e) {
     }
 }
 
-ARM void efectset(Entity *e) {
+void efectset(Entity *e) {
     for (u8 i = 0; i < 4; i++) {
         Entity *fx = GetSetWork(0xf, 0xd, 0x20);
         if (fx != NULL) {

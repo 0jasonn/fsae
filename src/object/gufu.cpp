@@ -9,7 +9,7 @@ typedef struct Vars_Gufu {
     /* 7f */ u8 sfxTimer; // counts down; when it is 0 the sound is played and the timer is reset to 0x3c
 } Vars_Gufu;
 
-ARM void GufuFuyusnd(Entity *e) {
+void GufuFuyusnd(Entity *e) {
     if (VARS(Vars_Gufu, e)->sfxTimer != 0) {
         VARS(Vars_Gufu, e)->sfxTimer--;
         return;

@@ -21,7 +21,7 @@ extern u32 em12_typeMasks[]; // one mask per area
 
 void set5c_block_set(Entity *e);
 
-ARM void set5c_init(Entity *e) {
+void set5c_init(Entity *e) {
     Vars_Set5c *v = VARS(Vars_Set5c, e);
 
     e->action = e->action + 1;
@@ -35,7 +35,7 @@ ARM void set5c_init(Entity *e) {
     e->action = 2;
 }
 
-ARM void set5c_block_set(Entity *e) {
+void set5c_block_set(Entity *e) {
     Vars_Set5c *v = VARS(Vars_Set5c, e);
 
     if (func_0208583c()) {
@@ -44,7 +44,7 @@ ARM void set5c_block_set(Entity *e) {
     RewCellOne(0x136, (u16)v->cell, e->layer);
 }
 
-ARM void set5c_appear(Entity *e) {
+void set5c_appear(Entity *e) {
     Vars_Set5c *v = VARS(Vars_Set5c, e);
 
     if (v->typeMask != (v->typeMask & em12_typeMasks[e->areaIndex])) {

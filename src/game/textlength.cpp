@@ -19,7 +19,7 @@ typedef struct KnifeTextLengthAnalyzer {
 
 // TextLengthAnalyzer::TextLengthAnalyzer() (0x020a16c4): sets the vtable and clears the counts
 extern "C" void Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(void *a);
-ARM void Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(void *a) {
+void Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(void *a) {
     KnifeTextLengthAnalyzer *self = (KnifeTextLengthAnalyzer *)a;
     s32 i;
 

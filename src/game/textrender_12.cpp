@@ -20,7 +20,7 @@ extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void *EL_GetGlobalAdr(u32 offset, u32 size);
 
 // TextRenderer::getNumberOfTokens() const (0x020a5340): the count of the token list, or of the tokenizer
-ARM s32 TextRenderer::getNumberOfTokens(void) const {
+s32 TextRenderer::getNumberOfTokens(void) const {
     if (tokenList != NULL) {
         return tokenListCount;
     }
@@ -28,7 +28,7 @@ ARM s32 TextRenderer::getNumberOfTokens(void) const {
 }
 
 // TextRenderer::getToken(int) const (0x020a5354): the token at index of the token list, or of the tokenizer
-ARM void *TextRenderer::getToken(s32 index) const {
+void *TextRenderer::getToken(s32 index) const {
     if (tokenList != NULL) {
         return ((void **)tokenList)[index];
     }
@@ -36,7 +36,7 @@ ARM void *TextRenderer::getToken(s32 index) const {
 }
 
 // TextRenderer::resetContext() (0x020a536c): clears the counters of the current context
-ARM void TextRenderer::resetContext(void) {
+void TextRenderer::resetContext(void) {
     unk_a4 = 0;
     unk_b4 = 0;
     unk_b0 = 0;

@@ -5,7 +5,7 @@
 
 // Functions in this file: em19_damage (0x0203e0c8), em19_init (0x0203e1c4).
 
-ARM void em19_damage(Entity *e) {
+void em19_damage(Entity *e) {
     if (e->unk_42 != 0 && e->action != 3 && e->action < 7) {
         e->action = 3;
         e->timer = 0;
@@ -35,7 +35,7 @@ ARM void em19_damage(Entity *e) {
     GenericKnockback(e, em19_stateTable);
 }
 
-ARM void em19_init(Entity *e) {
+void em19_init(Entity *e) {
     u8 type;
     u8 health;
     u16 pose;

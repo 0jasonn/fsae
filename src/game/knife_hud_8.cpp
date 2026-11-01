@@ -15,7 +15,7 @@ s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm
 // HudManager::getPlayerPos(int, VecFx32 *) const (0x0209ece8): position of the player's entity in pixels of the
 // scroll, 20.12 fixed point
 extern "C" void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int player, VecFx32 *pos);
-ARM void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int player, VecFx32 *pos) {
+void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int player, VecFx32 *pos) {
     PlayerData *pl = &data_0212ceb0[player];
     s16 scrollX = data_02158fa0[1];
     s16 scrollY = data_02158fa0[2];

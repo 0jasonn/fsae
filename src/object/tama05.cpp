@@ -7,7 +7,7 @@
 
 // tama05_init, 0x0207e834. Sets the sprite, the animation from the direction, and the hitbox; a type 3 actor gets
 // its own speed and damage; type2 0 starts the wait state, anything else runs hasshaSet.
-ARM void tama05_init(Entity *e) {
+void tama05_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->animationState = ((e->direction + 4) & 0x18) >> 3;
     e->hitbox = data_020dccc4;
@@ -27,7 +27,7 @@ ARM void tama05_init(Entity *e) {
 
 // tama05_wait, 0x0207e8e4. Follows the parent; on the parent's odd frames a type 3 actor spawns the matching
 // item at the parent's position, and then the actor is cleaned up.
-ARM void tama05_wait(Entity *e) {
+void tama05_wait(Entity *e) {
     Entity *tama;
     UpdateAnimationSingleFrame(e);
     ObjPosCopyOfs32(e->parent, e, 0, data_020dccb8[e->animationState] << 16);
@@ -50,7 +50,7 @@ ARM void tama05_wait(Entity *e) {
 
 // tama05_move, 0x0207e984. Animates the actor and tests the walls: a type 3 actor copies its position to an object
 // when it touched a wall, the others are removed when the wall mask of their direction is hit.
-ARM void tama05_move(Entity *e) {
+void tama05_move(Entity *e) {
     Entity *target;
     UpdateAnimationSingleFrame(e);
     func_0208b644(e);

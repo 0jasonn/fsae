@@ -6,7 +6,7 @@
 // Functions in this file: em22_damage (0x0203f7ac), em22_init (0x0203f850), em22_aim (0x0203f8b0),
 // em22_move (0x0203f924), dmgmgr (0x0203f99c), spdmgr (0x0203fa1c).
 
-ARM void em22_damage(Entity *e) {
+void em22_damage(Entity *e) {
     if ((u8)((e->contactFlags & 0x7f) - 4) <= 0x1e) {
         if (e->contactFlags != 0x95 && e->contactFlags != 0x94) {
             s32 stage;
@@ -30,7 +30,7 @@ ARM void em22_damage(Entity *e) {
     GenericKnockback(e, em22_stateTable);
 }
 
-ARM void em22_init(Entity *e) {
+void em22_init(Entity *e) {
     e->action = 1;
     e->timer = 0x1e;
     e->unk_2e = 5;
@@ -42,7 +42,7 @@ ARM void em22_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em22_aim(Entity *e) {
+void em22_aim(Entity *e) {
     Entity *target;
     u8 timer;
     if (e->timer != 0) {
@@ -62,7 +62,7 @@ ARM void em22_aim(Entity *e) {
     e->timer = timer;
 }
 
-ARM void em22_move(Entity *e) {
+void em22_move(Entity *e) {
     if ((frameCounter & 7) == 0) {
         func_02086200(e, func_02084fd0(e, VARS(Vars_em22, e)->aimTarget));
     }
@@ -74,7 +74,7 @@ ARM void em22_move(Entity *e) {
     }
 }
 
-ARM void dmgmgr(Entity *e) {
+void dmgmgr(Entity *e) {
     s32 anim;
     if (VARS(Vars_em22, e)->damageTimer == 0) {
         return;
@@ -94,7 +94,7 @@ ARM void dmgmgr(Entity *e) {
     InitAnimationForceUpdate(e, anim);
 }
 
-ARM void spdmgr(Entity *e) {
+void spdmgr(Entity *e) {
     if (VARS(Vars_em22, e)->speedTimer != 0) {
         VARS(Vars_em22, e)->speedTimer--;
         return;

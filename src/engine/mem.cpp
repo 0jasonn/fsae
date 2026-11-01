@@ -6,7 +6,7 @@ extern "C" s32 Mem_Compare(const u8 *left, const u8 *right, u32 count);
 extern "C" void Mem_SetCore(void *dst, s32 value, u32 size);
 
 // Compares count bytes: 0 when equal, -1 when the first differing byte of left is lower, 1 otherwise.
-ARM s32 Mem_Compare(const u8 *left, const u8 *right, u32 count) {
+s32 Mem_Compare(const u8 *left, const u8 *right, u32 count) {
     while (count != 0) {
         if (*left++ != *right++) {
             return left[-1] < right[-1] ? -1 : 1;
@@ -18,7 +18,7 @@ ARM s32 Mem_Compare(const u8 *left, const u8 *right, u32 count) {
 
 // Fills size bytes at dst with value. Short fills go byte by byte; longer ones align dst to 4, write 32-byte
 // blocks of the repeated word, then the remaining whole words, then the tail bytes.
-ARM void Mem_SetCore(void *dst, s32 value, u32 size) {
+void Mem_SetCore(void *dst, s32 value, u32 size) {
     u8 *bytes;
     u32 fill;
 

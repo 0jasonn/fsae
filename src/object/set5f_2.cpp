@@ -18,7 +18,7 @@ extern Entity *data_0212c648;
 
 void set5f_plset(Entity *e);
 
-ARM void type0_kudake(Entity *e) {
+void type0_kudake(Entity *e) {
     Entity *target;
 
     if (e->timer == 0) {
@@ -43,7 +43,7 @@ ARM void type0_kudake(Entity *e) {
     ObjPosCopyOfs32(e, target, data_020d90c0[e->timer >> 2] << 16, data_020d90c0[(e->timer >> 2) + 1] << 16);
 }
 
-ARM void type0_plBackJump(Entity *e) {
+void type0_plBackJump(Entity *e) {
     u8 i;
     u8 direction;
     Entity *tama;
@@ -88,7 +88,7 @@ ARM void type0_plBackJump(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set5f_type1(Entity *e) {
+void set5f_type1(Entity *e) {
     Entity *child;
 
     if (e->action != 0) {
@@ -113,7 +113,7 @@ ARM void set5f_type1(Entity *e) {
     }
 }
 
-ARM void set5f_type2(Entity *e) {
+void set5f_type2(Entity *e) {
     if (e->action != 0) {
         ObjPosCopy(e->parent, e);
         if (e->health != 0) {
@@ -135,7 +135,7 @@ ARM void set5f_type2(Entity *e) {
     data_0212ceb0[i].entity->z.WORD = 0;                         \
     data_0212ceb0[i].entity->animationState = 0;
 
-ARM void set5f_plset(Entity *e) {
+void set5f_plset(Entity *e) {
     switch (data_0212c7c8.unk_0) {
     case 2:
         SET5F_PLAYER_POS(0, 0x1e80000, 0x2780000);

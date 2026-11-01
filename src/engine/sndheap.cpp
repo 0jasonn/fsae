@@ -14,7 +14,7 @@ void *func_020c2120(void *obj, u32 tag, void *list, u32 a, u32 b);
 // Creates a heap over the region [base, base + size) with both ends aligned to 4 bytes. Returns 0 when the region is
 // empty or too small for a heap (0x4c bytes at least).
 extern "C" void *SndHeap_Create(u32 base, u32 size, s32 tag);
-ARM void *SndHeap_Create(u32 base, u32 size, s32 tag) {
+void *SndHeap_Create(u32 base, u32 size, s32 tag) {
     u32 start;
     u32 end;
 
@@ -31,7 +31,7 @@ ARM void *SndHeap_Create(u32 base, u32 size, s32 tag) {
 // Allocates from the heap: a zero flag takes the block from the low end, a negative flag from the high end (its
 // magnitude is passed on). Sizes are rounded up to 4 bytes; a zero size becomes 1 byte.
 extern "C" void *SndHeap_Allocate(u32 *heap, u32 size, s32 flag);
-ARM void *SndHeap_Allocate(u32 *heap, u32 size, s32 flag) {
+void *SndHeap_Allocate(u32 *heap, u32 size, s32 flag) {
     if (size == 0) {
         size = 1;
     }
@@ -45,7 +45,7 @@ ARM void *SndHeap_Allocate(u32 *heap, u32 size, s32 flag) {
 // Frees a block given its user pointer: the block header is 0x10 bytes before it. The block's bounds are decoded
 // and the block goes back to the free list at +0x2c, then merged into the list at +0x24.
 extern "C" void SndHeap_Free(u32 *heap, u8 *block);
-ARM void SndHeap_Free(u32 *heap, u8 *block) {
+void SndHeap_Free(u32 *heap, u8 *block) {
     u8 *node;
     u32 bounds[2];
 
@@ -58,7 +58,7 @@ ARM void SndHeap_Free(u32 *heap, u8 *block) {
 // Initialises a region through func_020c2120 (tag 'HMRF'), then copies the bounds at +0x18 and +0x1c into the words at
 // +0x24 and +0x28 and clears the word at +0x2c. Returns the heap.
 extern "C" void *SndHeap_InitRegion(u32 *heap, u32 a, u32 b);
-ARM void *SndHeap_InitRegion(u32 *heap, u32 a, u32 b) {
+void *SndHeap_InitRegion(u32 *heap, u32 a, u32 b) {
     func_020c2120(heap, 0x46524d48, (u8 *)heap + 0x30, a, b);
     heap[9] = heap[6];
     heap[10] = heap[7];
@@ -69,7 +69,7 @@ ARM void *SndHeap_InitRegion(u32 *heap, u32 a, u32 b) {
 // Takes size bytes from the low end of the heap at alignment align. Returns the block start, or 0 when it does not fit.
 // When the flag word before the heap has bit 0 set, the taken bytes are cleared with zeros.
 extern "C" void *SndHeap_AllocLow(u32 *heap, u32 size, u32 align);
-ARM void *SndHeap_AllocLow(u32 *heap, u32 size, u32 align) {
+void *SndHeap_AllocLow(u32 *heap, u32 size, u32 align) {
     u32 start;
     u32 next;
     u32 cleared;
@@ -92,7 +92,7 @@ ARM void *SndHeap_AllocLow(u32 *heap, u32 size, u32 align) {
 // Takes size bytes from the high end of the heap at alignment align. Returns the block start, or 0 when it would
 // overlap the low end. Clears the taken bytes the same way as SndHeap_AllocLow.
 extern "C" void *SndHeap_AllocHigh(u32 *heap, u32 size, u32 align);
-ARM void *SndHeap_AllocHigh(u32 *heap, u32 size, u32 align) {
+void *SndHeap_AllocHigh(u32 *heap, u32 size, u32 align) {
     u32 start;
     u32 cleared;
     u8 flags;

@@ -8,7 +8,7 @@
 extern const s8 data_020d8a34[]; // vertical offset table, indexed by subtimer & 7
 extern u16 data_0212c594;
 
-ARM void set51_move(Entity *e) {
+void set51_move(Entity *e) {
     Entity *contact;
 
     if (e->timer == 0) {

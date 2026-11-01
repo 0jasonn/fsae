@@ -10,7 +10,7 @@ extern const u8 data_02103dc4[];
 
 // Map level byte of the current stage: picks a row of data_02103dc4 by the stage counter and indexes it by a
 // value computed from the game state
-ARM u8 get_maplevel(void) {
+u8 get_maplevel(void) {
     u32 value;
     const u8 *row;
 

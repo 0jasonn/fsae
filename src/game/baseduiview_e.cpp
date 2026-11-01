@@ -14,21 +14,21 @@ extern "C" void basedUIView_vfunc2(basedUIView *self);
 extern "C" void basedUIView_vfunc1(basedUIView *self);
 
 // groupCreateUIView slot 2 (0x020ac014): empty
-ARM void groupCreateUIView_vfunc2(void *self) {
+void groupCreateUIView_vfunc2(void *self) {
 }
 
 // basedUIView default leave (0x020ac018): empty
-ARM void basedUIView_leave(basedUIView *self) {
+void basedUIView_leave(basedUIView *self) {
 }
 
 // basedUIView default enter (0x020ac01c): empty
-ARM void basedUIView_enter(basedUIView *self) {
+void basedUIView_enter(basedUIView *self) {
 }
 
 // basedUIView slot 2 (0x020ac020): empty
-ARM void basedUIView_vfunc2(basedUIView *self) {
+void basedUIView_vfunc2(basedUIView *self) {
 }
 
 // basedUIView slot 1 (0x020ac024): empty
-ARM void basedUIView_vfunc1(basedUIView *self) {
+void basedUIView_vfunc1(basedUIView *self) {
 }

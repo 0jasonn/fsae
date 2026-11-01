@@ -14,7 +14,7 @@ extern u16 data_0212c58c[];
 // Waits for the message box to be allowed to move on. While the box is closing (openMode 2) it waits for the frame
 // counter flag and the telop request; otherwise it waits for the player's flag in data_0212c58c. Both paths end by
 // setting subState to 3 (the shared block at set_sub3 keeps the code layout of the original).
-ARM void knife_commDispWait(KNIFE_MSGSYS *msg) {
+void knife_commDispWait(KNIFE_MSGSYS *msg) {
     u8 playerIndex;
     u8 state;
     u8 remaining;

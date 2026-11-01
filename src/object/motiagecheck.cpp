@@ -21,7 +21,7 @@
     }
 
 // motiagecheck (0x020690a0): counts the players and linked children that agree with the actor's animation state.
-ARM int motiagecheck(Entity *e) {
+int motiagecheck(Entity *e) {
     s32 mask;
     s32 count;
     mask = func_02084110(e);

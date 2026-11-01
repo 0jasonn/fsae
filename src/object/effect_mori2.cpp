@@ -8,11 +8,11 @@
 // Action table of effect_mori2, effectMori2Table
 extern const EntityFunc effectMori2Table[];
 
-ARM void effect_mori2(Entity *e) {
+void effect_mori2(Entity *e) {
     effectMori2Table[e->action](e);
 }
 
-ARM void effect_mori2_move(Entity *e) {
+void effect_mori2_move(Entity *e) {
     if (e->subtimer == 0) {
         e->spriteSettings.b0 = 1;
     } else {

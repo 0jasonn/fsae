@@ -18,7 +18,7 @@ typedef struct Vars_Set2b {
     /* 64 */ u16 lifeTimer; // 0x258 at start, the actor is removed when it reaches 0
 } Vars_Set2b;
 
-ARM void Set2b(Entity *e) {
+void Set2b(Entity *e) {
     Entity *templ = data_0212ced8[e->type].templ;
     u16 lifeTimer;
     u8 timer;

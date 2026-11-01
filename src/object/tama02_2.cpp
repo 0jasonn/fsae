@@ -6,7 +6,7 @@
 
 // tama02_tobashi, 0x0207e51c. Clears the health and gives the partner invincibility frames when the sideways move
 // ends without a collision; otherwise it returns early.
-ARM void tama02_tobashi(Entity *e) {
+void tama02_tobashi(Entity *e) {
     func_0208b644(e);
     if (UpdateGravity(e, 0x2800) != 0) {
         return;
@@ -18,7 +18,7 @@ ARM void tama02_tobashi(Entity *e) {
 
 // tobashiInit, 0x0207e560. Turns the actor to the partner's side, sets the arc speed from the parent's kind and
 // starts the falling state (action 2).
-ARM void tobashiInit(Entity *e) {
+void tobashiInit(Entity *e) {
     s32 threshold;
     e->action = 2;
     e->direction = (u8)(((s32)(u8)(e->direction - 0x40)) >> 3);

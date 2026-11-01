@@ -9,22 +9,22 @@
 //   0x020678e4 itemget_type0_init
 
 // Dispatcher: runs the handler for the current type2.
-ARM void Set26(Entity *e) {
+void Set26(Entity *e) {
     set26_typeTable[e->type2](e);
 }
 
 // Dispatcher: runs the handler for the current action (type 0 items).
-ARM void set26_type0(Entity *e) {
+void set26_type0(Entity *e) {
     set26_type0Table[e->action](e);
 }
 
 // Dispatcher: runs the handler for the current action (type 1 items).
-ARM void set26_type1(Entity *e) {
+void set26_type1(Entity *e) {
     set26_type1Table[e->action](e);
 }
 
 // Init of a type 0 item: advances the action and sets the status, the pose and the hitbox.
-ARM void itemget_type0_init(Entity *e) {
+void itemget_type0_init(Entity *e) {
     u8 action;
 
     action = e->action;

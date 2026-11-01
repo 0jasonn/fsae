@@ -13,14 +13,14 @@ extern "C" u32 LockWord_TryLock(void *word, u32 id, void *owner);
 extern "C" void CardBus_Release(u32 id);
 extern "C" void CardBus_Acquire(u32 id);
 
-ARM u32 LockWord_TryLock(void *word, u32 id, void *owner) {
+u32 LockWord_TryLock(void *word, u32 id, void *owner) {
     return OSi_DoTryLockByWord(word, id, owner, 0);
 }
 
-ARM void CardBus_Release(u32 id) {
+void CardBus_Release(u32 id) {
     Os_DoUnlockByWordWrap((void *)id, 0x2ffffe0, (void *)OSi_FreeCardBus);
 }
 
-ARM void CardBus_Acquire(u32 id) {
+void CardBus_Acquire(u32 id) {
     LockWord_TryLock((void *)id, 0x2ffffe0, (void *)OSi_AllocateCardBus);
 }

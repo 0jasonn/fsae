@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void PlWeaponSync(Entity *e, Entity *weapon) {
+void PlWeaponSync(Entity *e, Entity *weapon) {
     func_0208ab14(weapon, e);
     if (e->animationState == 0) {
         weapon->y.WORD -= 1;

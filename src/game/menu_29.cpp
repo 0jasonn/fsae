@@ -13,7 +13,7 @@ extern "C" MenuPoolEntry *Menu_FindPoolEntry(MenuPool *pool, s32 id);
 // Menu_AcquirePoolEntry (0x020beda0): claims the entry for the id (the existing one, or a new one from Menu_AllocPoolEntry)
 // when the pool is ready and the id is in range. The entry is cleared, and when value is not 0x80 its level is set
 // from the clamped value. Returns the entry, or 0.
-ARM void *Menu_AcquirePoolEntry(void *poolObj, s32 id, s32 value) {
+void *Menu_AcquirePoolEntry(void *poolObj, s32 id, s32 value) {
     MenuPool *pool = (MenuPool *)poolObj;
     MenuPoolEntry *entry;
     s32 level;

@@ -15,7 +15,7 @@ extern KnifeObjAffineSrcData scrollArgs;     // scrollArgs
 extern const EntityFunc set58_hamonActions[]; // set58_hamonActions, indexed by e->action
 extern const EntityFunc set58_youseidamaActions[]; // set58_youseidamaActions, indexed by e->action
 
-ARM void hane_open(Entity *e) {
+void hane_open(Entity *e) {
     s32 speed;
 
     speed = e->speed - 0x20;
@@ -32,23 +32,23 @@ ARM void hane_open(Entity *e) {
     ObjAffineSet2(&scrollArgs, e);
 }
 
-ARM void set58_nop(Entity *e) {
+void set58_nop(Entity *e) {
 }
 
-ARM void set58_hamon(Entity *e) {
+void set58_hamon(Entity *e) {
     set58_hamonActions[e->action](e);
 }
 
-ARM void hamon_init(Entity *e) {
+void hamon_init(Entity *e) {
     set58_actionInit(e);
     e->spriteSettings.b0 = 1;
     e->unk_5e.b0 = 0;
 }
 
-ARM void set58_hamonUpdate(Entity *e) {
+void set58_hamonUpdate(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void set58_youseidama(Entity *e) {
+void set58_youseidama(Entity *e) {
     set58_youseidamaActions[e->action](e);
 }

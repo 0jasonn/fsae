@@ -11,14 +11,14 @@ extern u8 data_02126c4c[];
 
 // PaneScale_get(index) (0x020b76bc, provisional name): the record index of the table data_02126c4c
 extern "C" PaneScaleParam *PaneScale_get(u32 index);
-ARM PaneScaleParam *PaneScale_get(u32 index) {
+PaneScaleParam *PaneScale_get(u32 index) {
     return (PaneScaleParam *)(data_02126c4c + index * 5);
 }
 
 // Pane_calcScaledBase(out, scale, param) (0x020b76d0, provisional name): out[index] = base[index] * (scale[index] - 1)
 // for the entry index of param, and the same for the other entry
 extern "C" void Pane_calcScaledBase(s16 *out, const s16 *scale, const PaneScaleParam *param);
-ARM void Pane_calcScaledBase(s16 *out, const s16 *scale, const PaneScaleParam *param) {
+void Pane_calcScaledBase(s16 *out, const s16 *scale, const PaneScaleParam *param) {
     u8 flag;
     int index;
     int other;

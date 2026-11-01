@@ -10,7 +10,7 @@ extern "C" BOOL func_020c1970(u8 *self, s32 a1, s32 a2, s32 a3, void *entry, u32
 // func_020c1970. Negative a1..a3 are replaced by the matching bytes and halfword of the entry (a2 halfword at +4, a1 byte at
 // +9, a3 byte at +8). Returns 0 when a lookup fails.
 extern "C" BOOL SndState_StartEntryEx(u8 *self, s32 a1, s32 a2, s32 a3, void *arg4, s32 arg5);
-ARM BOOL SndState_StartEntryEx(u8 *self, s32 a1, s32 a2, s32 a3, void *arg4, s32 arg5) {
+BOOL SndState_StartEntryEx(u8 *self, s32 a1, s32 a2, s32 a3, void *arg4, s32 arg5) {
     void *table;
     u32 word;
     void *entry;

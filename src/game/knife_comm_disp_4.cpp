@@ -42,7 +42,7 @@ typedef struct MsgMoveFields {
 
 // Moves the message text. The accumulator moveAccum is reduced by the speed (1, 2 or 5), then the steps of the speed
 // setting are added until it is positive; that many steps run, and each analyzes one part of the token list.
-ARM void knife_commDispMove(KNIFE_MSGSYS *msg) {
+void knife_commDispMove(KNIFE_MSGSYS *msg) {
     s16 steps;
     MsgMoveFields *fields = (MsgMoveFields *)msg;
     MsgTokenList *tokenList;

@@ -10,7 +10,7 @@ extern u32 opTitleState;
 
 // cockpit_error_check (0x020281b0): when the error state in opTitleState says so, resets the serial and the state bytes
 // 1 and 3. Wireless play resets whenever bit 0x1000 is set; otherwise bit 0x8000 and the two nibbles must match first.
-ARM void cockpit_error_check(void) {
+void cockpit_error_check(void) {
     u32 state;
 
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {

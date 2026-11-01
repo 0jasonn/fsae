@@ -11,7 +11,7 @@ extern "C" s32 func_020c0f90(u32 word, u32 byte, u32 a1, u32 one, u32 zero);
 // and dispatches each entry by its kind byte (0 func_020c0d6c, 1 func_020c0e50, 2 func_020c0f90, 3 SndState_AcquireAt0c). The first
 // nonzero result is returned; 1 when the table is missing, 0 when no entry reports one.
 extern "C" s32 SndState_RunEntries(u32 id, u32 a1);
-ARM s32 SndState_RunEntries(u32 id, u32 a1) {
+s32 SndState_RunEntries(u32 id, u32 a1) {
     u8 *table;
     u8 *entry;
     u32 i;

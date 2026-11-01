@@ -12,14 +12,14 @@ u32 SND_GetCurrentCommandTag(void);
 
 // SndList_Reset: resets the count of a list (it is SndList_Init with a count of zero).
 extern "C" void SndList_Reset(void *list);
-ARM void SndList_Reset(void *list) {
+void SndList_Reset(void *list) {
     SndList_Init((SndList *)list, 0);
 }
 
 // SndRecord_Create: sets the heap of a record, resets its list to 12 entries and allocates the first entry. Returns 1
 // when the entry could be allocated.
 extern "C" s32 SndRecord_Create(SndRecord *record, void *heap);
-ARM s32 SndRecord_Create(SndRecord *record, void *heap) {
+s32 SndRecord_Create(SndRecord *record, void *heap) {
     SndList_Init((SndList *)record->list, 0xc);
     record->heap = heap;
     return SndRecord_Alloc(record) != 0;
@@ -28,7 +28,7 @@ ARM s32 SndRecord_Create(SndRecord *record, void *heap) {
 // SndRecord_Alloc: allocates a 0x14-byte entry from the record's heap, resets it and adds it to the list. Returns 1 when
 // the entry was allocated, 0 otherwise.
 extern "C" s32 SndRecord_Alloc(SndRecord *record);
-ARM s32 SndRecord_Alloc(SndRecord *record) {
+s32 SndRecord_Alloc(SndRecord *record) {
     void *entry;
 
     entry = SndHeap_ReserveLinear(record->heap, 0x14, 4);
@@ -42,7 +42,7 @@ ARM s32 SndRecord_Alloc(SndRecord *record) {
 
 // SndSys_FlushAndWait: takes the current command tag, flushes the command queue and waits for that command.
 extern "C" void SndSys_FlushAndWait(void);
-ARM void SndSys_FlushAndWait(void) {
+void SndSys_FlushAndWait(void) {
     u32 tag;
 
     tag = SND_GetCurrentCommandTag();

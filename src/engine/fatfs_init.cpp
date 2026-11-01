@@ -9,7 +9,7 @@
 // flag is set.
 
 // 0x0200e578
-ARM void Fatfs_InitOnce(void) {
+void Fatfs_InitOnce(void) {
     volatile u16 *ime;
     u16 savedIme;
     u32 irqState;

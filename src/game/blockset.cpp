@@ -11,7 +11,7 @@ extern u8 data_0213492c[];
 extern u8 em12_spawnOffsetY[];
 
 // Sets the cell of one frame block: tile offsets come from the kind table, the cell is converted to 64-cell rows
-ARM void frame_block_set(u16 x, u16 y, u16 cell, u8 kind) {
+void frame_block_set(u16 x, u16 y, u16 cell, u8 kind) {
     u16 tileX;
     u16 tileY;
 

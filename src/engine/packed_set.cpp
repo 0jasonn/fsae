@@ -10,18 +10,18 @@ extern u8 data_02126b88[];
 
 // Packed_noop(self) (0x020b70fc, provisional name): does nothing
 extern "C" void Packed_noop(void *self);
-ARM void Packed_noop(void *self) {
+void Packed_noop(void *self) {
 }
 
 // Obj_initVtableB(self) (0x020b7100, provisional name): stores the vtable data_02126b88 in the first word
 extern "C" void Obj_initVtableB(void *self);
-ARM void Obj_initVtableB(void *self) {
+void Obj_initVtableB(void *self) {
     *(void **)self = data_02126b88;
 }
 
 // Packed_setU32BE(self, value) (0x020b7110, provisional name): writes the four bytes of value from the top and a zero byte
 extern "C" void Packed_setU32BE(void *self, u32 value);
-ARM void Packed_setU32BE(void *self, u32 value) {
+void Packed_setU32BE(void *self, u32 value) {
     u8 *bytes;
 
     bytes = (u8 *)self;
@@ -34,7 +34,7 @@ ARM void Packed_setU32BE(void *self, u32 value) {
 
 // Packed_setS16(self, value) (0x020b713c, provisional name): writes the high byte of the signed value, its low byte and a zero byte
 extern "C" void Packed_setS16(void *self, s32 value);
-ARM void Packed_setS16(void *self, s32 value) {
+void Packed_setS16(void *self, s32 value) {
     u8 *bytes;
 
     bytes = (u8 *)self;

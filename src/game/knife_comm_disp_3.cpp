@@ -22,7 +22,7 @@ typedef struct MsgRequestWidth {
 
 // Initialises the message box: clears the pause dialog buffer, sets up the text renderer canvas (the normal box or the
 // closing box, openMode 2), tokenizes the message and starts it at subState 1.
-ARM void knife_commDispInit(KNIFE_MSGSYS *msg) {
+void knife_commDispInit(KNIFE_MSGSYS *msg) {
     WindowSlot *slot;
     u16 frameSize;
     u16 msgId;

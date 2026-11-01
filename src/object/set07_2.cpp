@@ -6,7 +6,7 @@
 
 void writeCell(Entity *e);
 
-ARM void set07_move(Entity *e) {
+void set07_move(Entity *e) {
     MoveDir(e);
     func_02085d78(e);
     e->timer--;

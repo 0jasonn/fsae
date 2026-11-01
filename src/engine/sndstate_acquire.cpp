@@ -14,7 +14,7 @@ u32 SndTable_GetWord14(s32 index);
 // func_020c0e50 is returned. Otherwise flag bit 0 selects SndBank_AcquireSeqData (6 when it fails) over the table word
 // stored for the entry. The result goes to out when it is not null.
 extern "C" s32 func_020c0d6c(s32 index, u32 flags, u32 size, s32 flag, u32 *out);
-ARM s32 func_020c0d6c(s32 index, u32 flags, u32 size, s32 flag, u32 *out) {
+s32 func_020c0d6c(s32 index, u32 flags, u32 size, s32 flag, u32 *out) {
     u8 *entry;
     s32 status;
     void *result;
@@ -43,7 +43,7 @@ ARM s32 func_020c0d6c(s32 index, u32 flags, u32 size, s32 flag, u32 *out) {
 
 // SndState_AcquireAt0c: the same with the 0c table and flag bit 3, using SndBank_AcquireSeqDataB (7 when it fails).
 extern "C" s32 SndState_AcquireAt0c(s32 index, u32 flags, u32 size, s32 flag, u32 *out);
-ARM s32 SndState_AcquireAt0c(s32 index, u32 flags, u32 size, s32 flag, u32 *out) {
+s32 SndState_AcquireAt0c(s32 index, u32 flags, u32 size, s32 flag, u32 *out) {
     u8 *entry;
     void *result;
 

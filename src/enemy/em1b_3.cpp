@@ -31,7 +31,7 @@ extern const u8 em1b_type1Hitbox[];      // em1b_type1Hitbox, used when type == 
 extern const u8 em1b_otherHitbox[];      // em1b_otherHitbox, used for the other types
 
 // Type 1 movement: follows the trail stored in this entity by the parent (ofsset in the next unit), updates the animation.
-ARM void em1b_type1_move(Entity *e) {
+void em1b_type1_move(Entity *e) {
     Vars_Em1bType1 *vars = VARS(Vars_Em1bType1, e);
     u8 slot;
     u8 trailByte;

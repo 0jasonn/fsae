@@ -2,7 +2,7 @@
 #include "enemy/em2f.h"
 #include "global.h"
 
-ARM BOOL setTsubomi(Entity *e) {
+BOOL setTsubomi(Entity *e) {
     Entity *first;
     Entity *second;
     if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
@@ -27,7 +27,7 @@ ARM BOOL setTsubomi(Entity *e) {
     return FALSE;
 }
 
-ARM void tsubomiCloseWaitSet(Entity *e) {
+void tsubomiCloseWaitSet(Entity *e) {
     e->action = 0xf;
     V(e)->tsubomiSlot = em2f_slotNext[V(e)->tsubomiSlot][Random() & 7];
     if (V(e)->tsubomiSlot == 0xff) {
@@ -36,7 +36,7 @@ ARM void tsubomiCloseWaitSet(Entity *e) {
     V(e)->subPhase = flagBits[V(e)->tsubomiSlot];
 }
 
-ARM void getTsubomiMoveInfo(Entity *e) {
+void getTsubomiMoveInfo(Entity *e) {
     V(e)->pathCursor = em2f_tsubomiPaths[Random() & 3];
     V(e)->targetX = *V(e)->pathCursor++;
     V(e)->targetY = *V(e)->pathCursor++;
@@ -44,7 +44,7 @@ ARM void getTsubomiMoveInfo(Entity *e) {
     V(e)->pathWait = 0x80;
 }
 
-ARM int tblMove(Entity *e) {
+int tblMove(Entity *e) {
     if (V(e)->pathWait != 0) {
         V(e)->pathWait--;
     }

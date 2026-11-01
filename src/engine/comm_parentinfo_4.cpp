@@ -8,7 +8,7 @@
 extern char data_0211b0a4[]; // ParentInfo vtable (rodata)
 
 extern "C" void *Knife_Comm_ParentInfo_ParentInfo(void *self);
-ARM void *Knife_Comm_ParentInfo_ParentInfo(void *self) {
+void *Knife_Comm_ParentInfo_ParentInfo(void *self) {
     Knife::Comm::ParentInfo *info;
 
     info = (Knife::Comm::ParentInfo *)self;

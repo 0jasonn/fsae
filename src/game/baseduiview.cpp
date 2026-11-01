@@ -7,14 +7,14 @@
 //   serialize (0x020ace9c), deserialize (0x020acf5c)
 
 // basedUIView::initialize (0x020acd98): empty stack, no parent
-ARM void basedUIView_initialize(basedUIView *self) {
+void basedUIView_initialize(basedUIView *self) {
     self->unk_04 = 7;
     self->parent = NULL;
     self->stackIndex = 0;
 }
 
 // basedUIView::setRootView (0x020acdb0): the root view becomes the bottom of the stack and is entered
-ARM void basedUIView_setRootView(basedUIView *self, basedUIView *root) {
+void basedUIView_setRootView(basedUIView *self, basedUIView *root) {
     self->viewStack[0] = root;
     self->stackIndex = 0;
     root->parent = self;
@@ -22,7 +22,7 @@ ARM void basedUIView_setRootView(basedUIView *self, basedUIView *root) {
 }
 
 // basedUIView::push_view (0x020acdd8): leaves the top view, pushes child and enters it
-ARM void basedUIView_push_view(basedUIView *self, basedUIView *child) {
+void basedUIView_push_view(basedUIView *self, basedUIView *child) {
     self->viewStack[self->stackIndex]->leave();
     self->viewStack[self->stackIndex]->parent = NULL;
     self->stackIndex++;
@@ -32,7 +32,7 @@ ARM void basedUIView_push_view(basedUIView *self, basedUIView *child) {
 }
 
 // basedUIView::pop_view (0x020ace40): leaves the top view, removes it and enters the view below
-ARM void basedUIView_pop_view(basedUIView *self) {
+void basedUIView_pop_view(basedUIView *self) {
     self->viewStack[self->stackIndex]->leave();
     self->viewStack[self->stackIndex]->parent = NULL;
     self->stackIndex--;
@@ -40,7 +40,7 @@ ARM void basedUIView_pop_view(basedUIView *self) {
 }
 
 // basedUIView::serialize (0x020ace9c): writes unk_04, parent, stackIndex and the views below the top to the buffer
-ARM void basedUIView_serialize(basedUIView *self, u8 **buf) {
+void basedUIView_serialize(basedUIView *self, u8 **buf) {
     u32 i;
     u32 parent;
     void *entry;
@@ -60,7 +60,7 @@ ARM void basedUIView_serialize(basedUIView *self, u8 **buf) {
 }
 
 // basedUIView::deserialize (0x020acf5c): reads back what serialize wrote
-ARM void basedUIView_deserialize(basedUIView *self, u8 **buf) {
+void basedUIView_deserialize(basedUIView *self, u8 **buf) {
     u32 i;
     u32 parent;
     void *entry;

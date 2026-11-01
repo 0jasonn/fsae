@@ -9,7 +9,7 @@
 extern u8 data_0217d23c[];
 
 // subTask_game_start_reload (0x020c70ac): sets the state bytes of the subtask (1 and 2)
-ARM void subTask_game_start_reload(void) {
+void subTask_game_start_reload(void) {
     data_0217d23c[0xd0] = 1;
     data_0217d23c[0xd1] = 2;
 }

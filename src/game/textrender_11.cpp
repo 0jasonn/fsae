@@ -20,7 +20,7 @@ extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void *EL_GetGlobalAdr(u32 offset, u32 size);
 
 // TextRenderer::setScreenBuffer(void*, bool, int) (0x020a511c): stores the buffer; the OBJ buffers follow the BG ones
-ARM void TextRenderer::setScreenBuffer(void *buffer, bool isObj, s32 index) {
+void TextRenderer::setScreenBuffer(void *buffer, bool isObj, s32 index) {
     screenBuffer[index + (isObj ? 0 : 4)] = buffer;
 }
 

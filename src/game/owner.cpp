@@ -6,7 +6,7 @@
 // to a game language index (4 to 8; 4 for the default).
 
 // GetOwnerLanguageCode (0x02082838), was GetOwnerLanguageCode
-ARM s32 GetOwnerLanguageCode(void) {
+s32 GetOwnerLanguageCode(void) {
     u8 ownerInfo[0x58];
     u8 language;
 

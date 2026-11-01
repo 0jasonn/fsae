@@ -11,7 +11,7 @@ typedef struct StrFormatCtx {
 
 // Str_VSnprintf(dst, size, fmt, args) (0x02008080): formats fmt with args into dst through RingBuf_Write, which keeps at
 // most size bytes. Returns the formatted length. A NUL is written after the text, or over the last byte if it did not fit.
-ARM s32 Str_VSnprintf(u8 *dst, u32 size, const u8 *fmt, void *args) {
+s32 Str_VSnprintf(u8 *dst, u32 size, const u8 *fmt, void *args) {
     StrFormatCtx ctx;
     s32 length;
 
@@ -35,6 +35,6 @@ ARM s32 Str_VSnprintf(u8 *dst, u32 size, const u8 *fmt, void *args) {
 
 // Str_Sprintf(dst, fmt, ...) (0x020080e4): sprintf without a size limit. The variadic arguments are the caller's
 // stack words after fmt, so args starts at the word after fmt.
-ARM s32 Str_Sprintf(u8 *dst, const u8 *fmt, ...) {
+s32 Str_Sprintf(u8 *dst, const u8 *fmt, ...) {
     return Str_VSnprintf(dst, (u32)-1, fmt, (u8 *)(((u32)&fmt) & ~3) + 4);
 }

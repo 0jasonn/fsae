@@ -11,7 +11,7 @@ extern Entity *data_0212c838[]; // child entity per type2 (set while the child i
 void raderChild(Entity *e);
 void raderParent(Entity *e);
 
-ARM void Set10(Entity *e) {
+void Set10(Entity *e) {
     if (e->type == 0) {
         raderParent(e);
         return;
@@ -21,6 +21,6 @@ ARM void Set10(Entity *e) {
     e->spriteSettings.b0 = 0;
 }
 
-ARM void raderParent(Entity *e) {
+void raderParent(Entity *e) {
     data_02115a5c[e->action](e);
 }

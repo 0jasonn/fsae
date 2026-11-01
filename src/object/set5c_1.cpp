@@ -7,6 +7,6 @@
 
 extern const EntityFunc set5c_states[]; // state table indexed by e->action
 
-ARM void Set5c(Entity *e) {
+void Set5c(Entity *e) {
     set5c_states[e->action](e);
 }

@@ -15,7 +15,7 @@ extern "C" void StaticInit_RunTable(void);
 
 // Cleanup_Invoke(self) (0x0200c4a8): when both the payload and the callback are set, calls the callback with the payload
 // and -1.
-ARM void Cleanup_Invoke(CleanupObj *self) {
+void Cleanup_Invoke(CleanupObj *self) {
     void *payload;
     void (*cleanup)(void *, s32);
 
@@ -29,7 +29,7 @@ ARM void Cleanup_Invoke(CleanupObj *self) {
 }
 
 // StaticInit_RunTable() (0x0200c4d0): calls each non-null function pointer of the table at 0x020df56c in order.
-ARM void StaticInit_RunTable(void) {
+void StaticInit_RunTable(void) {
     void (**entry)(void);
 
     entry = (void (**)(void))0x020df56c;

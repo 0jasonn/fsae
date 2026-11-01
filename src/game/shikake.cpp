@@ -6,7 +6,7 @@
 //   ShikakeMove
 
 // Runs the big-block and other-kind handlers over the 8-byte records of data_02134bb0, then clears both counts.
-ARM void ShikakeMove(void) {
+void ShikakeMove(void) {
     u16 i;
     u8 *record;
 

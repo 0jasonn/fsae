@@ -11,7 +11,7 @@ s32 FS_ReadFile(void *file, void *dst, s32 size);
 // into the block. Each read is capped by the state's limit word (size when that is zero) and by what is left of the
 // block. Returns the bytes read, or -1 when the index is out of range or a seek fails.
 extern "C" s32 SndTable_ReadBlock(s32 index, void *payload, s32 size, s32 offset);
-ARM s32 SndTable_ReadBlock(s32 index, void *payload, s32 size, s32 offset) {
+s32 SndTable_ReadBlock(s32 index, void *payload, s32 size, s32 offset) {
     u8 *state;
     u8 *table;
     u8 *entry;

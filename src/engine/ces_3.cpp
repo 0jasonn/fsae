@@ -10,7 +10,7 @@ namespace Knife {
 namespace Message {
 
 // CES_UTF32LE::convert(void*, unsigned long, int) const (0x0208ffbc)
-ARM u32 CES_UTF32LE::convert(void *out, u32 outSize, s32 character) const {
+u32 CES_UTF32LE::convert(void *out, u32 outSize, s32 character) const {
     if (out == NULL) {
         return 0;
     }
@@ -22,7 +22,7 @@ ARM u32 CES_UTF32LE::convert(void *out, u32 outSize, s32 character) const {
 }
 
 // CES_UTF32LE::getCharCount(void const*, unsigned long) const (0x0208ffdc, vtable slot 3)
-ARM u32 CES_UTF32LE::getCharCount(const void *data, u32 size) const {
+u32 CES_UTF32LE::getCharCount(const void *data, u32 size) const {
     if (data == NULL) {
         return 0;
     }
@@ -30,7 +30,7 @@ ARM u32 CES_UTF32LE::getCharCount(const void *data, u32 size) const {
 }
 
 // CES_UTF32LE::readFirstCharacter(void const*, unsigned long, unsigned long*) const (0x0208ffec)
-ARM u32 CES_UTF32LE::readFirstCharacter(const void *data, u32 size, u32 *out) const {
+u32 CES_UTF32LE::readFirstCharacter(const void *data, u32 size, u32 *out) const {
     u32 local;
 
     if (out == NULL) {
@@ -46,7 +46,7 @@ ARM u32 CES_UTF32LE::readFirstCharacter(const void *data, u32 size, u32 *out) co
 
 // CES_UTF16LE::convert(void*, unsigned long, int) const (0x0209003c): one unit for the characters below 0x10000, a
 // surrogate pair above
-ARM u32 CES_UTF16LE::convert(void *out, u32 outSize, s32 character) const {
+u32 CES_UTF16LE::convert(void *out, u32 outSize, s32 character) const {
     u16 *units;
     s32 plane;
 

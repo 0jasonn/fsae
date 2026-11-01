@@ -28,7 +28,7 @@ typedef struct RectLinkPair {
 // RectObjPair_setOffsets with value, stores offset at +0x1c and 8 into both halfwords at +0x20
 extern "C" void RectObjPair_initWithLinks(RectLinkPair *self, void *holder, void *owner, s16 *pos, s16 value, s16 offset,
                                           u16 *widths);
-ARM void RectObjPair_initWithLinks(RectLinkPair *self, void *holder, void *owner, s16 *pos, s16 value, s16 offset,
+void RectObjPair_initWithLinks(RectLinkPair *self, void *holder, void *owner, s16 *pos, s16 value, s16 offset,
                                    u16 *widths) {
     void *items[2];
     s16 childPos[2];

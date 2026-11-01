@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM BOOL setUde(Entity *e) {
+BOOL setUde(Entity *e) {
     Entity *first;
     Entity *second;
     if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
@@ -65,7 +65,7 @@ ARM BOOL setUde(Entity *e) {
 // setFlower (0x02042cc8): like setUde with different types and directions. Stores the
 // two parts in this entity's part slots and plays sound 0xa2.
 
-ARM int setFlower(Entity *e) {
+int setFlower(Entity *e) {
     Entity *first;
     Entity *second;
     if ((first = GetObjWork()) != NULL && (second = GetObjWork2(first)) != NULL) {
@@ -93,7 +93,7 @@ ARM int setFlower(Entity *e) {
 // Enemy_SetSpriteFromTable (0x02042d7c): picks the sprite index from em30_spriteTable by the child's state and this type,
 // and copies it into the second sprite index field.
 
-ARM void Enemy_SetSpriteFromTable(Entity *e) {
+void Enemy_SetSpriteFromTable(Entity *e) {
     e->spriteSettings.b20 = em30_spriteTable[e->child->unk_6c[7] + e->type - 1];
     e->spriteSettings.b16 = e->spriteSettings.b20;
 }

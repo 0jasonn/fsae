@@ -25,14 +25,14 @@ extern const u8 data_02165fa8[]; // terrain type per cell
 
 int func_02083cdc(Entity *e);
 
-ARM BOOL DoorTypeCheck(Entity *e) {
+BOOL DoorTypeCheck(Entity *e) {
     s16 offset;
 
     offset = cellDeltaTable[e->type2 & 3];
     return data_02165fa8[(u16)(VARS(Vars_Door, e)->cell + offset)] != 0x18;
 }
 
-ARM void doorCheck(Entity *e) {
+void doorCheck(Entity *e) {
     VARS(Vars_Door, e)->flags = VARS(Vars_Door, e)->flags | DoorTypeCheck(e);
     if (e->type2 & 4) {
         return;

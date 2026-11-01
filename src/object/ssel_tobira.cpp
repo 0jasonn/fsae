@@ -9,6 +9,6 @@
 // Action table of ssel_tobira, sselTobiraTable
 extern const EntityFunc sselTobiraTable[];
 
-ARM void ssel_tobira(Entity *e) {
+void ssel_tobira(Entity *e) {
     sselTobiraTable[e->action](e);
 }

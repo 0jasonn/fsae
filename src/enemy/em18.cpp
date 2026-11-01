@@ -8,6 +8,6 @@
 extern const u8 data_020d2968[]; // knockback function table of em18
 
 // Knockback: passes the entity to the generic knockback with the em18 table.
-ARM void em18_knockback(Entity *e) {
+void em18_knockback(Entity *e) {
     GenericKnockback(e, data_020d2968);
 }

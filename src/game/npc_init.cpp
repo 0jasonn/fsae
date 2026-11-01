@@ -7,6 +7,6 @@
 //   func_0204f978 keeps its name (declared in engine/functions.h)
 
 // Clears the 0xa0 bytes of the scene slot table (data_02134d30)
-ARM void func_0204f978(void) {
+void func_0204f978(void) {
     MIi_CpuClear16(0, &data_02134d30, 0xa0);
 }

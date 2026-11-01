@@ -22,7 +22,7 @@ void BgmSet(void);
 void set6b_setenemy(Entity *e, u8 index);
 extern u32 flagBits[]; // one bit word per type2 bit (0x1f)
 
-ARM void set09_wait(Entity *e) {
+void set09_wait(Entity *e) {
     if (VARS(Vars_Set09, e)->typeBits != (VARS(Vars_Set09, e)->typeBits & em12_typeMasks[e->areaIndex])) {
         return;
     }
@@ -43,7 +43,7 @@ ARM void set09_wait(Entity *e) {
     e->action = 2;
 }
 
-ARM void set09_initset(Entity *e) {
+void set09_initset(Entity *e) {
     if (CountBits(VARS(Vars_Set09, e)->unk_64) >= e->timer) {
         e->action = 3;
         return;
@@ -51,7 +51,7 @@ ARM void set09_initset(Entity *e) {
     set6b_setenemy(e, 0);
 }
 
-ARM void set09_move(Entity *e) {
+void set09_move(Entity *e) {
     if (CountBits(VARS(Vars_Set09, e)->unk_64) < e->timer) {
         set6b_setenemy(e, 0x5a);
     }
@@ -64,7 +64,7 @@ ARM void set09_move(Entity *e) {
     }
 }
 
-ARM void set09_wait2(Entity *e) {
+void set09_wait2(Entity *e) {
     if (VARS(Vars_Set09, e)->unk_62 == 0) {
         e->action = 5;
         e->timer = 0x3c;

@@ -13,7 +13,7 @@ extern "C" void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);
 
 // i_IsExText(unsigned long) (0x020a3134): true for the character codes 0x2328 to 0x270f
 extern "C" BOOL Knife_Message_i_IsExText(u32 code);
-ARM BOOL Knife_Message_i_IsExText(u32 code) {
+BOOL Knife_Message_i_IsExText(u32 code) {
     if (code >= 0x2328 && code <= 0x270f) {
         return 1;
     }
@@ -22,7 +22,7 @@ ARM BOOL Knife_Message_i_IsExText(u32 code) {
 
 // RenderTarget::~RenderTarget() (0x020a3160): the deleting destructor, as 0x020a2dd4 and then operator delete
 extern "C" void *Knife_Message_RenderTarget_dtor_RenderTarget_0a3160(void *self);
-ARM void *Knife_Message_RenderTarget_dtor_RenderTarget_0a3160(void *self) {
+void *Knife_Message_RenderTarget_dtor_RenderTarget_0a3160(void *self) {
     *(u8 **)self = data_02124984;
     Knife_Message_RenderTarget_finalize(self);
     operator delete(self);
@@ -31,6 +31,6 @@ ARM void *Knife_Message_RenderTarget_dtor_RenderTarget_0a3160(void *self) {
 
 // Knife_Message_i_FinalizeRenderTargets (name invented): destroys the two render targets of data_0217d650
 extern "C" void Knife_Message_i_FinalizeRenderTargets(void);
-ARM void Knife_Message_i_FinalizeRenderTargets(void) {
+void Knife_Message_i_FinalizeRenderTargets(void) {
     Frame_LoopC868(data_0217d650, 2, 0x208, (void *)Knife_Message_PictogramRenderer_noop);
 }

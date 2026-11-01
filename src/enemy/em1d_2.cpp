@@ -11,7 +11,7 @@ void seqset(Entity *e, int baseAnim);      // original seqset(OBJ_WORK_*, int)
 extern const u8 em1d_hitbox[];
 
 // Buttobi: updates the animation frame and, when the entity is flagged and not in action 4, restarts its animation.
-ARM void em1d_buttobi(Entity *e) {
+void em1d_buttobi(Entity *e) {
     UpdateAnimationSingleFrame(e);
     func_02084794(e);
     if (e->unk_42 != 1) {
@@ -24,7 +24,7 @@ ARM void em1d_buttobi(Entity *e) {
 }
 
 // Init: sets the first action, the hitbox and the start height, then starts the animation.
-ARM void em1d_init(Entity *e) {
+void em1d_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->unk_2e = 4;
@@ -34,7 +34,7 @@ ARM void em1d_init(Entity *e) {
 }
 
 // Getdir: sets a timer and either starts a chase towards the aim player, facing it, or walks away with a short speed.
-ARM void em1d_getdir(Entity *e) {
+void em1d_getdir(Entity *e) {
     func_020847f8(e);
     e->timer = 0xb4;
     if ((Random() & 0xf) < 7) {

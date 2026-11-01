@@ -7,7 +7,7 @@ extern char data_0211b284[];
 
 // WirelessManager callback at 0x02093a1c (invented name): on success the timer counts up, on error it is set to -999.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StepTimer5(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_StepTimer5(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_StepTimer5(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
@@ -24,7 +24,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_StepTimer5(void *result) {
 // WirelessManager::callback_WM_SetEntry (0x02093a68): clears the flag at 0x1cdc, then on success sets the entry word at
 // 0x1ae to the manager flag at 0x1ccc; on error sets the flag from the entry word.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_SetEntry(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_SetEntry(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_SetEntry(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
@@ -45,7 +45,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_SetEntry(void *result) {
 
 // WirelessManager callback at 0x02093adc (invented name): clears the flag at 0x1cdc and runs the result check.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_ClearFlag(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_ClearFlag(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_ClearFlag(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();

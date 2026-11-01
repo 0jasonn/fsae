@@ -35,7 +35,7 @@ typedef struct SubtaskNrcsChunk {
     void *ptr;
 } SubtaskNrcsChunk;
 
-ARM void subTask_init_obj(int a, int b, int c, int d) {
+void subTask_init_obj(int a, int b, int c, int d) {
     SubtaskObjBlock *blk;
     SubtaskRachChunk *aObj;
     SubtaskNrcsChunk *obj;

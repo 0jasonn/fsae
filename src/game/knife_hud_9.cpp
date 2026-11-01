@@ -10,7 +10,7 @@ namespace Knife {
 namespace Hud {
 
 // HudManager::update(int) (0x0209e26c): clears the 24 OAM entries of mode, then updates the HUD for the state
-ARM void HudManager::update(int mode) {
+void HudManager::update(int mode) {
     KnifeHudVars *v = (KnifeHudVars *)this;
     s32 i;
     u8 *base;

@@ -8,7 +8,7 @@
 extern u8 data_021349c0[];           // result state block, see enemy/ending.h
 extern Entity *data_0212c648;        // the body entity the scene points at
 
-ARM void gufu_body_move(Entity *e) {
+void gufu_body_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     switch (data_021349c0[0x0e]) {
     case 0:

@@ -4,7 +4,7 @@
 
 // makemap_* (0x02047838 to 0x02047b14). makemap_sync_0204794c is a three-phase sync helper, makemap_nop_020479d4 is a bare return.
 
-ARM void makemap_00(void) {
+void makemap_00(void) {
     u8 i;
     ObjWorkPoolClear();
     BgInit();
@@ -36,7 +36,7 @@ ARM void makemap_00(void) {
 
 // makemap_* (0x0204794c to 0x02047b14). makemap_sync_0204794c is a three-phase sync helper, makemap_nop_020479d4 is a bare return.
 
-ARM void makemap_sync_0204794c(void) {
+void makemap_sync_0204794c(void) {
     switch (data_0216efa8) {
     case 0:
         ComRequest(4);
@@ -57,5 +57,5 @@ ARM void makemap_sync_0204794c(void) {
     }
 }
 
-ARM void makemap_nop_020479d4(void) {
+void makemap_nop_020479d4(void) {
 }

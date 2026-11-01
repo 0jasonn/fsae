@@ -11,7 +11,7 @@ namespace Message {
 
 // TextRenderer::renderText(RenderTarget const*, unsigned long, Language) (0x020a5138): tokenizes the message id and
 // analyzes the tokens
-ARM s32 TextRenderer::renderText(const RenderTarget *target, u32 textId, Language language) {
+s32 TextRenderer::renderText(const RenderTarget *target, u32 textId, Language language) {
     s32 result = 0;
 
     tokenList = NULL;
@@ -23,7 +23,7 @@ ARM s32 TextRenderer::renderText(const RenderTarget *target, u32 textId, Languag
 }
 
 // TextRenderer::renderText(RenderTarget const*, unsigned short const*) (0x020a5184): tokenizes a string and analyzes it
-ARM s32 TextRenderer::renderText(const RenderTarget *target, const u16 *str) {
+s32 TextRenderer::renderText(const RenderTarget *target, const u16 *str) {
     s32 result = 0;
 
     tokenList = NULL;
@@ -35,7 +35,7 @@ ARM s32 TextRenderer::renderText(const RenderTarget *target, const u16 *str) {
 }
 
 // TextRenderer::renderText(RenderTarget const*, Text const*) (0x020a51c8): tokenizes a Text and analyzes it
-ARM s32 TextRenderer::renderText(const RenderTarget *target, const Text *text) {
+s32 TextRenderer::renderText(const RenderTarget *target, const Text *text) {
     s32 result = 0;
 
     tokenList = NULL;
@@ -50,7 +50,7 @@ ARM s32 TextRenderer::renderText(const RenderTarget *target, const Text *text) {
 }
 
 // Knife_Message_TextRenderer_setTokenListAndAnalyze (0x020a520c): stores an explicit token list and count, then analyzes (tail call)
-ARM s32 Knife_Message_TextRenderer_setTokenListAndAnalyze(Knife::Message::TextRenderer *self,
+s32 Knife_Message_TextRenderer_setTokenListAndAnalyze(Knife::Message::TextRenderer *self,
                                                            const Knife::Message::RenderTarget *target, void **list,
                                                            s32 count) {
     self->tokenList = list;
@@ -66,7 +66,7 @@ namespace Message {
 
 // TextRenderer::analyzeAllTokens(RenderTarget const*) (0x020a5220): resets the layout, analyzes every token and draws
 // the text as the target mode asks
-ARM s32 TextRenderer::analyzeAllTokens(const RenderTarget *newTarget) {
+s32 TextRenderer::analyzeAllTokens(const RenderTarget *newTarget) {
     s32 lastLine = -1;
     s32 count;
     s32 i;

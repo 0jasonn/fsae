@@ -9,7 +9,7 @@
 extern const s8 data_020d8d00[]; // (dx, dy) pairs for the four directions, indexed by animation state
 extern u16 frameCounter;
 
-ARM void set4a_move(Entity *e) {
+void set4a_move(Entity *e) {
     s32 hitResult;
 
     hitResult = func_02083d18(e, data_020d8d00[e->animationState], data_020d8d00[e->animationState + 1]);

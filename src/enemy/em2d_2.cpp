@@ -2,7 +2,7 @@
 #include "enemy/em2d.h"
 #include "global.h"
 
-ARM void differentColSet(Entity *e) {
+void differentColSet(Entity *e) {
     if (V(e)->petal == NULL) {
         return;
     }
@@ -13,7 +13,7 @@ ARM void differentColSet(Entity *e) {
     V(e)->petal->spriteSettings.b16 = V(e)->petal->spriteSettings.b20;
 }
 
-ARM void openEndSet(Entity *e) {
+void openEndSet(Entity *e) {
     Entity *other = V(e)->petal;
     if (other == NULL) {
         return;
@@ -25,7 +25,7 @@ ARM void openEndSet(Entity *e) {
     V(e)->petal->unk_28 += Random() & 7;
 }
 
-ARM void closeInit(Entity *e) {
+void closeInit(Entity *e) {
     Entity *other = V(e)->petal;
     e->poseId = 0x40;
     e->hitbox = em2d_closeHitbox;
@@ -36,7 +36,7 @@ ARM void closeInit(Entity *e) {
     InitAnimationForceUpdate(e, 6);
 }
 
-ARM void closeEndSet(Entity *e) {
+void closeEndSet(Entity *e) {
     V(e)->phaseFlags &= 0x3f;
     e->spriteSettings.b20 = e->parent->spriteSettings.b16;
     e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -46,7 +46,7 @@ ARM void closeEndSet(Entity *e) {
     InitAnimationForceUpdate(e, 3);
 }
 
-ARM BOOL kukiSet(Entity *e) {
+BOOL kukiSet(Entity *e) {
     Entity *partA;
     Entity *partB;
     Entity *partC;
@@ -111,7 +111,7 @@ ARM BOOL kukiSet(Entity *e) {
     return FALSE;
 }
 
-ARM void flowerDie(Entity *e) {
+void flowerDie(Entity *e) {
     *V(e)->segmentSlot = NULL;
     VCT(e->parent)->flowerCount--;
     Entity *fx = GetSetWork(0xf, 1, 0);
@@ -128,7 +128,7 @@ ARM void flowerDie(Entity *e) {
     }
 }
 
-ARM void seedSet(Entity *e) {
+void seedSet(Entity *e) {
     Entity *proj = GetTamaWork(0xe);
     if (proj == NULL) {
         return;

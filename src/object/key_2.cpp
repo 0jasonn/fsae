@@ -10,7 +10,7 @@ typedef struct Vars_Key {
 } Vars_Key;
 
 // key_move, 0x02069930
-ARM void key_move(Entity *e) {
+void key_move(Entity *e) {
     Vars_Key *v = VARS(Vars_Key, e);
     if (data_021349c0[8] >= 2) {
         SoundReq(0x200);

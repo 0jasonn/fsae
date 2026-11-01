@@ -16,6 +16,6 @@ extern const EntityFunc set2c_actions[]; // set2c_actions, indexed by e->action
 extern u32 em12_typeMasks[];
 extern const u32 flagBits[]; // flagBits, indexed by e->type
 
-ARM void Set2c(Entity *e) {
+void Set2c(Entity *e) {
     set2c_actions[e->action](e);
 }

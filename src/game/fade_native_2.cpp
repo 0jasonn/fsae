@@ -6,7 +6,7 @@
 // Renamed here: fade_native_init_0467d0 -> fade_native_init_0467d0, fade_native_init_046a70 -> fade_native_init_046a70,
 // fade_native_init_046dd0 -> fade_native_init_046dd0.
 
-ARM void fade_native_init_0465ec(u8 param) {
+void fade_native_init_0465ec(u8 param) {
     u8 roll = Random();
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_4306, 0);
@@ -35,7 +35,7 @@ ARM void fade_native_init_0465ec(u8 param) {
     }
 }
 
-ARM void fade_native_init_0466cc(u8 param) {
+void fade_native_init_0466cc(u8 param) {
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_4325, param);
     } else {
@@ -53,7 +53,7 @@ ARM void fade_native_init_0466cc(u8 param) {
     }
 }
 
-ARM void fade_native_init_046758(u8 param) {
+void fade_native_init_046758(u8 param) {
     u8 roll = Random();
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_433b, 0);
@@ -69,7 +69,7 @@ ARM void fade_native_init_046758(u8 param) {
     }
 }
 
-ARM void fade_native_init_0467d0(u8 param) {
+void fade_native_init_0467d0(u8 param) {
     switch (Random() % 6) {
     case 0:
         RandomBlockSet(nativeInitList_4348, param);
@@ -98,7 +98,7 @@ ARM void fade_native_init_0467d0(u8 param) {
     }
 }
 
-ARM void fade_native_init_0468d4(u8 param) {
+void fade_native_init_0468d4(u8 param) {
     switch (Random() % 3) {
     case 0:
         RandomBlockSet(nativeInitList_6f52, param);
@@ -115,7 +115,7 @@ ARM void fade_native_init_0468d4(u8 param) {
     }
 }
 
-ARM void fade_native_init_046974(u8 param) {
+void fade_native_init_046974(u8 param) {
     u8 roll;
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_43a3, 0);
@@ -141,7 +141,7 @@ ARM void fade_native_init_046974(u8 param) {
     }
 }
 
-ARM void fade_native_init_046a70(u8 param) {
+void fade_native_init_046a70(u8 param) {
     u8 roll = Random();
     if (roll < 0x40) {
         RandomBlockSet(nativeInitList_43bd, 0);
@@ -162,7 +162,7 @@ ARM void fade_native_init_046a70(u8 param) {
     }
 }
 
-ARM void fade_native_init_046b48(u8 param) {
+void fade_native_init_046b48(u8 param) {
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_4408, param);
     } else {
@@ -215,7 +215,7 @@ ARM void fade_native_init_046b48(u8 param) {
     }
 }
 
-ARM void fade_native_init_046cec(u8 param) {
+void fade_native_init_046cec(u8 param) {
     switch (Random() & 3) {
     case 0:
         RandomBlockSet(nativeInitList_4421, param);
@@ -247,7 +247,7 @@ ARM void fade_native_init_046cec(u8 param) {
     }
 }
 
-ARM void fade_native_init_046dd0(u8 param) {
+void fade_native_init_046dd0(u8 param) {
     switch (Random() & 7) {
     case 0:
         RandomBlockSet(data_020f9c7c, param);
@@ -297,7 +297,7 @@ ARM void fade_native_init_046dd0(u8 param) {
     }
 }
 
-ARM void fade_native_init_046f8c(u8 param) {
+void fade_native_init_046f8c(u8 param) {
     u8 roll = Random();
     if (roll < 0x55) {
         RandomBlockSet(nativeInitList_444e, param);
@@ -311,7 +311,7 @@ ARM void fade_native_init_046f8c(u8 param) {
     }
 }
 
-ARM void fade_native_init_04700c(u8 param) {
+void fade_native_init_04700c(u8 param) {
     switch (Random() & 3) {
     case 0:
         RandomBlockSet(nativeInitList_b69e, param);

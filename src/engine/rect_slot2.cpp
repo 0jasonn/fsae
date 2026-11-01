@@ -20,7 +20,7 @@ typedef struct RectSlot2 {
 // RectSlot2_init(self) (0x020bba00, provisional name): RectObjList_init, the vtable data_02126f38, the words -1 at +0x20
 // and +0x24 and the bytes at +0x28 and +0x29 cleared. Returns self.
 extern "C" void *RectSlot2_init(RectSlot2 *self);
-ARM void *RectSlot2_init(RectSlot2 *self) {
+void *RectSlot2_init(RectSlot2 *self) {
     RectObjList_init(self);
     self->vtable = data_02126f38;
     self->unk_20 = -1;

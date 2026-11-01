@@ -9,6 +9,6 @@
 extern const EntityFunc set17_stateTable[]; // indexed by e->action (was set17_stateTable)
 extern const u8 set17_hitbox[];             // was set17_hitbox
 
-ARM void set17_run(Entity *e) {
+void set17_run(Entity *e) {
     set17_stateTable[e->action](e);
 }

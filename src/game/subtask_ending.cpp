@@ -7,7 +7,7 @@
 
 // subTask_ending_init() (0x020c8c60): starts the ending subtask: the VRAM and object setup, the sub screen
 // display control, and the fade in
-ARM void subTask_ending_init(void) {
+void subTask_ending_init(void) {
     u8 *app;
     u32 zero;
 
@@ -24,7 +24,7 @@ ARM void subTask_ending_init(void) {
 }
 
 // subTask_ending_end() (0x020c8cc4): frees the subtask slots and the object info block, then fades out
-ARM void subTask_ending_end(void) {
+void subTask_ending_end(void) {
     u32 i;
 
     for (i = 0; i < 4; i++) {
@@ -36,5 +36,5 @@ ARM void subTask_ending_end(void) {
 
 // subTask_ending_stub (0x020c8cf8): empty stub
 extern "C" void subTask_ending_stub(void);
-ARM void subTask_ending_stub(void) {
+void subTask_ending_stub(void) {
 }

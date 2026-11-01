@@ -11,7 +11,7 @@ extern "C" void Knife_ForwardMenuWrapper(void);
 namespace Knife {
 
 // Knife::runManual() (0x020c7c10): runs the manual mode. Returns 0 when the preprocessing fails.
-ARM s32 runManual(void) {
+s32 runManual(void) {
     if (i_preprocManual() == 0) {
         return 0;
     }
@@ -25,6 +25,6 @@ ARM s32 runManual(void) {
 }
 
 // Knife_GetManualFlag (0x020c7c3c): the flag byte at +0x3c of the manual object
-ARM u8 Knife_GetManualFlag(void) {
+u8 Knife_GetManualFlag(void) {
     return data_0218704c.flag3c;
 }

@@ -4,7 +4,7 @@
 
 // Functions in this file: kamen_kemuriSet (0x0203eed4).
 
-ARM void kamen_kemuriSet(Entity *e) {
+void kamen_kemuriSet(Entity *e) {
     V_KAMEN(e)->kemuriTimer--;
     if ((V_KAMEN(e)->kemuriTimer & 0x7) != 0) {
         return;

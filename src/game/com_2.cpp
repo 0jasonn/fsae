@@ -30,12 +30,12 @@ extern void (*const data_020f258c[])(void);
 void ComStart(u8 request);
 
 // func_020280e0 (0x020280e0): the status byte of the communication state.
-ARM u32 func_020280e0(void) {
+u32 func_020280e0(void) {
     return COM_WORK->status;
 }
 
 // MachiukeStart (0x020280f0): starts the serial, requests code 2 and sets the active flag.
-ARM void MachiukeStart(void) {
+void MachiukeStart(void) {
     MultiSioInit();
     ComStart(2);
     COM_WORK->status = 0;
@@ -43,20 +43,20 @@ ARM void MachiukeStart(void) {
 }
 
 // MachiukeStop (0x0202811c): restarts the serial with request 0 and clears the status.
-ARM void MachiukeStop(void) {
+void MachiukeStop(void) {
     MultiSioInit();
     ComStart(0);
     COM_WORK->status = 0;
 }
 
 // ComMain (0x02028140): ORs opTitleState into data_0212c544, then calls the handler for the current request.
-ARM void ComMain(void) {
+void ComMain(void) {
     data_0212c544 |= opTitleState;
     data_020f258c[COM_WORK->request]();
 }
 
 // ComUpdate (0x02028184): sends the data block at data_0212c9b8 and clears its 0x34 bytes.
-ARM void ComUpdate(void) {
+void ComUpdate(void) {
     MultiSioSendDataSet(data_0212c9b8);
     func_02029a50(data_0212c9b8, 0x34);
 }
@@ -65,8 +65,8 @@ ARM void ComUpdate(void) {
 extern "C" void func_020281a8(void);
 extern "C" void func_020281ac(void);
 
-ARM void func_020281a8(void) {
+void func_020281a8(void) {
 }
 
-ARM void func_020281ac(void) {
+void func_020281ac(void) {
 }

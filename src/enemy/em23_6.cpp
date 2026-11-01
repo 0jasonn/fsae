@@ -5,7 +5,7 @@
 
 // Functions in this file: Em23 (0x0203fa4c).
 
-ARM void Em23(Entity *e) {
+void Em23(Entity *e) {
     if (e->type2 == 0) {
         func_02084700(e);
         em23_stateTable[func_02084a30(e)](e);

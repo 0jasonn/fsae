@@ -6,7 +6,7 @@
 //   Knife_CheckIndexed (provisional name, returns the result of func_020c2c34 for a clamped index)
 
 // Knife_CheckIndexed (0x020c806c): the index is clamped to at least 1 and passed to func_020c2c34 on data_02187050
-ARM s32 Knife_CheckIndexed(s32 a) {
+s32 Knife_CheckIndexed(s32 a) {
     s32 id;
     s32 r;
 

@@ -4,7 +4,7 @@
 
 // Functions in this file: em19_atafutainit (0x0203e4e4), em19_atafutawait (0x0203e520), em19_atafuta (0x0203e55c).
 
-ARM void em19_atafutainit(Entity *e) {
+void em19_atafutainit(Entity *e) {
     e->action = 8;
     e->timer = 0xf;
     e->spriteSettings.b0 = 1;
@@ -13,7 +13,7 @@ ARM void em19_atafutainit(Entity *e) {
     InitAnimationForceUpdate(e, 2);
 }
 
-ARM void em19_atafutawait(Entity *e) {
+void em19_atafutawait(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -24,7 +24,7 @@ ARM void em19_atafutawait(Entity *e) {
     }
 }
 
-ARM void em19_atafuta(Entity *e) {
+void em19_atafuta(Entity *e) {
     if (--e->timer == 0) {
         e->direction = (Random() & 0x18) + 4;
     }

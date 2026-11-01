@@ -8,7 +8,7 @@ extern "C" void Dma_CheckConflict(s32 skip, u32 mode);
 // Dma_CheckConflict(skip, mode) (0x02015940): looks at the control words of the three DMA channels (0x040000b8 + 12 * i,
 // except channel skip). An enabled channel whose transfer mode is not compatible with mode ends the program. A channel
 // in mode 0x8000000 may share mode 0x10000000 and the other way round.
-ARM void Dma_CheckConflict(s32 skip, u32 mode) {
+void Dma_CheckConflict(s32 skip, u32 mode) {
     s32 i;
     u32 control;
 

@@ -42,7 +42,7 @@ extern "C" void RectObjList_freeBlock(void *holder, void *block);
 // RectObjList_setItems(self, holder, src, count, pos, size) (0x020b8078, provisional name): allocates the item array
 // of count pointers, copies src into it, and sets the offset from pos and the size from size
 extern "C" void RectObjList_setItems(RectObjList *self, void *holder, void **src, s32 count, s16 *pos, s16 *size);
-ARM void RectObjList_setItems(RectObjList *self, void *holder, void **src, s32 count, s16 *pos, s16 *size) {
+void RectObjList_setItems(RectObjList *self, void *holder, void **src, s32 count, s16 *pos, s16 *size) {
     s32 i;
 
     self->field14 = RectObjList_allocPtrArray(holder, count);
@@ -58,7 +58,7 @@ ARM void RectObjList_setItems(RectObjList *self, void *holder, void **src, s32 c
 
 // RectObjList_allocPtrArray(holder, count) (0x020b80ec, provisional name): allocates count pointers (at least one) from
 // the heap of holder and clears them. Returns NULL when the allocation fails.
-ARM void **RectObjList_allocPtrArray(void *holder, s32 count) {
+void **RectObjList_allocPtrArray(void *holder, s32 count) {
     void **array;
     void **slot;
     u32 i;
@@ -80,7 +80,7 @@ ARM void **RectObjList_allocPtrArray(void *holder, s32 count) {
 // calls RectObj_noop
 extern "C" void func_020b81a8(void *holder, void *obj);
 extern "C" void RectObjList_releaseItems(RectObjList *self, void *holder);
-ARM void RectObjList_releaseItems(RectObjList *self, void *holder) {
+void RectObjList_releaseItems(RectObjList *self, void *holder) {
     s32 i;
 
     for (i = 0; i < self->count; i++) {
@@ -91,7 +91,7 @@ ARM void RectObjList_releaseItems(RectObjList *self, void *holder) {
 }
 
 // RectObjList_freeBlock(holder, block) (0x020b8190, provisional name): frees block when it is not NULL
-ARM void RectObjList_freeBlock(void *holder, void *block) {
+void RectObjList_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }

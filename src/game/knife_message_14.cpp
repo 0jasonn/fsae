@@ -21,51 +21,51 @@ extern "C" void func_020a23b0(void);
 extern "C" void func_020a23b4(void);
 extern "C" void func_020a23b8(void);
 
-ARM void func_020a237c(void) {
+void func_020a237c(void) {
 }
 
-ARM void func_020a2380(void) {
+void func_020a2380(void) {
 }
 
-ARM void func_020a2384(void) {
+void func_020a2384(void) {
 }
 
-ARM void func_020a2388(void) {
+void func_020a2388(void) {
 }
 
-ARM void func_020a238c(void) {
+void func_020a238c(void) {
 }
 
-ARM void func_020a2390(void) {
+void func_020a2390(void) {
 }
 
-ARM void func_020a2394(void) {
+void func_020a2394(void) {
 }
 
-ARM void func_020a2398(void) {
+void func_020a2398(void) {
 }
 
-ARM void func_020a239c(void) {
+void func_020a239c(void) {
 }
 
-ARM void func_020a23a0(void) {
+void func_020a23a0(void) {
 }
 
-ARM void func_020a23a4(void) {
+void func_020a23a4(void) {
 }
 
-ARM void func_020a23a8(void) {
+void func_020a23a8(void) {
 }
 
-ARM void func_020a23ac(void) {
+void func_020a23ac(void) {
 }
 
-ARM void func_020a23b0(void) {
+void func_020a23b0(void) {
 }
 
-ARM void func_020a23b4(void) {
+void func_020a23b4(void) {
 }
 
-ARM void func_020a23b8(void) {
+void func_020a23b8(void) {
 }
 

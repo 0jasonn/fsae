@@ -7,6 +7,6 @@
 
 extern const EntityFunc data_020d8db0[]; // state table indexed by e->action
 
-ARM void Set4c(Entity *e) {
+void Set4c(Entity *e) {
     data_020d8db0[e->action](e);
 }

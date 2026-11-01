@@ -11,18 +11,18 @@ extern "C" u32 FS_ReadFile(void *file, void *dst, u32 size);
 
 // GzFile_close (0x0208e038)
 extern "C" void GzFile_close(void *file);
-ARM void GzFile_close(void *file) {
+void GzFile_close(void *file) {
     FS_CloseFile(file);
 }
 
 // GzFile_getLength (0x0208e044)
 extern "C" u32 GzFile_getLength(void *file);
-ARM u32 GzFile_getLength(void *file) {
+u32 GzFile_getLength(void *file) {
     return FS_GetFileLength(file);
 }
 
 // GzFile_read (0x0208e050)
 extern "C" u32 GzFile_read(void *file, void *dst, u32 size);
-ARM u32 GzFile_read(void *file, void *dst, u32 size) {
+u32 GzFile_read(void *file, void *dst, u32 size) {
     return FS_ReadFile(file, dst, size);
 }

@@ -10,7 +10,7 @@ extern u8 data_02134f30[];
 extern u8 data_02134ff0[];
 
 // Clears both stop block work arrays
-ARM void StopBlockInit(void) {
+void StopBlockInit(void) {
     OSi_CpuClear32(0, data_02134f30, 0xc0);
     OSi_CpuClear32(0, data_02134ff0, 0xc0);
 }

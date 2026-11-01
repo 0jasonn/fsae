@@ -8,7 +8,7 @@ extern "C" void *CopyBytes(void *dst, const void *src, u32 count);
 // Calls func_02005798 with (b, 1, c, a) and returns a when the result equals c, otherwise 0.
 extern "C" s32 Sub_CallChecked(s32 a, s32 b, s32 c);
 
-ARM s32 Sub_CallChecked(s32 a, s32 b, s32 c) {
+s32 Sub_CallChecked(s32 a, s32 b, s32 c) {
     s32 result;
 
     result = func_02005798(b, 1, c, a);
@@ -27,7 +27,7 @@ typedef struct RingBuf {
 
 extern "C" s32 RingBuf_Write(RingBuf *rb, const void *src, u32 count);
 
-ARM s32 RingBuf_Write(RingBuf *rb, const void *src, u32 count) {
+s32 RingBuf_Write(RingBuf *rb, const void *src, u32 count) {
     u32 pos;
 
     pos = rb->pos;

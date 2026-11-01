@@ -15,7 +15,7 @@ typedef struct Vars_Set14Move {
     /* 7d */ u8 turnMask;     // bit per rider type: that rider is being turned
 } Vars_Set14Move;
 
-ARM void set14_move(Entity *e) {
+void set14_move(Entity *e) {
     u8 result;
 
     VARS(Vars_Set14Move, e)->prevFrame = e->frame;

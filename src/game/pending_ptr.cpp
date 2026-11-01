@@ -8,12 +8,12 @@ extern void *data_0217da60; // one pointer, set by the setter and read by the ge
 
 // Stores the pointer in data_0217da60 (0x020a3778, name invented)
 extern "C" void Knife_Message_setPendingPtr(void *p);
-ARM void Knife_Message_setPendingPtr(void *p) {
+void Knife_Message_setPendingPtr(void *p) {
     data_0217da60 = p;
 }
 
 // Returns data_0217da60 (0x020a3788, name invented)
 extern "C" void *Knife_Message_getPendingPtr(void);
-ARM void *Knife_Message_getPendingPtr(void) {
+void *Knife_Message_getPendingPtr(void) {
     return data_0217da60;
 }

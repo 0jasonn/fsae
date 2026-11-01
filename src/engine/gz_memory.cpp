@@ -11,7 +11,7 @@
 
 // GzAllocator::init (0x0208e05c): takes the main arena (16-byte aligned) and makes a heap over it
 extern "C" void Gz_Memory_GzAllocator_init(Gz::Memory::GzAllocator *self, s32 unused);
-ARM void Gz_Memory_GzAllocator_init(Gz::Memory::GzAllocator *self, s32 unused) {
+void Gz_Memory_GzAllocator_init(Gz::Memory::GzAllocator *self, s32 unused) {
     void *arenaLo;
     void *arenaHi;
     u32 size;
@@ -26,7 +26,7 @@ ARM void Gz_Memory_GzAllocator_init(Gz::Memory::GzAllocator *self, s32 unused) {
 
 // GzAllocator::alloc(unsigned long) (0x0208e0b0): allocates with alignment 4, with interrupts disabled around the call
 extern "C" void *Gz_Memory_GzAllocator_alloc_08e0b0(Gz::Memory::GzAllocator *self, u32 size);
-ARM void *Gz_Memory_GzAllocator_alloc_08e0b0(Gz::Memory::GzAllocator *self, u32 size) {
+void *Gz_Memory_GzAllocator_alloc_08e0b0(Gz::Memory::GzAllocator *self, u32 size) {
     u16 ime;
     void *block;
 
@@ -40,7 +40,7 @@ ARM void *Gz_Memory_GzAllocator_alloc_08e0b0(Gz::Memory::GzAllocator *self, u32 
 
 // GzAllocator::alloc(unsigned long, long) (0x0208e0e0): same as above with the alignment given
 extern "C" void *Gz_Memory_GzAllocator_alloc_08e0e0(Gz::Memory::GzAllocator *self, u32 size, s32 align);
-ARM void *Gz_Memory_GzAllocator_alloc_08e0e0(Gz::Memory::GzAllocator *self, u32 size, s32 align) {
+void *Gz_Memory_GzAllocator_alloc_08e0e0(Gz::Memory::GzAllocator *self, u32 size, s32 align) {
     u16 ime;
     void *block;
 
@@ -54,7 +54,7 @@ ARM void *Gz_Memory_GzAllocator_alloc_08e0e0(Gz::Memory::GzAllocator *self, u32 
 
 // GzAllocator::dealloc(void*) (0x0208e10c): frees a block with interrupts disabled
 extern "C" void Gz_Memory_GzAllocator_dealloc(Gz::Memory::GzAllocator *self, void *block);
-ARM void Gz_Memory_GzAllocator_dealloc(Gz::Memory::GzAllocator *self, void *block) {
+void Gz_Memory_GzAllocator_dealloc(Gz::Memory::GzAllocator *self, void *block) {
     u16 ime;
 
     ime = REG_IME;
@@ -65,21 +65,21 @@ ARM void Gz_Memory_GzAllocator_dealloc(Gz::Memory::GzAllocator *self, void *bloc
 }
 
 // func_0208e138 (0x0208e138): sets the global allocator
-ARM void func_0208e138(void *allocator) {
+void func_0208e138(void *allocator) {
     data_021770a4 = (Gz::Memory::GzAllocator *)allocator;
 }
 
 // func_0208e148 (0x0208e148): allocates from the global allocator (alignment 4)
-ARM void *func_0208e148(u32 size) {
+void *func_0208e148(u32 size) {
     return Gz_Memory_GzAllocator_alloc_08e0b0(data_021770a4, size);
 }
 
 // EL_GetGlobalAdr (0x0208e164): allocates from the global allocator with the given alignment
-ARM void *EL_GetGlobalAdr(u32 offset, u32 size) {
+void *EL_GetGlobalAdr(u32 offset, u32 size) {
     return Gz_Memory_GzAllocator_alloc_08e0e0(data_021770a4, offset, size);
 }
 
 // func_0208e188 (0x0208e188): frees a block through the global allocator; declared in functions.h
-ARM void func_0208e188(void *block) {
+void func_0208e188(void *block) {
     Gz_Memory_GzAllocator_dealloc(data_021770a4, block);
 }

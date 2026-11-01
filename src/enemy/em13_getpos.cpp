@@ -9,7 +9,7 @@
 // em13_getpos(OBJ_WORK_*): picks a warp destination cell near the actor's position from em13_randomCellOffsets.
 // Returns TRUE and stores the warp home (warpX/warpY) when the destination is free and the sub position is inside it;
 // a blocked cell makes the actor choose a new move with nextMove, and the function returns FALSE.
-ARM BOOL em13_getpos(Entity *e) {
+BOOL em13_getpos(Entity *e) {
     u16 cell;
     u16 newX;
     u16 newY;

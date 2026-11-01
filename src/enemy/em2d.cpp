@@ -2,7 +2,7 @@
 #include "enemy/em2d.h"
 #include "global.h"
 
-ARM void Em2d(Entity *e) {
+void Em2d(Entity *e) {
     if (e->type == 0) {
         em2d_type0Actions[e->action](e);
         V(e)->cycleTimer--;
@@ -21,7 +21,7 @@ ARM void Em2d(Entity *e) {
     }
 }
 
-ARM void em2c_type0_init_034878(Entity *e) {
+void em2c_type0_init_034878(Entity *e) {
     if (kukiSet(e) == 0) {
         return;
     }
@@ -72,7 +72,7 @@ ARM void em2c_type0_init_034878(Entity *e) {
     em2d_retargetState.lastPlayer = 0;
 }
 
-ARM void type0_1stDemo(Entity *e) {
+void type0_1stDemo(Entity *e) {
     if (data_0212c7c8.unk_5 & 0x80) {
         return;
     }
@@ -92,7 +92,7 @@ ARM void type0_1stDemo(Entity *e) {
     }
 }
 
-ARM void em2c_type0_1stDemoWait_034b44(Entity *e) {
+void em2c_type0_1stDemoWait_034b44(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -102,7 +102,7 @@ ARM void em2c_type0_1stDemoWait_034b44(Entity *e) {
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
 
-ARM void type0_1stWait(Entity *e) {
+void type0_1stWait(Entity *e) {
     cercleMoveC2(e);
     if (--e->timer != 0) {
         return;
@@ -113,7 +113,7 @@ ARM void type0_1stWait(Entity *e) {
     V(e)->petal->spriteSettings.b16 = V(e)->petal->spriteSettings.b20;
 }
 
-ARM void type0_1stOpen(Entity *e) {
+void type0_1stOpen(Entity *e) {
     cercleMove2(e);
     if (V(e)->petal != NULL) {
         UpdateAnimationSingleFrame(V(e)->petal);
@@ -127,7 +127,7 @@ ARM void type0_1stOpen(Entity *e) {
     openEndSet(e);
 }
 
-ARM void type0_1stCercle(Entity *e) {
+void type0_1stCercle(Entity *e) {
     if (damagecheck(e) != 0 && e->health == 0) {
         flowerDie(e);
         return;
@@ -146,7 +146,7 @@ ARM void type0_1stCercle(Entity *e) {
     }
 }
 
-ARM void type0_1stClose(Entity *e) {
+void type0_1stClose(Entity *e) {
     cercleMove2(e);
     if (V(e)->petal != NULL) {
         UpdateAnimationSingleFrame(V(e)->petal);
@@ -161,7 +161,7 @@ ARM void type0_1stClose(Entity *e) {
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void type0_2ndDemo(Entity *e) {
+void type0_2ndDemo(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -170,7 +170,7 @@ ARM void type0_2ndDemo(Entity *e) {
     EnqueueSFX(0x9e);
 }
 
-ARM void type0_2ndGetdir(Entity *e) {
+void type0_2ndGetdir(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -199,7 +199,7 @@ ARM void type0_2ndGetdir(Entity *e) {
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void em2c_type0_2ndMove_034ea0(Entity *e) {
+void em2c_type0_2ndMove_034ea0(Entity *e) {
     if (V(e)->phaseFlags & 0x80) {
         e->action = 0xb;
         openInit(e);
@@ -225,7 +225,7 @@ ARM void em2c_type0_2ndMove_034ea0(Entity *e) {
     }
 }
 
-ARM void type0_2ndAttack(Entity *e) {
+void type0_2ndAttack(Entity *e) {
     if (V(e)->phaseFlags & 0x80) {
         e->action = 0xb;
         openInit(e);
@@ -243,7 +243,7 @@ ARM void type0_2ndAttack(Entity *e) {
     }
 }
 
-ARM void type0_2ndOpen(Entity *e) {
+void type0_2ndOpen(Entity *e) {
     if (V(e)->petal != NULL) {
         UpdateAnimationSingleFrame(V(e)->petal);
     }
@@ -256,7 +256,7 @@ ARM void type0_2ndOpen(Entity *e) {
     openEndSet(e);
 }
 
-ARM void type0_2ndBlossom(Entity *e) {
+void type0_2ndBlossom(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         if (damagecheck(e) == 0) {
@@ -275,7 +275,7 @@ ARM void type0_2ndBlossom(Entity *e) {
     closeInit(e);
 }
 
-ARM void type0_2ndClose(Entity *e) {
+void type0_2ndClose(Entity *e) {
     if (V(e)->petal != NULL) {
         UpdateAnimationSingleFrame(V(e)->petal);
     }
@@ -289,7 +289,7 @@ ARM void type0_2ndClose(Entity *e) {
     closeEndSet(e);
 }
 
-ARM void type0_3rdDemo(Entity *e) {
+void type0_3rdDemo(Entity *e) {
     MoveDir(e);
     if (--e->timer != 0) {
         return;
@@ -300,7 +300,7 @@ ARM void type0_3rdDemo(Entity *e) {
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
 
-ARM void type0_3rdCercle(Entity *e) {
+void type0_3rdCercle(Entity *e) {
     if ((V(e)->phaseFlags & 0xc0) == 0xc0) {
         e->action = 0x10;
         openInit(e);
@@ -312,7 +312,7 @@ ARM void type0_3rdCercle(Entity *e) {
     cercleMoveC(e);
 }
 
-ARM void type0_3rdOpen(Entity *e) {
+void type0_3rdOpen(Entity *e) {
     if (V(e)->petal != NULL) {
         UpdateAnimationSingleFrame(V(e)->petal);
     }
@@ -325,7 +325,7 @@ ARM void type0_3rdOpen(Entity *e) {
     openEndSet(e);
 }
 
-ARM void type0_3rdBlossom(Entity *e) {
+void type0_3rdBlossom(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         if (damagecheck(e) == 0) {
@@ -357,7 +357,7 @@ ARM void type0_3rdBlossom(Entity *e) {
     closeInit(e);
 }
 
-ARM void type0_3rdClose(Entity *e) {
+void type0_3rdClose(Entity *e) {
     if (V(e)->petal != NULL) {
         UpdateAnimationSingleFrame(V(e)->petal);
     }
@@ -379,7 +379,7 @@ ARM void type0_3rdClose(Entity *e) {
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void type0_3rdAimInit(Entity *e) {
+void type0_3rdAimInit(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -401,7 +401,7 @@ ARM void type0_3rdAimInit(Entity *e) {
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
-ARM void type0_3rdAimMove(Entity *e) {
+void type0_3rdAimMove(Entity *e) {
     if ((V(e)->phaseFlags & 0xc0) == 0xc0) {
         e->action = 0x10;
         openInit(e);
@@ -436,7 +436,7 @@ ARM void type0_3rdAimMove(Entity *e) {
     }
 }
 
-ARM void type0_3rdAttack(Entity *e) {
+void type0_3rdAttack(Entity *e) {
     if ((V(e)->phaseFlags & 0xc0) == 0xc0) {
         e->action = 0x10;
         openInit(e);
@@ -456,7 +456,7 @@ ARM void type0_3rdAttack(Entity *e) {
     }
 }
 
-ARM void type0_DieDemo0(Entity *e) {
+void type0_DieDemo0(Entity *e) {
     if (e->iframes != 0) {
         return;
     }
@@ -471,7 +471,7 @@ ARM void type0_DieDemo0(Entity *e) {
     MoveDir(e);
 }
 
-ARM void type0_DieDemo1(Entity *e) {
+void type0_DieDemo1(Entity *e) {
     e->x.HALF.HI += em2d_dieSway[e->timer & 3];
     if (++e->timer >= 0x3c) {
         e->timer = 0x1e;
@@ -479,14 +479,14 @@ ARM void type0_DieDemo1(Entity *e) {
     }
 }
 
-ARM void type0_DieDemo2(Entity *e) {
+void type0_DieDemo2(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
     flowerDie(e);
 }
 
-ARM void em2c_type1_init_0356bc(Entity *e) {
+void em2c_type1_init_0356bc(Entity *e) {
     e->action = 1;
     e->health = 0xff;
     e->statusFlags &= 0x7f;
@@ -494,7 +494,7 @@ ARM void em2c_type1_init_0356bc(Entity *e) {
     e->hitbox = em2d_type1Hitbox;
 }
 
-ARM void em2c_type1_wait_0356f4(Entity *e) {
+void em2c_type1_wait_0356f4(Entity *e) {
     Entity *parent = e->parent;
     if (parent->type2 != 0 || VCT(parent->parent)->flowerCount != 1) {
         return;
@@ -506,7 +506,7 @@ ARM void em2c_type1_wait_0356f4(Entity *e) {
     e->timer = (Random() + 0x1e) & 0xf;
 }
 
-ARM void type1_attackWait(Entity *e) {
+void type1_attackWait(Entity *e) {
     if (--e->timer == 0) {
         e->action = 3;
         InitAnimationForceUpdate(e, 9);
@@ -516,7 +516,7 @@ ARM void type1_attackWait(Entity *e) {
     }
 }
 
-ARM void type1_attack(Entity *e) {
+void type1_attack(Entity *e) {
     e->z.HALF.HI = em2d_attackZ[(e->frame >> 4) & 3];
     e->parent->z.HALF.HI = e->z.HALF.HI;
     if (e->frame & 1) {
@@ -537,7 +537,7 @@ ARM void type1_attack(Entity *e) {
     }
 }
 
-ARM void damageSet(Entity *e, Entity *src) {
+void damageSet(Entity *e, Entity *src) {
     V(e)->phaseFlags |= 1;
     u8 damage = src->contactedEntity->attackDamage;
     if (e->health < damage) {
@@ -552,7 +552,7 @@ ARM void damageSet(Entity *e, Entity *src) {
     EnqueueSFX(0x2d);
 }
 
-ARM BOOL damagecheck(Entity *e) {
+BOOL damagecheck(Entity *e) {
     Entity *other = V(e)->petal;
     if (other != NULL && other->spriteSettings.b20 == e->spriteSettings.b20) {
         if (e->contactFlags & 0x80) {

@@ -7,7 +7,7 @@
 //   0x02056e70 FSResultToKnifeFsResult (original name)
 //   0x02056ee0 Knife_getSaveBuffer (provisional)
 
-ARM s32 Knife_checkFileSpace(s32 fileSize, const char *path) {
+s32 Knife_checkFileSpace(s32 fileSize, const char *path) {
     u8 resource[0x30];
 
     if (FS_GetArchiveResource(path, resource) == 0) {
@@ -19,7 +19,7 @@ ARM s32 Knife_checkFileSpace(s32 fileSize, const char *path) {
     return 7;
 }
 
-ARM s32 FSResultToKnifeFsResult(s32 result) {
+s32 FSResultToKnifeFsResult(s32 result) {
     switch (result) {
     case 0:
         return 0;
@@ -44,6 +44,6 @@ ARM s32 FSResultToKnifeFsResult(s32 result) {
     return 1;
 }
 
-ARM void *Knife_getSaveBuffer(void) {
+void *Knife_getSaveBuffer(void) {
     return data_02171d10;
 }

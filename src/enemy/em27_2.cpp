@@ -2,7 +2,7 @@
 #include "enemy/em26.h"
 #include "global.h"
 
-ARM void em27_move(Entity *e) {
+void em27_move(Entity *e) {
     func_020847dc(e);
     UpdateAnimationSingleFrame(e);
     V(e)->lifeTimer--;
@@ -17,7 +17,7 @@ ARM void em27_move(Entity *e) {
     e->spriteSettings.b0 ^= 1;
 }
 
-ARM void cbubbleReset(Entity *e) {
+void cbubbleReset(Entity *e) {
     if (e->parent != NULL) {
         e->parent->parent = NULL;
         return;
@@ -25,6 +25,6 @@ ARM void cbubbleReset(Entity *e) {
     BubbleReset(e);
 }
 
-ARM void func_02040f20(Entity *e) {
+void func_02040f20(Entity *e) {
     EnemyFunctionHandler(e, em27_handlerTable);
 }

@@ -15,15 +15,15 @@ extern const EntityFunc gufu_typeActions[]; // gufu_typeActions, indexed by e->t
 extern const EntityFunc gufu_handActions[]; // gufu_handActions, indexed by e->action
 extern const EntityFunc gufu_bodyActions[]; // gufu_bodyActions, indexed by e->action
 
-ARM void gufu_typeDispatch(Entity *e) {
+void gufu_typeDispatch(Entity *e) {
     gufu_typeActions[e->type](e);
 }
 
-ARM void gufu_hand(Entity *e) {
+void gufu_hand(Entity *e) {
     gufu_handActions[e->action](e);
 }
 
-ARM void gufu_hand_init(Entity *e) {
+void gufu_hand_init(Entity *e) {
     e->action++;
     e->unk_20 = 0x60;
     e->spriteSettings.b0 = 2;
@@ -34,7 +34,7 @@ ARM void gufu_hand_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void gufu_hand_move(Entity *e) {
+void gufu_hand_move(Entity *e) {
     Entity *child;
 
     UpdateAnimationSingleFrame(e);
@@ -54,11 +54,11 @@ ARM void gufu_hand_move(Entity *e) {
     }
 }
 
-ARM void gufu_body(Entity *e) {
+void gufu_body(Entity *e) {
     gufu_bodyActions[e->action](e);
 }
 
-ARM void gufu_body_init(Entity *e) {
+void gufu_body_init(Entity *e) {
     e->action++;
     e->unk_20 = 0x60;
     e->spriteSettings.b0 = 1;

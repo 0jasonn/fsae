@@ -7,6 +7,6 @@
 //   0x02066190 Set23 (dispatcher)
 
 // Dispatcher: runs the handler for the current action.
-ARM void Set23(Entity *e) {
+void Set23(Entity *e) {
     set23_stateTable[e->action](e);
 }

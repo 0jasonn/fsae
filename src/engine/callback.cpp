@@ -10,18 +10,18 @@
 extern "C" void MI_UncompressLZ16(const void *src, void *dst);
 
 // WirelessAllocator_deallocate (0x02082fbc)
-ARM void WirelessAllocator_deallocate(void *allocator, void *block) {
+void WirelessAllocator_deallocate(void *allocator, void *block) {
     if (block != NULL) {
         func_0208e188(block);
     }
 }
 
 // ElGlobalAdrThunk (0x02082fd4)
-ARM void *ElGlobalAdrThunk(void *unused, u32 offset, u32 size) {
+void *ElGlobalAdrThunk(void *unused, u32 offset, u32 size) {
     return ((void *(*)(u32, u32))EL_GetGlobalAdr)(offset, size);
 }
 
 // CallbackForJpeg (0x02082fe8)
-ARM void CallbackForJpeg(void *a, void *b) {
+void CallbackForJpeg(void *a, void *b) {
     ((void (*)(const void *, void *))MI_UncompressLZ16)(b, a);
 }

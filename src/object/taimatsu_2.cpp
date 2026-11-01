@@ -13,17 +13,17 @@
 //   0x02059a74 taimatsu_count (original name)
 //   0x02059ae8 taimatsu_clear (original name)
 
-ARM void tp00_move(Entity *e) {
+void tp00_move(Entity *e) {
     if ((em12_typeMasks[e->areaIndex] & 3) != 3) {
         e->action--;
     }
 }
 
-ARM void taimatsu_puzzle_01(Entity *e) {
+void taimatsu_puzzle_01(Entity *e) {
     taimatsu01_actions[e->action](e);
 }
 
-ARM void tp01_wait(Entity *e) {
+void tp01_wait(Entity *e) {
     u32 flags;
 
     flags = em12_typeMasks[e->areaIndex];
@@ -32,13 +32,13 @@ ARM void tp01_wait(Entity *e) {
     }
 }
 
-ARM void tp01_init(Entity *e) {
+void tp01_init(Entity *e) {
     e->timer = 0x3c;
     e->subtimer = 0;
     e->action++;
 }
 
-ARM void tp01_move(Entity *e) {
+void tp01_move(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -61,7 +61,7 @@ ARM void tp01_move(Entity *e) {
     e->action = 0;
 }
 
-ARM void tp01_check(Entity *e) {
+void tp01_check(Entity *e) {
     u8 count;
     u16 *table;
 
@@ -88,7 +88,7 @@ ARM void tp01_check(Entity *e) {
     }
 }
 
-ARM void make_question(Entity *e) {
+void make_question(Entity *e) {
     u32 i;
     u32 j;
     u16 tmp;
@@ -106,7 +106,7 @@ ARM void make_question(Entity *e) {
     } while (i != 0);
 }
 
-ARM u8 taimatsu_count(Entity *e) {
+u8 taimatsu_count(Entity *e) {
     u16 *table;
     u8 count;
     u8 i;
@@ -123,7 +123,7 @@ ARM u8 taimatsu_count(Entity *e) {
     return count;
 }
 
-ARM void taimatsu_clear(Entity *e) {
+void taimatsu_clear(Entity *e) {
     u8 i;
 
     for (i = 0; i < 12; i++) {

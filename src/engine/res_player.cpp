@@ -11,7 +11,7 @@ extern "C" void ObjEntry_Setup(u32 index, u32 a, u32 b);
 
 // ResDraw_SetSize (provisional name): stores the two halfwords at +0xc/+0xe and sets flag 8 at +0x12 when the state at +0 is 1.
 extern "C" void ResDraw_SetSize(u8 *draw, s32 width, s32 height);
-ARM void ResDraw_SetSize(u8 *draw, s32 width, s32 height) {
+void ResDraw_SetSize(u8 *draw, s32 width, s32 height) {
     u16 flags;
 
     if (*(u32 *)draw == 1) {
@@ -24,7 +24,7 @@ ARM void ResDraw_SetSize(u8 *draw, s32 width, s32 height) {
 
 // ResDraw_SetPriority (provisional name): stores the halfword at +0x10 and sets flag 4 at +0x12 when the state at +0 is 1.
 extern "C" void ResDraw_SetPriority(u8 *draw, u32 value);
-ARM void ResDraw_SetPriority(u8 *draw, u32 value) {
+void ResDraw_SetPriority(u8 *draw, u32 value) {
     u16 flags;
 
     if (*(u32 *)draw == 1) {
@@ -36,7 +36,7 @@ ARM void ResDraw_SetPriority(u8 *draw, u32 value) {
 
 // ResDraw_SetPos (provisional name): stores the words at +4 and +8 and sets flag 2 at +0x12 when the state at +0 is 1.
 extern "C" void ResDraw_SetPos(u8 *draw, u32 x, u32 y);
-ARM void ResDraw_SetPos(u8 *draw, u32 x, u32 y) {
+void ResDraw_SetPos(u8 *draw, u32 x, u32 y) {
     u16 flags;
 
     if (*(u32 *)draw == 1) {
@@ -52,14 +52,14 @@ extern "C" void ResDraw_Reset(u8 *draw);
 
 // ResDraw_SetModeAndReset (provisional name): stores the state at +0 and resets the draw record.
 extern "C" void ResDraw_SetModeAndReset(u8 *draw, u32 mode);
-ARM void ResDraw_SetModeAndReset(u8 *draw, u32 mode) {
+void ResDraw_SetModeAndReset(u8 *draw, u32 mode) {
     *(u32 *)draw = mode;
     ResDraw_Reset(draw);
 }
 
 // ResDraw_Reset (provisional name): clears the 0x18 bytes from +4 and sets the two words at +4 and +8 to 0x1000.
 extern "C" void ResDraw_Reset(u8 *draw);
-ARM void ResDraw_Reset(u8 *draw) {
+void ResDraw_Reset(u8 *draw) {
     MIi_CpuClear16(0, draw + 4, 0x18);
     *(u32 *)(draw + 4) = 0x1000;
     *(u32 *)(draw + 8) = 0x1000;
@@ -69,7 +69,7 @@ ARM void ResDraw_Reset(u8 *draw) {
 // (ResRef_GetWord), stores the table lookup at +0x30, sets the draw state from the entry according to the mode of the
 // current record at +0x1c, and, when the table has a sub table and the slot at +0x38 is valid, runs ObjEntry_Setup.
 extern "C" void ResPlayer_Refresh(u8 *player);
-ARM void ResPlayer_Refresh(u8 *player) {
+void ResPlayer_Refresh(u8 *player) {
     u8 *entry;
     u8 *table;
     u8 mode;
@@ -118,7 +118,7 @@ extern "C" void ResPlayer_SetCursorTableAndRefresh(u8 *player, u8 *cursorTable);
 // ResPlayer_Start (provisional name): stores the entry table at +0x34, the slot -1 at +0x38, sets the draw mode to 1,
 // initialises the player and sets the cursor table and refreshes.
 extern "C" void ResPlayer_Start(u8 *player, u8 *cursorTable, u8 *entryTable);
-ARM void ResPlayer_Start(u8 *player, u8 *cursorTable, u8 *entryTable) {
+void ResPlayer_Start(u8 *player, u8 *cursorTable, u8 *entryTable) {
     *(u8 **)(player + 0x34) = entryTable;
     *(s32 *)(player + 0x38) = -1;
     ResDraw_SetModeAndReset(player + 0x3c, 1);
@@ -128,14 +128,14 @@ ARM void ResPlayer_Start(u8 *player, u8 *cursorTable, u8 *entryTable) {
 
 // ResPlayer_SetCursorTableAndRefresh (provisional name): ResCursor_SetTableAndInit on the player, then ResPlayer_Refresh.
 extern "C" void ResPlayer_SetCursorTableAndRefresh(u8 *player, u8 *cursorTable);
-ARM void ResPlayer_SetCursorTableAndRefresh(u8 *player, u8 *cursorTable) {
+void ResPlayer_SetCursorTableAndRefresh(u8 *player, u8 *cursorTable) {
     ResCursor_SetTableAndInit(player, cursorTable);
     ResPlayer_Refresh(player);
 }
 
 // ResPlayer_AdvanceAndRefresh (provisional name): when func_020c323c on the player succeeds, ResPlayer_Refresh.
 extern "C" void ResPlayer_AdvanceAndRefresh(u8 *player);
-ARM void ResPlayer_AdvanceAndRefresh(u8 *player) {
+void ResPlayer_AdvanceAndRefresh(u8 *player) {
     if (func_020c323c(player) != 0) {
         ResPlayer_Refresh(player);
     }
@@ -143,7 +143,7 @@ ARM void ResPlayer_AdvanceAndRefresh(u8 *player) {
 
 // ResPlayer_SeekAndRefresh (provisional name): when ResCursor_SeekAndReset to index succeeds, ResPlayer_Refresh.
 extern "C" void ResPlayer_SeekAndRefresh(u8 *player, u32 index);
-ARM void ResPlayer_SeekAndRefresh(u8 *player, u32 index) {
+void ResPlayer_SeekAndRefresh(u8 *player, u32 index) {
     if (ResCursor_SeekAndReset(player, index) != 0) {
         ResPlayer_Refresh(player);
     }

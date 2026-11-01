@@ -12,7 +12,7 @@
 #define SPRITE_WORD(e) (*(u32 *)&(e)->spriteSettings)
 
 // Runs the state table entry of the actor; once the parent is gone (health 0) the actor is removed
-ARM void Tama11(Entity *e) {
+void Tama11(Entity *e) {
     Entity *parent;
 
     data_020dcfd4[e->action](e);

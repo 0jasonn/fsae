@@ -9,7 +9,7 @@
 // lobby_setRecvParam(index, flag, value) (0x020b235c, provisional name): ORs the nibble of a player into the receive
 // word of the lobby. The nibble is flag << 2 | (value & 3), shifted to the position of the player index
 extern "C" void lobby_setRecvParam(s32 index, s32 flag, s32 value);
-ARM void lobby_setRecvParam(s32 index, s32 flag, s32 value) {
+void lobby_setRecvParam(s32 index, s32 flag, s32 value) {
     U32Table4 shift;
     LobbyState *lobby;
 
@@ -20,7 +20,7 @@ ARM void lobby_setRecvParam(s32 index, s32 flag, s32 value) {
 
 // getReciveParam(signed char) (0x020b23b8): the nibble of a player in the received parameter word
 extern "C" s32 getReciveParam(s32 index);
-ARM s32 getReciveParam(s32 index) {
+s32 getReciveParam(s32 index) {
     U32Table4 shift;
 
     shift = data_020deda4;

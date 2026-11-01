@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void PlWeaponFireCheck(Entity *e) {
+void PlWeaponFireCheck(Entity *e) {
     s32 contact;
     Entity *target;
     Entity *shot;
@@ -77,7 +77,7 @@ ARM void PlWeaponFireCheck(Entity *e) {
     RegistObjWork(6, shot);
 }
 
-ARM void PlayerTrans(void) {
+void PlayerTrans(void) {
     s32 i;
 
     for (i = 0; i < data_0212c7c8.unk_0; i++) {

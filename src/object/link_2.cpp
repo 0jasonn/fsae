@@ -17,11 +17,11 @@
 extern const EntityFunc kenfuri_subActions[]; // indexed by e->subAction
 extern s32 data_02134924; // game flag word
 
-ARM void link_kenfuri(Entity *e) {
+void link_kenfuri(Entity *e) {
     kenfuri_subActions[e->subAction](e);
 }
 
-ARM void kenfuri_init(Entity *e) {
+void kenfuri_init(Entity *e) {
     if (e->type == 0) {
         e->subAction++;
         e->direction = 0x1e;
@@ -42,7 +42,7 @@ ARM void kenfuri_init(Entity *e) {
     e->unk_5e.b2 = 1;
 }
 
-ARM void kenfuri_walk0(Entity *e) {
+void kenfuri_walk0(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -58,7 +58,7 @@ ARM void kenfuri_walk0(Entity *e) {
     e->subAction++;
 }
 
-ARM void kenfuri_walk1(Entity *e) {
+void kenfuri_walk1(Entity *e) {
     func_02085934(e, e->unk_1b);
     MoveDir(e);
     if (e->x.HALF.HI >= 0x80) {
@@ -71,7 +71,7 @@ ARM void kenfuri_walk1(Entity *e) {
     e->subAction++;
 }
 
-ARM void kenfuri_kenfuri(Entity *e) {
+void kenfuri_kenfuri(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         if (e->timer != 0) {
@@ -92,7 +92,7 @@ ARM void kenfuri_kenfuri(Entity *e) {
     e->subAction++;
 }
 
-ARM void kenfuri_wait(Entity *e) {
+void kenfuri_wait(Entity *e) {
     if (e->type != 0) {
         if ((e->frame & 0x80) == 0) {
             func_02085934(e, e->unk_1b);
@@ -105,7 +105,7 @@ ARM void kenfuri_wait(Entity *e) {
     }
 }
 
-ARM void kenfuri_bunshin(Entity *e) {
+void kenfuri_bunshin(Entity *e) {
     e->spriteSettings.b0 = 1;
     ObjAnimMoveLine(e);
     if ((data_02134924 & 0x10) == 0) {

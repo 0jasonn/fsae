@@ -10,5 +10,5 @@
 
 // 0x0208becc, 0x0208bee4: empty slots
 extern "C" void knifeSoundNop2(void *self);
-ARM void knifeSoundNop2(void *self) {
+void knifeSoundNop2(void *self) {
 }

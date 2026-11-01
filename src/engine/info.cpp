@@ -9,7 +9,7 @@
 extern const u32 *data_02134968[];
 
 // Pointer stored for (area, kind), or NULL when the area has no row
-ARM const u8 *GetInfoAdrs(u8 area, u8 kind) {
+const u8 *GetInfoAdrs(u8 area, u8 kind) {
     const u32 *row;
 
     row = (const u32 *)data_02134968[area];

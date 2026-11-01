@@ -12,6 +12,6 @@ public:
 
 // OS_GetPrintBlockingMode(self) (0x020b07a4): non-zero when groupSelectUIView::getNumOfRoom of self is non-zero
 extern "C" s32 OS_GetPrintBlockingMode(void *self);
-ARM s32 OS_GetPrintBlockingMode(void *self) {
+s32 OS_GetPrintBlockingMode(void *self) {
     return ((groupSelectUIView *)self)->getNumOfRoom() != 0;
 }

@@ -19,7 +19,7 @@ typedef struct SubtaskDialogBlock {
 #define DIALOG_BLOCK ((SubtaskDialogBlock *)data_0217e604)
 
 // subtask_dialogDelete (0x020ac308): clears the tiles of the dialog rectangle and sends the screen buffer if dirty
-ARM void subtask_dialogDelete(void) {
+void subtask_dialogDelete(void) {
     u16 *screen = DIALOG_BLOCK->screen;
     u32 y;
     u32 x;

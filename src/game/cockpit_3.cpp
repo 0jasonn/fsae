@@ -6,7 +6,7 @@
 // Functions in this file (module cockpit, original names): CockpitRecovery, cockpit_load
 
 // Redraws the heart or rupee part of the cockpit for a given value (a is the kind, b the amount).
-ARM void CockpitRecovery(u8 kind, u8 amount) {
+void CockpitRecovery(u8 kind, u8 amount) {
     if (data_0212c618[0] == 0) {
         return;
     }
@@ -25,7 +25,7 @@ ARM void CockpitRecovery(u8 kind, u8 amount) {
 }
 
 // Loads the cockpit graphics: data 1, then the copy of the cockpit block.
-ARM void cockpit_load(void) {
+void cockpit_load(void) {
     DataLoad(1);
     func_02027778();
     MIi_CpuCopyFast(data_021361a0, data_021369a0, 0x800);

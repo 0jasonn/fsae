@@ -19,7 +19,7 @@ extern "C" void Timer_Snapshot(TimerSnapshot *rec);
 
 // Copies the previous value into snapshot, computes limit minus the masked value into delta, and saves the
 // current value.
-ARM void Timer_Snapshot(TimerSnapshot *rec) {
+void Timer_Snapshot(TimerSnapshot *rec) {
     rec->snapshot = rec->lastValue;
     rec->delta = rec->limit - (rec->value & rec->mask);
     rec->maskedValue = rec->value;

@@ -12,7 +12,7 @@ extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 
 // Roll: scrolls the text up by one row (the cell rows and the line queue shift; the top row is cleared) when the line
 // change is requested through openMode 2. Otherwise it asks for a line change and moves the scroll bars of data_0217d358.
-ARM void knife_commDispRoll(KNIFE_MSGSYS *msg) {
+void knife_commDispRoll(KNIFE_MSGSYS *msg) {
     if (msg->openMode == 2) {
         MIi_CpuCopy16(msg->cellRows[1], msg->cellRows[0], 0x1e);
         MIi_CpuCopy16(msg->cellRows[2], msg->cellRows[1], 0x1e);

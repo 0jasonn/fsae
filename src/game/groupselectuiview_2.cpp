@@ -8,7 +8,7 @@
 
 // groupSelectUIView::getNumOfRoom (0x020b07bc): number of rooms at the start of the list that are still in use
 // (state above 8); the count stops at the first room that is not
-ARM s32 groupSelectUIView::getNumOfRoom(void) const {
+s32 groupSelectUIView::getNumOfRoom(void) const {
     s32 count;
     u32 i;
 

@@ -7,7 +7,7 @@
 //   tlpInit
 
 // Telop box initialization: clears the work blocks and sets up the telop window; returns 0 (the telop states run next)
-ARM int tlpInit(void) {
+int tlpInit(void) {
     MsgWork *telop = &telopBox;
     u32 idMask = 0x7fff;
     u8 initMode = 2;

@@ -7,7 +7,7 @@
 // Set13 actor, second unit (module set13). Address -> name:
 //   0x020645a4 set13_wait (original name)
 
-ARM void set13_wait(Entity *e) {
+void set13_wait(Entity *e) {
     u32 bits;
 
     bits = VARS(Vars_Set13, e)->typeBits;

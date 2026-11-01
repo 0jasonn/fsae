@@ -7,7 +7,7 @@
 extern "C" void Os_IrqDisabledFlush(void);
 extern "C" void Os_ThreadSwitch(void);
 
-ARM void Os_IrqDisabledFlush(void) {
+void Os_IrqDisabledFlush(void) {
     u32 state;
 
     state = OS_DisableInterrupts();

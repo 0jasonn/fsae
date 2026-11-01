@@ -6,5 +6,5 @@
 
 // KnifeInfoGetter::noop() (0x020a16c0): does nothing
 extern "C" void Knife_Message_KnifeInfoGetter_noop(void *a);
-ARM void Knife_Message_KnifeInfoGetter_noop(void *a) {
+void Knife_Message_KnifeInfoGetter_noop(void *a) {
 }

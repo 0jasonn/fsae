@@ -6,5 +6,5 @@
 
 // PictogramRenderer::noop() (0x020a48cc): does nothing
 extern "C" void Knife_Message_PictogramRenderer_noop(void *a);
-ARM void Knife_Message_PictogramRenderer_noop(void *a) {
+void Knife_Message_PictogramRenderer_noop(void *a) {
 }

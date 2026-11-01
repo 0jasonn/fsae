@@ -10,7 +10,7 @@ extern "C" void Frame_PopR3ToR7Return(void);
 extern "C" u32 Bits_CountLeadingZeros(u32 value);
 
 // 0x0200bf40: epilogue for a frame of 0xa4 bytes, restores r4-r11 and returns.
-ARM asm void Frame_AddSp0xa4PopR4R11(void) {
+asm void Frame_AddSp0xa4PopR4R11(void) {
     add sp, sp, #0xa4
     ldmia sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
 }

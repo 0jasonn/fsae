@@ -9,7 +9,7 @@
 // Cell codes of a player: u16 entries at 0x40, 0x44, ... 0x80 (every other halfword of the player record).
 #define CELL_AT(player, k) (*(u16 *)((u8 *)(player) + (k) * 2 + 0x40))
 
-ARM void AshimotoCheck(Entity *e) {
+void AshimotoCheck(Entity *e) {
     u16 cell;
     PlayerData *player;
     int base;

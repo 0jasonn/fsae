@@ -2,7 +2,7 @@
 #include "enemy/em26.h"
 #include "global.h"
 
-ARM void BubbleReset(Entity *e) {
+void BubbleReset(Entity *e) {
     Entity *bubble = GetEnemyWork(0x26);
     if (bubble == NULL) {
         return;

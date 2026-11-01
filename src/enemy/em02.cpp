@@ -11,15 +11,15 @@ extern const EntityFunc em02_actions[];
 extern const EntityFunc em02_normalActions[];
 extern const u8 em02_hitbox[];
 
-ARM void em02_main(Entity *e) {
+void em02_main(Entity *e) {
     EnemyFunctionHandler(e, em02_actions);
 }
 
-ARM void em02_normal(Entity *e) {
+void em02_normal(Entity *e) {
     em02_normalActions[e->action](e);
 }
 
-ARM void em02_damage(Entity *e) {
+void em02_damage(Entity *e) {
     if (e->health != 0 && VARS(Vars_02030790, e)->lastHealth != e->health) {
         e->action = 6;
         return;
@@ -27,7 +27,7 @@ ARM void em02_damage(Entity *e) {
     GenericKnockback(e, em02_actions);
 }
 
-ARM void em02_init(Entity *e) {
+void em02_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
     e->hitbox = em02_hitbox;
@@ -37,7 +37,7 @@ ARM void em02_init(Entity *e) {
     VARS(Vars_02030790, e)->lastHealth = e->health;
 }
 
-ARM void em02_wait(Entity *e) {
+void em02_wait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -48,7 +48,7 @@ ARM void em02_wait(Entity *e) {
     InitAnimationForceUpdate(e, (e->direction >> 3) + 1);
 }
 
-ARM void em02_move(Entity *e) {
+void em02_move(Entity *e) {
     if (--e->timer != 0) {
         if (e->frame == 0) {
             func_020852ec(e);
@@ -66,7 +66,7 @@ ARM void em02_move(Entity *e) {
     InitAnimationForceUpdate(e, 5);
 }
 
-ARM void em02_vanish(Entity *e) {
+void em02_vanish(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
         return;
@@ -80,7 +80,7 @@ ARM void em02_vanish(Entity *e) {
     e->spriteSettings.b0 = 0;
 }
 
-ARM void em02_vwait(Entity *e) {
+void em02_vwait(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -89,7 +89,7 @@ ARM void em02_vwait(Entity *e) {
     InitAnimationForceUpdate(e, 6);
 }
 
-ARM void em02_appear(Entity *e) {
+void em02_appear(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
         return;

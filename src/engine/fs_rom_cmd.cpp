@@ -26,7 +26,7 @@ extern "C" void G3C_Direct1(u16 value);
 // cmd 9 and 10 lock the ROM or switch to direct mode with the value and give 0. Other values give 0x102.
 extern "C" s32 FsRom_Command(FsRomCmdCtx *ctx, s32 cmd);
 
-ARM s32 FsRom_Command(FsRomCmdCtx *ctx, s32 cmd) {
+s32 FsRom_Command(FsRomCmdCtx *ctx, s32 cmd) {
     switch (cmd) {
     case 9:
         CARD_LockRom((u16)data_021297b8.value);

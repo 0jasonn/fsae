@@ -7,7 +7,7 @@
 //   groupSelectUIView::removeRoomPane (0x020b0b40)
 
 // groupSelectUIView::removeRoomPane (0x020b0b40): removes a room from the list and moves the rooms behind it up one row
-ARM void groupSelectUIView::removeRoomPane(RoomInfo *room) {
+void groupSelectUIView::removeRoomPane(RoomInfo *room) {
     u32 i;
     u32 found;
     RoomInfo *moved;

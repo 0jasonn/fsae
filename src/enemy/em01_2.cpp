@@ -4,7 +4,7 @@
 
 void dirSeqSet(Entity *e);
 
-ARM void em01_stop(Entity *e) {
+void em01_stop(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0x80) {
         e->timer = 0x3c;
@@ -13,7 +13,7 @@ ARM void em01_stop(Entity *e) {
 }
 
 
-ARM void dirSeqSet(Entity *e) {
+void dirSeqSet(Entity *e) {
     u8 animState = EmCharDir2(e->direction);
 
     if (animState == 0xff || animState == e->animationState) {

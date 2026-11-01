@@ -10,7 +10,7 @@ extern "C" void Os_LinkThreadAndFlush(OsThreadRec *thread);
 
 // Os_LinkThreadAndFlush(thread) (0x02017a5c): with interrupts off, links thread to the current thread's queue (when thread
 // is not NULL) and clears the state word of the current thread, then runs Os_ThreadSwitch and restores the interrupts.
-ARM void Os_LinkThreadAndFlush(OsThreadRec *thread) {
+void Os_LinkThreadAndFlush(OsThreadRec *thread) {
     u32 state;
     OsThreadRec *current;
 

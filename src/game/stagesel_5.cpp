@@ -3,7 +3,7 @@
 
 // stagesel_init0, 0x0207868c. Stage select setup, run once per frame by the state in data_0212c4dc:
 // 0 loads the graphics, 1 waits for the wireless check, 2 waits for the partner and sets their player flags.
-ARM void stagesel_init0(void) {
+void stagesel_init0(void) {
     switch (data_0212c4dc) {
     case 0: {
         u16 loadIndex = 0x14;

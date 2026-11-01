@@ -2,13 +2,13 @@
 #include "engine/misc_d.h"
 #include "global.h"
 
-ARM void OpeningTask(void) {
+void OpeningTask(void) {
     Random();
     data_02104a24[data_0212c500]();
     mist_effect();
 }
 
-ARM s32 OpeningTaskCanPrepareFinalize(void) {
+s32 OpeningTaskCanPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
     for (head = data_0212c6b0; head < data_0212c6f0; head++) {
@@ -26,7 +26,7 @@ ARM s32 OpeningTaskCanPrepareFinalize(void) {
 }
 
 // Marks type-0 tagged entities as subtimer 1, then deletes the type-5 tagged ones.
-ARM void OpeningTaskPrepareFinalize(void) {
+void OpeningTaskPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
     for (head = data_0212c6b0; head < data_0212c6f0; head++) {
@@ -61,7 +61,7 @@ ARM void OpeningTaskPrepareFinalize(void) {
     }
 }
 
-ARM void op_init(void) {
+void op_init(void) {
     u32 bankValue = 0x80010000;
     s32 slotIndex;
     s32 setupIndexA;
@@ -154,7 +154,7 @@ ARM void op_init(void) {
 }
 
 // Steps the effect timer and scans mistStepTable for the next value to write (guess: a 16-bit value table).
-ARM void mist_effect(void) {
+void mist_effect(void) {
     u8 stepIndex;
     u16 stepValue;
     if (data_021349c0[EFFECT_STATE_ACTIVE] != 0) {
@@ -185,7 +185,7 @@ ARM void mist_effect(void) {
     data_021349c0[EFFECT_STATE_ACTIVE] = 1;
 }
 
-ARM void color_control(void) {
+void color_control(void) {
     u8 *base;
     if (data_021349c0[EFFECT_STATE_ACTIVE] == 0) {
         return;
@@ -201,7 +201,7 @@ ARM void color_control(void) {
     title_MakeFadeBuff256(data_0212c5ac.blendColor, data_021349c0[EFFECT_STATE_LEVEL] << 4);
 }
 
-ARM void op_demo_skip(void) {
+void op_demo_skip(void) {
     if (data_0212c500 != 1) {
         return;
     }
@@ -216,11 +216,11 @@ ARM void op_demo_skip(void) {
     FadeSet(3, 0x20);
 }
 
-ARM s32 is_op_demo_end(void) {
+s32 is_op_demo_end(void) {
     return data_0212c500 == 2;
 }
 
-ARM void op_demo(void) {
+void op_demo(void) {
     data_02104a40[data_0212c4dc]();
     data_0212c564();
     func_020830ec();

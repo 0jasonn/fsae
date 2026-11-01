@@ -10,6 +10,6 @@ typedef struct Vars_Set3d {
     /* 68 */ u32 waitCount;
 } Vars_Set3d;
 
-ARM void set3d_setWaitOne(Entity *e) {
+void set3d_setWaitOne(Entity *e) {
     VARS(Vars_Set3d, e)->waitCount = 1;
 }

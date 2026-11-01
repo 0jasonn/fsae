@@ -12,7 +12,7 @@ extern const u8 em01_hitbox[];
 
 void dirSeqSet(Entity *e);
 
-ARM void Em01(Entity *e) {
+void Em01(Entity *e) {
     func_02084700(e);
     em01_actions[func_02084a30(e)](e);
     func_0208ae30(e);
@@ -21,12 +21,12 @@ ARM void Em01(Entity *e) {
 }
 
 
-ARM void em01_normal(Entity *e) {
+void em01_normal(Entity *e) {
     em01_normalActions[e->action](e);
 }
 
 
-ARM void em01_init(Entity *e) {
+void em01_init(Entity *e) {
     u8 nextAction;
 
     e->spriteSettings.b0 = 1;
@@ -40,7 +40,7 @@ ARM void em01_init(Entity *e) {
     e->action = nextAction;
 }
 
-ARM void em01_wait(Entity *e) {
+void em01_wait(Entity *e) {
     u8 direction;
     u8 animState;
     u8 nextAction;

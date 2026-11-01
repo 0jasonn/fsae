@@ -33,7 +33,7 @@ extern "C" int demoWaitCk(void);
 // DemoTask (0x0202a78c): phase 0 loads the demo graphics and palette, starts the display and waits;
 // 1 starts the link and waits for the timer, then fades; 2 leaves phase 3 when the blend is done;
 // 3 waits and fades; 4 hands over to task 7 when the blend is done.
-ARM void DemoTask(void) {
+void DemoTask(void) {
     u32 *dispCnt;
 
     switch (data_0212c4dc) {
@@ -78,7 +78,7 @@ ARM void DemoTask(void) {
 
 // demoWaitCk (0x0202a8bc): does nothing while the blend runs. Otherwise counts the timer down and moves to the next
 // phase (returns 1) once the timer is 0 or data_0212c510 is set; returns 0 while waiting.
-ARM int demoWaitCk(void) {
+int demoWaitCk(void) {
     if (data_0212c5ac != 0) {
         return 0;
     }
@@ -91,7 +91,7 @@ ARM int demoWaitCk(void) {
 }
 
 // DemoBgBuffClear (0x0202a92c): clears the two neighbour grids (0xb004 bytes each).
-ARM void DemoBgBuffClear(void) {
+void DemoBgBuffClear(void) {
     extern u8 data_02158fa0[];
     extern u8 data_02163fa4[];
 

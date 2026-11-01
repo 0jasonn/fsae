@@ -6,12 +6,12 @@
 // write_native_init_047450 is a bare return; named write_native_init_047450.
 
 // Writes x and y into the two halves of a cell position pair (rewrite with weight 0x4000).
-ARM void write_cell(u16 *pos, u16 x, u16 y) {
+void write_cell(u16 *pos, u16 x, u16 y) {
     RewCellOne(x, pos[0], 0x4000);
     RewCellOne(y, pos[1], 0x4000);
 }
 
-ARM void write_native_init_04711c(u8 param) {
+void write_native_init_04711c(u8 param) {
     if (Random() & 1) {
         write_cell(cellPos_c0fe, 0x447, 0x43e);
     } else {
@@ -35,7 +35,7 @@ ARM void write_native_init_04711c(u8 param) {
     }
 }
 
-ARM void write_native_init_0471f8(u8 param) {
+void write_native_init_0471f8(u8 param) {
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_445d, param);
     } else {
@@ -48,7 +48,7 @@ ARM void write_native_init_0471f8(u8 param) {
     }
 }
 
-ARM void write_native_init_04725c(u8 param) {
+void write_native_init_04725c(u8 param) {
     if (Random() & 1) {
         MultiEventSet(eventList_e32a, 0, 0, param);
     } else {
@@ -71,7 +71,7 @@ ARM void write_native_init_04725c(u8 param) {
     }
 }
 
-ARM void write_native_init_047334(u8 param) {
+void write_native_init_047334(u8 param) {
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_f23a, param);
     } else {
@@ -84,7 +84,7 @@ ARM void write_native_init_047334(u8 param) {
     }
 }
 
-ARM void write_native_init_047398(u8 param) {
+void write_native_init_047398(u8 param) {
     switch (Random() % 3) {
     case 0:
         RandomBlockSet(nativeInitList_f7c9, param);
@@ -98,7 +98,7 @@ ARM void write_native_init_047398(u8 param) {
     }
 }
 
-ARM void write_native_init_047414(u8 param) {
+void write_native_init_047414(u8 param) {
     if (Random() & 1) {
         RandomBlockSet(nativeInitList_fb76, param);
     } else {
@@ -106,5 +106,5 @@ ARM void write_native_init_047414(u8 param) {
     }
 }
 
-ARM void write_native_init_047450(u8 param) {
+void write_native_init_047450(u8 param) {
 }

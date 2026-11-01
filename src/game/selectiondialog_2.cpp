@@ -38,7 +38,7 @@ typedef struct KnifeSelectDialog {
 
 // selectionDialog::isModal() const (0x020a1d08): true unless the dialog is idle or finished
 extern "C" BOOL Knife_Message_selectionDialog_isModal(const void *a);
-ARM BOOL Knife_Message_selectionDialog_isModal(const void *a) {
+BOOL Knife_Message_selectionDialog_isModal(const void *a) {
     const KnifeSelectDialog *self = (const KnifeSelectDialog *)a;
 
     if (self->state == 0 || self->state == 6) {
@@ -49,7 +49,7 @@ ARM BOOL Knife_Message_selectionDialog_isModal(const void *a) {
 
 // selectionDialog::getResult() const (0x020a1d20): the choice once the dialog is finished, else 0
 extern "C" u8 Knife_Message_selectionDialog_getResult(const void *a);
-ARM u8 Knife_Message_selectionDialog_getResult(const void *a) {
+u8 Knife_Message_selectionDialog_getResult(const void *a) {
     const KnifeSelectDialog *self = (const KnifeSelectDialog *)a;
 
     if (self->state != 6) {
@@ -60,7 +60,7 @@ ARM u8 Knife_Message_selectionDialog_getResult(const void *a) {
 
 // selectionDialog::update_open() (0x020a1d34): opens the dialog by 0x200 per frame, returns true when it is fully open
 extern "C" BOOL Knife_Message_selectionDialog_update_open(void *a);
-ARM BOOL Knife_Message_selectionDialog_update_open(void *a) {
+BOOL Knife_Message_selectionDialog_update_open(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 
     self->timer += self->speed;

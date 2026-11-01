@@ -18,7 +18,7 @@ extern "C" void m4aSongNumSetParam(u16 value, u16 mask, s32 current);
 
 // volumeSet (0x02076f0c)
 extern "C" void volumeSet(u32 volume);
-ARM void volumeSet(u32 volume) {
+void volumeSet(u32 volume) {
     if (soundVolumeState.enabled == 0) {
         return;
     }
@@ -27,7 +27,7 @@ ARM void volumeSet(u32 volume) {
 
 // SoundInit (0x02076f40): clears the state, then sets the default volume
 extern "C" void SoundInit(void);
-ARM void SoundInit(void) {
+void SoundInit(void) {
     func_02029a50(&soundVolumeState, 8);
     soundVolumeState.unk_02 = 0;
     soundVolumeState.volume = 0x7f;
@@ -36,7 +36,7 @@ ARM void SoundInit(void) {
 // PlSoundReq (0x02076f6c): requests a sound. For a type 1 object that belongs to another player, the id is moved to
 // the upper half of the range (ids below 0xc8 get 0xc8 added).
 extern "C" void PlSoundReq(Entity *e, u32 sound);
-ARM void PlSoundReq(Entity *e, u32 sound) {
+void PlSoundReq(Entity *e, u32 sound) {
     u8 playerIndex;
 
     playerIndex = localPlayerIndex;

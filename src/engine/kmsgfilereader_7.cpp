@@ -16,7 +16,7 @@ const ICharacterEncodingScheme *getDefaultCES(Language language);
 }
 extern "C" void *Knife_Message_KMsgFileReader_offsetToAddress(Knife::Message::KMsgFileReader *self, u32 offset);
 extern "C" void Knife_Message_KMsgFileReader_convertTextHeaderToLocalizedText(Knife::Message::KMsgFileReader *self, void *dst, const void *header);
-ARM void Knife_Message_KMsgFileReader_convertTextHeaderToLocalizedText(Knife::Message::KMsgFileReader *self, void *dst, const void *header) {
+void Knife_Message_KMsgFileReader_convertTextHeaderToLocalizedText(Knife::Message::KMsgFileReader *self, void *dst, const void *header) {
     s32 i;
     u8 *out;
     const u8 *in;

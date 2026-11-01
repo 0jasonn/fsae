@@ -12,7 +12,7 @@
 //   0x02076988 BikkuriSet (original name)
 //   0x020769d4 ItemSet (original name)
 
-ARM Entity *GetSetWork(s32 kind, s32 type, s32 type2) {
+Entity *GetSetWork(s32 kind, s32 type, s32 type2) {
     Entity *e;
 
     e = GetObjWork();
@@ -26,7 +26,7 @@ ARM Entity *GetSetWork(s32 kind, s32 type, s32 type2) {
     return e;
 }
 
-ARM Entity *GetSetWorkSp(u8 kind, u8 type, u8 type2) {
+Entity *GetSetWorkSp(u8 kind, u8 type, u8 type2) {
     Entity *e;
 
     e = GetObjWorkSp();
@@ -40,7 +40,7 @@ ARM Entity *GetSetWorkSp(u8 kind, u8 type, u8 type2) {
     return e;
 }
 
-ARM void KemuriSet(Entity *e) {
+void KemuriSet(Entity *e) {
     Entity *spawn;
 
     spawn = GetSetWork(0xf, 2, 0);
@@ -50,7 +50,7 @@ ARM void KemuriSet(Entity *e) {
     ObjPosCopy(e, spawn);
 }
 
-ARM void SKemuriSet(Entity *e) {
+void SKemuriSet(Entity *e) {
     Entity *spawn;
 
     spawn = GetSetWork(0xf, 0x11, 0);
@@ -60,7 +60,7 @@ ARM void SKemuriSet(Entity *e) {
     ObjPosCopy(e, spawn);
 }
 
-ARM void HajikeSet(Entity *e) {
+void HajikeSet(Entity *e) {
     Entity *spawn;
 
     spawn = GetSetWork(0xf, 6, 0);
@@ -70,7 +70,7 @@ ARM void HajikeSet(Entity *e) {
     ObjPosCopy(e, spawn);
 }
 
-ARM void MizupochaSet(Entity *e) {
+void MizupochaSet(Entity *e) {
     Entity *spawn;
 
     spawn = GetSetWork(0xf, 0xb, 0);
@@ -80,7 +80,7 @@ ARM void MizupochaSet(Entity *e) {
     ObjPosCopy(e, spawn);
 }
 
-ARM void BikkuriSet(Entity *e, s32 a, s32 b) {
+void BikkuriSet(Entity *e, s32 a, s32 b) {
     Entity *spawn;
 
     spawn = GetSetWork(0xf, 0x18, 0x20);
@@ -90,7 +90,7 @@ ARM void BikkuriSet(Entity *e, s32 a, s32 b) {
     ObjPosCopyOfs32(e, spawn, (s16)a << 16, (s16)b << 16);
 }
 
-ARM Entity *ItemSet(Entity *e, u8 id) {
+Entity *ItemSet(Entity *e, u8 id) {
     Entity *spawn;
 
     spawn = GetSetWork(0, 0, 0);

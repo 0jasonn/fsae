@@ -16,7 +16,7 @@ namespace Knife {
 namespace Message {
 
 // getGrammaticalNumber(Language, int) (0x0208fea4): 0 for the singular, 1 for the plural. Language 0 has no number.
-ARM s32 getGrammaticalNumber(Language language, int value) {
+s32 getGrammaticalNumber(Language language, int value) {
     switch (language) {
     case 0:
         return 0;
@@ -46,7 +46,7 @@ ARM s32 getGrammaticalNumber(Language language, int value) {
 }
 
 // Separator between digit groups for a language and value (0x0208ff18), 0 for none (unnamed in the debug build)
-ARM s32 Knife_Message_getGroupSeparator(s32 language, s32 value) {
+s32 Knife_Message_getGroupSeparator(s32 language, s32 value) {
     switch (language) {
     case 0:
         return 0;
@@ -80,6 +80,6 @@ ARM s32 Knife_Message_getGroupSeparator(s32 language, s32 value) {
 }
 
 // Digits per group (0x0208ffb4): always 3 (unnamed in the debug build)
-ARM s32 Knife_Message_getGroupSize(s32 language, s32 value) {
+s32 Knife_Message_getGroupSize(s32 language, s32 value) {
     return 3;
 }

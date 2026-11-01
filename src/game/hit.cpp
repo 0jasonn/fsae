@@ -9,7 +9,7 @@ extern u8 data_0212ceb0[]; // one 0x94-byte entry per type (template data), read
 
 // Damage of a hit on e from t: deals the damage to the health (or heart), plays the hit sound for some kinds and returns
 // the damage left when it is positive.
-ARM u8 decVital(Entity *e, Entity *t) {
+u8 decVital(Entity *e, Entity *t) {
     s32 damage;
     u8 *typeEntry;
 
@@ -41,7 +41,7 @@ ARM u8 decVital(Entity *e, Entity *t) {
 
 // Halves the invincibility frames and the second timer of the object that holds the shield: e when e is kind 8 with id 9,
 // otherwise t.
-ARM void shiledCheck(Entity *e, Entity *t) {
+void shiledCheck(Entity *e, Entity *t) {
     if (e->objKind == 8 && e->objId == 9) {
         e->iframes = (s8)e->iframes >> 1;
         e->unk_42 = (s8)e->unk_42 >> 1;
@@ -52,7 +52,7 @@ ARM void shiledCheck(Entity *e, Entity *t) {
 }
 
 // Scales the invincibility of t by three quarters when t is a kind 8 or 1 object and e is a kind 8 or 1 object.
-ARM void nakamaCheckTgtOnly(Entity *e, Entity *t) {
+void nakamaCheckTgtOnly(Entity *e, Entity *t) {
     s8 frames;
 
     if (e->objKind != 8 && e->objKind != 1) {
@@ -68,7 +68,7 @@ ARM void nakamaCheckTgtOnly(Entity *e, Entity *t) {
 }
 
 // Scales the invincibility of both objects by three quarters when both are kind 8 or 1 objects.
-ARM void nakamaCheck(Entity *e, Entity *t) {
+void nakamaCheck(Entity *e, Entity *t) {
     s8 frames;
 
     if (e->objKind != 8 && e->objKind != 1) {
@@ -88,7 +88,7 @@ ARM void nakamaCheck(Entity *e, Entity *t) {
 }
 
 // Spawns an object of kind 0xf between e and t: the position and layer are the average of the two.
-ARM void setKokin(Entity *e, Entity *t) {
+void setKokin(Entity *e, Entity *t) {
     Entity *child;
 
     child = GetSetWork(0xf, 0x10, 0);

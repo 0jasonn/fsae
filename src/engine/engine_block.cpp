@@ -7,6 +7,6 @@ extern u8 data_02129d54[];
 
 extern "C" u8 *Engine_GetBlockD54(void);
 
-ARM u8 *Engine_GetBlockD54(void) {
+u8 *Engine_GetBlockD54(void) {
     return data_02129d54;
 }

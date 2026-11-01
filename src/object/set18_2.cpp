@@ -9,7 +9,7 @@
 
 // Removes the entity once its type bits are all set in the area mask. Otherwise counts down the frame timer, then
 // clears the cell (RewCell 0x10d) and clears the type bits from the area mask.
-ARM void set18_move(Entity *e) {
+void set18_move(Entity *e) {
     int cell;
     int dy;
     int dx;

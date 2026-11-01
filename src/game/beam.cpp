@@ -12,7 +12,7 @@ typedef struct Vars_Beam {
 } Vars_Beam;
 
 // Beam move: counts the lifetime down, moves, and removes the beam when it hits a wall, a target or the time runs out.
-ARM void beam_move(Entity *e) {
+void beam_move(Entity *e) {
     s32 lifetimeBefore;
     u16 *cellBase;
     s32 cell;

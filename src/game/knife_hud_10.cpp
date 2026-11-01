@@ -10,6 +10,6 @@
 
 // Knife_Hud_HudManager_getIconSlot (name invented): index of the player's icon slot, 7 + player
 extern "C" s32 Knife_Hud_HudManager_getIconSlot(const Knife::Hud::HudManager *self, int player);
-ARM s32 Knife_Hud_HudManager_getIconSlot(const Knife::Hud::HudManager *self, int player) {
+s32 Knife_Hud_HudManager_getIconSlot(const Knife::Hud::HudManager *self, int player) {
     return player + 7;
 }

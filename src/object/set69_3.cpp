@@ -19,7 +19,7 @@
 //   0x02076538 set69_type3 (original name)
 //   0x020765e0 set69_type4 (original name)
 
-ARM void type0_wait5(Entity *e) {
+void type0_wait5(Entity *e) {
     Entity *spawn;
     Entity *parent;
     u8 i;
@@ -66,7 +66,7 @@ ARM void type0_wait5(Entity *e) {
     e->action = 0xc;
 }
 
-ARM void type0_suikomi(Entity *e) {
+void type0_suikomi(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->child->health != 0) {
         return;
@@ -78,7 +78,7 @@ ARM void type0_suikomi(Entity *e) {
     MakeFadeBuff256(0x100);
 }
 
-ARM void type0_bgreset(Entity *e) {
+void type0_bgreset(Entity *e) {
     e->timer--;
     if (e->timer == 5) {
         MapLoad(data_020d70ec, 1);
@@ -93,7 +93,7 @@ ARM void type0_bgreset(Entity *e) {
     FadeSet(2, 4);
 }
 
-ARM void type0_wait6(Entity *e) {
+void type0_wait6(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->timer--;
     if (e->timer != 0) {
@@ -106,7 +106,7 @@ ARM void type0_wait6(Entity *e) {
     em12_typeMasks[0] = 1;
 }
 
-ARM void type0_down(Entity *e) {
+void type0_down(Entity *e) {
     s32 y;
 
     UpdateAnimationSingleFrame(e);
@@ -125,14 +125,14 @@ ARM void type0_down(Entity *e) {
     SoundReq(y + 0x2e);
 }
 
-ARM void type0_sasaru(Entity *e) {
+void type0_sasaru(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->action = 0x11;
     e->timer = 0x78;
     InitAnimationForceUpdate(e, 2);
 }
 
-ARM void type0_wait7(Entity *e) {
+void type0_wait7(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->timer--;
     if (e->timer != 0) {
@@ -143,11 +143,11 @@ ARM void type0_wait7(Entity *e) {
     func_020827a8(0xa);
 }
 
-ARM void set69_type1(Entity *e) {
+void set69_type1(Entity *e) {
     set69_type1Actions[e->action](e);
 }
 
-ARM void rr_type1_init_07623c(Entity *e) {
+void rr_type1_init_07623c(Entity *e) {
     Entity *spawn;
     Vars_Set69Type1 *v;
 
@@ -173,7 +173,7 @@ ARM void rr_type1_init_07623c(Entity *e) {
     ObjAffineSet2(&scrollArgs, e);
 }
 
-ARM void rr_type1_wait_0762f4(Entity *e) {
+void rr_type1_wait_0762f4(Entity *e) {
     Entity *spawn;
     Vars_Set69Type1 *v;
 
@@ -195,7 +195,7 @@ ARM void rr_type1_wait_0762f4(Entity *e) {
     ObjPosCopy(e, spawn);
 }
 
-ARM void type1_suikomare(Entity *e) {
+void type1_suikomare(Entity *e) {
     Vars_Set69Type1 *v;
 
     v = VARS(Vars_Set69Type1, e);
@@ -235,7 +235,7 @@ ARM void type1_suikomare(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set69_type2(Entity *e) {
+void set69_type2(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 1;
@@ -254,7 +254,7 @@ ARM void set69_type2(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set69_type3(Entity *e) {
+void set69_type3(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 1;
@@ -275,7 +275,7 @@ ARM void set69_type3(Entity *e) {
     e->spriteSettings.b0 ^= 1;
 }
 
-ARM void set69_type4(Entity *e) {
+void set69_type4(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 1;

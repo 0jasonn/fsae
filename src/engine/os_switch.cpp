@@ -25,7 +25,7 @@ extern u32 data_02129938[];
 // Os_ThreadSwitch() (0x02017650): switches the thread when the scheduler is not busy and the system is ready. A thread
 // that is not in state 2 is saved first (a nonzero save result returns to the saved thread). Then the callbacks at
 // +0 of the scheduler record and at data_02129938[3] run with (from, to), and the thread is loaded.
-ARM void Os_ThreadSwitch(void) {
+void Os_ThreadSwitch(void) {
     u32 *threadBase;
     u16 ready;
     void *from;

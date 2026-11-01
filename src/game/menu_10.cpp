@@ -3,7 +3,7 @@
 #include "game/menu.h"
 
 // Clears the nine cells (four halfwords each) and the three bytes and two halfwords after them.
-ARM void Menu_ClearCells(MenuCellWork *work) {
+void Menu_ClearCells(MenuCellWork *work) {
     s32 i;
 
     work->flag48 = 0;
@@ -20,7 +20,7 @@ ARM void Menu_ClearCells(MenuCellWork *work) {
 }
 
 // Starts the touch panel sampling with the calibration of the user info, then waits for the request to finish.
-ARM void Menu_StartTouch(void *callbackArg) {
+void Menu_StartTouch(void *callbackArg) {
     u8 info[8];
 
     TP_Init();

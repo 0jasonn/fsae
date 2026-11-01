@@ -25,7 +25,7 @@ extern "C" u32 WM_Disconnect(void *callback, u16 aid);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StepTimer4(void *result);
 extern char data_0211b274[];
 extern "C" void Knife_Comm_WirelessManager_update_child2idle(void *self);
-ARM void Knife_Comm_WirelessManager_update_child2idle(void *self) {
+void Knife_Comm_WirelessManager_update_child2idle(void *self) {
     WmDWork *w = (WmDWork *)self;
     u32 code;
 
@@ -53,7 +53,7 @@ ARM void Knife_Comm_WirelessManager_update_child2idle(void *self) {
 // update_reset: once the timer reaches 9999, clears the 15 child entries (stride 0x28 from +0x1a04) and returns to the
 // off state (state 2, timer 0, flag 0).
 extern "C" void Knife_Comm_WirelessManager_update_reset(void *self);
-ARM void Knife_Comm_WirelessManager_update_reset(void *self) {
+void Knife_Comm_WirelessManager_update_reset(void *self) {
     WmDWork *w = (WmDWork *)self;
     s32 i;
     u8 *child;

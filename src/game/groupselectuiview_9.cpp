@@ -8,7 +8,7 @@
 
 // groupSelectUIView::addRoomPane (0x020b0800): updates the room with the same id, or takes the first free slot for a
 // new room (copies its name, draws it and appends it to the list), then sorts the list
-ARM void groupSelectUIView::addRoomPane(const u8 *id, const u16 *name, u32 nameBytes, u8 nameIndex, u32 sortKey) {
+void groupSelectUIView::addRoomPane(const u8 *id, const u16 *name, u32 nameBytes, u8 nameIndex, u32 sortKey) {
     RoomUiIndexTable uiIndex;
     RoomInfo *room;
     RoomInfo *slot;

@@ -2,7 +2,7 @@
 #include "enemy/em2f.h"
 #include "global.h"
 
-ARM void em2f_stormSmashEnd(Entity *e) {
+void em2f_stormSmashEnd(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -20,7 +20,7 @@ ARM void em2f_stormSmashEnd(Entity *e) {
     e->spriteSettings.b14 = e->spriteSettings.b30;
 }
 
-ARM void em2f_fiveInitWait(Entity *e) {
+void em2f_fiveInitWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer == 0) {
         e->action = 0x1f;
@@ -28,7 +28,7 @@ ARM void em2f_fiveInitWait(Entity *e) {
     }
 }
 
-ARM void em2f_fiveAttackMove(Entity *e) {
+void em2f_fiveAttackMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((u16)(e->x.HALF.HI - 0x1f7) <= 2 && (u16)(e->y.HALF.HI - 0x1f7) <= 2) {
         e->action = 0x20;
@@ -45,7 +45,7 @@ ARM void em2f_fiveAttackMove(Entity *e) {
     GufuFuyusnd(e);
 }
 
-ARM void em2f_fiveAttackWait(Entity *e) {
+void em2f_fiveAttackWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -55,7 +55,7 @@ ARM void em2f_fiveAttackWait(Entity *e) {
     V(e)->attackCounter = em2f_fiveAttackCounts[Random() & 7];
 }
 
-ARM void em2f_fiveAttack(Entity *e) {
+void em2f_fiveAttack(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer == 0) {
         if (V(e)->attackCounter != 0) {
@@ -84,7 +84,7 @@ ARM void em2f_fiveAttack(Entity *e) {
     }
 }
 
-ARM void em2f_fiveMove(Entity *e) {
+void em2f_fiveMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->timer != 0) {
         e->timer--;
@@ -111,7 +111,7 @@ ARM void em2f_fiveMove(Entity *e) {
     }
 }
 
-ARM void em2f_die(Entity *e) {
+void em2f_die(Entity *e) {
     if (e->statusFlags != 0) {
         e->statusFlags = 0;
         e->timer = 0xb4;
@@ -152,7 +152,7 @@ ARM void em2f_die(Entity *e) {
     gufuBindPls();
 }
 
-ARM void em2f_dieWait(Entity *e) {
+void em2f_dieWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->spriteSettings.b0 ^= 1;
     gufuBindPls();
@@ -169,7 +169,7 @@ ARM void em2f_dieWait(Entity *e) {
     e->spriteSettings.b0 = 1;
 }
 
-ARM void em2f_dieDemo(Entity *e) {
+void em2f_dieDemo(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
 }

@@ -12,10 +12,10 @@
 //   0x02057fcc set0b_lift (original name)
 //   0x02057fec Set0c (original name)
 
-ARM void set_runAction(Entity *e) {
+void set_runAction(Entity *e) {
     data_02115398[e->action](e);
 }
 
-ARM void set00itemSetEntry(Entity *e) {
+void set00itemSetEntry(Entity *e) {
     set00itemSet(e);
 }

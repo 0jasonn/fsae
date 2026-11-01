@@ -5,7 +5,7 @@
 //   0x0207f830 tama07_remove
 
 // tama07_remove, 0x0207f830 (name a guess). Clears the parent's link to this actor and removes it.
-ARM void tama07_remove(Entity *e) {
+void tama07_remove(Entity *e) {
     if (e->parent != 0) {
         e->parent->child = 0;
     }

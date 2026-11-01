@@ -8,6 +8,6 @@
 
 extern const EntityFunc set14_stateTable[]; // indexed by e->action (was set14_stateTable)
 
-ARM void Set14(Entity *e) {
+void Set14(Entity *e) {
     set14_stateTable[e->action](e);
 }

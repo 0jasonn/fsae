@@ -6,7 +6,7 @@ extern EntityFunc oplogo_panelTable[];
 extern EntityFunc oplogo_youTable[];
 extern u8 data_0212c5ac;
 
-ARM void oplogo_shadow_move(Entity *e) {
+void oplogo_shadow_move(Entity *e) {
     s32 target;
     MoveDir(e);
     target = (e->type2 + 1) * 0x1a + 0x50;
@@ -19,11 +19,11 @@ ARM void oplogo_shadow_move(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void oplogo_panel(Entity *e) {
+void oplogo_panel(Entity *e) {
     oplogo_panelTable[e->action](e);
 }
 
-ARM void panel_init(Entity *e) {
+void panel_init(Entity *e) {
     u8 action = e->action;
     e->action = action + 1;
     *(u32 *)&e->spriteSettings |= 0x2000;
@@ -37,7 +37,7 @@ ARM void panel_init(Entity *e) {
     InitAnimationForceUpdate(e, (u8)(e->type2 + 4));
 }
 
-ARM void panel_wait(Entity *e) {
+void panel_wait(Entity *e) {
     MoveDir(e);
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
@@ -45,9 +45,9 @@ ARM void panel_wait(Entity *e) {
     }
 }
 
-ARM void panel_nop(Entity *e) {
+void panel_nop(Entity *e) {
 }
 
-ARM void oplogo_you(Entity *e) {
+void oplogo_you(Entity *e) {
     oplogo_youTable[e->action](e);
 }

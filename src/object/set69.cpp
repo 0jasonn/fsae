@@ -11,16 +11,16 @@
 //   0x02075b58 type0_kameradown (original name)
 //   0x02075ba0 type0_wait0 (original name)
 
-ARM void Set69(Entity *e) {
+void Set69(Entity *e) {
     set69_typeActions[e->type](e);
 }
 
-ARM void set69_type0(Entity *e) {
+void set69_type0(Entity *e) {
     set69_type0Actions[e->action](e);
     BindPlayers();
 }
 
-ARM void rr_type0_init_075a9c(Entity *e) {
+void rr_type0_init_075a9c(Entity *e) {
     e->action = 1;
     e->speed = 0x180;
     e->direction = 0x10;
@@ -31,12 +31,12 @@ ARM void rr_type0_init_075a9c(Entity *e) {
     rr_plset(e);
 }
 
-ARM void set69_type0_follow(Entity *e) {
+void set69_type0_follow(Entity *e) {
     e->action = 2;
     ObjPosCopy(e, e->parent);
 }
 
-ARM void type0_scrWait(Entity *e) {
+void type0_scrWait(Entity *e) {
     if (e->x.HALF.HI == *(s16 *)(data_0212c648 + 0x20) + 0x80 &&
         e->y.HALF.HI == *(s16 *)(data_0212c648 + 0x22) + 0x60) {
         FadeSet(2, 2);
@@ -45,7 +45,7 @@ ARM void type0_scrWait(Entity *e) {
     }
 }
 
-ARM void type0_kameradown(Entity *e) {
+void type0_kameradown(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -59,7 +59,7 @@ ARM void type0_kameradown(Entity *e) {
     e->timer = 0x1e;
 }
 
-ARM void type0_wait0(Entity *e) {
+void type0_wait0(Entity *e) {
     u8 i;
 
     e->timer--;

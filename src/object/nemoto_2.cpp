@@ -5,7 +5,7 @@
 // nemoto family (module nemoto), 0x0206c328 .. 0x0206c398.
 // Address -> name: 0x0206c328 nemoto_setdist (original setdist). Vars_Set40 holds savedX/savedY/value.
 
-ARM void nemoto_setdist(Entity *e) {
+void nemoto_setdist(Entity *e) {
     Vars_Set40 *v = VARS(Vars_Set40, e);
 
     switch (e->type) {

@@ -21,7 +21,7 @@ typedef struct WaveHandleFields {
 extern char data_0211b080[]; // WaveHandle vtable (rodata)
 
 extern "C" void *Knife_Sound_WaveHandle_WaveHandle(void *self);
-ARM void *Knife_Sound_WaveHandle_WaveHandle(void *self) {
+void *Knife_Sound_WaveHandle_WaveHandle(void *self) {
     WaveHandleFields *wave;
 
     wave = (WaveHandleFields *)self;

@@ -2,7 +2,7 @@
 #include "global.h"
 // Address -> name: 0x0202a128 BlockCopy.
 
-ARM void BlockCopy(u16 *dst, u16 *src, u16 width, u16 flags) {
+void BlockCopy(u16 *dst, u16 *src, u16 width, u16 flags) {
     u16 stride;
     u16 i;
 

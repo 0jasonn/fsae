@@ -9,6 +9,6 @@
 // Action table of effect_tokishin, effectTokishinTable
 extern const EntityFunc effectTokishinTable[];
 
-ARM void effect_tokishin(Entity *e) {
+void effect_tokishin(Entity *e) {
     effectTokishinTable[e->action](e);
 }

@@ -10,7 +10,7 @@ extern u8 data_0217a23c[];
 
 // fileSelUIView::viewWillApper() (0x020a761c): with the lobby flag set, the first child enters; otherwise the saved
 // entry is taken from the list, sent, and the top view enters
-ARM void fileSelUIView_viewWillApper(FileSelUIView *self) {
+void fileSelUIView_viewWillApper(FileSelUIView *self) {
     u8 *sendEntry;
 
     if (data_0217d23c[0xd0] != 0) {

@@ -11,7 +11,7 @@
 // Timer: u16 at 4 of data_021349c0 (ResultState). Shadow: u16 at 0x18 of data_0212c75c (DisplayShadow).
 
 // doorsel_shutter (0x0202adc8)
-ARM void doorsel_shutter(void) {
+void doorsel_shutter(void) {
     u8 step = data_0212c4dc;
 
     switch (step) {

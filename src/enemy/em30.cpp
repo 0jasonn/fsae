@@ -8,7 +8,7 @@ extern const EntityFunc em30_type0Table[];
 extern const s16 trigTable[];
 
 // moveInit (0x020421f8): fills the eight bytes at 0x78 with 0x88.
-ARM void moveInit(Entity *e) {
+void moveInit(Entity *e) {
     e->unk_6c[0x0c] = 0x88;
     e->unk_6c[0x0d] = 0x88;
     e->unk_6c[0x0e] = 0x88;
@@ -21,7 +21,7 @@ ARM void moveInit(Entity *e) {
 
 // Em30 (0x02042220): runs the handler for this type, copies the parent's state, and removes
 // this entity once the parent is gone.
-ARM void Em30(Entity *e) {
+void Em30(Entity *e) {
     em30_typeTable[e->type](e);
     if (e->parent->unk_6c[4] == 0xff) {
         PutObjWork(e);
@@ -40,7 +40,7 @@ ARM void Em30(Entity *e) {
 
 // em30_type0 (0x020422a8): runs the handler for this action, then places the entity at a fixed offset
 // from its parent, using the direction to index a table.
-ARM void em30_type0(Entity *e) {
+void em30_type0(Entity *e) {
     em30_type0Table[e->action](e);
     int dir = e->direction;
     e->x.HALF.HI = e->parent->x.HALF.HI + ((trigTable[dir] * 0x2c) >> 8);

@@ -21,7 +21,7 @@ extern "C" u32 Slot_RestoreFromStack(SlotWork *self);
 // Slot_RestoreFromStack(self) (0x0200c93c): with the stack words that end at base + offset (16 bytes less when flag is
 // set), walks down from the top and stores each word into the slot selected by its bit in mask, from slot 15 down. Then
 // top becomes base + offset. Returns the word at +0x54.
-ARM u32 Slot_RestoreFromStack(SlotWork *self) {
+u32 Slot_RestoreFromStack(SlotWork *self) {
     u32 offset;
     u32 *stackWord;
     s32 i;

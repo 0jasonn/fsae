@@ -7,7 +7,7 @@
 //   msgDie, tlpDie
 
 // Message box shutdown: starts the close animation and resets the state
-ARM int msgDie(void) {
+int msgDie(void) {
     statusUpdate((MSG_STATUS)0);
     data_0217d39c.windowMode = 4;
     data_0217d39c.state = 0;
@@ -15,7 +15,7 @@ ARM int msgDie(void) {
 }
 
 // Telop box shutdown: stops the telop window and releases the request
-ARM int tlpDie(void) {
+int tlpDie(void) {
     telopUpdate(0);
     telopBox.state = 0;
     telopRequest.active = 0;

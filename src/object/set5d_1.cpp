@@ -13,7 +13,7 @@ void ObjSetTargetWord(Entity *e, u16 value); // defined in src/game/npc.cpp, not
 
 extern const EntityFunc set5d_walk_states[]; // walk state table indexed by e->subAction
 
-ARM void set5d_init(Entity *e) {
+void set5d_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b14 = 2;
     e->spriteSettings.b30 = 2;
@@ -25,7 +25,7 @@ ARM void set5d_init(Entity *e) {
     e->action++;
 }
 
-ARM void set5d_wait(Entity *e) {
+void set5d_wait(Entity *e) {
     if (e->subAction == 0) {
         ObjSetTargetWord(e, 0);
         e->subAction++;
@@ -40,11 +40,11 @@ ARM void set5d_wait(Entity *e) {
     e->unk_28 = (Random() & 0xf0) + 1;
 }
 
-ARM void set5d_walk(Entity *e) {
+void set5d_walk(Entity *e) {
     set5d_walk_states[e->subAction](e);
 }
 
-ARM void set5d_walk_init(Entity *e) {
+void set5d_walk_init(Entity *e) {
     e->subAction++;
     e->timer = e->linkedEntity->unk_00[5];
     e->direction = e->linkedEntity->unk_00[6];
@@ -52,7 +52,7 @@ ARM void set5d_walk_init(Entity *e) {
     ObjSetTargetWord(e, 4);
 }
 
-ARM void set5d_walk_move(Entity *e) {
+void set5d_walk_move(Entity *e) {
     MoveDir(e);
     UpdateAnimationSingleFrame(e);
     e->timer--;
@@ -61,8 +61,8 @@ ARM void set5d_walk_move(Entity *e) {
     }
 }
 
-ARM void set5d_NoOp1(Entity *e) {
+void set5d_NoOp1(Entity *e) {
 }
 
-ARM void set5d_NoOp2(Entity *e) {
+void set5d_NoOp2(Entity *e) {
 }

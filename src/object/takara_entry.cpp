@@ -21,7 +21,7 @@ extern MapGridOrigin data_0212c648;
 // Registers e in the first free treasure entry, keyed by its cell (row in bits 6 and up, column below). Returns nothing.
 // Address 0x020772f0, original name unknown.
 extern "C" void takaraAddEntry(Entity *e, u8 handlerIndex);
-ARM void takaraAddEntry(Entity *e, u8 handlerIndex) {
+void takaraAddEntry(Entity *e, u8 handlerIndex) {
     TakaraEntry *entry;
     int i;
 

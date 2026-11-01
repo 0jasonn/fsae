@@ -40,7 +40,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void em30_type0_init(Entity *e) {
+void em30_type0_init(Entity *e) {
     if (setUde(e) == 0) {
         return;
     }
@@ -58,7 +58,7 @@ ARM void em30_type0_init(Entity *e) {
 // em30_type0_wait (0x02042398): when the timer runs out, picks a turn sign from the direction, takes a
 // remainder with a table value per player count, and goes to action 2 or 5 from the parent's flag bit for the type.
 
-ARM void em30_type0_wait(Entity *e) {
+void em30_type0_wait(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;

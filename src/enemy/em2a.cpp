@@ -2,7 +2,7 @@
 #include "enemy/em2a.h"
 #include "global.h"
 
-ARM void em02_div(Entity *e) {
+void em02_div(Entity *e) {
     s8 count = 0;
     Entity *first = GetEnemyWork(3);
     if (first != NULL) {
@@ -33,7 +33,7 @@ ARM void em02_div(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void func_02030ae4(int index) {
+void func_02030ae4(int index) {
     data_0212ceb0[index].state = 6;
     data_0212ceb0[index].stateTimer = 1;
     PlayerData *other = NULL;
@@ -48,7 +48,7 @@ ARM void func_02030ae4(int index) {
     }
 }
 
-ARM void Em2a(Entity *e) {
+void Em2a(Entity *e) {
     if (e->type2 & 0x80) {
         em2a_core(e);
         return;
@@ -138,7 +138,7 @@ ARM void Em2a(Entity *e) {
     em2a_actions[e->action](e);
 }
 
-ARM void em2a_init(Entity *e) {
+void em2a_init(Entity *e) {
     Entity *child = GetSetWork(0x65, 0, 0);
     if (child != NULL) {
         child->parent = e;
@@ -163,7 +163,7 @@ ARM void em2a_init(Entity *e) {
     CockpitOff();
 }
 
-ARM void em2a_demowait(Entity *e) {
+void em2a_demowait(Entity *e) {
     if (e->subtimer != 0) {
         if (e->subtimer == 0x3c) {
             data_0212c648 = e->child;
@@ -195,7 +195,7 @@ ARM void em2a_demowait(Entity *e) {
     efectset(e);
 }
 
-ARM void em2a_jumpmove2(Entity *e) {
+void em2a_jumpmove2(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 0) {
         return;

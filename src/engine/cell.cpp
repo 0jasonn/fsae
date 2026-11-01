@@ -6,7 +6,7 @@
 //   SearchCellTbl
 
 // Looks key up in a list of (key, value) pairs ending with 0xffff; returns the value or 0xffff when not found
-ARM u16 SearchCellTbl(const u16 *table, u16 key) {
+u16 SearchCellTbl(const u16 *table, u16 key) {
     u16 result;
 
     result = 0xffff;

@@ -11,7 +11,7 @@
 extern "C" void *FindByteForward(void *buf, u8 value, u32 size);
 
 extern "C" int hex_ascii_chg0(int a, int b, unsigned long c, void *d);
-ARM int hex_ascii_chg0(int a, int b, unsigned long c, void *d) {
+int hex_ascii_chg0(int a, int b, unsigned long c, void *d) {
     char fmtWide[5] = "%02d";
     char fmtNarrow[4] = "%2d";
     int len;

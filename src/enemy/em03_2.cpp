@@ -2,7 +2,7 @@
 #include "enemy/em03.h"
 #include "global.h"
 
-ARM void em03_init(Entity *e) {
+void em03_init(Entity *e) {
     e->unk_2e = 2;
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b4 = 1;
@@ -14,7 +14,7 @@ ARM void em03_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em03_wait(Entity *e) {
+void em03_wait(Entity *e) {
     if (UpdateGravity(e, 0x2000) != 0) {
         return;
     }
@@ -26,7 +26,7 @@ ARM void em03_wait(Entity *e) {
     InitAnimationForceUpdate(e, 1);
 }
 
-ARM void em03_tame(Entity *e) {
+void em03_tame(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame != 0x80) {
         return;
@@ -43,7 +43,7 @@ ARM void em03_tame(Entity *e) {
     e->subAction = 0;
 }
 
-ARM void em03_jumpup(Entity *e) {
+void em03_jumpup(Entity *e) {
     func_020847a0(e);
     UpdateGravity(e, 0x2000);
     if (e->subAction == 0) {
@@ -56,7 +56,7 @@ ARM void em03_jumpup(Entity *e) {
     }
 }
 
-ARM void em03_jumpdown(Entity *e) {
+void em03_jumpdown(Entity *e) {
     func_020847a0(e);
     if (UpdateGravity(e, 0x2000) != 0) {
         return;
@@ -65,7 +65,7 @@ ARM void em03_jumpdown(Entity *e) {
     InitAnimationForceUpdate(e, 4);
 }
 
-ARM void em03_jumpend(Entity *e) {
+void em03_jumpend(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame != 0x80) {
         return;

@@ -9,7 +9,7 @@
 // Pane_calcScaledY(out, a, scale, param) (0x020b5a70, provisional name): out[index] = base * (scale - 1) for the entry
 // index (0 or 1) of param, out[other] = (base + span) * (scale - 1) - (a[1] - 1) * span for the other entry
 extern "C" void Pane_calcScaledY(s16 *out, const s16 *a, const s16 *scale, const PaneScaleParam *param);
-ARM void Pane_calcScaledY(s16 *out, const s16 *a, const s16 *scale, const PaneScaleParam *param) {
+void Pane_calcScaledY(s16 *out, const s16 *a, const s16 *scale, const PaneScaleParam *param) {
     u8 flag;
     int index;
     int other;

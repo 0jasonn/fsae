@@ -21,7 +21,7 @@ extern "C" void *EL_GetGlobalAdr(u32 offset, u32 size);
 
 // TextRenderer::TextRenderer() (0x020a4f44): sets the vtables, constructs the tokenizer and clears the pool
 extern "C" void *Knife_Message_TextRenderer_TextRenderer(void *self);
-ARM void *Knife_Message_TextRenderer_TextRenderer(void *self) {
+void *Knife_Message_TextRenderer_TextRenderer(void *self) {
     TextRenderer *renderer = (TextRenderer *)self;
 
     renderer->vtbl = data_021249ac;
@@ -34,7 +34,7 @@ ARM void *Knife_Message_TextRenderer_TextRenderer(void *self) {
 
 // TextRenderer::~TextRenderer() (0x020a4f80): the base destructor, finalizes and destroys the tokenizer
 extern "C" void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4f80(void *self);
-ARM void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4f80(void *self) {
+void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4f80(void *self) {
     TextRenderer *renderer = (TextRenderer *)self;
 
     renderer->vtbl = data_021249ac;
@@ -46,7 +46,7 @@ ARM void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4f80(void *self) {
 
 // TextRenderer::~TextRenderer() (0x020a4fb4): the deleting destructor, the same as 0x020a4f80 and then operator delete
 extern "C" void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4fb4(void *self);
-ARM void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4fb4(void *self) {
+void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4fb4(void *self) {
     TextRenderer *renderer = (TextRenderer *)self;
 
     renderer->vtbl = data_021249ac;
@@ -58,7 +58,7 @@ ARM void *Knife_Message_TextRenderer_dtor_TextRenderer_0a4fb4(void *self) {
 }
 
 // TextRenderer::initialize(unsigned long) (0x020a4ff0): allocates the pool (a multiple of 0x20 bytes) and sets up the tokenizer
-ARM BOOL TextRenderer::initialize(u32 size) {
+BOOL TextRenderer::initialize(u32 size) {
     void *app;
 
     finalize();
@@ -82,7 +82,7 @@ ARM BOOL TextRenderer::initialize(u32 size) {
 }
 
 // TextRenderer::finalize() (0x020a507c): frees the pool, clears the buffers and the context
-ARM void TextRenderer::finalize(void) {
+void TextRenderer::finalize(void) {
     Knife_Message_TextTokenizer_finalize(tokenizer);
     if (pool != NULL) {
         func_0208e188(pool);

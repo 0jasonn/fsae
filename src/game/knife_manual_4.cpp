@@ -10,7 +10,7 @@ namespace Knife {
 
 // Knife::i_postprocManual() (0x020c7e58): frees the three blocks and the single block of the manual object, then
 // restores the graphics settings, clears the object and unlocks the sleep state
-ARM void i_postprocManual(void) {
+void i_postprocManual(void) {
     s32 i;
 
     for (i = 0; i < 3; i++) {

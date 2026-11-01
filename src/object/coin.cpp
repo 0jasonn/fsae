@@ -6,6 +6,6 @@
 //   0x02058890 coin (original name)
 //   0x020588ac coin_init: not matching yet, see scratch/agentF/nonmatching
 
-ARM void coin(Entity *e) {
+void coin(Entity *e) {
     coin_actions[e->action](e);
 }

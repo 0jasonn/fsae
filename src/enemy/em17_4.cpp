@@ -9,7 +9,7 @@ extern const u16 em17_wallMaskTable[];
 
 // Batabata: a wall hit while the actor is in the air takes it to the lift pose, otherwise it falls with gravity (the
 // fall stops at zero height, then the actor is walking again on the ground with its normal hitbox).
-ARM void em17_batabata(Entity *e) {
+void em17_batabata(Entity *e) {
     func_020847c8(e);
     UpdateAnimationSingleFrame(e);
     if (e->wallFlags & em17_wallMaskTable[e->direction >> 3]) {
@@ -39,7 +39,7 @@ ARM void em17_batabata(Entity *e) {
 
 // Jump: starts the jump animation with a height of -4 when it is not playing, applies gravity, and switches to the
 // landing animation when the vertical speed turns negative.
-ARM void em17_jump(Entity *e) {
+void em17_jump(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->animationState != 2) {
         e->z.HALF.HI = -4;

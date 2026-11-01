@@ -5,7 +5,7 @@
 // Set3e actor, second unit (module set3e). Address -> name:
 //   0x0205dc1c set3e_move
 
-ARM void set3e_move(Entity *e) {
+void set3e_move(Entity *e) {
     u8 code;
 
     if (e->speed < 0x300) {

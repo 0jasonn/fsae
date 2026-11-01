@@ -5,7 +5,7 @@
 // effect_rock_move (0x0206e688), original name effect_rock_move(OBJ_WORK_*). Module effect_rock.
 // effectPhaseTable[type2] counts the frames of the rock, the position of the object follows it.
 
-ARM void effect_rock_move(Entity *e) {
+void effect_rock_move(Entity *e) {
     s32 phase;
 
     e->unk_1b = 0xb1;

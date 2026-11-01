@@ -6,7 +6,7 @@
 
 // Tama0d, 0x0207cea8. A contact flagged with bit 7 (and at least 0x84) releases a random child and removes the
 // actor; otherwise runs the action of the table.
-ARM void Tama0d(Entity *e) {
+void Tama0d(Entity *e) {
     if ((e->contactFlags & 0x80) != 0 && e->contactFlags >= 0x84) {
         Entity *child;
         u8 kind = data_020dcad9[Random() & 0xf];
@@ -27,7 +27,7 @@ ARM void Tama0d(Entity *e) {
 }
 
 // tama0d_init, 0x0207cf44. Starts the actor with a random speed from the table and the first animation.
-ARM void tama0d_init(Entity *e) {
+void tama0d_init(Entity *e) {
     u32 settings;
     e->action = 1;
     settings = *(u32 *)&e->spriteSettings;
@@ -44,7 +44,7 @@ ARM void tama0d_init(Entity *e) {
 
 // tama0d_move, 0x0207cfcc. Counts the timer down (at zero the statusFlags bit 7 is set); when it stops rising it
 // starts the falling action.
-ARM void tama0d_move(Entity *e) {
+void tama0d_move(Entity *e) {
     s32 timer = e->timer - 1;
     e->timer = timer;
     if ((timer & 0xff) == 0) {
@@ -61,7 +61,7 @@ ARM void tama0d_move(Entity *e) {
 }
 
 // tama0d_move2, 0x0207d034. Falls to the next action when the gravity update reports the ground.
-ARM void tama0d_move2(Entity *e) {
+void tama0d_move2(Entity *e) {
     UpdateAnimationSingleFrame(e);
     MoveDir(e);
     if (UpdateGravity(e, 0x1800) == 0) {
@@ -71,7 +71,7 @@ ARM void tama0d_move2(Entity *e) {
 }
 
 // tama0d_move3, 0x0207d06c. Falls to the last action and sets the unk_5c value.
-ARM void tama0d_move3(Entity *e) {
+void tama0d_move3(Entity *e) {
     UpdateAnimationSingleFrame(e);
     MoveDir(e);
     if (UpdateGravity(e, 0x1800) != 0) {
@@ -83,7 +83,7 @@ ARM void tama0d_move3(Entity *e) {
 }
 
 // tama0d_move4, 0x0207d0b4. Takes the animation bit from frameCounter and removes the actor when it lands.
-ARM void tama0d_move4(Entity *e) {
+void tama0d_move4(Entity *e) {
     e->spriteSettings.b0 = *(u16 *)frameCounter & 1;
     UpdateAnimationSingleFrame(e);
     MoveDir(e);

@@ -13,18 +13,18 @@
 //   0x02075528 rr_poscopy (original name)
 //   0x0207553c plStCheck (original name)
 
-ARM void set66_type1(Entity *e) {
+void set66_type1(Entity *e) {
     set66_type1Actions[e->action](e);
 }
 
-ARM void rr_type1_init_07525c(Entity *e) {
+void rr_type1_init_07525c(Entity *e) {
     e->action = 1;
     e->timer = 0x1e;
     e->spriteSettings.b14 = 3;
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void type1_charload(Entity *e) {
+void type1_charload(Entity *e) {
     Vars_Set66 *v;
 
     if (e->timer != 0) {

@@ -2,7 +2,7 @@
 #include "enemy/em13.h"
 #include "global.h"
 
-ARM void em13_getnextpos(Entity *e) {
+void em13_getnextpos(Entity *e) {
     if (!em13_getpos(e)) {
         return;
     }
@@ -13,7 +13,7 @@ ARM void em13_getnextpos(Entity *e) {
     func_0208ae30(e);
 }
 
-ARM void em13_search(Entity *e) {
+void em13_search(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         Entity *child = func_02084f98(e, 0x60, 0x40);
@@ -33,7 +33,7 @@ ARM void em13_search(Entity *e) {
     }
 }
 
-ARM void em13_appear(Entity *e) {
+void em13_appear(Entity *e) {
     WizWarpAppear(e);
     if (e->timer != 0) {
         return;
@@ -43,7 +43,7 @@ ARM void em13_appear(Entity *e) {
     e->statusFlags |= 0x80;
 }
 
-ARM void em13_move(Entity *e) {
+void em13_move(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -61,7 +61,7 @@ ARM void em13_move(Entity *e) {
     InitAnimationForceUpdate(e, (e->animationState + 4) & 0xff);
 }
 
-ARM void em13_attack(Entity *e) {
+void em13_attack(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -70,7 +70,7 @@ ARM void em13_attack(Entity *e) {
     WizVanishInit(e);
 }
 
-ARM void em13_vanish(Entity *e) {
+void em13_vanish(Entity *e) {
     WizWarpVanish(e);
     if (e->timer != 0) {
         return;
@@ -80,7 +80,7 @@ ARM void em13_vanish(Entity *e) {
     e->spriteSettings.b0 = 0;
 }
 
-ARM void em13_wait(Entity *e) {
+void em13_wait(Entity *e) {
     V(e)->waitTimer--;
     if (V(e)->waitTimer != 0) {
         return;

@@ -5,7 +5,7 @@
 //   0x0205a42c connect_agb (original name)
 //   connect_btn at 0x0205a480 is in scratch/agentF/nonmatching/connect_btn.c
 
-ARM void connect_agb(Entity *e) {
+void connect_agb(Entity *e) {
     if (e->action != 0) {
         return;
     }

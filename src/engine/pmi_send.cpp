@@ -7,7 +7,7 @@
 // three parameters, sends each word and returns 0 with interrupts restored.
 extern "C" s32 PMi_StartSendBlock(u32 *words, s32 count, u32 a, u32 b, u32 c);
 
-ARM s32 PMi_StartSendBlock(u32 *words, s32 count, u32 a, u32 b, u32 c) {
+s32 PMi_StartSendBlock(u32 *words, s32 count, u32 a, u32 b, u32 c) {
     u32 irqState;
     s32 i;
 

@@ -17,7 +17,7 @@ extern u8 data_0212c710[];
 extern u8 data_0212c71c[];
 
 // ResourceCtrl (0x02082c64)
-ARM void ResourceCtrl(void) {
+void ResourceCtrl(void) {
     void (*callback)(void *);
     s32 other;
 

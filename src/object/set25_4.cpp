@@ -6,7 +6,7 @@
 //   0x02067770 breakSmokeSet (original name breakSmokeSet(OBJ_WORK_*))
 
 // Spawns four smoke pieces (set type 2) around the actor, offset by the table value on x and by 0x14 on y
-ARM void breakSmokeSet(Entity *e) {
+void breakSmokeSet(Entity *e) {
     Entity *piece;
 
     piece = GetSetWork(15, 2, 0);

@@ -10,7 +10,7 @@ namespace Knife {
 namespace Message {
 
 // Slot 22 of the vtable (0x0208f29c): marks the tokenizer as overflowed
-ARM void TextTokenizer::onReadError(void) {
+void TextTokenizer::onReadError(void) {
     overflow = 1;
 }
 

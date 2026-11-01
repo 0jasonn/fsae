@@ -10,7 +10,7 @@
 // func_020b5744 with it, arg and a zero position (two halfwords)
 extern "C" void func_020b5744(void *obj, void *arg, s16 *pos);
 extern "C" void lobby_callWithZeroPos(void *self, void *arg);
-ARM void lobby_callWithZeroPos(void *self, void *arg) {
+void lobby_callWithZeroPos(void *self, void *arg) {
     s16 pos[2];
 
     if (*(void **)((u8 *)self + 4) == NULL) {
@@ -26,7 +26,7 @@ ARM void lobby_callWithZeroPos(void *self, void *arg) {
 extern "C" void func_020b5264(void *self, void *arg);
 extern "C" void func_020b57f4(void *obj, void *arg);
 extern "C" void lobby_stepAndCall(void *self, void *arg);
-ARM void lobby_stepAndCall(void *self, void *arg) {
+void lobby_stepAndCall(void *self, void *arg) {
     func_020b5264(self, arg);
     if (*(void **)((u8 *)self + 4) == NULL) {
         return;

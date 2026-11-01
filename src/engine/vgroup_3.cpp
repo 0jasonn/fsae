@@ -16,7 +16,7 @@ extern u8 data_0212c4b8;
 extern const EntityFunc actorStateTable[];
 
 // countVGroupLine (0x02081318)
-ARM u8 countVGroupLine(u16 id) {
+u8 countVGroupLine(u16 id) {
     u32 *record;
     u8 total;
 
@@ -30,7 +30,7 @@ ARM u8 countVGroupLine(u16 id) {
 }
 
 // actorDispatch (0x02081360): an action handler from actorStateTable, then func_020857c8. Same shape as Throw.
-ARM void actorDispatch(Entity *e) {
+void actorDispatch(Entity *e) {
     if (data_0212c4b8 == 0) {
         actorStateTable[e->action](e);
     }

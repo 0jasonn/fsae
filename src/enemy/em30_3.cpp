@@ -5,7 +5,7 @@
 extern const u32 flagBits[];
 
 // type0_open (0x02042424): on an odd frame, finishes when setFlower succeeds.
-ARM void type0_open(Entity *e) {
+void type0_open(Entity *e) {
     if (e->frame & 1) {
         if (setFlower(e) == 0) {
             return;
@@ -20,7 +20,7 @@ ARM void type0_open(Entity *e) {
 
 // type0_blossom (0x02042468): advances the two parts and this entity; when the timer runs out, sets
 // the parts to their next animations.
-ARM void type0_blossom(Entity *e) {
+void type0_blossom(Entity *e) {
     UpdateAnimationSingleFrame(VP(e)->partA);
     UpdateAnimationSingleFrame(VP(e)->partB);
     UpdateAnimationSingleFrame(e);
@@ -35,7 +35,7 @@ ARM void type0_blossom(Entity *e) {
 
 // type0_close (0x020424cc): advances the parts; when the frame flag is set, clears the parent's flag and
 // deletes both parts.
-ARM void type0_close(Entity *e) {
+void type0_close(Entity *e) {
     UpdateAnimationSingleFrame(VP(e)->partA);
     UpdateAnimationSingleFrame(VP(e)->partB);
     UpdateAnimationSingleFrame(e);
@@ -52,7 +52,7 @@ ARM void type0_close(Entity *e) {
 
 // type0_suihei (0x02042530): once the parent's low flags are 3, steps the direction; at a
 // multiple of 0x40 it sets action 6 and marks the parent with a bit from flagBits.
-ARM void type0_suihei(Entity *e) {
+void type0_suihei(Entity *e) {
     Entity *parent = e->parent;
     if ((parent->unk_6c[4] & 3) != 3) {
         return;
@@ -68,7 +68,7 @@ ARM void type0_suihei(Entity *e) {
 
 // type0_suiheiWait (0x020425a4): when the parent's flag byte is clear, switches to action 7 and sets
 // the sprite bits (b30 copied into b14).
-ARM void type0_suiheiWait(Entity *e) {
+void type0_suiheiWait(Entity *e) {
     if (e->parent->unk_6c[4] != 0) {
         return;
     }
@@ -80,7 +80,7 @@ ARM void type0_suiheiWait(Entity *e) {
 
 // type0_cercle (0x020425e8): steps the direction; when it reaches 0xc0 or 0x40 with the parent
 // flag set, switches to action 8 and toggles the parent's bit from flagBits.
-ARM void type0_cercle(Entity *e) {
+void type0_cercle(Entity *e) {
     Entity *parent = e->parent;
     e->direction += (u8)(s8)e->unk_6c[5];
     if (parent->unk_6c[4] == 0) {

@@ -7,7 +7,7 @@
 //   em0c_stop -> em0c_stop, em0c_wait -> em0c_wait
 
 // Stop: when the flags at 0x74 are all inside the mask of the area, the action becomes 2.
-ARM void em0c_stop(Entity *e) {
+void em0c_stop(Entity *e) {
     u32 flags;
     u32 masked;
 
@@ -20,7 +20,7 @@ ARM void em0c_stop(Entity *e) {
 
 // Wait: counts the subtimer down (action 3 at zero). Then the type decides: with bit 1 the object is put away when the
 // mask of the area is inside the flags at 0x78; with type 1 the action returns to 1 when the flags at 0x74 leave the mask.
-ARM void em0c_wait(Entity *e) {
+void em0c_wait(Entity *e) {
     u32 flags;
     u32 masked;
 

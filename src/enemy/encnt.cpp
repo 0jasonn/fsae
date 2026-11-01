@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void Enemy_StartScript(Entity *e) {
+void Enemy_StartScript(Entity *e) {
     VS(e)->script = encntScripts[e->type2];
     honyaGetInfo(e);
 }

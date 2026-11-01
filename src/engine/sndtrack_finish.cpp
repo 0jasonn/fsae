@@ -12,7 +12,7 @@ void SndEntry_StopIfPending(void *entry);
 // SndTrack_Finish: with the sound mutex and the second track mutex held, stops the track's pending entry (flag bit 1),
 // calls its update callback (flag bit 0) and stops the track. The second argument is not used.
 extern "C" void SndTrack_Finish(SndTrack *track, s32 unused);
-ARM void SndTrack_Finish(SndTrack *track, s32 unused) {
+void SndTrack_Finish(SndTrack *track, s32 unused) {
     OS_LockMutexFromWToR(data_02185fd8);
     if (data_021848f0[1] != 0) {
         OS_LockMutexFromWToR((u8 *)data_021848f0[1] + 0x10c8);

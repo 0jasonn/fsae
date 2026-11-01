@@ -11,23 +11,23 @@ extern "C" void pauseWavePlayer(s32 pause);
 
 // SoundNop_0208d5d0 (0x0208d5d0): does nothing
 extern "C" void SoundNop_0208d5d0(void);
-ARM void SoundNop_0208d5d0(void) {
+void SoundNop_0208d5d0(void) {
 }
 
 // func_0208d5d4 (0x0208d5d4): does nothing; declared in functions.h
-ARM void func_0208d5d4(void) {
+void func_0208d5d4(void) {
 }
 
 // SoundVSyncOff_rev01 (0x0208d5d8): pauses the sound system and the wave player
 extern "C" void SoundVSyncOff_rev01(void);
-ARM void SoundVSyncOff_rev01(void) {
+void SoundVSyncOff_rev01(void) {
     Knife_Sound_System_pause(1);
     pauseWavePlayer(1);
 }
 
 // SoundVSyncOn_rev01 (0x0208d5f4): resumes the sound system and the wave player
 extern "C" void SoundVSyncOn_rev01(void);
-ARM void SoundVSyncOn_rev01(void) {
+void SoundVSyncOn_rev01(void) {
     Knife_Sound_System_pause(0);
     pauseWavePlayer(0);
 }

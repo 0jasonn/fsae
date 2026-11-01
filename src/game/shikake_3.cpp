@@ -6,7 +6,7 @@
 //   ShikakeInit
 
 // Clears both record counts.
-ARM void ShikakeInit(void) {
+void ShikakeInit(void) {
     data_021348e4 = 0;
     data_021348f0 = 0;
 }

@@ -20,7 +20,7 @@ extern u8 localPlayerIndex;
 extern u8 data_021349c0[];
 extern u8 data_0212c4dc;
 
-ARM void you_move(Entity *e) {
+void you_move(Entity *e) {
     u16 counter;
     s32 sine;
     u8 type;
@@ -61,7 +61,7 @@ ARM void you_move(Entity *e) {
     e->subtimer++;
 }
 
-ARM void oplogo_you_flash(Entity *e) {
+void oplogo_you_flash(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -69,11 +69,11 @@ ARM void oplogo_you_flash(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void oplogo_button(Entity *e) {
+void oplogo_button(Entity *e) {
     oplogo_buttonTable[e->action](e);
 }
 
-ARM void button_init(Entity *e) {
+void button_init(Entity *e) {
     u8 action = e->action;
     e->action = action + 1;
     e->x.HALF.HI = 0x100;
@@ -88,7 +88,7 @@ ARM void button_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void button_move(Entity *e) {
+void button_move(Entity *e) {
     u8 value;
     if (localPlayerIndex == 0) {
         if ((data_021349c0[8] & 0x80) && data_0212c4dc == 4) {

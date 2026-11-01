@@ -7,6 +7,6 @@
 
 extern const EntityFunc ed_fin_states[]; // state table indexed by e->action
 
-ARM void ed_fin(Entity *e) {
+void ed_fin(Entity *e) {
     ed_fin_states[e->action](e);
 }

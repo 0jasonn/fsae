@@ -12,7 +12,7 @@ s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm
 // HudManager::transferUnactiveEquipIconBasePalette(int) (0x0209ed8c): sends the palette of the unactive equip icon
 // for the player's subtask flag, the language selects the row (0x78, 0x7c or 0x80 added to the flag)
 extern "C" void Knife_Hud_HudManager_transferUnactiveEquipIconBasePalette(Knife::Hud::HudManager *self, int player);
-ARM void Knife_Hud_HudManager_transferUnactiveEquipIconBasePalette(Knife::Hud::HudManager *self, int player) {
+void Knife_Hud_HudManager_transferUnactiveEquipIconBasePalette(Knife::Hud::HudManager *self, int player) {
     int flag;
     int row;
     void *app;

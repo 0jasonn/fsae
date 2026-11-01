@@ -13,7 +13,7 @@ typedef struct SaveHeaderWords {
     u32 magic;
 } SaveHeaderWords;
 
-ARM s32 isAccordData(_SAVEHEADER *header, const u32 *data, s32 size) {
+s32 isAccordData(_SAVEHEADER *header, const u32 *data, s32 size) {
     SaveHeaderWords *words = (SaveHeaderWords *)header;
     u16 sum = CalcChecksum((const u16 *)&words->magic, 4) + CalcChecksum((const u16 *)data, size);
 

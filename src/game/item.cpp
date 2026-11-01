@@ -9,7 +9,7 @@
 
 
 // Graphics address for the cockpit item index: the cell block of the current state plus the offset of the index.
-ARM u8 *Cockpit_GetGfxAddr(s32 index) {
+u8 *Cockpit_GetGfxAddr(s32 index) {
     u8 *block;
     s32 isBig = 1;
 
@@ -25,6 +25,6 @@ ARM u8 *Cockpit_GetGfxAddr(s32 index) {
 }
 
 // Byte of the cockpit table at data_020cf81c for the index.
-ARM u8 Cockpit_GetTableByte(s32 index) {
+u8 Cockpit_GetTableByte(s32 index) {
     return data_020cf81c[index];
 }

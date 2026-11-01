@@ -6,7 +6,7 @@ extern const u32 flagBits[];
 
 // type0_attackInit (0x02042798): when the parent's low flags are clear, picks action 0xa or 0xd
 // from the parent bit in flagBits.
-ARM void type0_attackInit(Entity *e) {
+void type0_attackInit(Entity *e) {
     u8 parentFlags = e->parent->unk_6c[4];
     if (parentFlags & 3) {
         return;
@@ -20,7 +20,7 @@ ARM void type0_attackInit(Entity *e) {
 
 // type0_attackOpen (0x020427d4): on an odd frame, finishes when setFlower succeeds and starts
 // a 0x12c-frame delay.
-ARM void type0_attackOpen(Entity *e) {
+void type0_attackOpen(Entity *e) {
     if (e->frame & 1) {
         if (setFlower(e) == 0) {
             return;

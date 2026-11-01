@@ -13,7 +13,7 @@ extern "C" void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);
 
 // RenderTarget::~RenderTarget() (0x020a2dd4): sets the vtable, finalizes and returns the object
 extern "C" void *Knife_Message_RenderTarget_dtor_RenderTarget_0a2dd4(void *self);
-ARM void *Knife_Message_RenderTarget_dtor_RenderTarget_0a2dd4(void *self) {
+void *Knife_Message_RenderTarget_dtor_RenderTarget_0a2dd4(void *self) {
     *(u8 **)self = data_02124984;
     Knife_Message_RenderTarget_finalize(self);
     return self;

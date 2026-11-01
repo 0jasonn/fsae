@@ -18,7 +18,7 @@ extern "C" s32 Fs_GetDirFileOffset(void *dst);
 // Rec_formatStrU32(dst, size, name, value, arg) (0x020b7154, provisional name): formats dst from data_02126bf0 with the
 // name, the packed value and arg, and returns the length of the result
 extern "C" s32 Rec_formatStrU32(void *dst, s32 size, const u8 *name, u32 value, s32 arg);
-ARM s32 Rec_formatStrU32(void *dst, s32 size, const u8 *name, u32 value, s32 arg) {
+s32 Rec_formatStrU32(void *dst, s32 size, const u8 *name, u32 value, s32 arg) {
     u8 packed[5];
 
     Packed_setU32BE(packed, value);
@@ -29,7 +29,7 @@ ARM s32 Rec_formatStrU32(void *dst, s32 size, const u8 *name, u32 value, s32 arg
 // Rec_formatStrU32S16(dst, size, name, value, half, arg) (0x020b71ac, provisional name): as Rec_formatStrU32, with the
 // value also packed as a halfword and formatted from data_02126bfc
 extern "C" s32 Rec_formatStrU32S16(void *dst, s32 size, const u8 *name, u32 value, u16 half, s32 arg);
-ARM s32 Rec_formatStrU32S16(void *dst, s32 size, const u8 *name, u32 value, u16 half, s32 arg) {
+s32 Rec_formatStrU32S16(void *dst, s32 size, const u8 *name, u32 value, u16 half, s32 arg) {
     u8 packed[5];
     u8 packedHalf[3];
 

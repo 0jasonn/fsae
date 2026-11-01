@@ -29,7 +29,7 @@ public:
 
 // func_020909c8 (0x020909c8, C++ linkage as declared in functions.h): returns the singleton, constructing it on the first
 // call. The name is the dsd name for now; the original is a static local of WirelessManager::getInstance.
-ARM void *func_020909c8(void) {
+void *func_020909c8(void) {
     if ((data_021770bc[1] & 1) == 0) {
         Knife_Comm_WirelessManager_WirelessManager(data_021770e0);
         Chain_Push(data_021770e0, Knife_Comm_WirelessManager_dtor_WirelessManager_0923b4, data_021770c4);
@@ -42,7 +42,7 @@ ARM void *func_020909c8(void) {
 // the two buffers (0xf00 and 0x400 bytes, aligned to 0x20), starts the WM library with dmaNo and clears the manager
 // state. FALSE on any failure, with the buffers freed.
 extern "C" BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo);
-ARM BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo) {
+BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo) {
     WirelessManagerWork *wm;
     WirelessAllocatorIface *allocator;
     u8 *base;

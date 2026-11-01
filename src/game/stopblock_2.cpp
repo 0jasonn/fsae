@@ -12,7 +12,7 @@ extern u8 data_02134f30[];
 extern u8 data_02134ff0[];
 
 // Registers the cell of every active stop block and marks it as done
-ARM void StopBlockPreProcess(void) {
+void StopBlockPreProcess(void) {
     STOPBLOCK_WORK_ *block;
 
     for (block = (STOPBLOCK_WORK_ *)data_02134f30; block < (STOPBLOCK_WORK_ *)data_02134ff0; block++) {

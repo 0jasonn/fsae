@@ -6,7 +6,7 @@
 // returns dst.
 extern "C" void *CopyBytes(void *dst, const void *src, u32 count);
 
-ARM void *CopyBytes(void *dst, const void *src, u32 count) {
+void *CopyBytes(void *dst, const void *src, u32 count) {
     u8 *out;
     const u8 *in;
     u8 byte;

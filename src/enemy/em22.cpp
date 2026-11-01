@@ -4,7 +4,7 @@
 
 // Functions in this file: em22_normal (0x0203f754).
 
-ARM void em22_normal(Entity *e) {
+void em22_normal(Entity *e) {
     dmgmgr(e);
     em22_actionTable[e->action](e);
     UpdateAnimationSingleFrame(e);

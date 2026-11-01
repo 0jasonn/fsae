@@ -25,6 +25,6 @@ typedef struct Vars_Set36 {
 } Vars_Set36;
 
 // Set36, 0x0206b34c: runs the state function for the current action.
-ARM void Set36(Entity *e) {
+void Set36(Entity *e) {
     set36Table[e->action](e);
 }

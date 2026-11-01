@@ -3,7 +3,7 @@
 #include "game/menu.h"
 
 // Ends the pending reset: when sub+0x39c is set, the object at 0x370 is reset and the flag is cleared.
-ARM void Menu_Reset(MenuWork *menu) {
+void Menu_Reset(MenuWork *menu) {
     void *self;
     s32 pending;
 

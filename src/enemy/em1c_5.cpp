@@ -16,7 +16,7 @@ extern Em1cKnifeSlot data_0212ced8[];
 
 // Wait: counts the shared timer and the own timer down. When the timer ends the actor picks a new timer and direction;
 // while it waits it looks for an object to hold (and keeps the shared state updated when the Knife state changes).
-ARM void em1c_wait(Entity *e) {
+void em1c_wait(Entity *e) {
     void *app;
 
     charMove(e, 0);
@@ -66,7 +66,7 @@ ARM void em1c_wait(Entity *e) {
 }
 
 // Move: the actor walks with charMove, and stops at the end of its timer or when a grab is possible (the input bit 0x80).
-ARM void em1c_move(Entity *e) {
+void em1c_move(Entity *e) {
     void *app;
     u32 input;
 

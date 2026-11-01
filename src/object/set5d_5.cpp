@@ -10,11 +10,11 @@ void ObjSetTargetWord(Entity *e, u16 value); // defined in src/game/npc.cpp, not
 
 extern const EntityFunc set5d_bikkuri_states[]; // bikkuri state table indexed by e->subAction
 
-ARM void set5d_bikkuri(Entity *e) {
+void set5d_bikkuri(Entity *e) {
     set5d_bikkuri_states[e->subAction](e);
 }
 
-ARM void bikkuri_init(Entity *e) {
+void bikkuri_init(Entity *e) {
     Entity *mark;
 
     e->subAction++;
@@ -27,7 +27,7 @@ ARM void bikkuri_init(Entity *e) {
     SoundReq(0x1f7);
 }
 
-ARM void bikkuri_move(Entity *e) {
+void bikkuri_move(Entity *e) {
     if (UpdateGravity(e, 0x2400) == 0) {
         e->linkedEntity->unk_00[4] = 1;
     }

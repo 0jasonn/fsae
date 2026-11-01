@@ -12,7 +12,7 @@ s32 func_020c1970(void *obj, u32 a, u32 b, u32 c, void *entry, void *owner, s32 
 // that entry and the owner's list entry at arg. When all three exist, passes the entry's byte, halfword and byte, the
 // entry, the owner, index and arg to func_020c1970. Returns 0 when one of the lookups fails.
 extern "C" s32 SndState_StartEntryList(void *obj, s32 index, s32 arg);
-ARM s32 SndState_StartEntryList(void *obj, s32 index, s32 arg) {
+s32 SndState_StartEntryList(void *obj, s32 index, s32 arg) {
     u8 *entry;
     void *owner;
     u8 *listEntry;

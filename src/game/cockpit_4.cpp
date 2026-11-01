@@ -7,7 +7,7 @@
 //   heartAlart, PinchCheck, pinch_bgm_check, kattiUpdate
 
 // Plays the heart alarm (sound 0x25) when the alarm timer is clear and the heart block is at most 0x10.
-ARM void heartAlart(void) {
+void heartAlart(void) {
     if ((data_0212c594 & 0x3f) != 0 || frameCounter[0x11] != 0) {
         return;
     }
@@ -18,7 +18,7 @@ ARM void heartAlart(void) {
 }
 
 // Returns 1 when a player with a low health (1..16) has a value above the counter at state+8.
-ARM s32 PinchCheck(void) {
+s32 PinchCheck(void) {
     u8 i;
     s32 result;
 
@@ -34,7 +34,7 @@ ARM s32 PinchCheck(void) {
 }
 
 // Starts or stops the pinch music and the pinch telop, then updates the background music.
-ARM void pinch_bgm_check(void) {
+void pinch_bgm_check(void) {
     if (PinchCheck() != 0) {
         if (data_0212c7c8[0x51] == 0) {
             data_0212c7c8[0x51] = 1;
@@ -54,7 +54,7 @@ typedef struct KattiDirBits {
     u8 rest : 4;
 } KattiDirBits;
 
-ARM void kattiUpdate(void) {
+void kattiUpdate(void) {
     u8 kind;
 
     kind = ((KattiDirBits *)(data_0212c53c + 0x3e))->kind;

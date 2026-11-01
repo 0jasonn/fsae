@@ -18,7 +18,7 @@ extern "C" void GX_VRAMCNT_SetLCDC_(u16 bits);
 // 0x04000242. Then the LCDC bank setup runs with the new bits.
 extern "C" void Vram_SetBankGroupA(s32 mask);
 
-ARM void Vram_SetBankGroupA(s32 mask) {
+void Vram_SetBankGroupA(s32 mask) {
     data_02129864.bits = (data_02129864.bits | data_02129864.savedMask) & ~mask;
     data_02129864.savedMask = mask;
     if (mask <= 0x80) {

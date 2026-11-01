@@ -13,7 +13,7 @@ namespace Knife {
 namespace Message {
 
 // TextTokenizer::onReadSelectTag() (0x0208eaf8)
-ARM void TextTokenizer::onReadSelectTag(void) {
+void TextTokenizer::onReadSelectTag(void) {
     BOOL ok;
     u32 freeBytes;
     u8 *token;

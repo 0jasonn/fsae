@@ -9,18 +9,18 @@ namespace Single {
 namespace SinglePlay {
 
 // SinglePlayLogList::GetCurrentLog() const (0x0a31c)
-ARM const SinglePlayLog *SinglePlayLogList::GetCurrentLog(void) const {
+const SinglePlayLog *SinglePlayLogList::GetCurrentLog(void) const {
     return &log[current];
 }
 
 // SinglePlayLogList::GetCurrentLogPos() const (0x0a330)
-ARM POS SinglePlayLogList::GetCurrentLogPos(void) const {
+POS SinglePlayLogList::GetCurrentLogPos(void) const {
     return GetPosToInsert(current);
 }
 
 // SinglePlayLogList::GetNextLogPos() const (0x0a358): the position after the current entry, or the current one
 // when the list holds a single entry.
-ARM POS SinglePlayLogList::GetNextLogPos(void) const {
+POS SinglePlayLogList::GetNextLogPos(void) const {
     u8 index = current;
 
     if (oldest != current) {
@@ -30,13 +30,13 @@ ARM POS SinglePlayLogList::GetNextLogPos(void) const {
 }
 
 // SinglePlayLogList::GetPrevLogPos() const (0x0a39c)
-ARM POS SinglePlayLogList::GetPrevLogPos(void) const {
+POS SinglePlayLogList::GetPrevLogPos(void) const {
     return GetPosToInsert(unk_02[1]);
 }
 
 // SinglePlayLogList::GetPosToInsert(unsigned char) const (0x0a3c4): the position at index, moved by the average
 // of the distance sums of the entries after it.
-ARM POS SinglePlayLogList::GetPosToInsert(u8 index) const {
+POS SinglePlayLogList::GetPosToInsert(u8 index) const {
     POS pos;
     u8 i;
     s32 sumA = this->sumA;

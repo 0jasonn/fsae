@@ -12,7 +12,7 @@ typedef struct Vars_Set2c {
 
 extern u32 em12_typeMasks[];
 
-ARM void set2c_wait(Entity *e) {
+void set2c_wait(Entity *e) {
     u8 areaIndex;
     if (e->subtimer != 0) {
         e->subtimer--;

@@ -9,11 +9,11 @@
 // Action table of effect_particle, effectParticleTable
 extern const EntityFunc effectParticleTable[];
 
-ARM void effect_particle(Entity *e) {
+void effect_particle(Entity *e) {
     effectParticleTable[e->action](e);
 }
 
-ARM void effect_particle_init(Entity *e) {
+void effect_particle_init(Entity *e) {
     u8 action = e->action;
 
     e->action = action + 1;

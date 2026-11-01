@@ -7,7 +7,7 @@
 // data_021349c0[EFFECT_STATE_SCENE] and the countdown is the u16 at EFFECT_STATE_TIMER.
 extern "C" void op_scene_01(void);
 
-ARM void op_scene_01(void) {
+void op_scene_01(void) {
     switch (data_021349c0[EFFECT_STATE_SCENE]) {
         case 0:
             if ((data_0212c594 & 0x1f) != 0) {

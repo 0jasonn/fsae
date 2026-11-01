@@ -6,6 +6,6 @@
 extern "C" void OS_FreeToHeap(u32 arena, u32 heap, void *block);
 extern "C" void FreeToSystemHeap(void *block);
 
-ARM void FreeToSystemHeap(void *block) {
+void FreeToSystemHeap(void *block) {
     OS_FreeToHeap(0, (u32)-1, block);
 }

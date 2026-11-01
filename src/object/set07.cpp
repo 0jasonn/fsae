@@ -7,6 +7,6 @@
 
 extern const EntityFunc data_020d92a0[]; // indexed by e->action
 
-ARM void Set07(Entity *e) {
+void Set07(Entity *e) {
     data_020d92a0[e->action](e);
 }

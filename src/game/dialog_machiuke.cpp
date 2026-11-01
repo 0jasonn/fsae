@@ -10,7 +10,7 @@
 // this frame (new bits) go to data_0212c58c, the current keys become the previous ones, and the key state of the
 // machine is copied when the device is not in wireless mode
 extern "C" void dialog_machiuke_joy(void);
-ARM void dialog_machiuke_joy(void) {
+void dialog_machiuke_joy(void) {
     void *app;
     u32 i;
     u16 keys;

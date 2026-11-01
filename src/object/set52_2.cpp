@@ -11,7 +11,7 @@ extern const EntityFunc set52_actions[]; // indexed by e->action
 extern u8 data_0212cecb[]; // one byte per template entry: flags, read at index type * 0x94
 extern u16 frameCounter;
 
-ARM void set52_move(Entity *e) {
+void set52_move(Entity *e) {
     Entity *tmpl;
 
     tmpl = OBJ_TEMPLATE(e->type);
@@ -32,13 +32,13 @@ ARM void set52_move(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set52_end(Entity *e) {
+void set52_end(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         PutObjWork(e);
     }
 }
 
-ARM void Set52(Entity *e) {
+void Set52(Entity *e) {
     set52_actions[e->action](e);
 }

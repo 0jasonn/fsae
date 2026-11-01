@@ -8,13 +8,13 @@
 //   (zelda_disp at 0x0205fb9c is parked in scratch/agentC/nonmatching)
 //   (set5d_init at 0x0205fbd4 is in the next unit)
 
-ARM void set5c_update(Entity *e) {
+void set5c_update(Entity *e) {
     set5c_event_check(e);
     data_020d9028[e->action](e);
     zelda_disp(e);
 }
 
-ARM void set5c_event_check(Entity *e) {
+void set5c_event_check(Entity *e) {
     Entity *linked = e->linkedEntity;
 
     if (e->action == 0 || linked->unk_00[4] == 0) {

@@ -8,7 +8,7 @@
 
 extern "C" int ido_yukaPlMoveCheck(PlayerData *player);
 
-ARM int ido_yukaPlMoveCheck(PlayerData *player) {
+int ido_yukaPlMoveCheck(PlayerData *player) {
     if ((((u32)((u8 *)player)[0x8b]) << 25) >> 29) {
         return 1;
     }

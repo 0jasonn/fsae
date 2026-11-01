@@ -16,7 +16,7 @@ extern "C" s32 data_020dfb80;
 // engine, 4..7 sub engine), starting after rect->widthTiles * rect->heightTiles tiles of 0x40 bytes (colour mode 4) or
 // 0x20 bytes. The DMA channel data_020dfb80 is used when it holds 0..3, otherwise a CPU copy.
 extern "C" void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect);
-ARM void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect) {
+void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect) {
     u32 dstOffset;
     u32 vramBase;
     u32 charBlock;
@@ -57,7 +57,7 @@ ARM void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect) {
 // BgScreen_Load (provisional name): copies the BG map of info to the screen base of the BG of the screen, clipped to the
 // size of the BG in tiles (func_020c7018) and to the size of the map. The data of info is flushed from the cache first.
 extern "C" void BgScreen_Load(s32 screen, BgLoadInfo *info);
-ARM void BgScreen_Load(s32 screen, BgLoadInfo *info) {
+void BgScreen_Load(s32 screen, BgLoadInfo *info) {
     u32 screenBlock;
     u32 vramBase;
     u16 bgCnt;

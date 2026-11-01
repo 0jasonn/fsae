@@ -7,7 +7,7 @@
 // initializes the three text tokenizers (at +0x1bc, +0x44 and +0x180) with the data and a pool each. The pools (0x400,
 // 0x1000 and 0x400 bytes) are allocated the first time.
 extern "C" void KnifeApp_TextTokenizer_initWithData(void *self, void *data, u32 size);
-ARM void KnifeApp_TextTokenizer_initWithData(void *self, void *data, u32 size) {
+void KnifeApp_TextTokenizer_initWithData(void *self, void *data, u32 size) {
     u8 *app;
 
     app = (u8 *)self;
@@ -37,7 +37,7 @@ extern u8 *data_02171e18;
 
 // KnifeApp_loadField20 (0x0208dd8c): loads the file named by data_0211abfc into the object at +0x20 (when it could be read)
 extern "C" void KnifeApp_loadField20(void *self);
-ARM void KnifeApp_loadField20(void *self) {
+void KnifeApp_loadField20(void *self) {
     u32 size;
     void *buffer;
 
@@ -49,7 +49,7 @@ ARM void KnifeApp_loadField20(void *self) {
 }
 
 // KnifeApp::getZeldaResource (0x0208ddcc): the data of a resource, without its size
-ARM u8 *KnifeApp_getZeldaResource_08ddcc(void *a, s32 id) {
+u8 *KnifeApp_getZeldaResource_08ddcc(void *a, s32 id) {
     s32 size;
 
     return (u8 *)KnifeApp_getZeldaResource_08dde0(a, &size, id);

@@ -8,6 +8,6 @@
 
 extern EntityFunc data_02115b38[]; // handler per item type
 
-ARM void race_item_dispatch(Entity *e) {
+void race_item_dispatch(Entity *e) {
     data_02115b38[e->type](e);
 }

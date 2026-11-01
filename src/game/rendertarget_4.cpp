@@ -7,7 +7,7 @@
 
 // RenderTarget::finalize() (0x020a4e8c): if the target is in use, clears its state block and the use flag
 extern "C" void Knife_Message_RenderTarget_finalize(void *self);
-ARM void Knife_Message_RenderTarget_finalize(void *self) {
+void Knife_Message_RenderTarget_finalize(void *self) {
     u8 *target = (u8 *)self;
 
     if (target[0x1c] == 0) {

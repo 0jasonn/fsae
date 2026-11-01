@@ -24,7 +24,7 @@ typedef struct RectFlagPair {
 // with flag set, calls func_020b9774 (item, 0) on both items and clears their state bytes, and otherwise sets both
 // state bytes and calls func_020b9774 (item, 1) on both items
 extern "C" void RectFlagPair_setFlag(RectFlagPair *self, u8 flag);
-ARM void RectFlagPair_setFlag(RectFlagPair *self, u8 flag) {
+void RectFlagPair_setFlag(RectFlagPair *self, u8 flag) {
     self->flag = flag;
     self->record[0x29] = flag;
     if (self->flag) {

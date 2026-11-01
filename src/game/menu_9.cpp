@@ -3,13 +3,13 @@
 #include "game/menu.h"
 
 // Copies the scroll position (0x20) to the second scroll value (0x22).
-ARM void Menu_SyncScroll(MenuList *list) {
+void Menu_SyncScroll(MenuList *list) {
     list->unk_22 = list->unk_20;
 }
 
 // Number of list items: the height of the screen area (from the rectangle) is at least 0xae, plus the list length.
 // The second argument is not used (the caller passes its own argument register through).
-ARM s32 Menu_CountItems(MenuList *list, s32 value) {
+s32 Menu_CountItems(MenuList *list, s32 value) {
     s16 rect[4];
     s32 span;
     s32 count;
@@ -27,11 +27,11 @@ ARM s32 Menu_CountItems(MenuList *list, s32 value) {
 }
 
 // Nonzero when the item count is larger than the list length (unk_0e).
-ARM s32 Menu_IsOverflow(MenuList *list, s32 value) {
+s32 Menu_IsOverflow(MenuList *list, s32 value) {
     return Menu_CountItems(list, value) > list->unk_0e;
 }
 
 // Stores the value at 0x18.
-ARM void Menu_SetWord18(MenuList *list, s32 value) {
+void Menu_SetWord18(MenuList *list, s32 value) {
     list->unk_18 = value;
 }

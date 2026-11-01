@@ -8,7 +8,7 @@
 
 // Ctrl_findEntryA(self, id) (0x020bbe50, provisional name): the entry of id when ResChunk_OpenKBEC accepts it
 extern "C" void *Ctrl_findEntryA(void *self, s32 id);
-ARM void *Ctrl_findEntryA(void *self, s32 id) {
+void *Ctrl_findEntryA(void *self, s32 id) {
     void *entry;
 
     entry = Fs_GetDirFileOffset(id);
@@ -22,7 +22,7 @@ ARM void *Ctrl_findEntryA(void *self, s32 id) {
 
 // Ctrl_findEntryB(self, id) (0x020bbe84, provisional name): the same with Menu_ForwardC2cb4
 extern "C" void *Ctrl_findEntryB(void *self, s32 id);
-ARM void *Ctrl_findEntryB(void *self, s32 id) {
+void *Ctrl_findEntryB(void *self, s32 id) {
     void *entry;
 
     entry = Fs_GetDirFileOffset(id);
@@ -36,7 +36,7 @@ ARM void *Ctrl_findEntryB(void *self, s32 id) {
 
 // Ctrl_findEntryC(self, id) (0x020bbeb8, provisional name): the same with ResChunk_OpenRACH
 extern "C" void *Ctrl_findEntryC(void *self, s32 id);
-ARM void *Ctrl_findEntryC(void *self, s32 id) {
+void *Ctrl_findEntryC(void *self, s32 id) {
     void *entry;
 
     entry = Fs_GetDirFileOffset(id);
@@ -50,7 +50,7 @@ ARM void *Ctrl_findEntryC(void *self, s32 id) {
 
 // Ctrl_findEntryD(self, id) (0x020bbeec, provisional name): the same with ResChunk_OpenTTLP
 extern "C" void *Ctrl_findEntryD(void *self, s32 id);
-ARM void *Ctrl_findEntryD(void *self, s32 id) {
+void *Ctrl_findEntryD(void *self, s32 id) {
     void *entry;
 
     entry = Fs_GetDirFileOffset(id);
@@ -64,7 +64,7 @@ ARM void *Ctrl_findEntryD(void *self, s32 id) {
 
 // Ctrl_findEntryE(self, id) (0x020bbf20, provisional name): the same with ResChunk_GetNRCS
 extern "C" void *Ctrl_findEntryE(void *self, s32 id);
-ARM void *Ctrl_findEntryE(void *self, s32 id) {
+void *Ctrl_findEntryE(void *self, s32 id) {
     void *entry;
 
     entry = Fs_GetDirFileOffset(id);

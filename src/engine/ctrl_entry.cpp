@@ -31,7 +31,7 @@ typedef struct CtrlEntry {
 // Ctrl_getItemEntry(list, index) (0x020b9fac, provisional name): returns the first child of item index of list, or
 // data_02126efc when that child has status 0, and whether the item has any children (count != 0)
 extern "C" CtrlEntry Ctrl_getItemEntry(CtrlItemList *list, s16 index);
-ARM CtrlEntry Ctrl_getItemEntry(CtrlItemList *list, s16 index) {
+CtrlEntry Ctrl_getItemEntry(CtrlItemList *list, s16 index) {
     CtrlItem *item = list->items + index;
     CtrlEntry entry;
 

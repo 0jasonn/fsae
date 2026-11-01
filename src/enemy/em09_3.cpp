@@ -10,7 +10,7 @@ extern u8 data_0212ceca[]; // PlayerData field at +0x1a, stride 0x94 (flags of t
 // em09_kuttsuki(OBJ_WORK_*): the boss holds its child (the partner player's kuttsuki); while the child is alive and
 // its time limit (subtimer) has not run out, the child is positioned and the rupee drop counts down, otherwise the
 // kuttsuki reset runs.
-ARM void em09_kuttsuki(Entity *e) {
+void em09_kuttsuki(Entity *e) {
     void *app;
     Entity *partner;
     Entity *target;

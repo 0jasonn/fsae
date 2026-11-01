@@ -5,7 +5,7 @@
 extern EntityFunc oplogo_shadowTable[];
 extern u8 data_0212c4dc;
 
-ARM void oplogo_sword_test0(Entity *e) {
+void oplogo_sword_test0(Entity *e) {
     switch (e->timer) {
     case 0x3a:
         GetSetWork(0x28, 0xa, 0);
@@ -28,7 +28,7 @@ ARM void oplogo_sword_test0(Entity *e) {
     e->speed = 0x200;
 }
 
-ARM void oplogo_sword_test1(Entity *e) {
+void oplogo_sword_test1(Entity *e) {
     MoveDir(e);
     e->speed -= 0x10;
     if (e->speed <= 0) {
@@ -37,7 +37,7 @@ ARM void oplogo_sword_test1(Entity *e) {
     }
 }
 
-ARM void oplogo_sword_wait(Entity *e) {
+void oplogo_sword_wait(Entity *e) {
     Entity *sword;
     if (e->timer-- != 0) {
         return;
@@ -58,7 +58,7 @@ ARM void oplogo_sword_wait(Entity *e) {
     SoundReq(0x209);
 }
 
-ARM void oplogo_sword_left(Entity *e) {
+void oplogo_sword_left(Entity *e) {
     MoveDir(e);
     if (e->x.HALF.HI >= 0x50) {
         return;
@@ -68,7 +68,7 @@ ARM void oplogo_sword_left(Entity *e) {
     e->timer = 5;
 }
 
-ARM void oplogo_sword_end(Entity *e) {
+void oplogo_sword_end(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -80,6 +80,6 @@ ARM void oplogo_sword_end(Entity *e) {
     SoundReq(0x1b2);
 }
 
-ARM void oplogo_shadow(Entity *e) {
+void oplogo_shadow(Entity *e) {
     oplogo_shadowTable[e->action](e);
 }

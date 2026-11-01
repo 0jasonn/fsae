@@ -13,7 +13,7 @@ extern "C" void PMi_InitSend(void);
 // PMi_InitSend() (0x0201c8b8): once only (the ready flag is 0), clears the busy flag and the parameter, calls
 // Engine_Relay0201a070, waits until the PXI callback for fifo 8 is ready, installs func_0201c958 as the receive
 // callback and copies the word at 0x02fffc3c into the two saved fields.
-ARM void PMi_InitSend(void) {
+void PMi_InitSend(void) {
     if (data_0212b920.ready != 0) {
         return;
     }

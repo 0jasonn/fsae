@@ -17,7 +17,7 @@ extern "C" int func_02084f2c(u16 cell, u16 layer, s32 flags); // thumb label, no
 int func_02083d4c(u16 cell, u16 layer);                       // thumb helper, C++ linkage (_Z13func_02083d4ctt)
 
 // dushInitCheck (0x0203ed84): 1 when none of the four cells ahead is blocked.
-ARM int dushInitCheck(Entity *e) {
+int dushInitCheck(Entity *e) {
     u16 cell;
     u16 i;
     s32 dy;

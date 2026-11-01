@@ -5,7 +5,7 @@
 
 // Functions in this file: em20_init (0x0203e854).
 
-ARM void em20_init(Entity *e) {
+void em20_init(Entity *e) {
     s32 dir;
     e->action = 1;
     e->spriteSettings.b0 = 1;

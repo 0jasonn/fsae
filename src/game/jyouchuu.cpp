@@ -12,7 +12,7 @@ extern const u16 data_020d7da8[];
 extern const u16 data_020d7d84[];
 
 // Loads the data of the current stage (state 5 and up use the row of the current stage)
-ARM void LoadJyouchuu(void) {
+void LoadJyouchuu(void) {
     u8 state;
     u8 *row;
 

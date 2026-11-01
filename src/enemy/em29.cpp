@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void Em29(Entity *e) {
+void Em29(Entity *e) {
     if (e->type2 != 0) {
         Vars_Parent *parent = VARS(Vars_Parent, e->parent);
         if (parent->triggerFlags & 1) {
@@ -65,7 +65,7 @@ ARM void Em29(Entity *e) {
 // em29_init (0x020418bc): sets the start action and offsets from the type, resets the cycle timer, then
 // centres the scroll position at (0x800, 0x600) and refreshes the scroll arguments.
 
-ARM void em29_init(Entity *e) {
+void em29_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->y.HALF.LO = 2 - e->type;

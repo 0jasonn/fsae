@@ -6,7 +6,7 @@
 
 // tama02_init, 0x0207e15c. Starts the actor on its partner: sets the timer and the facing, copies the partner's
 // hitbox, and gives a player partner the state used while it is carried.
-ARM void tama02_init(Entity *e) {
+void tama02_init(Entity *e) {
     PlayerData *player;
     e->action = 1;
     e->timer = 0x3c;

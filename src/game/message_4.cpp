@@ -7,7 +7,7 @@
 //   Message, State_ClearFlagE3
 
 // Per-frame message update: starts a new box, runs the state tables and draws the windows
-ARM void Message(void) {
+void Message(void) {
     u8 mode;
     u32 i;
 
@@ -53,7 +53,7 @@ ARM void Message(void) {
 }
 
 // Last state of the message box loop: clears its state flag and finishes
-ARM int State_ClearFlagE3(void) {
+int State_ClearFlagE3(void) {
     data_0217d39c.windowMode = 0;
     return 0;
 }

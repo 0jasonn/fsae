@@ -19,7 +19,7 @@ extern VBlankEntry data_02134894[2];
 
 // SetCgColor (0x02029d0c): stores colour at index. With a colour adjust table, the colour is the OR of three table entries
 // (5-bit fields 0..4, 5..9 and 10..14 of colour, the second and third table halves are offset by 0x20 and 0x40).
-ARM void SetCgColor(u32 index, u32 color) {
+void SetCgColor(u32 index, u32 color) {
     const u16 *table;
 
     table = (const u16 *)data_020f2a18;
@@ -31,7 +31,7 @@ ARM void SetCgColor(u32 index, u32 color) {
 }
 
 // SetDataVBlank (0x02029d88): queues a VBlank transfer (source, destination, size) unless two are already queued.
-ARM void SetDataVBlank(const void *src, void *dst, u32 size) {
+void SetDataVBlank(const void *src, void *dst, u32 size) {
     u8 count;
 
     count = data_02134890;

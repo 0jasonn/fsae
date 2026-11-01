@@ -17,7 +17,7 @@ extern const u16 union_moveBounds[]; // ObjAnimMoveSet bounds (union_moveBounds)
 extern const EntityFunc union_subActions[]; // indexed by e->subAction (union_subActions)
 
 
-ARM void kenfuri_start(Entity *e) {
+void kenfuri_start(Entity *e) {
     func_02085934(e, e->unk_1b);
     MoveDir(e);
     if (e->timer != 0) {
@@ -32,17 +32,17 @@ ARM void kenfuri_start(Entity *e) {
     }
 }
 
-ARM void link_union(Entity *e) {
+void link_union(Entity *e) {
     union_subActions[e->subAction](e);
 }
 
-ARM void union_init(Entity *e) {
+void union_init(Entity *e) {
     ObjAnimMoveSet(e, union_moveBounds, 0x78);
     e->timer = 0x78;
     e->subAction++;
 }
 
-ARM void union_move(Entity *e) {
+void union_move(Entity *e) {
     e->spriteSettings.b0 = 1;
     ObjAnimMoveLine(e);
     e->timer--;
@@ -61,7 +61,7 @@ ARM void union_move(Entity *e) {
     }
 }
 
-ARM void union_wait(Entity *e) {
+void union_wait(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -70,6 +70,6 @@ ARM void union_wait(Entity *e) {
     data_0212ceb0[e->type].state = 2;
 }
 
-ARM void Set57(Entity *e) {
+void Set57(Entity *e) {
     set57_actions[e->action](e);
 }

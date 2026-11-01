@@ -14,6 +14,6 @@ void func_0208af0c(Entity *e); // label, thumb
 extern const u8 data_020dcc80[]; // hitbox of the tama04 family
 extern const EntityFunc data_020dccfc[]; // action table of the Tama05 dispatcher, indexed by e->action
 
-ARM void tama04_hajikiInit(Entity *e);
+void tama04_hajikiInit(Entity *e);
 
 #endif

@@ -9,7 +9,7 @@ extern u8 data_0211ab64[]; // Knife::Sound::Handle vtable
 extern "C" void Knife_Sound_Handle_reset(void *self);
 
 extern "C" void *Knife_Sound_Handle_Handle(void *self);
-ARM void *Knife_Sound_Handle_Handle(void *self) {
+void *Knife_Sound_Handle_Handle(void *self) {
     *(void **)self = data_0211ab64;
     Knife_Sound_Handle_reset(self);
     return self;

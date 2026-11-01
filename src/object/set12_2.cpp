@@ -7,7 +7,7 @@
 // Set12 actor, second unit (module set12). Address -> name:
 //   0x020639a8 set12_move, 0x02063ab0 set12_vanish, 0x02063b10 set12_appear, 0x02063b6c set12_wait (original names)
 
-ARM void set12_move(Entity *e) {
+void set12_move(Entity *e) {
     u8 slot;
 
     if (e->type & 0x80) {
@@ -38,7 +38,7 @@ ARM void set12_move(Entity *e) {
     InitAnimationForceUpdate(e, slot + 1);
 }
 
-ARM void set12_vanish(Entity *e) {
+void set12_vanish(Entity *e) {
     e->timer = e->timer - 1;
     if (e->timer != 0) {
         e->spriteSettings.b0 = e->spriteSettings.b0 ^ 1;
@@ -50,7 +50,7 @@ ARM void set12_vanish(Entity *e) {
     e->y.HALF.HI = VARS(Vars_Set12, e)->homeY;
 }
 
-ARM void set12_appear(Entity *e) {
+void set12_appear(Entity *e) {
     e->timer = e->timer - 1;
     if (e->timer != 0) {
         e->spriteSettings.b0 = e->spriteSettings.b0 ^ 1;
@@ -61,7 +61,7 @@ ARM void set12_appear(Entity *e) {
     e->spriteSettings.b0 = 1;
 }
 
-ARM void set12_wait(Entity *e) {
+void set12_wait(Entity *e) {
     u8 nextAction;
 
     if (flagBits[e->type & 0x1f] & em12_typeMasks[e->areaIndex]) {

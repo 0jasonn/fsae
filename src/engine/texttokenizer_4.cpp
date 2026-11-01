@@ -11,7 +11,7 @@ namespace Knife {
 namespace Message {
 
 // TextTokenizer::tokenize(unsigned long, Language, IAppInfoGetter const*) (0x0208e4e0)
-ARM BOOL TextTokenizer::tokenize(u32 textId, Language language, const IAppInfoGetter *appInfo) {
+BOOL TextTokenizer::tokenize(u32 textId, Language language, const IAppInfoGetter *appInfo) {
     u32 reader[6]; // the TextReader (0x18 bytes, plain functions below)
     LocalizedText localized;
     Text *end;

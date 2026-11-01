@@ -13,7 +13,7 @@ extern "C" void *RangeTable_Find(RangeEntry *table, s32 count, u32 key);
 
 // RangeTable_Find(table, count, key) (0x0200b2d0): binary search for the entry whose range [start, start + length)
 // contains key. Returns that entry, or NULL when no range contains key.
-ARM void *RangeTable_Find(RangeEntry *table, s32 count, u32 key) {
+void *RangeTable_Find(RangeEntry *table, s32 count, u32 key) {
     s32 lo;
     s32 hi;
     s32 mid;

@@ -23,7 +23,7 @@ typedef struct CtrlBits {
 // Ctrl_setFlagBits1(self, a, b) (0x020bb1bc, provisional name): bit 1 of the flags of child A is set when a is zero,
 // and bit 1 of the flags of child B is set when b is zero (the other bits are kept)
 extern "C" void Ctrl_setFlagBits1(CtrlBits *self, s32 a, s32 b);
-ARM void Ctrl_setFlagBits1(CtrlBits *self, s32 a, s32 b) {
+void Ctrl_setFlagBits1(CtrlBits *self, s32 a, s32 b) {
     CtrlBitsChild *child;
 
     child = self->childA;

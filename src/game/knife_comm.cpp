@@ -7,7 +7,7 @@
 //   knife_commDispDie, knife_commDispLF
 
 // Advances the message to its next state and clears the sub state; a finished message box (openMode 2) also clears unk_e7
-ARM void knife_commDispDie(MsgWork *msg) {
+void knife_commDispDie(MsgWork *msg) {
     msg->state++;
     msg->subState = 0;
     if (msg->openMode == 2) {
@@ -30,7 +30,7 @@ extern u8 frameCounter[];
 extern u16 data_0212c58c[];
 
 // Line feed of the message: waits for the timer and the key flags, then starts the next line
-ARM void knife_commDispLF(MsgWork *msg) {
+void knife_commDispLF(MsgWork *msg) {
     u8 index;
     u8 state;
     void *instance;

@@ -10,7 +10,7 @@ extern u16 scrollArgs[];                 // scale x, scale y, rotation for ObjAf
 extern const s16 set11_scaleTable[];     // (x, y) pairs indexed by subtimer, was set11_scaleTable
 extern u8 data_0212cebf[];               // byte of the player table, stride 0x94
 
-ARM void set11_move(Entity *e) {
+void set11_move(Entity *e) {
     Entity *other;
     u8 index;
 
@@ -55,7 +55,7 @@ timer_step:
     }
 }
 
-ARM void set11_break(Entity *e) {
+void set11_break(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         func_020841b0(e);

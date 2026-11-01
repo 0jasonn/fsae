@@ -6,14 +6,14 @@ extern "C" void *SndRangeTree_ParentList(u8 *node);
 
 // Removes a node from the child list that holds it (the list is found through the node's range tree position).
 extern "C" void SndRangeTree_Remove(u8 *node);
-ARM void SndRangeTree_Remove(u8 *node) {
+void SndRangeTree_Remove(u8 *node) {
     func_020c2004(SndRangeTree_ParentList(node), node);
 }
 
 // Stores two words for the node src: the first is src minus a 7-bit offset (bits 8..14 of the halfword at +2), the second
 // is the word at +4 plus the address of src + 0x10.
 extern "C" void SndRangeTree_DecodeBounds(u32 *out, u8 *src);
-ARM void SndRangeTree_DecodeBounds(u32 *out, u8 *src) {
+void SndRangeTree_DecodeBounds(u32 *out, u8 *src) {
     u16 offset;
     u32 base;
 
@@ -30,7 +30,7 @@ struct RangeChildList {
     u8 *last;
 };
 extern "C" u8 *SndRangeTree_UnlinkChild(RangeChildList *list, u8 *node);
-ARM u8 *SndRangeTree_UnlinkChild(RangeChildList *list, u8 *node) {
+u8 *SndRangeTree_UnlinkChild(RangeChildList *list, u8 *node) {
     u8 *prev;
     u8 *next;
 
@@ -51,7 +51,7 @@ ARM u8 *SndRangeTree_UnlinkChild(RangeChildList *list, u8 *node) {
 
 // Links a node after ref in the child list (at the head when ref is null). Returns the node.
 extern "C" u8 *SndRangeTree_InsertChild(RangeChildList *list, u8 *node, u8 *ref);
-ARM u8 *SndRangeTree_InsertChild(RangeChildList *list, u8 *node, u8 *ref) {
+u8 *SndRangeTree_InsertChild(RangeChildList *list, u8 *node, u8 *ref) {
     u8 *next;
 
     *(u8 **)(node + 0x8) = ref;
@@ -78,7 +78,7 @@ struct RangeBuffer {
     u32 end;
 };
 extern "C" u8 *SndRangeTree_InitNode(RangeBuffer *buf, u16 key);
-ARM u8 *SndRangeTree_InitNode(RangeBuffer *buf, u16 key) {
+u8 *SndRangeTree_InitNode(RangeBuffer *buf, u16 key) {
     u8 *node;
     u32 end;
     u32 zero;

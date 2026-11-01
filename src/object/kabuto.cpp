@@ -8,7 +8,7 @@ extern "C" void func_0208a240(Entity *e, u32 kind, u16 x, u16 y); // 0x0208a240,
 
 // kabutoEvent (0x0207bc48)
 extern "C" void kabutoEvent(Entity *e);
-ARM void kabutoEvent(Entity *e) {
+void kabutoEvent(Entity *e) {
     u8 row;
     u8 col;
     s8 dy;

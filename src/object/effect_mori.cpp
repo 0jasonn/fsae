@@ -5,7 +5,7 @@
 // effect_mori family (module effect_mori), 0x0206dbe0 .. 0x0206dcc8 (birdSet, 0x0206dcc8, is parked in scratch/agentA/nonmatching).
 // Address -> name: 0x0206dbe0 effect_mori, 0x0206dc1c effect_mori_init, 0x0206dc6c effect_mori_wait
 
-ARM void effect_mori(Entity *e) {
+void effect_mori(Entity *e) {
     effectMoriTable[e->action](e);
     if (e->type2 == KNIFE_CURSOR_INDEX()) {
         return;
@@ -13,7 +13,7 @@ ARM void effect_mori(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void effect_mori_init(Entity *e) {
+void effect_mori_init(Entity *e) {
     u32 settings = *(u32 *)&e->spriteSettings;
     u8 action = e->action;
     int nextAction;
@@ -29,7 +29,7 @@ ARM void effect_mori_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void effect_mori_wait(Entity *e) {
+void effect_mori_wait(Entity *e) {
     u8 timer;
 
     if (e->subtimer == 0) {

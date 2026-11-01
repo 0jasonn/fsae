@@ -11,7 +11,7 @@ extern u16 frameCounter;              // frame counter
 void adjust(Entity *e);
 
 // set37_demo, 0x0206b730
-ARM void set37_demo(Entity *e) {
+void set37_demo(Entity *e) {
     adjust(e);
     e->timer--;
     if (e->timer != 0) {
@@ -22,7 +22,7 @@ ARM void set37_demo(Entity *e) {
 }
 
 // adjust, 0x0206b768: follows the contacted entity's position and bits.
-ARM void adjust(Entity *e) {
+void adjust(Entity *e) {
     ObjPosCopy(e->contactedEntity, e);
     e->spriteSettings.b30 = e->contactedEntity->spriteSettings.b30;
     e->spriteSettings.b14 = e->contactedEntity->spriteSettings.b14;

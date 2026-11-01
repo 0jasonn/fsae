@@ -12,7 +12,7 @@ namespace Knife {
 namespace Comm {
 
 // ParentInfo::cleanup() (0x0209096c)
-ARM void ParentInfo::cleanup(void) {
+void ParentInfo::cleanup(void) {
     emptyFlag = 1;
     MI_CpuFill8((u8 *)this + 0x4, 0, 0xc0);
     field_c8 = 0;
@@ -20,7 +20,7 @@ ARM void ParentInfo::cleanup(void) {
 }
 
 // ParentInfo::decrementTTL() (0x0209099c): nothing for an empty slot
-ARM void ParentInfo::decrementTTL(void) {
+void ParentInfo::decrementTTL(void) {
     if (emptyFlag != 0) {
         return;
     }

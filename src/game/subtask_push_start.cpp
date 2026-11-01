@@ -13,7 +13,7 @@ extern u8 *data_0217d348;
 #define SUBTASK_DISPCNT (*(volatile u32 *)0x04001000)
 
 // subTask_push_start() (0x0209c88c)
-ARM void subTask_push_start(void) {
+void subTask_push_start(void) {
     SubtaskPushStartWork **work;
 
     if (data_0212c4e4 == 0 || data_0212c4e4 == 0xb) {

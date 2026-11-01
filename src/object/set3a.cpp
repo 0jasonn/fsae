@@ -7,7 +7,7 @@
 extern const EntityFunc set3a_actions[]; // set3a_actions, indexed by e->action
 extern u8 data_02171d1c;                 // 1 while no fade partner is active (see ZeldaFadeFlagGet)
 
-ARM void Set3a(Entity *e) {
+void Set3a(Entity *e) {
     if (data_02171d1c == 1) {
         PutObjWork(e);
         return;

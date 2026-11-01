@@ -27,7 +27,7 @@ extern Set2fGridOrigin data_0212c648;
 
 void rewlever(Entity *e);
 
-ARM void Set2f(Entity *e) {
+void Set2f(Entity *e) {
     if (e->iframes == 0) {
         VARS(Vars_Set2f, e)->triggered = 0;
     }

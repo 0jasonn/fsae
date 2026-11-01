@@ -35,7 +35,7 @@ typedef struct SubtaskNrcsChunk {
 } SubtaskNrcsChunk;
 
 extern "C" void subTask_init_bg3(int a, int b, int c);
-ARM void subTask_init_bg3(int a, int b, int c) {
+void subTask_init_bg3(int a, int b, int c) {
     SubtaskBgChunkBlock *blk;
     SubtaskRachChunk *aObj;
     SubtaskNrcsChunk *obj;
@@ -85,7 +85,7 @@ ARM void subTask_init_bg3(int a, int b, int c) {
 }
 
 extern "C" void subTask_init_bg2(int a, int b, int c);
-ARM void subTask_init_bg2(int a, int b, int c) {
+void subTask_init_bg2(int a, int b, int c) {
     SubtaskBgChunkBlock *blk;
     SubtaskRachChunk *aObj;
     SubtaskNrcsChunk *obj;

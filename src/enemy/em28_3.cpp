@@ -3,7 +3,7 @@
 #include "global.h"
 
 // em28_attack (0x02041344): switches to action 7 when the attack frame ends; sets unk_3f otherwise.
-ARM void em28_attack(Entity *e) {
+void em28_attack(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         e->action = 7;
@@ -18,7 +18,7 @@ ARM void em28_attack(Entity *e) {
 }
 
 // em28_attackwait (0x0204138c): when the idle timer runs out, moves at speed 0x100 in action 1.
-ARM void em28_attackwait(Entity *e) {
+void em28_attackwait(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -29,7 +29,7 @@ ARM void em28_attackwait(Entity *e) {
 
 // plCheck (0x020413bc): allocates a 0x68-byte child and returns it only when no
 // other player claims it. Returns NULL otherwise.
-ARM Entity *plCheck(Entity *e) {
+Entity *plCheck(Entity *e) {
     Entity *child = func_02084f98(e, 0x68, 0x40);
     if (child == NULL) {
         return NULL;
@@ -49,7 +49,7 @@ ARM Entity *plCheck(Entity *e) {
 }
 
 // dushInit (0x02041458): enters action 4 facing the target.
-ARM void dushInit(Entity *e, Entity *target) {
+void dushInit(Entity *e, Entity *target) {
     e->action = 4;
     e->timer = 8;
     V(e)->target = target;

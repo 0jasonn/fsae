@@ -31,7 +31,7 @@ extern const ResIDTranslate2 data_020cf8d4[];
 
 // InitObjColor (0x02027dc4): empties the records (refCount 0xff, id 0xff, count 0), then clears refCount and id of the
 // records from data_02134ad4 to data_02134ae4.
-ARM void InitObjColor(void) {
+void InitObjColor(void) {
     OC_CTRL_ *rec;
 
     rec = (OC_CTRL_ *)set58_bodyState;
@@ -52,7 +52,7 @@ ARM void InitObjColor(void) {
 
 // GetResTranslateID2 (0x02027e1c): finds id in the table and returns its value for the current game state (byte 0x8e
 // of data_0212c7c8). Returns id itself when it is not in the table or the state is not 1..5.
-ARM u16 GetResTranslateID2(u16 id, const ResIDTranslate2 *table, s32 count) {
+u16 GetResTranslateID2(u16 id, const ResIDTranslate2 *table, s32 count) {
     const ResIDTranslate2 *entry;
     s32 i;
     u8 state;
@@ -84,7 +84,7 @@ ARM u16 GetResTranslateID2(u16 id, const ResIDTranslate2 *table, s32 count) {
 
 // registOC (0x02027e9c): takes count consecutive records starting at ctrl for the colour id. Each record gets refCount + 1,
 // the id and the count it has left (count down to 1).
-ARM void registOC(OC_CTRL_ *ctrl, u8 id, u8 count) {
+void registOC(OC_CTRL_ *ctrl, u8 id, u8 count) {
     u8 remaining;
 
     remaining = count;

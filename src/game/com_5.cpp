@@ -12,7 +12,7 @@ extern void (*const data_020f2584[])(void); // handler table, indexed by the pha
 
 // com_randomsync (0x020286d4): when byte 3 is clear, ComFinish(5). Otherwise sends status 0x40 with data_0212c550 at
 // +0x14; on a successful send, copies +0x7c into data_0212c550 in wireless play, then ComFinish(1). Always CommErrorCheck(0x40).
-ARM void com_randomsync(void) {
+void com_randomsync(void) {
     if (data_0212c9a8[3] == 0) {
         ComFinish(5);
         return;
@@ -31,7 +31,7 @@ ARM void com_randomsync(void) {
 }
 
 // com_keysync (0x02028750): calls the handler for the phase byte 1, then CommErrorCheck(0x50).
-ARM void com_keysync(void) {
+void com_keysync(void) {
     data_020f2584[data_0212c9a8[1]]();
     CommErrorCheck(0x50);
 }

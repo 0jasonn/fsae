@@ -7,7 +7,7 @@
 // table entries and the current sub-list position, and apply it when it changed. A voice in state 2 with a full
 // sub-list is stopped, and a pending start is applied.
 extern "C" void SndVoice_UpdateList(void);
-ARM void SndVoice_UpdateList(void) {
+void SndVoice_UpdateList(void) {
     u32 status;
     SndVoiceFull *voice;
     SndVoiceFull *next;
@@ -64,7 +64,7 @@ ARM void SndVoice_UpdateList(void) {
 // holds. When the pool is full, its first voice is stopped if its priority is not above the new one. The new voice is
 // queued in the pool and linked with the reference both ways.
 extern "C" SndVoice *SndVoicePool_Start(SndVoiceRef *ref, s32 pool, s32 priority);
-ARM SndVoice *SndVoicePool_Start(SndVoiceRef *ref, s32 pool, s32 priority) {
+SndVoice *SndVoicePool_Start(SndVoiceRef *ref, s32 pool, s32 priority) {
     u8 *entry;
     SndVoice *voice;
 

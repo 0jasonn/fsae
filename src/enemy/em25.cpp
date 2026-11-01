@@ -2,7 +2,7 @@
 #include "enemy/em24.h"
 #include "global.h"
 
-ARM void em25_aimMove(Entity *e) {
+void em25_aimMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->aimTarget->health == 0) {
         e->timer = 1;
@@ -32,7 +32,7 @@ ARM void em25_aimMove(Entity *e) {
     }
 }
 
-ARM void getAimPos(Entity *e) {
+void getAimPos(Entity *e) {
     switch (e->animationState & 3) {
         case 0:
             V(e)->aimX = V(e)->aimTarget->x.HALF.HI;
@@ -53,7 +53,7 @@ ARM void getAimPos(Entity *e) {
     }
 }
 
-ARM BOOL crossCheck2(Entity *e) {
+BOOL crossCheck2(Entity *e) {
     int hitInfo = func_02084ac0(e, 0xc, V(e)->aimTarget);
     if (hitInfo & 0x80) {
         if ((e->animationState & 3) == ((hitInfo & 0x18) >> 3)) {
@@ -63,7 +63,7 @@ ARM BOOL crossCheck2(Entity *e) {
     return FALSE;
 }
 
-ARM void arrowSet(Entity *e) {
+void arrowSet(Entity *e) {
     Entity *child = GetTamaWork(8);
     if (child == NULL) {
         return;
@@ -75,7 +75,7 @@ ARM void arrowSet(Entity *e) {
     e->child = child;
 }
 
-ARM void arrowPosSet(Entity *e) {
+void arrowPosSet(Entity *e) {
     const s8 *offset = em24_arrowOffsets + ((e->animationState & 3) * 2);
     ObjPosCopyOfs32(e, e->child, (s32)offset[0] << 16, (s32)offset[1] << 16);
 }

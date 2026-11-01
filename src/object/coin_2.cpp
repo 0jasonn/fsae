@@ -7,7 +7,7 @@
 //   0x020589b0 coin_move (original name)
 //   0x02058a64 coin_wait (original name)
 
-ARM void kirakira_set(Entity *e) {
+void kirakira_set(Entity *e) {
     Entity *child;
     if ((data_0212c594 & 7) != 0) {
         return;
@@ -20,7 +20,7 @@ ARM void kirakira_set(Entity *e) {
     child->y.HALF.HI = e->y.HALF.HI + (Random() & 7) - 3;
 }
 
-ARM void coin_move(Entity *e) {
+void coin_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     MoveDir(e);
     if (e->y.HALF.HI > 0x34) {
@@ -35,7 +35,7 @@ ARM void coin_move(Entity *e) {
     e->spriteSettings.b16 = ((data_0212c594 & 2) == 0) ? 0 : 3;
 }
 
-ARM void coin_wait(Entity *e) {
+void coin_wait(Entity *e) {
     kirakira_set(e);
     e->spriteSettings.b16 = ((data_0212c594 & 2) == 0) ? 0 : 3;
 }

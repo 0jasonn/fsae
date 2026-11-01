@@ -18,7 +18,7 @@ void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index);
 
 // SndBank_AcquireSeqData (SndBank_AcquireSeqData).
 extern "C" void *SndBank_AcquireSeqData(s32 index, void *record, s32 flag);
-ARM void *SndBank_AcquireSeqData(s32 index, void *record, s32 flag) {
+void *SndBank_AcquireSeqData(s32 index, void *record, s32 flag) {
     void *result;
     void *data;
 
@@ -39,7 +39,7 @@ ARM void *SndBank_AcquireSeqData(s32 index, void *record, s32 flag) {
 
 // SndBank_AcquireSeqDataB (SndBank_AcquireSeqDataB).
 extern "C" void *SndBank_AcquireSeqDataB(s32 index, void *record, s32 flag);
-ARM void *SndBank_AcquireSeqDataB(s32 index, void *record, s32 flag) {
+void *SndBank_AcquireSeqDataB(s32 index, void *record, s32 flag) {
     void *result;
     void *data;
 
@@ -60,7 +60,7 @@ ARM void *SndBank_AcquireSeqDataB(s32 index, void *record, s32 flag) {
 
 // SndBank_AcquireBank (SndBank_AcquireBank).
 extern "C" void *SndBank_AcquireBank(s32 index, void *record, s32 flag);
-ARM void *SndBank_AcquireBank(s32 index, void *record, s32 flag) {
+void *SndBank_AcquireBank(s32 index, void *record, s32 flag) {
     void *result;
     void *data;
 
@@ -81,7 +81,7 @@ ARM void *SndBank_AcquireBank(s32 index, void *record, s32 flag) {
 
 // SndBank_AcquireWave (SndBank_AcquireWave).
 extern "C" void *SndBank_AcquireWave(s32 index, void *record, s32 flag);
-ARM void *SndBank_AcquireWave(s32 index, void *record, s32 flag) {
+void *SndBank_AcquireWave(s32 index, void *record, s32 flag) {
     void *result;
     void *data;
 

@@ -2,7 +2,7 @@
 #include "enemy/em03.h"
 #include "global.h"
 
-ARM void em05_jump1(Entity *e) {
+void em05_jump1(Entity *e) {
     func_020847c8(e);
     UpdateGravity(e, 0x1400);
     UpdateAnimationSingleFrame(e);

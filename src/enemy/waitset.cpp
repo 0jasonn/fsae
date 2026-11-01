@@ -10,7 +10,7 @@ typedef struct Vars_waitset {
     u16 waitTimer; // frames to wait, set to 0x3c
 } Vars_waitset;
 
-ARM void waitset(Entity *e) {
+void waitset(Entity *e) {
     e->action = 1;
     VARS(Vars_waitset, e)->waitTimer = 0x3c;
     e->spriteSettings.b0 = 0;

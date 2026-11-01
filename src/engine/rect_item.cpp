@@ -37,7 +37,7 @@ extern "C" void Heap_VirtualFree(void *heap, void *block);
 // RectObjPair_setOffsets(self, value) (0x020b88dc, provisional name): the first child moves to -value / 2 + 6 and
 // the second to value - value / 2 - 6 (both through the offset slot of the child)
 extern "C" void RectObjPair_setOffsets(RectObjPair *self, s32 value);
-ARM void RectObjPair_setOffsets(RectObjPair *self, s32 value) {
+void RectObjPair_setOffsets(RectObjPair *self, s32 value) {
     s16 offsets[2];
     s16 pos[2];
     s32 i;
@@ -54,14 +54,14 @@ ARM void RectObjPair_setOffsets(RectObjPair *self, s32 value) {
 
 // RectObjPair_setValue(self, value) (0x020b895c, provisional name)
 extern "C" void RectObjPair_setValue(RectObjPair *self, s16 value);
-ARM void RectObjPair_setValue(RectObjPair *self, s16 value) {
+void RectObjPair_setValue(RectObjPair *self, s16 value) {
     self->value = value;
 }
 
 // RectObjPair_updateChildren(self, arg) (0x020b8964, provisional name): updates both children with arg, then sets
 // the enable flag of the first child from value > 0 and of the second from value + offset < limit
 extern "C" void RectObjPair_updateChildren(RectObjPair *self, void *arg);
-ARM void RectObjPair_updateChildren(RectObjPair *self, void *arg) {
+void RectObjPair_updateChildren(RectObjPair *self, void *arg) {
     RectObjF *child0;
     RectObjF *child1;
 
@@ -77,7 +77,7 @@ ARM void RectObjPair_updateChildren(RectObjPair *self, void *arg) {
 
 // RectItem_clear(self) (0x020b89e4, provisional name): all pointers and the count to zero
 extern "C" void RectItem_clear(RectItem *self);
-ARM void RectItem_clear(RectItem *self) {
+void RectItem_clear(RectItem *self) {
     self->unk_00 = NULL;
     self->unk_04 = NULL;
     self->unk_08 = NULL;
@@ -90,13 +90,13 @@ ARM void RectItem_clear(RectItem *self) {
 extern "C" void RectItem_freeBlock(void *holder, void *block);
 extern "C" void RectItem_freeBlock2(void *holder, void *block);
 extern "C" void RectItem_releaseBlocks(RectItem *self, void *holder);
-ARM void RectItem_releaseBlocks(RectItem *self, void *holder) {
+void RectItem_releaseBlocks(RectItem *self, void *holder) {
     RectItem_freeBlock2(holder, self->block0c);
     RectItem_freeBlock(holder, self->block10);
 }
 
 // RectItem_freeBlock(holder, block) (0x020b8a2c, provisional name): frees block when it is not NULL
-ARM void RectItem_freeBlock(void *holder, void *block) {
+void RectItem_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }
@@ -104,7 +104,7 @@ ARM void RectItem_freeBlock(void *holder, void *block) {
 }
 
 // RectItem_freeBlock2(holder, block) (0x020b8a44, provisional name): the same code as RectItem_freeBlock
-ARM void RectItem_freeBlock2(void *holder, void *block) {
+void RectItem_freeBlock2(void *holder, void *block) {
     if (block == NULL) {
         return;
     }

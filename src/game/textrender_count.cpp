@@ -11,7 +11,7 @@ namespace Message {
 
 // TextRenderer::countTotalLines() (0x020a5384): measures every token with the analyzer (measuring mode), counting the
 // line breaks into unk_a0
-ARM s32 TextRenderer::countTotalLines(void) {
+s32 TextRenderer::countTotalLines(void) {
     s32 tokenCount = getNumberOfTokens();
     s32 i;
 
@@ -32,7 +32,7 @@ ARM s32 TextRenderer::countTotalLines(void) {
 
 // TextRenderer::calcCurrentLineWidth(int) (0x020a5410): measures the tokens from lineStart until a line break and keeps
 // the widest line width in unk_ac
-ARM s32 TextRenderer::calcCurrentLineWidth(s32 lineStart) {
+s32 TextRenderer::calcCurrentLineWidth(s32 lineStart) {
     s32 tokenCount = getNumberOfTokens();
     s32 i;
 

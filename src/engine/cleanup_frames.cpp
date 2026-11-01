@@ -11,7 +11,7 @@ extern "C" void Cleanup_Invoke(void *self);
 extern "C" void Frame_LoopC868(u32 base, u32 count, u32 step, void (*callback)(u32));
 
 // 0x0200c7a4: frame tail. Calls CallHook_0200c55c, runs Cleanup_Invoke on the frame object at r11 and pops the 0x18-byte frame.
-ARM asm void Frame_TailC7a4(void) {
+asm void Frame_TailC7a4(void) {
     bl CallHook_0200c55c
     add r0, r11, #0x0
     bl Cleanup_Invoke
@@ -23,7 +23,7 @@ ARM asm void Frame_TailC7a4(void) {
 // is called for each step with the cursor kept in r8 and the frame pointer stored at frame+0x14. The flag clear path
 // steps the callback pointer with r7. The block after the first return path is the frame tail that the ROM keeps
 // (func_0200c75c, Ctx_SaveFrameThenCall and Cleanup_Invoke). Written as instructions: the frame pointer r11 has no C form.
-ARM asm void Frame_LoopC7b8(void *array, s32 count, u32 size, void *ctor, void *dtor) {
+asm void Frame_LoopC7b8(void *array, s32 count, u32 size, void *ctor, void *dtor) {
     stmdb sp!, {r3, r4, r5, r6, r7, r8, r11, lr}
     sub sp, sp, #0x18
     mov r11, sp
@@ -76,7 +76,7 @@ c7b8_clear_loop:
 // 0x0200c868: calls callback(p) for p = base + count * step - step * k, k = 1..count (descending), when callback is set
 // and count is nonzero. It runs in a frame with r11 = sp and stores sp at frame+0x14 when step is nonzero, which C
 // cannot express (the frame pointer is the local's address); written as instructions.
-ARM asm void Frame_LoopC868(u32 base, u32 count, u32 step, void (*callback)(u32)) {
+asm void Frame_LoopC868(u32 base, u32 count, u32 step, void (*callback)(u32)) {
     stmdb sp!, {r4, r5, r6, r7, r11, lr}
     sub sp, sp, #0x18
     mov r11, sp
@@ -99,7 +99,7 @@ loop_c868:
 }
 
 // 0x0200c8b0: the same frame tail as 0x0200c7a4.
-ARM asm void Frame_TailC8b0(void) {
+asm void Frame_TailC8b0(void) {
     bl CallHook_0200c55c
     add r0, r11, #0x0
     bl Cleanup_Invoke

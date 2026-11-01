@@ -29,7 +29,7 @@ extern const u16 data_020d8ae0[]; // bounds for the move animation, 4 bytes per 
 extern u16 data_0212c75c[];       // display shadow, halfword registers
 extern const u8 namePlateSetTable[]; // namePlateSetTable, table passed to SetTblSetWorks
 
-ARM void namePlate_appear(Entity *e) {
+void namePlate_appear(Entity *e) {
     Vars_NamePlate *vars = VARS(Vars_NamePlate, e);
 
     if (vars->hideMask == 0xff) {
@@ -55,7 +55,7 @@ ARM void namePlate_appear(Entity *e) {
     }
 }
 
-ARM void namePlate_move(Entity *e) {
+void namePlate_move(Entity *e) {
     u8 index;
     u8 target;
 
@@ -99,7 +99,7 @@ ARM void namePlate_move(Entity *e) {
     }
 }
 
-ARM void namePlate_entry(Entity *e) {
+void namePlate_entry(Entity *e) {
     switch (e->subAction) {
     case 0:
         e->spriteSettings.b30 = 0;

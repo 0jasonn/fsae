@@ -64,7 +64,7 @@ extern u32 data_02134900;
 //   sr_exit
 
 // Leaves the stage select screen once no blend fade is running: resets the display and the object work pool
-ARM void sr_exit(void) {
+void sr_exit(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }

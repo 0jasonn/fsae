@@ -17,7 +17,7 @@ extern "C" Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e004(K
 extern "C" Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e054(Knife::Hud::HudManager *self);
 
 // HudManager::HudManager() (0x0209df50, name invented): vtable, the two arrays of interpolations and markers, then finalize
-ARM Knife::Hud::HudManager *Knife_Hud_HudManager_ctor(Knife::Hud::HudManager *self) {
+Knife::Hud::HudManager *Knife_Hud_HudManager_ctor(Knife::Hud::HudManager *self) {
     KnifeHudVars *v = (KnifeHudVars *)self;
 
     v->vtbl = data_0211c6e8;
@@ -28,29 +28,29 @@ ARM Knife::Hud::HudManager *Knife_Hud_HudManager_ctor(Knife::Hud::HudManager *se
 }
 
 // Knife::Interp<VecFx32>::Interp() (0x0209dfc4): vtable, no time and no function
-ARM void Knife_Interp_VecFx32__Interp(KnifeHudInterp *self) {
+void Knife_Interp_VecFx32__Interp(KnifeHudInterp *self) {
     self->vtbl = data_0211c6f8;
     self->t = 0;
     self->fn = NULL;
 }
 
 // Empty destructor of an Interp array element (0x0209dfe0)
-ARM void Knife_Interp_VecFx32_emptyDtor(void *self) {
+void Knife_Interp_VecFx32_emptyDtor(void *self) {
 }
 
 // StatusUpMarker::StatusUpMarker() (0x0209dfe4): its interpolation (vtable, no time, no function)
-ARM void Knife_Hud_HudManager_StatusUpMarker_StatusUpMarker(KnifeHudStatusUpMarker *self) {
+void Knife_Hud_HudManager_StatusUpMarker_StatusUpMarker(KnifeHudStatusUpMarker *self) {
     self->interp.vtbl = data_0211c6f8;
     self->interp.t = 0;
     self->interp.fn = NULL;
 }
 
 // Empty destructor of a status-up marker array element (0x0209e000)
-ARM void Knife_Hud_HudManager_StatusUpMarker_emptyDtor(void *self) {
+void Knife_Hud_HudManager_StatusUpMarker_emptyDtor(void *self) {
 }
 
 // HudManager::~HudManager() (0x0209e004): finalize, then the two arrays are destroyed
-ARM Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e004(Knife::Hud::HudManager *self) {
+Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e004(Knife::Hud::HudManager *self) {
     KnifeHudVars *v = (KnifeHudVars *)self;
 
     v->vtbl = data_0211c6e8;
@@ -61,7 +61,7 @@ ARM Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e004(Knife::H
 }
 
 // HudManager::~HudManager() (0x0209e054): the deleting destructor, the same as 0x0209e004 and then operator delete
-ARM Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e054(Knife::Hud::HudManager *self) {
+Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e054(Knife::Hud::HudManager *self) {
     KnifeHudVars *v = (KnifeHudVars *)self;
 
     v->vtbl = data_0211c6e8;

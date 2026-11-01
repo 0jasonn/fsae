@@ -8,6 +8,6 @@ extern u8 data_020de6fc[]; // table of 16-byte rows
 
 // TextRenderer::getTableValue(int, int) (0x020a5a44): word number index of row
 extern "C" u32 Knife_Message_TextRenderer_getTableValue(s32 index, s32 row);
-ARM u32 Knife_Message_TextRenderer_getTableValue(s32 index, s32 row) {
+u32 Knife_Message_TextRenderer_getTableValue(s32 index, s32 row) {
     return ((u32 *)(data_020de6fc + (row << 4)))[index];
 }

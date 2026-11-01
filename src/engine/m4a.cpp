@@ -10,7 +10,7 @@
 // m4aSoundInit (0x0208cda4): clears the sound globals and the wave tables, opens the two data files, sets up the
 // sound heap and the archive, loads the first sound group and starts the wave table.
 extern "C" void m4aSoundInit(void);
-ARM void m4aSoundInit(void) {
+void m4aSoundInit(void) {
     Knife::File::Entity *entity;
     Knife::File::Entity *entity2;
     void *heapMemory;
@@ -67,7 +67,7 @@ ARM void m4aSoundInit(void) {
 
 // pauseWavePlayer (0x0208cf88): pauses or resumes each playing wave handle and records the flag in the slot table
 extern "C" void pauseWavePlayer(s32 pause);
-ARM void pauseWavePlayer(s32 pause) {
+void pauseWavePlayer(s32 pause) {
     s32 i;
 
     for (i = 0; i < 2; i++) {

@@ -27,7 +27,7 @@ extern void *data_02171e10;
 extern void *data_02171e0c;
 
 extern "C" void KnifeApp_loadAllResource(void *self);
-ARM void KnifeApp_loadAllResource(void *self) {
+void KnifeApp_loadAllResource(void *self) {
     u32 size;
     KnifeAppPathTable paths;
     KnifeAppDestTable dests;

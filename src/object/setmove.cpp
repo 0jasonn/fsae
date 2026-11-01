@@ -14,7 +14,7 @@ typedef struct SetMoveVars {
 
 extern const EntityFunc data_020d85b8[];
 
-ARM void SetMove(Entity *e) {
+void SetMove(Entity *e) {
     Entity *player;
 
     if (e->action == 0) {

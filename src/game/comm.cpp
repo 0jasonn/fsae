@@ -7,7 +7,7 @@
 // (CommUpdateJoy at 0x02029650 is parked in scratch/agentB/nonmatching.)
 
 // Returns the 1-based index of the first slot whose key mask contains all of the keys, 0 when there is none.
-ARM s32 CommKeyCheck(u16 keys) {
+s32 CommKeyCheck(u16 keys) {
     if (data_0212c58c[0] != 0xffff) {
         if (keys == (keys & data_0212c58c[0])) {
             return 1;
@@ -32,7 +32,7 @@ ARM s32 CommKeyCheck(u16 keys) {
 }
 
 // Same as CommKeyCheck on the joypad slots (data_0212c584).
-ARM s32 CommJoyCheck(u16 keys) {
+s32 CommJoyCheck(u16 keys) {
     if (data_0212c584[0] != 0xffff) {
         if (keys == (keys & data_0212c584[0])) {
             return 1;

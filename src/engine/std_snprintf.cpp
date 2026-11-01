@@ -9,6 +9,6 @@ extern "C" s32 STD_TVSNPrintf(u8 *dst, u32 size, const u8 *fmt, void *args);
 // STD_TVSNPrintf. The variadic arguments follow format in the caller's stack words.
 extern "C" s32 func_0201dc94(void *dst, s32 size, const u8 *format, ...);
 
-ARM s32 func_0201dc94(void *dst, s32 size, const u8 *format, ...) {
+s32 func_0201dc94(void *dst, s32 size, const u8 *format, ...) {
     return STD_TVSNPrintf((u8 *)dst, size, format, (u8 *)(((u32)&format) & ~3) + 4);
 }

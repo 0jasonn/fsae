@@ -5,11 +5,11 @@
 // tenku_kumo family (module tenku_kumo), 0x0206d704 .. 0x0206d7dc.
 // Address -> name: 0x0206d704 tenku_kumo, 0x0206d720 tenku_kumo_init, 0x0206d7a0 tenku_kumo_move
 
-ARM void tenku_kumo(Entity *e) {
+void tenku_kumo(Entity *e) {
     tenkuKumoTable[e->action](e);
 }
 
-ARM void tenku_kumo_init(Entity *e) {
+void tenku_kumo_init(Entity *e) {
     int nextAction = e->action + 1;
     u32 settings = *(u32 *)&e->spriteSettings;
 
@@ -27,7 +27,7 @@ ARM void tenku_kumo_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void tenku_kumo_move(Entity *e) {
+void tenku_kumo_move(Entity *e) {
     set_pos(e);
     e->x.HALF.HI += *(s16 *)(data_021349c0 + 0x26);
     if (ZeldaFadeFlagGet() == 0) {

@@ -6,7 +6,7 @@
 // Module item (original names from the debug build): AddRupeeKakera
 
 // Counts one kakera for the entity's type and gives the telop for the collected count.
-ARM void AddRupeeKakera(Entity *e) {
+void AddRupeeKakera(Entity *e) {
     data_0212c830[e->type] += 1;
     SoundReq(0x8f);
     switch (data_0212c830[e->type]) {

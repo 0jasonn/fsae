@@ -12,10 +12,10 @@ extern const u8 data_020d8a74[];
 extern s8 data_021350f7[]; // 0x50 bytes per slot, first byte signed
 
 // No-op action slot
-ARM void option_nop(void) {
+void option_nop(void) {
 }
 
-ARM void optionGuide(Entity *e) {
+void optionGuide(Entity *e) {
     u8 slot;
 
     if (e->action == 0) {

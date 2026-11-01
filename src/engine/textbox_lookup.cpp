@@ -6,7 +6,7 @@
 // binary search of the count at +0xc (records of two halfwords, key then value, from +0xe); 0xffff for other kinds or
 // when no key matches.
 extern "C" u32 TextBox_LookupEntry(u8 *entry, u32 value);
-ARM u32 TextBox_LookupEntry(u8 *entry, u32 value) {
+u32 TextBox_LookupEntry(u8 *entry, u32 value) {
     u32 result;
     u8 *first;
     u8 *last;

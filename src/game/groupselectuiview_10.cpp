@@ -9,7 +9,7 @@
 
 // groupSelectUIView::updateScan (0x020b0d7c): marks the rooms, adds every scan result as a room (the players and the
 // game info of the scan result give the room its name), then removes the rooms that were not found again
-ARM void groupSelectUIView::updateScan(void) {
+void groupSelectUIView::updateScan(void) {
     void *manager;
     void *scanResult;
     const u16 *info;

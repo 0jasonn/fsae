@@ -9,7 +9,7 @@ extern SubtaskSendEntry data_0217d1b8[];
 extern u8 data_0217d23c[];
 
 // subTask_wall_paper_end (0x0209d9cc)
-ARM void subTask_wall_paper_end(void) {
+void subTask_wall_paper_end(void) {
     u32 i;
 
     for (i = 0; i < 4; i++) {
@@ -27,7 +27,7 @@ ARM void subTask_wall_paper_end(void) {
 
 // subTask_wallpaper_request (0x0209da28): bumps the frame counter at +0x52c of the object in data_0217d23c + 0x10c
 // and redraws the status wallpaper with mode 2.
-ARM void subTask_wallpaper_request(void) {
+void subTask_wallpaper_request(void) {
     u8 *state = *(u8 **)(data_0217d23c + 0x10c);
 
     *(u32 *)(state + 0x52c) += 1;
@@ -35,7 +35,7 @@ ARM void subTask_wallpaper_request(void) {
 }
 
 // subTaskSendStopScr (0x0209da54): clears the single request of index.
-ARM void subTaskSendStopScr(s16 index) {
+void subTaskSendStopScr(s16 index) {
     SubtaskSendEntry *entry = &data_0217d1b8[index];
     entry->size = 0;
     entry->offset = 0;
@@ -43,7 +43,7 @@ ARM void subTaskSendStopScr(s16 index) {
 }
 
 // subTaskSendScr (0x0209da7c): sets the single request of index.
-ARM void subTaskSendScr(s16 index, void *data, u32 offset, u32 size) {
+void subTaskSendScr(s16 index, void *data, u32 offset, u32 size) {
     SubtaskSendEntry *entry = &data_0217d1b8[index];
     entry->size = size;
     entry->offset = offset;

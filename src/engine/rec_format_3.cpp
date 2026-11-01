@@ -12,7 +12,7 @@ extern "C" s32 Rec_formatStrU32S16(void *dst, s32 size, const u8 *name, u32 valu
 // Rec_formatCond(rec, value, half, arg) (0x020b72ec, provisional name): formats the record as Rec_formatStrU32S16 when
 // half is not zero and as Rec_formatStrU32 otherwise; returns whether the formatted length is not zero
 extern "C" BOOL Rec_formatCond(void *self, u32 value, u16 half, s32 arg);
-ARM BOOL Rec_formatCond(void *self, u32 value, u16 half, s32 arg) {
+BOOL Rec_formatCond(void *self, u32 value, u16 half, s32 arg) {
     s32 length;
 
     if (half != 0) {

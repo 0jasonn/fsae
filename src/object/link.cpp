@@ -30,7 +30,7 @@ extern const EntityFunc link_walkbackSubActions[]; // indexed by e->subAction
 extern const EntityFunc link_buttobiSubActions[]; // indexed by e->subAction
 extern const EntityFunc link_standupSubActions[]; // indexed by e->subAction
 
-ARM void link_init_072704(Entity *e) {
+void link_init_072704(Entity *e) {
     e->action++;
     e->unk_1b = 0;
     if (data_0212cebc[e->type * 0x94] != 0) {
@@ -42,23 +42,23 @@ ARM void link_init_072704(Entity *e) {
     }
 }
 
-ARM void link_nop(Entity *e) {
+void link_nop(Entity *e) {
 }
 
-ARM void link_stand(Entity *e) {
+void link_stand(Entity *e) {
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 0;
 }
 
-ARM void link_walk(Entity *e) {
+void link_walk(Entity *e) {
     link_walkSubActions[e->subAction](e);
 }
 
-ARM void link_walk_init(Entity *e) {
+void link_walk_init(Entity *e) {
     e->subAction++;
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 4;
 }
 
-ARM void link_walk_move(Entity *e) {
+void link_walk_move(Entity *e) {
     u8 anim;
 
     if (e->timer != 0xff) {
@@ -78,16 +78,16 @@ ARM void link_walk_move(Entity *e) {
     func_02085934(e, e->unk_1b);
 }
 
-ARM void link_itemget(Entity *e) {
+void link_itemget(Entity *e) {
     link_itemgetSubActions[e->subAction](e);
 }
 
-ARM void itemget_init(Entity *e) {
+void itemget_init(Entity *e) {
     e->subAction++;
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 0xad;
 }
 
-ARM void itemget_move(Entity *e) {
+void itemget_move(Entity *e) {
     if (e->timer != 0xff) {
         e->timer--;
         if (e->timer == 0) {
@@ -100,19 +100,19 @@ ARM void itemget_move(Entity *e) {
     func_02085934(e, e->unk_1b);
 }
 
-ARM void itemget_nop(Entity *e) {
+void itemget_nop(Entity *e) {
 }
 
-ARM void link_dead(Entity *e) {
+void link_dead(Entity *e) {
     link_deadSubActions[e->subAction](e);
 }
 
-ARM void dead_init(Entity *e) {
+void dead_init(Entity *e) {
     e->subAction++;
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 0x1af;
 }
 
-ARM void dead_move(Entity *e) {
+void dead_move(Entity *e) {
     if (data_0212cee8[e->type * 0x94] != 0) {
         if (!(e->frame & 0x80)) {
             do {
@@ -129,31 +129,31 @@ ARM void dead_move(Entity *e) {
     func_02085934(e, e->unk_1b);
 }
 
-ARM void link_jitabata(Entity *e) {
+void link_jitabata(Entity *e) {
     link_jitabataSubActions[e->subAction](e);
 }
 
-ARM void jitabata_init(Entity *e) {
+void jitabata_init(Entity *e) {
     e->subAction++;
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 0x250;
 }
 
-ARM void link_setMode(Entity *e) {
+void link_setMode(Entity *e) {
     func_02085934(e, e->unk_1b);
 }
 
-ARM void link_walkback(Entity *e) {
+void link_walkback(Entity *e) {
     link_walkbackSubActions[e->subAction](e);
 }
 
-ARM void walkback_init(Entity *e) {
+void walkback_init(Entity *e) {
     e->subAction++;
     e->direction = ((e->animationState + 4) & 7) << 2;
     e->speed = 0x80;
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 4;
 }
 
-ARM void walkback_move(Entity *e) {
+void walkback_move(Entity *e) {
     MoveDir(e);
     func_02085934(e, e->unk_1b);
     e->timer--;
@@ -162,18 +162,18 @@ ARM void walkback_move(Entity *e) {
     }
 }
 
-ARM void link_buttobi(Entity *e) {
+void link_buttobi(Entity *e) {
     link_buttobiSubActions[e->subAction](e);
 }
 
-ARM void buttobi_init(Entity *e) {
+void buttobi_init(Entity *e) {
     e->subAction++;
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 0xae;
     e->direction = 9;
     e->speed = 0x400;
 }
 
-ARM void buttobi_kurukuru(Entity *e) {
+void buttobi_kurukuru(Entity *e) {
     MoveDir(e);
     func_02085934(e, e->unk_1b);
     e->speed -= 0x14;
@@ -187,25 +187,25 @@ ARM void buttobi_kurukuru(Entity *e) {
     SoundReq(0x1fc);
 }
 
-ARM void buttobi_batari(Entity *e) {
+void buttobi_batari(Entity *e) {
     if (e->frame & 0x80) {
         return;
     }
     func_02085934(e, e->unk_1b);
 }
 
-ARM void link_standup(Entity *e) {
+void link_standup(Entity *e) {
     link_standupSubActions[e->subAction](e);
 }
 
-ARM void standup_init(Entity *e) {
+void standup_init(Entity *e) {
     e->subAction++;
     e->zVelocity = 0x20000;
     *(u16 *)&data_0212ceb8[e->type * 0x94] = 0xc;
     SoundReq(0xd);
 }
 
-ARM void standup_move_072c24(Entity *e) {
+void standup_move_072c24(Entity *e) {
     func_02085934(e, e->unk_1b);
     if (UpdateGravity(e, 0x4000) != 0) {
         return;

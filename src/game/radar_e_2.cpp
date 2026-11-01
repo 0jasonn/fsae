@@ -9,7 +9,7 @@ void set_bg_char_8_16(u8 *buf, s32 x, s32 y, u16 palette, u16 charSize);
 // draw_radar_time(long, void*) (0x020a650c): the time readout on row 0x15, minutes capped at 99 then seconds, as two digit
 // cells each (tile 8 + digit), with the separator tile 7 between them
 extern "C" void draw_radar_time(s32 time, void *buf);
-ARM void draw_radar_time(s32 time, void *buf) {
+void draw_radar_time(s32 time, void *buf) {
     s32 minutes;
     s32 seconds;
     u16 digit;

@@ -24,7 +24,7 @@ typedef struct Vars_em17_2 {
 
 // Runs func_02084788, then while the actor is in pose 0x26 (lifted) its base direction goes through the wall check
 // func_02085a60 as the direction and is stored back into the base direction.
-ARM void em17_buttobi(Entity *e) {
+void em17_buttobi(Entity *e) {
     func_02084788(e);
     if (e->poseId != 0x26) {
         return;
@@ -35,7 +35,7 @@ ARM void em17_buttobi(Entity *e) {
 }
 
 // Init: sprite priority, the status flags, the hitbox, timer 1, action 1 and animation 0.
-ARM void em17_init(Entity *e) {
+void em17_init(Entity *e) {
     e->action = 1;
     e->timer = 1;
     e->spriteSettings.b0 = 1;
@@ -51,7 +51,7 @@ ARM void em17_init(Entity *e) {
 // child; carryFlag is set and carryTimer is 4. While carrying, the direction faces the target (averaged with the child
 // when there is one) and the carry is dropped when carryTimer runs out. Without a carry it picks a random direction
 // every 0x1e frames.
-ARM void em17_move(Entity *e) {
+void em17_move(Entity *e) {
     Entity *child;
 
     if (UpdateGravity(e, 0x1800)) {
@@ -94,7 +94,7 @@ ARM void em17_move(Entity *e) {
 }
 
 // Lift: runs the lift handler of the current sub action, then buruburu while the sub action is below 2.
-ARM void em17_lift(Entity *e) {
+void em17_lift(Entity *e) {
     em17_liftTable[e->subAction](e);
     if (e->subAction < 2) {
         buruburu(e);
@@ -102,7 +102,7 @@ ARM void em17_lift(Entity *e) {
 }
 
 // Lift init: sub action 1, timer 4, clears the top status bit, animation 6.
-ARM void em17_lift_init(Entity *e) {
+void em17_lift_init(Entity *e) {
     e->subAction = 1;
     e->timer = 4;
     e->statusFlags &= 0x7f;
@@ -112,11 +112,11 @@ ARM void em17_lift_init(Entity *e) {
 }
 
 // Empty handler (the table entry for an action that does nothing).
-ARM void em17_nop(Entity *e) {
+void em17_nop(Entity *e) {
 }
 
 // Throw of the lifted object: after the timer, it flies with speed 0x180 and its throw hitbox.
-ARM void em17_lift_throw(Entity *e) {
+void em17_lift_throw(Entity *e) {
     e->unk_2e = 5;
     if (e->direction == 0xff) {
         return;
@@ -140,7 +140,7 @@ ARM void em17_lift_throw(Entity *e) {
 }
 
 // End of a lift: action 6, animation 5 and the lift hitbox.
-ARM void em17_lift_end(Entity *e) {
+void em17_lift_end(Entity *e) {
     e->action = 6;
     e->unk_1a = 0;
     e->statusFlags |= 0x80;

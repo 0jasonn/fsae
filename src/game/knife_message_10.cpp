@@ -7,9 +7,9 @@
 extern "C" void func_020a0ed4(void);
 extern "C" void func_020a0ed8(void);
 
-ARM void func_020a0ed4(void) {
+void func_020a0ed4(void) {
 }
 
-ARM void func_020a0ed8(void) {
+void func_020a0ed8(void) {
 }
 

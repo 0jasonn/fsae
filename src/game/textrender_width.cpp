@@ -12,7 +12,7 @@ void *TextBox_FindRangeEntry(void *font, u32 index);  // 0x020c4f2c: glyph entry
 
 // TextRenderer::calcTextWidth(Text const*) const (0x020a54bc): the width of the text in pixels, the advance of every
 // character plus the spacing of the renderer (unk_98)
-ARM extern "C" s32 Knife_Message_TextRenderer_calcTextWidth(const Knife::Message::TextRenderer *self,
+extern "C" s32 Knife_Message_TextRenderer_calcTextWidth(const Knife::Message::TextRenderer *self,
                                                         const Knife::Message::Text *text) {
     void *app;
     Knife::Message::Text copy;

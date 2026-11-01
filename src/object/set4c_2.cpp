@@ -14,7 +14,7 @@ typedef struct Vars_Set4c {
     /* 7e */ u16 timer; // countdown of the wait state
 } Vars_Set4c;
 
-ARM void set4c_wait(Entity *e) {
+void set4c_wait(Entity *e) {
     Vars_Set4c *v = VARS(Vars_Set4c, e);
 
     v->timer--;
@@ -28,7 +28,7 @@ ARM void set4c_wait(Entity *e) {
     e->statusFlags |= 0x80;
 }
 
-ARM void set4c_move(Entity *e) {
+void set4c_move(Entity *e) {
     Vars_Set4c *v = VARS(Vars_Set4c, e);
 
     UpdateAnimationSingleFrame(e);

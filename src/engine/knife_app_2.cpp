@@ -7,7 +7,7 @@
 // text tokenizers and the HUD manager, sets the two tables, and registers the KnifeApp destructor.
 extern "C" void *KnifeApp_dtor_KnifeApp(void *self);
 extern "C" void *KnifeApp_getInstance(void);
-ARM void *KnifeApp_getInstance(void) {
+void *KnifeApp_getInstance(void) {
     u8 *app;
 
     if ((data_021763dc & 1) == 0) {

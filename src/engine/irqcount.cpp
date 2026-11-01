@@ -17,14 +17,14 @@ extern "C" u32 IrqCount_Acquire(void);
 extern "C" u32 IrqCount_Release(void);
 extern "C" void Obj_SetWordB4(void *obj, u32 value);
 
-ARM void Os_EnableIrqAndHalt(void) {
+void Os_EnableIrqAndHalt(void) {
     OS_EnableInterrupts();
     for (;;) {
         OS_Halt();
     }
 }
 
-ARM u32 IrqCount_Acquire(void) {
+u32 IrqCount_Acquire(void) {
     u32 state = OS_DisableInterrupts();
     u32 old;
     if (data_0212991c.count < 0xffffffff) {
@@ -35,7 +35,7 @@ ARM u32 IrqCount_Acquire(void) {
     return old;
 }
 
-ARM u32 IrqCount_Release(void) {
+u32 IrqCount_Release(void) {
     u32 state = OS_DisableInterrupts();
     u32 old = 0;
     if (data_0212991c.count != 0) {
@@ -46,6 +46,6 @@ ARM u32 IrqCount_Release(void) {
     return old;
 }
 
-ARM void Obj_SetWordB4(void *obj, u32 value) {
+void Obj_SetWordB4(void *obj, u32 value) {
     *(u32 *)((u8 *)obj + 0xb4) = value;
 }

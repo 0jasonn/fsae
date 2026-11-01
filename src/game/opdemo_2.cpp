@@ -5,7 +5,7 @@
 // scene_03 -> scene_03 (guess: intro/opening state machine of the scene block)
 // fairy_talkmove -> fairy_talkmove
 // opdemo_scroll -> opdemo_scroll
-ARM void scene_03(void) {
+void scene_03(void) {
     switch (data_021349c0[EFFECT_STATE_SCENE]) {
         case 0:
             *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
@@ -76,7 +76,7 @@ ARM void scene_03(void) {
 }
 
 // Waits until the scene control block is idle, then starts effect effectId in slot.
-ARM int fairy_talkmove(u8 slot, u16 effectId) {
+int fairy_talkmove(u8 slot, u16 effectId) {
     u8 mode = messageRequest[SCENE_CTRL_MODE] & 0x7f;
     if (mode == 6) {
         Status_ArmIfEnabled();

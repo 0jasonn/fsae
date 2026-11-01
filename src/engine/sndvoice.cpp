@@ -5,7 +5,7 @@
 // func_020c0058: frees the voice's record and takes the voice out of its table list. A voice with an owner only
 // clears the owner's word at +8 instead.
 extern "C" void func_020c0058(SndVoice *voice);
-ARM void func_020c0058(SndVoice *voice) {
+void func_020c0058(SndVoice *voice) {
     if (voice->record == 0) {
         return;
     }
@@ -20,7 +20,7 @@ ARM void func_020c0058(SndVoice *voice) {
 // SndVoice_SetPriority: takes the voice out of its own list and the global list, stores the priority, then puts it
 // back into the sorted lists.
 extern "C" void SndVoice_SetPriority(SndVoice *voice, u8 priority);
-ARM void SndVoice_SetPriority(SndVoice *voice, u8 priority) {
+void SndVoice_SetPriority(SndVoice *voice, u8 priority) {
     SndList *list;
 
     list = voice->list;
@@ -38,7 +38,7 @@ ARM void SndVoice_SetPriority(SndVoice *voice, u8 priority) {
 
 // SndVoice_ReleaseChannel: unlocks the voice's channel mask and clears it.
 extern "C" void SndVoice_ReleaseChannel(SndVoice *voice);
-ARM void SndVoice_ReleaseChannel(SndVoice *voice) {
+void SndVoice_ReleaseChannel(SndVoice *voice) {
     if (voice->channelMask != 0) {
         SndChannel_Unlock(voice->channelMask);
         voice->channelMask = 0;

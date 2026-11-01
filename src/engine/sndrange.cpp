@@ -14,7 +14,7 @@ extern u32 data_02185ffc;
 // SndRangeTree_Find: returns the deepest node whose range contains value (searching the children of each matching node),
 // or 0 when no node in the list contains it.
 extern "C" u8 *SndRangeTree_Find(SndList *list, u32 value);
-ARM u8 *SndRangeTree_Find(SndList *list, u32 value) {
+u8 *SndRangeTree_Find(SndList *list, u32 value) {
     u8 *node;
     u8 *found;
 
@@ -36,7 +36,7 @@ ARM u8 *SndRangeTree_Find(SndList *list, u32 value) {
 
 // SndRangeTree_ParentList: the child list of the node that contains the address of node (or the root list).
 extern "C" SndList *SndRangeTree_ParentList(u8 *node);
-ARM SndList *SndRangeTree_ParentList(u8 *node) {
+SndList *SndRangeTree_ParentList(u8 *node) {
     u8 *found;
     SndList *parent;
 

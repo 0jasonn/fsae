@@ -23,14 +23,14 @@ extern const EntityFunc em2b_moveActions[];
 extern const u8 em2b_hitbox[];
 
 
-ARM void Em2b(Entity *e) {
+void Em2b(Entity *e) {
     if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
     em2b_actions[e->action](e);
 }
 
-ARM void em2b_init(Entity *e) {
+void em2b_init(Entity *e) {
     e->subtimer = Random();
     e->unk_2e = 6;
     e->hitbox = em2b_hitbox;
@@ -43,11 +43,11 @@ ARM void em2b_init(Entity *e) {
     e->spriteSettings.b0 = 1;
 }
 
-ARM void em2b_move(Entity *e) {
+void em2b_move(Entity *e) {
     em2b_moveActions[e->subAction](e);
 }
 
-ARM void em2b_move_u(Entity *e) {
+void em2b_move_u(Entity *e) {
     MoveDir(e);
     if (V(e)->targetY < e->y.HALF.HI) {
         return;
@@ -56,7 +56,7 @@ ARM void em2b_move_u(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_ur(Entity *e) {
+void em2b_move_ur(Entity *e) {
     MoveDir(e);
     if (V(e)->targetY < e->y.HALF.HI) {
         return;
@@ -69,7 +69,7 @@ ARM void em2b_move_ur(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_r(Entity *e) {
+void em2b_move_r(Entity *e) {
     MoveDir(e);
     if (V(e)->targetX > e->x.HALF.HI) {
         return;
@@ -78,7 +78,7 @@ ARM void em2b_move_r(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_dr(Entity *e) {
+void em2b_move_dr(Entity *e) {
     MoveDir(e);
     if (V(e)->targetY > e->y.HALF.HI || V(e)->targetX > e->x.HALF.HI) {
         return;
@@ -88,7 +88,7 @@ ARM void em2b_move_dr(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_d(Entity *e) {
+void em2b_move_d(Entity *e) {
     MoveDir(e);
     if (V(e)->targetY > e->y.HALF.HI) {
         return;
@@ -97,7 +97,7 @@ ARM void em2b_move_d(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_dl(Entity *e) {
+void em2b_move_dl(Entity *e) {
     MoveDir(e);
     if (V(e)->targetY > e->y.HALF.HI) {
         return;
@@ -110,7 +110,7 @@ ARM void em2b_move_dl(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_l(Entity *e) {
+void em2b_move_l(Entity *e) {
     MoveDir(e);
     if (V(e)->targetX < e->x.HALF.HI) {
         return;
@@ -119,7 +119,7 @@ ARM void em2b_move_l(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_ul(Entity *e) {
+void em2b_move_ul(Entity *e) {
     MoveDir(e);
     if (V(e)->targetY < e->y.HALF.HI || V(e)->targetX < e->x.HALF.HI) {
         return;
@@ -129,14 +129,14 @@ ARM void em2b_move_ul(Entity *e) {
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_move_wait(Entity *e) {
+void em2b_move_wait(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
     em2b_getNextInfo(e);
 }
 
-ARM void em2b_getNextInfo(Entity *e) {
+void em2b_getNextInfo(Entity *e) {
     if (V(e)->pathCursor[0] == 0xffff) {
         V(e)->pathCursor = V(e)->pathStart;
     }

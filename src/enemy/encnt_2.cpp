@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void Enemy_ArmSharedState(void) {
+void Enemy_ArmSharedState(void) {
     encntSharedState[0] = 1;
     nextset();
 }
@@ -44,7 +44,7 @@ ARM void Enemy_ArmSharedState(void) {
 // Encounter (0x02043728): when the byte at frameCounter+0x12 is clear, runs the handler selected by the
 // state byte in encntState.
 
-ARM void Encounter(void) {
+void Encounter(void) {
     if (((u8 *)&frameCounter)[0x12] != 0) {
         return;
     }

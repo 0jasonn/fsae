@@ -19,7 +19,7 @@ typedef struct Vars_Set41Move {
     /* 64 */ u16 messageId; // message requested by the lever, 0x292 for the staff roll message
 } Vars_Set41Move;
 
-ARM void set41_move(Entity *e) {
+void set41_move(Entity *e) {
     Entity *player;
     u8 facing;
     void *app;

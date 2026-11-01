@@ -12,7 +12,7 @@ extern "C" void lobby_freeBlock(void *heap, void *block);
 
 // lobby_msgObj_init(self) (0x020b4e60, provisional name): sets the vtable of the message object and clears its fields
 extern "C" void lobby_msgObj_init(void *self);
-ARM void lobby_msgObj_init(void *self) {
+void lobby_msgObj_init(void *self) {
     u8 *obj;
 
     obj = (u8 *)self;
@@ -27,13 +27,13 @@ ARM void lobby_msgObj_init(void *self) {
 
 // lobby_msgObj_release(obj, heap) (0x020b4e8c, provisional name): releases the two blocks of a message object
 extern "C" void lobby_msgObj_release(void *obj, void *heap);
-ARM void lobby_msgObj_release(void *obj, void *heap) {
+void lobby_msgObj_release(void *obj, void *heap) {
     lobby_releaseObj(heap, *(void **)((u8 *)obj + 4));
     lobby_freeBlock(heap, *(void **)((u8 *)obj + 0x18));
 }
 
 // lobby_freeBlock(heap, block) (0x020b4eb4, provisional name): frees the block when it is not NULL
-ARM void lobby_freeBlock(void *heap, void *block) {
+void lobby_freeBlock(void *heap, void *block) {
     if (block == NULL) {
         return;
     }

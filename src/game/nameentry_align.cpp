@@ -15,7 +15,7 @@ typedef struct NameEntryTarget {
 // nameEntryUIView::alignCenter(index, width) (0x020ae7a8): centres the render target of the entry index horizontally in
 // width, using the first two bytes of the text range entry found for the entry's text id (the first is the left offset
 // and the second the width)
-ARM void nameEntryUIView_alignCenter(void *self, s32 index, s32 width) {
+void nameEntryUIView_alignCenter(void *self, s32 index, s32 width) {
     u16 textId;
     NameEntryTarget *target;
     u8 *box;

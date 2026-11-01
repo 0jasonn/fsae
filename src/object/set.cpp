@@ -12,7 +12,7 @@
 //   0x02057fcc set0b_lift (original name)
 //   0x02057fec Set0c (original name)
 
-ARM void set0a_init(Entity *e) {
+void set0a_init(Entity *e) {
     e->action++;
     if (e->subtimer != 0) {
         return;
@@ -20,7 +20,7 @@ ARM void set0a_init(Entity *e) {
     set0a_moveset(e);
 }
 
-ARM void set0a_wait(Entity *e) {
+void set0a_wait(Entity *e) {
     e->subtimer--;
     if (e->subtimer != 0) {
         return;

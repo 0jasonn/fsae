@@ -7,7 +7,7 @@
 
 // TextReader::readParams(TagFormat, TextReader::Param*) (0x020a2978): reads the parameters of a tag as the format
 // asks (0: none, 1: a u16, 2: a text, 3: a u16 and two texts); any other format sets the error flag at +5
-ARM extern "C" void Knife_Message_TextReader_readParams(void *self, s32 format, s32 *params) {
+extern "C" void Knife_Message_TextReader_readParams(void *self, s32 format, s32 *params) {
     switch (format) {
     case 0:
         break;

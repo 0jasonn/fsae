@@ -10,7 +10,7 @@ namespace Knife {
 namespace Message {
 
 // CES_ISO8859_1::convert(void*, unsigned long, int) const (0x02090398)
-ARM u32 CES_ISO8859_1::convert(void *out, u32 outSize, s32 character) const {
+u32 CES_ISO8859_1::convert(void *out, u32 outSize, s32 character) const {
     if (out == NULL) {
         return 0;
     }
@@ -25,7 +25,7 @@ ARM u32 CES_ISO8859_1::convert(void *out, u32 outSize, s32 character) const {
 }
 
 // CES_ISO8859_1::getCharCount(void const*, unsigned long) const (0x020903c4, vtable slot 3): one character per byte
-ARM u32 CES_ISO8859_1::getCharCount(const void *data, u32 size) const {
+u32 CES_ISO8859_1::getCharCount(const void *data, u32 size) const {
     if (data == NULL) {
         return 0;
     }
@@ -33,7 +33,7 @@ ARM u32 CES_ISO8859_1::getCharCount(const void *data, u32 size) const {
 }
 
 // CES_ISO8859_1::readFirstCharacter(void const*, unsigned long, unsigned long*) const (0x020903d4)
-ARM u32 CES_ISO8859_1::readFirstCharacter(const void *data, u32 size, u32 *out) const {
+u32 CES_ISO8859_1::readFirstCharacter(const void *data, u32 size, u32 *out) const {
     u32 local;
 
     if (out == NULL) {
@@ -48,7 +48,7 @@ ARM u32 CES_ISO8859_1::readFirstCharacter(const void *data, u32 size, u32 *out) 
 }
 
 // CES_ASCII::convert(void*, unsigned long, int) const (0x02090424)
-ARM u32 CES_ASCII::convert(void *out, u32 outSize, s32 character) const {
+u32 CES_ASCII::convert(void *out, u32 outSize, s32 character) const {
     if (out == NULL) {
         return 0;
     }
@@ -63,7 +63,7 @@ ARM u32 CES_ASCII::convert(void *out, u32 outSize, s32 character) const {
 }
 
 // CES_ASCII::getCharCount(void const*, unsigned long) const (0x02090450, vtable slot 3)
-ARM u32 CES_ASCII::getCharCount(const void *data, u32 size) const {
+u32 CES_ASCII::getCharCount(const void *data, u32 size) const {
     if (data == NULL) {
         return 0;
     }
@@ -71,7 +71,7 @@ ARM u32 CES_ASCII::getCharCount(const void *data, u32 size) const {
 }
 
 // CES_ASCII::readFirstCharacter(void const*, unsigned long, unsigned long*) const (0x02090460)
-ARM u32 CES_ASCII::readFirstCharacter(const void *data, u32 size, u32 *out) const {
+u32 CES_ASCII::readFirstCharacter(const void *data, u32 size, u32 *out) const {
     u32 local;
 
     if (out == NULL) {

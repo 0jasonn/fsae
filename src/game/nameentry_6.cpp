@@ -12,7 +12,7 @@ void nameEntryUIView_keybord_disp(void *self);
 }
 
 // nameEntryUIView::backspace (0x020af104): removes the last character of the name and redraws the entries
-ARM void nameEntryUIView_backspace(void *self) {
+void nameEntryUIView_backspace(void *self) {
     u8 *obj;
     u32 i;
 
@@ -34,7 +34,7 @@ ARM void nameEntryUIView_backspace(void *self) {
 }
 
 // nameEntryUIView_changeCharSet (0x020af17c): switches the character table of the keyboard (mode 1 or 2) and reloads it
-ARM void nameEntryUIView_changeCharSet(void *self) {
+void nameEntryUIView_changeCharSet(void *self) {
     u8 *obj;
     s32 mode;
 

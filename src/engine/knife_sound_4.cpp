@@ -10,14 +10,14 @@
 
 // WaveHandle::~WaveHandle, non-deleting dtor (0x020904e0): runs the Handle base dtor
 extern "C" void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0(void *self);
-ARM void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0(void *self) {
+void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0(void *self) {
     knifeSoundNop3(self);
     return self;
 }
 
 // WaveHandle::~WaveHandle, deleting dtor (0x020904f4): runs the Handle base dtor and frees the block
 extern "C" void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904f4(void *self);
-ARM void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904f4(void *self) {
+void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904f4(void *self) {
     knifeSoundNop3(self);
     operator delete(self);
     return self;
@@ -25,7 +25,7 @@ ARM void *Knife_Sound_WaveHandle_dtor_WaveHandle_0904f4(void *self) {
 
 // Knife::Sound::WaveHandle::setFlagByte (0x02090510): stores the flag byte at +0x1e
 extern "C" void Knife_Sound_WaveHandle_setFlagByte(void *handle, s32 flag);
-ARM void Knife_Sound_WaveHandle_setFlagByte(void *handle, s32 flag) {
+void Knife_Sound_WaveHandle_setFlagByte(void *handle, s32 flag) {
     ((u8 *)handle)[0x1e] = flag;
 }
 
@@ -33,7 +33,7 @@ namespace Knife {
 namespace Sound {
 
 // WaveHandle::finalize (0x02090518): stops the player (if any), clears the player pointer and the paused flag
-ARM void WaveHandle::finalize(void) {
+void WaveHandle::finalize(void) {
     if (player == NULL) {
         return;
     }
@@ -45,7 +45,7 @@ ARM void WaveHandle::finalize(void) {
 }
 
 // WaveHandle::isValid (0x02090550): TRUE while a player is attached and reports itself valid
-ARM s32 WaveHandle::isValid(void) const {
+s32 WaveHandle::isValid(void) const {
     s32 result;
 
     result = 0;

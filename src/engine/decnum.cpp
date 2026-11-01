@@ -15,7 +15,7 @@ extern "C" s32 DecNum_RoundDir(DecNum *self, u8 n);
 // DecNum_RoundDir(self, n) (0x0200a41c): rounding direction for the digits after the first n. Returns 1 to round up,
 // -1 to round down. A digit above 5 rounds up, below 5 down; a 5 rounds up when a nonzero digit follows, otherwise
 // the rounding goes to even (up when the last kept digit is odd).
-ARM s32 DecNum_RoundDir(DecNum *self, u8 n) {
+s32 DecNum_RoundDir(DecNum *self, u8 n) {
     u8 *p;
     u8 *end;
 

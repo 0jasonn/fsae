@@ -16,7 +16,7 @@ extern u32 data_0218485c;
 // SndEntry_Stop: stops a started entry (timer off, hooks removed, flags cleared, command queue flushed) and then
 // releases it.
 extern "C" void SndEntry_Stop(SndEntry *entry);
-ARM void SndEntry_Stop(SndEntry *entry) {
+void SndEntry_Stop(SndEntry *entry) {
     u32 tag;
 
     if (((s32)(entry->flags << 30) >> 31) != 0) {
@@ -34,7 +34,7 @@ ARM void SndEntry_Stop(SndEntry *entry) {
 // SndEntry_Release: clears the channel's bit in word 4, removes the entry from the list and clears the release-pending
 // flag.
 extern "C" void SndEntry_Release(SndEntry *entry);
-ARM void SndEntry_Release(SndEntry *entry) {
+void SndEntry_Release(SndEntry *entry) {
     SndChannel_ClearWord4(entry->channelIndex);
     func_020c2004(data_02184788, entry);
     entry->flags &= ~1;
@@ -42,7 +42,7 @@ ARM void SndEntry_Release(SndEntry *entry) {
 
 // SndSys_ClearWords: clears two state words.
 extern "C" void SndSys_ClearWords(void);
-ARM void SndSys_ClearWords(void) {
+void SndSys_ClearWords(void) {
     data_02184814 = 0;
     data_0218485c = 0;
 }

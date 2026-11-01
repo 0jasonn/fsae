@@ -9,7 +9,7 @@ extern "C" void set_bg_char_xywh(u8 *buf, s32 x, s32 y, s32 w, s32 h, u16 palett
 // draw_radar_kakera(long, void*) (0x020a6830): the kakera gauge on column 0x1b, four base blocks of height 3 and then, for
 // each level from 1 to mode, a pair of blocks (height 2 and 1); the switch falls through from the highest level down
 extern "C" void draw_radar_kakera(s32 mode, void *buf);
-ARM void draw_radar_kakera(s32 mode, void *buf) {
+void draw_radar_kakera(s32 mode, void *buf) {
     set_bg_char_xywh((u8 *)buf, 0x1b, 4, 2, 3, 0, 0x180);
     set_bg_char_xywh((u8 *)buf, 0x1b, 8, 2, 3, 0, 0x180);
     set_bg_char_xywh((u8 *)buf, 0x1b, 0xc, 2, 3, 0, 0x180);

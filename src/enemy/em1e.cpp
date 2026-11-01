@@ -16,15 +16,15 @@ typedef struct UnkStruct_0212c540 {
 } UnkStruct_0212c540;
 extern UnkStruct_0212c540 data_0212c540;
 
-ARM void em1e_main(Entity *e) {
+void em1e_main(Entity *e) {
     EnemyFunctionHandler(e, em1e_actions);
 }
 
-ARM void em1e_normal(Entity *e) {
+void em1e_normal(Entity *e) {
     em1e_normalActions[e->action](e);
 }
 
-ARM void em1e_damage(Entity *e) {
+void em1e_damage(Entity *e) {
     switch (e->contactFlags & 0x7f) {
         case 0:
             if (e->action == 3) {
@@ -52,7 +52,7 @@ ARM void em1e_damage(Entity *e) {
     GenericKnockback(e, em1e_actions);
 }
 
-ARM void em1e_init(Entity *e) {
+void em1e_init(Entity *e) {
     e->action = 1;
     e->timer = 1;
     e->spriteSettings.b0 = 1;
@@ -62,7 +62,7 @@ ARM void em1e_init(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState = e->direction >> 3);
 }
 
-ARM void em1e_move(Entity *e) {
+void em1e_move(Entity *e) {
     if (func_02084ac8(e, 0xc) & 0x80) {
         e->action = 2;
         e->timer = 0x1e;
@@ -88,7 +88,7 @@ ARM void em1e_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em1e_dushinit(Entity *e) {
+void em1e_dushinit(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -99,7 +99,7 @@ ARM void em1e_dushinit(Entity *e) {
     InitAnimationForceUpdate(e, 8);
 }
 
-ARM void em1e_dush(Entity *e) {
+void em1e_dush(Entity *e) {
     if (func_020847c8(e) == 0) {
         e->timer = 1;
     }
@@ -115,7 +115,7 @@ ARM void em1e_dush(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState + 4);
 }
 
-ARM void em1e_dushend(Entity *e) {
+void em1e_dushend(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -125,14 +125,14 @@ ARM void em1e_dushend(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState);
 }
 
-ARM void em1e_return(Entity *e) {
+void em1e_return(Entity *e) {
     if (UpdateGravity(e, 0x1800) == 0) {
         e->action = 1;
         e->timer = 1;
     }
 }
 
-ARM void em1e_hikkurikaeri(Entity *e) {
+void em1e_hikkurikaeri(Entity *e) {
     func_020847c8(e);
     switch (func_02086044(e, 0x1800)) {
         case 0:
@@ -144,7 +144,7 @@ ARM void em1e_hikkurikaeri(Entity *e) {
     }
 }
 
-ARM void em1e_piyori(Entity *e) {
+void em1e_piyori(Entity *e) {
     if (--e->timer != 0) {
         if (e->timer >= 0x3c) {
             return;
@@ -163,14 +163,14 @@ ARM void em1e_piyori(Entity *e) {
     EnqueueSFX(0x31);
 }
 
-ARM void Em1f(Entity *e) {
+void Em1f(Entity *e) {
     if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
     em1f_actions[e->action](e);
 }
 
-ARM void em1f_init(Entity *e) {
+void em1f_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     e->unk_2e = 5;
@@ -178,7 +178,7 @@ ARM void em1f_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em1f_wait(Entity *e) {
+void em1f_wait(Entity *e) {
     u32 result = func_02084ac8(e, 0xa);
     if (result & 0x80) {
         e->action = 2;
@@ -196,7 +196,7 @@ ARM void em1f_wait(Entity *e) {
     InitAnimationForceUpdate(e, 1);
 }
 
-ARM void em1f_move(Entity *e) {
+void em1f_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (func_020847a0(e) != 0) {
         if (e->speed < 0x110) {
@@ -208,7 +208,7 @@ ARM void em1f_move(Entity *e) {
     InitAnimationForceUpdate(e, 2);
 }
 
-ARM void em1f_stop(Entity *e) {
+void em1f_stop(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         e->action = 1;

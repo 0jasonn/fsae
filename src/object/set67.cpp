@@ -6,6 +6,6 @@
 //   0x020755a4 Set67 (provisional name; dispatches on e->action)
 //   0x02075604 set67_animSingleFrame (provisional name; tail call to UpdateAnimationSingleFrame)
 
-ARM void Set67(Entity *e) {
+void Set67(Entity *e) {
     set67_actions[e->action](e);
 }

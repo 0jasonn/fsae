@@ -13,7 +13,7 @@ extern "C" void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);
 
 // RenderTarget::GetRenderTarget(int) (0x020a2efc): the entry of the pool, or NULL while the pool is empty
 extern "C" void *Knife_Message_GetRenderTarget(s32 index);
-ARM void *Knife_Message_GetRenderTarget(s32 index) {
+void *Knife_Message_GetRenderTarget(s32 index) {
     u8 *base = *(u8 **)(data_0217d56c + 0xc);
 
     if (base == NULL) {

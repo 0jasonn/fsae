@@ -6,7 +6,7 @@
 //   0x0205e63c set4e_init (name from symbols.txt)
 //   (Set4e dispatcher is in set4e_1.cpp, set4e_move at 0x0205e714 is in set4e_2.cpp)
 
-ARM void set4e_init(Entity *e) {
+void set4e_init(Entity *e) {
     e->layer = 0x8000;
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b30 = 1;

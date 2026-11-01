@@ -16,11 +16,11 @@ typedef struct BeamOffsetList {
 extern const BeamOffsetList beam1OffsetX; // beam1OffsetX
 extern const BeamOffsetList beam1OffsetY; // beam1OffsetY
 
-ARM void effect_beam1(Entity *e) {
+void effect_beam1(Entity *e) {
     effectBeam1Table[e->action](e);
 }
 
-ARM void effect_beam1_init(Entity *e) {
+void effect_beam1_init(Entity *e) {
     u8 action = e->action;
     BeamOffsetList xs;
     BeamOffsetList ys;

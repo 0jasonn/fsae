@@ -43,7 +43,7 @@ extern u8 data_0212cb60[];
 
 // SinglePlayWork::SinglePlayWork() (0x02099da8): clears the pointers, then the halfword and byte fields
 extern "C" void Knife_Single_SinglePlay_SinglePlayWork_SinglePlayWork(void *self);
-ARM void Knife_Single_SinglePlay_SinglePlayWork_SinglePlayWork(void *self) {
+void Knife_Single_SinglePlay_SinglePlayWork_SinglePlayWork(void *self) {
     SpWorkPair *w;
 
     w = (SpWorkPair *)self;

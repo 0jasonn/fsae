@@ -19,7 +19,7 @@ typedef struct Vars_Set35 {
     /* 6c */ u32 frameTicks;   // incremented while the actor is active
 } Vars_Set35;
 
-ARM void set35_move(Entity *e) {
+void set35_move(Entity *e) {
     Vars_Set35 *v = VARS(Vars_Set35, e);
     Entity *contacted;
     Entity *spawned;

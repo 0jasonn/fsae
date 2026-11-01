@@ -64,7 +64,7 @@ extern u32 data_02134900;
 //   stagesel_save_tutorial_update
 
 // Counts down the tutorial save dialog and, when it ends, closes the dialog and starts the next phase
-ARM void stagesel_save_tutorial_update(void) {
+void stagesel_save_tutorial_update(void) {
     if ((s8)data_02171d58.unk_00[1] == 0) {
         return;
     }

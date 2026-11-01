@@ -12,7 +12,7 @@ extern "C" void Os_StartContext(OsThreadRec *context, u32 arg);
 // Os_StartContext(context, arg) (0x02017970): when the scheduler block has an initial stack, sets the context up on it to
 // run func_020179c8 with arg (flag 0x80 in the first word, arg at +4, state 1) and loads it. Without a stack, calls
 // func_020179c8 with arg directly.
-ARM void Os_StartContext(OsThreadRec *context, u32 arg) {
+void Os_StartContext(OsThreadRec *context, u32 arg) {
     u32 stack;
     u32 flags;
 

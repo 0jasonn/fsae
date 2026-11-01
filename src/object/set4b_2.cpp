@@ -7,7 +7,7 @@
 
 extern u8 data_0212c824[]; // per parent type: animation step for this actor
 
-ARM void set4b_move(Entity *e) {
+void set4b_move(Entity *e) {
     Entity *parent = e->contactedEntity;
     s32 flag = 1;
     s32 step;

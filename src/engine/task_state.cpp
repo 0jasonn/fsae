@@ -19,14 +19,14 @@ extern "C" void Task_Flush(s32 flag);
 extern "C" void Task_Start(void);
 
 // Marks the task active and flushes it with flag 1.
-ARM void Task_Start(void) {
+void Task_Start(void) {
     TaskSlot_Release(1);
     data_02127280.active = 1;
     Task_Flush(1);
 }
 
 // When the task is not active, runs the pending callback once; then dispatches the queue with flag.
-ARM void Task_Flush(s32 flag) {
+void Task_Flush(s32 flag) {
     if (data_02127280.active == 0) {
         Chain_Drain();
         if (data_02127280.callback != NULL) {

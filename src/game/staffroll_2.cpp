@@ -17,7 +17,7 @@ extern u8 data_02180fe0[];
 extern u8 data_0217d23c[];
 
 // subTask_staffroll_start_finale (0x020ae2b8): sets the flag byte and the sub display control
-ARM void subTask_staffroll_start_finale(void) {
+void subTask_staffroll_start_finale(void) {
     u32 *reg;
 
     data_02180da8[1] = 1;
@@ -26,11 +26,11 @@ ARM void subTask_staffroll_start_finale(void) {
 }
 
 // PM_GetExitFactor (0x020ae2e4): returns the value at offset 0x14 of the screen state
-ARM s32 PM_GetExitFactor(void) {
+s32 PM_GetExitFactor(void) {
     return *(s32 *)(data_02180da8 + 0x14);
 }
 
 // subTask_staffroll_setupObj (0x020ae2f4): registers the object of this screen with the task helper
-ARM void subTask_staffroll_setupObj(void) {
+void subTask_staffroll_setupObj(void) {
     Frame_LoopC868(data_02180fe0, 0x10, 0x68, (void *)Knife_Message_RenderTarget_dtor_RenderTarget_0a2dd4);
 }

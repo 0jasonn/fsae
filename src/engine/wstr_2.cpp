@@ -6,7 +6,7 @@ extern "C" u16 *Wstr_FindChar(const u16 *str, s32 value);
 
 // Finds the first halfword equal to value in a NUL-terminated string; a zero value finds the terminator. NULL when
 // absent.
-ARM u16 *Wstr_FindChar(const u16 *str, s32 value) {
+u16 *Wstr_FindChar(const u16 *str, s32 value) {
     s32 wanted;
     u16 unit;
 

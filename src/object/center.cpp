@@ -5,7 +5,7 @@
 // Center actor. Address -> name:
 //   0x02058c04 center (original name)
 
-ARM void center(Entity *e) {
+void center(Entity *e) {
     e->action = 1;
     e->x.HALF.HI = 0x98;
     if (em12_typeMasks[0] != 0) {

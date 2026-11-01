@@ -3,6 +3,6 @@
 
 extern EntityFunc oplogo_kenhikariTable[];
 
-ARM void oplogo_kenhikari(Entity *e) {
+void oplogo_kenhikari(Entity *e) {
     oplogo_kenhikariTable[e->action](e);
 }

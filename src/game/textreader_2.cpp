@@ -24,7 +24,7 @@ extern "C" void Knife_Message_TextReader_cleanup(void *self);
 
 // TextReader::cancel() (0x020a25f8): asks the read to end, once it is in progress
 extern "C" void Knife_Message_TextReader_cancel(void *self);
-ARM void Knife_Message_TextReader_cancel(void *self) {
+void Knife_Message_TextReader_cancel(void *self) {
     KnifeTextReader *reader = (KnifeTextReader *)self;
 
     if (reader->unk_06 != 0) {
@@ -34,7 +34,7 @@ ARM void Knife_Message_TextReader_cancel(void *self) {
 
 // TextReader::cleanup() (0x020a260c): clears the read state
 extern "C" void Knife_Message_TextReader_cleanup(void *self);
-ARM void Knife_Message_TextReader_cleanup(void *self) {
+void Knife_Message_TextReader_cleanup(void *self) {
     KnifeTextReader *reader = (KnifeTextReader *)self;
 
     reader->unk_04 = 0;

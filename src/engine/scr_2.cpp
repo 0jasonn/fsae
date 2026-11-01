@@ -8,7 +8,7 @@
 //   0x02056f30 GetBgBuffAdrs (original name, matches)
 //   0x0205747c YureSet (original name, matches)
 
-ARM void YureSet(int a, int b) {
+void YureSet(int a, int b) {
     data_0212c648.yureValue = a;
     data_0212c648.yureMode = b & 3;
 }

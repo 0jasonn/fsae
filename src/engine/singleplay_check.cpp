@@ -13,13 +13,13 @@ extern "C" BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(void *self, u8 ki
 
 // SinglePlay::CheckBane(OBJ_WORK_*, short, short) (0x02094b64): checks at the entity's position plus the offset
 extern "C" BOOL Knife_Single_SinglePlay_CheckBane_094b64(void *self, Entity *e, s16 x, s16 y);
-ARM BOOL Knife_Single_SinglePlay_CheckBane_094b64(void *self, Entity *e, s16 x, s16 y) {
+BOOL Knife_Single_SinglePlay_CheckBane_094b64(void *self, Entity *e, s16 x, s16 y) {
     return Knife_Single_SinglePlay_CheckBane_094b94(self, (s16)(e->x.HALF.HI + x), (s16)(e->y.HALF.HI + y), e->layer);
 }
 
 // SinglePlay::CheckBane(short, short, unsigned short) (0x02094b94): TRUE when the helper value is 0x16 to 0x1f
 extern "C" BOOL Knife_Single_SinglePlay_CheckBane_094b94(void *self, s16 x, s16 y, u16 layer);
-ARM BOOL Knife_Single_SinglePlay_CheckBane_094b94(void *self, s16 x, s16 y, u16 layer) {
+BOOL Knife_Single_SinglePlay_CheckBane_094b94(void *self, s16 x, s16 y, u16 layer) {
     u32 value;
 
     value = (u32)func_02083c8c(x, y, layer);
@@ -33,14 +33,14 @@ ARM BOOL Knife_Single_SinglePlay_CheckBane_094b94(void *self, s16 x, s16 y, u16 
 
 // SinglePlay::CheckTsubuAtari(unsigned char, unsigned long, OBJ_WORK_*, short, short) (0x02094bc4)
 extern "C" BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094bc4(void *self, u8 kind, u32 mask, Entity *e, s16 x, s16 y);
-ARM BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094bc4(void *self, u8 kind, u32 mask, Entity *e, s16 x, s16 y) {
+BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094bc4(void *self, u8 kind, u32 mask, Entity *e, s16 x, s16 y) {
     return Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(self, kind, mask, (s16)(x + e->x.HALF.HI),
                                                            (s16)(y + e->y.HALF.HI), e->layer);
 }
 
 // SinglePlay::CheckTsubuAtari(unsigned char, unsigned long, short, short, unsigned short) (0x02094c0c): the 2x2 cell
 // bit of the position, expanded by the mask, tested against the kind (0x1e and 0x1f map to 10 and 5)
-ARM BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(void *self, u8 kind, u32 mask, s16 x, s16 y, u16 layer) {
+BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(void *self, u8 kind, u32 mask, s16 x, s16 y, u16 layer) {
     s16 xCell;
     s16 yCell;
     u8 cells;
@@ -68,7 +68,7 @@ ARM BOOL Knife_Single_SinglePlay_CheckTsubuAtari_094c0c(void *self, u8 kind, u32
 // SinglePlay::CheckShell(OBJ_WORK_*, unsigned char) (0x02094ca0): the first entity of the list (SearchWork and
 // SearchWorkNext, list 2) whose type byte differs from the entity's, or NULL
 extern "C" Entity *Knife_Single_SinglePlay_CheckShell(void *self, Entity *e, u8 kind);
-ARM Entity *Knife_Single_SinglePlay_CheckShell(void *self, Entity *e, u8 kind) {
+Entity *Knife_Single_SinglePlay_CheckShell(void *self, Entity *e, u8 kind) {
     Entity *found;
 
     found = SearchWork(kind, 2);

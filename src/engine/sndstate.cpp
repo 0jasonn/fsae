@@ -11,7 +11,7 @@ extern "C" s32 SndList_GetEntryCount(void *list);
 
 // SndState_GetBlockWord: returns the word at the offset stored in the block at state+0x98 (0 when that offset is 0).
 extern "C" u32 SndState_GetBlockWord(void);
-ARM u32 SndState_GetBlockWord(void) {
+u32 SndState_GetBlockWord(void) {
     u8 *block;
     u8 *word;
     u32 offset;
@@ -32,7 +32,7 @@ ARM u32 SndState_GetBlockWord(void) {
 // SndState_GetEntryCount: the entry count of the list selected by the object from func_020c0650. Returns 0 when there is no
 // object or no entry.
 extern "C" s32 SndState_GetEntryCount(void);
-ARM s32 SndState_GetEntryCount(void) {
+s32 SndState_GetEntryCount(void) {
     void *obj;
     u32 value;
 
@@ -49,7 +49,7 @@ ARM s32 SndState_GetEntryCount(void) {
 
 // SndTable_GetWord10: reads the word at +0x10 of entry index of the table at state+0x90 (0 when index is out of range).
 extern "C" u32 SndTable_GetWord10(u32 index);
-ARM u32 SndTable_GetWord10(u32 index) {
+u32 SndTable_GetWord10(u32 index) {
     u8 *table;
 
     table = *(u8 **)(data_021848b0 + 0x90);

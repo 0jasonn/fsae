@@ -17,7 +17,7 @@ extern u8 data_021350dd[];   // +0x2d of the slot block
 
 // fsCreateFile(unsigned char) (0x020a7480, invented name): sets the two flags of a slot, writes the file with the 0x80
 // bit set and updates the status
-ARM void fsCreateFile(u8 slot) {
+void fsCreateFile(u8 slot) {
     s32 offset;
 
     offset = slot * 0x50;
@@ -31,15 +31,15 @@ ARM void fsCreateFile(u8 slot) {
 }
 
 // fsSaveBegin() (0x020a74cc): empty hook before a save operation
-ARM void fsSaveBegin(void) {
+void fsSaveBegin(void) {
 }
 
 // fsSaveEnd() (0x020a74d0): empty hook after a save operation
-ARM void fsSaveEnd(void) {
+void fsSaveEnd(void) {
 }
 
 // fsLoadFiles() (0x020a74d4): refreshes the status of the three slots
-ARM void fsLoadFiles(void) {
+void fsLoadFiles(void) {
     fsSaveBegin();
     fsUpdateStatus(0);
     fsUpdateStatus(1);

@@ -6,7 +6,7 @@
 //   0x0205edac grass_throw_init (original name throw_init)
 //   (grass_throw at 0x0205ed90 is in grass_1.cpp, the next unit starts at Throw_NoOp 0x0205ee78)
 
-ARM void grass_throw_init(Entity *e) {
+void grass_throw_init(Entity *e) {
     Vars_Pot *v = VARS(Vars_Pot, e);
     u8 *bg;
     int cell;

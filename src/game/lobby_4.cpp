@@ -9,7 +9,7 @@
 // update_change_filesel() (0x020b3fcc): counts the timer of the lobby down. At 1 the display control register is set
 // for the file select, at 0 the phase is set to 4 (parent) and the wait value 0x8007 is stored. Returns 0
 extern "C" s32 update_change_filesel(void);
-ARM s32 update_change_filesel(void) {
+s32 update_change_filesel(void) {
     LobbyState *lobby;
 
     lobby = *(LobbyState **)(data_02181860 + 4);

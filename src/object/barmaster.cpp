@@ -21,11 +21,11 @@ extern u8 data_021349c0[];
 void namelPosSync(Entity *e);
 void slavePosSync(Entity *e);
 
-ARM void barMaster(Entity *e) {
+void barMaster(Entity *e) {
     barMaster_actions[e->action](e);
 }
 
-ARM void barMaster_init(Entity *e) {
+void barMaster_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b30 = 3;
     e->spriteSettings.b14 = 3;
@@ -35,7 +35,7 @@ ARM void barMaster_init(Entity *e) {
     namelPosSync(e);
 }
 
-ARM void barMaster_wait(Entity *e) {
+void barMaster_wait(Entity *e) {
     Entity *child;
     Entity *second;
 
@@ -61,7 +61,7 @@ ARM void barMaster_wait(Entity *e) {
     }
 }
 
-ARM void barMaster_move(Entity *e) {
+void barMaster_move(Entity *e) {
     if (e->subtimer < 0x88) {
         e->subtimer += 8;
         data_021349c0[NP_SHOWN] = 1;
@@ -73,7 +73,7 @@ ARM void barMaster_move(Entity *e) {
     }
 }
 
-ARM void namelPosSync(Entity *e) {
+void namelPosSync(Entity *e) {
     if (e->parent == NULL) {
         e->y.HALF.HI = 0xd0;
         return;
@@ -83,7 +83,7 @@ ARM void namelPosSync(Entity *e) {
     e->y.HALF.HI += 0x14;
 }
 
-ARM void barSlave(Entity *e) {
+void barSlave(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b30 = 3;
@@ -99,7 +99,7 @@ ARM void barSlave(Entity *e) {
     }
 }
 
-ARM void slavePosSync(Entity *e) {
+void slavePosSync(Entity *e) {
     if (e->parent == NULL || e->child == NULL) {
         e->y.HALF.HI = 0xd0;
         return;

@@ -7,12 +7,12 @@
 //   0x020742cc set58_actionInit (provisional name; sets action 1 and forces the animation)
 //   0x020742e4 setYouseiEffect (original name)
 
-ARM void set58_actionInit(Entity *e) {
+void set58_actionInit(Entity *e) {
     e->action = 1;
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void setYouseiEffect(Entity *e) {
+void setYouseiEffect(Entity *e) {
     Entity *child;
 
     if (e->timer != 0) {

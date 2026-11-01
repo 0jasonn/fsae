@@ -22,7 +22,7 @@ extern "C" void Knife_Comm_ChildInfo_cleanup(void *child);
 
 // update_off2idle: powers the wireless hardware on, step by step (timer 1 starts WM_PowerOn).
 extern "C" void Knife_Comm_WirelessManager_update_off2idle(void *self);
-ARM void Knife_Comm_WirelessManager_update_off2idle(void *self) {
+void Knife_Comm_WirelessManager_update_off2idle(void *self) {
     WmDWork *w = (WmDWork *)self;
     u32 code;
 
@@ -52,13 +52,13 @@ ARM void Knife_Comm_WirelessManager_update_off2idle(void *self) {
 
 // update_idle: refreshes the allowed channel mask.
 extern "C" void Knife_Comm_WirelessManager_update_idle(void *self);
-ARM void Knife_Comm_WirelessManager_update_idle(void *self) {
+void Knife_Comm_WirelessManager_update_idle(void *self) {
     ((WmDWork *)self)->channelMask = WM_GetAllowedChannel();
 }
 
 // update_idle2off: powers the wireless hardware off, step by step (timer 1 starts WM_PowerOff, timer 3 WM_Disable).
 extern "C" void Knife_Comm_WirelessManager_update_idle2off(void *self);
-ARM void Knife_Comm_WirelessManager_update_idle2off(void *self) {
+void Knife_Comm_WirelessManager_update_idle2off(void *self) {
     WmDWork *w = (WmDWork *)self;
     u32 code;
 

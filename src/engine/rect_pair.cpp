@@ -29,7 +29,7 @@ extern "C" void RectObjList_countDown(void *self);
 // RectObjPair_setHitFlags(self, first, second) (0x020b86b8, provisional name): the hit bit of child 1 is set from first
 // and the hit bit of child 0 from second (bit 0 of each argument)
 extern "C" void RectObjPair_setHitFlags(RectPair *self, u8 first, u8 second);
-ARM void RectObjPair_setHitFlags(RectPair *self, u8 first, u8 second) {
+void RectObjPair_setHitFlags(RectPair *self, u8 first, u8 second) {
     RectPairChild *child;
 
     child = self->children[1];
@@ -41,7 +41,7 @@ ARM void RectObjPair_setHitFlags(RectPair *self, u8 first, u8 second) {
 // RectObjPair_updateFlags(self, value) (0x020b86f4, provisional name): stores value at +0x20, then the unk_bit1 bit of
 // child 1 is set when value is not positive and the one of child 0 when value + value at +0x1e is at least the limit
 extern "C" void RectObjPair_updateFlags(RectPair *self, s32 value);
-ARM void RectObjPair_updateFlags(RectPair *self, s32 value) {
+void RectObjPair_updateFlags(RectPair *self, s32 value) {
     RectPairChild *child;
 
     self->unk_20 = value;
@@ -53,7 +53,7 @@ ARM void RectObjPair_updateFlags(RectPair *self, s32 value) {
 
 // RectObjPair_countDownBoth(self) (0x020b8760, provisional name): counts down both children (child 1 first)
 extern "C" void RectObjPair_countDownBoth(RectPair *self);
-ARM void RectObjPair_countDownBoth(RectPair *self) {
+void RectObjPair_countDownBoth(RectPair *self) {
     RectObjList_countDown(self->children[1]);
     RectObjList_countDown(self->children[0]);
 }

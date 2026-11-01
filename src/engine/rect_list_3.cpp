@@ -38,7 +38,7 @@ extern "C" void Heap_VirtualFree(void *heap, void *block);
 
 // RectObjList_countDown(self) (0x020b8384, provisional name): decrements the count when it is not zero
 extern "C" void RectObjList_countDown(RectObjList *self);
-ARM void RectObjList_countDown(RectObjList *self) {
+void RectObjList_countDown(RectObjList *self) {
     if (self->count != 0) {
         self->count = self->count - 1;
     }

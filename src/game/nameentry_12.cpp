@@ -7,7 +7,7 @@
 
 // nameEntryUIView_clearWork (0x020afc70): sets the state word to 4, clears the 0x80 bytes of the buffer at 0x34 and the
 // flags at 0x100 to 0x107, and sets the two words at 0xc8 and 0xcc to 0 and -1
-ARM void nameEntryUIView_clearWork(void *self) {
+void nameEntryUIView_clearWork(void *self) {
     u8 *obj;
 
     obj = (u8 *)self;

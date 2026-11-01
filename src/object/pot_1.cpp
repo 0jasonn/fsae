@@ -7,6 +7,6 @@
 
 extern const EntityFunc pot_states[]; // state table indexed by e->action
 
-ARM void Pot(Entity *e) {
+void Pot(Entity *e) {
     pot_states[e->action](e);
 }

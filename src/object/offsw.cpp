@@ -16,16 +16,16 @@ typedef struct Vars_Offsw {
     /* 60 */ u32 typeBits; // ParseTypeBits(e->type), tested against em12_typeMasks[e->areaIndex]
 } Vars_Offsw;
 
-ARM void offsw_main(Entity *e) {
+void offsw_main(Entity *e) {
     offsw_actions[e->action](e);
 }
 
-ARM void offsw_init(Entity *e) {
+void offsw_init(Entity *e) {
     e->action++;
     VARS(Vars_Offsw, e)->typeBits = ParseTypeBits(e->type);
 }
 
-ARM void offsw_move(Entity *e) {
+void offsw_move(Entity *e) {
     Vars_Offsw *v;
 
     v = VARS(Vars_Offsw, e);

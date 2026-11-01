@@ -5,7 +5,7 @@
 
 // Functions in this file: em20_dush (0x0203e9d4), em20_stop (0x0203eacc).
 
-ARM void em20_dush(Entity *e) {
+void em20_dush(Entity *e) {
     s32 x;
     s32 y;
     if (func_020847c8(e) == 0) {
@@ -28,7 +28,7 @@ ARM void em20_dush(Entity *e) {
     }
 }
 
-ARM void em20_stop(Entity *e) {
+void em20_stop(Entity *e) {
     s32 x;
     s32 y;
     e->speed -= 0x20;

@@ -8,7 +8,7 @@
 
 // Writes the decimal digits of value, count of them from the right, to the tile map: two rows of tiles (the second 0x40
 // bytes below the first), each digit gets its own tile (0x20 + digit and 0x40 + digit, OR-ed with the flags).
-ARM void cockpit_write_rupee(u16 *dst, u32 value, u8 count, u16 flags) {
+void cockpit_write_rupee(u16 *dst, u32 value, u8 count, u16 flags) {
     u32 digit;
 
     if (count == 0) {

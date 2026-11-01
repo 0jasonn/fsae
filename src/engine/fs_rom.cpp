@@ -22,7 +22,7 @@ extern "C" s32 FsRomFile_LengthIsZero(FsFile *file, u32 arg);
 extern "C" s32 FsRomFile_PositionIsZero(FsFile *file, u32 arg);
 
 // FsRomFile_LengthIsZero(file, arg) (0x02012488): 1 when the file is in the ROM FAT archive and its length is zero.
-ARM s32 FsRomFile_LengthIsZero(FsFile *file, u32 arg) {
+s32 FsRomFile_LengthIsZero(FsFile *file, u32 arg) {
     FsArchive *archive;
     s32 result;
 
@@ -35,7 +35,7 @@ ARM s32 FsRomFile_LengthIsZero(FsFile *file, u32 arg) {
 }
 
 // FsRomFile_PositionIsZero(file, arg) (0x020124c8): 1 when the file is in the ROM FAT archive and its position is zero.
-ARM s32 FsRomFile_PositionIsZero(FsFile *file, u32 arg) {
+s32 FsRomFile_PositionIsZero(FsFile *file, u32 arg) {
     FsArchive *archive;
     s32 result;
 

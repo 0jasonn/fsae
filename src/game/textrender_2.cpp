@@ -35,7 +35,7 @@ typedef struct KnifeTextRender {
 
 // TextRender::onReadSelectTag() (0x020a1340): records the position of the next select entry, in cells
 extern "C" void Knife_Message_TextRender_onReadSelectTag(void *a);
-ARM void Knife_Message_TextRender_onReadSelectTag(void *a) {
+void Knife_Message_TextRender_onReadSelectTag(void *a) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 
     self->selectTable[self->selectCount * 2] = self->startX / 8;

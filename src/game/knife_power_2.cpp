@@ -8,7 +8,7 @@
 namespace Knife {
 
 // Knife::PowerManager::lockSleep() (0x020c8314): raises the sleep lock count with the interrupt master enable off
-ARM void PowerManager::lockSleep(void) {
+void PowerManager::lockSleep(void) {
     u16 ime;
 
     ime = *(volatile u16 *)0x04000208;
@@ -19,7 +19,7 @@ ARM void PowerManager::lockSleep(void) {
 }
 
 // Knife::PowerManager::unlockSleep() (0x020c8340): lowers the sleep lock count with the interrupt master enable off
-ARM void PowerManager::unlockSleep(void) {
+void PowerManager::unlockSleep(void) {
     u16 ime;
 
     ime = *(volatile u16 *)0x04000208;

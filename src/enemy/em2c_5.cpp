@@ -2,7 +2,7 @@
 #include "enemy/em2c.h"
 #include "global.h"
 
-ARM void kukiMgr(Entity *e, Entity *first) {
+void kukiMgr(Entity *e, Entity *first) {
     kukiRangeSet(first, e, VL(first->parent)->lockValue);
     Entity *second = first->child;
     kukiRangeSet(second, first, VL(second->parent)->lockValue);
@@ -13,7 +13,7 @@ ARM void kukiMgr(Entity *e, Entity *first) {
     ObjPosCopyOfs32(last, VC(last)->chainA, 0, 1);
 }
 
-ARM void kukiDieDemoSet(Entity *e) {
+void kukiDieDemoSet(Entity *e) {
     Entity *obj = GetEnemyWork(0x2c);
     if (obj == NULL) {
         return;

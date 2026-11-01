@@ -10,7 +10,7 @@ extern "C" s32 Fp_DoubleEqual(u64 a, u64 b);
 extern "C" s32 Fp_DoubleNotEqual(u64 a, u64 b);
 
 // 0x0200d544: a < b (unordered sets the overflow flag and returns 0).
-ARM asm s32 Fp_DoubleLess(u64 a, u64 b) {
+asm s32 Fp_DoubleLess(u64 a, u64 b) {
     mov ip, #0x200000
     cmn ip, r1, lsl #0x1
     bhs fpl_nan_a
@@ -59,7 +59,7 @@ fpl_nan_b:
 }
 
 // 0x0200d5e0: a == b (unordered clears the overflow bit and returns 0).
-ARM asm s32 Fp_DoubleEqual(u64 a, u64 b) {
+asm s32 Fp_DoubleEqual(u64 a, u64 b) {
     mov ip, #0x200000
     cmn ip, r1, lsl #0x1
     bhs fpe_nan_a
@@ -103,7 +103,7 @@ fpe_nan_b:
 }
 
 // 0x0200d66c: a != b (unordered clears the overflow flag and returns 1).
-ARM asm s32 Fp_DoubleNotEqual(u64 a, u64 b) {
+asm s32 Fp_DoubleNotEqual(u64 a, u64 b) {
     mov ip, #0x200000
     cmn ip, r1, lsl #0x1
     bhs fpn_nan_a

@@ -26,7 +26,7 @@ extern const s32 data_020deac8[][4];
 extern const s32 data_020deb28[][4];
 
 // Knife::Comm::GetPlayerNoByAID (0x020ae318): player number of an AID in the group
-ARM s32 Knife_Comm_GetPlayerNoByAID(s32 aid, const void *groupInfo) {
+s32 Knife_Comm_GetPlayerNoByAID(s32 aid, const void *groupInfo) {
     u32 groupType;
 
     groupType = ((u32 *)groupInfo)[0] << 25 >> 29;
@@ -34,7 +34,7 @@ ARM s32 Knife_Comm_GetPlayerNoByAID(s32 aid, const void *groupInfo) {
 }
 
 // Knife::Comm::GetAIDByPlayerNo (0x020ae338): AID of a player number in the group
-ARM s32 Knife_Comm_GetAIDByPlayerNo(s32 playerNo, const void *groupInfo) {
+s32 Knife_Comm_GetAIDByPlayerNo(s32 playerNo, const void *groupInfo) {
     u32 groupType;
 
     groupType = ((u32 *)groupInfo)[0] << 25 >> 29;
@@ -43,7 +43,7 @@ ARM s32 Knife_Comm_GetAIDByPlayerNo(s32 playerNo, const void *groupInfo) {
 
 // Knife_Comm_setPlayerBit (0x020ae358): with playerNo 0 resets the group word to the single player mask 1, type 0;
 // otherwise adds playerNo to the player mask
-ARM void Knife_Comm_setPlayerBit(s32 playerNo, u32 *groupWord) {
+void Knife_Comm_setPlayerBit(s32 playerNo, u32 *groupWord) {
     KnifeGroupWord *g;
     u32 mask;
 

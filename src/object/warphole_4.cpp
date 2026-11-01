@@ -7,7 +7,7 @@
 //   0x0205df74 warphole_move (original name)
 //   (warphole_init at 0x0205de50 is in scratch/agentF/nonmatching; pos_copy at 0x0205e05c is in warphole_2.cpp)
 
-ARM void warphole_wait(Entity *e) {
+void warphole_wait(Entity *e) {
     u8 *resource;
     u8 kind;
 
@@ -33,7 +33,7 @@ ARM void warphole_wait(Entity *e) {
     }
 }
 
-ARM void warphole_move(Entity *e) {
+void warphole_move(Entity *e) {
     u8 playerMask;
 
     UpdateAnimationSingleFrame(e);

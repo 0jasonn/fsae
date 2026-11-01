@@ -10,7 +10,7 @@ namespace Message {
 
 // TextTokenizer::cleanupTokens() (0x0208f32c): calls the complete dtor (slot 0) of each token, then clears the pool and
 // empties the token list. Does nothing when there is no pool.
-ARM void TextTokenizer::cleanupTokens(void) {
+void TextTokenizer::cleanupTokens(void) {
     s32 i;
 
     if (poolBase == NULL) {

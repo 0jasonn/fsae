@@ -7,11 +7,11 @@
 //   0x0206ba80 heart_throw_init, 0x0206bab8 heart_throw_nop (empty), 0x0206babc heart_throw_throw,
 //   0x0206bae4 heart_throw_end, 0x0206bb28 heart_throw_finish (tail call to heart_throw_end), 0x0206bb34 set38_put
 
-ARM void Set38(Entity *e) {
+void Set38(Entity *e) {
     set38Table[e->action](e);
 }
 
-ARM void set38_init(Entity *e) {
+void set38_init(Entity *e) {
     Entity *child;
 
     if (e->type & 0x80) {
@@ -45,7 +45,7 @@ ARM void set38_init(Entity *e) {
     e->action++;
 }
 
-ARM void set38_move(Entity *e) {
+void set38_move(Entity *e) {
     Vars_Set38 *v = VARS(Vars_Set38, e);
     Entity *link;
 
@@ -84,28 +84,28 @@ ARM void set38_move(Entity *e) {
     }
 }
 
-ARM void set38_lift(Entity *e) {
+void set38_lift(Entity *e) {
     set38LiftTable[e->subAction](e);
 }
 
-ARM void heart_throw_init(Entity *e) {
+void heart_throw_init(Entity *e) {
     e->parent->child = NULL;
     func_02085fac(e->parent);
     InitAnimationForceUpdate(e, 0);
     e->subAction++;
 }
 
-ARM void heart_throw_nop(Entity *e) {
+void heart_throw_nop(Entity *e) {
 }
 
-ARM void heart_throw_throw(Entity *e) {
+void heart_throw_throw(Entity *e) {
     if (e->z.HALF.HI == 0) {
         heart_throw_end(e);
     }
     e->parent->timer = 2;
 }
 
-ARM void heart_throw_end(Entity *e) {
+void heart_throw_end(Entity *e) {
     if (func_02085c28(e) == 0) {
         EffectSet(e, 0xd, 0);
     }
@@ -114,11 +114,11 @@ ARM void heart_throw_end(Entity *e) {
     e->timer = 0x1e;
 }
 
-ARM void heart_throw_finish(Entity *e) {
+void heart_throw_finish(Entity *e) {
     heart_throw_end(e);
 }
 
-ARM void set38_put(Entity *e) {
+void set38_put(Entity *e) {
     u8 held;
     u8 timer;
     u8 sfxTimer;

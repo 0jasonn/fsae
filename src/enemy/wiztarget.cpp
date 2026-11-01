@@ -11,7 +11,7 @@ extern const u8 data_020d2400[]; // three rows of eight choices (one row per pla
 
 // WizGetTarget(OBJ_WORK_*): sorts the players by health (bubble passes depending on the player count), picks one of
 // them with a random choice, falls back to the aim player when it is dead or flagged, and turns the actor towards it.
-ARM void WizGetTarget(Entity *e) {
+void WizGetTarget(Entity *e) {
     Entity *a;
     Entity *b;
     Entity *c;

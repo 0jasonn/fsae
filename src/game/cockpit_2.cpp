@@ -6,6 +6,6 @@
 // Functions in this file: func_02026774 (dsd name, declared in functions.h)
 
 // Sets the flag that requests a redraw of the cockpit.
-ARM void func_02026774(void) {
+void func_02026774(void) {
     data_0212c618[2] = 1;
 }

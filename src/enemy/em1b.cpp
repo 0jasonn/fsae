@@ -19,11 +19,11 @@ extern EntityFunc em1b_type0NormalActions[]; // em1b_type0NormalActions, indexed
 
 void ofsset(Entity *e);
 
-ARM void Em1b(Entity *e) {
+void Em1b(Entity *e) {
     em1b_typeActions[e->type](e);
 }
 
-ARM void em1b_type0(Entity *e) {
+void em1b_type0(Entity *e) {
     Vars_Em1b *vars = VARS(Vars_Em1b, e);
 
     vars->savedX = e->x.HALF.HI;
@@ -32,11 +32,11 @@ ARM void em1b_type0(Entity *e) {
     ofsset(e);
 }
 
-ARM void type0_normal(Entity *e) {
+void type0_normal(Entity *e) {
     em1b_type0NormalActions[e->action](e);
 }
 
-ARM void type0_damage(Entity *e) {
+void type0_damage(Entity *e) {
     Vars_Em1b *vars = VARS(Vars_Em1b, e);
 
     e->child->iframes = e->iframes;

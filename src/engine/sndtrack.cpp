@@ -4,7 +4,7 @@
 
 // func_020c1a38: runs SndTrack_Update with count on each active track of the table.
 extern "C" void func_020c1a38(s32 count);
-ARM void func_020c1a38(s32 count) {
+void func_020c1a38(s32 count) {
     s32 i;
     SndTrack *track;
 

@@ -3,6 +3,7 @@
 import re, subprocess, sys
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
 from trymatch import name_to_addr
+import defs
 from pathlib import Path
 ROOT = Path(__file__).parent.parent
 syms = []
@@ -26,7 +27,7 @@ def method_addr(name):
 if __name__ == "__main__":
     for path in sys.argv[1:]:
         src = Path(path).read_text()
-        names = re.findall(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*&:<>]*?\b(\w+(?:::\w+)*)\s*\([^;\n]*$', src, re.M)
+        names = defs.def_names(src)
         addrs = sorted(a for a in (method_addr(n) for n in names) if a is not None)
         r = subprocess.run([sys.executable, str(ROOT / "tools/trymatch.py"), path, "-q"], capture_output=True, text=True).stdout.strip()
         idx = [syms.index(a) for a in addrs]

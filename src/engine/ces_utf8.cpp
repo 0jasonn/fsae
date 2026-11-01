@@ -11,7 +11,7 @@ namespace Message {
 
 // CES_UTF8::convert(void*, unsigned long, int) const (0x02090164): writes the character, FALSE (0) when the output is
 // NULL, the character is out of range or the buffer is too small; otherwise the number of bytes written
-ARM u32 CES_UTF8::convert(void *out, u32 outSize, s32 character) const {
+u32 CES_UTF8::convert(void *out, u32 outSize, s32 character) const {
     u8 *bytes;
 
     if (out == NULL) {
@@ -57,7 +57,7 @@ ARM u32 CES_UTF8::convert(void *out, u32 outSize, s32 character) const {
 
 // CES_UTF8::readFirstCharacter(void const*, unsigned long, unsigned long*) const (0x02090290): the code point of the
 // first character and its length in *out (0 when there is none)
-ARM u32 CES_UTF8::readFirstCharacter(const void *data, u32 size, u32 *out) const {
+u32 CES_UTF8::readFirstCharacter(const void *data, u32 size, u32 *out) const {
     const u8 *bytes;
     u32 local;
 

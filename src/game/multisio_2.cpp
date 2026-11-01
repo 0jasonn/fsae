@@ -5,7 +5,7 @@
 // Send side of the wireless link (0x0204f1c0): packs the packet header bits from the selected table entry.
 
 // MultiSioSendDataSet (0x0204f1c0)
-ARM void MultiSioSendDataSet(void *a) {
+void MultiSioSendDataSet(void *a) {
     MultiSioPacket *packet;
     void *manager;
     void *instance;

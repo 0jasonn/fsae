@@ -17,7 +17,7 @@ typedef struct Vars_Getarea {
 
 extern "C" void getarea(Entity *e);
 
-ARM void getarea(Entity *e) {
+void getarea(Entity *e) {
     u8 *p;
     u8 *base;
 

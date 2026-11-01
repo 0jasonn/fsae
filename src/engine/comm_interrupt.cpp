@@ -10,7 +10,7 @@
 extern char data_0211b0d4[]; // InterruptDisabledSection vtable (rodata)
 
 extern "C" void *Knife_Comm_InterruptDisabledSection_dtor_InterruptDisabledSection_093b00(void *self);
-ARM void *Knife_Comm_InterruptDisabledSection_dtor_InterruptDisabledSection_093b00(void *self) {
+void *Knife_Comm_InterruptDisabledSection_dtor_InterruptDisabledSection_093b00(void *self) {
     *(void **)self = data_0211b0d4;
     (void)REG_IME;
     REG_IME = *(u32 *)((u8 *)self + 4);

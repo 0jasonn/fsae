@@ -8,7 +8,7 @@
 //   0x02056ddc ProgramSaveBufferDwordEx
 // The save buffer is the u16 table at KnifeApp + 0x4b0, four halfwords per dword index.
 
-ARM void ProgramSaveBufferDwordEx(u16 index, u16 *data) {
+void ProgramSaveBufferDwordEx(u16 index, u16 *data) {
     u16 base = index * 4;
     u32 i;
 

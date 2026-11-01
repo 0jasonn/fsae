@@ -10,7 +10,7 @@ extern const u8 em12_actions[]; // knockback table of em12 (dsd name)
 
 // Damage: a contact from a partner player that faces the actor (contact flag 0x95) with the matching direction and
 // distance costs one health and gives the actor 0xf frames of invincibility; then the generic knockback runs.
-ARM void em12_damage(Entity *e) {
+void em12_damage(Entity *e) {
     Entity *partner;
     s32 gap;
 

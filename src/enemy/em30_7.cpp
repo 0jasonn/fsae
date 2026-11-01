@@ -36,7 +36,7 @@ extern const u8 em30_type0Hitbox[];
 
 // Em29 (0x020417e8): a follower whose parent raises trigger bit 0 restarts in action 6.
 // Then runs the action handler and, for type 2, the two helpers below and a 0x1e-frame cycle that plays sound 0x59.
-ARM void em30_type1(Entity *e) {
+void em30_type1(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 1;
@@ -59,7 +59,7 @@ ARM void em30_type1(Entity *e) {
 // em30_type2 (0x02042a5c): on the first action starts action 1 with animation 3 and sets up with
 // Enemy_SetSpriteFromTable. Every frame updates the child through ObjPosCopyOfs32.
 
-ARM void em30_type2(Entity *e) {
+void em30_type2(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 1;

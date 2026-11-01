@@ -10,7 +10,7 @@ typedef struct WispVars {
     u16 wispTimer; // set to 0x258 when a wisp hits
 } WispVars;
 
-ARM BOOL hit_wisp(Entity *e, Entity *t, u8 unused) {
+BOOL hit_wisp(Entity *e, Entity *t, u8 unused) {
     u16 timer;
     u8 knockback;
 

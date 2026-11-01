@@ -19,7 +19,7 @@ void boots_plsync(Entity *e, Entity *tmpl);
 void func_02084180(Entity *e);
 
 // Boots main: runs the state handler while the game is not frozen, then the common object update.
-ARM void Boots(Entity *e) {
+void Boots(Entity *e) {
     if (data_0212c4b8 == 0) {
         data_020ce524[e->action](e);
     }

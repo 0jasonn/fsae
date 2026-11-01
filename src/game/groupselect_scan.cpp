@@ -13,7 +13,7 @@ extern "C" void Knife_Comm_WirelessManager_startScan(void *manager, BOOL flag, c
 // groupSelect_startScanWait() (0x020b0f8c): switches the wireless manager on, waits until it is ready, then starts
 // the scan of the group select screen
 extern "C" void groupSelect_startScanWait(void);
-ARM void groupSelect_startScanWait(void) {
+void groupSelect_startScanWait(void) {
     void *manager;
     s32 state;
 

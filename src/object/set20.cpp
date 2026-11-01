@@ -7,12 +7,12 @@
 //   0x02065988 set20_init, 0x02065a28 set20_move
 
 // Dispatcher: runs the handler for the current action.
-ARM void Set20(Entity *e) {
+void Set20(Entity *e) {
     set20_stateTable[e->action](e);
 }
 
 // Init: starts the animation and sound, sets the hitbox and the combat stats.
-ARM void set20_init(Entity *e) {
+void set20_init(Entity *e) {
     if ((e->layer & 0xc000) == 0) {
         func_0208ae30(e);
     }
@@ -33,7 +33,7 @@ ARM void set20_init(Entity *e) {
 
 // Updates the animation. A set flag in the frame byte removes the entity. Otherwise the hitbox follows the frame, or
 // the status bit 0x80 is cleared for frames 5 and up.
-ARM void set20_move(Entity *e) {
+void set20_move(Entity *e) {
     u8 frame;
 
     UpdateAnimationSingleFrame(e);

@@ -6,7 +6,7 @@
 //   shikake_playercheck
 
 // Returns 0 as soon as one of the four attached objects of kind 1 fails func_020860dc; 1 otherwise.
-ARM BOOL shikake_playercheck(SHIKAKEWORK *req) {
+BOOL shikake_playercheck(SHIKAKEWORK *req) {
     u8 i;
     Entity *obj;
 

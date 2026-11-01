@@ -16,7 +16,7 @@ typedef struct RectGroupSlot {
 // RectGroup_setSlot(self, index, value) (0x020b9d30, provisional name): stores value in the pointer array at
 // index + count + 5 (the sum is taken as 16 bits)
 extern "C" void RectGroup_setSlot(RectGroupSlot *self, s32 index, void *value);
-ARM void RectGroup_setSlot(RectGroupSlot *self, s32 index, void *value) {
+void RectGroup_setSlot(RectGroupSlot *self, s32 index, void *value) {
     u16 slot;
 
     slot = self->count + 1;

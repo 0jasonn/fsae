@@ -43,7 +43,7 @@ typedef struct CtrlRef {
 // Ctrl_updateAc(self) (0x020bb660, provisional name): RectFlagPair_setFlag with 1 when flagAc is zero (otherwise 0), then
 // Menu_AcquirePoolEntry on the pointer at +0x1c with 2 and 0x80; returns flagAc
 extern "C" u8 Ctrl_updateAc(CtrlFlags *self);
-ARM u8 Ctrl_updateAc(CtrlFlags *self) {
+u8 Ctrl_updateAc(CtrlFlags *self) {
     RectFlagPair_setFlag(self, (self->flagAc == 0) ? 1 : 0);
     Menu_AcquirePoolEntry(self->unk_1c, 2, 0x80);
     return self->flagAc;
@@ -52,7 +52,7 @@ ARM u8 Ctrl_updateAc(CtrlFlags *self) {
 // Ctrl_tryChange(self, out) (0x020bb698, provisional name): returns 0 when Ctrl_isReady (self, out) reports a change,
 // otherwise stores the result of Ctrl_updateAc at out and returns 1
 extern "C" s32 Ctrl_tryChange(CtrlFlags *self, u8 *out);
-ARM s32 Ctrl_tryChange(CtrlFlags *self, u8 *out) {
+s32 Ctrl_tryChange(CtrlFlags *self, u8 *out) {
     if (Ctrl_isReady(self) != 0) {
         return 0;
     }
@@ -64,7 +64,7 @@ ARM s32 Ctrl_tryChange(CtrlFlags *self, u8 *out) {
 // the halfword at +0x18 of the pointer at +0x6c set to 10, then Menu_AcquirePoolEntry on the pointer at +0x1c with 8 and 0x80;
 // returns flagAd
 extern "C" u8 Ctrl_updateAd(CtrlFlags *self);
-ARM u8 Ctrl_updateAd(CtrlFlags *self) {
+u8 Ctrl_updateAd(CtrlFlags *self) {
     Ctrl_setFlagAndUpdate((void *)self, (self->flagAd == 0) ? 1 : 0);
     ((s16 *)self->unk_6c)[0x18 / 2] = 10;
     Menu_AcquirePoolEntry(self->unk_1c, 8, 0x80);
@@ -74,7 +74,7 @@ ARM u8 Ctrl_updateAd(CtrlFlags *self) {
 // Ctrl_setCounterA(self) (0x020bb70c, provisional name): the halfword at +0x18 of the pointer at +0x68 set to 10, then
 // Menu_AcquirePoolEntry on the pointer at +0x1c with 4 and 0x80
 extern "C" void Ctrl_setCounterA(CtrlFlags *self);
-ARM void Ctrl_setCounterA(CtrlFlags *self) {
+void Ctrl_setCounterA(CtrlFlags *self) {
     ((s16 *)self->unk_68)[0x18 / 2] = 10;
     Menu_AcquirePoolEntry(self->unk_1c, 4, 0x80);
 }
@@ -82,7 +82,7 @@ ARM void Ctrl_setCounterA(CtrlFlags *self) {
 // Ctrl_isReady(self) (0x020bb730, provisional name): 0 when the halfword at +0x26 is in 1..0x95 and the flag is set,
 // the halfword at +0x9a equals the one at +4 of the pointer at +0x60 (outside that range) and the two halfwords of the
 // slider at +0x5c are equal; otherwise 1
-ARM s32 Ctrl_isReady(void *selfObj) {
+s32 Ctrl_isReady(void *selfObj) {
     CtrlFlags *self = (CtrlFlags *)selfObj;
     s32 result = 1;
     s32 flag = 1;

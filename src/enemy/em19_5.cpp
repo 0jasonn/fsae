@@ -5,7 +5,7 @@
 
 // Functions in this file: em19_move2 (0x0203e410).
 
-ARM void em19_move2(Entity *e) {
+void em19_move2(Entity *e) {
     func_020847a0(e);
     UpdateAnimationSingleFrame(e);
     if ((e->direction & 8) != 0) {

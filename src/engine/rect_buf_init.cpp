@@ -20,7 +20,7 @@ extern "C" void func_020bc99c(void *self, void *bufA, s32 bufB, s32 arg5, u16 ar
 // func_020bc8bc, makes bufA from sourceA (size 4) and bufB from sourceB (size 0x20), then calls func_020bc99c with
 // bufA, bufB rounded up to 0x20 and the two other arguments
 extern "C" void RectBufSet_init(RectBufSet *self, s32 arg1, void *sourceA, void *sourceB, s32 arg5, u16 arg6);
-ARM void RectBufSet_init(RectBufSet *self, s32 arg1, void *sourceA, void *sourceB, s32 arg5, u16 arg6) {
+void RectBufSet_init(RectBufSet *self, s32 arg1, void *sourceA, void *sourceB, s32 arg5, u16 arg6) {
     func_020bc8bc(self, arg1);
     self->bufA = func_020b7b1c(sourceA, self, 4, 0);
     self->bufB = func_020b7b1c(sourceB, self, 0x20, 0);

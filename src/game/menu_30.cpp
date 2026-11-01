@@ -12,7 +12,7 @@ s32 Menu_WrapInto(void *self, s32 value, s32 a, s32 b);
 // entry that is not in use, starting there. The first free entry becomes current and is returned. When none is free and
 // flag is set, the entry at the current index is returned (otherwise 0).
 extern "C" MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag);
-ARM MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag) {
+MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag) {
     u32 i;
     s32 zero;
     s32 index;

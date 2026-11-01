@@ -16,7 +16,7 @@ extern u8 data_0212c75c[]; // display block, 16-bit fields at +0, +0x66 and +0x6
 extern u16 data_0212c584[];
 
 // yousei_fade (0x02081f14)
-ARM void yousei_fade(void) {
+void yousei_fade(void) {
     u8 i;
 
     switch (data_0212c4dc) {
@@ -46,7 +46,7 @@ ARM void yousei_fade(void) {
 }
 
 // yousei_msgFinishWait (0x02082008)
-ARM int yousei_msgFinishWait(void) {
+int yousei_msgFinishWait(void) {
     u8 i;
 
     for (i = 0; i < data_0212c7c8.unk_0; i++) {

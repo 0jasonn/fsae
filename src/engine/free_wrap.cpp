@@ -7,7 +7,7 @@ extern "C" void FreeToSystemHeap(void *block);
 
 extern "C" void FreeIfSet_02005628(void *block);
 
-ARM void FreeIfSet_02005628(void *block) {
+void FreeIfSet_02005628(void *block) {
     if (block == NULL) {
         return;
     }

@@ -5,7 +5,7 @@
 // Save media unit 5. Address -> name:
 //   0x02056998 Knife_InitialSaveFile (original name)
 
-ARM void Knife_InitialSaveFile(u8 slot) {
+void Knife_InitialSaveFile(u8 slot) {
     const u8 *name = data_020d8524;
     const SaveEepInfo *info;
 

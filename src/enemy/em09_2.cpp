@@ -7,7 +7,7 @@
 // em09_seqSet em09_seqSet, seqMove seqMove, kuttsukiReset kuttsukiReset,
 // em09_kuttsuki_reset em09_kuttsuki_reset, Boss_RunStateTable Boss_RunStateTable, em10_normal em10_normal
 
-ARM void em09_wait2(Entity *e) {
+void em09_wait2(Entity *e) {
     u8 action;
     if (--e->subtimer == 0) {
         action = e->action;
@@ -17,7 +17,7 @@ ARM void em09_wait2(Entity *e) {
     seqMove(e);
 }
 
-ARM void em09_type2_init(Entity *e) {
+void em09_type2_init(Entity *e) {
     Tbl3 altPalette;
     e->spriteSettings.b20 = em09_paletteByType[e->type];
     e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -33,13 +33,13 @@ ARM void em09_type2_init(Entity *e) {
     e->action++;
 }
 
-ARM void em09_type2_move(Entity *e) {
+void em09_type2_move(Entity *e) {
     if (VPW(e->parent)->childAlive == 0) {
         PutObjWork(e);
     }
 }
 
-ARM void em09_seqSet(Entity *e) {
+void em09_seqSet(Entity *e) {
     u8 anim = EmCharDir2(e->direction);
     if (anim != 0xff && anim != e->animationState) {
         e->animationState = anim;
@@ -48,12 +48,12 @@ ARM void em09_seqSet(Entity *e) {
     }
 }
 
-ARM void seqMove(Entity *e) {
+void seqMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     UpdateAnimationSingleFrame(e->parent);
 }
 
-ARM void kuttsukiReset(Entity *e) {
+void kuttsukiReset(Entity *e) {
     data_0212ceb0[e->child->type].unk_02 = 0x41;
     data_0212ceb0[e->child->type].unk_0a[0] = 0;
     data_0212ceb0[e->child->type].statusFlags &= 0xffef;
@@ -71,16 +71,16 @@ ARM void kuttsukiReset(Entity *e) {
     }
 }
 
-ARM void em09_kuttsuki_reset(Entity *e) {
+void em09_kuttsuki_reset(Entity *e) {
     if (e->action == 4) {
         kuttsukiReset(e);
     }
 }
 
-ARM void Boss_RunStateTable(Entity *e) {
+void Boss_RunStateTable(Entity *e) {
     EnemyFunctionHandler(e, em10_actions);
 }
 
-ARM void em10_normal(Entity *e) {
+void em10_normal(Entity *e) {
     em10_normalActions[e->action](e);
 }

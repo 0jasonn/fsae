@@ -48,16 +48,16 @@ extern u8 data_02fe0000[];
 extern void OS_SetIrqFunction(u32 mask, void (*func)(void));
 
 // Track id from the game state
-ARM void LoadTokiWave(void) {
+void LoadTokiWave(void) {
     func_0208cb74(tokiWaveLockIds[data_0212c7c8.unk_48]);
     m4aLockWaveData(tokiWaveLockIds[data_0212c7c8.unk_48]);
 }
 
-ARM void UnlockTokiWave(void) {
+void UnlockTokiWave(void) {
     m4aUnlockWaveData(tokiWaveUnlockIds[data_0212c7c8.unk_48]);
 }
 
-ARM void Irq_InitVBlank(void) {
+void Irq_InitVBlank(void) {
     OS_SetIrqFunction(0x80, Irq_Bit7Handler);
     OS_SetIrqFunction(1, VBlankIntr);
     OS_SetIrqFunction(4, VCountIntr);

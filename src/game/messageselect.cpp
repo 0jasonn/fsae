@@ -26,7 +26,7 @@ typedef struct KnifeMessageSelect {
 
 // MessageSelect::init() (0x020a1838): clears the list
 extern "C" void Knife_Message_MessageSelect_init(void *a);
-ARM void Knife_Message_MessageSelect_init(void *a) {
+void Knife_Message_MessageSelect_init(void *a) {
     KnifeMessageSelect *self = (KnifeMessageSelect *)a;
 
     self->flag0 = 0;

@@ -7,7 +7,7 @@
 
 // WirelessIcon::~WirelessIcon, deleting dtor (0x0209a660): frees the block and returns it.
 extern "C" WirelessIcon *Knife_Comm_WirelessIcon_dtor_WirelessIcon(WirelessIcon *self);
-ARM WirelessIcon *Knife_Comm_WirelessIcon_dtor_WirelessIcon(WirelessIcon *self) {
+WirelessIcon *Knife_Comm_WirelessIcon_dtor_WirelessIcon(WirelessIcon *self) {
     operator delete(self);
     return self;
 }
@@ -16,7 +16,7 @@ extern "C" void Knife_Comm_WirelessIcon_finalize(WirelessIcon *self);
 
 // WirelessIcon::initialize_16x16_ColorMode(ColorType, int) (0x0209a674)
 extern "C" void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(WirelessIcon *self, u32 colorType, s32 paletteNo);
-ARM void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(WirelessIcon *self, u32 colorType, s32 paletteNo) {
+void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(WirelessIcon *self, u32 colorType, s32 paletteNo) {
     Knife_Comm_WirelessIcon_finalize(self);
     self->unk_05 = 0;
     self->unk_06 = 0;
@@ -27,7 +27,7 @@ ARM void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(WirelessIcon *self, 
 
 // WirelessIcon::finalize() (0x0209a6a8): clears the state fields.
 extern "C" void Knife_Comm_WirelessIcon_finalize(WirelessIcon *self);
-ARM void Knife_Comm_WirelessIcon_finalize(WirelessIcon *self) {
+void Knife_Comm_WirelessIcon_finalize(WirelessIcon *self) {
     self->enabled = 0;
     self->unk_05 = 0;
     self->unk_06 = 0;

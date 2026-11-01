@@ -9,7 +9,7 @@ namespace Knife {
 namespace Message {
 
 // MessageTextRender::onReadBlankTag(int) (0x020a0dac): moves the text x position by a blank of value pixels
-ARM void MessageTextRender::onReadBlankTag(int value) {
+void MessageTextRender::onReadBlankTag(int value) {
     offsetX = offsetX + (s16)value;
 }
 

@@ -7,7 +7,7 @@
 
 // Level_deletingDtor(self) (0x020b70e8, provisional name): deleting destructor of the Level class, returns self
 extern "C" void *Level_deletingDtor(void *self);
-ARM void *Level_deletingDtor(void *self) {
+void *Level_deletingDtor(void *self) {
     operator delete(self);
     return self;
 }

@@ -26,11 +26,11 @@ extern u8 messageRequest;
 extern u8 localPlayerIndex;
 extern u16 data_0212c584[4];
 
-ARM void em0f_main(Entity *e) {
+void em0f_main(Entity *e) {
     em0f_actions[func_02085294(e)](e);
 }
 
-ARM void em0f_normal(Entity *e) {
+void em0f_normal(Entity *e) {
     if (VARS(Vars_Em0f, e)->darumaMode != 0) {
         darumaMgr(e);
         return;
@@ -38,7 +38,7 @@ ARM void em0f_normal(Entity *e) {
     em0f_normalActions[e->action](e);
 }
 
-ARM void em0f_damage(Entity *e) {
+void em0f_damage(Entity *e) {
     Vars_Em0f *vars = VARS(Vars_Em0f, e);
 
     if (vars->hitsLeft != 0 && e->contactFlags == 0x96) {
@@ -53,7 +53,7 @@ ARM void em0f_damage(Entity *e) {
     GenericKnockback(e, em0f_actions);
 }
 
-ARM void em0f_init(Entity *e) {
+void em0f_init(Entity *e) {
     e->action = 1;
     e->unk_2e = 8;
     e->z.HALF.HI = -0x20;
@@ -83,7 +83,7 @@ ARM void em0f_init(Entity *e) {
     BindPlayers();
 }
 
-ARM void em0f_eyeopen(Entity *e) {
+void em0f_eyeopen(Entity *e) {
     u8 i;
 
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
@@ -103,7 +103,7 @@ ARM void em0f_eyeopen(Entity *e) {
     }
 }
 
-ARM void em0f_meswait(Entity *e) {
+void em0f_meswait(Entity *e) {
     u16 i;
 
     BindPlayers();
@@ -127,7 +127,7 @@ ARM void em0f_meswait(Entity *e) {
     e->action = 3;
 }
 
-ARM void em0f_flight(Entity *e) {
+void em0f_flight(Entity *e) {
     void *app;
 
     app = KnifeApp_getInstance();

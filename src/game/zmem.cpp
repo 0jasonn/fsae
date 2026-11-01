@@ -9,7 +9,7 @@
 extern u8 data_0213a7a0[];
 
 // zFree (0x0202a568)
-ARM void zFree(void *block) {
+void zFree(void *block) {
     u16 *table = (u16 *)data_0213a7a0;
     u16 i = 0;
     u16 count = table[0];

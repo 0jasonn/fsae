@@ -11,15 +11,15 @@
 //   0x020751e4 rr_type0_move (dsd name, original type0_move)
 //   0x02075218 type0_setgufu (original name)
 
-ARM void Set66(Entity *e) {
+void Set66(Entity *e) {
     set66_typeActions[e->type](e);
 }
 
-ARM void set66_type0(Entity *e) {
+void set66_type0(Entity *e) {
     set66_type0Actions[e->action](e);
 }
 
-ARM void rr_type0_init_075064(Entity *e) {
+void rr_type0_init_075064(Entity *e) {
     const s16 *pos;
     u16 i;
     Entity *spawn;
@@ -36,7 +36,7 @@ ARM void rr_type0_init_075064(Entity *e) {
     e->action = 1;
 }
 
-ARM void rr_type0_wait(Entity *e) {
+void rr_type0_wait(Entity *e) {
     Vars_Set66 *v;
     u8 i;
 
@@ -63,7 +63,7 @@ ARM void rr_type0_wait(Entity *e) {
     }
 }
 
-ARM void rr_type0_move(Entity *e) {
+void rr_type0_move(Entity *e) {
     Vars_Set66 *v;
 
     v = VARS(Vars_Set66, e);
@@ -73,7 +73,7 @@ ARM void rr_type0_move(Entity *e) {
     }
 }
 
-ARM void type0_setgufu(Entity *e) {
+void type0_setgufu(Entity *e) {
     BindPlayers();
     if (GetEnemyWork(0x2f) != NULL) {
         PutObjWork(e);

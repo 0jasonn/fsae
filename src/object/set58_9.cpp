@@ -32,7 +32,7 @@ typedef struct Vars_Set58Fairy {
     /* 62 */ s16 homeY; // y of the spot
 } Vars_Set58Fairy;
 
-ARM void set58_kougyoku(Entity *e) {
+void set58_kougyoku(Entity *e) {
     if (e->type2 == 0) {
         set58_kougyokuActions[e->action](e);
     } else {
@@ -41,7 +41,7 @@ ARM void set58_kougyoku(Entity *e) {
     }
 }
 
-ARM void kougyoku_init(Entity *e) {
+void kougyoku_init(Entity *e) {
     s32 rank;
 
     set58_actionInit(e);
@@ -59,7 +59,7 @@ ARM void kougyoku_init(Entity *e) {
     e->spriteSettings.b16 = e->spriteSettings.b20;
 }
 
-ARM void kougyoku_move(Entity *e) {
+void kougyoku_move(Entity *e) {
     u16 i;
     Entity *child;
 
@@ -84,7 +84,7 @@ ARM void kougyoku_move(Entity *e) {
     e->spriteSettings.b0 = 0;
 }
 
-ARM void kougyoku_wait(Entity *e) {
+void kougyoku_wait(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -94,7 +94,7 @@ ARM void kougyoku_wait(Entity *e) {
     em12_typeMasks |= 4;
 }
 
-ARM void kougyoku_down(Entity *e) {
+void kougyoku_down(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -103,7 +103,7 @@ ARM void kougyoku_down(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void kougyoku2_move(Entity *e) {
+void kougyoku2_move(Entity *e) {
     Entity *child;
 
     child = e->child;
@@ -115,7 +115,7 @@ ARM void kougyoku2_move(Entity *e) {
     MoveDir(e);
 }
 
-ARM void kougyoku2_wait(Entity *e) {
+void kougyoku2_wait(Entity *e) {
     if (!(em12_typeMasks & 4)) {
         return;
     }
@@ -124,7 +124,7 @@ ARM void kougyoku2_wait(Entity *e) {
     e->direction = 0x10;
 }
 
-ARM void kougyoku2_down(Entity *e) {
+void kougyoku2_down(Entity *e) {
     Entity *child;
 
     if (e->timer != 0) {
@@ -145,7 +145,7 @@ ARM void kougyoku2_down(Entity *e) {
     e->timer = 0x3c;
 }
 
-ARM void kougyoku2_key(Entity *e) {
+void kougyoku2_key(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -153,11 +153,11 @@ ARM void kougyoku2_key(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set58_fairy(Entity *e) {
+void set58_fairy(Entity *e) {
     set58_fairyActions[e->action](e);
 }
 
-ARM void kougyoku2_fairy_init(Entity *e) {
+void kougyoku2_fairy_init(Entity *e) {
     Vars_Set58Fairy *v = VARS(Vars_Set58Fairy, e);
 
     e->spriteSettings.b0 = 1;
@@ -173,7 +173,7 @@ ARM void kougyoku2_fairy_init(Entity *e) {
     }
 }
 
-ARM void kougyoku2_fairy_fuwafuwa(Entity *e) {
+void kougyoku2_fairy_fuwafuwa(Entity *e) {
     Vars_Set58Fairy *v = VARS(Vars_Set58Fairy, e);
 
     MoveDir(e);

@@ -2,12 +2,12 @@
 #include "engine/misc_d.h"
 #include "global.h"
 
-ARM void PaletteFade_ClearBufferFlag(void) {
+void PaletteFade_ClearBufferFlag(void) {
     paletteFade.bufferSelect = 0;
 }
 
 // Applies the fade level from the entity's x position, blends and uploads the palette buffer.
-ARM void title_resourceCtrlCallback(DISP_CTRL_ *ctrl) {
+void title_resourceCtrlCallback(DISP_CTRL_ *ctrl) {
     Entity *e = (Entity *)ctrl; // DISP_CTRL_ layout not known yet; read through the Entity view
     u16 fadeLevel = e->x.HALF.LO;
     if (fadeLevel > 0xc0) {
@@ -43,7 +43,7 @@ ARM void title_resourceCtrlCallback(DISP_CTRL_ *ctrl) {
     func_02014c24(0x60);
 }
 
-ARM void setupVirtualScreenCallback(void) {
+void setupVirtualScreenCallback(void) {
     s32 copySize;
     void *copySource;
     func_02082c54((void *)title_resourceCtrlCallback);

@@ -16,7 +16,7 @@ extern const MusicIndexEntry *const bgmIndexTable[];
 extern const u32 bgmVariantTracks[];
 
 
-ARM void BgmSet(void) {
+void BgmSet(void) {
     u32 trackId;
     u16 current;
     if (data_0212c7c8.unk_6e >= 2) {
@@ -56,7 +56,7 @@ ARM void BgmSet(void) {
     SoundReq(trackId);
 }
 
-ARM void GameState_SetTrackVariant(void) {
+void GameState_SetTrackVariant(void) {
     u8 key;
     data_0212c7c8.unk_8e = 0;
     if (data_0212c7c8.pickIndex < 5) {

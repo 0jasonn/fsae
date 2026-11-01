@@ -50,7 +50,7 @@ typedef struct RectSlot {
 // RectItem_allocArray(holder, count) (0x020b8e28, provisional name): allocates count items (at least one) from the heap
 // of holder, clears each one and returns the array, or NULL when the allocation fails
 extern "C" RectSlotItem *RectItem_allocArray(void *holder, u32 count);
-ARM RectSlotItem *RectItem_allocArray(void *holder, u32 count) {
+RectSlotItem *RectItem_allocArray(void *holder, u32 count) {
     RectSlotItem *items;
     u32 i;
     u32 n;
@@ -72,7 +72,7 @@ ARM RectSlotItem *RectItem_allocArray(void *holder, u32 count) {
 // RectObjList_findHit2(items, count, pos) (0x020b8e88, provisional name): index of the first item that RectObj_hitTest
 // accepts at pos, or -1 when none does (the same code as RectObjList_findHit)
 extern "C" s32 RectObjList_findHit2(void **items, s32 count, s16 *pos);
-ARM s32 RectObjList_findHit2(void **items, s32 count, s16 *pos) {
+s32 RectObjList_findHit2(void **items, s32 count, s16 *pos) {
     s16 point[2];
     s16 i;
 
@@ -88,7 +88,7 @@ ARM s32 RectObjList_findHit2(void **items, s32 count, s16 *pos) {
 
 // RectSlot_status(self) (0x020b8ef8, provisional name): -1 when the first word of self is set, otherwise 0
 extern "C" s32 RectSlot_status(RectSlot *self);
-ARM s32 RectSlot_status(RectSlot *self) {
+s32 RectSlot_status(RectSlot *self) {
     s32 status = 0;
     if (self->vtable != NULL) {
         status = -1;
@@ -99,7 +99,7 @@ ARM s32 RectSlot_status(RectSlot *self) {
 // RectSlot_init(self) (0x020b8f0c, provisional name): RectObjLink2_init, then the vtable data_02126ec0, the offsets
 // and flags of the slot (the two -1 halfwords at +0x2a and +0x2c, the byte at +0x3c set to 1). Returns self.
 extern "C" void *RectSlot_init(RectSlot *self);
-ARM void *RectSlot_init(RectSlot *self) {
+void *RectSlot_init(RectSlot *self) {
     RectObjLink2_init(self);
     self->vtable = data_02126ec0;
     self->unk_1c = NULL;

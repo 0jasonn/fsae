@@ -18,7 +18,7 @@
         return 0; \
     } while (0)
 
-ARM int ObjLiftPrioCheck(Entity *e) {
+int ObjLiftPrioCheck(Entity *e) {
     s32 cell;
 
     if ((e->layer & 0x8000) == 0) {

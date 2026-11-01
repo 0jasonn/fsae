@@ -9,7 +9,7 @@ extern "C" void SndHeap_ResetHigh(u32 *heap);
 // SndHeap_ReserveLinear: reserves size bytes from the linear heap (a zero size becomes 1 byte, the size is rounded up to 4).
 // A flag of zero or more takes the block from the low cursor with that alignment, a negative flag from the high cursor.
 extern "C" void *SndHeap_ReserveLinear(u32 *heap, u32 size, s32 flag);
-ARM void *SndHeap_ReserveLinear(u32 *heap, u32 size, s32 flag) {
+void *SndHeap_ReserveLinear(u32 *heap, u32 size, s32 flag) {
     if (size == 0) {
         size = 1;
     }
@@ -22,7 +22,7 @@ ARM void *SndHeap_ReserveLinear(u32 *heap, u32 size, s32 flag) {
 
 // SndHeap_ResetFlags: bit 0 of flags rewinds the low cursor, bit 1 resets the high cursor.
 extern "C" void SndHeap_ResetFlags(u32 *heap, u32 flags);
-ARM void SndHeap_ResetFlags(u32 *heap, u32 flags) {
+void SndHeap_ResetFlags(u32 *heap, u32 flags) {
     if (flags & 1) {
         SndHeap_Rewind(heap);
     }
@@ -33,7 +33,7 @@ ARM void SndHeap_ResetFlags(u32 *heap, u32 flags) {
 
 // SndHeapPool_Pop: takes the first block of a free list whose next word is at +0; returns the block or 0.
 extern "C" void *SndHeapPool_Pop(void **head);
-ARM void *SndHeapPool_Pop(void **head) {
+void *SndHeapPool_Pop(void **head) {
     void *block;
 
     block = *head;
@@ -46,7 +46,7 @@ ARM void *SndHeapPool_Pop(void **head) {
 // SndHeapPool_Alloc: pops a block from the pool at heap+0x24. When the flag word has bit 0 set the block is cleared with
 // zeros over the pool block size (heap+0x28).
 extern "C" void *SndHeapPool_Alloc(u32 *heap);
-ARM void *SndHeapPool_Alloc(u32 *heap) {
+void *SndHeapPool_Alloc(u32 *heap) {
     void *block;
     u32 blockSize;
 
@@ -62,7 +62,7 @@ ARM void *SndHeapPool_Alloc(u32 *heap) {
 
 // SndHeapPool_Push: links block at the front of the pool at heap+0x24.
 extern "C" void SndHeapPool_Push(u32 *heap, void *block);
-ARM void SndHeapPool_Push(u32 *heap, void *block) {
+void SndHeapPool_Push(u32 *heap, void *block) {
     *(void **)block = (void *)heap[9];
     heap[9] = (u32)block;
 }

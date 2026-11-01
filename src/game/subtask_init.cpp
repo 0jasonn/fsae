@@ -10,7 +10,7 @@
 extern void *data_0212c560;
 
 extern "C" void subTaskInit_lang(int language);
-ARM void subTaskInit_lang(int language) {
+void subTaskInit_lang(int language) {
     u32 size;
     void *file;
     void *block;

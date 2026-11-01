@@ -49,7 +49,7 @@ extern "C" void nameEntryUIView_initialize(NameEntryUIViewCtrl *self);
 
 // nameEntryUIView::getText (0x020ae558): ids 0x2328 to 0x232d are the name characters of the view, other ids come from the
 // table of the language flag at offset 0x47
-ARM s32 nameEntryUIView_getText(void *self, KnifeMsgText *out, u32 index, s32 language) {
+s32 nameEntryUIView_getText(void *self, KnifeMsgText *out, u32 index, s32 language) {
     u8 *obj;
     s32 slot;
     u32 handle;
@@ -73,7 +73,7 @@ ARM s32 nameEntryUIView_getText(void *self, KnifeMsgText *out, u32 index, s32 la
 }
 
 // nameEntryUIView::initialize (0x020ae5bc): initialises the base view, the flags and the 0x47 name entries
-ARM void nameEntryUIView_initialize(NameEntryUIViewCtrl *self) {
+void nameEntryUIView_initialize(NameEntryUIViewCtrl *self) {
     u32 off;
     u32 i;
     u8 *el;

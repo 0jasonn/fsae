@@ -2,7 +2,7 @@
 #include "enemy/em26.h"
 #include "global.h"
 
-ARM void em28_init(Entity *e) {
+void em28_init(Entity *e) {
     Entity *child = GetTamaWork2(9);
     if (child == NULL) {
         return;
@@ -20,7 +20,7 @@ ARM void em28_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em28_getdir(Entity *e) {
+void em28_getdir(Entity *e) {
     e->action = 2;
     e->timer = 0x3c;
     e->unk_6c[8] = 0x3c;

@@ -17,13 +17,13 @@ typedef struct ObjDispatchVars {
 
 // objDispatchPutWork (0x02076b50)
 extern "C" void objDispatchPutWork(Entity *e);
-ARM void objDispatchPutWork(Entity *e) {
+void objDispatchPutWork(Entity *e) {
     PutObjWork(e);
 }
 
 // objDispatchAction (0x02076b5c)
 extern "C" void objDispatchAction(Entity *e);
-ARM void objDispatchAction(Entity *e) {
+void objDispatchAction(Entity *e) {
     if (e->action != 0) {
         if (data_0212c4b8 == 0) {
             if (VARS(ObjDispatchVars, e)->delayTimer != 0) {

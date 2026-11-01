@@ -18,13 +18,13 @@ extern "C" void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(void *self, u
 extern "C" void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
 
 // BeforeTask (0x020828b8)
-ARM void BeforeTask(void) {
+void BeforeTask(void) {
     frameCounter[0x14] = frameCounter[0x13];
     frameCounter[0x13] = 0;
 }
 
 // twlInitVRAM (0x020828d4)
-ARM void twlInitVRAM(void) {
+void twlInitVRAM(void) {
     Vram_SetLcdcBits(0x1ff);
     MIi_CpuClearFast(0, (void *)0x6800000, 0xa4000);
     Vram_DisableBankTail();
@@ -35,7 +35,7 @@ ARM void twlInitVRAM(void) {
 }
 
 // twlInitAgb (0x0208294c)
-ARM void twlInitAgb(void) {
+void twlInitAgb(void) {
     u32 control;
 
     func_020148f0(1);
@@ -46,7 +46,7 @@ ARM void twlInitAgb(void) {
 }
 
 // twlInitSubDisplay (0x02082994)
-ARM void twlInitSubDisplay(void) {
+void twlInitSubDisplay(void) {
     u8 *app;
 
     Vram_SetBankGroupA(4);

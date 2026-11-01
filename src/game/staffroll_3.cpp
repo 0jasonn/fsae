@@ -9,6 +9,6 @@
 extern "C" void subTask_staffroll_release(void);
 
 // subTask_staffroll_releaseEntry (0x020adfe4): entry of the release step, jumps to subTask_staffroll_release
-ARM void subTask_staffroll_releaseEntry(void) {
+void subTask_staffroll_releaseEntry(void) {
     subTask_staffroll_release();
 }

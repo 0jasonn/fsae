@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void BindPlayers(void) {
+void BindPlayers(void) {
     u8 i;
 
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
@@ -49,7 +49,7 @@ ARM void BindPlayers(void) {
     frameCounter[0x13] = 1;
 }
 
-ARM void WarpPlayer(void) {
+void WarpPlayer(void) {
     u8 i;
 
     for (i = 0; i < data_0212c7c8.unk_0; i++) {

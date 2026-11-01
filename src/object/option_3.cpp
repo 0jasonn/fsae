@@ -4,7 +4,7 @@
 //   0x0205c2d8 copy_move, 0x0205c330 copy_hide, 0x0205c364 miniPanelPatSet
 //   0x0205c3bc panel_mode, 0x0205c3d8 mode_init, 0x0205c3f4 mode_wait, 0x0205c420 mode_out, 0x0205c488 mode_in
 
-ARM void copy_move(Entity *e) {
+void copy_move(Entity *e) {
     Vars_Option *vars = VARS(Vars_Option, e);
 
     miniPanelPatSet(e);
@@ -18,7 +18,7 @@ ARM void copy_move(Entity *e) {
     data_021349c0[NP_SHOWN] = 1;
 }
 
-ARM void copy_hide(Entity *e) {
+void copy_hide(Entity *e) {
     data_021349c0[NP_SHOWN] = 1;
     miniPanelPatSet(e);
     if (ObjAnimMoveLine(e)) {
@@ -27,7 +27,7 @@ ARM void copy_hide(Entity *e) {
     }
 }
 
-ARM void miniPanelPatSet(Entity *e) {
+void miniPanelPatSet(Entity *e) {
     Vars_Option *vars = VARS(Vars_Option, e);
 
     if (data_021349c0[NP_SLOT_B] == 3 && e->type2 == data_021349c0[NP_CURSOR_TYPE]) {
@@ -39,17 +39,17 @@ ARM void miniPanelPatSet(Entity *e) {
     e->unk_21 = vars->patBase + vars->patSelect;
 }
 
-ARM void panel_mode(Entity *e) {
+void panel_mode(Entity *e) {
     panel_mode_actions[e->action](e);
 }
 
-ARM void mode_init(Entity *e) {
+void mode_init(Entity *e) {
     e->action = 1;
     e->type2 = 0xff;
     e->timer = 0x20;
 }
 
-ARM void mode_wait(Entity *e) {
+void mode_wait(Entity *e) {
     if (e->type2 != data_021349c0[NP_PHASE]) {
         e->type2 = data_021349c0[NP_PHASE];
         e->action = 2;
@@ -57,7 +57,7 @@ ARM void mode_wait(Entity *e) {
     }
 }
 
-ARM void mode_out(Entity *e) {
+void mode_out(Entity *e) {
     if (DISP_REG(0xc) < 0x20) {
         DISP_REG(0xc) += 2;
     } else {
@@ -69,7 +69,7 @@ ARM void mode_out(Entity *e) {
     data_021349c0[NP_SHOWN] = 1;
 }
 
-ARM void mode_in(Entity *e) {
+void mode_in(Entity *e) {
     if (DISP_REG(0xc) != 0) {
         DISP_REG(0xc) -= 2;
     } else {

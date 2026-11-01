@@ -29,11 +29,11 @@ typedef struct Vars_Rr {
     /* 6a */ u16 layer;          // 0x4000 or 0x8000, copied to the spawned object's layer
 } Vars_Rr;
 
-ARM void rr_main(Entity *e) {
+void rr_main(Entity *e) {
     rr_actions[e->action](e);
 }
 
-ARM void rr_init(Entity *e) {
+void rr_init(Entity *e) {
     Vars_Rr *v;
     u16 layer;
 
@@ -53,7 +53,7 @@ ARM void rr_init(Entity *e) {
     v->layer = layer;
 }
 
-ARM void rr_wait(Entity *e) {
+void rr_wait(Entity *e) {
     Vars_Rr *v;
 
     v = VARS(Vars_Rr, e);
@@ -63,7 +63,7 @@ ARM void rr_wait(Entity *e) {
     }
 }
 
-ARM void rr_move(Entity *e) {
+void rr_move(Entity *e) {
     Vars_Rr *v;
     u16 x;
     u16 y;
@@ -85,7 +85,7 @@ ARM void rr_move(Entity *e) {
 }
 
 // Spawns one rupee object at (x, y) for the rupee rush entity e.
-ARM void setRupee(Entity *e, u16 x, u16 y) {
+void setRupee(Entity *e, u16 x, u16 y) {
     Vars_Rr *v;
     Entity *spawn;
 

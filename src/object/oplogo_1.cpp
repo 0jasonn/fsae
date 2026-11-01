@@ -19,15 +19,15 @@ typedef struct Vars_Oplogo {
     /* 7c */ u16 holdTimer; // frames to wait before the appear step
 } Vars_Oplogo;
 
-ARM void oplogo_typeDispatch(Entity *e) {
+void oplogo_typeDispatch(Entity *e) {
     data_02115bac[e->type](e);
 }
 
-ARM void oplogo_title(Entity *e) {
+void oplogo_title(Entity *e) {
     data_02115b84[e->action](e);
 }
 
-ARM void oplogo_title_init(Entity *e) {
+void oplogo_title_init(Entity *e) {
     e->spriteSettings.b0 = 2;
     e->spriteSettings.b14 = (e->type == 0) ? 2 : 1;
     e->spriteSettings.b30 = 1;
@@ -39,7 +39,7 @@ ARM void oplogo_title_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void oplogo_title_appear(Entity *e) {
+void oplogo_title_appear(Entity *e) {
     Vars_Oplogo *v = VARS(Vars_Oplogo, e);
 
     if (*(u16 *)data_0212c594 & 1) {
@@ -53,7 +53,7 @@ ARM void oplogo_title_appear(Entity *e) {
     }
 }
 
-ARM void oplogo_title_move(Entity *e) {
+void oplogo_title_move(Entity *e) {
     Vars_Oplogo *v = VARS(Vars_Oplogo, e);
 
     if (data_0212c4dc != 3) {

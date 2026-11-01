@@ -7,7 +7,7 @@ extern u8 data_021349c0[];
 extern u16 data_0212c594[];
 
 // lever, 0x020699a4
-ARM void lever(Entity *e) {
+void lever(Entity *e) {
     u8 action = e->action;
     u8 nextAction;
     s16 *pos;
@@ -30,7 +30,7 @@ ARM void lever(Entity *e) {
 }
 
 // abutton, 0x02069a38
-ARM void abutton(Entity *e) {
+void abutton(Entity *e) {
     u8 action = e->action;
     u8 nextAction;
     s16 *pos;
@@ -56,7 +56,7 @@ ARM void abutton(Entity *e) {
 }
 
 // pwait, 0x02069ae4
-ARM void pwait(Entity *e) {
+void pwait(Entity *e) {
     u8 action = e->action;
     u8 nextAction;
     s16 *pos;
@@ -81,7 +81,7 @@ ARM void pwait(Entity *e) {
 }
 
 // breturn, 0x02069bac
-ARM void breturn(Entity *e) {
+void breturn(Entity *e) {
     u8 action = e->action;
     u8 nextAction;
     if (action == 0) {

@@ -4,7 +4,7 @@
 
 // Functions in this file: em23_init (0x0203fb88).
 
-ARM void em23_init(Entity *e) {
+void em23_init(Entity *e) {
     e->action = 1;
     e->subtimer = Random();
     e->spriteSettings.b0 = 1;

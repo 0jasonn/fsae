@@ -6,7 +6,7 @@
 //   nativeInitialize
 
 // Calls the init routine stored for the area (kind 7), if there is one
-ARM void nativeInitialize(u8 area) {
+void nativeInitialize(u8 area) {
     void (*init)(u8);
 
     init = (void (*)(u8))GetInfoAdrs(area, 7);

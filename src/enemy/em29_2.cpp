@@ -3,7 +3,7 @@
 #include "global.h"
 
 // em29_kakudai (0x0204198c): steps the scroll position and clamps it to the type's limits.
-ARM void em29_kakudai(Entity *e) {
+void em29_kakudai(Entity *e) {
     V(e)->subPosX -= 0x18;
     V(e)->subPosY -= 0x10;
     u16 limitX = em29_scrollLimitsOut[e->type * 2];

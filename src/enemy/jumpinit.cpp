@@ -18,7 +18,7 @@ typedef struct Vars_JumpTarget {
 
 // Starts a jump towards a player: the target is the local player (single play) or the nearest living player
 // (wireless), the direction follows the timer, and the jump sound plays.
-ARM void jumpInit(Entity *e) {
+void jumpInit(Entity *e) {
     s32 dir;
     s32 found;
     s32 i;

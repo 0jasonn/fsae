@@ -15,7 +15,7 @@ typedef struct Vars_Rupee {
 } Vars_Rupee;
 
 // setrupee, 0x0206b4dc
-ARM void setrupee(Entity *e) {
+void setrupee(Entity *e) {
     Vars_Rupee *v = VARS(Vars_Rupee, e);
     u8 rupeeKind;
     Entity *found;

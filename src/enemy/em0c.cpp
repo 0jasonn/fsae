@@ -7,7 +7,7 @@
 //   Em0c
 
 // Main of em0c: the same check of the counter as Em0a and Em0b, then the handler of the current action.
-ARM void Em0c(Entity *e) {
+void Em0c(Entity *e) {
     if (*(u16 *)(data_0212c540 + 2) > 1) {
         func_02084700(e);
     }

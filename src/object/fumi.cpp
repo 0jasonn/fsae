@@ -14,7 +14,7 @@ typedef struct Vars_Fumi {
     /* 7e */ u8 event;      // argument of func_0208365c
 } Vars_Fumi;
 
-ARM int fumiCheck(Entity *e) {
+int fumiCheck(Entity *e) {
     int result;
     int kind;
 
@@ -32,7 +32,7 @@ ARM int fumiCheck(Entity *e) {
     return 0x10;
 }
 
-ARM int fumiCheck2(Entity *e) {
+int fumiCheck2(Entity *e) {
     int result;
 
     result = func_02084110(e);

@@ -7,7 +7,7 @@
 
 // linkPalToPanePal(signed char) (0x020b11dc): entry of the palette link table
 extern "C" s8 linkPalToPanePal(s8 index);
-ARM s8 linkPalToPanePal(s8 index) {
+s8 linkPalToPanePal(s8 index) {
     LinkPalTable table;
 
     table = data_020ded44;

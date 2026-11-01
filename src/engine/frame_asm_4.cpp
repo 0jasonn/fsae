@@ -10,7 +10,7 @@ extern "C" void Frame_PopR3ToR7Return(void);
 extern "C" u32 Bits_CountLeadingZeros(u32 value);
 
 // 0x02019980: count leading zero bits.
-ARM asm u32 Bits_CountLeadingZeros(u32 value) {
+asm u32 Bits_CountLeadingZeros(u32 value) {
     clz r0, r0
     bx lr
 }

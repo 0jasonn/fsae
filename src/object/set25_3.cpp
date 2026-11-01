@@ -14,7 +14,7 @@ typedef struct Vars_Vitaldec {
 } Vars_Vitaldec;
 
 // Applies the contact damage of the other entity to this one and reacts to it
-ARM void vitaldec(Entity *e, u8 *timer) {
+void vitaldec(Entity *e, u8 *timer) {
     Entity *other;
     u8 damage;
     u8 health;

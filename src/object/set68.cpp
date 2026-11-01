@@ -11,11 +11,11 @@
 //   0x0207578c type01_wait (original name)
 //   0x020757fc type01_center (original name)
 
-ARM void Set68(Entity *e) {
+void Set68(Entity *e) {
     set68_typeActions[e->type](e);
 }
 
-ARM void set68_type0(Entity *e) {
+void set68_type0(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 1;
@@ -37,11 +37,11 @@ ARM void set68_type0(Entity *e) {
     }
 }
 
-ARM void set68_type1(Entity *e) {
+void set68_type1(Entity *e) {
     set68_type1Actions[e->action](e);
 }
 
-ARM void type01_init(Entity *e) {
+void type01_init(Entity *e) {
     e->action = 1;
     e->subtimer = e->type2;
     e->speed = 0x280;
@@ -50,7 +50,7 @@ ARM void type01_init(Entity *e) {
     InitAnimationForceUpdate(e, 3);
 }
 
-ARM void type01_up(Entity *e) {
+void type01_up(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (!(em12_typeMasks[0] & 2)) {
         return;
@@ -64,7 +64,7 @@ ARM void type01_up(Entity *e) {
     e->timer = 0x1e;
 }
 
-ARM void type01_wait(Entity *e) {
+void type01_wait(Entity *e) {
     s16 x;
 
     UpdateAnimationSingleFrame(e);
@@ -84,7 +84,7 @@ ARM void type01_wait(Entity *e) {
     }
 }
 
-ARM void type01_center(Entity *e) {
+void type01_center(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->speed != 0) {
         MoveDir(e);

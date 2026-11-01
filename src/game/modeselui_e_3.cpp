@@ -9,7 +9,7 @@
 
 // modeSelUIView::update() (0x020aaaf8): runs the handler of the current state (1 to 5) and stores the state it returns;
 // a pending dialog number in unk_60 is shown first
-ARM void modeSelUIView_update(ModeSelUIView *self) {
+void modeSelUIView_update(ModeSelUIView *self) {
     s32 next;
 
     switch (self->unk_5c) {
@@ -40,5 +40,5 @@ ARM void modeSelUIView_update(ModeSelUIView *self) {
 }
 
 // modeSelUIView slot 2 (0x020aab7c): empty
-ARM void modeSelUIView_vfunc2(void *self) {
+void modeSelUIView_vfunc2(void *self) {
 }

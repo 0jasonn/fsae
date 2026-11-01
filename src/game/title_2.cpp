@@ -7,7 +7,7 @@
 // knife_title_dialogDisp -> knife_title_dialogDisp
 // knife_title_dialogDelete -> knife_title_dialogDelete
 // Region of the tile map to flush is paletteFade bytes [4..7]: x, y, width, height (tiles).
-ARM void title_timeout(void) {
+void title_timeout(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }
@@ -18,7 +18,7 @@ ARM void title_timeout(void) {
     Task_Chain(7);
 }
 
-ARM void title_back(void) {
+void title_back(void) {
     if (data_0212c5ac.blendEnabled != 0) {
         return;
     }
@@ -30,7 +30,7 @@ ARM void title_back(void) {
     OpeningTaskFinalzie();
 }
 
-ARM void knife_title_dialogDisp(s32 index) {
+void knife_title_dialogDisp(s32 index) {
     data_0212c75c.unk_c = 0;
     knife_title_dialogDelete();
     *(u8 **)((u8 *)&titleDialogBlock + 0xe8) = (u8 *)KnifeApp_getInstance() + 0x1bc;
@@ -44,7 +44,7 @@ ARM void knife_title_dialogDisp(s32 index) {
     func_02026774();
 }
 
-ARM void knife_title_dialogDelete(void) {
+void knife_title_dialogDelete(void) {
     u8 *tileMap = data_021361a0 + data_0212c618[3] * 0x800;
     s32 height = ((s8 *)&paletteFade)[7];
     u32 row;

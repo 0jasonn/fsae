@@ -6,7 +6,7 @@
 
 // tama0f_fireshot, 0x0207db04. Counts down the fire timer and removes the actor at zero. Each time the subtimer runs
 // out it aims at the player (timer is the player number) and restarts the subtimer.
-ARM void tama0f_fireshot(Entity *e) {
+void tama0f_fireshot(Entity *e) {
     s32 fireTimer;
     u8 subtimer;
     if (e->parent->action == 4) {
@@ -31,7 +31,7 @@ ARM void tama0f_fireshot(Entity *e) {
 
 // tama0f_post, 0x0207db90. Waits for the parent's action 4 to end; the state 6 removes the actor once its frame
 // bit 7 is set, the other states count the subtimer and then start the matching animation.
-ARM void tama0f_post(Entity *e) {
+void tama0f_post(Entity *e) {
     u8 state;
     u8 subtimer;
     if (e->parent->action == 4) {

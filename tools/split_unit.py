@@ -7,12 +7,13 @@ sys.path.insert(0, str(Path(__file__).parent))
 from trymatch import name_to_addr
 
 ROOT = Path(__file__).parent.parent
-DEF = re.compile(r'^ARM (?:extern "C" )?(?:static )?[\w\s\*]*?\b(\w+)\s*\([^;\n]*$')
+import defs
 syms = sorted(int(m.group(1), 16) for m in re.finditer(r"kind:function\S* addr:0x([0-9a-f]+)",
                                                          (ROOT / "config/eur/arm9/symbols.txt").read_text()))
 path = Path(sys.argv[1])
 lines = path.read_text(encoding="utf-8").split("\n")
-starts = [i for i, l in enumerate(lines) if DEF.match(l)]
+found = dict(defs.def_starts(lines))
+starts = sorted(found)
 begins = []
 for i in starts:
     j = i
@@ -22,7 +23,7 @@ for i in starts:
 pre = "\n".join(lines[:begins[0]])
 blocks = []
 for b, e, i in zip(begins, begins[1:] + [len(lines)], starts):
-    blocks.append((name_to_addr(DEF.match(lines[i]).group(1)), "\n".join(lines[b:e]).rstrip("\n") + "\n"))
+    blocks.append((name_to_addr(found[i]), "\n".join(lines[b:e]).rstrip("\n") + "\n"))
 blocks.sort()
 groups = []
 for a, t in blocks:

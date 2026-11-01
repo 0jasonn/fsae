@@ -7,7 +7,7 @@
 
 // tama0f_demo, 0x0207de68. While subAction is set it falls and removes the actor on landing. Otherwise it counts the
 // subtimer down, follows the parent's height and, when it is directly above the parent, faces it.
-ARM void tama0f_demo(Entity *e) {
+void tama0f_demo(Entity *e) {
     u8 subAction;
     u8 subtimer;
     UpdateAnimationSingleFrame(e);
@@ -40,7 +40,7 @@ ARM void tama0f_demo(Entity *e) {
 
 // tama0f_ruppyset, 0x0207df44. Spawns an item of the given kind and marks it with type2 1.
 // The original debug name is ruppyset(OBJ_WORK_*, unsigned char); the symbols.txt name is kept.
-ARM void tama0f_ruppyset(Entity *e, u8 kind) {
+void tama0f_ruppyset(Entity *e, u8 kind) {
     Entity *item = ItemSet(e, kind);
     if (item != 0) {
         item->type2 = 1;

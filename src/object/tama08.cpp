@@ -5,18 +5,18 @@
 //   0x0207f84c Tama08, 0x0207f874 tama08_normal, 0x0207f890 tama08_damage
 
 // Tama08, 0x0207f84c. Runs the state table entry that func_02085294 picks.
-ARM void Tama08(Entity *e) {
+void Tama08(Entity *e) {
     data_020dcf74[func_02085294()](e);
 }
 
 // tama08_normal, 0x0207f874. Runs the action of the current state.
-ARM void tama08_normal(Entity *e) {
+void tama08_normal(Entity *e) {
     data_020dcf60[e->action](e);
 }
 
 // tama08_damage, 0x0207f890. A contact with exactly 0x80 removes the actor; otherwise it is bounced: action 4, the
 // direction flipped by 0x10 and the speed and the z velocity set.
-ARM void tama08_damage(Entity *e) {
+void tama08_damage(Entity *e) {
     if (e->contactFlags == 0x80) {
         PutObjWork(e);
         return;

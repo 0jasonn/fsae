@@ -7,11 +7,11 @@
 //   0x02058d6c set01_init (original name)
 //   0x02058e7c set01_spawnRandom: not matching yet, see scratch/agentF/nonmatching
 
-ARM void Set01(Entity *e) {
+void Set01(Entity *e) {
     set01_actions[e->action](e);
 }
 
-ARM void set01_init(Entity *e) {
+void set01_init(Entity *e) {
     Entity *child;
     if ((e->type2 & 1) != 0) {
         e->action = 2;

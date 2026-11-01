@@ -22,14 +22,14 @@ typedef struct RectSlot3 {
 
 // RectSlot2_setFlag(self, flag) (0x020bbb70, provisional name): stores the flag byte at +0x28
 extern "C" void RectSlot2_setFlag(void *self, s32 flag);
-ARM void RectSlot2_setFlag(void *self, s32 flag) {
+void RectSlot2_setFlag(void *self, s32 flag) {
     ((u8 *)self)[0x28] = (u8)flag;
 }
 
 // RectSlot3_init(self) (0x020bbb78, provisional name): RectObjLink_init, the vtable data_02126f60 and the word at +0x20
 // cleared. Returns self.
 extern "C" void *RectSlot3_init(RectSlot3 *self);
-ARM void *RectSlot3_init(RectSlot3 *self) {
+void *RectSlot3_init(RectSlot3 *self) {
     RectObjLink_init(self);
     self->vtable = data_02126f60;
     self->unk_20 = 0;
@@ -40,7 +40,7 @@ ARM void *RectSlot3_init(RectSlot3 *self) {
 // RectObjLink_setGeometry with the position (0x80, 9), the size (0x100, 0x12) and the value of func_020bc200 (owner, 0,
 // value); stores value at +0x1c
 extern "C" void RectSlot3_setGeometry(RectSlot3 *self, void *owner, s32 value);
-ARM void RectSlot3_setGeometry(RectSlot3 *self, void *owner, s32 value) {
+void RectSlot3_setGeometry(RectSlot3 *self, void *owner, s32 value) {
     s16 pos[2];
     s16 size[2];
     s32 geomValue;

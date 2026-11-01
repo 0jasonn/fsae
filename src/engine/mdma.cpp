@@ -16,7 +16,7 @@ extern u32 data_0212c56c;
 extern u8 data_0212ccb0[];
 
 // mdma (0x02080d18)
-ARM unsigned char *mdma(unsigned char *record) {
+unsigned char *mdma(unsigned char *record) {
     u32 src;
     u32 dst;
     u32 size;
@@ -29,12 +29,12 @@ ARM unsigned char *mdma(unsigned char *record) {
 }
 
 // MdmaCheck (0x02080d70)
-ARM BOOL MdmaCheck(void) {
+BOOL MdmaCheck(void) {
     return data_0212c56c < (u32)(data_0212ccb0 + (data_0212c4c8 << 8) + 0xf6);
 }
 
 // mdma_zMalloc (0x02080da8)
-ARM unsigned char *mdma_zMalloc(unsigned char *record) {
+unsigned char *mdma_zMalloc(unsigned char *record) {
     u32 src;
     u32 dst;
     u32 size;
@@ -48,7 +48,7 @@ ARM unsigned char *mdma_zMalloc(unsigned char *record) {
 }
 
 // mdma_forComp (0x02080e0c)
-ARM unsigned char *mdma_forComp(unsigned char *record) {
+unsigned char *mdma_forComp(unsigned char *record) {
     u32 src;
     u32 dst;
 

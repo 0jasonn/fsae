@@ -5,7 +5,7 @@
 // fileSelUIViewCtrl::initUIObject (0x020ad020) is the only function of this unit: initialize (0x020ad070) is not done yet
 
 // fileSelUIViewCtrl::initUIObject (0x020ad020): clears the UI object table and initialises every object
-ARM void fileSelUIViewCtrl_initUIObject(FileSelUIViewCtrl *self) {
+void fileSelUIViewCtrl_initUIObject(FileSelUIViewCtrl *self) {
     u32 i;
 
     self->unk_253c = 0;

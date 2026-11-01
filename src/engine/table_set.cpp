@@ -9,7 +9,7 @@
 // Table_setValueA(self, index, value) (0x020bc280, provisional name): 0 when there is no entry, otherwise sets the
 // entry through ResPlayer_AdvanceAndRefresh and returns 1
 extern "C" s32 Table_setValueA(u8 *self, s32 index, s32 value);
-ARM s32 Table_setValueA(u8 *self, s32 index, s32 value) {
+s32 Table_setValueA(u8 *self, s32 index, s32 value) {
     void *entry;
 
     entry = Table_getEntry58(self, index);
@@ -22,7 +22,7 @@ ARM s32 Table_setValueA(u8 *self, s32 index, s32 value) {
 
 // Table_setValueB(self, index, value) (0x020bc2a8, provisional name): the same with ResPlayer_SeekAndRefresh
 extern "C" s32 Table_setValueB(u8 *self, s32 index, s32 value);
-ARM s32 Table_setValueB(u8 *self, s32 index, s32 value) {
+s32 Table_setValueB(u8 *self, s32 index, s32 value) {
     void *entry;
 
     entry = Table_getEntry58(self, index);

@@ -20,7 +20,7 @@ extern "C" void func_020c36fc(void *obj, const void *attrs, u16 count);
 
 // draw_radar_goal_pos(long, long) (0x020a6cc0): the goal marker, one OAM entry centred on (x + 0x38, y + 0x10)
 extern "C" void draw_radar_goal_pos(s32 x, s32 y);
-ARM void draw_radar_goal_pos(s32 x, s32 y) {
+void draw_radar_goal_pos(s32 x, s32 y) {
     GXOamShape shape = (GXOamShape)0;
     u16 width;
     u16 height;

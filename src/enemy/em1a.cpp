@@ -8,18 +8,18 @@
 // em1a_revivalwait, em1a_move, em1a_move_u, em1a_move_ur, em1a_move_r, em1a_move_dr, em1a_move_d,
 // em1a_move_dl, em1a_move_l, em1a_move_ul, em1a_move_wait. em1a_getNextInfo is in the next unit.
 
-ARM void Em1a(Entity *e) {
+void Em1a(Entity *e) {
     if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
     em1a_actions[func_02084a30(e)](e);
 }
 
-ARM void em1a_normal(Entity *e) {
+void em1a_normal(Entity *e) {
     em1a_normalActions[e->action](e);
 }
 
-ARM void em1a_damage(Entity *e) {
+void em1a_damage(Entity *e) {
     Entity *set;
     Entity *child;
     Vars_Em1a *childVars;
@@ -40,7 +40,7 @@ ARM void em1a_damage(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void em1a_init(Entity *e) {
+void em1a_init(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     e->subtimer = Random();
@@ -61,7 +61,7 @@ ARM void em1a_init(Entity *e) {
     }
 }
 
-ARM void em1a_revivalwait(Entity *e) {
+void em1a_revivalwait(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     vars->revivalTimer--;
@@ -76,13 +76,13 @@ ARM void em1a_revivalwait(Entity *e) {
     }
 }
 
-ARM void em1a_move(Entity *e) {
+void em1a_move(Entity *e) {
     e->z.HALF.HI = em1a_bobTable[((frameCounter + e->subtimer) & 0x30) >> 4];
     UpdateAnimationSingleFrame(e);
     em1a_moveActions[e->subAction](e);
 }
 
-ARM void em1a_move_u(Entity *e) {
+void em1a_move_u(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -93,7 +93,7 @@ ARM void em1a_move_u(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_ur(Entity *e) {
+void em1a_move_ur(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -105,7 +105,7 @@ ARM void em1a_move_ur(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_r(Entity *e) {
+void em1a_move_r(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -116,7 +116,7 @@ ARM void em1a_move_r(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_dr(Entity *e) {
+void em1a_move_dr(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -128,7 +128,7 @@ ARM void em1a_move_dr(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_d(Entity *e) {
+void em1a_move_d(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -139,7 +139,7 @@ ARM void em1a_move_d(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_dl(Entity *e) {
+void em1a_move_dl(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -151,7 +151,7 @@ ARM void em1a_move_dl(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_l(Entity *e) {
+void em1a_move_l(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -162,7 +162,7 @@ ARM void em1a_move_l(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_ul(Entity *e) {
+void em1a_move_ul(Entity *e) {
     Vars_Em1a *vars = VARS(Vars_Em1a, e);
 
     MoveDir(e);
@@ -174,7 +174,7 @@ ARM void em1a_move_ul(Entity *e) {
     em1a_getNextInfo(e);
 }
 
-ARM void em1a_move_wait(Entity *e) {
+void em1a_move_wait(Entity *e) {
     if (--e->timer != 0) {
         return;
     }

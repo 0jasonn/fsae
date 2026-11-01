@@ -5,7 +5,7 @@
 // eff_fade_in_init, 0x0209b90c (eff_fade_in and eff_fade_in2 parked).
 
 // eff_fade_in_init(long) (0x0209b90c): adds a fade in entry starting at -0x10000.
-ARM void eff_fade_in_init(s32 speed) {
+void eff_fade_in_init(s32 speed) {
     EffWork *work;
 
     *(s32 *)(data_0217c23c + 0xf50) = 0;

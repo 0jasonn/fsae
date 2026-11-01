@@ -37,13 +37,13 @@ typedef struct KnifeSelectDialog {
 } KnifeSelectDialog;
 
 // func_020a1a1c (0x020a1a1c, C++ symbol _Z13func_020a1a1cPv, declared in functions.h): clears 0x7c bytes at a
-ARM void func_020a1a1c(void *a) {
+void func_020a1a1c(void *a) {
     MI_CpuFill8(a, 0, 0x7c);
 }
 
 // selectionDialog::initWithMsgScrn(KNIFE_MSGSCRN const*) (0x0209a1a30): resets the state and copies the message screen
 extern "C" void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *msgScrn);
-ARM void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *msgScrn) {
+void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *msgScrn) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 
     self->unk_64 = 0;

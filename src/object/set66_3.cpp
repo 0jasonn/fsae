@@ -9,7 +9,7 @@
 //   0x02075528 rr_poscopy (original name)
 //   0x0207553c plStCheck (original name)
 
-ARM void rr_type1_wait_07543c(Entity *e) {
+void rr_type1_wait_07543c(Entity *e) {
     Vars_Set66 *v;
     Entity *spawn;
 
@@ -29,7 +29,7 @@ ARM void rr_type1_wait_07543c(Entity *e) {
     ObjPosCopy(data_0212ceb0[e->type2].entity, spawn);
 }
 
-ARM void rr_type1_vanish(Entity *e) {
+void rr_type1_vanish(Entity *e) {
     Vars_Set66 *v;
 
     UpdateAnimationSingleFrame(e);
@@ -46,7 +46,7 @@ ARM void rr_type1_vanish(Entity *e) {
     e->spriteSettings.b0 = e->spriteSettings.b0 ^ 1;
 }
 
-ARM void rr_poscopy(Entity *e, Entity *target) {
+void rr_poscopy(Entity *e, Entity *target) {
     target->x.WORD = e->x.WORD;
     target->y.WORD = e->y.WORD;
 }

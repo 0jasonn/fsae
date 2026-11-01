@@ -9,7 +9,7 @@ namespace Knife {
 namespace Sound {
 
 // WaveHandle::setVolume (0x02090634): sets the volume on the player unless paused, and keeps it in the slot
-ARM void WaveHandle::setVolume(s32 volume) {
+void WaveHandle::setVolume(s32 volume) {
     if (isValid() == 0) {
         return;
     }
@@ -20,7 +20,7 @@ ARM void WaveHandle::setVolume(s32 volume) {
 }
 
 // WaveHandle::setPan (0x02090674): sets the pan on the player
-ARM void WaveHandle::setPan(s32 pan) {
+void WaveHandle::setPan(s32 pan) {
     if (isValid() == 0) {
         return;
     }
@@ -28,7 +28,7 @@ ARM void WaveHandle::setPan(s32 pan) {
 }
 
 // WaveHandle::setStop (0x020906a4): stops the player
-ARM void WaveHandle::setStop(void) {
+void WaveHandle::setStop(void) {
     if (isValid() == 0) {
         return;
     }
@@ -36,7 +36,7 @@ ARM void WaveHandle::setStop(void) {
 }
 
 // WaveHandle::setPause (0x020906cc): pauses the player (volume 0) or resumes it at the slot volume, and records the flag
-ARM void WaveHandle::setPause(s32 pause) {
+void WaveHandle::setPause(s32 pause) {
     s32 level;
 
     if (isValid() == 0) {

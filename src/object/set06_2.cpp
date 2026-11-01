@@ -37,7 +37,7 @@ void posAdd(Entity *e, WWORK *offset);
 #define SET06_CELL(e)                                                                                   \
     ((u16)((((e)->x.HALF.HI - data_0212c648.scrollX) >> 4) | ((((e)->y.HALF.HI - data_0212c648.scrollY) >> 4) << 6)))
 
-ARM void set06_move(Entity *e) {
+void set06_move(Entity *e) {
     u32 bits;
 
     if (--e->timer != 0) {
@@ -64,7 +64,7 @@ ARM void set06_move(Entity *e) {
     SoundReq(7);
 }
 
-ARM void set06_die(Entity *e) {
+void set06_die(Entity *e) {
     if (e->subAction == 0) {
         if (VARS(Vars_Set06, e)->bits == (VARS(Vars_Set06, e)->bits & em12_typeMasks[e->areaIndex])) {
             e->subAction++;
@@ -88,7 +88,7 @@ ARM void set06_die(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void posAdd(Entity *e, WWORK *offset) {
+void posAdd(Entity *e, WWORK *offset) {
     e->x.HALF.HI += offset->x;
     e->y.HALF.HI += offset->y;
 }

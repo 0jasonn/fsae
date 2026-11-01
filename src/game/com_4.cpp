@@ -13,7 +13,7 @@ void entry_check(void);                  // entry_check, parked in scratch/agent
 void cockpit_error_check(void);          // in com_3.cpp
 
 // com_machiuke (0x02028280): the state machine of the communication handshake, run by the state byte 1 (cases 0..5).
-ARM void com_machiuke(void) {
+void com_machiuke(void) {
     u8 state;
     u8 sel;
     u8 flags;

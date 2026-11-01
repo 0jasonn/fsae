@@ -25,7 +25,7 @@ extern const EntityFunc data_02115a4c[]; // indexed by e->action
 void mgrMove(Entity *e);
 u8 getRandomType(void);
 
-ARM void getDebu(Entity *e) {
+void getDebu(Entity *e) {
     Entity *enemy;
     u8 index;
 
@@ -41,7 +41,7 @@ ARM void getDebu(Entity *e) {
     enemy->layer = 0x4000;
 }
 
-ARM void getMgrInfo(Entity *e) {
+void getMgrInfo(Entity *e) {
     u32 index;
 
     if (e->objId == 0x72) {
@@ -59,7 +59,7 @@ ARM void getMgrInfo(Entity *e) {
     mgrMove(e);
 }
 
-ARM void mgrMove(Entity *e) {
+void mgrMove(Entity *e) {
     const u16 *cmd;
     const u16 *list;
     Entity *enemy;
@@ -96,6 +96,6 @@ ARM void mgrMove(Entity *e) {
     VARS(Vars_Mgr, e)->statePtr = cmd + 1;
 }
 
-ARM u8 getRandomType(void) {
+u8 getRandomType(void) {
     return data_020d91d4[Random() & 0xf];
 }

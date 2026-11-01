@@ -10,7 +10,7 @@ extern u8 data_02134d30[];
 extern u8 fairySlots[];
 
 // Releases the entity of scene slot index (if any) and clears the slot record
-ARM void PutNPC(u8 index) {
+void PutNPC(u8 index) {
     u32 offset;
     Entity *entity;
 

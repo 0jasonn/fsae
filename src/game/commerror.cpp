@@ -29,7 +29,7 @@ extern u8 data_0212c4d4;
 extern u32 opTitleState;
 
 // CommStatusSync (0x02029828): 1 when every connected player's tag equals status, matching the ready mask.
-ARM int CommStatusSync(u8 status) {
+int CommStatusSync(u8 status) {
     u8 matched;
     u8 expected;
     u32 connected;
@@ -65,7 +65,7 @@ ARM int CommStatusSync(u8 status) {
 
 // comerror_error_check (0x020298d0): as CommStatusSync, and the connection bits must equal the matched players.
 extern "C" int comerror_error_check(u8 value);
-ARM int comerror_error_check(u8 value) {
+int comerror_error_check(u8 value) {
     u8 matched = 0;
     u8 expected;
     u32 connected;

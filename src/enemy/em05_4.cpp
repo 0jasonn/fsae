@@ -18,7 +18,7 @@
 // em08_jump em08_jump, em08_dush em08_dush, explodeSet explodeSet,
 // em08_seqSet em08_seqSet (nonmatching, see scratch/agentA/nonmatching)
 
-ARM void em05_press(Entity *e) {
+void em05_press(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -32,7 +32,7 @@ ARM void em05_press(Entity *e) {
     EnqueueSFX(0x5e);
 }
 
-ARM void em05_move2(Entity *e) {
+void em05_move2(Entity *e) {
     if (e->subtimer != 0) {
         e->subtimer--;
         if (e->subtimer == 0) {
@@ -52,7 +52,7 @@ ARM void em05_move2(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em05_nage(Entity *e) {
+void em05_nage(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         if (e->child != NULL) {
@@ -95,7 +95,7 @@ ARM void em05_nage(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em05DirChange(Entity *e) {
+void em05DirChange(Entity *e) {
     u8 direction = Random() & 0x1f;
     e->direction = direction;
     u8 newAnim = EmCharDir2(direction);
@@ -106,7 +106,7 @@ ARM void em05DirChange(Entity *e) {
     InitAnimationForceUpdate(e, newAnim);
 }
 
-ARM void em0d_die(Entity *e) {
+void em0d_die(Entity *e) {
     switch (VB(e)->jumpPhase) {
     case 0:
         if (UpdateGravity(e, 0x20000) != 0) {
@@ -150,7 +150,7 @@ ARM void em0d_die(Entity *e) {
     }
 }
 
-ARM void Em0d(Entity *e) {
+void Em0d(Entity *e) {
     if (data_0212c540[1] > 1) {
         func_02084700(e);
     }
@@ -162,7 +162,7 @@ ARM void Em0d(Entity *e) {
     }
 }
 
-ARM void Em06(Entity *e) {
+void Em06(Entity *e) {
     func_02084700(e);
     em06_actions[func_02084a30(e)](e);
     func_0208ae30(e);
@@ -170,15 +170,15 @@ ARM void Em06(Entity *e) {
     e->spriteSettings.b14 = 1;
 }
 
-ARM void em06_normal(Entity *e) {
+void em06_normal(Entity *e) {
     em06_normalActions[e->action](e);
 }
 
-ARM void em06_knockback(Entity *e) {
+void em06_knockback(Entity *e) {
     GenericKnockback(e, em06_actions);
 }
 
-ARM void em06_init(Entity *e) {
+void em06_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 0;
     e->hitbox = em06_hitbox;
@@ -187,7 +187,7 @@ ARM void em06_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em06_move(Entity *e) {
+void em06_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         e->direction = Random() & 0x1f;
@@ -198,15 +198,15 @@ ARM void em06_move(Entity *e) {
     e->z.HALF.HI = em06_heightByFrame[e->frame];
 }
 
-ARM void em07_main(Entity *e) {
+void em07_main(Entity *e) {
     EnemyFunctionHandler(e, em07_actions);
 }
 
-ARM void em07_normal(Entity *e) {
+void em07_normal(Entity *e) {
     em07_normalActions[e->action](e);
 }
 
-ARM void em07_damage(Entity *e) {
+void em07_damage(Entity *e) {
     if (e->health != 0 && VB(e)->lastHealth != e->health) {
         e->action = 9;
         return;
@@ -214,7 +214,7 @@ ARM void em07_damage(Entity *e) {
     GenericKnockback(e, em07_actions);
 }
 
-ARM void em07_init(Entity *e) {
+void em07_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
     e->hitbox = em07_hitbox;
@@ -226,13 +226,13 @@ ARM void em07_init(Entity *e) {
     e->direction = GetFacingDirection(e, VB(e)->target);
 }
 
-ARM void em07_moveInit(Entity *e) {
+void em07_moveInit(Entity *e) {
     e->action++;
     e->timer = (Random() & 0x30) + 0x20;
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em07_move(Entity *e) {
+void em07_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -252,7 +252,7 @@ ARM void em07_move(Entity *e) {
     }
 }
 
-ARM void em07_tame(Entity *e) {
+void em07_tame(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) == 0) {
         return;
@@ -269,7 +269,7 @@ ARM void em07_tame(Entity *e) {
     EnqueueSFX(0x31);
 }
 
-ARM void em07_jump(Entity *e) {
+void em07_jump(Entity *e) {
     func_020847a0(e);
     UpdateAnimationSingleFrame(e);
     if (UpdateGravity(e, 0x1800) != 0) {
@@ -279,7 +279,7 @@ ARM void em07_jump(Entity *e) {
     InitAnimationForceUpdate(e, 3);
 }
 
-ARM void em07_land(Entity *e) {
+void em07_land(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) == 0) {
         return;
@@ -292,7 +292,7 @@ ARM void em07_land(Entity *e) {
     InitAnimationForceUpdate(e, 1);
 }
 
-ARM void em07_vanish(Entity *e) {
+void em07_vanish(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         e->frame = 0;
@@ -307,7 +307,7 @@ ARM void em07_vanish(Entity *e) {
     e->spriteSettings.b0 = 0;
 }
 
-ARM void em07_hide(Entity *e) {
+void em07_hide(Entity *e) {
     if (--e->timer != 0) {
         return;
     }
@@ -316,7 +316,7 @@ ARM void em07_hide(Entity *e) {
     InitAnimationForceUpdate(e, 5);
 }
 
-ARM void em07_appear(Entity *e) {
+void em07_appear(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         e->frame = 0;
@@ -330,7 +330,7 @@ ARM void em07_appear(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em07_div(Entity *e) {
+void em07_div(Entity *e) {
     s8 count = 0;
     Entity *pieceA = GetEnemyWork(3);
     if (pieceA != NULL) {
@@ -361,11 +361,11 @@ ARM void em07_div(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void em08_main(Entity *e) {
+void em08_main(Entity *e) {
     EnemyFunctionHandler(e, em08_actions);
 }
 
-ARM void em08_normal(Entity *e) {
+void em08_normal(Entity *e) {
     em08_normalActions[e->action](e);
     if (VB(e)->dyingTimer == 0) {
         return;
@@ -388,7 +388,7 @@ ARM void em08_normal(Entity *e) {
     }
 }
 
-ARM void em08_damage(Entity *e) {
+void em08_damage(Entity *e) {
     switch (e->contactFlags & 0x7f) {
     case 0x16:
         explodeSet(e);
@@ -425,12 +425,12 @@ ARM void em08_damage(Entity *e) {
     GenericKnockback(e, em08_actions);
 }
 
-ARM void em08_buttobi(Entity *e) {
+void em08_buttobi(Entity *e) {
     searchCandle(e);
     func_02084788(e);
 }
 
-ARM void em08_init(Entity *e) {
+void em08_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
     e->hitbox = em08_hitbox;
@@ -442,7 +442,7 @@ ARM void em08_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em08_move(Entity *e) {
+void em08_move(Entity *e) {
     if (UpdateGravity(e, 0x1800) != 0) {
         return;
     }
@@ -455,12 +455,12 @@ ARM void em08_move(Entity *e) {
     func_020847a0(e);
 }
 
-ARM void em08_lift(Entity *e) {
+void em08_lift(Entity *e) {
     em08_liftActions[e->subAction](e);
     purupuru(e);
 }
 
-ARM void em08_lift_init(Entity *e) {
+void em08_lift_init(Entity *e) {
     e->subAction = 1;
     e->unk_5c = 0x3100;
     Entity *player = data_0212ceb0[e->type2].entity;
@@ -469,7 +469,7 @@ ARM void em08_lift_init(Entity *e) {
     e->unk_2e = 0;
 }
 
-ARM void em08_lift_move(Entity *e) {
+void em08_lift_move(Entity *e) {
     Entity *player = data_0212ceb0[e->type2].entity;
     if (((VB(e)->mirroredAnim ^ player->animationState) & 4) == 0) {
         return;
@@ -480,7 +480,7 @@ ARM void em08_lift_move(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState);
 }
 
-ARM void em08_lift_throw(Entity *e) {
+void em08_lift_throw(Entity *e) {
     e->unk_2e = 2;
     if (VB(e)->poseLatched == 0) {
         VB(e)->poseLatched = 1;
@@ -490,12 +490,12 @@ ARM void em08_lift_throw(Entity *e) {
     searchCandle(e);
 }
 
-ARM void em08_lift_end(Entity *e) {
+void em08_lift_end(Entity *e) {
     piyoriSet(e);
     e->unk_1a = 0;
 }
 
-ARM void em08_piyori(Entity *e) {
+void em08_piyori(Entity *e) {
     func_02086044(e, 0x2000);
     if (purupuru(e) == 0) {
         return;
@@ -503,7 +503,7 @@ ARM void em08_piyori(Entity *e) {
     func_02089524(e);
 }
 
-ARM void em08_jump(Entity *e) {
+void em08_jump(Entity *e) {
     e->spriteSettings.b14 = 1;
     e->spriteSettings.b30 = 1;
     if (UpdateGravity(e, 0x1800) != 0) {
@@ -517,7 +517,7 @@ ARM void em08_jump(Entity *e) {
     em08_seqSet(e, 2);
 }
 
-ARM void em08_dush(Entity *e) {
+void em08_dush(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (func_020847b0(e) != 0) {
         em08_seqSet(e, 2);
@@ -529,7 +529,7 @@ ARM void em08_dush(Entity *e) {
     EnqueueSFX(0x53);
 }
 
-ARM void explodeSet(Entity *e) {
+void explodeSet(Entity *e) {
     Entity *fx = GetSetWork(0x20, 0xff, 0);
     if (fx != NULL) {
         ObjPosCopy(e, fx);

@@ -9,7 +9,7 @@
 extern "C" s32 func_0208a06c(Entity *e);
 
 extern "C" BOOL Knife_Single_SinglePlay_WarpAtariCheck(void *self, Entity *e);
-ARM BOOL Knife_Single_SinglePlay_WarpAtariCheck(void *self, Entity *e) {
+BOOL Knife_Single_SinglePlay_WarpAtariCheck(void *self, Entity *e) {
     u16 saved;
     u16 flags;
     BOOL group1;

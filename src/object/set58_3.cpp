@@ -9,6 +9,6 @@
 
 extern const EntityFunc set58_haneActions[]; // set58_haneActions, indexed by e->action
 
-ARM void set58_hane(Entity *e) {
+void set58_hane(Entity *e) {
     set58_haneActions[e->action](e);
 }

@@ -6,7 +6,7 @@
 // WirelessManager callback at 0x02093584 (invented name, the same shape as callback_WM_PowerOffStep): on success the timer
 // counts up, on error it is set to -999.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StepTimer(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_StepTimer(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_StepTimer(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
@@ -23,7 +23,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_StepTimer(void *result) {
 // WirelessManager::callback_WM_MeasureChannel (0x020935d0): on success keeps the channel with the lowest level so far (in
 // bestLevel and bestChannel) and counts the timer up. An error sets the timer to -999.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_MeasureChannel(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_MeasureChannel(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_MeasureChannel(void *result) {
     WmDWork *wm;
     WmMeasureResult *measure;
 
@@ -45,7 +45,7 @@ ARM void Knife_Comm_WirelessManager_callback_WM_MeasureChannel(void *result) {
 
 // WirelessManager callback at 0x02093644 (invented name, the same shape as callback_WM_StepTimer).
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StepTimer2(void *result);
-ARM void Knife_Comm_WirelessManager_callback_WM_StepTimer2(void *result) {
+void Knife_Comm_WirelessManager_callback_WM_StepTimer2(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();

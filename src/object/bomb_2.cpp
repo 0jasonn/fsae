@@ -19,7 +19,7 @@ extern const u8 bomb_hitbox[]; // hitbox of a bomb (bomb_hitbox) // affine sourc
 
 // Bomb main: runs the state handler while the game is not frozen (or the bomb is idle), and the flash and fuse
 // timers, then the common object update.
-ARM void Bomb(Entity *e) {
+void Bomb(Entity *e) {
     Entity *child;
 
     if (data_0212c4b8 == 0 || e->action == 0) {

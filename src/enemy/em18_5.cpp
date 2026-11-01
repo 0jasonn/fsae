@@ -7,7 +7,7 @@
 
 // Setup of type 0: takes four free objects as its children (types 0 to 3), links them to the actor, registers them
 // in list 4 and starts the rock-on state.
-ARM void em18_type0_init(Entity *e) {
+void em18_type0_init(Entity *e) {
     Entity *c0;
     Entity *c1;
     Entity *c2;
@@ -65,7 +65,7 @@ ARM void em18_type0_init(Entity *e) {
 
 // Rock-on state of type 0: keeps a child (from the free slots of the players when none is set) and turns the actor
 // to face it, then moves on to the state of em18_type0_move after the timer.
-ARM void type0_rockon(Entity *e) {
+void type0_rockon(Entity *e) {
     e->child = func_02084f98(e, 0x50, 0x40);
     e->timer--;
     if (e->timer != 0) {
@@ -84,7 +84,7 @@ ARM void type0_rockon(Entity *e) {
 
 // Move of type 0: counts the sub timer down (rock-on state again at zero), drops the actor when its type2 is 0, and
 // turns the child towards the actor every 0xf frames.
-ARM void em18_type0_move(Entity *e) {
+void em18_type0_move(Entity *e) {
     e->subtimer--;
     if (e->subtimer != 0) {
         if (e->type2 != 0) {

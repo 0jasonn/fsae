@@ -8,7 +8,7 @@
 
 // make_item_color (0x02027a10): sets the palette bank (bits 12..15) of the item tile word at data_0212c4a0 + 0xc from the
 // item's colour table entry. Item 7 becomes 4 when the byte at +0xe is 2, otherwise it stays 7.
-ARM void make_item_color(void) {
+void make_item_color(void) {
     u8 colorIndex;
 
     colorIndex = data_0212c618[0xc];
@@ -19,7 +19,7 @@ ARM void make_item_color(void) {
 }
 
 // make_item_color_2p (0x02027a64): the same for the second player's item, bytes +0x2c and +0x2d, word at +0x14.
-ARM void make_item_color_2p(void) {
+void make_item_color_2p(void) {
     u8 colorIndex;
 
     colorIndex = data_0212c618[0x2c];
@@ -32,7 +32,7 @@ ARM void make_item_color_2p(void) {
 // make_item_char (0x02027ab8): when the item index at +0xc is not 0, copies 0x80 bytes of item graphics to 0x06405d00.
 // The graphics come from Zelda resource 0x287 when the state byte at 0x8e is 1 or 4, otherwise from 0xa1, offset by the
 // table entry of the item index.
-ARM void make_item_char(void) {
+void make_item_char(void) {
     u8 *graphics;
     s32 useAltResource;
 
@@ -49,7 +49,7 @@ ARM void make_item_char(void) {
 }
 
 // make_item_char_2p (0x02027b44): the same for the second player, index at +0x2c, destination 0x06405d80.
-ARM void make_item_char_2p(void) {
+void make_item_char_2p(void) {
     u8 *graphics;
     s32 useAltResource;
 

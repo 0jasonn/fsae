@@ -3,7 +3,7 @@
 
 // haneSet, 0x0207c5d8. Creates the wing object (type 0x24) at the position of e, linked to e, and marks it as a
 // child when e has the layer bit 0x4000.
-ARM void haneSet(Entity *e) {
+void haneSet(Entity *e) {
     Entity *child = GetSetWork(0x24, 0, 0);
     if (child == 0) {
         return;

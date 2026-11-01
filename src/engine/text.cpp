@@ -12,7 +12,7 @@ namespace Knife {
 namespace Message {
 
 // Text::clear (0x0208f9c8): the default state, no scheme, no data
-ARM void Text::clear(void) {
+void Text::clear(void) {
     ces = NULL;
     data = NULL;
     size = 0;
@@ -22,7 +22,7 @@ ARM void Text::clear(void) {
 }
 }
 
-ARM Knife::Message::Text *Knife_Message_Text_Text(Knife::Message::Text *self, const u16 *str) {
+Knife::Message::Text *Knife_Message_Text_Text(Knife::Message::Text *self, const u16 *str) {
     self->ces = (Knife::Message::ICharacterEncodingScheme *)data_021770b4;
     self->data = str;
     self->size = Wstr_Length(str) << 1;
@@ -33,14 +33,14 @@ namespace Knife {
 namespace Message {
 
 // Text::set(ICharacterEncodingScheme*, void const*, unsigned long) (0x0208fa0c)
-ARM void Text::set(ICharacterEncodingScheme *newCes, const void *newData, u32 newSize) {
+void Text::set(ICharacterEncodingScheme *newCes, const void *newData, u32 newSize) {
     ces = newCes;
     data = newData;
     size = newSize;
 }
 
 // Text::readFirstCharacter(unsigned long*) const (0x0208fa14): 0 when the text is empty; the scheme reads the character
-ARM u32 Text::readFirstCharacter(u32 *out) const {
+u32 Text::readFirstCharacter(u32 *out) const {
     u32 local;
 
     if (data == NULL || ces == NULL) {
@@ -53,7 +53,7 @@ ARM u32 Text::readFirstCharacter(u32 *out) const {
 }
 
 // Text::readFirstCharacterAndStep(unsigned long*) (0x0208fa54): reads the first character and moves the start past it
-ARM u32 Text::readFirstCharacterAndStep(u32 *out) {
+u32 Text::readFirstCharacterAndStep(u32 *out) {
     u32 local;
     u32 result;
 
@@ -73,7 +73,7 @@ ARM u32 Text::readFirstCharacterAndStep(u32 *out) {
 }
 
 // Text::getLength() const (0x0208fac0): the length of the text in characters, 0 when empty
-ARM u32 Text::getLength(void) const {
+u32 Text::getLength(void) const {
     if (data == NULL || ces == NULL) {
         return 0;
     }

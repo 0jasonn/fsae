@@ -9,7 +9,7 @@
 extern const s16 trigTable[];
 
 // Moves the entity one step of its speed in its direction (the 0x80 flag of the direction byte stops it)
-ARM void MoveDir(Entity *e) {
+void MoveDir(Entity *e) {
     if (e->direction & 0x80) {
         return;
     }

@@ -9,6 +9,6 @@ extern u8 data_02126ad4[];
 
 // Window_getClassInfo() (0x020b64f0, provisional name): vtable slot 0 of Window, returns the class info of Window
 extern "C" void *Window_getClassInfo(void);
-ARM void *Window_getClassInfo(void) {
+void *Window_getClassInfo(void) {
     return data_02126ad4;
 }

@@ -21,7 +21,7 @@ extern "C" void Vram_SetBankGroupC(u32 mask);
 // Vram_SetBankGroupB(mask) (0x02015190): the group B bits are rebuilt from the saved mask at +0x16 and mask is stored
 // there. Mask 0x80 sets bit 0x40000000 of the register at 0x04001000 and writes 0x82 to 0x04000248; mask 0 clears it.
 // Then the LCDC bank setup runs with the new bits.
-ARM void Vram_SetBankGroupB(u32 mask) {
+void Vram_SetBankGroupB(u32 mask) {
     data_02129864.bits = (data_02129864.bits | data_02129864.savedB) & ~mask;
     data_02129864.savedB = mask;
     if (mask != 0) {
@@ -37,7 +37,7 @@ ARM void Vram_SetBankGroupB(u32 mask) {
 
 // Vram_SetBankGroupC(mask) (0x02015210): as Vram_SetBankGroupB with the saved mask at +0x18. Mask 0x100 sets bit
 // 0x80000000 of the register at 0x04001000 and writes 0x83 to 0x04000249; mask 0 clears it.
-ARM void Vram_SetBankGroupC(u32 mask) {
+void Vram_SetBankGroupC(u32 mask) {
     data_02129864.bits = (data_02129864.bits | data_02129864.savedC) & ~mask;
     data_02129864.savedC = mask;
     if (mask != 0) {

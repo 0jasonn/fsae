@@ -6,7 +6,7 @@
 //   Knife_MsgReadPtrFromID
 
 // Marks the message data block as read for the given id; always returns 1
-ARM void *Knife_MsgReadPtrFromID(void *dat, u16 id) {
+void *Knife_MsgReadPtrFromID(void *dat, u16 id) {
     u8 *block;
 
     block = (u8 *)dat;

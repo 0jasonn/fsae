@@ -2,13 +2,13 @@
 #include "enemy/em2d.h"
 #include "global.h"
 
-ARM void cercleMove2(Entity *e) {
+void cercleMove2(Entity *e) {
     e->direction++;
     e->x.HALF.HI = e->parent->x.HALF.HI + ((V(e)->orbitRadius * trigTable[e->direction]) >> 8);
     e->y.HALF.HI = e->parent->y.HALF.HI - ((V(e)->orbitRadius * trigTable[e->direction + 0x40]) >> 8);
 }
 
-ARM void cercleMoveC2(Entity *e) {
+void cercleMoveC2(Entity *e) {
     e->direction++;
     int anim = ((e->direction + 0x10) >> 5) & 7;
     if (e->animationState != anim) {
@@ -19,7 +19,7 @@ ARM void cercleMoveC2(Entity *e) {
     e->y.HALF.HI = e->parent->y.HALF.HI - ((V(e)->orbitRadius * trigTable[e->direction + 0x40]) >> 8);
 }
 
-ARM void testiRupeeSet(Entity *e) {
+void testiRupeeSet(Entity *e) {
     if (e->type >= 2) {
         return;
     }

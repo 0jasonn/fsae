@@ -8,7 +8,7 @@
 
 // tama07_move, 0x0207f5ec. Counts the timer down; while the child is alive and the timer runs, it toggles bit 0 of
 // the sprite settings and clears bit 7 of the status flags at 0x1e. Otherwise the actor is removed.
-ARM void tama07_move(Entity *e) {
+void tama07_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->timer = e->timer - 1;
     if (func_0208b644(e) == 0 || e->timer == 0) {

@@ -21,7 +21,7 @@ extern "C" void Group_freeBlock2(void *holder, void *block);
 // Group_allocU16Array(holder, count) (0x020b9284, provisional name): allocates count halfwords (at least one) from the
 // heap of holder and clears them. Returns NULL when the allocation fails.
 extern "C" u16 *Group_allocU16Array(void *holder, s32 count);
-ARM u16 *Group_allocU16Array(void *holder, s32 count) {
+u16 *Group_allocU16Array(void *holder, s32 count) {
     u16 *array;
     u16 *slot;
     u32 i;
@@ -42,7 +42,7 @@ ARM u16 *Group_allocU16Array(void *holder, s32 count) {
 // Group_allocU32Array(holder, count) (0x020b92d0, provisional name): allocates count words (at least one) from the
 // heap of holder and clears them. Returns NULL when the allocation fails.
 extern "C" u32 *Group_allocU32Array(void *holder, s32 count);
-ARM u32 *Group_allocU32Array(void *holder, s32 count) {
+u32 *Group_allocU32Array(void *holder, s32 count) {
     u32 *array;
     u32 *slot;
     u32 i;
@@ -62,14 +62,14 @@ ARM u32 *Group_allocU32Array(void *holder, s32 count) {
 
 // Group_release(self, holder) (0x020b931c, provisional name): frees the two blocks, then releases the list
 extern "C" void Group_release(RectGroup *self, void *holder);
-ARM void Group_release(RectGroup *self, void *holder) {
+void Group_release(RectGroup *self, void *holder) {
     Group_freeBlock2(holder, self->block34);
     Group_freeBlock(holder, self->block30);
     RectObjList_releaseItems(self, holder);
 }
 
 // Group_freeBlock(holder, block) (0x020b9350, provisional name): frees block when it is not NULL
-ARM void Group_freeBlock(void *holder, void *block) {
+void Group_freeBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }
@@ -77,7 +77,7 @@ ARM void Group_freeBlock(void *holder, void *block) {
 }
 
 // Group_freeBlock2(holder, block) (0x020b9368, provisional name): the same code as Group_freeBlock
-ARM void Group_freeBlock2(void *holder, void *block) {
+void Group_freeBlock2(void *holder, void *block) {
     if (block == NULL) {
         return;
     }

@@ -35,7 +35,7 @@ typedef struct KnifeTextRender {
 
 // TextRender::setup() (0x020a11fc): resets the centre index and computes the start x from the centring value
 extern "C" void Knife_Message_TextRender_setup(void *a);
-ARM void Knife_Message_TextRender_setup(void *a) {
+void Knife_Message_TextRender_setup(void *a) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 
     self->centerIndex = 0;

@@ -6,11 +6,11 @@
 // Address -> name: 0x0206cf74 Set44, 0x0206cf90 set44_init, 0x0206d060 set44_wait,
 // 0x0206d154 set44_move, 0x0206d2e0 set44_reset
 
-ARM void Set44(Entity *e) {
+void Set44(Entity *e) {
     set44Table[e->action](e);
 }
 
-ARM void set44_init(Entity *e) {
+void set44_init(Entity *e) {
     if (e->type2 & flagBits[data_0212c7c8.playerCount - 1]) {
         PutObjWork(e);
         return;
@@ -28,7 +28,7 @@ ARM void set44_init(Entity *e) {
     }
 }
 
-ARM void set44_wait(Entity *e) {
+void set44_wait(Entity *e) {
     Vars_NemotoCell *v = VARS(Vars_NemotoCell, e);
     int cellResult;
     int index;
@@ -62,7 +62,7 @@ ARM void set44_wait(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set44_move(Entity *e) {
+void set44_move(Entity *e) {
     Vars_NemotoCell *v = VARS(Vars_NemotoCell, e);
     int hitMask;
 
@@ -113,7 +113,7 @@ ARM void set44_move(Entity *e) {
     }
 }
 
-ARM void set44_reset(Entity *e) {
+void set44_reset(Entity *e) {
     Vars_NemotoCell *v = VARS(Vars_NemotoCell, e);
 
     e->timer--;

@@ -12,7 +12,7 @@ extern "C" void RectObj_calcTopLeft(s16 *out, RectObjF *self);
 // RectObj_isOnScreen(self) (0x020b7d08, provisional name): the top left corner is left of 0x100 and above 0xc0, and the
 // rectangle extends past the top left corner (its far corner is positive)
 extern "C" BOOL RectObj_isOnScreen(RectObjF *self);
-ARM BOOL RectObj_isOnScreen(RectObjF *self) {
+BOOL RectObj_isOnScreen(RectObjF *self) {
     BOOL inX;
     BOOL inside;
     s32 x;
@@ -43,7 +43,7 @@ ARM BOOL RectObj_isOnScreen(RectObjF *self) {
 // RectObj_updateBoundsCheck(self, pos) (0x020b7d74, provisional name): RectObj_updateBounds, then returns whether the
 // rectangle is on the screen (nothing is done and FALSE returned while the bounds are frozen)
 extern "C" BOOL RectObj_updateBoundsCheck(RectObjF *self, const s16 *pos);
-ARM BOOL RectObj_updateBoundsCheck(RectObjF *self, const s16 *pos) {
+BOOL RectObj_updateBoundsCheck(RectObjF *self, const s16 *pos) {
     if (((RectFlagBits *)&self->flags)->frozen) {
         return FALSE;
     }

@@ -9,7 +9,7 @@ namespace Knife {
 namespace Hud {
 
 // HudManager::startCallAnim(int) (0x0209eb3c): a call animation that is pending (negative) starts and is cleared
-ARM BOOL HudManager::startCallAnim(int player) {
+BOOL HudManager::startCallAnim(int player) {
     if (callAnim[player] < 0) {
         callAnim[player] = 0;
         return TRUE;
@@ -18,12 +18,12 @@ ARM BOOL HudManager::startCallAnim(int player) {
 }
 
 // HudManager::isJustStartedCallAnim(int) const (0x0209eb58): true while the call animation has just started
-ARM BOOL HudManager::isJustStartedCallAnim(int player) const {
+BOOL HudManager::isJustStartedCallAnim(int player) const {
     return callAnim[player] == 1;
 }
 
 // HudManager::setStateOne (0x0209eb70, name guessed): sets the game-over state to 1
-ARM void HudManager::setStateOne(void) {
+void HudManager::setStateOne(void) {
     state170 = 1;
 }
 

@@ -11,7 +11,7 @@ void Menu_ForwardC28b0(void *heap);
 // SndHeap_CreateRecord: makes a record at the 4-byte aligned start of [base, base + size). Its heap is the rest of the range
 // after a 0x10-byte header. Returns the record, or 0 when the range is too small or the heap could not be made.
 extern "C" void *SndHeap_CreateRecord(void *base, s32 size);
-ARM void *SndHeap_CreateRecord(void *base, s32 size) {
+void *SndHeap_CreateRecord(void *base, s32 size) {
     u32 rounded;
     u32 start;
     u32 end;
@@ -41,7 +41,7 @@ ARM void *SndHeap_CreateRecord(void *base, s32 size) {
 
 // SndRecord_Free: clears the record and frees its heap.
 extern "C" void SndRecord_Free(SndRecord *record);
-ARM void SndRecord_Free(SndRecord *record) {
+void SndRecord_Free(SndRecord *record) {
     SndRecord_Clear(record);
     Menu_ForwardC28b0(record->heap);
 }

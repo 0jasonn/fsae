@@ -14,7 +14,7 @@ typedef struct Vars_enrinChild {
 
 // Follows the child: copies its position, sprite bits and the timer-based flag, drops the child's status bit 0x4000
 // and removes itself when the child's timer is out.
-ARM void enrinMove(Entity *e) {
+void enrinMove(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->statusFlags = 0;

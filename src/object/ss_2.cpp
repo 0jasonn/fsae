@@ -8,6 +8,6 @@
 
 extern EntityFunc data_02115b1c[]; // state table indexed by e->action
 
-ARM void shutter_set(Entity *e) {
+void shutter_set(Entity *e) {
     data_02115b1c[e->action](e);
 }

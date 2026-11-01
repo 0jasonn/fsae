@@ -8,7 +8,7 @@
 // result is 1 on success or 0 with the handle cleared.
 extern "C" s32 FsFile_OpenPath(FsOpenRecord *rec, u32 path, u32 arg);
 
-ARM s32 FsFile_OpenPath(FsOpenRecord *rec, u32 path, u32 arg) {
+s32 FsFile_OpenPath(FsOpenRecord *rec, u32 path, u32 arg) {
     u32 resolved;
     u8 buffer[0x118];
     FsOpenArgs args;

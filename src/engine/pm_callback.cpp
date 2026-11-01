@@ -16,7 +16,7 @@ extern "C" void PMi_RunCallback(u32 result);
 
 // PMi_RunCallback(result) (0x0201c854): clears the busy flag, then takes the callback (if any), clears it and calls it with
 // result and the stored argument.
-ARM void PMi_RunCallback(u32 result) {
+void PMi_RunCallback(u32 result) {
     void (*callback)(u32, u32);
     u32 arg;
 

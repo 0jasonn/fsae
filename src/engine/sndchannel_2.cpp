@@ -29,7 +29,7 @@ typedef struct SndChannelRef {
 
 // SndChannelRef_Stop (0x020bf66c): stops the channel timer of an active reference and clears the active flag.
 extern "C" void SndChannelRef_Stop(SndChannelRef *ref);
-ARM void SndChannelRef_Stop(SndChannelRef *ref) {
+void SndChannelRef_Stop(SndChannelRef *ref) {
     if (ref->active == 0) {
         return;
     }
@@ -39,7 +39,7 @@ ARM void SndChannelRef_Stop(SndChannelRef *ref) {
 
 // SndChannelRef_SetVolume (0x020bf6a8): sets the volume of the channel of an active reference.
 extern "C" void SndChannelRef_SetVolume(SndChannelRef *ref, s32 volume);
-ARM void SndChannelRef_SetVolume(SndChannelRef *ref, s32 volume) {
+void SndChannelRef_SetVolume(SndChannelRef *ref, s32 volume) {
     if (ref->active == 0) {
         return;
     }
@@ -48,7 +48,7 @@ ARM void SndChannelRef_SetVolume(SndChannelRef *ref, s32 volume) {
 
 // SndChannelRef_SetPan (0x020bf6d0): sets the pan of the channel of an active reference.
 extern "C" void SndChannelRef_SetPan(SndChannelRef *ref, s32 pan);
-ARM void SndChannelRef_SetPan(SndChannelRef *ref, s32 pan) {
+void SndChannelRef_SetPan(SndChannelRef *ref, s32 pan) {
     if (ref->active == 0) {
         return;
     }
@@ -58,7 +58,7 @@ ARM void SndChannelRef_SetPan(SndChannelRef *ref, s32 pan) {
 // SndChannelRef_Update (0x020bf6f4): returns 1 while the command of the reference is pending, otherwise checks whether
 // the channel still plays and clears the active flag when it stopped.
 extern "C" s32 SndChannelRef_Update(SndChannelRef *ref);
-ARM s32 SndChannelRef_Update(SndChannelRef *ref) {
+s32 SndChannelRef_Update(SndChannelRef *ref) {
     if (ref->active == 0) {
         return 0;
     }
@@ -78,7 +78,7 @@ ARM s32 SndChannelRef_Update(SndChannelRef *ref) {
 // SndChannelRef_Wait (0x020bf750): waits for the command of an idle reference (flushing its channel), or for the
 // command and then for the channel to stop when the reference is active.
 extern "C" void SndChannelRef_Wait(SndChannelRef *ref);
-ARM void SndChannelRef_Wait(SndChannelRef *ref) {
+void SndChannelRef_Wait(SndChannelRef *ref) {
     u32 tag;
 
     if (ref->active == 0) {

@@ -17,11 +17,11 @@ extern u16 data_0212c594;
 
 void set51_move(Entity *e);
 
-ARM void Set51(Entity *e) {
+void Set51(Entity *e) {
     set51_typeHandlers[e->type](e);
 }
 
-ARM void set51_parent(Entity *e) {
+void set51_parent(Entity *e) {
     u8 i;
     Entity *child;
 
@@ -36,6 +36,6 @@ ARM void set51_parent(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set51_child(Entity *e) {
+void set51_child(Entity *e) {
     set51_childActions[e->action](e);
 }

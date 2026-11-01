@@ -4,7 +4,7 @@
 // YouseiDemoLoad (0x0204d50c): loads the frame record of the current demo, then the room, the events and the frame.
 extern "C" void YouseiDemoLoad(void);
 
-ARM void YouseiDemoLoad(void) {
+void YouseiDemoLoad(void) {
     FRAME_INFO_ *frame;
 
     frame = youseiFrameTable[data_0212c7c8.unk_1[0]];

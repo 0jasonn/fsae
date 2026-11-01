@@ -8,7 +8,7 @@
 
 // Ctrl_lookupEntry(id) (0x020bc51c, provisional name): the entry of id from Fs_GetDirFileOffset
 extern "C" void *Ctrl_lookupEntry(s32 id);
-ARM void *Ctrl_lookupEntry(s32 id) {
+void *Ctrl_lookupEntry(s32 id) {
     return Fs_GetDirFileOffset(id);
 }
 

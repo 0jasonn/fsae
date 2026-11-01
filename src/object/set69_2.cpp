@@ -6,7 +6,7 @@
 //   0x02075ca0 type0_waitkamae (original name)
 //   0x02075d50 type0_wait2 (original name)
 
-ARM void type0_waitkamae(Entity *e) {
+void type0_waitkamae(Entity *e) {
     Entity *spawn;
     u8 i;
 
@@ -25,7 +25,7 @@ ARM void type0_waitkamae(Entity *e) {
     }
 }
 
-ARM void type0_wait2(Entity *e) {
+void type0_wait2(Entity *e) {
     Entity *spawn;
     u8 i;
 
@@ -45,7 +45,7 @@ ARM void type0_wait2(Entity *e) {
     SoundReq(0x21c);
 }
 
-ARM void type0_wait3(Entity *e) {
+void type0_wait3(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -55,7 +55,7 @@ ARM void type0_wait3(Entity *e) {
     em12_typeMasks[0] = 2;
 }
 
-ARM void type0_up(Entity *e) {
+void type0_up(Entity *e) {
     MoveDir(e);
     if (e->y.HALF.HI > 0x118) {
         return;

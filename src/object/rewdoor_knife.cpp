@@ -7,7 +7,7 @@
 
 extern "C" void knife_rewDoor(Entity *e, const u16 *table);
 
-ARM void knife_rewDoor(Entity *e, const u16 *table) {
+void knife_rewDoor(Entity *e, const u16 *table) {
     s32 cell;
 
     cell = (u16)(((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6));

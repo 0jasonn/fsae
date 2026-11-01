@@ -23,7 +23,7 @@ extern ObjListHead data_0212c6f0[];
 
 // getNumberOfObj (0x020774cc): number of objects with the given kind and id
 extern "C" int getNumberOfObj(u8 kind, u8 id);
-ARM int getNumberOfObj(u8 kind, u8 id) {
+int getNumberOfObj(u8 kind, u8 id) {
     int count;
     ObjListHead *head;
     ObjListNode *node;
@@ -41,7 +41,7 @@ ARM int getNumberOfObj(u8 kind, u8 id) {
 
 // findObj (0x0207752c): the first object with the given kind and id, or NULL
 extern "C" Entity *findObj(u8 kind, u8 id);
-ARM Entity *findObj(u8 kind, u8 id) {
+Entity *findObj(u8 kind, u8 id) {
     ObjListHead *head;
     ObjListNode *node;
 

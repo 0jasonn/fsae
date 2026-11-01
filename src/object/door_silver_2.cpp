@@ -9,7 +9,7 @@ typedef struct DoorSilverBlock {
 extern DoorSilverBlock data_0212c75c;
 extern u8 data_021349c0[];
 
-ARM void door_silver_wait(Entity *e) {
+void door_silver_wait(Entity *e) {
     if (data_021349c0[8] < 3) {
         return;
     }

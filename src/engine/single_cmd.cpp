@@ -18,7 +18,7 @@ extern "C" void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, void *obj, u
 // SinglePlay::SetObjMoveReqNo (0x02099774): for the controlling player (contNo), moves obj by delta in the direction
 // given by bits 3 and 4 of dir (x or y, plus or minus). Records obj at 0x30 whenever the move is applied.
 extern "C" void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, void *obj, u8 player, s32 delta, u8 dir);
-ARM void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, void *obj, u8 player, s32 delta, u8 dir) {
+void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, void *obj, u8 player, s32 delta, u8 dir) {
     if (delta == 0) {
         return;
     }

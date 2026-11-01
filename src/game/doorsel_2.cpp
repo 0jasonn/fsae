@@ -9,7 +9,7 @@ extern "C" void doorsel_sync(void);
 extern u8 data_0212c4dc;
 extern u8 data_0212c500;
 
-ARM void doorsel_sync(void) {
+void doorsel_sync(void) {
     data_0212c500 = data_0212c500 + 1;
     data_0212c4dc = 0;
 }

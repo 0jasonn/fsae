@@ -4,7 +4,7 @@
 // ResTable_Relocate (ResTable_Relocate, provisional name): adds the table address to the table pointer at +4 and to each of
 // the u32 offsets the table holds (count at +0).
 extern "C" void ResTable_Relocate(u8 *table);
-ARM void ResTable_Relocate(u8 *table) {
+void ResTable_Relocate(u8 *table) {
     u16 i;
     u32 *offsets;
 

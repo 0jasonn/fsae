@@ -34,7 +34,7 @@ extern "C" void CircleWindowHook(void);
 extern "C" void EffectWindowHook(void);
 
 // keyClear (0x0202b54c)
-ARM void keyClear(void) {
+void keyClear(void) {
     ComRequest(5);
     data_0212c584[3] = 0;
     data_0212c584[2] = 0;
@@ -47,16 +47,16 @@ ARM void keyClear(void) {
 }
 
 // CircleWindowHook (CircleWindowHook): placeholder with no code in the ROM, called after the circle window starts.
-ARM void CircleWindowHook(void) {
+void CircleWindowHook(void) {
 }
 
 // EffectWindowHook (EffectWindowHook): placeholder with no code in the ROM, called after the effect window stops.
-ARM void EffectWindowHook(void) {
+void EffectWindowHook(void) {
 }
 
 // StopEffectWindow (0x0202b598): clears the window bit of the display flags and the window active flag, stops the DMA
 // and calls EffectWindowHook.
-ARM void StopEffectWindow(void) {
+void StopEffectWindow(void) {
     data_0212c75c.displayFlags = data_0212c75c.displayFlags & 0xdfff;
     hblankDma.active = 0;
     MI_StopDma(0);
@@ -65,7 +65,7 @@ ARM void StopEffectWindow(void) {
 
 // InitCircleWindow (0x0202b5d4): sets the window bit, the window bounds x and y, the size 0xc0 and the active flag,
 // then calls CircleWindowHook.
-ARM void InitCircleWindow(u16 x, u16 y) {
+void InitCircleWindow(u16 x, u16 y) {
     data_0212c75c.displayFlags = data_0212c75c.displayFlags | 0x2000;
     data_0212c75c.unk_60 = x;
     data_0212c75c.unk_62 = y;

@@ -13,7 +13,7 @@ namespace File {
 
 // Entity::read (0x0208c7ac): if the path exists, reads the whole file into a block from EL_GetGlobalAdr. readDone is
 // set either way. Returns whether the read finished.
-ARM BOOL Entity::read(void) {
+BOOL Entity::read(void) {
     BOOL ok = FALSE;
 
     if (FS_FindDir(fsFile, path) != FALSE) {
@@ -37,7 +37,7 @@ ARM BOOL Entity::read(void) {
 
 // List::~List, deleting dtor (0x0208c82c): unlinks the node, leaves the List vtable and frees it
 extern "C" Knife::File::List *Knife_File_List_dtor_List_08c82c(Knife::File::List *self);
-ARM Knife::File::List *Knife_File_List_dtor_List_08c82c(Knife::File::List *self) {
+Knife::File::List *Knife_File_List_dtor_List_08c82c(Knife::File::List *self) {
     *(void **)self = data_0211abcc;
     self->next->prev = self->prev;
     self->prev->next = self->next;
@@ -49,7 +49,7 @@ ARM Knife::File::List *Knife_File_List_dtor_List_08c82c(Knife::File::List *self)
 
 // List::~List, base dtor (0x0208c868): unlinks the node and leaves the List vtable
 extern "C" void Knife_File_List_dtor_List_08c868(Knife::File::List *self);
-ARM void Knife_File_List_dtor_List_08c868(Knife::File::List *self) {
+void Knife_File_List_dtor_List_08c868(Knife::File::List *self) {
     *(void **)self = data_0211abcc;
     self->next->prev = self->prev;
     self->prev->next = self->next;
@@ -62,7 +62,7 @@ namespace File {
 
 // System::threadFunction (0x0208c894): the loader thread. Waits until an entity is queued, takes the first one off the
 // queue, reads it and yields, until quitRequested is set. Then the thread exits.
-ARM void System::threadFunction(void *arg) {
+void System::threadFunction(void *arg) {
     Entity *entity;
     BOOL empty;
 
@@ -94,7 +94,7 @@ ARM void System::threadFunction(void *arg) {
 
 // System::initialize (0x0208c968): clears the quit flag, sets up the file system and the archive tables, enables the
 // IRQ mask for flags, and starts the loader thread
-ARM void System::initialize(u32 flags) {
+void System::initialize(u32 flags) {
     s32 tableSize;
     void *tableBuf;
 
@@ -113,13 +113,13 @@ ARM void System::initialize(u32 flags) {
 }
 
 // System::yieldThread (0x0208ca28): tail call to OS_YieldThread
-ARM void System::yieldThread(void) {
+void System::yieldThread(void) {
     ((void (*)(void))OS_YieldThread)();
 }
 
 // System::alloc (0x0208ca34): news an Entity (0xa0 bytes) for the name and appends it to the queue. The loader thread
 // is signalled when the queue was empty.
-ARM Entity *System::alloc(const char *name) {
+Entity *System::alloc(const char *name) {
     Entity *entity;
     BOOL wasEmpty;
 
@@ -141,7 +141,7 @@ ARM Entity *System::alloc(const char *name) {
 }
 
 // System::release (0x0208cad0): destroys an entity through its vtable (slot 0) and frees it
-ARM void System::release(Entity *entity) {
+void System::release(Entity *entity) {
     if (entity != NULL) {
         entity->virtualDtor();
         func_0208e188(entity);
@@ -150,7 +150,7 @@ ARM void System::release(Entity *entity) {
 
 // System::allocGroup (0x0208caf4, provisional name): for the two slots of a group, allocates an entity for each valid
 // record whose slot is empty
-ARM void System::allocGroup(u16 group) {
+void System::allocGroup(u16 group) {
     u16 i;
     u16 index;
     FileRecord *record;
@@ -170,12 +170,12 @@ ARM void System::allocGroup(u16 group) {
 }
 
 // func_0208cb74 (0x0208cb74): the group ID starts at 0x1ea; declared in functions.h
-ARM void func_0208cb74(u16 id) {
+void func_0208cb74(u16 id) {
     ((void (*)(u16))Knife::File::System::allocGroup)((u16)(id - 0x1ea));
 }
 
 // m4aLockWaveData (0x0208cb94): sets the lock flag of the second slot of the pair and copies it to the first
-ARM void m4aLockWaveData(u16 id) {
+void m4aLockWaveData(u16 id) {
     int first;
     Knife::File::SlotInfo *a;
     Knife::File::SlotInfo *b;
@@ -188,7 +188,7 @@ ARM void m4aLockWaveData(u16 id) {
 }
 
 // m4aUnlockWaveData (0x0208cbe8): clears the lock flag of the pair, as m4aLockWaveData sets it
-ARM void m4aUnlockWaveData(u16 id) {
+void m4aUnlockWaveData(u16 id) {
     int first;
     Knife::File::SlotInfo *a;
     Knife::File::SlotInfo *b;
@@ -202,7 +202,7 @@ ARM void m4aUnlockWaveData(u16 id) {
 
 // m4aRegistWaveData (0x0208cc38): stores the wave data in slot 2 * index + which and marks it registered
 extern "C" void m4aRegistWaveData(s32 index, s32 which, const void *waveData);
-ARM void m4aRegistWaveData(s32 index, s32 which, const void *waveData) {
+void m4aRegistWaveData(s32 index, s32 which, const void *waveData) {
     Knife::File::SlotInfo *slot;
 
     slot = &data_021762b8[which + index * 2];
@@ -213,7 +213,7 @@ ARM void m4aRegistWaveData(s32 index, s32 which, const void *waveData) {
 // m4aReleaseWaveData (0x0208cc60): frees the wave data of slot 2 * index + which, unless the slot is locked or still
 // registered, and only when its file record is valid
 extern "C" void m4aReleaseWaveData(s32 index, s32 which);
-ARM void m4aReleaseWaveData(s32 index, s32 which) {
+void m4aReleaseWaveData(s32 index, s32 which) {
     s32 slot;
 
     slot = which + index * 2;

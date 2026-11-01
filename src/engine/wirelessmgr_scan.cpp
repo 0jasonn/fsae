@@ -6,7 +6,7 @@
 // WirelessManager::requestEndScan (0x02091464, no original name): a leaf function (no interrupt object; REG_IME is
 // saved and restored directly). While scanning (state 5) sets the end-of-scan flag at 0xcb9 and returns TRUE.
 extern "C" BOOL Knife_Comm_WirelessManager_requestEndScan(void *self);
-ARM BOOL Knife_Comm_WirelessManager_requestEndScan(void *self) {
+BOOL Knife_Comm_WirelessManager_requestEndScan(void *self) {
     u16 savedIme;
     WirelessManagerWork *wm;
 

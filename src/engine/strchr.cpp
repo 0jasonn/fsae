@@ -6,7 +6,7 @@ extern "C" u8 *Str_FindChar(const u8 *str, s32 value);
 
 // Finds the first byte equal to value in a NUL-terminated string. A zero value finds the terminator; otherwise NULL
 // is returned when the byte is not present.
-ARM u8 *Str_FindChar(const u8 *str, s32 value) {
+u8 *Str_FindChar(const u8 *str, s32 value) {
     u8 wanted;
     u8 byte;
 

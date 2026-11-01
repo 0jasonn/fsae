@@ -8,7 +8,7 @@
 extern "C" u32 Fp_PackU32ToFloat(u32 value);
 
 // 0x0200d6f8
-ARM asm u32 Fp_PackU32ToFloat(u32 value) {
+asm u32 Fp_PackU32ToFloat(u32 value) {
     cmp r0, #0x0
     bxeq lr
     mov r3, #0x9e

@@ -14,12 +14,12 @@ typedef struct Vars_Set35 {
 } Vars_Set35;
 
 // set35 (dispatcher), 0x0206b068: runs the state function for the current action.
-ARM void set35(Entity *e) {
+void set35(Entity *e) {
     set35Table[e->action](e);
 }
 
 // set35_init, 0x0206b084
-ARM void set35_init(Entity *e) {
+void set35_init(Entity *e) {
     Vars_Set35 *v = VARS(Vars_Set35, e);
     u8 nextAction = e->action + 1;
     e->action = nextAction;

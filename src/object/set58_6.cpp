@@ -11,11 +11,11 @@
 
 extern const EntityFunc set58_auraActions[]; // set58_auraActions, indexed by e->action
 
-ARM void set58_aura(Entity *e) {
+void set58_aura(Entity *e) {
     set58_auraActions[e->action](e);
 }
 
-ARM void aura_init(Entity *e) {
+void aura_init(Entity *e) {
     set58_actionInit(e);
     e->unk_5e.b0 = 0;
     e->spriteSettings.b0 = 1;
@@ -25,7 +25,7 @@ ARM void aura_init(Entity *e) {
     e->spriteSettings.b16 = e->spriteSettings.b16 + 1;
 }
 
-ARM void aura_up(Entity *e) {
+void aura_up(Entity *e) {
     ObjPosCopy(e->parent, e);
     if (e->z.HALF.HI != -20) {
         return;
@@ -48,7 +48,7 @@ ARM void aura_up(Entity *e) {
     ObjAffineSet2(&scrollArgs, e);
 }
 
-ARM void aura_move(Entity *e) {
+void aura_move(Entity *e) {
     s32 speed;
 
     e->timer--;

@@ -6,7 +6,7 @@
 
 // tama00_move, 0x0207c898. Moves the animation and checks the wall flags: 0xffff removes the actor, another value
 // (a wall) starts the flick motion, zero only runs the common update.
-ARM void tama00_move(Entity *e) {
+void tama00_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     func_0208b668(e);
     if (e->wallFlags != 0) {
@@ -23,7 +23,7 @@ ARM void tama00_move(Entity *e) {
 }
 
 // tama00_hajiki, 0x0207c8f8. Flick motion: moves, animates and removes the actor when it stops.
-ARM void tama00_hajiki(Entity *e) {
+void tama00_hajiki(Entity *e) {
     MoveDir(e);
     UpdateAnimationSingleFrame(e);
     if (UpdateGravity(e, 0x1800) != 0) {
@@ -33,7 +33,7 @@ ARM void tama00_hajiki(Entity *e) {
 }
 
 // tama00_hajikiInit, 0x0207c92c. Starts the flick motion with the animation of the direction.
-ARM void tama00_hajikiInit(Entity *e) {
+void tama00_hajikiInit(Entity *e) {
     e->action = 2;
     e->speed = 0x40;
     e->zVelocity = 0x14000;

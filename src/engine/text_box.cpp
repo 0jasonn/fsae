@@ -8,14 +8,14 @@ extern "C" u32 data_020df104[];
 
 // TextBox_SetKindHandler (provisional name): TextBox_Init-style call on the record, then the handler at data_020df104 indexed by the kind byte at +7 of the info record at +0.
 extern "C" void TextBox_SetKindHandler(u8 *self, u8 *arg);
-ARM void TextBox_SetKindHandler(u8 *self, u8 *arg) {
+void TextBox_SetKindHandler(u8 *self, u8 *arg) {
     func_020c6c30(arg, self);
     *(u32 *)(self + 4) = data_020df104[*(u8 *)(*(u8 **)self + 7)];
 }
 
 // TextBox_SetDefaultHandler (provisional name): the same record call, then the default handler TextStream_ReadU16 at +4.
 extern "C" void TextBox_SetDefaultHandler(u8 *self, u8 *arg);
-ARM void TextBox_SetDefaultHandler(u8 *self, u8 *arg) {
+void TextBox_SetDefaultHandler(u8 *self, u8 *arg) {
     func_020c6c30(arg, self);
     *(u32 *)(self + 4) = (u32)TextStream_ReadU16;
 }
@@ -23,7 +23,7 @@ ARM void TextBox_SetDefaultHandler(u8 *self, u8 *arg) {
 // TextBox_FindRange (provisional name): walks the list at +0x10 of the head record for the entry whose inclusive halfword range
 // holds value and returns TextBox_LookupEntry on it; 0xffff when none matches.
 extern "C" u32 TextBox_FindRange(u8 *self, u32 value);
-ARM u32 TextBox_FindRange(u8 *self, u32 value) {
+u32 TextBox_FindRange(u8 *self, u32 value) {
     u8 *entry;
 
     entry = *(u8 **)(*(u8 **)self + 0x10);
@@ -39,7 +39,7 @@ ARM u32 TextBox_FindRange(u8 *self, u32 value) {
 // TextBox_FindRangeEntry (provisional name): the record of the list at +0xc of the head whose inclusive range holds value,
 // returned as entry + 8 + (value - low) * 3; when none matches the address of the head + 4.
 extern "C" u8 *TextBox_FindRangeEntry(u8 *self, u32 value);
-ARM u8 *TextBox_FindRangeEntry(u8 *self, u32 value) {
+u8 *TextBox_FindRangeEntry(u8 *self, u32 value) {
     u8 *entry;
     u8 *head;
 
@@ -58,7 +58,7 @@ ARM u8 *TextBox_FindRangeEntry(u8 *self, u32 value) {
 // character adds base plus the signed width from its range entry. outState receives the reader state on a newline and 0 at the
 // end. The result is the total minus one base, or the total when it is not positive.
 extern "C" s32 TextBox_MeasureSegment(u8 *self, s32 base, u32 state, u32 *outState);
-ARM s32 TextBox_MeasureSegment(u8 *self, s32 base, u32 state, u32 *outState) {
+s32 TextBox_MeasureSegment(u8 *self, s32 base, u32 state, u32 *outState) {
     u32 localState;
     s32 total;
     u32 (*reader)(u32 *);

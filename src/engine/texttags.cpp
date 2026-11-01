@@ -13,7 +13,7 @@ namespace Knife {
 namespace Message {
 
 // TextTokenizer::onReadSyncTag() (0x0208e9ec)
-ARM void TextTokenizer::onReadSyncTag(void) {
+void TextTokenizer::onReadSyncTag(void) {
     BOOL ok;
     u32 freeBytes;
     u8 *token;

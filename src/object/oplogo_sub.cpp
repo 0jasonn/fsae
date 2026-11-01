@@ -14,11 +14,11 @@
 extern EntityFunc data_02115b60[]; // state table indexed by e->action
 extern EntityFunc data_02115b90[]; // state table indexed by e->action
 
-ARM void oplogo_sub_title(Entity *e) {
+void oplogo_sub_title(Entity *e) {
     data_02115b60[e->action](e);
 }
 
-ARM void oplogo_sub_title_init(Entity *e) {
+void oplogo_sub_title_init(Entity *e) {
     e->spriteSettings.b0 = 2;
     e->spriteSettings.b14 = 0;
     e->spriteSettings.b30 = 1;
@@ -31,7 +31,7 @@ ARM void oplogo_sub_title_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void oplogo_sub_title_appear(Entity *e) {
+void oplogo_sub_title_appear(Entity *e) {
     MoveDir(e);
     if (e->x.HALF.HI < 0x80) {
         e->x.HALF.HI = 0x80;
@@ -39,14 +39,14 @@ ARM void oplogo_sub_title_appear(Entity *e) {
     }
 }
 
-ARM void oplogo_NoOp(Entity *e) {
+void oplogo_NoOp(Entity *e) {
 }
 
-ARM void oplogo_sword(Entity *e) {
+void oplogo_sword(Entity *e) {
     data_02115b90[e->action](e);
 }
 
-ARM void oplogo_sword_init(Entity *e) {
+void oplogo_sword_init(Entity *e) {
     e->spriteSettings.b0 = 2;
     e->spriteSettings.b14 = 0;
     e->spriteSettings.b30 = 1;
@@ -59,7 +59,7 @@ ARM void oplogo_sword_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
 }
 
-ARM void oplogo_sword_move(Entity *e) {
+void oplogo_sword_move(Entity *e) {
     MoveDir(e);
     if (e->y.HALF.HI > 0x60) {
         return;

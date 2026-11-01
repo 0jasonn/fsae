@@ -25,13 +25,13 @@ void ComFinish(u32 finishArg);
 void ComRequest(u8 request);
 
 // ComStart (0x02028068): sends the request, then starts the multiplayer serial.
-ARM void ComStart(u8 request) {
+void ComStart(u8 request) {
     ComRequest(request);
     MultiSioStart();
 }
 
 // ComRequest (0x02028078): stores the request code and resets the phase and the request state.
-ARM void ComRequest(u8 request) {
+void ComRequest(u8 request) {
     COM_WORK->request = request;
     COM_WORK->phase = 0;
     COM_WORK->requestFlag = 1;
@@ -40,12 +40,12 @@ ARM void ComRequest(u8 request) {
 }
 
 // func_0202809c (0x0202809c): ComFinish with argument 0. C++ linkage, as stageseldecls.h declares it.
-ARM void func_0202809c(void) {
+void func_0202809c(void) {
     ComFinish(0);
 }
 
 // ComFinish (0x020280ac): ends the request and keeps the argument in finishArg.
-ARM void ComFinish(u32 finishArg) {
+void ComFinish(u32 finishArg) {
     COM_WORK->request = 0;
     COM_WORK->phase = 0;
     COM_WORK->requestFlag = 0;

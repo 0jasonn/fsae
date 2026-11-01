@@ -18,7 +18,7 @@ extern u8 data_0212c618[];
 
 // cockpit_call_check (0x02027bd0): starts the call animation of the player that asks for it. Single play uses the
 // active player of the single play block; wireless play checks every player.
-ARM void cockpit_call_check(void) {
+void cockpit_call_check(void) {
     void *knife;
     Knife::Hud::HudManager *hud;
     u8 *single;
@@ -66,7 +66,7 @@ ARM void cockpit_call_check(void) {
 
 // cockpit_obj_trans (0x02027d44): runs the call check, advances the frame counter at data_0212c4a0 + 4 (modulo 0x30) and
 // sets the two HUD slots from the item indices, then updates the HUD with mode.
-ARM void cockpit_obj_trans(u8 mode) {
+void cockpit_obj_trans(u8 mode) {
     void *knife;
     Knife::Hud::HudManager *hud;
 

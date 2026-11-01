@@ -11,7 +11,7 @@ extern u8 data_02181860[];
 
 // isSpaceColorSlot(long) (0x020b2560): TRUE when the colour slot is still free
 extern "C" BOOL isSpaceColorSlot(s32 slot);
-ARM BOOL isSpaceColorSlot(s32 slot) {
+BOOL isSpaceColorSlot(s32 slot) {
     s8 *colors;
 
     colors = *(s8 **)(data_02181860 + 4);
@@ -23,7 +23,7 @@ ARM BOOL isSpaceColorSlot(s32 slot) {
 
 // isFinishedColorChoiceAllPlayers() (0x020b2580): TRUE when every player has picked a colour
 extern "C" BOOL isFinishedColorChoiceAllPlayers(void);
-ARM BOOL isFinishedColorChoiceAllPlayers(void) {
+BOOL isFinishedColorChoiceAllPlayers(void) {
     s32 taken;
     u32 i;
     s8 *colors;

@@ -6,7 +6,7 @@
 
 // clamp_s8(signed char&, signed char, signed char) (0x020ac898): limits the byte to [low, high]
 extern "C" void clamp_s8(signed char &value, signed char low, signed char high);
-ARM void clamp_s8(signed char &value, signed char low, signed char high) {
+void clamp_s8(signed char &value, signed char low, signed char high) {
     if (value < low) {
         value = low;
         return;

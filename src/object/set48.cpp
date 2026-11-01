@@ -8,6 +8,6 @@
 // Action table of Set48, set48Table
 extern const EntityFunc set48Table[];
 
-ARM void Set48(Entity *e) {
+void Set48(Entity *e) {
     set48Table[e->action](e);
 }

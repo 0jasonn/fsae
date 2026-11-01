@@ -22,7 +22,7 @@ typedef struct CtrlRelease {
 // Ctrl_releaseSubobjects(self, arg) (0x020ba80c, provisional name): calls the first virtual of subobject A (+0x3c) and
 // of subobject B (+0x20) with arg, then RectObj_noop(self, arg)
 extern "C" void Ctrl_releaseSubobjects(void *selfv, s32 arg);
-ARM void Ctrl_releaseSubobjects(void *selfv, s32 arg) {
+void Ctrl_releaseSubobjects(void *selfv, s32 arg) {
     CtrlRelease *self = (CtrlRelease *)selfv;
     ((CtrlSubobject *)self->unk_3c)->release(arg);
     ((CtrlSubobject *)self->subB)->release(arg);

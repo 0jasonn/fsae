@@ -9,17 +9,17 @@
 //   0x0208bee8 knifeSoundReturnZero, 0x0208bef0 knifeSoundGetFlag0e
 
 extern "C" void knifeSoundNop3(void *self);
-ARM void knifeSoundNop3(void *self) {
+void knifeSoundNop3(void *self) {
 }
 
 // 0x0208bee8: slot that reports 0
 extern "C" int knifeSoundReturnZero(void *self);
-ARM int knifeSoundReturnZero(void *self) {
+int knifeSoundReturnZero(void *self) {
     return 0;
 }
 
 // 0x0208bef0: returns the byte at +0x0e (the sound slot's player index)
 extern "C" u8 knifeSoundGetFlag0e(void *self);
-ARM u8 knifeSoundGetFlag0e(void *self) {
+u8 knifeSoundGetFlag0e(void *self) {
     return ((u8 *)self)[0x0e];
 }

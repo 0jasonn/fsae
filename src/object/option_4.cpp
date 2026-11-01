@@ -4,7 +4,7 @@
 //   0x0205c54c change_panel, 0x0205c618 entry_cursor, 0x0205c6a8 star_cursor, 0x0205c6fc langStar
 //   0x0205c770 star_adjust
 
-ARM void change_panel(Entity *e) {
+void change_panel(Entity *e) {
     u8 layer;
 
     if (e->action == 0) {
@@ -31,7 +31,7 @@ ARM void change_panel(Entity *e) {
     e->spriteSettings.b16 = layer;
 }
 
-ARM void entry_cursor(Entity *e) {
+void entry_cursor(Entity *e) {
     u8 offset;
     int x;
 
@@ -54,7 +54,7 @@ ARM void entry_cursor(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void star_cursor(Entity *e) {
+void star_cursor(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b14 = 2;
@@ -65,7 +65,7 @@ ARM void star_cursor(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void langStar(Entity *e) {
+void langStar(Entity *e) {
     if (e->action == 0) {
         e->action = 1;
         e->spriteSettings.b0 = 2;
@@ -76,7 +76,7 @@ ARM void langStar(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void star_adjust(Entity *e, s16 a, s16 b) {
+void star_adjust(Entity *e, s16 a, s16 b) {
     Entity *star = NP_ENTITY_PTR(8);
 
     if (star == NULL) {

@@ -5,7 +5,7 @@
 // Subtask draw helpers, 0x0209cd18 to 0x0209cdb0: queue a BG character write for mode 1 to 3.
 
 // subtask_draw_ice_key (0x0209cd18)
-ARM void subtask_draw_ice_key(s32 x, s32 y, u32 mode, u8 *buf) {
+void subtask_draw_ice_key(s32 x, s32 y, u32 mode, u8 *buf) {
     switch (mode) {
     case 0:
         break;
@@ -22,7 +22,7 @@ ARM void subtask_draw_ice_key(s32 x, s32 y, u32 mode, u8 *buf) {
 }
 
 // subtask_draw_fire_key (0x0209cdb0)
-ARM void subtask_draw_fire_key(s32 x, s32 y, u32 mode, u8 *buf) {
+void subtask_draw_fire_key(s32 x, s32 y, u32 mode, u8 *buf) {
     switch (mode) {
     case 0:
         break;

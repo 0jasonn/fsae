@@ -8,11 +8,11 @@
 //   (0x020aaaf8), modeSelUIView_vfunc2 (0x020aab7c)
 
 // func_020a9494 (0x020a9494): modeSelUIView::move(0)
-ARM void func_020a9494(void *self) {
+void func_020a9494(void *self) {
     modeSelUIView_move((ModeSelUIView *)self, 0);
 }
 
 // func_020a94a4 (0x020a94a4): modeSelUIView::move(1)
-ARM void func_020a94a4(void *self) {
+void func_020a94a4(void *self) {
     modeSelUIView_move((ModeSelUIView *)self, 1);
 }

@@ -9,7 +9,7 @@ extern s16 scrollArgs[3];
 void func_02085934(Entity *e, u8 mode);
 void func_020859a0(Entity *e, u8 a, u8 b);
 
-ARM void set6b_move(Entity *e) {
+void set6b_move(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
     } else {
@@ -25,7 +25,7 @@ ARM void set6b_move(Entity *e) {
 }
 
 
-ARM void set6b_tidimu(Entity *e) {
+void set6b_tidimu(Entity *e) {
     int next;
 
     if (e->type == 0) {

@@ -7,7 +7,7 @@
 // em10_awake em10_awake, em10_move em10_move, em10_endmove0 em10_endmove0,
 // em10_endmove1 em10_endmove1, em10_sleep em10_sleep
 
-ARM void em10_damage(Entity *e) {
+void em10_damage(Entity *e) {
     if (e->action == 1) {
         e->action = 2;
         if (e->contactedEntity->objKind == 1) {
@@ -23,7 +23,7 @@ ARM void em10_damage(Entity *e) {
     GenericKnockback(e, em10_actions);
 }
 
-ARM void em10_init(Entity *e) {
+void em10_init(Entity *e) {
     e->spriteSettings.b0 = 1;
     e->unk_2e = 2;
     e->hitbox = em10_hitbox;
@@ -33,10 +33,10 @@ ARM void em10_init(Entity *e) {
     attset(e);
 }
 
-ARM void Boss_NoOp(Entity *e) {
+void Boss_NoOp(Entity *e) {
 }
 
-ARM void em10_awake(Entity *e) {
+void em10_awake(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         u8 wobbleTimer = ++e->timer;
@@ -67,7 +67,7 @@ ARM void em10_awake(Entity *e) {
     }
 }
 
-ARM void em10_move(Entity *e) {
+void em10_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     func_020847a0(e);
     if (--e->subtimer == 0) {
@@ -86,7 +86,7 @@ ARM void em10_move(Entity *e) {
     }
 }
 
-ARM void em10_endmove0(Entity *e) {
+void em10_endmove0(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (poscheck(e) != 0) {
         nextendmoveset(e);
@@ -106,7 +106,7 @@ ARM void em10_endmove0(Entity *e) {
     }
 }
 
-ARM void em10_endmove1(Entity *e) {
+void em10_endmove1(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (poscheck(e) != 0) {
         sleepSet(e);
@@ -126,7 +126,7 @@ ARM void em10_endmove1(Entity *e) {
     }
 }
 
-ARM void em10_sleep(Entity *e) {
+void em10_sleep(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         if (func_02083d28(e) == 0xf) {

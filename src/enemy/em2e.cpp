@@ -30,7 +30,7 @@ typedef struct Vars_Flag {
 } Vars_Flag;
 
 
-ARM void em2e_main(Entity *e) {
+void em2e_main(Entity *e) {
     em2e_actions[e->action](e);
     if (!(e->contactFlags & 0x80)) {
         return;
@@ -49,7 +49,7 @@ ARM void em2e_main(Entity *e) {
     data_0212ceb0[e->contactedEntity->type].statusFlags |= 0x400;
 }
 
-ARM void em2e_init(Entity *e) {
+void em2e_init(Entity *e) {
     e->layer = 0x4000;
     e->spriteSettings.b0 = 1;
     InitAnimationForceUpdate(e, 0);
@@ -67,7 +67,7 @@ ARM void em2e_init(Entity *e) {
     V(e)->unk_6e = 0;
 }
 
-ARM void em2e_gatherwait(Entity *e) {
+void em2e_gatherwait(Entity *e) {
     if (e->type == 0) {
         BindPlayers();
         if (e->subtimer != 0) {
@@ -154,7 +154,7 @@ ARM void em2e_gatherwait(Entity *e) {
     atSelect(e);
 }
 
-ARM void em2e_sign(Entity *e) {
+void em2e_sign(Entity *e) {
     UpdateAnimationSingleFrame(e);
     UpdateGravity(e, 0x2000);
     switch (V(e)->mode) {
@@ -234,7 +234,7 @@ ARM void em2e_sign(Entity *e) {
     }
 }
 
-ARM void em2e_move(Entity *e) {
+void em2e_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     func_020852ec(e);
     if (UpdateGravity(e, 0x2000) != 0) {
@@ -261,7 +261,7 @@ ARM void em2e_move(Entity *e) {
     atSelect(e);
 }
 
-ARM void em2e_break(Entity *e) {
+void em2e_break(Entity *e) {
     if (e->type == 4 && em2e_type4Hidden != 0) {
         e->action = 6;
         return;
@@ -306,7 +306,7 @@ ARM void em2e_break(Entity *e) {
     V(e)->hideTimer = 5;
 }
 
-ARM void em2e_hide(Entity *e) {
+void em2e_hide(Entity *e) {
     Entity *target = e->child;
     e->x.HALF.HI = target->x.HALF.HI;
     e->y.HALF.HI = target->y.HALF.HI;
@@ -327,12 +327,12 @@ ARM void em2e_hide(Entity *e) {
     e->direction = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, 0x1f8, 0x1f8);
 }
 
-ARM void em2e_die(Entity *e) {
+void em2e_die(Entity *e) {
     EmDie(e);
     e->type = 5;
 }
 
-ARM void gatherInit(Entity *e) {
+void gatherInit(Entity *e) {
     if (e->health == 0) {
         u8 level = e->type;
         if (level < 3 && level != 0) {
@@ -350,7 +350,7 @@ ARM void gatherInit(Entity *e) {
     V(e)->sparkCount = 0;
 }
 
-ARM void atSelect(Entity *e) {
+void atSelect(Entity *e) {
     if (V(e)->mode != 2 && V(e)->fxSpawned == 0) {
         V(e)->mode = 2;
     } else {
@@ -368,7 +368,7 @@ ARM void atSelect(Entity *e) {
     V(e)->homeX = e->x.HALF.HI;
 }
 
-ARM void firepostSet(Entity *e, u16 x, u16 y) {
+void firepostSet(Entity *e, u16 x, u16 y) {
     if (Random() & 1) {
         return;
     }

@@ -29,13 +29,13 @@ typedef struct RectObj {
 
 // RectObj_noop(self) (0x020b7cd0, provisional name): does nothing
 extern "C" void RectObj_noop(RectObj *self);
-ARM void RectObj_noop(RectObj *self) {
+void RectObj_noop(RectObj *self) {
 }
 
 // RectObj_updateBounds(self, pos) (0x020b7cd4, provisional name): unless the flag bit 0 is set, the bounds are the position
 // plus the offset
 extern "C" void RectObj_updateBounds(RectObj *self, void *unused, const s16 *pos);
-ARM void RectObj_updateBounds(RectObj *self, void *unused, const s16 *pos) {
+void RectObj_updateBounds(RectObj *self, void *unused, const s16 *pos) {
     if (((RectFlagBits *)&self->flags)->frozen) {
         return;
     }

@@ -3,7 +3,7 @@
 
 // stagesel_dialog, 0x0207abb4. Stage select dialog, once per frame. data_0212c4dc 0 waits for the answer of the
 // selection dialog (data_02171d7c), 1 waits for the confirmation in the pause dialog.
-ARM void stagesel_dialog(void) {
+void stagesel_dialog(void) {
     u16 value;
     if (CommFrameSync() == 0) {
         return;

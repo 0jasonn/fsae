@@ -22,7 +22,7 @@ typedef struct RectPairInit {
 // (RectObjList_create), gives each its geometry from data_020deee0 and the value of func_020bc200, sets the group items
 // from pos and the fixed size 0x65 x 0x14, then stores value at +0x1e
 extern "C" void RectObjPair_init(RectPairInit *self, void *holder, void *owner, s16 *pos, s16 value);
-ARM void RectObjPair_init(RectPairInit *self, void *holder, void *owner, s16 *pos, s16 value) {
+void RectObjPair_init(RectPairInit *self, void *holder, void *owner, s16 *pos, s16 value) {
     void *items[2];
     s16 childPos[2];
     s16 childSize[2];

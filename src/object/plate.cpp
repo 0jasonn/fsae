@@ -5,7 +5,7 @@
 // Plate actor (module plate). Address -> name:
 //   0x02058684 plate_move (original name)
 
-ARM void plate_move(Entity *e) {
+void plate_move(Entity *e) {
     plate_posY_set(e);
     if (data_0212c4dc == 1) {
         if (VPLATE(e)->count < VPLATE(e)->limit) {

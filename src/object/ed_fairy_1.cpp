@@ -8,6 +8,6 @@
 
 extern const EntityFunc ed_fairy_states[]; // state table indexed by e->action
 
-ARM void ed_fairy(Entity *e) {
+void ed_fairy(Entity *e) {
     ed_fairy_states[e->action](e);
 }

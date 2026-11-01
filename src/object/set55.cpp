@@ -27,7 +27,7 @@ extern u16 data_0212c58c[];
 
 void set55_movef(Entity *e);
 
-ARM void Set55(Entity *e) {
+void Set55(Entity *e) {
     if (e->type != 0) {
         set55_actionsTypeN[e->action](e);
     } else {
@@ -35,7 +35,7 @@ ARM void Set55(Entity *e) {
     }
 }
 
-ARM void set55_init(Entity *e) {
+void set55_init(Entity *e) {
     Entity *child;
 
     e->action++;
@@ -66,7 +66,7 @@ ARM void set55_init(Entity *e) {
     }
 }
 
-ARM void set55_movei(Entity *e) {
+void set55_movei(Entity *e) {
     Entity *child;
     u8 playerIndex;
 
@@ -127,7 +127,7 @@ ARM void set55_movei(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set55_movef(Entity *e) {
+void set55_movef(Entity *e) {
     u8 type;
     Entity *child;
 
@@ -203,7 +203,7 @@ ARM void set55_movef(Entity *e) {
     }
 }
 
-ARM Entity *func_02072554(s32 a) {
+Entity *func_02072554(s32 a) {
     Entity *set;
 
     set = GetSetWork(0x56, a, 0);

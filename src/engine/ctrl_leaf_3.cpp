@@ -12,7 +12,7 @@ typedef struct CtrlLeafFlags {
 } CtrlLeafFlags;
 
 extern "C" s32 Ctrl_getFlagAdValue(CtrlLeafFlags *self);
-ARM s32 Ctrl_getFlagAdValue(CtrlLeafFlags *self) {
+s32 Ctrl_getFlagAdValue(CtrlLeafFlags *self) {
     s32 value = 0x94;
     if (self->flagAd != 0) {
         value = 0;

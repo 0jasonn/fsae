@@ -16,7 +16,7 @@ extern "C" s32 Pair_Restore(u32 arg);
 // Pair_Restore(arg) (0x02019c0c): copies the saved 0x300-byte buffer from main RAM back into the pair buffer and
 // checks its CRC. A matching CRC enables the pair (flags = 1) and clears bit 0 of the kind byte; otherwise the buffer
 // is cleared and the main arena is disabled.
-ARM s32 Pair_Restore(u32 arg) {
+s32 Pair_Restore(u32 arg) {
     u16 savedCrc;
 
     if (OS_IsValidDeliverArg(arg) == 0) {

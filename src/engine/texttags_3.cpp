@@ -14,7 +14,7 @@ namespace Message {
 
 // TextTokenizer::onReadValueTag(int) (0x0208ec90): localizes the number that slot 0 of the app info gives and passes
 // the text to onReadPlainText
-ARM void TextTokenizer::onReadValueTag(s32 value) {
+void TextTokenizer::onReadValueTag(s32 value) {
     u8 buf[0x40];
     Text text;
     s32 number;

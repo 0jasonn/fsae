@@ -39,7 +39,7 @@ typedef struct KnifeSelectDialog {
 
 // selectionDialog::stop() (0x020a20e0): clears the frame and the state when the dialog is shown
 extern "C" void Knife_Message_selectionDialog_stop(void *a);
-ARM void Knife_Message_selectionDialog_stop(void *a) {
+void Knife_Message_selectionDialog_stop(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 
     if (self->state == 0) {
@@ -53,7 +53,7 @@ ARM void Knife_Message_selectionDialog_stop(void *a) {
 // selectionDialog::close() (0x020a2108): moves the dialog to the closing state (5), and plays the close sound when the
 // dialog was modal and is visible
 extern "C" void Knife_Message_selectionDialog_close(void *a);
-ARM void Knife_Message_selectionDialog_close(void *a) {
+void Knife_Message_selectionDialog_close(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 
     if (Knife_Message_selectionDialog_isModal(self)) {
@@ -66,7 +66,7 @@ ARM void Knife_Message_selectionDialog_close(void *a) {
 
 // selectionDialog::setVisible(bool) (0x020a2138): stores the request and the visible flag
 extern "C" void Knife_Message_selectionDialog_setVisible(void *a, s32 visible);
-ARM void Knife_Message_selectionDialog_setVisible(void *a, s32 visible) {
+void Knife_Message_selectionDialog_setVisible(void *a, s32 visible) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 
     self->visibleRequest = visible;

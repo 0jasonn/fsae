@@ -5,7 +5,7 @@
 
 // WstrBuf_Write(wb, src, count) (0x0200a2e4): copies up to count halfwords from src to the buffer at its position, cut to
 // the space left, and advances the position. Returns what Mem_CopyHalfwords returns.
-ARM void *WstrBuf_Write(WstrBuf *wb, const void *src, u32 count) {
+void *WstrBuf_Write(WstrBuf *wb, const void *src, u32 count) {
     u32 pos;
     void *result;
 
@@ -20,7 +20,7 @@ ARM void *WstrBuf_Write(WstrBuf *wb, const void *src, u32 count) {
 
 // Wstr_Snprintf(dst, size, fmt, ...) (0x0200a324): variadic wrapper of Wstr_VSnprintf. The variadic arguments follow fmt
 // in the caller's stack words, so args starts at the word after fmt.
-ARM s32 Wstr_Snprintf(u16 *dst, u32 size, const u16 *fmt, ...) {
+s32 Wstr_Snprintf(u16 *dst, u32 size, const u16 *fmt, ...) {
     return Wstr_VSnprintf(dst, size, fmt, (u8 *)(((u32)&fmt) & ~3) + 4);
 }
 
@@ -31,7 +31,7 @@ typedef struct WstrFormatCtx {
     WstrBuf buf;
 } WstrFormatCtx;
 
-ARM s32 Wstr_VSnprintf(u16 *dst, u32 size, const u16 *fmt, void *args) {
+s32 Wstr_VSnprintf(u16 *dst, u32 size, const u16 *fmt, void *args) {
     WstrFormatCtx ctx;
     s32 length;
 

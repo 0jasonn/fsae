@@ -29,7 +29,7 @@ extern "C" void Slider_updateFlags(Slider *self);
 
 // Slider_updateFlags(self) (0x020b97d4, provisional name): does nothing when count is 1 or less; otherwise the bit
 // unk_bit1 of child 0 is set when position <= 0 and that of child 1 when position + 1 >= count
-ARM void Slider_updateFlags(Slider *self) {
+void Slider_updateFlags(Slider *self) {
     SliderChild *child;
 
     if (self->count <= 1) {

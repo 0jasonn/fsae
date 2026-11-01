@@ -11,7 +11,7 @@ extern u8 messageRequest[];
 void goto_nextdemo(void);
 
 // getRupeeLevel (0x02082054)
-ARM int getRupeeLevel(void) {
+int getRupeeLevel(void) {
     u32 rupees;
 
     rupees = *(u32 *)((u8 *)&data_0212c7c8 + 8);
@@ -28,7 +28,7 @@ ARM int getRupeeLevel(void) {
 }
 
 // rupee_error (0x02082094)
-ARM void rupee_error(u16 message) {
+void rupee_error(u16 message) {
     MessageRequest(message);
     messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
     messageRequest[4] = (messageRequest[4] & ~0x1f) | 0xe;

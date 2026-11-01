@@ -9,7 +9,7 @@ extern u8 data_0212c4dc; // demo sub-step
 extern u8 data_0212c500; // demo step
 
 // Task_Chain (0x02082ee0)
-ARM void Task_Chain(u8 a) {
+void Task_Chain(u8 a) {
     if (data_0212c4e4 == 7 || data_0212c4e4 == 9) {
         OpeningTaskFinalzie();
     }

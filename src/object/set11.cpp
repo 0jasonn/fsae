@@ -10,6 +10,6 @@ extern const u8 data_020d9f66[]; // hitbox
 extern u16 scrollArgs[]; // affine source (scale x, scale y, rotation)
 void func_02084180(Entity *e);
 
-ARM void Set11(Entity *e) {
+void Set11(Entity *e) {
     data_020d9f70[e->action](e);
 }

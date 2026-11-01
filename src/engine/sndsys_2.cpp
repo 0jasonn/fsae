@@ -35,7 +35,7 @@ extern "C" void SndSys_StopActiveTimer(void);
 // SndSys_StopAll: releases the slots, clears the surround decay and the timer, then flushes the commands and waits for
 // the last one.
 extern "C" void SndSys_StopAll(void);
-ARM void SndSys_StopAll(void) {
+void SndSys_StopAll(void) {
     u32 tag;
 
     SndSlot_ReleaseAll(0);
@@ -51,7 +51,7 @@ ARM void SndSys_StopAll(void) {
 // SndSys_SwapDriverBuffer: swaps the driver buffer once the last queued command has finished. The first call only reads the
 // current buffer and records its tag. Returns 1 when the buffers were swapped.
 extern "C" s32 SndSys_SwapDriverBuffer(void);
-ARM s32 SndSys_SwapDriverBuffer(void) {
+s32 SndSys_SwapDriverBuffer(void) {
     if (data_02181964.initialized == 0) {
         while (SND_RecvCommandReply(0) != 0) {
         }
@@ -80,7 +80,7 @@ ARM s32 SndSys_SwapDriverBuffer(void) {
 
 // SndSys_ReadChannelInfoCurrent: reads the channel info from the current driver buffer. Returns 0 when there is no current buffer.
 extern "C" s32 SndSys_ReadChannelInfoCurrent(s32 index, void *entry);
-ARM s32 SndSys_ReadChannelInfoCurrent(s32 index, void *entry) {
+s32 SndSys_ReadChannelInfoCurrent(s32 index, void *entry) {
     u8 *table;
 
     if (data_02181964.bufferIndex < 0) {
@@ -97,7 +97,7 @@ ARM s32 SndSys_ReadChannelInfoCurrent(s32 index, void *entry) {
 // SndSys_ExitStopTimer: sound exit callback (A). Runs SndSys_StopActiveTimer, stops the timer, then flushes the commands and waits for
 // the last one.
 extern "C" void SndSys_ExitStopTimer(void);
-ARM void SndSys_ExitStopTimer(void) {
+void SndSys_ExitStopTimer(void) {
     u32 tag;
 
     SndSys_StopActiveTimer();

@@ -10,7 +10,7 @@ extern u16 data_020cf868[];
 
 // Writes nine six-halfword rows (rows 5 to 13 of the screen block, 0x40 bytes apart, starting at block + 8) from the
 // table data_020cf868, then sets data_0212c618[2].
-ARM void kinomi_disp(void) {
+void kinomi_disp(void) {
     u8 *block;
     u16 *row;
     const u16 *table;

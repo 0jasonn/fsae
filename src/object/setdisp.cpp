@@ -3,7 +3,7 @@
 
 // EffectSet (0x02076a20): spawns a child work of kind 0xf and links it to e as its parent. Returns the child, or NULL.
 extern "C" Entity *EffectSet(Entity *e, int kind, int arg);
-ARM Entity *EffectSet(Entity *e, int kind, int arg) {
+Entity *EffectSet(Entity *e, int kind, int arg) {
     Entity *child;
 
     child = GetSetWork(0xf, kind, arg);
@@ -15,7 +15,7 @@ ARM Entity *EffectSet(Entity *e, int kind, int arg) {
 }
 
 // SetDisp (0x02076a50): spawns a display work (kind 0x60) placed at e, copying its timer, layer and sprite settings.
-ARM Entity *SetDisp(Entity *e, u8 a, u8 b, u8 c) {
+Entity *SetDisp(Entity *e, u8 a, u8 b, u8 c) {
     Entity *child;
 
     child = GetSetWork(0x60, a, b);

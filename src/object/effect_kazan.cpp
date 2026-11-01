@@ -8,7 +8,7 @@
 // Offsets of the palette block inside the resource, indexed by subtimer, kazanPalOffsetTable
 extern const u16 kazanPalOffsetTable[];
 
-ARM void effect_kazan(Entity *e) {
+void effect_kazan(Entity *e) {
     u8 timer;
 
     if (e->action == 0) {

@@ -8,7 +8,7 @@
 void seqset(Entity *e, int baseAnim);      // original seqset(OBJ_WORK_*, int)
 
 // Aimmove: counts the timer; every 8th frame turns the entity towards its target; ends the action when the timer runs out.
-ARM void em1d_aimmove(Entity *e) {
+void em1d_aimmove(Entity *e) {
     e->timer -= 1;
     if ((u8)e->timer != 0) {
         if ((e->timer & 7) == 0) {
@@ -25,7 +25,7 @@ ARM void em1d_aimmove(Entity *e) {
 }
 
 // Rndmove: walks in a random direction for the sub timer, then changes the direction and animation at random.
-ARM void em1d_rndmove(Entity *e) {
+void em1d_rndmove(Entity *e) {
     e->timer -= 1;
     if ((u8)e->timer != 0) {
         e->subtimer -= 1;

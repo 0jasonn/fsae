@@ -9,6 +9,6 @@
 extern u8 data_02180da8[];
 
 // subTask_staffroll_setFlagOff (0x020ae280): sets the flag byte of the screen state to 0xff
-ARM void subTask_staffroll_setFlagOff(void) {
+void subTask_staffroll_setFlagOff(void) {
     ((s8 *)data_02180da8)[1] = -1;
 }

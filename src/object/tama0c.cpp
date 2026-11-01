@@ -6,7 +6,7 @@
 
 // tama0c_fall, 0x0207ce40. Counts the timer down, then falls until the gravity update reports the ground; a type 0
 // actor plays its effect before it is removed, others just advance their type.
-ARM void tama0c_fall(Entity *e) {
+void tama0c_fall(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -23,6 +23,6 @@ ARM void tama0c_fall(Entity *e) {
 }
 
 // tama0c_remove, 0x0207ce9c. Removes the actor.
-ARM void tama0c_remove(Entity *e) {
+void tama0c_remove(Entity *e) {
     PutObjWork(e);
 }

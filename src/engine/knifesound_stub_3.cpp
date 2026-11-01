@@ -10,13 +10,13 @@
 
 // 0x0208bdec: clears the word at the start of the object
 extern "C" void knifeSoundClearWord(void *self);
-ARM void knifeSoundClearWord(void *self) {
+void knifeSoundClearWord(void *self) {
     *(u32 *)self = 0;
 }
 
 // 0x0208bdf8: stores the word argument at the start of the object and returns 1
 extern "C" int knifeSoundSetWordReturnOne(void *self, u32 value);
-ARM int knifeSoundSetWordReturnOne(void *self, u32 value) {
+int knifeSoundSetWordReturnOne(void *self, u32 value) {
     *(u32 *)self = value;
     return 1;
 }

@@ -6,6 +6,6 @@
 //   GetFacingDirection
 
 // Direction from e towards target (tail call to the shared direction helper)
-ARM u8 GetFacingDirection(Entity *e, Entity *target) {
+u8 GetFacingDirection(Entity *e, Entity *target) {
     return func_02086078(e, target);
 }

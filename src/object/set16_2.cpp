@@ -14,7 +14,7 @@ typedef struct Vars_Set16_2 {
 extern u32 em12_typeMasks[];
 extern const EntityFunc set16_subActionTable[]; // indexed by e->subAction (was set16_subActionTable)
 
-ARM void set16_move(Entity *e) {
+void set16_move(Entity *e) {
     u32 request;
     u8 *player;
 

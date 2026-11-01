@@ -12,7 +12,7 @@ extern u8 data_0217e6f0[];
 
 // playStyleSelUIView viewWillApper (0x020aac30): a pending selection with code 3 or 4 pushes the second view and returns;
 // otherwise the pending flag clears, the saved entry is popped (or unk_5e cleared), and the title dialog is shown
-ARM void playStyleSelUIView_viewWillApper(PlayStyleSelUIView *self) {
+void playStyleSelUIView_viewWillApper(PlayStyleSelUIView *self) {
     u8 *pending = data_0217d30c;
     s32 isEmpty;
 

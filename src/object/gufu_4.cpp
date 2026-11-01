@@ -13,7 +13,7 @@ extern const s16 trigTable[]; // trigTable, 256 entries of sin, cos is 0x40 entr
 extern u8 data_021349c0[];    // result state block, see enemy/ending.h
 extern u8 messageRequest[];   // flag block, see engine/misc_d.h
 
-ARM void gufu_body_kaiten(Entity *e) {
+void gufu_body_kaiten(Entity *e) {
     Vars_GufuBody *v = VARS(Vars_GufuBody, e);
 
     UpdateAnimationSingleFrame(e);
@@ -63,7 +63,7 @@ ARM void gufu_body_kaiten(Entity *e) {
     }
 }
 
-ARM void gufu_body_left(Entity *e) {
+void gufu_body_left(Entity *e) {
     UpdateAnimationSingleFrame(e);
     MoveDir(e);
     if (e->x.HALF.HI >= -0x40) {
@@ -75,7 +75,7 @@ ARM void gufu_body_left(Entity *e) {
     data_021349c0[0] = data_021349c0[0] + 1;
 }
 
-ARM void gufu_body_right(Entity *e) {
+void gufu_body_right(Entity *e) {
     u16 pos[2];
 
     UpdateAnimationSingleFrame(e);

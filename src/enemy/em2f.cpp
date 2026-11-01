@@ -2,14 +2,14 @@
 #include "enemy/em2f.h"
 #include "global.h"
 
-ARM void em2f_main(Entity *e) {
+void em2f_main(Entity *e) {
     if (e->health == 0 && e->action < 0x23) {
         e->action = 0x23;
     }
     em2f_actions[e->action](e);
 }
 
-ARM void em2f_init(Entity *e) {
+void em2f_init(Entity *e) {
     e->action = 1;
     e->timer = 0xb4;
     e->x.HALF.HI = 0x1f8;
@@ -41,7 +41,7 @@ ARM void em2f_init(Entity *e) {
     data_0212c7c8.unk_26 = 0xffff;
 }
 
-ARM void em2f_initWait(Entity *e) {
+void em2f_initWait(Entity *e) {
     BindPlayers();
     u8 timer = --e->timer;
     if (timer == 0) {
@@ -76,7 +76,7 @@ ARM void em2f_initWait(Entity *e) {
     }
 }
 
-ARM void em2f_appear(Entity *e) {
+void em2f_appear(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -91,7 +91,7 @@ ARM void em2f_appear(Entity *e) {
     MessageRequest(0x194);
 }
 
-ARM void em2f_mesWait(Entity *e) {
+void em2f_mesWait(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -119,10 +119,10 @@ ARM void em2f_mesWait(Entity *e) {
     MakeFadeBuff256(0x100);
 }
 
-ARM void em2f_noOp(Entity *e) {
+void em2f_noOp(Entity *e) {
 }
 
-ARM void em2f_flash1(Entity *e) {
+void em2f_flash1(Entity *e) {
     GufuFuyusnd(e);
     BindPlayers();
     if (--e->timer != 0) {
@@ -137,7 +137,7 @@ ARM void em2f_flash1(Entity *e) {
     FadeSet(2, 8);
 }
 
-ARM void em2f_flashWait(Entity *e) {
+void em2f_flashWait(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -147,7 +147,7 @@ ARM void em2f_flashWait(Entity *e) {
     }
 }
 
-ARM void em2f_demoWait(Entity *e) {
+void em2f_demoWait(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -164,7 +164,7 @@ ARM void em2f_demoWait(Entity *e) {
     e->action = 8;
 }
 
-ARM void em2f_taiden(Entity *e) {
+void em2f_taiden(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -182,7 +182,7 @@ ARM void em2f_taiden(Entity *e) {
     e->action = 9;
 }
 
-ARM void em2f_plDown(Entity *e) {
+void em2f_plDown(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -202,7 +202,7 @@ ARM void em2f_plDown(Entity *e) {
     }
 }
 
-ARM void em2f_downWait(Entity *e) {
+void em2f_downWait(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -218,7 +218,7 @@ ARM void em2f_downWait(Entity *e) {
     }
 }
 
-ARM void em2f_demoMove(Entity *e) {
+void em2f_demoMove(Entity *e) {
     BindPlayers();
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
@@ -230,7 +230,7 @@ ARM void em2f_demoMove(Entity *e) {
     }
 }
 
-ARM void em2f_demoEnd(Entity *e) {
+void em2f_demoEnd(Entity *e) {
     UpdateAnimationSingleFrame(e);
     GufuFuyusnd(e);
     if (--e->timer != 0) {
@@ -260,7 +260,7 @@ ARM void em2f_demoEnd(Entity *e) {
     CockpitOn();
 }
 
-ARM void em2f_change(Entity *e) {
+void em2f_change(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((u16)(e->x.HALF.HI - 0x1f7) <= 2 && (u16)(e->y.HALF.HI - 0x19f) <= 2) {
         e->x.HALF.HI = 0x1f8;
@@ -276,7 +276,7 @@ ARM void em2f_change(Entity *e) {
     GufuFuyusnd(e);
 }
 
-ARM void em2f_tsubomiInit(Entity *e) {
+void em2f_tsubomiInit(Entity *e) {
     if (e->frame & 1) {
         if (setTsubomi(e) == 0) {
             return;
@@ -289,7 +289,7 @@ ARM void em2f_tsubomiInit(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em2f_tsubomiCloseWait(Entity *e) {
+void em2f_tsubomiCloseWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->subPhase != 0) {
         return;
@@ -299,7 +299,7 @@ ARM void em2f_tsubomiCloseWait(Entity *e) {
     e->timer = 0x3c;
 }
 
-ARM void em2f_tsubomiSuihei(Entity *e) {
+void em2f_tsubomiSuihei(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->subPhase != 0xf) {
         return;
@@ -315,7 +315,7 @@ ARM void em2f_tsubomiSuihei(Entity *e) {
     e->spriteSettings.b14 = e->spriteSettings.b30;
 }
 
-ARM void em2f_tsubomiCercle(Entity *e) {
+void em2f_tsubomiCercle(Entity *e) {
     if (V(e)->subPhase == 0) {
         if (tblMove(e) == 0) {
             V(e)->subPhase = 7;
@@ -329,7 +329,7 @@ ARM void em2f_tsubomiCercle(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em2f_tsubomiKamae(Entity *e) {
+void em2f_tsubomiKamae(Entity *e) {
     if (--e->timer == 0) {
         e->action = 0x13;
         e->timer = 0x3c;
@@ -338,7 +338,7 @@ ARM void em2f_tsubomiKamae(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em2f_tsubomiAttackInit(Entity *e) {
+void em2f_tsubomiAttackInit(Entity *e) {
     if (V(e)->subPhase == 3 && --e->timer == 0) {
         V(e)->subPhase = flagBits[V(e)->tsubomiSlot + 2];
         e->action = 0x14;
@@ -346,14 +346,14 @@ ARM void em2f_tsubomiAttackInit(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void em2f_tsubomiAttack(Entity *e) {
+void em2f_tsubomiAttack(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->subPhase == 0) {
         e->action = 0x15;
     }
 }
 
-ARM void em2f_tsubomiAttackEnd(Entity *e) {
+void em2f_tsubomiAttackEnd(Entity *e) {
     if (--e->subtimer != 0) {
         tsubomiCloseWaitSet(e);
         return;
@@ -363,7 +363,7 @@ ARM void em2f_tsubomiAttackEnd(Entity *e) {
     InitAnimationForceUpdate(e, 4);
 }
 
-ARM void em2f_tsubomiEnd(Entity *e) {
+void em2f_tsubomiEnd(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (!(e->frame & 0x80)) {
         return;
@@ -374,7 +374,7 @@ ARM void em2f_tsubomiEnd(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em2f_stormInitWait(Entity *e) {
+void em2f_stormInitWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (--e->timer != 0) {
         return;
@@ -388,7 +388,7 @@ ARM void em2f_stormInitWait(Entity *e) {
     e->spriteSettings.b14 = e->spriteSettings.b30;
 }
 
-ARM void em2f_stormGetTama(Entity *e) {
+void em2f_stormGetTama(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 1) {
         stormGetTama(e);
@@ -405,7 +405,7 @@ ARM void em2f_stormGetTama(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void em2f_stormWait(Entity *e) {
+void em2f_stormWait(Entity *e) {
     UpdateAnimationSingleFrame(e);
     stormMove(e);
     if (--e->timer != 0) {
@@ -415,7 +415,7 @@ ARM void em2f_stormWait(Entity *e) {
     getStormMoveInfo(e);
 }
 
-ARM void em2f_stormMove(Entity *e) {
+void em2f_stormMove(Entity *e) {
     UpdateAnimationSingleFrame(e);
     stormMove(e);
     if (tblMove(e) != 0 && V(e)->subPhase == 0) {
@@ -424,7 +424,7 @@ ARM void em2f_stormMove(Entity *e) {
     e->action = 0x1b;
 }
 
-ARM void em2f_stormSmashInit(Entity *e) {
+void em2f_stormSmashInit(Entity *e) {
     UpdateAnimationSingleFrame(e);
     stormMove(e);
     if (V(e)->attackCounter == 0) {

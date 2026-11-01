@@ -24,7 +24,7 @@ void func_02084460(void);
 #define ENTITY_POOL_STRIDE 0x80
 
 // Frees every entity whose index is listed in data_02134dd0 (count in data_021348d4)
-ARM void DeletePutWork(void) {
+void DeletePutWork(void) {
     u8 *table;
     u8 count;
 
@@ -43,7 +43,7 @@ ARM void DeletePutWork(void) {
 }
 
 // Appends e to the end of a list and counts it in the matching counter
-ARM void RegistObjWork(int list, Entity *e) {
+void RegistObjWork(int list, Entity *e) {
     EntityNode *head;
 
     head = &data_0212c6b0[list];
@@ -63,7 +63,7 @@ ARM void RegistObjWork(int list, Entity *e) {
 }
 
 // Moves the first entity of a list to its end (no-op for lists with at most one entry)
-ARM void RotateObjWork(u8 list) {
+void RotateObjWork(u8 list) {
     EntityNode *head;
     EntityNode *node;
 
@@ -83,7 +83,7 @@ ARM void RotateObjWork(u8 list) {
 }
 
 // First entity of list with the given id, or NULL
-ARM Entity *SearchWork(s32 id, s32 list) {
+Entity *SearchWork(s32 id, s32 list) {
     EntityNode *head;
     EntityNode *node;
 
@@ -99,7 +99,7 @@ ARM Entity *SearchWork(s32 id, s32 list) {
 }
 
 // Next entity after start in list with the same id as start, or NULL
-ARM Entity *SearchWorkNext(Entity *start, s32 list) {
+Entity *SearchWorkNext(Entity *start, s32 list) {
     EntityNode *head;
     EntityNode *node;
     u8 id;

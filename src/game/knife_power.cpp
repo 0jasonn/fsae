@@ -9,13 +9,13 @@
 namespace Knife {
 
 // Knife::PowerManager::initialize() (0x020c8158): finalizes the state, then marks the manager active
-ARM void PowerManager::initialize(void) {
+void PowerManager::initialize(void) {
     finalize();
     active = 1;
 }
 
 // Knife::PowerManager::finalize() (0x020c8170): clears the state
-ARM void PowerManager::finalize(void) {
+void PowerManager::finalize(void) {
     active = 0;
     sleepLockCount = 0;
     unk_0c = 1;
@@ -26,7 +26,7 @@ ARM void PowerManager::finalize(void) {
 }
 
 // Provisional name for Knife_PowerManager_isActive: returns the active flag
-ARM s32 PowerManager::isActive(void) {
+s32 PowerManager::isActive(void) {
     return active;
 }
 

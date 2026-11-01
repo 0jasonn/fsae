@@ -9,10 +9,10 @@
 extern const EntityFunc pot_typeHandlers[]; // handler per type
 extern const EntityFunc op_fairy_states[]; // state table indexed by e->action
 
-ARM void pot_typeDispatch(Entity *e) {
+void pot_typeDispatch(Entity *e) {
     pot_typeHandlers[e->type](e);
 }
 
-ARM void op_fairy(Entity *e) {
+void op_fairy(Entity *e) {
     op_fairy_states[e->action](e);
 }

@@ -7,5 +7,5 @@
 extern "C" void groupCreateUIView_leave(void *self);
 
 // groupCreateUIView leave (0x020ab6cc): empty
-ARM void groupCreateUIView_leave(void *self) {
+void groupCreateUIView_leave(void *self) {
 }

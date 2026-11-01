@@ -8,7 +8,7 @@
 // (cartridge) top-byte area. Returns when the flag word at 0x04004008 (bit 0) and flags are clear and both ends
 // are in range.
 // 0x020159cc
-ARM void Region_CheckNotIoOrRom(u32 flags, u32 addr, u32 len, u32 dir) {
+void Region_CheckNotIoOrRom(u32 flags, u32 addr, u32 len, u32 dir) {
     u32 ioBusy;
     u32 startKind;
     u32 endKind;

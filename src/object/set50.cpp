@@ -19,7 +19,7 @@ extern const u16 set50_spawnTotalTable[]; // indexed by spawnBase
 extern u8 data_021348d8;
 extern const u8 *moji_posTables[]; // indexed by e->type - 1; each entry is indexed by e->type2
 
-ARM void Set50(Entity *e) {
+void Set50(Entity *e) {
     if (e->type == 0) {
         set50_actionsType0[e->action](e);
     } else {
@@ -27,14 +27,14 @@ ARM void Set50(Entity *e) {
     }
 }
 
-ARM void set50_init(Entity *e) {
+void set50_init(Entity *e) {
     e->action = 1;
     e->timer = 0x3c;
     VARS(Vars_Set50, e)->spawnBase = set50_spawnBaseTable[data_021348d8];
     VARS(Vars_Set50, e)->spawnTotal = set50_spawnTotalTable[VARS(Vars_Set50, e)->spawnBase];
 }
 
-ARM void set50_move(Entity *e) {
+void set50_move(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;

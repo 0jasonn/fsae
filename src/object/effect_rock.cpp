@@ -9,11 +9,11 @@
 // Action table of effect_rock, effectRockTable
 extern const EntityFunc effectRockTable[];
 
-ARM void effect_rock(Entity *e) {
+void effect_rock(Entity *e) {
     effectRockTable[e->action](e);
 }
 
-ARM void effect_rock_init(Entity *e) {
+void effect_rock_init(Entity *e) {
     u8 action = e->action;
 
     e->action = action + 1;

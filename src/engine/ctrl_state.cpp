@@ -15,7 +15,7 @@ typedef struct CtrlState {
 // Ctrl_setStateValue(self) (0x020bb85c, provisional name): state 0 sets the value -0x60, state 1 sets 0 and state 2 sets
 // -0x30; other states leave it unchanged
 extern "C" void Ctrl_setStateValue(CtrlState *self);
-ARM void Ctrl_setStateValue(CtrlState *self) {
+void Ctrl_setStateValue(CtrlState *self) {
     switch (self->state) {
     case 0:
         self->value = -0x60;

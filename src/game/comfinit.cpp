@@ -12,7 +12,7 @@ extern u32 opTitleState;    // communication state word, cleared here
 
 // Clears the communication work area and the two state words, finishes the last transfer and starts the
 // serial interface.
-ARM void ComInitState(void) {
+void ComInitState(void) {
     MIi_CpuClear16(0, data_0212c9a8, 0x148);
     ComFinish(0);
     MultiSioInit();

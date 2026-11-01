@@ -11,7 +11,7 @@
 // TextTokenizer::initialize(void const*, unsigned long, void*, unsigned long) (0x0208e450): finalizes the tokenizer,
 // reads the message file from data, and sets the pool when the file was accepted. FALSE when the file is not valid.
 extern "C" BOOL Knife_Message_TextTokenizer_initialize(void *self, const void *data, u32 size, void *pool, u32 poolSize);
-ARM BOOL Knife_Message_TextTokenizer_initialize(void *self, const void *data, u32 size, void *pool, u32 poolSize) {
+BOOL Knife_Message_TextTokenizer_initialize(void *self, const void *data, u32 size, void *pool, u32 poolSize) {
     Knife::Message::TextTokenizer *tokenizer;
 
     tokenizer = (Knife::Message::TextTokenizer *)self;
@@ -25,7 +25,7 @@ ARM BOOL Knife_Message_TextTokenizer_initialize(void *self, const void *data, u3
 
 // TextTokenizer::finalize() (0x0208e49c): cleans up the tokens, finalizes the message file and clears the state
 extern "C" void Knife_Message_TextTokenizer_finalize(void *self);
-ARM void Knife_Message_TextTokenizer_finalize(void *self) {
+void Knife_Message_TextTokenizer_finalize(void *self) {
     Knife::Message::TextTokenizer *tokenizer;
 
     tokenizer = (Knife::Message::TextTokenizer *)self;

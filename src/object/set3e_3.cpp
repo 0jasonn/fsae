@@ -14,7 +14,7 @@ typedef struct Vars_Set3eWait {
 extern const s8 data_020d8c40[]; // (dx, dy) pairs for the four directions, indexed by direction >> 2
 extern const u8 pot_moveCheckTable[];
 
-ARM void set3e_wait(Entity *e) {
+void set3e_wait(Entity *e) {
     s32 code = func_02083c84(e);
     s32 index;
     s32 x;

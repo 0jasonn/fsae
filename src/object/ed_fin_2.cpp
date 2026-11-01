@@ -16,7 +16,7 @@ typedef struct Vars_Fin {
 
 extern KnifeObjAffineSrcData scrollArgs; // affine source for ObjAffineSet2 (named in symbols.txt)
 
-ARM void fin_init(Entity *e) {
+void fin_init(Entity *e) {
     Vars_Fin *v = VARS(Vars_Fin, e);
     u8 action = e->action + 1;
 
@@ -36,7 +36,7 @@ ARM void fin_init(Entity *e) {
     ObjAffineSet2(&scrollArgs, e);
 }
 
-ARM void fin_move(Entity *e) {
+void fin_move(Entity *e) {
     Vars_Fin *v = VARS(Vars_Fin, e);
     u16 scaleY = v->scaleY;
     u16 scaleX;

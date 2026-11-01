@@ -21,11 +21,11 @@ extern const EntityFunc set58_sazanamiActions[];   // set58_sazanamiActions, ind
 extern const EntityFunc set58_hikariActions[];     // set58_hikariActions, indexed by e->action
 extern const EntityFunc set58_tamahikariActions[]; // set58_tamahikariActions, indexed by e->action
 
-ARM void set58_milkcrown(Entity *e) {
+void set58_milkcrown(Entity *e) {
     set58_milkcrownActions[e->action](e);
 }
 
-ARM void milkcrown_init(Entity *e) {
+void milkcrown_init(Entity *e) {
     set58_actionInit(e);
     e->spriteSettings.b0 = 1;
     e->z.HALF.HI = 0;
@@ -33,24 +33,24 @@ ARM void milkcrown_init(Entity *e) {
     SoundReq(0x213);
 }
 
-ARM void milkcrown_move(Entity *e) {
+void milkcrown_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         PutObjWork(e);
     }
 }
 
-ARM void set58_sazanami(Entity *e) {
+void set58_sazanami(Entity *e) {
     set58_sazanamiActions[e->action](e);
 }
 
-ARM void sazanami_init(Entity *e) {
+void sazanami_init(Entity *e) {
     set58_actionInit(e);
     e->spriteSettings.b0 = 1;
     e->unk_5e.b0 = 0;
 }
 
-ARM void sazanami_move(Entity *e) {
+void sazanami_move(Entity *e) {
     if (em12_typeMasks & 2) {
         PutObjWork(e);
     } else {
@@ -58,11 +58,11 @@ ARM void sazanami_move(Entity *e) {
     }
 }
 
-ARM void set58_hikari(Entity *e) {
+void set58_hikari(Entity *e) {
     set58_hikariActions[e->action](e);
 }
 
-ARM void hikari_init(Entity *e) {
+void hikari_init(Entity *e) {
     set58_actionInit(e);
     e->timer = 0x78;
     e->spriteSettings.b0 = 1;
@@ -73,7 +73,7 @@ ARM void hikari_init(Entity *e) {
     SoundReq(0x212);
 }
 
-ARM void hikari_move(Entity *e) {
+void hikari_move(Entity *e) {
     Entity *child;
 
     UpdateAnimationSingleFrame(e);
@@ -90,17 +90,17 @@ ARM void hikari_move(Entity *e) {
     PutObjWork(e);
 }
 
-ARM void set58_tamahikari(Entity *e) {
+void set58_tamahikari(Entity *e) {
     set58_tamahikariActions[e->action](e);
 }
 
-ARM void tamahikari_init(Entity *e) {
+void tamahikari_init(Entity *e) {
     set58_actionInit(e);
     e->spriteSettings.b0 = 1;
     e->unk_5e.b0 = 1;
 }
 
-ARM void tamahikari_move(Entity *e) {
+void tamahikari_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         PutObjWork(e);

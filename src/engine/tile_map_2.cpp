@@ -21,6 +21,6 @@ typedef struct TileMap {
 
 // TileMap_getCell(self, pos) (0x020b75d0, provisional name): the halfword at column pos[0] of row pos[1]
 extern "C" u16 TileMap_getCell(TileMap *self, const s16 *pos);
-ARM u16 TileMap_getCell(TileMap *self, const s16 *pos) {
+u16 TileMap_getCell(TileMap *self, const s16 *pos) {
     return *(u16 *)(self->base + pos[1] * self->stride + pos[0] * 2);
 }

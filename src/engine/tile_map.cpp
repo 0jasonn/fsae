@@ -21,6 +21,6 @@ typedef struct TileMap {
 
 // Rec_returnZero(self) (0x020b7570, provisional name): returns 0
 extern "C" s32 Rec_returnZero(void *self);
-ARM s32 Rec_returnZero(void *self) {
+s32 Rec_returnZero(void *self) {
     return 0;
 }

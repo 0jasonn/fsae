@@ -2,7 +2,7 @@
 #include "enemy/em03.h"
 #include "global.h"
 
-ARM void Em03(Entity *e) {
+void Em03(Entity *e) {
     func_02084700(e);
     Entity *partner = func_020849c8(e);
     if (partner != 0) {
@@ -15,6 +15,6 @@ ARM void Em03(Entity *e) {
     }
 }
 
-ARM void em03_normal(Entity *e) {
+void em03_normal(Entity *e) {
     em03_normalActions[e->action](e);
 }

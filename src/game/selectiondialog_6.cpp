@@ -33,7 +33,7 @@ typedef struct KnifeSelectDialog {
 } KnifeSelectDialog;
 
 // selectionDialog::update() (0x020a22cc): runs the state machine of the dialog, returns true once it has finished
-ARM BOOL Knife_Message_selectionDialog_update(void *a) {
+BOOL Knife_Message_selectionDialog_update(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
     BOOL finished = 0;
 

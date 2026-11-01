@@ -10,7 +10,7 @@ typedef struct Vars_Set4d {
     /* 60 */ const u8 *info; // GetInfoAdrs(areaIndex, type)
 } Vars_Set4d;
 
-ARM void set4d_init(Entity *e) {
+void set4d_init(Entity *e) {
     VARS(Vars_Set4d, e)->info = GetInfoAdrs(e->areaIndex, e->type);
     e->action = e->action + 1;
 }

@@ -8,6 +8,6 @@
 extern const EntityFunc data_020d8cb0[]; // state table indexed by e->action
 
 
-ARM void warphole(Entity *e) {
+void warphole(Entity *e) {
     data_020d8cb0[e->action](e);
 }

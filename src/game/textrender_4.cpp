@@ -35,7 +35,7 @@ typedef struct KnifeTextRender {
 
 // TextRender::setCenteringParam(long, unsigned short const*) (0x020a1614): copies count centring values
 extern "C" void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values);
-ARM void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values) {
+void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values) {
     KnifeTextRender *self = (KnifeTextRender *)a;
     s32 i;
 
@@ -46,7 +46,7 @@ ARM void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u1
 
 // Sets flag83 (0x020a1644, name invented)
 extern "C" void Knife_Message_TextRender_setField83(void *a, u8 value);
-ARM void Knife_Message_TextRender_setField83(void *a, u8 value) {
+void Knife_Message_TextRender_setField83(void *a, u8 value) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 
     self->flag83 = value;
@@ -54,7 +54,7 @@ ARM void Knife_Message_TextRender_setField83(void *a, u8 value) {
 
 // TextRender::clearCanvas(int) (0x020a164c): clears the canvas with the low four bits of mode through the hook
 extern "C" void Knife_Message_TextRender_clearCanvas(void *a, s32 mode);
-ARM void Knife_Message_TextRender_clearCanvas(void *a, s32 mode) {
+void Knife_Message_TextRender_clearCanvas(void *a, s32 mode) {
     KnifeTextRender *self = (KnifeTextRender *)a;
 
     self->hook->clear((void *)&self->canvas, mode & 0xf);

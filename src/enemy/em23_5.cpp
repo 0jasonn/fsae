@@ -5,7 +5,7 @@
 
 // Functions in this file: em23_wait (0x0203fbe8), em23_move (0x0203fc5c).
 
-ARM void em23_wait(Entity *e) {
+void em23_wait(Entity *e) {
     Entity *target;
     if (VARS(Vars_em23_aim, e)->aimTarget != NULL) {
         target = EmGetAimPl();
@@ -26,7 +26,7 @@ ARM void em23_wait(Entity *e) {
     e->direction = GetFacingDirection(e, target);
 }
 
-ARM void em23_move(Entity *e) {
+void em23_move(Entity *e) {
     if ((frameCounter & 7) == 0) {
         func_02086200(e, func_02084fd0(e, VARS(Vars_em23_aim, e)->aimTarget));
     }

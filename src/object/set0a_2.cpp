@@ -20,7 +20,7 @@ typedef struct SetVars {
 
 extern const u8 data_020d87a0[];
 
-ARM void set0a_move(Entity *e) {
+void set0a_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 1) {
         set0a_setenemy(e);
@@ -41,7 +41,7 @@ ARM void set0a_move(Entity *e) {
     }
 }
 
-ARM void set0a_moveset(Entity *e) {
+void set0a_moveset(Entity *e) {
     e->action = 2;
     if (VARS(SetVars, e)->setKind != 0x12) {
         if (e->x.HALF.HI != 0 || e->y.HALF.HI != 0) {
@@ -58,7 +58,7 @@ ARM void set0a_moveset(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-ARM void set0a_setenemy(Entity *e) {
+void set0a_setenemy(Entity *e) {
     Entity *child = GetObjWork();
 
     if (child == 0) {

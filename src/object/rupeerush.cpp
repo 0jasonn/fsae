@@ -15,14 +15,14 @@ extern u8 rupeeRushDice[15];          // rupeeRushDice
 
 // changeRupeeRushLevel (0x0207758c): sets the level and starts the dice at a random cursor
 extern "C" void changeRupeeRushLevel(u8 level);
-ARM void changeRupeeRushLevel(u8 level) {
+void changeRupeeRushLevel(u8 level) {
     rupeeRushState.level = level;
     rupeeRushState.diceIndex = Random() % 15;
 }
 
 // initRupeeRush (0x020775c4): fills the dice with 0..14, then shuffles them with 128 random swaps
 extern "C" void initRupeeRush(void);
-ARM void initRupeeRush(void) {
+void initRupeeRush(void) {
     int i;
     int count;
     int a;

@@ -13,7 +13,7 @@ extern const LrCursorList lrCursorYTable;    // lrCursorYTable: y offset per typ
 extern const LrCursorList lrCursorXTable;    // lrCursorXTable: x offset per type2
 
 // lr_cursor, 0x02069c20
-ARM void lr_cursor(Entity *e) {
+void lr_cursor(Entity *e) {
     LrCursorList xTable = lrCursorXTable;
     LrCursorList yTable = lrCursorYTable;
     LrCursorList animTable = lrCursorAnimTable;

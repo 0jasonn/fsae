@@ -9,7 +9,7 @@
 //   0x02073640 body_appearwait (original name)
 //   0x020736cc body_move (original name)
 
-ARM void body_hikari(Entity *e) {
+void body_hikari(Entity *e) {
     Entity *child;
 
     child = GetSetWork(0x58, 7, 0);
@@ -20,7 +20,7 @@ ARM void body_hikari(Entity *e) {
     e->action = 3;
 }
 
-ARM void body_wait(Entity *e) {
+void body_wait(Entity *e) {
     Entity *child;
 
     if ((em12_typeMasks & 1) == 0) {
@@ -38,7 +38,7 @@ ARM void body_wait(Entity *e) {
     e->spriteSettings.b0 = 1;
 }
 
-ARM void body_appearwait(Entity *e) {
+void body_appearwait(Entity *e) {
     Entity *child;
 
     UpdateAnimationSingleFrame(e);
@@ -62,7 +62,7 @@ ARM void body_appearwait(Entity *e) {
     e->subtimer = 0;
 }
 
-ARM void body_move(Entity *e) {
+void body_move(Entity *e) {
     Entity *child;
 
     if (e->timer != 0) {

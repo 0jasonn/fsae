@@ -6,7 +6,7 @@
 // Places the effect object made by GetSetWork(0x39) at the cell packed in the 0x94-byte table entry for e->type.
 extern u8 data_0212ced2[];
 
-ARM extern "C" void IroyukaEffectSet(Entity *e) {
+extern "C" void IroyukaEffectSet(Entity *e) {
     Entity *effect;
     s32 cell;
 

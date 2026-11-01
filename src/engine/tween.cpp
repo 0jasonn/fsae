@@ -22,17 +22,17 @@ typedef struct TweenEntry {
 
 // TweenTable_noopA() (0x020b6868, provisional name): slot 1 of the table, does nothing
 extern "C" void TweenTable_noopA(void);
-ARM void TweenTable_noopA(void) {
+void TweenTable_noopA(void) {
 }
 
 // TweenTable_noopB() (0x020b686c, provisional name): slot 2 of the table, does nothing
 extern "C" void TweenTable_noopB(void);
-ARM void TweenTable_noopB(void) {
+void TweenTable_noopB(void) {
 }
 
 // Tween_init(self, a, b, c, flag, ptr14, ptr10) (0x020b6870, provisional name): stores the seven fields of the record
 extern "C" void Tween_init(TweenEntry *self, u32 a, u32 b, u32 c, u32 flag, void *ptr14, void *ptr10);
-ARM void Tween_init(TweenEntry *self, u32 a, u32 b, u32 c, u32 flag, void *ptr14, void *ptr10) {
+void Tween_init(TweenEntry *self, u32 a, u32 b, u32 c, u32 flag, void *ptr14, void *ptr10) {
     self->c = c;
     self->flag = flag;
     self->a = a;
@@ -43,6 +43,6 @@ ARM void Tween_init(TweenEntry *self, u32 a, u32 b, u32 c, u32 flag, void *ptr14
 
 // Tween_initWithTable(self, a, b, c, flag, ptr10) (0x020b6898, provisional name): Tween_init with the table data_020deed4
 extern "C" void Tween_initWithTable(TweenEntry *self, u32 a, u32 b, u32 c, u32 flag, void *ptr10);
-ARM void Tween_initWithTable(TweenEntry *self, u32 a, u32 b, u32 c, u32 flag, void *ptr10) {
+void Tween_initWithTable(TweenEntry *self, u32 a, u32 b, u32 c, u32 flag, void *ptr10) {
     Tween_init(self, a, b, c, flag, data_020deed4, ptr10);
 }

@@ -2,7 +2,7 @@
 #include "enemy/em03.h"
 #include "global.h"
 
-ARM void em04_dush(Entity *e) {
+void em04_dush(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
         return;
@@ -17,10 +17,10 @@ ARM void em04_dush(Entity *e) {
     InitAnimationForceUpdate(e, e->animationState);
 }
 
-ARM void em05_main(Entity *e) {
+void em05_main(Entity *e) {
     EnemyFunctionHandler(e, em05_actions);
 }
 
-ARM void em05_normal(Entity *e) {
+void em05_normal(Entity *e) {
     em05_typeActions[e->type][e->action](e);
 }

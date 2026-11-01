@@ -5,7 +5,7 @@
 
 extern u8 objAffineSet[];
 
-ARM void ObjAffineSet2(const KnifeObjAffineSrcData *src, Entity *e) {
+void ObjAffineSet2(const KnifeObjAffineSrcData *src, Entity *e) {
     u8 *base = objAffineSet + (e->spriteSettings.b24 >> 1) * 0x20;
     u8 *srcRow;
     u8 *dstRow;

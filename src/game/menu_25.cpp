@@ -8,7 +8,7 @@
 
 // Menu_CopyViewState (0x020be70c): fills the view state of dst from the list (the rectangle through Menu_GetRect).
 extern "C" void Menu_CopyViewState(MenuList *list, MenuViewState *dst);
-ARM void Menu_CopyViewState(MenuList *list, MenuViewState *dst) {
+void Menu_CopyViewState(MenuList *list, MenuViewState *dst) {
     Menu_GetRect((s16 *)dst, list->active);
     dst->unk_10 = list->unk_10;
     dst->unk_14 = list->unk_14;
@@ -20,7 +20,7 @@ ARM void Menu_CopyViewState(MenuList *list, MenuViewState *dst) {
 // Menu_SyncListRect (0x020be750): when the list is active, reads its rectangle (Work21_clear), copies the view state
 // and passes both to lobby_callWithZeroPos.
 extern "C" void Menu_SyncListRect(MenuList *list);
-ARM void Menu_SyncListRect(MenuList *list) {
+void Menu_SyncListRect(MenuList *list) {
     MenuViewState state;
 
     if (list->active == 0) {

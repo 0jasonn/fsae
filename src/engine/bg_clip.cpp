@@ -15,7 +15,7 @@ extern "C" void BgRect_Copy16(u16 *dstBase, BgLoadInfo *src, u32 srcOffset, s32 
 // 0 func_020c491c, 1 func_020c4b44, 2 BgRect_Copy16; other values copy nothing.
 extern "C" void BgRect_ClipCopy(u8 *dstVram, BgLoadInfo *src, s32 srcX, s32 srcY, s32 dstX, s32 dstY, s32 dstWidth,
                                 s32 dstHeight, s32 width, s32 height);
-ARM void BgRect_ClipCopy(u8 *dstVram, BgLoadInfo *src, s32 srcX, s32 srcY, s32 dstX, s32 dstY, s32 dstWidth,
+void BgRect_ClipCopy(u8 *dstVram, BgLoadInfo *src, s32 srcX, s32 srcY, s32 dstX, s32 dstY, s32 dstWidth,
                          s32 dstHeight, s32 width, s32 height) {
     if (dstX < 0) {
         dstX = -dstX;

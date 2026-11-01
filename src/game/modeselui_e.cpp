@@ -9,7 +9,7 @@
 
 // modeSelUIView::viewWillApper() (0x020a8ff0): pushes the child view when the lobby flag is set, otherwise resets the
 // cursor and shows the mode select message
-ARM void modeSelUIView_viewWillApper(ModeSelUIView *self) {
+void modeSelUIView_viewWillApper(ModeSelUIView *self) {
     if (data_0217d23c[0xd0] != 0) {
         basedUIView_push_view((basedUIView *)data_0217e6f0, self->child);
     } else {
@@ -22,6 +22,6 @@ ARM void modeSelUIView_viewWillApper(ModeSelUIView *self) {
 }
 
 // modeSelUIView::leave() (0x020a9048): the default leave, which only removes the title dialog
-ARM void modeSelUIView_leave(ModeSelUIView *self) {
+void modeSelUIView_leave(ModeSelUIView *self) {
     knife_title_dialogDelete();
 }

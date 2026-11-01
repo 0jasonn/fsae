@@ -14,7 +14,7 @@ extern u8 data_0212c5ac;     // non-zero while the screen is blanked
 extern u16 data_021355a0;
 
 // yousei_exit (0x020825bc)
-ARM void yousei_exit(void) {
+void yousei_exit(void) {
     switch (data_0212c4dc) {
     case 0:
         if ((messageRequest & 0x7f) == 6) {
@@ -36,7 +36,7 @@ ARM void yousei_exit(void) {
 }
 
 // yousei_end (0x0208265c)
-ARM void yousei_end(void) {
+void yousei_end(void) {
     if (data_0212c5ac != 0) {
         return;
     }

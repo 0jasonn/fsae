@@ -23,7 +23,7 @@ extern Set2fGridOrigin data_0212c648;
 
 void rewlever(Entity *e);
 
-ARM void set2f_move(Entity *e) {
+void set2f_move(Entity *e) {
     if ((e->contactFlags & 0x80) == 0) {
         return;
     }
@@ -38,7 +38,7 @@ ARM void set2f_move(Entity *e) {
     func_02085f98(e, 0x17);
 }
 
-ARM void rewlever(Entity *e) {
+void rewlever(Entity *e) {
     if (e->type2 != 0) {
         RewCell(0x14d, ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6), e->layer);
     } else {

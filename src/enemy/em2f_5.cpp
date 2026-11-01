@@ -2,7 +2,7 @@
 #include "enemy/em2f.h"
 #include "global.h"
 
-ARM void getFiveMoveInfo(Entity *e) {
+void getFiveMoveInfo(Entity *e) {
     V(e)->pathCursor = em2f_fivePaths[Random() & 3];
     V(e)->targetX = *V(e)->pathCursor++;
     V(e)->targetY = *V(e)->pathCursor++;
@@ -10,7 +10,7 @@ ARM void getFiveMoveInfo(Entity *e) {
     V(e)->pathWait = 0x80;
 }
 
-ARM int gufuVitalCheck(Entity *e) {
+int gufuVitalCheck(Entity *e) {
     u8 hp = e->health;
     u8 difficulty = data_0212c7c8.difficulty;
     int result = 0;
@@ -23,7 +23,7 @@ ARM int gufuVitalCheck(Entity *e) {
     return result;
 }
 
-ARM void gufuBindPls(void) {
+void gufuBindPls(void) {
     for (u8 i = 0; i < data_0212c7c8.unk_0; i++) {
         data_0212ceb0[i].unk_14 = 1;
     }

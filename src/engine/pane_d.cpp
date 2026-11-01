@@ -7,5 +7,5 @@
 
 // Pane_releaseItemNoop(item, heap) (0x020b5ba4, provisional name): release callback of an item, does nothing
 extern "C" void Pane_releaseItemNoop(void *item, void *heap);
-ARM void Pane_releaseItemNoop(void *item, void *heap) {
+void Pane_releaseItemNoop(void *item, void *heap) {
 }

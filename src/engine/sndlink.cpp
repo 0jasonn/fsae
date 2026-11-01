@@ -5,7 +5,7 @@
 // func_020c2004: unlinks the node from the list (the first, last and neighbour links and the count) and clears its own
 // link words. Kept under its plain name because the sound entry code calls it by that name.
 extern "C" void func_020c2004(void *list, void *node);
-ARM void func_020c2004(void *list, void *node) {
+void func_020c2004(void *list, void *node) {
     SndList *owner;
     SndLink *link;
     u8 *prev;
@@ -32,7 +32,7 @@ ARM void func_020c2004(void *list, void *node) {
 
 // func_020c2064: the node after node, or the first node when node is null.
 extern "C" u8 *func_020c2064(SndList *list, u8 *node);
-ARM u8 *func_020c2064(SndList *list, u8 *node) {
+u8 *func_020c2064(SndList *list, u8 *node) {
     if (node == 0) {
         return list->first;
     }
@@ -41,7 +41,7 @@ ARM u8 *func_020c2064(SndList *list, u8 *node) {
 
 // SndList_GetPrev: the node before node, or the last node when node is null.
 extern "C" u8 *SndList_GetPrev(SndList *list, u8 *node);
-ARM u8 *SndList_GetPrev(SndList *list, u8 *node) {
+u8 *SndList_GetPrev(SndList *list, u8 *node) {
     if (node == 0) {
         return list->last;
     }

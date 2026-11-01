@@ -7,6 +7,6 @@
 
 extern const EntityFunc set2a_actions[]; // set2a_actions, indexed by e->action
 
-ARM void Set2a(Entity *e) {
+void Set2a(Entity *e) {
     set2a_actions[e->action](e);
 }

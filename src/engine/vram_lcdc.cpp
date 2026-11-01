@@ -8,7 +8,7 @@
 
 // 0x0201500c
 extern "C" void Vram_SetLcdcBits(u32 mask);
-ARM void Vram_SetLcdcBits(u32 mask) {
+void Vram_SetLcdcBits(u32 mask) {
     data_02129864 |= (u16)mask;
     GX_VRAMCNT_SetLCDC_(mask);
 }

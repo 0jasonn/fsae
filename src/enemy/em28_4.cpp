@@ -5,7 +5,7 @@
 extern const void *em28_swordHitboxes[];
 
 // swordMgr (0x02041774): picks the child's hitbox from the animation state and frame.
-ARM void swordMgr(Entity *e) {
+void swordMgr(Entity *e) {
     if (e->child == NULL) {
         return;
     }

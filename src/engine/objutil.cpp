@@ -3,21 +3,21 @@
 #include "engine/player.h"
 #include "global.h"
 
-ARM s32 fix_mul(s16 lhs, s16 rhs) {
+s32 fix_mul(s16 lhs, s16 rhs) {
     s32 product = lhs * rhs;
     s32 shifted = product >> 7;
     product += (u32)shifted >> 24;
     return (product << 8) >> 16;
 }
 
-ARM s16 fix_div(s32 numerator, s32 denominator) {
+s16 fix_div(s32 numerator, s32 denominator) {
     if (denominator == 0) {
         return 0;
     }
     return _s32_div_f(numerator << 8, denominator);
 }
 
-ARM Entity *ObjPosCopy(Entity *src, Entity *dst) {
+Entity *ObjPosCopy(Entity *src, Entity *dst) {
     dst->x = src->x;
     dst->y = src->y;
     dst->z = src->z;
@@ -26,14 +26,14 @@ ARM Entity *ObjPosCopy(Entity *src, Entity *dst) {
     return func_0208ae78(dst);
 }
 
-ARM void ObjPosCopy2(Entity *src, Entity *dst) {
+void ObjPosCopy2(Entity *src, Entity *dst) {
     ObjPosCopy(src, dst);
     if (dst->unk_5e.b0 < 3) {
         dst->unk_5e.b0++;
     }
 }
 
-ARM void ObjPosCopyOfs32(Entity *src, Entity *dst, s32 dx, s32 dy) {
+void ObjPosCopyOfs32(Entity *src, Entity *dst, s32 dx, s32 dy) {
     dst->x.WORD = src->x.WORD + dx;
     dst->y.WORD = src->y.WORD + dy;
     dst->z = src->z;
@@ -42,7 +42,7 @@ ARM void ObjPosCopyOfs32(Entity *src, Entity *dst, s32 dx, s32 dy) {
     func_0208ae78(dst);
 }
 
-ARM void DropRupeeDir(s32 playerIndex, s32 value, s32 flags) {
+void DropRupeeDir(s32 playerIndex, s32 value, s32 flags) {
     s32 idx;
     Entity *target;
     Entity *fx;

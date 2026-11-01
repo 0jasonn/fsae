@@ -16,7 +16,7 @@ extern u8 set58_bodyState[];
 extern u8 data_02134ae8[];
 
 // PutObjColor (0x02027fe8): releases one reference to each record holding the colour id a.
-ARM void PutObjColor(u8 a) {
+void PutObjColor(u8 a) {
     OC_CTRL_ *rec;
 
     rec = (OC_CTRL_ *)set58_bodyState;

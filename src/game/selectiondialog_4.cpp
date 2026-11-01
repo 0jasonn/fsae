@@ -39,7 +39,7 @@ typedef struct KnifeSelectDialog {
 // selectionDialog::update_close() (0x020a2268): clears the frame buffer, closes the dialog step by step, returns true
 // once it is fully closed
 extern "C" BOOL Knife_Message_selectionDialog_update_close(void *a);
-ARM BOOL Knife_Message_selectionDialog_update_close(void *a) {
+BOOL Knife_Message_selectionDialog_update_close(void *a) {
     KnifeSelectDialog *self = (KnifeSelectDialog *)a;
 
     MI_CpuFill(pauseDialogBuffer, 0, 0x800);

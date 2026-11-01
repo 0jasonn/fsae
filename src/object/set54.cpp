@@ -11,7 +11,7 @@
 extern const s8 set53_scrcheckOffsets[]; // (dx, dy) pairs, indexed by direction index
 extern const EntityFunc set54_actions[]; // indexed by e->action
 
-ARM u8 set53_scrcheck(Entity *e, Entity *other, u8 flag) {
+u8 set53_scrcheck(Entity *e, Entity *other, u8 flag) {
     u8 idx;
     u8 dir;
 
@@ -28,9 +28,9 @@ ARM u8 set53_scrcheck(Entity *e, Entity *other, u8 flag) {
     return idx << 2;
 }
 
-ARM void set53_nop(Entity *e) {
+void set53_nop(Entity *e) {
 }
 
-ARM void Set54(Entity *e) {
+void Set54(Entity *e) {
     set54_actions[e->action](e);
 }

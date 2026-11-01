@@ -7,7 +7,7 @@
 // (0 to 15) to the state functions, then decrements the TTL of the 16 parent entries while connected.
 
 extern "C" void Knife_Comm_WirelessManager_update(void *self);
-ARM void Knife_Comm_WirelessManager_update(void *self) {
+void Knife_Comm_WirelessManager_update(void *self) {
     WmInterruptSection section;
     WirelessManagerWork *wm;
     s32 i;

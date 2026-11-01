@@ -4,11 +4,11 @@
 
 // Functions in this file: Em24 (0x0203fe40), em24_normal (0x0203fe60).
 
-ARM void Em24(Entity *e) {
+void Em24(Entity *e) {
     EnemyFunctionHandler(e, em24_initStateTable);
     swordset(e);
 }
 
-ARM void em24_normal(Entity *e) {
+void em24_normal(Entity *e) {
     em24_actionTable[e->action](e);
 }

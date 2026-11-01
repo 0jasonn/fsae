@@ -21,7 +21,7 @@ extern "C" s32 GetResTranslateID(u16 id, const void *table, s32 count);
 BOOL MdmaCheck(void);
 
 // VGroupInit (0x02080e58)
-ARM void VGroupInit(void) {
+void VGroupInit(void) {
     u8 i;
 
     func_02029a50(vgroupSlots, 0x100);

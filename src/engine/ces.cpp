@@ -10,7 +10,7 @@ namespace Knife {
 namespace Message {
 
 // ICharacterEncodingScheme::getLength(void const*, unsigned long) const (0x0208fb94): counts the characters of the data
-ARM u32 ICharacterEncodingScheme::getLength(const void *data, u32 size) const {
+u32 ICharacterEncodingScheme::getLength(const void *data, u32 size) const {
     u32 consumed;
     u32 count;
     u32 next;
@@ -30,7 +30,7 @@ ARM u32 ICharacterEncodingScheme::getLength(const void *data, u32 size) const {
 }
 
 // getDefaultCES(Language) (0x0208fc14): copies the table and returns the scheme of the language, NULL outside 0 to 9
-ARM const ICharacterEncodingScheme *getDefaultCES(Language language) {
+const ICharacterEncodingScheme *getDefaultCES(Language language) {
     CESTable table;
 
     table = data_0211b050;
@@ -45,12 +45,12 @@ ARM const ICharacterEncodingScheme *getDefaultCES(Language language) {
 
 // Getter of the static scheme at data_021770b4 (0x0208fc6c)
 extern "C" void *Knife_Message_getCESObject_021770b4(void);
-ARM void *Knife_Message_getCESObject_021770b4(void) {
+void *Knife_Message_getCESObject_021770b4(void) {
     return data_021770b4;
 }
 
 // Getter of the static scheme at data_021770b8 (0x0208fc78)
 extern "C" void *Knife_Message_getCESObject_021770b8(void);
-ARM void *Knife_Message_getCESObject_021770b8(void) {
+void *Knife_Message_getCESObject_021770b8(void) {
     return data_021770b8;
 }

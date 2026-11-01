@@ -7,5 +7,5 @@
 //   playStyleSelUIView_vfunc2 (0x020ab520): empty slot 2
 
 // playStyleSelUIView slot 2 (0x020ab520): empty
-ARM void playStyleSelUIView_vfunc2(void *self) {
+void playStyleSelUIView_vfunc2(void *self) {
 }

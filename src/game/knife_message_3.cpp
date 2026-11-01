@@ -9,17 +9,17 @@ namespace Knife {
 namespace Message {
 
 // MessageTextRender::clearField36 (0x020a0624): clears the byte at +0x36
-ARM void MessageTextRender::clearField36(void) {
+void MessageTextRender::clearField36(void) {
     field36 = 0;
 }
 
 // MessageTextRender::getField36 (0x020a0630): reads the byte at +0x36
-ARM u8 MessageTextRender::getField36(void) const {
+u8 MessageTextRender::getField36(void) const {
     return field36;
 }
 
 // MessageTextRender::setSceneInfo (0x020a0638): stores the scene block pointer at +0x38
-ARM void MessageTextRender::setSceneInfo(void *info) {
+void MessageTextRender::setSceneInfo(void *info) {
     sceneInfo = (MessageSceneInfo *)info;
 }
 

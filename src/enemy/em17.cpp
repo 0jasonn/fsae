@@ -6,18 +6,18 @@
 //   0x0203d51c em17_normal
 
 // Entry of the actor: runs the state handler for the current action.
-ARM void Em17(Entity *e) {
+void Em17(Entity *e) {
     EnemyFunctionHandler(e, em17_stateTable);
 }
 
 // Runs the handler for the current action.
-ARM void em17_normal(Entity *e) {
+void em17_normal(Entity *e) {
     em17_actionTable[e->action](e);
 }
 
 // Knockback: a hit on a lifted object starts the lift-throw (action 4, poseId 0x26) and plays sound 0x238, a hit
 // with poseId 0x26 gives invincibility and plays sound 0x60, a hit with poseId 7 plays sound 4.
-ARM void em17_damage(Entity *e) {
+void em17_damage(Entity *e) {
     if (e->contactFlags != 0x93) {
         if (e->poseId == 0x25 && e->contactFlags >= 0x84) {
             e->action = 4;

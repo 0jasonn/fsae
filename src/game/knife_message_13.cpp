@@ -10,18 +10,18 @@ extern "C" void func_020a1608(void);
 extern "C" void func_020a160c(void);
 extern "C" void func_020a1610(void);
 
-ARM void func_020a1600(void) {
+void func_020a1600(void) {
 }
 
-ARM void func_020a1604(void) {
+void func_020a1604(void) {
 }
 
-ARM void func_020a1608(void) {
+void func_020a1608(void) {
 }
 
-ARM void func_020a160c(void) {
+void func_020a160c(void) {
 }
 
-ARM void func_020a1610(void) {
+void func_020a1610(void) {
 }
 

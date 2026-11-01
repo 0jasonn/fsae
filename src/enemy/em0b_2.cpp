@@ -6,7 +6,7 @@
 // Functions in this file (actor em0b, original name em0b_wait)
 
 // Wait: when the input bit is set, the direction is taken from the input and the position of the target is stored.
-ARM void em0b_wait(Entity *e) {
+void em0b_wait(Entity *e) {
     u32 input;
 
     input = func_02084ac8(e, 10);

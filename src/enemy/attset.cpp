@@ -20,7 +20,7 @@ typedef struct GridOrigin {
 extern GridOrigin data_0212c648;
 
 // Attset: saves the attribute byte of the cell under the entity in the layer and marks it with 0x0f.
-ARM void attset(Entity *e) {
+void attset(Entity *e) {
     int bg = GetBgBuffAdrs(e->layer);
     u16 cell = (u16)(((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6));
     u8 *map = (u8 *)(bg + 4 + 0x2000);
@@ -29,7 +29,7 @@ ARM void attset(Entity *e) {
 }
 
 // Attreset: writes the saved attribute byte back into the cell under the entity.
-ARM void attreset(Entity *e) {
+void attreset(Entity *e) {
     int bg = GetBgBuffAdrs(e->layer);
     u16 cell = (u16)(((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6));
     u8 *map = (u8 *)(bg + cell + 0x2000);

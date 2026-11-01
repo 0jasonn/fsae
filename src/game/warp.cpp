@@ -7,7 +7,7 @@ extern const u16 timeBonusThresholdsAlt[];
 extern const u16 *const timeBonusValues[];
 extern const u16 *const timeBonusValuesAlt[];
 
-ARM BOOL warp_check(void) {
+BOOL warp_check(void) {
     u8 i;
     for (i = 0; i < data_0212c7c8.unk_0; i++) {
         if (!(data_0212ceb0[i].unk_36 & 1)) {
@@ -20,7 +20,7 @@ ARM BOOL warp_check(void) {
     return (func_020280e0() & 0xf) == data_0212c7c8.unk_6f;
 }
 
-ARM void time_bonus(void) {
+void time_bonus(void) {
     u32 seconds = data_0212c7c8.unk_1c / 60;
     int playerCount = data_0212c7c8.unk_0;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
@@ -33,7 +33,7 @@ ARM void time_bonus(void) {
     telopRequest.unk_14 = (u16)playerCount;
 }
 
-ARM u16 get_time_bonus(void) {
+u16 get_time_bonus(void) {
     u8 i;
     u32 seconds = data_0212c7c8.unk_1c / 60;
     const u16 *const *bonusValues = timeBonusValues;

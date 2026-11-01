@@ -3,7 +3,7 @@
 #include "global.h"
 
 // Sets the sub-action when the player-state flag at frameCounter+0x12 is set or the player's flag is clear (guess).
-ARM void ObjHippariCheck(Entity *e) {
+void ObjHippariCheck(Entity *e) {
     if (frameCounter[0x12] != 0) {
         e->subAction = 6;
     }

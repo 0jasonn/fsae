@@ -10,7 +10,7 @@ extern "C" u16 *srchCells(u16 start, u16 width, u16 height);
 
 // srchCells (0x0204e3e0): allocates a list of width * height cell ids (count in the first halfword). Each row holds
 // the ids from the start id on, and the row starts 64 - width ids further on. The list is then shuffled.
-ARM u16 *srchCells(u16 start, u16 width, u16 height) {
+u16 *srchCells(u16 start, u16 width, u16 height) {
     u16 *list;
     u16 count;
     u16 value;

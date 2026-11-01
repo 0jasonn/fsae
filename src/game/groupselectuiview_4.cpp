@@ -8,7 +8,7 @@
 //   noop (0x020b10d0, renamed from groupSelectUIView_noop)
 
 // groupSelectUIView::stopScan (0x020b0fe8): stops the wireless scan
-ARM void groupSelectUIView::stopScan(void) {
+void groupSelectUIView::stopScan(void) {
     void *manager;
 
     manager = func_020909c8();
@@ -16,7 +16,7 @@ ARM void groupSelectUIView::stopScan(void) {
 }
 
 // groupSelectUIView::getText (0x020b0ff8): fills the text handle of a room (or of the not-found message)
-ARM BOOL groupSelectUIView::getText(KnifeMsgText *text, u32 textId, s32 language) {
+BOOL groupSelectUIView::getText(KnifeMsgText *text, u32 textId, s32 language) {
     RoomInfo *room;
     const void *arg;
     const u16 *str;
@@ -49,7 +49,7 @@ ARM BOOL groupSelectUIView::getText(KnifeMsgText *text, u32 textId, s32 language
 }
 
 // groupSelectUIView::getRoomInfoFromTextID (0x020b108c): the room slot that owns a text pane, NULL if none does
-ARM groupSelectUIView::RoomInfo *groupSelectUIView::getRoomInfoFromTextID(u32 textId) {
+groupSelectUIView::RoomInfo *groupSelectUIView::getRoomInfoFromTextID(u32 textId) {
     u32 i;
     u32 pane;
 
@@ -63,5 +63,5 @@ ARM groupSelectUIView::RoomInfo *groupSelectUIView::getRoomInfoFromTextID(u32 te
 }
 
 // groupSelectUIView::noop (0x020b10d0): empty
-ARM void groupSelectUIView::noop(void) {
+void groupSelectUIView::noop(void) {
 }

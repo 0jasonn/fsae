@@ -33,7 +33,7 @@ typedef struct KnifeTextLengthAnalyzer {
 // TextLengthAnalyzer::onReadPlainText(Text const*) (0x020a1748): adds the width of the first character of the text to the
 // current line and counts the character
 extern "C" void Knife_Message_TextLengthAnalyzer_onReadPlainText(void *a, const void *text);
-ARM void Knife_Message_TextLengthAnalyzer_onReadPlainText(void *a, const void *text) {
+void Knife_Message_TextLengthAnalyzer_onReadPlainText(void *a, const void *text) {
     KnifeTextLengthAnalyzer *self = (KnifeTextLengthAnalyzer *)a;
     Knife::Message::Text copy;
     u32 character;

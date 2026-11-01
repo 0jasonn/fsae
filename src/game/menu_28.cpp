@@ -20,7 +20,7 @@ void SndSys_Shutdown(void);
 // Menu_InitPool (0x020bec80): sets up the pool object: the entries (id -1), the extra object at +0x234, the counts
 // and the ready flag.
 extern "C" void Menu_InitPool(MenuPool *pool, s32 value);
-ARM void Menu_InitPool(MenuPool *pool, s32 value) {
+void Menu_InitPool(MenuPool *pool, s32 value) {
     u32 i;
 
     SndSys_Init(pool);

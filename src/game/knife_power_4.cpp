@@ -20,7 +20,7 @@ typedef struct PowerManagerView {
 
 // Knife::PowerManager::update() (0x020c81a0): follows the lid state and switches the LCD power and the
 // wireless state when it changes
-ARM void PowerManager::update(void) {
+void PowerManager::update(void) {
     PowerManagerView *view;
     u8 lidClosed;
     s32 ret;

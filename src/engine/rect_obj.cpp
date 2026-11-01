@@ -29,7 +29,7 @@ typedef struct RectObj {
 
 // RectObj_init(self) (0x020b7c50, provisional name): sets the vtable and clears the record
 extern "C" void RectObj_init(RectObj *self);
-ARM void RectObj_init(RectObj *self) {
+void RectObj_init(RectObj *self) {
     self->vtable = data_02126d08;
     self->offsetX = 0;
     self->offsetY = 0;

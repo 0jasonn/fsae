@@ -7,6 +7,6 @@ extern u32 data_020dfb40;
 
 extern "C" u32 Engine_ReadRomWord(void);
 
-ARM u32 Engine_ReadRomWord(void) {
+u32 Engine_ReadRomWord(void) {
     return data_020dfb40;
 }

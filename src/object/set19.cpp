@@ -9,12 +9,12 @@
 //   0x02065850 set19_init, 0x020658b4 set19_move, 0x020658dc set19_wait
 
 // Dispatcher: runs the handler for the current action.
-ARM void Set19(Entity *e) {
+void Set19(Entity *e) {
     set19_stateTable[e->action](e);
 }
 
 // Init: advances the action, stores the BG cell pointer and its value under the entity.
-ARM void set19_init(Entity *e) {
+void set19_init(Entity *e) {
     int bg;
     int cell;
 
@@ -26,7 +26,7 @@ ARM void set19_init(Entity *e) {
 }
 
 // Waits until the BG cell changes from the value taken in set19_init, then sets the timer to 15 and advances.
-ARM void set19_move(Entity *e) {
+void set19_move(Entity *e) {
     u8 action;
 
     if (VARS(Vars_Set19, e)->cellValue != *VARS(Vars_Set19, e)->cellPtr) {
@@ -38,7 +38,7 @@ ARM void set19_move(Entity *e) {
 
 // Counts the timer down. At 0 it sets the area mask bits of the type, fires the area's MultiEventSet when type2 is
 // set, and removes the entity.
-ARM void set19_wait(Entity *e) {
+void set19_wait(Entity *e) {
     u8 area;
 
     if (--e->timer != 0) {

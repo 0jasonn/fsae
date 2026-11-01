@@ -17,7 +17,7 @@ typedef struct Vars_Set3d {
 
 extern u32 data_0212c54c; // cleared by set3d_back
 
-ARM void set3d_wait(Entity *e) {
+void set3d_wait(Entity *e) {
     Vars_Set3d *vars = VARS(Vars_Set3d, e);
     u16 timer;
 
@@ -29,7 +29,7 @@ ARM void set3d_wait(Entity *e) {
     settail(e);
 }
 
-ARM void set3d_back(Entity *e) {
+void set3d_back(Entity *e) {
     if (e->timer != 0) {
         e->timer = e->timer - 1;
         settail(e);
@@ -40,7 +40,7 @@ ARM void set3d_back(Entity *e) {
     PutObjWork(e);
 }
 
-ARM Entity *settail(Entity *e) {
+Entity *settail(Entity *e) {
     Entity *child = 0;
     u8 prevSubtimer = e->subtimer;
 

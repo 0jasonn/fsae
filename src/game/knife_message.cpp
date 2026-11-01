@@ -9,7 +9,7 @@ namespace Knife {
 namespace Message {
 
 // MessageTextRender::clearCanvasLine(long, long, long) (0x020a0508): fills cells of the canvas with a colour
-ARM void MessageTextRender::clearCanvasLine(s32 line, s32 lines, s32 color) {
+void MessageTextRender::clearCanvasLine(s32 line, s32 lines, s32 color) {
     u32 spread = SpreadColor32(&canvas, color);
     u8 *dst = (u8 *)canvas.pBits + line * canvas.width * Knife_CharBytes(&canvas);
     s32 size = canvas.width * lines * Knife_CharBytes(&canvas);

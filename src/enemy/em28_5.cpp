@@ -22,7 +22,7 @@ extern Em28Claim em28_claim;
 
 // em28_normal (0x02040f34): counts the idle timer, starts a dash when a player is ready, runs the action function,
 // updates the sword and claims the shared player slot in em28_claim when the game is not in wireless mode.
-ARM void em28_normal(Entity *e) {
+void em28_normal(Entity *e) {
     Entity *child;
 
     if (e->action != 0) {

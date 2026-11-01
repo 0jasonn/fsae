@@ -5,7 +5,7 @@
 
 // Functions in this file: em20_dushInit (0x0203e990).
 
-ARM void em20_dushInit(Entity *e) {
+void em20_dushInit(Entity *e) {
     UpdateAnimationSingleFrame(e);
     UpdateAnimationSingleFrame(e);
     if (--e->timer == 0) {

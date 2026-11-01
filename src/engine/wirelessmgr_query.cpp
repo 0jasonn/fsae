@@ -7,7 +7,7 @@
 
 // WirelessManager::getMaxParents() (0x02091d38, no original name): the number of parent entries (16).
 extern "C" s32 Knife_Comm_WirelessManager_getMaxParents(void *self);
-ARM s32 Knife_Comm_WirelessManager_getMaxParents(void *self) {
+s32 Knife_Comm_WirelessManager_getMaxParents(void *self) {
     return 0x10;
 }
 

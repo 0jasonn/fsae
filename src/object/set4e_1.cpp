@@ -6,6 +6,6 @@
 
 extern const EntityFunc set4e_states[]; // state table indexed by e->action
 
-ARM void Set4e(Entity *e) {
+void Set4e(Entity *e) {
     set4e_states[e->action](e);
 }

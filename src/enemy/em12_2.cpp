@@ -4,7 +4,7 @@
 
 // Original names: em12_wakeup, em12_move, em12_return, em12_sleep, em12_kemuriSet, igoalWalk, tgtareacheck (igoalGetDir is in scratch/agentA/nonmatching/igoalGetDir.c)
 
-ARM void em12_wakeup(Entity *e) {
+void em12_wakeup(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if ((e->frame & 0x80) == 0) {
         return;
@@ -19,7 +19,7 @@ ARM void em12_wakeup(Entity *e) {
     yukaRewCell(e);
 }
 
-ARM void em12_move(Entity *e) {
+void em12_move(Entity *e) {
     u8 diff;
 
     UpdateAnimationSingleFrame(e);
@@ -80,7 +80,7 @@ ARM void em12_move(Entity *e) {
     }
 }
 
-ARM void em12_return(Entity *e) {
+void em12_return(Entity *e) {
     u32 playerIndex;
     Entity *target;
     int diff;
@@ -147,7 +147,7 @@ ARM void em12_return(Entity *e) {
     }
 }
 
-ARM void em12_sleep(Entity *e) {
+void em12_sleep(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame & 0x80) {
         e->action = 2;
@@ -155,7 +155,7 @@ ARM void em12_sleep(Entity *e) {
     }
 }
 
-ARM void em12_kemuriSet(Entity *e) {
+void em12_kemuriSet(Entity *e) {
     Entity *fx;
 
     fx = GetSetWork(0xf, 2, 0);
@@ -172,7 +172,7 @@ ARM void em12_kemuriSet(Entity *e) {
     }
 }
 
-ARM void igoalWalk(Entity *e) {
+void igoalWalk(Entity *e) {
     func_02089e34(e, 9, (u16)(e->x.HALF.HI + em12_walkOffsets[e->animationState * 4]),
                   (u16)(e->y.HALF.HI + em12_walkOffsets[e->animationState * 4 + 1]));
     func_02089e34(e, 9, (u16)(e->x.HALF.HI + em12_walkOffsets[e->animationState * 4 + 2]),
@@ -202,7 +202,7 @@ ARM void igoalWalk(Entity *e) {
     }
 }
 
-ARM BOOL tgtareacheck(Entity *e, Entity *target) {
+BOOL tgtareacheck(Entity *e, Entity *target) {
     if (target == NULL) {
         return FALSE;
     }

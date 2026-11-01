@@ -7,6 +7,6 @@
 //   throwinit (0x02080b60): sets up the throw from the child's position and copies the child's and player's pose.
 
 // tama11_putObjWorkThunk (0x02080b54)
-ARM void tama11_putObjWorkThunk(Entity *e) {
+void tama11_putObjWorkThunk(Entity *e) {
     ((void (*)(Entity *))PutObjWork)(e);
 }

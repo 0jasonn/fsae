@@ -6,7 +6,7 @@
 // Warp hole actor, third unit (module warphole). Address -> name:
 //   0x0205e114 warphole_exit (original name)
 
-ARM void warphole_exit(Entity *e) {
+void warphole_exit(Entity *e) {
     int players = func_02084110(e);
 
     if (players & 1) {

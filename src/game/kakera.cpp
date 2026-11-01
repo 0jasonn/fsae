@@ -10,7 +10,7 @@ extern u16 data_020cf842[];
 
 // Writes four kakera tiles: each source byte selects a 6-halfword tile pattern, written as a 3 by 2 block into the
 // screen block of the current cockpit page (block at 0x1a8, rows 0x40 halfwords apart).
-ARM void kakera_write(const u8 *kakera) {
+void kakera_write(const u8 *kakera) {
     u16 *dst;
     u8 count;
     u8 index;

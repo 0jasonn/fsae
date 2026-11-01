@@ -16,7 +16,7 @@ public:
 // Ctrl_freeVirtualBlock(holder, block) (0x020bc7b8, provisional name): does nothing for a NULL block; otherwise calls
 // the first virtual of block with holder and frees the block from the heap at the first word of holder
 extern "C" void Ctrl_freeVirtualBlock(void *holder, void *block);
-ARM void Ctrl_freeVirtualBlock(void *holder, void *block) {
+void Ctrl_freeVirtualBlock(void *holder, void *block) {
     if (block == NULL) {
         return;
     }

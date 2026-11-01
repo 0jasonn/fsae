@@ -7,7 +7,7 @@
 // and jumps to target (r2). Register-only sequence: it never returns to the caller.
 
 // 0x0200ca80
-ARM asm void Ctx_RestoreRegsJump(void *context, u32 unused, void (*target)(void)) {
+asm void Ctx_RestoreRegsJump(void *context, u32 unused, void (*target)(void)) {
     ldr r4, [r0, #0x2c]
     ldr r5, [r0, #0x30]
     ldr r6, [r0, #0x34]
@@ -26,7 +26,7 @@ ARM asm void Ctx_RestoreRegsJump(void *context, u32 unused, void (*target)(void)
 // func_0200c3b4 with the frame address in r0.
 
 // 0x0200cab0
-ARM asm void Ctx_SaveFrameThenCall(void) {
+asm void Ctx_SaveFrameThenCall(void) {
     mov ip, sp
     sub sp, sp, #0x70
     str r4, [sp, #0x2c]

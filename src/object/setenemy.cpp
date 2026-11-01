@@ -27,7 +27,7 @@ typedef struct Vars_Setenemy_Child {
 extern "C" s32 func_02084634(u16 a);
 extern const u32 flagBits[];
 
-ARM void set6b_setenemy(Entity *e, u8 index) {
+void set6b_setenemy(Entity *e, u8 index) {
     Entity *obj;
     s32 slot;
 

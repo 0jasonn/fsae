@@ -12,7 +12,7 @@ extern u8 data_021350b0[];
 
 // fileSelUIView::checkSaveStatus() (0x020a76d0): looks at the state of the three save entries; the states 3 and 4 start a
 // task chain, 6 and 7 pick a result, and a result shows the status through func_020ac038
-ARM s32 fileSelUIView_checkSaveStatus(void *self) {
+s32 fileSelUIView_checkSaveStatus(void *self) {
     u8 i;
     s32 result;
     u8 *entry;

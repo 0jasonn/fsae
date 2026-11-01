@@ -19,7 +19,7 @@ extern "C" void Knife_Message_TextReader_cleanup(void *self);
 
 // TextReader::TextReader() (0x020a23bc): sets the vtable, clears the text at +0x0c and resets the reader
 extern "C" void *Knife_Message_TextReader_TextReader(void *self);
-ARM void *Knife_Message_TextReader_TextReader(void *self) {
+void *Knife_Message_TextReader_TextReader(void *self) {
     *(void **)self = data_0211ee30;
     ((Knife::Message::Text *)((u8 *)self + 0x0c))->clear();
     Knife_Message_TextReader_cleanup(self);

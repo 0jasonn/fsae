@@ -11,7 +11,7 @@ extern const u8 em19_stateTable[];
 // Em19 (0x0203e05c), plain name in the ROM
 extern "C" void Em19(Entity *e);
 
-ARM void Em19(Entity *e) {
+void Em19(Entity *e) {
     if (e->type == 2) {
         EnemyFunctionHandler(e, em19_stateTable);
         if (e->parent != 0) {

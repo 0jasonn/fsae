@@ -8,7 +8,7 @@ extern u8 data_0212ceb2[];
 extern u8 data_0212ceb4[];
 
 extern "C" void kabutowari(Entity *e);
-ARM void kabutowari(Entity *e) {
+void kabutowari(Entity *e) {
     Entity *other;
 
     other = *(Entity **)&data_0212ced8[e->type * 0x94];

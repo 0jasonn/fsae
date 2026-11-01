@@ -7,6 +7,6 @@
 // Set13 actor (module set13). Address -> name:
 //   0x020644cc Set13 (original name)
 
-ARM void Set13(Entity *e) {
+void Set13(Entity *e) {
     set13_stateTable[e->action](e);
 }

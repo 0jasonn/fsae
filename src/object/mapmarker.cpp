@@ -6,7 +6,7 @@
 extern u8 localPlayerIndex;            // localPlayerIndex
 
 // MapMarkerSet, 0x02069d64: makes the map markers for each player and links the local player's marker to its child.
-ARM void MapMarkerSet(void) {
+void MapMarkerSet(void) {
     Entity *found;
     Entity *marker;
     u8 i;

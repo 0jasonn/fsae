@@ -6,7 +6,7 @@
 // effect_syurenjyo_move, second unit of the effect_syurenjyo module, 0x0206e454 .. 0x0206e4d8.
 // Address -> name: 0x0206e454 effect_syurenjyo_move
 
-ARM void effect_syurenjyo_move(Entity *e) {
+void effect_syurenjyo_move(Entity *e) {
     e->unk_1b = 0xb1;
     e->spriteSettings.b20 = 8;
     e->spriteSettings.b16 = e->spriteSettings.b20;

@@ -5,7 +5,7 @@
 extern "C" void initScrWithLoad(BGInfo *bg, u32 unused, s32 index);
 
 // initScrWithLoad (0x020ac64c): copies a screen resource into a new 0x20-aligned buffer and reads its chunk
-ARM void initScrWithLoad(BGInfo *bg, u32 unused, s32 index) {
+void initScrWithLoad(BGInfo *bg, u32 unused, s32 index) {
     u32 size;
     void *buf;
     void *data;

@@ -6,5 +6,5 @@
 //   Stub_IgnoreArg
 
 // Does nothing; callers pass a value that is ignored
-ARM void Stub_IgnoreArg(int arg) {
+void Stub_IgnoreArg(int arg) {
 }

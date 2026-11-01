@@ -15,7 +15,7 @@ extern const char data_02124ab4[];
 extern const char data_02124a65[];
 
 // DatalinkReader::initialize(void const*, unsigned long) (0x020a6398): finalizes, then takes the block if it verifies
-ARM BOOL DatalinkReader::initialize(const void *data, u32 size) {
+BOOL DatalinkReader::initialize(const void *data, u32 size) {
     finalize();
     if (Datalink::verify(data, size) == 0) {
         return FALSE;
@@ -28,7 +28,7 @@ ARM BOOL DatalinkReader::initialize(const void *data, u32 size) {
 }
 
 // DatalinkReader::finalize() (0x020a63d8): forgets the block
-ARM void DatalinkReader::finalize(void) {
+void DatalinkReader::finalize(void) {
     block = NULL;
     table = NULL;
     blockSize = 0;
@@ -36,7 +36,7 @@ ARM void DatalinkReader::finalize(void) {
 }
 
 // DatalinkReader::getDataBuffer(long) const (0x020a63f0): the entry's data, at table + its offset
-ARM const void *DatalinkReader::getDataBuffer(s32 index) const {
+const void *DatalinkReader::getDataBuffer(s32 index) const {
     if (initialized == 0) {
         Engine_AssertFail(data_02124a88, data_02124a94, data_02124a71, 0x67);
     }
@@ -44,7 +44,7 @@ ARM const void *DatalinkReader::getDataBuffer(s32 index) const {
 }
 
 // DatalinkReader::getDataSize(long) const (0x020a6438): the size of the entry
-ARM s32 DatalinkReader::getDataSize(s32 index) const {
+s32 DatalinkReader::getDataSize(s32 index) const {
     if (initialized == 0) {
         Engine_AssertFail(data_02124aa8, data_02124ab4, data_02124a65, 0x6f);
     }

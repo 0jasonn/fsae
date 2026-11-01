@@ -16,11 +16,11 @@ typedef struct PikaOffsetList {
 extern const PikaOffsetList pikaOffsetX; // pikaOffsetX
 extern const PikaOffsetList pikaOffsetY; // pikaOffsetY
 
-ARM void effect_pika(Entity *e) {
+void effect_pika(Entity *e) {
     effectPikaTable[e->action](e);
 }
 
-ARM void effect_pika_init(Entity *e) {
+void effect_pika_init(Entity *e) {
     u8 action = e->action;
     PikaOffsetList xs;
     PikaOffsetList ys;

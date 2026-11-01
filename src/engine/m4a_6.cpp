@@ -12,7 +12,7 @@
 extern "C" void pauseWavePlayer(s32 pause);
 extern "C" u32 func_0208d260(u32 songNum);
 extern "C" u32 m4aSongNumStart(u16 songNum);
-ARM u32 m4aSongNumStart(u16 songNum) {
+u32 m4aSongNumStart(u16 songNum) {
     s32 index;
     s32 flag;
     void *handle;

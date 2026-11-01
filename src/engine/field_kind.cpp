@@ -7,7 +7,7 @@
 // Field_GetSigned5(field) (0x02012f98): returns the magnitude, negated for the 0x8000 form, and 0 when the form is none.
 extern "C" s32 Field_GetSigned5(u16 *field);
 
-ARM s32 Field_GetSigned5(u16 *field) {
+s32 Field_GetSigned5(u16 *field) {
     u16 form;
 
     form = (u16)(*field & 0xc000);

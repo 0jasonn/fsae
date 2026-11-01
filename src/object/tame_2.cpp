@@ -23,7 +23,7 @@ extern u16 frameCounter;
 
 // tame_move, 0x020702c8. Follows the player slot of e->type (stride 0x94): copies its height and its sprite layer,
 // then offsets the position from the player by the animation table and runs the timer effects.
-ARM void tame_move(Entity *e) {
+void tame_move(Entity *e) {
     Entity *target;
     const s8 *offsets;
     u8 kind;

@@ -18,7 +18,7 @@ extern u16 data_02134d10[];
 
 // frame_ack (0x02028944): a frame is acknowledged when no table entry of the players selected by byte 3 (bits 0..3) is
 // 0xc000 at the index data_0212c538 - 2. Wireless play answers with 2 at +8 unless the manager says the frame is done.
-ARM void frame_ack(void) {
+void frame_ack(void) {
     void *manager;
     void *knife;
     u8 flags;

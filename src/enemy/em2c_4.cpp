@@ -2,7 +2,7 @@
 #include "enemy/em2c.h"
 #include "global.h"
 
-ARM BOOL set3rd(Entity *e) {
+BOOL set3rd(Entity *e) {
     Entity *partA;
     Entity *partB;
     Entity *partC;

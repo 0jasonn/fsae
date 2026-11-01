@@ -17,7 +17,7 @@ void *G2S_GetBG2ScrPtr(void);
 void *G2S_GetBG3ScrPtr(void);
 }
 
-ARM extern "C" void *func_020a59ac(Knife::Message::TextRenderer *self, s32 isBg, s32 index) {
+extern "C" void *func_020a59ac(Knife::Message::TextRenderer *self, s32 isBg, s32 index) {
     s32 layer = (isBg ? 0 : 4) + index;
     void *buffer = self->screenBuffer[layer];
 

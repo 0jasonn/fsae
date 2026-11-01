@@ -7,6 +7,6 @@
 
 extern const EntityFunc grass_throw_states[]; // state table indexed by e->subAction
 
-ARM void grass_throw(Entity *e) {
+void grass_throw(Entity *e) {
     grass_throw_states[e->subAction](e);
 }

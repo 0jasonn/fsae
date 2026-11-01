@@ -8,10 +8,10 @@
 extern "C" void PmList_DeleteFirst(void *item);
 extern "C" void PmList_DeleteSecond(void *item);
 
-ARM void PmList_DeleteFirst(void *item) {
+void PmList_DeleteFirst(void *item) {
     PMi_DeleteList(data_0212b93c, item);
 }
 
-ARM void PmList_DeleteSecond(void *item) {
+void PmList_DeleteSecond(void *item) {
     PMi_DeleteList(data_0212b924, item);
 }

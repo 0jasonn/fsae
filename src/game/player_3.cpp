@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 
 
 
-ARM void PlWorkColorReset(void) {
+void PlWorkColorReset(void) {
     u8 i;
     PlWork *end;
     PlWork *plWork;

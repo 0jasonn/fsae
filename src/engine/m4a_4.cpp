@@ -8,7 +8,7 @@
 // m4aSongNumSetPlayerValue (0x0208d790): forwards a value to the sequence player of a song that is not a wave slot
 // (numbers 0x1ea to 0x1f3 do nothing)
 extern "C" void m4aSongNumSetPlayerValue(u16 songNum, s32 value);
-ARM void m4aSongNumSetPlayerValue(u16 songNum, s32 value) {
+void m4aSongNumSetPlayerValue(u16 songNum, s32 value) {
     void *handle;
 
     if (songNum >= 0x1ea && songNum < 0x1f4) {
@@ -24,7 +24,7 @@ ARM void m4aSongNumSetPlayerValue(u16 songNum, s32 value) {
 // m4aSongNumSetParam (0x0208d7c8): sets the parameter of both wave slots (numbers 0x1ea to 0x1f3) or of the song handle.
 // The second argument is not read.
 extern "C" void m4aSongNumSetParam(u16 songNum, u16 unused, s32 param);
-ARM void m4aSongNumSetParam(u16 songNum, u16 unused, s32 param) {
+void m4aSongNumSetParam(u16 songNum, u16 unused, s32 param) {
     s32 i;
     void *handle;
 

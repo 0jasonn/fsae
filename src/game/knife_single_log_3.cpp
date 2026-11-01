@@ -17,7 +17,7 @@ extern "C" int Knife_Single_SinglePlay_SinglePlayLogList_SetLog_09a084(SinglePla
 
 // SetLog(OBJ_WORK_ const*, unsigned short, long, short, short, short) (0x0209a2e0): takes the position from the object
 extern "C" int Knife_Single_SinglePlay_SinglePlayLogList_SetLog_09a2e0(SinglePlayLogList *self, const Entity *obj, u16 kind, s32 c, s16 threshold, s16 sumAddA, s16 sumAddB);
-ARM int Knife_Single_SinglePlay_SinglePlayLogList_SetLog_09a2e0(SinglePlayLogList *self, const Entity *obj, u16 kind, s32 c, s16 threshold, s16 sumAddA, s16 sumAddB) {
+int Knife_Single_SinglePlay_SinglePlayLogList_SetLog_09a2e0(SinglePlayLogList *self, const Entity *obj, u16 kind, s32 c, s16 threshold, s16 sumAddA, s16 sumAddB) {
     return Knife_Single_SinglePlay_SinglePlayLogList_SetLog_09a084(self, *(const POS *)&obj->x, *(const POS *)&obj->y, kind, c, threshold, sumAddA, sumAddB);
 }
 

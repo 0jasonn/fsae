@@ -7,7 +7,7 @@ extern u8 data_0212c500;
 extern u8 data_0212c4dc;
 
 // goto_nextdemo (0x02082598)
-ARM void goto_nextdemo(void) {
+void goto_nextdemo(void) {
     data_0212c500 = 3;
     data_0212c4dc = 0;
 }

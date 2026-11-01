@@ -9,6 +9,6 @@
 // Action table of effect_syurenjyo, effectSyurenjyoTable
 extern const EntityFunc effectSyurenjyoTable[];
 
-ARM void effect_syurenjyo(Entity *e) {
+void effect_syurenjyo(Entity *e) {
     effectSyurenjyoTable[e->action](e);
 }

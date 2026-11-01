@@ -7,7 +7,7 @@
 //   telopFrame
 
 // Writes the frame tiles of the telop window; type 1 has no top rows, types 2 and 3 add one or two more
-ARM void telopFrame(s8 type, u16 *tiles) {
+void telopFrame(s8 type, u16 *tiles) {
     int i;
 
     switch (type) {

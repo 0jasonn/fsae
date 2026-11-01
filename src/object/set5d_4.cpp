@@ -22,11 +22,11 @@ extern const EntityFunc set5d_fall_states[]; // fall state table indexed by e->s
 extern const EntityFunc set5d_standup_states[]; // standup state table indexed by e->subAction
 extern u32 em12_typeMasks[]; // 0x02134954: bit 0 of word 0 is set when the fall ends (also used by em12 as type masks)
 
-ARM void set5d_fall(Entity *e) {
+void set5d_fall(Entity *e) {
     set5d_fall_states[e->subAction](e);
 }
 
-ARM void fall_init(Entity *e) {
+void fall_init(Entity *e) {
     s32 index;
 
     e->subAction++;
@@ -42,7 +42,7 @@ ARM void fall_init(Entity *e) {
     SoundReq(0x248 - index);
 }
 
-ARM void fall_fade(Entity *e) {
+void fall_fade(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
         return;
@@ -51,7 +51,7 @@ ARM void fall_fade(Entity *e) {
     FadeSet(0, 2);
 }
 
-ARM void fall_move(Entity *e) {
+void fall_move(Entity *e) {
     if (e->z.HALF.HI < 0) {
         e->z.WORD += 0x4000;
         UpdateAnimationSingleFrame(e);
@@ -65,20 +65,20 @@ ARM void fall_move(Entity *e) {
     ObjSetTargetWord(e, 0xa);
 }
 
-ARM void fall_anim(Entity *e) {
+void fall_anim(Entity *e) {
     UpdateAnimationSingleFrame(e);
 }
 
-ARM void set5d_standup(Entity *e) {
+void set5d_standup(Entity *e) {
     set5d_standup_states[e->subAction](e);
 }
 
-ARM void set5d_standup_init(Entity *e) {
+void set5d_standup_init(Entity *e) {
     e->subAction++;
     ObjSetTargetWord(e, 9);
 }
 
-ARM void set5d_standup_move(Entity *e) {
+void set5d_standup_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     e->linkedEntity->unk_00[2] = 2;
     if (!(e->frame & 0x80)) {

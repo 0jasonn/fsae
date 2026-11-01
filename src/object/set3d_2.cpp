@@ -11,7 +11,7 @@ typedef struct Vars_Set3d {
     /* 68 */ u32 waitCount;
 } Vars_Set3d;
 
-ARM void set3d_initwait(Entity *e) {
+void set3d_initwait(Entity *e) {
     Vars_Set3d *vars = VARS(Vars_Set3d, e);
 
     if (e->z.HALF.HI == -0x20) {

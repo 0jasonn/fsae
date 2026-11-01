@@ -7,7 +7,7 @@
 //   rupeeUpdate, heartUpdate, bg_trans_body, cockpit_bg_trans
 
 // Moves the displayed rupee count towards the counter at state+8 in steps of 1000, 100 or 10.
-ARM void rupeeUpdate(void) {
+void rupeeUpdate(void) {
     s32 target;
     s32 diff;
     s32 current;
@@ -51,7 +51,7 @@ ARM void rupeeUpdate(void) {
 }
 
 // Moves the heart display counter (byte 8) one step towards the health of the current player.
-ARM void heartUpdate(u16 kind) {
+void heartUpdate(u16 kind) {
     s32 health;
 
     if ((*(u16 *)frameCounter & 3) != 0) {
@@ -78,7 +78,7 @@ ARM void heartUpdate(u16 kind) {
 }
 
 // Background of the cockpit: the rupee, heart and kakera parts are drawn again.
-ARM void bg_trans_body(void) {
+void bg_trans_body(void) {
     rupee_disp();
     addrupee_disp();
     heart_disp();
