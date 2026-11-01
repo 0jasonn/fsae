@@ -10,7 +10,7 @@
 
 extern "C" KnifeSoundHandleFactory *Knife_Sound_HandleFactory_dtor_HandleFactory(KnifeSoundHandleFactory *self);
 ARM KnifeSoundHandleFactory *Knife_Sound_HandleFactory_dtor_HandleFactory(KnifeSoundHandleFactory *self) {
-    func_0200c868(self, 16, sizeof(KnifeSoundSequenceHandle), (void *)Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c);
+    Frame_LoopC868(self, 16, sizeof(KnifeSoundSequenceHandle), (void *)Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c);
     return self;
 }
 

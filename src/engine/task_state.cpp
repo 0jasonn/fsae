@@ -12,7 +12,7 @@ typedef struct TaskState {
 
 extern TaskState data_02127280;
 
-extern "C" void func_0200813c(s32 value);
+extern "C" void TaskSlot_Release(s32 value);
 extern "C" void Chain_Drain(void);
 extern "C" void Task_Dispatch(s32 flag);
 extern "C" void Task_Flush(s32 flag);
@@ -20,7 +20,7 @@ extern "C" void Task_Start(void);
 
 // Marks the task active and flushes it with flag 1.
 ARM void Task_Start(void) {
-    func_0200813c(1);
+    TaskSlot_Release(1);
     data_02127280.active = 1;
     Task_Flush(1);
 }

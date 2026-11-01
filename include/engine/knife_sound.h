@@ -59,7 +59,7 @@ void *SndHeap_CreateRecord(void *base, u32 size);
 void func_0208bcd4(void *self);                                              // base ctor, sets the base vtable
 void knifeSoundNop1(void *self);                                              // base dtor, empty
 KnifeSoundSequenceHandle *Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c(KnifeSoundSequenceHandle *self); // Knife_Sound_SequenceHandle_dtor_SequenceHandle_08c45c
-void func_0200c868(void *array, s32 count, u32 size, void *dtor);            // array destructor helper
+void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);            // array destructor helper
 void func_020c050c(void *p);
 void SndVoiceRef_SetTempo(void *player);
 void func_020bf9dc(void *player);

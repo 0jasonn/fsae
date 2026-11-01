@@ -21,8 +21,8 @@ ARM Knife::Hud::HudManager *Knife_Hud_HudManager_ctor(Knife::Hud::HudManager *se
     KnifeHudVars *v = (KnifeHudVars *)self;
 
     v->vtbl = data_0211c6e8;
-    func_0200c7b8(&v->interp, 2, sizeof(KnifeHudInterp), (void *)Knife_Interp_VecFx32__Interp, (void *)Knife_Interp_VecFx32_emptyDtor);
-    func_0200c7b8(&v->statusUp, 4, sizeof(KnifeHudStatusUpMarker), (void *)Knife_Hud_HudManager_StatusUpMarker_StatusUpMarker, (void *)Knife_Hud_HudManager_StatusUpMarker_emptyDtor);
+    Frame_LoopC7b8(&v->interp, 2, sizeof(KnifeHudInterp), (void *)Knife_Interp_VecFx32__Interp, (void *)Knife_Interp_VecFx32_emptyDtor);
+    Frame_LoopC7b8(&v->statusUp, 4, sizeof(KnifeHudStatusUpMarker), (void *)Knife_Hud_HudManager_StatusUpMarker_StatusUpMarker, (void *)Knife_Hud_HudManager_StatusUpMarker_emptyDtor);
     self->finalize();
     return self;
 }
@@ -55,8 +55,8 @@ ARM Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e004(Knife::H
 
     v->vtbl = data_0211c6e8;
     self->finalize();
-    func_0200c868(&v->statusUp, 4, sizeof(KnifeHudStatusUpMarker), (void *)Knife_Hud_HudManager_StatusUpMarker_emptyDtor);
-    func_0200c868(&v->interp, 2, sizeof(KnifeHudInterp), (void *)Knife_Interp_VecFx32_emptyDtor);
+    Frame_LoopC868(&v->statusUp, 4, sizeof(KnifeHudStatusUpMarker), (void *)Knife_Hud_HudManager_StatusUpMarker_emptyDtor);
+    Frame_LoopC868(&v->interp, 2, sizeof(KnifeHudInterp), (void *)Knife_Interp_VecFx32_emptyDtor);
     return self;
 }
 
@@ -66,8 +66,8 @@ ARM Knife::Hud::HudManager *Knife_Hud_HudManager_dtor_HudManager_09e054(Knife::H
 
     v->vtbl = data_0211c6e8;
     self->finalize();
-    func_0200c868(&v->statusUp, 4, sizeof(KnifeHudStatusUpMarker), (void *)Knife_Hud_HudManager_StatusUpMarker_emptyDtor);
-    func_0200c868(&v->interp, 2, sizeof(KnifeHudInterp), (void *)Knife_Interp_VecFx32_emptyDtor);
+    Frame_LoopC868(&v->statusUp, 4, sizeof(KnifeHudStatusUpMarker), (void *)Knife_Hud_HudManager_StatusUpMarker_emptyDtor);
+    Frame_LoopC868(&v->interp, 2, sizeof(KnifeHudInterp), (void *)Knife_Interp_VecFx32_emptyDtor);
     operator delete(self);
     return self;
 }

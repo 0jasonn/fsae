@@ -42,5 +42,5 @@ ARM KnifeSoundWaveHandle *Knife_Sound_System_getWaveHandle(s32 index) {
 
 extern "C" void Knife_Sound_System_destroyWaveHandles(void);
 ARM void Knife_Sound_System_destroyWaveHandles(void) {
-    func_0200c868(data_02171e74, 2, sizeof(KnifeSoundWaveHandle), (void *)Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0);
+    Frame_LoopC868(data_02171e74, 2, sizeof(KnifeSoundWaveHandle), (void *)Knife_Sound_WaveHandle_dtor_WaveHandle_0904e0);
 }

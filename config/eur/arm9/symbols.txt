@@ -79,7 +79,7 @@ Str_VSnprintf kind:function(arm,size=0x64) addr:0x02008080
 Str_Sprintf kind:function(arm,size=0x2c) addr:0x020080e4
 func_02008110 kind:function(arm,size=0x28) addr:0x02008110
 _Z13Stub_02008138v kind:function(arm,size=0x4) addr:0x02008138
-func_0200813c kind:function(arm,size=0x128) addr:0x0200813c
+TaskSlot_Release kind:function(arm,size=0x128) addr:0x0200813c
 Str_Length kind:function(arm,size=0x1c) addr:0x02008264
 func_02008280 kind:function(arm,size=0xc8) addr:0x02008280
 Str_CopyN kind:function(arm,size=0x50) addr:0x02008348
@@ -146,10 +146,10 @@ Chain_Push kind:function(arm,size=0x20) addr:0x0200c574
 func_0200c594 kind:function(arm,size=0x1b4) addr:0x0200c594
 _ZdlPv kind:function(arm,size=0x14) addr:0x0200c748
 func_0200c75c kind:function(arm,size=0x48) addr:0x0200c75c
-func_0200c7a4 kind:function(arm,size=0x14) addr:0x0200c7a4
-_Z13func_0200c7b8PvlmS_S_ kind:function(arm,size=0xb0) addr:0x0200c7b8
-func_0200c868 kind:function(arm,size=0x48) addr:0x0200c868
-func_0200c8b0 kind:function(arm,size=0x14) addr:0x0200c8b0
+_Z14Frame_TailC7a4v kind:function(arm,size=0x14) addr:0x0200c7a4
+_Z14Frame_LoopC7b8PvlmS_S_ kind:function(arm,size=0xb0) addr:0x0200c7b8
+Frame_LoopC868 kind:function(arm,size=0x48) addr:0x0200c868
+_Z14Frame_TailC8b0v kind:function(arm,size=0x14) addr:0x0200c8b0
 _Z13Stub_0200c8c4v kind:function(arm,size=0x4) addr:0x0200c8c4
 _Z20Passthrough_0200c8c8i kind:function(arm,size=0x14) addr:0x0200c8c8
 Obj_DeleteAfterStub kind:function(arm,size=0x1c) addr:0x0200c8dc
@@ -165,9 +165,9 @@ _Z21Ctx_SaveFrameThenCallv kind:function(arm,size=0x4c) addr:0x0200cab0
 func_0200cafc kind:function(arm,size=0x318) addr:0x0200cafc
 func_0200ce2c kind:function(arm,size=0x3b4) addr:0x0200ce2c
 func_0200d1e0 kind:function(arm,size=0x364) addr:0x0200d1e0
-func_0200d544 kind:function(arm,size=0x9c) addr:0x0200d544
-func_0200d5e0 kind:function(arm,size=0x8c) addr:0x0200d5e0
-func_0200d66c kind:function(arm,size=0x8c) addr:0x0200d66c
+Fp_DoubleLess kind:function(arm,size=0x9c) addr:0x0200d544
+Fp_DoubleEqual kind:function(arm,size=0x8c) addr:0x0200d5e0
+Fp_DoubleNotEqual kind:function(arm,size=0x8c) addr:0x0200d66c
 Fp_PackU32ToFloat kind:function(arm,size=0x48) addr:0x0200d6f8
 func_0200d740 kind:function(arm,size=0x1c0) addr:0x0200d740
 func_0200d900 kind:function(arm,size=0x48) addr:0x0200d900
@@ -540,7 +540,7 @@ OSi_RemoveSpecifiedLinkFromQueue kind:function(arm,size=0x54) addr:0x02017528
 OSi_RemoveMutexLinkFromQueue kind:function(arm,size=0x30) addr:0x0201757c
 OSi_InsertThreadToList kind:function(arm,size=0x5c) addr:0x020175ac
 OSi_RemoveThreadFromList kind:function(arm,size=0x48) addr:0x02017608
-func_02017650 kind:function(arm,size=0xc4) addr:0x02017650
+Os_ThreadSwitch kind:function(arm,size=0xc4) addr:0x02017650
 func_02017714 kind:function(arm,size=0x14c) addr:0x02017714
 OS_CreateThread kind:function(arm,size=0xf0) addr:0x02017860
 OS_ExitThread kind:function(arm,size=0x20) addr:0x02017950
@@ -678,8 +678,8 @@ OSi_InitVramExclusive kind:function(arm,size=0x34) addr:0x02019988
 OSi_TryLockVram kind:function(arm,size=0xc0) addr:0x020199bc
 OSi_UnlockVram kind:function(arm,size=0x84) addr:0x02019a7c
 Pair_Setup kind:function(arm,size=0x5c) addr:0x02019b00
-func_02019b5c kind:function(arm,size=0xb0) addr:0x02019b5c
-func_02019c0c kind:function(arm,size=0xac) addr:0x02019c0c
+Pair_Commit kind:function(arm,size=0xb0) addr:0x02019b5c
+Pair_Restore kind:function(arm,size=0xac) addr:0x02019c0c
 OS_DisableMainExArena kind:function(arm,size=0x14) addr:0x02019cb8
 Pair_GetIfEnabled kind:function(arm,size=0x24) addr:0x02019ccc
 OS_IsValidDeliverArg kind:function(arm,size=0x18) addr:0x02019cf0
@@ -792,7 +792,7 @@ PMi_WaitBusy kind:function(arm,size=0x84) addr:0x0201c7c4
 PMi_DummyCallback kind:function(arm,size=0xc) addr:0x0201c848
 PMi_RunCallback kind:function(arm,size=0x30) addr:0x0201c854
 PMi_WaitVBlank kind:function(arm,size=0x34) addr:0x0201c884
-func_0201c8b8 kind:function(arm,size=0xa0) addr:0x0201c8b8
+PMi_InitSend kind:function(arm,size=0xa0) addr:0x0201c8b8
 func_0201c958 kind:function(arm,size=0x120) addr:0x0201c958
 PMi_StartSendBlock kind:function(arm,size=0x84) addr:0x0201ca78
 PMi_TryToSendPxiDataTillSuccess kind:function(arm,size=0xc4) addr:0x0201cafc
@@ -2054,7 +2054,7 @@ _Z18knife_commDispWaitP12KNIFE_MSGSYS kind:function(arm,size=0xe4) addr:0x0204b6
 _Z17knife_commDispDieP7MsgWork kind:function(arm,size=0x24) addr:0x0204b7d8
 _Z16knife_commDispLFP7MsgWork kind:function(arm,size=0x104) addr:0x0204b7fc
 _Z18knife_commDispRollP12KNIFE_MSGSYS kind:function(arm,size=0x11c) addr:0x0204b900
-knife_commDispEnq kind:function(arm,size=0x180) addr:0x0204ba1c
+_Z17knife_commDispEnqP12KNIFE_MSGSYS kind:function(arm,size=0x180) addr:0x0204ba1c
 _Z16ObjWorkPoolClearv kind:function(arm,size=0x1c) addr:0x0204bb9c
 _Z11ObjMoveInitv kind:function(arm,size=0x54) addr:0x0204bbb8
 ObjMove kind:function(arm,size=0xbc) addr:0x0204bc0c
@@ -9920,7 +9920,7 @@ data_0210392c kind:data(any) addr:0x0210392c
 data_021039d8 kind:data(any) addr:0x021039d8
 data_02103abc kind:data(any) addr:0x02103abc
 entityActionTable kind:data(any) addr:0x02103be8
-data_02103bf0 kind:data(any) addr:0x02103bf0
+knifeChoiceRows kind:data(any) addr:0x02103bf0
 messageStates kind:data(any) addr:0x02103c00
 telopStates kind:data(any) addr:0x02103c18
 msgMoveTable kind:data(any) addr:0x02103c34
@@ -13994,7 +13994,7 @@ data_0217d354 kind:bss addr:0x0217d354
 data_0217d358 kind:bss addr:0x0217d358
 data_0217d35c kind:bss addr:0x0217d35c
 data_0217d360 kind:bss addr:0x0217d360
-data_0217d364 kind:bss addr:0x0217d364
+knifeChoiceMsgIds kind:bss addr:0x0217d364
 telopRequest kind:bss addr:0x0217d36c
 messageRequest kind:bss addr:0x0217d384
 data_0217d39c kind:bss addr:0x0217d39c

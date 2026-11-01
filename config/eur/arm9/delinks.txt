@@ -181,6 +181,10 @@ src/engine/free_wrap_2.cpp:
     complete
     .text       start:0x0200c748 end:0x0200c75c
 
+src/engine/cleanup_frames.cpp:
+    complete
+    .text       start:0x0200c7a4 end:0x0200c8c4
+
 src/engine/stub_5.cpp:
     complete
     .text       start:0x0200c8c4 end:0x0200c8dc
@@ -212,6 +216,10 @@ src/engine/packed_optional.cpp:
 src/engine/ctx_asm.cpp:
     complete
     .text       start:0x0200ca80 end:0x0200cafc
+
+src/engine/fp_compare.cpp:
+    complete
+    .text       start:0x0200d544 end:0x0200d6f8
 
 src/engine/fp_pack.cpp:
     complete
@@ -297,6 +305,10 @@ src/engine/field_kind.cpp:
     complete
     .text       start:0x02012f98 end:0x02012fd8
 
+src/engine/vram_lcdc_mode.cpp:
+    complete
+    .text       start:0x02014c24 end:0x02014d1c
+
 src/engine/vram_lcdc.cpp:
     complete
     .text       start:0x0201500c end:0x02015030
@@ -356,6 +368,10 @@ src/engine/os_wrap_4.cpp:
 src/engine/cardbus_lock.cpp:
     complete
     .text       start:0x02017338 end:0x02017380
+
+src/engine/os_switch.cpp:
+    complete
+    .text       start:0x02017650 end:0x02017714
 
 src/engine/os_start_context.cpp:
     complete
@@ -421,6 +437,10 @@ src/engine/pair_setup.cpp:
     complete
     .text       start:0x02019b00 end:0x02019b5c
 
+src/engine/pair_restore.cpp:
+    complete
+    .text       start:0x02019c0c end:0x02019cb8
+
 src/engine/pair_get.cpp:
     complete
     .text       start:0x02019ccc end:0x02019cf0
@@ -452,6 +472,10 @@ src/engine/obj_get38.cpp:
 src/engine/pm_callback.cpp:
     complete
     .text       start:0x0201c854 end:0x0201c884
+
+src/engine/pmi_init.cpp:
+    complete
+    .text       start:0x0201c8b8 end:0x0201c958
 
 src/engine/pmi_send.cpp:
     complete
@@ -1546,6 +1570,10 @@ src/game/knife_comm_disp_3.cpp:
     complete
     .text       start:0x0204b2f0 end:0x0204b488
 
+src/game/knife_comm_disp_4.cpp:
+    complete
+    .text       start:0x0204b4dc end:0x0204b6f4
+
 src/game/knife_comm_disp.cpp:
     complete
     .text       start:0x0204b6f4 end:0x0204b7d8
@@ -1557,6 +1585,10 @@ src/game/knife_comm.cpp:
 src/game/knife_comm_disp_2.cpp:
     complete
     .text       start:0x0204b900 end:0x0204ba1c
+
+src/game/knife_comm_disp_5.cpp:
+    complete
+    .text       start:0x0204ba1c end:0x0204bb9c
 
 src/engine/objwork.cpp:
     complete

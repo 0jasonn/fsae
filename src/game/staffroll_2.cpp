@@ -8,7 +8,7 @@
 
 extern "C" {
 s32 PM_GetExitFactor(void);
-void func_0200c868(void *obj, u32 a, u32 b, void *fn);
+void Frame_LoopC868(void *obj, u32 a, u32 b, void *fn);
 void Knife_Message_RenderTarget_dtor_RenderTarget_0a2dd4(void *self);
 }
 
@@ -32,5 +32,5 @@ ARM s32 PM_GetExitFactor(void) {
 
 // subTask_staffroll_setupObj (0x020ae2f4): registers the object of this screen with the task helper
 ARM void subTask_staffroll_setupObj(void) {
-    func_0200c868(data_02180fe0, 0x10, 0x68, (void *)Knife_Message_RenderTarget_dtor_RenderTarget_0a2dd4);
+    Frame_LoopC868(data_02180fe0, 0x10, 0x68, (void *)Knife_Message_RenderTarget_dtor_RenderTarget_0a2dd4);
 }
