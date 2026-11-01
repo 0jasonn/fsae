@@ -1842,6 +1842,10 @@ src/game/backup.cpp:
     complete
     .text       start:0x02056120 end:0x020561d0
 
+src/game/backup_media.cpp:
+    complete
+    .text       start:0x020562ec end:0x02056478
+
 src/game/backup_9.cpp:
     complete
     .text       start:0x02056478 end:0x020564e4
@@ -3354,13 +3358,25 @@ src/engine/knifesound_basevtbl.cpp:
     complete
     .text       start:0x0208bcd4 end:0x0208bce4
 
+src/engine/knifesound_archive.cpp:
+    complete
+    .text       start:0x0208bce4 end:0x0208bcfc
+
 src/engine/knifesound_stub_2.cpp:
     complete
     .text       start:0x0208bcfc end:0x0208bd34
 
+src/engine/knifesound_seq.cpp:
+    complete
+    .text       start:0x0208bd34 end:0x0208bdec
+
 src/engine/knifesound_stub_3.cpp:
     complete
     .text       start:0x0208bdec end:0x0208be04
+
+src/engine/knifesound_load.cpp:
+    complete
+    .text       start:0x0208be04 end:0x0208beac
 
 src/engine/knifesound_handle.cpp:
     complete
