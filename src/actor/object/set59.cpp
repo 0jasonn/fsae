@@ -2,7 +2,8 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/set58.h"
-#include "actor/object/d_decls.h"
+#include "engine/entity.h"
+#include "game/rank_api.h"
 
 // Set59 actor (module set59). Address -> name:
 //   0x0207432c Set59 (original name; dispatches on e->action)

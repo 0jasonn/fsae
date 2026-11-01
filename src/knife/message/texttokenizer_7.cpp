@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "knife/message/text_tokenizer.h"
-#include "knife/message/kmsgreader_d.h"
 
 // Knife::Message::TextTokenizer::initialize (0x0208e450) and finalize (0x0208e49c). Both are plain extern "C" functions
 // taking the tokenizer as self: the callers in knife_app_4.cpp, textrender_10.cpp and texttokenizer.cpp use the plain

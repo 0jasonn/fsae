@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/objdecls.h"
-#include "actor/object/objdecls_d.h"
+#include "engine/entity.h"
 #include "actor/object/set57.h"
 
 // Kenfuri end, union and Set57 actor (provisional module kenfuri). Address -> name:

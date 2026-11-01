@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/objdecls.h"
-#include "actor/object/objdecls_d.h"
+#include "engine/entity.h"
 
 // Set55 actor (module set55). Address -> name:
 //   0x02071f4c Set55 (provisional name; dispatch by e->action, table depends on e->type)

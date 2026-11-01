@@ -5,7 +5,7 @@
 #include "engine/functions.h"
 
 void func_02084a20(Entity *e);          // thumb helper, dsd name
-extern "C" void AddHeart(Entity *e, s32 amount); // original AddHeart (unmangled)
+extern "C" s32 AddHeart(Entity *e, s32 amount); // original AddHeart (unmangled)
 
 void ComFinish(u32 a);                    // original ComFinish(unsigned long)
 void MultiSioInit(void);                 // original MultiSioInit()

@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/d_decls.h"
+#include "engine/entity.h"
 #include "engine/player.h"
 #include "actor/object/gufu_vars.h"
 

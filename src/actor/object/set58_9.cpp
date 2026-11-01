@@ -2,7 +2,8 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/set58.h"
-#include "actor/object/d_decls.h"
+#include "engine/entity.h"
+#include "game/rank_api.h"
 
 // Set58 kougyoku (crystal ball) and kougyoku2 actors (module set58, unit 9). Address -> name:
 //   0x02073e18 set58_kougyoku (original name; type2 == 0 uses one action table, otherwise the kougyoku2 table)

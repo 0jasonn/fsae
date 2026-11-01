@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "engine/misc.h"
 #include "global.h"
-#include "actor/object/d_decls.h"
+#include "engine/entity.h"
 #include "engine/callback_api.h"
 
 // Gufu hand and body actors (module gufu, second unit). Address -> name:

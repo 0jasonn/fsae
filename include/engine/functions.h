@@ -176,6 +176,7 @@ void GameState_UpdatePhase(void); // plain symbol, 0x02049454, no arguments
 void ranking_hyosyo(void);   // plain symbol; parked in scratch/agentC/nonmatching (ranking_hyosyo)
 u8 ClearKeyCheck(void);
 void G2x_SetBlendAlpha_(void *reg, s32 a, s32 b, s32 c, s32 d);
+s32 AddHeart(Entity *e, s32 amount);
 }
 
 void BikkuriSet(Entity *e, s32 a, s32 b);
@@ -600,9 +601,10 @@ void func_02084180(Entity *e); // thumb
 u8 func_02084110(Entity *e); // thumb: bit mask of the players touching e
 void AddHeartUtsuwa(u8 type, s8 amount);                // AddHeartUtsuwa(unsigned char, signed char), 0x0202604c
 
-
 void sword_move(Entity *e);
 
 int CalcRupeeDiff(u8 index);
+
+#include "types.h"
 
 #endif

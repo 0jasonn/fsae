@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/objdecls.h"
-#include "actor/object/objdecls_d.h"
+#include "engine/entity.h"
 
 // Link actor, second unit (module link). Address -> name:
 //   0x02072c70 link_kenfuri (original name, dispatches on e->subAction)
