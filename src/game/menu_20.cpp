@@ -43,3 +43,46 @@ s32 Menu_DispatchKeys(MenuWork *menu) {
     }
     return result;
 }
+
+// Steps the menu: a nonzero flag starts the menu sequence, otherwise the object at 0x358 is asked and an error
+// result (-1) is returned as is. (The original returns the register left by Menu_Begin, so this is void.)
+void Menu_Step(MenuWork *menu, s32 flag) {
+    s32 result;
+
+    if (flag != 0) {
+        Menu_Begin(menu);
+        return;
+    }
+    result = Ctrl_getSliderIndexA(menu->unk_358);
+    if (result == -1) {
+        return;
+    }
+    Menu_SetCursorPos(menu);
+}
+
+// Marks the menu as finished (the flag at sub+0x621) and tells the object at 0x358.
+void Menu_Finish(MenuWork *menu) {
+    Ctrl_setCounterA(menu->unk_358);
+    menu->sub.unk_621 = 1;
+}
+
+// Copies the three table pointers into the menu and points the sub-object at them.
+void Menu_SetTable(MenuWork *menu, void *const *table) {
+    s32 i;
+
+    for (i = 0; i < 3; i++) {
+        menu->unk_0f0[i] = table[i];
+    }
+    menu->sub.unk_378 = menu->unk_0f0;
+}
+
+// Clears the video memory (BG and OBJ VRAM, palettes) before the menu starts.
+void Menu_ClearVram(void) {
+    Vram_SetLcdcBits(0x1ff);
+    MIi_CpuClearFast(0, (void *)0x6800000, 0xa4000);
+    Vram_DisableBankTail();
+    MIi_CpuClearFast(0xc0, (void *)0x7000000, 0x400);
+    MIi_CpuClearFast(0, (void *)0x5000000, 0x400);
+    MIi_CpuClearFast(0xc0, (void *)0x7000400, 0x400);
+    MIi_CpuClearFast(0, (void *)0x5000400, 0x400);
+}

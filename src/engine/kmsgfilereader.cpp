@@ -4,6 +4,15 @@
 #include "engine/kmsgreader.h"
 #include "engine/kmsgfilereader_api.h"
 
+// KMsgFileReader base dtor (0x0208e1a4): restores the KMsgFileReader vtable, finalizes the reader and returns it.
+// Kept as a plain extern "C" function (see the note in matching_tips on dtors).
+extern "C" Knife::Message::KMsgFileReader *Knife_Message_KMsgFileReader_dtor_KMsgFileReader_08e1a4(Knife::Message::KMsgFileReader *self);
+Knife::Message::KMsgFileReader *Knife_Message_KMsgFileReader_dtor_KMsgFileReader_08e1a4(Knife::Message::KMsgFileReader *self) {
+    self->vtbl = data_0211ad2c;
+    self->finalize();
+    return self;
+}
+
 // Knife::Message::KMsgFileReader dtors, 0x0208e1c4 to 0x0208e20c. The deleting dtor frees the block.
 
 // KMsgFileReader::~KMsgFileReader, non-deleting dtor (0x0208e1c4): sets the vtable and finalizes

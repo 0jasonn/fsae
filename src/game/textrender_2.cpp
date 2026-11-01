@@ -14,3 +14,10 @@ void Knife_Message_TextRender_onReadSelectTag(void *a) {
     self->selectTable[self->selectCount * 2 + 1] = self->unk_32 / 8;
     self->selectCount = self->selectCount + 1;
 }
+
+// Functions in this file (invented name, the debug build has none):
+//   TextRender::onReadNop (0x020a1390): an empty tag handler
+
+// TextRender::onReadNop() (0x020a1390): an empty tag handler
+void Knife_Message_TextRender_onReadNop(void *a) {
+}

@@ -575,15 +575,7 @@ src/game/hit_2.cpp:
 
 src/game/hit_3.cpp:
     complete
-    .text       start:0x020251ec end:0x02025518
-
-src/game/hit_4.cpp:
-    complete
-    .text       start:0x02025518 end:0x02025628
-
-src/game/hit_6.cpp:
-    complete
-    .text       start:0x02025628 end:0x02025808
+    .text       start:0x020251ec end:0x02025808
 
 src/game/hit_7.cpp:
     complete
@@ -591,11 +583,7 @@ src/game/hit_7.cpp:
 
 src/game/hit_8.cpp:
     complete
-    .text       start:0x02025c18 end:0x02025ce8
-
-src/game/hit_5.cpp:
-    complete
-    .text       start:0x02025ce8 end:0x02025d2c
+    .text       start:0x02025c18 end:0x02025d2c
 
 src/game/item.cpp:
     complete
@@ -645,13 +633,9 @@ src/game/kakera.cpp:
     complete
     .text       start:0x0202777c end:0x02027800
 
-src/game/kinomi_2.cpp:
-    complete
-    .text       start:0x02027894 end:0x02027930
-
 src/game/kinomi.cpp:
     complete
-    .text       start:0x02027930 end:0x02027a10
+    .text       start:0x02027894 end:0x02027a10
 
 src/game/make_item.cpp:
     complete
@@ -995,11 +979,7 @@ src/enemy/em03_2.cpp:
 
 src/enemy/em04.cpp:
     complete
-    .text       start:0x02038a34 end:0x02038b68
-
-src/enemy/em04_2.cpp:
-    complete
-    .text       start:0x02038b68 end:0x02038bbc
+    .text       start:0x02038a34 end:0x02038bbc
 
 src/enemy/em04_3.cpp:
     complete
@@ -1049,13 +1029,9 @@ src/enemy/em11.cpp:
     complete
     .text       start:0x0203b02c end:0x0203b384
 
-src/enemy/em12_3.cpp:
-    complete
-    .text       start:0x0203b384 end:0x0203b434
-
 src/enemy/em12.cpp:
     complete
-    .text       start:0x0203b434 end:0x0203b594
+    .text       start:0x0203b384 end:0x0203b594
 
 src/enemy/em12_2.cpp:
     complete
@@ -1119,11 +1095,7 @@ src/enemy/em17_4.cpp:
 
 src/enemy/em17_3.cpp:
     complete
-    .text       start:0x0203daac end:0x0203db0c
-
-src/enemy/em17_5.cpp:
-    complete
-    .text       start:0x0203db0c end:0x0203dc04
+    .text       start:0x0203daac end:0x0203dc04
 
 src/enemy/em18_4.cpp:
     complete
@@ -1175,35 +1147,11 @@ src/enemy/em19_5.cpp:
 
 src/enemy/em19_2.cpp:
     complete
-    .text       start:0x0203e4c0 end:0x0203e4e4
-
-src/enemy/em19_3.cpp:
-    complete
-    .text       start:0x0203e4e4 end:0x0203e59c
-
-src/enemy/bgobj_6.cpp:
-    complete
-    .text       start:0x0203e59c end:0x0203e63c
+    .text       start:0x0203e4c0 end:0x0203e59c
 
 src/enemy/bgobj.cpp:
     complete
-    .text       start:0x0203e63c end:0x0203e658
-
-src/enemy/bgobj_2.cpp:
-    complete
-    .text       start:0x0203e658 end:0x0203e6a0
-
-src/enemy/bgobj_3.cpp:
-    complete
-    .text       start:0x0203e6a0 end:0x0203e6c8
-
-src/enemy/bgobj_4.cpp:
-    complete
-    .text       start:0x0203e6c8 end:0x0203e720
-
-src/enemy/bgobj_5.cpp:
-    complete
-    .text       start:0x0203e720 end:0x0203e764
+    .text       start:0x0203e59c end:0x0203e764
 
 src/enemy/waitset.cpp:
     complete
@@ -1277,29 +1225,9 @@ src/enemy/em22_2.cpp:
     complete
     .text       start:0x0203f7ac end:0x0203fa4c
 
-src/enemy/em23_6.cpp:
-    complete
-    .text       start:0x0203fa4c end:0x0203fac0
-
 src/enemy/em23.cpp:
     complete
-    .text       start:0x0203fac0 end:0x0203fadc
-
-src/enemy/em23_4.cpp:
-    complete
-    .text       start:0x0203fadc end:0x0203fb88
-
-src/enemy/em23_3.cpp:
-    complete
-    .text       start:0x0203fb88 end:0x0203fbe8
-
-src/enemy/em23_5.cpp:
-    complete
-    .text       start:0x0203fbe8 end:0x0203fc98
-
-src/enemy/em23_2.cpp:
-    complete
-    .text       start:0x0203fc98 end:0x0203fcd8
+    .text       start:0x0203fa4c end:0x0203fcd8
 
 src/enemy/enrin.cpp:
     complete
@@ -1590,13 +1518,9 @@ src/game/knife_comm_disp_3.cpp:
     complete
     .text       start:0x0204b2f0 end:0x0204b488
 
-src/game/knife_comm_disp_4.cpp:
-    complete
-    .text       start:0x0204b4dc end:0x0204b6f4
-
 src/game/knife_comm_disp.cpp:
     complete
-    .text       start:0x0204b6f4 end:0x0204b7d8
+    .text       start:0x0204b4dc end:0x0204b7d8
 
 src/game/knife_comm.cpp:
     complete
@@ -1604,11 +1528,7 @@ src/game/knife_comm.cpp:
 
 src/game/knife_comm_disp_2.cpp:
     complete
-    .text       start:0x0204b900 end:0x0204ba1c
-
-src/game/knife_comm_disp_5.cpp:
-    complete
-    .text       start:0x0204ba1c end:0x0204bb9c
+    .text       start:0x0204b900 end:0x0204bb9c
 
 src/engine/objwork.cpp:
     complete
@@ -1622,13 +1542,9 @@ src/game/msgdat.cpp:
     complete
     .text       start:0x0204c2cc end:0x0204c2e0
 
-src/game/knife_font_2.cpp:
-    complete
-    .text       start:0x0204c2e0 end:0x0204c34c
-
 src/game/knife_font.cpp:
     complete
-    .text       start:0x0204c34c end:0x0204c3a4
+    .text       start:0x0204c2e0 end:0x0204c3a4
 
 src/engine/cell.cpp:
     complete
@@ -1762,13 +1678,9 @@ src/game/opening_2.cpp:
     complete
     .text       start:0x02050b08 end:0x0205114c
 
-src/game/opdemo_4.cpp:
-    complete
-    .text       start:0x02051508 end:0x0205193c
-
 src/game/opdemo.cpp:
     complete
-    .text       start:0x0205193c end:0x02051994
+    .text       start:0x02051508 end:0x02051994
 
 src/game/opdemo_2.cpp:
     complete
@@ -1824,11 +1736,7 @@ src/game/player_2.cpp:
 
 src/game/player_3.cpp:
     complete
-    .text       start:0x02054c04 end:0x02054c4c
-
-src/game/player_4.cpp:
-    complete
-    .text       start:0x02054c4c end:0x02054ddc
+    .text       start:0x02054c04 end:0x02054ddc
 
 src/game/player_5.cpp:
     complete
@@ -1872,11 +1780,7 @@ src/game/backup_6.cpp:
 
 src/game/backup_2.cpp:
     complete
-    .text       start:0x020565e8 end:0x0205663c
-
-src/game/backup_10.cpp:
-    complete
-    .text       start:0x0205663c end:0x020566dc
+    .text       start:0x020565e8 end:0x020566dc
 
 src/game/backup_5.cpp:
     complete
@@ -1888,19 +1792,11 @@ src/game/backup_3.cpp:
 
 src/game/backup_13.cpp:
     complete
-    .text       start:0x02056c7c end:0x02056d00
-
-src/game/backup_7.cpp:
-    complete
-    .text       start:0x02056d00 end:0x02056d44
+    .text       start:0x02056c7c end:0x02056d44
 
 src/game/backup_8.cpp:
     complete
-    .text       start:0x02056ddc end:0x02056e1c
-
-src/game/backup_4.cpp:
-    complete
-    .text       start:0x02056e1c end:0x02056ef0
+    .text       start:0x02056ddc end:0x02056ef0
 
 src/engine/scr.cpp:
     complete
@@ -2008,11 +1904,7 @@ src/object/taimatsu_2.cpp:
 
 src/object/matsuri.cpp:
     complete
-    .text       start:0x02059b24 end:0x02059be4
-
-src/object/matsuri_2.cpp:
-    complete
-    .text       start:0x02059be4 end:0x02059d74
+    .text       start:0x02059b24 end:0x02059d74
 
 src/object/block_neta.cpp:
     complete
@@ -2164,11 +2056,7 @@ src/object/set3e.cpp:
 
 src/object/set3e_3.cpp:
     complete
-    .text       start:0x0205dad8 end:0x0205dc1c
-
-src/object/set3e_2.cpp:
-    complete
-    .text       start:0x0205dc1c end:0x0205dc90
+    .text       start:0x0205dad8 end:0x0205dc90
 
 src/object/set3f.cpp:
     complete
@@ -2180,19 +2068,7 @@ src/object/warphole.cpp:
 
 src/object/warphole_4.cpp:
     complete
-    .text       start:0x0205dec8 end:0x0205e05c
-
-src/object/warphole_2.cpp:
-    complete
-    .text       start:0x0205e05c end:0x0205e078
-
-src/object/warphole_5.cpp:
-    complete
-    .text       start:0x0205e078 end:0x0205e114
-
-src/object/warphole_3.cpp:
-    complete
-    .text       start:0x0205e114 end:0x0205e18c
+    .text       start:0x0205dec8 end:0x0205e18c
 
 src/object/set4a.cpp:
     complete
@@ -2218,13 +2094,9 @@ src/object/set4c_2.cpp:
     complete
     .text       start:0x0205e47c end:0x0205e53c
 
-src/object/set4d_2.cpp:
-    complete
-    .text       start:0x0205e53c end:0x0205e558
-
 src/object/set4d.cpp:
     complete
-    .text       start:0x0205e558 end:0x0205e580
+    .text       start:0x0205e53c end:0x0205e580
 
 src/object/set4e_1.cpp:
     complete
@@ -2248,11 +2120,7 @@ src/object/pot_1.cpp:
 
 src/object/grass_1.cpp:
     complete
-    .text       start:0x0205ed90 end:0x0205edac
-
-src/object/grass_2.cpp:
-    complete
-    .text       start:0x0205edac end:0x0205ee78
+    .text       start:0x0205ed90 end:0x0205ee78
 
 src/object/pot_2.cpp:
     complete
@@ -2264,19 +2132,7 @@ src/object/pot_throw.cpp:
 
 src/object/pot_9.cpp:
     complete
-    .text       start:0x0205f084 end:0x0205f0a8
-
-src/object/pot_3.cpp:
-    complete
-    .text       start:0x0205f0a8 end:0x0205f0b4
-
-src/object/pot_7.cpp:
-    complete
-    .text       start:0x0205f0b4 end:0x0205f0e0
-
-src/object/pot_4.cpp:
-    complete
-    .text       start:0x0205f0e0 end:0x0205f0f4
+    .text       start:0x0205f084 end:0x0205f0f4
 
 src/object/pot_8.cpp:
     complete
@@ -2412,11 +2268,7 @@ src/object/setenemy.cpp:
 
 src/object/rader.cpp:
     complete
-    .text       start:0x0206305c end:0x020630cc
-
-src/object/rader_3.cpp:
-    complete
-    .text       start:0x020630cc end:0x02063194
+    .text       start:0x0206305c end:0x02063194
 
 src/object/rader_2.cpp:
     complete
@@ -2476,15 +2328,7 @@ src/object/set16_2.cpp:
 
 src/object/ido.cpp:
     complete
-    .text       start:0x02064e74 end:0x02064f24
-
-src/object/ido_3.cpp:
-    complete
-    .text       start:0x02064f24 end:0x020650a0
-
-src/object/ido_2.cpp:
-    complete
-    .text       start:0x020650a0 end:0x020650f4
+    .text       start:0x02064e74 end:0x020650f4
 
 src/object/set17.cpp:
     complete
@@ -2732,15 +2576,7 @@ src/object/stick.cpp:
 
 src/object/nemoto.cpp:
     complete
-    .text       start:0x0206c18c end:0x0206c1c8
-
-src/object/nemoto_4.cpp:
-    complete
-    .text       start:0x0206c1c8 end:0x0206c328
-
-src/object/nemoto_2.cpp:
-    complete
-    .text       start:0x0206c328 end:0x0206c398
+    .text       start:0x0206c18c end:0x0206c398
 
 src/object/set41.cpp:
     complete
@@ -2748,11 +2584,7 @@ src/object/set41.cpp:
 
 src/object/set41_2.cpp:
     complete
-    .text       start:0x0206c4c0 end:0x0206c594
-
-src/object/set41_3.cpp:
-    complete
-    .text       start:0x0206c594 end:0x0206c704
+    .text       start:0x0206c4c0 end:0x0206c704
 
 src/object/set42.cpp:
     complete
@@ -2988,11 +2820,7 @@ src/object/set58.cpp:
 
 src/object/set58_2.cpp:
     complete
-    .text       start:0x02073588 end:0x02073780
-
-src/object/set58_3.cpp:
-    complete
-    .text       start:0x02073780 end:0x0207379c
+    .text       start:0x02073588 end:0x0207379c
 
 src/object/set58_4.cpp:
     complete
@@ -3052,11 +2880,7 @@ src/object/rr.cpp:
 
 src/object/set66.cpp:
     complete
-    .text       start:0x0207502c end:0x02075240
-
-src/object/set66_2.cpp:
-    complete
-    .text       start:0x02075240 end:0x020752f8
+    .text       start:0x0207502c end:0x020752f8
 
 src/object/set66_3.cpp:
     complete
@@ -3084,11 +2908,7 @@ src/object/set69_2.cpp:
 
 src/object/set69_3.cpp:
     complete
-    .text       start:0x02075ef0 end:0x02076620
-
-src/object/set69_4.cpp:
-    complete
-    .text       start:0x02076620 end:0x02076804
+    .text       start:0x02075ef0 end:0x02076804
 
 src/object/setwork.cpp:
     complete
@@ -3100,11 +2920,7 @@ src/object/setdisp.cpp:
 
 src/object/objdispatch.cpp:
     complete
-    .text       start:0x02076b24 end:0x02076b50
-
-src/object/objdispatch_2.cpp:
-    complete
-    .text       start:0x02076b50 end:0x02076bf0
+    .text       start:0x02076b24 end:0x02076bf0
 
 src/object/sound.cpp:
     complete
@@ -3340,11 +3156,7 @@ src/game/rupeelevel.cpp:
 
 src/game/yousei_4.cpp:
     complete
-    .text       start:0x02082598 end:0x020825bc
-
-src/game/yousei_3.cpp:
-    complete
-    .text       start:0x020825bc end:0x020826b0
+    .text       start:0x02082598 end:0x020826b0
 
 src/game/owner.cpp:
     complete
@@ -3502,13 +3314,9 @@ src/engine/gz_memory.cpp:
     complete
     .text       start:0x0208e05c end:0x0208e1a4
 
-src/engine/kmsgfilereader_3.cpp:
-    complete
-    .text       start:0x0208e1a4 end:0x0208e1c4
-
 src/engine/kmsgfilereader.cpp:
     complete
-    .text       start:0x0208e1c4 end:0x0208e20c
+    .text       start:0x0208e1a4 end:0x0208e20c
 
 src/engine/kmsgfilereader_2.cpp:
     complete
@@ -3804,11 +3612,7 @@ src/game/knife_single_log.cpp:
 
 src/game/knife_single_log_3.cpp:
     complete
-    .text       start:0x0209a2e0 end:0x0209a31c
-
-src/game/knife_single_log_2.cpp:
-    complete
-    .text       start:0x0209a31c end:0x0209a480
+    .text       start:0x0209a2e0 end:0x0209a480
 
 src/game/knife_comm_0.cpp:
     complete
@@ -3852,21 +3656,9 @@ src/game/set_bg_2.cpp:
     complete
     .text       start:0x0209b4c0 end:0x0209b508
 
-src/game/subtask_data_0.cpp:
-    complete
-    .text       start:0x0209b700 end:0x0209b714
-
 src/game/subtask_data.cpp:
     complete
-    .text       start:0x0209b714 end:0x0209b734
-
-src/game/subtask_data_1.cpp:
-    complete
-    .text       start:0x0209b734 end:0x0209b748
-
-src/game/subtask_data_2.cpp:
-    complete
-    .text       start:0x0209b748 end:0x0209b78c
+    .text       start:0x0209b700 end:0x0209b78c
 
 src/game/eff_0.cpp:
     complete
@@ -3953,13 +3745,9 @@ src/game/set6c.cpp:
     complete
     .text       start:0x0209de18 end:0x0209dec0
 
-src/game/knife_hud_7.cpp:
-    complete
-    .text       start:0x0209df50 end:0x0209e0ac
-
 src/game/knife_hud.cpp:
     complete
-    .text       start:0x0209e0ac end:0x0209e0c4
+    .text       start:0x0209df50 end:0x0209e0c4
 
 src/game/knife_hud_9.cpp:
     complete
@@ -3975,27 +3763,7 @@ src/game/knife_hud_3.cpp:
 
 src/game/knife_hud_4.cpp:
     complete
-    .text       start:0x0209ecbc end:0x0209ece8
-
-src/game/knife_hud_8.cpp:
-    complete
-    .text       start:0x0209ece8 end:0x0209ed4c
-
-src/game/knife_hud_5.cpp:
-    complete
-    .text       start:0x0209ed4c end:0x0209ed6c
-
-src/game/knife_hud_10.cpp:
-    complete
-    .text       start:0x0209ed6c end:0x0209ed74
-
-src/game/knife_hud_6.cpp:
-    complete
-    .text       start:0x0209ed74 end:0x0209ed8c
-
-src/game/knife_hud_11.cpp:
-    complete
-    .text       start:0x0209ed8c end:0x0209ede0
+    .text       start:0x0209ecbc end:0x0209ede0
 
 src/game/knife_interp_2.cpp:
     complete
@@ -4003,11 +3771,7 @@ src/game/knife_interp_2.cpp:
 
 src/game/knife_interp.cpp:
     complete
-    .text       start:0x0209fb40 end:0x0209fb58
-
-src/game/knife_interp_3.cpp:
-    complete
-    .text       start:0x0209fb58 end:0x0209fcc4
+    .text       start:0x0209fb40 end:0x0209fcc4
 
 src/game/knife_canvas.cpp:
     complete
@@ -4019,19 +3783,7 @@ src/game/knife_canvas_2.cpp:
 
 src/game/knife_message.cpp:
     complete
-    .text       start:0x020a0508 end:0x020a0564
-
-src/game/knife_message_2.cpp:
-    complete
-    .text       start:0x020a0564 end:0x020a0574
-
-src/game/knife_message_8.cpp:
-    complete
-    .text       start:0x020a0574 end:0x020a0624
-
-src/game/knife_message_3.cpp:
-    complete
-    .text       start:0x020a0624 end:0x020a0640
+    .text       start:0x020a0508 end:0x020a0640
 
 src/game/knife_message_4.cpp:
     complete
@@ -4047,15 +3799,7 @@ src/game/knife_message_6.cpp:
 
 src/game/knife_message_5.cpp:
     complete
-    .text       start:0x020a0dac end:0x020a0dc0
-
-src/game/knife_message_9.cpp:
-    complete
-    .text       start:0x020a0dc0 end:0x020a0dcc
-
-src/game/knife_message_7.cpp:
-    complete
-    .text       start:0x020a0dcc end:0x020a0dfc
+    .text       start:0x020a0dac end:0x020a0dfc
 
 src/game/knife_message_10.cpp:
     complete
@@ -4067,11 +3811,7 @@ src/game/knife_message_11.cpp:
 
 src/game/textrender.cpp:
     complete
-    .text       start:0x020a11fc end:0x020a1244
-
-src/game/textrender_6.cpp:
-    complete
-    .text       start:0x020a1244 end:0x020a12e0
+    .text       start:0x020a11fc end:0x020a12e0
 
 src/game/knife_message_12.cpp:
     complete
@@ -4079,11 +3819,7 @@ src/game/knife_message_12.cpp:
 
 src/game/textrender_2.cpp:
     complete
-    .text       start:0x020a1340 end:0x020a1390
-
-src/game/textrender_5.cpp:
-    complete
-    .text       start:0x020a1390 end:0x020a1394
+    .text       start:0x020a1340 end:0x020a1394
 
 src/game/textrender_3.cpp:
     complete
@@ -4107,19 +3843,7 @@ src/game/knife_message_16.cpp:
 
 src/game/textlength.cpp:
     complete
-    .text       start:0x020a16c4 end:0x020a1704
-
-src/game/textlength_2.cpp:
-    complete
-    .text       start:0x020a1704 end:0x020a1748
-
-src/game/textlength_4.cpp:
-    complete
-    .text       start:0x020a1748 end:0x020a17e8
-
-src/game/textlength_3.cpp:
-    complete
-    .text       start:0x020a17e8 end:0x020a1838
+    .text       start:0x020a16c4 end:0x020a1838
 
 src/game/messageselect.cpp:
     complete
@@ -4143,11 +3867,7 @@ src/game/selectiondialog_3.cpp:
 
 src/game/selectiondialog_4.cpp:
     complete
-    .text       start:0x020a2268 end:0x020a22cc
-
-src/game/selectiondialog_6.cpp:
-    complete
-    .text       start:0x020a22cc end:0x020a237c
+    .text       start:0x020a2268 end:0x020a237c
 
 src/game/knife_message_14.cpp:
     complete
@@ -4293,17 +4013,9 @@ src/game/datalink_2.cpp:
     complete
     .text       start:0x020a6398 end:0x020a6480
 
-src/game/radar_e_2.cpp:
-    complete
-    .text       start:0x020a650c end:0x020a6658
-
 src/game/radar_e.cpp:
     complete
-    .text       start:0x020a6658 end:0x020a6830
-
-src/game/radar_e_3.cpp:
-    complete
-    .text       start:0x020a6830 end:0x020a6a50
+    .text       start:0x020a650c end:0x020a6a50
 
 src/game/radar_e_4.cpp:
     complete
@@ -4503,11 +4215,7 @@ src/game/nameentry_align.cpp:
 
 src/game/nameentry_13.cpp:
     complete
-    .text       start:0x020ae824 end:0x020ae830
-
-src/game/nameentry_3.cpp:
-    complete
-    .text       start:0x020ae830 end:0x020ae968
+    .text       start:0x020ae824 end:0x020ae968
 
 src/game/nameentry_5.cpp:
     complete
@@ -4551,27 +4259,15 @@ src/engine/os_blocking_mode.cpp:
 
 src/game/groupselectuiview_2.cpp:
     complete
-    .text       start:0x020b07bc end:0x020b0800
-
-src/game/groupselectuiview_9.cpp:
-    complete
-    .text       start:0x020b0800 end:0x020b09f4
+    .text       start:0x020b07bc end:0x020b09f4
 
 src/game/groupselectuiview_7.cpp:
     complete
-    .text       start:0x020b0a6c end:0x020b0b40
-
-src/game/groupselectuiview_8.cpp:
-    complete
-    .text       start:0x020b0b40 end:0x020b0c38
+    .text       start:0x020b0a6c end:0x020b0c38
 
 src/game/groupselectuiview_3.cpp:
     complete
-    .text       start:0x020b0d58 end:0x020b0d7c
-
-src/game/groupselectuiview_10.cpp:
-    complete
-    .text       start:0x020b0d7c end:0x020b0e84
+    .text       start:0x020b0d58 end:0x020b0e84
 
 src/game/groupselect_scan.cpp:
     complete
@@ -4699,11 +4395,7 @@ src/engine/work21_clear.cpp:
 
 src/engine/level_table.cpp:
     complete
-    .text       start:0x020b70c0 end:0x020b70e8
-
-src/engine/level_table_2.cpp:
-    complete
-    .text       start:0x020b70e8 end:0x020b70fc
+    .text       start:0x020b70c0 end:0x020b70fc
 
 src/engine/packed_set.cpp:
     complete
@@ -4743,11 +4435,7 @@ src/engine/tilebuf.cpp:
 
 src/engine/tile_row.cpp:
     complete
-    .text       start:0x020b7508 end:0x020b7528
-
-src/engine/tile_row_2.cpp:
-    complete
-    .text       start:0x020b7528 end:0x020b7570
+    .text       start:0x020b7508 end:0x020b7570
 
 src/engine/tile_map.cpp:
     complete
@@ -4975,19 +4663,11 @@ src/engine/rect_buf_init.cpp:
 
 src/game/menu_2.cpp:
     complete
-    .text       start:0x020bd2c0 end:0x020bd2d8
-
-src/game/menu_3.cpp:
-    complete
-    .text       start:0x020bd2d8 end:0x020bd474
+    .text       start:0x020bd2c0 end:0x020bd474
 
 src/game/menu_20.cpp:
     complete
-    .text       start:0x020bd968 end:0x020bda3c
-
-src/game/menu_4.cpp:
-    complete
-    .text       start:0x020bda3c end:0x020bdb34
+    .text       start:0x020bd968 end:0x020bdb34
 
 src/game/menu_6.cpp:
     complete
@@ -4999,11 +4679,7 @@ src/game/menu_21.cpp:
 
 src/game/menu_31.cpp:
     complete
-    .text       start:0x020be154 end:0x020be1f4
-
-src/game/menu_7.cpp:
-    complete
-    .text       start:0x020be1f4 end:0x020be244
+    .text       start:0x020be154 end:0x020be244
 
 src/game/menu_8.cpp:
     complete
@@ -5027,39 +4703,11 @@ src/game/menu_10.cpp:
 
 src/game/menu_11.cpp:
     complete
-    .text       start:0x020bec6c end:0x020bec80
-
-src/game/menu_28.cpp:
-    complete
-    .text       start:0x020bec80 end:0x020bed14
+    .text       start:0x020bec6c end:0x020bed14
 
 src/game/menu_29.cpp:
     complete
-    .text       start:0x020beda0 end:0x020bee6c
-
-src/game/menu_26.cpp:
-    complete
-    .text       start:0x020bee6c end:0x020beed4
-
-src/game/menu_30.cpp:
-    complete
-    .text       start:0x020beed4 end:0x020bef68
-
-src/game/menu_12.cpp:
-    complete
-    .text       start:0x020bef68 end:0x020befd0
-
-src/game/menu_23.cpp:
-    complete
-    .text       start:0x020befd0 end:0x020bf05c
-
-src/game/menu_14.cpp:
-    complete
-    .text       start:0x020bf05c end:0x020bf06c
-
-src/game/menu_24.cpp:
-    complete
-    .text       start:0x020bf06c end:0x020bf09c
+    .text       start:0x020beda0 end:0x020bf09c
 
 src/engine/sndsys.cpp:
     complete
@@ -5121,25 +4769,13 @@ src/game/menu_17.cpp:
     complete
     .text       start:0x020bfd1c end:0x020bfd28
 
-src/engine/sndvoice_2.cpp:
-    complete
-    .text       start:0x020bfd78 end:0x020c0058
-
 src/engine/sndvoice.cpp:
     complete
-    .text       start:0x020c0058 end:0x020c0130
+    .text       start:0x020bfd78 end:0x020c0130
 
 src/engine/sndentry.cpp:
     complete
-    .text       start:0x020c0130 end:0x020c01a0
-
-src/engine/sndentry_3.cpp:
-    complete
-    .text       start:0x020c01a0 end:0x020c020c
-
-src/engine/sndentry_2.cpp:
-    complete
-    .text       start:0x020c020c end:0x020c02d0
+    .text       start:0x020c0130 end:0x020c02d0
 
 src/engine/sndstop.cpp:
     complete
@@ -5415,27 +5051,7 @@ src/game/knife_manual.cpp:
 
 src/game/knife_manual_6.cpp:
     complete
-    .text       start:0x020c7da0 end:0x020c7e28
-
-src/game/knife_manual_2.cpp:
-    complete
-    .text       start:0x020c7e28 end:0x020c7e58
-
-src/game/knife_manual_4.cpp:
-    complete
-    .text       start:0x020c7e58 end:0x020c7ed4
-
-src/game/knife_manual_7.cpp:
-    complete
-    .text       start:0x020c7ed4 end:0x020c806c
-
-src/game/knife_manual_5.cpp:
-    complete
-    .text       start:0x020c806c end:0x020c8094
-
-src/game/knife_manual_3.cpp:
-    complete
-    .text       start:0x020c8094 end:0x020c8104
+    .text       start:0x020c7da0 end:0x020c8104
 
 src/game/knife_power_3.cpp:
     complete

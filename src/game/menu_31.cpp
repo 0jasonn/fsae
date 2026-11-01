@@ -38,3 +38,12 @@ void Menu_SetCursorPos(MenuWork *menu) {
     func_020bbbfc(menu->unk_354, entry->value8, (u16)row);
     menu->sub.unk_608 = packed;
 }
+
+void Menu_Begin(MenuWork *menu) {
+    s32 position;
+
+    func_020bdd60(menu, data_02127188, menu->sub.unk_3f8, 1);
+    position = Menu_GetPosition(menu->sub.unk_370);
+    func_020bbbfc(menu->unk_354, position, 0xffff);
+    menu->sub.unk_608 = 0;
+}

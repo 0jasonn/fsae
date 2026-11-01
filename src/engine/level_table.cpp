@@ -27,3 +27,12 @@ void *Level_getEntry(void *self, u32 level) {
 // Level_noop(self) (0x020b70e4, provisional name): does nothing
 void Level_noop(void *self) {
 }
+
+// level_table_2: function Level_deletingDtor (0x020b70e8), matching. It follows Level_noop, the empty destructor of the
+// Level class, and frees the block through operator delete.
+
+// Level_deletingDtor(self) (0x020b70e8, provisional name): deleting destructor of the Level class, returns self
+void *Level_deletingDtor(void *self) {
+    operator delete(self);
+    return self;
+}

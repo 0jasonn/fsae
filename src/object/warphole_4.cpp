@@ -1,6 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "object/protos.h"
+#include "object/warphole.h"
+#include "engine/player.h"
 
 // Warp hole actor, first unit after warphole_init (module warphole). Address -> name:
 //   0x0205dec8 warphole_wait (original name)
@@ -62,5 +64,61 @@ void warphole_move(Entity *e) {
             e->spriteSettings.b16 = 0;
         }
         e->subtimer = 0;
+    }
+}
+
+// Warp hole actor, second unit (module warphole). Address -> name:
+//   0x0205e05c pos_copy (original name)
+//   (warphole_wait2 at 0x0205e078 and warphole_exit at 0x0205e114 are in the next units)
+
+void pos_copy(Entity *src, Entity *dst) {
+    dst->x.WORD = src->x.WORD;
+    dst->y.WORD = src->y.WORD;
+    dst->z.HALF.HI = 0;
+}
+
+// Warp hole actor, third unit (module warphole). Address -> name:
+//   0x0205e078 warphole_wait2 (original name)
+//   (pos_copy at 0x0205e05c is in warphole_2.cpp; warphole_exit at 0x0205e114 is in warphole_3.cpp)
+
+void warphole_wait2(Entity *e) {
+    u8 flag;
+    Entity *target;
+
+    if (data_0212c7c8.unk_6e >= 3 && data_0212c7c8.phaseFlags == e->type2) {
+        flag = 0;
+        e->action = e->action + 1;
+        e->spriteSettings.b16 = 1;
+        InitAnimationForceUpdate(e, flag);
+        if ((func_02084110(e) & 1) == 0) {
+            flag = 1;
+        }
+        target = GetSetWork(0x42, flag, 0);
+        if (target != NULL) {
+            ObjPosCopy(e, target);
+        }
+    } else {
+        UpdateAnimationSingleFrame(e);
+    }
+    warphole_exit(e);
+}
+
+// Warp hole actor, third unit (module warphole). Address -> name:
+//   0x0205e114 warphole_exit (original name)
+
+void warphole_exit(Entity *e) {
+    int players = func_02084110(e);
+
+    if (players & 1) {
+        pos_copy(e, data_0212ceb0[0].entity);
+    }
+    if (players & 2) {
+        pos_copy(e, data_0212ceb0[1].entity);
+    }
+    if (players & 4) {
+        pos_copy(e, data_0212ceb0[2].entity);
+    }
+    if (players & 8) {
+        pos_copy(e, data_0212ceb0[3].entity);
     }
 }

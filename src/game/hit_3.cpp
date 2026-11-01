@@ -2,6 +2,8 @@
 #include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
+#include "object/template.h"
+#include "game/hit_6.h"
 
 // Hit handlers, second hit unit (module hit). Original names from the debug build:
 //   hit_jelly, hit_tgtstop, hit_plhajiki, hit_orgdamageonly, hit_tgtdamageonly, hit_damageonly, hit_orgdie, hit_tgtdie,
@@ -132,6 +134,91 @@ BOOL hit_wanwan(Entity *e, Entity *t, u8 unused) {
     t->statusFlags = flags & 0x7f;
     if (e->iframes == 0) {
         e->iframes = 0xff;
+    }
+    return 1;
+}
+
+// Tate hit handlers (module hit, fourth unit). Original names from the debug build:
+//   hit_tateorghajiki, hit_tatetgthajiki
+// The template of the object's type gets invincibility 0x80 when it has none.
+
+// Original-side tate hit: e takes the knockback of t and the frames of t, the template and t are given invincibility.
+BOOL hit_tateorghajiki(Entity *e, Entity *t, u8 unused) {
+    e->unk_42 = *(u8 *)&t->attackKnockback;
+    e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
+    if (OBJ_TEMPLATE(e->type)->iframes == 0) {
+        OBJ_TEMPLATE(e->type)->iframes = 0x80;
+    }
+    nakamaCheckTgtOnly(t, e);
+    if (t->iframes == 0) {
+        t->iframes = 0xff;
+    }
+    shiledCheck(e, t);
+    return 1;
+}
+
+// Target-side tate hit: t takes the knockback of e and the frames of e; the template and e are given invincibility.
+BOOL hit_tatetgthajiki(Entity *e, Entity *t, u8 unused) {
+    t->unk_42 = *(u8 *)&e->attackKnockback;
+    t->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&e->attackKnockback);
+    if (OBJ_TEMPLATE(t->type)->iframes == 0) {
+        OBJ_TEMPLATE(t->type)->iframes = 0x80;
+    }
+    if (e->iframes == 0) {
+        e->iframes = 0xff;
+    }
+    return 1;
+}
+
+// Hit handlers of the module hit (sixth unit). Original names from the debug build:
+//   hit_tatehajiki (hit_tatehajiki(OBJ_WORK_*, OBJ_WORK_*, unsigned char)), hit_firerobe (hit_firerobe(...))
+// Knockback frames: positive knockback gives sk + sk/4, otherwise the negated value.
+// Knockback frames of a hit on the fire and ice objects: -16 - sk for negative knockback, else sk + 16.
+#define HIT_KNOCKBACK_FRAMES_SHORT(k) (((k) & 0x80) ? (-16 - (s8)(k)) : ((s8)(k) + 16))
+// The damage object of an entity type: PlayerData.entity of data_0212ceb0[type].
+#define HIT_DAMAGE_OBJECT(e) (data_0212ceb0[(e)->type].entity)
+
+BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
+        if (Knife_Single_SinglePlay_GetInstance()[1] != 0) {
+            if (t->objKind == 1 && e->objKind == 8 && e->type < 2) {
+                return FALSE;
+            }
+        }
+    }
+    e->unk_42 = *(u8 *)&t->attackKnockback;
+    e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
+    if (e->objKind == 8) {
+        if (HIT_DAMAGE_OBJECT(e)->iframes == 0) {
+            HIT_DAMAGE_OBJECT(e)->iframes = 0x80;
+        }
+    }
+    t->unk_42 = *(u8 *)&e->attackKnockback;
+    t->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&e->attackKnockback);
+    if (t->objKind == 8) {
+        if (HIT_DAMAGE_OBJECT(t)->iframes == 0) {
+            HIT_DAMAGE_OBJECT(t)->iframes = 0x80;
+        }
+    }
+    nakamaCheck(e, t);
+    return 1;
+}
+
+BOOL hit_firerobe(Entity *e, Entity *t, u8 mode) {
+    Entity *fire;
+
+    if ((data_0212ceb0[e->type].statusFlags & 0x1401) == 0) {
+        fire = GetSetWork(0x55, 1, 0);
+        if (fire != NULL) {
+            fire->child = e;
+            data_0212ceb0[e->type].statusFlags = 0x400;
+            e->animationState = (mode ^ 0x10) >> 2;
+        }
+    }
+    e->unk_42 = *(u8 *)&t->attackKnockback;
+    e->iframes = HIT_KNOCKBACK_FRAMES_SHORT(*(u8 *)&t->attackKnockback);
+    if (t->iframes == 0) {
+        t->iframes = 0xff;
     }
     return 1;
 }
