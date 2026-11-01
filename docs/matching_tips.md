@@ -41,7 +41,7 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 - `_u32_div_f` (0x0200db54) is the runtime unsigned divide that `%`/`/` on unsigned values call.
 - **Initialised local arrays** (`u16 ids[8] = {...}`) copy from a rodata table. Give the table its ROM name as a global
   `const` struct, copy it (`TelopIdList list = data_020d7c50;`), index `list.ids[i]`, and add the table's range as a
-  `.rodata` line on the unit in `delinks.txt` (see `src/game/message_02049f38.c`).
+  `.rodata` line on the unit in `delinks.txt` (see `src/ui/message_2.cpp`).
 - **trymatch checks ARM call targets**: a `bl` to the wrong function (or `_s32_div_f` where the original calls
   `_u32_div_f`) is reported as `call at +0x.. goes to X, the original calls 0x..`. Unsigned operands (`(u32)x % n`)
   give the unsigned divide helper.
