@@ -3578,6 +3578,10 @@ src/knife/comm/singleplay_init.cpp:
     complete
     .text       start:0x02093bbc end:0x02093c48
 
+src/knife/comm/singleplay_update.cpp:
+    complete
+    .text       start:0x02093ef4 end:0x02094044
+
 src/knife/comm/singleplay_check.cpp:
     complete
     .text       start:0x02094b64 end:0x02094d08
