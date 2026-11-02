@@ -25,7 +25,7 @@ s32 Menu_DispatchKeys(MenuWork *menu) {
             result = 1;
         }
     } else if (keys & 0x10) {
-        if (func_020bb56c(menu->unk_358) != 0) {
+        if (Ctrl_advanceSelection(menu->unk_358) != 0) {
             Menu_SetCursorPos(menu);
             result = 1;
         }

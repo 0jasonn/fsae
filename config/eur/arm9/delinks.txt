@@ -4217,6 +4217,10 @@ src/knife/comm/knifecomm.cpp:
     complete
     .text       start:0x020ae318 end:0x020ae3b0
 
+src/knife/comm/knifecomm_f.cpp:
+    complete
+    .text       start:0x020ae3b0 end:0x020ae4a4
+
 src/knife/comm/knifecomm_2.cpp:
     complete
     .text       start:0x020ae540 end:0x020ae558
@@ -4348,6 +4352,10 @@ src/ui/lobby_10.cpp:
 src/ui/lobby_11.cpp:
     complete
     .text       start:0x020b52f8 end:0x020b5318
+
+src/ui/widget/layout_tag.cpp:
+    complete
+    .text       start:0x020b5318 end:0x020b5424
 
 src/ui/widget/pane_a.cpp:
     complete
@@ -4585,6 +4593,10 @@ src/ui/widget/ctrl_bits.cpp:
     complete
     .text       start:0x020bb1bc end:0x020bb208
 
+src/ui/widget/ctrl_select_2.cpp:
+    complete
+    .text       start:0x020bb56c end:0x020bb660
+
 src/ui/widget/ctrl_flags.cpp:
     complete
     .text       start:0x020bb660 end:0x020bb788
@@ -4592,6 +4604,10 @@ src/ui/widget/ctrl_flags.cpp:
 src/ui/widget/ctrl_state.cpp:
     complete
     .text       start:0x020bb85c end:0x020bb898
+
+src/ui/widget/ctrl_select.cpp:
+    complete
+    .text       start:0x020bb898 end:0x020bb980
 
 src/ui/widget/rect_flag_pair.cpp:
     complete
@@ -4612,6 +4628,10 @@ src/ui/widget/rect_slot3.cpp:
 src/ui/widget/ctrl_find.cpp:
     complete
     .text       start:0x020bbe50 end:0x020bbf54
+
+src/ui/widget/ctrl_loadbg.cpp:
+    complete
+    .text       start:0x020bbfd0 end:0x020bc0e4
 
 src/ui/widget/ctrl_init.cpp:
     complete

@@ -92,7 +92,7 @@ void Heap_VirtualFree(void *arg, void *obj);
 s32 func_020bc588(s32 value);
 void RectBufSet_init(s32 obj, void *checker, void *a, void *b, void *c, u16 d);
 s32 func_020bb450(void *obj);
-s32 func_020bb56c(void *obj);
+s32 Ctrl_advanceSelection(void *obj);
 s32 Ctrl_tryChange(void *obj, u8 *out);
 s32 Ctrl_updateAd(void *obj);
 }

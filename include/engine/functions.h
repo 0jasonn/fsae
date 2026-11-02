@@ -82,7 +82,7 @@ void *func_020b7b1c(void *source, void *self, s32 size, s32 flag);
 void func_020b81a8(void *holder, void *obj);
 void Ctrl_refreshItemRing(void *self);
 void func_020bb208(void *self);
-void func_020bb898(void *self, s32 flag);
+void Ctrl_selectCurrentItem(void *self, s32 flag);
 void Menu_setupHardware(void *self, s32 arg);
 void func_020bc99c(void *self, void *bufA, s32 bufB, s32 arg5, u16 arg6);
 s32 func_020c0f90(u32 word, u32 byte, u32 a1, u32 one, u32 zero);

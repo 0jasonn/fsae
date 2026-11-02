@@ -22,7 +22,7 @@ typedef struct CtrlSetList {
 } CtrlSetList;
 
 // Ctrl_setItemList(self, list) (0x020ba948, provisional name): stores list at +0x14, sets up slider A for its count, then
-// resets slider A to index 0 and calls func_020bb898 when the list is not empty, otherwise calls func_020bb148; finally
+// resets slider A to index 0 and calls Ctrl_selectCurrentItem when the list is not empty, otherwise calls func_020bb148; finally
 // calls func_020bb208
 extern "C" void Ctrl_setItemList(void *selfv, CtrlSetItems *list);
 void Ctrl_setItemList(void *selfv, CtrlSetItems *list) {
@@ -33,7 +33,7 @@ void Ctrl_setItemList(void *selfv, CtrlSetItems *list) {
     Ctrl_refreshItemRing(self);
     if (self->itemList->count != 0) {
         Ctrl_setSliderIndexA(self, 0);
-        func_020bb898(self, 1);
+        Ctrl_selectCurrentItem(self, 1);
     } else {
         func_020bb148(self);
     }
