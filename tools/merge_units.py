@@ -135,10 +135,10 @@ for chain in chains():
     d = DELINKS.read_text()
     pos = re.search(rf"^{re.escape(paths[0])}:\n", d, re.M).start()
     unit = f"{target}:\n    complete\n    .text       start:{chain[0][0]:#010x} end:{chain[-1][1]:#010x}\n\n"
-    d = d[:pos] + "\x00" + d[pos:]  # marks where the merged unit goes
+    d = d[:pos] + "\x00\n" + d[pos:]  # marks where the merged unit goes (on its own line, so ^ still finds the piece)
     for p in paths:  # remove every piece first, the target name included, then insert the merged unit
         d = re.sub(rf"^{re.escape(p)}:\n(?:    .*\n)+\n?", "", d, count=1, flags=re.M)
-    DELINKS.write_text(d.replace("\x00", unit), newline="\n")
+    DELINKS.write_text(d.replace("\x00\n", unit), newline="\n")
     done += 1
     print(f"{' + '.join(paths)} -> {target}")
 print(f"{done} chains merged")
