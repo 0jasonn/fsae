@@ -4581,6 +4581,10 @@ src/engine/os_owner.cpp:
     complete
     .text       start:0x020b7b00 end:0x020b7b1c
 
+src/engine/blzload_e.cpp:
+    complete
+    .text       start:0x020b7b1c end:0x020b7c50
+
 src/ui/widget/rect_obj.cpp:
     complete
     .text       start:0x020b7c50 end:0x020b7c80

@@ -78,7 +78,7 @@ void func_020b5744(void *obj, void *arg, s16 *pos);
 void func_020b57c8(void *self, s32 arg, s16 *pos);
 void func_020b57f4(void *obj, void *arg);
 void func_020b7578(void *self, void **src);
-void *func_020b7b1c(void *source, void *self, s32 size, s32 flag);
+void *LoadBlzFile(const char *path, void *heap, s32 align, u32 *outSize); // LoadBlzFile: returns the raw heap block
 void func_020b81a8(void *holder, void *obj);
 void Ctrl_refreshItemRing(void *self);
 void func_020bb208(void *self);
