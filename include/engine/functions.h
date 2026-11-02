@@ -59,7 +59,7 @@ void WaitByLoop(u32 count);
 void bgTrans(void *bg);
 void disableBankForX_(void *bank);
 s32 func_02005798(u32 a, u32 b, u32 c, u32 d);
-void RingBuf_Printf(const char *format, u32 a, u32 b, u32 c, u32 d);
+s32 RingBuf_Printf(const char *fmt, ...);
 const u8 *func_0200b24c(const u8 *src, u32 *value);
 s32 func_0200c594(void *self, u32 value, u32 *out);
 void func_0200fe08(void *archive);

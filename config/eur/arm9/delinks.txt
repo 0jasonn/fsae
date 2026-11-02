@@ -89,6 +89,10 @@ src/engine/stream.cpp:
     complete
     .text       start:0x02007ee8 end:0x02007f58
 
+src/engine/ringbuf_printf.cpp:
+    complete
+    .text       start:0x02007f58 end:0x02008080
+
 src/engine/str_format.cpp:
     complete
     .text       start:0x02008080 end:0x02008110

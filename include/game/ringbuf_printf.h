@@ -12,7 +12,7 @@ typedef struct LockRecord {
 } LockRecord;
 
 extern "C" {
-s32 RingBuf_Printf(const u8 *fmt, ...);              // RingBuf_Printf
+s32 RingBuf_Printf(const char *fmt, ...);              // RingBuf_Printf
 s32 func_020083d0(void *stream, s32 mode);           // parked in scratch/agentA/nonmatching, returns the stream state
 s32 Sub_CallChecked(s32 a, s32 b, s32 c);            // src/engine/stream.cpp (Sub_CallChecked)
 s32 func_02007638(void *writer, void *ctx, const u8 *fmt, void *args, s32 flags);   // vprintf core; shared header lacks the fifth parameter
