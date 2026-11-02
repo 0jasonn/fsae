@@ -2554,7 +2554,7 @@ _Z10throw_holdP9OBJ_WORK_ kind:function(arm,size=0x2c) addr:0x0205f0b4
 _Z13throw_holdoffP9OBJ_WORK_ kind:function(arm,size=0x14) addr:0x0205f0e0
 pot_push kind:function(arm,size=0x130) addr:0x0205f0f4
 _Z9pot_clashP9OBJ_WORK_S0_ kind:function(arm,size=0x2c) addr:0x0205f224
-pot_puton kind:function(arm,size=0x1f8) addr:0x0205f250
+_Z9pot_putonP9OBJ_WORK_ kind:function(arm,size=0x1f8) addr:0x0205f250
 _Z16pot_typeDispatchP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205f448
 _Z8op_fairyP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205f464
 op_fairy_init kind:function(arm,size=0xa4) addr:0x0205f480
@@ -3229,7 +3229,7 @@ _Z23objDispatchClearContactP9OBJ_WORK_ kind:function(arm,size=0x2c) addr:0x02076
 objDispatchPutWork kind:function(arm,size=0xc) addr:0x02076b50
 objDispatchAction kind:function(arm,size=0x94) addr:0x02076b5c
 shieldInit kind:function(arm,size=0xe4) addr:0x02076bf0
-shieldMove kind:function(arm,size=0x238) addr:0x02076cd4
+_Z10shieldMoveP9OBJ_WORK_ kind:function(arm,size=0x238) addr:0x02076cd4
 volumeSet kind:function(arm,size=0x34) addr:0x02076f0c
 SoundInit kind:function(arm,size=0x2c) addr:0x02076f40
 PlSoundReq kind:function(arm,size=0x74) addr:0x02076f6c
@@ -7989,11 +7989,11 @@ data_020dc15e kind:data(any) addr:0x020dc15e
 data_020dc176 kind:data(any) addr:0x020dc176
 data_020dc18e kind:data(any) addr:0x020dc18e
 data_020dc1ac kind:data(any) addr:0x020dc1ac
-data_020dc1d0 kind:data(any) addr:0x020dc1d0
+setInitSubTables kind:data(any) addr:0x020dc1d0
 data_020dc200 kind:data(any) addr:0x020dc200
 data_020dc248 kind:data(any) addr:0x020dc248
 data_020dc29c kind:data(any) addr:0x020dc29c
-data_020dc340 kind:data(any) addr:0x020dc340
+setInitTable kind:data(any) addr:0x020dc340
 data_020dc600 kind:data(any) addr:0x020dc600
 data_020dc608 kind:data(any) addr:0x020dc608
 data_020dc610 kind:data(any) addr:0x020dc610
@@ -8015,7 +8015,7 @@ data_020dc70a kind:data(any) addr:0x020dc70a
 data_020dc712 kind:data(any) addr:0x020dc712
 data_020dc71c kind:data(any) addr:0x020dc71c
 data_020dc728 kind:data(any) addr:0x020dc728
-data_020dc73c kind:data(any) addr:0x020dc73c
+swordSpawnOffsets kind:data(any) addr:0x020dc73c
 data_020dc77c kind:data(any) addr:0x020dc77c
 data_020dc920 kind:data(any) addr:0x020dc920
 data_020dc968 kind:data(any) addr:0x020dc968
@@ -8281,8 +8281,8 @@ data_020dd8ec kind:data(any) addr:0x020dd8ec
 actorStateTable kind:data(any) addr:0x020dd980
 wanwan_hitbox kind:data(any) addr:0x020dd988
 data_020dd990 kind:data(any) addr:0x020dd990
-data_020dd99c kind:data(any) addr:0x020dd99c
-data_020dd9a0 kind:data(any) addr:0x020dd9a0
+songGroupRefs kind:data(any) addr:0x020dd99c
+soundGroups kind:data(any) addr:0x020dd9a0
 data_020dd9ac kind:data(any) addr:0x020dd9ac
 data_020dd9d4 kind:data(any) addr:0x020dd9d4
 data_020dda98 kind:data(any) addr:0x020dda98
@@ -11774,7 +11774,7 @@ set4d_states kind:data(any) addr:0x021158a0
 data_021158a8 kind:data(any) addr:0x021158a8
 set4e_states kind:data(any) addr:0x021158ac
 data_021158b4 kind:data(any) addr:0x021158b4
-data_021158f0 kind:data(any) addr:0x021158f0
+pot_putonLimit kind:data(any) addr:0x021158f0
 data_021158f1 kind:data(any) addr:0x021158f1
 data_021158f7 kind:data(any) addr:0x021158f7
 data_021158fd kind:data(any) addr:0x021158fd
@@ -11987,7 +11987,7 @@ data_02116680 kind:data(any) addr:0x02116680
 data_021166a4 kind:data(any) addr:0x021166a4
 data_021166ac kind:data(any) addr:0x021166ac
 data_021166f0 kind:data(any) addr:0x021166f0
-data_021166f8 kind:data(any) addr:0x021166f8
+shieldHitboxTable kind:data(any) addr:0x021166f8
 srStepTable kind:data(any) addr:0x02116708
 data_02116720 kind:data(any) addr:0x02116720
 data_02116728 kind:data(any) addr:0x02116728

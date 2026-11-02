@@ -1818,6 +1818,14 @@ src/actor/object/setmove.cpp:
     complete
     .text       start:0x02057568 end:0x02057614
 
+src/actor/object/set_init.cpp:
+    complete
+    .text       start:0x02057614 end:0x0205784c
+
+src/actor/object/set_item_add.cpp:
+    complete
+    .text       start:0x0205784c end:0x02057c64
+
 src/actor/object/set0a.cpp:
     complete
     .text       start:0x02057c64 end:0x02057ca8
@@ -2141,6 +2149,10 @@ src/actor/object/pot_9.cpp:
 src/actor/object/pot_8.cpp:
     complete
     .text       start:0x0205f224 end:0x0205f250
+
+src/actor/object/pot_puton.cpp:
+    complete
+    .text       start:0x0205f250 end:0x0205f448
 
 src/actor/object/op_fairy_1.cpp:
     complete
@@ -2926,9 +2938,17 @@ src/actor/object/objdispatch.cpp:
     complete
     .text       start:0x02076b24 end:0x02076bf0
 
+src/actor/object/shield.cpp:
+    complete
+    .text       start:0x02076cd4 end:0x02076f0c
+
 src/actor/object/sound.cpp:
     complete
     .text       start:0x02076f0c end:0x02076fe0
+
+src/engine/sound/sound_req.cpp:
+    complete
+    .text       start:0x02076fe0 end:0x020772f0
 
 src/actor/object/takara_entry.cpp:
     complete
@@ -2985,6 +3005,10 @@ src/ui/stagesel_10.cpp:
 src/actor/object/sword.cpp:
     complete
     .text       start:0x0207af58 end:0x0207af94
+
+src/actor/object/sword_move.cpp:
+    complete
+    .text       start:0x0207b190 end:0x0207b400
 
 src/actor/object/kabuto_2.cpp:
     complete
@@ -3526,6 +3550,10 @@ src/knife/comm/wirelessmgr_states_2.cpp:
     complete
     .text       start:0x02092be0 end:0x02092c0c
 
+src/knife/comm/wirelessmanager_idle2parent.cpp:
+    complete
+    .text       start:0x02092c0c end:0x02092e0c
+
 src/knife/comm/wirelessmanager_10.cpp:
     complete
     .text       start:0x02092e0c end:0x02092f24
@@ -3593,6 +3621,10 @@ src/knife/comm/singleplay_warp.cpp:
 src/engine/stub_zero_a.cpp:
     complete
     .text       start:0x020956ec end:0x020956f4
+
+src/knife/comm/singleplay_formation.cpp:
+    complete
+    .text       start:0x02096110 end:0x0209625c
 
 src/engine/stub_zero_b.cpp:
     complete

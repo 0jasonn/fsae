@@ -601,7 +601,7 @@ void func_02084180(Entity *e); // thumb
 u8 func_02084110(Entity *e); // thumb: bit mask of the players touching e
 void AddHeartUtsuwa(u8 type, s8 amount);                // AddHeartUtsuwa(unsigned char, signed char), 0x0202604c
 
-void sword_move(Entity *e);
+extern "C" void sword_move(Entity *e);
 
 int CalcRupeeDiff(u8 index);
 
