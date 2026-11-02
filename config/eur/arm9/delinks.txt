@@ -3873,6 +3873,10 @@ src/knife/message/icon_canvas_e.cpp:
     complete
     .text       start:0x020a0a18 end:0x020a0b64
 
+src/knife/message/msgtextrender_e_2.cpp:
+    complete
+    .text       start:0x020a0b64 end:0x020a0dac
+
 src/knife/message/knife_message_5.cpp:
     complete
     .text       start:0x020a0dac end:0x020a0dfc
@@ -4077,9 +4081,17 @@ src/knife/message/textrender_8.cpp:
     complete
     .text       start:0x020a5a44 end:0x020a5a58
 
+src/knife/message/textrender_e2.cpp:
+    complete
+    .text       start:0x020a5a58 end:0x020a5d38
+
 src/knife/message/textrender_9.cpp:
     complete
     .text       start:0x020a5d38 end:0x020a5d44
+
+src/knife/message/textrender_e2_2.cpp:
+    complete
+    .text       start:0x020a5d44 end:0x020a5e28
 
 src/knife/message/textrender_plain.cpp:
     complete
@@ -4385,6 +4397,10 @@ src/ui/lobby_6.cpp:
     complete
     .text       start:0x020b1920 end:0x020b19d8
 
+src/ui/lobby_e.cpp:
+    complete
+    .text       start:0x020b2190 end:0x020b235c
+
 src/ui/lobby.cpp:
     complete
     .text       start:0x020b235c end:0x020b23fc
@@ -4393,6 +4409,10 @@ src/ui/lobby_color.cpp:
     complete
     .text       start:0x020b2560 end:0x020b25c0
 
+src/ui/lobby_e_2.cpp:
+    complete
+    .text       start:0x020b26d0 end:0x020b2898
+
 src/ui/dialog_machiuke.cpp:
     complete
     .text       start:0x020b2898 end:0x020b292c
@@ -4400,6 +4420,10 @@ src/ui/dialog_machiuke.cpp:
 src/game/exchange_savedata.cpp:
     complete
     .text       start:0x020b2a5c end:0x020b2b54
+
+src/ui/lobby_e_3.cpp:
+    complete
+    .text       start:0x020b3d70 end:0x020b3ea0
 
 src/ui/lobby_8.cpp:
     complete
