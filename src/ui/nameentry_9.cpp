@@ -8,7 +8,7 @@
 extern "C" {
 void nameEntryUIView_moveOut(void *self);
 void fsCreateFile(s32 a);
-void func_020ac038(s32 a, s32 b, s32 c, s32 d);
+extern "C" void func_020ac038(s32 a, s32 b, s32 c, s32 d);
 void subtask_dialogDelete(void);
 extern "C" void clearSaveData(s32 a);
 }

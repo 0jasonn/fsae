@@ -117,7 +117,6 @@ void *KnifeApp_getZeldaResource_08dde0(void *a, s32 *size, s32 id);
 int KnifeApp_isWirelessMode(void *a);
 s32 Knife_Comm_WirelessManager_getState(void *manager);
 void Knife_Comm_WirelessManager_turnOff(void *manager);
-void Knife_Message_selectionDialog_doModal(void *a, u16 index, s32 b, s32 c, s32 d);
 void Knife_Message_selectionDialog_getFrameSize(void *a, s32 *x, s32 *y, s32 *z, s32 *w);
 void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *b);
 void Knife_Message_selectionDialog_setVisible(void *a, s32 b);

@@ -2,6 +2,9 @@
 #include "game/scene.h"
 #include "global.h"
 
+// The callers pass the last two arguments as full words (the definition reads them as bytes).
+extern "C" void Knife_Message_selectionDialog_doModal(void *dialog, u16 msgId, s32 a, s32 b, s32 c);
+
 // pause_dialogDisp -> pause_dialogDisp (guess): clears the 0x800 byte buffer pauseDialogBuffer and sets up the
 // table at pauseHandlerTable (the same block that Pause reads the handler table from).
 void pause_dialogDisp(s32 index, s32 unused, s32 value) {

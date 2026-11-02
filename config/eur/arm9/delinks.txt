@@ -3949,6 +3949,10 @@ src/ui/selectiondialog.cpp:
     complete
     .text       start:0x020a1a1c end:0x020a1a88
 
+src/knife/message/seldialog_e_2.cpp:
+    complete
+    .text       start:0x020a1a88 end:0x020a1c60
+
 src/ui/selectiondialog_2.cpp:
     complete
     .text       start:0x020a1d08 end:0x020a1d78
@@ -4424,6 +4428,10 @@ src/ui/dialog_machiuke.cpp:
 src/game/exchange_savedata.cpp:
     complete
     .text       start:0x020b2a5c end:0x020b2b54
+
+src/ui/lobby_e_4.cpp:
+    complete
+    .text       start:0x020b3b28 end:0x020b3d70
 
 src/ui/lobby_e_3.cpp:
     complete

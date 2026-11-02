@@ -5,6 +5,9 @@
 #include "types.h"
 #include "ui/stagesel.h"
 
+// The callers pass the last two arguments as full words (the definition reads them as bytes).
+extern "C" void Knife_Message_selectionDialog_doModal(void *dialog, u16 msgId, s32 a, s32 b, s32 c);
+
 // Shared object pointer table (data_02171d58); only the pointers used by the stage select code are named
 typedef struct SselObjTable {
     /* 00 */ u8 unk_00[8];
