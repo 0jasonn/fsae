@@ -127,8 +127,8 @@ typedef struct MenuWrapper {
 } MenuWrapper;
 
 extern "C" {
-void func_02013d28(s32 a, s32 b, s32 c, s32 d);
-void func_02013c6c(s32 a, s32 b, s32 c, s32 d);
+void BgScr_CopyBG3(s32 a, s32 b, s32 c, s32 d);
+void BgScr_CopyBG3Alt(s32 a, s32 b, s32 c, s32 d);
 s32 func_020c2c34(MenuChecker *obj, s32 id);
 s32 CtrlItem_init(s32 value);
 s32 func_020ba9a4(void *obj, MenuEvent *event, MenuInput *input);

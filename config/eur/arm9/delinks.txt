@@ -601,6 +601,10 @@ src/game/item_4.cpp:
     complete
     .text       start:0x0202639c end:0x02026474
 
+src/game/cockpit_11.cpp:
+    complete
+    .text       start:0x020264f4 end:0x02026628
+
 src/game/cockpit.cpp:
     complete
     .text       start:0x020266f8 end:0x02026720
@@ -612,6 +616,10 @@ src/game/cockpit_2.cpp:
 src/game/cockpit_3.cpp:
     complete
     .text       start:0x020267d8 end:0x02026850
+
+src/game/cockpit_9.cpp:
+    complete
+    .text       start:0x02026a34 end:0x02026b98
 
 src/game/cockpit_4.cpp:
     complete
@@ -693,6 +701,10 @@ src/knife/comm/com_6.cpp:
     complete
     .text       start:0x02028b34 end:0x02028b58
 
+src/game/comerror.cpp:
+    complete
+    .text       start:0x02028e70 end:0x02028fe8
+
 src/knife/comm/comm.cpp:
     complete
     .text       start:0x020296e8 end:0x02029828
@@ -761,6 +773,10 @@ src/ui/doorsel_3.cpp:
     complete
     .text       start:0x0202adc8 end:0x0202aee4
 
+src/game/doorsel_4.cpp:
+    complete
+    .text       start:0x0202af70 end:0x0202b18c
+
 src/game/keyclear.cpp:
     complete
     .text       start:0x0202b54c end:0x0202b620
@@ -791,7 +807,7 @@ src/actor/enemy/em0c.cpp:
 
 src/actor/enemy/em0c_2.cpp:
     complete
-    .text       start:0x0202c768 end:0x0202c80c
+    .text       start:0x0202c768 end:0x0202c9a8
 
 src/actor/enemy/areacheck_2.cpp:
     complete
@@ -1585,6 +1601,14 @@ src/game/history.cpp:
 src/engine/maplevel.cpp:
     complete
     .text       start:0x0204daf4 end:0x0204db38
+
+src/game/parts.cpp:
+    complete
+    .text       start:0x0204db38 end:0x0204dcc4
+
+src/game/frame_load.cpp:
+    complete
+    .text       start:0x0204df84 end:0x0204e0f8
 
 src/game/srchcells.cpp:
     complete

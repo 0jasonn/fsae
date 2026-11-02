@@ -2,14 +2,14 @@
 #include "global.h"
 #include "ui/widget/menu.h"
 
-// Two forwarders to the BG3 screen writers (func_02013d28, func_02013c6c). Their roles are not confirmed yet.
+// Two forwarders to the BG3 screen writers (BgScr_CopyBG3, BgScr_CopyBG3Alt). Their roles are not confirmed yet.
 
 void Menu_Bg3WriteA(s32 a, s32 b, s32 c, s32 d) {
-    func_02013d28(a, b, c, d);
+    BgScr_CopyBG3(a, b, c, d);
 }
 
 void Menu_Bg3WriteB(s32 a, s32 b, s32 c, s32 d) {
-    func_02013c6c(a, b, c, d);
+    BgScr_CopyBG3Alt(a, b, c, d);
 }
 
 // Handles one input request: the event kind picks an action, then flag5 sets the state and flag6 clears it.

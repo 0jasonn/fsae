@@ -7,7 +7,7 @@
 extern EntityFunc data_0211c69c[];
 extern u32 data_02179a38;
 extern u8 data_02179a3c[];
-extern "C" void func_02013d28(void *buf, s32 a, s32 size);
+extern "C" void BgScr_CopyBG3(void *buf, s32 a, s32 size);
 
 // subTask_setupBuffer (0x0209dd44): clears the 2 KB buffer once, flushes it and runs the variant for mode.
 void subTask_setupBuffer(u32 mode) {
@@ -18,16 +18,16 @@ void subTask_setupBuffer(u32 mode) {
     DC_FlushRange(data_02179a3c, 0x800);
     switch (mode) {
     case 0:
-        func_02013a38(data_02179a3c, 0, 0x800);
+        BgScr_CopyBG0(data_02179a3c, 0, 0x800);
         break;
     case 1:
-        func_02013af4(data_02179a3c, 0, 0x800);
+        BgScr_CopyBG1(data_02179a3c, 0, 0x800);
         break;
     case 2:
-        func_02013bb0(data_02179a3c, 0, 0x800);
+        BgScr_CopyBG2(data_02179a3c, 0, 0x800);
         break;
     case 3:
-        func_02013d28(data_02179a3c, 0, 0x800);
+        BgScr_CopyBG3(data_02179a3c, 0, 0x800);
         break;
     }
 }

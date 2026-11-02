@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "actor/enemy/em00.h"
+#include "game/em0c_3.h"
 
 // Functions in this file (actor em0c, provisional names from their behaviour):
 //   em0c_stop -> em0c_stop, em0c_wait -> em0c_wait
@@ -44,5 +45,64 @@ void em0c_wait(Entity *e) {
     masked = flags & em12_typeMasks[e->areaIndex];
     if (flags != masked) {
         e->action = 1;
+    }
+}
+
+// em0c_shoot(e) (0x0202c80c): when the target player is inside the sensor box of the actor and the player area check
+// fails, the actor fires a shot (EmGetTama) in the direction it faces (or at the target when bit 0x20 of the direction
+// is set) and steps its action back. In a wireless game the target is chosen by the frame counter, otherwise by the
+// single-player index; the single-player case uses areacheck2.
+void em0c_shoot(Entity *e) {
+    Entity *target;
+    Entity *shot;
+
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance())) {
+        target = data_0212ceb0[*(u16 *)frameCounter & 3].entity;
+        if (target == NULL) {
+            return;
+        }
+        if ((u32)(target->x.HALF.HI - VARS(Em0cSensor, e)->boxX) > VARS(Em0cSensor, e)->boxWidth ||
+            (u32)(target->y.HALF.HI - VARS(Em0cSensor, e)->boxY) > VARS(Em0cSensor, e)->boxHeight) {
+            return;
+        }
+        if (areacheck(e) == 0) {
+            return;
+        }
+        shot = EmGetTama(e, 1, 0);
+        if (shot == NULL) {
+            return;
+        }
+        if (!(e->direction & 0x20)) {
+            shot->direction = e->direction;
+            e->subtimer = e->timer;
+        } else {
+            shot->direction = GetFacingDirection(e, target);
+            e->subtimer = e->timer + (Random() & 3);
+        }
+        e->action -= 1;
+    } else {
+        target = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+        if (target == NULL) {
+            return;
+        }
+        if ((u32)(target->x.HALF.HI - VARS(Em0cSensor, e)->boxX) > VARS(Em0cSensor, e)->boxWidth ||
+            (u32)(target->y.HALF.HI - VARS(Em0cSensor, e)->boxY) > VARS(Em0cSensor, e)->boxHeight) {
+            return;
+        }
+        if (areacheck2(e) == 0) {
+            return;
+        }
+        shot = EmGetTama(e, 1, 0);
+        if (shot == NULL) {
+            return;
+        }
+        if (!(e->direction & 0x20)) {
+            shot->direction = e->direction;
+            e->subtimer = e->timer;
+        } else {
+            shot->direction = GetFacingDirection(e, target);
+            e->subtimer = e->timer + (Random() & 3);
+        }
+        e->action -= 1;
     }
 }
