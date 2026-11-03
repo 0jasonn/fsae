@@ -17,7 +17,7 @@ typedef struct FRAME_INFO_ {
 } FRAME_INFO_;
 
 extern "C" void FrameSet(u16 frameNo);                    // original FrameSet(unsigned short), 0x0205715c
-extern "C" void MultiRoomInit(u16 roomNo);                // original MultiRoomInit(unsigned short), 0x02056f4c
+void MultiRoomInit(u16 roomNo);                           // original MultiRoomInit(unsigned short), 0x02056f4c
 extern "C" void MPlayerSet(FRAME_INFO_ *frame);           // original MPlayerSet(FRAME_INFO_*), 0x0204c950
 void MultiEventSet(u16 *list, u8 a, u8 b, u8 c);          // original MultiEventSet(unsigned short*, unsigned char x3), 0x0204602c
 void MultiRoomSet(void);                                  // original MultiRoomSet(), 0x020572b4

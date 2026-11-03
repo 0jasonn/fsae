@@ -38,3 +38,19 @@ void effect_beam3_init(Entity *e) {
     InitAnimationForceUpdate(e, e->type);
     effectPhaseTable[e->type2] = 0;
 }
+
+// effect_beam3 family (module effect_beam3), per-frame move. Address -> name:
+//   0x0206ef08 effect_beam3_move
+
+void effect_beam3_move(Entity *e) {
+    e->spriteSettings.b20 = 6;
+    e->spriteSettings.b16 = e->spriteSettings.b20;
+    e->unk_1b = 0xb0;
+    e->timer = e->timer + 1;
+    e->spriteSettings.b0 = 1;
+    UpdateAnimationSingleFrame(e);
+    if (e->timer <= 0x258) {
+        return;
+    }
+    PutObjWork(e);
+}

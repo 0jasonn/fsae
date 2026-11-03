@@ -1652,7 +1652,7 @@ src/game/stopblock_2.cpp:
 
 src/game/stopblock_3.cpp:
     complete
-    .text       start:0x0204ebdc end:0x0204ec38
+    .text       start:0x0204ebdc end:0x0204eca4
 
 src/actor/object/set5c.cpp:
     complete
@@ -1794,9 +1794,9 @@ src/game/ranking_3.cpp:
     complete
     .text       start:0x020554c8 end:0x020556c0
 
-src/game/ranking_4.cpp:
+src/game/ranking_5.cpp:
     complete
-    .text       start:0x0205610c end:0x02056120
+    .text       start:0x02055d28 end:0x02056120
 
 src/game/backup.cpp:
     complete
@@ -1818,9 +1818,9 @@ src/game/backup_2.cpp:
     complete
     .text       start:0x020565e8 end:0x020566dc
 
-src/game/backup_5.cpp:
+src/game/backup_14.cpp:
     complete
-    .text       start:0x02056998 end:0x020569cc
+    .text       start:0x0205687c end:0x020569cc
 
 src/game/backup_3.cpp:
     complete
@@ -1838,6 +1838,10 @@ src/engine/scr.cpp:
     complete
     .text       start:0x02056ef0 end:0x02056f4c
 
+src/game/multiroom.cpp:
+    complete
+    .text       start:0x02056f4c end:0x0205715c
+
 src/engine/scr_3.cpp:
     complete
     .text       start:0x020572b4 end:0x02057344
@@ -1845,6 +1849,10 @@ src/engine/scr_3.cpp:
 src/engine/scr_2.cpp:
     complete
     .text       start:0x0205747c end:0x02057494
+
+src/game/multiroom_2.cpp:
+    complete
+    .text       start:0x02057508 end:0x02057568
 
 src/actor/object/setmove.cpp:
     complete
@@ -1889,6 +1897,10 @@ src/actor/object/set_4.cpp:
 src/actor/object/set0c.cpp:
     complete
     .text       start:0x02058078 end:0x020580a4
+
+src/actor/object/set0c_3.cpp:
+    complete
+    .text       start:0x020580a4 end:0x0205819c
 
 src/actor/object/set0c_2.cpp:
     complete
@@ -1994,6 +2006,10 @@ src/actor/object/set2c.cpp:
     complete
     .text       start:0x0205a73c end:0x0205a758
 
+src/actor/object/set2c_3.cpp:
+    complete
+    .text       start:0x0205a758 end:0x0205a798
+
 src/actor/object/set2c_2.cpp:
     complete
     .text       start:0x0205a798 end:0x0205a80c
@@ -2008,11 +2024,7 @@ src/actor/object/set2e.cpp:
 
 src/actor/object/set51.cpp:
     complete
-    .text       start:0x0205ad24 end:0x0205ade8
-
-src/actor/object/set51_2.cpp:
-    complete
-    .text       start:0x0205ae5c end:0x0205aed8
+    .text       start:0x0205ad24 end:0x0205aed8
 
 src/actor/object/set2f.cpp:
     complete
@@ -2033,6 +2045,10 @@ src/actor/object/fumi.cpp:
 src/actor/object/zeldafade.cpp:
     complete
     .text       start:0x0205b67c end:0x0205b700
+
+src/actor/object/zeldafade_2.cpp:
+    complete
+    .text       start:0x0205b700 end:0x0205b730
 
 src/actor/object/set3a.cpp:
     complete
@@ -2242,6 +2258,10 @@ src/actor/object/set5e_1.cpp:
     complete
     .text       start:0x0205ffd4 end:0x0205fff0
 
+src/actor/object/set5e_1b.cpp:
+    complete
+    .text       start:0x0205fff0 end:0x02060050
+
 src/actor/object/set5e_2.cpp:
     complete
     .text       start:0x02060050 end:0x02060104
@@ -2318,9 +2338,9 @@ src/actor/object/rader.cpp:
     complete
     .text       start:0x0206305c end:0x02063194
 
-src/actor/object/rader_2.cpp:
+src/actor/object/rader_3.cpp:
     complete
-    .text       start:0x02063400 end:0x02063450
+    .text       start:0x020633bc end:0x02063450
 
 src/actor/object/set11.cpp:
     complete
@@ -2350,9 +2370,17 @@ src/actor/object/set13_2.cpp:
     complete
     .text       start:0x020645a4 end:0x0206461c
 
+src/actor/object/set13_4.cpp:
+    complete
+    .text       start:0x0206461c end:0x02064690
+
 src/actor/object/set13_3.cpp:
     complete
     .text       start:0x02064690 end:0x02064770
+
+src/actor/object/set13_5.cpp:
+    complete
+    .text       start:0x02064770 end:0x020647d0
 
 src/actor/object/set14.cpp:
     complete
@@ -2370,9 +2398,9 @@ src/actor/object/set16.cpp:
     complete
     .text       start:0x02064bf4 end:0x02064c60
 
-src/actor/object/set16_2.cpp:
+src/actor/object/set16_3.cpp:
     complete
-    .text       start:0x02064e18 end:0x02064e74
+    .text       start:0x02064dbc end:0x02064e74
 
 src/actor/object/ido.cpp:
     complete
@@ -2380,11 +2408,7 @@ src/actor/object/ido.cpp:
 
 src/actor/object/set17.cpp:
     complete
-    .text       start:0x020654c0 end:0x020654dc
-
-src/actor/object/set17_2.cpp:
-    complete
-    .text       start:0x02065548 end:0x02065588
+    .text       start:0x020654c0 end:0x02065588
 
 src/actor/object/set18.cpp:
     complete
@@ -2700,11 +2724,7 @@ src/actor/object/ss.cpp:
 
 src/actor/object/effect_tuto0.cpp:
     complete
-    .text       start:0x0206da58 end:0x0206da74
-
-src/actor/object/effect_tuto0_2.cpp:
-    complete
-    .text       start:0x0206dadc end:0x0206db30
+    .text       start:0x0206da58 end:0x0206db30
 
 src/actor/object/effect_tori.cpp:
     complete
@@ -2768,7 +2788,7 @@ src/actor/object/effect_omoideon.cpp:
 
 src/actor/object/effect_particle.cpp:
     complete
-    .text       start:0x0206e93c end:0x0206e9ac
+    .text       start:0x0206e93c end:0x0206eba0
 
 src/actor/object/effect_beam1.cpp:
     complete
@@ -2780,7 +2800,7 @@ src/actor/object/effect_beam2.cpp:
 
 src/actor/object/effect_beam3.cpp:
     complete
-    .text       start:0x0206ee40 end:0x0206ef08
+    .text       start:0x0206ee40 end:0x0206ef6c
 
 src/actor/object/effect_pika.cpp:
     complete
@@ -2873,6 +2893,10 @@ src/actor/object/set58_2.cpp:
 src/actor/object/set58_4.cpp:
     complete
     .text       start:0x0207382c end:0x02073904
+
+src/actor/object/youseidama.cpp:
+    complete
+    .text       start:0x02073904 end:0x02073984
 
 src/actor/object/set58_5.cpp:
     complete
@@ -3081,6 +3105,10 @@ src/actor/object/hane.cpp:
 src/actor/object/tama00.cpp:
     complete
     .text       start:0x0207c7c8 end:0x0207c834
+
+src/actor/object/tama00_3.cpp:
+    complete
+    .text       start:0x0207c834 end:0x0207c898
 
 src/actor/object/tama00_2.cpp:
     complete
@@ -3706,6 +3734,14 @@ src/knife/comm/knife_comm_a2.cpp:
     complete
     .text       start:0x0209a818 end:0x0209a890
 
+src/knife/subtask/subtask_hblank.cpp:
+    complete
+    .text       start:0x0209a890 end:0x0209a8b8
+
+src/knife/subtask/subtask_dispreset.cpp:
+    complete
+    .text       start:0x0209aa2c end:0x0209aa58
+
 src/knife/subtask/subtask_misc.cpp:
     complete
     .text       start:0x0209ad08 end:0x0209ad3c
@@ -3744,17 +3780,33 @@ src/game/eff.cpp:
     complete
     .text       start:0x0209b79c end:0x0209b8c0
 
+src/game/eff_fade_out.cpp:
+    complete
+    .text       start:0x0209b8c0 end:0x0209b90c
+
 src/game/eff_2.cpp:
     complete
     .text       start:0x0209b90c end:0x0209b94c
+
+src/game/eff_fade_in.cpp:
+    complete
+    .text       start:0x0209b94c end:0x0209b9cc
 
 src/game/eff_3.cpp:
     complete
     .text       start:0x0209b9cc end:0x0209ba08
 
+src/game/eff_white_out.cpp:
+    complete
+    .text       start:0x0209ba08 end:0x0209ba50
+
 src/game/eff_4.cpp:
     complete
     .text       start:0x0209ba50 end:0x0209ba94
+
+src/game/eff_white_in.cpp:
+    complete
+    .text       start:0x0209ba94 end:0x0209bad8
 
 src/knife/subtask/subtask_init.cpp:
     complete

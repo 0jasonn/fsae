@@ -4,7 +4,7 @@
 #include "actor/object/g_callees.h"
 
 // Set16 actor, second unit (module set16). Address -> name:
-//   0x02064e18 set16_move (original name)
+//   0x02064dbc set16_wait (original name)
 
 typedef struct Vars_Set16_2 {
     /* 00 */ u8 unk_00[0x60];
@@ -12,6 +12,25 @@ typedef struct Vars_Set16_2 {
 } Vars_Set16_2;
 
 extern u32 em12_typeMasks[];
+void set16_wait(Entity *e) {
+    u32 bits;
+    u8 objIdValue;
+    bits = VARS(Vars_Set16_2, e)->requestBits;
+    if (bits != (bits & em12_typeMasks[e->areaIndex])) {
+        return;
+    }
+    VARS(Vars_Set16_2, e)->requestBits = 0;
+    e->spriteSettings.b0 = 1;
+    e->action = e->action + 1;
+    objIdValue = e->objId;
+    if (objIdValue != 0x73) {
+        KemuriSet(e);
+    }
+}
+
+// Set16 actor, second unit (module set16). Address -> name:
+//   0x02064e18 set16_move (original name)
+
 extern const EntityFunc set16_subActionTable[]; // indexed by e->subAction (was set16_subActionTable)
 
 void set16_move(Entity *e) {

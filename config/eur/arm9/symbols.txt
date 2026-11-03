@@ -2114,7 +2114,7 @@ sbRegistSub kind:function(arm,size=0x10c) addr:0x0204e7d4
 _Z19StopBlockPreProcessv kind:function(arm,size=0x78) addr:0x0204e8e0
 StopBlockManager kind:function(arm,size=0x284) addr:0x0204e958
 _Z11sbKemuriSetP15STOPBLOCK_WORK_ kind:function(arm,size=0x5c) addr:0x0204ebdc
-sbGarbageCollection kind:function(arm,size=0x6c) addr:0x0204ec38
+_Z19sbGarbageCollectionP15STOPBLOCK_WORK_S0_ kind:function(arm,size=0x6c) addr:0x0204ec38
 _Z20set5c_changeiroankyott kind:function(arm,size=0x54) addr:0x0204eca4
 _Z16set5c_returnZerov kind:function(arm,size=0x8) addr:0x0204ecf8
 _Z12MultiSioInitv kind:function(arm,size=0xc4) addr:0x0204ed00
@@ -2298,7 +2298,7 @@ _Z19Knife_getSaveBufferv kind:function(arm,size=0x10) addr:0x02056ee0
 _Z8scr_initv kind:function(arm,size=0x1c) addr:0x02056ef0
 _Z10ScrollMovev kind:function(arm,size=0x24) addr:0x02056f0c
 GetBgBuffAdrs kind:function(arm,size=0x1c) addr:0x02056f30
-MultiRoomInit kind:function(arm,size=0x210) addr:0x02056f4c
+_Z13MultiRoomInitt kind:function(arm,size=0x210) addr:0x02056f4c
 FrameSet kind:function(arm,size=0xa0) addr:0x0205715c
 PartsSet kind:function(arm,size=0xb8) addr:0x020571fc
 _Z12MultiRoomSetv kind:function(arm,size=0x90) addr:0x020572b4
@@ -2325,8 +2325,8 @@ _Z10set0b_liftP9OBJ_WORK_ kind:function(arm,size=0x20) addr:0x02057fcc
 _Z5Set0cP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x02057fec
 set0c_init kind:function(arm,size=0x70) addr:0x02058008
 _Z10set0c_waitP9OBJ_WORK_ kind:function(arm,size=0x2c) addr:0x02058078
-set0c_appear kind:function(arm,size=0x78) addr:0x020580a4
-set0c_vanish kind:function(arm,size=0x80) addr:0x0205811c
+_Z12set0c_appearP9OBJ_WORK_ kind:function(arm,size=0x78) addr:0x020580a4
+_Z12set0c_vanishP9OBJ_WORK_ kind:function(arm,size=0x80) addr:0x0205811c
 _Z18set0c_typeDispatchP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205819c
 _Z8crystal0P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x020581b8
 _Z9cry0_initP9OBJ_WORK_ kind:function(arm,size=0xac) addr:0x020581d4
@@ -2420,7 +2420,7 @@ set2a_init kind:function(arm,size=0x58) addr:0x0205a508
 _Z10set2a_moveP9OBJ_WORK_ kind:function(arm,size=0x34) addr:0x0205a560
 _Z5Set2bP9OBJ_WORK_ kind:function(arm,size=0x1a8) addr:0x0205a594
 _Z5Set2cP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205a73c
-set2c_init kind:function(arm,size=0x40) addr:0x0205a758
+_Z10set2c_initP9OBJ_WORK_ kind:function(arm,size=0x40) addr:0x0205a758
 _Z10set2c_waitP9OBJ_WORK_ kind:function(arm,size=0x74) addr:0x0205a798
 Set2d kind:function(arm,size=0xdc) addr:0x0205a80c
 _Z13AshimotoCheckP9OBJ_WORK_ kind:function(arm,size=0x110) addr:0x0205a8e8
@@ -2430,7 +2430,7 @@ _Z10set2e_moveP9OBJ_WORK_ kind:function(arm,size=0x23c) addr:0x0205aae8
 _Z5Set51P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205ad24
 _Z12set51_parentP9OBJ_WORK_ kind:function(arm,size=0x8c) addr:0x0205ad40
 _Z11set51_childP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205adcc
-set51_init kind:function(arm,size=0x74) addr:0x0205ade8
+_Z10set51_initP9OBJ_WORK_ kind:function(arm,size=0x74) addr:0x0205ade8
 _Z10set51_moveP9OBJ_WORK_ kind:function(arm,size=0x7c) addr:0x0205ae5c
 _Z5Set2fP9OBJ_WORK_ kind:function(arm,size=0x2c) addr:0x0205aed8
 set2f_init kind:function(arm,size=0xa8) addr:0x0205af04
@@ -2597,7 +2597,7 @@ _Z13set5d_bikkuriP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205ff38
 _Z12bikkuri_initP9OBJ_WORK_ kind:function(arm,size=0x5c) addr:0x0205ff54
 _Z12bikkuri_moveP9OBJ_WORK_ kind:function(arm,size=0x24) addr:0x0205ffb0
 _Z5Set5eP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0205ffd4
-set5e_init kind:function(arm,size=0x60) addr:0x0205fff0
+_Z10set5e_initP9OBJ_WORK_ kind:function(arm,size=0x60) addr:0x0205fff0
 _Z10set5e_moveP9OBJ_WORK_ kind:function(arm,size=0xb4) addr:0x02060050
 _Z5Set5fP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x02060104
 _Z11set5f_type0P9OBJ_WORK_ kind:function(arm,size=0x20) addr:0x02060120
@@ -2683,7 +2683,7 @@ hidari_bgcheck kind:function(arm,size=0xe8) addr:0x020643e4
 _Z5Set13P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x020644cc
 set13_init kind:function(arm,size=0xbc) addr:0x020644e8
 _Z10set13_waitP9OBJ_WORK_ kind:function(arm,size=0x78) addr:0x020645a4
-set13_move0 kind:function(arm,size=0x74) addr:0x0206461c
+_Z11set13_move0P9OBJ_WORK_ kind:function(arm,size=0x74) addr:0x0206461c
 _Z11set13_move1P9OBJ_WORK_ kind:function(arm,size=0xe0) addr:0x02064690
 hidari_writecell kind:function(arm,size=0x60) addr:0x02064770
 hidari_rewritecell kind:function(arm,size=0x44) addr:0x020647d0
@@ -2697,7 +2697,7 @@ _Z10set15_nop0P9OBJ_WORK_ kind:function(arm,size=0x4) addr:0x02064bec
 _Z10set15_nop1P9OBJ_WORK_ kind:function(arm,size=0x4) addr:0x02064bf0
 _Z5Set16P9OBJ_WORK_ kind:function(arm,size=0x6c) addr:0x02064bf4
 set16_init kind:function(arm,size=0x15c) addr:0x02064c60
-set16_wait kind:function(arm,size=0x5c) addr:0x02064dbc
+_Z10set16_waitP9OBJ_WORK_ kind:function(arm,size=0x5c) addr:0x02064dbc
 _Z10set16_moveP9OBJ_WORK_ kind:function(arm,size=0x5c) addr:0x02064e18
 _Z6ido_upP9OBJ_WORK_ kind:function(arm,size=0x2c) addr:0x02064e74
 _Z9ido_rightP9OBJ_WORK_ kind:function(arm,size=0x2c) addr:0x02064ea0
@@ -2708,7 +2708,7 @@ ido_getNextInfo kind:function(arm,size=0xe0) addr:0x02064fc0
 ido_yukaPlMoveCheck kind:function(arm,size=0x54) addr:0x020650a0
 ido_yukaMove kind:function(arm,size=0x3cc) addr:0x020650f4
 _Z9set17_runP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x020654c0
-set17_init kind:function(arm,size=0x6c) addr:0x020654dc
+_Z10set17_initP9OBJ_WORK_ kind:function(arm,size=0x6c) addr:0x020654dc
 _Z10set17_moveP9OBJ_WORK_ kind:function(arm,size=0x40) addr:0x02065548
 _Z15TaimatuIgnitionP9OBJ_WORK_t kind:function(arm,size=0xac) addr:0x02065588
 _Z5Set18P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x02065634
@@ -2942,7 +2942,7 @@ _Z9ss_cursorP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0206d8f0
 _Z11ss_cur_initP9OBJ_WORK_ kind:function(arm,size=0x9c) addr:0x0206d90c
 _Z11ss_cur_moveP9OBJ_WORK_ kind:function(arm,size=0xb0) addr:0x0206d9a8
 _Z12effect_tuto0P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0206da58
-effect_tuto0_init kind:function(arm,size=0x68) addr:0x0206da74
+_Z17effect_tuto0_initP9OBJ_WORK_ kind:function(arm,size=0x68) addr:0x0206da74
 _Z17effect_tuto0_moveP9OBJ_WORK_ kind:function(arm,size=0x54) addr:0x0206dadc
 _Z11effect_toriP9OBJ_WORK_ kind:function(arm,size=0x3c) addr:0x0206db30
 _Z16effect_tori_initP9OBJ_WORK_ kind:function(arm,size=0x44) addr:0x0206db6c
@@ -2979,7 +2979,7 @@ _Z20effect_omoideon_initP9OBJ_WORK_ kind:function(arm,size=0x4c) addr:0x0206e898
 _Z20effect_omoideon_moveP9OBJ_WORK_ kind:function(arm,size=0x58) addr:0x0206e8e4
 _Z15effect_particleP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0206e93c
 _Z20effect_particle_initP9OBJ_WORK_ kind:function(arm,size=0x54) addr:0x0206e958
-effect_particle_move kind:function(arm,size=0x1f4) addr:0x0206e9ac
+_Z20effect_particle_moveP9OBJ_WORK_ kind:function(arm,size=0x1f4) addr:0x0206e9ac
 _Z12effect_beam1P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0206eba0
 _Z17effect_beam1_initP9OBJ_WORK_ kind:function(arm,size=0xac) addr:0x0206ebbc
 effect_beam1_move kind:function(arm,size=0x74) addr:0x0206ec68
@@ -2988,7 +2988,7 @@ _Z17effect_beam2_initP9OBJ_WORK_ kind:function(arm,size=0xc4) addr:0x0206ecf8
 effect_beam2_move kind:function(arm,size=0x84) addr:0x0206edbc
 _Z12effect_beam3P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0206ee40
 _Z17effect_beam3_initP9OBJ_WORK_ kind:function(arm,size=0xac) addr:0x0206ee5c
-effect_beam3_move kind:function(arm,size=0x64) addr:0x0206ef08
+_Z17effect_beam3_moveP9OBJ_WORK_ kind:function(arm,size=0x64) addr:0x0206ef08
 _Z11effect_pikaP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0206ef6c
 _Z16effect_pika_initP9OBJ_WORK_ kind:function(arm,size=0xac) addr:0x0206ef88
 effect_pika_move kind:function(arm,size=0x74) addr:0x0206f034
@@ -3101,7 +3101,7 @@ _Z11set58_hamonP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x02073894
 _Z10hamon_initP9OBJ_WORK_ kind:function(arm,size=0x2c) addr:0x020738b0
 _Z17set58_hamonUpdateP9OBJ_WORK_ kind:function(arm,size=0xc) addr:0x020738dc
 _Z16set58_youseidamaP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x020738e8
-youseidama_init kind:function(arm,size=0x80) addr:0x02073904
+_Z15youseidama_initP9OBJ_WORK_ kind:function(arm,size=0x80) addr:0x02073904
 _Z13youseidama_upP9OBJ_WORK_ kind:function(arm,size=0x94) addr:0x02073984
 _Z15youseidama_moveP9OBJ_WORK_ kind:function(arm,size=0x34) addr:0x02073a18
 _Z10set58_auraP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x02073a4c
@@ -3304,7 +3304,7 @@ func_0207c648 kind:function(arm,size=0x180) addr:0x0207c648
 _Z6Tama00P9OBJ_WORK_ kind:function(arm,size=0x28) addr:0x0207c7c8
 _Z13tama00_normalP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0207c7f0
 _Z13tama00_damageP9OBJ_WORK_ kind:function(arm,size=0x28) addr:0x0207c80c
-tama00_init kind:function(arm,size=0x64) addr:0x0207c834
+_Z11tama00_initP9OBJ_WORK_ kind:function(arm,size=0x64) addr:0x0207c834
 _Z11tama00_moveP9OBJ_WORK_ kind:function(arm,size=0x60) addr:0x0207c898
 _Z13tama00_hajikiP9OBJ_WORK_ kind:function(arm,size=0x34) addr:0x0207c8f8
 _Z17tama00_hajikiInitP9OBJ_WORK_ kind:function(arm,size=0x48) addr:0x0207c92c
@@ -4300,10 +4300,10 @@ Knife_Comm_WirelessIcon_finalize kind:function(arm,size=0x24) addr:0x0209a6a8
 Knife_Comm_WirelessIcon_updateObj kind:function(arm,size=0x14c) addr:0x0209a6cc
 Knife_Comm_ChildInfo_setup kind:function(arm,size=0x3c) addr:0x0209a818
 Knife_Comm_ChildInfo_cleanup kind:function(arm,size=0x3c) addr:0x0209a854
-func_0209a890 kind:function(arm,size=0x28) addr:0x0209a890
+subtask_hblank_irq kind:function(arm,size=0x28) addr:0x0209a890
 subtask_make_lobby_raster kind:function(arm,size=0xbc) addr:0x0209a8b8
 subtask_init_hblank_raster kind:function(arm,size=0xb8) addr:0x0209a974
-subtask_dispReset kind:function(arm,size=0x2c) addr:0x0209aa2c
+_Z17subtask_dispResetb kind:function(arm,size=0x2c) addr:0x0209aa2c
 subtask_vblank kind:function(arm,size=0x2b0) addr:0x0209aa58
 _Z15subtask_dma_oamv kind:function(arm,size=0x34) addr:0x0209ad08
 hex_ascii_chg0 kind:function(arm,size=0x15c) addr:0x0209ad3c
@@ -4332,14 +4332,14 @@ _Z11eff_cut_outPvl kind:function(arm,size=0x20) addr:0x0209b810
 _Z15eff_cut_in_initv kind:function(arm,size=0x30) addr:0x0209b830
 _Z10eff_cut_inPvl kind:function(arm,size=0x20) addr:0x0209b860
 _Z17eff_fade_out_initl kind:function(arm,size=0x40) addr:0x0209b880
-eff_fade_out kind:function(arm,size=0x4c) addr:0x0209b8c0
+_Z12eff_fade_outPvl kind:function(arm,size=0x4c) addr:0x0209b8c0
 _Z16eff_fade_in_initl kind:function(arm,size=0x40) addr:0x0209b90c
-eff_fade_in kind:function(arm,size=0x40) addr:0x0209b94c
-eff_fade_in2 kind:function(arm,size=0x40) addr:0x0209b98c
+_Z11eff_fade_inPvl kind:function(arm,size=0x40) addr:0x0209b94c
+_Z12eff_fade_in2Pvl kind:function(arm,size=0x40) addr:0x0209b98c
 _Z18eff_white_out_initl kind:function(arm,size=0x3c) addr:0x0209b9cc
-eff_white_out kind:function(arm,size=0x48) addr:0x0209ba08
+_Z13eff_white_outPvl kind:function(arm,size=0x48) addr:0x0209ba08
 _Z17eff_white_in_initl kind:function(arm,size=0x44) addr:0x0209ba50
-eff_white_in kind:function(arm,size=0x44) addr:0x0209ba94
+_Z12eff_white_inPvl kind:function(arm,size=0x44) addr:0x0209ba94
 subTaskEffect kind:function(arm,size=0xdc) addr:0x0209bad8
 subTaskInit_lang kind:function(arm,size=0x140) addr:0x0209bbb4
 subTaskInit kind:function(arm,size=0x190) addr:0x0209bcf4
@@ -7800,11 +7800,11 @@ thunderOffsetX kind:data(any) addr:0x020dae44
 thunderOffsetY kind:data(any) addr:0x020dae58
 beam2OffsetX kind:data(any) addr:0x020dae6c
 beam2OffsetY kind:data(any) addr:0x020dae84
-data_020dae9c kind:data(any) addr:0x020dae9c
-data_020daebc kind:data(any) addr:0x020daebc
-data_020daee4 kind:data(any) addr:0x020daee4
-data_020daf0c kind:data(any) addr:0x020daf0c
-data_020daf3c kind:data(any) addr:0x020daf3c
+particleSpeedTable kind:data(any) addr:0x020dae9c
+particleXDivTable kind:data(any) addr:0x020daebc
+particleYDivTable kind:data(any) addr:0x020daee4
+particleXBaseTable kind:data(any) addr:0x020daf0c
+particleYBaseTable kind:data(any) addr:0x020daf3c
 set46PosTable kind:data(any) addr:0x020daf6c
 data_020db008 kind:data(any) addr:0x020db008
 data_020db0b4 kind:data(any) addr:0x020db0b4
@@ -11807,7 +11807,7 @@ data_02115a2c kind:data(any) addr:0x02115a2c
 data_02115a3c kind:data(any) addr:0x02115a3c
 data_02115a4c kind:data(any) addr:0x02115a4c
 data_02115a5c kind:data(any) addr:0x02115a5c
-data_02115a64 kind:data(any) addr:0x02115a64
+raderChildTable kind:data(any) addr:0x02115a64
 data_02115a6c kind:data(any) addr:0x02115a6c
 data_02115a7a kind:data(any) addr:0x02115a7a
 data_02115a88 kind:data(any) addr:0x02115a88

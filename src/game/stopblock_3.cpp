@@ -19,3 +19,29 @@ void sbKemuriSet(STOPBLOCK_WORK_ *block) {
     e->layer = block->key & 0xc000;
     func_0208ae78(e);
 }
+
+// Stop block (sb) module. 0x0204ec38 sbGarbageCollection (original name)
+// Stop block records are 4 bytes; a record with a zero key at offset 0 is free. Compacts the live records towards
+// the front: the first free record from the front is filled with the last live record from the back.
+void sbGarbageCollection(STOPBLOCK_WORK_ *begin, STOPBLOCK_WORK_ *end) {
+    u32 *front;
+    u32 *back;
+
+    back = (u32 *)end;
+    back--;
+    while (*(u16 *)back == 0 && back > (u32 *)begin) {
+        back--;
+    }
+    if ((u32 *)begin >= back) {
+        return;
+    }
+    for (front = (u32 *)begin; front < back; front++) {
+        if (*(u16 *)front == 0) {
+            *front = *back;
+            *back = 0;
+            while (*(u16 *)back == 0 && back > front) {
+                back--;
+            }
+        }
+    }
+}
