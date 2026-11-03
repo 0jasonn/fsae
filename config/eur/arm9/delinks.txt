@@ -785,6 +785,10 @@ src/game/keyclear.cpp:
     complete
     .text       start:0x0202b54c end:0x0202b620
 
+src/game/trianglewin.cpp:
+    complete
+    .text       start:0x0202b828 end:0x0202ba58
+
 src/actor/enemy/em00.cpp:
     complete
     .text       start:0x0202bb4c end:0x0202bee8
