@@ -4,7 +4,6 @@
 #include "engine/entity.h"
 #include "engine/player.h"
 
-typedef void (*VoidFunc)(void);
 
 // Node of the intrusive entity lists whose heads are data_0212c6b0[]; the links sit at the start of Entity
 typedef struct EntityNode {

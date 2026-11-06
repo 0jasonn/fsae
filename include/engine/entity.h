@@ -14,6 +14,7 @@ typedef union FixedPoint {
 
 typedef struct OBJ_WORK_ Entity; // original name OBJ_WORK_
 typedef void (*EntityFunc)(Entity *e);
+typedef void (*VoidFunc)(void); // a function without arguments or result (state tables, callbacks)
 
 // Game object shared by the actor update functions. Field meanings are not known yet.
 typedef struct OBJ_WORK_ {

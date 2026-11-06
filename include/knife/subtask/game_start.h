@@ -4,6 +4,7 @@
 // Game start subtask (subTask_game_start_*, 0x020c70ac to 0x020c75a4). Provisional names for the work block
 // that data_02186fdc points at (its storage is data_02186fe0, 0x6c bytes).
 
+#include "engine/entity.h"
 #include "engine/functions.h"
 #include "knife/subtask/subtask.h"
 
@@ -42,11 +43,10 @@ void *func_0208e148(u32 size);
 // Calls made by the ending and error subtasks (original signatures in original_names.tsv)
 
 // Function tables of the boot and terminate error screens (indexed by the byte at data_0212c500)
-typedef void (*SubtaskFunc)(void);
 extern u8 data_0212c500[];
 extern u8 data_0217a258[];
-extern SubtaskFunc data_021271cc[];
-extern SubtaskFunc data_0212720c[];
+extern VoidFunc data_021271cc[];
+extern VoidFunc data_0212720c[];
 
 extern "C" {
 void Knife_Message_setPendingPtr(u32 a);

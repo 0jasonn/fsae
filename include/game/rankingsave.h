@@ -78,14 +78,13 @@ typedef struct RankEffectState {
 extern RankEffectState effectState;
 
 
-typedef void (*RankVoidFunc)(void);
-extern RankVoidFunc data_0212c564; // per-frame handler called by ranking_calc
+extern VoidFunc data_0212c564; // per-frame handler called by ranking_calc
 extern u8 data_0212c4dc; // phase of the result sequence, 0..3
 extern u16 data_0212c594; // frame counter
 extern const u8 data_020d851c[];
 extern const u8 data_020d8524[];
 extern u8 data_02171d01[];
-extern const RankVoidFunc data_020d85b0[];
+extern const VoidFunc data_020d85b0[];
 extern const EntityFunc data_02115398[];
 extern const EntityFunc data_020d8860[];
 extern u16 data_021349d8[];

@@ -5,10 +5,10 @@
 // Functions missing from engine/functions.h use the original signatures from config/eur/original_names.tsv
 // where listed, or the parameters the call sites pass.
 
+#include "engine/entity.h"
 #include "engine/functions.h"
 #include "engine/player.h"
 
-typedef void (*EndingVoidFunc)(void);
 
 // Scene slot table at data_02134d30: 0x14-byte records, each with an entity pointer at 0x0c
 typedef struct SceneSlot {
@@ -102,14 +102,14 @@ extern u32 em12_typeMasks;
 extern u32 em2f_mapFlag;
 extern u8 data_0212c4dc;
 extern u8 data_0212c500;
-extern EndingVoidFunc data_0212c564;
+extern VoidFunc data_0212c564;
 extern SceneSlot data_02134d30; // first record; the others are reached with SCENE_SLOT
 #define SCENE_SLOT(k) (((SceneSlot *)&data_02134d30)[k])
 extern CameraState mapState;
 extern DisplayShadow displayState;
-extern EndingVoidFunc const endingFinaleTable[];
-extern EndingVoidFunc const finaleDemoTable[];
-extern EndingVoidFunc const endingRescueTable[];
+extern VoidFunc const endingFinaleTable[];
+extern VoidFunc const finaleDemoTable[];
+extern VoidFunc const endingRescueTable[];
 extern u16 playerKeysPrev[4];
 extern u16 data_0212c594;
 extern u8 data_0212c4f8;

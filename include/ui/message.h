@@ -1,12 +1,12 @@
 #ifndef WIP_C_MESSAGE_H
 #define WIP_C_MESSAGE_H
 
+#include "engine/entity.h"
 #include "types.h"
 
 // Per-state function of the message box (messageStates) and the telop box (telopStates).
 // A state returns 0 when it is finished for this frame.
 typedef int (*MsgStateFunc)(void);
-typedef void (*MsgVoidFunc)(void);
 
 // Telop request block (telopRequest, 0x18 bytes)
 typedef struct TelopWork {
@@ -106,7 +106,7 @@ extern u8 data_021371a0[];
 extern u8 data_021361a0[];
 extern MsgStateFunc messageStates[];
 extern MsgStateFunc telopStates[];
-extern MsgVoidFunc msgMoveTable[];
+extern VoidFunc msgMoveTable[];
 extern WindowSlot telopWindowSlots[];
 extern WindowSlot data_0216f010[];
 extern WindowSlot data_0216efe0[];
