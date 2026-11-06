@@ -1165,9 +1165,17 @@ src/actor/enemy/em19_4.cpp:
     complete
     .text       start:0x0203e0c8 end:0x0203e220
 
+src/actor/enemy/em19_7.cpp:
+    complete
+    .text       start:0x0203e220 end:0x0203e324
+
 src/actor/enemy/em19_5.cpp:
     complete
     .text       start:0x0203e410 end:0x0203e468
+
+src/actor/enemy/em19_8.cpp:
+    complete
+    .text       start:0x0203e468 end:0x0203e4c0
 
 src/actor/enemy/em19_2.cpp:
     complete
@@ -3887,11 +3895,7 @@ src/knife/app/knife_hud_2.cpp:
 
 src/knife/app/knife_hud_3.cpp:
     complete
-    .text       start:0x0209eb3c end:0x0209eb7c
-
-src/knife/app/knife_hud_4.cpp:
-    complete
-    .text       start:0x0209ecbc end:0x0209ede0
+    .text       start:0x0209eb3c end:0x0209ede0
 
 src/knife/app/knife_interp_2.cpp:
     complete
@@ -5216,6 +5220,10 @@ src/engine/record_init_table.cpp:
 src/engine/record_init_sized.cpp:
     complete
     .text       start:0x020c5fcc end:0x020c6008
+
+src/knife/message/tcl_layout_2.cpp:
+    complete
+    .text       start:0x020c6b50 end:0x020c6c30
 
 src/engine/nftr_font.cpp:
     complete
