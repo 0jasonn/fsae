@@ -7,7 +7,7 @@
 
 extern u8 pauseState[];
 extern u16 data_021355a0;
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern u8 data_0212c4d4;
 extern u16 data_0212c520;
@@ -20,7 +20,7 @@ extern u8 data_0212c4e4;
 extern u16 data_0212c514;
 extern u16 data_0212c510;
 extern Entity *data_0212c534;
-extern u16 data_0212c584[];
+extern u16 playerKeysPrev[];
 extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
@@ -37,7 +37,7 @@ extern u8 localPlayerIndex;
 
 
 void pause_retry(void) {
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     DispReset();
@@ -48,7 +48,7 @@ void pause_retry(void) {
     MessageInitialize();
     TelopInitialize();
     func_02029a50(pauseState, 0x20);
-    data_0212c7c8.unk_8c = 1;
+    gameState.unk_8c = 1;
     data_0212c4b8 = 1;
     data_0212c520 = 1;
     data_0212c500 = 1;
@@ -65,7 +65,7 @@ void keyDisable(void) {
     playerCount = frameCounter[0x11] & 3;
     for (i = 0; i < 4; i++) {
         if (i != playerCount) {
-            data_0212c58c[i] = 0;
+            playerKeys[i] = 0;
         }
     }
 }
@@ -84,8 +84,8 @@ void LinkControl(Entity *e) {
     mode = data_0212c4e4;
     data_0212c534 = e;
     if (mode == 2 || mode == 10) {
-        data_0212c514 = data_0212c584[e->type];
-        data_0212c510 = data_0212c58c[e->type];
+        data_0212c514 = playerKeysPrev[e->type];
+        data_0212c510 = playerKeys[e->type];
     }
     func_02086740(e);
     data_0212c514 = savedA;

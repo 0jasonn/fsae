@@ -8,14 +8,14 @@
 
 void pot_throw_throw(Entity *e) {
     if (e->contactFlags & 0x80) {
-        if (e->contactedEntity->objKind == 1 && data_0212ceb0[e->contactedEntity->type].statusFlags == 0 &&
-            data_0212ceb0[e->contactedEntity->type].specialState == 0 &&
-            data_0212ceb0[e->contactedEntity->type].unk_26 == 0) {
+        if (e->contactedEntity->objKind == 1 && playerWork[e->contactedEntity->type].statusFlags == 0 &&
+            playerWork[e->contactedEntity->type].specialState == 0 &&
+            playerWork[e->contactedEntity->type].unk_26 == 0) {
             if (KnifeApp_isWirelessMode(KnifeApp_getInstance())) {
                 u8 playerIndex;
 
                 SetCgColor(0, 0);
-                data_0212ceb0[e->contactedEntity->type].statusFlags |= 4;
+                playerWork[e->contactedEntity->type].statusFlags |= 4;
                 e->child = e->contactedEntity;
                 e->child->child = e;
                 e->action = 4;

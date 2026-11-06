@@ -20,7 +20,7 @@ typedef struct Vars_PlHit {
 
 // Jelly hit: ignored (only t loses its status bit) when the type's flags have 0x60 set, otherwise e takes the knockback.
 BOOL hit_jelly(Entity *e, Entity *t, u8 unused) {
-    if (data_0212ceb0[e->type].hitFlags & 0x60) {
+    if (playerWork[e->type].hitFlags & 0x60) {
         t->statusFlags &= 0x7f;
     } else {
         e->unk_42 = *(u8 *)&t->attackKnockback;
@@ -175,8 +175,8 @@ BOOL hit_tatetgthajiki(Entity *e, Entity *t, u8 unused) {
 // Knockback frames: positive knockback gives sk + sk/4, otherwise the negated value.
 // Knockback frames of a hit on the fire and ice objects: -16 - sk for negative knockback, else sk + 16.
 #define HIT_KNOCKBACK_FRAMES_SHORT(k) (((k) & 0x80) ? (-16 - (s8)(k)) : ((s8)(k) + 16))
-// The damage object of an entity type: PlayerData.entity of data_0212ceb0[type].
-#define HIT_DAMAGE_OBJECT(e) (data_0212ceb0[(e)->type].entity)
+// The damage object of an entity type: PlayerData.entity of playerWork[type].
+#define HIT_DAMAGE_OBJECT(e) (playerWork[(e)->type].entity)
 
 BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
@@ -207,11 +207,11 @@ BOOL hit_tatehajiki(Entity *e, Entity *t, u8 unused) {
 BOOL hit_firerobe(Entity *e, Entity *t, u8 mode) {
     Entity *fire;
 
-    if ((data_0212ceb0[e->type].statusFlags & 0x1401) == 0) {
+    if ((playerWork[e->type].statusFlags & 0x1401) == 0) {
         fire = GetSetWork(0x55, 1, 0);
         if (fire != NULL) {
             fire->child = e;
-            data_0212ceb0[e->type].statusFlags = 0x400;
+            playerWork[e->type].statusFlags = 0x400;
             e->animationState = (mode ^ 0x10) >> 2;
         }
     }

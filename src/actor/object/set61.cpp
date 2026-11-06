@@ -17,11 +17,11 @@ void Set61(Entity *e) {
         if (e->subtimer-- != 0) {
             return;
         }
-        for (i = 0; i < data_0212c7c8.playerCount; i++) {
+        for (i = 0; i < gameState.playerCount; i++) {
             tama = GetTamaWork(0xc);
             if (tama != NULL) {
-                tama->x.HALF.HI = data_0212ceb0[i].entity->x.HALF.HI;
-                tama->y.HALF.HI = data_0212ceb0[i].entity->y.HALF.HI;
+                tama->x.HALF.HI = playerWork[i].entity->x.HALF.HI;
+                tama->y.HALF.HI = playerWork[i].entity->y.HALF.HI;
                 if (Random() & 1) {
                     tama->x.HALF.HI = tama->x.HALF.HI + (s16)(Random() & 0x1f);
                 } else {

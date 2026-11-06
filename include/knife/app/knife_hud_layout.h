@@ -63,7 +63,7 @@ extern char data_0211c6f8[]; // Interp<VecFx32> vtable
 
 void Frame_LoopC7b8(void *array, s32 count, u32 size, void *ctor, void *dtor); // array constructor helper
 extern "C" void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);            // array destructor helper
-extern u8 data_0212c618[];                                                    // cockpit block, byte 0 gates the HUD update
+extern u8 cockpitState[];                                                    // cockpit block, byte 0 gates the HUD update
 extern u8 objAffineSet[];                                                     // OAM buffer, 0x400 bytes per mode
 
 // Members of HudManager that are not declared in game/knife_hud.h yet (C linkage, the object is the first argument)

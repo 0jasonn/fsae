@@ -23,11 +23,11 @@ void set09_wait(Entity *e) {
     if (e->unk_16 != 0) {
         if (e->objId != 0x70 && e->objId != 0x71) {
             SoundReq(0x1a1);
-            data_0212c7c8.unk_26 = 0x1a1;
+            gameState.unk_26 = 0x1a1;
         }
         if (e->objId == 9) {
-            u8 count52 = ((u8 *)&data_0212c7c8)[0x52];
-            ((u8 *)&data_0212c7c8)[0x52] = count52 + 1;
+            u8 count52 = ((u8 *)&gameState)[0x52];
+            ((u8 *)&gameState)[0x52] = count52 + 1;
         }
     }
     e->action = 2;

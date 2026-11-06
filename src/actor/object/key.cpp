@@ -12,7 +12,7 @@ extern u8 keyInitUnk21Table[];         // keyInitUnk21Table, indexed by type2
 extern u8 keyInitBankTable[];          // keyInitBankTable, indexed by type2
 extern const s16 trigTable[];
 extern u16 data_0212c594[];
-extern u8 data_021349c0[];
+extern u8 effectState[];
 
 void key_pos_set(Entity *e);
 
@@ -117,7 +117,7 @@ void key_kazan(Entity *e) {
 // key_pos_set, 0x020697e8
 void key_pos_set(Entity *e) {
     u8 index = VARS(Vars_Key, e)->posIndex;
-    u8 scale = data_021349c0[9];
+    u8 scale = effectState[9];
     e->x.HALF.HI = ((scale * trigTable[index + 0x40]) >> 8) + 0x80;
     e->y.HALF.HI = ((scale * trigTable[index]) >> 8) + 0x6c;
 }

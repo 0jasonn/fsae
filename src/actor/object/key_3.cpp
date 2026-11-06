@@ -32,7 +32,7 @@ void key_frame(Entity *e) {
     default:
         return;
     }
-    e->unk_21 = data_0212c7c8.playerCount + keyFrameBaseTable[KNIFE_CURSOR_INDEX()] - 2;
+    e->unk_21 = gameState.playerCount + keyFrameBaseTable[KNIFE_CURSOR_INDEX()] - 2;
     e->x.HALF.HI = e->parent->x.HALF.HI + 0x1c;
     e->y.HALF.HI = e->parent->y.HALF.HI - 8;
     if (KNIFE_CURSOR_INDEX() == 4 || KNIFE_CURSOR_INDEX() == 5) {
@@ -65,7 +65,7 @@ void key_child(Entity *e) {
 void key_child_set(Entity *e) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
+    for (i = 0; i < gameState.playerCount; i++) {
         Entity *child = GetSetWork(0x46, 0x15, i);
         if (child != NULL) {
             child->parent = e;

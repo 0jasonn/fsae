@@ -11,7 +11,7 @@ void heartAlart(void) {
     if ((data_0212c594 & 0x3f) != 0 || frameCounter[0x11] != 0) {
         return;
     }
-    if (data_0212c618[8] > 0x10) {
+    if (cockpitState[8] > 0x10) {
         return;
     }
     SoundReq(0x25);
@@ -23,9 +23,9 @@ s32 PinchCheck(void) {
     s32 result;
 
     result = 0;
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
+    for (i = 0; i < gameState.playerCount; i++) {
         if (PL_ENTITY(i)->health != 0 && PL_ENTITY(i)->health <= 0x10) {
-            if (func_020867cc() > data_0212c7c8.score) {
+            if (func_020867cc() > gameState.score) {
                 result = 1;
             }
         }
@@ -36,13 +36,13 @@ s32 PinchCheck(void) {
 // Starts or stops the pinch music and the pinch telop, then updates the background music.
 void pinch_bgm_check(void) {
     if (PinchCheck() != 0) {
-        if (data_0212c7c8.unk_50[0x1] == 0) {
-            data_0212c7c8.unk_50[0x1] = 1;
+        if (gameState.unk_50[0x1] == 0) {
+            gameState.unk_50[0x1] = 1;
             TelopRequest(0x4b4);
             KAKERA_U32(0x10) = (u16)func_020867cc();
         }
     } else {
-        data_0212c7c8.unk_50[0x1] = 0;
+        gameState.unk_50[0x1] = 0;
     }
     BgmSet();
 }
@@ -58,9 +58,9 @@ void kattiUpdate(void) {
     u8 kind;
 
     kind = ((KattiDirBits *)(data_0212c53c + 0x3e))->kind;
-    if (data_0212c618[7] == kind) {
+    if (cockpitState[7] == kind) {
         return;
     }
-    data_0212c618[7] = kind;
-    func_020845b0(0x6014200, KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), data_020f2530[data_0212c618[7]]) + data_020f2524[data_0212c618[7]], 0x180);
+    cockpitState[7] = kind;
+    func_020845b0(0x6014200, KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), data_020f2530[cockpitState[7]]) + data_020f2524[cockpitState[7]], 0x180);
 }

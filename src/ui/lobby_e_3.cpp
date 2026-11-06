@@ -25,7 +25,7 @@ s32 update_confirm_wait(void) {
     }
     lobby = *(LobbyState **)(data_02181860 + 4);
     confirmed = lobby->unk_39;
-    if (confirmed == 0 && (((u16 *)data_0212c58c)[lobby->isParent] & 1)) {
+    if (confirmed == 0 && (((u16 *)playerKeys)[lobby->isParent] & 1)) {
         isParent = lobby->isParent;
         if (isParent == 0) {
             *((u8 *)lobby + 4) = 1;

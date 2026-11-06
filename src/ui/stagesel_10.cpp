@@ -9,10 +9,10 @@ void stagesel_dialog(void) {
         return;
     }
     CommUpdateJoy();
-    value = data_0212c58c[0];
-    data_0212c58c[1] = value;
-    data_0212c58c[2] = value;
-    data_0212c58c[3] = value;
+    value = playerKeys[0];
+    playerKeys[1] = value;
+    playerKeys[2] = value;
+    playerKeys[3] = value;
     Knife_Message_selectionDialog_update(data_02171d7c);
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0 || localPlayerIndex == 0) {
         ssel_pause_dialogUpdate();

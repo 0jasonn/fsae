@@ -3,7 +3,7 @@
 
 #include "engine/entity.h"
 
-// data_0212c648 as read by rewlever: grid origin of the map cells.
+// mapState as read by rewlever: grid origin of the map cells.
 typedef struct Set2fGridOrigin {
     /* 00 */ u8 unk_00[0x18];
     /* 18 */ u16 originX;

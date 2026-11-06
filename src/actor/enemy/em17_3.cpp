@@ -35,7 +35,7 @@ extern const s8 em17_shakeOffsetTable[];
 int buruburu(Entity *e) {
     V(e)->field70.shakeTimer--;
     if (V(e)->field70.shakeTimer == 0) {
-        if (e->action == 2 && data_0212ceb0[e->type2].unk_02 != 0) {
+        if (e->action == 2 && playerWork[e->type2].unk_02 != 0) {
             V(e)->field70.shakeTimer = 4;
         } else {
             e->action = 7;

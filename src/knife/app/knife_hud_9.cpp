@@ -24,7 +24,7 @@ void HudManager::update(int mode) {
         *(u16 *)(base + i * 8 + 4) = 0;
     }
     if (v->state170 == 0) {
-        if (data_0212c618[0] == 0) {
+        if (cockpitState[0] == 0) {
             return;
         }
         Knife_Hud_HudManager_updateEquipIcon(this, mode);

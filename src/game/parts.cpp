@@ -11,16 +11,16 @@ void parts_set(FRAME_INFO_ *frame, u32 flags) {
     u8 cursor;
     PartRecord *part;
 
-    cursor = data_0212c7c8.unk_49[2];
-    if (data_0212c7c8.unk_8c == 0) {
+    cursor = gameState.unk_49[2];
+    if (gameState.unk_8c == 0) {
         for (i = 0; i < 0x20; i++) {
             data_0216f8b4[i] = data_0216f834[i];
         }
     }
     for (i = 0; i < frame->unk_02[0]; i++) {
         part = parts_select(frame, flags);
-        if (i == 0 && data_0212c7c8.unk_8c == 0) {
-            cursor = data_0212c7c8.unk_49[2];
+        if (i == 0 && gameState.unk_8c == 0) {
+            cursor = gameState.unk_49[2];
         }
         data_0216f820[1] = part->partId;
         data_02134968[i + 1] = part->infoRows;
@@ -35,5 +35,5 @@ void parts_set(FRAME_INFO_ *frame, u32 flags) {
             takara_set((u8 *)GetInfoAdrs(i + 1, 3), frame, i + 1);
         }
     }
-    data_0212c7c8.unk_49[2] = cursor;
+    gameState.unk_49[2] = cursor;
 }

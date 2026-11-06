@@ -15,7 +15,7 @@ typedef struct WindowState {
     u32 windowReg;
 } WindowState;
 
-// Display shadow block (data_0212c75c): display flags at +0, window values at +0x5c, +0x60 and +0x62.
+// Display shadow block (displayState): display flags at +0, window values at +0x5c, +0x60 and +0x62.
 typedef struct WindowDisplay {
     u16 displayFlags;
     u8 unk_02[0x5a];
@@ -25,24 +25,24 @@ typedef struct WindowDisplay {
     u16 unk_62;
 } WindowDisplay;
 
-extern u16 data_0212c584[4];
-extern u16 data_0212c58c[4];
+extern u16 playerKeysPrev[4];
+extern u16 playerKeys[4];
 extern WindowState hblankDma;
-extern WindowDisplay data_0212c75c;
+extern WindowDisplay displayState;
 
 extern "C" void keyClear(void);
 
 // keyClear (0x0202b54c)
 void keyClear(void) {
     ComRequest(5);
-    data_0212c584[3] = 0;
-    data_0212c584[2] = 0;
-    data_0212c584[1] = 0;
-    data_0212c584[0] = 0;
-    data_0212c58c[3] = 0;
-    data_0212c58c[2] = 0;
-    data_0212c58c[1] = 0;
-    data_0212c58c[0] = 0;
+    playerKeysPrev[3] = 0;
+    playerKeysPrev[2] = 0;
+    playerKeysPrev[1] = 0;
+    playerKeysPrev[0] = 0;
+    playerKeys[3] = 0;
+    playerKeys[2] = 0;
+    playerKeys[1] = 0;
+    playerKeys[0] = 0;
 }
 
 // CircleWindowHook (CircleWindowHook): placeholder with no code in the ROM, called after the circle window starts.
@@ -56,7 +56,7 @@ void EffectWindowHook(void) {
 // StopEffectWindow (0x0202b598): clears the window bit of the display flags and the window active flag, stops the DMA
 // and calls EffectWindowHook.
 void StopEffectWindow(void) {
-    data_0212c75c.displayFlags = data_0212c75c.displayFlags & 0xdfff;
+    displayState.displayFlags = displayState.displayFlags & 0xdfff;
     hblankDma.active = 0;
     MI_StopDma(0);
     EffectWindowHook();
@@ -65,10 +65,10 @@ void StopEffectWindow(void) {
 // InitCircleWindow (0x0202b5d4): sets the window bit, the window bounds x and y, the size 0xc0 and the active flag,
 // then calls CircleWindowHook.
 void InitCircleWindow(u16 x, u16 y) {
-    data_0212c75c.displayFlags = data_0212c75c.displayFlags | 0x2000;
-    data_0212c75c.unk_60 = x;
-    data_0212c75c.unk_62 = y;
-    data_0212c75c.unk_5c = 0xc0;
+    displayState.displayFlags = displayState.displayFlags | 0x2000;
+    displayState.unk_60 = x;
+    displayState.unk_62 = y;
+    displayState.unk_5c = 0xc0;
     hblankDma.active = 1;
     hblankDma.windowReg = 0x04000040;
     CircleWindowHook();

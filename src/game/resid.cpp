@@ -16,7 +16,7 @@ typedef struct ResIDTranslate {
 
 extern "C" u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count);
 
-// GetResTranslateID (0x02029ab8): the value of the entry with id for the current game state (byte 0x8e of data_0212c7c8),
+// GetResTranslateID (0x02029ab8): the value of the entry with id for the current game state (byte 0x8e of gameState),
 // or id itself when it is not in the table or the state is not 1..5.
 u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count) {
     const ResIDTranslate *entry;
@@ -26,7 +26,7 @@ u16 GetResTranslateID(u16 id, const ResIDTranslate *table, s32 count) {
     for (i = 0; i < count; i++) {
         entry = &table[i];
         if (id == entry->id) {
-            state = data_0212c7c8.unk_8e;
+            state = gameState.unk_8e;
             if (state == 1) {
                 return entry->value[0];
             }

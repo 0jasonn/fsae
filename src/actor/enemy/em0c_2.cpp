@@ -57,7 +57,7 @@ void em0c_shoot(Entity *e) {
     Entity *shot;
 
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance())) {
-        target = data_0212ceb0[*(u16 *)frameCounter & 3].entity;
+        target = playerWork[*(u16 *)frameCounter & 3].entity;
         if (target == NULL) {
             return;
         }
@@ -81,7 +81,7 @@ void em0c_shoot(Entity *e) {
         }
         e->action -= 1;
     } else {
-        target = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+        target = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         if (target == NULL) {
             return;
         }

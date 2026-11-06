@@ -6,7 +6,7 @@
 
 // Damage electric hit (module hit, eighth unit). Original name: hit_dengekidamage.
 #define HIT_KNOCKBACK_FRAMES_SHORT(k) (((k) & 0x80) ? (-16 - (s8)(k)) : ((s8)(k) + 16))
-#define HIT_DAMAGE_OBJECT(e) (data_0212ceb0[(e)->type].entity)
+#define HIT_DAMAGE_OBJECT(e) (playerWork[(e)->type].entity)
 
 BOOL hit_dengekidamage(Entity *e, Entity *t, u8 mode) {
     HIT_DAMAGE_OBJECT(e)->contactFlags = t->unk_40 | 0x80;

@@ -24,7 +24,7 @@ extern const u32 flagBits[];              // flagBits, indexed by playerCount - 
 extern const BgmIndexEntry *const bgmIndexTable[];
 
 // Entity of player i (PlayerData.entity at +0x28 in each 0x94-byte block)
-#define PLAYER_ENTITY(i) (data_0212ceb0[i].entity)
+#define PLAYER_ENTITY(i) (playerWork[i].entity)
 
 void Set44(Entity *e);
 void set44_init(Entity *e);

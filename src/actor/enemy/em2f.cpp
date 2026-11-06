@@ -19,9 +19,9 @@ void em2f_init(Entity *e) {
     e->unk_5e.b2 = 2;
     e->hitbox = em2f_hitbox;
     V(e)->attackSeed = Random();
-    e->health = em2f_healthByDifficulty[data_0212c7c8.difficulty];
+    e->health = em2f_healthByDifficulty[gameState.difficulty];
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        switch (data_0212c7c8.playerCount) {
+        switch (gameState.playerCount) {
             case 2:
                 e->health = e->health + e->health / 5;
                 break;
@@ -38,7 +38,7 @@ void em2f_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
     BindPlayers();
     SoundReq(0x80080000);
-    data_0212c7c8.unk_26 = 0xffff;
+    gameState.unk_26 = 0xffff;
 }
 
 void em2f_initWait(Entity *e) {
@@ -48,19 +48,19 @@ void em2f_initWait(Entity *e) {
         e->action = 2;
         e->timer = 0x78;
         e->spriteSettings.b0 = 1;
-        data_0212c648 = e;
-        for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
-            data_0212ceb0[i].entity->animationState = 0;
-            BikkuriSet(data_0212ceb0[i].entity, -8, -12);
+        mapState = e;
+        for (u8 i = 0; i < gameState.playerCount; i++) {
+            playerWork[i].entity->animationState = 0;
+            BikkuriSet(playerWork[i].entity, -8, -12);
         }
         return;
     }
     if (e->subtimer < 0x20) {
         e->subtimer++;
-        data_0212c5ac.unk_c = 0xfff0;
-        data_0212c5ac.unk_7 = 0;
+        blendRequest.unk_c = 0xfff0;
+        blendRequest.unk_7 = 0;
         MakeFadeBuff256((e->subtimer >> 2) << 4);
-        data_0212c5ac.unk_c = -1;
+        blendRequest.unk_c = -1;
         return;
     }
     if (timer >= 0x96) {
@@ -69,9 +69,9 @@ void em2f_initWait(Entity *e) {
     if (timer & 0xf) {
         return;
     }
-    for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
+    for (u8 i = 0; i < gameState.playerCount; i++) {
         if (Random() & 7) {
-            data_0212ceb0[i].entity->animationState = Random() & 6;
+            playerWork[i].entity->animationState = Random() & 6;
         }
     }
 }
@@ -107,15 +107,15 @@ void em2f_mesWait(Entity *e) {
         e->subAction = 1;
         return;
     }
-    for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
-        if (data_0212c584[i] & 0x1000) {
+    for (u8 i = 0; i < gameState.playerCount; i++) {
+        if (playerKeysPrev[i] & 0x1000) {
             return;
         }
     }
     e->action = 5;
     e->timer = 8;
     SoundReq(0x1f9);
-    data_0212c5ac.unk_7 = 0x16;
+    blendRequest.unk_7 = 0x16;
     MakeFadeBuff256(0x100);
 }
 
@@ -191,8 +191,8 @@ void em2f_plDown(Entity *e) {
     }
     e->action = 0xa;
     e->timer = 0x24;
-    for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
-        PlayerData *player = &data_0212ceb0[i];
+    for (u8 i = 0; i < gameState.playerCount; i++) {
+        PlayerData *player = &playerWork[i];
         player->state = 0xf;
         player->motionId = 0x1af;
         player->stateTimer = 0xb4;
@@ -213,8 +213,8 @@ void em2f_downWait(Entity *e) {
     e->spriteSettings.b14 = 1;
     e->spriteSettings.b30 = 1;
     e->unk_5e.b0 = 3;
-    for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].entity->direction = 0xff;
+    for (u8 i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].entity->direction = 0xff;
     }
 }
 
@@ -243,19 +243,19 @@ void em2f_demoEnd(Entity *e) {
     e->spriteSettings.b30 = 2;
     e->unk_5e.b0 = 2;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        data_0212c648 = data_0212ceb0[localPlayerIndex].entity;
+        mapState = playerWork[localPlayerIndex].entity;
     } else {
-        data_0212c648 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+        mapState = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
-    for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
-        PlayerData *player = &data_0212ceb0[i];
+    for (u8 i = 0; i < gameState.playerCount; i++) {
+        PlayerData *player = &playerWork[i];
         player->motionId = 0xc;
         player->stateTimer = 1;
         player->unk_02 = 0x41;
         player->entity->zVelocity = 0x20000;
     }
     SoundReq(0x1af);
-    data_0212c618 = 1;
+    cockpitState = 1;
     Scene_ClearFlag5();
     CockpitOn();
 }

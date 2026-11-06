@@ -17,8 +17,8 @@ BOOL em13_getpos(Entity *e) {
     u16 dy;
     u32 index;
 
-    cell = (u16)(((e->x.HALF.HI - data_0212c648.originX) >> 4) |
-                 (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6));
+    cell = (u16)(((e->x.HALF.HI - mapState.originX) >> 4) |
+                 (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
     index = (u32)Random() & 0x1f;
     cell = (u16)(em13_randomCellOffsets[index] + cell);
     if (func_02083d4c(cell, 0x4000) != 0) {
@@ -27,8 +27,8 @@ BOOL em13_getpos(Entity *e) {
     if (func_02083d4c(cell, 0x8000) != 0) {
         goto nomove;
     }
-    newX = (u16)(((cell & 0x3f) << 4) + 8 + data_0212c648.originX);
-    newY = (u16)(((cell & 0xfc0) >> 2) + 8 + data_0212c648.originY);
+    newX = (u16)(((cell & 0x3f) << 4) + 8 + mapState.originX);
+    newY = (u16)(((cell & 0xfc0) >> 2) + 8 + mapState.originY);
     if (V(e)->subX == 0 && V(e)->subY == 0) {
         V(e)->warpX = newX;
         V(e)->warpY = newY;

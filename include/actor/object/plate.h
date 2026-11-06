@@ -12,7 +12,7 @@ typedef struct Vars_Plate {
 #define VPLATE(e) VARS(Vars_Plate, e)
 
 extern u8 data_0212c4dc;     // game flag, 1 while counting up, 2 when the count is snapped to limit
-extern u8 data_021349c0[];   // game state, byte 0x27 nonzero when the actor should be removed
+extern u8 effectState[];   // game state, byte 0x27 nonzero when the actor should be removed
 
 void plate_posY_set(Entity *e);
 void rupee_move(Entity *e, s8 dx, u32 divisor);

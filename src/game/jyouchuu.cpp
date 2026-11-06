@@ -16,9 +16,9 @@ void LoadJyouchuu(void) {
     u8 state;
     u8 *row;
 
-    state = data_0212c7c8.unk_01;
+    state = gameState.unk_01;
     if (state >= 5) {
-        row = *(u8 **)((u8 *)bgmIndexTable[state] + data_0212c7c8.unk_48 * 8);
+        row = *(u8 **)((u8 *)bgmIndexTable[state] + gameState.unk_48 * 8);
         DataLoad(data_020d7da8[row[1]]);
     } else {
         DataLoad(data_020d7d84[state]);

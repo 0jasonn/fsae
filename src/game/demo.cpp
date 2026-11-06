@@ -22,10 +22,10 @@ typedef struct DemoDisplayShadow {
 } DemoDisplayShadow;
 
 extern u8 data_0212c4dc;                // demo phase, 0..4
-extern u8 data_0212c5ac;                // blendEnabled, first byte of the blend request
+extern u8 blendRequest;                // blendEnabled, first byte of the blend request
 extern u16 data_0212c510;               // nonzero ends the phase wait early
-extern DemoDisplayShadow data_0212c75c; // display shadow block
-extern DemoEffectState data_021349c0;   // effect state block
+extern DemoDisplayShadow displayState; // display shadow block
+extern DemoEffectState effectState;   // effect state block
 extern u16 data_021355a0;
 
 // DemoTask (0x0202a78c): phase 0 loads the demo graphics and palette, starts the display and waits;
@@ -36,12 +36,12 @@ void DemoTask(void) {
 
     switch (data_0212c4dc) {
     case 0:
-        data_0212c75c.displayFlags = 0x100;
-        data_0212c75c.unk_8 = 8;
+        displayState.displayFlags = 0x100;
+        displayState.unk_8 = 8;
         DataLoad(4);
         CgLoad(3);
-        func_02029a50(&data_021349c0, 0x28);
-        data_021349c0.timer = 0xf0;
+        func_02029a50(&effectState, 0x28);
+        effectState.timer = 0xf0;
         *(u16 *)0x05000000 = 0;
         data_021355a0 = 0;
         FadeSet(0, 8);
@@ -57,7 +57,7 @@ void DemoTask(void) {
         }
         break;
     case 2:
-        if (data_0212c5ac == 0) {
+        if (blendRequest == 0) {
             data_0212c4dc = 4;
         }
         break;
@@ -67,7 +67,7 @@ void DemoTask(void) {
         }
         break;
     case 4:
-        if (data_0212c5ac == 0) {
+        if (blendRequest == 0) {
             Task_Chain(7);
         }
         break;
@@ -77,11 +77,11 @@ void DemoTask(void) {
 // demoWaitCk (0x0202a8bc): does nothing while the blend runs. Otherwise counts the timer down and moves to the next
 // phase (returns 1) once the timer is 0 or data_0212c510 is set; returns 0 while waiting.
 int demoWaitCk(void) {
-    if (data_0212c5ac != 0) {
+    if (blendRequest != 0) {
         return 0;
     }
-    data_021349c0.timer = data_021349c0.timer - 1;
-    if (data_0212c510 != 0 || data_021349c0.timer == 0) {
+    effectState.timer = effectState.timer - 1;
+    if (data_0212c510 != 0 || effectState.timer == 0) {
         data_0212c4dc++;
         return 1;
     }

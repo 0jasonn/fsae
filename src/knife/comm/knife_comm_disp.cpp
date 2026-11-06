@@ -12,7 +12,7 @@ extern "C" void knife_commDispMove(KNIFE_MSGSYS *msg);
 
 extern u8 localPlayerIndex[];
 extern u8 frameCounter[];
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern const s8 data_020d7c18[]; // step table of the text speed, indexed by the low nibble of speedSetting
 
 // Knife::Message::Token as the move function calls it: slot 2 gives the number of parts, slot 5 analyzes one part
@@ -58,7 +58,7 @@ void knife_commDispMove(KNIFE_MSGSYS *msg) {
     }
     if (msg->openMode != 2) {
         speed = 1;
-        if ((data_0212c58c[playerIndex] & 1) != 0) {
+        if ((playerKeys[playerIndex] & 1) != 0) {
             if (isSkipAvailable(msg) != 0) {
                 msg->noTelopWait = speed;
                 speed = 5;
@@ -118,7 +118,7 @@ void knife_commDispMove(KNIFE_MSGSYS *msg) {
 //   knife_commDispWait (0x0204b6f4)
 
 // Waits for the message box to be allowed to move on. While the box is closing (openMode 2) it waits for the frame
-// counter flag and the telop request; otherwise it waits for the player's flag in data_0212c58c. Both paths end by
+// counter flag and the telop request; otherwise it waits for the player's flag in playerKeys. Both paths end by
 // setting subState to 3 (the shared block at set_sub3 keeps the code layout of the original).
 void knife_commDispWait(KNIFE_MSGSYS *msg) {
     u8 playerIndex;
@@ -136,7 +136,7 @@ void knife_commDispWait(KNIFE_MSGSYS *msg) {
         if (KnifeApp_isWirelessMode(instance) == 0) {
             playerIndex = Knife_Single_SinglePlay_GetInstance()[0];
         }
-        if ((data_0212c58c[playerIndex] & 1) != 0) {
+        if ((playerKeys[playerIndex] & 1) != 0) {
             goto set_sub3;
         }
         return;

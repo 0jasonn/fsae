@@ -3,13 +3,13 @@
 #include "actor/object/objdecls_a.h"
 #include "actor/object/key.h"
 
-extern u8 data_021349c0[];
+extern u8 effectState[];
 void key_pos_set(Entity *e);
 
 // key_move, 0x02069930
 void key_move(Entity *e) {
     Vars_Key *v = VARS(Vars_Key, e);
-    if (data_021349c0[8] >= 2) {
+    if (effectState[8] >= 2) {
         SoundReq(0x200);
         PutObjWork(e);
         return;
@@ -21,6 +21,6 @@ void key_move(Entity *e) {
         }
         return;
     }
-    v->posIndex += data_021349c0[10];
+    v->posIndex += effectState[10];
     key_pos_set(e);
 }

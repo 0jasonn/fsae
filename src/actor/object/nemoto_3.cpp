@@ -8,7 +8,7 @@
 void nemoto_writecell(Entity *e) {
     Vars_NemotoCell *v = VARS(Vars_NemotoCell, e);
 
-    v->cell = ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6);
+    v->cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
     v->cellValue = func_0208367c(v->cell, e->layer);
     v->cellFlag = func_02083d4c(v->cell, e->layer);
     func_0208366c(0x4009, v->cell, e->layer);

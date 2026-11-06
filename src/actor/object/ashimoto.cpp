@@ -17,8 +17,8 @@ void AshimotoCheck(Entity *e) {
     int k;
 
     base = GetBgBuffAdrs(e->layer);
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        player = &data_0212ceb0[i];
+    for (i = 0; i < gameState.playerCount; i++) {
+        player = &playerWork[i];
         if (player->entity == NULL) {
             continue;
         }

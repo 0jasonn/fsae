@@ -45,7 +45,7 @@ void knife_commDispRoll(KNIFE_MSGSYS *msg) {
 //   knife_commDispEnq (0x0204ba1c)
 
 extern u8 localPlayerIndex[];
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern u8 data_0217d350[];           // saved state, written by the choice dispatch
 extern u8 data_0217d358[];           // choice block of the message box, cleared by func_02029a50
 extern u8 knifeChoiceMsgIds[];       // message id low byte for each choice state (knifeChoiceMsgIds)
@@ -83,7 +83,7 @@ void knife_commDispEnq(KNIFE_MSGSYS *msg) {
     if (KnifeApp_isWirelessMode(instance) == 0) {
         playerIndex = Knife_Single_SinglePlay_GetInstance()[0];
     }
-    keys = data_0212c58c[playerIndex];
+    keys = playerKeys[playerIndex];
     if ((keys & 9) != 0) {
         msgIdLow = knifeChoiceMsgIds[choice->state];
         if (msgIdLow == 0xff) {

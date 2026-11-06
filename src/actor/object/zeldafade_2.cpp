@@ -10,6 +10,6 @@ extern u8 data_02171d1c; // 1 while no fade partner is active (see ZeldaFadeFlag
 void ZeldaFadeFinish(void) {
     StopEffectWindow();
     data_02171d1c = 1;
-    *((u8 *)&data_0212c5ac + 4) = 1; // fade running flag
-    data_0212c5ac.blendEnabled = 0;
+    *((u8 *)&blendRequest + 4) = 1; // fade running flag
+    blendRequest.blendEnabled = 0;
 }

@@ -21,7 +21,7 @@ typedef struct BgAnmSlot {
 extern BgAnmSlot data_02134a68[];
 extern BgAnmEntry *data_020ce17c[]; // script table, indexed by the id in BgAnmInit's list
 extern u32 data_020cd6b8[]; // per-id table of 16-bit time values (8 entries each) for random times
-extern u8 data_0212c5ac; // non-zero while the screen is blanked: records are not sent
+extern u8 blendRequest; // non-zero while the screen is blanked: records are not sent
 
 u16 getanmcnt(u32 *time);
 void SendBgAnmData(u32 *records);
@@ -43,7 +43,7 @@ void BgAnm(void) {
         slot->timer--;
         if (slot->timer == 0) {
             if (advanced == 0) {
-                if (data_0212c5ac == 0) {
+                if (blendRequest == 0) {
                     SendBgAnmData(slot->cur->records);
                 }
                 slot->timer = getanmcnt(&slot->cur->time);

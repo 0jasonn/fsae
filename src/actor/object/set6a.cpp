@@ -18,18 +18,18 @@ typedef struct Vars_Set6a {
 } Vars_Set6a;
 
 extern const EntityFunc data_020d91e4[]; // indexed by e->action
-extern u8 data_021349c0[];
+extern u8 effectState[];
 extern u32 em12_typeMasks[]; // one mask per area
 extern u32 flagBits[]; // one mask per type2
 extern u16 frameCounter;
-extern Entity *data_0212c648;
+extern Entity *mapState;
 
 void getDebu(Entity *e);
 void getMgrInfo(Entity *e);
 void mgrMove(Entity *e);
 
 void Set6a(Entity *e) {
-    if (data_021349c0[1] != 0 && e->objId != 0x72) {
+    if (effectState[1] != 0 && e->objId != 0x72) {
         return;
     }
     data_020d91e4[e->action](e);
@@ -48,7 +48,7 @@ void set6a_init(Entity *e) {
         e->x.HALF.HI = 0x1f8;
         e->y.HALF.HI = 0x1f8;
         VARS(Vars_Set6a, e)->counter72 = 0xf0;
-        data_0212c648 = e;
+        mapState = e;
     }
 }
 
@@ -62,14 +62,14 @@ void set6a_move(Entity *e) {
         }
         if (VARS(Vars_Set6a, e)->t78 == 0) {
             SoundReq(0x10);
-            data_0212c648 = VARS(Vars_Set6a, e)->next;
+            mapState = VARS(Vars_Set6a, e)->next;
             em12_typeMasks[e->areaIndex] |= flagBits[e->type2];
             PutObjWork(e);
             return;
         }
         if (VARS(Vars_Set6a, e)->t78 == (u16)(e->timer * 0x3c)) {
-            VARS(Vars_Set6a, e)->next = data_0212c648;
-            data_0212c648 = e;
+            VARS(Vars_Set6a, e)->next = mapState;
+            mapState = e;
             SoundReq(0x800d01a7);
         }
         VARS(Vars_Set6a, e)->t78--;

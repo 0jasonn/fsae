@@ -23,13 +23,13 @@ void tenku_kumo_init(Entity *e) {
     }
     e->action = nextAction;
     set_pos(e);
-    e->x.HALF.HI += *(s16 *)(data_021349c0 + 0x26);
+    e->x.HALF.HI += *(s16 *)(effectState + 0x26);
     InitAnimationForceUpdate(e, e->type);
 }
 
 void tenku_kumo_move(Entity *e) {
     set_pos(e);
-    e->x.HALF.HI += *(s16 *)(data_021349c0 + 0x26);
+    e->x.HALF.HI += *(s16 *)(effectState + 0x26);
     if (ZeldaFadeFlagGet() == 0) {
         *(u32 *)&e->spriteSettings &= ~0xc00;
     }

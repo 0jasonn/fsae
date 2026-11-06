@@ -30,27 +30,27 @@ void ranking_exit(void) {
             msgLines = knife_MakeMsgScreen(0x7dc, screen);
         }
         SoundReq(0x79);
-        data_0212c75c.unk_0a = 0;
-        data_0212c75c.unk_0c = -(0xc0 - (msgLines + 2) * 8) / 2;
-        data_0212c75c.unk_08 = *(u16 *)(data_020ce4d0 + 0x24);
-        data_0212c75c.displayFlags |= 0x100;
+        displayState.unk_0a = 0;
+        displayState.unk_0c = -(0xc0 - (msgLines + 2) * 8) / 2;
+        displayState.unk_08 = *(u16 *)(data_020ce4d0 + 0x24);
+        displayState.displayFlags |= 0x100;
         FadeSet(0, 8);
-        data_021349c0.timer = 0x78;
+        effectState.timer = 0x78;
         data_0212c4dc++;
         break;
     case 1:
-        if (data_0212c5ac != 0) {
+        if (blendRequest != 0) {
             return;
         }
-        data_021349c0.timer--;
-        if (data_021349c0.timer != 0) {
+        effectState.timer--;
+        if (effectState.timer != 0) {
             return;
         }
         FadeSet(3, 8);
         data_0212c4dc++;
         break;
     case 2:
-        if (data_0212c5ac != 0) {
+        if (blendRequest != 0) {
             return;
         }
         DispReset();
@@ -75,17 +75,17 @@ void CalcRanking(void) {
 
     ranking_noop();
     rk = data_02171d00; // local pointer: keeps the table address loads after the call
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
+    for (i = 0; i < gameState.playerCount; i++) {
         rk[i].playerIndex = i;
         rk[i].rank = 0;
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-            rk[i].score = data_0212c7c8.playerCounters[i];
+            rk[i].score = gameState.playerCounters[i];
         } else {
-            rk[i].score = data_0212c7c8.score;
+            rk[i].score = gameState.score;
         }
     }
 
-    for (i = 1; i < data_0212c7c8.playerCount; i++) {
+    for (i = 1; i < gameState.playerCount; i++) {
         keyPlayer = rk[i].playerIndex;
         keyRank = rk[i].rank;
         keyScore = rk[i].score;
@@ -102,7 +102,7 @@ void CalcRanking(void) {
     }
 
     rank = 1;
-    for (i = 1; i < data_0212c7c8.playerCount; i++, rank++) {
+    for (i = 1; i < gameState.playerCount; i++, rank++) {
         if (rk[i].score == rk[i - 1].score) {
             rk[i].rank = rk[i - 1].rank;
         } else {
@@ -110,7 +110,7 @@ void CalcRanking(void) {
         }
     }
 
-    for (i = 1; i < data_0212c7c8.playerCount; i++) {
+    for (i = 1; i < gameState.playerCount; i++) {
         keyPlayer = rk[i].playerIndex;
         keyRank = rk[i].rank;
         keyScore = rk[i].score;

@@ -13,7 +13,7 @@ u8 decVital(Entity *e, Entity *t) {
     PlayerData *player;
 
     if (e->objKind == 1) {
-        player = &data_0212ceb0[e->type];
+        player = &playerWork[e->type];
         damage = t->attackDamage - (s32)((u32)(player->unk_3e << 28) >> 30);
         if (damage <= 1) {
             damage = 1;

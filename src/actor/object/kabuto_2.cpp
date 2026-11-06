@@ -7,19 +7,19 @@ extern "C" void kabutowari(Entity *e);
 void kabutowari(Entity *e) {
     Entity *other;
 
-    other = data_0212ceb0[e->type].entity;
-    if (data_0212ceb0[e->type].weapon != e) {
+    other = playerWork[e->type].entity;
+    if (playerWork[e->type].weapon != e) {
         func_020841b0(e);
         zFree((void *)e->hitbox);
         PutObjWork(e);
     }
-    if (data_0212ceb0[e->type].inUse == 0) {
+    if (playerWork[e->type].inUse == 0) {
         goto clear_c3;
     }
-    if (data_0212ceb0[e->type].unk_02 != 0) {
+    if (playerWork[e->type].unk_02 != 0) {
         goto normal_n1;
     }
-    data_0212ceb0[e->type].weapon = 0;
+    playerWork[e->type].weapon = 0;
     func_020841b0(e);
     zFree((void *)e->hitbox);
     PutObjWork(e);
@@ -28,7 +28,7 @@ normal_n1:
     if ((other->frame & 0x80) == 0) {
         goto normal_n2;
     }
-    data_0212ceb0[e->type].weapon = 0;
+    playerWork[e->type].weapon = 0;
     func_020841b0(e);
     zFree((void *)e->hitbox);
     PutObjWork(e);
@@ -49,7 +49,7 @@ normal_n2:
     kabutoEvent(e);
     return;
 clear_c3:
-    data_0212ceb0[e->type].weapon = 0;
+    playerWork[e->type].weapon = 0;
     func_020841b0(e);
     zFree((void *)e->hitbox);
     PutObjWork(e);

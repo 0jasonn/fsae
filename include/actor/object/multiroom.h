@@ -4,7 +4,7 @@
 #include "engine/functions.h"
 #include "engine/entity.h"
 
-// Scroll state block data_0212c648 as MultiRoomInit uses it. The first word is the entity the view follows.
+// Scroll state block mapState as MultiRoomInit uses it. The first word is the entity the view follows.
 typedef struct MultiRoomScroll {
     /* 00 */ Entity *target;
     /* 04 */ u8 unk_04[0xe];
@@ -22,7 +22,7 @@ typedef struct MultiRoomScroll {
     /* 28 */ u16 limitX;
     /* 2a */ u16 limitY;
 } MultiRoomScroll;
-extern MultiRoomScroll data_0212c648;
+extern MultiRoomScroll mapState;
 
 extern u8 triangleTable[];               // 0x021387a0, cleared by MultiRoomInit (size 0x800)
 extern u16 data_0215dfa4[];              // 0x0215dfa4, cell index lists of the two layers

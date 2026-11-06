@@ -62,7 +62,7 @@ void searchCandle(Entity *e) {
 int purupuru(Entity *e) {
     VBL(e)->launchTimer--;
     if (VBL(e)->launchTimer == 0) {
-        if (e->action == 2 && data_0212ceb0[e->type2].unk_02 != 0) {
+        if (e->action == 2 && playerWork[e->type2].unk_02 != 0) {
             VBL(e)->launchTimer = 4;
         } else {
             e->action = 1;
@@ -136,7 +136,7 @@ void em09_damage(Entity *e) {
         InitAnimationForceUpdate(e->parent, 5);
         KemuriSet(e);
         if (e->contactedEntity->objKind == 8 || e->contactedEntity->objKind == 1) {
-            e->child = data_0212ceb0[e->contactedEntity->type].entity;
+            e->child = playerWork[e->contactedEntity->type].entity;
         } else {
             e->child = EmGetAimPl();
         }
@@ -146,7 +146,7 @@ void em09_damage(Entity *e) {
         kuttsukiReset(e);
     }
     if (e->contactedEntity->objKind == 1) {
-        if ((data_0212ceb0[e->contactedEntity->type].statusFlags & 2) == 0) {
+        if ((playerWork[e->contactedEntity->type].statusFlags & 2) == 0) {
             if (e->action == 2) {
                 InitAnimationForceUpdate(e, 0);
                 InitAnimationForceUpdate(e->parent, 3);
@@ -162,7 +162,7 @@ void em09_damage(Entity *e) {
             e->child = EmGetAimPl();
         }
     } else if (e->contactedEntity->objKind == 8) {
-        e->child = data_0212ceb0[e->contactedEntity->type].entity;
+        e->child = playerWork[e->contactedEntity->type].entity;
     } else {
         e->child = EmGetAimPl();
     }
@@ -197,7 +197,7 @@ void em09_init(Entity *e) {
     VBT(e)->savedPalette = e->spriteSettings.b16;
     e->spriteSettings.b20 = em09_paletteByType[e->type];
     e->spriteSettings.b16 = e->spriteSettings.b20;
-    if (data_0212c7c8.unk_8e == 2) {
+    if (gameState.unk_8e == 2) {
         altPalette = *(Tbl3 *)em09_altPaletteA;
         e->spriteSettings.b20 = altPalette.v[e->type];
         e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -246,7 +246,7 @@ void em09_move(Entity *e) {
     if (--e->timer == 0) {
         e->timer = 8;
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-            e->child = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+            e->child = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         e->direction = func_02084fd0(e, e->child);
         em09_seqSet(e);

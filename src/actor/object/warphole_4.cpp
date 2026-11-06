@@ -18,7 +18,7 @@ void warphole_wait(Entity *e) {
             return;
         }
         resource = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x9a);
-        kind = data_0212c7c8.unk_01;
+        kind = gameState.unk_01;
         if (kind >= 5) {
             if (kind == 5) {
                 func_020845b0(0x6400000 + ((e->unk_53 + 1) << 9), resource + 0x400, 0x100);
@@ -39,7 +39,7 @@ void warphole_move(Entity *e) {
     u8 playerMask;
 
     UpdateAnimationSingleFrame(e);
-    if (data_0212c7c8.unk_6e >= 2) {
+    if (gameState.unk_6e >= 2) {
         e->action = e->action + 1;
         return;
     }
@@ -48,12 +48,12 @@ void warphole_move(Entity *e) {
         playerMask = 1;
     }
     if (CountBits(playerMask) == 1) {
-        if (e->type2 != data_0212c7c8.phaseFlags) {
-            data_0212c7c8.unk_6f = 0;
-            data_0212c7c8.phaseFlags = e->type2;
+        if (e->type2 != gameState.phaseFlags) {
+            gameState.unk_6f = 0;
+            gameState.phaseFlags = e->type2;
         }
-        data_0212c7c8.unk_6f |= playerMask;
-        Knife_Single_SinglePlay_SetWarpInfo(Knife_Single_SinglePlay_GetInstance(), data_0212c7c8.unk_6f, data_0212c7c8.phaseFlags);
+        gameState.unk_6f |= playerMask;
+        Knife_Single_SinglePlay_SetWarpInfo(Knife_Single_SinglePlay_GetInstance(), gameState.unk_6f, gameState.phaseFlags);
         if (e->subtimer == 0) {
             EnqueueSFX(0x18);
             e->spriteSettings.b16 = 1;
@@ -85,7 +85,7 @@ void warphole_wait2(Entity *e) {
     u8 flag;
     Entity *target;
 
-    if (data_0212c7c8.unk_6e >= 3 && data_0212c7c8.phaseFlags == e->type2) {
+    if (gameState.unk_6e >= 3 && gameState.phaseFlags == e->type2) {
         flag = 0;
         e->action = e->action + 1;
         e->spriteSettings.b16 = 1;
@@ -110,15 +110,15 @@ void warphole_exit(Entity *e) {
     int players = func_02084110(e);
 
     if (players & 1) {
-        pos_copy(e, data_0212ceb0[0].entity);
+        pos_copy(e, playerWork[0].entity);
     }
     if (players & 2) {
-        pos_copy(e, data_0212ceb0[1].entity);
+        pos_copy(e, playerWork[1].entity);
     }
     if (players & 4) {
-        pos_copy(e, data_0212ceb0[2].entity);
+        pos_copy(e, playerWork[2].entity);
     }
     if (players & 8) {
-        pos_copy(e, data_0212ceb0[3].entity);
+        pos_copy(e, playerWork[3].entity);
     }
 }

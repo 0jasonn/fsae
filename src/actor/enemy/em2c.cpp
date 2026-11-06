@@ -15,7 +15,7 @@ extern const EntityFunc em2c_actions[];
 extern const EntityFunc em2c_typeActions[];
 extern const EntityFunc em2c_type0Actions[];
 extern const u8 em2c_hitbox[];
-extern Entity *data_0212c648;
+extern Entity *mapState;
 extern u8 localPlayerIndex;
 extern s32 em2c_leverDone;
 
@@ -28,8 +28,8 @@ void Em2c(Entity *e) {
     if ((e->contactFlags & 0x7f) != 0x10) {
         return;
     }
-    data_0212ceb0[e->contactedEntity->type].state = 6;
-    data_0212ceb0[e->contactedEntity->type].stateTimer = 1;
+    playerWork[e->contactedEntity->type].state = 6;
+    playerWork[e->contactedEntity->type].stateTimer = 1;
 }
 
 void em2c_normal(Entity *e) {
@@ -62,7 +62,7 @@ void em2c_type0_init_033378(Entity *e) {
     e->unk_6a = 1;
     e->unk_5e.b0 = 0;
     InitAnimationForceUpdate(e, 0);
-    data_0212c648 = e;
+    mapState = e;
     CockpitOff();
 }
 
@@ -79,9 +79,9 @@ void em2c_type0_1stDemoWait_0333f0(Entity *e) {
     V(e)->demoTimer = 0x4b0;
     SoundReq(0x19c);
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        data_0212c648 = data_0212ceb0[localPlayerIndex].entity;
+        mapState = playerWork[localPlayerIndex].entity;
     } else {
-        data_0212c648 = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+        mapState = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
     CockpitOn();
 }
@@ -94,7 +94,7 @@ void type0_1stMove(Entity *e) {
             }
             return;
         }
-        if (data_0212c7c8.level != 1) {
+        if (gameState.level != 1) {
             if (set2nd(e) == 0) {
                 return;
             }

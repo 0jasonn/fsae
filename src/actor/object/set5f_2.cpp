@@ -10,7 +10,7 @@
 
 extern const s8 data_020d90ac[];
 extern const s8 data_020d90c0[];
-extern Entity *data_0212c648;
+extern Entity *mapState;
 
 void set5f_plset(Entity *e);
 
@@ -61,14 +61,14 @@ void type0_plBackJump(Entity *e) {
             tama->layer = 0x8000;
         }
     }
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].state = 0xf;
-        data_0212ceb0[i].stateTimer = 0xb4;
-        data_0212ceb0[i].motionId = 0xc;
-        data_0212ceb0[i].unk_02 = 0x41;
-        data_0212ceb0[i].entity->direction = 0x10;
-        data_0212ceb0[i].entity->animationState = 0;
-        data_0212ceb0[i].entity->zVelocity = 0x18000;
+    for (i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].state = 0xf;
+        playerWork[i].stateTimer = 0xb4;
+        playerWork[i].motionId = 0xc;
+        playerWork[i].unk_02 = 0x41;
+        playerWork[i].entity->direction = 0x10;
+        playerWork[i].entity->animationState = 0;
+        playerWork[i].entity->zVelocity = 0x18000;
     }
     enemyId = 0xf;
     enemy = GetEnemyWork(enemyId);
@@ -76,7 +76,7 @@ void type0_plBackJump(Entity *e) {
         return;
     }
     ObjPosCopy(e, enemy);
-    data_0212c648 = enemy;
+    mapState = enemy;
     e->child->health = 0;
     FadeSet(2, 0x10);
     SoundReq(0x208 - enemyId);
@@ -126,13 +126,13 @@ void set5f_type2(Entity *e) {
 }
 
 #define SET5F_PLAYER_POS(i, px, py)                              \
-    data_0212ceb0[i].entity->x.WORD = (px);                      \
-    data_0212ceb0[i].entity->y.WORD = (py);                      \
-    data_0212ceb0[i].entity->z.WORD = 0;                         \
-    data_0212ceb0[i].entity->animationState = 0;
+    playerWork[i].entity->x.WORD = (px);                      \
+    playerWork[i].entity->y.WORD = (py);                      \
+    playerWork[i].entity->z.WORD = 0;                         \
+    playerWork[i].entity->animationState = 0;
 
 void set5f_plset(Entity *e) {
-    switch (data_0212c7c8.playerCount) {
+    switch (gameState.playerCount) {
     case 2:
         SET5F_PLAYER_POS(0, 0x1e80000, 0x2780000);
         SET5F_PLAYER_POS(1, 0x2080000, 0x2780000);

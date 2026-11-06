@@ -6,6 +6,6 @@
 
 void type0rockonSet(Entity *e) {
     e->action = 1;
-    e->timer = data_0212c7c8.playerCount;
+    e->timer = gameState.playerCount;
     e->child = 0;
 }

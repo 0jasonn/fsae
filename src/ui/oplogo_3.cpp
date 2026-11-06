@@ -12,12 +12,12 @@ typedef struct BlendRequestOpl {
     /* 08 */ u8 unk_08[4];
     /* 0c */ s32 resetValue;
 } BlendRequestOpl;
-extern BlendRequestOpl data_0212c5ac;
+extern BlendRequestOpl blendRequest;
 extern const s16 data_020c91fc[][2];
 extern const u8 oplogo_youPosTable[];
 extern EntityFunc oplogo_buttonTable[];
 extern u8 localPlayerIndex;
-extern u8 data_021349c0[];
+extern u8 effectState[];
 extern u8 data_0212c4dc;
 
 void you_move(Entity *e) {
@@ -48,13 +48,13 @@ void you_move(Entity *e) {
     }
     switch (e->subtimer) {
     case 0x1e:
-        data_0212c5ac.resetValue = -27;
-        data_0212c5ac.blendColor = 0;
+        blendRequest.resetValue = -27;
+        blendRequest.blendColor = 0;
         FadeSet(3, 0xc);
         break;
     case 0x28:
-        data_0212c5ac.resetValue = -27;
-        data_0212c5ac.blendColor = 0;
+        blendRequest.resetValue = -27;
+        blendRequest.blendColor = 0;
         FadeSet(5, 0xc);
         break;
     }
@@ -91,7 +91,7 @@ void button_init(Entity *e) {
 void button_move(Entity *e) {
     u8 value;
     if (localPlayerIndex == 0) {
-        if ((data_021349c0[8] & 0x80) && data_0212c4dc == 4) {
+        if ((effectState[8] & 0x80) && data_0212c4dc == 4) {
             value = 2;
         } else {
             value = 0;

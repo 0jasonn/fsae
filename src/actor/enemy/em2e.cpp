@@ -18,7 +18,7 @@ typedef struct Vars_02036314 {
 
 extern const EntityFunc em2e_actions[];
 extern const u8 em2e_hitbox[];
-extern Entity *data_0212c648;
+extern Entity *mapState;
 extern s32 em2e_type4Hidden;
 extern const u16 em2e_hideTimes[];
 extern const u32 em2e_resourceIds[];
@@ -38,7 +38,7 @@ void em2e_main(Entity *e) {
     if (e->contactFlags & 0x7f) {
         return;
     }
-    if (data_0212ceb0[e->contactedEntity->type].statusFlags & 0x400) {
+    if (playerWork[e->contactedEntity->type].statusFlags & 0x400) {
         return;
     }
     Entity *obj = GetSetWork(0x55, 1, 0);
@@ -46,7 +46,7 @@ void em2e_main(Entity *e) {
         return;
     }
     obj->child = e->contactedEntity;
-    data_0212ceb0[e->contactedEntity->type].statusFlags |= 0x400;
+    playerWork[e->contactedEntity->type].statusFlags |= 0x400;
 }
 
 void em2e_init(Entity *e) {
@@ -60,8 +60,8 @@ void em2e_init(Entity *e) {
     gatherInit(e);
     e->subtimer = 0x3c;
     V(e)->unk_7b = 0x1e;
-    e->child = data_0212c648;
-    data_0212c648 = e;
+    e->child = mapState;
+    mapState = e;
     CockpitOff();
     em2e_type4Hidden = 0;
     V(e)->unk_6e = 0;
@@ -76,7 +76,7 @@ void em2e_gatherwait(Entity *e) {
         }
     }
     if (e->health == 0) {
-        if (data_0212c7c8.level == e->type) {
+        if (gameState.level == e->type) {
             V(e)->displayType = 4;
         } else {
             V(e)->displayType = e->type + 1;
@@ -137,7 +137,7 @@ void em2e_gatherwait(Entity *e) {
         return;
     }
     if (e->type == 0) {
-        data_0212c648 = e->child;
+        mapState = e->child;
         SoundReq(0x19c);
         CockpitOn();
     }
@@ -185,7 +185,7 @@ void em2e_sign(Entity *e) {
     e->x.HALF.HI = V(e)->homeX;
     switch (V(e)->mode) {
         case 4:
-            for (e->timer = data_0212c7c8.playerCount << 2; e->timer != 0; e->timer--) {
+            for (e->timer = gameState.playerCount << 2; e->timer != 0; e->timer--) {
                 int spawnX = ((Random() & 0x1f) << 4) + 0x76;
                 int spawnY = ((Random() & 0x1f) << 4) + 0xa8;
                 firepostSet(e, spawnX, spawnY);
@@ -201,7 +201,7 @@ void em2e_sign(Entity *e) {
             firepostSet(e, e->x.HALF.HI, e->y.HALF.HI);
             return;
         case 1:
-            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].entity);
+            e->direction = func_02086078(e, playerWork[func_02085608()].entity);
             e->timer = e->type + 3;
             e->speed = 0x100;
             e->action = 3;
@@ -251,9 +251,9 @@ void em2e_move(Entity *e) {
         if (V(e)->mode == 0) {
             e->direction = Random() & 0x1f;
         } else if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-            e->direction = func_02086078(e, data_0212ceb0[func_02085608()].entity);
+            e->direction = func_02086078(e, playerWork[func_02085608()].entity);
         } else {
-            e->direction = func_02086078(e, data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity);
+            e->direction = func_02086078(e, playerWork[*Knife_Single_SinglePlay_GetInstance()].entity);
         }
         firepostSet(e, e->x.HALF.HI, e->y.HALF.HI);
         return;

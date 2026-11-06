@@ -8,7 +8,7 @@
 
 extern u8 pauseState[];
 extern u16 data_021355a0;
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern u8 data_0212c4d4;
 extern u16 data_0212c520;
@@ -21,7 +21,7 @@ extern u8 data_0212c4e4;
 extern u16 data_0212c514;
 extern u16 data_0212c510;
 extern Entity *data_0212c534;
-extern u16 data_0212c584[];
+extern u16 playerKeysPrev[];
 extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
@@ -40,7 +40,7 @@ extern u8 localPlayerIndex;
 void BindPlayers(void) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
+    for (i = 0; i < gameState.playerCount; i++) {
         BindPlayer(i);
     }
     frameCounter[0x13] = 1;
@@ -49,8 +49,8 @@ void BindPlayers(void) {
 void WarpPlayer(void) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].entity->action = 0x14;
-        data_0212ceb0[i].entity->subAction = 0;
+    for (i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].entity->action = 0x14;
+        playerWork[i].entity->subAction = 0;
     }
 }

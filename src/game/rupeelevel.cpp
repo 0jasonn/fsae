@@ -14,7 +14,7 @@ void goto_nextdemo(void);
 int getRupeeLevel(void) {
     u32 rupees;
 
-    rupees = data_0212c7c8.score;
+    rupees = gameState.score;
     if (rupees < 1000) {
         return 0;
     }

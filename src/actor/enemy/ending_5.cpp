@@ -17,7 +17,7 @@ void yousei_move(void) {
 
 // finale_end (0x0204581c): clears the screen and starts the next task chain step once the blend is idle.
 void finale_end(void) {
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     DispReset();

@@ -29,7 +29,7 @@ typedef struct WindowSlot {
     /* 07 */ u8 height;
 } WindowSlot;
 
-// Message box (data_0217d39c) and telop box (telopBox), both 0xe8 bytes with the same layout
+// Message box (messageBox) and telop box (telopBox), both 0xe8 bytes with the same layout
 // Original name Knife::Message::KNIFE_MSGSYS. The renderer and tokenizer types are defined in enemy/knife_msgsys.h.
 struct MsgRendererView;
 namespace Knife {
@@ -90,7 +90,7 @@ typedef struct KNIFE_MSGSYS {
 typedef Knife::Message::KNIFE_MSGSYS KNIFE_MSGSYS;
 
 extern TelopWork telopRequest;
-extern KNIFE_MSGSYS data_0217d39c;
+extern KNIFE_MSGSYS messageBox;
 extern KNIFE_MSGSYS telopBox;
 extern u8 data_0216efbc[];
 extern u8 messageRequest[];
@@ -111,7 +111,7 @@ extern WindowSlot telopWindowSlots[];
 extern WindowSlot data_0216f010[];
 extern WindowSlot data_0216efe0[];
 extern WindowSlot data_0216eff0[];
-extern u8 data_0212c618[];
+extern u8 cockpitState[];
 
 extern void knife_msgLineChange(KNIFE_MSGSYS *msg, s32 lines);
 extern void Knife_msgFrameDma(KNIFE_MSGSYS *msg, u32 bank);

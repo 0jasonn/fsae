@@ -65,7 +65,7 @@ void em30_type0_wait(Entity *e) {
     }
     int sign = (e->direction > 0x80) ? 1 : -1;
     e->unk_6c[5] = sign;
-    e->unk_6c[7] = ((u32)RANDOM_WITH_ARG(sign) % em30_randRangeByPlayers[data_0212c7c8.playerCount - 2]) << 1;
+    e->unk_6c[7] = ((u32)RANDOM_WITH_ARG(sign) % em30_randRangeByPlayers[gameState.playerCount - 2]) << 1;
     if (e->parent->unk_6c[4] & flagBits[e->type2]) {
         e->action = 2;
     } else {

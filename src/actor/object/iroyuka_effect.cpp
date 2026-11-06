@@ -14,7 +14,7 @@ extern "C" void IroyukaEffectSet(Entity *e) {
     if (effect == NULL) {
         return;
     }
-    cell = ((u32)data_0212ceb0[e->type].unk_22 << 15) >> 16;
+    cell = ((u32)playerWork[e->type].unk_22 << 15) >> 16;
     effect->x.HALF.HI = ((cell & 0x3f) << 4) | 8;
     effect->y.HALF.HI = ((cell & 0xfc0) >> 2) | 8;
     effect->layer = e->layer;

@@ -14,12 +14,12 @@ void func_0208366c(s32 mode, u16 cell, u16 layer);
 u16 func_0208367c(u16 cell, u16 layer);
 int func_02085ccc(Entity *e);
 
-// Grid origin used to turn world positions into map cells (data_0212c648, same bytes as UnkStruct_0212c648 in enemy/em09.h).
+// Grid origin used to turn world positions into map cells (mapState, same bytes as UnkStruct_0212c648 in enemy/em09.h).
 typedef struct CellOrigin {
     /* 00 */ u8 unk_00[0x18];
     /* 18 */ u16 originX;
     /* 1a */ u16 originY;
 } CellOrigin;
-extern CellOrigin data_0212c648;
+extern CellOrigin mapState;
 
 #endif

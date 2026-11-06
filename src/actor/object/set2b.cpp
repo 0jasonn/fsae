@@ -11,7 +11,7 @@ typedef struct Vars_Set2b {
 } Vars_Set2b;
 
 void Set2b(Entity *e) {
-    Entity *templ = data_0212ceb0[e->type].entity;
+    Entity *templ = playerWork[e->type].entity;
     u16 lifeTimer;
     u8 timer;
     u8 subtimer;
@@ -59,7 +59,7 @@ void Set2b(Entity *e) {
                     child->y.HALF.HI = templ->y.HALF.HI + offset;
                 }
             }
-            data_0212ceb0[e->type].statusFlags |= 2;
+            playerWork[e->type].statusFlags |= 2;
             templ->unk_40 = 0xf;
             templ->attackKnockback = 0xc;
         } else {

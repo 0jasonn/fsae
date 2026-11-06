@@ -28,13 +28,13 @@ void kenfuri_init(Entity *e) {
         e->speed = 0x140;
         e->animationState = 0;
         e->timer = 0x1e;
-        data_0212ceb0[e->type].motionId = 4;
+        playerWork[e->type].motionId = 4;
     } else {
         e->subAction = 4;
         e->animationState = 4;
-        data_0212ceb0[e->type].motionId = 0x1b1;
-        e->spriteSettings.b30 = data_0212ceb0[0].entity->spriteSettings.b30;
-        e->spriteSettings.b14 = data_0212ceb0[0].entity->spriteSettings.b14;
+        playerWork[e->type].motionId = 0x1b1;
+        e->spriteSettings.b30 = playerWork[0].entity->spriteSettings.b30;
+        e->spriteSettings.b14 = playerWork[0].entity->spriteSettings.b14;
         e->spriteSettings.b0 = 0;
     }
     e->unk_5e.b0 = 3 - e->type;
@@ -66,7 +66,7 @@ void kenfuri_walk1(Entity *e) {
     }
     e->x.HALF.HI = 0x80;
     e->animationState = 4;
-    data_0212ceb0[e->type].motionId = 0;
+    playerWork[e->type].motionId = 0;
     e->timer = 0x3c;
     e->subAction++;
 }
@@ -77,7 +77,7 @@ void kenfuri_kenfuri(Entity *e) {
         if (e->timer != 0) {
             return;
         }
-        data_0212ceb0[e->type].motionId = 0x1b1;
+        playerWork[e->type].motionId = 0x1b1;
         SoundReq(0x228);
         data_02134924 |= 2;
         return;
@@ -97,8 +97,8 @@ void kenfuri_wait(Entity *e) {
         if ((e->frame & 0x80) == 0) {
             func_02085934(e, e->unk_1b);
         }
-        e->x.HALF.HI = data_0212ceb0[0].entity->x.HALF.HI;
-        e->y.HALF.HI = data_0212ceb0[0].entity->y.HALF.HI;
+        e->x.HALF.HI = playerWork[0].entity->x.HALF.HI;
+        e->y.HALF.HI = playerWork[0].entity->y.HALF.HI;
     }
     if (data_02134924 & 8) {
         e->subAction++;
@@ -111,7 +111,7 @@ void kenfuri_bunshin(Entity *e) {
     if ((data_02134924 & 0x10) == 0) {
         return;
     }
-    data_0212ceb0[e->type].motionId = 0;
+    playerWork[e->type].motionId = 0;
     e->subAction++;
     e->spriteSettings.b0 = 1;
 }

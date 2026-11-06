@@ -17,7 +17,7 @@ void set52_move(Entity *e) {
     tmpl = OBJ_TEMPLATE(e->type);
     func_0208ab14(e, tmpl);
     UpdateAnimationSingleFrame(e);
-    if (data_0212ceb0[e->type].actionFlags != 0) {
+    if (playerWork[e->type].actionFlags != 0) {
         if ((frameCounter & 3) != 0) {
             return;
         }

@@ -27,11 +27,11 @@ void set59_init(Entity *e) {
     e->spriteSettings.b14 = 0;
     rank = RankCheck();
     if (rank == 3) {
-        rank = (u8)(rank + data_0212c7c8.unk_01);
+        rank = (u8)(rank + gameState.unk_01);
     }
     e->spriteSettings.b20 = GetObjColor((u8)set59_colorTable[rank]);
     e->spriteSettings.b16 = e->spriteSettings.b20;
-    InitAnimationForceUpdate(e, data_0212c7c8.unk_01);
+    InitAnimationForceUpdate(e, gameState.unk_01);
 }
 
 void set59_move(Entity *e) {

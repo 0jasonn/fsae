@@ -86,14 +86,14 @@ void em12_return(Entity *e) {
     int diff;
 
     UpdateAnimationSingleFrame(e);
-    playerIndex = (frameCounter & 3) % data_0212c7c8.playerCount;
-    target = data_0212ceb0[playerIndex].entity;
+    playerIndex = (frameCounter & 3) % gameState.playerCount;
+    target = playerWork[playerIndex].entity;
     if ((u32)(target->x.HALF.HI - V(e)->areaX) <= V(e)->areaW &&
         (u32)(target->y.HALF.HI - V(e)->areaY) <= V(e)->areaH) {
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-            V(e)->target = data_0212ceb0[playerIndex].entity;
+            V(e)->target = playerWork[playerIndex].entity;
         } else {
-            V(e)->target = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+            V(e)->target = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         V(e)->w70.b.inArea = 0xff;
     } else {
@@ -206,7 +206,7 @@ BOOL tgtareacheck(Entity *e, Entity *target) {
     if (target == NULL) {
         return FALSE;
     }
-    if (data_0212c584[target->type] & 0x1000) {
+    if (playerKeysPrev[target->type] & 0x1000) {
         return FALSE;
     }
     if (target->health == 0) {

@@ -23,7 +23,7 @@ void Set56(Entity *e) {
 void knife_event_check(Entity *e) {
     PlayerData *pl;
 
-    pl = &data_0212ceb0[e->type];
+    pl = &playerWork[e->type];
     if (e->action == 0 || pl->state == 0) {
         return;
     }

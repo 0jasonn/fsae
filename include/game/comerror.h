@@ -11,7 +11,7 @@ extern u8 data_0212c4dc;
 extern u16 data_0212c510;
 extern u8 data_020f25a8[];
 extern u8 data_020f25b4[];
-extern u8 data_021349c0[];   // ResultState block (enemy/ending.h): u16 timer at +4
+extern u8 effectState[];   // ResultState block (enemy/ending.h): u16 timer at +4
 extern u16 data_021355a0;
 extern void (*data_0212c564)(void);
 extern const u8 data_020ce4d0[];

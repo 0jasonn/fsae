@@ -14,6 +14,6 @@ void AddKey(Entity *e) {
         keyWork->contactedEntity = e;
     }
     data_0212c824[e->type] += 1;
-    data_0212c618[2] = 1;
+    cockpitState[2] = 1;
     SoundReq(9);
 }

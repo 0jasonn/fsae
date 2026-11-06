@@ -38,7 +38,7 @@ BOOL historyCheck(void *entry);
 BOOL pasthistoryCheck(void *entry);
 BOOL checkSingleErrorParts(u8 mode, u16 partId);
 
-extern Entity *data_0212c648;      // entity of the local player
+extern Entity *mapState;      // entity of the local player
 extern u8 localPlayerIndex;
 extern u32 em12_typeMasks[];
 extern const u8 data_02103e84[];    // 8 byte start layouts, indexed by the low nibble of game state byte 0x4f

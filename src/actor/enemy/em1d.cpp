@@ -41,7 +41,7 @@ void em1d_damage(Entity *e) {
 
     if (e->contactFlags == 0x80) {
         hitter = e->contactedEntity;
-        player = &data_0212ceb0[hitter->type];
+        player = &playerWork[hitter->type];
         if (player->unk_26 == 0 && (player->statusFlags & 0xc80) == 0) {
             e->child = hitter;
             e->unk_5c = 0x1aa ^ (1 << (hitter->type * 2 + 1));

@@ -58,7 +58,7 @@ void fairy_talk(Entity *e) {
     timer = e->timer;
     e->z.HALF.HI = (s16)(((s32)trigTable[timer + 0x40] << 2) >> 8);
     e->timer = timer + 0x10;
-    if (data_021349c0[0xf] != e->type2) {
+    if (effectState[0xf] != e->type2) {
         e->action = 2;
     }
 }

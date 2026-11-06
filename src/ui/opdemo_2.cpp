@@ -6,69 +6,69 @@
 // fairy_talkmove -> fairy_talkmove
 // opdemo_scroll -> opdemo_scroll
 void scene_03(void) {
-    switch (data_021349c0[EFFECT_STATE_SCENE]) {
+    switch (effectState[EFFECT_STATE_SCENE]) {
         case 0:
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) == 0) {
-                data_021349c0[EFFECT_STATE_SCENE]++;
-                data_021349c0[EFFECT_STATE_FLAG_E] = 4;
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
+            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
+                effectState[EFFECT_STATE_SCENE]++;
+                effectState[EFFECT_STATE_FLAG_E] = 4;
             }
             break;
         case 1: {
-            Entity *player = data_0212ceb0[0].entity;
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = 0x78;
-            *(Entity **)&data_0212c648 = player;
+            Entity *player = playerWork[0].entity;
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x78;
+            *(Entity **)&mapState = player;
             break;
         }
         case 2:
             opdemo_scroll();
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) != 0) {
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
+            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
                 return;
             }
-            data_021349c0[EFFECT_STATE_SCENE]++;
-            data_021349c0[EFFECT_STATE_FLAG_E] = 5;
+            effectState[EFFECT_STATE_SCENE]++;
+            effectState[EFFECT_STATE_FLAG_E] = 5;
             {
                 Entity *fx = GetSetWork(0x5a, 1, 0x14);
-                fx->x.HALF.HI = data_0212ceb0[0].entity->x.HALF.HI - 8;
-                fx->y.HALF.HI = data_0212ceb0[0].entity->y.HALF.HI - 8;
+                fx->x.HALF.HI = playerWork[0].entity->x.HALF.HI - 8;
+                fx->y.HALF.HI = playerWork[0].entity->y.HALF.HI - 8;
             }
             DemoLinkWalkSet(0, 8, 8);
-            data_0212ceb0[0].state = 8;
+            playerWork[0].state = 8;
             break;
         case 3:
             opdemo_scroll();
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = 0xb4;
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0xb4;
             break;
         case 4:
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) == 0) {
-                data_021349c0[EFFECT_STATE_SCENE]++;
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
+            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
+                effectState[EFFECT_STATE_SCENE]++;
             }
             break;
         case 5:
             if ((data_0212c594 & 3) != 0) {
                 return;
             }
-            if (data_021349c0[EFFECT_STATE_LEVEL] < 0x10) {
-                data_0212c5ac.resetValue = -1;
-                data_021349c0[EFFECT_STATE_LEVEL]++;
+            if (effectState[EFFECT_STATE_LEVEL] < 0x10) {
+                blendRequest.resetValue = -1;
+                effectState[EFFECT_STATE_LEVEL]++;
                 return;
             }
-            data_021349c0[EFFECT_STATE_SCENE]++;
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = 0x5a;
+            effectState[EFFECT_STATE_SCENE]++;
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x5a;
             Status_ArmIfEnabled();
             SoundReq(0x80040000);
             break;
         case 6: {
             u8 counter;
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) != 0) {
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
+            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
                 return;
             }
             counter = data_0212c4dc;
             data_0212c4dc = counter + 1;
-            data_021349c0[EFFECT_STATE_SCENE] = 0;
+            effectState[EFFECT_STATE_SCENE] = 0;
         }
         default:
             break;
@@ -83,11 +83,11 @@ int fairy_talkmove(u8 slot, u16 effectId) {
     }
     mode = messageRequest[SCENE_CTRL_MODE] & 0x7f;
     if (mode == 0) {
-        data_021349c0[EFFECT_STATE_ACTIVE_SLOT] = 0xff;
-        *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
-        if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) == 0) {
-            data_021349c0[EFFECT_STATE_SCENE]++;
-            *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = 0x1e;
+        effectState[EFFECT_STATE_ACTIVE_SLOT] = 0xff;
+        *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
+        if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
+            effectState[EFFECT_STATE_SCENE]++;
+            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x1e;
             fairy_talkset(slot, effectId);
             return 1;
         }

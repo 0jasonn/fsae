@@ -9,12 +9,12 @@
 //   0x0205747c YureSet (original name, matches)
 
 void scr_init(void) {
-    data_0212c648.scrollMode = 1;
-    data_0212c648.unk_04 = 0;
+    mapState.scrollMode = 1;
+    mapState.unk_04 = 0;
 }
 
 void ScrollMove(void) {
-    data_020d85b0[data_0212c648.scrollMode]();
+    data_020d85b0[mapState.scrollMode]();
 }
 
 int GetBgBuffAdrs(int a) {

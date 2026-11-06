@@ -19,8 +19,8 @@ void stagesel_init0(void) {
         data_0212c4dc++;
         data_02171d58.pleaseWait = 0;
         data_02171d58.unk_18 = 0;
-        *(u16 *)(data_021349c0 + 4) = 0xa;
-        *(u16 *)(data_021349c0 + 6) = 0;
+        *(u16 *)(effectState + 4) = 0xa;
+        *(u16 *)(effectState + 6) = 0;
         data_02171d58.tutorialActive = 0;
         data_02171d58.tutorialTimer = 0;
         ComRequest(4);
@@ -36,7 +36,7 @@ void stagesel_init0(void) {
         }
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
             u8 next = data_0212c4dc + 1;
-            *(u16 *)(data_021349c0 + 4) = 0;
+            *(u16 *)(effectState + 4) = 0;
             data_0212c4dc = next;
             ComRequest(5);
         } else {
@@ -53,20 +53,20 @@ void stagesel_init0(void) {
             return;
         }
         if ((enemyTypeFlags[localPlayerIndex].flags & 0x1000) != 0) {
-            *(u32 *)(data_0212c9a8 + 0x3c) = 1;
+            *(u32 *)(comWork + 0x3c) = 1;
         }
-        for (i = 0; i < data_0212c7c8.playerCount; i++) {
-            if (*(u32 *)(data_0212c9a8 + i * 0x34 + 0xa4) == 1) {
-                data_0212c7c8.slots[i].flags |= 0x1000;
+        for (i = 0; i < gameState.playerCount; i++) {
+            if (*(u32 *)(comWork + i * 0x34 + 0xa4) == 1) {
+                gameState.slots[i].flags |= 0x1000;
             }
         }
-        timer = *(u16 *)(data_021349c0 + 4);
-        *(u16 *)(data_021349c0 + 4) = timer + 1;
+        timer = *(u16 *)(effectState + 4);
+        *(u16 *)(effectState + 4) = timer + 1;
         if (timer <= 8) {
             return;
         }
         partnerCount = data_0212c500;
-        *(u16 *)(data_021349c0 + 4) = 0;
+        *(u16 *)(effectState + 4) = 0;
         data_0212c500 = partnerCount + 1;
         data_0212c4dc = 0;
         return;

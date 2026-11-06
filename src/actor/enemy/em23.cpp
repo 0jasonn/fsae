@@ -39,7 +39,7 @@ void em23_damage(Entity *e) {
         e->timer = 0x1e;
         e->statusFlags &= 0x7f;
     }
-    if ((data_0212ceb0[e->contactedEntity->type].statusFlags & 0x4000) == 0) {
+    if ((playerWork[e->contactedEntity->type].statusFlags & 0x4000) == 0) {
         Entity *child = GetEnemyWork(0x23);
         if (child != NULL) {
             Entity *contacted;
@@ -47,7 +47,7 @@ void em23_damage(Entity *e) {
             child->type2 = 1;
             contacted = e->contactedEntity;
             child->child = contacted;
-            data_0212ceb0[contacted->type].statusFlags |= 0x4000;
+            playerWork[contacted->type].statusFlags |= 0x4000;
         }
     }
     GenericKnockback(e, em23_stateTable);

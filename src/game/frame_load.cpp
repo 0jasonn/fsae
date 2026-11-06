@@ -15,15 +15,15 @@ void FrameLoad_Select(void) {
     frame = entry->frame;
     partsFlags = entry->flags;
     GameState_SetTrackVariant();
-    if (data_0212c7c8.unk_8e != 0) {
+    if (gameState.unk_8e != 0) {
         CgLoad(2);
         DataLoad(0x10);
         *(u16 *)0x05000000 = 0;
         data_021355a0 = 0;
     }
-    data_0212c7c8.active = (frame->roomNo == 4) ? 1 : 0;
+    gameState.active = (frame->roomNo == 4) ? 1 : 0;
     data_02134968[0] = frame->infoRows;
-    data_0212c7c8.unk_49[3] = frame->unk_02[1];
+    gameState.unk_49[3] = frame->unk_02[1];
     MPlayerSet(frame);
     MultiRoomInit(frame->roomNo);
     FrameSet(frame->frameNo);
@@ -40,7 +40,7 @@ void FrameLoad_Select(void) {
     if (GetInfoAdrs(0, 3) != 0) {
         takara_set((u8 *)GetInfoAdrs(0, 3), frame, 0);
     }
-    if (data_0212c7c8.unk_01 < 5) {
+    if (gameState.unk_01 < 5) {
         parts_set(frame, partsFlags);
     }
 }

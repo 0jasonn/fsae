@@ -32,7 +32,7 @@ void beam_move(Entity *e) {
         PlWeaponFireCheck(e);
 
         cellBase = (u16 *)GetBgBuffAdrs(e->layer);
-        cell = ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6);
+        cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
         flags = cellBase[cell + 2];
         index = (u16)(flags & 0x7ff);
         value = *(u16 *)((u8 *)cellBase + (index << 1) + 0x5004);

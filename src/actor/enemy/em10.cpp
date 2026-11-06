@@ -12,8 +12,8 @@ void em10_damage(Entity *e) {
         e->action = 2;
         if (e->contactedEntity->objKind == 1) {
             VBP(e)->target = e->contactedEntity;
-        } else if (e->contactedEntity->type < data_0212c7c8.playerCount) {
-            VBP(e)->target = data_0212ceb0[e->contactedEntity->type].entity;
+        } else if (e->contactedEntity->type < gameState.playerCount) {
+            VBP(e)->target = playerWork[e->contactedEntity->type].entity;
         } else {
             VBP(e)->target = EmGetAimPl();
         }

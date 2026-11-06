@@ -19,7 +19,7 @@ typedef struct UnkStruct_0212c648_T {
     /* 1a */ u16 scrollY;
 } UnkStruct_0212c648_T;
 
-extern UnkStruct_0212c648_T data_0212c648;
+extern UnkStruct_0212c648_T mapState;
 extern const EntityFunc data_020d92c0[]; // indexed by e->action
 extern u32 em12_typeMasks[]; // one mask per area
 
@@ -36,8 +36,8 @@ void set08_init(Entity *e) {
     e->action = 1;
     e->timer = 0x18;
     VARS(Vars_Set08, e)->typeBits = ParseTypeBits(e->type);
-    VARS(Vars_Set08, e)->cell = ((e->x.HALF.HI - data_0212c648.scrollX) >> 4) |
-                                (((e->y.HALF.HI - data_0212c648.scrollY) >> 4) << 6);
+    VARS(Vars_Set08, e)->cell = ((e->x.HALF.HI - mapState.scrollX) >> 4) |
+                                (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6);
     doorCheck(e);
 }
 

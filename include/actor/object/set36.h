@@ -3,7 +3,7 @@
 
 #include "engine/entity.h"
 
-// Scroll origin used to turn screen position into a map position (data_0212c648, shared).
+// Scroll origin used to turn screen position into a map position (mapState, shared).
 typedef struct ScrollOrigin {
     /* 00 */ u8 unk_00[0x18];
     /* 18 */ u16 baseX;

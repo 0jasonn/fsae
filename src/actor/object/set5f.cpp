@@ -13,7 +13,7 @@
 extern const EntityFunc set5f_typeHandlers[]; // set5f_typeHandlers, indexed by e->type
 extern const EntityFunc set5f_type0Actions[]; // set5f_type0Actions, indexed by e->action
 extern u8 messageRequest[];
-extern Entity *data_0212c648;
+extern Entity *mapState;
 extern s16 scrollArgs[3];
 extern const s16 trigTable[];
 extern const s16 data_020d7f58[];
@@ -48,7 +48,7 @@ void set5f_type0_init(Entity *e) {
     VARS(Vars_Set5f, e)->messageId = 0x191;
     InitAnimationForceUpdate(e, 0);
     set5f_plset(e);
-    data_0212c648 = e;
+    mapState = e;
     Scene_SetFlag5();
     CockpitOff();
     ScrPosSet(e->x.HALF.HI, e->y.HALF.HI);
@@ -62,12 +62,12 @@ void type0_initWait(Entity *e) {
         return;
     }
     e->action = 2;
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].state = 0xf;
-        data_0212ceb0[i].motionId = 4;
-        data_0212ceb0[i].stateTimer = 0xff;
-        data_0212ceb0[i].entity->direction = 0;
-        data_0212ceb0[i].entity->animationState = 0;
+    for (i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].state = 0xf;
+        playerWork[i].motionId = 4;
+        playerWork[i].stateTimer = 0xff;
+        playerWork[i].entity->direction = 0;
+        playerWork[i].entity->animationState = 0;
     }
 }
 
@@ -75,13 +75,13 @@ void type0_plEntrance(Entity *e) {
     u8 i;
 
     GufuFuyusnd(e);
-    if (data_0212ceb0[0].entity->y.HALF.HI > 0x21c) {
+    if (playerWork[0].entity->y.HALF.HI > 0x21c) {
         return;
     }
     e->action = 3;
     e->timer = 0x3c;
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].entity->timer = 1;
+    for (i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].entity->timer = 1;
     }
 }
 
@@ -112,8 +112,8 @@ void type0_meswait(Entity *e) {
         e->subAction = 1;
         return;
     }
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        if (data_0212c584[i] & 0x1000) {
+    for (i = 0; i < gameState.playerCount; i++) {
+        if (playerKeysPrev[i] & 0x1000) {
             return;
         }
     }

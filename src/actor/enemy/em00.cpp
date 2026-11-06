@@ -136,7 +136,7 @@ void em0a_init(Entity *e) {
     e->timer = 0x40;
     e->subtimer = 0x10;
     e->child = 0;
-    if (data_0212c7c8.unk_8e == 3 || data_0212c7c8.unk_8e == 5) {
+    if (gameState.unk_8e == 3 || gameState.unk_8e == 5) {
         e->spriteSettings.b20 = 5;
         e->spriteSettings.b16 = e->spriteSettings.b20;
     }

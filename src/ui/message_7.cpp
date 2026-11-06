@@ -9,19 +9,19 @@
 //   tlpClose -> tlpClose
 
 // Work blocks in the bss, accessed by byte offset
-extern u8 data_0217d39c[];
+extern u8 messageBox[];
 extern u8 telopBox[];
 
 
 // Scene state handlers: a table entry returns 0 when the state is done
 int msgOpen(void) {
-    if (data_0217d39c[0xe3] != 1) {
-        data_0217d39c[0xe3] = 1;
+    if (messageBox[0xe3] != 1) {
+        messageBox[0xe3] = 1;
         SoundReq(0x43);
     }
     statusUpdate((MSG_STATUS)2);
     if (msgWinSizeChange(1) != 0) {
-        data_0217d39c[0xd0] = 3;
+        messageBox[0xd0] = 3;
     }
     return 0;
 }
@@ -34,17 +34,17 @@ int tlpOpen(void) {
 }
 
 int msgClose(void) {
-    if (data_0217d39c[0xe3] != 3) {
-        data_0217d39c[0xe3] = 3;
-        data_0217d39c[0xaf] = 0;
-        data_0217d39c[0xae] = 0;
-        data_0217d39c[0xad] = 0;
-        data_0217d39c[0xac] = 0;
+    if (messageBox[0xe3] != 3) {
+        messageBox[0xe3] = 3;
+        messageBox[0xaf] = 0;
+        messageBox[0xae] = 0;
+        messageBox[0xad] = 0;
+        messageBox[0xac] = 0;
         SoundReq(0x44);
     }
     statusUpdate((MSG_STATUS)7);
     if (msgWinSizeChange(-1) != 0) {
-        data_0217d39c[0xd0] = 5;
+        messageBox[0xd0] = 5;
     }
     return 0;
 }

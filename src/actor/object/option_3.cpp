@@ -8,29 +8,29 @@ void copy_move(Entity *e) {
     Vars_Option *vars = VARS(Vars_Option, e);
 
     miniPanelPatSet(e);
-    if (e->subtimer == data_021349c0[NP_PHASE]) {
+    if (e->subtimer == effectState[NP_PHASE]) {
         return;
     }
     vars->animBounds[0] = e->x.HALF.HI;
     vars->animBounds[1] = 0xc0;
     ObjAnimMoveSet(e, vars->animBounds, 0x14);
     e->action = 3;
-    data_021349c0[NP_SHOWN] = 1;
+    effectState[NP_SHOWN] = 1;
 }
 
 void copy_hide(Entity *e) {
-    data_021349c0[NP_SHOWN] = 1;
+    effectState[NP_SHOWN] = 1;
     miniPanelPatSet(e);
     if (ObjAnimMoveLine(e)) {
         e->action = 1;
-        data_021349c0[NP_HIDE_DONE] = 1;
+        effectState[NP_HIDE_DONE] = 1;
     }
 }
 
 void miniPanelPatSet(Entity *e) {
     Vars_Option *vars = VARS(Vars_Option, e);
 
-    if (data_021349c0[NP_SLOT_B] == 3 && e->type2 == data_021349c0[NP_CURSOR_TYPE]) {
+    if (effectState[NP_SLOT_B] == 3 && e->type2 == effectState[NP_CURSOR_TYPE]) {
         star_adjust(e, -33, -10);
         vars->patSelect = 0;
     } else {
@@ -50,10 +50,10 @@ void mode_init(Entity *e) {
 }
 
 void mode_wait(Entity *e) {
-    if (e->type2 != data_021349c0[NP_PHASE]) {
-        e->type2 = data_021349c0[NP_PHASE];
+    if (e->type2 != effectState[NP_PHASE]) {
+        e->type2 = effectState[NP_PHASE];
         e->action = 2;
-        data_021349c0[NP_SHOWN] = 1;
+        effectState[NP_SHOWN] = 1;
     }
 }
 
@@ -62,11 +62,11 @@ void mode_out(Entity *e) {
         DISP_REG(0xc) += 2;
     } else {
         void *instance = KnifeApp_getInstance();
-        u8 *resource = KnifeApp_getZeldaResource_08ddcc(instance, data_02171d20[data_021349c0[NP_PHASE]]);
+        u8 *resource = KnifeApp_getZeldaResource_08ddcc(instance, data_02171d20[effectState[NP_PHASE]]);
         MI_UncompressLZ16(resource, (void *)0x0600e000);
         e->action = 3;
     }
-    data_021349c0[NP_SHOWN] = 1;
+    effectState[NP_SHOWN] = 1;
 }
 
 void mode_in(Entity *e) {
@@ -76,5 +76,5 @@ void mode_in(Entity *e) {
         DISP_REG(0xc) = 0;
         e->action = 1;
     }
-    data_021349c0[NP_SHOWN] = 1;
+    effectState[NP_SHOWN] = 1;
 }

@@ -19,17 +19,17 @@ void WizGetTarget(Entity *e) {
     Entity *swap;
     u8 choice;
 
-    a = data_0212ceb0[0].entity;
-    b = data_0212ceb0[1].entity;
-    c = data_0212ceb0[2].entity;
-    d = data_0212ceb0[3].entity;
-    if (data_0212c7c8.playerCount == 2) {
+    a = playerWork[0].entity;
+    b = playerWork[1].entity;
+    c = playerWork[2].entity;
+    d = playerWork[3].entity;
+    if (gameState.playerCount == 2) {
         goto pass1;
     }
-    if (data_0212c7c8.playerCount == 3) {
+    if (gameState.playerCount == 3) {
         goto pass2;
     }
-    if (data_0212c7c8.playerCount != 4) {
+    if (gameState.playerCount != 4) {
         goto choose;
     }
     if (a->health > b->health) { swap = a; a = b; b = swap; }
@@ -41,7 +41,7 @@ pass2:
 pass1:
     if (a->health > b->health) { swap = a; a = b; b = swap; }
 choose:
-    choice = data_020d2400[(data_0212c7c8.playerCount - 1) * 8 + (Random() & 7)];
+    choice = data_020d2400[(gameState.playerCount - 1) * 8 + (Random() & 7)];
     if (choice == 1) {
         goto pickB;
     }
@@ -60,11 +60,11 @@ pickB:
 pickC:
     e->child = c;
 checkChild:
-    if (e->child->health == 0 || (data_0212c584[e->child->type] & 0x1000) != 0) {
+    if (e->child->health == 0 || (playerKeysPrev[e->child->type] & 0x1000) != 0) {
         e->child = EmGetAimPl();
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        e->child = data_0212ceb0[Knife_Single_SinglePlay_GetInstance()[0]].entity;
+        e->child = playerWork[Knife_Single_SinglePlay_GetInstance()[0]].entity;
     }
     e->direction = (GetFacingDirection(e, e->child) + 4) & 0x18;
 }

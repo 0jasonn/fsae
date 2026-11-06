@@ -39,7 +39,7 @@ void CheckInit(void) {
     data_0212e590[13].flag = 0;
     data_0212e590[14].flag = 0;
     data_0212e590[15].flag = 0;
-    switch (data_0212c7c8.playerCount) {
+    switch (gameState.playerCount) {
     case 2:
         saved = data_0212e590[0].link;
         data_0212e590[0].link = data_0212e590[1].link;
@@ -67,20 +67,20 @@ void CheckPlsSet(void) {
 
     func_02029a50(data_0212e590, 0x900);
     ((u32 *)data_0212e590)[0] = (u32)data_0212e590;
-    first = data_0212ceb0[0].entity;
+    first = playerWork[0].entity;
     ((u32 *)data_0212e590)[1] = (u32)data_0212e590;
     data_0213490c = data_0212e590;
     ((u32 *)data_0212e590)[2] = (u32)first;
-    if (data_0212ceb0[1].entity == NULL) {
+    if (playerWork[1].entity == NULL) {
         return;
     }
-    func_02084180(data_0212ceb0[1].entity);
-    if (data_0212ceb0[2].entity == NULL) {
+    func_02084180(playerWork[1].entity);
+    if (playerWork[2].entity == NULL) {
         return;
     }
-    func_02084180(data_0212ceb0[2].entity);
-    if (data_0212ceb0[3].entity == NULL) {
+    func_02084180(playerWork[2].entity);
+    if (playerWork[3].entity == NULL) {
         return;
     }
-    func_02084180(data_0212ceb0[3].entity);
+    func_02084180(playerWork[3].entity);
 }

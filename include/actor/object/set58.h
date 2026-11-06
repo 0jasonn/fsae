@@ -15,8 +15,8 @@ extern const EntityFunc set58_typeActions[]; // set58_typeActions, indexed by e-
 extern const EntityFunc set58_bodyActions[]; // set58_bodyActions, indexed by e->action
 extern u8 set58_bodyState[];                 // set58_bodyState
 extern const s16 set58_sazanamiOffsets[];    // set58_sazanamiOffsets, indexed by timer (x, y pairs)
-extern const u16 set58_cgIdsA[];             // set58_cgIdsA, indexed by data_0212c7c8.unk_01
-extern const u16 set58_cgIdsB[];             // set58_cgIdsB, indexed by data_0212c7c8.unk_01
+extern const u16 set58_cgIdsA[];             // set58_cgIdsA, indexed by gameState.unk_01
+extern const u16 set58_cgIdsB[];             // set58_cgIdsB, indexed by gameState.unk_01
 extern s32 em12_typeMasks;                    // game flag word
 extern KnifeObjAffineSrcData scrollArgs;     // scrollArgs
 

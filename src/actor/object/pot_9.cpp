@@ -6,7 +6,7 @@
 //   0x0205f084 pot_throw_end (original name throw_end): clashes with the player that threw the pot
 
 void pot_throw_end(Entity *e) {
-    pot_clash(e, data_0212ceb0[e->type2].entity);
+    pot_clash(e, playerWork[e->type2].entity);
 }
 
 // Pot actor, delete (module pot). Address -> name:
@@ -23,7 +23,7 @@ void throw_delete(Entity *e) {
 
 void throw_hold(Entity *e) {
     // PlayerData byte at 0x05 (unk_03[2]) of the player that holds the pot: nonzero means it is still held
-    if (data_0212ceb0[e->type2].specialState != 0) {
+    if (playerWork[e->type2].specialState != 0) {
         return;
     }
     throw_holdoff(e);

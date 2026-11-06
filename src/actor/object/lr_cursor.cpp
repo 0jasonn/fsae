@@ -2,7 +2,7 @@
 #include "global.h"
 #include "actor/object/objdecls_a.h"
 
-extern u8 data_021349c0[];
+extern u8 effectState[];
 
 // Three u16 triples in rodata, one per type2 (ROM names lrCursorAnimTable / b8 / c0).
 typedef struct LrCursorList {
@@ -30,9 +30,9 @@ void lr_cursor(Entity *e) {
     }
     e->unk_1b = 0xb3;
     e->spriteSettings.b16 = 6;
-    e->spriteSettings.b0 = (data_021349c0[2] == e->type2) ? 2 : 0;
+    e->spriteSettings.b0 = (effectState[2] == e->type2) ? 2 : 0;
     UpdateAnimationSingleFrame(e);
-    if (data_021349c0[8] >= 1) {
+    if (effectState[8] >= 1) {
         PutObjWork(e);
     }
 }

@@ -62,7 +62,7 @@ typedef struct EncntSpawnVars {
 extern u8 encntSharedState[];
 extern u8 encntSpawnCount;
 extern u16 data_0212c540;
-extern u16 data_0212c584[4];
+extern u16 playerKeysPrev[4];
 
 typedef struct AreaRect {
     u16 x;
@@ -87,7 +87,7 @@ typedef struct GridOrigin {
     u16 x;                              // +18
     u16 y;                              // +1a
 } GridOrigin;
-extern GridOrigin data_0212c648;
+extern GridOrigin mapState;
 
 extern u8 data_0212c500;
 extern void (*const endingTasks[])(void);

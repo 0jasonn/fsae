@@ -27,7 +27,7 @@ void calc_result(void);
 void ranking_player_set(void);
 
 // Data used by implementer D's files, typed where the D files need fields.
-// data_0212c648: the first word is the entity whose y position the ranking camera follows.
+// mapState: the first word is the entity whose y position the ranking camera follows.
 typedef struct RankScrollState {
     /* 00 */ Entity *target;
     /* 04 */ u8 unk_04;
@@ -39,9 +39,9 @@ typedef struct RankScrollState {
     /* 20 */ u16 unk_20;
     /* 22 */ s16 cameraX;
 } RankScrollState;
-extern RankScrollState data_0212c648;
+extern RankScrollState mapState;
 
-// data_0212c75c: display/effect shadow block (same bytes as UnkStruct_0212c75c in engine/misc_d.h)
+// displayState: display/effect shadow block (same bytes as UnkStruct_0212c75c in engine/misc_d.h)
 typedef struct RankDispShadow {
     /* 00 */ u16 displayFlags;
     /* 02 */ u8 unk_02[6];
@@ -60,12 +60,12 @@ typedef struct RankDispShadow {
     /* 66 */ u16 reg66; // hardware value written by the ranking screen
     /* 68 */ u16 reg68;
 } RankDispShadow;
-extern RankDispShadow data_0212c75c;
+extern RankDispShadow displayState;
 
-extern u8 data_0212c618[];
+extern u8 cockpitState[];
 extern u8 data_021361a0[];
 
-// data_021349c0: effect and result state block of the ranking screen (bytes shared with other files)
+// effectState: effect and result state block of the ranking screen (bytes shared with other files)
 typedef struct RankEffectState {
     /* 00 */ u8 unk_00[4];
     /* 04 */ u16 timer; // countdown of the result phase
@@ -75,7 +75,7 @@ typedef struct RankEffectState {
     /* 14 */ u8 unk_14[0x13];
     /* 27 */ u8 unk_27;
 } RankEffectState;
-extern RankEffectState data_021349c0;
+extern RankEffectState effectState;
 
 
 typedef void (*RankVoidFunc)(void);
@@ -92,7 +92,7 @@ extern u16 data_021349d8[];
 extern u16 data_021355a0;
 extern u8 data_0212c4f8;
 extern u8 data_0212c500;
-extern u8 data_0212c5ac; // blendEnabled, see misc_d.h
+extern u8 blendRequest; // blendEnabled, see misc_d.h
 
 
 // Save media (backup) layer, see src/game/backup*.cpp

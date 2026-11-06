@@ -13,7 +13,7 @@ typedef struct UnkStruct_0212c648 {
     /* 1c */ u8 unk_1c[6];
     /* 22 */ s16 unk_22;
 } UnkStruct_0212c648;
-extern UnkStruct_0212c648 data_0212c648;
+extern UnkStruct_0212c648 mapState;
 
 // Actor-template table: one 0x94-byte entry per type; the first word of an entry points to a template Entity.
 extern u8 data_0212ced8[];

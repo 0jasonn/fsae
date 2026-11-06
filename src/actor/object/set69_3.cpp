@@ -48,8 +48,8 @@ void type0_wait5(Entity *e) {
         e->subAction = 1;
         return;
     }
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        if (data_0212c584[i] & 0x1000) {
+    for (i = 0; i < gameState.playerCount; i++) {
+        if (playerKeysPrev[i] & 0x1000) {
             return;
         }
     }
@@ -74,7 +74,7 @@ void type0_suikomi(Entity *e) {
     e->action = 0xd;
     e->timer = 8;
     SoundReq(0x21f);
-    data_0212c5ac[7] = 0x16;
+    blendRequest[7] = 0x16;
     MakeFadeBuff256(0x100);
 }
 
@@ -288,54 +288,54 @@ void set69_type4(Entity *e) {
 //   0x02076620 rr_plset (original name plset; places each player's entity for the rupee rush start)
 
 void rr_plset(Entity *e) {
-    switch (data_0212c7c8.playerCount) {
+    switch (gameState.playerCount) {
     case 1:
-        data_0212ceb0[0].entity->x.HALF.HI = 0x1f8;
-        data_0212ceb0[0].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[0].entity->z.HALF.HI = 0;
-        data_0212ceb0[0].entity->animationState = 0;
+        playerWork[0].entity->x.HALF.HI = 0x1f8;
+        playerWork[0].entity->y.HALF.HI = 0x1c8;
+        playerWork[0].entity->z.HALF.HI = 0;
+        playerWork[0].entity->animationState = 0;
         break;
     case 2:
-        data_0212ceb0[0].entity->x.HALF.HI = 0x1e6;
-        data_0212ceb0[0].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[0].entity->z.HALF.HI = 0;
-        data_0212ceb0[0].entity->animationState = 0;
-        data_0212ceb0[1].entity->x.HALF.HI = 0x20a;
-        data_0212ceb0[1].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[1].entity->z.HALF.HI = 0;
-        data_0212ceb0[1].entity->animationState = 0;
+        playerWork[0].entity->x.HALF.HI = 0x1e6;
+        playerWork[0].entity->y.HALF.HI = 0x1c8;
+        playerWork[0].entity->z.HALF.HI = 0;
+        playerWork[0].entity->animationState = 0;
+        playerWork[1].entity->x.HALF.HI = 0x20a;
+        playerWork[1].entity->y.HALF.HI = 0x1c8;
+        playerWork[1].entity->z.HALF.HI = 0;
+        playerWork[1].entity->animationState = 0;
         break;
     case 3:
-        data_0212ceb0[0].entity->x.HALF.HI = 0x1d4;
-        data_0212ceb0[0].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[0].entity->z.HALF.HI = 0;
-        data_0212ceb0[0].entity->animationState = 0;
-        data_0212ceb0[1].entity->x.HALF.HI = 0x1f8;
-        data_0212ceb0[1].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[1].entity->z.HALF.HI = 0;
-        data_0212ceb0[1].entity->animationState = 0;
-        data_0212ceb0[2].entity->x.HALF.HI = 0x21c;
-        data_0212ceb0[2].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[2].entity->z.HALF.HI = 0;
-        data_0212ceb0[2].entity->animationState = 0;
+        playerWork[0].entity->x.HALF.HI = 0x1d4;
+        playerWork[0].entity->y.HALF.HI = 0x1c8;
+        playerWork[0].entity->z.HALF.HI = 0;
+        playerWork[0].entity->animationState = 0;
+        playerWork[1].entity->x.HALF.HI = 0x1f8;
+        playerWork[1].entity->y.HALF.HI = 0x1c8;
+        playerWork[1].entity->z.HALF.HI = 0;
+        playerWork[1].entity->animationState = 0;
+        playerWork[2].entity->x.HALF.HI = 0x21c;
+        playerWork[2].entity->y.HALF.HI = 0x1c8;
+        playerWork[2].entity->z.HALF.HI = 0;
+        playerWork[2].entity->animationState = 0;
         break;
     case 4:
-        data_0212ceb0[0].entity->x.HALF.HI = 0x1c2;
-        data_0212ceb0[0].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[0].entity->z.HALF.HI = 0;
-        data_0212ceb0[0].entity->animationState = 0;
-        data_0212ceb0[1].entity->x.HALF.HI = 0x1e6;
-        data_0212ceb0[1].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[1].entity->z.HALF.HI = 0;
-        data_0212ceb0[1].entity->animationState = 0;
-        data_0212ceb0[2].entity->x.HALF.HI = 0x20a;
-        data_0212ceb0[2].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[2].entity->z.HALF.HI = 0;
-        data_0212ceb0[2].entity->animationState = 0;
-        data_0212ceb0[3].entity->x.HALF.HI = 0x22e;
-        data_0212ceb0[3].entity->y.HALF.HI = 0x1c8;
-        data_0212ceb0[3].entity->z.HALF.HI = 0;
-        data_0212ceb0[3].entity->animationState = 0;
+        playerWork[0].entity->x.HALF.HI = 0x1c2;
+        playerWork[0].entity->y.HALF.HI = 0x1c8;
+        playerWork[0].entity->z.HALF.HI = 0;
+        playerWork[0].entity->animationState = 0;
+        playerWork[1].entity->x.HALF.HI = 0x1e6;
+        playerWork[1].entity->y.HALF.HI = 0x1c8;
+        playerWork[1].entity->z.HALF.HI = 0;
+        playerWork[1].entity->animationState = 0;
+        playerWork[2].entity->x.HALF.HI = 0x20a;
+        playerWork[2].entity->y.HALF.HI = 0x1c8;
+        playerWork[2].entity->z.HALF.HI = 0;
+        playerWork[2].entity->animationState = 0;
+        playerWork[3].entity->x.HALF.HI = 0x22e;
+        playerWork[3].entity->y.HALF.HI = 0x1c8;
+        playerWork[3].entity->z.HALF.HI = 0;
+        playerWork[3].entity->animationState = 0;
         break;
     }
 }

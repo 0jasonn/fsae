@@ -17,7 +17,7 @@ void tama02_init(Entity *e) {
     VARS(Vars_Tama02, e)->swingTimer = 0x12c;
     VARS(Vars_Tama02, e)->resetTimer = (Random() & 0xf) + 0x18;
     if (VARS(Vars_Tama02, e)->partner->objKind == 1) {
-        player = &data_0212ceb0[VARS(Vars_Tama02, e)->partner->type];
+        player = &playerWork[VARS(Vars_Tama02, e)->partner->type];
         player->state = 0xe;
         player->stateTimer = 0xc1;
         player->unk_39 = 2;

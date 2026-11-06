@@ -26,7 +26,7 @@ void rr_type1_wait_07543c(Entity *e) {
         return;
     }
     spawn->type = e->type2;
-    ObjPosCopy(data_0212ceb0[e->type2].entity, spawn);
+    ObjPosCopy(playerWork[e->type2].entity, spawn);
 }
 
 void rr_type1_vanish(Entity *e) {

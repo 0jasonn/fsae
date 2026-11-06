@@ -11,7 +11,7 @@ void Set44(Entity *e) {
 }
 
 void set44_init(Entity *e) {
-    if (e->type2 & flagBits[data_0212c7c8.playerCount - 1]) {
+    if (e->type2 & flagBits[gameState.playerCount - 1]) {
         PutObjWork(e);
         return;
     }
@@ -21,10 +21,10 @@ void set44_init(Entity *e) {
     e->hitbox = set44Hitbox;
     nemoto_writecell(e);
     InitAnimationForceUpdate(e, 0);
-    if (data_0212c7c8.unk_01 >= 5) {
-        GetVGroup(e, set44VgroupTable[bgmIndexTable[data_0212c7c8.unk_01][data_0212c7c8.unk_48].table[1]]);
+    if (gameState.unk_01 >= 5) {
+        GetVGroup(e, set44VgroupTable[bgmIndexTable[gameState.unk_01][gameState.unk_48].table[1]]);
     } else {
-        GetVGroup(e, set44VgroupIds[data_0212c7c8.unk_01]);
+        GetVGroup(e, set44VgroupIds[gameState.unk_01]);
     }
 }
 
@@ -71,19 +71,19 @@ void set44_move(Entity *e) {
     if (hitMask != 0) {
         if (hitMask & 1) {
             PLAYER_ENTITY(0)->contactFlags = 0xb8;
-            func_02089988(&data_0212ceb0[0]);
+            func_02089988(&playerWork[0]);
         }
         if (hitMask & 2) {
             PLAYER_ENTITY(1)->contactFlags = 0xb8;
-            func_02089988(&data_0212ceb0[1]);
+            func_02089988(&playerWork[1]);
         }
         if (hitMask & 4) {
             PLAYER_ENTITY(2)->contactFlags = 0xb8;
-            func_02089988(&data_0212ceb0[2]);
+            func_02089988(&playerWork[2]);
         }
         if (hitMask & 8) {
             PLAYER_ENTITY(3)->contactFlags = 0xb8;
-            func_02089988(&data_0212ceb0[3]);
+            func_02089988(&playerWork[3]);
         }
     }
 

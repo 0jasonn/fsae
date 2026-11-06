@@ -71,14 +71,14 @@ void em0e_type0_nop(Entity *e) {
 
 void type0_motiage(Entity *e) {
     ObjHippariCheck(e);
-    if (data_0212ceb0[e->type2].specialState == 0) {
+    if (playerWork[e->type2].specialState == 0) {
         e->subAction = 6;
     }
     em0e_type0_motiageStates[e->subAction - 5](e);
 }
 
 void motiage0_move(Entity *e) {
-    PlayerData *player = &data_0212ceb0[e->type2];
+    PlayerData *player = &playerWork[e->type2];
     Entity *playerEntity = player->entity;
 
     if (player->specialState != 0) {
@@ -127,7 +127,7 @@ void type1_motiage(Entity *e) {
 }
 
 void motiage1_move(Entity *e) {
-    PlayerData *player = &data_0212ceb0[e->type2];
+    PlayerData *player = &playerWork[e->type2];
     Entity *playerEntity = player->entity;
 
     if (player->specialState != 0) {

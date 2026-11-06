@@ -20,7 +20,7 @@ void set41_wait(Entity *e) {
 
     if (e->type == 1) {
         for (i = 0; i < 4; i++) {
-            if (data_0212c7c8.unk_5c[i] != 0) {
+            if (gameState.unk_5c[i] != 0) {
                 appear(e);
                 return;
             }
@@ -69,13 +69,13 @@ void set41_move(Entity *e) {
         app = KnifeApp_getInstance();
         if (KnifeApp_isWirelessMode(app) == 0 && e->unk_47 == 2) {
             if (*Knife_Single_SinglePlay_GetInstance() == 0) {
-                data_0212ceb0[e->unk_47 - 1].unk_0b = 0;
+                playerWork[e->unk_47 - 1].unk_0b = 0;
                 e->unk_47 = 0;
                 return;
             }
         }
 
-        player = data_0212ceb0[e->unk_47 - 1].entity;
+        player = playerWork[e->unk_47 - 1].entity;
         em12_typeMasks[e->areaIndex] |= flagBits[e->unk_16];
         facing = GetFacingDirection(e, player);
         if ((facing & 0xf) != 0) {

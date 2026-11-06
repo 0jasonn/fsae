@@ -21,7 +21,7 @@ void tama0f_fireshot(Entity *e) {
         subtimer = e->subtimer;
         e->subtimer = subtimer - 1;
         if (subtimer == 0) {
-            e->direction = func_02086078(e, data_0212ceb0[e->timer].entity);
+            e->direction = func_02086078(e, playerWork[e->timer].entity);
             e->subtimer = 0x14;
         }
     } else {

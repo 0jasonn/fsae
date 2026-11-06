@@ -4,7 +4,7 @@
 
 extern EntityFunc cursorTable[];       // cursorTable
 extern u8 cursorInitTable[][3];        // cursorInitTable: start x, start y, animation per type2
-extern u8 data_021349c0[];
+extern u8 effectState[];
 
 // Actor fields of the cursor, file-local.
 typedef struct Vars_Cursor {
@@ -30,14 +30,14 @@ void cursor_init(Entity *e) {
 
 void cursor_move(Entity *e) {
     u32 flag;
-    if (data_021349c0[2] == e->type2) {
+    if (effectState[2] == e->type2) {
         flag = 2;
     } else {
         flag = 0;
     }
     *(u32 *)&e->spriteSettings = (*(u32 *)&e->spriteSettings & ~3) | (flag & 3);
     UpdateAnimationSingleFrame(e);
-    if (data_021349c0[8] == 1) {
+    if (effectState[8] == 1) {
         PutObjWork(e);
     }
 }
@@ -69,7 +69,7 @@ void cursor_effect(Entity *e) {
 
 void cursor_wait(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    if (data_021349c0[8] < 2) {
+    if (effectState[8] < 2) {
         return;
     }
     PutObjWork(e);

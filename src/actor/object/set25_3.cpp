@@ -30,7 +30,7 @@ void vitaldec(Entity *e, u8 *timer) {
     *timer = 8;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         if (Knife_Single_SinglePlay_GetInstance()[1] != 0) {
-            if (data_0212ceb0[0].entity->unk_21 == data_0212ceb0[1].entity->unk_21) {
+            if (playerWork[0].entity->unk_21 == playerWork[1].entity->unk_21) {
                 damage = damage << 1;
             }
         }

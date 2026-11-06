@@ -8,7 +8,7 @@
 //   lobby_noop), leaveLobby (0x020b2ab0)
 
 extern u8 enemyTypeFlags[];  // 0x20 bytes, cleared by exchange_savedata
-extern u8 data_0212c9a8[];  // exchange state: u32 at +8 (1 when the exchange ended), flag byte at +0x0e
+extern u8 comWork[];  // exchange state: u32 at +8 (1 when the exchange ended), flag byte at +0x0e
 extern u8 data_02181860[];  // lobby state, the pointer at +4 leads to the lobby block
 extern u8 data_0217d23c[];  // lobby flags at +0xd0 and +0xd1
 extern u8 data_0217d23c[];
@@ -20,12 +20,12 @@ void MachiukeStop(void);
 void exchange_savedata(void) {
     OSi_CpuClear32(0, enemyTypeFlags, 0x20);
     ComRequest(3);
-    data_0212c9a8[0x0e] = 1;
+    comWork[0x0e] = 1;
 }
 
 // is_exchange_savedata_end() (0x020b2a90): TRUE when the exchange has ended
 BOOL is_exchange_savedata_end(void) {
-    if (*(u32 *)(data_0212c9a8 + 8) == 1) {
+    if (*(u32 *)(comWork + 8) == 1) {
         return TRUE;
     }
     return FALSE;

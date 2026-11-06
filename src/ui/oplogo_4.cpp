@@ -5,7 +5,7 @@ typedef struct OplogoShadowBlock {
     /* 00 */ u8 unk_00[0xc];
     /* 0c */ s16 scrollOffset; // guess: horizontal offset written by oplogo_info
 } OplogoShadowBlock;
-extern OplogoShadowBlock data_0212c75c;
+extern OplogoShadowBlock displayState;
 extern u8 data_0212c4dc;
 
 void oplogo_fadeOff(Entity *e) {
@@ -13,7 +13,7 @@ void oplogo_fadeOff(Entity *e) {
 }
 
 void oplogo_info(Entity *e) {
-    s16 offset = data_0212c75c.scrollOffset;
+    s16 offset = displayState.scrollOffset;
     e->action = 1;
     if (data_0212c4dc == 4) {
         if (offset < -0x90) {
@@ -24,5 +24,5 @@ void oplogo_info(Entity *e) {
             offset = offset - 8;
         }
     }
-    data_0212c75c.scrollOffset = offset;
+    displayState.scrollOffset = offset;
 }

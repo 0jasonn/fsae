@@ -8,17 +8,17 @@
 #include "global.h"
 
 int RankCheck(void) {
-    switch (data_0212c7c8.level) {
+    switch (gameState.level) {
         case 1:
-            if (data_0212c7c8.score >= 0x3e8) {
+            if (gameState.score >= 0x3e8) {
                 return 1;
             }
         case 2:
-            if (data_0212c7c8.score >= 0xbb8) {
+            if (gameState.score >= 0xbb8) {
                 return 2;
             }
         case 3:
-            if (data_0212c7c8.score >= 0x1388) {
+            if (gameState.score >= 0x1388) {
                 return 3;
             }
     }

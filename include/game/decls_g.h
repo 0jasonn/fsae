@@ -53,11 +53,11 @@ extern const u32 data_020df200[];
 // Title and save-error screen data and calls (savefile_error_*, terminateInfo_*)
 extern u8 data_021271cc[];
 extern u8 data_021271d4[];
-extern u8 data_0212c75c[];
+extern u8 displayState[];
 extern const u8 data_020ce4d0[];
 extern u8 data_0212c508;
-extern u8 data_0212c5ac;
-extern u8 data_021349c0[];
+extern u8 blendRequest;
+extern u8 effectState[];
 extern u8 data_0212c500[];
 extern u8 data_0212c4dc;
 extern u8 data_0212720c[];

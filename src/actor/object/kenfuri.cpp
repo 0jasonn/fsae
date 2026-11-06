@@ -53,7 +53,7 @@ void union_move(Entity *e) {
     e->timer = 0x3c;
     if (e->type == 0) {
         e->spriteSettings.b0 = 1;
-        e->spriteSettings.b16 = (data_0212c7c8.unk_50[3] + 7) & 0xf;
+        e->spriteSettings.b16 = (gameState.unk_50[3] + 7) & 0xf;
         e->spriteSettings.b20 = e->spriteSettings.b16;
         SoundReq(0x208);
     } else {
@@ -67,7 +67,7 @@ void union_wait(Entity *e) {
         return;
     }
     em12_typeMasks |= 8;
-    data_0212ceb0[e->type].state = 2;
+    playerWork[e->type].state = 2;
 }
 
 void Set57(Entity *e) {

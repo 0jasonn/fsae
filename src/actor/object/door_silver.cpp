@@ -2,8 +2,8 @@
 #include "global.h"
 #include "actor/object/door_silver.h"
 
-extern DoorSilverBlock data_0212c75c;
-extern u8 data_021349c0[];
+extern DoorSilverBlock displayState;
+extern u8 effectState[];
 extern s16 data_02115c78[][3];
 extern EntityFunc set31TypeTable[];
 extern EntityFunc doorSilverTable[];

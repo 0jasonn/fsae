@@ -20,11 +20,11 @@ void CalcHeartLevel(void) {
     u8 tier;
     const u8 *row;
 
-    level = data_0212c7c8.level - 1;
-    playerCount = data_0212c7c8.playerCount;
+    level = gameState.level - 1;
+    playerCount = gameState.playerCount;
     i = 0;
     while (i < playerCount) {
-        if (data_0212c7c8.slots[i].fieldBits != 0x3f) {
+        if (gameState.slots[i].fieldBits != 0x3f) {
             break;
         }
         i++;
@@ -35,8 +35,8 @@ void CalcHeartLevel(void) {
 
     minCounter = 0xffff;
     for (j = 0; j < playerCount; j++) {
-        if (minCounter > data_0212c7c8.slots[j].counter) {
-            minCounter = data_0212c7c8.slots[j].counter;
+        if (minCounter > gameState.slots[j].counter) {
+            minCounter = gameState.slots[j].counter;
         }
     }
 
@@ -50,6 +50,6 @@ void CalcHeartLevel(void) {
         tier = 3;
     }
 
-    row = data_02117a0c[data_0212c7c8.unk_01] + level * 4;
-    data_0212c7c8.unk_49[4] = row[tier];
+    row = data_02117a0c[gameState.unk_01] + level * 4;
+    gameState.unk_49[4] = row[tier];
 }

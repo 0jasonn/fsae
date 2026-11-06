@@ -21,9 +21,9 @@ extern const u8 set55_hitbox[];
 extern const EntityFunc set55_actionsTypeN[]; // indexed by e->action, e->type != 0
 extern const EntityFunc set55_actionsType0[]; // indexed by e->action, e->type == 0
 extern u8 localPlayerIndex;
-extern Entity *data_0212c648;
+extern Entity *mapState;
 extern const s8 set55_xOffsets[]; // indexed by animationState >> 1
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 
 void set55_movef(Entity *e);
 
@@ -62,7 +62,7 @@ void set55_init(Entity *e) {
         return;
     }
     if (localPlayerIndex == e->child->type) {
-        data_0212c648 = e;
+        mapState = e;
     }
 }
 
@@ -71,9 +71,9 @@ void set55_movei(Entity *e) {
     u8 playerIndex;
 
     child = e->child;
-    if (data_0212ceb0[child->type].statusFlags & 0x1000) {
-        data_0212ceb0[child->type].statusFlags &= 0xf7ff;
-        data_0212c648 = e->child;
+    if (playerWork[child->type].statusFlags & 0x1000) {
+        playerWork[child->type].statusFlags &= 0xf7ff;
+        mapState = e->child;
         PutObjWork(e);
         return;
     }
@@ -82,7 +82,7 @@ void set55_movei(Entity *e) {
         playerIndex = *Knife_Single_SinglePlay_GetInstance();
     }
     child = e->child;
-    if (data_0212ceb0[child->type].statusFlags & 0x800) {
+    if (playerWork[child->type].statusFlags & 0x800) {
         if (e->contactFlags & 0x80) {
             switch (e->contactFlags & 0x7f) {
             case 4:
@@ -90,9 +90,9 @@ void set55_movei(Entity *e) {
             case 12:
             case 16:
             case 19:
-                data_0212ceb0[child->type].statusFlags &= 0xf7ff;
+                playerWork[child->type].statusFlags &= 0xf7ff;
                 if (playerIndex == e->child->type) {
-                    data_0212c648 = e->child;
+                    mapState = e->child;
                 }
                 PutObjWork(e);
                 return;
@@ -101,14 +101,14 @@ void set55_movei(Entity *e) {
                 Entity *created;
 
                 contacted = e->contactedEntity;
-                if ((data_0212ceb0[contacted->type].statusFlags & 0x1881) == 0 &&
-                    data_0212ceb0[contacted->type].state == 0 && contacted->action == 1 &&
-                    data_0212ceb0[contacted->type].entity->iframes == 0) {
+                if ((playerWork[contacted->type].statusFlags & 0x1881) == 0 &&
+                    playerWork[contacted->type].state == 0 && contacted->action == 1 &&
+                    playerWork[contacted->type].entity->iframes == 0) {
                     created = GetSetWork(0x55, 0, 0);
                     if (created != NULL) {
                         created->child = e->contactedEntity;
-                        data_0212ceb0[e->contactedEntity->type].statusFlags |= 0x800;
-                        data_0212ceb0[e->contactedEntity->type].state = 0xd;
+                        playerWork[e->contactedEntity->type].statusFlags |= 0x800;
+                        playerWork[e->contactedEntity->type].state = 0xd;
                     }
                 }
                 return;
@@ -122,7 +122,7 @@ void set55_movei(Entity *e) {
         }
     }
     if (playerIndex == child->type) {
-        data_0212c648 = child;
+        mapState = child;
     }
     PutObjWork(e);
 }
@@ -133,16 +133,16 @@ void set55_movef(Entity *e) {
 
     V55(e)->lifetime--;
     type = e->child->type;
-    if ((data_0212ceb0[type].statusFlags & 0x1810) != 0 || V55(e)->lifetime == 0) {
-        data_0212ceb0[type].statusFlags &= 0xfbff;
+    if ((playerWork[type].statusFlags & 0x1810) != 0 || V55(e)->lifetime == 0) {
+        playerWork[type].statusFlags &= 0xfbff;
         PutObjWork(e);
         return;
     }
-    if (data_0212c58c[type] != 0) {
+    if (playerKeys[type] != 0) {
         e->subtimer++;
     }
     if (e->subtimer > 0x1e) {
-        data_0212ceb0[e->child->type].statusFlags &= 0xfbff;
+        playerWork[e->child->type].statusFlags &= 0xfbff;
         PutObjWork(e);
         return;
     }
@@ -165,7 +165,7 @@ void set55_movef(Entity *e) {
         e->child->iframes = 0x10;
         func_02085f98(e->child, 0xc3);
     }
-    if (data_0212ceb0[e->child->type].statusFlags & 0x400) {
+    if (playerWork[e->child->type].statusFlags & 0x400) {
         UpdateAnimationSingleFrame(e);
         if (e->type & 0x80) {
             return;
@@ -178,11 +178,11 @@ void set55_movef(Entity *e) {
         case 8:
         case 12:
         case 16:
-            data_0212ceb0[e->child->type].statusFlags &= 0xfbff;
+            playerWork[e->child->type].statusFlags &= 0xfbff;
             PutObjWork(e);
             return;
         case 0:
-            if (data_0212ceb0[e->contactedEntity->type].statusFlags & 0x400) {
+            if (playerWork[e->contactedEntity->type].statusFlags & 0x400) {
                 return;
             }
             {
@@ -191,7 +191,7 @@ void set55_movef(Entity *e) {
                     return;
                 }
                 created->child = e->contactedEntity;
-                data_0212ceb0[e->contactedEntity->type].statusFlags |= 0x400;
+                playerWork[e->contactedEntity->type].statusFlags |= 0x400;
             }
             return;
         default:
@@ -213,7 +213,7 @@ Entity *func_02072554(s32 a) {
         set->unk_20 = a << 5;
         set->animationState = 4;
         set->spriteSettings.b14 = 2;
-        data_0212ceb0[a].entity = set;
+        playerWork[a].entity = set;
     }
     return set;
 }

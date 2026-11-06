@@ -13,7 +13,7 @@ void MapMarkerSet(void) {
     GetSetWorkSp(0x32, 1, 0);
     GetSetWorkSp(0x32, 3, 0);
     i = 0;
-    while (i < data_0212c7c8.playerCount) {
+    while (i < gameState.playerCount) {
         found = GetSetWorkSp(0x32, 2, i);
         if (found != 0) {
             if (i == localPlayerIndex) {

@@ -81,7 +81,7 @@ void ido_wait(Entity *e) {
     }
     for (playerIndex = 0; playerIndex < 2; playerIndex++) {
         if (mask & (1 << playerIndex)) {
-            if (ido_yukaPlMoveCheck(&data_0212ceb0[playerIndex]) == 0) {
+            if (ido_yukaPlMoveCheck(&playerWork[playerIndex]) == 0) {
                 mask &= ~(1 << playerIndex);
             }
         }

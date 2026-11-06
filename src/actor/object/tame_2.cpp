@@ -27,19 +27,19 @@ void tame_move(Entity *e) {
     s32 step;
     Entity *effect;
 
-    target = data_0212ceb0[e->type].entity;
-    if (data_0212ceb0[e->type].inUse == 0) {
+    target = playerWork[e->type].entity;
+    if (playerWork[e->type].inUse == 0) {
         PutObjWork(e);
         return;
     }
     e->z.HALF.HI = target->z.HALF.HI;
     if (e->type2 != 0) {
-        if (data_0212ceb0[e->type].tameState >= 0x14) {
+        if (playerWork[e->type].tameState >= 0x14) {
             e->spriteSettings.b0 = 1;
             offsets = data_020db588;
-            kind = data_0212ceb0[e->type].tameState;
+            kind = playerWork[e->type].tameState;
         } else {
-            if (data_0212ceb0[e->type].tameState != 0) {
+            if (playerWork[e->type].tameState != 0) {
                 e->spriteSettings.b0 = 0;
                 return;
             }
@@ -47,9 +47,9 @@ void tame_move(Entity *e) {
             return;
         }
     } else {
-        if ((data_0212ceb0[e->type].actionFlags & 1) != 0) {
+        if ((playerWork[e->type].actionFlags & 1) != 0) {
             offsets = data_020db580;
-            kind = data_0212ceb0[e->type].actionFlags;
+            kind = playerWork[e->type].actionFlags;
         } else {
             PutObjWork(e);
             return;
@@ -111,7 +111,7 @@ void tame_move(Entity *e) {
         }
         MoveDir(e);
         if (e->type2 == 0) {
-            if ((data_0212ceb0[e->type].actionFlags & 0x40) != 0) {
+            if ((playerWork[e->type].actionFlags & 0x40) != 0) {
                 e->action++;
             }
         }

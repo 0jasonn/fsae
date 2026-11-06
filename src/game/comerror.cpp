@@ -20,14 +20,14 @@ void comerror_move(void) {
         ((Knife::Hud::HudManager *)(app + 0x1f8))->update(data_0212c4c8);
         *(u16 *)0x05000000 = 0;
         data_021355a0 = 0;
-        data_0212c75c.displayFlags = data_0212c75c.displayFlags & 0xfeff;
-        if (*(u16 *)(data_021349c0 + 4) != 0) {
-            *(u16 *)(data_021349c0 + 4) = *(u16 *)(data_021349c0 + 4) - 1;
-            if (*(u16 *)(data_021349c0 + 4) == 0) {
+        displayState.displayFlags = displayState.displayFlags & 0xfeff;
+        if (*(u16 *)(effectState + 4) != 0) {
+            *(u16 *)(effectState + 4) = *(u16 *)(effectState + 4) - 1;
+            if (*(u16 *)(effectState + 4) == 0) {
                 ((Knife::Hud::HudManager *)(app + 0x1f8))->setStateThree();
             }
         }
-        if (*(u16 *)(data_021349c0 + 4) == 0 && (data_0212c510 & 1)) {
+        if (*(u16 *)(effectState + 4) == 0 && (data_0212c510 & 1)) {
             SoundReq(0x3e);
             FadeSet(3, 8);
             data_0212c4dc = data_0212c4dc + 1;
@@ -35,7 +35,7 @@ void comerror_move(void) {
         break;
     case 1:
         ((Knife::Hud::HudManager *)(app + 0x1f8))->update(data_0212c4c8);
-        if (data_0212c5ac.blendEnabled != 0) {
+        if (blendRequest.blendEnabled != 0) {
             return;
         }
         DispReset();

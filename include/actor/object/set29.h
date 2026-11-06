@@ -8,13 +8,13 @@ void RewCellOne(u16 a, u16 b, u16 c);
 
 BOOL test(Entity *e, u16 a, u16 b);
 
-// Grid origin at data_0212c648 (shared; the origin fields are at +0x18 and +0x1a).
+// Grid origin at mapState (shared; the origin fields are at +0x18 and +0x1a).
 typedef struct OplogoGridOrigin {
     /* 00 */ u8 unk_00[0x18];
     /* 18 */ u16 originX;
     /* 1a */ u16 originY;
 } OplogoGridOrigin;
-extern OplogoGridOrigin data_0212c648;
+extern OplogoGridOrigin mapState;
 
 // Actor fields of the Set29 family, file-local to set29.cpp.
 typedef struct Vars_Set29 {

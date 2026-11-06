@@ -9,9 +9,9 @@
 //   func_020280e0 (dsd name, declared in functions.h), MachiukeStart (MachiukeStart()), MachiukeStop (MachiukeStop()),
 //   ComMain (ComMain()), ComUpdate (ComUpdate()), func_020281a8 and func_020281ac (empty functions)
 
-#define COM_WORK ((ComWork *)data_0212c9a8)
+#define COM_WORK ((ComWork *)comWork)
 
-extern u8 data_0212c9a8[];
+extern u8 comWork[];
 extern u8 data_0212c9b8[];
 extern u32 data_0212c544;
 extern u32 opTitleState;

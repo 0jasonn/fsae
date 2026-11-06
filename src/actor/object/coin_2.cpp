@@ -26,8 +26,8 @@ void coin_move(Entity *e) {
     if (e->y.HALF.HI > 0x34) {
         e->action++;
         InitAnimationForceUpdate(e, 1);
-        data_0212ceb0[e->type2].state = 4;
-        data_0212ceb0[e->type2].stateTimer = 0xff;
+        playerWork[e->type2].state = 4;
+        playerWork[e->type2].stateTimer = 0xff;
         SoundReq(0x216);
         SoundReq(0x216 - 0x73);
     }

@@ -7,7 +7,7 @@
 
 extern u8 pauseState[];
 extern u16 data_021355a0;
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern u8 data_0212c4d4;
 extern u16 data_0212c520;
@@ -20,7 +20,7 @@ extern u8 data_0212c4e4;
 extern u16 data_0212c514;
 extern u16 data_0212c510;
 extern Entity *data_0212c534;
-extern u16 data_0212c584[];
+extern u16 playerKeysPrev[];
 extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 

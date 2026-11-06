@@ -12,7 +12,7 @@ void getFiveMoveInfo(Entity *e) {
 
 int gufuVitalCheck(Entity *e) {
     u8 hp = e->health;
-    u8 difficulty = data_0212c7c8.difficulty;
+    u8 difficulty = gameState.difficulty;
     int result = 0;
     if (((const u8 *)em2f_vitalThresholds)[difficulty * 2] > hp) {
         result = 1;
@@ -24,8 +24,8 @@ int gufuVitalCheck(Entity *e) {
 }
 
 void gufuBindPls(void) {
-    for (u8 i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].unk_14 = 1;
+    for (u8 i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].unk_14 = 1;
     }
     BindPlayers();
 }

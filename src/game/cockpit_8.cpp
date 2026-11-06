@@ -7,12 +7,12 @@
 // Functions in this file (module cockpit, original names from the debug build):
 //   cockpit_call_check (cockpit_call_check()), cockpit_obj_trans (cockpit_obj_trans(unsigned char))
 
-extern u16 data_0212c58c[]; // flags per player, bit 0x400 set while the player is active
-extern u16 data_0212c584[]; // flags per player, bit 0x1000 blocks the call animation
+extern u16 playerKeys[]; // flags per player, bit 0x400 set while the player is active
+extern u16 playerKeysPrev[]; // flags per player, bit 0x1000 blocks the call animation
 extern u8 messageRequest[];
 extern u8 frameCounter[];
 extern u8 data_0212c4a0[];
-extern u8 data_0212c618[];
+extern u8 cockpitState[];
 
 // cockpit_call_check (0x02027bd0): starts the call animation of the player that asks for it. Single play uses the
 // active player of the single play block; wireless play checks every player.
@@ -32,14 +32,14 @@ void cockpit_call_check(void) {
         } else {
             hud->setActivePlayer(-1);
         }
-        if ((data_0212c58c[0] & 0x400) == 0) {
+        if ((playerKeys[0] & 0x400) == 0) {
             return;
         }
         requestMode = messageRequest[0] & 0x7f;
         if (requestMode != 0 || frameCounter[0x14] != 0 || frameCounter[0x11] != 0) {
             return;
         }
-        if (data_0212ceb0[single[0]].callState != 0) {
+        if (playerWork[single[0]].callState != 0) {
             return;
         }
         if (hud->startCallAnim(single[0]) == 0) {
@@ -48,12 +48,12 @@ void cockpit_call_check(void) {
         SoundReq(0x232);
         return;
     }
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        if ((data_0212c58c[i] & 0x400) == 0) {
+    for (i = 0; i < gameState.playerCount; i++) {
+        if ((playerKeys[i] & 0x400) == 0) {
             continue;
         }
-        if ((data_0212c584[i] & 0x1000) == 0 && frameCounter[0x14] == 0 && frameCounter[0x11] == 0 &&
-            data_0212ceb0[i].callState == 0) {
+        if ((playerKeysPrev[i] & 0x1000) == 0 && frameCounter[0x14] == 0 && frameCounter[0x11] == 0 &&
+            playerWork[i].callState == 0) {
             if (hud->startCallAnim(i) != 0) {
                 SoundReq(0x232);
             }
@@ -73,7 +73,7 @@ void cockpit_obj_trans(u8 mode) {
     cockpit_call_check();
     *(u32 *)(data_0212c4a0 + 4) = (*(u32 *)(data_0212c4a0 + 4) + 1) % 0x30;
     hud = (Knife::Hud::HudManager *)((u8 *)knife + 0x1f8);
-    hud->setField70(0, data_0212c618[0xc]);
-    hud->setField70(1, data_0212c618[0x2c]);
+    hud->setField70(0, cockpitState[0xc]);
+    hud->setField70(1, cockpitState[0x2c]);
     hud->update(mode);
 }

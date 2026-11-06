@@ -14,7 +14,7 @@ void plate_move(Entity *e) {
     } else if (data_0212c4dc >= 2) {
         VPLATE(e)->count = VPLATE(e)->limit;
     }
-    if (data_021349c0[0x27] != 0) {
+    if (effectState[0x27] != 0) {
         PutObjWork(e);
     }
 }

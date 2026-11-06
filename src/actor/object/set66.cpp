@@ -24,8 +24,8 @@ void rr_type0_init_075064(Entity *e) {
     u16 i;
     Entity *spawn;
 
-    pos = rr_type0_posTable[data_0212c7c8.playerCount - 1];
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
+    pos = rr_type0_posTable[gameState.playerCount - 1];
+    for (i = 0; i < gameState.playerCount; i++) {
         spawn = GetSetWork(0x66, 1, (u8)i);
         if (spawn != NULL) {
             spawn->parent = e;
@@ -41,25 +41,25 @@ void rr_type0_wait(Entity *e) {
     u8 i;
 
     v = VARS(Vars_Set66, e);
-    if (data_0212c7c8.playerCount != CountBits(v->typeBits)) {
+    if (gameState.playerCount != CountBits(v->typeBits)) {
         return;
     }
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        if (plStCheck(&data_0212ceb0[i])) {
+    for (i = 0; i < gameState.playerCount; i++) {
+        if (plStCheck(&playerWork[i])) {
             return;
         }
     }
     e->action = 2;
     v->typeBits = 0xffff;
-    data_0212c618 = 2;
+    cockpitState = 2;
     BindPlayers();
     Scene_SetFlag5();
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].state = 0xf;
-        data_0212ceb0[i].motionId = 0xc3;
-        data_0212ceb0[i].stateTimer = 0xb4;
-        data_0212ceb0[i].unk_39 = 1;
-        data_0212ceb0[i].entity->animationState = 4;
+    for (i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].state = 0xf;
+        playerWork[i].motionId = 0xc3;
+        playerWork[i].stateTimer = 0xb4;
+        playerWork[i].unk_39 = 1;
+        playerWork[i].entity->animationState = 4;
     }
 }
 
@@ -68,7 +68,7 @@ void rr_type0_move(Entity *e) {
 
     v = VARS(Vars_Set66, e);
     BindPlayers();
-    if (16 - data_0212c7c8.playerCount == CountBits(v->typeBits)) {
+    if (16 - gameState.playerCount == CountBits(v->typeBits)) {
         e->action = 3;
     }
 }

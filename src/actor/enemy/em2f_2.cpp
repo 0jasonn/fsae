@@ -125,9 +125,9 @@ void em2f_die(Entity *e) {
         e->timer--;
         return;
     }
-    u8 count = data_0212c7c8.playerCount;
+    u8 count = gameState.playerCount;
     for (u32 i = 0; i < count; i++) {
-        PlayerData *player = &data_0212ceb0[i];
+        PlayerData *player = &playerWork[i];
         if ((player->statusFlags & 1) || player->callState != 0) {
             return;
         }
@@ -135,8 +135,8 @@ void em2f_die(Entity *e) {
             return;
         }
     }
-    for (u32 i = 0; i < data_0212c7c8.playerCount; i++) {
-        PlayerData *player = &data_0212ceb0[i];
+    for (u32 i = 0; i < gameState.playerCount; i++) {
+        PlayerData *player = &playerWork[i];
         player->entity->z.HALF.HI = 0;
         player->entity->zVelocity = 0;
         player->entity->direction = 0xff;

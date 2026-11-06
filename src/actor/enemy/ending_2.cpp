@@ -6,7 +6,7 @@
 // ending_msgFinishWait (0x020446b4).
 
 void ending_init(void) {
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     *(u16 *)0x05000000 = 0;
@@ -15,7 +15,7 @@ void ending_init(void) {
     MIi_CpuClearFast(0xc0, (void *)0x07000000, 0x400);
     MIi_CpuClearFast(0xc0, objAffineSet, 0x800);
     MIi_CpuClearFast(0, data_0212ccb0, 0x200);
-    data_0212c618 = 0;
+    cockpitState = 0;
     MIi_CpuClearFast(0, data_021361a0, 0x1000);
     func_02026774();
     ObjWorkPoolClear();
@@ -25,13 +25,13 @@ void ending_init(void) {
     MessageInitialize();
     func_0204f978();
     PlWorkClear();
-    MIi_CpuClear16(0, &data_021349c0, 0x28);
+    MIi_CpuClear16(0, &effectState, 0x28);
     DataLoad(8);
     em12_typeMasks = 0;
     GetNPC(0x5d, 1, 0);
     data_02134d30.entity->x.HALF.HI = 0x1f8;
     data_02134d30.entity->y.HALF.HI = 0x1b8;
-    data_0212c648.target = data_02134d30.entity;
+    mapState.target = data_02134d30.entity;
     data_02134d30.unk_04 = 6;
     ending_link_init();
     Entity *linked = GetSetWork(0x69, 4, 0);
@@ -42,7 +42,7 @@ void ending_init(void) {
     data_0212c564();
     em2f_mapFlag = 0;
     ComRequest(5);
-    data_021349c0.frames = 0;
+    effectState.frames = 0;
 }
 
 void ending_link_init(void) {
@@ -61,10 +61,10 @@ void ending_link_init(void) {
         e->unk_5e.b0 = slot;
     }
     {
-        Entity *selected = data_0212ceb0[GAME_STATE_U8(0x53)].entity;
+        Entity *selected = playerWork[GAME_STATE_U8(0x53)].entity;
         u8 prevB0 = selected->unk_5e.b0;
         selected->unk_5e.b0 = 3;
-        data_0212ceb0[0].entity->unk_5e.b0 = prevB0;
+        playerWork[0].entity->unk_5e.b0 = prevB0;
     }
 }
 
@@ -73,7 +73,7 @@ void ending_rescue(void) {
         return;
     }
     CommUpdateJoy();
-    data_021349c0.frames++;
+    effectState.frames++;
     endingRescueTable[data_0212c4dc]();
     data_0212c564();
     if (data_0212c4dc < 2) {
@@ -89,7 +89,7 @@ void ending_rescue(void) {
 BOOL ending_msgFinishWait(void) {
     u8 i;
     for (i = 0; i < GAME_STATE_U8(0); i++) {
-        if (data_0212c584[i] & 0x1000) {
+        if (playerKeysPrev[i] & 0x1000) {
             return TRUE;
         }
     }

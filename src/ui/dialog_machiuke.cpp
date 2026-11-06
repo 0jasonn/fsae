@@ -8,7 +8,7 @@
 //   dialog_machiuke_joy (0x020b2898)
 
 // dialog_machiuke_joy() (0x020b2898): edge detection of the keys of the four players. The keys that were pressed in
-// this frame (new bits) go to data_0212c58c, the current keys become the previous ones, and the key state of the
+// this frame (new bits) go to playerKeys, the current keys become the previous ones, and the key state of the
 // machine is copied when the device is not in wireless mode
 void dialog_machiuke_joy(void) {
     void *app;
@@ -19,14 +19,14 @@ void dialog_machiuke_joy(void) {
     func_020909c8();
     app = KnifeApp_getInstance();
     for (i = 0; i < 4; i++) {
-        keys = *(u16 *)(data_0212c9a8 + i * 0x34 + 0x7a);
-        prev = ((u16 *)data_0212c584)[i];
-        ((u16 *)data_0212c58c)[i] = keys & (keys ^ prev);
-        ((u16 *)data_0212c584)[i] = keys;
+        keys = *(u16 *)(comWork + i * 0x34 + 0x7a);
+        prev = ((u16 *)playerKeysPrev)[i];
+        ((u16 *)playerKeys)[i] = keys & (keys ^ prev);
+        ((u16 *)playerKeysPrev)[i] = keys;
     }
     if (KnifeApp_isWirelessMode(app) == 0) {
-        *(u16 *)data_0212c58c = *(u16 *)data_0212c514;
-        *(u16 *)(data_0212c9a8 + 0x7a) = *(u16 *)data_0212c514;
+        *(u16 *)playerKeys = *(u16 *)data_0212c514;
+        *(u16 *)(comWork + 0x7a) = *(u16 *)data_0212c514;
     }
-    *(u16 *)(data_0212c9a8 + 0x12) = *(u16 *)data_0212c514;
+    *(u16 *)(comWork + 0x12) = *(u16 *)data_0212c514;
 }

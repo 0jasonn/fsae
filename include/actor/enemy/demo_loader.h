@@ -24,7 +24,7 @@ void MultiRoomSet(void);                                  // original MultiRoomS
 void func_0208309c(void);                                 // thumb helper, mangled _Z13func_0208309cv
 
 extern FRAME_INFO_ staffrollFrameInfo;                   // ROM frame record used by StaffrollLoad (staffrollFrameInfo)
-extern FRAME_INFO_ *youseiFrameTable[];                  // frame record table indexed by data_0212c7c8.unk_01 (youseiFrameTable)
+extern FRAME_INFO_ *youseiFrameTable[];                  // frame record table indexed by gameState.unk_01 (youseiFrameTable)
 extern const u32 *data_02134968[];                        // info table, one row pointer per area (see src/engine/info.cpp)
 extern u8 data_0212c4c8;
 extern u8 data_021348f4[];

@@ -3,33 +3,33 @@
 #include "actor/object/gufu_vars.h"
 
 // Gufu body movement (module gufu, third unit). Address -> name:
-//   0x0207481c gufu_body_move (original name; switch on the result state byte at data_021349c0 + 0x0e)
+//   0x0207481c gufu_body_move (original name; switch on the result state byte at effectState + 0x0e)
 
-extern u8 data_021349c0[];           // result state block, see enemy/ending.h
-extern Entity *data_0212c648;        // the body entity the scene points at
+extern u8 effectState[];           // result state block, see enemy/ending.h
+extern Entity *mapState;        // the body entity the scene points at
 
 void gufu_body_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    switch (data_021349c0[0x0e]) {
+    switch (effectState[0x0e]) {
     case 0:
         break;
     case 1:
-        data_0212c648 = e;
+        mapState = e;
         e->direction = 0x10;
         e->speed = 0x80;
         MoveDir(e);
         if (e->y.HALF.HI <= 0xa0) {
             return;
         }
-        data_021349c0[0] = data_021349c0[0] + 1;
-        data_021349c0[0x0e] = 0;
+        effectState[0] = effectState[0] + 1;
+        effectState[0x0e] = 0;
         return;
     case 2:
         if (e->frame != 1) {
             return;
         }
         InitAnimationForceUpdate(e, 2);
-        data_021349c0[0x0e] = 0;
+        effectState[0x0e] = 0;
         return;
     case 3:
         if (e->frame == 1) {
@@ -40,7 +40,7 @@ void gufu_body_move(Entity *e) {
             return;
         }
         InitAnimationForceUpdate(e, 1);
-        data_021349c0[0x0e] = 0;
+        effectState[0x0e] = 0;
         return;
     case 4: {
         Vars_GufuBody *v;

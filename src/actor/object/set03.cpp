@@ -8,7 +8,7 @@
 //   0x0205b0d8 set03_init (original name)
 //   set03_wait, set03_move, set03_swoff: scratch/agentF/nonmatching/set03_wait.c, set03_move.c, set03_swoff.c
 
-// data_0212c648 as read by set03_init: grid origin of the map cells.
+// mapState as read by set03_init: grid origin of the map cells.
 typedef struct Set03GridOrigin {
     /* 00 */ u8 unk_00[0x18];
     /* 18 */ u16 originX;
@@ -29,13 +29,13 @@ extern const EntityFunc set03_actions[]; // set03_actions, indexed by e->action
 extern const u8 data_020d8a5c[];          // hitbox of the switch
 extern const u32 flagBits[];             // flagBits, indexed by e->type
 extern u32 em12_typeMasks[];
-extern Set03GridOrigin data_0212c648;
+extern Set03GridOrigin mapState;
 
 // Cell of player k (its entity, 3 pixels below the feet).
-#define SET03_PLAYER_CELL(k) ((((data_0212ceb0[k].entity->y.HALF.HI + 3) >> 4) << 6) | (data_0212ceb0[k].entity->x.HALF.HI >> 4))
+#define SET03_PLAYER_CELL(k) ((((playerWork[k].entity->y.HALF.HI + 3) >> 4) << 6) | (playerWork[k].entity->x.HALF.HI >> 4))
 
 // Clears the player bit when that player is busy (statusFlags & 0x90) or stands on another cell than the actor.
-#define SET03_PRUNE_PLAYER(k, bit, keep)                                                        if ((flags & (bit)) != 0) {                                                                     if ((data_0212ceb0[k].statusFlags & 0x90) != 0 ||                                               VARS(Vars_Set03, e)->cellPlain != SET03_PLAYER_CELL(k)) {                                   flags &= (keep);                                                                        }                                                                                       }
+#define SET03_PRUNE_PLAYER(k, bit, keep)                                                        if ((flags & (bit)) != 0) {                                                                     if ((playerWork[k].statusFlags & 0x90) != 0 ||                                               VARS(Vars_Set03, e)->cellPlain != SET03_PLAYER_CELL(k)) {                                   flags &= (keep);                                                                        }                                                                                       }
 
 void Set03(Entity *e) {
     set03_actions[e->action](e);
@@ -45,7 +45,7 @@ void set03_init(Entity *e) {
     e->action++;
     e->statusFlags = 0;
     e->hitbox = data_020d8a5c;
-    VARS(Vars_Set03, e)->cell = ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6);
+    VARS(Vars_Set03, e)->cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
     VARS(Vars_Set03, e)->cellKind = func_02083ca8(VARS(Vars_Set03, e)->cell, e->layer);
     VARS(Vars_Set03, e)->cellPlain = (e->x.HALF.HI >> 4) | (((e->y.HALF.HI) >> 4) << 6);
 }

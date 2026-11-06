@@ -9,12 +9,12 @@
 // Functions in this file (original names from the debug build):
 //   ChangeIroyuka
 
-// Game state byte 1 (data_0212c7c8) and the counter block at data_0216f820
+// Game state byte 1 (gameState) and the counter block at data_0216f820
 extern u32 data_0216f820[];
 
 // Sets the new value of the counter block when the game state is not 1 and the block is active
 void ChangeIroyuka(u8 value) {
-    if (data_0212c7c8.unk_01 != 1 && data_0216f820[2] != 0) {
+    if (gameState.unk_01 != 1 && data_0216f820[2] != 0) {
         data_0216f820[1] = value + 1;
     }
 }
@@ -44,7 +44,7 @@ void UpdateIroyuka(void) {
     if (data_0216f820[1] == 0) {
         return;
     }
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     resource = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0xa4);
@@ -61,7 +61,7 @@ void UpdateIroyuka(void) {
             RewCellOne(data_0216f934[i].cell, data_0216f934[i].flags, 0x4000);
         }
     }
-    player = &data_0212ceb0[index];
+    player = &playerWork[index];
     paletteIdx = ((u32)player->paletteBits << 28) >> 30;
     SetDataVBlank(resource + (paletteIdx << 7), (void *)0x0600cc00, 0x40);
     paletteIdx = ((u32)player->paletteBits << 28) >> 30;

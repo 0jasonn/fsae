@@ -21,7 +21,7 @@ typedef struct SceneSlot {
     /* 10 */ u8 unk_10[4];
 } SceneSlot;
 
-// Camera state at data_0212c648: first word is the entity the camera follows
+// Camera state at mapState: first word is the entity the camera follows
 typedef struct CameraState {
     /* 00 */ Entity *target;
     /* 04 */ u8 unk_04[0x1c];
@@ -31,7 +31,7 @@ typedef struct CameraState {
     /* 28 */ u16 unk_28;
 } CameraState;
 
-// Display shadow at data_0212c75c (displayFlags is the first halfword)
+// Display shadow at displayState (displayFlags is the first halfword)
 typedef struct DisplayShadow {
     /* 00 */ u16 displayFlags;
     /* 02 */ u8 unk_02[0x1e];
@@ -48,7 +48,7 @@ typedef struct DisplayShadow {
     /* 6a */ u16 unk_6a;
 } DisplayShadow;
 
-// Result state block at data_021349c0 (0x28 bytes, cleared by ending_init)
+// Result state block at effectState (0x28 bytes, cleared by ending_init)
 typedef struct ResultState {
     /* 00 */ u8 phase;     // state of the scene machine in ending_scene_01
     /* 01 */ u8 subPhase; // sub-state of the demo in demo_01 and demo_00
@@ -60,7 +60,7 @@ typedef struct ResultState {
     /* 24 */ u32 frames;   // incremented once per frame by ending_rescue
 } ResultState;
 
-// Fade work at data_0212c5ac (the original tag is FADE_WORK_). Blend request read by the palette code.
+// Fade work at blendRequest (the original tag is FADE_WORK_). Blend request read by the palette code.
 typedef struct FADE_WORK_ {
     /* 00 */ u8 blendEnabled;
     /* 01 */ u8 blendMode;       // index into fadeModeTable
@@ -87,17 +87,17 @@ typedef struct UnkStruct_0217d384 {
     /* 04 */ u8 unk_04;
 } UnkStruct_0217d384;
 
-#define GAME_STATE_U8(off) (*((u8 *)&data_0212c7c8 + (off)))
+#define GAME_STATE_U8(off) (*((u8 *)&gameState + (off)))
 
-extern BlendRequest data_0212c5ac;
+extern BlendRequest blendRequest;
 extern u16 data_021355a0;
 extern u8 data_02135840[];
 extern u8 data_0216fd04[];
 extern u8 objAffineSet[];
 extern u8 data_0212ccb0[];
-extern u8 data_0212c618;
+extern u8 cockpitState;
 extern u8 data_021361a0[];
-extern ResultState data_021349c0;
+extern ResultState effectState;
 extern u32 em12_typeMasks;
 extern u32 em2f_mapFlag;
 extern u8 data_0212c4dc;
@@ -105,12 +105,12 @@ extern u8 data_0212c500;
 extern EndingVoidFunc data_0212c564;
 extern SceneSlot data_02134d30; // first record; the others are reached with SCENE_SLOT
 #define SCENE_SLOT(k) (((SceneSlot *)&data_02134d30)[k])
-extern CameraState data_0212c648;
-extern DisplayShadow data_0212c75c;
+extern CameraState mapState;
+extern DisplayShadow displayState;
 extern EndingVoidFunc const endingFinaleTable[];
 extern EndingVoidFunc const finaleDemoTable[];
 extern EndingVoidFunc const endingRescueTable[];
-extern u16 data_0212c584[4];
+extern u16 playerKeysPrev[4];
 extern u16 data_0212c594;
 extern u8 data_0212c4f8;
 extern s32 data_02134924;

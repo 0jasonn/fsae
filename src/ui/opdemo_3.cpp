@@ -16,38 +16,38 @@ void fairy_talkset(u8 slot, u16 effectId) {
     MessageRequest(effectId);
     messageRequest[SCENE_CTRL_SUBMODE_3] = (messageRequest[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
     messageRequest[SCENE_CTRL_SUBMODE_4] = (messageRequest[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
-    data_021349c0[EFFECT_STATE_ACTIVE_SLOT] = slot;
+    effectState[EFFECT_STATE_ACTIVE_SLOT] = slot;
     fairySlots[slot].entity->action = 3;
 }
 
-// Follows the camera target (data_0212c648) on y, clamping the camera x to 0..0xa0
+// Follows the camera target (mapState) on y, clamping the camera x to 0..0xa0
 void opdemo_scroll(void) {
     s32 desired;
     s32 next;
-    if (*(Entity **)&data_0212c648 == NULL) {
+    if (*(Entity **)&mapState == NULL) {
         return;
     }
-    desired = (s16)((*(Entity **)&data_0212c648)->y.HALF.HI - 0x60);
+    desired = (s16)((*(Entity **)&mapState)->y.HALF.HI - 0x60);
     if (desired < 0) {
         desired = 0;
     }
     if (desired > 0xa0) {
         desired = 0xa0;
     }
-    if (data_0212c648.cameraX != desired) {
-        if (data_0212c648.cameraX < desired) {
-            next = data_0212c648.cameraX + 1;
+    if (mapState.cameraX != desired) {
+        if (mapState.cameraX < desired) {
+            next = mapState.cameraX + 1;
         } else {
-            next = data_0212c648.cameraX - 1;
+            next = mapState.cameraX - 1;
         }
-        data_0212c648.cameraX = next;
+        mapState.cameraX = next;
     }
-    data_0212c75c.unk_30 = data_0212c648.cameraX;
-    data_0212c75c.scrollX = data_0212c75c.unk_30;
+    displayState.unk_30 = mapState.cameraX;
+    displayState.scrollX = displayState.unk_30;
 }
 
 void op_title(void) {
-    data_021349c0[8] = opTitleState & 0xf;
+    effectState[8] = opTitleState & 0xf;
     opTitleTable[data_0212c4dc]();
     data_0212c564();
     func_020830ec();

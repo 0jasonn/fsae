@@ -3,7 +3,7 @@
 #include "actor/enemy/commerror.h"
 
 // Communication error module (0x02029828 to 0x02029968): CommStatusSync, comerror_error_check.
-// data_0212c9a8 is the communication state block: byte 0x03 holds the ready mask of the players (low 4 bits),
+// comWork is the communication state block: byte 0x03 holds the ready mask of the players (low 4 bits),
 // u16 0x0c the error timer, byte 0x0e a hold flag, and four 0x34-byte player slots from 0x78 whose first byte is a tag.
 // opTitleState holds the connection bits of the four players.
 
@@ -22,9 +22,9 @@ typedef struct ComErrorWork {
     ComPlayerSlot players[4];
 } ComErrorWork;
 
-#define COM_WORK ((ComErrorWork *)data_0212c9a8)
+#define COM_WORK ((ComErrorWork *)comWork)
 
-extern u8 data_0212c9a8[];
+extern u8 comWork[];
 extern u8 data_0212c4d4;
 extern u32 opTitleState;
 

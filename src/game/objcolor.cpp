@@ -43,7 +43,7 @@ void InitObjColor(void) {
 }
 
 // GetResTranslateID2 (0x02027e1c): finds id in the table and returns its value for the current game state (byte 0x8e
-// of data_0212c7c8). Returns id itself when it is not in the table or the state is not 1..5.
+// of gameState). Returns id itself when it is not in the table or the state is not 1..5.
 u16 GetResTranslateID2(u16 id, const ResIDTranslate2 *table, s32 count) {
     const ResIDTranslate2 *entry;
     s32 i;
@@ -52,7 +52,7 @@ u16 GetResTranslateID2(u16 id, const ResIDTranslate2 *table, s32 count) {
     for (i = 0; i < count; i++) {
         entry = &table[i];
         if (id == entry->id) {
-            state = data_0212c7c8.unk_8e;
+            state = gameState.unk_8e;
             if (state == 1) {
                 return entry->value[0];
             }

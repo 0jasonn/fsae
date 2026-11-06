@@ -36,7 +36,7 @@ void WizVanishInit(Entity *e) {
 
 void nextMove(Entity *e) {
     if (V(e)->subX == 0 && V(e)->subY == 0) {
-        Entity *target = data_0212ceb0[Random() % data_0212c7c8.playerCount].entity;
+        Entity *target = playerWork[Random() % gameState.playerCount].entity;
         e->x.HALF.HI = target->x.HALF.HI;
         e->y.HALF.HI = target->y.HALF.HI;
     }

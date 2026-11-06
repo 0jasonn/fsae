@@ -18,7 +18,7 @@ typedef struct GridOrigin {
     /* 18 */ u16 unk_18;
     /* 1a */ u16 unk_1a;
 } GridOrigin;
-extern GridOrigin data_0212c648; // grid origin, see em12.h
+extern GridOrigin mapState; // grid origin, see em12.h
 extern const u8 set57_itemIds[];      // set57_itemIds, indexed by e->type
 extern const u8 set57_paletteIndex[]; // set57_paletteIndex, indexed by e->type
 extern const u16 set57_tileIds[];     // set57_tileIds, indexed by e->type

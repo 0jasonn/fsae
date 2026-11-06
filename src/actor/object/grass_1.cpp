@@ -25,7 +25,7 @@ void grass_throw_init(Entity *e) {
     e->hitbox = grass_hitbox;
     e->statusFlags = 0x89;
     e->poseId = 1;
-    e->unk_5c = data_0212ceb0[e->type2].entity->unk_5c & 0x55;
+    e->unk_5c = playerWork[e->type2].entity->unk_5c & 0x55;
     cell = MAP_CELL_INDEX(e->x.HALF.HI, e->y.HALF.HI);
     *(u16 *)(bg + cell * 2 + 4) = v->savedCell;
     cell = MAP_CELL_INDEX(e->x.HALF.HI, e->y.HALF.HI);

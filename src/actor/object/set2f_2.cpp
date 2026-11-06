@@ -8,7 +8,7 @@
 
 extern u32 em12_typeMasks[];
 extern const u32 flagBits[]; // flagBits, indexed by e->type
-extern Set2fGridOrigin data_0212c648;
+extern Set2fGridOrigin mapState;
 
 void rewlever(Entity *e);
 
@@ -29,8 +29,8 @@ void set2f_move(Entity *e) {
 
 void rewlever(Entity *e) {
     if (e->type2 != 0) {
-        RewCell(0x14d, ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6), e->layer);
+        RewCell(0x14d, ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6), e->layer);
     } else {
-        RewCell(0x14c, ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6), e->layer);
+        RewCell(0x14c, ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6), e->layer);
     }
 }

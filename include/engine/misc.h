@@ -32,7 +32,7 @@ typedef struct UnkStruct_0212c5ac_D {
     /* 0a */ u8 unk_a[2];
     /* 0c */ s32 resetValue; // set to -1 by op_demo_skip (guess)
 } UnkStruct_0212c5ac_D;
-extern UnkStruct_0212c5ac_D data_0212c5ac;
+extern UnkStruct_0212c5ac_D blendRequest;
 
 // Display/effect shadow block (hardware-register mirror values; field names are guesses where marked)
 typedef struct UnkStruct_0212c75c {
@@ -58,14 +58,14 @@ typedef struct UnkStruct_0212c75c {
     /* 66 */ u16 reg66; // hardware value written by mist_effect
     /* 68 */ u16 reg68; // hardware value written by mist_effect
 } UnkStruct_0212c75c;
-extern UnkStruct_0212c75c data_0212c75c;
+extern UnkStruct_0212c75c displayState;
 
 typedef struct UnkStruct_0212c648_D {
     /* 00 */ u8 unk_0[0x20];
     /* 20 */ u16 unk_20;
     /* 22 */ s16 cameraX; // guess
 } UnkStruct_0212c648_D;
-extern UnkStruct_0212c648_D data_0212c648;
+extern UnkStruct_0212c648_D mapState;
 
 // Effect state block. Kept as a byte array: a struct-typed declaration makes mwcc schedule the stores differently.
 enum {
@@ -77,7 +77,7 @@ enum {
     EFFECT_STATE_LEVEL = 0x0c,
     EFFECT_STATE_FLAG_E = 0x0e, // set to 2/3 by gufu_scene_02, cleared by its last state
 };
-extern u8 data_021349c0[];
+extern u8 effectState[];
 
 // Scene/actor control byte block (messageRequest): low 7 bits of [0] are the mode, [3] and [4] hold 5-bit sub-modes
 enum {
@@ -116,7 +116,7 @@ extern u8 frameCounter[];
 extern u8 data_0212c4bc;
 extern u8 data_0212c4f8;
 extern u8 localPlayerIndex;
-extern u8 data_0212c618[];
+extern u8 cockpitState[];
 extern u8 data_021361a0[];
 extern const u8 data_020ce4d0[];
 extern s32 data_02134924;

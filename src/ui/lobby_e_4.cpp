@@ -43,7 +43,7 @@ s32 update_confirm(void) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) && is_exchange_savedata_end()) {
         func_0202809c();
     }
-    if (done && (((u16 *)data_0212c58c)[LOBBY->isParent] & 2) && LOBBY->isParent != 0) {
+    if (done && (((u16 *)playerKeys)[LOBBY->isParent] & 2) && LOBBY->isParent != 0) {
         s8 f = subtask_getFlag(LOBBY->isParent);
         LOBBY->recvBits = (((u32)LOBBY->isParent << 24) >> 16) | 0x2000 | (f & 0xff);
         LOBBY->phase = 3;

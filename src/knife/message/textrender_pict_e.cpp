@@ -6,7 +6,7 @@ void Knife_Message_TextRender_onReadPictTag(KnifeTextRender *self, s32 pictogram
     PictogramTable table = data_020de5f4;
     u16 packed = table.entry[pictogram];
     u16 cell = ((packed & 0xc0) << 6) | 0x400 | (packed & 0x3f);
-    BOOL alt = (data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4);
+    BOOL alt = (gameState.unk_8e == 1 || gameState.unk_8e == 4);
     u8 *sheet;
 
     if (alt) {
@@ -25,7 +25,7 @@ void Knife_Message_TextRender_onReadButtonTag(KnifeTextRender *self, s32 button)
     ButtonTable table = data_020de5d8;
     u16 packed = table.entry[button];
     u16 cell = ((packed & 0xc0) << 6) | 0x400 | (packed & 0x3f);
-    BOOL alt = (data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4);
+    BOOL alt = (gameState.unk_8e == 1 || gameState.unk_8e == 4);
     u8 *sheet;
     u16 *map;
     s32 row;

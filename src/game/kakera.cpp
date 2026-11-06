@@ -4,7 +4,7 @@
 
 // Kakera HUD functions (module kakera). Original name from the debug build: kakera_write(unsigned char const*).
 
-extern u8 data_0212c618[];
+extern u8 cockpitState[];
 extern u8 data_021361a0[];
 extern u16 data_020cf842[];
 
@@ -16,7 +16,7 @@ void kakera_write(const u8 *kakera) {
     u8 index;
     const u16 *pattern;
 
-    dst = (u16 *)(data_021361a0 + (data_0212c618[3] << 11) + 0x1a8);
+    dst = (u16 *)(data_021361a0 + (cockpitState[3] << 11) + 0x1a8);
     count = 4;
     do {
         index = *kakera++;

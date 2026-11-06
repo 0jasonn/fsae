@@ -7,13 +7,13 @@
 // title_move -> title_move
 // title_machiuke_joy -> title_machiuke_joy
 void title_wait(void) {
-    *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) = *(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) - 1;
-    if (*(u16 *)(data_021349c0 + EFFECT_STATE_TIMER) != 0) {
+    *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
+    if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
         return;
     }
-    data_0212c75c.displayFlags = 0x1f40;
+    displayState.displayFlags = 0x1f40;
     GX_DispOn();
-    data_0212c5ac.resetValue = -1;
+    blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
     FadeSet(2, 8);
     data_0212c4dc++;

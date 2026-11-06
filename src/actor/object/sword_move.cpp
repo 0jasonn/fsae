@@ -7,42 +7,42 @@
 //   0x0207b190 sword_move (original name): per-frame update of the sword: removal, hit sounds, wave spawn
 
 void sword_move(Entity *e) {
-    Entity *owner = data_0212ceb0[e->type].entity;
+    Entity *owner = playerWork[e->type].entity;
 
-    if (data_0212ceb0[e->type].weapon != e) {
+    if (playerWork[e->type].weapon != e) {
         func_020841b0(e);
         zFree((void *)e->hitbox);
         PutObjWork(e);
         return;
     }
-    if (data_0212ceb0[e->type].inUse == 0) {
-        data_0212ceb0[e->type].weapon = NULL;
-        data_0212ceb0[e->type].actionFlags = 0;
+    if (playerWork[e->type].inUse == 0) {
+        playerWork[e->type].weapon = NULL;
+        playerWork[e->type].actionFlags = 0;
         func_020841b0(e);
         zFree((void *)e->hitbox);
         PutObjWork(e);
         return;
     }
-    if (data_0212ceb0[e->type].inUse & 0x80) {
+    if (playerWork[e->type].inUse & 0x80) {
         func_02085f98(owner, 0x14);
     }
-    if (data_0212ceb0[e->type].actionFlags != 0) {
+    if (playerWork[e->type].actionFlags != 0) {
         e->unk_40 = 0xc;
-        if (data_0212ceb0[e->type].actionFlags & 0x20) {
+        if (playerWork[e->type].actionFlags & 0x20) {
             e->spriteSettings.b16 ^= 3;
         }
-        if (data_0212ceb0[e->type].actionFlags & 0x40) {
-            e->attackDamage = ((SwordLevelView *)&data_0212ceb0[e->type].unk_3e)->level * 2 + 8;
+        if (playerWork[e->type].actionFlags & 0x40) {
+            e->attackDamage = ((SwordLevelView *)&playerWork[e->type].unk_3e)->level * 2 + 8;
             e->unk_40 = 8;
         }
     }
     sword_plsync(e, owner);
     PlWeaponFireCheck(e);
     swordEvent(e);
-    if (data_0212ceb0[e->type].actionFlags == 0) {
+    if (playerWork[e->type].actionFlags == 0) {
         Entity *effect;
 
-        if (((SwordLevelView *)&data_0212ceb0[e->type].unk_3e)->level == 0) {
+        if (((SwordLevelView *)&playerWork[e->type].unk_3e)->level == 0) {
             return;
         }
         if (!(owner->frame & 0x40)) {
@@ -54,7 +54,7 @@ void sword_move(Entity *e) {
         }
         effect->objKind = 6;
         effect->objId = 0xf;
-        if (((SwordLevelView *)&data_0212ceb0[e->type].unk_3e)->level == 1) {
+        if (((SwordLevelView *)&playerWork[e->type].unk_3e)->level == 1) {
             effect->type = 0x14;
         } else {
             effect->type = 0x12;
@@ -69,6 +69,6 @@ void sword_move(Entity *e) {
         effect->layer = e->layer;
         RegistObjWork(6, effect);
     } else if (owner->frame & 0x20) {
-        func_02085f98(data_0212ceb0[e->type].entity, 0x1c);
+        func_02085f98(playerWork[e->type].entity, 0x1c);
     }
 }

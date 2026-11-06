@@ -65,7 +65,7 @@ void MakeTriangleWindow(s16 x, s16 y, s16 radius, s16 angle) {
         }
         span += 2;
     }
-    *(u16 *)&data_0212c75c.unk_32[0x26] = *(u16 *)(data_021352a0 + data_0212c4c8 * 0x180);
+    *(u16 *)&displayState.unk_32[0x26] = *(u16 *)(data_021352a0 + data_0212c4c8 * 0x180);
     *(u8 **)(&hblankDma + 4) = data_021352a0 + data_0212c4c8 * 0x180;
     DC_FlushRange(data_021352a0 + data_0212c4c8 * 0x180, 0x180);
 }

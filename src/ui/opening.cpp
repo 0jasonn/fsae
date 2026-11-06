@@ -21,21 +21,21 @@ void title_resourceCtrlCallback(DISP_CTRL_ *ctrl) {
         }
         paletteFade.fadeLevel = fadeLevel;
     }
-    if (data_0212c5ac.blendEnabled != 0 || paletteFade.fadeActive != 0) {
-        switch (data_0212c5ac.blendMode) {
+    if (blendRequest.blendEnabled != 0 || paletteFade.fadeActive != 0) {
+        switch (blendRequest.blendMode) {
             case 0:
             case 2:
             case 4:
             case 5:
-                title_MakeFadeBuff256(data_0212c5ac.blendColor, data_0212c5ac.blendWeight);
+                title_MakeFadeBuff256(blendRequest.blendColor, blendRequest.blendWeight);
                 break;
             case 1:
             case 3:
-                title_MakeFadeBuff256(data_0212c5ac.blendColor, 0x100 - data_0212c5ac.blendWeight);
+                title_MakeFadeBuff256(blendRequest.blendColor, 0x100 - blendRequest.blendWeight);
                 break;
         }
     }
-    paletteFade.fadeActive = data_0212c5ac.blendEnabled;
+    paletteFade.fadeActive = blendRequest.blendEnabled;
     Vram_ResetMainBankA();
     GX_TrySetBankForLCDC(0x20);
     GX_TrySetBankForLCDC(0x40);

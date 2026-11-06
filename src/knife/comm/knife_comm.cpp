@@ -17,7 +17,7 @@ void knife_commDispDie(KNIFE_MSGSYS *msg) {
 
 extern u8 localPlayerIndex[];
 extern u8 frameCounter[];
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 
 // Line feed of the message: waits for the timer and the key flags, then starts the next line
 void knife_commDispLF(KNIFE_MSGSYS *msg) {
@@ -48,7 +48,7 @@ void knife_commDispLF(KNIFE_MSGSYS *msg) {
     if (KnifeApp_isWirelessMode(instance) == 0) {
         index = Knife_Single_SinglePlay_GetInstance()[0];
     }
-    if ((data_0212c58c[index] & 1) == 0) {
+    if ((playerKeys[index] & 1) == 0) {
         msg->cursorState++;
         return;
     }

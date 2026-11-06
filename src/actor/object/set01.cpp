@@ -19,15 +19,15 @@ void set01_init(Entity *e) {
         e->subtimer = 8;
         SoundReq(0x80010000);
         SoundReq(0x2e);
-        if (((u32 *)&data_0212c7c8)[7] < 0xe10) {
+        if (((u32 *)&gameState)[7] < 0xe10) {
             VSET01(e)->stageLevel = 3;
             return;
         }
-        if (((u32 *)&data_0212c7c8)[7] < 0x2a30) {
+        if (((u32 *)&gameState)[7] < 0x2a30) {
             VSET01(e)->stageLevel = 2;
             return;
         }
-        if (((u32 *)&data_0212c7c8)[7] < 0x4650) {
+        if (((u32 *)&gameState)[7] < 0x4650) {
             VSET01(e)->stageLevel = 1;
         }
         return;
@@ -35,7 +35,7 @@ void set01_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     if (e->timer != 0xff) {
-        e->timer = (u32)e->timer % data_0212c7c8.playerCount; // unsigned divide in the original
+        e->timer = (u32)e->timer % gameState.playerCount; // unsigned divide in the original
     }
     InitAnimationForceUpdate(e, 0);
     EnqueueSFX(5);

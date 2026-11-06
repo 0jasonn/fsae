@@ -4,7 +4,7 @@
 #include "engine/entity.h"
 #include "engine/player.h"
 
-// File-local view of one PlayerData entry (data_0212ceb0[n], 0x94 bytes) with the fields the player functions use
+// File-local view of one PlayerData entry (playerWork[n], 0x94 bytes) with the fields the player functions use
 typedef struct PlWork {
     /* 00 */ u8 unk_00;
     /* 01 */ u8 unk_01;

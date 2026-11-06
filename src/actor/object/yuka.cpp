@@ -40,29 +40,29 @@ int rc_yukaPlMoveCheck(PlayerData *player) {
 void yukaCheck(Entity *e) {
     func_02084228(e);
     if (VARS(Vars_Yuka, e)->yukaFlags & 1) {
-        if (rc_yukaPlMoveCheck(&data_0212ceb0[0])) {
-            func_02083f60(e, data_0212ceb0[0].entity);
+        if (rc_yukaPlMoveCheck(&playerWork[0])) {
+            func_02083f60(e, playerWork[0].entity);
         } else {
             VARS(Vars_Yuka, e)->yukaFlags = VARS(Vars_Yuka, e)->yukaFlags ^ 1;
         }
     }
     if (VARS(Vars_Yuka, e)->yukaFlags & 2) {
-        if (rc_yukaPlMoveCheck(&data_0212ceb0[1])) {
-            func_02083f60(e, data_0212ceb0[1].entity);
+        if (rc_yukaPlMoveCheck(&playerWork[1])) {
+            func_02083f60(e, playerWork[1].entity);
         } else {
             VARS(Vars_Yuka, e)->yukaFlags = VARS(Vars_Yuka, e)->yukaFlags ^ 2;
         }
     }
     if (VARS(Vars_Yuka, e)->yukaFlags & 4) {
-        if (rc_yukaPlMoveCheck(&data_0212ceb0[2])) {
-            func_02083f60(e, data_0212ceb0[2].entity);
+        if (rc_yukaPlMoveCheck(&playerWork[2])) {
+            func_02083f60(e, playerWork[2].entity);
         } else {
             VARS(Vars_Yuka, e)->yukaFlags = VARS(Vars_Yuka, e)->yukaFlags ^ 4;
         }
     }
     if (VARS(Vars_Yuka, e)->yukaFlags & 8) {
-        if (rc_yukaPlMoveCheck(&data_0212ceb0[3])) {
-            func_02083f60(e, data_0212ceb0[3].entity);
+        if (rc_yukaPlMoveCheck(&playerWork[3])) {
+            func_02083f60(e, playerWork[3].entity);
         } else {
             VARS(Vars_Yuka, e)->yukaFlags = VARS(Vars_Yuka, e)->yukaFlags ^ 8;
         }

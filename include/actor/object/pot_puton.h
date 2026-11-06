@@ -5,7 +5,7 @@
 
 // Local player index (0x0212c504); same declaration as in misc_d.h
 extern u8 localPlayerIndex;
-extern u16 data_0212c58c[]; // per-player key state, indexed by player
+extern u16 playerKeys[]; // per-player key state, indexed by player
 extern u8 pot_putonLimit;   // 0x021158f0, subtimer limit of a pot being carried
 
 // Bit layout of PlayerData::paletteBits (0x8b): the low two bits are tested here (proposed bitfield for the shared struct)

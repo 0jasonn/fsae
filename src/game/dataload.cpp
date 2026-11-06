@@ -63,7 +63,7 @@ void DataLoad(u16 index) {
 
         if (send != 0) {
             id = entry->key & 0xffffff;
-            state = data_0212c7c8.unk_8e;
+            state = gameState.unk_8e;
             if (state >= 6) {
                 for (row = 0; row < 0x19; row += 5) {
                     if (id == data_020cf948[row]) {

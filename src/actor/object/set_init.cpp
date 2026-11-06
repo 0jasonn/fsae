@@ -34,7 +34,7 @@ void SetInit(Entity *e) {
             e->spriteSettings.b20 = colorInfo;
             e->spriteSettings.b16 = e->spriteSettings.b20;
         }
-        if (data_0212c7c8.unk_8e == 2) {
+        if (gameState.unk_8e == 2) {
             if (e->objId == 0 || e->objId == 0xb) {
                 switch (e->type) {
                 case 1:
@@ -66,7 +66,7 @@ void SetInit(Entity *e) {
                     break;
                 }
             }
-        } else if (data_0212c7c8.unk_8e == 3 && e->objId == 1 && e->unk_20 != 0x60 && (e->type == 3 || e->type == 0x17)) {
+        } else if (gameState.unk_8e == 3 && e->objId == 1 && e->unk_20 != 0x60 && (e->type == 3 || e->type == 0x17)) {
             e->spriteSettings.b20 = 5;
             e->spriteSettings.b16 = e->spriteSettings.b20;
         }

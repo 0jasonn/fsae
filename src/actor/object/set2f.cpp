@@ -12,7 +12,7 @@ extern const EntityFunc set2f_actions[]; // set2f_actions, indexed by e->action
 extern const u8 data_020d8a54[];         // hitbox of the lever
 extern u32 em12_typeMasks[];
 extern const u32 flagBits[];             // flagBits, indexed by e->type
-extern Set2fGridOrigin data_0212c648;
+extern Set2fGridOrigin mapState;
 
 void rewlever(Entity *e);
 

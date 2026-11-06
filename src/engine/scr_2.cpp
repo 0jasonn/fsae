@@ -9,6 +9,6 @@
 //   0x0205747c YureSet (original name, matches)
 
 void YureSet(int a, int b) {
-    data_0212c648.yureValue = a;
-    data_0212c648.yureMode = b & 3;
+    mapState.yureValue = a;
+    mapState.yureMode = b & 3;
 }

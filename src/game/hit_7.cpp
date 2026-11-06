@@ -16,7 +16,7 @@ BOOL hit_wisp(Entity *e, Entity *t, u8 unused) {
     u8 knockback;
 
     timer = 0x258;
-    data_0212ceb0[e->type].unk_1a = 1;
+    playerWork[e->type].unk_1a = 1;
     VARS(WispVars, e)->wispTimer = timer;
     e->unk_42 = *(u8 *)&t->attackKnockback;
     knockback = *(u8 *)&t->attackKnockback;

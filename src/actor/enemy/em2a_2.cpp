@@ -187,7 +187,7 @@ void em2a_ice(Entity *e) {
         if (e->health == 0) {
             e->type++;
             PutVGroup(e);
-            if (data_0212c7c8.level + 1 == e->type) {
+            if (gameState.level + 1 == e->type) {
                 e->type = 4;
             }
             lifeset(e);
@@ -280,7 +280,7 @@ void em2a_coremove(Entity *e) {
         e->timer--;
         func_020852ec(e);
         if (e->wallFlags & em2a_wallMasks[e->direction >> 3]) {
-            u8 targetDir = func_02086078(data_0212ceb0[e->subtimer].entity, e);
+            u8 targetDir = func_02086078(playerWork[e->subtimer].entity, e);
             if (e->direction != targetDir) {
                 e->direction ^= 0x10;
             } else {

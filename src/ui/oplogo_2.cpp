@@ -4,7 +4,7 @@
 // Opening logo objects, continued from 0x02068314 (oplogo_2 unit; panel_nop is a no-op state).
 extern EntityFunc oplogo_panelTable[];
 extern EntityFunc oplogo_youTable[];
-extern u8 data_0212c5ac;
+extern u8 blendRequest;
 
 void oplogo_shadow_move(Entity *e) {
     s32 target;
@@ -13,7 +13,7 @@ void oplogo_shadow_move(Entity *e) {
     if (e->x.HALF.HI < target) {
         e->x.HALF.HI = target;
     }
-    if (data_0212c5ac == 0) {
+    if (blendRequest == 0) {
         return;
     }
     PutObjWork(e);

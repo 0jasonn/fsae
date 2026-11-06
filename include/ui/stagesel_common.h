@@ -64,7 +64,7 @@ extern u8 data_021350b0[];
 extern u32 data_0212c858[];
 extern u8 multiSioSelect[];
 extern u8 data_02171d7c[];
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 // Scroll table entries (data_020dc67c): two u16 per step, copied to the stack by stagesel_scroll
 typedef struct SselScrollPair {
     u16 first;
@@ -108,8 +108,8 @@ extern u8 data_0212c4e4;
 extern u16 data_021355a0;
 extern u8 data_0212c500;
 extern u8 localPlayerIndex;
-extern u8 data_021349c0[]; // effect state block, u16 timer at +4
-extern u8 data_0212c9a8[];
+extern u8 effectState[]; // effect state block, u16 timer at +4
+extern u8 comWork[];
 // Frame counts of the stage select messages (11 words, copied to the stack by stagesel_message)
 typedef struct SselMessageTimes {
     u32 frames[11];

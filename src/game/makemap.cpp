@@ -17,7 +17,7 @@ void makemap_00(void) {
     func_02029a50(data_0212caf0, 0x1c0);
     PlWorkReset();
     for (i = 0; i < 4; i++) {
-        data_0212ceb0[i].unk_1c = GS_U8(0x58 + i);
+        playerWork[i].unk_1c = GS_U8(0x58 + i);
     }
     GS_U8(0x8e) = 0;
     CgLoad(2);
@@ -29,7 +29,7 @@ void makemap_00(void) {
     *(u16 *)(frameCounter + 2) = 0xa;
     SetCgColor(0, 0);
     SetCgColor(0xe, 0xffff);
-    data_0212c75c.displayFlags = 0;
+    displayState.displayFlags = 0;
     *(u32 *)0x04000000 = ConvertDispCntToTWL(0, *(u32 *)0x04000000);
     Knife_Single_SinglePlay_GetInstance();
     Knife_Single_SinglePlay_Initialize();
@@ -52,7 +52,7 @@ void makemap_sync_0204794c(void) {
         u8 zero = 0;
         data_0212c4dc += 2;
         data_0216efa8 = zero;
-        data_021349c0.unk_02[1] = zero;
+        effectState.unk_02[1] = zero;
         break;
     }
     }

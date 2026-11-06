@@ -10,7 +10,7 @@
 //   0x02074b0c gufu_body_right (original name)
 
 extern const s16 trigTable[]; // trigTable, 256 entries of sin, cos is 0x40 entries later
-extern u8 data_021349c0[];    // result state block, see enemy/ending.h
+extern u8 effectState[];    // result state block, see enemy/ending.h
 extern u8 messageRequest[];   // flag block, see engine/misc_d.h
 
 void gufu_body_kaiten(Entity *e) {
@@ -70,22 +70,22 @@ void gufu_body_left(Entity *e) {
         return;
     }
     e->action++;
-    data_0212ceb0[0].entity->animationState = 6;
+    playerWork[0].entity->animationState = 6;
     DemoLinkWalkSet(0, 0x10, 0);
-    data_021349c0[0] = data_021349c0[0] + 1;
+    effectState[0] = effectState[0] + 1;
 }
 
 void gufu_body_right(Entity *e) {
     u16 pos[2];
 
     UpdateAnimationSingleFrame(e);
-    if (data_021349c0[0x0e] < 5) {
+    if (effectState[0x0e] < 5) {
         return;
     }
     switch (e->subAction) {
     case 0:
-        pos[0] = data_0212ceb0[0].entity->x.HALF.HI;
-        pos[1] = data_0212ceb0[0].entity->y.HALF.HI;
+        pos[0] = playerWork[0].entity->x.HALF.HI;
+        pos[1] = playerWork[0].entity->y.HALF.HI;
         ObjAnimMoveSet(e, pos, 0x1e);
         SoundReq(0x1fb);
         e->subAction++;
@@ -95,9 +95,9 @@ void gufu_body_right(Entity *e) {
             return;
         }
         pos[0] = 0x12c;
-        pos[1] = data_0212ceb0[0].entity->y.HALF.HI - 0x20;
+        pos[1] = playerWork[0].entity->y.HALF.HI - 0x20;
         ObjAnimMoveSet(e, pos, 0x1e);
-        data_0212ceb0[0].state = 9;
+        playerWork[0].state = 9;
         MessageRequest(7);
         messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
         messageRequest[4] = (messageRequest[4] & ~0x1f) | 0x10;
@@ -108,7 +108,7 @@ void gufu_body_right(Entity *e) {
         if (ObjAnimMoveLine(e) == 0) {
             return;
         }
-        data_021349c0[0]++;
+        effectState[0]++;
         PutObjWork(e);
         return;
     }

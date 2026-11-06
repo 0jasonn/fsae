@@ -47,7 +47,7 @@ void DropRupeeDir(s32 playerIndex, s32 value, s32 flags) {
     Entity *target;
     Entity *fx;
     void *knifeApp = KnifeApp_getInstance();
-    target = data_0212ceb0[playerIndex].entity;
+    target = playerWork[playerIndex].entity;
     if (data_0212c7d4[playerIndex] - value < 0) {
         if (KnifeApp_isWirelessMode(knifeApp) != 0) {
             return;
@@ -55,7 +55,7 @@ void DropRupeeDir(s32 playerIndex, s32 value, s32 flags) {
         if (data_0212c7d4[playerIndex ^ 1] - value < 0) {
             return;
         }
-        target = data_0212ceb0[playerIndex ^ 1].entity;
+        target = playerWork[playerIndex ^ 1].entity;
     }
     switch (value) {
         case 1:
@@ -83,7 +83,7 @@ void DropRupeeDir(s32 playerIndex, s32 value, s32 flags) {
     if (fx == NULL) {
         return;
     }
-    ObjPosCopy(data_0212ceb0[playerIndex].entity, fx);
+    ObjPosCopy(playerWork[playerIndex].entity, fx);
     fx->direction = flags | 0x80;
     fx->zVelocity = 0x20000;
     fx->z.HALF.HI -= 4;

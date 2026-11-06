@@ -26,7 +26,7 @@ void jumpInit(Entity *e) {
     u8 timer;
 
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        VJT(e)->target = data_0212ceb0[Knife_Single_SinglePlay_GetInstance()[0]].entity;
+        VJT(e)->target = playerWork[Knife_Single_SinglePlay_GetInstance()[0]].entity;
         dir = func_02084fd0(e, VJT(e)->target);
         timer = e->timer;
         e->timer = timer + 1;
@@ -34,14 +34,14 @@ void jumpInit(Entity *e) {
     } else {
         found = -1;
         if (VJT(e)->target->health == 0) {
-            count = data_0212c7c8.playerCount;
+            count = gameState.playerCount;
             for (i = 0; i < count; i++) {
-                if (data_0212ceb0[i].entity->health != 0) {
+                if (playerWork[i].entity->health != 0) {
                     found = i;
                 }
             }
             if (found != -1) {
-                VJT(e)->target = data_0212ceb0[found].entity;
+                VJT(e)->target = playerWork[found].entity;
             }
         }
     }

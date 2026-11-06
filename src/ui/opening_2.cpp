@@ -67,7 +67,7 @@ void op_init(void) {
     s32 setupIndexA;
     s32 setupIndexB;
     s32 zero = 0;
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     if (data_0212c4bc != 0) {
@@ -78,7 +78,7 @@ void op_init(void) {
     SoundReq(0x800b01ad);
     DispReset();
     ZeldaFadeFinish();
-    ((u8 *)&data_0212c7c8)[0x8e] = 0;
+    ((u8 *)&gameState)[0x8e] = 0;
     initializeVirtualScreenData();
     setupVirtualScreenCallback();
     ObjMoveInit();
@@ -88,7 +88,7 @@ void op_init(void) {
     DemoBgBuffClear();
     MessageInitialize();
     func_0204f978();
-    MIi_CpuClear16(0, data_021349c0, 0x28);
+    MIi_CpuClear16(0, effectState, 0x28);
     PlWorkClear();
     PlWorkColorReset();
     slotIndex = 0x17;
@@ -104,41 +104,41 @@ void op_init(void) {
         bankValue -= 0x80000010;
         data_02134924 = zero;
         localPlayerIndex = zero;
-        data_0212c618[0] = zero;
-        data_0212c618[3] = zero;
-        data_0212c75c.workBuffer = data_021361a0;
-        data_0212c75c.unk_8 = *(const u16 *)(data_020ce4d0 + 0x24);
-        data_0212c75c.unk_14 = valueA;
-        data_0212c75c.unk_20 = 0x841a;
-        data_0212c75c.unk_2c = valueB;
-        data_0212c75c.reg66 = 0x3e66;
-        data_0212c75c.reg68 = 0x0c0c;
-        data_0212c75c.unk_a = zero;
-        data_0212c75c.unk_c = bankValue;
-        data_0212c75c.frameCounter = zero;
-        data_0212c75c.unk_18 = bankValue;
-        data_0212c75c.unk_22 = zero;
-        data_0212c75c.scrollX = zero;
-        data_0212c75c.unk_2e = zero;
-        data_0212c75c.unk_30 = 0xb0;
-        data_0212c648.unk_20 = zero;
-        data_0212c648.cameraX = 0xb0;
+        cockpitState[0] = zero;
+        cockpitState[3] = zero;
+        displayState.workBuffer = data_021361a0;
+        displayState.unk_8 = *(const u16 *)(data_020ce4d0 + 0x24);
+        displayState.unk_14 = valueA;
+        displayState.unk_20 = 0x841a;
+        displayState.unk_2c = valueB;
+        displayState.reg66 = 0x3e66;
+        displayState.reg68 = 0x0c0c;
+        displayState.unk_a = zero;
+        displayState.unk_c = bankValue;
+        displayState.frameCounter = zero;
+        displayState.unk_18 = bankValue;
+        displayState.unk_22 = zero;
+        displayState.scrollX = zero;
+        displayState.unk_2e = zero;
+        displayState.unk_30 = 0xb0;
+        mapState.unk_20 = zero;
+        mapState.cameraX = 0xb0;
         em2f_mapFlag = zero;
     }
-    data_0212c75c.displayFlags |= 0x1b00;
+    displayState.displayFlags |= 0x1b00;
     func_02026774();
     ((u8 *)KnifeApp_getInstance())[0xcb0] = 0;
     *(volatile u32 *)0x04000000 = (*(volatile u32 *)0x04000000 & 0xffcfffef) | 0x10;
-    data_021349c0[EFFECT_STATE_STEP_TIMER] = 0xb4;
-    data_021349c0[EFFECT_STATE_STEP_INDEX] = zero;
-    data_021349c0[EFFECT_STATE_ACTIVE] = zero;
-    data_021349c0[EFFECT_STATE_LEVEL] = zero;
-    data_0212c5ac.resetValue = -1;
+    effectState[EFFECT_STATE_STEP_TIMER] = 0xb4;
+    effectState[EFFECT_STATE_STEP_INDEX] = zero;
+    effectState[EFFECT_STATE_ACTIVE] = zero;
+    effectState[EFFECT_STATE_LEVEL] = zero;
+    blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
     FadeSet(setupIndexB, 4);
-    data_0212c5ac.blendColor = 0x19;
+    blendRequest.blendColor = 0x19;
     MakeFadeBuff256(0x100);
-    title_MakeFadeBuff256(data_0212c5ac.blendColor, 0x100);
+    title_MakeFadeBuff256(blendRequest.blendColor, 0x100);
     {
         Entity *spawned = GetSetWork(0x5a, setupIndexB, zero);
         spawned->x.HALF.HI = 0x80;
@@ -157,48 +157,48 @@ void op_init(void) {
 void mist_effect(void) {
     u8 stepIndex;
     u16 stepValue;
-    if (data_021349c0[EFFECT_STATE_ACTIVE] != 0) {
+    if (effectState[EFFECT_STATE_ACTIVE] != 0) {
         return;
     }
     if ((data_0212c594 & 3) == 0) {
-        data_0212c75c.frameCounter++;
+        displayState.frameCounter++;
     }
-    if (data_021349c0[EFFECT_STATE_STEP_TIMER] != 0) {
-        data_021349c0[EFFECT_STATE_STEP_TIMER]--;
+    if (effectState[EFFECT_STATE_STEP_TIMER] != 0) {
+        effectState[EFFECT_STATE_STEP_TIMER]--;
         return;
     }
     if ((data_0212c594 & 7) != 0) {
         return;
     }
-    stepIndex = data_021349c0[EFFECT_STATE_STEP_INDEX];
+    stepIndex = effectState[EFFECT_STATE_STEP_INDEX];
     stepValue = mistStepTable[stepIndex];
     if (stepValue != 0xffff && stepIndex != 0xff) {
-        data_021349c0[EFFECT_STATE_STEP_INDEX] = stepIndex + 1;
-        data_0212c75c.reg68 = stepValue;
+        effectState[EFFECT_STATE_STEP_INDEX] = stepIndex + 1;
+        displayState.reg68 = stepValue;
         return;
     }
-    data_0212c75c.displayFlags &= 0xfdff;
-    data_0212c75c.displayFlags |= 0x400;
-    data_0212c75c.reg66 = 0x3c64;
-    data_0212c75c.reg68 = 0x808;
-    data_0212c75c.scrollX = data_0212c648.cameraX;
-    data_021349c0[EFFECT_STATE_ACTIVE] = 1;
+    displayState.displayFlags &= 0xfdff;
+    displayState.displayFlags |= 0x400;
+    displayState.reg66 = 0x3c64;
+    displayState.reg68 = 0x808;
+    displayState.scrollX = mapState.cameraX;
+    effectState[EFFECT_STATE_ACTIVE] = 1;
 }
 
 void color_control(void) {
     u8 *base;
-    if (data_021349c0[EFFECT_STATE_ACTIVE] == 0) {
+    if (effectState[EFFECT_STATE_ACTIVE] == 0) {
         return;
     }
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     if ((data_0212c594 & 3) == 0) {
         base = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x3a);
         CgPalletSet((u16 *)(base + ((Random() & 3) << 5)), 0xf, 1);
     }
-    MakeFadeBuff256(data_021349c0[EFFECT_STATE_LEVEL] << 4);
-    title_MakeFadeBuff256(data_0212c5ac.blendColor, data_021349c0[EFFECT_STATE_LEVEL] << 4);
+    MakeFadeBuff256(effectState[EFFECT_STATE_LEVEL] << 4);
+    title_MakeFadeBuff256(blendRequest.blendColor, effectState[EFFECT_STATE_LEVEL] << 4);
 }
 
 void op_demo_skip(void) {
@@ -206,10 +206,10 @@ void op_demo_skip(void) {
         return;
     }
     SoundReq(0x80010000);
-    data_0212c5ac.resetValue = -1;
+    blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
-    data_021349c0[EFFECT_STATE_STEP_TIMER] = 0;
-    data_021349c0[EFFECT_STATE_STEP_INDEX] = 0xff;
+    effectState[EFFECT_STATE_STEP_TIMER] = 0;
+    effectState[EFFECT_STATE_STEP_INDEX] = 0xff;
     data_0212c500 = 2;
     data_0212c4dc = 0;
     SetCgColor(0, 0x6739);

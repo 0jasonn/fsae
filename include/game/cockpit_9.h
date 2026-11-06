@@ -8,7 +8,7 @@
 extern u8 data_0212c830[];   // per-player value copied to the HUD block byte 0x0a
 extern u8 data_0212c4c8;     // local player index for the HUD
 
-// HUD block at data_0212c618 (data_0212c618[]): 0 active, 2 redraw request, 3 buffer index, 4 clear mask,
+// HUD block at cockpitState (cockpitState[]): 0 active, 2 redraw request, 3 buffer index, 4 clear mask,
 // 5 map mode step, 0x0a copy of data_0212c830[local player]
 #define HUD_ACTIVE 0
 #define HUD_REDRAW 2
@@ -16,7 +16,7 @@ extern u8 data_0212c4c8;     // local player index for the HUD
 #define HUD_CLEAR_MASK 4
 #define HUD_MAP_STEP 5
 #define HUD_LAST_VALUE 0x0a
-#define RUPEE_S32(off) (*(s32 *)(data_0212c618 + (off)))
+#define RUPEE_S32(off) (*(s32 *)(cockpitState + (off)))
 
 extern u8 pauseDialogWindow[];
 

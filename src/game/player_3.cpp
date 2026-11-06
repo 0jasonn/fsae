@@ -7,7 +7,7 @@
 
 extern u8 pauseState[];
 extern u16 data_021355a0;
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern u8 data_0212c4d4;
 extern u16 data_0212c520;
@@ -21,7 +21,7 @@ extern u8 data_0212c4e4;
 extern u16 data_0212c514;
 extern u16 data_0212c510;
 extern Entity *data_0212c534;
-extern u16 data_0212c584[];
+extern u16 playerKeysPrev[];
 extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
@@ -39,8 +39,8 @@ void PlWorkColorReset(void) {
     PlayerData *end;
     PlayerData *player;
 
-    player = data_0212ceb0;
-    end = &data_0212ceb0[4];
+    player = playerWork;
+    end = &playerWork[4];
     i = 0;
     if (player < end) {
         do {
@@ -94,18 +94,18 @@ void PlWeaponFireCheck(Entity *e) {
 void PlayerTrans(void) {
     s32 i;
 
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        data_0212ceb0[i].entity->y.HALF.HI += data_0212ceb0[i].yOffset;
-        if ((u8)(data_0212ceb0[i].specialState + 0xfd) <= 1) {
-            if (*(Entity **)&data_0212ceb0[i].entity->unk_6c[0] != 0 && (*(Entity **)&data_0212ceb0[i].entity->unk_6c[0])->child != 0) {
-                PlLiftSync(data_0212ceb0[i].entity);
+    for (i = 0; i < gameState.playerCount; i++) {
+        playerWork[i].entity->y.HALF.HI += playerWork[i].yOffset;
+        if ((u8)(playerWork[i].specialState + 0xfd) <= 1) {
+            if (*(Entity **)&playerWork[i].entity->unk_6c[0] != 0 && (*(Entity **)&playerWork[i].entity->unk_6c[0])->child != 0) {
+                PlLiftSync(playerWork[i].entity);
             }
         }
-        if (data_0212ceb0[i].statusFlags & 4) {
-            func_0208a95c(data_0212ceb0[i].entity);
+        if (playerWork[i].statusFlags & 4) {
+            func_0208a95c(playerWork[i].entity);
         }
-        if (data_0212ceb0[i].weapon != 0) {
-            PlWeaponSync(data_0212ceb0[i].entity, data_0212ceb0[i].weapon);
+        if (playerWork[i].weapon != 0) {
+            PlWeaponSync(playerWork[i].entity, playerWork[i].weapon);
         }
     }
 }

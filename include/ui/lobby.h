@@ -51,12 +51,12 @@ extern u8 data_0217d348[];   // pointer to the table of the received data blocks
 
 extern u8 pauseDialogWindow[];   // pauseDialogWindow, the selection dialog of the lobby
 extern u8 pauseDialogBuffer[];   // pauseDialogBuffer, screen block of the selection dialog (0x600 bytes)
-extern u8 data_0212c9a8[];   // exchange state, the key block of the four players (stride 0x34) at +0x7a
-extern u8 data_0212c584[];   // previous key state of the four players (u16 each)
-extern u8 data_0212c58c[];   // new keys of the four players (u16 each), also the key state of the machine
+extern u8 comWork[];   // exchange state, the key block of the four players (stride 0x34) at +0x7a
+extern u8 playerKeysPrev[];   // previous key state of the four players (u16 each)
+extern u8 playerKeys[];   // new keys of the four players (u16 each), also the key state of the machine
 extern u8 data_0212c514[];   // key state of the machine (u16)
 
-extern u8 data_0212c5ac[];   // stage change block, the word at +0xc is set to -1 by update_change_stage
+extern u8 blendRequest[];   // stage change block, the word at +0xc is set to -1 by update_change_stage
 extern u8 data_0217a258[];   // OBJInfo block freed by subTask_lobby_end
 extern u8 data_02126a48[];   // vtable of the lobby message object (lobby_msgObj_init)
 extern "C" void Heap_VirtualFree(void *heap, void *block); // frees a block of a heap

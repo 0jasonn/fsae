@@ -7,5 +7,5 @@
 
 // Sets the flag that requests a redraw of the cockpit.
 void func_02026774(void) {
-    data_0212c618[2] = 1;
+    cockpitState[2] = 1;
 }

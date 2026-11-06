@@ -26,7 +26,7 @@ int ObjLiftPrioCheck(Entity *e) {
         if (cell != 0) {
             OBJ_LIFT_ACCEPT();
         }
-        if (((u8 *)&data_0212c7c8)[1] == 5) {
+        if (((u8 *)&gameState)[1] == 5) {
             cell = func_02083c8c(e->x.HALF.HI, e->y.HALF.HI, e->layer);
             if (cell == 0x264 || cell == 0x273) {
                 OBJ_LIFT_ACCEPT();

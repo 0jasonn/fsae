@@ -25,7 +25,7 @@ void SetMove(Entity *e) {
     }
     data_020d85b8[e->objId](e);
     if (e->objId == 0xf && e->type == 0x18 && (VARS(SetMoveVars, e)->followFlags & 0x80) != 0) {
-        player = data_0212ceb0[VARS(SetMoveVars, e)->followFlags & 3].entity;
+        player = playerWork[VARS(SetMoveVars, e)->followFlags & 3].entity;
         e->x.HALF.HI = player->x.HALF.HI;
         e->y.HALF.HI = player->y.HALF.HI - 0x18;
         e->z.WORD = player->z.WORD;

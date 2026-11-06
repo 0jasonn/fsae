@@ -41,7 +41,7 @@ void nemoto_leverMove(Entity *e) {
     s32 sinValue;
     s32 cosValue;
 
-    player = data_0212ceb0[e->type2].entity;
+    player = playerWork[e->type2].entity;
     dir = data_020daa0f[e->type];
     if (v->progress > v->target) {
         oldX = player->x.HALF.HI;

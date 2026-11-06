@@ -21,10 +21,10 @@ typedef struct Vars_Em0f {
 extern EntityFunc em0f_actions[];
 extern EntityFunc em0f_normalActions[];
 extern const u8 em0f_hitbox[];
-extern Entity *data_0212c648;
+extern Entity *mapState;
 extern u8 messageRequest;
 extern u8 localPlayerIndex;
-extern u16 data_0212c584[4];
+extern u16 playerKeysPrev[4];
 
 void em0f_main(Entity *e) {
     em0f_actions[func_02085294(e)](e);
@@ -67,7 +67,7 @@ void em0f_init(Entity *e) {
     e->unk_6a = 1;
     VARS(Vars_Em0f, e)->aimTarget = EmGetAimPl();
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        switch (data_0212c7c8.playerCount) {
+        switch (gameState.playerCount) {
             case 2:
                 e->health = 0x4c;
                 break;
@@ -86,8 +86,8 @@ void em0f_init(Entity *e) {
 void em0f_eyeopen(Entity *e) {
     u8 i;
 
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        PlayerData *player = &data_0212ceb0[i];
+    for (i = 0; i < gameState.playerCount; i++) {
+        PlayerData *player = &playerWork[i];
         if (player->entity->z.HALF.HI == 0) {
             player->motionId = 0;
             player->entity->direction = 0xff;
@@ -119,8 +119,8 @@ void em0f_meswait(Entity *e) {
         e->subAction = 1;
         return;
     }
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
-        if (data_0212c584[i] & 0x1000) {
+    for (i = 0; i < gameState.playerCount; i++) {
+        if (playerKeysPrev[i] & 0x1000) {
             return;
         }
     }
@@ -131,9 +131,9 @@ void em0f_flight(Entity *e) {
     void *app;
 
     app = KnifeApp_getInstance();
-    if ((KnifeApp_isWirelessMode(app) != 0 && data_0212c648 != data_0212ceb0[localPlayerIndex].entity) ||
-        (KnifeApp_isWirelessMode(app) == 0 && data_0212c648 != data_0212ceb0[0].entity &&
-         data_0212c648 != data_0212ceb0[1].entity)) {
+    if ((KnifeApp_isWirelessMode(app) != 0 && mapState != playerWork[localPlayerIndex].entity) ||
+        (KnifeApp_isWirelessMode(app) == 0 && mapState != playerWork[0].entity &&
+         mapState != playerWork[1].entity)) {
         BindPlayers();
     }
     e->z.WORD -= 0x8000;

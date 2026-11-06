@@ -49,7 +49,7 @@ void start_select(int mode) {
     effect_char_load(*((u8 *)KnifeApp_getInstance() + 0xcb0), mode);
     GetSetWork(0x46, 6, *((u8 *)KnifeApp_getInstance() + 0xcb0));
     cursor = GetSetWork(0x46, 7, 0);
-    *(Entity **)&data_0212c648 = cursor;
+    *(Entity **)&mapState = cursor;
     data_02171d58.unk_08 = cursor;
     data_0212c4dc = 0;
     data_0212c500 = 4;

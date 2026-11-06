@@ -21,7 +21,7 @@ void set2e_init(Entity *e) {
         e->spriteSettings.b0 = 1;
         player = data_0212c53c;
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-            player = &data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()];
+            player = &playerWork[*Knife_Single_SinglePlay_GetInstance()];
         }
         e->spriteSettings.b16 = (player->entity->type + 7) & 0xf;
         e->contactedEntity = player->entity;

@@ -8,7 +8,7 @@
 // knife_title_dialogDelete -> knife_title_dialogDelete
 // Region of the tile map to flush is paletteFade bytes [4..7]: x, y, width, height (tiles).
 void title_timeout(void) {
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     DispReset();
@@ -19,7 +19,7 @@ void title_timeout(void) {
 }
 
 void title_back(void) {
-    if (data_0212c5ac.blendEnabled != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     DispReset();
@@ -31,11 +31,11 @@ void title_back(void) {
 }
 
 void knife_title_dialogDisp(s32 index) {
-    data_0212c75c.unk_c = 0;
+    displayState.unk_c = 0;
     knife_title_dialogDelete();
     *(u8 **)((u8 *)&titleDialogBlock + 0xe8) = (u8 *)KnifeApp_getInstance() + 0x1bc;
     *(u8 **)((u8 *)&titleDialogBlock + 0xb8) = titleDialogBuffer;
-    *(u8 **)((u8 *)&titleDialogBlock + 0xb4) = data_021361a0 + data_0212c618[3] * 0x800;
+    *(u8 **)((u8 *)&titleDialogBlock + 0xb4) = data_021361a0 + cockpitState[3] * 0x800;
     OSi_CpuClear32(0, data_021361a0, 0x800);
     OSi_CpuClear32(0, data_021369a0, 0x800);
     knife_MakeMsgScreen((u16)index, titleDialogData);
@@ -45,7 +45,7 @@ void knife_title_dialogDisp(s32 index) {
 }
 
 void knife_title_dialogDelete(void) {
-    u8 *tileMap = data_021361a0 + data_0212c618[3] * 0x800;
+    u8 *tileMap = data_021361a0 + cockpitState[3] * 0x800;
     s32 height = ((s8 *)&paletteFade)[7];
     u32 row;
     u32 col;
@@ -61,5 +61,5 @@ void knife_title_dialogDelete(void) {
     }
     ((s8 *)&paletteFade)[7] = 0;
     ((s8 *)&paletteFade)[6] = 0;
-    data_0212c75c.unk_c = 0;
+    displayState.unk_c = 0;
 }

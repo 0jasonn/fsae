@@ -10,7 +10,7 @@ typedef struct ScrollOrigin_Set5e {
     /* 1a */ u16 scrollY;
 } ScrollOrigin_Set5e;
 
-extern ScrollOrigin_Set5e data_0212c648; // scroll origin of the current map
+extern ScrollOrigin_Set5e mapState; // scroll origin of the current map
 
 typedef struct Vars_Set5e_init {
     /* 00 */ u8 unk_00[0x78];
@@ -27,8 +27,8 @@ void set5e_init(Entity *e) {
     e->action = 1;
     base = GetBgBuffAdrs(e->layer);
     table = (u16 *)(base + 4);
-    cell = ((e->x.HALF.HI - data_0212c648.scrollX) >> 4) |
-           (((e->y.HALF.HI - data_0212c648.scrollY) >> 4) << 6);
+    cell = ((e->x.HALF.HI - mapState.scrollX) >> 4) |
+           (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6);
     v->cellPtr = table + cell;
     v->value = table[cell];
 }

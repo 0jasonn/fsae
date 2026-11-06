@@ -6,15 +6,15 @@
 #include "global.h"
 
 BOOL isBossFloor(void) {
-    data_0212c7c8.periodicFlag = (data_0212c7c8.phaseTimer % 3 == 2) ? 0x81 : 0;
-    return data_0212c7c8.periodicFlag != 0;
+    gameState.periodicFlag = (gameState.phaseTimer % 3 == 2) ? 0x81 : 0;
+    return gameState.periodicFlag != 0;
 }
 
 void shuffleStage(void) {
-    u8 oldIndex = data_0212c7c8.unk_01;
+    u8 oldIndex = gameState.unk_01;
     u8 newIndex;
     do {
         newIndex = Random() & 3;
-        data_0212c7c8.unk_01 = newIndex;
+        gameState.unk_01 = newIndex;
     } while (newIndex == oldIndex);
 }

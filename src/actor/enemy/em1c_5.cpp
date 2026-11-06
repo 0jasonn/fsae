@@ -41,7 +41,7 @@ void em1c_wait(Entity *e) {
         u8 size = data_020d04ec[e->timer >> 4];
         VARS(Vars_Em1c, e)->grabbed = func_02084f98(e, size, size);
         if (VARS(Vars_Em1c, e)->grabbed == NULL || em1c_sharedState.timer == 0) {
-            VARS(Vars_Em1c, e)->grabbed = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+            VARS(Vars_Em1c, e)->grabbed = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         if (VARS(Vars_Em1c, e)->grabbed != NULL) {
             e->direction = (GetFacingDirection(e, VARS(Vars_Em1c, e)->grabbed) + 4) & 0x18;

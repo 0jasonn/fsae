@@ -33,12 +33,12 @@ void random_ochiba_set(u16 key, u16 index) {
     u8 *row;
     u16 tile;
 
-    state = data_0212c7c8.unk_01;
+    state = gameState.unk_01;
     if (state != 3) {
         if (state < 5) {
             return;
         }
-        row = *(u8 **)((u8 *)bgmIndexTable[state] + data_0212c7c8.unk_48 * 8);
+        row = *(u8 **)((u8 *)bgmIndexTable[state] + gameState.unk_48 * 8);
         if (row[1] != 2 && row[1] != 0xc) {
             return;
         }
@@ -61,7 +61,7 @@ void random_rupeemizu_set(u16 key, u16 index) {
     u8 *row;
     u16 tile;
 
-    state = data_0212c7c8.unk_01;
+    state = gameState.unk_01;
     if (state == 3 || state == 0) {
         if (key == 0x82) {
             tile = (Random() & 0xff) < 0x7f ? 0x81 : 0x80;
@@ -72,7 +72,7 @@ void random_rupeemizu_set(u16 key, u16 index) {
     if (state < 5) {
         return;
     }
-    row = *(u8 **)((u8 *)bgmIndexTable[state] + data_0212c7c8.unk_48 * 8);
+    row = *(u8 **)((u8 *)bgmIndexTable[state] + gameState.unk_48 * 8);
     if (row[1] != 2 && row[1] != 1 && row[1] != 8 && row[1] != 9 && row[1] != 0xc) {
         if (row[1] != 0xb) {
             return;

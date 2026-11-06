@@ -30,6 +30,6 @@ void subTask_lobby_end(void) {
         eff_fade_out_init(0x1000);
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        data_0212c9a8[0x0e] = 0;
+        comWork[0x0e] = 0;
     }
 }

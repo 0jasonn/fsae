@@ -39,8 +39,8 @@ void Knife_Single_SinglePlay_InitializeCont(void *self) {
     sp->unk_20 = 0xffff;
     sp->unk_0f = 0;
     ((Knife::Single::SinglePlay::SinglePlayLogList *)sp->unk_34)->Initialize();
-    data_0212ceb0[0].unk_30 = 0;
-    data_0212ceb0[1].unk_30 = 0;
+    playerWork[0].unk_30 = 0;
+    playerWork[1].unk_30 = 0;
     sp->unk_2e = 0;
     sp->unk_2c = 0;
     sp->unk_30 = NULL;

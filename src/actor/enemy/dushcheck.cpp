@@ -2,10 +2,10 @@
 #include "global.h"
 #include "actor/enemy/attset.h"
 
-// Dash checks (em20 dash): dushInitCheck (0x0203ed84) walks the four cells ahead of the entity. Both use the grid origin data_0212c648 and the per-direction cell step table
+// Dash checks (em20 dash): dushInitCheck (0x0203ed84) walks the four cells ahead of the entity. Both use the grid origin mapState and the per-direction cell step table
 // cellDeltaTable (0x020cf91c).
 
-extern GridOrigin data_0212c648;
+extern GridOrigin mapState;
 extern const u8 cellDeltaTable[];
 
 int func_02083d4c(u16 cell, u16 layer);                       // thumb helper, C++ linkage (_Z13func_02083d4ctt)
@@ -19,8 +19,8 @@ int dushInitCheck(Entity *e) {
     const s8 *hitbox;
 
     hitbox = (const s8 *)e->hitbox;
-    dy = (e->y.HALF.HI + hitbox[1]) - data_0212c648.originY;
-    dx = e->x.HALF.HI - data_0212c648.originX;
+    dy = (e->y.HALF.HI + hitbox[1]) - mapState.originY;
+    dx = e->x.HALF.HI - mapState.originX;
     cell = (u16)((dx >> 4) | ((dy >> 4) << 6));
     for (i = 0; i < 4; i++) {
         if (func_02083d4c(cell, e->layer)) {

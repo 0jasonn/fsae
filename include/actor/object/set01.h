@@ -6,7 +6,7 @@
 // Set01 actor fields (file-local overlay for src/object/set01.cpp, not shared).
 typedef struct Vars_Set01 {
     /* 00 */ u8 unk_00[0x7c];
-    /* 7c */ u8 stageLevel; // 1..3, picked from the elapsed time in set01_init (data_0212c7c8 + 0x1c)
+    /* 7c */ u8 stageLevel; // 1..3, picked from the elapsed time in set01_init (gameState + 0x1c)
 } Vars_Set01;
 #define VSET01(e) VARS(Vars_Set01, e)
 

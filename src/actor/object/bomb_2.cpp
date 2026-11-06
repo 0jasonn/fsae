@@ -46,7 +46,7 @@ void Bomb(Entity *e) {
                         e->subtimer--;
                         if (e->subtimer == 0) {
                             if (e->action == 2 && e->subAction == 1) {
-                                data_0212ceb0[e->type2].specialState = 0;
+                                playerWork[e->type2].specialState = 0;
                             }
                             func_02085d34(e);
                             e->action = 3;

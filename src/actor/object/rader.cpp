@@ -38,16 +38,16 @@ void rp_init(Entity *e) {
     s32 i;
 
     for (k = 0; k < 4; k++) {
-        *(u32 *)((u8 *)&data_0212c7c8 + k * 4 + 0x70) = 0;
+        *(u32 *)((u8 *)&gameState + k * 4 + 0x70) = 0;
     }
     spawned = 0;
     knife = KnifeApp_getInstance();
-    for (i = 0; i < data_0212c7c8.playerCount; i++) {
+    for (i = 0; i < gameState.playerCount; i++) {
         if (!(i == localPlayerIndex && KnifeApp_isWirelessMode(knife))) {
             child = GetSetWork(0x10, 1, (u8)i);
             if (child != NULL) {
                 child->parent = e;
-                child->child = data_0212ceb0[i].entity;
+                child->child = playerWork[i].entity;
                 child->subtimer = spawned;
                 spawned++;
             }

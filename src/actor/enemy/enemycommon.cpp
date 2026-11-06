@@ -136,7 +136,7 @@ void EmDivPosSet(Entity *e, Entity *first, Entity *second) {
     if (first != NULL) {
         EmPalamCopy(e, first);
         if (func_02083d18(first, 6, 0) == 0) {
-            if (first->x.HALF.HI + 6 < data_0212c648.unk_28) {
+            if (first->x.HALF.HI + 6 < mapState.unk_28) {
                 first->x.HALF.HI = first->x.HALF.HI + 6;
             }
         }

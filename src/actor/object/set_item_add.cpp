@@ -17,12 +17,12 @@ void SetItemAdd(Entity *item, Entity *player) {
 
     if (player->objKind == 1) {
         if (KnifeApp_isWirelessMode(app) == 0) {
-            p1 = &data_0212ceb0[1];
-            p0 = &data_0212ceb0[0];
+            p1 = &playerWork[1];
+            p0 = &playerWork[0];
             e0 = p0->entity;
-            e1 = data_0212ceb0[1].entity;
+            e1 = playerWork[1].entity;
         } else {
-            p1 = &data_0212ceb0[player->type];
+            p1 = &playerWork[player->type];
             p0 = p1;
         }
     }

@@ -15,10 +15,10 @@ void MultiWorkInit(void);
 typedef struct MultiFlagByte { u8 b0 : 2; u8 b2 : 2; u8 b4 : 2; u8 b6 : 2; } MultiFlagByte;
 typedef struct MultiFlagWord { u32 b0 : 2; u32 b2 : 2; u32 b4 : 2; u32 b6 : 2; } MultiFlagWord;
 
-// Game state block at data_0212c7c8 (only the offsets used by the multiplay code are named)
-#define GS_U8(off) (*((u8 *)&data_0212c7c8 + (off)))
-#define GS_U16(off) (*(u16 *)((u8 *)&data_0212c7c8 + (off)))
-#define GS_U32(off) (*(u32 *)((u8 *)&data_0212c7c8 + (off)))
+// Game state block at gameState (only the offsets used by the multiplay code are named)
+#define GS_U8(off) (*((u8 *)&gameState + (off)))
+#define GS_U16(off) (*(u16 *)((u8 *)&gameState + (off)))
+#define GS_U32(off) (*(u32 *)((u8 *)&gameState + (off)))
 
 // Saved multiplay record at data_0212c5ec (byte and word arrays indexed by player)
 extern u8 data_0212c5ec[];
@@ -43,7 +43,7 @@ void BgmSet(void);
 void PlayerTrans(void);
 extern u32 data_0212c538;
 extern u8 data_02134cb0[];
-extern u8 data_0212c9a8[];
+extern u8 comWork[];
 void GetSetWorkSp(u8 a, u8 b, u8 c);
 extern u8 data_0212c9ec[];
 extern u16 data_0212c594;
@@ -56,7 +56,7 @@ void func_0204363c(void);
 extern u16 data_0212c510;
 extern u16 data_0212c514;
 extern u16 data_0212c520;
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern "C" {
 void FloorInit(void);
@@ -76,7 +76,7 @@ void CalcHeartLevel(void);
 }
 
 // Byte at offset off of player slot i (PlayerData is 0x94 bytes; fields past 0x3d are not named in player.h)
-#define PLAYER_BYTE(i, off) (((u8 *)&data_0212ceb0[i])[off])
+#define PLAYER_BYTE(i, off) (((u8 *)&playerWork[i])[off])
 
 extern u8 localPlayerIndex;
 extern u8 data_0216efa8;                    // makemap state byte

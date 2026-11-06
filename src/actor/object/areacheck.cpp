@@ -7,13 +7,13 @@
 int heart_areaCheck(Entity *e) {
     u16 i;
     i = 0;
-    if ((s32)data_0212c7c8.playerCount > 0) {
+    if ((s32)gameState.playerCount > 0) {
         do {
-            if (func_02083ed8(e, data_0212ceb0[i].entity)) {
+            if (func_02083ed8(e, playerWork[i].entity)) {
                 return 1;
             }
             i++;
-        } while ((s32)data_0212c7c8.playerCount > (s32)i);
+        } while ((s32)gameState.playerCount > (s32)i);
     }
     return 0;
 }

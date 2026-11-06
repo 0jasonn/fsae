@@ -6,13 +6,13 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-// Grid origin used to turn a world position into a map cell (data_0212c648, bss). Its u16 pair sits at 0x18 / 0x1a.
+// Grid origin used to turn a world position into a map cell (mapState, bss). Its u16 pair sits at 0x18 / 0x1a.
 typedef struct GridOrigin {
     u8 unk_00[0x18];
     u16 originX; // 0x18
     u16 originY; // 0x1a
 } GridOrigin;
-extern GridOrigin data_0212c648;
+extern GridOrigin mapState;
 
 extern u8 data_021180a8[];
 extern u8 data_0211857c[];
@@ -58,7 +58,7 @@ struct BG_BUFF_;
 typedef struct BG_BUFF_ BG_BUFF_;
 
 // Cockpit block and player blocks (PlayerData[4], 0x94 bytes each; entity pointer at 0x28).
-extern u8 data_0212c618[];
+extern u8 cockpitState[];
 extern u8 data_0212c82c[];
 extern u8 *data_0212c53c; // current player block
 

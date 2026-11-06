@@ -23,7 +23,7 @@ void Knife_Message_MessageTextRender_onReadPictTag(Knife::Message::MessageTextRe
     msg->unk_d8[0] = msg->palletBits | 0x80;
     Knife_palletChange((KNIFE_MSGSYS *)self->sceneInfo, (u8)(((cell & 0xf000) >> 8) | 0x81));
     ((KNIFE_MSGSYS *)self->sceneInfo)->unk_d8[1] = 0;
-    alt = (data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4);
+    alt = (gameState.unk_8e == 1 || gameState.unk_8e == 4);
     if (alt) {
         sheet = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x286);
     } else {
@@ -48,7 +48,7 @@ void Knife_Message_MessageTextRender_onReadButtonTag(Knife::Message::MessageText
     msg->unk_d8[0] = msg->palletBits | 0x80;
     Knife_palletChange((KNIFE_MSGSYS *)self->sceneInfo, (u8)(((cell & 0xf000) >> 8) | 0x81));
     ((KNIFE_MSGSYS *)self->sceneInfo)->unk_d8[1] = 0;
-    alt = (data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4);
+    alt = (gameState.unk_8e == 1 || gameState.unk_8e == 4);
     if (alt) {
         sheet = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x286);
     } else {

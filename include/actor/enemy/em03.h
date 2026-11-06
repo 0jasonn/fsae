@@ -26,7 +26,7 @@ extern const EntityFunc em04_actions[];
 extern const EntityFunc em05_actions[];
 extern const u8 em05_hitbox[];
 extern const EntityFunc *const em05_typeActions[];
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 extern u8 data_0212ceb2[];
 extern u8 data_0212ceca[];
 extern u8 data_0212cee4[];

@@ -3,11 +3,11 @@
 #include "actor/object/objdecls_a.h"
 
 extern EntityFunc set32Table[];        // set32Table, indexed by type
-extern u8 data_0212c618[];             // game state; byte 5 is a flag
+extern u8 cockpitState[];             // game state; byte 5 is a flag
 
 // Set32, 0x02069e0c
 void Set32(Entity *e) {
-    if (data_0212c618[5] == 0) {
+    if (cockpitState[5] == 0) {
         PutObjWork(e);
         return;
     }

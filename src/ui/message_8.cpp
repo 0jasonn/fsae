@@ -9,8 +9,8 @@
 // Message box shutdown: starts the close animation and resets the state
 int msgDie(void) {
     statusUpdate((MSG_STATUS)0);
-    data_0217d39c.windowMode = 4;
-    data_0217d39c.state = 0;
+    messageBox.windowMode = 4;
+    messageBox.state = 0;
     return 0;
 }
 

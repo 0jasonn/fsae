@@ -11,7 +11,7 @@ void pot_puton(Entity *e) {
     u8 playerIndex;
 
     e->statusFlags = 0;
-    if ((v->heldKeys ^ 0xffff) & data_0212c58c[e->child->type]) {
+    if ((v->heldKeys ^ 0xffff) & playerKeys[e->child->type]) {
         e->subtimer++;
         e->timer = 5;
         if (!m4aSongNumIsPlaying(0x229)) {
@@ -26,13 +26,13 @@ void pot_puton(Entity *e) {
         e->subtimer = pot_putonLimit;
         break;
     }
-    if (!(data_0212ceb0[e->child->type].statusFlags & 4)) {
+    if (!(playerWork[e->child->type].statusFlags & 4)) {
         e->subtimer = pot_putonLimit;
     }
-    if (data_0212ceb0[e->child->type].statusFlags & 0x4c11) {
+    if (playerWork[e->child->type].statusFlags & 0x4c11) {
         e->subtimer = pot_putonLimit;
     }
-    if (data_0212ceb0[e->child->type].hitFlags & 0x20) {
+    if (playerWork[e->child->type].hitFlags & 0x20) {
         e->subtimer = pot_putonLimit;
     }
     playerIndex = localPlayerIndex;
@@ -43,13 +43,13 @@ void pot_puton(Entity *e) {
         if (e->unk_6b != 0) {
             pot_remove(e);
         }
-        data_0212ceb0[e->child->type].statusFlags &= ~4;
+        playerWork[e->child->type].statusFlags &= ~4;
         pot_clash(e, NULL);
         return;
     }
     if (playerIndex == e->child->type) {
-        if (((PaletteBitsView *)&data_0212ceb0[e->child->type].paletteBits)->low == 0 ||
-            (data_0212ceb0[e->child->type ^ 1].statusFlags & 4)) {
+        if (((PaletteBitsView *)&playerWork[e->child->type].paletteBits)->low == 0 ||
+            (playerWork[e->child->type ^ 1].statusFlags & 4)) {
             pot_ware(e);
             return;
         }

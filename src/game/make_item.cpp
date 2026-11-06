@@ -11,9 +11,9 @@
 void make_item_color(void) {
     u8 colorIndex;
 
-    colorIndex = data_0212c618[0xc];
+    colorIndex = cockpitState[0xc];
     if (colorIndex == 7) {
-        colorIndex = (data_0212c618[0xe] == 2) ? 4 : 7;
+        colorIndex = (cockpitState[0xe] == 2) ? 4 : 7;
     }
     *(u16 *)(data_0212c4a0 + 0xc) = (*(u16 *)(data_0212c4a0 + 0xc) & ~0xf000) | (((u32)data_020cf81c[colorIndex] << 28) >> 16);
 }
@@ -22,9 +22,9 @@ void make_item_color(void) {
 void make_item_color_2p(void) {
     u8 colorIndex;
 
-    colorIndex = data_0212c618[0x2c];
+    colorIndex = cockpitState[0x2c];
     if (colorIndex == 7) {
-        colorIndex = (data_0212c618[0x2d] == 2) ? 4 : 7;
+        colorIndex = (cockpitState[0x2d] == 2) ? 4 : 7;
     }
     *(u16 *)(data_0212c4a0 + 0x14) = (*(u16 *)(data_0212c4a0 + 0x14) & ~0xf000) | (((u32)data_020cf81c[colorIndex] << 28) >> 16);
 }
@@ -36,16 +36,16 @@ void make_item_char(void) {
     u8 *graphics;
     s32 useAltResource;
 
-    if (data_0212c618[0xc] == 0) {
+    if (cockpitState[0xc] == 0) {
         return;
     }
-    useAltResource = data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4;
+    useAltResource = gameState.unk_8e == 1 || gameState.unk_8e == 4;
     if (useAltResource) {
         graphics = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x287);
     } else {
         graphics = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0xa1);
     }
-    func_020845b0(0x6405d00, graphics + *data_020f253c[data_0212c618[0xc]], 0x80);
+    func_020845b0(0x6405d00, graphics + *data_020f253c[cockpitState[0xc]], 0x80);
 }
 
 // make_item_char_2p (0x02027b44): the same for the second player, index at +0x2c, destination 0x06405d80.
@@ -53,14 +53,14 @@ void make_item_char_2p(void) {
     u8 *graphics;
     s32 useAltResource;
 
-    if (data_0212c618[0x2c] == 0) {
+    if (cockpitState[0x2c] == 0) {
         return;
     }
-    useAltResource = data_0212c7c8.unk_8e == 1 || data_0212c7c8.unk_8e == 4;
+    useAltResource = gameState.unk_8e == 1 || gameState.unk_8e == 4;
     if (useAltResource) {
         graphics = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x287);
     } else {
         graphics = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0xa1);
     }
-    func_020845b0(0x6405d80, graphics + *data_020f253c[data_0212c618[0x2c]], 0x80);
+    func_020845b0(0x6405d80, graphics + *data_020f253c[cockpitState[0x2c]], 0x80);
 }

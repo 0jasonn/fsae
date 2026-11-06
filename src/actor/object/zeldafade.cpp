@@ -14,7 +14,7 @@ typedef struct ZeldaFadeEntry {
     /* 04 */ u8 unk_04[0x10];
 } ZeldaFadeEntry;
 
-// Fade work at data_0212c5ac, only the fields read here.
+// Fade work at blendRequest, only the fields read here.
 typedef struct FadeWorkZelda {
     /* 00 */ u8 blendEnabled;
     /* 01 */ u8 unk_01[3];
@@ -23,7 +23,7 @@ typedef struct FadeWorkZelda {
 
 extern const ZeldaFadeEntry zeldaFadeTable[]; // zeldaFadeTable, indexed by the fade index
 extern u8 data_02171d1c;                      // 1 while no fade partner is active (see ZeldaFadeFlagGet)
-extern FadeWorkZelda data_0212c5ac;
+extern FadeWorkZelda blendRequest;
 
 void ZeldaFadeSet(Entity *e, u32 index) {
     Entity *child;
@@ -37,7 +37,7 @@ void ZeldaFadeSet(Entity *e, u32 index) {
     } else {
         data_02171d1c = 1;
     }
-    data_0212c5ac.fadeRunning = 0;
+    blendRequest.fadeRunning = 0;
     FadeSet(entry->paletteA & 0xff, entry->paletteB & 0xff);
 }
 

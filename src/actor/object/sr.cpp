@@ -11,7 +11,7 @@ extern u8 data_0212c500;             // step index into srStepTable
 extern void (*srStepTable[])(void); // srStepTable: sr_init, sr_wait, sr_makemap, sr_start, sr_main, ...
 extern u32 data_0212c550;
 extern u32 data_0212c554;
-extern u16 data_0212c75c;            // display shadow flags (first halfword)
+extern u16 displayState;            // display shadow flags (first halfword)
 
 extern "C" s32 WXC_GetStateCode(void);
 void ComRequest(u8 request); // C++ name _Z10ComRequesth

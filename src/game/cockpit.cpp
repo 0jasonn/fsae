@@ -7,8 +7,8 @@
 
 // Turns the cockpit state off: flags in the cockpit block, the screen layer is set to 3.
 void CockpitOff(void) {
-    data_0212c618[0] = 0;
-    data_0212c618[2] = 1;
-    data_0212c618[1] = 0;
-    data_0212c618[4] = 3;
+    cockpitState[0] = 0;
+    cockpitState[2] = 1;
+    cockpitState[1] = 0;
+    cockpitState[4] = 3;
 }

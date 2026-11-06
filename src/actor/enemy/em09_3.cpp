@@ -17,7 +17,7 @@ void em09_kuttsuki(Entity *e) {
 
     seqMove(e);
     seqMove(e);
-    if (data_0212c58c[e->child->type] != 0) {
+    if (playerKeys[e->child->type] != 0) {
         e->subtimer++;
     }
     app = KnifeApp_getInstance();
@@ -27,7 +27,7 @@ void em09_kuttsuki(Entity *e) {
         index = e->child->type ^ 1;
         if (data_0212c7d4[index] != NULL) {
             partner = data_0212c7d4[index];
-            target = data_0212ceb0[index].entity;
+            target = playerWork[index].entity;
         }
     }
     if (e->subtimer > 0x37 || partner == NULL || e->child->health == 0) {
@@ -35,7 +35,7 @@ void em09_kuttsuki(Entity *e) {
         return;
     }
     func_0208919c(e->child);
-    data_0212ceb0[e->child->type].unk_1a |= 0x80;
+    playerWork[e->child->type].unk_1a |= 0x80;
     ObjPosCopyOfs32(e, e->child, 0, 1);
     e->child->z.HALF.HI = data_020d1d96[e->frame & 7];
     e->child->unk_2e = 0;

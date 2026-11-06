@@ -40,7 +40,7 @@ s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm
 // scroll, 20.12 fixed point
 extern "C" void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int player, VecFx32 *pos);
 void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int player, VecFx32 *pos) {
-    PlayerData *pl = &data_0212ceb0[player];
+    PlayerData *pl = &playerWork[player];
     s16 scrollX = data_02158fa0[1];
     s16 scrollY = data_02158fa0[2];
 
@@ -52,14 +52,14 @@ void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int p
 // Functions in this file (original names from the debug build):
 //   HudManager::getPlayerDir (0x0209ed4c)
 
-extern PlayerData data_0212ceb0[4];
+extern PlayerData playerWork[4];
 
 namespace Knife {
 namespace Hud {
 
 // HudManager::getPlayerDir(int) const (0x0209ed4c): half the animation value of the player's entity
 int HudManager::getPlayerDir(int player) const {
-    PlayerData *pl = &data_0212ceb0[player];
+    PlayerData *pl = &playerWork[player];
 
     return pl->entity->animationState >> 1;
 }
@@ -110,7 +110,7 @@ void Knife_Hud_HudManager_transferUnactiveEquipIconBasePalette(Knife::Hud::HudMa
     u8 language;
 
     flag = subtask_getFlag(player);
-    language = ((u8 *)&data_0212c7c8)[0x8e];
+    language = ((u8 *)&gameState)[0x8e];
     row = 0x78;
     if (language == 1 || language == 4) {
         row = 0x7c;

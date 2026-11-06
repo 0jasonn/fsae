@@ -7,7 +7,7 @@
 //   0x0205ba4c namePlate_appear, 0x0205bb1c namePlate_move, 0x0205bc48 namePlate_entry
 //   (namePlate itself is in nameplate.cpp; namePlate_init at 0x0205b9c0 is in scratch/agentF/nonmatching)
 
-// data_021349c0 bytes used by the name plate code
+// effectState bytes used by the name plate code
 enum {
     NP_PHASE = 0x1a,   // == 3 while the plate is set up
     NP_SHOWN = 0x1b,   // set to 1 once the plate is shown
@@ -16,12 +16,12 @@ enum {
     NP_FLAG_24 = 0x24, // nonzero: plate is drawn at the second position
 };
 
-extern u8 data_021349c0[];
+extern u8 effectState[];
 extern u8 multiSioSelect[];
 extern const u8 data_020d8aa4[];  // animation flags, indexed by timer * 3 + type2
 extern const u16 data_020d8bae[]; // bounds for the appear animation, 4 bytes per mask
 extern const u16 data_020d8ae0[]; // bounds for the move animation, 4 bytes per index
-extern u16 data_0212c75c[];       // display shadow, halfword registers
+extern u16 displayState[];       // display shadow, halfword registers
 extern const u8 namePlateSetTable[]; // namePlateSetTable, table passed to SetTblSetWorks
 
 void namePlate_appear(Entity *e) {
@@ -54,9 +54,9 @@ void namePlate_move(Entity *e) {
     u8 index;
     u8 target;
 
-    if (data_021349c0[NP_SLOT_A] == e->type2) {
+    if (effectState[NP_SLOT_A] == e->type2) {
         index = 3;
-    } else if (data_021349c0[NP_SLOT_B] == e->type2) {
+    } else if (effectState[NP_SLOT_B] == e->type2) {
         index = 4;
     } else {
         index = 6;
@@ -64,18 +64,18 @@ void namePlate_move(Entity *e) {
     e->spriteSettings.b16 = index;
     ObjAnimMoveLine(e);
     e->spriteSettings.b14 = 3;
-    if (data_021349c0[NP_SLOT_B] == e->type2) {
-        if (data_021349c0[NP_FLAG_24] != 0) {
+    if (effectState[NP_SLOT_B] == e->type2) {
+        if (effectState[NP_FLAG_24] != 0) {
             e->spriteSettings.b14 = 0;
         }
         star_adjust(e, 0, 0xc);
     }
-    if (data_021349c0[NP_SLOT_A] < 3) {
+    if (effectState[NP_SLOT_A] < 3) {
         return;
     }
-    if (data_021349c0[NP_PHASE] == 3) {
-        data_021349c0[NP_SHOWN] = 1;
-        if (data_021349c0[NP_SLOT_B] != e->type2) {
+    if (effectState[NP_PHASE] == 3) {
+        effectState[NP_SHOWN] = 1;
+        if (effectState[NP_SLOT_B] != e->type2) {
             PutObjWork(e);
             return;
         }
@@ -84,7 +84,7 @@ void namePlate_move(Entity *e) {
         target = 6;
     } else {
         target = e->type2;
-        if (data_021349c0[NP_SLOT_B] < e->type2) {
+        if (effectState[NP_SLOT_B] < e->type2) {
             target = (e->type2 + 3) & 0xff;
         }
     }
@@ -102,26 +102,26 @@ void namePlate_entry(Entity *e) {
         if (ObjAnimMoveLine(e)) {
             e->subAction = 1;
             e->subtimer = 0x20;
-            data_0212c75c[0] |= 0x2e00;
-            data_0212c75c[0x60 / 2] = 9;
-            data_0212c75c[0x62 / 2] = 0x1f40 - 1;
-            data_0212c75c[0x58 / 2] = 0x8e8;
-            data_0212c75c[0x5c / 2] = 0x3180 - 0x8e8;
-            data_0212c75c[0x66 / 2] = 0x8e8 - 0xa4;
-            data_0212c75c[0x68 / 2] = 0x8e8 - 0xdc;
+            displayState[0] |= 0x2e00;
+            displayState[0x60 / 2] = 9;
+            displayState[0x62 / 2] = 0x1f40 - 1;
+            displayState[0x58 / 2] = 0x8e8;
+            displayState[0x5c / 2] = 0x3180 - 0x8e8;
+            displayState[0x66 / 2] = 0x8e8 - 0xa4;
+            displayState[0x68 / 2] = 0x8e8 - 0xdc;
             SetTblSetWorks(namePlateSetTable);
         }
-        data_021349c0[NP_SHOWN] = 1;
+        effectState[NP_SHOWN] = 1;
         break;
     case 1:
         if (e->subtimer < 0x98) {
             e->subtimer += 8;
-            data_0212c75c[0x5c / 2] = ((u8)e->subtimer << 8) | 0x98;
+            displayState[0x5c / 2] = ((u8)e->subtimer << 8) | 0x98;
         } else {
-            data_0212c75c[0] &= 0xdfff;
+            displayState[0] &= 0xdfff;
             e->subAction = 2;
         }
-        data_021349c0[NP_SHOWN] = 1;
+        effectState[NP_SHOWN] = 1;
         break;
     default:
         break;

@@ -8,7 +8,7 @@
 
 void shieldMove(Entity *e) {
     Vars_Shield *v = VARS(Vars_Shield, e);
-    Entity *owner = data_0212ceb0[e->type].entity;
+    Entity *owner = playerWork[e->type].entity;
 
     if (owner->iframes == 0 || owner->iframes == 0x81) {
         owner->iframes = e->iframes;
@@ -18,10 +18,10 @@ void shieldMove(Entity *e) {
         e->baseDirection = 0;
         e->iframes = 0;
     }
-    if (data_0212ceb0[e->type].unk_03 != 0 && e == data_0212ceb0[e->type].weapon) {
-        if (data_0212ceb0[e->type].unk_03 & 0x80) {
+    if (playerWork[e->type].unk_03 != 0 && e == playerWork[e->type].weapon) {
+        if (playerWork[e->type].unk_03 & 0x80) {
             e->hitbox = shieldHitboxTable[owner->animationState >> 1];
-            data_0212ceb0[e->type].unk_03 &= 0x7f;
+            playerWork[e->type].unk_03 &= 0x7f;
             e->statusFlags = (owner->statusFlags + 1) | 0x20;
             func_02084320(e);
         } else if ((e->contactFlags & 0x80) && e->contactedEntity->unk_1b != 0x2e) {
@@ -30,20 +30,20 @@ void shieldMove(Entity *e) {
                 v->hitSoundTimer = 8;
             }
             if ((e->contactFlags & 0x7f) == 0) {
-                if (data_0212ceb0[e->contactedEntity->type].hitFlags != 0) {
-                    data_0212ceb0[e->contactedEntity->type].hitFlags = 0;
+                if (playerWork[e->contactedEntity->type].hitFlags != 0) {
+                    playerWork[e->contactedEntity->type].hitFlags = 0;
                     e->contactedEntity->iframes = 0;
                 }
             }
         }
     } else {
         e->timer = 0;
-        data_0212ceb0[e->type].unk_03 = 0;
+        playerWork[e->type].unk_03 = 0;
         e->spriteSettings.b16 = 3;
         func_020841b0(e);
         e->statusFlags = 0;
-        if (data_0212ceb0[e->type].weapon == e) {
-            data_0212ceb0[e->type].weapon = NULL;
+        if (playerWork[e->type].weapon == e) {
+            playerWork[e->type].weapon = NULL;
         }
         PutObjWork(e);
         return;

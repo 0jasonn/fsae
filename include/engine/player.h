@@ -65,7 +65,7 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 8c */ u8 unk_8c[8];
 } PlayerData; // size 0x94
 
-extern PlayerData data_0212ceb0[4];
+extern PlayerData playerWork[4];
 // One 8-byte record per player inside the game state (enemyTypeFlags points at the first one)
 typedef struct GameSlot {
     /* 00 */ u32 flags;
@@ -74,7 +74,7 @@ typedef struct GameSlot {
     /* 06 */ u16 counter;
 } GameSlot;
 
-// Game state block (data_0212c7c8). Other symbols point inside it: data_0212c7d4 (+0x0c), enemyTypeFlags (+0x28),
+// Game state block (gameState). Other symbols point inside it: data_0212c7d4 (+0x0c), enemyTypeFlags (+0x28),
 // keyTypeFlags (+0x2d), data_0212c7f6 (+0x2e), data_0212c810 (+0x48).
 typedef struct GameState {
     /* 00 */ u8 playerCount;
@@ -116,7 +116,7 @@ typedef struct GameState {
     /* 8e */ u8 unk_8e;       // game state byte
     /* 8f */ u8 unk_8f;
 } GameState;
-extern GameState data_0212c7c8;
-extern u16 data_0212c584[4];
+extern GameState gameState;
+extern u16 playerKeysPrev[4];
 
 #endif

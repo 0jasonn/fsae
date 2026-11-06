@@ -16,7 +16,7 @@ extern const EntityFunc set69_typeActions[];  // set69_typeActions, indexed by e
 extern const EntityFunc set69_type0Actions[]; // set69_type0Actions, indexed by e->action
 extern u32 em12_typeMasks[];                 // indexed by e->areaIndex; [0] is the game flag word used by set67/68/69
 extern const s16 *const rr_type0_posTable[];  // rr_type0_posTable, indexed by player count - 1, (x, y) pairs
-extern u8 data_0212c618;                      // flag byte, bss
+extern u8 cockpitState;                      // flag byte, bss
 extern const u32 flagBits[];                  // indexed by e->type2
 
 int plStCheck(PlayerData *player);            // 0x0207553c, defined in set66_2.cpp
@@ -35,6 +35,6 @@ typedef struct Vars_Set66 {
 } Vars_Set66;
 
 void rr_plset(Entity *e);                     // 0x02076620, defined later in the set69 range
-extern u8 data_0212c648[];                    // shared block: Entity * at +0, s16 fields at +0x20 / +0x22
+extern u8 mapState[];                    // shared block: Entity * at +0, s16 fields at +0x20 / +0x22
 
 #endif

@@ -7,7 +7,7 @@
 //   0x020554c8 ranking_init (matches)
 
 void ranking_init(void) {
-    if (data_0212c5ac != 0) {
+    if (blendRequest != 0) {
         return;
     }
     DispReset();
@@ -17,11 +17,11 @@ void ranking_init(void) {
     ObjMoveInit();
     VGroupInit();
     ClearWorkBuffer();
-    func_02029a50(&data_021349c0, 0x28);
+    func_02029a50(&effectState, 0x28);
     ranking_noop();
     data_0212c4f8 = 0;
-    if (data_0212c7c8.unk_01 == 5) {
-        data_0212c7c8.unk_8e = 0;
+    if (gameState.unk_01 == 5) {
+        gameState.unk_8e = 0;
         CgLoad(2);
     }
     CgLoad(0x14);
@@ -29,27 +29,27 @@ void ranking_init(void) {
     data_021355a0 = 0x6739;
     DataLoad(1);
     DataLoad(0x23);
-    DataLoad(data_0212c7c8.playerCount + 0x22);
+    DataLoad(gameState.playerCount + 0x22);
     ranking_player_set();
     make_cockpit();
     calc_result();
     CalcRanking();
     ComRequest(5);
-    data_0212c75c.reg66 = 0x3f40;
-    data_0212c75c.reg68 = 0x720 - 0x14;
-    data_0212c75c.unk_08 = 0x54;
-    data_0212c75c.unk_20 = 0x844a;
-    data_0212c75c.unk_2c = 0x864b;
-    data_0212c75c.unk_0a = 0;
-    data_0212c75c.unk_0c = 0;
-    data_0212c75c.unk_22 = 0;
-    data_0212c75c.scrollX = 0x140;
-    data_0212c75c.unk_2e = 0;
-    data_0212c75c.unk_30 = 0x140;
-    data_0212c648.unk_20 = 0;
-    data_0212c648.cameraX = 0x140;
-    data_0212c75c.displayFlags = 0x1d40;
-    data_021349c0.unk_27 = 0;
+    displayState.reg66 = 0x3f40;
+    displayState.reg68 = 0x720 - 0x14;
+    displayState.unk_08 = 0x54;
+    displayState.unk_20 = 0x844a;
+    displayState.unk_2c = 0x864b;
+    displayState.unk_0a = 0;
+    displayState.unk_0c = 0;
+    displayState.unk_22 = 0;
+    displayState.scrollX = 0x140;
+    displayState.unk_2e = 0;
+    displayState.unk_30 = 0x140;
+    mapState.unk_20 = 0;
+    mapState.cameraX = 0x140;
+    displayState.displayFlags = 0x1d40;
+    effectState.unk_27 = 0;
     FadeSet(2, 4);
     data_0212c500++;
 }
@@ -58,25 +58,25 @@ void ranking_scroll(void) {
     s32 wanted;
     s16 cameraX;
 
-    if (data_0212c648.target == 0) {
+    if (mapState.target == 0) {
         return;
     }
-    wanted = (s16)(data_0212c648.target->y.HALF.HI - 0x60);
+    wanted = (s16)(mapState.target->y.HALF.HI - 0x60);
     if (wanted < 0) {
         wanted = 0;
     }
     if (wanted > 0x140) {
         wanted = 0x140;
     }
-    cameraX = data_0212c648.cameraX;
+    cameraX = mapState.cameraX;
     if (cameraX != wanted) {
         if (cameraX < wanted) {
             wanted = cameraX + 1;
         } else {
             wanted = cameraX - 1;
         }
-        data_0212c648.cameraX = wanted;
+        mapState.cameraX = wanted;
     }
-    data_0212c75c.unk_30 = data_0212c648.cameraX;
-    data_0212c75c.scrollX = data_0212c75c.unk_30;
+    displayState.unk_30 = mapState.cameraX;
+    displayState.scrollX = displayState.unk_30;
 }

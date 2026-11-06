@@ -18,7 +18,7 @@ extern u8 data_0212ceba[];
 extern u8 data_0212ceb8[];
 extern u8 data_0212cee6[];
 extern u8 data_0212ceca[];
-extern u16 data_0212c58c[];   // indexed by child->type
+extern u16 playerKeys[];   // indexed by child->type
 extern u8 data_020dcec0[];    // +-1 steps for the child's base direction, indexed by Random() & 1
 
 #endif

@@ -6,7 +6,7 @@
 #include "global.h"
 #include "actor/object/fdecls.h"
 
-// data_021349c0 bytes used by the option panels
+// effectState bytes used by the option panels
 enum {
     NP_PHASE = 0x1a,        // phase of the panel sequence, copied into the copy actor's subtimer
     NP_SHOWN = 0x1b,        // set to 1 by the panel actors on every frame they run
@@ -26,24 +26,24 @@ typedef struct Vars_Option {
     /* 65 */ u8 patBase;        // pattern offset from copy_pattern_table
 } Vars_Option;
 
-extern u8 data_021349c0[];
+extern u8 effectState[];
 extern const EntityFunc win_open_actions[];   // win_open_actions, indexed by e->action
 extern const EntityFunc panel_copy_actions[]; // panel_copy_actions, indexed by e->action
 extern const u16 win_open_table[];            // win_open_table, indexed by slot
-extern const u8 data_020d8ac8[][6];           // animation bytes (shared with em1d_possess), row picked from data_021349c0[NP_PHASE]
-extern u16 data_0212c75c[];                   // display shadow, halfword registers
+extern const u8 data_020d8ac8[][6];           // animation bytes (shared with em1d_possess), row picked from effectState[NP_PHASE]
+extern u16 displayState[];                   // display shadow, halfword registers
 extern const EntityFunc panel_mode_actions[]; // panel_mode_actions, indexed by e->action
 extern u8 data_021348d8;                      // flag, nonzero: the panel moves the entity by 13 per type
 extern u16 data_0212c594;                     // cursor counter, bits 2..4 pick the z offset
 extern const s8 entry_z_table[];             // entry_z_table, z offsets for entry_cursor
-extern u32 data_02171d20[];                   // resource ids, indexed by data_021349c0[NP_PHASE]
+extern u32 data_02171d20[];                   // resource ids, indexed by effectState[NP_PHASE]
 
-#define DISP_REG(off) data_0212c75c[(off) / 2]
+#define DISP_REG(off) displayState[(off) / 2]
 
 void *KnifeApp_getInstance(void);
 
-// data_021349c0 holds an Entity pointer at offset 8: the star entity moved by star_adjust
-#define NP_ENTITY_PTR(off) (*(Entity **)(data_021349c0 + (off)))
+// effectState holds an Entity pointer at offset 8: the star entity moved by star_adjust
+#define NP_ENTITY_PTR(off) (*(Entity **)(effectState + (off)))
 
 void miniPanelPatSet(Entity *e);
 

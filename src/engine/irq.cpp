@@ -36,12 +36,12 @@ extern void OS_SetIrqFunction(u32 mask, void (*func)(void));
 
 // Track id from the game state
 void LoadTokiWave(void) {
-    func_0208cb74(tokiWaveLockIds[data_0212c7c8.unk_48]);
-    m4aLockWaveData(tokiWaveLockIds[data_0212c7c8.unk_48]);
+    func_0208cb74(tokiWaveLockIds[gameState.unk_48]);
+    m4aLockWaveData(tokiWaveLockIds[gameState.unk_48]);
 }
 
 void UnlockTokiWave(void) {
-    m4aUnlockWaveData(tokiWaveUnlockIds[data_0212c7c8.unk_48]);
+    m4aUnlockWaveData(tokiWaveUnlockIds[gameState.unk_48]);
 }
 
 void Irq_InitVBlank(void) {

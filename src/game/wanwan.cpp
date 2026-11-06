@@ -3,7 +3,7 @@
 #include "engine/player.h"
 #include "game/wanwan.h"
 
-// Wanwan module, 0x0208139c: wanwan_init sets up a chain piece that follows the player entity data_0212ceb0[type].
+// Wanwan module, 0x0208139c: wanwan_init sets up a chain piece that follows the player entity playerWork[type].
 
 extern const u8 wanwan_hitbox[]; // wanwan_hitbox, rename in renames.txt
 
@@ -15,7 +15,7 @@ void wanwan_init(Entity *e) {
     s32 resourceSize;
     void *app;
 
-    owner = data_0212ceb0[e->type].entity;
+    owner = playerWork[e->type].entity;
     e->action++;
     e->spriteSettings.b0 = 1;
     e->spriteSettings.b16 = 4;
@@ -71,7 +71,7 @@ void wanwan_init(Entity *e) {
             e->child->type2 = e->type2 + 1;
             if (e->type2 == 4) {
                 e->child->type2 |= 0x80;
-                data_0212ceb0[e->type].unk_3d = 1;
+                playerWork[e->type].unk_3d = 1;
             }
             RegistObjWork(6, e->child);
         }

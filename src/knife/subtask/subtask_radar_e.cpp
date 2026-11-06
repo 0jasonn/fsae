@@ -19,7 +19,7 @@ void subTask_radar_end(void) {
         subTask_free_slot(i);
     }
     subTask_free_objinfo((OBJInfo *)data_0217a258);
-    if (data_0212c7c8.unk_8c == 0 && frameCounter[0x11] == 0) {
+    if (gameState.unk_8c == 0 && frameCounter[0x11] == 0) {
         eff_fade_out_init(0x1000);
     }
 }

@@ -21,7 +21,7 @@ void em09_type2_init(Entity *e) {
     Tbl3 altPalette;
     e->spriteSettings.b20 = em09_paletteByType[e->type];
     e->spriteSettings.b16 = e->spriteSettings.b20;
-    if (data_0212c7c8.unk_8e == 2) {
+    if (gameState.unk_8e == 2) {
         altPalette = *(Tbl3 *)em09_altPaletteB;
         e->spriteSettings.b20 = altPalette.v[e->type];
         e->spriteSettings.b16 = e->spriteSettings.b20;
@@ -54,9 +54,9 @@ void seqMove(Entity *e) {
 }
 
 void kuttsukiReset(Entity *e) {
-    data_0212ceb0[e->child->type].unk_02 = 0x41;
-    data_0212ceb0[e->child->type].unk_0a = 0;
-    data_0212ceb0[e->child->type].statusFlags &= 0xffef;
+    playerWork[e->child->type].unk_02 = 0x41;
+    playerWork[e->child->type].unk_0a = 0;
+    playerWork[e->child->type].statusFlags &= 0xffef;
     e->child->zVelocity = 0x18000;
     e->child->statusFlags |= 0x80;
     e->child->iframes = 0xdc;

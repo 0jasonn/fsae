@@ -7,7 +7,7 @@
 //   0x02060bb0 set06_move, 0x02060ccc set06_die (original names)
 //   0x02060dbc posAdd (original name)
 
-extern UnkStruct_0212c648_S data_0212c648;
+extern UnkStruct_0212c648_S mapState;
 extern const EntityFunc data_02115a20[]; // indexed by e->action
 extern const s16 data_02115a2c[];
 extern const s16 data_02115a3c[];
@@ -17,7 +17,7 @@ void posAdd(Entity *e, WWORK *offset);
 
 // Cell index of the entity relative to the scroll position: row in bits 6+, column in the low bits
 #define SET06_CELL(e)                                                                                   \
-    ((u16)((((e)->x.HALF.HI - data_0212c648.scrollX) >> 4) | ((((e)->y.HALF.HI - data_0212c648.scrollY) >> 4) << 6)))
+    ((u16)((((e)->x.HALF.HI - mapState.scrollX) >> 4) | ((((e)->y.HALF.HI - mapState.scrollY) >> 4) << 6)))
 
 void set06_move(Entity *e) {
     u32 bits;

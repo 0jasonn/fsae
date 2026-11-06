@@ -41,13 +41,13 @@ void gufu_hand_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (e->frame == 2) {
         e->frame = 0;
-        data_021349c0[0x0d] = 1;
+        effectState[0x0d] = 1;
         SoundReq(0x204);
         SoundReq(0x202);
         return;
     }
     if (e->frame & 0x80) {
-        data_021349c0[0x0d] = 2;
+        effectState[0x0d] = 2;
         child = GetSetWork(0x62, 1, 0);
         child->x.HALF.HI = 0x80;
         child->y.HALF.HI = 0x38;

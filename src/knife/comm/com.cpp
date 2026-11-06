@@ -8,9 +8,9 @@
 //   ComStart (ComStart(unsigned char)), ComRequest (ComRequest(unsigned char)), ComFinish (ComFinish(unsigned long)),
 //   func_0202809c (ComFinish(0), dsd name kept because stageseldecls.h declares it)
 
-#define COM_WORK ((ComWork *)data_0212c9a8)
+#define COM_WORK ((ComWork *)comWork)
 
-extern u8 data_0212c9a8[];
+extern u8 comWork[];
 
 void ComFinish(u32 finishArg);
 void ComRequest(u8 request);

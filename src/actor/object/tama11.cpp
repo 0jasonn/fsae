@@ -23,7 +23,7 @@ void tama11_move1(Entity *e) {
             VARS(Tama11Vars, e)->frameCounter++;
             if (VARS(Tama11Vars, e)->phaseLength > e->subtimer) {
                 e->iframes = 0xf0;
-                u32 roll = Random() % (data_0212c7c8.playerCount - 1);
+                u32 roll = Random() % (gameState.playerCount - 1);
                 e->spriteSettings.b16 = tama11_spriteTable[e->spriteSettings.b16][roll];
                 e->spriteSettings.b20 = e->spriteSettings.b16;
                 if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) || Knife_Single_SinglePlay_GetInstance()[1] != 0) {

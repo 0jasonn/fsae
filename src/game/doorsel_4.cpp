@@ -3,21 +3,21 @@
 #include "types.h"
 #include "game/doorsel_4.h"
 
-// Door select screen, selection step (0x0202af70). data_0212c4dc is the sub-step. The ResultState block data_021349c0
+// Door select screen, selection step (0x0202af70). data_0212c4dc is the sub-step. The ResultState block effectState
 // holds the selected entry at +2, the number of entries at +3 and a u16 timer at +4.
 
 // doorsel_select (0x0202af70): step 0 sets up the sprite work of the screen, step 1 moves the cursor with left and right
 // (wrapping, 3 entries; with 2 entries it toggles) or calls ab_check, step 2 counts the timer down and then returns
 // to the task chain.
 void doorsel_select(void) {
-    u8 *state = data_021349c0;
+    u8 *state = effectState;
     s32 selection;
 
     switch (data_0212c4dc) {
     case 0:
         data_0212c4dc = data_0212c4dc + 1;
         if (state[3] == 3) {
-            *(u16 *)data_0212c75c = *(u16 *)data_0212c75c & 0xfdff;
+            *(u16 *)displayState = *(u16 *)displayState & 0xfdff;
         }
         GetSetWork(0x31, 3, 0);
         GetSetWork(0x31, 3, 2);
@@ -40,7 +40,7 @@ void doorsel_select(void) {
         }
         CommUpdateJoy();
         if (state[3] >= 2) {
-            if (data_0212c58c[0] & 0x20) {
+            if (playerKeys[0] & 0x20) {
                 if (state[3] == 2) {
                     selection = 2;
                     if (state[2] != 0) {
@@ -54,7 +54,7 @@ void doorsel_select(void) {
                 }
                 state[2] = selection;
                 SoundReq(0x3d);
-            } else if (data_0212c58c[0] & 0x10) {
+            } else if (playerKeys[0] & 0x10) {
                 if (state[3] == 2) {
                     selection = 2;
                     if (state[2] != 0) {

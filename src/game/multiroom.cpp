@@ -12,33 +12,33 @@ void MultiRoomInit(u16 room) {
     s16 i;
     u16 cellIndex;
 
-    data_0212c648.offsetX = 0;
-    data_0212c648.offsetY = 0;
-    target = data_0212c648.target;
+    mapState.offsetX = 0;
+    mapState.offsetY = 0;
+    target = mapState.target;
     targetX = target->x.HALF.HI;
     targetY = target->y.HALF.HI;
-    data_0212c648.unk_14 = 0;
-    data_0212c648.unk_12 = 0xe;
+    mapState.unk_14 = 0;
+    mapState.unk_12 = 0xe;
     target->layer = 0xe;
-    data_0212c648.limitX = 0x3f0;
-    data_0212c648.limitY = 0x3f0;
-    data_0212c648.originX = 0;
-    data_0212c648.originY = 0;
-    data_0212c648.startX = targetX;
-    data_0212c648.startY = targetY;
+    mapState.limitX = 0x3f0;
+    mapState.limitY = 0x3f0;
+    mapState.originX = 0;
+    mapState.originY = 0;
+    mapState.startX = targetX;
+    mapState.startY = targetY;
     if (targetX < 0x80) {
-        data_0212c648.scrollX = 0;
-    } else if (data_0212c648.limitX - 0x80 < targetX) {
-        data_0212c648.scrollX = data_0212c648.limitX - 0x100;
+        mapState.scrollX = 0;
+    } else if (mapState.limitX - 0x80 < targetX) {
+        mapState.scrollX = mapState.limitX - 0x100;
     } else {
-        data_0212c648.scrollX = targetX - 0x80;
+        mapState.scrollX = targetX - 0x80;
     }
     if (targetY < 0x60) {
-        data_0212c648.scrollY = 0;
-    } else if (data_0212c648.limitY - 0x60 < targetY) {
-        data_0212c648.scrollY = data_0212c648.limitY - 0xc0;
+        mapState.scrollY = 0;
+    } else if (mapState.limitY - 0x60 < targetY) {
+        mapState.scrollY = mapState.limitY - 0xc0;
     } else {
-        data_0212c648.scrollY = targetY - 0x60;
+        mapState.scrollY = targetY - 0x60;
     }
 
     func_02029a50(triangleTable, 0x800);
@@ -70,8 +70,8 @@ void MultiRoomInit(u16 room) {
         layerCells2++;
     }
 
-    (*(u16 **)data_02163fa4)[1] = data_0212c648.offsetX + data_0212c648.scrollX - data_0212c648.originX;
+    (*(u16 **)data_02163fa4)[1] = mapState.offsetX + mapState.scrollX - mapState.originX;
     (*(u16 **)data_02158fa0)[1] = (*(u16 **)data_02163fa4)[1];
-    (*(u16 **)data_02163fa4)[2] = data_0212c648.offsetY + data_0212c648.scrollY - data_0212c648.originY;
+    (*(u16 **)data_02163fa4)[2] = mapState.offsetY + mapState.scrollY - mapState.originY;
     (*(u16 **)data_02158fa0)[2] = (*(u16 **)data_02163fa4)[2];
 }

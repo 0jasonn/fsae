@@ -9,15 +9,15 @@ void FadeClear(void);
 
 void FadeInit(void) {
     u32 size = 0x10;
-    func_02029a50(&data_0212c5ac, size);
+    func_02029a50(&blendRequest, size);
     FadeClear();
-    data_0212c5ac.resetValue = size - 0x11;
-    data_0212c5ac.fadeRunning = 1;
+    blendRequest.resetValue = size - 0x11;
+    blendRequest.fadeRunning = 1;
 }
 
 void FadeClear(void) {
-    if (data_0212c5ac.fadeRunning == 0) {
-        data_0212c75c.unk_66 = 0;
+    if (blendRequest.fadeRunning == 0) {
+        displayState.unk_66 = 0;
         return;
     }
     em2f_mapFlag = 0xffffffff;

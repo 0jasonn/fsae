@@ -34,13 +34,13 @@ void em02_div(Entity *e) {
 }
 
 void func_02030ae4(int index) {
-    data_0212ceb0[index].state = 6;
-    data_0212ceb0[index].stateTimer = 1;
+    playerWork[index].state = 6;
+    playerWork[index].stateTimer = 1;
     PlayerData *other = NULL;
-    if (data_0212ceb0[index].hitFlags & 0x80) {
-        other = V(data_0212ceb0[index].entity)->playerData;
-    } else if (data_0212ceb0[index].hitFlags & 0x20) {
-        other = (PlayerData *)V(data_0212ceb0[index].entity)->linked;
+    if (playerWork[index].hitFlags & 0x80) {
+        other = V(playerWork[index].entity)->playerData;
+    } else if (playerWork[index].hitFlags & 0x20) {
+        other = (PlayerData *)V(playerWork[index].entity)->linked;
     }
     if (other != NULL && other->state != 6 && other->entity->action != 6) {
         other->state = 6;
@@ -68,8 +68,8 @@ void Em2a(Entity *e) {
             return;
         }
         Entity *hitter = e->contactedEntity;
-        data_0212ceb0[hitter->type].state = 6;
-        data_0212ceb0[hitter->type].stateTimer = 1;
+        playerWork[hitter->type].state = 6;
+        playerWork[hitter->type].stateTimer = 1;
         e->iframes = 0xfe;
         if (hitter->animationState != 2) {
             return;
@@ -105,8 +105,8 @@ void Em2a(Entity *e) {
         if (e->action != 8 && e->z.WORD == 0 && e->type != 0 && (e->contactFlags & 0x80) && (e->contactFlags & 0x7f) != 0) {
             if ((e->contactFlags & 0x7f) == 0x10) {
                 Entity *hitter = e->contactedEntity;
-                data_0212ceb0[hitter->type].state = 6;
-                data_0212ceb0[hitter->type].stateTimer = 1;
+                playerWork[hitter->type].state = 6;
+                playerWork[hitter->type].stateTimer = 1;
                 e->iframes = 0xfe;
                 if (hitter->animationState == 2) {
                     e->spriteSettings.b0 = 1;
@@ -148,7 +148,7 @@ void em2a_init(Entity *e) {
     e->action = 1;
     e->spriteSettings.b0 = 1;
     InitAnimationForceUpdate(e, 6);
-    e->timer = data_0212c7c8.playerCount * 3;
+    e->timer = gameState.playerCount * 3;
     e->subtimer = 0xb4;
     V(e)->effectTimer = 0x2a30;
     e->speed = 0x300;
@@ -158,15 +158,15 @@ void em2a_init(Entity *e) {
     e->hitbox = em2a_hitbox;
     e->unk_6a = 1;
     e->poseId = 0x48;
-    e->child = data_0212c648;
-    data_0212c648 = e;
+    e->child = mapState;
+    mapState = e;
     CockpitOff();
 }
 
 void em2a_demowait(Entity *e) {
     if (e->subtimer != 0) {
         if (e->subtimer == 0x3c) {
-            data_0212c648 = e->child;
+            mapState = e->child;
         } else if (e->subtimer == 0x1e) {
             CockpitOn();
         }

@@ -28,7 +28,7 @@ void Set_TrySpawnChild(Entity *parent, u8 tableIndex, Entity *target) {
         typeIndex = 5;
     }
     roll = Random() & 0x1f;
-    kind = Set_KindTables[tableIndex][data_0212c7c8.unk_01][typeIndex][roll];
+    kind = Set_KindTables[tableIndex][gameState.unk_01][typeIndex][roll];
     record = &Set_KindRecords[kind * 4];
 
     switch (kind) {
@@ -47,14 +47,14 @@ void Set_TrySpawnChild(Entity *parent, u8 tableIndex, Entity *target) {
         RegistObjWork(2, child);
         return;
     case 0x11:
-        if (Set_Kind11Threshold[data_0212c7c8.unk_01] >= (Random() & 0x1f)) {
+        if (Set_Kind11Threshold[gameState.unk_01] >= (Random() & 0x1f)) {
             record = Set_Record11Hit;
         } else {
             record = Set_Record11Miss;
         }
         break;
     case 0x12:
-        if (Set_Kind12Threshold[data_0212c7c8.unk_49[4]] >= (Random() & 0x1f)) {
+        if (Set_Kind12Threshold[gameState.unk_49[4]] >= (Random() & 0x1f)) {
             record = Set_Record12Hit;
         } else {
             record = Set_Record12Miss;

@@ -12,9 +12,9 @@ void ScrPosSet(u16 x, u16 y) {
 
     windowX = (s16)(u16)(x - 0x80);
     windowY = (s16)(u16)(y - 0x60);
-    data_0212c648.scrollX = windowX;
-    data_0212c648.scrollY = windowY;
-    data_0212c648.startX = windowX;
-    data_0212c648.startY = windowY;
+    mapState.scrollX = windowX;
+    mapState.scrollY = windowY;
+    mapState.startX = windowX;
+    mapState.startY = windowY;
     data_021348f4[data_0212c4c8] = 1;
 }

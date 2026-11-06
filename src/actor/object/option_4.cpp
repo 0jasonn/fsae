@@ -23,7 +23,7 @@ void change_panel(Entity *e) {
             e->unk_20 = e->type2 * 10;
         }
     }
-    if (data_021349c0[NP_CURSOR_ROW] == 5 && data_021349c0[NP_CURSOR_TYPE] == e->type2) {
+    if (effectState[NP_CURSOR_ROW] == 5 && effectState[NP_CURSOR_TYPE] == e->type2) {
         layer = 5;
     } else {
         layer = 6;
@@ -42,10 +42,10 @@ void entry_cursor(Entity *e) {
         e->spriteSettings.b14 = 0;
         InitAnimationForceUpdate(e, 1);
     }
-    if (data_021349c0[0x22] >= 6) {
+    if (effectState[0x22] >= 6) {
         x = 0x4c;
     } else {
-        x = (data_021349c0[0x22] << 3) + 0x24;
+        x = (effectState[0x22] << 3) + 0x24;
     }
     e->y.HALF.HI = 0xd;
     e->x.HALF.HI = x;

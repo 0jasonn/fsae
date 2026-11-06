@@ -35,7 +35,7 @@ typedef struct UnkStruct_0212c648 {
     /* 1a */ u16 unk_1a;
 } UnkStruct_0212c648;
 
-extern UnkStruct_0212c648 data_0212c648;
+extern UnkStruct_0212c648 mapState;
 extern u16 frameCounter;          // frame counter
 extern u32 em12_typeMasks[];
 extern u16 data_0213492c[];
@@ -45,7 +45,7 @@ extern const s8 em12_kemuriOffsets[];
 extern const s8 em12_walkOffsets[];
 extern const u16 data_020d2144[];
 extern u8 *data_02171e0c;
-extern u16 data_0212c584[4];
+extern u16 playerKeysPrev[4];
 extern const u8 em12_colorByPlayer[];
 
 

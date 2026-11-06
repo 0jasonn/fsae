@@ -9,7 +9,7 @@
 // Work blocks in the bss, accessed by byte offset
 extern u8 telopRequest[];
 extern u8 messageRequest[];
-extern u8 data_0217d39c[];
+extern u8 messageBox[];
 extern u8 telopBox[];
 extern u8 data_0216efbc[];
 extern u8 data_0216efe0[];
@@ -21,7 +21,7 @@ extern u8 data_0217d350[];
 
 void MessageInitialize(void) {
     func_02029a50(messageRequest, 0x18);
-    func_02029a50(data_0217d39c, 0xe8);
+    func_02029a50(messageBox, 0xe8);
     func_02029a50(data_0216efe0, 0x10);
     func_02029a50(data_0216eff0, 0x10);
     func_02029a50(data_0217d350, 4);

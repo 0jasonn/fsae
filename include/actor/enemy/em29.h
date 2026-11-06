@@ -73,7 +73,7 @@ typedef struct UnkStruct_0212c648 {
     /* 18 */ u16 unk_18;
     /* 1a */ u16 unk_1a;
 } UnkStruct_0212c648;
-extern UnkStruct_0212c648 data_0212c648;
+extern UnkStruct_0212c648 mapState;
 
 typedef struct UnkStruct_0212c6b0 {
     /* 00 */ u8 unk_00[0x14];

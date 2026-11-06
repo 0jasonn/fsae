@@ -18,10 +18,10 @@ typedef struct Tama11Vars {
     u8 phaseLength;    // 0x75: subtimer limit that switches tama11_move1 to its second phase
 } Tama11Vars;
 
-// Game state byte (data_0212c7c8 + off), see GAME_STATE_U8 in ending.h.
-#define TAMA_GAME_STATE_BYTE(off) (*((u8 *)&data_0212c7c8 + (off)))
-// Byte inside a player's PlayerData entry (data_0212ceb0[i] + off).
-#define TAMA_PLAYER_BYTE(i, off) (((u8 *)&data_0212ceb0[i])[off])
+// Game state byte (gameState + off), see GAME_STATE_U8 in ending.h.
+#define TAMA_GAME_STATE_BYTE(off) (*((u8 *)&gameState + (off)))
+// Byte inside a player's PlayerData entry (playerWork[i] + off).
+#define TAMA_PLAYER_BYTE(i, off) (((u8 *)&playerWork[i])[off])
 
 void fiveMove(Entity *e);
 void prtDamage(Entity *e);

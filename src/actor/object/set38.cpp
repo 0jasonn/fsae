@@ -58,7 +58,7 @@ void set38_move(Entity *e) {
         if (e->unk_47 == 0) {
             return;
         }
-        link = data_0212ceb0[e->unk_47 - 1].entity;
+        link = playerWork[e->unk_47 - 1].entity;
         if (AssignObj(VARS(Vars_Carrier, link)->carried) != 0) {
             if (VARS(Vars_Carrier, link)->carried->child == data_02134920) {
                 data_02134920->action = 3;
@@ -68,7 +68,7 @@ void set38_move(Entity *e) {
                 func_02085fd0(e);
             }
         }
-        data_0212ceb0[e->unk_47 - 1].unk_0b &= 0x7f;
+        playerWork[e->unk_47 - 1].unk_0b &= 0x7f;
         e->unk_47 = 0;
     } else {
         if (e->timer != 0) {

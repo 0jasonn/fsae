@@ -6,7 +6,7 @@
 //   0x0205c9c8 option_nop (renamed from option_nop), 0x0205c9cc optionGuide
 //   (option_dialog at 0x0205c84c is in scratch/agentF/nonmatching; langCursor at 0x0205c7b0 too)
 
-// Per-slot dialog position {x, y} and animation bounds; the slot is data_021349c0[NP_SLOT_B] or NP_PANEL_STATE
+// Per-slot dialog position {x, y} and animation bounds; the slot is effectState[NP_SLOT_B] or NP_PANEL_STATE
 extern const u16 data_020d8a8c[][2];
 extern const u8 data_020d8a74[];
 extern s8 data_021350f7[]; // 0x50 bytes per slot, first byte signed
@@ -34,17 +34,17 @@ void optionGuide(Entity *e) {
     e->spriteSettings.b0 = 0;
 
     if (e->type2 != 0) {
-        slot = data_021349c0[NP_PANEL_STATE];
+        slot = effectState[NP_PANEL_STATE];
         e->y.HALF.HI = data_020d8a8c[slot][1] + 0x10;
-        if (data_021349c0[0x24] == 2) {
+        if (effectState[0x24] == 2) {
             e->spriteSettings.b0 = 2;
         }
         return;
     }
-    if (data_021349c0[NP_PHASE] != 0 || data_021349c0[0x24] != 0) {
+    if (effectState[NP_PHASE] != 0 || effectState[0x24] != 0) {
         return;
     }
-    slot = data_021349c0[NP_PANEL_STATE];
+    slot = effectState[NP_PANEL_STATE];
     if (slot >= 3) {
         return;
     }

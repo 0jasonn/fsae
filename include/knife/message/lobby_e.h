@@ -2,10 +2,10 @@
 #define WIP_E_LOBBY_E_H
 
 #include "types.h"
-// engine/player.h and ui/lobby.h declare data_0212c584 differently; player.h only needs GameState here
-#define data_0212c584 shim_data_0212c584
+// engine/player.h and ui/lobby.h declare playerKeysPrev differently; player.h only needs GameState here
+#define playerKeysPrev shim_data_0212c584
 #include "engine/player.h"
-#undef data_0212c584
+#undef playerKeysPrev
 #include "ui/lobby.h"
 
 void MachiukeStop(void);

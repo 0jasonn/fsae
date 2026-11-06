@@ -26,10 +26,10 @@ typedef struct KanaamiScroll {
     /* 1a */ u16 scrollY;
 } KanaamiScroll;
 
-extern KanaamiScroll data_0212c648; // scroll origin of the current map
+extern KanaamiScroll mapState; // scroll origin of the current map
 
 #define KANAAMI_CELL(dx, dy)                                                                              \
-    ((u16)(((e->x.HALF.HI + (dx) - data_0212c648.scrollX) >> 4) | (((e->y.HALF.HI + (dy) - data_0212c648.scrollY) >> 4) << 6)))
+    ((u16)(((e->x.HALF.HI + (dx) - mapState.scrollX) >> 4) | (((e->y.HALF.HI + (dy) - mapState.scrollY) >> 4) << 6)))
 
 void kanaamiRew(Entity *e, u16 index) {
     RewCell(index, KANAAMI_CELL(-0x10, -0x10), 0x8000);

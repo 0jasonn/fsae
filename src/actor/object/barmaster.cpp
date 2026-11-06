@@ -7,7 +7,7 @@
 //   0x0205bd7c barMaster_init, 0x0205bdc8 barMaster_wait, 0x0205be6c barMaster_move
 //   0x0205bee8 namelPosSync, 0x0205bf34 barSlave, 0x0205bfe8 slavePosSync
 
-// data_021349c0 bytes used by the name plate code
+// effectState bytes used by the name plate code
 enum {
     NP_PHASE = 0x1a,    // == 3 while the plate is set up
     NP_SHOWN = 0x1b,    // set to 1 once the plate is shown
@@ -16,7 +16,7 @@ enum {
 };
 
 extern const EntityFunc barMaster_actions[]; // barMaster_actions, indexed by e->action
-extern u8 data_021349c0[];
+extern u8 effectState[];
 
 void namelPosSync(Entity *e);
 void slavePosSync(Entity *e);
@@ -39,7 +39,7 @@ void barMaster_wait(Entity *e) {
     Entity *child;
     Entity *second;
 
-    data_021349c0[NP_SHOWN] = 1;
+    effectState[NP_SHOWN] = 1;
     namelPosSync(e);
     if (e->subAction == 0) {
         return;
@@ -64,11 +64,11 @@ void barMaster_wait(Entity *e) {
 void barMaster_move(Entity *e) {
     if (e->subtimer < 0x88) {
         e->subtimer += 8;
-        data_021349c0[NP_SHOWN] = 1;
+        effectState[NP_SHOWN] = 1;
     }
     namelPosSync(e);
-    e->spriteSettings.b0 = ((data_021349c0[NP_SLOT_TYPE] & 3) == e->type2) ? 0 : 2;
-    if (data_021349c0[NP_PHASE] == 3) {
+    e->spriteSettings.b0 = ((effectState[NP_SLOT_TYPE] & 3) == e->type2) ? 0 : 2;
+    if (effectState[NP_PHASE] == 3) {
         PutObjWork(e);
     }
 }
@@ -93,8 +93,8 @@ void barSlave(Entity *e) {
         e->unk_21 = (e->unk_16 != 0) ? 0xf : 0x10;
     }
     slavePosSync(e);
-    e->spriteSettings.b0 = ((data_021349c0[NP_SLOT_TYPE] & 3) == e->type2) ? 0 : 2;
-    if (data_021349c0[NP_PHASE] == 3) {
+    e->spriteSettings.b0 = ((effectState[NP_SLOT_TYPE] & 3) == e->type2) ? 0 : 2;
+    if (effectState[NP_PHASE] == 3) {
         PutObjWork(e);
     }
 }

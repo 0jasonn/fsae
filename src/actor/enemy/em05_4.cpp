@@ -221,7 +221,7 @@ void em07_init(Entity *e) {
     VB(e)->lastHealth = e->health;
     InitAnimationForceUpdate(e, 0);
     e->action++;
-    e->child = data_0212ceb0[0].entity;
+    e->child = playerWork[0].entity;
     VB(e)->target = EmGetAimPl();
     e->direction = GetFacingDirection(e, VB(e)->target);
 }
@@ -262,7 +262,7 @@ void em07_tame(Entity *e) {
     e->z.HALF.HI = -8;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         u8 playerIndex = *Knife_Single_SinglePlay_GetInstance();
-        VB(e)->target = data_0212ceb0[playerIndex].entity;
+        VB(e)->target = playerWork[playerIndex].entity;
     }
     e->direction = func_02084fd0(e, VB(e)->target);
     InitAnimationForceUpdate(e, 2);
@@ -463,14 +463,14 @@ void em08_lift(Entity *e) {
 void em08_lift_init(Entity *e) {
     e->subAction = 1;
     e->unk_5c = 0x3100;
-    Entity *player = data_0212ceb0[e->type2].entity;
+    Entity *player = playerWork[e->type2].entity;
     VB(e)->mirroredAnim = player->animationState;
     VB(e)->poseLatched = 0;
     e->unk_2e = 0;
 }
 
 void em08_lift_move(Entity *e) {
-    Entity *player = data_0212ceb0[e->type2].entity;
+    Entity *player = playerWork[e->type2].entity;
     if (((VB(e)->mirroredAnim ^ player->animationState) & 4) == 0) {
         return;
     }
@@ -484,7 +484,7 @@ void em08_lift_throw(Entity *e) {
     e->unk_2e = 2;
     if (VB(e)->poseLatched == 0) {
         VB(e)->poseLatched = 1;
-        Entity *player = data_0212ceb0[e->type2].entity;
+        Entity *player = playerWork[e->type2].entity;
         e->wallFlags = *(const u16 *)(em08_throwParams + (player->animationState & ~1));
     }
     searchCandle(e);

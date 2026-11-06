@@ -35,14 +35,14 @@ Entity *plCheck(Entity *e) {
         return NULL;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        if (child != data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity) {
+        if (child != playerWork[*Knife_Single_SinglePlay_GetInstance()].entity) {
             return NULL;
         }
         if (em28_claim.claimed != 0) {
             return NULL;
         }
     }
-    if (data_0212ceb0[child->type].statusFlags & 0x1091) {
+    if (playerWork[child->type].statusFlags & 0x1091) {
         return NULL;
     }
     return child;

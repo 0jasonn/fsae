@@ -7,7 +7,7 @@
 
 void heart_lift_move(Entity *e) {
     Vars_HeartLift *v = VARS(Vars_HeartLift, e);
-    Entity *player = data_0212ceb0[e->type2].entity;
+    Entity *player = playerWork[e->type2].entity;
     u16 x;
     u16 y;
     int blocked;

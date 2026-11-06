@@ -5,7 +5,7 @@
 extern const u8 em2c_pushSpeeds[];
 extern const u8 em2c_pushMasks[];
 extern const s8 em2c_pushXOffsets[];
-extern u16 data_0212c584[];
+extern u16 playerKeysPrev[];
 
 void type1_appear(Entity *e) {
     if (!(VE(e->parent)->eventFlags & flagBits[VL(V(e)->lockEntity)->lockBitIndex])) {
@@ -27,7 +27,7 @@ void type1_appear(Entity *e) {
 void type1_lift(Entity *e) {
     ObjHippariCheck(e);
     if (e->subAction == 5) {
-        Entity *player = data_0212ceb0[e->type2].entity;
+        Entity *player = playerWork[e->type2].entity;
         if (V(e)->leverState == 0) {
             player->x.HALF.HI = e->x.HALF.HI + em2c_liftOffsets[player->animationState];
             player->y.HALF.HI = e->y.HALF.HI + em2c_liftOffsets[player->animationState + 1];
@@ -184,7 +184,7 @@ void em2c_type4(Entity *e) {
 
 
 void em2c_leverMove(Entity *e) {
-    Entity *player = data_0212ceb0[e->type2].entity;
+    Entity *player = playerWork[e->type2].entity;
     u8 speed = em2c_pushSpeeds[V(e)->side];
     if (V(e)->pushProgress < 0x30) {
         s16 px = player->x.HALF.HI;
@@ -215,7 +215,7 @@ void em2c_leverMove(Entity *e) {
         }
         return;
     }
-    if (em2c_pushMasks[V(e)->side] & data_0212c584[e->type2]) {
+    if (em2c_pushMasks[V(e)->side] & playerKeysPrev[e->type2]) {
         if (V(e)->pushCount < 0xf) {
             V(e)->pushCount++;
             if (em2c_leverTimers[V(e)->side] != 0) {

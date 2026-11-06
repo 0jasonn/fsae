@@ -36,38 +36,38 @@ void plmove(Entity *e) {
         y = (s16)((u16)vars->baseY - vars->rangeY);
         break;
     }
-    if (func_02086120(data_0212ceb0[0].entity) != 0) {
-        if ((data_0212ceb0[0].entity->layer & e->layer) >> 14 != 0) {
-            if (vars->rangeX >= (u16)(data_0212ceb0[0].entity->x.HALF.HI - x)) {
-                if (vars->rangeY >= (u16)(data_0212ceb0[0].entity->y.HALF.HI - y)) {
-                    func_020852f8(data_0212ceb0[0].entity, e->speed, e->direction);
+    if (func_02086120(playerWork[0].entity) != 0) {
+        if ((playerWork[0].entity->layer & e->layer) >> 14 != 0) {
+            if (vars->rangeX >= (u16)(playerWork[0].entity->x.HALF.HI - x)) {
+                if (vars->rangeY >= (u16)(playerWork[0].entity->y.HALF.HI - y)) {
+                    func_020852f8(playerWork[0].entity, e->speed, e->direction);
                 }
             }
         }
     }
-    if (func_02086120(data_0212ceb0[1].entity) != 0) {
-        if ((data_0212ceb0[1].entity->layer & e->layer) >> 14 != 0) {
-            if (vars->rangeX >= (u16)(data_0212ceb0[1].entity->x.HALF.HI - x)) {
-                if (vars->rangeY >= (u16)(data_0212ceb0[1].entity->y.HALF.HI - y)) {
-                    func_020852f8(data_0212ceb0[1].entity, e->speed, e->direction);
+    if (func_02086120(playerWork[1].entity) != 0) {
+        if ((playerWork[1].entity->layer & e->layer) >> 14 != 0) {
+            if (vars->rangeX >= (u16)(playerWork[1].entity->x.HALF.HI - x)) {
+                if (vars->rangeY >= (u16)(playerWork[1].entity->y.HALF.HI - y)) {
+                    func_020852f8(playerWork[1].entity, e->speed, e->direction);
                 }
             }
         }
     }
-    if (func_02086120(data_0212ceb0[2].entity) != 0) {
-        if ((data_0212ceb0[2].entity->layer & e->layer) >> 14 != 0) {
-            if (vars->rangeX >= (u16)(data_0212ceb0[2].entity->x.HALF.HI - x)) {
-                if (vars->rangeY >= (u16)(data_0212ceb0[2].entity->y.HALF.HI - y)) {
-                    func_020852f8(data_0212ceb0[2].entity, e->speed, e->direction);
+    if (func_02086120(playerWork[2].entity) != 0) {
+        if ((playerWork[2].entity->layer & e->layer) >> 14 != 0) {
+            if (vars->rangeX >= (u16)(playerWork[2].entity->x.HALF.HI - x)) {
+                if (vars->rangeY >= (u16)(playerWork[2].entity->y.HALF.HI - y)) {
+                    func_020852f8(playerWork[2].entity, e->speed, e->direction);
                 }
             }
         }
     }
-    if (func_02086120(data_0212ceb0[3].entity) != 0) {
-        if ((data_0212ceb0[3].entity->layer & e->layer) >> 14 != 0) {
-            if (vars->rangeX >= (u16)(data_0212ceb0[3].entity->x.HALF.HI - x)) {
-                if (vars->rangeY >= (u16)(data_0212ceb0[3].entity->y.HALF.HI - y)) {
-                    func_020852f8(data_0212ceb0[3].entity, e->speed, e->direction);
+    if (func_02086120(playerWork[3].entity) != 0) {
+        if ((playerWork[3].entity->layer & e->layer) >> 14 != 0) {
+            if (vars->rangeX >= (u16)(playerWork[3].entity->x.HALF.HI - x)) {
+                if (vars->rangeY >= (u16)(playerWork[3].entity->y.HALF.HI - y)) {
+                    func_020852f8(playerWork[3].entity, e->speed, e->direction);
                 }
             }
         }

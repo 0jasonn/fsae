@@ -7,7 +7,7 @@ void ObjHippariCheck(Entity *e) {
     if (frameCounter[0x12] != 0) {
         e->subAction = 6;
     }
-    if (data_0212ceb0[e->type2].specialState == 0) {
+    if (playerWork[e->type2].specialState == 0) {
         e->subAction = 6;
     }
 }

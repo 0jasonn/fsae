@@ -3,7 +3,7 @@
 
 #include "engine/misc.h"
 
-// Effect state block (data_021349c0) entries used only by the functions in this range
+// Effect state block (effectState) entries used only by the functions in this range
 #define EFFECT_STATE_ACTIVE_SLOT 0x0f // slot of the running effect, 0xff when none (guess)
 
 // One 0x14-byte entry of fairySlots: the first word is the entity that owns the slot
@@ -55,8 +55,8 @@ extern u8 data_020d80d8[];
 extern u8 data_021361a0[];
 extern u8 data_0212c4e0;
 extern u16 data_0212c514;
-extern u16 data_0212c58c[];
-extern u8 data_0212c9a8[];
+extern u16 playerKeys[];
+extern u8 comWork[];
 extern u16 data_021355a0;
 extern u8 titleDialogBuffer[];
 extern u8 data_021369a0[];

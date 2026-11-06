@@ -36,13 +36,13 @@ void set3e_wait(Entity *e) {
         x = e->x.HALF.HI + data_020d8c40[(u8)e->direction >> 2];
         y = e->y.HALF.HI + data_020d8c40[((u8)e->direction >> 2) + 1];
         if (func_02085890(e, pot_moveCheckTable, x, y) == 0) {
-            cell = ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6);
+            cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
             RewCell(VARS(Vars_Set3eWait, e)->rewId, (u16)cell, e->layer);
             e->action = e->action + 1;
             EnqueueSFX(0x22c);
         } else {
             u16 *bg = (u16 *)GetBgBuffAdrs(e->layer);
-            cell = ((e->x.HALF.HI - data_0212c648.originX) >> 4) | (((e->y.HALF.HI - data_0212c648.originY) >> 4) << 6);
+            cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
             (bg + cell)[2] = 0x400e;
         }
         break;

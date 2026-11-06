@@ -8,7 +8,7 @@
 
 extern u16 data_0212c510;
 extern u8 localPlayerIndex;
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 
 // Selection dialog (Knife::Message::selectionDialog) as MessageSelect update sees it
 typedef struct KnifeSelectMenu {
@@ -33,7 +33,7 @@ void Knife_Message_MessageSelect_update(void *self) {
     app = KnifeApp_getInstance();
     keys = data_0212c510;
     if (KnifeApp_isWirelessMode(app) != 0) {
-        keys = data_0212c58c[localPlayerIndex];
+        keys = playerKeys[localPlayerIndex];
     } else {
         Knife_Single_SinglePlay_GetInstance();
     }

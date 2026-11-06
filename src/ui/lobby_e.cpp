@@ -20,7 +20,7 @@ void connectCheck(void) {
     childLost = FALSE;
     lobby = LOBBY;
     if ((u8)(s8)(lobby->phase - 4) <= 2 && lobby->unk_a4 != 0) {
-        if ((s8)lobby->playerCount == 1 || data_0212c7c8.playerCount > Knife_Comm_WirelessManager_getLinkLevel(manager)) {
+        if ((s8)lobby->playerCount == 1 || gameState.playerCount > Knife_Comm_WirelessManager_getLinkLevel(manager)) {
             parentLost = TRUE;
             Knife_Comm_WirelessManager_endParent(manager);
         }

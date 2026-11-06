@@ -13,7 +13,7 @@ typedef struct ScrollOrigin_Set4f {
     /* 1a */ u16 scrollY;
 } ScrollOrigin_Set4f;
 
-extern ScrollOrigin_Set4f data_0212c648; // scroll origin of the current map
+extern ScrollOrigin_Set4f mapState; // scroll origin of the current map
 extern const EntityFunc set4f_states[]; // state table indexed by e->action
 extern u16 set4f_rewriteIds[]; // RewCell id per actor type
 
@@ -35,8 +35,8 @@ void set4f_init(Entity *e) {
 
     e->action = 1;
     base = GetBgBuffAdrs(e->layer);
-    v->cell = (u16)(((e->x.HALF.HI - data_0212c648.scrollX) >> 4) |
-                    (((e->y.HALF.HI - data_0212c648.scrollY) >> 4) << 6));
+    v->cell = (u16)(((e->x.HALF.HI - mapState.scrollX) >> 4) |
+                    (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
     v->statePtr = (u8 *)(base + 4 + 0x2000 + v->cell);
 }
 

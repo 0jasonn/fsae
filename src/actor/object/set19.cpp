@@ -20,7 +20,7 @@ void set19_init(Entity *e) {
 
     e->action++;
     bg = GetBgBuffAdrs(e->layer);
-    cell = ((e->x.HALF.HI - data_0212c648.unk_18) >> 4) | (((e->y.HALF.HI - data_0212c648.unk_1a) >> 4) << 6);
+    cell = ((e->x.HALF.HI - mapState.unk_18) >> 4) | (((e->y.HALF.HI - mapState.unk_1a) >> 4) << 6);
     VARS(Vars_Set19, e)->cellPtr = (u16 *)(bg + 4 + cell * 2);
     VARS(Vars_Set19, e)->cellValue = *VARS(Vars_Set19, e)->cellPtr;
 }

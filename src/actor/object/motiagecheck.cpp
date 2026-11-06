@@ -7,11 +7,11 @@
 // counts up or down depending on its status flags and the child entity it is linked to.
 #define MOTIA_CHECK_PLAYER(idx, bit)                                        \
     if (mask & (bit)) {                                                     \
-        data_0212ceb0[idx].yOffset = motiaAnimTable[e->animationState];    \
-        if (data_0212ceb0[idx].statusFlags & 0x90) {                        \
+        playerWork[idx].yOffset = motiaAnimTable[e->animationState];    \
+        if (playerWork[idx].statusFlags & 0x90) {                        \
             count = (u8)(count - 1);                                        \
         } else {                                                            \
-            Entity *ent = data_0212ceb0[idx].entity;                        \
+            Entity *ent = playerWork[idx].entity;                        \
             Entity *linked = *(Entity **)ent->unk_6c;                       \
             if (linked != NULL && linked->child->objKind == 1 &&            \
                 !(mask & flagBits[linked->child->type])) {             \

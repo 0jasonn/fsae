@@ -35,16 +35,16 @@ void heart_marker(Entity *e) {
         e->spriteSettings.b16 = 0;
         e->spriteSettings.b14 = 1;
         e->spriteSettings.b30 = 0;
-        e->x.HALF.HI = ((data_0212c7c8.targetX >> 4) & 0x3f) + 0x58;
-        e->y.HALF.HI = ((data_0212c7c8.targetY >> 4) & 0x3f) + 0x30;
+        e->x.HALF.HI = ((gameState.targetX >> 4) & 0x3f) + 0x58;
+        e->y.HALF.HI = ((gameState.targetY >> 4) & 0x3f) + 0x30;
         InitAnimationForceUpdate(e, e->type);
     }
-    if (data_0212c7c8.targetX == 0) {
+    if (gameState.targetX == 0) {
         e->spriteSettings.b0 = 0;
     } else {
         e->spriteSettings.b0 = 2;
-        e->x.HALF.HI = ((data_0212c7c8.targetX >> 4) & 0x3f) + 0x58;
-        e->y.HALF.HI = ((data_0212c7c8.targetY >> 4) & 0x3f) + 0x30;
+        e->x.HALF.HI = ((gameState.targetX >> 4) & 0x3f) + 0x58;
+        e->y.HALF.HI = ((gameState.targetY >> 4) & 0x3f) + 0x30;
     }
     UpdateAnimationSingleFrame(e);
 }

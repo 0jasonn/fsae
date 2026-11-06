@@ -13,7 +13,7 @@ BOOL areacheck(Entity *e) {
     s32 dx;
     s32 dy;
 
-    target = data_0212ceb0[0].entity;
+    target = playerWork[0].entity;
     dx = target->x.HALF.HI - e->x.HALF.HI + 0x18;
     if ((u32)dx <= 0x30) {
         dy = target->y.HALF.HI - e->y.HALF.HI + 0x12;
@@ -21,7 +21,7 @@ BOOL areacheck(Entity *e) {
             return 0;
         }
     }
-    target = data_0212ceb0[1].entity;
+    target = playerWork[1].entity;
     if (target != NULL) {
         dx = target->x.HALF.HI - e->x.HALF.HI + 0x18;
         if ((u32)dx <= 0x30) {
@@ -30,7 +30,7 @@ BOOL areacheck(Entity *e) {
                 return 0;
             }
         }
-        target = data_0212ceb0[2].entity;
+        target = playerWork[2].entity;
         if (target != NULL) {
             dx = target->x.HALF.HI - e->x.HALF.HI + 0x18;
             if ((u32)dx <= 0x30) {
@@ -39,7 +39,7 @@ BOOL areacheck(Entity *e) {
                     return 0;
                 }
             }
-            target = data_0212ceb0[3].entity;
+            target = playerWork[3].entity;
             if (target != NULL) {
                 dx = target->x.HALF.HI - e->x.HALF.HI + 0x18;
                 if ((u32)dx <= 0x30) {

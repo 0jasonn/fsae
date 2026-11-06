@@ -6,7 +6,7 @@
 extern EntityFunc set36Table[];        // set36Table, indexed by action
 extern void setrupee(Entity *e);       // setrupee, 0x0206b4dc (setrupee.cpp)
 
-extern ScrollOrigin data_0212c648;
+extern ScrollOrigin mapState;
 
 // Set36, 0x0206b34c: runs the state function for the current action.
 void Set36(Entity *e) {

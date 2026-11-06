@@ -178,10 +178,10 @@ void em29_die(Entity *e) {
 }
 
 // breakSekichu (0x02041e58): converts the position into a 64-column cell index relative to
-// data_0212c648. When the cell check returns 0x138, spawns effect 0xf on this entity and reports the cell.
+// mapState. When the cell check returns 0x138, spawns effect 0xf on this entity and reports the cell.
 
 void breakSekichu(Entity *e) {
-    u16 cell = ((e->x.HALF.HI - data_0212c648.unk_18) >> 4) | (((e->y.HALF.HI - data_0212c648.unk_1a) >> 4) << 6);
+    u16 cell = ((e->x.HALF.HI - mapState.unk_18) >> 4) | (((e->y.HALF.HI - mapState.unk_1a) >> 4) << 6);
     if (func_02083ca8(cell, e->layer) != 0x138) {
         return;
     }
@@ -198,10 +198,10 @@ void breakSekichu(Entity *e) {
 
 BOOL movecheck(Entity *e) {
     if (func_020860dc(e) != 0) {
-        if (data_0212ceb0[e->type].statusFlags & 0x100) {
+        if (playerWork[e->type].statusFlags & 0x100) {
             return FALSE;
         }
-        if (data_0212ceb0[e->type].specialState == 1) {
+        if (playerWork[e->type].specialState == 1) {
             return FALSE;
         }
         return e->action != 6;

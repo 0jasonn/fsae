@@ -36,7 +36,7 @@ void em03_tame(Entity *e) {
     InitAnimationForceUpdate(e, 2);
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         u8 playerIndex = *Knife_Single_SinglePlay_GetInstance();
-        V(e)->target = data_0212ceb0[playerIndex].entity;
+        V(e)->target = playerWork[playerIndex].entity;
     }
     e->direction = func_02084fd0(e, V(e)->target);
     func_02083c84(e);

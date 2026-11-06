@@ -77,25 +77,25 @@ void Pause(void) {
 // pause_init -> pause_init (guess)
 void pause_init(void) {
     u8 i;
-    if (data_0212c5ac.blendEnabled != 0 || pauseState[5] != 0) {
+    if (blendRequest.blendEnabled != 0 || pauseState[5] != 0) {
         return;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        for (i = 0; i < data_0212c7c8.playerCount; i++) {
-            if ((data_0212c58c[i] & 0x8) != 0 && (data_0212c584[i] & 0x1000) == 0
-                && (s8)data_0212ceb0[i].entity->iframes >= 0) {
+        for (i = 0; i < gameState.playerCount; i++) {
+            if ((playerKeys[i] & 0x8) != 0 && (playerKeysPrev[i] & 0x1000) == 0
+                && (s8)playerWork[i].entity->iframes >= 0) {
                 pause_req(i);
             }
         }
         return;
     }
-    if ((data_0212c58c[0] & 0x8) == 0) {
+    if ((playerKeys[0] & 0x8) == 0) {
         return;
     }
-    if ((data_0212c584[0] & 0x1000) != 0 && (data_0212c584[1] & 0x1000) != 0) {
+    if ((playerKeysPrev[0] & 0x1000) != 0 && (playerKeysPrev[1] & 0x1000) != 0) {
         return;
     }
-    if ((s8)data_0212ceb0[0].entity->iframes < 0 && (s8)data_0212ceb0[1].entity->iframes < 0) {
+    if ((s8)playerWork[0].entity->iframes < 0 && (s8)playerWork[1].entity->iframes < 0) {
         return;
     }
     pause_req(0);

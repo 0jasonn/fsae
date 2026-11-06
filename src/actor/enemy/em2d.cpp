@@ -31,14 +31,14 @@ void em2c_type0_init_034878(Entity *e) {
             e->timer = 0x78;
             e->subtimer = 0x96;
             e->speed = 0x100;
-            e->health = em2d_healthType0[data_0212c7c8.level - 1];
+            e->health = em2d_healthType0[gameState.level - 1];
             V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             break;
         case 1: {
             e->action = 7;
             e->timer = 0x3c;
-            e->health = em2d_healthType1[data_0212c7c8.level - 1];
+            e->health = em2d_healthType1[gameState.level - 1];
             V(e)->orbitRadius = 0x10;
             InitAnimationForceUpdate(e, 3);
             Entity *fx = GetSetWork(0xf, 2, 0x20);
@@ -51,7 +51,7 @@ void em2c_type0_init_034878(Entity *e) {
             e->action = 0xe;
             e->timer = 0x96;
             e->speed = 0x100;
-            e->health = em2d_healthType2[data_0212c7c8.level - 1];
+            e->health = em2d_healthType2[gameState.level - 1];
             V(e)->orbitRadius = 0x10;
             e->direction = Random() & 0x1f;
             InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
@@ -73,7 +73,7 @@ void em2c_type0_init_034878(Entity *e) {
 }
 
 void type0_1stDemo(Entity *e) {
-    if (data_0212c7c8.periodicFlag & 0x80) {
+    if (gameState.periodicFlag & 0x80) {
         return;
     }
     if (e->timer != 0) {
@@ -98,7 +98,7 @@ void em2c_type0_1stDemoWait_034b44(Entity *e) {
     }
     e->action = 3;
     e->timer = 0x5a;
-    e->speed = em2d_demoSpeeds[data_0212c7c8.level - 1];
+    e->speed = em2d_demoSpeeds[gameState.level - 1];
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
 
@@ -177,14 +177,14 @@ void type0_2ndGetdir(Entity *e) {
     }
     e->action = 9;
     e->timer = (Random() & 0x3f) + 0xb4;
-    if (data_0212c7c8.playerCount != 2) {
+    if (gameState.playerCount != 2) {
         e->speed = 0x120;
     } else {
         e->speed = 0x100;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         if (em2d_retargetState.retargetTimer == 0) {
-            V(e)->aimTarget = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+            V(e)->aimTarget = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         if (V(e)->aimTarget == NULL) {
             V(e)->aimTarget = EmGetAimPl();
@@ -208,7 +208,7 @@ void em2c_type0_2ndMove_034ea0(Entity *e) {
     if (e->contactFlags & 0x80) {
         u8 index = e->contactedEntity->type;
         if (index < 4) {
-            V(e)->aimTarget = data_0212ceb0[index].entity;
+            V(e)->aimTarget = playerWork[index].entity;
         }
     }
     if (--e->timer != 0) {
@@ -295,7 +295,7 @@ void type0_3rdDemo(Entity *e) {
         return;
     }
     e->action = 0xf;
-    e->speed = em2d_thirdDemoSpeeds[data_0212c7c8.level - 1];
+    e->speed = em2d_thirdDemoSpeeds[gameState.level - 1];
     V(e)->phaseFlags = 1;
     VE(e->parent)->eventFlags |= (u8)flagBits[V(e)->eventBitIndex];
 }
@@ -389,7 +389,7 @@ void type0_3rdAimInit(Entity *e) {
     e->speed = 0x120;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         if (em2d_retargetState.retargetTimer == 0) {
-            V(e)->aimTarget = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+            V(e)->aimTarget = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
         if (V(e)->aimTarget == NULL) {
             V(e)->aimTarget = EmGetAimPl();
@@ -413,13 +413,13 @@ void type0_3rdAimMove(Entity *e) {
     if ((e->contactFlags & 0x80) && e->contactedEntity->type < 4) {
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
             if (em2d_retargetState.retargetTimer == 0) {
-                V(e)->aimTarget = data_0212ceb0[*Knife_Single_SinglePlay_GetInstance()].entity;
+                V(e)->aimTarget = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
             }
             if (V(e)->aimTarget == NULL) {
-                V(e)->aimTarget = data_0212ceb0[e->contactedEntity->type].entity;
+                V(e)->aimTarget = playerWork[e->contactedEntity->type].entity;
             }
         } else {
-            V(e)->aimTarget = data_0212ceb0[e->contactedEntity->type].entity;
+            V(e)->aimTarget = playerWork[e->contactedEntity->type].entity;
         }
     }
     if (--e->timer != 0) {
@@ -522,7 +522,7 @@ void type1_attack(Entity *e) {
     if (e->frame & 1) {
         Entity *proj = GetTamaWork(0xd);
         if (proj != NULL) {
-            proj->direction = GetFacingDirection(e, data_0212ceb0[Random() % data_0212c7c8.playerCount].entity);
+            proj->direction = GetFacingDirection(e, playerWork[Random() % gameState.playerCount].entity);
             ObjPosCopy(e, proj);
             e->frame = 0;
             EnqueueSFX(0xa5);

@@ -38,7 +38,7 @@ void enrinMove(Entity *e) {
         }
         e->spriteSettings.b0 ^= 1;
     } else {
-        data_0212ceb0[e->child->type].statusFlags &= 0xbfff;
+        playerWork[e->child->type].statusFlags &= 0xbfff;
         PutObjWork(e);
     }
 }

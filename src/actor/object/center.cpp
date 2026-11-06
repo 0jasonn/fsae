@@ -13,6 +13,6 @@ void center(Entity *e) {
             e->y.HALF.HI--;
         }
     } else {
-        e->y.HALF.HI = data_0212ceb0[0].entity->y.HALF.HI;
+        e->y.HALF.HI = playerWork[0].entity->y.HALF.HI;
     }
 }

@@ -11,6 +11,6 @@ extern s32 data_0212c538;
 // Joypad keys per player slot: four 16-entry tables, 0x20 bytes apart (frame_ack.cpp).
 extern u16 data_02134cb0[];
 // Keys of the communication slots, and the new keys of the slots (cleared when the mode is below 8).
-extern u16 data_0212c58c[];
+extern u16 playerKeys[];
 
 #endif

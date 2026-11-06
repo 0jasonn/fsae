@@ -21,7 +21,7 @@ void goto_nextdemo(void) {
 extern u8 data_0212c4dc;     // demo sub-step
 extern u8 data_0212c500;     // demo step
 extern u8 messageRequest;
-extern u8 data_0212c5ac;     // non-zero while the screen is blanked
+extern u8 blendRequest;     // non-zero while the screen is blanked
 extern u16 data_021355a0;
 
 // yousei_exit (0x020825bc)
@@ -48,7 +48,7 @@ void yousei_exit(void) {
 
 // yousei_end (0x0208265c)
 void yousei_end(void) {
-    if (data_0212c5ac != 0) {
+    if (blendRequest != 0) {
         return;
     }
     DispReset();

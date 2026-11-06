@@ -12,7 +12,7 @@ void bunshin_set(void) {
     data_02134924 |= 8;
     i = 0;
     do {
-        ObjAnimMoveSet(data_0212ceb0[i].entity, data_02104a30[i], 0x78);
+        ObjAnimMoveSet(playerWork[i].entity, data_02104a30[i], 0x78);
         i++;
     } while (i < 4);
     SoundReq(0x205);
