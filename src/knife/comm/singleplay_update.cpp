@@ -5,7 +5,7 @@
 #include "knife/comm/single_play.h"
 #include "knife/comm/single_play_api.h"
 #include "knife/comm/singleplay_work_api.h"
-#include "knife/comm/singleplay_d.h"
+#include "knife/comm/singleplay_2.h"
 
 // Knife::Single::SinglePlay::UpdatePause(PL_WORK_*, PL_WORK_*) (0x02093ef4): builds the work pair on the stack, sets the
 // palette bits of the two players, then waits for the partner or ends a controller change, and clears the pause state.

@@ -333,7 +333,7 @@ src/engine/vram_lcdc.cpp:
     complete
     .text       start:0x0201500c end:0x02015030
 
-src/engine/vram_group_a.cpp:
+src/engine/vram_group.cpp:
     complete
     .text       start:0x02015084 end:0x02015120
 
@@ -3650,7 +3650,7 @@ src/knife/comm/wm_child.cpp:
     complete
     .text       start:0x02093690 end:0x020937c8
 
-src/knife/comm/wm_connect_b.cpp:
+src/knife/comm/wm_connect_2.cpp:
     complete
     .text       start:0x020938e4 end:0x02093930
 
@@ -3730,7 +3730,7 @@ src/knife/comm/knife_comm_wireless_nop.cpp:
     complete
     .text       start:0x0209a65c end:0x0209a660
 
-src/knife/comm/knife_comm_a.cpp:
+src/knife/comm/knife_comm_3.cpp:
     complete
     .text       start:0x0209a660 end:0x0209a6cc
 
@@ -3845,13 +3845,9 @@ src/knife/subtask/subtask_push_start.cpp:
     complete
     .text       start:0x0209c88c end:0x0209ca38
 
-src/knife/subtask/subtask_draw_a.cpp:
-    complete
-    .text       start:0x0209ca38 end:0x0209cd18
-
 src/knife/subtask/subtask_draw.cpp:
     complete
-    .text       start:0x0209cd18 end:0x0209ce48
+    .text       start:0x0209ca38 end:0x0209ce48
 
 src/knife/subtask/subtask_draw_2.cpp:
     complete
@@ -3929,11 +3925,11 @@ src/knife/message/knife_message_6.cpp:
     complete
     .text       start:0x020a08f0 end:0x020a0918
 
-src/knife/message/icon_canvas_e.cpp:
+src/knife/message/icon_canvas.cpp:
     complete
     .text       start:0x020a0a18 end:0x020a0b64
 
-src/knife/message/msgtextrender_e_2.cpp:
+src/knife/message/msgtextrender.cpp:
     complete
     .text       start:0x020a0b64 end:0x020a0dac
 
@@ -3945,7 +3941,7 @@ src/knife/message/knife_message_10.cpp:
     complete
     .text       start:0x020a0ed4 end:0x020a0edc
 
-src/knife/message/textrender_setup_e.cpp:
+src/knife/message/textrender_setup.cpp:
     complete
     .text       start:0x020a0f24 end:0x020a0fec
 
@@ -3965,7 +3961,7 @@ src/knife/message/textrender_2.cpp:
     complete
     .text       start:0x020a1340 end:0x020a1394
 
-src/knife/message/textrender_pict_e.cpp:
+src/knife/message/textrender_pict.cpp:
     complete
     .text       start:0x020a1394 end:0x020a15e0
 
@@ -4005,7 +4001,7 @@ src/ui/selectiondialog.cpp:
     complete
     .text       start:0x020a1a1c end:0x020a1a88
 
-src/knife/message/seldialog_e_2.cpp:
+src/knife/message/seldialog_2.cpp:
     complete
     .text       start:0x020a1a88 end:0x020a1c60
 
@@ -4013,7 +4009,7 @@ src/ui/selectiondialog_2.cpp:
     complete
     .text       start:0x020a1d08 end:0x020a1d78
 
-src/knife/message/seldialog_e.cpp:
+src/knife/message/seldialog.cpp:
     complete
     .text       start:0x020a1fbc end:0x020a20e0
 
@@ -4083,13 +4079,9 @@ src/knife/message/pictogram_ctor.cpp:
 
 src/knife/message/rendertarget_4.cpp:
     complete
-    .text       start:0x020a4e8c end:0x020a4ee0
+    .text       start:0x020a4e8c end:0x020a4f30
 
-src/knife/message/rendertarget_e.cpp:
-    complete
-    .text       start:0x020a4ee0 end:0x020a4f30
-
-src/knife/message/textrender_setters_e.cpp:
+src/knife/message/textrender_setters.cpp:
     complete
     .text       start:0x020a4f30 end:0x020a4f44
 
@@ -4097,7 +4089,7 @@ src/knife/message/textrender_10.cpp:
     complete
     .text       start:0x020a4f44 end:0x020a510c
 
-src/knife/message/textrender_setters_e_2.cpp:
+src/knife/message/textrender_setters_2.cpp:
     complete
     .text       start:0x020a510c end:0x020a511c
 
@@ -4105,7 +4097,7 @@ src/knife/message/textrender_11.cpp:
     complete
     .text       start:0x020a511c end:0x020a5138
 
-src/knife/message/textrender_e.cpp:
+src/knife/message/textrender_5.cpp:
     complete
     .text       start:0x020a5138 end:0x020a5340
 
@@ -4125,7 +4117,7 @@ src/knife/message/textrender_7.cpp:
     complete
     .text       start:0x020a58ac end:0x020a58b4
 
-src/knife/message/textrender_clear_e.cpp:
+src/knife/message/textrender_clear.cpp:
     complete
     .text       start:0x020a58b4 end:0x020a58d0
 
@@ -4145,7 +4137,7 @@ src/knife/message/textrender_8.cpp:
     complete
     .text       start:0x020a5a44 end:0x020a5a58
 
-src/knife/message/textrender_e2.cpp:
+src/knife/message/textrender_6.cpp:
     complete
     .text       start:0x020a5a58 end:0x020a5d38
 
@@ -4153,7 +4145,7 @@ src/knife/message/textrender_9.cpp:
     complete
     .text       start:0x020a5d38 end:0x020a5d44
 
-src/knife/message/textrender_e2_2.cpp:
+src/knife/message/textrender_13.cpp:
     complete
     .text       start:0x020a5d44 end:0x020a5e28
 
@@ -4181,39 +4173,39 @@ src/knife/comm/datalink_2.cpp:
     complete
     .text       start:0x020a6398 end:0x020a6480
 
-src/game/radar_e.cpp:
+src/game/radar.cpp:
     complete
     .text       start:0x020a650c end:0x020a6a50
 
-src/game/radar_e_4.cpp:
+src/game/radar_2.cpp:
     complete
     .text       start:0x020a6cc0 end:0x020a6d68
 
-src/knife/subtask/subtask_radar_e.cpp:
+src/knife/subtask/subtask_radar.cpp:
     complete
     .text       start:0x020a6f98 end:0x020a6ff0
 
-src/game/fs_e.cpp:
+src/game/fs.cpp:
     complete
     .text       start:0x020a723c end:0x020a7370
 
-src/game/fs_e_4.cpp:
+src/game/fs_4.cpp:
     complete
     .text       start:0x020a7370 end:0x020a73ec
 
-src/game/fs_e_2.cpp:
+src/game/fs_2.cpp:
     complete
     .text       start:0x020a73ec end:0x020a7410
 
-src/game/fs_e_3.cpp:
+src/game/fs_3.cpp:
     complete
     .text       start:0x020a7480 end:0x020a74fc
 
-src/ui/fileselui_view_e.cpp:
+src/ui/fileselui_view.cpp:
     complete
     .text       start:0x020a761c end:0x020a76d0
 
-src/ui/fileselui_status_e.cpp:
+src/ui/fileselui_status.cpp:
     complete
     .text       start:0x020a76d0 end:0x020a777c
 
@@ -4233,31 +4225,27 @@ src/ui/fileselui_5.cpp:
     complete
     .text       start:0x020a8178 end:0x020a8198
 
-src/ui/fileselui_e.cpp:
+src/ui/fileselui_7.cpp:
     complete
     .text       start:0x020a88a8 end:0x020a8904
 
-src/ui/fileselui_e_2.cpp:
+src/ui/fileselui_8.cpp:
     complete
     .text       start:0x020a8d78 end:0x020a8dbc
 
-src/ui/fileselui_e_3.cpp:
+src/ui/fileselui_9.cpp:
     complete
     .text       start:0x020a8f7c end:0x020a8f80
 
-src/ui/modeselui_e.cpp:
-    complete
-    .text       start:0x020a8ff0 end:0x020a9054
-
 src/ui/modeselui.cpp:
     complete
-    .text       start:0x020a9054 end:0x020a9064
+    .text       start:0x020a8ff0 end:0x020a9064
 
-src/ui/modeselui_e_2.cpp:
+src/ui/modeselui_3.cpp:
     complete
     .text       start:0x020a9494 end:0x020a94b4
 
-src/ui/modeselui_e_3.cpp:
+src/ui/modeselui_4.cpp:
     complete
     .text       start:0x020aaaf8 end:0x020aab80
 
@@ -4265,15 +4253,15 @@ src/ui/playstyleselui_init.cpp:
     complete
     .text       start:0x020aac30 end:0x020aacfc
 
-src/ui/playstyleselui_e.cpp:
+src/ui/playstyleselui.cpp:
     complete
     .text       start:0x020aacfc end:0x020aad08
 
-src/ui/playstyleselui_e_2.cpp:
+src/ui/playstyleselui_2.cpp:
     complete
     .text       start:0x020ab520 end:0x020ab524
 
-src/ui/groupcreateui_e.cpp:
+src/ui/groupcreateui.cpp:
     complete
     .text       start:0x020ab6cc end:0x020ab6d0
 
@@ -4281,7 +4269,7 @@ src/knife/subtask/subtask_dialog_wait.cpp:
     complete
     .text       start:0x020abf5c end:0x020ac014
 
-src/ui/widget/baseduiview_e.cpp:
+src/ui/widget/baseduiview_2.cpp:
     complete
     .text       start:0x020ac014 end:0x020ac028
 
@@ -4367,11 +4355,7 @@ src/ui/staffroll_2.cpp:
 
 src/knife/comm/knifecomm.cpp:
     complete
-    .text       start:0x020ae318 end:0x020ae3b0
-
-src/knife/comm/knifecomm_f.cpp:
-    complete
-    .text       start:0x020ae3b0 end:0x020ae4a4
+    .text       start:0x020ae318 end:0x020ae4a4
 
 src/knife/comm/knifecomm_2.cpp:
     complete
@@ -4461,19 +4445,15 @@ src/ui/lobby_6.cpp:
     complete
     .text       start:0x020b1920 end:0x020b19d8
 
-src/ui/lobby_e.cpp:
-    complete
-    .text       start:0x020b2190 end:0x020b235c
-
 src/ui/lobby.cpp:
     complete
-    .text       start:0x020b235c end:0x020b23fc
+    .text       start:0x020b2190 end:0x020b23fc
 
 src/ui/lobby_color.cpp:
     complete
     .text       start:0x020b2560 end:0x020b25c0
 
-src/ui/lobby_e_2.cpp:
+src/ui/lobby_7.cpp:
     complete
     .text       start:0x020b26d0 end:0x020b2898
 
@@ -4485,11 +4465,11 @@ src/game/exchange_savedata.cpp:
     complete
     .text       start:0x020b2a5c end:0x020b2b54
 
-src/ui/lobby_e_4.cpp:
+src/ui/lobby_12.cpp:
     complete
     .text       start:0x020b3b28 end:0x020b3d70
 
-src/ui/lobby_e_3.cpp:
+src/ui/lobby_9.cpp:
     complete
     .text       start:0x020b3d70 end:0x020b3ea0
 
@@ -4649,7 +4629,7 @@ src/engine/os_owner.cpp:
     complete
     .text       start:0x020b7b00 end:0x020b7b1c
 
-src/engine/blzload_e.cpp:
+src/engine/blzload.cpp:
     complete
     .text       start:0x020b7b1c end:0x020b7c50
 

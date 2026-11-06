@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wirelessmgr_d.h"
+#include "knife/comm/wirelessmgr.h"
 
 // Knife::Comm::WirelessManager::getFrameFlag (0x020921b0). getAID (0x020921bc) is parked in scratch/agentD/nonmatching.
 

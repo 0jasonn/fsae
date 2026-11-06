@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wirelessmgr_d.h"
+#include "knife/comm/wirelessmgr.h"
 
 // Knife::Comm::WirelessManager::getMaxParents-style constant (0x02091d38), in the query range 0x02091cd8 to 0x02091d84.
 

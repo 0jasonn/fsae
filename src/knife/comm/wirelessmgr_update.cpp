@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wirelessmgr_d.h"
+#include "knife/comm/wirelessmgr.h"
 #include "knife/comm/wirelessmgr_update_api.h"
 
 // Knife::Comm::WirelessManager::update() (0x02090c88): runs with interrupts disabled. Dispatches on the state index

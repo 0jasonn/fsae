@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wirelessmgr_d.h"
+#include "knife/comm/wirelessmgr.h"
 
 // Named after the state it leaves (state 4 to state 5): counts the timer down and starts the scan (0x02092aac).
 void Knife_Comm_WirelessManager_update_waitScan(void *self) {

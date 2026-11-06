@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/comm/wirelessmgr_d.h"
+#include "knife/comm/wirelessmgr.h"
 
 // WirelessManager::requestEndScan (0x02091464, no original name): a leaf function (no interrupt object; REG_IME is
 // saved and restored directly). While scanning (state 5) sets the end-of-scan flag at 0xcb9 and returns TRUE.
