@@ -193,8 +193,15 @@ def main():
     best_text = text
     for r in range(args.r):
         jobs = [(best_text, args.function, addr, args.n, args.seed * 1000 + r * 100 + k, best) for k in range(args.j)]
-        with mp.Pool(args.j, initializer=_init, initargs=(REF_SIZE,)) as pool:
-            results = pool.map(worker, jobs)
+        results = None
+        if args.j > 1:
+            try:
+                with mp.Pool(args.j, initializer=_init, initargs=(REF_SIZE,)) as pool:
+                    results = pool.map(worker, jobs)
+            except (PermissionError, OSError):  # some sandboxes block child processes: run the jobs one by one
+                print("parallel workers are not allowed here; running in one process", flush=True)
+        if results is None:
+            results = [worker(job) for job in jobs]
         s, t = min(results, key=lambda x: x[0])
         if s < best:
             best, best_text = s, t
