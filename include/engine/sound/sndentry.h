@@ -25,7 +25,7 @@ extern "C" void SND_StopTimer(u32 timer, u32 unk1, u32 mask, u32 unk3);
 extern "C" void PM_PrependPostExitCallback(void *callback);
 extern "C" void PM_AppendPostExitCallback(void *callback);
 extern "C" void SndChannel_ClearWord4(u32 index);
-extern "C" void func_020c2004(void *list, void *entry);
+extern "C" void LinkList_Remove(void *list, void *entry);
 extern "C" s32 SND_CalcChannelVolume(s32 value);
 extern "C" void SND_SetChannelVolume(u32 mask, u32 volumeLow, s32 volumeHigh);
 }

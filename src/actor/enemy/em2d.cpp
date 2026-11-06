@@ -195,7 +195,7 @@ void type0_2ndGetdir(Entity *e) {
     if (V(e)->aimTarget == NULL) {
         return;
     }
-    e->direction = func_02084fd0(e, V(e)->aimTarget);
+    e->direction = GetDirectionToEntity(e, V(e)->aimTarget);
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
@@ -213,7 +213,7 @@ void em2c_type0_2ndMove_034ea0(Entity *e) {
     }
     if (--e->timer != 0) {
         if ((e->timer & 3) == 0) {
-            func_02086200(e, func_02084fd0(e, V(e)->aimTarget));
+            func_02086200(e, GetDirectionToEntity(e, V(e)->aimTarget));
             int anim = ((e->direction + 2) >> 2) & 7;
             if (anim != e->animationState) {
                 InitAnimationForceUpdate(e, (e->animationState = anim) + 0x14);
@@ -397,7 +397,7 @@ void type0_3rdAimInit(Entity *e) {
     } else {
         V(e)->aimTarget = EmGetAimPl();
     }
-    e->direction = func_02084fd0(e, V(e)->aimTarget);
+    e->direction = GetDirectionToEntity(e, V(e)->aimTarget);
     InitAnimationForceUpdate(e, (e->animationState = ((e->direction + 2) >> 2) & 7) + 0x14);
 }
 
@@ -424,7 +424,7 @@ void type0_3rdAimMove(Entity *e) {
     }
     if (--e->timer != 0) {
         if ((e->timer & 3) == 0) {
-            func_02086200(e, func_02084fd0(e, V(e)->aimTarget));
+            func_02086200(e, GetDirectionToEntity(e, V(e)->aimTarget));
             int anim = ((e->direction + 2) >> 2) & 7;
             if (anim != e->animationState) {
                 InitAnimationForceUpdate(e, (e->animationState = anim) + 0x14);

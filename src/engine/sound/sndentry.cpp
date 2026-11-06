@@ -76,7 +76,7 @@ void SndEntry_Stop(SndEntry *entry) {
 // flag.
 void SndEntry_Release(SndEntry *entry) {
     SndChannel_ClearWord4(entry->channelIndex);
-    func_020c2004(data_02184788, entry);
+    LinkList_Remove(data_02184788, entry);
     entry->flags &= ~1;
 }
 

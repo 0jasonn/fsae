@@ -38,7 +38,7 @@ void em03_tame(Entity *e) {
         u8 playerIndex = *Knife_Single_SinglePlay_GetInstance();
         V(e)->target = playerWork[playerIndex].entity;
     }
-    e->direction = func_02084fd0(e, V(e)->target);
+    e->direction = GetDirectionToEntity(e, V(e)->target);
     func_02083c84(e);
     e->subAction = 0;
 }

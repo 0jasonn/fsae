@@ -18,7 +18,7 @@ u8 *SndRangeTree_Find(SndList *list, u32 value) {
     u8 *node;
     u8 *found;
 
-    node = func_020c2064(list, 0);
+    node = LinkList_Next(list, 0);
     if (node != 0) {
         do {
             if (*(u32 *)(node + 0x18) <= value && value < *(u32 *)(node + 0x1c)) {
@@ -28,7 +28,7 @@ u8 *SndRangeTree_Find(SndList *list, u32 value) {
                 }
                 return found;
             }
-            node = func_020c2064(list, node);
+            node = LinkList_Next(list, node);
         } while (node != 0);
     }
     return 0;

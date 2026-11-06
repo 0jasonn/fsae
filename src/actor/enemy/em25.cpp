@@ -7,7 +7,7 @@ void em25_aimMove(Entity *e) {
     if (V(e)->aimTarget->health == 0) {
         e->timer = 1;
     }
-    u8 aimDir = ((func_02084fd0(e, V(e)->aimTarget) + 4) & 0x18) >> 3;
+    u8 aimDir = ((GetDirectionToEntity(e, V(e)->aimTarget) + 4) & 0x18) >> 3;
     if ((e->animationState & 3) != aimDir) {
         e->timer = 1;
     }

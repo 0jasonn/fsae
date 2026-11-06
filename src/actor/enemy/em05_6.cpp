@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 
-// em05_move1 (0x02038f3c): em05 walks in one direction for a while, then turns to a target found by func_02084f98
+// em05_move1 (0x02038f3c): em05 walks in one direction for a while, then turns to a target found by FindTargetInRange
 void em05_move1(Entity *e) {
     Entity *target;
     u8 facing;
@@ -10,7 +10,7 @@ void em05_move1(Entity *e) {
     if (e->subtimer != 0) {
         e->subtimer--;
     } else {
-        target = func_02084f98(e, 0x40, 0x30);
+        target = FindTargetInRange(e, 0x40, 0x30);
     }
     if (target != 0) {
         e->action = 4;

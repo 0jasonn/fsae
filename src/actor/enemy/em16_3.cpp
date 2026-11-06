@@ -97,7 +97,7 @@ BOOL frontCheck(Entity *e) {
 
     if (V(e)->waitTimer == 0) {
         if ((u32)(e->direction | 0x80) == func_02084ac8(e, 0xc)) {
-            child = func_02084f98(e, 0x38, 0x38);
+            child = FindTargetInRange(e, 0x38, 0x38);
             if (child != NULL) {
                 V(e)->target = child;
                 e->timer = 0x1e;

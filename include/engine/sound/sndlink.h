@@ -11,8 +11,8 @@ typedef struct SndLink {
     u8 *next;
 } SndLink;
 
-extern "C" void func_020c2004(void *list, void *node);
-extern "C" u8 *func_020c2064(SndList *list, u8 *node);
+extern "C" void LinkList_Remove(void *list, void *node);
+extern "C" u8 *LinkList_Next(SndList *list, u8 *node);
 extern "C" u8 *SndList_GetPrev(SndList *list, u8 *node);
 
 #endif

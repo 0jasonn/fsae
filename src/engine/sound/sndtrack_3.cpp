@@ -32,12 +32,12 @@ void SndList_MoveMatching(SndList *list, s32 key) {
     u8 *next;
 
     irq = OS_DisableInterrupts();
-    node = func_020c2064(list, 0);
+    node = LinkList_Next(list, 0);
     if (node != 0) {
         do {
-            next = func_020c2064(list, node);
+            next = LinkList_Next(list, node);
             if (*(s32 *)(node + 8) == key) {
-                func_020c2004(list, node);
+                LinkList_Remove(list, node);
                 SndPending_AppendLocked(node);
             }
             node = next;

@@ -39,7 +39,7 @@ void TelopRequest(u16 telopId) {
     if (telopRequest.requestId & 0x8000) {
         return;
     }
-    func_02029a50(&telopRequest, 0x18);
+    MemClearFast(&telopRequest, 0x18);
     telopRequest.active = 1;
     telopRequest.requestId = telopId;
     telopRequest.flags = (telopRequest.flags & ~0xf) | 3;

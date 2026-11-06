@@ -5,7 +5,7 @@
 
 typedef struct Vars_0204001c {
     /* 00 */ u8 unk_00[0x64];
-    /* 64 */ Entity *aimTarget; // aim object, allocated by func_02084f98 (0x58 bytes)
+    /* 64 */ Entity *aimTarget; // aim object, allocated by FindTargetInRange (0x58 bytes)
     /* 68 */ u8 unk_68[0x14];
     /* 7c */ u16 aimX;
     /* 7e */ u16 aimY;

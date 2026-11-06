@@ -30,9 +30,9 @@ void TakaraOpen(Entity *e, u16 id, u16 key) {
     }
     SoundReq(0x21);
     data_0213491c = data_0213491c | flagBits[index];
-    func_02083ca8(id, key);
+    GetCellKind(id, key);
     data_02116800[entry->unk_02 & 0x1f](entry, e, id);
-    if (func_02083ca8(id, key) != 0x107) {
+    if (GetCellKind(id, key) != 0x107) {
         return;
     }
     RewCell(0x108, id, key);

@@ -2,10 +2,10 @@
 #include "global.h"
 #include "engine/sound/sndlink.h"
 
-// func_020c2004: unlinks the node from the list (the first, last and neighbour links and the count) and clears its own
+// LinkList_Remove: unlinks the node from the list (the first, last and neighbour links and the count) and clears its own
 // link words. Kept under its plain name because the sound entry code calls it by that name.
-extern "C" void func_020c2004(void *list, void *node);
-void func_020c2004(void *list, void *node) {
+extern "C" void LinkList_Remove(void *list, void *node);
+void LinkList_Remove(void *list, void *node) {
     SndList *owner;
     SndLink *link;
     u8 *prev;
@@ -30,8 +30,8 @@ void func_020c2004(void *list, void *node) {
     owner->count = owner->count - 1;
 }
 
-// func_020c2064: the node after node, or the first node when node is null.
-u8 *func_020c2064(SndList *list, u8 *node) {
+// LinkList_Next: the node after node, or the first node when node is null.
+u8 *LinkList_Next(SndList *list, u8 *node) {
     if (node == 0) {
         return list->first;
     }

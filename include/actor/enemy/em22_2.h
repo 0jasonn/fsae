@@ -15,7 +15,7 @@ extern const u8 em22_moveTimerTable[];  // em22_moveTimerTable, move time picked
 // Actor-specific fields of em22 (0x64 onwards, see Entity for the rest).
 typedef struct Vars_em22 {
     u8 unk_00[0x64];
-    Entity *aimTarget;  // 0x64: player the actor aims at, from func_02084f98
+    Entity *aimTarget;  // 0x64: player the actor aims at, from FindTargetInRange
     u8 unk_68[0x14];
     u8 damageStage;     // 0x7c: number of hits taken (0..3), moves to the next pose
     u8 damageTimer;     // 0x7d: frames left in the current damage stage

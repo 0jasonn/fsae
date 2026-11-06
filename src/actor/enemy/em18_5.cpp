@@ -66,7 +66,7 @@ void em18_type0_init(Entity *e) {
 // Rock-on state of type 0: keeps a child (from the free slots of the players when none is set) and turns the actor
 // to face it, then moves on to the state of em18_type0_move after the timer.
 void type0_rockon(Entity *e) {
-    e->child = func_02084f98(e, 0x50, 0x40);
+    e->child = FindTargetInRange(e, 0x50, 0x40);
     e->timer--;
     if (e->timer != 0) {
         if (e->child == NULL) {
@@ -91,7 +91,7 @@ void em18_type0_move(Entity *e) {
             e->timer--;
             if (e->timer == 0) {
                 e->timer = 0xf;
-                e->direction = func_02084fd0(e, e->child);
+                e->direction = GetDirectionToEntity(e, e->child);
             }
             func_020847f8(e);
         } else {

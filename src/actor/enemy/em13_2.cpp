@@ -16,7 +16,7 @@ void em13_getnextpos(Entity *e) {
 void em13_search(Entity *e) {
     e->timer--;
     if (e->timer != 0) {
-        Entity *child = func_02084f98(e, 0x60, 0x40);
+        Entity *child = FindTargetInRange(e, 0x60, 0x40);
         if (child == NULL) {
             return;
         }

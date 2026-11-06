@@ -46,7 +46,7 @@ void CockpitInit(void) {
     ((Knife::Hud::HudManager *)(app + 0x1f8))->initialize();
     ((Knife::Hud::HudManager *)(app + 0x1f8))->setStateNone();
     ((Knife::Hud::HudManager *)(app + 0x1f8))->setActivePlayer(0xff);
-    func_02029a50(data_0212c4a8, 0x10);
+    MemClearFast(data_0212c4a8, 0x10);
     data_0212c4a0.sizeHi = 0xd4;
     data_0212c4a0.sizeLo = 0xa;
     data_0212c4a0.mode = 1;

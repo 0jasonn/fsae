@@ -43,7 +43,7 @@ void em24_wait(Entity *e) {
 }
 
 void em24_move(Entity *e) {
-    V(e)->aimTarget = func_02084f98(e, 0x34, 0x34);
+    V(e)->aimTarget = FindTargetInRange(e, 0x34, 0x34);
     if (V(e)->aimTarget != NULL) {
         aimSet(e);
         return;

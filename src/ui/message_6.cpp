@@ -13,8 +13,8 @@ int tlpInit(void) {
     u8 initMode = 2;
     u32 flags;
 
-    func_02029a50(telopWindowSlots, 0x10);
-    func_02029a50(telop, 0xe8);
+    MemClearFast(telopWindowSlots, 0x10);
+    MemClearFast(telop, 0xe8);
     MIi_CpuCopy32(&telopRequest, data_0217d490, 0x18);
     telop->layoutFlags = (telop->layoutFlags & ~0xf) | 1;
     telop->msgId &= idMask;

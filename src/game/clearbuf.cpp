@@ -9,5 +9,5 @@ extern u8 data_0213a7a0[]; // work buffer cleared by ClearWorkBuffer
 
 // Clears the 0x2800 bytes of the work buffer (tail call of the clear helper).
 void ClearWorkBuffer(void) {
-    func_02029a50(data_0213a7a0, 0x2800);
+    MemClearFast(data_0213a7a0, 0x2800);
 }

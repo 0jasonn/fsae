@@ -20,18 +20,18 @@ extern u8 data_0217d350[];
 
 
 void MessageInitialize(void) {
-    func_02029a50(messageRequest, 0x18);
-    func_02029a50(messageBox, 0xe8);
-    func_02029a50(data_0216efe0, 0x10);
-    func_02029a50(data_0216eff0, 0x10);
-    func_02029a50(data_0217d350, 4);
+    MemClearFast(messageRequest, 0x18);
+    MemClearFast(messageBox, 0xe8);
+    MemClearFast(data_0216efe0, 0x10);
+    MemClearFast(data_0216eff0, 0x10);
+    MemClearFast(data_0217d350, 4);
     data_0216efbc[0] = 0;
 }
 
 void TelopInitialize(void) {
-    func_02029a50(telopRequest, 0x18);
-    func_02029a50(telopBox, 0xe8);
-    func_02029a50(telopWindowSlots, 0x10);
-    func_02029a50(data_0216f010, 0x10);
+    MemClearFast(telopRequest, 0x18);
+    MemClearFast(telopBox, 0xe8);
+    MemClearFast(telopWindowSlots, 0x10);
+    MemClearFast(data_0216f010, 0x10);
     data_0216efbc[1] = 0;
 }

@@ -5,7 +5,7 @@
 void em24_fugofugo(Entity *e) {
     UpdateAnimationSingleFrame(e);
     if (V(e)->aimTarget == NULL) {
-        V(e)->aimTarget = func_02084f98(e, 0x58, 0x58);
+        V(e)->aimTarget = FindTargetInRange(e, 0x58, 0x58);
     }
     if ((e->frame & 0x20) && V(e)->aimTarget != NULL) {
         aimSet(e);
@@ -39,7 +39,7 @@ void em24_aimMove(Entity *e) {
         return;
     }
     e->child->attackDamage = 4;
-    e->direction = func_02084fd0(e, V(e)->aimTarget);
+    e->direction = GetDirectionToEntity(e, V(e)->aimTarget);
     charset(e, 8);
     func_020847a0(e);
     UpdateAnimationSingleFrame(e);

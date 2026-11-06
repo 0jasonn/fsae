@@ -81,7 +81,7 @@ void em23_wait(Entity *e) {
         e->direction = GetFacingDirection(e, target);
         return;
     }
-    target = func_02084f98(e, 0x78, 0x50);
+    target = FindTargetInRange(e, 0x78, 0x50);
     VARS(Vars_em23_aim, e)->aimTarget = target;
     if (target == NULL) {
         return;
@@ -92,7 +92,7 @@ void em23_wait(Entity *e) {
 
 void em23_move(Entity *e) {
     if ((frameCounter & 7) == 0) {
-        func_02086200(e, func_02084fd0(e, VARS(Vars_em23_aim, e)->aimTarget));
+        func_02086200(e, GetDirectionToEntity(e, VARS(Vars_em23_aim, e)->aimTarget));
     }
     func_020847f8(e);
 }

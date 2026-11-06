@@ -14,7 +14,7 @@ void set45_move(Entity *e) {
     if (e->timer != 0) {
         return;
     }
-    cellResult = func_02083ca8(v->cell, e->layer);
+    cellResult = GetCellKind(v->cell, e->layer);
     if (cellResult == 0x2f || cellResult == 0x58) {
         e->action = 3;
         e->timer = 0x1e;

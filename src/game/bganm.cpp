@@ -120,7 +120,7 @@ void BgAnmInit(u16 *ids) {
 void Set1BlockOshiYoyaku(u16 a, u16 b) {
     int kind;
 
-    kind = func_02083e54(func_02083ca8(a, b));
+    kind = func_02083e54(GetCellKind(a, b));
     if (kind != 2 && kind != 3 && kind != 1 && kind != 0x23) {
         return;
     }
@@ -129,5 +129,5 @@ void Set1BlockOshiYoyaku(u16 a, u16 b) {
 
 // Whether the cell at (a, b) is of block kind 0x401e.
 BOOL Check1BlockOshiYoyaku(u16 a, u16 b) {
-    return func_02083e54(func_02083ca8(a, b)) == 0x401e;
+    return func_02083e54(GetCellKind(a, b)) == 0x401e;
 }

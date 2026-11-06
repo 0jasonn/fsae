@@ -44,7 +44,7 @@ void clearSaveData(u8 slot) {
 
     slot &= 7;
     offset = slot * 0x50;
-    func_02029a50(data_021350b0 + offset, 0x50);
+    MemClearFast(data_021350b0 + offset, 0x50);
     data_021350dc[offset] = 1;
     data_021350dd[offset] = 1;
 }

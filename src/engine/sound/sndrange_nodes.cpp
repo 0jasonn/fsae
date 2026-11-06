@@ -1,13 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
 
-extern "C" void func_020c2004(void *list, void *node);
+extern "C" void LinkList_Remove(void *list, void *node);
 extern "C" void *SndRangeTree_ParentList(u8 *node);
 
 // Removes a node from the child list that holds it (the list is found through the node's range tree position).
 extern "C" void SndRangeTree_Remove(u8 *node);
 void SndRangeTree_Remove(u8 *node) {
-    func_020c2004(SndRangeTree_ParentList(node), node);
+    LinkList_Remove(SndRangeTree_ParentList(node), node);
 }
 
 // Stores two words for the node src: the first is src minus a 7-bit offset (bits 8..14 of the halfword at +2), the second

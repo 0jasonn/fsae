@@ -40,7 +40,7 @@ void DemoTask(void) {
         displayState.unk_8 = 8;
         DataLoad(4);
         CgLoad(3);
-        func_02029a50(&effectState, 0x28);
+        MemClearFast(&effectState, 0x28);
         effectState.timer = 0xf0;
         *(u16 *)0x05000000 = 0;
         data_021355a0 = 0;

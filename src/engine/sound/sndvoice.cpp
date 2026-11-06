@@ -41,11 +41,11 @@ SndRecord *SndVoicePool_Acquire(s32 group, SndVoiceOwner *owner) {
     SndVoiceFull *node;
 
     pool = (u8 *)data_02184304 + group * 0x24;
-    node = (SndVoiceFull *)func_020c2064((SndList *)(pool + 0xc), 0);
+    node = (SndVoiceFull *)LinkList_Next((SndList *)(pool + 0xc), 0);
     if (node == 0) {
         return 0;
     }
-    func_020c2004((SndList *)(pool + 0xc), node);
+    LinkList_Remove((SndList *)(pool + 0xc), node);
     node->owner = owner;
     owner->unk_08 = (u32)node;
     SndRecord_Clear(node->record);
@@ -72,12 +72,12 @@ void SndVoice_Reset(SndVoice *voice) {
 void SndVoice_InsertSorted(SndList *list, SndVoice *voice) {
     u8 *node;
 
-    node = func_020c2064(list, 0);
+    node = LinkList_Next(list, 0);
     while (node != 0) {
         if (voice->priority < ((SndVoice *)node)->priority) {
             break;
         }
-        node = func_020c2064(list, node);
+        node = LinkList_Next(list, node);
     }
     func_020c1fa0(list, node, voice);
     voice->list = list;
@@ -87,12 +87,12 @@ void SndVoice_InsertSorted(SndList *list, SndVoice *voice) {
 void SndVoice_InsertGlobal(SndVoice *voice) {
     u8 *node;
 
-    node = func_020c2064(&data_02183eb8, 0);
+    node = LinkList_Next(&data_02183eb8, 0);
     while (node != 0) {
         if (voice->priority < ((SndVoice *)node)->priority) {
             break;
         }
-        node = func_020c2064(&data_02183eb8, node);
+        node = LinkList_Next(&data_02183eb8, node);
     }
     func_020c1fa0(&data_02183eb8, node, voice);
 }
@@ -113,15 +113,15 @@ void SndVoice_Stop(SndVoice *voice) {
 SndVoice *SndVoice_Allocate(s32 priority) {
     SndVoiceFull *node;
 
-    node = (SndVoiceFull *)func_020c2064(&data_02183eac, 0);
+    node = (SndVoiceFull *)LinkList_Next(&data_02183eac, 0);
     if (node == 0) {
-        node = (SndVoiceFull *)func_020c2064(&data_02183eb8, 0);
+        node = (SndVoiceFull *)LinkList_Next(&data_02183eb8, 0);
         if (priority < node->priority) {
             return 0;
         }
         SndVoice_Stop((SndVoice *)node);
     }
-    func_020c2004(&data_02183eac, node);
+    LinkList_Remove(&data_02183eac, node);
     node->priority = priority;
     SndVoice_InsertGlobal((SndVoice *)node);
     return (SndVoice *)node;
@@ -140,7 +140,7 @@ void SndVoice_Release(SndVoice *voice) {
         v->link = 0;
     }
     list = v->list;
-    func_020c2004(list, v);
+    LinkList_Remove(list, v);
     record = v->record;
     v->list = 0;
     if (record != 0) {
@@ -148,7 +148,7 @@ void SndVoice_Release(SndVoice *voice) {
         *(u32 *)((u8 *)v->record + 0xc) = 0;
         v->record = 0;
     }
-    func_020c2004(&data_02183eb8, v);
+    LinkList_Remove(&data_02183eb8, v);
     SndList_Append(&data_02183eac, (u8 *)v);
     v->state = 0;
 }
@@ -165,7 +165,7 @@ void func_020c0058(SndVoice *voice) {
         voice->owner->unk_08 = 0;
         return;
     }
-    func_020c2004(data_02184304 + voice->index * 0x24 + 0xc, voice);
+    LinkList_Remove(data_02184304 + voice->index * 0x24 + 0xc, voice);
 }
 
 // SndVoice_SetPriority: takes the voice out of its own list and the global list, stores the priority, then puts it
@@ -176,10 +176,10 @@ void SndVoice_SetPriority(SndVoice *voice, u8 priority) {
 
     list = voice->list;
     if (list != 0) {
-        func_020c2004(list, voice);
+        LinkList_Remove(list, voice);
         voice->list = 0;
     }
-    func_020c2004(&data_02183eb8, voice);
+    LinkList_Remove(&data_02183eb8, voice);
     voice->priority = priority;
     if (list != 0) {
         SndVoice_InsertSorted(list, voice);

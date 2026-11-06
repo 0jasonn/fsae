@@ -28,7 +28,7 @@ void volumeSet(u32 volume) {
 // SoundInit (0x02076f40): clears the state, then sets the default volume
 extern "C" void SoundInit(void);
 void SoundInit(void) {
-    func_02029a50(&soundVolumeState, 8);
+    MemClearFast(&soundVolumeState, 8);
     soundVolumeState.unk_02 = 0;
     soundVolumeState.volume = 0x7f;
 }

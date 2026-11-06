@@ -32,7 +32,7 @@ void MakeTriangleWindow(s16 x, s16 y, s16 radius, s16 angle) {
     calc_triangle(x0, y0, x1, y1, 0);
     calc_triangle(x0, y0, x2, y2, 1);
     calc_triangle(x1, y1, x2, y2, 2);
-    func_02029a50(data_021352a0 + data_0212c4c8 * 0x180, 0x180);
+    MemClearFast(data_021352a0 + data_0212c4c8 * 0x180, 0x180);
     span = data_021352a0 + data_0212c4c8 * 0x180;
     src = triangleTable;
     for (count = 0xc0; count > 0; count--) {

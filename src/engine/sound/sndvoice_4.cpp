@@ -18,13 +18,13 @@ void SndVoice_UpdateList(void) {
     s32 levelA;
 
     status = SND_GetPlayerStatus();
-    voice = (SndVoiceFull *)func_020c2064(&data_02183eb8, 0);
+    voice = (SndVoiceFull *)LinkList_Next(&data_02183eb8, 0);
     if (voice == 0) {
         return;
     }
     minVolume = -0x8000;
     do {
-        next = (SndVoiceFull *)func_020c2064(&data_02183eb8, (u8 *)voice);
+        next = (SndVoiceFull *)LinkList_Next(&data_02183eb8, (u8 *)voice);
         if (voice->finished == 0) {
             if (SND_IsFinishedCommandTag(voice->commandTag) != 0) {
                 voice->finished = 1;
@@ -73,7 +73,7 @@ SndVoice *SndVoicePool_Start(SndVoiceRef *ref, s32 pool, s32 priority) {
         Menu_ReleaseRef((void * volatile *)ref);
     }
     if (*(u16 *)(entry + 8) >= *(u32 *)(entry + 0x18)) {
-        voice = (SndVoice *)func_020c2064((SndList *)entry, 0);
+        voice = (SndVoice *)LinkList_Next((SndList *)entry, 0);
         if (voice == 0) {
             return 0;
         }

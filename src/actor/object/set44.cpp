@@ -36,7 +36,7 @@ void set44_wait(Entity *e) {
     if (func_02085ccc(e) != 0) {
         return;
     }
-    cellResult = func_02083ca8(v->cell, e->layer);
+    cellResult = GetCellKind(v->cell, e->layer);
     if (cellResult == 0x4009) {
         return;
     }
@@ -47,7 +47,7 @@ void set44_wait(Entity *e) {
         e->timer = 0x20;
         EnqueueSFX(0x15);
         nemoto_rewritecell(e);
-        cellResult = func_02083ca8((u16)(v->cell + cellDeltaTable[e->direction >> 3]), e->layer);
+        cellResult = GetCellKind((u16)(v->cell + cellDeltaTable[e->direction >> 3]), e->layer);
         if (cellResult == 0x148 || cellResult == 0x14a) {
             e->z.HALF.HI = -2;
         }

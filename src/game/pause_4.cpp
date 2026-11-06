@@ -47,7 +47,7 @@ void pause_retry(void) {
     ObjMoveInit();
     MessageInitialize();
     TelopInitialize();
-    func_02029a50(pauseState, 0x20);
+    MemClearFast(pauseState, 0x20);
     gameState.unk_8c = 1;
     data_0212c4b8 = 1;
     data_0212c520 = 1;

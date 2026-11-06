@@ -31,7 +31,7 @@ void em1c_wait(Entity *e) {
         e->action = 2;
         e->timer = data_020d04f4[Random() & 3];
         if (VARS(Vars_Em1c, e)->grabbed != NULL) {
-            e->direction = (func_02084fd0(e, VARS(Vars_Em1c, e)->grabbed) + 4) & 0x18;
+            e->direction = (GetDirectionToEntity(e, VARS(Vars_Em1c, e)->grabbed) + 4) & 0x18;
             return;
         }
         e->direction = Random() & 0x18;
@@ -39,7 +39,7 @@ void em1c_wait(Entity *e) {
     }
     if (KnifeApp_isWirelessMode(app) == 0) {
         u8 size = data_020d04ec[e->timer >> 4];
-        VARS(Vars_Em1c, e)->grabbed = func_02084f98(e, size, size);
+        VARS(Vars_Em1c, e)->grabbed = FindTargetInRange(e, size, size);
         if (VARS(Vars_Em1c, e)->grabbed == NULL || em1c_sharedState.timer == 0) {
             VARS(Vars_Em1c, e)->grabbed = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
@@ -52,7 +52,7 @@ void em1c_wait(Entity *e) {
     }
     {
         u8 size = data_020d04ec[e->timer >> 4];
-        Entity *found = func_02084f98(e, size, size);
+        Entity *found = FindTargetInRange(e, size, size);
         VARS(Vars_Em1c, e)->grabbed = found;
         if (found == NULL) {
             return;

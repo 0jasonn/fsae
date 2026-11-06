@@ -37,7 +37,7 @@ void em12_move(Entity *e) {
                 if (V(e)->w70.b.inArea != 0) {
                     diff = CalculateDirectionTo(e->x.HALF.HI, e->y.HALF.HI, V(e)->homeX, V(e)->homeY);
                 } else {
-                    diff = func_02084fd0(e, V(e)->target);
+                    diff = GetDirectionToEntity(e, V(e)->target);
                 }
                 diff = (e->direction - diff) & 0x1f;
             }

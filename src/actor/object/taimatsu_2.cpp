@@ -69,7 +69,7 @@ void tp01_check(Entity *e) {
     if (count != e->timer) {
         table = (u16 *)e->contactedEntity->unk_6c;
         while (e->timer != count) {
-            if (func_02083ca8(table[e->timer], e->layer) == 0x10e) {
+            if (GetCellKind(table[e->timer], e->layer) == 0x10e) {
                 SoundReq(9);
                 e->timer++;
             } else {
@@ -115,7 +115,7 @@ u8 taimatsu_count(Entity *e) {
     e->type2 = 0;
     table = (u16 *)e->contactedEntity->unk_6c;
     for (i = 0; i < 6; i++) {
-        if (func_02083ca8(table[i], e->layer) == 0x10e) {
+        if (GetCellKind(table[i], e->layer) == 0x10e) {
             e->type2 |= 1 << i;
             count++;
         }

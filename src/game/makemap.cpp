@@ -14,7 +14,7 @@ void makemap_00(void) {
     ShikakeInit();
     VGroupInit();
     InitObjColor();
-    func_02029a50(data_0212caf0, 0x1c0);
+    MemClearFast(data_0212caf0, 0x1c0);
     PlWorkReset();
     for (i = 0; i < 4; i++) {
         playerWork[i].unk_1c = GS_U8(0x58 + i);

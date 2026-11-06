@@ -68,7 +68,7 @@ void em0a_move(Entity *e) {
     posY = e->y.HALF.HI;
     posX = e->x.HALF.HI;
     cell = (u16)((posX >> 4) | ((posY >> 4) << 6));
-    kind = (u16)(func_02083e54(func_02083ca8(cell, e->layer)) + 0x3b8 + 0xfc00);
+    kind = (u16)(func_02083e54(GetCellKind(cell, e->layer)) + 0x3b8 + 0xfc00);
     if (kind > 1) {
         return;
     }

@@ -17,7 +17,7 @@ void ranking_init(void) {
     ObjMoveInit();
     VGroupInit();
     ClearWorkBuffer();
-    func_02029a50(&effectState, 0x28);
+    MemClearFast(&effectState, 0x28);
     ranking_noop();
     data_0212c4f8 = 0;
     if (gameState.unk_01 == 5) {

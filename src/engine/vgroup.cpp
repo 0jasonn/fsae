@@ -24,8 +24,8 @@ BOOL MdmaCheck(void);
 void VGroupInit(void) {
     u8 i;
 
-    func_02029a50(vgroupSlots, 0x100);
-    func_02029a50(vgroupQueue, 0x100);
+    MemClearFast(vgroupSlots, 0x100);
+    MemClearFast(vgroupQueue, 0x100);
     for (i = 0; i < 8; i++) {
         vgroupSlots[i].state = 0xff;
         vgroupSlots[i].link = 0xff;

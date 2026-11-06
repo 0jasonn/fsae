@@ -65,7 +65,7 @@ void CheckInit(void) {
 void CheckPlsSet(void) {
     Entity *first;
 
-    func_02029a50(data_0212e590, 0x900);
+    MemClearFast(data_0212e590, 0x900);
     ((u32 *)data_0212e590)[0] = (u32)data_0212e590;
     first = playerWork[0].entity;
     ((u32 *)data_0212e590)[1] = (u32)data_0212e590;

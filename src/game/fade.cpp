@@ -9,7 +9,7 @@ void FadeClear(void);
 
 void FadeInit(void) {
     u32 size = 0x10;
-    func_02029a50(&blendRequest, size);
+    MemClearFast(&blendRequest, size);
     FadeClear();
     blendRequest.resetValue = size - 0x11;
     blendRequest.fadeRunning = 1;

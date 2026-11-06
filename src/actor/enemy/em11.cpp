@@ -42,7 +42,7 @@ void sleepSet(Entity *e) {
 }
 
 void dirSet(Entity *e) {
-    int desiredDir = func_02084fd0(e, VBP(e)->target);
+    int desiredDir = GetDirectionToEntity(e, VBP(e)->target);
     u8 currentDir = e->direction;
     if ((e->wallFlags & em11_blockMasks[currentDir >> 3]) != 0) {
         if (((desiredDir + 4) & 0x18) == currentDir) {

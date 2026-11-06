@@ -13,7 +13,7 @@ extern u8 data_02184304[];
 extern "C" {
 void SndVoice_Setup(void *obj, s32 arg);
 void SndVoice_SetPaused(void *obj, s32 arg);
-void *func_020c2064(void *head, void *node);
+void *LinkList_Next(void *head, void *node);
 }
 
 // SndSlot_ReleaseFirst (0x020bf89c): releases the object held in the first word of the slot.

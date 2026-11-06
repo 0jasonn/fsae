@@ -31,7 +31,7 @@ extern u8 data_02184304[];
 extern SndList data_02183eb8;
 void SndRecord_Free(SndRecord *record);
 void SndChannel_Unlock(u32 mask);
-void func_020c2004(void *list, void *node);
+void LinkList_Remove(void *list, void *node);
 void SndVoice_InsertSorted(SndList *list, SndVoice *voice);
 void SndVoice_InsertGlobal(SndVoice *voice);
 }

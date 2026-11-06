@@ -17,8 +17,8 @@ void MapLoad(u32 *entries, u8 mode) {
     void *src;
 
     if (mode == 0) {
-        func_02029a50(data_02163fa8, 0x2000);
-        func_02029a50(data_02165fa8, 0x1000);
+        MemClearFast(data_02163fa8, 0x2000);
+        MemClearFast(data_02165fa8, 0x1000);
     }
     entry = entries;
     do {

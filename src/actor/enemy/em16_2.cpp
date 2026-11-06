@@ -23,7 +23,7 @@ void em16_kyoro(Entity *e) {
     if (!frontCheck(e)) {
         return;
     }
-    child = func_02084f98(e, 0x40, 0x40);
+    child = FindTargetInRange(e, 0x40, 0x40);
     if (child != NULL) {
         switch (e->animationState) {
         case 0:

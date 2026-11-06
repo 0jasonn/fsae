@@ -41,7 +41,7 @@ void MultiRoomInit(u16 room) {
         mapState.scrollY = targetY - 0x60;
     }
 
-    func_02029a50(triangleTable, 0x800);
+    MemClearFast(triangleTable, 0x800);
     layerCells = data_0215dfa4;
     MIi_CpuClear16(0xffff, layerCells, 0x1000);
     layerCells2 = data_02168fa8;

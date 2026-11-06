@@ -6,7 +6,7 @@
 // Actor em1c. Declarations of functions defined in other units of the same actor, and of its data.
 typedef struct Vars_Em1c {
     /* 00 */ u8 unk_00[0x64];
-    /* 64 */ Entity *grabbed;      // set from func_02084f98 while the enemy holds an object, NULL otherwise
+    /* 64 */ Entity *grabbed;      // set from FindTargetInRange while the enemy holds an object, NULL otherwise
     /* 68 */ u8 unk_68[8];
     /* 70 */ u8 cachedQuadrant;    // last value of em1c_charAnimTable, see charMove
     /* 71 */ u8 cooldown;          // counts down, set to 0x78 when an attack ends

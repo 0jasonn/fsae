@@ -58,7 +58,7 @@ void em10_awake(Entity *e) {
         e->subtimer = 0x10;
         VBH(e)->moveTimer = 0x258;
         {
-            int targetDir = func_02084fd0(e, VBP(e)->target);
+            int targetDir = GetDirectionToEntity(e, VBP(e)->target);
             int facing = (targetDir + 4) & 0x18;
             e->direction = facing;
             e->animationState = facing >> 3;

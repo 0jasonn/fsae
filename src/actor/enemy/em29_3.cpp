@@ -182,7 +182,7 @@ void em29_die(Entity *e) {
 
 void breakSekichu(Entity *e) {
     u16 cell = ((e->x.HALF.HI - mapState.unk_18) >> 4) | (((e->y.HALF.HI - mapState.unk_1a) >> 4) << 6);
-    if (func_02083ca8(cell, e->layer) != 0x138) {
+    if (GetCellKind(cell, e->layer) != 0x138) {
         return;
     }
     Entity *fx = GetSetWork(0xf, 0xf, 0);

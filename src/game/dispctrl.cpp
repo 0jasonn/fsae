@@ -11,7 +11,7 @@ extern u8 data_02134890[];    // end of the object range of AssignObj
 
 // DispCtrlClear (0x0202a700): clears the 0x6c-byte block and sets its first halfword to 0x40.
 void DispCtrlClear(void) {
-    func_02029a50(data_0212c568, 0x6c);
+    MemClearFast(data_0212c568, 0x6c);
     *(u16 *)data_0212c568 = 0x40;
 }
 

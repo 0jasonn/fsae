@@ -47,7 +47,7 @@ void em17_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
 }
 
-// Move: when func_02084f98 returns an entity (not NULL), it becomes the new target and the old target becomes the
+// Move: when FindTargetInRange returns an entity (not NULL), it becomes the new target and the old target becomes the
 // child; carryFlag is set and carryTimer is 4. While carrying, the direction faces the target (averaged with the child
 // when there is one) and the carry is dropped when carryTimer runs out. Without a carry it picks a random direction
 // every 0x1e frames.
@@ -57,7 +57,7 @@ void em17_move(Entity *e) {
     if (UpdateGravity(e, 0x1800)) {
         return;
     }
-    child = func_02084f98(e, 0x38, 0x38);
+    child = FindTargetInRange(e, 0x38, 0x38);
     if (child != NULL) {
         if (V2(e)->target != NULL) {
             e->child = V2(e)->target;

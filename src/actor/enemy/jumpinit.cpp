@@ -27,7 +27,7 @@ void jumpInit(Entity *e) {
 
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         VJT(e)->target = playerWork[Knife_Single_SinglePlay_GetInstance()[0]].entity;
-        dir = func_02084fd0(e, VJT(e)->target);
+        dir = GetDirectionToEntity(e, VJT(e)->target);
         timer = e->timer;
         e->timer = timer + 1;
         e->direction = (data_020d319c[timer & 1] + dir) & 0x1f;
@@ -45,7 +45,7 @@ void jumpInit(Entity *e) {
             }
         }
     }
-    dir = func_02084fd0(e, VJT(e)->target);
+    dir = GetDirectionToEntity(e, VJT(e)->target);
     timer = e->timer;
     e->timer = timer + 1;
     e->direction = (data_020d319c[timer & 1] + dir) & 0x1f;

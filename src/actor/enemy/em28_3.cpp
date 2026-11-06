@@ -30,7 +30,7 @@ void em28_attackwait(Entity *e) {
 // plCheck (0x020413bc): allocates a 0x68-byte child and returns it only when no
 // other player claims it. Returns NULL otherwise.
 Entity *plCheck(Entity *e) {
-    Entity *child = func_02084f98(e, 0x68, 0x40);
+    Entity *child = FindTargetInRange(e, 0x68, 0x40);
     if (child == NULL) {
         return NULL;
     }

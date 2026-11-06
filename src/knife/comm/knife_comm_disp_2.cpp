@@ -47,7 +47,7 @@ void knife_commDispRoll(KNIFE_MSGSYS *msg) {
 extern u8 localPlayerIndex[];
 extern u16 playerKeys[];
 extern u8 data_0217d350[];           // saved state, written by the choice dispatch
-extern u8 data_0217d358[];           // choice block of the message box, cleared by func_02029a50
+extern u8 data_0217d358[];           // choice block of the message box, cleared by MemClearFast
 extern u8 knifeChoiceMsgIds[];       // message id low byte for each choice state (knifeChoiceMsgIds)
 extern u8 *const knifeChoiceRows[];  // rows of direction states for each entry count (knifeChoiceRows)
 
@@ -98,7 +98,7 @@ void knife_commDispEnq(KNIFE_MSGSYS *msg) {
         }
         data_0217d350[1] = ((KnifeChoiceBlock *)data_0217d358)->state;
         data_0217d350[0] = 3;
-        func_02029a50(data_0217d358, 0x14);
+        MemClearFast(data_0217d358, 0x14);
         return;
     }
 

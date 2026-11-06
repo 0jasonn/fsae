@@ -48,7 +48,7 @@ void ComMain(void) {
 // ComUpdate (0x02028184): sends the data block at data_0212c9b8 and clears its 0x34 bytes.
 void ComUpdate(void) {
     MultiSioSendDataSet(data_0212c9b8);
-    func_02029a50(data_0212c9b8, 0x34);
+    MemClearFast(data_0212c9b8, 0x34);
 }
 
 // Empty functions (dsd names kept, plain symbols).

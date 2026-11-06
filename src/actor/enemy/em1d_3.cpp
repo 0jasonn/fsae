@@ -12,7 +12,7 @@ void em1d_aimmove(Entity *e) {
     e->timer -= 1;
     if ((u8)e->timer != 0) {
         if ((e->timer & 7) == 0) {
-            func_02086200(e, func_02084fd0(e, e->child));
+            func_02086200(e, GetDirectionToEntity(e, e->child));
         }
         seqset(e, 2);
     } else {

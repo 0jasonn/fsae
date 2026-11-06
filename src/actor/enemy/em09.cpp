@@ -230,7 +230,7 @@ void em09_appear(Entity *e) {
         e->timer = 8;
         e->animationState = 0;
         {
-            int dir = func_02084fd0(e, e->child);
+            int dir = GetDirectionToEntity(e, e->child);
             e->direction = dir;
             e->animationState = (dir & 0xff) >> 4;
         }
@@ -248,7 +248,7 @@ void em09_move(Entity *e) {
         if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
             e->child = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
         }
-        e->direction = func_02084fd0(e, e->child);
+        e->direction = GetDirectionToEntity(e, e->child);
         em09_seqSet(e);
     }
     func_020847a0(e);

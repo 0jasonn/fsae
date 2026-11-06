@@ -49,7 +49,7 @@ void em22_aim(Entity *e) {
         e->timer--;
         return;
     }
-    target = func_02084f98(e, 0x60, 0x50);
+    target = FindTargetInRange(e, 0x60, 0x50);
     if (target == NULL) {
         return;
     }
@@ -64,7 +64,7 @@ void em22_aim(Entity *e) {
 
 void em22_move(Entity *e) {
     if ((frameCounter & 7) == 0) {
-        func_02086200(e, func_02084fd0(e, VARS(Vars_em22, e)->aimTarget));
+        func_02086200(e, GetDirectionToEntity(e, VARS(Vars_em22, e)->aimTarget));
     }
     spdmgr(e);
     func_020847a0(e);

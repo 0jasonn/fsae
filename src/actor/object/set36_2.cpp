@@ -11,7 +11,7 @@ extern ScrollOrigin mapState;
 // set36_move, 0x0206b404
 void set36_move(Entity *e) {
     Vars_Set36 *v = VARS(Vars_Set36, e);
-    if (func_02083ca8(v->mapPos, e->layer) != 0x4008) {
+    if (GetCellKind(v->mapPos, e->layer) != 0x4008) {
         return;
     }
     func_0208366c(0x4000, v->mapPos, e->layer);

@@ -58,7 +58,7 @@ void em05_nage(Entity *e) {
         if (e->child != NULL) {
             return;
         }
-        e->child = func_02084f98(e, e->timer, e->timer);
+        e->child = FindTargetInRange(e, e->timer, e->timer);
         e->subtimer++;
         if ((e->subtimer & 3) == 0) {
             e->timer += 0x20;
@@ -264,7 +264,7 @@ void em07_tame(Entity *e) {
         u8 playerIndex = *Knife_Single_SinglePlay_GetInstance();
         VB(e)->target = playerWork[playerIndex].entity;
     }
-    e->direction = func_02084fd0(e, VB(e)->target);
+    e->direction = GetDirectionToEntity(e, VB(e)->target);
     InitAnimationForceUpdate(e, 2);
     EnqueueSFX(0x31);
 }

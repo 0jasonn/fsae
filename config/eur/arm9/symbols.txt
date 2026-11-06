@@ -1087,7 +1087,7 @@ _Z14CommStatusSynch kind:function(arm,size=0xa8) addr:0x02029828
 comerror_error_check kind:function(arm,size=0x98) addr:0x020298d0
 _Z14CommErrorCheckm kind:function(arm,size=0xdc) addr:0x02029968
 _Z7abs_s32l kind:function(arm,size=0xc) addr:0x02029a44
-_Z13func_02029a50Pvm kind:function(arm,size=0x18) addr:0x02029a50
+_Z12MemClearFastPvm kind:function(arm,size=0x18) addr:0x02029a50
 _Z14SetColorAdjustm kind:function(arm,size=0x50) addr:0x02029a68
 GetResTranslateID kind:function(arm,size=0x80) addr:0x02029ab8
 _Z6CgLoadm kind:function(arm,size=0x128) addr:0x02029b38
@@ -3486,7 +3486,7 @@ func_02083c70 kind:function(thumb,size=0x2) addr:0x02083c70
 _Z13func_02083c74P9OBJ_WORK_ii kind:function(thumb,size=0x0,unknown) addr:0x02083c74
 _Z13func_02083c84P9OBJ_WORK_ kind:function(thumb,size=0x0,unknown) addr:0x02083c84
 _Z13func_02083c8ciit kind:function(thumb,size=0x0,unknown) addr:0x02083c8c
-_Z13func_02083ca8tt kind:function(thumb,size=0x1f8) addr:0x02083ca8
+_Z11GetCellKindtt kind:function(thumb,size=0x1f8) addr:0x02083ca8
 .L_02083caa kind:label(thumb) addr:0x02083caa
 _Z13func_02083cccP9OBJ_WORK_ss kind:label(thumb) addr:0x02083ccc
 _Z13func_02083cdcP9OBJ_WORK_ kind:label(thumb) addr:0x02083cdc
@@ -3564,8 +3564,8 @@ func_02084ee4 kind:label(thumb) addr:0x02084ee4
 _Z13func_02084f18v kind:label(thumb) addr:0x02084f18
 func_02084f2c kind:label(thumb) addr:0x02084f2c
 _Z13func_02084f54P9OBJ_WORK_ kind:label(thumb) addr:0x02084f54
-_Z13func_02084f98P9OBJ_WORK_ii kind:function(thumb,size=0x8c) addr:0x02084f98
-_Z13func_02084fd0P9OBJ_WORK_S0_ kind:label(thumb) addr:0x02084fd0
+_Z17FindTargetInRangeP9OBJ_WORK_ii kind:function(thumb,size=0x8c) addr:0x02084f98
+_Z20GetDirectionToEntityP9OBJ_WORK_S0_ kind:label(thumb) addr:0x02084fd0
 _Z13func_02085024P9OBJ_WORK_PKth kind:function(thumb,size=0xa8) addr:0x02085024
 func_020850ce kind:function(thumb,size=0x1b2) addr:0x020850ce
 func_0208528c kind:function(thumb,size=0x4a) addr:0x0208528c
@@ -5410,8 +5410,8 @@ SndList_AddFirst kind:function(arm,size=0x2c) addr:0x020c1ed0
 SndList_Append kind:function(arm,size=0x54) addr:0x020c1efc
 SndList_Prepend kind:function(arm,size=0x50) addr:0x020c1f50
 func_020c1fa0 kind:function(arm,size=0x64) addr:0x020c1fa0
-func_020c2004 kind:function(arm,size=0x60) addr:0x020c2004
-func_020c2064 kind:function(arm,size=0x18) addr:0x020c2064
+LinkList_Remove kind:function(arm,size=0x60) addr:0x020c2004
+LinkList_Next kind:function(arm,size=0x18) addr:0x020c2064
 SndList_GetPrev kind:function(arm,size=0x14) addr:0x020c207c
 SndRangeTree_Find kind:function(arm,size=0x68) addr:0x020c2090
 SndRangeTree_ParentList kind:function(arm,size=0x28) addr:0x020c20f8

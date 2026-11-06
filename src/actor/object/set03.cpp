@@ -19,7 +19,7 @@ typedef struct Vars_Set03 {
     /* 00 */ u8 unk_00[0x76];
     /* 76 */ u16 cellPlain;  // cell of the actor without the grid origin
     /* 78 */ u16 cellEvent;  // result of func_0208367c
-    /* 7a */ u16 cellKind;   // result of func_02083ca8 for the cell
+    /* 7a */ u16 cellKind;   // result of GetCellKind for the cell
     /* 7c */ u16 cell;       // cell of the actor with the grid origin
     /* 7e */ u8 event;       // argument of func_0208365c
     /* 7f */ u8 countdown;   // turns down while the switch is off
@@ -46,6 +46,6 @@ void set03_init(Entity *e) {
     e->statusFlags = 0;
     e->hitbox = data_020d8a5c;
     VARS(Vars_Set03, e)->cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
-    VARS(Vars_Set03, e)->cellKind = func_02083ca8(VARS(Vars_Set03, e)->cell, e->layer);
+    VARS(Vars_Set03, e)->cellKind = GetCellKind(VARS(Vars_Set03, e)->cell, e->layer);
     VARS(Vars_Set03, e)->cellPlain = (e->x.HALF.HI >> 4) | (((e->y.HALF.HI) >> 4) << 6);
 }
