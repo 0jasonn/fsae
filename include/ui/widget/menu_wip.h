@@ -89,7 +89,7 @@ void Work21_clear(void *buf);
 void lobby_callWithZeroPos(s32 active, void *buf);
 void Menu_releaseBlocks(void *obj);
 void Heap_VirtualFree(void *arg, void *obj);
-s32 func_020bc588(s32 value);
+s32 Menu_InitState(s32 value);
 void RectBufSet_init(s32 obj, void *checker, void *a, void *b, void *c, u16 d);
 s32 func_020bb450(void *obj);
 s32 Ctrl_advanceSelection(void *obj);

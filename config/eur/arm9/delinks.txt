@@ -4081,6 +4081,10 @@ src/knife/message/rendertarget_3.cpp:
     complete
     .text       start:0x020a3134 end:0x020a31ac
 
+src/knife/subtask/subtask_radar_status.cpp:
+    complete
+    .text       start:0x020a3570 end:0x020a3778
+
 src/game/pending_ptr.cpp:
     complete
     .text       start:0x020a3778 end:0x020a3798
@@ -4865,6 +4869,10 @@ src/ui/widget/ctrl_leaf_3.cpp:
     complete
     .text       start:0x020bc574 end:0x020bc588
 
+src/ui/widget/menu_init.cpp:
+    complete
+    .text       start:0x020bc588 end:0x020bc6c4
+
 src/ui/widget/menu_release.cpp:
     complete
     .text       start:0x020bc6c4 end:0x020bc78c
@@ -5081,6 +5089,10 @@ src/engine/sound/sndstate_start_ex.cpp:
     complete
     .text       start:0x020c17c0 end:0x020c186c
 
+src/engine/sound/sndstate_startentry.cpp:
+    complete
+    .text       start:0x020c186c end:0x020c1a38
+
 src/engine/sound/sndtrack.cpp:
     complete
     .text       start:0x020c1a38 end:0x020c1a7c
@@ -5136,6 +5148,10 @@ src/engine/sound/sndheap_linear_2.cpp:
 src/engine/narc_check.cpp:
     complete
     .text       start:0x020c2984 end:0x020c29c8
+
+src/engine/narc_mount.cpp:
+    complete
+    .text       start:0x020c29c8 end:0x020c2b10
 
 src/engine/fs_dirfile.cpp:
     complete
@@ -5252,6 +5268,10 @@ src/engine/record_init.cpp:
 src/engine/record_init_table.cpp:
     complete
     .text       start:0x020c5f1c end:0x020c5f48
+
+src/engine/record_init_shape.cpp:
+    complete
+    .text       start:0x020c5f48 end:0x020c5fcc
 
 src/engine/record_init_sized.cpp:
     complete
