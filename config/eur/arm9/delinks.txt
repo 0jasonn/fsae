@@ -541,6 +541,10 @@ src/game/shikake_3.cpp:
     complete
     .text       start:0x02022dfc end:0x02022e1c
 
+src/game/frontcheck.cpp:
+    complete
+    .text       start:0x02022e1c end:0x020233f0
+
 src/game/frontcheck_2.cpp:
     complete
     .text       start:0x0202357c end:0x02023608
@@ -944,6 +948,10 @@ src/actor/enemy/em2a.cpp:
 src/actor/enemy/em2a_2.cpp:
     complete
     .text       start:0x02031304 end:0x02031cb0
+
+src/actor/enemy/em2a_4.cpp:
+    complete
+    .text       start:0x02031cb0 end:0x0203224c
 
 src/actor/enemy/em2a_3.cpp:
     complete
@@ -1504,6 +1512,10 @@ src/game/makemap.cpp:
 src/game/warp.cpp:
     complete
     .text       start:0x02048264 end:0x020483f8
+
+src/game/multiplay_4.cpp:
+    complete
+    .text       start:0x020483f8 end:0x02048948
 
 src/game/rank.cpp:
     complete
@@ -2354,6 +2366,10 @@ src/actor/object/door.cpp:
     complete
     .text       start:0x02061dc4 end:0x02061e44
 
+src/actor/object/rewhalf.cpp:
+    complete
+    .text       start:0x02061e44 end:0x020623c8
+
 src/actor/object/set09.cpp:
     complete
     .text       start:0x02062bb8 end:0x02062bd4
@@ -2493,6 +2509,10 @@ src/actor/object/set25_2.cpp:
 src/actor/object/set25_3.cpp:
     complete
     .text       start:0x02066818 end:0x02066910
+
+src/actor/object/recell.cpp:
+    complete
+    .text       start:0x02066910 end:0x02067770
 
 src/actor/object/set25_4.cpp:
     complete
@@ -3162,6 +3182,10 @@ src/actor/object/tama0d.cpp:
     complete
     .text       start:0x0207cea8 end:0x0207d10c
 
+src/actor/object/tama0f_3.cpp:
+    complete
+    .text       start:0x0207d794 end:0x0207db04
+
 src/actor/object/tama0f.cpp:
     complete
     .text       start:0x0207db04 end:0x0207dc3c
@@ -3708,7 +3732,7 @@ src/knife/comm/singleplay_check.cpp:
 
 src/knife/comm/singleplay_warp.cpp:
     complete
-    .text       start:0x020954f0 end:0x0209554c
+    .text       start:0x02094d08 end:0x0209554c
 
 src/engine/stub_zero_a.cpp:
     complete

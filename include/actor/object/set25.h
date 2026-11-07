@@ -14,6 +14,6 @@ extern const EntityFunc set25_stateTable[];   // indexed by e->action, was set25
 extern const u8 *set25_hitboxTable[];         // hitbox per entity type, was set25_hitboxTable
 extern "C" void vitaldec(Entity *e, u8 *timer); // original vitaldec(OBJ_WORK_*, unsigned char*)
 extern "C" void breakSmokeSet(Entity *e);       // original breakSmokeSet(OBJ_WORK_*)
-extern "C" void recell1(Entity *e);             // original recell1(OBJ_WORK_*)
+void recell1(Entity *e);                        // original recell1(OBJ_WORK_*)
 
 #endif
