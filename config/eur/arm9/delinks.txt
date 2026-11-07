@@ -697,6 +697,10 @@ src/knife/comm/com_3.cpp:
     complete
     .text       start:0x020281b0 end:0x02028240
 
+src/engine/entry_check.cpp:
+    complete
+    .text       start:0x02028240 end:0x02028280
+
 src/knife/comm/com_4.cpp:
     complete
     .text       start:0x02028280 end:0x020284d4
@@ -2286,6 +2290,10 @@ src/actor/object/set5c_3.cpp:
     complete
     .text       start:0x0205fb38 end:0x0205fb9c
 
+src/game/zelda_disp.cpp:
+    complete
+    .text       start:0x0205fb9c end:0x0205fbd4
+
 src/actor/object/set5d_1.cpp:
     complete
     .text       start:0x0205fbd4 end:0x0205fd34
@@ -3014,6 +3022,10 @@ src/actor/object/set67.cpp:
     complete
     .text       start:0x020755a4 end:0x020755c0
 
+src/actor/object/set67_init.cpp:
+    complete
+    .text       start:0x020755c0 end:0x02075604
+
 src/actor/object/set67_2.cpp:
     complete
     .text       start:0x02075604 end:0x02075610
@@ -3378,9 +3390,17 @@ src/knife/sound/knifesound_handle_2.cpp:
     complete
     .text       start:0x0208bef8 end:0x0208bf60
 
+src/knife/sound/knifesound_handle_volume.cpp:
+    complete
+    .text       start:0x0208bf60 end:0x0208c054
+
 src/knife/sound/knifesound_handle_3.cpp:
     complete
     .text       start:0x0208c054 end:0x0208c068
+
+src/knife/sound/knifesound_handle_update.cpp:
+    complete
+    .text       start:0x0208c068 end:0x0208c188
 
 src/knife/sound/knifesound_factory.cpp:
     complete
@@ -3941,9 +3961,17 @@ src/knife/app/knife_hud_3.cpp:
     complete
     .text       start:0x0209eb3c end:0x0209ede0
 
+src/knife/app/knife_hud_interp.cpp:
+    complete
+    .text       start:0x0209fa70 end:0x0209faec
+
 src/knife/app/knife_interp_2.cpp:
     complete
     .text       start:0x0209faec end:0x0209fb00
+
+src/knife/app/knife_interp_decel.cpp:
+    complete
+    .text       start:0x0209fb00 end:0x0209fb40
 
 src/knife/app/knife_interp.cpp:
     complete
@@ -3960,6 +3988,10 @@ src/knife/message/knife_canvas_2.cpp:
 src/knife/message/knife_message.cpp:
     complete
     .text       start:0x020a0508 end:0x020a0640
+
+src/knife/message/msgtextrender_e.cpp:
+    complete
+    .text       start:0x020a0640 end:0x020a0788
 
 src/knife/message/knife_message_4.cpp:
     complete
@@ -4089,6 +4121,10 @@ src/knife/message/textreader_params.cpp:
     complete
     .text       start:0x020a2978 end:0x020a29e8
 
+src/knife/message/textreader_readparam.cpp:
+    complete
+    .text       start:0x020a29e8 end:0x020a2a2c
+
 src/knife/message/textreader_param.cpp:
     complete
     .text       start:0x020a2a2c end:0x020a2b14
@@ -4104,6 +4140,10 @@ src/knife/message/rendertarget_2.cpp:
 src/knife/message/rendertarget_3.cpp:
     complete
     .text       start:0x020a3134 end:0x020a31ac
+
+src/knife/subtask/subtask_status.cpp:
+    complete
+    .text       start:0x020a31ac end:0x020a3570
 
 src/knife/subtask/subtask_radar_status.cpp:
     complete
@@ -4124,6 +4164,10 @@ src/knife/message/pictogram_noop.cpp:
 src/knife/message/pictogram.cpp:
     complete
     .text       start:0x020a48d0 end:0x020a49c4
+
+src/knife/message/pictogram_find.cpp:
+    complete
+    .text       start:0x020a4a80 end:0x020a4ad8
 
 src/knife/message/pictogram_ctor.cpp:
     complete
@@ -4440,6 +4484,10 @@ src/ui/nameentry_5.cpp:
 src/ui/nameentry_6.cpp:
     complete
     .text       start:0x020af104 end:0x020af1f4
+
+src/ui/nameentryui_checkspace.cpp:
+    complete
+    .text       start:0x020af344 end:0x020af380
 
 src/ui/nameentry_7.cpp:
     complete
@@ -5120,6 +5168,10 @@ src/engine/sound/sndstate_startentry.cpp:
 src/engine/sound/sndtrack.cpp:
     complete
     .text       start:0x020c1a38 end:0x020c1a7c
+
+src/engine/sound/sndtrack_5.cpp:
+    complete
+    .text       start:0x020c1a7c end:0x020c1b88
 
 src/engine/sound/sndtrack_2.cpp:
     complete

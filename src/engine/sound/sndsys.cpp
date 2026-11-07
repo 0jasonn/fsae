@@ -19,7 +19,7 @@ void SndChannel_Reset(void);
 void SndVoice_UpdateList(void);
 void SndSys_ClearWords(void);
 void func_020c02d0(void);
-void func_020c1a7c(void);
+void SndTrack_UpdateAll(void);
 }
 void Menu_ForwardBf40c(s32 a, s32 b, s32 c, s32 d); // C++, src/game/menu_16.cpp
 
@@ -70,6 +70,6 @@ void SndSys_Shutdown(void) {
     }
     SndVoice_UpdateList();
     func_020c02d0();
-    func_020c1a7c();
+    SndTrack_UpdateAll();
     SND_FlushCommand(0);
 }

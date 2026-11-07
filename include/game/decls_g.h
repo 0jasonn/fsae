@@ -72,7 +72,7 @@ s32 func_020bd474(MenuWork *menu, void *event);
 s32 func_020bd830(MenuWork *menu);
 s32 Menu_DispatchKeys(MenuWork *menu);
 
-void func_020beb00(void *obj, MenuEvent *event);
+void Touch_UpdateFilter(void *obj, MenuEvent *event);
 void func_020be244(MenuWork *menu);
 }
 // Menu input handlers (C++ names from original_names.tsv)
