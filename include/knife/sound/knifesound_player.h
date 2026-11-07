@@ -15,7 +15,7 @@ void *Knife_Sound_SequenceHandle_getPlayerField(void *handle);
 s32 SndState_StartEntry(void *obj, s32 index);
 BOOL SndState_StartEntryEx(u8 *self, s32 a1, s32 a2, s32 a3, void *arg4, s32 arg5);
 void Knife_Sound_Archive_apply(void *self);
-void SSP_GetDateTime(s32 group, s32 value);
+BOOL SSP_GetDateTime(u32 id, u32 value);
 s32 SndSys_CheckValue(void *obj, s32 value);
 }
 

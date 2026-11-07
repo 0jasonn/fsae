@@ -4387,11 +4387,15 @@ src/ui/fileselui_9.cpp:
 
 src/ui/modeselui.cpp:
     complete
-    .text       start:0x020a8ff0 end:0x020a9064
+    .text       start:0x020a8ff0 end:0x020a92e0
 
 src/ui/modeselui_3.cpp:
     complete
     .text       start:0x020a9494 end:0x020a94b4
+
+src/ui/modeselui_setuptext.cpp:
+    complete
+    .text       start:0x020a9ce0 end:0x020a9e0c
 
 src/ui/modeselui_4.cpp:
     complete
@@ -5169,6 +5173,10 @@ src/engine/sound/sndrecord.cpp:
     complete
     .text       start:0x020c0b88 end:0x020c0c28
 
+src/engine/sound/ssp_getdatetime.cpp:
+    complete
+    .text       start:0x020c0c28 end:0x020c0c40
+
 src/engine/sound/sndsys_7.cpp:
     complete
     .text       start:0x020c0c40 end:0x020c0c70
@@ -5188,6 +5196,10 @@ src/engine/sound/sndtable_payload.cpp:
 src/engine/sound/sndbank_acquire.cpp:
     complete
     .text       start:0x020c10b8 end:0x020c1268
+
+src/engine/sound/sndbank_wavearc.cpp:
+    complete
+    .text       start:0x020c1268 end:0x020c1390
 
 src/engine/sound/sndbank.cpp:
     complete
