@@ -15,7 +15,6 @@ extern const u8 keyTypeUnk21Table[];   // keyTypeUnk21Table
 extern const u8 keyTypeBankTable[];    // keyTypeBankTable, indexed by bank value or cb0 + 4
 extern u8 keyTypeFlags[];              // keyTypeFlags, rows of 8 indexed by type2
 
-
 void key_frame(Entity *e) {
     u8 action = e->action;
 
@@ -71,4 +70,27 @@ void key_child_set(Entity *e) {
             child->parent = e;
         }
     }
+}
+
+extern const u8 keyTypeMaskTable[];
+extern const u8 keyTypeShiftTable[];
+extern const u8 keyTypeUnk21Table[];
+extern const u8 keyTypeBankTable[];
+extern u8 keyTypeFlags[];
+
+typedef struct KeyPlayerState {
+    u8 playerCount;
+} KeyPlayerState;
+
+void key_type_set(Entity *e) {
+    u8 flags;
+
+    u8 m = keyTypeMaskTable[KNIFE_CURSOR_INDEX()]; u8 k = keyTypeFlags[e->type2 * 8]; flags = k & m;
+    if (flags == 0) {
+        e->spriteSettings.b0 = 0;
+        return;
+    }
+    flags >>= keyTypeShiftTable[KNIFE_CURSOR_INDEX()];
+    e->unk_21 = keyTypeUnk21Table[KNIFE_CURSOR_INDEX()];
+    e->spriteSettings.b16 = (flags != 3) ? keyTypeBankTable[flags] : keyTypeBankTable[KNIFE_CURSOR_INDEX() + 4];
 }

@@ -2,6 +2,7 @@
 #include "global.h"
 #include "actor/object/ss.h"
 #include "actor/object/effectdecls.h"
+#include "actor/object/objdecls_a.h"
 
 // effect_beam2 family (module effect_beam2), 0x0206ecdc .. 0x0206edbc (dispatcher and init).
 // Address -> name: 0x0206ecdc effect_beam2, 0x0206ecf8 effect_beam2_init
@@ -37,4 +38,18 @@ void effect_beam2_init(Entity *e) {
     e->y.HALF.HI = e->y.HALF.HI + 9;
     InitAnimationForceUpdate(e, e->type);
     effectPhaseTable[e->type2] = 0;
+}
+
+void effect_beam2_move(Entity *e) {
+    e->unk_1b = 0xb0;
+    e->spriteSettings.b20 = 6;
+    e->spriteSettings.b16 = e->spriteSettings.b20;
+    e->timer++;
+    if (e->type2 <= 2) { e->y.HALF.HI = e->y.HALF.HI - 8; }
+    e->spriteSettings.b0 = 1;
+    UpdateAnimationSingleFrame(e);
+    if (e->y.HALF.HI >= -8) {
+        return;
+    }
+    PutObjWork(e);
 }

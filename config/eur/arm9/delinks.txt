@@ -721,6 +721,10 @@ src/game/frame_ack.cpp:
     complete
     .text       start:0x02028944 end:0x02028a64
 
+src/knife/comm/com_waitsync.cpp:
+    complete
+    .text       start:0x02028a64 end:0x02028b34
+
 src/knife/comm/com_6.cpp:
     complete
     .text       start:0x02028b34 end:0x02028b58
@@ -780,6 +784,10 @@ src/game/clearbuf.cpp:
 src/game/dispctrl.cpp:
     complete
     .text       start:0x0202a700 end:0x0202a754
+
+src/engine/dispcnt.cpp:
+    complete
+    .text       start:0x0202a754 end:0x0202a78c
 
 src/game/demo.cpp:
     complete
@@ -1064,6 +1072,10 @@ src/actor/enemy/em05_3.cpp:
 src/actor/enemy/em05_4.cpp:
     complete
     .text       start:0x02039074 end:0x02039e8c
+
+src/actor/enemy/em08.cpp:
+    complete
+    .text       start:0x02039e8c end:0x02039ed4
 
 src/actor/enemy/em09.cpp:
     complete
@@ -1520,6 +1532,10 @@ src/game/warp.cpp:
 src/game/multiplay_4.cpp:
     complete
     .text       start:0x020483f8 end:0x02048948
+
+src/game/clearkey.cpp:
+    complete
+    .text       start:0x02048ea8 end:0x02048fa0
 
 src/game/rank.cpp:
     complete
@@ -2634,6 +2650,10 @@ src/actor/object/set33.cpp:
     complete
     .text       start:0x0206a0c8 end:0x0206a0e4
 
+src/actor/object/set33_3.cpp:
+    complete
+    .text       start:0x0206a7b8 end:0x0206a830
+
 src/actor/object/set33_2.cpp:
     complete
     .text       start:0x0206a8e4 end:0x0206a964
@@ -2812,7 +2832,7 @@ src/actor/object/effect_mori2.cpp:
 
 src/actor/object/key_3.cpp:
     complete
-    .text       start:0x0206e054 end:0x0206e210
+    .text       start:0x0206e054 end:0x0206e2c8
 
 src/actor/object/effect_tokishin.cpp:
     complete
@@ -2852,11 +2872,11 @@ src/actor/object/effect_particle.cpp:
 
 src/actor/object/effect_beam1.cpp:
     complete
-    .text       start:0x0206eba0 end:0x0206ec68
+    .text       start:0x0206eba0 end:0x0206ecdc
 
 src/actor/object/effect_beam2.cpp:
     complete
-    .text       start:0x0206ecdc end:0x0206edbc
+    .text       start:0x0206ecdc end:0x0206ee40
 
 src/actor/object/effect_beam3.cpp:
     complete
@@ -2864,7 +2884,7 @@ src/actor/object/effect_beam3.cpp:
 
 src/actor/object/effect_pika.cpp:
     complete
-    .text       start:0x0206ef6c end:0x0206f034
+    .text       start:0x0206ef6c end:0x0206f0a8
 
 src/actor/object/effect_omoide_end.cpp:
     complete
@@ -2881,6 +2901,10 @@ src/actor/object/ssel_tobira_3.cpp:
 src/actor/object/set48.cpp:
     complete
     .text       start:0x0206f3e4 end:0x0206f400
+
+src/actor/object/set48_2.cpp:
+    complete
+    .text       start:0x0206f544 end:0x0206f5a8
 
 src/actor/object/set49.cpp:
     complete
@@ -3985,6 +4009,10 @@ src/knife/message/knife_canvas_2.cpp:
     complete
     .text       start:0x0209ffb8 end:0x0209ffec
 
+src/knife/message/knife_bitreader.cpp:
+    complete
+    .text       start:0x0209ffec end:0x020a004c
+
 src/knife/message/knife_message.cpp:
     complete
     .text       start:0x020a0508 end:0x020a0640
@@ -4020,6 +4048,10 @@ src/knife/message/knife_message_5.cpp:
 src/knife/message/knife_message_10.cpp:
     complete
     .text       start:0x020a0ed4 end:0x020a0edc
+
+src/knife/message/knife_message_term.cpp:
+    complete
+    .text       start:0x020a0edc end:0x020a0f24
 
 src/knife/message/textrender_setup.cpp:
     complete
@@ -5360,6 +5392,10 @@ src/knife/message/tcl_layout_2.cpp:
 src/engine/nftr_font.cpp:
     complete
     .text       start:0x020c6df4 end:0x020c6ecc
+
+src/engine/bitstream.cpp:
+    complete
+    .text       start:0x020c6ecc end:0x020c6f2c
 
 src/knife/message/text_stream.cpp:
     complete

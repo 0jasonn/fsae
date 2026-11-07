@@ -2,6 +2,7 @@
 #include "global.h"
 #include "actor/object/ss.h"
 #include "actor/object/effectdecls.h"
+#include "actor/object/objdecls_a.h"
 
 // effect_pika family (module effect_pika), 0x0206ef6c .. 0x0206f034 (dispatcher and init).
 // Address -> name: 0x0206ef6c effect_pika, 0x0206ef88 effect_pika_init
@@ -37,4 +38,18 @@ void effect_pika_init(Entity *e) {
     e->y.HALF.HI = e->y.HALF.HI + 9;
     InitAnimationForceUpdate(e, e->type);
     effectPhaseTable[e->type2] = 0;
+}
+
+void effect_pika_move(Entity *e) {
+    e->unk_1b = 0xb0;
+    e->spriteSettings.b20 = 6;
+    e->spriteSettings.b16 = e->spriteSettings.b20;
+    e->timer++;
+    e->y.HALF.HI = e->y.HALF.HI - 8;
+    e->spriteSettings.b0 = 1;
+    UpdateAnimationSingleFrame(e);
+    if (e->y.HALF.HI >= -8) {
+        return;
+    }
+    PutObjWork(e);
 }
