@@ -45,3 +45,15 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 - **trymatch checks ARM call targets**: a `bl` to the wrong function (or `_s32_div_f` where the original calls
   `_u32_div_f`) is reported as `call at +0x.. goes to X, the original calls 0x..`. Unsigned operands (`(u32)x % n`)
   give the unsigned divide helper.
+
+## Patterns that closed near-misses (closer rounds, Nov 2026)
+- Read a field back instead of keeping a local copy (`e->animationState ^= 2; e->direction = e->animationState << 3;`),
+  and loop on the field itself (`for (i = 0; i < gameState.playerCount; i++)`).
+- Increments first: `e->action++` before the other stores of a state change.
+- Chained assignments fix store and register order: `a = b = c = i = 0;`, `count = x[2] = x[2] + 1;`.
+- Bitfield stores in the original order instead of masking a word (`spriteSettings.b0/b14/b30`).
+- If/else orientation matters: putting the `>=` case in the else branch changes predicated-instruction order.
+- Operand order of `&`, `==` and `+` can decide the register order; try both.
+- Pointer-typed parameters (`u8 *self`) schedule differently from `s32` plus a cast.
+- mwcc merges identical case bodies into a branch to one copy; write the groups out separately when the ROM does.
+- For short bodies an exhaustive search over statement orders (scratch/agentK/w/perm.py) beats random permutation.
