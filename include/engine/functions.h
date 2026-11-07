@@ -171,7 +171,7 @@ void subTaskSetBG3Offset_reset(void);
 void OS_EnableDTCM(void);
 void func_020855bc(Entity *e); // dsd name (thumb label 0x020855bc), takes the player entity
 void make_hyosyo(void);    // plain symbol, 0x020558c0 (ranking screen setup)
-void GameState_UpdatePhase(void); // plain symbol, 0x02049454, no arguments
+BOOL GameState_UpdatePhase(void); // plain symbol, 0x02049454, no arguments
 void ranking_hyosyo(void);   // plain symbol; parked in scratch/agentC/nonmatching (ranking_hyosyo)
 u8 ClearKeyCheck(void);
 void G2x_SetBlendAlpha_(void *reg, s32 a, s32 b, s32 c, s32 d);
