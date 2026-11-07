@@ -26,10 +26,10 @@ void mapmode_move(void);                           // 0x02026a34
 void CockpitInit(void);                            // 0x020264f4
 void Cockpit(void);                                // 0x02026b98
 void cockpit_move(void);
-void CockpitUpdate(void);                          // 0x02026628
 void cockpit_bg_trans(void);
 void cockpit_obj_set(u8 index);
 }
+void CockpitUpdate(void);                          // 0x02026628, C++ (original CockpitUpdate())
 void cockpit_obj_trans(u8 mode);
 void cockpit_load(void);
 void kakera_disp(void);

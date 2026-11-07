@@ -6,7 +6,7 @@
 //   nameEntryUIView::IsDakuonConvertable(unsigned short) (0x020afa7c), nameEntryUIView::IsHandakuonConvertable(unsigned short)
 //   (0x020afb4c), nameEntryUIView::DakuonConvert(unsigned short) (0x020afb94), nameEntryUIView::HandakuonConvert(unsigned short)
 //   (0x020afc0c), nameEntryUIView_noop nameEntryUIView_noop (0x020afc5c)
-// func_020afc60 (nameEntryUIView_getTextThunk) is parked in scratch/agentF/nonmatching/func_020afc60.cpp
+// nameEntryUIView_getText_adjust (nameEntryUIView_getTextThunk) is parked in scratch/agentF/nonmatching/nameEntryUIView_getText_adjust.cpp
 
 extern "C" {
 s32 nameEntryUIView_IsDakuon(void *self, u16 ch);
