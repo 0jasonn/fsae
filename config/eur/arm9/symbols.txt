@@ -7301,7 +7301,7 @@ data_020d7cac kind:data(any) addr:0x020d7cac
 data_020d7ccc kind:data(any) addr:0x020d7ccc
 data_020d7cec kind:data(any) addr:0x020d7cec
 data_020d7d0c kind:data(any) addr:0x020d7d0c
-data_020d7d2c kind:data(any) addr:0x020d7d2c
+msgFramePalette kind:data(any) addr:0x020d7d2c
 data_020d7d6c kind:data(any) addr:0x020d7d6c
 data_020d7d74 kind:data(any) addr:0x020d7d74
 data_020d7d7c kind:data(any) addr:0x020d7d7c
@@ -9925,7 +9925,7 @@ messageStates kind:data(any) addr:0x02103c00
 telopStates kind:data(any) addr:0x02103c18
 msgMoveTable kind:data(any) addr:0x02103c34
 data_02103c50 kind:data(any) addr:0x02103c50
-data_02103c74 kind:data(any) addr:0x02103c74
+dialogText kind:data(any) addr:0x02103c74
 data_02103cd4 kind:data(any) addr:0x02103cd4
 data_02103cd8 kind:data(any) addr:0x02103cd8
 data_02103cdc kind:data(any) addr:0x02103cdc

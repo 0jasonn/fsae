@@ -1642,6 +1642,10 @@ src/knife/message/knife_font.cpp:
     complete
     .text       start:0x0204c2e0 end:0x0204c3a4
 
+src/knife/message/msgscreen.cpp:
+    complete
+    .text       start:0x0204c4bc end:0x0204c87c
+
 src/engine/cell.cpp:
     complete
     .text       start:0x0204caf4 end:0x0204cb20
@@ -3766,6 +3770,10 @@ src/knife/comm/singleplay_init.cpp:
     complete
     .text       start:0x02093bbc end:0x02093c48
 
+src/knife/comm/singleplay_updatemain.cpp:
+    complete
+    .text       start:0x02093c48 end:0x02093ef4
+
 src/knife/comm/singleplay_update.cpp:
     complete
     .text       start:0x02093ef4 end:0x02094044
@@ -3782,6 +3790,10 @@ src/engine/stub_zero_a.cpp:
     complete
     .text       start:0x020956ec end:0x020956f4
 
+src/knife/comm/singleplay_enemycheck.cpp:
+    complete
+    .text       start:0x02095878 end:0x02095ca4
+
 src/knife/comm/singleplay_formation.cpp:
     complete
     .text       start:0x02096110 end:0x0209625c
@@ -3797,6 +3809,10 @@ src/knife/comm/single_play.cpp:
 src/knife/comm/single_cmd.cpp:
     complete
     .text       start:0x02099774 end:0x020997fc
+
+src/knife/comm/singleplay_cmd.cpp:
+    complete
+    .text       start:0x02099864 end:0x02099cec
 
 src/knife/comm/single_play_2.cpp:
     complete

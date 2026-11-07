@@ -500,7 +500,7 @@ void initializeVirtualScreenData(void);
 void jumpInit(Entity *e);
 void jumpefectSet(Entity *e);
 void keyDisable(void);
-void knife_MakeMsgScreen(u16 index, const void *src);
+u32 knife_MakeMsgScreen(u16 index, const void *src); // returns (cols << 16) | rows of a framed dialog, 0 otherwise
 void knife_native_init_053428(u8 param);
 void knife_native_init_053484(u8 param);
 void knife_native_init_0534e0(u8 param);
