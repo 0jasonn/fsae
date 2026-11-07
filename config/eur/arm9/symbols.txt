@@ -13454,7 +13454,7 @@ data_02129874 kind:bss addr:0x02129874
 data_0212987a kind:bss addr:0x0212987a
 data_0212987c kind:bss addr:0x0212987c
 data_02129880 kind:bss addr:0x02129880
-data_02129884 kind:bss addr:0x02129884
+irqFunctionTable kind:bss addr:0x02129884
 data_02129888 kind:bss addr:0x02129888
 data_0212988c kind:bss addr:0x0212988c
 data_021298e4 kind:bss addr:0x021298e4
