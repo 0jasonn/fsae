@@ -20,7 +20,7 @@ extern const EntityFunc data_020dcb48[];
 extern const EntityFunc data_020dcb74[];
 extern const EntityFunc data_020dcb88[];
 extern const u8 data_020dcb1b[];
-extern const void *const data_02117b90[];
+extern const void *data_02117b90[]; // writable .data table; a const array makes mwcc drop a store tama0f_init keeps
 extern const u8 data_020dcb13[];
 extern const u8 data_020dcb10[];
 extern const u8 data_020dcb17[];

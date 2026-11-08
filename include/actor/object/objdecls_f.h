@@ -6,7 +6,7 @@
 #include "engine/functions.h"
 
 extern "C" void PlStartPosSet(Entity *e); // 0x02054fe4, original name PlStartPosSet (C linkage)
-extern "C" int abs_s32(int a);      // 0x02029a44, returns |a| (no original name yet)
+s32 abs_s32(s32 value);            // 0x02029a44, returns |value|
 void CalcRanking(void);                   // 0x02055f18, original name CalcRanking()
 u32 ranking_getKey(u8 index);             // 0x0205610c, original name ranking_getKey(unsigned char)
 void func_0208366c(s32 a, u16 b, u16 c);    // 0x0208366c (C++ name func_0208366cltt)

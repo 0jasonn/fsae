@@ -46,8 +46,8 @@ typedef struct PalBits {
     u8 d : 1;
 } PalBits;
 
-// Rodata block read by the formation code (symbols.txt: data_0211b298); this unit reads the u16 at +0x32.
-extern u8 data_0211b298[];
+// data_0211b298, the rodata block of tuning values, is declared by each user: the partner update must read it as const
+// (its loads are hoisted), while the enemy check and the formation code must not.
 
 // Table of s16 offset pairs indexed by the animation state (symbols.txt: data_0211b2e4); UpdateTruck reads it.
 extern s16 data_0211b2e4[];
@@ -67,7 +67,6 @@ void _ZN5Knife6Single10SinglePlay17SinglePlayLogList10InitializeEv(void *self);
 BOOL Knife_Single_SinglePlay_UpdateTruck(void *self, SpWorkPair *pair);
 BOOL Knife_Single_SinglePlay_WarpPartner(void *self, PlayerData *player);
 BOOL Knife_Single_SinglePlay_WarpPartnerToTarget(void *self, PlayerData *player0, PlayerData *player1, s16 x, s16 y);
-void Knife_Single_SinglePlay_SinglePlayLogList_UpdateCurrentLogDistance(void *self, s16 distance);
 BOOL Knife_Single_SinglePlay_UpdateStopWarp(void *self, SpWorkPair *pair);
 }
 

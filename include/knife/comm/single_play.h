@@ -2,22 +2,10 @@
 #define KNIFE_COMM_SINGLE_PLAY_H
 
 #include "types.h"
+#include "knife/comm/knife_single_log.h"
 
 // Knife::Single::SinglePlay state (the object the controller, formation and warp functions work on). Offsets from the
 // start of the object. Only the fields the D functions read or write are named.
-namespace Knife {
-namespace Single {
-namespace SinglePlay {
-
-class SinglePlayLogList {
-public:
-    void Initialize(void); // 0x0209a060, C++ member (mangled name in symbols.txt)
-};
-
-}
-}
-}
-
 typedef struct SinglePlayWork {
     u8 contNo;               // 0x00: the controlling player (0 or 1)
     u8 contChanging;         // 0x01: nonzero while a controller change is in progress

@@ -5,6 +5,7 @@
 #include "knife/comm/single_play.h"
 #include "knife/comm/single_play_api.h"
 #include "knife/comm/singleplay_2.h"
+extern u8 data_0211b298[]; // rodata block of tuning values; see singleplay_2.h
 
 // Knife::Single::SinglePlay::UpdateFormationMode2p(SinglePlayWork&) (0x02096110): the two-player formation state machine.
 // Returns FALSE on every path. From state 0 it moves to state 0x11 or 0x12 when entity 0 or player 0 is in the right state

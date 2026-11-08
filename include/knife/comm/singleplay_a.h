@@ -1,5 +1,5 @@
-#ifndef WIP_A_SINGLEPLAY_A_H
-#define WIP_A_SINGLEPLAY_A_H
+#ifndef KNIFE_COMM_SINGLEPLAY_A_H
+#define KNIFE_COMM_SINGLEPLAY_A_H
 
 #include "engine/functions.h"
 #include "engine/player.h"
@@ -8,6 +8,8 @@
 #include "knife/comm/singleplay_work_api.h"
 #include "knife/comm/singleplay_2.h"
 #include "engine/misc.h"
+
+extern u8 data_0211b298[]; // rodata block of tuning values; see singleplay_2.h
 
 // SinglePlay functions defined or called by the files of implementer A (plain names, `this` as void *).
 extern "C" {
@@ -20,13 +22,6 @@ BOOL Knife_Single_SinglePlay_UpdateWallCheck(void *self, SpWorkPair *pair);
 }
 
 
-// Three-component fixed point vector (VecFx32 in the SDK).
-typedef struct VecFx32 {
-    s32 x;
-    s32 y;
-    s32 z;
-} VecFx32;
-extern "C" s32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 
 // C++ functions (original names) called by the update code
 int Em30CheckAttack(Entity *e);

@@ -4290,7 +4290,7 @@ _ZNK5Knife6Single10SinglePlay17SinglePlayLogList16GetCurrentLogPosEv kind:functi
 _ZNK5Knife6Single10SinglePlay17SinglePlayLogList13GetNextLogPosEv kind:function(arm,size=0x44) addr:0x0209a358
 _ZNK5Knife6Single10SinglePlay17SinglePlayLogList13GetPrevLogPosEv kind:function(arm,size=0x28) addr:0x0209a39c
 _ZNK5Knife6Single10SinglePlay17SinglePlayLogList14GetPosToInsertEh kind:function(arm,size=0xbc) addr:0x0209a3c4
-Knife_Single_SinglePlay_SinglePlayLogList_UpdateCurrentLogDistance kind:function(arm,size=0x118) addr:0x0209a480
+_ZN5Knife6Single10SinglePlay17SinglePlayLogList24UpdateCurrentLogDistanceEs kind:function(arm,size=0x118) addr:0x0209a480
 Knife_Single_SinglePlay_SinglePlayLogList_ResetDistance kind:function(arm,size=0xa4) addr:0x0209a598
 Knife_Comm_WirelessIcon_WirelessIcon kind:function(arm,size=0x20) addr:0x0209a63c
 Knife_Comm_WirelessIcon_nop kind:function(arm,size=0x4) addr:0x0209a65c

@@ -104,7 +104,7 @@ BOOL Knife_Single_SinglePlay_UpdateEnemyCheck(void *self, SpWorkPair *pair) {
             }
             if (!found && work->unk_0a > 2) {
                 work->unk_0a = 1;
-                Knife_Single_SinglePlay_SinglePlayLogList_UpdateCurrentLogDistance((u8 *)work + 0x34, 0x12);
+                ((Knife::Single::SinglePlay::SinglePlayLogList *)((u8 *)work + 0x34))->UpdateCurrentLogDistance(0x12);
             }
         }
     }

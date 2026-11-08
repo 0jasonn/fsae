@@ -1,5 +1,5 @@
-#ifndef WIP_A_KNIFE_SINGLE_LOG_H
-#define WIP_A_KNIFE_SINGLE_LOG_H
+#ifndef KNIFE_COMM_KNIFE_SINGLE_LOG_H
+#define KNIFE_COMM_KNIFE_SINGLE_LOG_H
 
 #include "engine/functions.h"
 

@@ -733,6 +733,10 @@ src/game/comerror.cpp:
     complete
     .text       start:0x02028e70 end:0x02028fe8
 
+src/knife/comm/commframe_sync.cpp:
+    complete
+    .text       start:0x02028fe8 end:0x0202903c
+
 src/knife/comm/comm.cpp:
     complete
     .text       start:0x020296e8 end:0x02029828
@@ -3178,6 +3182,10 @@ src/actor/object/kabuto_2.cpp:
     complete
     .text       start:0x0207b400 end:0x0207b560
 
+src/actor/object/sword_move_2.cpp:
+    complete
+    .text       start:0x0207b868 end:0x0207b908
+
 src/actor/object/kabuto.cpp:
     complete
     .text       start:0x0207bc48 end:0x0207bcd4
@@ -3237,6 +3245,10 @@ src/actor/object/tama0c.cpp:
 src/actor/object/tama0d.cpp:
     complete
     .text       start:0x0207cea8 end:0x0207d10c
+
+src/actor/object/tama0f_4.cpp:
+    complete
+    .text       start:0x0207d3cc end:0x0207d794
 
 src/actor/object/tama0f_3.cpp:
     complete
@@ -3801,6 +3813,14 @@ src/knife/comm/singleplay_updatemain.cpp:
 src/knife/comm/singleplay_update.cpp:
     complete
     .text       start:0x02093ef4 end:0x02094044
+
+src/knife/comm/singleplay_movepartner.cpp:
+    complete
+    .text       start:0x02094044 end:0x02094a88
+
+src/knife/comm/singleplay_ankyo.cpp:
+    complete
+    .text       start:0x02094a88 end:0x02094b64
 
 src/knife/comm/singleplay_check.cpp:
     complete
