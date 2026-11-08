@@ -1,6 +1,7 @@
 #ifndef WIP_E_SETUPTEXT_E_H
 #define WIP_E_SETUPTEXT_E_H
 
+#include "knife/message/rtinfo_e.h"
 #include "engine/functions.h"
 #include "ui/fileselui_view.h"
 #include "ui/modeselui_view.h"
@@ -22,7 +23,6 @@ typedef struct UIViewTextTarget {
 
 extern "C" {
 s32 knife_GetFontStrWidth_04c2e0(s32 msgId, u8 flag, void *work);
-void Knife_Message_SetupTextRenderer(void *sceneInfo, s32 language, void *textGetter);
 s32 fsFileCheck(u8 slot);
 void modeSelUIView_setupTextRender(ModeSelUIView *self);
 }
@@ -32,5 +32,11 @@ extern u8 *data_02180da4;          // cell buffer
 extern UIViewTextTarget data_02124bb4[];
 extern u8 data_021806f0[];
 extern u8 data_02124c50[];
+
+namespace Knife {
+namespace Message {
+s32 SetupTextRenderer(const TextRenderSceneInfo *info, Language language, IExTextGetter *getter); // 0x020a2b14
+}
+}
 
 #endif

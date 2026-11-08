@@ -57,3 +57,9 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 - Pointer-typed parameters (`u8 *self`) schedule differently from `s32` plus a cast.
 - mwcc merges identical case bodies into a branch to one copy; write the groups out separately when the ROM does.
 - For short bodies an exhaustive search over statement orders (scratch/agentK/w/perm.py) beats random permutation.
+- Separate return blocks: when the ROM has one FALSE block and one TRUE block, write `if (a || b) return FALSE; return TRUE;`. Early returns or `&&` fold into predicated moves.
+- `BOOL result = TRUE; ... if (!second) result = FALSE;` matches where a direct return does not.
+- Reading rodata through a `const` declaration lets the scheduler hoist its load above stores; a non-const view keeps the load in place. The same table can need either in different units, so such a table is declared per unit (data_0211b298). Conversely, a const table in .data can make mwcc drop a store the ROM keeps (data_02117b90).
+- A single local's type can flip register allocation across a whole function: `int diffX = (s16)(a - b)` gives signed behaviour without the side effects of an s16 local.
+- Declaring a struct local mid-block (`VecFx32 v = {0,0,0};`) controls where its zero stores land.
+- mwcc merges a case's trailing call into an identical call at the end of a following block only when that block is the last before the join.

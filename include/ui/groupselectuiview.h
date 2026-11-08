@@ -112,7 +112,6 @@ extern "C" void subTaskSendObjChar(void *buf, u32 offset, u32 size);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
-extern "C" void Knife_Message_SetupTextRenderer(void *sceneInfo, s32 language, void *textGetter);
 
 // Text render target of a pane (Knife::Message render target, only the fields the room drawing reads)
 typedef struct TextRenderTarget {

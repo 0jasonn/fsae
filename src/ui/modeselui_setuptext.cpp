@@ -1,6 +1,5 @@
 #include "ui/setuptext_e.h"
 
-extern "C" void DC_FlushRange(void *base, u32 size);
 extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
 
 // modeSelUIView::setupTextRender() (0x020a9ce0): centres the common text (message 0x84f) on the two option targets,
@@ -32,7 +31,9 @@ void modeSelUIView_setupTextRender(ModeSelUIView *self) {
     if (getter != NULL) {
         getter += 0x30;
     }
-    Knife_Message_SetupTextRenderer(data_02124c50, KnifeApp_getCurrentLanguage(KnifeApp_getInstance()), getter);
+    Knife::Message::SetupTextRenderer((const Knife::Message::TextRenderSceneInfo *)data_02124c50,
+                                      (Knife::Message::Language)KnifeApp_getCurrentLanguage(KnifeApp_getInstance()),
+                                      (Knife::Message::IExTextGetter *)getter);
     DC_FlushRange(*cellBufferRef + 0x6400, 0xa80);
     subTaskSendBgChar(1, *cellBufferRef + 0x6400, 0x6400, 0xa80);
 }

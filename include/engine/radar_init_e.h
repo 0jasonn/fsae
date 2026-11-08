@@ -58,7 +58,6 @@ s32 _get_subtask_data_size(s32 index);
 
 extern "C" {
 s32 KnifeApp_getCurrentLanguage(void *app);
-void Knife_Message_SetupTextRenderer(void *sceneInfo, s32 language, void *textGetter);
 void MI_CpuCopy8(const void *src, void *dst, u32 size);
 void MI_CpuFill8(void *dst, u8 value, u32 size);
 s32 ResChunk_GetNRCS(void *entry, void *owner);

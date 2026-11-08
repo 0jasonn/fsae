@@ -161,7 +161,6 @@ void func_020be9f0(void *obj);
 void func_020bed14(void *obj);
 s32 func_020be66c(void *obj, u8 *flag);
 void func_020be798(void *obj);
-void func_020bacb8(void *obj);
 void KnifeApp_MessageRequest(void *self, s32 index, void *tokenizer, void *analyzer, s32 flag);
 s32 WM_GetDispersionScanPeriod(void);
 s32 WM_StartScanEx(void *callback, void *param);

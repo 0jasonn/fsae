@@ -4221,6 +4221,10 @@ src/knife/message/textreader_param.cpp:
     complete
     .text       start:0x020a2a2c end:0x020a2b14
 
+src/knife/message/msg_setuprt.cpp:
+    complete
+    .text       start:0x020a2b14 end:0x020a2d30
+
 src/knife/message/rendertarget.cpp:
     complete
     .text       start:0x020a2dd4 end:0x020a2df4
