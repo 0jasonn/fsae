@@ -1798,9 +1798,17 @@ src/ui/opdemo_2.cpp:
     complete
     .text       start:0x02051b24 end:0x02051d84
 
+src/ui/opdemo_6.cpp:
+    complete
+    .text       start:0x02051d84 end:0x020521dc
+
 src/ui/opdemo_5.cpp:
     complete
     .text       start:0x020521dc end:0x02052244
+
+src/ui/opdemo_4.cpp:
+    complete
+    .text       start:0x02052244 end:0x02052688
 
 src/ui/opdemo_3.cpp:
     complete
