@@ -4209,6 +4209,10 @@ src/knife/message/rendertarget_2.cpp:
     complete
     .text       start:0x020a2efc end:0x020a2f1c
 
+src/knife/message/message_rendertarget.cpp:
+    complete
+    .text       start:0x020a2f1c end:0x020a3134
+
 src/knife/message/rendertarget_3.cpp:
     complete
     .text       start:0x020a3134 end:0x020a31ac
@@ -4432,6 +4436,10 @@ src/ui/playstyleselui_init.cpp:
 src/ui/playstyleselui.cpp:
     complete
     .text       start:0x020aacfc end:0x020aad08
+
+src/ui/playstyleselui_update.cpp:
+    complete
+    .text       start:0x020ab190 end:0x020ab4c4
 
 src/ui/playstyleselui_2.cpp:
     complete
@@ -4816,6 +4824,10 @@ src/ui/widget/tile_attr.cpp:
 src/ui/widget/pane_scale.cpp:
     complete
     .text       start:0x020b76bc end:0x020b771c
+
+src/ui/widget/tilebuf_blit.cpp:
+    complete
+    .text       start:0x020b771c end:0x020b786c
 
 src/engine/os_owner.cpp:
     complete
