@@ -4961,6 +4961,10 @@ src/ui/widget/slider_ctrl.cpp:
     complete
     .text       start:0x020bac20 end:0x020bacb8
 
+src/ui/ctrl_scroll.cpp:
+    complete
+    .text       start:0x020bacb8 end:0x020baef4
+
 src/ui/widget/menu_scroll.cpp:
     complete
     .text       start:0x020baef4 end:0x020bafb4
