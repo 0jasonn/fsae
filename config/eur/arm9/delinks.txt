@@ -2434,6 +2434,10 @@ src/actor/object/set12_2.cpp:
     complete
     .text       start:0x020639a8 end:0x02063bac
 
+src/actor/object/rc_yuka.cpp:
+    complete
+    .text       start:0x02063bac end:0x02063fd8
+
 src/actor/object/yuka.cpp:
     complete
     .text       start:0x02063fd8 end:0x020644cc
@@ -2481,6 +2485,10 @@ src/actor/object/set16_3.cpp:
 src/actor/object/ido.cpp:
     complete
     .text       start:0x02064e74 end:0x020650f4
+
+src/actor/object/ido_yuka.cpp:
+    complete
+    .text       start:0x020650f4 end:0x020654c0
 
 src/actor/object/set17.cpp:
     complete
@@ -3330,6 +3338,10 @@ src/game/wanwan.cpp:
     complete
     .text       start:0x0208139c end:0x02081640
 
+src/actor/object/wanwan_2.cpp:
+    complete
+    .text       start:0x02081640 end:0x02081a8c
+
 src/game/yousei.cpp:
     complete
     .text       start:0x02081b64 end:0x02081d3c
@@ -3341,6 +3353,10 @@ src/game/yousei_5.cpp:
 src/game/rupeelevel.cpp:
     complete
     .text       start:0x02082054 end:0x020820cc
+
+src/game/yousei_2.cpp:
+    complete
+    .text       start:0x020820cc end:0x02082598
 
 src/game/yousei_4.cpp:
     complete
