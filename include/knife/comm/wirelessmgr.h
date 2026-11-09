@@ -42,7 +42,7 @@ public:
 };
 
 // Functions of the WirelessManager that are not declared in functions.h (plain names, extern "C").
-extern "C" void Knife_Comm_WirelessManager_internalReset(void *self);
+extern "C" BOOL Knife_Comm_WirelessManager_internalReset(void *self);
 extern "C" void Knife_Comm_WirelessManager_update_off2idle(void *self);
 extern "C" void Knife_Comm_WirelessManager_update_idle(void *self);
 extern "C" void Knife_Comm_WirelessManager_update_idle2off(void *self);

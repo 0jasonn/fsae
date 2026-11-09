@@ -3902,9 +3902,21 @@ src/knife/comm/wireless_manager_2.cpp:
     complete
     .text       start:0x02090ecc end:0x02090ed8
 
+src/knife/comm/wireless_manager_3.cpp:
+    complete
+    .text       start:0x02090ed8 end:0x020912a4
+
 src/knife/comm/wirelessmgr_scan.cpp:
     complete
     .text       start:0x02091464 end:0x020914a4
+
+src/knife/comm/wireless_manager_endparent.cpp:
+    complete
+    .text       start:0x02091738 end:0x02091870
+
+src/knife/comm/wireless_manager_disconnect.cpp:
+    complete
+    .text       start:0x02091ba0 end:0x02091cd8
 
 src/knife/comm/wirelessmgr_query.cpp:
     complete
@@ -3913,6 +3925,10 @@ src/knife/comm/wirelessmgr_query.cpp:
 src/knife/comm/wm_state.cpp:
     complete
     .text       start:0x02091e7c end:0x02091eb4
+
+src/knife/comm/wireless_manager_updategameinfo.cpp:
+    complete
+    .text       start:0x02091eb4 end:0x0209200c
 
 src/knife/comm/wirelessmgr_aid.cpp:
     complete
@@ -3953,6 +3969,10 @@ src/knife/comm/wirelessmanager_2.cpp:
 src/knife/comm/wm_result.cpp:
     complete
     .text       start:0x02092758 end:0x02092820
+
+src/knife/comm/wireless_manager_internalreset.cpp:
+    complete
+    .text       start:0x02092820 end:0x02092940
 
 src/knife/comm/wirelessmgr_state_empty0.cpp:
     complete
