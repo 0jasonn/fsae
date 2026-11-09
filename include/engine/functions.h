@@ -75,7 +75,7 @@ int func_02086120(Entity *e);
 s32 func_0208a06c(Entity *e);
 void func_020b5264(void *self, void *arg);
 void func_020b5744(void *obj, void *arg, s16 *pos);
-void func_020b57c8(void *self, s32 arg, s16 *pos);
+void Pane_setOffset(void *self, s32 arg, s16 *pos);
 void func_020b57f4(void *obj, void *arg);
 void func_020b7578(void *self, void **src);
 void *LoadBlzFile(const char *path, void *heap, s32 align, u32 *outSize); // LoadBlzFile: returns the raw heap block
@@ -274,7 +274,7 @@ void Scene_StoreTileIndices(const u16 *pos, u32 layer0, u32 layer1);
 s32 ScriptMove(NPC_WORK_ *a);
 void SetCgColor(u32 a, u32 b);
 Entity *SetDisp(Entity *e, u8 a, u8 b, u8 c);
-void SetTblSetWorks(const u8 *list);
+BOOL SetTblSetWorks(const u8 *list);
 void Status_ArmIfEnabled(void);
 void Stub_IgnoreArg(int arg);
 void Task_Chain(u8 a);

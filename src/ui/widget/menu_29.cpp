@@ -36,7 +36,7 @@ void *Menu_AcquirePoolEntry(void *poolObj, s32 id, s32 value) {
     SndState_StartEntryList(entry, 0, id);
     if (value != 0x80) {
         level = Menu_ClampValue(pool, value, 0, 0xff);
-        func_020bf9dc(entry, 0xffff, level - 0x80);
+        SndRef_setPan(entry, 0xffff, level - 0x80);
     }
     entry->id = id;
     entry->unk_08 = 0;

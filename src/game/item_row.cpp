@@ -25,7 +25,7 @@ typedef struct ItemRow {
     u16 count;             // 0x38
 } ItemRow;
 
-// ItemRow_layout(self, arg, pos) (0x020b6cc4): copies pos and passes it to func_020b57c8, then computes the largest
+// ItemRow_layout(self, arg, pos) (0x020b6cc4): copies pos and passes it to Pane_setOffset, then computes the largest
 // minX and the total width of the entries with the gap between them
 void ItemRow_layout(void *selfv, s32 arg, s16 *pos) {
     ItemRow *self = (ItemRow *)selfv;
@@ -37,7 +37,7 @@ void ItemRow_layout(void *selfv, s32 arg, s16 *pos) {
     }
     copy[0] = pos[0];
     copy[1] = pos[1];
-    func_020b57c8(self, arg, copy);
+    Pane_setOffset(self, arg, copy);
     self->maxX = 0;
     self->sumX = 0;
     for (i = 0; i < self->count; i++) {

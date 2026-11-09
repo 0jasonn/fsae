@@ -9,7 +9,7 @@ void Menu_ClearList(MenuList *list);
 void Menu_ClearCells(MenuCellWork *cells);
 
 extern "C" {
-void func_020b7218(void *object);
+void Obj_initVtableC(void *object);
 u8 *Menu_InitState(u8 *self);
 }
 

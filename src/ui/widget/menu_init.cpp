@@ -26,8 +26,8 @@ u8 *Menu_InitState(u8 *self) {
     *(u16 *)(self + 0x403a2) = 0;
     *(u16 *)(self + 0x403a4) = 0;
     Menu_ClearCells((MenuCellWork *)(self + 0x403a6));
-    func_020b7218(self + 0x403f8);
-    func_020b7218(self + 0x40500);
+    Obj_initVtableC(self + 0x403f8);
+    Obj_initVtableC(self + 0x40500);
     *(s32 *)(self + 0x40608) = 0;
     *(u16 *)(self + 0x4060c) = 0;
     *(u16 *)(self + 0x4060e) = 0;

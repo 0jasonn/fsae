@@ -28,7 +28,7 @@ s32 SndState_StartEntry2(void * volatile *ref, s32 pool, s32 id, s32 priority, M
     }
     func_020bfd28(voice, (u8 *)data + data->dataOffset, zero, (s32)seq);
     Menu_SetRefByte40(ref, entry->byte6);
-    func_020bf9bc(ref, entry->byte7);
+    SndRef_setPriority(ref, entry->byte7);
     MenuSound_SetFade(ref, index);
     return 1;
 }
@@ -53,7 +53,7 @@ s32 SndState_StartEntryOwned(void * volatile *ref, s32 pool, s32 id, s32 priorit
     }
     func_020bfd28(voice, (u8 *)data + data->dataOffset, *(s32 *)entry, (s32)seq);
     Menu_SetRefByte40(ref, entry->byte6);
-    func_020bf9bc(ref, entry->byte7);
+    SndRef_setPriority(ref, entry->byte7);
     MenuSound_SetFadeTimes(ref, fadeIn, fadeOut);
     return 1;
 }

@@ -509,6 +509,18 @@ src/engine/std_snprintf.cpp:
     complete
     .text       start:0x0201dc94 end:0x0201dcbc
 
+src/game/wm_endmp.cpp:
+    complete
+    .text       start:0x02020260 end:0x020202d8
+
+src/game/wm_datasharing_end.cpp:
+    complete
+    .text       start:0x02020518 end:0x02020564
+
+src/game/wm_cmd.cpp:
+    complete
+    .text       start:0x02020df8 end:0x02020fc8
+
 src/actor/object/arrow.cpp:
     complete
     .text       start:0x02020fc8 end:0x02021004
@@ -888,6 +900,10 @@ src/actor/enemy/em0c_2.cpp:
 src/actor/enemy/areacheck_2.cpp:
     complete
     .text       start:0x0202c9a8 end:0x0202caa0
+
+src/game/areacheck2.cpp:
+    complete
+    .text       start:0x0202caa0 end:0x0202caf8
 
 src/actor/enemy/em0e.cpp:
     complete
@@ -1397,9 +1413,17 @@ src/actor/enemy/em26_3.cpp:
     complete
     .text       start:0x02040d00 end:0x02040d60
 
+src/game/childInit.cpp:
+    complete
+    .text       start:0x02040d60 end:0x02040dcc
+
 src/actor/enemy/em27.cpp:
     complete
     .text       start:0x02040dcc end:0x02040e44
+
+src/game/em27_init.cpp:
+    complete
+    .text       start:0x02040e44 end:0x02040e94
 
 src/actor/enemy/em27_2.cpp:
     complete
@@ -1549,6 +1573,10 @@ src/game/fade.cpp:
     complete
     .text       start:0x020461e0 end:0x0204625c
 
+src/game/fade_set.cpp:
+    complete
+    .text       start:0x0204625c end:0x020462c4
+
 src/game/fade_2.cpp:
     complete
     .text       start:0x020462c4 end:0x020463f0
@@ -1677,6 +1705,10 @@ src/ui/msgwin_2.cpp:
 src/knife/comm/knife_comm_disp_3.cpp:
     complete
     .text       start:0x0204b2f0 end:0x0204b488
+
+src/actor/object/knife_comm_disp_4.cpp:
+    complete
+    .text       start:0x0204b488 end:0x0204b4dc
 
 src/knife/comm/knife_comm_disp.cpp:
     complete
@@ -1841,6 +1873,10 @@ src/engine/objutil_4.cpp:
 src/actor/object/objprio.cpp:
     complete
     .text       start:0x0204ff68 end:0x02050200
+
+src/actor/object/objutil_5.cpp:
+    complete
+    .text       start:0x02050280 end:0x020502e0
 
 src/engine/objutil.cpp:
     complete
@@ -2434,6 +2470,10 @@ src/actor/object/set5c_2.cpp:
     complete
     .text       start:0x0205f9d4 end:0x0205fadc
 
+src/actor/object/set5c_vanish.cpp:
+    complete
+    .text       start:0x0205fadc end:0x0205fb38
+
 src/actor/object/set5c_3.cpp:
     complete
     .text       start:0x0205fb38 end:0x0205fb9c
@@ -2722,6 +2762,10 @@ src/ui/oplogo.cpp:
     complete
     .text       start:0x02068044 end:0x020682ac
 
+src/actor/object/oplogo_shadow_init.cpp:
+    complete
+    .text       start:0x020682ac end:0x02068314
+
 src/ui/oplogo_2.cpp:
     complete
     .text       start:0x02068314 end:0x02068428
@@ -3002,6 +3046,10 @@ src/actor/object/effect_tokishin.cpp:
     complete
     .text       start:0x0206e2c8 end:0x0206e2e4
 
+src/actor/object/effect_tokishin_init.cpp:
+    complete
+    .text       start:0x0206e2e4 end:0x0206e34c
+
 src/actor/object/effect_tokishin_2.cpp:
     complete
     .text       start:0x0206e34c end:0x0206e3d0
@@ -3009,6 +3057,10 @@ src/actor/object/effect_tokishin_2.cpp:
 src/actor/object/effect_syurenjyo.cpp:
     complete
     .text       start:0x0206e3d0 end:0x0206e3ec
+
+src/actor/object/effect_syurenjyo_init.cpp:
+    complete
+    .text       start:0x0206e3ec end:0x0206e454
 
 src/actor/object/effect_syurenjyo_2.cpp:
     complete
@@ -3078,6 +3130,10 @@ src/actor/object/set50.cpp:
     complete
     .text       start:0x0207005c end:0x02070140
 
+src/actor/object/moji.cpp:
+    complete
+    .text       start:0x02070140 end:0x02070194
+
 src/actor/object/set50_2.cpp:
     complete
     .text       start:0x02070194 end:0x020701b8
@@ -3109,6 +3165,10 @@ src/actor/object/rewdoor_knife.cpp:
 src/actor/object/set55.cpp:
     complete
     .text       start:0x02071f4c end:0x020725d0
+
+src/actor/object/link_demo.cpp:
+    complete
+    .text       start:0x020725d0 end:0x02072608
 
 src/actor/object/set56.cpp:
     complete
@@ -4413,6 +4473,22 @@ src/game/pending_ptr.cpp:
     complete
     .text       start:0x020a3778 end:0x020a3798
 
+src/engine/card.cpp:
+    complete
+    .text       start:0x020a3900 end:0x020a39e8
+
+src/engine/card_2.cpp:
+    complete
+    .text       start:0x020a3a60 end:0x020a3b54
+
+src/engine/card_pullout.cpp:
+    complete
+    .text       start:0x020a46b0 end:0x020a4708
+
+src/engine/card_pullout_2.cpp:
+    complete
+    .text       start:0x020a4798 end:0x020a47a8
+
 src/knife/message/pictogram_init.cpp:
     complete
     .text       start:0x020a4888 end:0x020a48cc
@@ -4600,6 +4676,10 @@ src/ui/fileselui_9.cpp:
 src/ui/modeselui.cpp:
     complete
     .text       start:0x020a8ff0 end:0x020a92e0
+
+src/ui/widget/modeselui_move.cpp:
+    complete
+    .text       start:0x020a92e0 end:0x020a9494
 
 src/ui/modeselui_3.cpp:
     complete
@@ -4893,6 +4973,10 @@ src/ui/widget/pane_a.cpp:
     complete
     .text       start:0x020b5578 end:0x020b5744
 
+src/ui/widget/pane_setoffset.cpp:
+    complete
+    .text       start:0x020b57c8 end:0x020b57f4
+
 src/ui/widget/pane_b.cpp:
     complete
     .text       start:0x020b5840 end:0x020b5850
@@ -4960,6 +5044,10 @@ src/engine/packed_set.cpp:
 src/engine/rec_format.cpp:
     complete
     .text       start:0x020b7154 end:0x020b7218
+
+src/ui/widget/uiobj_init.cpp:
+    complete
+    .text       start:0x020b7218 end:0x020b7248
 
 src/engine/rec_init.cpp:
     complete
@@ -5037,6 +5125,10 @@ src/ui/widget/rect_obj_4.cpp:
     complete
     .text       start:0x020b7e48 end:0x020b7fec
 
+src/ui/widget/rectobj_link.cpp:
+    complete
+    .text       start:0x020b7fec end:0x020b8004
+
 src/ui/widget/rect_obj_5.cpp:
     complete
     .text       start:0x020b8004 end:0x020b8078
@@ -5061,6 +5153,10 @@ src/ui/widget/rect_pair_init.cpp:
     complete
     .text       start:0x020b8440 end:0x020b8528
 
+src/ui/widget/rect_create_2.cpp:
+    complete
+    .text       start:0x020b8528 end:0x020b8554
+
 src/ui/widget/rect_pair.cpp:
     complete
     .text       start:0x020b86b8 end:0x020b8784
@@ -5073,6 +5169,10 @@ src/ui/widget/rect_pair_links.cpp:
     complete
     .text       start:0x020b87b4 end:0x020b88b0
 
+src/ui/widget/rect_create_3.cpp:
+    complete
+    .text       start:0x020b88b0 end:0x020b88dc
+
 src/ui/widget/rect_item.cpp:
     complete
     .text       start:0x020b88dc end:0x020b8a5c
@@ -5084,6 +5184,10 @@ src/ui/widget/rect_item_2.cpp:
 src/ui/widget/rect_slot.cpp:
     complete
     .text       start:0x020b8e28 end:0x020b8f68
+
+src/ui/widget/rect_create_4.cpp:
+    complete
+    .text       start:0x020b9258 end:0x020b9284
 
 src/ui/widget/rect_list_4.cpp:
     complete
@@ -5116,6 +5220,14 @@ src/ui/widget/rect_group_slot.cpp:
 src/ui/widget/ctrl_entry.cpp:
     complete
     .text       start:0x020b9fac end:0x020ba004
+
+src/ui/widget/uiobj_create.cpp:
+    complete
+    .text       start:0x020ba71c end:0x020ba774
+
+src/ui/widget/uiobj_create_3.cpp:
+    complete
+    .text       start:0x020ba7e0 end:0x020ba80c
 
 src/ui/widget/ctrl_release.cpp:
     complete
@@ -5257,6 +5369,10 @@ src/ui/widget/rect_buf_init.cpp:
     complete
     .text       start:0x020bc84c end:0x020bc8bc
 
+src/ui/widget/uiobj_create_2.cpp:
+    complete
+    .text       start:0x020bcd34 end:0x020bce14
+
 src/ui/widget/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd474
@@ -5272,6 +5388,10 @@ src/ui/widget/menu_6.cpp:
 src/ui/widget/menu_21.cpp:
     complete
     .text       start:0x020be0c4 end:0x020be128
+
+src/ui/widget/uiobj_create_4.cpp:
+    complete
+    .text       start:0x020be128 end:0x020be154
 
 src/ui/widget/menu_31.cpp:
     complete

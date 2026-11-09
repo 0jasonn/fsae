@@ -68,7 +68,7 @@ typedef struct CtrlSelectObj {
 } CtrlSelectObj;
 
 extern "C" {
-void func_020b7fec(void *obj, void *arg, s32 value);
+void RectObjLink_callA(void *obj, void *arg, s32 value);
 void func_020bb788(void *self, u16 mode);
 void Ctrl_selectCurrentItem(void *self, s32 flag);
 void Ctrl_setSliderIndexA(void *self, s32 value);

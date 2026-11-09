@@ -3,7 +3,7 @@
 
 #include "engine/functions.h"
 
-// Entry of the menu sound table: the byte at +6 goes to the reference (Menu_SetRefByte40), +7 to func_020bf9bc
+// Entry of the menu sound table: the byte at +6 goes to the reference (Menu_SetRefByte40), +7 to SndRef_setPriority
 typedef struct MenuSoundEntry {
     u8 unk_00[6];
     u8 byte6;
@@ -22,7 +22,7 @@ void *SndVoicePool_Acquire(s32 pool, void *voice);
 s32 func_020c0d6c(s32 index, u32 flags, void *record, s32 flag, MenuSoundData **out);
 s32 func_020c0e50(s32 index, u32 flags, void *record, s32 flag, MenuSoundData **out);
 void func_020bfd28(void *voice, void *data, s32 a, s32 b);
-void func_020bf9bc(void * volatile *ref, u8 value);
+void SndRef_setPriority(void * volatile *ref, u8 value);
 void Menu_SetRefByte40(void * volatile *ref, u8 value);
 void MenuSound_SetFadeTimes(void * volatile *ref, s32 fadeIn, s32 fadeOut);
 void MenuSound_SetFade(void * volatile *ref, s32 value); // the ROM callers pass a full word (menu_api.h has u16)

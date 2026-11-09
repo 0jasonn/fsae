@@ -155,7 +155,7 @@ s32 Knife_Sound_SequenceHandle_getPlayerNumber(KnifeSoundSequenceHandle *self) {
 
 extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c4c4(KnifeSoundSequenceHandle *self, s32 a, s32 b);
 void Knife_Sound_SequenceHandle_fwdPlayer_08c4c4(KnifeSoundSequenceHandle *self, s32 a, s32 b) {
-    func_020bf9dc(&self->player);
+    SndRef_setPan(&self->player);
 }
 
 extern "C" void *Knife_Sound_SequenceHandle_getPlayerField(KnifeSoundSequenceHandle *self);

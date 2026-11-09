@@ -36,7 +36,7 @@ void Ctrl_selectCurrentItem(void *selfv, s32 flag) {
                 pos[0] = ((s16 *)self->cursor)[2];
                 pos[1] = (s16)((rel + 1) * 0x17);
                 ((void (*)(void *, s16 *))CTRL_VSLOT(self->cursor, 2))(self->cursor, pos);
-                func_020b7fec(self->cursor, self->unk_18, sel);
+                RectObjLink_callA(self->cursor, self->unk_18, sel);
                 self->selected = 1;
                 if (flag == 0) {
                     sel = 1;
