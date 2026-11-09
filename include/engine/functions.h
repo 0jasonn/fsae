@@ -598,6 +598,10 @@ int ObjAnimMoveLine(Entity *e); // nonzero when the move animation has ended
 void func_02084180(Entity *e); // thumb
 u8 func_02084110(Entity *e); // thumb: bit mask of the players touching e
 void AddHeartUtsuwa(u8 type, s8 amount);                // AddHeartUtsuwa(unsigned char, signed char), 0x0202604c
+void AtariMake(void);                                   // AtariMake(), 0x02057344
+void BlockCopy(u16 *dst, u16 *src, u16 width, u16 flags); // BlockCopy(unsigned short*, unsigned short*, unsigned short, unsigned short), 0x0202a128
+void FrameSet(u16 frame);                               // FrameSet(unsigned short), 0x0205715c
+void PartsSet(u16 part, u16 cellX, u16 cellY);          // PartsSet(unsigned short, unsigned short, unsigned short), 0x020571fc
 
 extern "C" void sword_move(Entity *e);
 

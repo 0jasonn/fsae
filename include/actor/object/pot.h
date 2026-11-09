@@ -11,6 +11,9 @@ typedef struct MapScroll {
     /* 00 */ u8 unk_00[0x18];
     /* 18 */ u16 scrollX;
     /* 1a */ u16 scrollY;
+    /* 1c */ u8 unk_1c[0xc];
+    /* 28 */ u16 viewX;
+    /* 2a */ u16 viewY;
 } MapScroll;
 
 extern MapScroll mapState;

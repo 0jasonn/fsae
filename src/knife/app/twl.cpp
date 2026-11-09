@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "knife/app/twl.h"
 
 // TWL boot code, 0x020828b8 to 0x020829d8.
 //   BeforeTask (0x020828b8): moves the pending flag of frameCounter into its second byte and clears the first.

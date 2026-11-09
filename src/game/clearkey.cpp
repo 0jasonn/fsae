@@ -2,6 +2,7 @@
 #include "global.h"
 #include "engine/player.h"
 #include "actor/object/k_misc.h"
+#include "actor/object/k_yousei.h"
 // key_check (0x02048ea8): bit mask of the two-bit fields of keys (field n -> bit n) that are at least threshold
 s32 key_check(u8 keys, u8 threshold) {
     s32 result = 0;
@@ -37,4 +38,28 @@ u8 ClearKeyCheck(void) {
     if (cnt3 == gameState.playerCount) return 3;
     if (cnt2 == gameState.playerCount) return 2;
     return cnt1 == gameState.playerCount;
+}
+
+extern u8 data_021036a8[]; // (mask, shift) pairs: bit field of GameSlot::fieldBits that belongs to each stage group
+
+// Raises the clear key level of the current stage group (GameState::unk_01 < 5) in every player's field bits to at least
+// `level`.
+void ClearKeyUpdate(u8 level) {
+    u8 mask;
+    u8 shift;
+    u8 value;
+    u8 i;
+
+    if (gameState.unk_01 >= 5) {
+        return;
+    }
+    shift = data_021036a8[gameState.unk_01 * 2 + 1];
+    mask = data_021036a8[gameState.unk_01 * 2];
+    value = level << shift;
+    for (i = 0; i < gameState.playerCount; i++) {
+        u8 bits = gameState.slots[i].fieldBits;
+        if ((bits & mask) < value) {
+            gameState.slots[i].fieldBits = (bits & ~mask) | value;
+        }
+    }
 }

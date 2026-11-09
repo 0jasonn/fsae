@@ -531,11 +531,7 @@ src/game/map_2.cpp:
 
 src/game/shikake.cpp:
     complete
-    .text       start:0x02021fb0 end:0x0202203c
-
-src/game/shikake_2.cpp:
-    complete
-    .text       start:0x020220c0 end:0x02022110
+    .text       start:0x02021fb0 end:0x02022110
 
 src/game/shikake_3.cpp:
     complete
@@ -569,6 +565,10 @@ src/actor/object/boots.cpp:
     complete
     .text       start:0x02024498 end:0x020244d4
 
+src/game/boots_nop.cpp:
+    complete
+    .text       start:0x020247b4 end:0x020247b8
+
 src/game/check.cpp:
     complete
     .text       start:0x020247b8 end:0x020248f0
@@ -577,13 +577,25 @@ src/game/hit.cpp:
     complete
     .text       start:0x020248f0 end:0x02024b20
 
+src/game/hit_none.cpp:
+    complete
+    .text       start:0x02024b20 end:0x02024b38
+
 src/game/hit_2.cpp:
     complete
     .text       start:0x02024b38 end:0x020250f8
 
+src/game/hit_4.cpp:
+    complete
+    .text       start:0x020250f8 end:0x020251ec
+
 src/game/hit_3.cpp:
     complete
     .text       start:0x020251ec end:0x02025808
+
+src/game/hit_5.cpp:
+    complete
+    .text       start:0x02025808 end:0x020258f0
 
 src/game/hit_7.cpp:
     complete
@@ -597,6 +609,10 @@ src/game/item.cpp:
     complete
     .text       start:0x02025d2c end:0x02025d9c
 
+src/game/utsuwa.cpp:
+    complete
+    .text       start:0x0202604c end:0x020260ac
+
 src/game/item_2.cpp:
     complete
     .text       start:0x020260ac end:0x020260c8
@@ -605,9 +621,17 @@ src/game/item_3.cpp:
     complete
     .text       start:0x020262b4 end:0x02026308
 
+src/game/usekey.cpp:
+    complete
+    .text       start:0x02026308 end:0x0202639c
+
 src/game/item_4.cpp:
     complete
     .text       start:0x0202639c end:0x02026474
+
+src/game/kakera_full.cpp:
+    complete
+    .text       start:0x02026474 end:0x020264f4
 
 src/game/cockpit_11.cpp:
     complete
@@ -737,6 +761,10 @@ src/knife/comm/commframe_sync.cpp:
     complete
     .text       start:0x02028fe8 end:0x0202903c
 
+src/game/formation_break.cpp:
+    complete
+    .text       start:0x0202954c end:0x020295a4
+
 src/knife/comm/comm.cpp:
     complete
     .text       start:0x020296e8 end:0x02029828
@@ -805,9 +833,17 @@ src/ui/doorsel_2.cpp:
     complete
     .text       start:0x0202ab90 end:0x0202abb8
 
+src/game/doorsel_5.cpp:
+    complete
+    .text       start:0x0202abb8 end:0x0202abfc
+
 src/ui/doorsel_3.cpp:
     complete
     .text       start:0x0202adc8 end:0x0202aee4
+
+src/game/doorsel_6.cpp:
+    complete
+    .text       start:0x0202aee4 end:0x0202af70
 
 src/game/doorsel_4.cpp:
     complete
@@ -896,6 +932,10 @@ src/actor/enemy/em01_2.cpp:
 src/actor/enemy/em1a.cpp:
     complete
     .text       start:0x0202eb88 end:0x0202ef7c
+
+src/game/em1a_2.cpp:
+    complete
+    .text       start:0x0202ef7c end:0x0202f098
 
 src/actor/enemy/em1b.cpp:
     complete
@@ -1453,13 +1493,25 @@ src/actor/enemy/encnt_4.cpp:
     complete
     .text       start:0x02043b54 end:0x02043bf8
 
+src/game/encnt_9.cpp:
+    complete
+    .text       start:0x02043bf8 end:0x02043cb8
+
 src/actor/enemy/encnt_5.cpp:
     complete
     .text       start:0x02043cb8 end:0x02043d28
 
+src/game/encnt_8.cpp:
+    complete
+    .text       start:0x02043d28 end:0x02043da8
+
 src/actor/enemy/encnt_6.cpp:
     complete
     .text       start:0x02043da8 end:0x02043dc8
+
+src/game/encnt_10.cpp:
+    complete
+    .text       start:0x02043dc8 end:0x02043f00
 
 src/actor/enemy/encnt_7.cpp:
     complete
@@ -1539,7 +1591,7 @@ src/game/multiplay_4.cpp:
 
 src/game/clearkey.cpp:
     complete
-    .text       start:0x02048ea8 end:0x02048fa0
+    .text       start:0x02048ea8 end:0x02049020
 
 src/game/rank.cpp:
     complete
@@ -1598,9 +1650,21 @@ src/ui/message_9.cpp:
     complete
     .text       start:0x0204a61c end:0x0204a624
 
+src/game/message_11.cpp:
+    complete
+    .text       start:0x0204a624 end:0x0204a69c
+
+src/game/message_12.cpp:
+    complete
+    .text       start:0x0204a87c end:0x0204a93c
+
 src/ui/message_10.cpp:
     complete
     .text       start:0x0204aa00 end:0x0204aa84
+
+src/game/message_13.cpp:
+    complete
+    .text       start:0x0204ab00 end:0x0204ab20
 
 src/ui/msgwin.cpp:
     complete
@@ -1661,6 +1725,10 @@ src/game/cell_random.cpp:
 src/game/native.cpp:
     complete
     .text       start:0x0204cd0c end:0x0204cd30
+
+src/game/magic_takara.cpp:
+    complete
+    .text       start:0x0204cd30 end:0x0204cdd8
 
 src/game/iroyuka.cpp:
     complete
@@ -1945,6 +2013,10 @@ src/engine/scr.cpp:
 src/game/multiroom.cpp:
     complete
     .text       start:0x02056f4c end:0x0205715c
+
+src/engine/scr_4.cpp:
+    complete
+    .text       start:0x0205715c end:0x020572b4
 
 src/engine/scr_3.cpp:
     complete
@@ -2241,6 +2313,10 @@ src/actor/object/set3d_4.cpp:
 src/actor/object/set3e.cpp:
     complete
     .text       start:0x0205d9d4 end:0x0205d9f0
+
+src/actor/object/set3e_2.cpp:
+    complete
+    .text       start:0x0205d9f0 end:0x0205dad8
 
 src/actor/object/set3e_3.cpp:
     complete
@@ -2632,7 +2708,7 @@ src/actor/object/race_item_1.cpp:
 
 src/actor/object/ss_2.cpp:
     complete
-    .text       start:0x02067bdc end:0x02067bf8
+    .text       start:0x02067bdc end:0x02067d68
 
 src/actor/object/oplogo_1.cpp:
     complete
@@ -4989,6 +5065,10 @@ src/ui/widget/rect_pair.cpp:
     complete
     .text       start:0x020b86b8 end:0x020b8784
 
+src/ui/widget/rect_create.cpp:
+    complete
+    .text       start:0x020b8784 end:0x020b87b4
+
 src/ui/widget/rect_pair_links.cpp:
     complete
     .text       start:0x020b87b4 end:0x020b88b0
@@ -5024,6 +5104,10 @@ src/ui/widget/slider.cpp:
 src/ui/widget/slider_2.cpp:
     complete
     .text       start:0x020b97d4 end:0x020b9844
+
+src/ui/widget/ctrl_list_rows.cpp:
+    complete
+    .text       start:0x020b98f8 end:0x020b9d30
 
 src/ui/widget/rect_group_slot.cpp:
     complete
@@ -5092,6 +5176,10 @@ src/ui/widget/rect_geom_copy.cpp:
 src/ui/widget/rect_slot3.cpp:
     complete
     .text       start:0x020bbb70 end:0x020bbbfc
+
+src/ui/widget/ctrl_row_label.cpp:
+    complete
+    .text       start:0x020bbbfc end:0x020bbdd8
 
 src/ui/widget/ctrl_find.cpp:
     complete

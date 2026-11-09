@@ -23,7 +23,7 @@ typedef struct RectLinkPair {
 } RectLinkPair;
 
 // RectObjPair_initWithLinks(self, holder, owner, pos, value, offset, widths) (0x020b87b4, provisional name): creates two
-// RectObjLink children (func_020b88b0) with the position (0, 0) and the size (0xd, 8), gives each the value of
+// RectObjLink children (RectObjLink_create) with the position (0, 0) and the size (0xd, 8), gives each the value of
 // func_020bc200 (owner, widths[i]), sets the group items from pos and the size (0xd, value), calls
 // RectObjPair_setOffsets with value, stores offset at +0x1c and 8 into both halfwords at +0x20
 extern "C" void RectObjPair_initWithLinks(RectLinkPair *self, void *holder, void *owner, s16 *pos, s16 value, s16 offset,
@@ -41,7 +41,7 @@ void RectObjPair_initWithLinks(RectLinkPair *self, void *holder, void *owner, s1
     s32 j;
 
     for (i = 0; i < 2; i++) {
-        child = func_020b88b0(holder);
+        child = RectObjLink_create(holder);
         childSize[0] = 0xd;
         childSize[1] = 8;
         childPos[0] = 0;

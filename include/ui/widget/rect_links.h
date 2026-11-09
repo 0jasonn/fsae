@@ -5,7 +5,7 @@
 
 #include "types.h"
 
-extern "C" void *func_020b88b0(void *holder);
+extern "C" void *RectObjLink_create(void *holder);
 extern "C" s32 func_020bc200(void *owner, u16 w);
 extern "C" void RectObjLink_setGeometry(void *self, s16 *pos, s16 *size, s32 value);
 extern "C" void RectObjList_setItems(void *self, void *holder, void **src, s32 count, s16 *pos, s16 *size);

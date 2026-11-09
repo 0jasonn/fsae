@@ -73,7 +73,7 @@ s32 func_020bd830(MenuWork *menu);
 s32 Menu_DispatchKeys(MenuWork *menu);
 
 void Touch_UpdateFilter(void *obj, MenuEvent *event);
-void func_020be244(MenuWork *menu);
+void Menu_teardownHardware(MenuWork *menu);
 }
 // Menu input handlers (C++ names from original_names.tsv)
 s32 Menu_HandleInputB(MenuWork *menu, MenuInput *input);

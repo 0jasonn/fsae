@@ -53,7 +53,6 @@ FrameEntry *frame_select(void);                             // 0x0204dcc4
 void MPlayerInit(u8 player, u8 slotA, u8 slotB);               // 0x0204c87c
 void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 PartRecord *parts_select(FRAME_INFO_ *frame, u32 flags);        // 0x0204d950
-void PartsSet(u16 partId, u16 x, u16 y);                    // 0x020571fc
 void takara_set(u8 *list, FRAME_INFO_ *frame, u8 flag);     // 0x0204d788
 void parts_set(FRAME_INFO_ *frame, u32 flags);              // 0x0204db38
 void FrameLoad_Select(void);                                // 0x0204df84

@@ -134,7 +134,7 @@ s32 CtrlItem_init(s32 value);
 s32 func_020ba9a4(void *obj, MenuEvent *event, MenuInput *input);
 s32 func_020b8554(void *obj, MenuEventB *event, MenuInput *input);
 s32 lobby_msgObj_init(s32 value);
-s32 func_020b8784(s32 value);
+s32 RectObjLink3_init(s32 value);
 s32 RectSlot3_init(s32 value);
 s32 func_020bbf54(s32 value);
 s32 Ctrl_getSliderIndexA(void *obj);
@@ -142,7 +142,7 @@ s32 Ctrl_getSliderIndexB(void *obj);
 void Ctrl_setCounterA(void *obj);
 void Ctrl_freeVirtualBlock(void *self, s32 value);
 void Gx_setBrightnessPair(s32 value);
-void func_020bbbfc(void *obj, s32 a, s32 b);
+void Ctrl_setRowLabel(void *obj, s32 a, s32 b);
 void func_020bdd60(MenuWork *menu, const void *data, void *obj, s32 flag);
 s32 Menu_GetPosition(void *obj);
 void *Menu_AcquirePoolEntry(void *pool, s32 id, s32 value); // src/game/menu_29.cpp (pool is a MenuPool, see game/menu_wip.h)

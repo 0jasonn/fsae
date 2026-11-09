@@ -7,8 +7,8 @@
 
 extern u8 localPlayerIndex;
 void func_0202809c(void);          // C++ linkage (ComFinish(0))
-extern "C" {
 void ab_check(void);               // 0x0202aee4
+extern "C" {
 void doorsel_select(void);         // 0x0202af70
 }
 

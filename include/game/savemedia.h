@@ -30,7 +30,6 @@ void FS_CreateFile(const char *path, u32 mode);
 void FS_SetFileLength(FSFile *file, u32 length);
 void FS_WriteFileAsync(FSFile *file, const void *buffer, u32 size);
 void FS_WaitAsync(FSFile *file);
-void BlockCopy(const void *src, void *dst, u16 x, u16 y);
 void func_0208ae14(void); // thumb
 }
 

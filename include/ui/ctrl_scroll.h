@@ -74,7 +74,7 @@ void Ctrl_setStateValue(void *self);
 void RectObjList_countDown(void *list);
 CtrlItemEntry Ctrl_getItemEntry(void *list, s16 index);
 s32 func_020b9df0(CtrlPanel *slider, CtrlItemEntry (*getter)(void *, s16), void *itemList);
-void func_020b98f8(CtrlPanel *slider, const CtrlItemEntry &entry, s32 index);
+void Ctrl_drawListRow(CtrlPanel *slider, const CtrlItemEntry &entry, s32 index);
 }
 
 #endif

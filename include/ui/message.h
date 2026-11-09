@@ -9,6 +9,10 @@
 typedef int (*MsgStateFunc)(void);
 
 // Telop request block (telopRequest, 0x18 bytes)
+typedef struct TelopDrawBits {
+    u8 pos : 5;
+    u8 rest : 3;
+} TelopDrawBits;
 typedef struct TelopWork {
     /* 00 */ u8 active;
     /* 01 */ u8 unk_01;
@@ -51,7 +55,10 @@ typedef struct KNIFE_MSGSYS {
         };
     };
     /* 0f */ u8 originBits; // low 5 bits: tile origin x of the window
-    /* 10 */ u8 drawFlags;  // low 5 bits set to 0x18 by tlpInit
+    /* 10 */ union {
+        u8 drawFlags; // low 5 bits set to 0x18 by tlpInit
+        TelopDrawBits draw;
+    };
     /* 11 */ u8 sizeBits;   // low 5 bits: width step, bits 5-7: height step
     /* 12 */ u16 msgId;     // text id of the message
     /* 14 */ u8 unk_14[0x25 - 0x14];
