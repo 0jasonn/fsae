@@ -1782,6 +1782,10 @@ src/engine/objutil_2.cpp:
     complete
     .text       start:0x0205063c end:0x0205069c
 
+src/actor/object/obj_anim_move_set.cpp:
+    complete
+    .text       start:0x0205069c end:0x020506d8
+
 src/engine/objutil_3.cpp:
     complete
     .text       start:0x02050840 end:0x02050880
@@ -1834,6 +1838,10 @@ src/game/stageinit_2.cpp:
     complete
     .text       start:0x020537bc end:0x02053ab8
 
+src/game/pause_req.cpp:
+    complete
+    .text       start:0x02053ab8 end:0x02053aec
+
 src/game/pause.cpp:
     complete
     .text       start:0x02053bc8 end:0x02053c6c
@@ -1854,6 +1862,10 @@ src/game/player.cpp:
     complete
     .text       start:0x020547ec end:0x02054894
 
+src/game/before_player.cpp:
+    complete
+    .text       start:0x02054894 end:0x020548f4
+
 src/game/player_2.cpp:
     complete
     .text       start:0x02054a44 end:0x02054b64
@@ -1865,6 +1877,10 @@ src/game/player_3.cpp:
 src/game/player_5.cpp:
     complete
     .text       start:0x02054f30 end:0x02054f64
+
+src/game/pl_start_pos.cpp:
+    complete
+    .text       start:0x02054fe4 end:0x0205501c
 
 src/game/plcheck.cpp:
     complete
@@ -2066,6 +2082,10 @@ src/actor/object/set1f.cpp:
     complete
     .text       start:0x02059fbc end:0x02059fd8
 
+src/actor/object/set1f_move.cpp:
+    complete
+    .text       start:0x0205a050 end:0x0205a090
+
 src/actor/object/set02.cpp:
     complete
     .text       start:0x0205a090 end:0x0205a0d0
@@ -2078,9 +2098,17 @@ src/actor/object/connect.cpp:
     complete
     .text       start:0x0205a42c end:0x0205a480
 
+src/actor/object/connect_btn.cpp:
+    complete
+    .text       start:0x0205a480 end:0x0205a4ec
+
 src/actor/object/set2a.cpp:
     complete
     .text       start:0x0205a4ec end:0x0205a508
+
+src/actor/object/set2a_init.cpp:
+    complete
+    .text       start:0x0205a508 end:0x0205a560
 
 src/actor/object/set2a_2.cpp:
     complete
@@ -2102,6 +2130,10 @@ src/actor/object/set2c_2.cpp:
     complete
     .text       start:0x0205a798 end:0x0205a80c
 
+src/actor/object/set2d.cpp:
+    complete
+    .text       start:0x0205a80c end:0x0205a8e8
+
 src/actor/object/ashimoto.cpp:
     complete
     .text       start:0x0205a8e8 end:0x0205a9f8
@@ -2117,6 +2149,10 @@ src/actor/object/set51.cpp:
 src/actor/object/set2f.cpp:
     complete
     .text       start:0x0205aed8 end:0x0205af04
+
+src/actor/object/set2f_init.cpp:
+    complete
+    .text       start:0x0205af04 end:0x0205afac
 
 src/actor/object/set2f_2.cpp:
     complete
@@ -2161,6 +2197,10 @@ src/actor/object/barmaster.cpp:
 src/actor/object/option.cpp:
     complete
     .text       start:0x0205c03c end:0x0205c08c
+
+src/actor/object/open_move.cpp:
+    complete
+    .text       start:0x0205c158 end:0x0205c1c4
 
 src/actor/object/option_2.cpp:
     complete
@@ -2474,6 +2514,10 @@ src/actor/object/set13_5.cpp:
     complete
     .text       start:0x02064770 end:0x020647d0
 
+src/actor/object/set13_cell.cpp:
+    complete
+    .text       start:0x020647d0 end:0x02064880
+
 src/actor/object/set14.cpp:
     complete
     .text       start:0x02064880 end:0x0206489c
@@ -2550,9 +2594,17 @@ src/actor/object/set25.cpp:
     complete
     .text       start:0x020665c0 end:0x020665dc
 
+src/actor/object/set25_init.cpp:
+    complete
+    .text       start:0x020665dc end:0x02066630
+
 src/actor/object/set25_2.cpp:
     complete
     .text       start:0x02066630 end:0x0206672c
+
+src/actor/object/set25_end.cpp:
+    complete
+    .text       start:0x0206672c end:0x0206677c
 
 src/actor/object/set25_3.cpp:
     complete
@@ -2605,6 +2657,10 @@ src/ui/oplogo_3.cpp:
 src/ui/oplogo_4.cpp:
     complete
     .text       start:0x020687dc end:0x0206884c
+
+src/actor/object/oplogo_kentama.cpp:
+    complete
+    .text       start:0x0206884c end:0x020688d8
 
 src/ui/oplogo_5.cpp:
     complete
@@ -2782,6 +2838,10 @@ src/actor/object/set43_3.cpp:
     complete
     .text       start:0x0206cac8 end:0x0206cb1c
 
+src/actor/object/set43_gensoku.cpp:
+    complete
+    .text       start:0x0206cb1c end:0x0206cb84
+
 src/actor/object/getarea.cpp:
     complete
     .text       start:0x0206cb84 end:0x0206cc9c
@@ -2789,6 +2849,10 @@ src/actor/object/getarea.cpp:
 src/actor/object/plmove_1.cpp:
     complete
     .text       start:0x0206cc9c end:0x0206cea0
+
+src/actor/object/switchcheck.cpp:
+    complete
+    .text       start:0x0206cea0 end:0x0206cef8
 
 src/actor/object/setwind.cpp:
     complete
@@ -3066,6 +3130,10 @@ src/actor/object/set66_3.cpp:
     complete
     .text       start:0x0207543c end:0x0207553c
 
+src/actor/object/plstcheck.cpp:
+    complete
+    .text       start:0x0207553c end:0x020755a4
+
 src/actor/object/set67.cpp:
     complete
     .text       start:0x020755a4 end:0x020755c0
@@ -3129,6 +3197,10 @@ src/actor/object/objfind.cpp:
 src/actor/object/rupeerush.cpp:
     complete
     .text       start:0x0207758c end:0x02077650
+
+src/actor/object/rupeerush_dice.cpp:
+    complete
+    .text       start:0x02077650 end:0x02077684
 
 src/actor/object/sr_2.cpp:
     complete
@@ -3206,6 +3278,10 @@ src/actor/object/takara_4.cpp:
     complete
     .text       start:0x0207c180 end:0x0207c228
 
+src/actor/object/calc_rupee_diff.cpp:
+    complete
+    .text       start:0x0207c228 end:0x0207c26c
+
 src/game/heartlevel.cpp:
     complete
     .text       start:0x0207c334 end:0x0207c408
@@ -3233,6 +3309,10 @@ src/actor/object/tama00_2.cpp:
 src/actor/object/tama0a.cpp:
     complete
     .text       start:0x0207c974 end:0x0207cb58
+
+src/actor/object/tama0a_type1_init.cpp:
+    complete
+    .text       start:0x0207ccfc end:0x0207cd40
 
 src/actor/object/tama0a_2.cpp:
     complete
@@ -3289,6 +3369,10 @@ src/actor/object/tama05.cpp:
 src/actor/object/tama06.cpp:
     complete
     .text       start:0x0207ead4 end:0x0207f0cc
+
+src/actor/object/tama06_rlarge.cpp:
+    complete
+    .text       start:0x0207f0cc end:0x0207f120
 
 src/actor/object/tama06_2.cpp:
     complete

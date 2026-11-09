@@ -6,7 +6,7 @@
 // Rupee rush (module sr): setupRupeeRush places the rupee rush object (kind 3, id 9) on a free cell of the
 // board. Dice index and cell tables are read by getRupeeRushDiceIndex (0x02077650, parked).
 extern "C" u32 getNumberOfObj(u8 kind, u8 id);
-extern "C" u8 getRupeeRushDiceIndex(void);
+u8 getRupeeRushDiceIndex(void); // 0x02077650, rupeerush_dice.cpp
 extern u8 rupeeRushState[];        // rupeeRushState: [0] rush step counter, [1] index into rupeeRushSetId
 extern const u8 rupeeRushSetId[];  // rupeeRushSetId: set id per index
 extern const u8 rupeeRushCell[];   // rupeeRushCell: (x, y) cell pairs
