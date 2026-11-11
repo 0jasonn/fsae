@@ -19,14 +19,14 @@ void *func_020bbf54(void *self);
 void *RectSpan_clear(void *self);
 
 void *UiObj_ba71c_create(void *holder);
-void *UiObj_ba748_create(void *holder);
-void *UiObj_ba7e0_create(void *holder);
-void *UiObj_bcd34_create(void *holder);
-void *UiObj_bcd60_create(void *holder);
-void *UiObj_bcd8c_create(void *holder);
-void *UiObj_bcdb8_create(void *holder);
+void *RectObjLink2_create(void *holder);
+void *RectSlot_create(void *holder);
+void *CtrlItem_create(void *holder);
+void *LobbyMsgObj_create(void *holder);
+void *RectObjLink3_create(void *holder);
+void *RectSlot3_create(void *holder);
 void *UiObj_bcde4_create(void *holder);
-void *UiObj_be128_create(void *holder);
+void *RectSpan_create(void *holder);
 }
 
 #endif

@@ -5,7 +5,7 @@
 // Each one allocates its record from the heap in the first word of holder, returns NULL when the allocation fails and
 // otherwise returns the object initialised in place.
 
-void *UiObj_ba7e0_create(void *holder) {
+void *RectSlot_create(void *holder) {
     void *obj = func_020c2c34(*(void **)holder, 0x40);
     if (obj == NULL) {
         goto null;

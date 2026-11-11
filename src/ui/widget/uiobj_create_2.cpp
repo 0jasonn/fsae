@@ -7,7 +7,7 @@
 // Each one allocates its record from the heap in the first word of holder, returns NULL when the allocation fails and
 // otherwise returns the object initialised in place.
 
-void *UiObj_bcd34_create(void *holder) {
+void *CtrlItem_create(void *holder) {
     void *obj = func_020c2c34(*(void **)holder, 0xb0);
     if (obj == NULL) {
         goto null;
@@ -20,7 +20,7 @@ null:
     return NULL;
 }
 
-void *UiObj_bcd60_create(void *holder) {
+void *LobbyMsgObj_create(void *holder) {
     void *obj = func_020c2c34(*(void **)holder, 0x20);
     if (obj == NULL) {
         goto null;
@@ -33,7 +33,7 @@ null:
     return NULL;
 }
 
-void *UiObj_bcd8c_create(void *holder) {
+void *RectObjLink3_create(void *holder) {
     void *obj = func_020c2c34(*(void **)holder, 0x24);
     if (obj == NULL) {
         goto null;
@@ -46,7 +46,7 @@ null:
     return NULL;
 }
 
-void *UiObj_bcdb8_create(void *holder) {
+void *RectSlot3_create(void *holder) {
     void *obj = func_020c2c34(*(void **)holder, 0x24);
     if (obj == NULL) {
         goto null;

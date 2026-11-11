@@ -74,7 +74,7 @@ extern u8 data_02127180[];
 extern u16 data_020df004[];
 
 extern "C" {
-s32 UiObj_be128_create(void *ref);
+s32 RectSpan_create(void *ref);
 void RectSpan_callAndMore(s32 value, void *data, void *obj, void *ref);
 void Ctrl_setItemList(void *obj, s32 value);
 void func_020bf09c(void *out, void *data, void *obj);

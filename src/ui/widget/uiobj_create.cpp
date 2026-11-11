@@ -18,7 +18,7 @@ null:
     return NULL;
 }
 
-void *UiObj_ba748_create(void *holder) {
+void *RectObjLink2_create(void *holder) {
     void *obj = func_020c2c34(*(void **)holder, 0x1c);
     if (obj == NULL) {
         goto null;
