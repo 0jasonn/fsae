@@ -1,4 +1,4 @@
-#include "ui/setuptext_e.h"
+#include "ui/setuptext.h"
 
 extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
 

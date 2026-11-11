@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
-#include "game/hit_a.h"
+#include "game/hit.h"
 
 // Field of the player slot at byte offset `off` of playerWork (the slot is selected by the entity type)
 #define PLAYER_FIELD(type, field, off) (*(type *)((u8 *)&playerWork[0].field + (off)))

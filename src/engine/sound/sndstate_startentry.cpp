@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/menusound_e.h"
+#include "engine/menusound.h"
 
 // SndState_StartEntry2 (0x020c186c): starts the sound of a menu sound entry for a reference. A voice is taken from the
 // pool, the sequence (kind 6 lookup) and the sound data (lookup 1) are acquired for it; when one of them fails the

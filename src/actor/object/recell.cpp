@@ -1,4 +1,4 @@
-#include "actor/object/recell_a.h"
+#include "actor/object/recell.h"
 
 // Rewrites the map cells around a block (recell0/recell1, 0x02066910 and 0x02067040): the cell list for the block type
 // is applied around the cell under the block position; cases 0 and 2 start 8 pixels to the left.

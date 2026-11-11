@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "knife/comm/wirelessmanager.h"
 #include "actor/object/wm_idle2parent.h"
-#include "game/agent_a.h"
+#include "game/agent.h"
 
 // Wireless manager commands, 0x02020df8 .. 0x02020fc8.
 

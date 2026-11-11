@@ -1,4 +1,4 @@
-#include "actor/object/rewhalf_a.h"
+#include "actor/object/rewhalf.h"
 
 // Rewrites the map cells under a half block (rewHalf, 0x02061e44). The cell list comes from the pick index (or from the
 // bgm record when it is 6) and the block type; the type & 3 selects the cells around the block.

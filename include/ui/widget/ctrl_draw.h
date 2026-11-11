@@ -2,7 +2,7 @@
 #define WIP_E_CTRL_DRAW_E_H
 
 #include "engine/functions.h"
-#include "knife/message/tcl_layout_e.h"
+#include "knife/message/tcl_layout.h"
 #include "ui/ctrl_scroll.h"
 
 // Text canvas that the Ctrl rows draw into: a record (made by Record_InitShape) with a vtable at +0x14 and the text drawer

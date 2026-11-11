@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "knife/comm/wireless_manager_c.h"
+#include "knife/comm/wireless_manager_methods.h"
 
 // Knife::Comm::WirelessManager::updateUserGameInfo() (0x02091eb4): fills the "KNF" game-info block with the
 // current user value and link level and pushes it through WM_SetGameInfo.

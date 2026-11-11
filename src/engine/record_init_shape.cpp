@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/record_init_e.h"
+#include "engine/record_init.h"
 
 static inline u32 CountLeadingZeros(u32 value) {
     asm { clz value, value }

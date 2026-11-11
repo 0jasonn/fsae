@@ -4,8 +4,8 @@
 #include "engine/functions.h"
 #include "ui/fileselui.h"
 #include "ui/fileselui_view.h"
-#include "ui/modeselui_e.h"
-#include "ui/setuptext_e.h"
+#include "ui/modeselui.h"
+#include "ui/setuptext.h"
 #include "knife/comm/multisio.h"
 #include "game/setbg.h"
 

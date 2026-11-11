@@ -1,4 +1,4 @@
-#include "knife/comm/wireless_manager_c.h"
+#include "knife/comm/wireless_manager_methods.h"
 
 // Knife::Comm::WirelessManager::endParent() (0x02091738): ends the parent session (state 8) by stopping the
 // data sharing and the MP session, then moves to state 9.

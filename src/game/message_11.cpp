@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/message.h"
-#include "game/message_a.h"
+#include "game/message.h"
 
 // Functions in this file (original names from the debug build): tlpMove, msgMove
 

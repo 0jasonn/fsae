@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/encnt_a.h"
+#include "game/encnt.h"
 
 // housha1: moves a free spawn slot along a random direction. On the first call the direction is picked at random (0..63);
 // every call adds the step of that direction (trigTable, sine and cosine in 1/16 steps) to the slot position, wrapped to the

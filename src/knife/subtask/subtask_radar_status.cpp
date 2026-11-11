@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/radar_status_e.h"
+#include "engine/radar_status.h"
 
 // GetSubtaskRadarStatus(SUBTASK_RADAR_WORK*) (0x020a3570, original name from the debug build): collects the values the
 // radar screen shows: stage, area, time, the three power levels of the local player, the position of every player

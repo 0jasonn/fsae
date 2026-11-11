@@ -1,4 +1,4 @@
-#include "engine/sndpcm_e.h"
+#include "engine/sndpcm.h"
 
 // SndPcmPlayer_Start (0x020bf540): sets up a hardware PCM channel (format 0 = PCM8, 1 = PCM16, 2 = ADPCM; the loop
 // start and length are counted in words), starts its timer and records the playing state and the command tag.

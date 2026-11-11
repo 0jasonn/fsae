@@ -1,4 +1,4 @@
-#include "knife/comm/msgscrn_a.h"
+#include "knife/comm/msgscrn.h"
 
 // knife_MakeMsgScreen(unsigned short, Knife::Message::KNIFE_MSGSCRN const*) (0x0204c4bc): builds the frame and the text of a
 // message dialog from a message screen description. With a frame the frame graphics are copied, the text is measured and

@@ -1,4 +1,4 @@
-#include "actor/object/tama0f_a.h"
+#include "actor/object/tama0f_api.h"
 
 // Storm shot (tama0f_storm, 0x0207d794): hops between the players when hit, then hovers and drops sparks.
 void tama0f_storm(Entity *e) {

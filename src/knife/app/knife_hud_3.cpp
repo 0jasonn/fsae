@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/app/knife_hud.h"
-#include "knife/message/knife_hud_e.h"
+#include "knife/message/knife_hud.h"
 #include "knife/subtask/subtask_calls.h"
 #include "engine/player.h"
 #include "knife/app/knife_hud_layout.h"

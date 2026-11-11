@@ -1,4 +1,4 @@
-#include "knife/comm/singleplay_a.h"
+#include "knife/comm/singleplay_api.h"
 
 // Knife::Single::SinglePlay::CheckCommand(PL_WORK_*, PL_WORK_*) (0x02099864): decides whether the pending request
 // (reqKind 1: controller change, 2: formation change) may run now. The first player is the controlled one.

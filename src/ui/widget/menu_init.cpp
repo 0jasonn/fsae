@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/menu_init_e.h"
+#include "engine/menu_init.h"
 
 // Menu_InitState (0x020bc588): clears the state of a menu object (counters, lists, cells, the two embedded objects
 // and the tables of pointers) and returns it

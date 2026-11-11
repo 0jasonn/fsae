@@ -5,7 +5,7 @@
 #include "engine/entity.h"
 #include "engine/player.h"
 #include "knife/app/knife_hud.h"
-#include "engine/radar_init_e.h"
+#include "engine/radar_init.h"
 
 extern PlayerData *data_0212c53c;   // current player block
 extern u8 data_0212c830[];          // per-player value shown on the radar

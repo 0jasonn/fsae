@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "knife/message/tcl_layout_e.h"
+#include "knife/message/tcl_layout.h"
 
 // TclText_DrawBlockAligned (0x020c6b50): moves the origin along the cross direction to align the block within
 // a box of the given height (end or centre), then draws the lines.

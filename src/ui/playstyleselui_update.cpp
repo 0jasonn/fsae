@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "knife/message/playstyle_update_e.h"
+#include "knife/message/playstyle_update.h"
 #define CTRL ((FileSelUIViewCtrl *)data_0217e6f0)
 
 extern u8 data_021806f0[];

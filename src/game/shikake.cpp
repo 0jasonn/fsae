@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/shikake.h"
-#include "game/shikake_a.h"
+#include "game/shikake_api.h"
 
 // Switch-block helpers (module shikake). Original names from the debug build.
 //   ShikakeMove

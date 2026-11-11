@@ -2,7 +2,7 @@
 #include "global.h"
 #include "ui/modeselui_view.h"
 #include "ui/modeselui_api.h"
-#include "ui/modeselui_e.h"
+#include "ui/modeselui.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   modeSelUIView_viewWillApper (0x020a8ff0), modeSelUIView_leave (0x020a9048), func_020a9494 and func_020a94a4

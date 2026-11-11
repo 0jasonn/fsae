@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "knife/message/tilebuf_e.h"
+#include "knife/message/tilebuf.h"
 #include "ui/widget/tile_record.h"
 
 // TileBuffer_blitMap (0x020b771c): copies the present tiles of a tile map source into the tile buffer at pos. The

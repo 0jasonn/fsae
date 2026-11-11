@@ -3900,11 +3900,7 @@ src/knife/comm/wirelessmgr_update.cpp:
 
 src/knife/comm/wireless_manager_2.cpp:
     complete
-    .text       start:0x02090ecc end:0x02090ed8
-
-src/knife/comm/wireless_manager_3.cpp:
-    complete
-    .text       start:0x02090ed8 end:0x020912a4
+    .text       start:0x02090ecc end:0x020912a4
 
 src/knife/comm/wirelessmgr_scan.cpp:
     complete
@@ -4317,7 +4313,7 @@ src/knife/message/knife_message.cpp:
     complete
     .text       start:0x020a0508 end:0x020a0640
 
-src/knife/message/msgtextrender_e.cpp:
+src/knife/message/msgtextrender_2.cpp:
     complete
     .text       start:0x020a0640 end:0x020a0788
 

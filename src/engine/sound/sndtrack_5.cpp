@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/sndtrack_e.h"
+#include "engine/sndtrack.h"
 
 // SndTrack_UpdateAll (0x020c1a7c): per-frame update of the four sound tracks. An active track with a sequence starts
 // it once its start data is ready; a started track advances its list, recalculates its volume from the level table

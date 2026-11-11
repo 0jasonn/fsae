@@ -1,4 +1,4 @@
-#include "actor/object/frontcheck_a.h"
+#include "actor/object/frontcheck.h"
 
 // What is in front of an actor that pushes/uses (FrontCheck, 0x02022e1c): looks at the map cell the actor faces and
 // reacts to keys, doors, chests and pushable blocks. Returns 0 for nothing, 1 for a door/chest, 2 for a push.

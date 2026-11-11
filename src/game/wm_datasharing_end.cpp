@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "knife/comm/wirelessmanager.h"
-#include "game/agent_a.h"
+#include "game/agent.h"
 
 // WM_EndDataSharing (0x02020518): stops data sharing on the given work block.
 s32 WM_EndDataSharing(void *buf) {

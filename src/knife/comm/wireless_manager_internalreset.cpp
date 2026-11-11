@@ -1,4 +1,4 @@
-#include "knife/comm/wireless_manager_c.h"
+#include "knife/comm/wireless_manager_methods.h"
 
 // Knife::Comm::WirelessManager::internalReset() (0x02092820): resets the manager back to an idle state. When the
 // state is already below 2 it terminates; otherwise it ends any sharing session and resets through the SDK, then

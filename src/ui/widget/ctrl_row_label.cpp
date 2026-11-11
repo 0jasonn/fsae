@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "knife/message/wstr_format.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/ctrl_draw_e.h"
+#include "ui/widget/ctrl_draw.h"
 
 // Row object of the menu list: the text pointer of the label sits at +0x20
 typedef struct CtrlLabelRow {

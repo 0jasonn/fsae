@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "knife/message/setuprt_e.h"
+#include "knife/message/setuprt.h"
 
 // Knife::Message::SetupTextRenderer (0x020a2b14): resets the text renderer, sets up the pictogram OAM buffers, screen buffers and
 // scene arguments from the scene info, then allocates and initialises one render target per entry. Returns 0 on failure.

@@ -1,4 +1,4 @@
-#include "engine/subtask_status_e.h"
+#include "engine/subtask_status.h"
 
 // GetSubtaskPlayerStatus (0x020a31ac): fills the status block of one player, from the wireless member record in
 // wireless mode and from the local send table otherwise.

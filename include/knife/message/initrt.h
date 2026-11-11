@@ -1,7 +1,7 @@
 #ifndef WIP_E_INITRT_E_H
 #define WIP_E_INITRT_E_H
 
-#include "knife/message/rtinfo_e.h"
+#include "knife/message/rtinfo.h"
 
 namespace Knife {
 namespace Message {

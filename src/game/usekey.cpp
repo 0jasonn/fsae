@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "ui/message.h"
-#include "actor/object/frontcheck_a.h"
+#include "actor/object/frontcheck.h"
 
 // Uses a key of the entity's player (GameState::unk_5c[type]) or, for player 0 in single play, the shared key counter
 // unk_5c[1]. Returns 1 when a key was used.

@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/enemy/ending.h"
-#include "game/doorsel_a.h"
+#include "game/doorsel.h"
 
 extern u16 playerKeys[];
 

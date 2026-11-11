@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "knife/comm/wirelessmanager.h"
-#include "game/agent_a.h"
+#include "game/agent.h"
 
 // WM_EndMP (0x02020260): stops the MP session.
 s32 WM_EndMP(void *callback) {

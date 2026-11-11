@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
-#include "game/hit_a.h"
+#include "game/hit.h"
 
 // Invincibility frames of a hit with knockback byte k: -16 - k when bit 7 is set, k + 16 otherwise.
 #define HIT_KNOCKBACK_FRAMES_SHORT(k) (((k) & 0x80) ? (-16 - (s8)(k)) : ((s8)(k) + 16))

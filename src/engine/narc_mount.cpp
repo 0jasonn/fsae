@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "engine/narc_mount_e.h"
+#include "engine/narc_mount.h"
 
 // NarcArchive_Mount (0x020c29c8): registers a NARC file in memory as a file system archive under name. The three
 // sections are found by their magic ('BTAF', 'BTNF', 'GMIF'); the archive tables are loaded from them.

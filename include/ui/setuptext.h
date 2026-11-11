@@ -1,7 +1,7 @@
 #ifndef WIP_E_SETUPTEXT_E_H
 #define WIP_E_SETUPTEXT_E_H
 
-#include "knife/message/rtinfo_e.h"
+#include "knife/message/rtinfo.h"
 #include "engine/functions.h"
 #include "ui/fileselui_view.h"
 #include "ui/modeselui_view.h"

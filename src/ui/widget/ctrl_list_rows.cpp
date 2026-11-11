@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "knife/message/wstr_format.h"
-#include "ui/widget/ctrl_draw_e.h"
+#include "ui/widget/ctrl_draw.h"
 #include "ui/widget/rect_slot3_api.h"
 
 #define SOURCE(slider) (((CtrlSourcePool *)*(void **)((u8 *)(slider) + 0x1c))->source)

@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "knife/message/initrt_e.h"
+#include "knife/message/initrt.h"
 
 namespace Knife {
 namespace Message {

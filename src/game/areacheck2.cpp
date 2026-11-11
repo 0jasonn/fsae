@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
-#include "game/agent_a.h"
+#include "game/agent.h"
 
 // areacheck2 (0x0202caa0): 0 while the single-player Link is inside the 0x30 x 0x24 box
 // centred on the entity, 1 otherwise.
