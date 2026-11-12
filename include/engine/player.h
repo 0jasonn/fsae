@@ -62,7 +62,8 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 40 */ u8 unk_40[0x4a];
     /* 8a */ u8 unk_8a;
     /* 8b */ u8 paletteBits; // bits 2..3 hold a color/palette index (PlWorkColorReset); bits 4..6 are tested by set11
-    /* 8c */ u8 unk_8c[8];
+    /* 8c */ u8 unk_8c[4];
+    /* 90 */ Entity *holdObject; // object the player is attached to (the boat in set53_row)
 } PlayerData; // size 0x94
 
 extern PlayerData playerWork[4];

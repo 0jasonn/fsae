@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1064" width="960" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="100%" height="100%" fill="#0d1117" rx="6"/>
-<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 3687 / 4859 game functions decompiled (75.9%, 51.2% of code)</text>
+<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 3694 / 4859 game functions decompiled (76.0%, 52.4% of code)</text>
 <rect x="12" y="34" width="12" height="12" fill="#3fb950" rx="2"/><text x="29" y="44" fill="#8b949e" font-size="12">Decompiled (C++)</text>
 <rect x="202" y="34" width="12" height="12" fill="#58a6ff" rx="2"/><text x="219" y="44" fill="#8b949e" font-size="12">TwlSDK / runtime</text>
 <rect x="392" y="34" width="12" height="12" fill="#30363d" rx="2"/><text x="409" y="44" fill="#8b949e" font-size="12">Not decompiled yet</text>
@@ -259,8 +259,8 @@
 <rect x="267.92" y="140" width="17.95" height="12" fill="#30363d"/>
 <rect x="285.88" y="140" width="36.25" height="12" fill="#58a6ff"/>
 <rect x="322.13" y="140" width="45.23" height="12" fill="#3fb950"/>
-<rect x="367.36" y="140" width="150.18" height="12" fill="#30363d"/>
-<rect x="517.54" y="140" width="15.54" height="12" fill="#3fb950"/>
+<rect x="367.36" y="140" width="59.73" height="12" fill="#30363d"/>
+<rect x="427.08" y="140" width="105.99" height="12" fill="#3fb950"/>
 <rect x="533.07" y="140" width="24.51" height="12" fill="#30363d"/>
 <rect x="557.59" y="140" width="31.76" height="12" fill="#3fb950"/>
 <rect x="589.35" y="140" width="31.07" height="12" fill="#30363d"/>
@@ -461,9 +461,7 @@
 <rect x="99.52" y="322" width="58.00" height="12" fill="#30363d"/>
 <rect x="157.52" y="322" width="90.80" height="12" fill="#3fb950"/>
 <rect x="248.33" y="322" width="81.82" height="12" fill="#30363d"/>
-<rect x="330.15" y="322" width="85.28" height="12" fill="#3fb950"/>
-<rect x="415.43" y="322" width="94.25" height="12" fill="#30363d"/>
-<rect x="509.68" y="322" width="124.29" height="12" fill="#3fb950"/>
+<rect x="330.15" y="322" width="303.82" height="12" fill="#3fb950"/>
 <rect x="633.97" y="322" width="47.30" height="12" fill="#30363d"/>
 <rect x="681.27" y="322" width="35.91" height="12" fill="#3fb950"/>
 <rect x="717.17" y="322" width="66.29" height="12" fill="#30363d"/>
@@ -479,8 +477,8 @@
 <rect x="112.78" y="336" width="349.39" height="12" fill="#3fb950"/>
 <rect x="462.17" y="336" width="66.63" height="12" fill="#30363d"/>
 <rect x="528.81" y="336" width="50.06" height="12" fill="#3fb950"/>
-<rect x="578.87" y="336" width="188.85" height="12" fill="#30363d"/>
-<rect x="767.72" y="336" width="152.26" height="12" fill="#3fb950"/>
+<rect x="578.87" y="336" width="96.32" height="12" fill="#30363d"/>
+<rect x="675.19" y="336" width="244.78" height="12" fill="#3fb950"/>
 <rect x="919.98" y="336" width="40.02" height="12" fill="#30363d"/>
 <rect x="0.00" y="350" width="78.74" height="12" fill="#30363d"/>
 <rect x="78.74" y="350" width="48.33" height="12" fill="#3fb950"/>
@@ -797,9 +795,9 @@
 <rect x="579.92" y="546" width="16.57" height="12" fill="#30363d"/>
 <rect x="596.49" y="546" width="22.10" height="12" fill="#3fb950"/>
 <rect x="618.59" y="546" width="141.21" height="12" fill="#30363d"/>
-<rect x="759.79" y="546" width="1.73" height="12" fill="#3fb950"/>
-<rect x="761.52" y="546" width="198.48" height="12" fill="#30363d"/>
-<rect x="0.00" y="560" width="80.48" height="12" fill="#30363d"/>
+<rect x="759.79" y="546" width="200.21" height="12" fill="#3fb950"/>
+<rect x="0.00" y="560" width="69.43" height="12" fill="#3fb950"/>
+<rect x="69.43" y="560" width="11.05" height="12" fill="#30363d"/>
 <rect x="80.48" y="560" width="12.43" height="12" fill="#3fb950"/>
 <rect x="92.91" y="560" width="34.18" height="12" fill="#30363d"/>
 <rect x="127.09" y="560" width="220.27" height="12" fill="#3fb950"/>
@@ -896,8 +894,8 @@
 <rect x="310.42" y="630" width="6.90" height="12" fill="#3fb950"/>
 <rect x="317.33" y="630" width="36.25" height="12" fill="#30363d"/>
 <rect x="353.58" y="630" width="68.36" height="12" fill="#3fb950"/>
-<rect x="421.94" y="630" width="181.26" height="12" fill="#30363d"/>
-<rect x="603.19" y="630" width="1.04" height="12" fill="#3fb950"/>
+<rect x="421.94" y="630" width="49.72" height="12" fill="#30363d"/>
+<rect x="471.65" y="630" width="132.58" height="12" fill="#3fb950"/>
 <rect x="604.23" y="630" width="27.97" height="12" fill="#30363d"/>
 <rect x="632.20" y="630" width="48.33" height="12" fill="#3fb950"/>
 <rect x="680.53" y="630" width="56.28" height="12" fill="#30363d"/>
@@ -1054,9 +1052,7 @@
 <rect x="107.22" y="784" width="12.43" height="12" fill="#30363d"/>
 <rect x="119.65" y="784" width="32.11" height="12" fill="#3fb950"/>
 <rect x="151.76" y="784" width="36.60" height="12" fill="#30363d"/>
-<rect x="188.35" y="784" width="15.19" height="12" fill="#3fb950"/>
-<rect x="203.54" y="784" width="97.71" height="12" fill="#30363d"/>
-<rect x="301.25" y="784" width="1.04" height="12" fill="#3fb950"/>
+<rect x="188.35" y="784" width="113.93" height="12" fill="#3fb950"/>
 <rect x="302.29" y="784" width="80.79" height="12" fill="#30363d"/>
 <rect x="383.07" y="784" width="58.35" height="12" fill="#3fb950"/>
 <rect x="441.42" y="784" width="277.58" height="12" fill="#30363d"/>

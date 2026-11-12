@@ -85,6 +85,8 @@ typedef struct UnkStruct_0217d384 {
     /* 01 */ u8 unk_01[2];
     /* 03 */ u8 unk_03;
     /* 04 */ u8 unk_04;
+    /* 05 */ u8 unk_05[3];
+    /* 08 */ u32 unk_08; // ending_scene_00 stores the player count here
 } UnkStruct_0217d384;
 
 #define GAME_STATE_U8(off) (*((u8 *)&gameState + (off)))

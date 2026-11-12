@@ -525,6 +525,10 @@ src/actor/object/arrow.cpp:
     complete
     .text       start:0x02020fc8 end:0x02021004
 
+src/actor/object/arrow_move.cpp:
+    complete
+    .text       start:0x020212b8 end:0x020216d0
+
 src/actor/object/arrow_2.cpp:
     complete
     .text       start:0x020216d0 end:0x02021784
@@ -1549,6 +1553,10 @@ src/actor/enemy/ending_2.cpp:
     complete
     .text       start:0x020443a0 end:0x02044700
 
+src/actor/enemy/ending_scene_00.cpp:
+    complete
+    .text       start:0x02044700 end:0x02044b44
+
 src/actor/enemy/ending_3.cpp:
     complete
     .text       start:0x02044b44 end:0x020450e4
@@ -1608,6 +1616,10 @@ src/game/multiplay_2.cpp:
 src/game/makemap.cpp:
     complete
     .text       start:0x02047838 end:0x020479d8
+
+src/game/multiplay_main.cpp:
+    complete
+    .text       start:0x02047e34 end:0x02048264
 
 src/game/warp.cpp:
     complete
@@ -3154,6 +3166,14 @@ src/actor/object/singleplay.cpp:
     complete
     .text       start:0x02070dbc end:0x02070dd0
 
+src/actor/object/set53_row.cpp:
+    complete
+    .text       start:0x02070dd0 end:0x020713a0
+
+src/actor/object/set53_move3.cpp:
+    complete
+    .text       start:0x020713a0 end:0x020719f0
+
 src/actor/object/set54.cpp:
     complete
     .text       start:0x02071a70 end:0x02071b00
@@ -3549,6 +3569,10 @@ src/actor/object/tama11_2.cpp:
 src/actor/object/tama11.cpp:
     complete
     .text       start:0x02080008 end:0x02080320
+
+src/actor/object/throw_throw.cpp:
+    complete
+    .text       start:0x02080560 end:0x02080b54
 
 src/actor/object/throwinit.cpp:
     complete
@@ -4272,6 +4296,10 @@ src/knife/app/knife_hud.cpp:
 src/knife/app/knife_hud_9.cpp:
     complete
     .text       start:0x0209e26c end:0x0209e31c
+
+src/knife/app/knife_hud_setactiveplayer.cpp:
+    complete
+    .text       start:0x0209e31c end:0x0209e788
 
 src/knife/app/knife_hud_2.cpp:
     complete

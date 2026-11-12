@@ -28,7 +28,7 @@ BOOL Knife_Single_SinglePlay_CheckCommand(void *self, PlayerData *player0, Playe
     switch (work->reqKind) {
     case 1:
         if ((player0->statusFlags & 0x1000) && (player1->statusFlags & 0x1000) &&
-            *(u32 *)&player0->unk_8c[4] == *(u32 *)&player1->unk_8c[4]) {
+            player0->holdObject == player1->holdObject) {
             if (work->contChanging != 0) {
                 return FALSE;
             }
@@ -83,7 +83,7 @@ BOOL Knife_Single_SinglePlay_CheckCommand(void *self, PlayerData *player0, Playe
     case 2:
         reqNo = work->reqNo;
         if (reqNo != 0xff && (player0->statusFlags & 0x1000) && (player1->statusFlags & 0x1000) &&
-            *(u32 *)&player0->unk_8c[4] == *(u32 *)&player1->unk_8c[4]) {
+            player0->holdObject == player1->holdObject) {
             return FALSE;
         }
         if (player0->motionId == 0x22c && player1->motionId == 0x22c) {
@@ -100,7 +100,7 @@ BOOL Knife_Single_SinglePlay_CheckCommand(void *self, PlayerData *player0, Playe
             return FALSE;
         }
         if (reqNo != 0xff && (player0->statusFlags & 0x1000) && (player1->statusFlags & 0x1000) &&
-            *(u32 *)&player0->unk_8c[4] == *(u32 *)&player1->unk_8c[4]) {
+            player0->holdObject == player1->holdObject) {
             return FALSE;
         }
         if ((player0->unk_07 & 0x80) && (player1->unk_07 & 0x80)) {
