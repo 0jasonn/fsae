@@ -63,3 +63,8 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 - A single local's type can flip register allocation across a whole function: `int diffX = (s16)(a - b)` gives signed behaviour without the side effects of an s16 local.
 - Declaring a struct local mid-block (`VecFx32 v = {0,0,0};`) controls where its zero stores land.
 - mwcc merges a case's trailing call into an identical call at the end of a following block only when that block is the last before the join.
+- Two pool loads of the same symbol in one expression come from small `static inline` helpers (e.g. CellX/CellY around mapState); plain expressions are merged into one register.
+- `cmp r,rA; cmpne r,rB` against hoisted constants is a `switch` with adjacent cases; `x == A || x == A+1` folds into a range check.
+- Casting the address of a struct global (`((u32 *)&messageRequest)[2]`) makes it address-taken and changes scheduling in the whole function: the field has to exist in the struct.
+- For a bitfield view of one element, cast the whole array to an overlay struct (`((View *)playerWork)[i].bits`); casting `&playerWork[i].field` breaks base-register sharing.
+- A local copy of a rodata pair is one ldm/stm block when the table type is `struct { VecFx32 pos[2]; }`; two separate members are copied one at a time.

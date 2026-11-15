@@ -2578,6 +2578,10 @@ src/actor/object/rewhalf.cpp:
     complete
     .text       start:0x02061e44 end:0x020623c8
 
+src/actor/object/set6b_rewdoor.cpp:
+    complete
+    .text       start:0x020623c8 end:0x02062bb8
+
 src/actor/object/set09.cpp:
     complete
     .text       start:0x02062bb8 end:0x02062bd4
@@ -3161,6 +3165,10 @@ src/actor/object/tame_2.cpp:
 src/actor/object/set52_2.cpp:
     complete
     .text       start:0x02070658 end:0x02070758
+
+src/actor/object/set53_move2.cpp:
+    complete
+    .text       start:0x020709fc end:0x02070dbc
 
 src/actor/object/singleplay.cpp:
     complete
