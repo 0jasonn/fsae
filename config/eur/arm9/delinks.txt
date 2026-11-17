@@ -821,6 +821,10 @@ src/knife/comm/com_6.cpp:
     complete
     .text       start:0x02028b34 end:0x02028b58
 
+src/game/comerror_wait.cpp:
+    complete
+    .text       start:0x02028b58 end:0x02028c44
+
 src/game/comerror.cpp:
     complete
     .text       start:0x02028e70 end:0x02028fe8
@@ -940,6 +944,10 @@ src/game/doorsel_6.cpp:
 src/game/doorsel_4.cpp:
     complete
     .text       start:0x0202af70 end:0x0202b18c
+
+src/game/doorsel_exit.cpp:
+    complete
+    .text       start:0x0202b470 end:0x0202b54c
 
 src/game/keyclear.cpp:
     complete
@@ -1101,9 +1109,17 @@ src/actor/enemy/em1d_3.cpp:
     complete
     .text       start:0x0202fd78 end:0x0202fe98
 
+src/actor/enemy/em1d_possess.cpp:
+    complete
+    .text       start:0x0202fe98 end:0x020300b4
+
 src/actor/enemy/seqset.cpp:
     complete
     .text       start:0x020300b4 end:0x02030108
+
+src/actor/enemy/gieni.cpp:
+    complete
+    .text       start:0x02030108 end:0x020301f0
 
 src/actor/enemy/em1e.cpp:
     complete
@@ -1116,6 +1132,10 @@ src/actor/enemy/em02.cpp:
 src/actor/enemy/em2a.cpp:
     complete
     .text       start:0x02030a14 end:0x0203120c
+
+src/actor/enemy/em2a_move2land.cpp:
+    complete
+    .text       start:0x0203120c end:0x02031304
 
 src/actor/enemy/em2a_2.cpp:
     complete
@@ -1289,6 +1309,10 @@ src/actor/enemy/em13.cpp:
     complete
     .text       start:0x0203c208 end:0x0203c27c
 
+src/actor/enemy/em13_init.cpp:
+    complete
+    .text       start:0x0203c27c end:0x0203c36c
+
 src/actor/enemy/em13_2.cpp:
     complete
     .text       start:0x0203c36c end:0x0203c570
@@ -1309,13 +1333,25 @@ src/actor/enemy/wiztarget.cpp:
     complete
     .text       start:0x0203ca40 end:0x0203cbe4
 
+src/actor/enemy/em14_getpos.cpp:
+    complete
+    .text       start:0x0203cbe4 end:0x0203ccc8
+
 src/actor/enemy/em15.cpp:
     complete
     .text       start:0x0203ccc8 end:0x0203cf18
 
+src/actor/enemy/em15_getpos.cpp:
+    complete
+    .text       start:0x0203cf18 end:0x0203cfcc
+
 src/actor/enemy/em16.cpp:
     complete
     .text       start:0x0203cfcc end:0x0203d1a4
+
+src/actor/enemy/em16_getdir.cpp:
+    complete
+    .text       start:0x0203d1a4 end:0x0203d218
 
 src/actor/enemy/em16_5.cpp:
     complete
@@ -1593,9 +1629,17 @@ src/actor/enemy/em28_2.cpp:
     complete
     .text       start:0x0204112c end:0x02041244
 
+src/actor/enemy/em28_dush.cpp:
+    complete
+    .text       start:0x02041244 end:0x02041344
+
 src/actor/enemy/em28_3.cpp:
     complete
     .text       start:0x02041344 end:0x02041498
+
+src/actor/enemy/em28_dir.cpp:
+    complete
+    .text       start:0x02041498 end:0x02041774
 
 src/actor/enemy/em28_4.cpp:
     complete
@@ -1784,6 +1828,10 @@ src/game/warp.cpp:
 src/game/multiplay_4.cpp:
     complete
     .text       start:0x020483f8 end:0x02048948
+
+src/game/clearkey_level.cpp:
+    complete
+    .text       start:0x02048de8 end:0x02048ea8
 
 src/game/clearkey.cpp:
     complete
@@ -2066,6 +2114,10 @@ src/engine/objutil.cpp:
     complete
     .text       start:0x020502e0 end:0x02050504
 
+src/engine/droprupees.cpp:
+    complete
+    .text       start:0x02050504 end:0x0205063c
+
 src/engine/objutil_2.cpp:
     complete
     .text       start:0x0205063c end:0x0205069c
@@ -2177,6 +2229,10 @@ src/game/plcheck.cpp:
 src/game/ranking.cpp:
     complete
     .text       start:0x02055170 end:0x02055194
+
+src/game/ranking_player.cpp:
+    complete
+    .text       start:0x02055194 end:0x020552c0
 
 src/game/ranking_2.cpp:
     complete
@@ -2454,6 +2510,10 @@ src/actor/object/set03.cpp:
     complete
     .text       start:0x0205b0bc end:0x0205b15c
 
+src/actor/object/set03_2.cpp:
+    complete
+    .text       start:0x0205b15c end:0x0205b5bc
+
 src/actor/object/fumi.cpp:
     complete
     .text       start:0x0205b5bc end:0x0205b67c
@@ -2618,6 +2678,10 @@ src/actor/object/pot_9.cpp:
     complete
     .text       start:0x0205f084 end:0x0205f0f4
 
+src/actor/object/pot_push.cpp:
+    complete
+    .text       start:0x0205f0f4 end:0x0205f224
+
 src/actor/object/pot_8.cpp:
     complete
     .text       start:0x0205f224 end:0x0205f250
@@ -2769,6 +2833,10 @@ src/actor/object/set6b_rewdoor.cpp:
 src/actor/object/set09.cpp:
     complete
     .text       start:0x02062bb8 end:0x02062bd4
+
+src/actor/object/set09_init.cpp:
+    complete
+    .text       start:0x02062bd4 end:0x02062ce4
 
 src/actor/object/set09_2.cpp:
     complete
@@ -3002,6 +3070,10 @@ src/actor/object/set29.cpp:
     complete
     .text       start:0x02068bd8 end:0x02068bf4
 
+src/actor/object/set29_init.cpp:
+    complete
+    .text       start:0x02068bf4 end:0x02068d04
+
 src/actor/object/set29_2.cpp:
     complete
     .text       start:0x02068d04 end:0x02068dd0
@@ -3157,6 +3229,10 @@ src/actor/object/nemoto.cpp:
 src/actor/object/set41.cpp:
     complete
     .text       start:0x0206c398 end:0x0206c3b4
+
+src/actor/object/set41_init.cpp:
+    complete
+    .text       start:0x0206c3b4 end:0x0206c4c0
 
 src/actor/object/set41_2.cpp:
     complete
@@ -3437,6 +3513,10 @@ src/actor/object/kenfuri_wait2.cpp:
 src/actor/object/kenfuri.cpp:
     complete
     .text       start:0x0207303c end:0x020731f0
+
+src/actor/object/set57_init.cpp:
+    complete
+    .text       start:0x020731f0 end:0x020732f4
 
 src/actor/object/set57.cpp:
     complete
@@ -4014,6 +4094,10 @@ src/knife/sound/knife_sound.cpp:
     complete
     .text       start:0x0208c1c8 end:0x0208c554
 
+src/knife/sound/knife_sound_update.cpp:
+    complete
+    .text       start:0x0208c554 end:0x0208c5f0
+
 src/knife/sound/knife_sound_2.cpp:
     complete
     .text       start:0x0208c5f0 end:0x0208c6b4
@@ -4045,6 +4129,10 @@ src/engine/sound/m4a_vsync.cpp:
 src/engine/sound/m4a_3.cpp:
     complete
     .text       start:0x0208d610 end:0x0208d6a8
+
+src/engine/sound/m4a_songnumcontinue.cpp:
+    complete
+    .text       start:0x0208d6a8 end:0x0208d790
 
 src/engine/sound/m4a_4.cpp:
     complete
@@ -4278,6 +4366,10 @@ src/knife/comm/wireless_manager_2.cpp:
     complete
     .text       start:0x02090ecc end:0x020912a4
 
+src/knife/comm/wireless_manager_startscan.cpp:
+    complete
+    .text       start:0x020912a4 end:0x02091464
+
 src/knife/comm/wirelessmgr_scan.cpp:
     complete
     .text       start:0x02091464 end:0x020914a4
@@ -4297,6 +4389,10 @@ src/knife/comm/wirelessmgr_connectresult.cpp:
 src/knife/comm/wirelessmgr_query.cpp:
     complete
     .text       start:0x02091d38 end:0x02091d40
+
+src/knife/comm/wireless_manager_setentry.cpp:
+    complete
+    .text       start:0x02091d84 end:0x02091e7c
 
 src/knife/comm/wm_state.cpp:
     complete

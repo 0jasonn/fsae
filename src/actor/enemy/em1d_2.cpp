@@ -5,7 +5,7 @@
 // Functions in this file (actor em1d, original names from the debug build; em1d_aimmove and em1d_rndmove are in scratch/agentB/unfinished/em1d_3.cpp until functions.h declares func_020847f8 as int):
 //   em1d_buttobi, em1d_init, em1d_getdir
 
-extern "C" Entity *gieniGetAimPl(void);   // original gieniGetAimPl()
+Entity *gieniGetAimPl(void);   // original gieniGetAimPl()
 extern "C" void func_02084794(Entity *e); // no original name yet
 void seqset(Entity *e, int baseAnim);      // original seqset(OBJ_WORK_*, int)
 extern const u8 em1d_hitbox[];
