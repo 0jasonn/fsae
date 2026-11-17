@@ -97,6 +97,10 @@ src/engine/str_format.cpp:
     complete
     .text       start:0x02008080 end:0x02008110
 
+src/engine/runtime_callback.cpp:
+    complete
+    .text       start:0x02008110 end:0x02008138
+
 src/engine/stub_7.cpp:
     complete
     .text       start:0x02008138 end:0x0200813c
