@@ -68,7 +68,6 @@ void Cockpit(void);
 }
 extern u8 data_0212caf0[];
 extern "C" {
-void BgInit(void);
 void CheckInit(void);
 }
 extern "C" {
@@ -89,5 +88,8 @@ extern u32 data_0212c554;
 // Task tables indexed by a state byte (rodata)
 extern void (*const multiplayMakemapTable[])(void);   // multiplayMakemapTable
 extern void (*const game00TaskTable[])(void);         // game00TaskTable
+
+// BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.
+void BgInit(void);
 
 #endif

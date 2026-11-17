@@ -65,7 +65,7 @@ void Knife_Comm_WirelessManager_update_idle2parent(void *self) {
     case 7:
         wm->state = 8;
         wm->timer = 0;
-        wm->unk_1cdc = 0;
+        wm->callPending = 0;
         return;
     }
 }

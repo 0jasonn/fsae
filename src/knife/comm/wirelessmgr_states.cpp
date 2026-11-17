@@ -36,12 +36,12 @@ void Knife_Comm_WirelessManager_update_off2idle(void *self) {
     case 3:
         w->state = 2;
         w->timer = 0;
-        w->unk_1cdc = 0;
+        w->callPending = 0;
         break;
     case 5:
         w->state = 0;
         w->timer = 0;
-        w->unk_1cdc = 0;
+        w->callPending = 0;
         break;
     }
 }
@@ -78,7 +78,7 @@ void Knife_Comm_WirelessManager_update_idle2off(void *self) {
     case 5:
         w->state = 0;
         w->timer = 0;
-        w->unk_1cdc = 0;
+        w->callPending = 0;
         break;
     }
 }

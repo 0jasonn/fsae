@@ -14,6 +14,6 @@ void Knife_Comm_WirelessManager_update_waitScan(void *self) {
     if (wm->timer == 1) {
         wm->state = 5;
         wm->timer = 0;
-        wm->unk_1cdc = 0;
+        wm->callPending = 0;
     }
 }

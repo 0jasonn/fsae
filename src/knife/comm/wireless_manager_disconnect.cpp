@@ -21,6 +21,6 @@ BOOL Knife_Comm_WirelessManager_disconnect(void *self) {
     }
     wm->state = 0xc;
     wm->timer = 0;
-    wm->unk_1cdc = 1;
+    wm->callPending = 1;
     return TRUE;
 }

@@ -27,7 +27,7 @@ void Knife_Comm_WirelessManager_callback_WM_SetEntry(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
-    wm->unk_1cdc = 0;
+    wm->callPending = 0;
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }
@@ -47,6 +47,6 @@ void Knife_Comm_WirelessManager_callback_WM_ClearFlag(void *result) {
     WmDWork *wm;
 
     wm = (WmDWork *)func_020909c8();
-    wm->unk_1cdc = 0;
+    wm->callPending = 0;
     (void)Knife_Comm_WirelessManager_checkCallbackResult(wm, result);
 }

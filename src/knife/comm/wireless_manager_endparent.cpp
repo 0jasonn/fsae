@@ -21,6 +21,6 @@ BOOL Knife_Comm_WirelessManager_endParent(void *self) {
     }
     wm->state = 9;
     wm->timer = 0;
-    wm->unk_1cdc = 1;
+    wm->callPending = 1;
     return TRUE;
 }

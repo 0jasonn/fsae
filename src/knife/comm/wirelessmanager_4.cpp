@@ -36,7 +36,7 @@ void Knife_Comm_WirelessManager_update_idle2child(void *self) {
         WM_FIELD(self, 0x1cde, u16) = (u16)(WM_GetConnectedAIDs() | (1 << WM_GetAID()));
         wm->state = 11;
         wm->timer = 0;
-        wm->unk_1cdc = 0;
+        wm->callPending = 0;
         break;
     }
 }

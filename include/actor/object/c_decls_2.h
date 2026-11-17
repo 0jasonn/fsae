@@ -7,7 +7,6 @@
 #include "engine/player.h"
 
 extern "C" {
-void BgInit(void);
 void func_020841b0(Entity *e);
 void CheckInit(void);
 void CheckPlsSet(void);
@@ -43,5 +42,8 @@ extern u16 data_0212c540;
 extern u8 frameCounter[];
 extern u16 displayState[];
 extern u8 data_0212c500;
+
+// BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.
+void BgInit(void);
 
 #endif

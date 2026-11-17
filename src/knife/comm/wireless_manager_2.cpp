@@ -11,7 +11,7 @@ s32 func_02090ecc(void *manager) {
     WirelessManagerWork *wm;
 
     wm = (WirelessManagerWork *)manager;
-    return wm->unk_1cdc;
+    return wm->callPending;
 }
 
 // Knife::Comm::WirelessManager::turnOn / turnOff / reset (0x02090ed8..0x020912a4). Each runs with
@@ -37,7 +37,7 @@ BOOL Knife_Comm_WirelessManager_turnOn(void *self, BOOL on) {
     }
     wm->state = 1;
     wm->timer = 0;
-    wm->unk_1cdc = 1;
+    wm->callPending = 1;
     wm->connectPhase = 0;
     return TRUE;
 }
@@ -67,7 +67,7 @@ BOOL Knife_Comm_WirelessManager_turnOff(void *self) {
         }
         wm->timer = 0;
     }
-    wm->unk_1cdc = 1;
+    wm->callPending = 1;
     wm->state = 3;
     wm->connectPhase = 0;
     return TRUE;
@@ -92,6 +92,6 @@ BOOL Knife_Comm_WirelessManager_reset(void *self) {
     }
     wm->state = 0xd;
     wm->timer = 0;
-    wm->unk_1cdc = 1;
+    wm->callPending = 1;
     return TRUE;
 }

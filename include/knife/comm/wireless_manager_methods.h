@@ -73,7 +73,7 @@ typedef struct WmCWork {
     u16 paramD;               // 0x1cd0: WM_SetGameInfo argument (unk4)
     u8 unk_1cd2[0x1cd8 - 0x1cd2];
     s32 timer;                // 0x1cd8
-    u8 unk_1cdc;              // 0x1cdc: controller flag
+    u8 callPending;           // 0x1cdc: an SDK call is pending (func_02090ecc returns it)
     u8 unk_1cdd;              // 0x1cdd: frame flag
     u8 unk_1cde[0x1ce4 - 0x1cde];
     s32 connectPhase;         // 0x1ce4

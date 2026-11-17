@@ -1,6 +1,14 @@
 #include "engine/functions.h"
-#include "actor/enemy/em24.h"
 #include "global.h"
+#include "actor/enemy/em24.h"
+void em25_aimInit(Entity *e) {
+    if (--e->timer != 0) {
+        return;
+    }
+    e->action = 5; e->timer = 0x80; e->subtimer = 0x10; e->speed = 0x100;
+    e->animationState = (e->animationState & 3) + 8;
+    InitAnimationForceUpdate(e, e->animationState);
+}
 
 void em25_aimMove(Entity *e) {
     UpdateAnimationSingleFrame(e);

@@ -35,7 +35,7 @@ typedef struct WmDWork {
     u8 unk_1cd0[0x1cd4 - 0x1cd0];
     s32 timer2;             // 0x1cd4
     s32 timer;              // 0x1cd8
-    u8 unk_1cdc;            // 0x1cdc: controller flag (func_02090ecc)
+    u8 callPending;           // 0x1cdc: an SDK call is pending (func_02090ecc returns it)
     u8 unk_1cdd;            // 0x1cdd: frame flag
     u8 unk_1cde[0x1ce0 - 0x1cde];
     u16 linkValue;          // 0x1ce0

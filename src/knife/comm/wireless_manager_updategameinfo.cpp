@@ -32,6 +32,6 @@ BOOL Knife_Comm_WirelessManager_updateUserGameInfo(void *self) {
     if (!Knife_Comm_WirelessManager_handleResult(self, WM_SetGameInfo(Knife_Comm_WirelessManager_callback_WM_ClearFlag, &wm->gameInfo, paramA, 0x800602, paramD, flag), 0, data_0211b18c)) {
         return FALSE;
     }
-    wm->unk_1cdc = 1;
+    wm->callPending = 1;
     return TRUE;
 }

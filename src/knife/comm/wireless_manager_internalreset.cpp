@@ -8,7 +8,7 @@ BOOL Knife_Comm_WirelessManager_internalReset(void *self) {
     WmInterruptSection section;
     WmCWork *wm = (WmCWork *)self;
 
-    wm->unk_1cdc = 0;
+    wm->callPending = 0;
     if (wm->state < 2) {
         OS_Terminate();
         wm->state = 0xe;
@@ -25,6 +25,6 @@ BOOL Knife_Comm_WirelessManager_internalReset(void *self) {
     }
     wm->state = 0xd;
     wm->timer = 0;
-    wm->unk_1cdc = 1;
+    wm->callPending = 1;
     return TRUE;
 }

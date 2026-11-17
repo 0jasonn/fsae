@@ -32,7 +32,7 @@ void Knife_Message_selectionDialog_clearFrame(void *self);
 void Knife_Message_selectionDialog_dispFrame(void *self);
 void Knife_Message_selectionDialog_dispMessage(void *self);
 BOOL Knife_Message_selectionDialog_update_move(void *self);
-void Knife_Single_SinglePlay_ChangeFormationNoDirect(void *self);
+void Knife_Single_SinglePlay_ChangeFormationNoDirect(void *self, struct PL_WORK_ *player0, struct PL_WORK_ *player1);
 void MIi_DmaCopy16(u32 dmaNo, const void *src, void *dst, u32 size, u32 flag);
 void OS_CreateAlarm(void *alarm);
 void OS_DisableMainExArena(void);

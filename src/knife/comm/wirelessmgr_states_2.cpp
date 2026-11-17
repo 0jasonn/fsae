@@ -25,7 +25,7 @@ void Knife_Comm_WirelessManager_update_scan2idle(void *self) {
         if (w->timer == 1) {
             w->state = 2;
             w->timer = 0;
-            w->unk_1cdc = 0;
+            w->callPending = 0;
         }
     }
 }
