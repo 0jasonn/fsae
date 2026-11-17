@@ -5,7 +5,6 @@
 #include "game/multiplay.h"
 
 extern "C" {
-void CalcItemLevel(void);
 void StopBlockManager(void);
 void func_02083fb8(void); // thumb
 void func_02062fcc(void);
@@ -22,5 +21,8 @@ void BgAnm(void);
 void func_0208309c(void);
 void func_0202809c(void);
 s32 abs_s32(s32 value);
+
+// CalcItemLevel has C++ linkage (original CalcItemLevel()), 0x0207c26c.
+void CalcItemLevel(void);
 
 #endif

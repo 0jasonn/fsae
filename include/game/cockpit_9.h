@@ -27,7 +27,6 @@ void CockpitInit(void);                            // 0x020264f4
 void Cockpit(void);                                // 0x02026b98
 void cockpit_move(void);
 void cockpit_bg_trans(void);
-void cockpit_obj_set(u8 index);
 }
 void CockpitUpdate(void);                          // 0x02026628, C++ (original CockpitUpdate())
 void cockpit_obj_trans(u8 mode);
@@ -37,5 +36,8 @@ void kinomi_disp(void);
 void MapMarkerSet(void);
 void cockpit_write_rupee(u16 *dst, u32 value, u8 count, u16 flags);   // original write_rupee
 extern "C" BOOL Knife_Message_selectionDialog_isModal(const void *a);
+
+// cockpit_obj_set has C++ linkage (original cockpit_obj_set(unsigned char)), 0x02026850.
+void cockpit_obj_set(u8 index);
 
 #endif

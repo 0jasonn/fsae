@@ -32,10 +32,10 @@ extern u16 *const data_020d714c[];       // per-room background animation, may b
 extern u8 data_02158fa0[];               // 0x02158fa0, layer buffers (first word: pointer to the screen block)
 extern u8 data_02163fa4[];
 
-extern "C" {
-void bg2StSet(void);                     // 0x02057494
-}
 void BgAnmInit(u16 *a);                  // 0x02023cc0
 void MultiRoomInit(u16 room);            // 0x02056f4c
+
+// bg2StSet has C++ linkage (original bg2StSet()), 0x02057494.
+void bg2StSet(void);
 
 #endif
