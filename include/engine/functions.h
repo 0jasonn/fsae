@@ -261,7 +261,7 @@ u32 GetObjColor(u8 index);
 Entity *GetObjWork2(Entity *);
 Entity *GetTamaWork(u16 id);
 Entity *GetTamaWork2(u16 id);
-void GetVGroup(Entity *e, u16 a);
+u8 GetVGroup(Entity *e, u16 a);                                   // 0 when attached or reserved, 0xff when no slots are free
 u32 GetVgRemain(void);
 void GufuFuyusnd(Entity *e);
 void InitAnimationForceUpdate(Entity *e, u8 anim);
