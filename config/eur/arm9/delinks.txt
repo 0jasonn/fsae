@@ -3446,9 +3446,17 @@ src/actor/object/set58.cpp:
     complete
     .text       start:0x02073390 end:0x020734a4
 
+src/actor/object/set58_body.cpp:
+    complete
+    .text       start:0x020734a4 end:0x02073588
+
 src/actor/object/set58_2.cpp:
     complete
     .text       start:0x02073588 end:0x0207379c
+
+src/actor/object/set58_hane.cpp:
+    complete
+    .text       start:0x0207379c end:0x0207382c
 
 src/actor/object/set58_4.cpp:
     complete
