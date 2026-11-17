@@ -15,6 +15,8 @@ typedef struct PaneScaleParam {
 extern "C" {
 void Pane_calcRectOffset(s16 *outA, s16 *outB, const s16 *origin, const s16 *size, const s16 *inset);
 void Pane_calcRectSum(s16 *outA, s16 *outB, const s16 *origin, const s16 *size, const s16 *inset);
+void Pane_calcRightRect(s16 *outA, s16 *outB, const s16 *origin, const s16 *size, const s16 *inset);
+void Pane_calcScaledBaseWithContext(s16 *out, void *unused, const s16 *scale, const PaneScaleParam *param);
 }
 
 #endif

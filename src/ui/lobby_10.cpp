@@ -21,12 +21,12 @@ void lobby_callWithZeroPos(void *self, void *arg) {
     func_020b5744(*(void **)((u8 *)self + 4), arg, pos);
 }
 
-// lobby_stepAndCall(self, arg) (0x020b523c, provisional name): calls func_020b5264 and then func_020b57f4 with the object
+// lobby_stepAndCall(self, arg) (0x020b523c, provisional name): calls func_020b5264 and then Pane_visitTree with the object
 // at +4 of self when it exists
 void lobby_stepAndCall(void *self, void *arg) {
     func_020b5264(self, arg);
     if (*(void **)((u8 *)self + 4) == NULL) {
         return;
     }
-    func_020b57f4(*(void **)((u8 *)self + 4), arg);
+    Pane_visitTree(*(void **)((u8 *)self + 4), arg);
 }

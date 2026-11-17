@@ -237,6 +237,10 @@ src/engine/packed_rec.cpp:
     complete
     .text       start:0x0200c998 end:0x0200ca38
 
+src/engine/range_default.cpp:
+    complete
+    .text       start:0x0200ca38 end:0x0200ca58
+
 src/engine/packed_optional.cpp:
     complete
     .text       start:0x0200ca58 end:0x0200ca80
@@ -361,6 +365,10 @@ src/engine/vram_disable.cpp:
     complete
     .text       start:0x02015448 end:0x0201545c
 
+src/engine/os_external_init.cpp:
+    complete
+    .text       start:0x0201556c end:0x02015578
+
 src/engine/dma_conflict.cpp:
     complete
     .text       start:0x02015940 end:0x020159cc
@@ -384,6 +392,10 @@ src/engine/stub_empty.cpp:
 src/engine/os_wrap_2.cpp:
     complete
     .text       start:0x02016d08 end:0x02016d18
+
+src/engine/os_external_query.cpp:
+    complete
+    .text       start:0x02016ecc end:0x02016ed8
 
 src/engine/os_kind_terminate.cpp:
     complete
@@ -4166,17 +4178,33 @@ src/knife/message/texttokenizer_9.cpp:
     complete
     .text       start:0x0208e854 end:0x0208e8d4
 
+src/knife/message/texttags_wait_auto.cpp:
+    complete
+    .text       start:0x0208e8d4 end:0x0208e9ec
+
 src/knife/message/texttags.cpp:
     complete
     .text       start:0x0208e9ec end:0x0208ea6c
+
+src/knife/message/texttags_next.cpp:
+    complete
+    .text       start:0x0208ea6c end:0x0208eaf8
 
 src/knife/message/texttags_2.cpp:
     complete
     .text       start:0x0208eaf8 end:0x0208eb78
 
+src/knife/message/texttags_se_pict.cpp:
+    complete
+    .text       start:0x0208eb78 end:0x0208ec90
+
 src/knife/message/texttags_3.cpp:
     complete
     .text       start:0x0208ec90 end:0x0208ed0c
+
+src/knife/message/texttags_button.cpp:
+    complete
+    .text       start:0x0208ed0c end:0x0208ed98
 
 src/knife/message/texttags_blank.cpp:
     complete
@@ -5433,6 +5461,10 @@ src/ui/widget/pane_setoffset.cpp:
     complete
     .text       start:0x020b57c8 end:0x020b57f4
 
+src/ui/widget/pane_visit.cpp:
+    complete
+    .text       start:0x020b57f4 end:0x020b5840
+
 src/ui/widget/pane_b.cpp:
     complete
     .text       start:0x020b5840 end:0x020b5850
@@ -5443,7 +5475,7 @@ src/ui/widget/pane_c.cpp:
 
 src/ui/widget/pane_e.cpp:
     complete
-    .text       start:0x020b5950 end:0x020b5998
+    .text       start:0x020b5950 end:0x020b5a34
 
 src/ui/widget/pane_calc.cpp:
     complete

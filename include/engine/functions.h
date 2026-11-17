@@ -103,7 +103,7 @@ s32 func_0208a06c(Entity *e);
 void func_020b5264(void *self, void *arg);
 void func_020b5744(void *obj, void *arg, s16 *pos);
 void Pane_setOffset(void *self, s32 arg, s16 *pos);
-void func_020b57f4(void *obj, void *arg);
+void Pane_visitTree(void *obj, void *arg);
 s32 TextBox_getHorizontalAlignment(void *self);
 s32 TextBox_getVerticalAlignment(void *self);
 s32 TextBox_getAlignment(void *self);

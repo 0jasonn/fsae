@@ -18,7 +18,7 @@ void RangeLookup_Resolve(u32 key, RangeLookup *out) {
 
     out->data = NULL;
     out->item = NULL;
-    if (func_0200ca38(out, key) == 0) {
+    if (RangeLookup_SetDefaultBounds(out, key) == 0) {
         return;
     }
     count = ((u8 *)out->tableEnd - (u8 *)out->table) / 12;
