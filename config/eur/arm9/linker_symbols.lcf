@@ -1,2 +1,4 @@
-    /* ARM9 code calls this DMA helper at a fixed address outside the linked image. */
+    /* ARM9 code calls these helpers at fixed addresses outside the linked image. */
     DmaCopy32Fast = 0x021893a0;
+    func_0218a5d4 = 0x0218a5d4;
+    func_0218a5fc = 0x0218a5fc;

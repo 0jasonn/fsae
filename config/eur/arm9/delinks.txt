@@ -465,6 +465,10 @@ src/engine/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
 
+src/engine/os_runon_checks.cpp:
+    complete
+    .text       start:0x02019968 end:0x02019980
+
 src/engine/frame_asm_4.cpp:
     complete
     .text       start:0x02019980 end:0x02019988
@@ -536,6 +540,10 @@ src/engine/wm_sleep.cpp:
 src/engine/wm_enable.cpp:
     complete
     .text       start:0x0201f838 end:0x0201f848
+
+src/engine/wm_validate_parent.cpp:
+    complete
+    .text       start:0x0201faac end:0x0201fafc
 
 src/engine/wm_start_parent.cpp:
     complete
@@ -2208,11 +2216,11 @@ src/game/backup_9.cpp:
 
 src/game/backup_2.cpp:
     complete
-    .text       start:0x020565e8 end:0x020566dc
+    .text       start:0x020565e8 end:0x02056738
 
 src/game/backup_14.cpp:
     complete
-    .text       start:0x0205687c end:0x020569cc
+    .text       start:0x0205687c end:0x02056a28
 
 src/game/backup_3.cpp:
     complete
@@ -2325,6 +2333,10 @@ src/actor/object/coin.cpp:
 src/actor/object/coin_2.cpp:
     complete
     .text       start:0x02058948 end:0x02058aa0
+
+src/actor/object/kirakira.cpp:
+    complete
+    .text       start:0x02058b60 end:0x02058c04
 
 src/actor/object/center.cpp:
     complete
@@ -6268,6 +6280,10 @@ src/knife/app/knife_power_4.cpp:
 src/knife/app/knife_power_2.cpp:
     complete
     .text       start:0x020c8314 end:0x020c836c
+
+src/knife/app/knife_power_ctor.cpp:
+    complete
+    .text       start:0x020c836c end:0x020c83a0
 
 src/knife/app/knife_power_5.cpp:
     complete

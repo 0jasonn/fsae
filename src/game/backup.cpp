@@ -41,7 +41,7 @@ s8 ReadCartInfo(u32 *data) {
 void DeleteSaveFile(u8 slot) {
     const SaveEepInfo *info = getEepInfo((u8)(slot | 4));
 
-    func_020569cc(data_020d851c, info->unk_02, 8);
+    writeToSaveBuffer(data_020d851c, info->unk_02, 8);
     Knife_mediaWrite();
 }
 
