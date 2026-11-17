@@ -33,11 +33,14 @@ typedef struct PalBits {
 
 extern "C" {
 BOOL TryUsingKey(Entity *e);
-void openDoor(Entity *e, PlayerData *player, int bgBuffer);
 int FrontCheck(Entity *e, PlayerData *player);
 }
 u16 func_02083e54(int kind);                                      // class of a cell kind (thumb)
 void SetMoveBlockByKind(Entity *e, u8 a, s32 kind, u16 cell);     // 0x0202357c
 void TakaraOpen(Entity *e, u16 cell, u16 layer);                  // 0x0207bd00
+
+// openDoor (0x0202375c, src/game/opendoor.cpp) has C++ linkage, as in the original openDoor(OBJ_WORK_*, PL_WORK_*, BG_BUFF_*).
+struct BG_BUFF_;
+void openDoor(Entity *e, PlayerData *player, struct BG_BUFF_ *bg);
 
 #endif

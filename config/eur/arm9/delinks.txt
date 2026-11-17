@@ -597,9 +597,17 @@ src/game/frontcheck.cpp:
     complete
     .text       start:0x02022e1c end:0x020233f0
 
+src/game/frontcheck_af.cpp:
+    complete
+    .text       start:0x020233f0 end:0x0202357c
+
 src/game/frontcheck_2.cpp:
     complete
     .text       start:0x0202357c end:0x02023608
+
+src/game/opendoor.cpp:
+    complete
+    .text       start:0x0202375c end:0x0202382c
 
 src/game/bganm.cpp:
     complete
@@ -609,9 +617,17 @@ src/actor/object/bomb_2.cpp:
     complete
     .text       start:0x02023d78 end:0x02023f58
 
+src/actor/object/bomb_init.cpp:
+    complete
+    .text       start:0x02023f58 end:0x0202406c
+
 src/actor/object/bomb.cpp:
     complete
     .text       start:0x0202406c end:0x02024234
+
+src/actor/object/bomb_flash.cpp:
+    complete
+    .text       start:0x02024344 end:0x02024400
 
 src/actor/object/bomb_3.cpp:
     complete
@@ -657,9 +673,17 @@ src/game/hit_5.cpp:
     complete
     .text       start:0x02025808 end:0x020258f0
 
+src/game/hit_front.cpp:
+    complete
+    .text       start:0x020258f0 end:0x02025ac4
+
 src/game/hit_7.cpp:
     complete
     .text       start:0x02025ac4 end:0x02025b28
+
+src/game/hit_tartnuck.cpp:
+    complete
+    .text       start:0x02025b28 end:0x02025c18
 
 src/game/hit_8.cpp:
     complete
@@ -1165,6 +1189,10 @@ src/actor/enemy/em2c_3.cpp:
     complete
     .text       start:0x020337e4 end:0x020340a8
 
+src/actor/enemy/set1st.cpp:
+    complete
+    .text       start:0x02034124 end:0x0203432c
+
 src/actor/enemy/em2c_4.cpp:
     complete
     .text       start:0x02034508 end:0x0203464c
@@ -1200,6 +1228,10 @@ src/actor/enemy/em2f.cpp:
 src/actor/enemy/em2f_2.cpp:
     complete
     .text       start:0x02037a6c end:0x02037f6c
+
+src/actor/enemy/em2f_next_set.cpp:
+    complete
+    .text       start:0x02037f6c end:0x0203808c
 
 src/actor/enemy/em2f_3.cpp:
     complete

@@ -88,7 +88,7 @@ int FrontCheck(Entity *e, PlayerData *player) {
         if (!TryUsingKey(e)) {
             break;
         }
-        openDoor(e, player, buf);
+        openDoor(e, player, (struct BG_BUFF_ *)buf);
         return 1;
     case 0x2a:
         if (!(data_0212c510 & 1)) {
