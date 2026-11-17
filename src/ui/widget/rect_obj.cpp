@@ -4,9 +4,7 @@
 #include "ui/widget/pane.h"
 #include "ui/widget/rect_obj.h"
 
-// rect_obj: functions RectObj_init (0x020b7c50), RectObj_noop (0x020b7cd0) and RectObj_updateBounds (0x020b7cd4).
-// RectObj_initWithPos (0x020b7c80) is parked in scratch/agentF/nonmatching. data_02126d08 is the vtable of RectObj. Bit 0 of the flag byte at +0x10 freezes the
-// bounds (RectObj_updateBounds does nothing while it is set).
+// RectObj constructors at 0x020b7c50 and 0x020b7c80. Bit 0 of the flag byte freezes the bounds.
 
 extern u8 data_02126d08[];
 
@@ -23,4 +21,26 @@ void RectObj_init(RectObj *self) {
     self->flags = 0;
 }
 
-// RectObj_initWithPos: parked (see scratch/agentF/nonmatching/func_020b7c80.cpp)
+// Clears the rectangle before reading the supplied position and size, in the original access order.
+RectObj *RectObj_initWithPos(RectObj *self, const s16 *pos, const s16 *size) {
+    volatile RectObj *target;
+    volatile const s16 *position;
+    volatile const s16 *dimensions;
+
+    target = self;
+    position = pos;
+    dimensions = size;
+    target->vtable = data_02126d08;
+    target->offsetX = 0;
+    target->offsetY = 0;
+    target->sizeX = 0;
+    target->sizeY = 0;
+    target->boundX = 0;
+    target->boundY = 0;
+    target->flags = 0;
+    target->offsetX = position[0];
+    target->offsetY = position[1];
+    target->sizeX = dimensions[0];
+    target->sizeY = dimensions[1];
+    return self;
+}

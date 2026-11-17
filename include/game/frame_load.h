@@ -51,7 +51,6 @@ extern u16 data_0216f820[];   // [1] holds the part id of the part being set
 extern "C" {
 FrameEntry *frame_select(void);                             // 0x0204dcc4
 void MPlayerInit(u8 player, u8 slotA, u8 slotB);               // 0x0204c87c
-void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 PartRecord *parts_select(FRAME_INFO_ *frame, u32 flags);        // 0x0204d950
 void takara_set(u8 *list, FRAME_INFO_ *frame, u8 flag);     // 0x0204d788
 void parts_set(FRAME_INFO_ *frame, u32 flags);              // 0x0204db38

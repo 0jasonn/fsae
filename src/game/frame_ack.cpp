@@ -5,8 +5,6 @@
 
 // Functions in this file (module com, original names from the debug build): frame_ack (frame_ack())
 
-extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
-
 extern u32 data_0212c538;
 extern u8 comWork[];   // communication state block (see com.cpp)
 extern u8 data_0212c9ec[];

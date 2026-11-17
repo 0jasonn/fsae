@@ -39,7 +39,8 @@ typedef struct SndVoiceRef {
 
 extern "C" {
 void SND_PrepareSeq(u32 track);
-void SND_SetTrackPan(u32 track, s32 pan);
+void SND_SetPlayerChannelPriority(u32 player, u8 priority);
+void SND_SetTrackPan(u32 player, u32 trackMask, s32 pan);
 void SND_SetPlayerTempoRatio(u32 track, s32 ratio);
 void SND_StartPreparedSeq(u32 track);
 s32 SND_IsFinishedCommandTag(u32 tag);

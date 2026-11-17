@@ -14,7 +14,6 @@ s32 Fs_ReleaseArchive(void *archive);
 void func_0218a860(s32 arg);
 void func_02012c40(void);
 void OS_Terminate(void);
-s32 ResCursor_InitRange(u8 *cursor);
 }
 
 #endif

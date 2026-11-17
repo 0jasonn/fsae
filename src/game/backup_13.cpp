@@ -30,6 +30,7 @@ s32 Knife_readSaveFile(void *buffer, const char *path) {
 // Save buffer access and NAND helpers. Address -> name (original names):
 //   0x02056b40 NAND_CreateDirectory
 //   0x02056d00 ReadSaveBufferDword
+//   0x02056d44 VerifySaveBufferDword
 //   0x02056ddc ProgramSaveBufferDwordEx
 // The save buffer is the u16 table at KnifeApp + 0x4b0, four halfwords per dword index.
 
@@ -41,4 +42,30 @@ s32 ReadSaveBufferDword(u16 index, u16 *data) {
         data[i] = ((u16 *)((u8 *)KnifeApp_getInstance() + 0x4b0 + base * 2))[i];
     }
     return 0;
+}
+
+// Checks the four halfwords at index and returns 1 on the first mismatch.
+s32 VerifySaveBufferDword(u16 index, u16 *data) {
+    u32 wordIndex;
+    const u8 *appBase;
+
+    appBase = (const u8 *)KnifeApp_getInstance();
+    wordIndex = (u32)index << 2;
+    if (data[0] != *(const u16 *)(appBase + wordIndex * 2 + 0x400 + 0xb0)) {
+        goto mismatch;
+    }
+    appBase = (const u8 *)KnifeApp_getInstance();
+    if (data[1] != *(const u16 *)(appBase + (wordIndex + 1) * 2 + 0x400 + 0xb0)) {
+        goto mismatch;
+    }
+    appBase = (const u8 *)KnifeApp_getInstance();
+    if (data[2] != *(const u16 *)(appBase + (wordIndex + 2) * 2 + 0x400 + 0xb0)) {
+        goto mismatch;
+    }
+    appBase = (const u8 *)KnifeApp_getInstance();
+    if (data[3] == *(const u16 *)(appBase + (wordIndex + 3) * 2 + 0x400 + 0xb0)) {
+        return 0;
+    }
+mismatch:
+    return 1;
 }

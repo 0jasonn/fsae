@@ -41,7 +41,7 @@ void Knife_Comm_WirelessManager_update_idle2parent(void *self) {
         }
     case 3:
         ret = Knife_Comm_WirelessManager_handleResult(
-            self, func_0201fb74((void *)Knife_Comm_WirelessManager_callback_WM_ChildEntry), 0, data_0211b214);
+            self, WM_StartParent((void *)Knife_Comm_WirelessManager_callback_WM_ChildEntry), 0, data_0211b214);
         if (ret != 0) {
             wm->timer = 4;
             return;

@@ -46,7 +46,6 @@ extern const EntityFunc data_020d334c[]; // per action function table of em28
 
 // TwlSDK and resid helpers (extern "C", plain names in symbols.txt)
 extern "C" u16 GetResTranslateID(u16 id, const void *table, s32 count); // resid.cpp
-extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 extern "C" void MI_UncompressLZ16(const void *src, void *dst, u32 flags); // flags: the entry word, bit 31 set
 
 // srchcells.cpp callees (plain names in symbols.txt)

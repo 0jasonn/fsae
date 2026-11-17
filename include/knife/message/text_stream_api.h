@@ -6,6 +6,7 @@
 #include "engine/entity.h"
 
 extern "C" {
+u16 TextStream_ReadSjis(u8 *self);
 u8 TextStream_ReadU8(u8 *self);
 }
 

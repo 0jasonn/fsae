@@ -34,10 +34,10 @@ void m4aSoundInit(void) {
         field58 = Knife_File_Entity_getField58(entity);
         if (reader.initialize((void *)field54, field58)) {
             ((M4aSoundTable *)&data_02176238)->bitmap = (u8 *)reader.getDataBuffer(1);
-            ((M4aSoundTable *)&data_02176238)->table2 = reader.getDataBuffer(2);
-            ((M4aSoundTable *)&data_02176238)->records = reader.getDataBuffer(3);
+            ((M4aSoundTable *)&data_02176238)->table2 = (void *)reader.getDataBuffer(2);
+            ((M4aSoundTable *)&data_02176238)->records = (void *)reader.getDataBuffer(3);
             list = (u16 *)reader.getDataBuffer(0);
-            count = reader.getDataSize(0) >> 1;
+            count = (u32)reader.getDataSize(0) >> 1;
             for (i = 0; i < count; i++) {
                 SndTable_SetWord4(i, list[i]);
             }

@@ -21,21 +21,20 @@ typedef struct RectFlagPair {
 } RectFlagPair;
 
 // RectFlagPair_setFlag(self, flag) (0x020bb980, provisional name): stores flag in self and in the record at +0x64, then
-// with flag set, calls func_020b9774 (item, 0) on both items and clears their state bytes, and otherwise sets both
-// state bytes and calls func_020b9774 (item, 1) on both items
+// with flag set, clears both items' selected-row flags and state bytes, and otherwise sets them.
 extern "C" void RectFlagPair_setFlag(RectFlagPair *self, u8 flag);
 void RectFlagPair_setFlag(RectFlagPair *self, u8 flag) {
     self->flag = flag;
     self->record[0x29] = flag;
     if (self->flag) {
-        func_020b9774(self->itemA, 0);
+        SliderRing_setSelectedChild(self->itemA, 0);
         self->itemA->state = 0;
-        func_020b9774(self->itemB, 0);
+        SliderRing_setSelectedChild(self->itemB, 0);
         self->itemB->state = 0;
     } else {
         self->itemA->state = 1;
-        func_020b9774(self->itemA, 1);
+        SliderRing_setSelectedChild(self->itemA, 1);
         self->itemB->state = 1;
-        func_020b9774(self->itemB, 1);
+        SliderRing_setSelectedChild(self->itemB, 1);
     }
 }

@@ -5,6 +5,7 @@
 
 extern "C" {
 s32 Slider_setIndex(void *self, s32 value);
+void SliderRing_setSelectedChild(void *self, s32 selected);
 }
 
 #endif

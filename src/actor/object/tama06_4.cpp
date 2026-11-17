@@ -2,7 +2,20 @@
 #include "actor/object/tama06.h"
 
 // tama06 family, type0 position helpers, address -> name (original names from symbols.txt):
-//   0x0207f31c type0PosSet, 0x0207f3f0 type0WaitPosSet, 0x0207f434 type0AttackPosSet
+//   0x0207f37c type0PosSetR, 0x0207f3f0 type0WaitPosSet, 0x0207f434 type0AttackPosSet
+
+// Positions the piece around its parent using the supplied radius and direction.
+void type0PosSetR(Entity *e, u8 radius) {
+    s32 scale;
+    s32 product;
+    s8 scaledRadius;
+
+    scale = data_020dce54[e->direction];
+    product = scale * radius;
+    scaledRadius = product / 16;
+    e->x.HALF.HI = e->parent->x.HALF.HI + ((scaledRadius * trigTable[e->direction * 8]) >> 8);
+    e->y.HALF.HI = e->parent->y.HALF.HI - 8 - ((scaledRadius * trigTable[e->direction * 8 + 0x40]) >> 8);
+}
 
 // type0WaitPosSet, 0x0207f3f0. Places the piece at the parent's position plus the offset of its animation.
 void type0WaitPosSet(Entity *e) {

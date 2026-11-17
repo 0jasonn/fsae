@@ -8,6 +8,7 @@
 extern "C" {
 void lobby_freeBlock(void *heap, void *block);
 void lobby_msgObj_release(void *obj, void *heap);
+void lobby_releaseObj(void *holder, void *obj);
 s32 lobby_selection_dialogUpdate(void);
 void lobby_setRecvParam(s32 index, s32 flag, s32 value);
 void lobby_stepAndCall(void *self, void *arg);

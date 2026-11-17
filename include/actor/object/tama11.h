@@ -24,6 +24,7 @@ typedef struct Tama11Vars {
 #define TAMA_PLAYER_BYTE(i, off) (((u8 *)&playerWork[i])[off])
 
 void fiveMove(Entity *e);
+void tama11_move0(Entity *e);
 void prtDamage(Entity *e);
 void Throw(Entity *e);
 void tama11_throw_init(Entity *e);

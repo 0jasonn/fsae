@@ -5,7 +5,7 @@
 #include "ui/widget/rect_list.h"
 
 // rect_list: functions RectObjList_setItems (0x020b8078), RectObjList_allocPtrArray (0x020b80ec), RectObjList_releaseItems
-// (0x020b8138) and RectObjList_freeBlock (0x020b8190), all matching.
+// (0x020b8138), RectObjList_freeBlock (0x020b8190) and RectObjList_deleteItem (0x020b81a8), all matching.
 
 // Calls through slot n of the vtable of an object (slot 0 is at +0)
 typedef void (*RectSlotFn)(void *self, void *arg);
@@ -67,7 +67,7 @@ void RectObjList_releaseItems(RectObjList *self, void *holder) {
     s32 i;
 
     for (i = 0; i < self->count; i++) {
-        func_020b81a8(holder, ((void **)self->field14)[i]);
+        RectObjList_deleteItem(holder, ((void **)self->field14)[i]);
     }
     RectObjList_freeBlock(holder, self->field14);
     RectObj_noop(self, holder);
@@ -79,4 +79,20 @@ void RectObjList_freeBlock(void *holder, void *block) {
         return;
     }
     Heap_VirtualFree(*(void **)holder, block);
+}
+
+namespace {
+class RectObjDeleteSlot {
+public:
+    virtual void deleteItem(void *holder) = 0;
+};
+}
+
+// Releases a child through its first vtable slot, then frees its storage from the holder's heap.
+void RectObjList_deleteItem(void *holder, void *obj) {
+    if (obj == NULL) {
+        return;
+    }
+    ((RectObjDeleteSlot *)obj)->deleteItem(holder);
+    Heap_VirtualFree(*(void **)holder, obj);
 }

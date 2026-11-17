@@ -1,11 +1,23 @@
 #include "engine/functions.h"
+#include "engine/radar_init.h"
 #include "global.h"
 #include "game/radar_api.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
-//   draw_radar_time (0x020a650c)
+//   draw_radar_stage (0x020a6480), draw_radar_area (0x020a64c8), draw_radar_time (0x020a650c)
 
+extern "C" void set_bg_char_xywh(u8 *buf, s32 x, s32 y, s32 w, s32 h, u16 palette, u16 charSize);
+extern "C" u16 data_02124ac8[];
+extern "C" u16 data_02124ad6[];
 void set_bg_char_8_16(u8 *buf, s32 x, s32 y, u16 palette, u16 charSize);
+
+void draw_radar_stage(s32 mode, void *buf) {
+    set_bg_char_xywh((u8 *)buf, 6, 0x15, 0x10, 2, 4, data_02124ac8[mode]);
+}
+
+void draw_radar_area(s32 mode, void *buf) {
+    set_bg_char_xywh((u8 *)buf, 0x16, 0x15, 4, 2, 4, data_02124ad6[mode]);
+}
 
 // draw_radar_time(long, void*) (0x020a650c): the time readout on row 0x15, minutes capped at 99 then seconds, as two digit
 // cells each (tile 8 + digit), with the separator tile 7 between them
@@ -33,7 +45,6 @@ void draw_radar_time(s32 time, void *buf) {
 // Functions in this file (plain names from the debug build, C linkage):
 //   draw_radar_power (0x020a6658), draw_radar_defense (0x020a66f0), draw_radar_speed (0x020a6788)
 
-extern "C" void set_bg_char_xywh(u8 *buf, s32 x, s32 y, s32 w, s32 h, u16 palette, u16 charSize);
 extern "C" void set_bg_NULL_16_16_pal_chr(u8 *buf, s32 x, s32 y, u16 palette, u16 charSize);
 void set_bg_char_16_16(u8 *buf, s32 x, s32 y, u16 palette, u16 charSize);
 

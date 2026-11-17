@@ -2,8 +2,6 @@
 #include "global.h"
 #include "engine/res_cursor_api.h"
 
-extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
-
 // ResCursor_SeekAndReset (ResCursor_SeekAndReset, provisional name): ResCursor_Seek, and on success clears the word at +0x10.
 s32 ResCursor_SeekAndReset(u8 *cursor, u32 index) {
     s32 found;

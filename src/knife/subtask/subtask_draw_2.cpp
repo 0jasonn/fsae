@@ -2,9 +2,22 @@
 #include "global.h"
 #include "knife/subtask/subtask.h"
 
-// Subtask OAM helpers, 0x0209ceb8 to 0x0209cf98: OAM link priority, the OAM you entry, and the flag table access.
-
 extern u8 data_0217d1b4[];
+
+// Write attr0 and attr1 together, followed by the tile, priority and palette in attr2.
+BOOL subtask_draw_oam(s32 x, s32 y, s32 charNo, s32 palette, GXOamShape shape, GXOamAttr *attr) {
+    u8 *out = (u8 *)attr;
+    *(u32 *)out = (u32)shape | ((u32)y & 0xff) | (((u32)x << 23) >> 7);
+    *(u16 *)(out + 4) = (u16)(charNo | 0x400 | ((u32)palette << 12));
+    return TRUE;
+}
+
+BOOL subtask_draw_oam_eff(s32 x, s32 y, s32 charNo, s32 palette, GXOamShape shape, GXOamAttr *attr, GXOamEffect effect) {
+    u8 *out = (u8 *)attr;
+    *(u32 *)out = (u32)shape | ((u32)y & 0xff) | (((u32)x << 23) >> 7) | (u32)effect;
+    *(u16 *)(out + 4) = (u16)(charNo | 0x400 | ((u32)palette << 12));
+    return TRUE;
+}
 
 // subtask_draw_oam_you (0x0209ceb8)
 BOOL subtask_draw_oam_you(s32 x, s32 y, s32 palette, GXOamAttr *attr) {

@@ -79,11 +79,13 @@ extern u8 data_02126a98[];   // class info of Picture (returned by Picture_getCl
 extern u8 data_02126ac4[];   // vtable of Picture
 extern u8 data_02126b00[];   // vtable of Window
 
-// Shared functions this file calls, declared here (the original names of the lobby and the allocator)
-extern "C" void lobby_releaseObj(void *heap, void *obj);
+// Shared functions used by the pane and window implementations.
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void *func_020b6bf8(void *self, void *spec, void *ctx);
 extern "C" void Window_allocItems(Pane *self, void *owner, s32 count);
+extern "C" Pane *func_020b5ba8(Pane *self, void *owner, const PaneSpec *spec, void *ctx);
+extern "C" Pane *func_020b5850(Pane *self, const PaneSpec *spec, void *ctx);
+Pane *Pane_initFromSpec(Pane *self, const PaneSpec *spec, void *ctx);
 
 #endif

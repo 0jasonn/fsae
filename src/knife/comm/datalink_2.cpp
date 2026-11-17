@@ -3,6 +3,7 @@
 #include "knife/comm/datalink.h"
 
 // Functions in this file (original names from the debug build):
+//   DatalinkReader constructor and destructor (0x020a636c and 0x020a6384),
 //   DatalinkReader::initialize(void const*, unsigned long) (0x020a6398), DatalinkReader::finalize() (0x020a63d8),
 //   DatalinkReader::getDataBuffer(long) const (0x020a63f0), DatalinkReader::getDataSize(long) const (0x020a6438)
 
@@ -13,6 +14,22 @@ extern const char data_02124a71[];
 extern const char data_02124aa8[];
 extern const char data_02124ab4[];
 extern const char data_02124a65[];
+
+// Emit the ROM's complete-object constructor and destructor entry points with their exact ABI symbols.
+extern "C" {
+DatalinkReader *_ZN14DatalinkReaderC1Ev(DatalinkReader *self) {
+    self->block = NULL;
+    self->table = NULL;
+    self->blockSize = 0;
+    self->initialized = 0;
+    return self;
+}
+
+DatalinkReader *_ZN14DatalinkReaderD1Ev(DatalinkReader *self) {
+    self->finalize();
+    return self;
+}
+}
 
 // DatalinkReader::initialize(void const*, unsigned long) (0x020a6398): finalizes, then takes the block if it verifies
 BOOL DatalinkReader::initialize(const void *data, u32 size) {

@@ -21,4 +21,8 @@ typedef struct RectObj {
     u8 flags;          // 0x10
 } RectObj;
 
+extern "C" {
+RectObj *RectObj_initWithPos(RectObj *self, const s16 *pos, const s16 *size);
+}
+
 #endif

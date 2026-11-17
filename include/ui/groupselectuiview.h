@@ -108,7 +108,6 @@ extern "C" void Knife_Comm_WirelessManager_requestEndScan(void *manager);
 extern "C" s32 Knife_Comm_WirelessManager_getMaxParents(void *manager);
 extern "C" void *Knife_Comm_WirelessManager_getScanResult(void *manager, s32 index);
 extern "C" s32 Knife_Comm_WirelessManager_getState(void *manager);
-extern "C" void subTaskSendObjChar(void *buf, u32 offset, u32 size);
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern "C" s32 KnifeApp_getCurrentLanguage(void *app);

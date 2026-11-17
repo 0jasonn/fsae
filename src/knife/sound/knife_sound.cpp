@@ -153,9 +153,9 @@ s32 Knife_Sound_SequenceHandle_getPlayerNumber(KnifeSoundSequenceHandle *self) {
     return *((u8 *)self->player + 0x3c);
 }
 
-extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c4c4(KnifeSoundSequenceHandle *self, s32 a, s32 b);
-void Knife_Sound_SequenceHandle_fwdPlayer_08c4c4(KnifeSoundSequenceHandle *self, s32 a, s32 b) {
-    SndRef_setPan(&self->player);
+extern "C" void Knife_Sound_SequenceHandle_fwdPlayer_08c4c4(KnifeSoundSequenceHandle *self, s32 trackMask, s32 pan);
+void Knife_Sound_SequenceHandle_fwdPlayer_08c4c4(KnifeSoundSequenceHandle *self, s32 trackMask, s32 pan) {
+    SndRef_setPan(&self->player, trackMask, pan);
 }
 
 extern "C" void *Knife_Sound_SequenceHandle_getPlayerField(KnifeSoundSequenceHandle *self);

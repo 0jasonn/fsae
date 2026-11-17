@@ -32,7 +32,7 @@ BOOL Knife_Comm_WirelessManager_turnOn(void *self, BOOL on) {
     if (func_02019968() == 0) {
         return FALSE;
     }
-    if (!Knife_Comm_WirelessManager_handleResult(self, func_0201f838(Knife_Comm_WirelessManager_callback_WM_EnableStep), 0, data_0211b0dc)) {
+    if (!Knife_Comm_WirelessManager_handleResult(self, WM_Enable(Knife_Comm_WirelessManager_callback_WM_EnableStep), 0, data_0211b0dc)) {
         return FALSE;
     }
     wm->state = 1;

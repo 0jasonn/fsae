@@ -4,7 +4,18 @@
 #include "ui/widget/pane.h"
 #include "ui/widget/pane_calc.h"
 
-// pane_calc: functions Pane_calcScaledY (0x020b5a70), Pane_calcScaledX (0x020b5b30).
+// Combines the rectangle coordinates with the window frame inset.
+void Pane_calcRectSum(s16 *outA, s16 *outB, const s16 *origin, const s16 *size, const s16 *inset) {
+    int adjustedY;
+    int adjustedX;
+
+    adjustedY = origin[1] + size[1] - inset[3];
+    adjustedX = origin[0] + inset[0];
+    outA[0] = adjustedX;
+    outA[1] = adjustedY;
+    outB[0] = size[0] - inset[0];
+    outB[1] = inset[3];
+}
 
 // Pane_calcScaledX(out, a, scale, param) (0x020b5b30, provisional name): the x counterpart of Pane_calcScaledY,
 // out[index] = (base + span) * (scale - 1) - (a[0] - 1) * span and out[other] = base * (scale - 1)

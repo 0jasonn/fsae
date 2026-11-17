@@ -44,7 +44,7 @@ s32 WM_MeasureChannel(void *callback, u16 unk1, u16 unk2, u16 channel, u16 unk4)
     u16 data[5];
     s32 status;
 
-    func_0201eddc();
+    WMi_GetWorkPointer();
     status = WMi_CheckStateEx(1, 2);
     if (status != 0) {
         return status;

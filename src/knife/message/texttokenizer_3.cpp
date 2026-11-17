@@ -4,8 +4,7 @@
 #include "knife/message/text_tokenizer.h"
 
 // Knife::Message::TextTokenizer, 0x0208e5c4 to 0x0208e6bc: the string overloads of tokenize, changeMemoryPool and the
-// slot 0 hook (onBegin). onEnd (0x0208e6bc) is parked in scratch/agentD/nonmatching. The tokenize(unsigned long, ...)
-// overload at 0x0208e4e0 is not in this unit yet.
+// slot 0 hook (onBegin).
 
 namespace Knife {
 namespace Message {

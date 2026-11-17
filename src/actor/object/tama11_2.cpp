@@ -6,7 +6,7 @@
 
 // Tama11 actor, second unit (module tama11). Address -> name:
 //   0x0207fe14 Tama11 (original name Tama11(OBJ_WORK_*))
-//   tama11_init (0x0207fe64) and tama11_move0 (0x0207ff4c) are parked in scratch/agentC/nonmatching
+//   tama11_init (0x0207fe64) is still in assembly.
 
 // Entity sprite settings word (0x1c)
 #define SPRITE_WORD(e) (*(u32 *)&(e)->spriteSettings)

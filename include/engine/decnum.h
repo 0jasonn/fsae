@@ -1,7 +1,7 @@
 #ifndef WIP_A_DECNUM_H
 #define WIP_A_DECNUM_H
 
-// Decimal digit string used by the float formatting code (same layout as struct DecNum in src/engine/decnum.cpp).
+// Decimal digit string used by the float formatting code.
 #include "types.h"
 
 typedef struct DecNum {
@@ -12,6 +12,9 @@ typedef struct DecNum {
 } DecNum;
 
 extern "C" {
+s32 DecNum_RoundDir(DecNum *self, s32 keep);
+void DecNum_Increment(DecNum *self, s32 keep);
+void DecNum_Truncate(DecNum *self, s32 keep);
 void DecNum_RoundDigits(DecNum *self, s32 keep);
 void DecNum_RoundDigits2(DecNum *self, s32 keep);
 }

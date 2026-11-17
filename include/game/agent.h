@@ -2,6 +2,7 @@
 #define WIP_A_AGENT_A_H
 
 #include "engine/functions.h"
+#include "engine/wm_api.h"
 
 // Prototypes for functions defined in src/wip/A/ (Implementer A).
 // Plain (unmangled) functions get C linkage here; the original debug names of mangled ones are C++.
@@ -28,9 +29,7 @@ void WM_SetPortCallback(u32 port, u32 a, u32 b);
 u32 WMi_SendCommand(u32 a, u32 b, ...);
 void DC_InvalidateRange(void *addr, u32 size);
 void DC_StoreRange(void *addr, u32 size);
-void *func_0201eddc(void);
 s32 NWMi_CheckInitialized(void);
-void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 u32 OS_DisableInterrupts(void);
 void OS_RestoreInterrupts(u32 state);
 }

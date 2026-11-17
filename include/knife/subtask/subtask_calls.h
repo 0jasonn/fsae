@@ -18,13 +18,9 @@ extern "C" s32 ResChunk_GetNRCS(void *entry, void *owner);
 extern "C" void GXS_BeginLoadBGExtPltt(void);
 extern "C" void GXS_LoadBGExtPltt(void *data, u32 offset, u32 size);
 extern "C" void GXS_EndLoadBGExtPltt(void);
-extern "C" void subTaskSendBgChar(s16 index, void *data, u32 offset, u32 size);
-extern "C" void subTaskSendBgPlt(void *data, u32 offset, u32 size);
 extern "C" s32 ResChunk_OpenKBEC(void *entry, void *owner);
 extern "C" s32 ResChunk_OpenRACH(void *entry, void *owner);
 extern "C" s32 Menu_ForwardC2cb4(void *entry, void *owner);
-extern "C" void subTaskSendObjChar(void *data, u32 offset, u32 size);
-extern "C" void subTaskSendObjPlt(void *data, u32 offset, u32 size);
 extern "C" void Slots_ClearThree(void *block);
 extern "C" void Slots_ClearThreeAt8(void *block);
 // subTaskSendScr(short, void*, unsigned long, unsigned long) is C++ (mangled _Z14subTaskSendScrsPvmm).

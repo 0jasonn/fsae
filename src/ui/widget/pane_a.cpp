@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "ui/lobby_api.h"
 #include "ui/widget/pane.h"
 #include "ui/widget/pane_a_api.h"
 

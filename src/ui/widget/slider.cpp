@@ -3,6 +3,7 @@
 #include "types.h"
 #include "ui/widget/rect_obj_view.h"
 #include "ui/widget/slider.h"
+#include "ui/widget/slider_index_api.h"
 
 // slider: functions Slider_setPosition (0x020b9720), Slider_setPositionChecked (0x020b9740) and Slider_updateFlags
 // (0x020b97d4), all matching. The slider keeps two children at +0x14 (see rect_pair.cpp for the child layout).
@@ -28,4 +29,24 @@ s32 Slider_setPositionChecked(Slider *self, s16 position) {
     Slider_setPosition(self, position);
     self->result = self->scaled * 0x17;
     return 1;
+}
+
+// Provisional name. Set the selected item's row flag while it lies in the visible window.
+void SliderRing_setSelectedChild(void *selfv, s32 selected) {
+    Slider *self = (Slider *)selfv;
+    s32 firstIndex;
+    s32 slot;
+
+    if (self->selectedIndex == -1 || self->unk_3c == 0) {
+        return;
+    }
+    firstIndex = self->scaled;
+    if (self->selectedIndex < firstIndex) {
+        return;
+    }
+    if (self->selectedIndex >= firstIndex + self->step) {
+        return;
+    }
+    slot = self->selectedIndex % (u16)(self->step + 1);
+    self->rows[slot]->selected = selected;
 }

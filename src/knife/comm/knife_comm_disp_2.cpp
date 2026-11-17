@@ -8,8 +8,6 @@
 // Functions in this file (module knife_comm, the message box dispatch):
 //   knife_commDispRoll (0x0204b900), knife_commDispEnq (0x0204ba1c)
 
-extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
-
 // Roll: scrolls the text up by one row (the cell rows and the line queue shift; the top row is cleared) when the line
 // change is requested through openMode 2. Otherwise it asks for a line change and moves the scroll bars of data_0217d358.
 void knife_commDispRoll(KNIFE_MSGSYS *msg) {

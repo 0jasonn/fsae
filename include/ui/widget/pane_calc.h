@@ -12,4 +12,9 @@ typedef struct PaneScaleParam {
     u8 index;     // 0x04: the entry written first (0 or 1, any nonzero value counts as 1)
 } PaneScaleParam;
 
+extern "C" {
+void Pane_calcRectOffset(s16 *outA, s16 *outB, const s16 *origin, const s16 *size, const s16 *inset);
+void Pane_calcRectSum(s16 *outA, s16 *outB, const s16 *origin, const s16 *size, const s16 *inset);
+}
+
 #endif

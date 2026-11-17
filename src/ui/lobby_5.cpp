@@ -6,9 +6,6 @@
 
 // Functions in this file (no original names, provisional names from what they do):
 //   lobby_msgObj_init (lobby_msgObj_init), lobby_msgObj_release (lobby_msgObj_release), lobby_freeBlock (lobby_freeBlock)
-// lobby_releaseObj (lobby_releaseObj) is parked in scratch/agentF/nonmatching/lobby_releaseObj.cpp
-
-extern "C" void lobby_releaseObj(void *heap, void *obj);
 
 // lobby_msgObj_init(self) (0x020b4e60, provisional name): sets the vtable of the message object and clears its fields
 extern "C" void lobby_msgObj_init(void *self);
@@ -37,4 +34,21 @@ void lobby_freeBlock(void *heap, void *block) {
         return;
     }
     Heap_VirtualFree(*(void **)heap, block);
+}
+
+namespace {
+class LobbyReleasable {
+public:
+    virtual void slot0(void) = 0;
+    virtual void release(void *holder) = 0;
+};
+}
+
+// Release the object through its second vtable slot, then free its storage.
+void lobby_releaseObj(void *holder, void *obj) {
+    if (obj == NULL) {
+        return;
+    }
+    ((LobbyReleasable *)obj)->release(holder);
+    Heap_VirtualFree(*(void **)holder, obj);
 }

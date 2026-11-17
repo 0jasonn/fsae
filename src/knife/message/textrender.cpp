@@ -79,3 +79,16 @@ void Knife_Message_TextRender_onReadPlainText(void *a, const void *text) {
     self->flag84 = 1;
     self->posX = self->posX + advance;
 }
+
+// Advance to the next line and recalculate its horizontal starting position.
+void Knife_Message_TextRender_onReadNewLine(void *a) {
+    KnifeTextRender *self = (KnifeTextRender *)a;
+
+    self->centerIndex++;
+    if (self->flag83 == 0) {
+        self->startX = 0;
+    } else {
+        self->startX = (self->widthCells * 8 - self->centering[self->centerIndex]) / 2;
+    }
+    self->unk_32 = self->unk_32 + self->unk_76;
+}

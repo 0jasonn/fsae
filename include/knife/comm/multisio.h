@@ -73,7 +73,6 @@ extern "C" u32 Knife_Comm_GetPlayerNoByAID(int index, const void *info);
 extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 int set5c_returnZero(void); // C++ symbol, always returns 0
 extern "C" void func_0200a3c8(u16 *dst, const u16 *src);
-extern "C" void func_0209205c(void *manager, void *packet);
 s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm, src/game/subtask_draw_2.cpp
 
 // Timer control value snapshot taken by MultiSioMain
