@@ -1910,6 +1910,10 @@ src/ui/message_10.cpp:
     complete
     .text       start:0x0204aa00 end:0x0204aa84
 
+src/game/telopstring.cpp:
+    complete
+    .text       start:0x0204aa84 end:0x0204ab00
+
 src/game/message_13.cpp:
     complete
     .text       start:0x0204ab00 end:0x0204ab20
@@ -2038,9 +2042,17 @@ src/game/blockset.cpp:
     complete
     .text       start:0x0204e634 end:0x0204e690
 
+src/game/randomblock.cpp:
+    complete
+    .text       start:0x0204e690 end:0x0204e70c
+
 src/game/stopblock.cpp:
     complete
     .text       start:0x0204e70c end:0x0204e744
+
+src/game/registstopblock.cpp:
+    complete
+    .text       start:0x0204e744 end:0x0204e7d4
 
 src/game/stopblock_4.cpp:
     complete
@@ -2210,6 +2222,10 @@ src/game/player_2.cpp:
     complete
     .text       start:0x02054a44 end:0x02054b64
 
+src/game/plworkclear.cpp:
+    complete
+    .text       start:0x02054b64 end:0x02054c04
+
 src/game/player_3.cpp:
     complete
     .text       start:0x02054c04 end:0x02054ddc
@@ -2217,6 +2233,10 @@ src/game/player_3.cpp:
 src/game/player_5.cpp:
     complete
     .text       start:0x02054f30 end:0x02054f64
+
+src/game/pltelop.cpp:
+    complete
+    .text       start:0x02054f64 end:0x02054fe4
 
 src/game/pl_start_pos.cpp:
     complete
@@ -2658,6 +2678,10 @@ src/actor/object/set4f.cpp:
     complete
     .text       start:0x0205e87c end:0x0205e914
 
+src/actor/object/set4f_move.cpp:
+    complete
+    .text       start:0x0205e914 end:0x0205e9c0
+
 src/actor/object/pot_1.cpp:
     complete
     .text       start:0x0205e9c0 end:0x0205e9dc
@@ -3018,9 +3042,17 @@ src/actor/object/itemget.cpp:
     complete
     .text       start:0x02067a3c end:0x02067a60
 
+src/actor/object/itemget_type1_move.cpp:
+    complete
+    .text       start:0x02067a60 end:0x02067b44
+
 src/actor/object/race_item_1.cpp:
     complete
     .text       start:0x02067b44 end:0x02067b60
+
+src/actor/object/race_item.cpp:
+    complete
+    .text       start:0x02067b60 end:0x02067bdc
 
 src/actor/object/ss_2.cpp:
     complete
@@ -3150,6 +3182,10 @@ src/actor/object/set33_3.cpp:
     complete
     .text       start:0x0206a7b8 end:0x0206a830
 
+src/actor/object/set33_lift.cpp:
+    complete
+    .text       start:0x0206a830 end:0x0206a8e4
+
 src/actor/object/set33_2.cpp:
     complete
     .text       start:0x0206a8e4 end:0x0206a964
@@ -3178,9 +3214,17 @@ src/actor/object/set36.cpp:
     complete
     .text       start:0x0206b34c end:0x0206b368
 
+src/actor/object/set36_init.cpp:
+    complete
+    .text       start:0x0206b368 end:0x0206b404
+
 src/actor/object/set36_2.cpp:
     complete
     .text       start:0x0206b404 end:0x0206b460
+
+src/actor/object/set36_fever.cpp:
+    complete
+    .text       start:0x0206b460 end:0x0206b4dc
 
 src/actor/object/setrupee.cpp:
     complete
@@ -3189,6 +3233,10 @@ src/actor/object/setrupee.cpp:
 src/actor/object/set37.cpp:
     complete
     .text       start:0x0206b5b8 end:0x0206b648
+
+src/actor/object/set37_move.cpp:
+    complete
+    .text       start:0x0206b648 end:0x0206b730
 
 src/actor/object/set37_2.cpp:
     complete
@@ -3222,6 +3270,10 @@ src/actor/object/stick.cpp:
     complete
     .text       start:0x0206c068 end:0x0206c0b0
 
+src/actor/object/stick_move.cpp:
+    complete
+    .text       start:0x0206c0b0 end:0x0206c18c
+
 src/actor/object/nemoto.cpp:
     complete
     .text       start:0x0206c18c end:0x0206c398
@@ -3242,6 +3294,10 @@ src/actor/object/set42.cpp:
     complete
     .text       start:0x0206c704 end:0x0206c720
 
+src/actor/object/set42_init.cpp:
+    complete
+    .text       start:0x0206c720 end:0x0206c7cc
+
 src/actor/object/set42_wait.cpp:
     complete
     .text       start:0x0206c7cc end:0x0206c850
@@ -3257,6 +3313,10 @@ src/actor/object/set43.cpp:
 src/actor/object/set43_2.cpp:
     complete
     .text       start:0x0206ca20 end:0x0206ca4c
+
+src/actor/object/set43_kasoku.cpp:
+    complete
+    .text       start:0x0206ca4c end:0x0206cac8
 
 src/actor/object/set43_3.cpp:
     complete
@@ -3325,6 +3385,10 @@ src/actor/object/effect_tori.cpp:
 src/actor/object/effect_mori.cpp:
     complete
     .text       start:0x0206dbe0 end:0x0206dcc8
+
+src/actor/object/effect_mori_bird.cpp:
+    complete
+    .text       start:0x0206dcc8 end:0x0206dd84
 
 src/actor/object/effect_mori_2.cpp:
     complete
@@ -3430,6 +3494,10 @@ src/actor/object/set48_2.cpp:
     complete
     .text       start:0x0206f544 end:0x0206f5a8
 
+src/actor/object/set48_move2.cpp:
+    complete
+    .text       start:0x0206f5a8 end:0x0206f680
+
 src/actor/object/set49.cpp:
     complete
     .text       start:0x0206f680 end:0x0206f750
@@ -3482,6 +3550,10 @@ src/actor/object/set54_init.cpp:
     complete
     .text       start:0x02071b00 end:0x02071b6c
 
+src/actor/object/set54_2.cpp:
+    complete
+    .text       start:0x02071b6c end:0x02071c8c
+
 src/actor/object/rewdoor_knife.cpp:
     complete
     .text       start:0x02071c8c end:0x02071f4c
@@ -3497,6 +3569,10 @@ src/actor/object/link_demo.cpp:
 src/actor/object/set56.cpp:
     complete
     .text       start:0x02072608 end:0x02072684
+
+src/actor/object/link_disp.cpp:
+    complete
+    .text       start:0x02072684 end:0x02072704
 
 src/actor/object/link.cpp:
     complete
@@ -3897,6 +3973,10 @@ src/actor/object/tama05_main.cpp:
 src/actor/object/tama05.cpp:
     complete
     .text       start:0x0207e834 end:0x0207ea14
+
+src/actor/object/hassha.cpp:
+    complete
+    .text       start:0x0207ea54 end:0x0207ead4
 
 src/actor/object/tama06.cpp:
     complete
