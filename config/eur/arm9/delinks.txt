@@ -6105,6 +6105,10 @@ src/engine/sound/sndlist.cpp:
     complete
     .text       start:0x020c1dcc end:0x020c1fa0
 
+src/engine/sound/sndlist_insert_before.cpp:
+    complete
+    .text       start:0x020c1fa0 end:0x020c2004
+
 src/engine/sound/sndlink.cpp:
     complete
     .text       start:0x020c2004 end:0x020c2090
