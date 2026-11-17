@@ -72,7 +72,8 @@ def name_to_addr(name):
             for line in ren.read_text().splitlines():
                 parts = line.split()
                 if len(parts) == 2 and parts[0].startswith("func_"):
-                    _NAMES[parts[1]] = int(parts[0][5:13], 16)
+                    # Live symbols take precedence over provisional scratch renames.
+                    _NAMES.setdefault(parts[1], int(parts[0][5:13], 16))
     return _NAMES.get(name)
 
 

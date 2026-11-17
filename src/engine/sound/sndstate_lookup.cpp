@@ -10,6 +10,40 @@ extern u8 *data_021848b0; // sound state pointer
 // +N (zero means no table), entries are word offsets from +4, and the result is the block plus the entry offset
 // or 0 when the index is out of range or the offset is zero.
 
+// Provisional name. Look up an entry through the table at block offset 0x08.
+u8 *SndState_LookupAt08(s32 index) {
+    u8 *state;
+    u8 *block;
+    u8 *table;
+    u32 offset;
+
+    state = data_021848b0;
+    block = *(u8 **)(state + 0x98);
+    offset = *(u32 *)(block + 8);
+    if (offset == 0) {
+        table = NULL;
+    } else {
+        table = block + offset;
+    }
+    if (table == NULL) {
+        return NULL;
+    }
+    if (index < 0) {
+        return NULL;
+    }
+    if ((u32)index >= *(u32 *)table) {
+        return NULL;
+    }
+    offset = *(u32 *)(table + index * 4 + 4);
+    block = *(u8 **)(state + 0x98);
+    if (offset == 0) {
+        block = NULL;
+    } else {
+        block = block + offset;
+    }
+    return block;
+}
+
 // func_020c0650: lookup through the block table at +0xc.
 extern "C" u8 *func_020c0650(s32 index);
 u8 *func_020c0650(s32 index) {

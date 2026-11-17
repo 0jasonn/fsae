@@ -66,7 +66,7 @@ void OSi_SleepAlarmCallback(void);
 s32 PXI_IsCallbackReady(u32 fifo, u32 kind);
 void STD_CopyLString(void *dst, const void *src, s32 size);
 void Slider_setupItems(void *slider, s32 count);
-void Str_CopyN(u8 *dst, const u8 *src, u32 count);
+u8 *Str_CopyN(u8 *dst, const u8 *src, u32 count);
 void TaskSlot_Release(s32 value);
 void SndRef_setPan(void * volatile *ref, u32 trackMask, s32 pan);
 void Task_Dispatch(s32 flag);
@@ -124,7 +124,7 @@ void OamRing_ResetAll(void *oam);
 void OamRing_Alloc(void *dst, s32 value, s32 size, s32 flag);
 void func_020c3b94(void *a, s32 b, s32 c, s32 *d);
 void func_020c6c30(u8 *obj, u8 *self);
-void func_020c7018(u32 *widthTiles, u32 *heightTiles, s32 screen);
+void BgScreen_GetTileDimensions(u32 *widthTiles, u32 *heightTiles, s32 screen);
 BOOL EnemyInit(Entity *e);
 void AfterPlayer(void);
 s32 _s32_div_f(s32 a, s32 b); // runtime signed divide

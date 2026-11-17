@@ -105,6 +105,10 @@ src/engine/str.cpp:
     complete
     .text       start:0x02008264 end:0x02008280
 
+src/engine/str_copy.cpp:
+    complete
+    .text       start:0x02008348 end:0x02008398
+
 src/engine/strchr.cpp:
     complete
     .text       start:0x02008398 end:0x020083d0
@@ -5951,7 +5955,7 @@ src/engine/sound/sndstate_get.cpp:
 
 src/engine/sound/sndstate_lookup.cpp:
     complete
-    .text       start:0x020c0650 end:0x020c0844
+    .text       start:0x020c05ec end:0x020c0844
 
 src/engine/sound/sndstate.cpp:
     complete
@@ -6228,6 +6232,10 @@ src/knife/message/text_stream.cpp:
 src/knife/message/text_stream_2.cpp:
     complete
     .text       start:0x020c6fb0 end:0x020c7018
+
+src/engine/bg_dimensions.cpp:
+    complete
+    .text       start:0x020c7018 end:0x020c70ac
 
 src/knife/subtask/subtask_game_start.cpp:
     complete
