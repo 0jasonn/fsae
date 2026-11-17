@@ -6,6 +6,7 @@
 
 #include "types.h"
 #include "knife/comm/wireless_manager.h"
+#include "engine/wm_api.h"
 
 // REG_IME, the interrupt master enable.
 #define WM_REG_IME (*(volatile u16 *)0x04000208)
@@ -51,11 +52,12 @@ public:
 // SDK and ROM functions the WirelessManager methods call.
 extern "C" {
 s32 func_02019968(void);                                          // thunk to a check outside the ARM9 image
-s32 func_0201f838(void *callback);                                // WM_Enable(callback)
 s32 WM_Reset(void *callback);
 s32 WM_PowerOff(void *callback);
 s32 WM_EndDataSharing(void *buf);
 s32 WM_EndMP(void *callback);
+s32 WM_GetAID(void);
+s32 WM_GetConnectedAIDs(void);
 s32 WM_SetGameInfo(void *callback, void *gameInfo, u16 unk2, u32 unk3, u16 unk4, u8 unk5);
 s32 Knife_Comm_WirelessManager_getLinkLevel(void *self);
 void OS_Terminate(void);

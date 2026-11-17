@@ -4,6 +4,7 @@
 // Declarations used by the implementer F units of the rect family (not in engine/functions.h yet).
 
 #include "types.h"
+#include "ui/widget/slider_index_api.h"
 
 extern "C" void *func_020c2c34(void *heap, s32 size);
 extern "C" void RectItem_clear(void *self);
@@ -16,7 +17,6 @@ extern "C" void RectObjList_setItems(void *self, void *holder, void **src, s32 c
 extern "C" s32 func_020bc200(void *owner, u16 w, s32 x);
 
 extern "C" void RectGroup_updateItems(void *self);
-extern "C" void func_020b9774(void *self, s32 flag);
 extern "C" void Slider_setPosition(void *self, s16 position);
 extern "C" s32 Slider_setPositionChecked(void *self, s16 position);
 

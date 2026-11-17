@@ -6,7 +6,6 @@
 #include "engine/functions.h"
 
 extern "C" void MI_UncompressLZ16(const void *src, void *dst);
-extern "C" void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 
 // KnifeApp::getZelmapResource(unsigned long) (plain name in symbols.txt). The first argument is the KnifeApp instance.
 extern "C" u32 KnifeApp_getZelmapResource(void *app, u32 id);

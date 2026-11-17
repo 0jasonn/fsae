@@ -2,12 +2,40 @@
 #include "global.h"
 #include "actor/object/tama11.h"
 
-// tama11 / Throw module, 0x02080008 to 0x02080320 (tama11_throw_init, throw_move and throw_throw are in other files).
+// tama11 / Throw module, 0x0207ff4c to 0x02080320.
+//   tama11_move0 (0x0207ff4c): changes direction on contact, then updates the sprite and shared movement timer.
 //   tama11_move1 (0x02080008): the flying object. Counts down expireTimer, then on contact steps its subtimer and
 //     either re-rolls the sprite (phase 1) or switches to action 1 (phase 2), then plays SFX 0xb4 and runs fiveMove.
 //   prtDamage (0x020801a0): hits the parent with damage 0x14 (or 5 for type 0) and drops a rupee.
 //   fiveMove (0x02080238): shared per-frame update for the throw family, with the five-frame timer.
 //   Throw (0x020802e4): dispatches on subAction through Throw_stateTable unless the game is paused, then runs func_020857c8.
+
+void tama11_move0(Entity *e) {
+    u8 direction;
+    u8 frameCount;
+
+    if ((e->contactFlags & 0x80) != 0) {
+        if ((u8)(e->contactFlags - 0x84) <= 0x87) {
+            if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0 || e->type == 0) {
+                direction = e->baseDirection;
+            } else {
+                direction = func_02086078(e, e->parent);
+            }
+            // Preserve the original direction store before the frame-counter read.
+            *(volatile u8 *)&e->direction = direction;
+            frameCount = *(volatile u8 *)&VARS(Tama11Vars, e)->frameCounter;
+            if (frameCount < 0xa) {
+                frameCount++;
+                VARS(Tama11Vars, e)->frameCounter = frameCount;
+            }
+            EnqueueSFX(0xb4);
+        }
+    }
+    e->timer = e->timer + 1;
+    e->spriteSettings.b16 = ((e->timer & 0x3) + 7) & 0xf;
+    e->spriteSettings.b20 = e->spriteSettings.b16;
+    fiveMove(e);
+}
 
 // tama11_move1 (0x02080008)
 void tama11_move1(Entity *e) {

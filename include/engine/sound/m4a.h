@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "knife/app/knife_file_2.h"
+#include "knife/comm/datalink.h"
 #include "knife/sound/knife_sound.h"
 
 // The sound globals at data_02176238 (also the file table of knife_file_2.h): flags, a frame counter, the wave id of
@@ -26,22 +27,6 @@ typedef struct M4aRecord {
     /* 10 */ u16 field10;
     /* 12 */ u8 unk_12[0x1e];
 } M4aRecord;
-
-// The DatalinkReader (0x10 bytes): three pointers and a flag, all zeroed by the constructor and finalize
-class DatalinkReader {
-public:
-    DatalinkReader(void);
-    ~DatalinkReader(void);
-    BOOL initialize(const void *data, u32 size);
-    void finalize(void);
-    void *getDataBuffer(s32 index) const;
-    u32 getDataSize(s32 index) const;
-
-    void *buffer;      // 0x00
-    void *table;       // 0x04
-    void *tableEnd;    // 0x08
-    u8 unk_0c;         // 0x0c
-};
 
 extern "C" {
 // Calls from the m4a code into other units (dsd names where the function has none yet)

@@ -47,3 +47,47 @@ void set01_init(Entity *e) {
         }
     }
 }
+
+void set01_spawnRandom(Entity *e) {
+    UpdateAnimationSingleFrame(e);
+    if (e->frame == 0x80) {
+        if (e->timer < 4) {
+            u8 randomIndex = Random() & 0x1f;
+            u8 slot = data_020f26dc[data_020d410c[e->type]][data_0212c81c[e->timer]][randomIndex];
+            if (slot != 0xff && e->type2 == 0) {
+                Entity *child = GetSetWork(0, slot, 1);
+                if (child != NULL) {
+                    ObjPosCopy(e, child);
+                }
+            }
+        }
+        PutObjWork(e);
+    }
+}
+
+// Set01 actor, second unit (module set01). Address -> name:
+//   0x02058f18 set01_boss (original name)
+
+extern const s8 data_021154f4[]; // (dx, dy) pairs, indexed by subtimer, moved to the child each frame
+
+void set01_boss(Entity *e) {
+    Entity *child;
+
+    if (e->timer == 0) {
+        child = GetSetWork(0xf, 1, 0x20);
+        if (child == NULL) {
+            return;
+        }
+        e->timer = 10;
+        e->subtimer--;
+        if (e->subtimer == 0) {
+            e->action = 3;
+            e->timer = 2;
+            SoundReq(0x10);
+            PutObjWork(e->child);
+        }
+        ObjPosCopyOfs32(e, child, data_021154f4[e->subtimer * 2] << 16, data_021154f4[e->subtimer * 2 + 1] << 16);
+    } else {
+        e->timer--;
+    }
+}

@@ -82,7 +82,6 @@ void OS_GetOwnerInfoEx(void *info);
 extern "C" s32 Ctrl_isReady(void *obj);
 s32 func_020be5a4(MenuList *list, s32 delta);
 MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag);
-void SndRef_setPan(void *obj, s32 a, s32 b);
 void SndState_StartEntryList(void *obj, s32 a, s32 b);
 void SndSlot_ReleaseFirst(void *obj, s32 value);
 void Work21_clear(void *buf);

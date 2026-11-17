@@ -1,13 +1,16 @@
 #ifndef WIP_C_TAMA08_H
 #define WIP_C_TAMA08_H
 
-// Declarations for the Tama08 actor family (src/wip/C/tama08.cpp).
+// Declarations for the Tama08 actor family.
 #include "engine/functions.h"
 #include "global.h"
 
 extern "C" {
 int func_02085294(void); // label, thumb: state index of the Tama08 dispatcher
 }
+
+void tama08_init(Entity *e);
+void tama08_wait(Entity *e);
 
 extern const EntityFunc data_020dcf74[]; // Tama08 dispatcher table, indexed by func_02085294()
 extern const EntityFunc data_020dcf60[]; // tama08_normal action table, indexed by e->action

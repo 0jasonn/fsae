@@ -29,7 +29,6 @@ void subTask_game_start_init_vram(s32 mode);
 void subTask_init_bg3(int a, int b, int c);
 void subTask_init_obj_lang(int a, int b);
 void initCellAnimation(void *obj, s32 index1, s32 index2);
-void *subTask_GetNewCellAnimation(void *cell);
 void ResPlayer_SeekAndRefresh(void *entry, s32 value);
 void subTask_game_start_init(void);
 }

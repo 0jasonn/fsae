@@ -9,6 +9,7 @@ extern "C" {
 void ResCursor_Clear(u8 *cursor);
 s32 ResCursor_Seek(u8 *cursor, u32 index);
 s32 ResCursor_SeekAndReset(u8 *cursor, u32 index);
+s32 ResCursor_InitRange(u8 *cursor);
 s32 ResCursor_SetTableAndInit(u8 *cursor, u8 *table);
 void ResPlayer_Init(u8 *player);
 u32 ResRef_GetWord(u8 *ref);

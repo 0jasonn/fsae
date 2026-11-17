@@ -13,6 +13,8 @@ public:
 // Reader of a datalink block: the block is checked by Datalink::verify, the entries follow the 16-byte header.
 class DatalinkReader {
 public:
+    DatalinkReader(void);
+    ~DatalinkReader(void);
     BOOL initialize(const void *block, u32 blockSize);
     void finalize(void);
     const void *getDataBuffer(s32 index) const;

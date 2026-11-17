@@ -4,7 +4,7 @@
 
 // Functions in this file (provisional name for a func_ address):
 //   nameEntryUIView_getCursorGroup nameEntryUIView_getCursorGroup (0x020af050)
-// nameEntryUIView_setRowCursor (0x020af0b0) is parked in scratch/agentF/nonmatching/func_020af0b0.cpp
+//   nameEntryUIView_setRowCursor (0x020af0b0)
 
 // nameEntryUIView_getCursorGroup (0x020af050): maps the index r2 of the entry to a group 1 to 4 when the mode is 5,
 // otherwise returns the value of the mode field at offset 0x46
@@ -24,4 +24,23 @@ s32 nameEntryUIView_getCursorGroup(void *self, s32 mode, s32 index) {
         }
     }
     return (s8)((u8 *)self)[0x46];
+}
+
+// Moves the cursor to the final column of the current row.
+void nameEntryUIView_setRowCursor(void *self) {
+    u8 *obj;
+    s32 position;
+    s32 row;
+
+    obj = (u8 *)self;
+    if ((s8)obj[0x46] == 4) {
+        return;
+    }
+    position = *(s16 *)(obj + 0x4a);
+    row = position / 5;
+    obj[0x4d] = (u8)row;
+    *(volatile u8 *)(obj + 0x4c) = 4;
+    *(s16 *)(obj + 0x4a) = (s16)((s8)obj[0x4d] * 5 + 4);
+    obj[0x44] = 1;
+    *(volatile u8 *)(obj + 0x46) = 4;
 }

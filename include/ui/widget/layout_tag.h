@@ -1,7 +1,7 @@
 #ifndef WIP_F_LAYOUT_TAG_H
 #define WIP_F_LAYOUT_TAG_H
 
-// Declarations for the layout block dispatcher of implementer F (round 16). The helpers it calls are not named yet.
+// Layout block dispatcher and the record constructors selected by its tag.
 
 #include "engine/functions.h"
 #include "types.h"
@@ -12,10 +12,10 @@ typedef struct LayoutQuad {
 } LayoutQuad;
 
 extern "C" {
-s32 func_020b5524(void *arg1, void *arg3, LayoutQuad q);
-s32 func_020b54d0(void *arg1, void *arg3, LayoutQuad q);
-s32 func_020b547c(void *arg1, void *arg3, LayoutQuad q);
-s32 func_020b5424(void *arg1, u32 first, void *arg3, LayoutQuad q);
+s32 Pane_createByTag(void *holder, void *spec, LayoutQuad q);
+s32 Picture_createByTag(void *holder, void *spec, LayoutQuad q);
+s32 TextBox_createByTag(void *holder, void *spec, LayoutQuad q);
+s32 Window_createByTag(void *holder, u32 heap, void *spec, LayoutQuad q);
 s32 Layout_createByTag(void *unused, void *arg1, s32 tag, void *arg3, const LayoutQuad *q);
 }
 

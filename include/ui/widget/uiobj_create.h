@@ -9,7 +9,6 @@
 extern "C" {
 void *func_020c2c34(void *heap, s32 size);
 
-void *func_020b8408(void *self);
 void *RectObjLink2_initCopy(void *self);
 void *RectSlot_init(void *self);
 void *CtrlItem_init(void *self);
@@ -20,6 +19,7 @@ void *RectSpan_clear(void *self);
 
 void *UiObj_ba71c_create(void *holder);
 void *RectObjLink2_create(void *holder);
+void *RectObj_createWithPos(void *holder, const s16 *position, const s16 *size);
 void *RectSlot_create(void *holder);
 void *CtrlItem_create(void *holder);
 void *LobbyMsgObj_create(void *holder);

@@ -31,7 +31,6 @@ void fileSelUIView_deserialize(FileSelUIView *self, u8 **buf);
 }
 
 extern "C" {
-void subTaskSendBgChar(s16 index, void *data, u32 offset, u32 size);
 void fileSelUIView_viewWillApper(FileSelUIView *self);
 void fileSelUIView_setupTextRender(FileSelUIView *self);
 }

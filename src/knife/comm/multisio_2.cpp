@@ -51,5 +51,5 @@ void MultiSioSendDataSet(void *a) {
     if (state == 8) {
         packet->unk_30 = multiSioFlags;
     }
-    func_0209205c(manager, packet);
+    Knife_Comm_WirelessManager_setSendPacket(manager, packet);
 }

@@ -2,6 +2,7 @@
 #define WIP_D_WIRELESSMGR_D_H
 
 #include "types.h"
+#include "engine/wm_api.h"
 #include "knife/comm/wireless_manager.h"
 #include "knife/comm/comm_parentinfo.h"
 
@@ -62,7 +63,6 @@ extern "C" void Knife_Comm_WirelessManager_update_waitScan(void *self);
 
 // SDK and dsd-named functions called by the WirelessManager code (the names are the ROM symbols).
 extern "C" s32 func_02019968(void);                    // thunk to a function outside the ARM9 image (a check)
-extern "C" s32 func_0201f838(void *callback);          // WM_Enable(callback)
 extern "C" s32 Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);  // WM result handler
 extern "C" void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);  // WM_Enable callback
 extern "C" void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);  // WM_PowerOff callback

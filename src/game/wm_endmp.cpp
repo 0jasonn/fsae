@@ -4,7 +4,7 @@
 
 // WM_EndMP (0x02020260): stops the MP session.
 s32 WM_EndMP(void *callback) {
-    void *work = func_0201eddc();
+    void *work = WMi_GetWorkPointer();
     s32 status;
 
     status = WMi_CheckStateEx(2, 9, 10);

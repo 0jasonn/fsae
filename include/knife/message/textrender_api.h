@@ -8,6 +8,7 @@
 extern "C" {
 void Knife_Message_TextRender_clearCanvas(void *a, s32 mode);
 void Knife_Message_TextRender_onReadBlankTag(void *a, s32 value);
+void Knife_Message_TextRender_onReadNewLine(void *a);
 void Knife_Message_TextRender_onReadNop(void *a);
 void Knife_Message_TextRender_onReadSelectTag(void *a);
 void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values);

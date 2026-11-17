@@ -62,8 +62,6 @@ void OamRing_Push(void *obj, const u32 *attrs, u16 count);
 void Vram_SetBankGroupA(u32 a);
 void fileSelUIViewCtrl_finalize(FileSelUIViewCtrl *self);
 void Vram_SetBankGroupB(u32 a);
-void *G2S_GetBG1ScrPtr(void);
-void *G2S_GetBG2ScrPtr(void);
 extern u8 data_0217d23c[];
 extern u8 data_0217a23c[];
 extern u8 data_0217e6f0[]; // the file select controller (FileSelUIViewCtrl)

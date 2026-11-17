@@ -73,6 +73,7 @@ void subTask_free_objinfo(OBJInfo *info);
 void subTask_free_slot(s32 index);
 void subTask_setupBuffer(u32 mode);
 BOOL subtask_draw_oam(s32 x, s32 y, s32 charNo, s32 palette, GXOamShape shape, GXOamAttr *attr);
+BOOL subtask_draw_oam_eff(s32 x, s32 y, s32 charNo, s32 palette, GXOamShape shape, GXOamAttr *attr, GXOamEffect effect);
 void subTaskSendStop(void);
 void Knife_Message_CleanupTextRenderer(void);
 

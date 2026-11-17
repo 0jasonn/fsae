@@ -51,10 +51,6 @@ extern "C" void ResChunk_OpenTTLP(void *entry, void *chunk);   // 0x020c2fdc
 extern "C" s32 ResChunk_OpenKBEC(void *entry, void *owner);    // 0x020c2e44
 extern "C" s32 Menu_ForwardC2cb4(void *entry, void *owner);    // 0x020c2cb4
 
-extern "C" void subTaskSendBgChar(s16 index, void *data, u32 offset, u32 size); // 0x0209daa0 (parked)
-extern "C" void subTaskSendBgPlt(void *data, u32 offset, u32 size);  // 0x0209db38 (parked)
-extern "C" void subTaskSendObjChar(void *data, u32 offset, u32 size); // 0x0209daf0 (parked)
-extern "C" void subTaskSendObjPlt(void *data, u32 offset, u32 size); // 0x0209db80 (parked)
 void func_0208e188(void *block);                                // 0x0208e188, C++ linkage
 extern "C" void initBgCharWithLoadVram(BGInfo *bg, u32 layer, s32 index, u32 offset, u32 freeFlag);
 

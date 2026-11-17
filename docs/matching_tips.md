@@ -68,3 +68,7 @@ Every DSi compiler version (1.1–1.6sp2) has produced identical code so far; 2.
 - Casting the address of a struct global (`((u32 *)&messageRequest)[2]`) makes it address-taken and changes scheduling in the whole function: the field has to exist in the struct.
 - For a bitfield view of one element, cast the whole array to an overlay struct (`((View *)playerWork)[i].bits`); casting `&playerWork[i].field` breaks base-register sharing.
 - A local copy of a rodata pair is one ldm/stm block when the table type is `struct { VecFx32 pos[2]; }`; two separate members are copied one at a time.
+- A struct local declared with an initialiser mid-block is copied with ldm/stm; assigning to a struct declared at the top copies field by field.
+- `sub r0, rX, #1` for -1, or a 0 kept in a callee-saved register, means a variable that is 0 on that path and assigned elsewhere too (mwcc does not propagate a variable with two definitions).
+- Conditional bitfield constants (orreq/orrne on one word): `if (x) f.b = 2; else f.b = 3;`; a ternary gives moveq/movne plus a field insert.
+- A truncation (lsl/lsr 16) of an argument that already comes from a u16 means the local is an `s32` holding a `(u16)` cast.

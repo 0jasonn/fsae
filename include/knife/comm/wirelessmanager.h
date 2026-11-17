@@ -2,6 +2,7 @@
 #define WIP_D_WIRELESSMANAGER_H
 
 #include "types.h"
+#include "engine/wm_api.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wm_irq.h"
 
@@ -51,7 +52,6 @@ s32 WM_StepDataSharing(void *buf, void *sendBuf, void *recvBuf);
 void *WM_GetSharedDataAddress(void *buf, void *table, u16 index);
 void MI_CpuFill8(void *dst, u32 value, u32 size);
 s32 func_02019968(void);
-s32 func_0201f838(void *callback);
 s32 WM_PowerOff(void *callback);
 s32 WM_Reset(void *callback);
 void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);

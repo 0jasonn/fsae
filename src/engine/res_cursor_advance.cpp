@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "engine/res_cursor_api.h"
-#include "engine/g_calls.h"
 #include "engine/res_cursor_advance_api.h"
 
 // ResCursor_Advance (0x020c30e8, provisional name): steps the cursor to the next entry of its table. Modes 3 and 4
