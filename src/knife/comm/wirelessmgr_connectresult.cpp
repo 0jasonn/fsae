@@ -10,7 +10,7 @@ s32 Knife_Comm_WirelessManager_getConnectResult(void *self);
 }
 
 s32 Knife_Comm_WirelessManager_getConnectResult(void *self) {
-    WmCWork *wm = (WmCWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
     u16 savedIme = WM_REG_IME;
     s32 state = wm->state;
 

@@ -3,6 +3,7 @@
 
 #include "global.h"
 #include "types.h"
+#include "knife/comm/wireless_manager.h"
 
 // REG_IME, the interrupt master enable. The WirelessManager functions save it, clear it and restore it by hand.
 #define WM_REG_IME (*(volatile u16 *)0x04000208)
@@ -10,38 +11,6 @@
 // Field of the WirelessManager at a byte offset from its start (self is the manager pointer).
 #define WM_FIELD(self, off, type) (*(type *)((u8 *)(self) + (off)))
 
-// The WirelessManager fields the wip units use, at their offsets from the start of the manager.
-typedef struct WmDWork {
-    u8 unk_0000[0x1d2];
-    u16 bestChannel;        // 0x1d2: channel of the best measured level (MeasureChannel callback)
-    u8 unk_1d4[0x1c5c - 0x1d4];
-    u32 slots[16];          // 0x1c5c: 16 words
-    void *allocator;        // 0x1c9c: WmAllocatorIface (non-NULL once initialized)
-    u8 unk_1ca0[0x1ca8 - 0x1ca0];
-    void *recvBuf;          // 0x1ca8
-    void *sendBuf;          // 0x1cac
-    u32 recvSize;           // 0x1cb0
-    s32 sendSize;           // 0x1cb4
-    u8 unk_1cb8;            // 0x1cb8
-    u8 unk_1cb9;            // 0x1cb9
-    u8 unk_1cba[0x1cbc - 0x1cba];
-    s32 channel;            // 0x1cbc: channel index used by stepNextChannel
-    s32 bestLevel;          // 0x1cc0: best measured level (MeasureChannel callback)
-    s32 state;              // 0x1cc4
-    u8 unk_1cc8[0x1ccc - 0x1cc8];
-    u8 flag;                // 0x1ccc
-    u8 unk_1ccd[0x1cce - 0x1ccd];
-    u16 channelMask;        // 0x1cce: allowed channel bits (set by the enable callback)
-    u8 unk_1cd0[0x1cd4 - 0x1cd0];
-    s32 timer2;             // 0x1cd4
-    s32 timer;              // 0x1cd8
-    u8 callPending;           // 0x1cdc: an SDK call is pending (func_02090ecc returns it)
-    u8 unk_1cdd;            // 0x1cdd: frame flag
-    u8 unk_1cde[0x1ce0 - 0x1cde];
-    u16 linkValue;          // 0x1ce0
-    u8 unk_1ce2[2];
-    s32 connectPhase;        // 0x1ce4: connect phase (StartConnect and StartMP callbacks)
-} WmDWork;
 
 // Header of the SDK callback result (WMCallback): the API id, then the error code at offset 2.
 typedef struct WmCallbackHead {
@@ -74,6 +43,6 @@ extern "C" void Knife_Comm_WirelessManager_appendScanResult(void *self, void *bs
 extern "C" BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);
 extern "C" void OS_Terminate(void);
 extern "C" void Knife_Comm_WirelessManager_deleteMPBuffer(void *self);
-extern "C" void Knife_Comm_WirelessManager_internalReset(void *self);
+extern "C" BOOL Knife_Comm_WirelessManager_internalReset(void *self);
 
 #endif

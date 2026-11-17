@@ -11,10 +11,10 @@
 // the child state (11) and clears the timer and the controller flag.
 
 void Knife_Comm_WirelessManager_update_idle2child(void *self) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     s32 ret;
 
-    wm = (WmDWork *)self;
+    wm = (WirelessManagerWork *)self;
     switch (wm->timer) {
     case 0:
     case 2:
@@ -47,12 +47,12 @@ void Knife_Comm_WirelessManager_update_idle2child(void *self) {
 // the first slot's link word then goes to +0x1cde. At timer 1 the manager is reset (internalReset).
 
 void Knife_Comm_WirelessManager_update_child(void *self) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     s32 result;
     s32 ret;
     u16 i;
 
-    wm = (WmDWork *)self;
+    wm = (WirelessManagerWork *)self;
     switch (wm->timer) {
     case 0:
         MI_CpuFill8((u8 *)self + 0x1c5c, 0, 0x40);

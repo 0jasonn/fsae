@@ -23,12 +23,12 @@ typedef struct WmChildCallback {
 // WirelessManager::callback_WM_ChildEntry (0x02093690, invented name): an error code 1 sets the timer to -999. Kind 0
 // counts the timer up, kind 7 sets up child entry (index - 1) and kinds 9 and 26 clean it up. Other kinds do nothing.
 void Knife_Comm_WirelessManager_callback_WM_ChildEntry(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     WmChildCallback *cb;
     s32 kind;
 
     cb = (WmChildCallback *)result;
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }
@@ -57,9 +57,9 @@ void Knife_Comm_WirelessManager_callback_WM_ChildEntry(void *result) {
 
 // WirelessManager callback at 0x0209377c (invented name): on success the timer counts up, on error it is set to -999.
 void Knife_Comm_WirelessManager_callback_WM_StepTimer3(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }

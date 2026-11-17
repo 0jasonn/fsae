@@ -10,9 +10,9 @@ extern char data_0211b284[];
 
 // WirelessManager callback at 0x020938e4 (invented name): on success the timer counts up, on error it is set to -999.
 void Knife_Comm_WirelessManager_callback_WM_StepTimer4(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }

@@ -6,7 +6,7 @@
 #include "knife/comm/wm_child_api.h"
 
 // Knife::Comm::WirelessManager state update functions (plain names, self is the manager). The state machine is kept in
-// WmDWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).
+// WirelessManagerWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).
 
 extern char data_0211b1a8[];
 extern char data_0211b1b4[];
@@ -18,11 +18,10 @@ extern "C" BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s3
 extern "C" void Knife_Comm_ChildInfo_cleanup(void *child);
 
 // update_parent2idle: step 1 ends the parent (WM_EndParent) and step 3 clears the child entries, like update_reset.
-extern "C" void Knife_Comm_WirelessManager_internalReset(void *self);
 extern char data_0211b244[];
 extern "C" void Knife_Comm_WirelessManager_update_parent2idle(void *self);
 void Knife_Comm_WirelessManager_update_parent2idle(void *self) {
-    WmDWork *w = (WmDWork *)self;
+    WirelessManagerWork *w = (WirelessManagerWork *)self;
     u32 code;
     s32 i;
     u8 *child;

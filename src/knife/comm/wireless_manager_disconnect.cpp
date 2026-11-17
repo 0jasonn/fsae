@@ -5,7 +5,7 @@
 
 BOOL Knife_Comm_WirelessManager_disconnect(void *self) {
     WmInterruptSection section;
-    WmCWork *wm = (WmCWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
 
     if (wm->state != 0xb) {
         return FALSE;

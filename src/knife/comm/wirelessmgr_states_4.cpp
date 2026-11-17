@@ -6,7 +6,7 @@
 #include "knife/comm/wm_connect_2_api.h"
 
 // Knife::Comm::WirelessManager state update functions (plain names, self is the manager). The state machine is kept in
-// WmDWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).
+// WirelessManagerWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).
 
 extern char data_0211b1a8[];
 extern char data_0211b1b4[];
@@ -21,7 +21,7 @@ extern "C" void Knife_Comm_ChildInfo_cleanup(void *child);
 extern char data_0211b274[];
 extern "C" void Knife_Comm_WirelessManager_update_child2idle(void *self);
 void Knife_Comm_WirelessManager_update_child2idle(void *self) {
-    WmDWork *w = (WmDWork *)self;
+    WirelessManagerWork *w = (WirelessManagerWork *)self;
     u32 code;
 
     switch (w->timer) {
@@ -49,7 +49,7 @@ void Knife_Comm_WirelessManager_update_child2idle(void *self) {
 // off state (state 2, timer 0, flag 0).
 extern "C" void Knife_Comm_WirelessManager_update_reset(void *self);
 void Knife_Comm_WirelessManager_update_reset(void *self) {
-    WmDWork *w = (WmDWork *)self;
+    WirelessManagerWork *w = (WirelessManagerWork *)self;
     s32 i;
     u8 *child;
 

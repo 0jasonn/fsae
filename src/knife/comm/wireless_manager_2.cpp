@@ -21,7 +21,7 @@ s32 func_02090ecc(void *manager) {
 // Knife::Comm::WirelessManager::turnOn(bool) (0x02090ed8)
 BOOL Knife_Comm_WirelessManager_turnOn(void *self, BOOL on) {
     WmInterruptSection section;
-    WmCWork *wm = (WmCWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
 
     if (wm->state != 0) {
         return FALSE;
@@ -45,7 +45,7 @@ BOOL Knife_Comm_WirelessManager_turnOn(void *self, BOOL on) {
 // Knife::Comm::WirelessManager::turnOff() (0x02090ff4)
 BOOL Knife_Comm_WirelessManager_turnOff(void *self) {
     WmInterruptSection section;
-    WmCWork *wm = (WmCWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
 
     if (wm->state < 2) {
         return FALSE;
@@ -76,7 +76,7 @@ BOOL Knife_Comm_WirelessManager_turnOff(void *self) {
 // Knife::Comm::WirelessManager::reset() (0x02091184)
 BOOL Knife_Comm_WirelessManager_reset(void *self) {
     WmInterruptSection section;
-    WmCWork *wm = (WmCWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
 
     if (wm->state < 2) {
         return FALSE;

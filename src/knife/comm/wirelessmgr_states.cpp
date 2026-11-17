@@ -5,7 +5,7 @@
 #include "knife/comm/wm_callbacks_api.h"
 
 // Knife::Comm::WirelessManager state update functions (plain names, self is the manager). The state machine is kept in
-// WmDWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).
+// WirelessManagerWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).
 
 extern char data_0211b1a8[];
 extern char data_0211b1b4[];
@@ -19,7 +19,7 @@ extern "C" void Knife_Comm_ChildInfo_cleanup(void *child);
 // update_off2idle: powers the wireless hardware on, step by step (timer 1 starts WM_PowerOn).
 extern "C" void Knife_Comm_WirelessManager_update_off2idle(void *self);
 void Knife_Comm_WirelessManager_update_off2idle(void *self) {
-    WmDWork *w = (WmDWork *)self;
+    WirelessManagerWork *w = (WirelessManagerWork *)self;
     u32 code;
 
     switch (w->timer) {
@@ -49,13 +49,13 @@ void Knife_Comm_WirelessManager_update_off2idle(void *self) {
 // update_idle: refreshes the allowed channel mask.
 extern "C" void Knife_Comm_WirelessManager_update_idle(void *self);
 void Knife_Comm_WirelessManager_update_idle(void *self) {
-    ((WmDWork *)self)->channelMask = WM_GetAllowedChannel();
+    ((WirelessManagerWork *)self)->channelMask = WM_GetAllowedChannel();
 }
 
 // update_idle2off: powers the wireless hardware off, step by step (timer 1 starts WM_PowerOff, timer 3 WM_Disable).
 extern "C" void Knife_Comm_WirelessManager_update_idle2off(void *self);
 void Knife_Comm_WirelessManager_update_idle2off(void *self) {
-    WmDWork *w = (WmDWork *)self;
+    WirelessManagerWork *w = (WirelessManagerWork *)self;
     u32 code;
 
     switch (w->timer) {

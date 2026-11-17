@@ -8,11 +8,11 @@
 // WM_GetMPSendBufferSize, at most 0x200) and the receive buffer (at most 0x400), both aligned to 0x20. FALSE on any failure
 // (buffers freed again, OS_Terminate on an allocation failure).
 BOOL Knife_Comm_WirelessManager_allocMPBuffer(void *self) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     WmAllocatorIface *allocator;
     u32 size;
 
-    wm = (WmDWork *)self;
+    wm = (WirelessManagerWork *)self;
     Knife_Comm_WirelessManager_deleteMPBuffer(self);
     size = WM_GetMPSendBufferSize();
     wm->sendSize = size;
@@ -46,10 +46,10 @@ BOOL Knife_Comm_WirelessManager_allocMPBuffer(void *self) {
 // WirelessManager::deleteMPBuffer (0x02092528): frees the send and receive buffers through the allocator (slot 1) and
 // clears their pointers and sizes.
 void Knife_Comm_WirelessManager_deleteMPBuffer(void *self) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     void *recv;
 
-    wm = (WmDWork *)self;
+    wm = (WirelessManagerWork *)self;
     if (wm->sendBuf != NULL) {
         ((WmAllocatorIface *)wm->allocator)->deallocate(wm->sendBuf);
     }

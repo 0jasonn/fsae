@@ -1,16 +1,11 @@
-#ifndef WIP_C_WIRELESS_MANAGER_H
-#define WIP_C_WIRELESS_MANAGER_H
+#ifndef KNIFE_COMM_WIRELESS_MANAGER_METHODS_H
+#define KNIFE_COMM_WIRELESS_MANAGER_METHODS_H
 
-// Self-contained declarations for the Knife::Comm::WirelessManager methods implemented by agent C
-// (turnOn, turnOff, reset, endParent, disconnect, updateUserGameInfo, internalReset).
-//
-// These are kept here instead of reusing include/knife/comm/wirelessmgr_d.h / wm_work.h because those
-// headers declare internalReset (and functions.h declares turnOn/turnOff) with a `void` return type,
-// while the original functions all return BOOL (the disassembly sets r0 to 0 or 1 before returning).
-// The reviewer should fix those shared declarations to BOOL and then this file can be folded back into
-// them.
+// Declarations for the Knife::Comm::WirelessManager methods turnOn, turnOff, reset, endParent, disconnect,
+// updateUserGameInfo and internalReset (all return BOOL, as the original does), and the inline WmInterruptSection.
 
 #include "types.h"
+#include "knife/comm/wireless_manager.h"
 
 // REG_IME, the interrupt master enable.
 #define WM_REG_IME (*(volatile u16 *)0x04000208)
@@ -51,33 +46,7 @@ public:
     u32 savedIme;
 };
 
-// The game-info block the manager fills and hands to WM_SetGameInfo (magic 0x464e4b = "KNF").
-typedef struct KnifeGameInfo {
-    u32 magic;    // 0x00: 0x464e4b ("KNF")
-    u16 value;    // 0x04
-    u16 linkLevel; // 0x06
-} KnifeGameInfo;
 
-// WirelessManager fields used by the C units, at their offsets from the start of the manager.
-typedef struct WmCWork {
-    u8 unk_0000[0x20];
-    KnifeGameInfo gameInfo;   // 0x20: the game info handed to WM_SetGameInfo
-    u8 unk_0028[0x1a4 - 0x28];
-    u16 paramA;               // 0x1a4: WM_SetGameInfo argument (unk2)
-    u8 unk_1a6[0x1ae - 0x1a6];
-    u16 isFlag;               // 0x1ae: flag passed to WM_SetGameInfo (unk5)
-    u16 userValue;            // 0x1b0: copied into gameInfo.value
-    u8 unk_1b2[0x1cc4 - 0x1b2];
-    s32 state;                // 0x1cc4
-    u8 unk_1cc8[0x1cd0 - 0x1cc8];
-    u16 paramD;               // 0x1cd0: WM_SetGameInfo argument (unk4)
-    u8 unk_1cd2[0x1cd8 - 0x1cd2];
-    s32 timer;                // 0x1cd8
-    u8 callPending;           // 0x1cdc: an SDK call is pending (func_02090ecc returns it)
-    u8 unk_1cdd;              // 0x1cdd: frame flag
-    u8 unk_1cde[0x1ce4 - 0x1cde];
-    s32 connectPhase;         // 0x1ce4
-} WmCWork;
 
 // SDK and ROM functions the WirelessManager methods call.
 extern "C" {

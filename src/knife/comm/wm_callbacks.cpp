@@ -10,9 +10,9 @@
 // WirelessManager::callback_WM_EnableStep (0x020932fc): on success the timer counts up, on error it is set to 5.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }
@@ -25,9 +25,9 @@ void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result) {
 
 // WirelessManager::callback_WM_ResetStep (0x02093340): on success the timer counts up, on error it is set to -999.
 void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }
@@ -41,9 +41,9 @@ void Knife_Comm_WirelessManager_callback_WM_ResetStep(void *result) {
 // WirelessManager::callback_WM_Enable (0x0209338c): on success stores the allowed channels (WM_GetAllowedChannel); if no
 // channel is allowed the timer is set to 5. The timer counts up in both cases.
 void Knife_Comm_WirelessManager_callback_WM_Enable(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }
@@ -61,9 +61,9 @@ void Knife_Comm_WirelessManager_callback_WM_Enable(void *result) {
 // WirelessManager::callback_WM_PowerOffStep (0x020933fc): same shape as callback_WM_ResetStep.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }
@@ -78,10 +78,10 @@ void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result) {
 // 1 sets it to -999, 8 sets it to -1000, anything else terminates the program.
 extern "C" void Knife_Comm_WirelessManager_callback_WM_Reset(void *result);
 void Knife_Comm_WirelessManager_callback_WM_Reset(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     u16 errCode;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     errCode = ((WmCallbackHead *)result)->errCode;
     switch (errCode) {
     case 0:
@@ -119,13 +119,13 @@ typedef struct WmScanCallback {
 
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result);
 void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     WmScanCallback *scan;
     s32 count;
     s32 i;
 
     scan = (WmScanCallback *)result;
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         return;
     }

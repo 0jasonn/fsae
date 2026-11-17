@@ -6,11 +6,11 @@
 // (mask (1 << (player count word at 0x1b0 + 1)) - 1, length from 0x1cd4) and moves to phase 1 with the timer counting up, or
 // to phase 5 with timer -999 when the call fails.
 void Knife_Comm_WirelessManager_callback_WM_StartMP(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     WmStartMPResult *cb = (WmStartMPResult *)result;
     s32 code;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         wm->connectPhase = 5;
         return;

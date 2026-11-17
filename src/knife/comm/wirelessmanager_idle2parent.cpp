@@ -12,7 +12,7 @@
 // resets the manager.
 
 void Knife_Comm_WirelessManager_update_idle2parent(void *self) {
-    WmDWork *wm = (WmDWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
     s32 ret;
 
     switch (wm->timer) {

@@ -13,9 +13,9 @@
 // The constructor stores the vtable pointer at +0 and clears the allocator at +0x1c9c.
 
 void *Knife_Comm_WirelessManager_WirelessManager(void *self) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
 
-    wm = (WmDWork *)self;
+    wm = (WirelessManagerWork *)self;
     *(void **)self = data_0211b0c4;
     Frame_LoopC7b8((u8 *)self + 0xd04, 16, 0xd0, (void *)Knife_Comm_ParentInfo_ParentInfo, (void *)Knife_Comm_WirelessManager_noop_020922ec);
     Frame_LoopC7b8((u8 *)self + 0x1a04, 15, 0x28, (void *)Knife_Comm_ChildInfo_ChildInfo, (void *)Knife_Comm_WirelessManager_noop_02092330);

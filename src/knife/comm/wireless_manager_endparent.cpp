@@ -5,7 +5,7 @@
 
 BOOL Knife_Comm_WirelessManager_endParent(void *self) {
     WmInterruptSection section;
-    WmCWork *wm = (WmCWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
 
     if (wm->state != 8) {
         return FALSE;

@@ -6,10 +6,10 @@
 // timer -999. Kind 6 maps error 11 to phase 3 and error 12 to phase 2 (both with timer -999), kind 7 counts the timer up,
 // kind 9 gives phase 3 for a parameter of 0x13 and phase 4 otherwise (timer -999), kind 0x1a gives phase 4.
 void Knife_Comm_WirelessManager_callback_WM_StartConnect(void *result) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     WmConnectResult *cb = (WmConnectResult *)result;
 
-    wm = (WmDWork *)func_020909c8();
+    wm = (WirelessManagerWork *)func_020909c8();
     if (Knife_Comm_WirelessManager_checkCallbackResult(wm, result) == 0) {
         wm->connectPhase = 5;
         return;

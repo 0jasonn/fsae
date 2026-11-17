@@ -17,7 +17,7 @@ drop = []
 for f in staged:
     if f.startswith("src/") and f.endswith((".c", ".cpp")) and f not in units:
         drop.append(f)
-    m = re.match(r"include/(wip/[A-Z]/.+)", f)
+    m = re.match(r"include/(wip/[A-Z0-9]+/.+)", f)
     if m and m.group(1) not in included:
         drop.append(f)
 if drop:

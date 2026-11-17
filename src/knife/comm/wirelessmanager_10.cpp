@@ -10,13 +10,13 @@
 // reset (internalReset).
 
 void Knife_Comm_WirelessManager_update_parent(void *self) {
-    WmDWork *wm;
+    WirelessManagerWork *wm;
     s32 result;
     s32 ret;
     u16 i;
 
     WM_GetConnectedAIDs();
-    wm = (WmDWork *)self;
+    wm = (WirelessManagerWork *)self;
     switch (wm->timer) {
     case 0:
         MI_CpuFill8((u8 *)self + 0x1c5c, 0, 0x40);

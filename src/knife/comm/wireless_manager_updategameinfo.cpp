@@ -8,7 +8,7 @@
 
 BOOL Knife_Comm_WirelessManager_updateUserGameInfo(void *self) {
     WmInterruptSection section;
-    WmCWork *wm = (WmCWork *)self;
+    WirelessManagerWork *wm = (WirelessManagerWork *)self;
     s32 linkLevel;
     u16 isFlag;
     u32 paramD;
