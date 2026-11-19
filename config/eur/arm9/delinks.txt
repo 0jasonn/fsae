@@ -549,6 +549,10 @@ src/game/wm_datasharing_end.cpp:
     complete
     .text       start:0x02020518 end:0x02020564
 
+src/engine/wm_datasharing_callback.cpp:
+    complete
+    .text       start:0x02020894 end:0x0202096c
+
 src/engine/wm_datasharing_2.cpp:
     complete
     .text       start:0x02020aa0 end:0x02020c54
@@ -988,6 +992,10 @@ src/game/trianglewin.cpp:
 src/actor/enemy/em00.cpp:
     complete
     .text       start:0x0202bb4c end:0x0202bee8
+
+src/actor/enemy/em0a.cpp:
+    complete
+    .text       start:0x0202bee8 end:0x0202c078
 
 src/actor/enemy/em0a_2.cpp:
     complete

@@ -1143,7 +1143,7 @@ _Z4Em0aP9OBJ_WORK_ kind:function(arm,size=0x44) addr:0x0202bdb0
 _Z11em0a_normalP9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0202bdf4
 _Z11em0a_damageP9OBJ_WORK_ kind:function(arm,size=0x44) addr:0x0202be10
 _Z9em0a_initP9OBJ_WORK_ kind:function(arm,size=0x94) addr:0x0202be54
-em0a_gatagata kind:function(arm,size=0x190) addr:0x0202bee8
+_Z13em0a_gatagataP9OBJ_WORK_ kind:function(arm,size=0x190) addr:0x0202bee8
 _Z9em0a_jumpP9OBJ_WORK_ kind:function(arm,size=0x4c) addr:0x0202c078
 _Z9em0a_waitP9OBJ_WORK_ kind:function(arm,size=0x80) addr:0x0202c0c4
 _Z9em0a_moveP9OBJ_WORK_ kind:function(arm,size=0xe0) addr:0x0202c144
@@ -5848,7 +5848,7 @@ data_020cfcfe kind:data(any) addr:0x020cfcfe
 data_020cfd14 kind:data(any) addr:0x020cfd14
 data_020cfd2c kind:data(any) addr:0x020cfd2c
 data_020cfd4c kind:data(any) addr:0x020cfd4c
-data_020cfd50 kind:data(any) addr:0x020cfd50
+em0aBobOffsets kind:data(any) addr:0x020cfd50
 data_020cfd54 kind:data(any) addr:0x020cfd54
 data_020cfd5c kind:data(any) addr:0x020cfd5c
 data_020cfd70 kind:data(any) addr:0x020cfd70
