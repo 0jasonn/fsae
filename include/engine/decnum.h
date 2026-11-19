@@ -11,8 +11,15 @@ typedef struct DecNum {
     u8 digits[1];      // 0x05: digits, most significant first
 } DecNum;
 
+// Formatting options: only the signed precision at +0x02 is recovered here.
+typedef struct DecNumFormat {
+    u8 unk_00[2];
+    s16 precision;
+} DecNumFormat;
+
 extern "C" {
 void func_0200a75c(DecNum *self, const u8 *text, s32 exponent);
+void func_0200acf8(const DecNumFormat *format, f64 value, DecNum *out);
 s32 DecNum_RoundDir(DecNum *self, s32 keep);
 void DecNum_Increment(DecNum *self, s32 keep);
 void DecNum_Truncate(DecNum *self, s32 keep);
