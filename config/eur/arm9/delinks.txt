@@ -537,6 +537,10 @@ src/engine/pmi_init.cpp:
     complete
     .text       start:0x0201c8b8 end:0x0201c958
 
+src/engine/pm_receive.cpp:
+    complete
+    .text       start:0x0201c958 end:0x0201ca78
+
 src/engine/pmi_send.cpp:
     complete
     .text       start:0x0201ca78 end:0x0201cafc
