@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1064" width="960" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="100%" height="100%" fill="#0d1117" rx="6"/>
-<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 3904 / 4861 game functions decompiled (80.3%, 57.0% of code)</text>
+<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 3905 / 4861 game functions decompiled (80.3%, 57.0% of code)</text>
 <rect x="12" y="34" width="12" height="12" fill="#3fb950" rx="2"/><text x="29" y="44" fill="#8b949e" font-size="12">Decompiled (C++)</text>
 <rect x="202" y="34" width="12" height="12" fill="#58a6ff" rx="2"/><text x="219" y="44" fill="#8b949e" font-size="12">TwlSDK / runtime</text>
 <rect x="392" y="34" width="12" height="12" fill="#30363d" rx="2"/><text x="409" y="44" fill="#8b949e" font-size="12">Not decompiled yet</text>
@@ -241,9 +241,8 @@
 <rect x="862.65" y="126" width="10.36" height="12" fill="#58a6ff"/>
 <rect x="873.01" y="126" width="1.38" height="12" fill="#3fb950"/>
 <rect x="874.39" y="126" width="82.51" height="12" fill="#58a6ff"/>
-<rect x="956.90" y="126" width="3.10" height="12" fill="#30363d"/>
-<rect x="0.00" y="140" width="30.05" height="12" fill="#30363d"/>
-<rect x="30.05" y="140" width="8.98" height="12" fill="#3fb950"/>
+<rect x="956.90" y="126" width="3.10" height="12" fill="#3fb950"/>
+<rect x="0.00" y="140" width="39.02" height="12" fill="#3fb950"/>
 <rect x="39.02" y="140" width="26.93" height="12" fill="#30363d"/>
 <rect x="65.95" y="140" width="10.36" height="12" fill="#3fb950"/>
 <rect x="76.31" y="140" width="49.72" height="12" fill="#58a6ff"/>

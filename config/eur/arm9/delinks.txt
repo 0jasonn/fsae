@@ -577,6 +577,10 @@ src/engine/wm_start_parent.cpp:
     complete
     .text       start:0x0201fb74 end:0x0201fb84
 
+src/engine/wm_startmp_internal.cpp:
+    complete
+    .text       start:0x0201ff40 end:0x020200c0
+
 src/engine/wm_startmp.cpp:
     complete
     .text       start:0x020200c0 end:0x02020128
