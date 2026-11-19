@@ -5699,7 +5699,7 @@ src/ui/widget/rect_list_4.cpp:
 
 src/ui/widget/slider_index.cpp:
     complete
-    .text       start:0x020b9424 end:0x020b94ac
+    .text       start:0x020b9380 end:0x020b94ac
 
 src/ui/widget/rect_group_update.cpp:
     complete
