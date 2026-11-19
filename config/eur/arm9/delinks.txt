@@ -653,6 +653,10 @@ src/actor/object/boots_2.cpp:
     complete
     .text       start:0x020245d0 end:0x020246b4
 
+src/actor/object/boots_plsync.cpp:
+    complete
+    .text       start:0x020246b4 end:0x020247b4
+
 src/game/boots_nop.cpp:
     complete
     .text       start:0x020247b4 end:0x020247b8
