@@ -35,7 +35,6 @@ extern u8 data_0212cdb0[];
 extern u8 data_0212de50[];
 extern u8 data_021361a0[];
 extern u8 objAffineSet[];
-extern u8 hblankDma;
 
 // em28 module callees (src/enemy/em28_3.cpp, em28_4.cpp, em1c and em26 headers hold the other declarations)
 Entity *plCheck(Entity *e);

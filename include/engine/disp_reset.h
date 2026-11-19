@@ -20,6 +20,5 @@ typedef struct DispState {
 extern DispState data_0212c594;
 extern u8 objAffineSet[];
 extern u8 data_021361a0[];
-extern u8 hblankDma;
 
 #endif

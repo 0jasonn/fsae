@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "engine/disp_reset.h"
+#include "engine/irq.h"
 
 // DispReset (0x0202a60c): resets the display state: clears the display control register, the buffers that are copied
 // to OAM, palette and VRAM, and stops the HBlank DMA when it is running.
@@ -20,8 +21,8 @@ void DispReset(void) {
     MIi_CpuClearFast(0xc0, objAffineSet, 0x800);
     MIi_CpuClearFast(zero, data_0212ccb0, 0x200);
     MIi_CpuClearFast(zero, data_021361a0, 0x1000);
-    if (hblankDma != 0) {
+    if (hblankDma.enabled != 0) {
         MI_StopDma(zero);
-        hblankDma = zero;
+        hblankDma.enabled = zero;
     }
 }
