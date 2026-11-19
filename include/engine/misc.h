@@ -29,18 +29,7 @@ extern UnkStruct_0216fcf8 paletteFade;
 
 #include "engine/effect_state.h"
 
-// Scene control block (data_02134d30)
-typedef struct UnkStruct_02134d30 {
-    /* 00 */ u8 unk_0[2];
-    /* 02 */ u8 unk_2;
-    /* 03 */ u8 unk_3;
-    /* 04 */ u8 unk_4;
-    /* 05 */ u8 unk_5;
-    /* 06 */ u8 unk_6;
-    /* 07 */ u8 unk_7[5];
-    /* 0c */ Entity *entity;
-} UnkStruct_02134d30;
-extern UnkStruct_02134d30 data_02134d30;
+#include "engine/scene_slot.h"
 extern const u8 data_02104a74[];
 
 extern EntityNode data_0212c6b0[8]; // list heads, 8 x 8 bytes up to data_0212c6f0 (a DisplayState)

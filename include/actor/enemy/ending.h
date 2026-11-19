@@ -10,16 +10,7 @@
 #include "engine/player.h"
 
 
-// Scene slot table at data_02134d30: 0x14-byte records, each with an entity pointer at 0x0c
-typedef struct SceneSlot {
-    /* 00 */ u8 unk_00[4];
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 unk_05;
-    /* 06 */ u8 unk_06;
-    /* 07 */ u8 unk_07[5];
-    /* 0c */ Entity *entity;
-    /* 10 */ u8 unk_10[4];
-} SceneSlot;
+#include "engine/scene_slot.h"
 
 #include "engine/map_state.h"
 #include "engine/display_state.h"
@@ -41,8 +32,6 @@ extern u8 data_0212ccb0[];
 extern u8 data_0212c4dc;
 extern u8 data_0212c500;
 extern VoidFunc data_0212c564;
-extern SceneSlot data_02134d30; // first record; the others are reached with SCENE_SLOT
-#define SCENE_SLOT(k) (((SceneSlot *)&data_02134d30)[k])
 extern VoidFunc const endingFinaleTable[];
 extern VoidFunc const finaleDemoTable[];
 extern VoidFunc const endingRescueTable[];

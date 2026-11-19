@@ -6,9 +6,6 @@
 #include "engine/irq.h"
 #include "engine/message_request.h"
 
-// data_02134d30 is an array of 0x14-byte NPC slots (see GetNPC); each slot's entity pointer is at +0x0c.
-#define SCENE_SLOT_ENTITY(offset) (*(Entity **)((u8 *)&data_02134d30 + (offset)))
-
 // scene_05, 0x02052244: the fifth opening scene (fairy talk and the end of the intro).
 void scene_05(void) {
     switch (effectState.phase) {

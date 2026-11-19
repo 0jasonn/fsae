@@ -8,5 +8,5 @@
 
 // Clears the 0xa0 bytes of the scene slot table (data_02134d30)
 void func_0204f978(void) {
-    MIi_CpuClear16(0, &data_02134d30, 0xa0);
+    MIi_CpuClear16(0, data_02134d30, sizeof(data_02134d30));
 }

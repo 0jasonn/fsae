@@ -4,13 +4,6 @@
 #include "engine/misc.h"
 #include "game/pause_req.h"
 
-// One 0x14-byte entry of fairySlots: the first word is the entity that owns the slot
-typedef struct EffectSlot {
-    /* 00 */ Entity *entity;
-    /* 04 */ u8 unk_04[0x10];
-} EffectSlot;
-extern EffectSlot fairySlots[];
-
 // Pairs of u16 (x and y bounds) indexed by player or effect number
 extern const u16 data_02104a30[][2];
 extern const u16 fairyMoveTable[][2];

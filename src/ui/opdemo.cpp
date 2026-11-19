@@ -25,7 +25,7 @@ void op_scene_01(void) {
             return;
         case 1:
             if ((frameState.frameCount & 0xf) == 0) {
-                data_02134d30.entity->animationState = (u8)((Random() & 3) << 1);
+                data_02134d30[0].entity->animationState = (u8)((Random() & 3) << 1);
                 playerWork[0].entity->animationState = (u8)((Random() & 3) << 1);
             }
             effectState.timer = effectState.timer - 1;
@@ -39,8 +39,8 @@ void op_scene_01(void) {
             }
             return;
         case 2:
-            if (data_02134d30.entity != NULL && (frameState.frameCount & 0xf) == 0) {
-                data_02134d30.entity->animationState = (u8)((Random() & 3) << 1);
+            if (data_02134d30[0].entity != NULL && (frameState.frameCount & 0xf) == 0) {
+                data_02134d30[0].entity->animationState = (u8)((Random() & 3) << 1);
                 playerWork[0].entity->animationState = (u8)((Random() & 3) << 1);
             }
             if (effectState.subState == 1) {

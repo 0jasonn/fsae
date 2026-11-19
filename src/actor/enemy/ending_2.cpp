@@ -29,10 +29,10 @@ void ending_init(void) {
     DataLoad(8);
     em12_typeMasks[0] = 0;
     GetNPC(0x5d, 1, 0);
-    data_02134d30.entity->x.HALF.HI = 0x1f8;
-    data_02134d30.entity->y.HALF.HI = 0x1b8;
-    mapState.target = data_02134d30.entity;
-    data_02134d30.unk_04 = 6;
+    data_02134d30[0].entity->x.HALF.HI = 0x1f8;
+    data_02134d30[0].entity->y.HALF.HI = 0x1b8;
+    mapState.target = data_02134d30[0].entity;
+    data_02134d30[0].scriptArg = 6;
     ending_link_init();
     Entity *linked = GetSetWork(0x69, 4, 0);
     linked->x.HALF.HI = 0x1f8;

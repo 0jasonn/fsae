@@ -8,8 +8,8 @@
 // opdemo_scroll -> opdemo_scroll
 // op_title -> op_title
 void fairy_set(u8 slot, u8 index, u8 flags) {
-    ObjAnimMoveSet(fairySlots[slot].entity, fairyMoveTable[index], flags);
-    fairySlots[slot].entity->action = 1;
+    ObjAnimMoveSet(data_02134d30[slot].entity, fairyMoveTable[index], flags);
+    data_02134d30[slot].entity->action = 1;
     SoundReq(0x201);
 }
 
@@ -18,7 +18,7 @@ void fairy_talkset(u8 slot, u16 effectId) {
     messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
     messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
     effectState.activeSlot = slot;
-    fairySlots[slot].entity->action = 3;
+    data_02134d30[slot].entity->action = 3;
 }
 
 // Follows the camera target (mapState) on y, clamping the camera x to 0..0xa0

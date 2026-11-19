@@ -1,9 +1,24 @@
 #include "engine/functions.h"
-#include "engine/misc.h"
-#include "game/npc.h"
+#include "engine/scene_slot.h"
 #include "global.h"
 #include "types.h"
+#include "engine/misc.h"
+#include "game/npc.h"
 #include "engine/message_request.h"
+
+// Functions in this file (original names from the debug build):
+//   PutNPC
+
+// Releases the entity of scene slot index (if any) and clears the slot record
+void PutNPC(u8 index) {
+    Entity *entity;
+
+    entity = data_02134d30[index].entity;
+    if (entity != 0) {
+        PutObjWork(entity);
+    }
+    MIi_CpuClear16(0, &data_02134d30[index], sizeof(NPC_WORK_));
+}
 
 // Functions in this file (original names from the debug build):
 //   ObjSetTargetWord -> ObjSetTargetWord, ScriptJump -> ScriptJump, script_nop -> script_nop,
@@ -151,4 +166,19 @@ s32 script_message_close(NPC_WORK_ *npc) {
     Status_ArmIfEnabled();
     npc->script += 1;
     return 0;
+}
+
+// Functions in this file (original names from the debug build):
+//   MoveDir
+
+// Direction step table: dy for each direction at index dir * 8, dx at index dir * 8 + 0x40
+extern const s16 trigTable[];
+
+// Moves the entity one step of its speed in its direction (the 0x80 flag of the direction byte stops it)
+void MoveDir(Entity *e) {
+    if (e->direction & 0x80) {
+        return;
+    }
+    e->x.WORD += e->speed * trigTable[e->direction * 8];
+    e->y.WORD -= e->speed * trigTable[e->direction * 8 + 0x40];
 }

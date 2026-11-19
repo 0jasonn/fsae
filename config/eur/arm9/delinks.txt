@@ -1889,6 +1889,10 @@ src/actor/enemy/ending_4.cpp:
     complete
     .text       start:0x02045308 end:0x020454a8
 
+src/actor/enemy/ending_demo_01.cpp:
+    complete
+    .text       start:0x020454a8 end:0x020457a8
+
 src/actor/enemy/ending_5.cpp:
     complete
     .text       start:0x020457a8 end:0x02045874
@@ -2246,17 +2250,9 @@ src/game/getnpc.cpp:
     complete
     .text       start:0x0204f994 end:0x0204fa20
 
-src/game/npc_2.cpp:
-    complete
-    .text       start:0x0204fa20 end:0x0204fa60
-
 src/game/npc.cpp:
     complete
-    .text       start:0x0204fa60 end:0x0204fd40
-
-src/game/npc_3.cpp:
-    complete
-    .text       start:0x0204fd40 end:0x0204fd90
+    .text       start:0x0204fa20 end:0x0204fd90
 
 src/game/objcell.cpp:
     complete

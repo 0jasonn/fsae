@@ -48,7 +48,7 @@ void demo_00(void) {
     if ((effectState.frames & 1) == 0) {
         return;
     }
-    data_02134d30.entity->animationState = 0;
+    data_02134d30[0].entity->animationState = 0;
     if (mapState.scrollY < 0x7b) {
         mapState.scrollY = mapState.scrollY + 1;
         displayState.bg[3].scrollY = mapState.scrollY;

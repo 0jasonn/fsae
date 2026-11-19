@@ -6,12 +6,12 @@
 
 // yousei_move (0x020457a8): starts the fairy movement on the three scene slots and plays sound 0x201.
 void yousei_move(void) {
-    ObjAnimMoveSet(SCENE_SLOT(1).entity, youseiBounds1, 0x78);
-    SCENE_SLOT(1).entity->action = 1;
-    ObjAnimMoveSet(SCENE_SLOT(2).entity, youseiBounds2, 0x78);
-    SCENE_SLOT(2).entity->action = 1;
-    ObjAnimMoveSet(SCENE_SLOT(3).entity, youseiBounds3, 0x78);
-    SCENE_SLOT(3).entity->action = 1;
+    ObjAnimMoveSet(data_02134d30[1].entity, youseiBounds1, 0x78);
+    data_02134d30[1].entity->action = 1;
+    ObjAnimMoveSet(data_02134d30[2].entity, youseiBounds2, 0x78);
+    data_02134d30[2].entity->action = 1;
+    ObjAnimMoveSet(data_02134d30[3].entity, youseiBounds3, 0x78);
+    data_02134d30[3].entity->action = 1;
     SoundReq(0x201);
 }
 

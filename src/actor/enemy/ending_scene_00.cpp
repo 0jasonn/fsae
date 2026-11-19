@@ -49,11 +49,11 @@ void ending_scene_00(void) {
         if (ending_msgFinishWait() != 0) {
             break;
         }
-        data_02134d30.unk_04 = 7;
+        data_02134d30[0].scriptArg = 7;
         effectState.phase++;
         break;
     case 5:
-        if (data_02134d30.unk_00[2] == 0) {
+        if (data_02134d30[0].waitFlag == 0) {
             effectState.phase = phase + 1;
             effectState.timer = 0x1e;
         }
