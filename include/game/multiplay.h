@@ -40,8 +40,8 @@ extern u32 data_0212c538;
 extern u8 data_02134cb0[];
 #include "engine/com_work.h"
 void GetSetWorkSp(u8 a, u8 b, u8 c);
+void InitCircleWindow(u16 a, u16 b); // C++ linkage, original InitCircleWindow(unsigned short, unsigned short)
 extern "C" {
-void InitCircleWindow(u16 a, u16 b);
 void MakeTriangleWindow(s16 a, s16 b, s16 c, s16 d);
 }
 void LoadJyouchuu(void);

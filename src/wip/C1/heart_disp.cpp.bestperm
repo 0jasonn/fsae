@@ -1,0 +1,45 @@
+#include "engine/functions.h"
+#include "engine/cockpit_state.h"
+#include "game/cockpit.h"
+
+// heart_disp() (0x0202765c): draws the heart meter into the HUD tile map. cockpitState.heartKind is the number of
+// heart containers and cockpitState.hearts the displayed health in eighths of a heart. Every container is one tile
+// on the upper row and one on the lower row, ten per line; the first line is at map + 0x21 tiles and the second
+// one starts after container 9.
+void heart_disp(void) {
+    s16 health;
+    u16 i;
+    u16 *row;
+    u16 col;
+    u8 hearts;
+    u16 *map;
+
+    hearts = cockpitState.heartKind;
+    health = cockpitState.hearts;
+    map = (u16 *)data_021361a0[cockpitState.bufferIndex];
+    row = map + 0x21;
+    for (i = 0; i < hearts; i++) {
+        col = i % 10;
+        if (health > 8) {
+            row[col] = 0x10;
+            row[col + 0x20] = 0x16;
+        } else if (health > 0) {
+            row[col] = (health == 1) ? 0x13 : 0x14 - health / 2;
+            row[col + 0x20] = 0x16;
+        } else {
+            row[col] = 0x14;
+            row[col + 0x20] = 0x16;
+        }
+        health -= 8;
+        if (health < 0) {
+            health = 0;
+        }
+        if (i == 9) {
+            row = map + 0x41;
+        }
+    }
+    ((u16 *)data_021361a0[cockpitState.bufferIndex])[0x20] = 0x15;
+    if (cockpitState.heartKind > 10) {
+        ((u16 *)data_021361a0[cockpitState.bufferIndex])[0x40] = 0x15;
+    }
+}

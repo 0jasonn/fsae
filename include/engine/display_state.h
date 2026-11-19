@@ -19,7 +19,9 @@ typedef struct DispBg {
 // original tag is taken to be DISP_CTRL_.
 typedef struct DISP_CTRL_ {
     /* 00 */ u16 displayFlags; // DISPCNT mirror: bits 8-12 BG0-3/OBJ on, 13-14 windows 0/1; bit 11 cleared each frame by yousei
-    /* 02 */ u8 unk_02[6];
+    /* 02 */ u8 unk_02[2];
+    /* 04 */ u16 savedFlags; // copy of displayFlags (written by makemap_30, restored by multiplay_startdemo)
+    /* 06 */ u8 unk_06[2];
     /* 08 */ DispBg bg[4];
     /* 38 */ u8 unk_38[0x20];
     /* 58 */ u16 win0H;      // WIN0H; also the first span word of the HBlank window table (circle/triangle windows)

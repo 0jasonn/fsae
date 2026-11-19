@@ -1921,6 +1921,10 @@ src/game/makemap.cpp:
     complete
     .text       start:0x02047838 end:0x020479d8
 
+src/game/multiplay_startdemo.cpp:
+    complete
+    .text       start:0x02047b14 end:0x02047c9c
+
 src/game/multiplay_main.cpp:
     complete
     .text       start:0x02047e34 end:0x02048264
@@ -2425,6 +2429,10 @@ src/game/ranking_3.cpp:
 src/game/ranking_make_hyosyo.cpp:
     complete
     .text       start:0x020558c0 end:0x02055b20
+
+src/game/ranking_hyosyo.cpp:
+    complete
+    .text       start:0x02055b20 end:0x02055d28
 
 src/game/ranking_5.cpp:
     complete
