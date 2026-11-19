@@ -5897,6 +5897,10 @@ src/ui/widget/menu_8.cpp:
     complete
     .text       start:0x020be2f8 end:0x020be518
 
+src/ui/widget/menu_scroll_input.cpp:
+    complete
+    .text       start:0x020be518 end:0x020be5a4
+
 src/ui/widget/menu_25.cpp:
     complete
     .text       start:0x020be70c end:0x020be798
