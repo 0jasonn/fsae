@@ -7,8 +7,6 @@
 
 extern u32 data_0212c538;
 #include "engine/com_work.h"
-extern u8 data_0212c9ec[];
-extern u8 data_0212c9b8[];
 extern u16 data_02134cb0[];  // four 16-entry key tables, 0x20 bytes apart
 extern u16 data_02134cd0[];
 extern u16 data_02134cf0[];
@@ -53,12 +51,12 @@ void frame_ack(void) {
             comWork.result = 2;
             return;
         }
-        MIi_CpuCopy16(data_0212c9ec, data_0212c9b8, 0x34);
+        MIi_CpuCopy16(&comWork.next, &comWork.send, sizeof(ComPacket));
         return;
     }
     if (Knife_Comm_WirelessManager_getFrameFlag(manager) == 0) {
         comWork.result = 2;
         return;
     }
-    MIi_CpuCopy16(data_0212c9ec, data_0212c9b8, 0x34);
+    MIi_CpuCopy16(&comWork.next, &comWork.send, sizeof(ComPacket));
 }

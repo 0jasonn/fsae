@@ -35,6 +35,12 @@ typedef struct DISP_CTRL_ {
 } DISP_CTRL_;
 typedef DISP_CTRL_ DisplayState;
 
-extern DisplayState displayState;
+extern DisplayState displayState; // 0x0212c75c
+// Second display block (0x0212c6f0, 0x6c bytes up to displayState): ResourceCtrl passes it to the resource callback
+// (title_resourceCtrlCallback), transfers its BG entries with bgTrans and uses displayFlags bit 12 for the OBJ
+// affine upload. dsd's data_0212c6f8/704/710/71c are its bg[0..3].
+extern DisplayState data_0212c6f0;
+// Pointer to the display block that DispCtrlClear clears (0x0212c568); set58 (hane_init) writes its blend registers.
+extern DisplayState *data_0212c568;
 
 #endif

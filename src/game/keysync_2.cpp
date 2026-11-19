@@ -6,7 +6,6 @@
 // Key synchronisation of the wireless players (module keysync): keysync_init (0x0202877c), keysync_move (0x02028804).
 
 #include "engine/com_work.h"
-extern u8 data_0212c9ec[];
 extern u32 data_0212c538;
 extern u8 data_02134cb0[];
 
@@ -21,7 +20,7 @@ void keysync_init(void) {
         keyHistory[i + 0x30] = 0;
         keyHistory[i] = keyHistory[i + 0x10] = keyHistory[i + 0x20] = keyHistory[i + 0x30];
     }
-    MIi_CpuClear16(0, data_0212c9ec, 0x34);
+    MIi_CpuClear16(0, &comWork.next, sizeof(ComPacket));
     data_0212c538 = 0;
     comWork.phase += 1;
 }

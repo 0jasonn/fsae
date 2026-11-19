@@ -90,7 +90,7 @@ void knife_commDispEnq(KNIFE_MSGSYS *msg) {
         } else {
             newMsgId = (u16)((msg->msgId & 0xff00) | msgIdLow);
             msg->msgId = newMsgId;
-            Knife_MsgReadPtrFromID((u8 *)msg + 0x24, newMsgId);
+            Knife_MsgReadPtrFromID(&msg->datRead, newMsgId);
             msg->subState = 1;
             msg->unk_df = 3;
         }

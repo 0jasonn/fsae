@@ -39,6 +39,8 @@ typedef struct KNIFE_MSGSYS {
     /* 00 */ struct MsgRendererView *renderer;
     /* 04 */ TextTokenizer *tokenizer;
     /* 08 */ const void *appInfo; // IAppInfoGetter passed to the tokenizer
+    // +0x0c..+0x24 is a copy of the 0x18-byte request (tlpInit copies telopRequest here; same layout as TelopWork and
+    // MessageRequestWork).
     /* 0c */ u8 windowPhase; // window opening progress, compared with 1 and 6 in Message (guess)
     /* 0d */ u8 unk_0d;
     /* 0e */ union {
@@ -56,9 +58,11 @@ typedef struct KNIFE_MSGSYS {
     };
     /* 11 */ u8 sizeBits;   // low 5 bits: width step, bits 5-7: height step
     /* 12 */ u16 msgId;     // text id of the message
-    /* 14 */ u8 unk_14[0x25 - 0x14];
+    /* 14 */ u8 unk_14[0x24 - 0x14];
+    /* 24 */ u8 datRead;  // message data block given to Knife_MsgReadPtrFromID, which sets this to 1 and datId to the id
     /* 25 */ u8 openMode; // 2 while the message box is closing
-    /* 26 */ u8 unk_26[0x2a - 0x26];
+    /* 26 */ u16 datId;   // text id stored by Knife_MsgReadPtrFromID
+    /* 28 */ u8 unk_28[0x2a - 0x28];
     /* 2a */ u8 unk_2a; // set to 0xa0 by tlpInit
     /* 2b */ u8 unk_2b[0x30 - 0x2b];
     /* 30 */ s16 tokenIndex;
@@ -94,11 +98,7 @@ typedef Knife::Message::KNIFE_MSGSYS KNIFE_MSGSYS;
 extern KNIFE_MSGSYS messageBox;
 extern KNIFE_MSGSYS telopBox;
 extern u8 data_0216efbc[];
-extern u8 data_0217d3c0[];
-extern u8 data_0217d4a8[];
 extern u8 data_0217d358[];
-extern u8 data_0217d3a8[];
-extern u8 data_0217d490[];
 extern u8 data_0216efc8[];
 extern u8 data_0216efd4[];
 extern u8 data_0211ed80[];

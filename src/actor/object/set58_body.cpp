@@ -36,5 +36,3 @@ void body_sazanami(Entity *e) {
     e->timer += 2;
 }
 
-extern void *data_0212c568; // pointer to the 0x6c byte display control block (see game/dispctrl.cpp)
-

@@ -48,11 +48,11 @@ void ending_init(void) {
 void ending_link_init(void) {
     u8 i;
     selectEndingLink();
-    for (i = 0; i < GAME_STATE_U8(0) ; i++) {
+    for (i = 0; i < gameState.playerCount; i++) {
         Entity *e = func_02072554(i);
         u8 slot = 3 - i;
         e->spriteSettings.b0 = 1;
-        e->x.HALF.HI = 0x1f8 - ((GAME_STATE_U8(0) - 1) << 3) + (i << 4);
+        e->x.HALF.HI = 0x1f8 - ((gameState.playerCount - 1) << 3) + (i << 4);
         e->y.HALF.HI = 0x1d8;
         e->animationState = 0;
         e->spriteSettings.b30 = 2;
@@ -61,7 +61,7 @@ void ending_link_init(void) {
         e->unk_5e.b0 = slot;
     }
     {
-        Entity *selected = playerWork[GAME_STATE_U8(0x53)].entity;
+        Entity *selected = playerWork[gameState.unk_50[3]].entity;
         u8 prevB0 = selected->unk_5e.b0;
         selected->unk_5e.b0 = 3;
         playerWork[0].entity->unk_5e.b0 = prevB0;
@@ -88,7 +88,7 @@ void ending_rescue(void) {
 
 BOOL ending_msgFinishWait(void) {
     u8 i;
-    for (i = 0; i < GAME_STATE_U8(0); i++) {
+    for (i = 0; i < gameState.playerCount; i++) {
         if (playerKeysPrev[i] & 0x1000) {
             return TRUE;
         }

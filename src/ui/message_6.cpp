@@ -16,10 +16,10 @@ int tlpInit(void) {
 
     MemClearFast(telopWindowSlots, 0x10);
     MemClearFast(telop, 0xe8);
-    MIi_CpuCopy32(&telopRequest, data_0217d490, 0x18);
+    MIi_CpuCopy32(&telopRequest, &telopBox.windowPhase, sizeof(TelopWork));
     telop->layoutFlags = (telop->layoutFlags & ~0xf) | 1;
     telop->msgId &= idMask;
-    Knife_MsgReadPtrFromID(data_0217d4a8, telop->msgId);
+    Knife_MsgReadPtrFromID(&telopBox.datRead, telop->msgId);
     MIi_CpuClearFast(idMask - 0x8000, (u8 *)&data_021371a0 + 0x1080, 0x500);
     Stub_IgnoreArg(initMode);
     SoundReq(0x79);

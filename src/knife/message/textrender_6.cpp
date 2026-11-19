@@ -3,7 +3,6 @@
 #include "knife/comm/multisio.h"
 #include "game/decls_e.h"
 
-extern u8 data_0212ca20[]; // group info block, the member names are 0x34 bytes apart from +0x14
 extern const u16 data_020de6f8[]; // empty string
 
 #define BG_CNT(addr) (*(volatile u16 *)(addr))

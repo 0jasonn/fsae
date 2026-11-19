@@ -9,7 +9,6 @@
 //   func_020280e0 (dsd name, declared in functions.h), MachiukeStart (MachiukeStart()), MachiukeStop (MachiukeStop()),
 //   ComMain (ComMain()), ComUpdate (ComUpdate()), func_020281a8 and func_020281ac (empty functions)
 
-extern u8 data_0212c9b8[];
 extern u32 data_0212c544;
 extern u32 opTitleState;
 extern void (*const data_020f258c[])(void);
@@ -42,10 +41,10 @@ void ComMain(void) {
     data_020f258c[comWork.request]();
 }
 
-// ComUpdate (0x02028184): sends the data block at data_0212c9b8 and clears its 0x34 bytes.
+// ComUpdate (0x02028184): sends comWork.send and clears it.
 void ComUpdate(void) {
-    MultiSioSendDataSet(data_0212c9b8);
-    MemClearFast(data_0212c9b8, 0x34);
+    MultiSioSendDataSet(&comWork.send);
+    MemClearFast(&comWork.send, sizeof(ComPacket));
 }
 
 // Empty functions (dsd names kept, plain symbols).

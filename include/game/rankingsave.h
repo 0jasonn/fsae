@@ -43,7 +43,6 @@ extern u8 data_02171d01[];
 extern const VoidFunc data_020d85b0[];
 extern const EntityFunc data_02115398[];
 extern const EntityFunc data_020d8860[];
-extern u16 data_021349d8[];
 extern u16 data_021355a0;
 extern u8 data_0212c4f8;
 extern u8 data_0212c500;
@@ -77,7 +76,5 @@ s32 FS_GetArchiveResource(const char *path, void *resource);
 s32 FS_HasEnoughSpaceToCreateFile(void *resource, const char *path, s32 size);
 }
 extern void *data_02171d10;
-extern u8 data_02163fa4[];
-extern u8 data_02158fa0[];
 
 #endif

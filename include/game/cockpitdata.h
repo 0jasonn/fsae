@@ -35,22 +35,14 @@ s32 add_sub(s32 value, s32 delta, s32 limit);
 // Absolute value (abs_s32, defined later in the E units).
 s32 abs_s32(s32 value);
 
-// Keys per type, kakera counts per type, kakera telop/effect block and the per-type kakera timers (u16).
+// Keys per type, kakera counts per type and the kakera telop block (the per-type kakera timers are cockpitState.kakeraTimer).
 extern u8 data_0212c824[];
 extern u8 data_0212c830[];
-extern u16 data_0212c63c[];
 #include "engine/telop_request.h"
-
-#define GS_U8(off) (*((u8 *)&gameState + (off)))
-#define GS_S32(off) (*(s32 *)((u8 *)&gameState + (off)))
 
 // Cockpit graphics and object blocks used by the HUD code.
 #include "engine/display_state.h"
 extern u8 data_0212c4a0[];
-extern u8 data_021369a0[];
 extern u16 data_020cf810[];
-
-#define PL_BYTE(i, off) (((u8 *)&playerWork[i])[off])
-#define PL_ENTITY(i) (playerWork[i].entity)
 
 #endif

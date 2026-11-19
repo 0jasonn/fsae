@@ -56,7 +56,6 @@ extern u16 playerKeys[];
 #include "engine/com_work.h"
 extern u16 data_021355a0;
 extern u8 titleDialogBuffer[];
-extern u8 data_021369a0[];
 extern const u8 titleDialogData[];
 extern u8 data_0216fcfc[];
 extern u8 data_0216fcfd[];
@@ -83,6 +82,5 @@ extern u8 pauseDialogWindow[];
 extern const VoidFunc pauseHandlerTable[];
 extern u8 pauseDialogBuffer[];
 extern const u8 pauseDialogRect[];
-extern u8 data_021369a0[];
 
 #endif

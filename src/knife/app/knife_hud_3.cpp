@@ -4,6 +4,7 @@
 #include "knife/message/knife_hud.h"
 #include "knife/subtask/subtask_calls.h"
 #include "engine/player.h"
+#include "engine/bg_buff.h"
 #include "knife/app/knife_hud_layout.h"
 
 // Functions in this file (original names from the debug build, or guessed where marked):
@@ -97,7 +98,6 @@ BOOL HudManager::isGameoverMode(void) const {
 
 // The start*Anim functions (0x0209e794, 0x0209e8cc, 0x0209ea04) are parked in scratch/agentE/nonmatching.
 
-extern s16 *data_02158fa0; // scroll position: x at [1], y at [2]
 s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm
 
 // HudManager::getPlayerPos(int, VecFx32 *) const (0x0209ece8): position of the player's entity in pixels of the
@@ -105,8 +105,8 @@ s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm
 extern "C" void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int player, VecFx32 *pos);
 void Knife_Hud_HudManager_getPlayerPos(const Knife::Hud::HudManager *self, int player, VecFx32 *pos) {
     PlayerData *pl = &playerWork[player];
-    s16 scrollX = data_02158fa0[1];
-    s16 scrollY = data_02158fa0[2];
+    s16 scrollX = data_02158fa0.disp->scrollX;
+    s16 scrollY = data_02158fa0.disp->scrollY;
 
     pos->x = (pl->entity->x.HALF.HI - scrollX) << 12;
     pos->y = (pl->entity->y.HALF.HI + pl->entity->z.HALF.HI - scrollY) << 12;
@@ -174,7 +174,7 @@ void Knife_Hud_HudManager_transferUnactiveEquipIconBasePalette(Knife::Hud::HudMa
     u8 language;
 
     flag = subtask_getFlag(player);
-    language = ((u8 *)&gameState)[0x8e];
+    language = gameState.unk_8e;
     row = 0x78;
     if (language == 1 || language == 4) {
         row = 0x7c;

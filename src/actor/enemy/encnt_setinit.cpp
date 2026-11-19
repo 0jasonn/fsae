@@ -19,7 +19,7 @@ void encnt_setinit(void) {
     encntState.kind = (encntState.table[index + 1] & 0xf000) >> 12;
     encntState.timerReload = (Random() & 1) + 3;
     retry = 0;
-    for (head = data_0212c6b0; head < data_0212c6f0; head++) {
+    for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
         for (node = head->next; node != (EncntNode *)head; node = node->next) {
             if (node->tag == 3 && node->subtag == encntState.posA) {
                 if (retry++ > 8) {

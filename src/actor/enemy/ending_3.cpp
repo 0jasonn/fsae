@@ -34,7 +34,7 @@ void ending_scene_01(void) {
     case 2:
         effectState.timer--;
         if (effectState.timer == 0) {
-            for (i = 0; i < GAME_STATE_U8(0); i++) {
+            for (i = 0; i < gameState.playerCount; i++) {
                 playerWork[i].state = 0xc;
             }
             SoundReq(0x205);

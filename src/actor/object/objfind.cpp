@@ -3,7 +3,7 @@
 #include "actor/object/objfind_api.h"
 
 // Object list search (module objfind): data_0212c6b0 holds one circular list head per object group (8 bytes each,
-// the list runs through next at +4) and data_0212c6f0 is the end of the heads.
+// the list runs through next at +4); the 8 heads end at data_0212c6f0 (a DisplayState).
 //   getNumberOfObj (0x020774cc), findObj (0x0207752c).
 // The objects are Entity works: objKind at +8 and objId at +9 are the search keys.
 
@@ -19,8 +19,7 @@ typedef struct ObjListHead {
     ObjListNode *next; // 04
 } ObjListHead;
 
-extern ObjListHead data_0212c6b0[];
-extern ObjListHead data_0212c6f0[];
+extern ObjListHead data_0212c6b0[8];
 
 // getNumberOfObj (0x020774cc): number of objects with the given kind and id
 extern "C" int getNumberOfObj(u8 kind, u8 id);
@@ -30,7 +29,7 @@ int getNumberOfObj(u8 kind, u8 id) {
     ObjListNode *node;
 
     count = 0;
-    for (head = data_0212c6b0; head < data_0212c6f0; head++) {
+    for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
         for (node = head->next; node != (ObjListNode *)head; node = node->next) {
             if (node->objKind == kind && node->objId == id) {
                 count++;
@@ -45,7 +44,7 @@ Entity *findObj(u8 kind, u8 id) {
     ObjListHead *head;
     ObjListNode *node;
 
-    for (head = data_0212c6b0; head < data_0212c6f0; head++) {
+    for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
         for (node = head->next; node != (ObjListNode *)head; node = node->next) {
             if (node->objKind == kind && node->objId == id) {
                 return (Entity *)node;

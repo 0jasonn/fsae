@@ -7,8 +7,7 @@
 
 #define REG_DISPSTAT (*(volatile u16 *)0x04000004)
 
-extern u8 data_02163fa8[];
-extern u8 data_02165fa8[];
+#include "engine/bg_buff.h"
 
 // Loads the map resource list, one 12-byte entry at a time, waiting for each VBlank. Entry: { id (bit 31 = another entry
 // follows), destination, flags (bit 31 = LZ compressed) }. A zero destination loads a character graphic (CgLoad) instead.
@@ -17,8 +16,8 @@ void MapLoad(u32 *entries, u8 mode) {
     void *src;
 
     if (mode == 0) {
-        MemClearFast(data_02163fa8, 0x2000);
-        MemClearFast(data_02165fa8, 0x1000);
+        MemClearFast(data_02163fa4.screen, 0x2000);
+        MemClearFast(data_02163fa4.attr, 0x1000);
     }
     entry = entries;
     do {

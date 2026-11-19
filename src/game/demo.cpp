@@ -4,6 +4,7 @@
 #include "engine/blend_request.h"
 #include "game/demo_api.h"
 #include "engine/display_state.h"
+#include "engine/bg_buff.h"
 
 // Demo module (demo): DemoTask runs the demo phase machine (phase byte data_0212c4dc), demoWaitCk counts down the
 // phase timer, DemoBgBuffClear clears the two neighbour grids.
@@ -77,9 +78,6 @@ int demoWaitCk(void) {
 
 // DemoBgBuffClear (0x0202a92c): clears the two neighbour grids (0xb004 bytes each).
 void DemoBgBuffClear(void) {
-    extern u8 data_02158fa0[];
-    extern u8 data_02163fa4[];
-
-    OSi_CpuClear32(0, data_02158fa0, 0xb004);
-    OSi_CpuClear32(0, data_02163fa4, 0xb004);
+    OSi_CpuClear32(0, &data_02158fa0, sizeof(BG_BUFF_));
+    OSi_CpuClear32(0, &data_02163fa4, sizeof(BG_BUFF_));
 }

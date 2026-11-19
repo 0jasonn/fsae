@@ -5,7 +5,6 @@
 
 // Cockpit (HUD) block (cockpitState, 0x30 bytes up to mapState). CockpitInit() clears all 0x30 bytes. The HUD tile map is
 // double buffered in data_021361a0: bufferIndex selects the 0x800-byte page being drawn, Cockpit flips it each frame.
-// dsd also has a symbol data_0212c63c at +0x24 (kakeraTimer below), which item_4 and kakera_full still use.
 typedef struct CockpitState {
     /* 00 */ u8 mode;        // 0 off (CockpitOff, ending, opening), 1 HUD active (CockpitInit, cockpit_14), 2 set on a warp
     /* 01 */ u8 unk_01;      // cleared by CockpitOff
@@ -33,7 +32,7 @@ typedef struct CockpitState {
 extern CockpitState cockpitState; // 0x0212c618
 
 // HUD/message BG tile map (0x1000 bytes): two 0x800-byte pages (32x32 u16 entries), page cockpitState.bufferIndex is
-// the one being drawn. The message windows draw into the same pages. dsd names page 1 data_021369a0.
+// the one being drawn. The message windows draw into the same pages. (dsd's data_021369a0 is page 1.)
 extern u8 data_021361a0[2][0x800];
 
 #endif

@@ -3,23 +3,44 @@
 
 #include "types.h"
 
+// Packed status word of a player record (ComPacket +0x24), read by GetSubtaskPlayerStatus (multiplay_init copies b0).
+typedef struct ComPacketBits {
+    u32 b0 : 2;
+    u32 b2 : 1;
+    u32 b3 : 1;
+    u32 b4 : 1;
+    u32 b5 : 1;
+    u32 b6 : 1;
+    u32 b7 : 2;
+    u32 b9 : 2;
+    u32 b11 : 2;
+    u32 b13 : 10; // medal value
+    u32 b23 : 7;
+    u32 b30 : 2;
+} ComPacketBits;
+
 // One communication packet (0x34 bytes): what this machine sends each frame, and what each player sent. The tag is the
 // status code the sender is in (0x20/0x21 machiuke, 0x40 random sync, 0x50 key sync, 0x60 wait sync, ...);
-// CommStatusSync compares the received tags with the expected status.
+// CommStatusSync compares the received tags with the expected status. In a wireless session the received records
+// (recv[]) also serve as the group member records: name, status word, rupees and the group word.
 typedef struct ComPacket {
     /* 00 */ u8 tag;
     /* 01 */ u8 ready;      // com_machiuke sets 1 once 2 to 4 players are connected and checks it in every recv packet
     /* 02 */ u16 keys;      // pad keys of the sender (playerKeys edge detection reads the received ones)
     /* 04 */ u32 value;     // e.g. the random seed of com_randomsync (data_0212c550)
-    /* 08 */ u8 unk_08[0x2c - 0x08];
-    /* 2c */ u32 stageFlag; // stagesel relays flag 0x1000 of each player with it (1 = set; stagesel_message sends 1)
-    /* 30 */ u32 unk_30;
+    /* 08 */ u8 unk_08[0x14 - 0x08];
+    /* 14 */ u16 name[8];   // wireless: member name (TextRenderer::getPlayerName; length is a guess, up to +0x24)
+    /* 24 */ ComPacketBits bits; // wireless: packed status bits (GetSubtaskPlayerStatus)
+    /* 28 */ u32 rupees;    // wireless: rupee value (GetSubtaskPlayerStatus ruppyValue)
+    /* 2c */ u32 stageFlag; // stagesel relays flag 0x1000 of each player with it (1 = set; stagesel_message sends 1);
+                            // GetSubtaskPlayerStatus reads the same word as the packed float value
+    /* 30 */ u32 groupWord; // recv[0]: group word given to GetPlayerNoByAID (player mask, group type in bits 4-6)
 } ComPacket;
 
 // Communication state block (comWork, 0x148 bytes; ComInitState clears all of it). ComRequest()/ComFinish() set the
 // request and its result, ComMain runs the handler of the request (data_020f258c) once per frame, and the handlers
-// step through phase. dsd also has the symbols data_0212c9b8 (+0x10, send), data_0212c9ec (+0x44, next) and data_0212ca20
-// (+0x78, recv[0], the SubtaskMember view in engine/subtask_status.h) inside this block.
+// step through phase. dsd also has the symbols data_0212c9b8 (+0x10, send), data_0212c9ec (+0x44, next), data_0212ca20
+// (+0x78, recv[0]) and data_0212ca44 (recv[0].bits) inside this block.
 typedef struct ComWork {
     /* 000 */ u8 request;     // request code, set by ComRequest and ComFinish; index into data_020f258c in ComMain
     /* 001 */ u8 phase;       // step of the request handler, cleared by ComRequest and ComFinish

@@ -22,7 +22,7 @@ void AddRupeeKakera(Entity *e) {
         telopRequest.params[1] = (u16)(4 - data_0212c830[e->type]);
         break;
     case 4:
-        data_0212c63c[e->type] = 0xf;
+        cockpitState.kakeraTimer[e->type] = 0xf;
         break;
     }
 }

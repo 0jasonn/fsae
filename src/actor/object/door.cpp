@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/bg_buff.h"
 
 // Door helpers (module door). Address -> name:
 //   0x02061dc4 DoorTypeCheck, 0x02061e04 doorCheck (original names)
@@ -21,7 +22,6 @@ typedef struct SrchEntry {
 
 extern const s16 cellDeltaTable[]; // cell step per kind (x 4 kinds)
 extern const SrchEntry data_020d9324[]; // cells to look for, per kind
-extern const u8 data_02165fa8[]; // terrain type per cell
 
 int func_02083cdc(Entity *e);
 
@@ -29,7 +29,7 @@ BOOL DoorTypeCheck(Entity *e) {
     s16 offset;
 
     offset = cellDeltaTable[e->type2 & 3];
-    return data_02165fa8[(u16)(VARS(Vars_Door, e)->cell + offset)] != 0x18;
+    return data_02163fa4.attr[(u16)(VARS(Vars_Door, e)->cell + offset)] != 0x18;
 }
 
 void doorCheck(Entity *e) {

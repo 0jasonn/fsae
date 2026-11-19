@@ -19,15 +19,15 @@ void set01_init(Entity *e) {
         e->subtimer = 8;
         SoundReq(0x80010000);
         SoundReq(0x2e);
-        if (((u32 *)&gameState)[7] < 0xe10) {
+        if (gameState.frameCount < 0xe10) {
             VSET01(e)->stageLevel = 3;
             return;
         }
-        if (((u32 *)&gameState)[7] < 0x2a30) {
+        if (gameState.frameCount < 0x2a30) {
             VSET01(e)->stageLevel = 2;
             return;
         }
-        if (((u32 *)&gameState)[7] < 0x4650) {
+        if (gameState.frameCount < 0x4650) {
             VSET01(e)->stageLevel = 1;
         }
         return;

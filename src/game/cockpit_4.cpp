@@ -25,7 +25,7 @@ s32 PinchCheck(void) {
 
     result = 0;
     for (i = 0; i < gameState.playerCount; i++) {
-        if (PL_ENTITY(i)->health != 0 && PL_ENTITY(i)->health <= 0x10) {
+        if (playerWork[i].entity->health != 0 && playerWork[i].entity->health <= 0x10) {
             if (func_020867cc() > gameState.score) {
                 result = 1;
             }

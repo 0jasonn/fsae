@@ -18,11 +18,11 @@ void housha0att(EncntEntry *e, u16 index) {
     y = (e->y + (trigTable[e->angle * 8 + 0x40] >> 4)) & 0x3ff;
     cell = (x - mapState.originX) >> 4 | ((y - mapState.originY) >> 4) << 6;
     blocked = 0;
-    if (data_0215afa4[cell] != 0 || data_02165fa8[cell] != 0) {
+    if (data_02158fa0.attr[cell] != 0 || data_02163fa4.attr[cell] != 0) {
         blocked = 2;
     }
     for (i = 0; i < 4; i++) {
-        if (data_02158fa0[cell + cellDeltaTable[i] + 0x2004] != 0 || data_02163fa4[cell + cellDeltaTable[i] + 0x2004] != 0) {
+        if (data_02158fa0.attr[cell + cellDeltaTable[i]] != 0 || data_02163fa4.attr[cell + cellDeltaTable[i]] != 0) {
             blocked++;
         }
     }

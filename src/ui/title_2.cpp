@@ -37,7 +37,7 @@ void knife_title_dialogDisp(s32 index) {
     *(u8 **)((u8 *)&titleDialogBlock + 0xb8) = titleDialogBuffer;
     *(u8 **)((u8 *)&titleDialogBlock + 0xb4) = data_021361a0[cockpitState.bufferIndex];
     OSi_CpuClear32(0, data_021361a0[0], 0x800);
-    OSi_CpuClear32(0, data_021369a0, 0x800);
+    OSi_CpuClear32(0, data_021361a0[1], 0x800);
     knife_MakeMsgScreen((u16)index, titleDialogData);
     getDialogXYZWH(data_0216fcfc, data_0216fcfd, data_0216fcfe, data_0216fcff, (u16)index, titleDialogData);
     func_020845b0(0x6014800, titleDialogBuffer, 0x1780);

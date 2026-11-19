@@ -12,7 +12,7 @@ void OpeningTask(void) {
 s32 OpeningTaskCanPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
-    for (head = data_0212c6b0; head < data_0212c6f0; head++) {
+    for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
         node = head->next;
         if (node != head) {
             do {
@@ -30,7 +30,7 @@ s32 OpeningTaskCanPrepareFinalize(void) {
 void OpeningTaskPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
-    for (head = data_0212c6b0; head < data_0212c6f0; head++) {
+    for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
         node = head->next;
         if (node != head) {
             do {
@@ -46,7 +46,7 @@ void OpeningTaskPrepareFinalize(void) {
         EntityNode *head2;
         EntityNode *node2;
         EntityNode *prevNode;
-        for (head2 = data_0212c6b0; head2 < data_0212c6f0; head2++) {
+        for (head2 = data_0212c6b0; head2 < data_0212c6b0 + 8; head2++) {
             node2 = head2->next;
             if (node2 != head2) {
                 do {
@@ -79,7 +79,7 @@ void op_init(void) {
     SoundReq(0x800b01ad);
     DispReset();
     ZeldaFadeFinish();
-    ((u8 *)&gameState)[0x8e] = 0;
+    gameState.unk_8e = 0;
     initializeVirtualScreenData();
     setupVirtualScreenCallback();
     ObjMoveInit();

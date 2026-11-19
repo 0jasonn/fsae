@@ -52,8 +52,7 @@ typedef struct EncntListHead {  // 8-byte head; the list runs through next
     u8 unk_00[4];
     EncntNode *next;
 } EncntListHead;
-extern EncntListHead data_0212c6b0[];
-extern EncntListHead data_0212c6f0[];
+extern EncntListHead data_0212c6b0[8]; // list heads, 8 x 8 bytes up to data_0212c6f0 (a DisplayState)
 
 // Fields that encnt_setem writes on the spawned entity (beyond the Entity common part).
 typedef struct EncntSpawnVars {
@@ -81,10 +80,7 @@ typedef void (*EncntPosFunc)(EncntEntry *entry, u16 index);
 extern const EncntPosFunc encntPosFuncs[];
 
 extern const s16 trigTable[];       // direction table, 8 steps per direction, quarter-wave offset at +0x40
-extern const u8 data_0215afa4[];        // 64x64 occupancy grid
-extern const u8 data_02165fa8[];        // second 64x64 grid
-extern u8 data_02158fa0[];              // neighbour grid, read at cell + offset + 0x2004
-extern u8 data_02163fa4[];              // neighbour grid, same layout
+#include "engine/bg_buff.h"           // occupancy grids: data_02158fa0.attr, data_02163fa4.attr
 extern const s16 cellDeltaTable[];       // four cell offsets for the neighbour test
 extern const s8 data_020d4170[];        // step table, x and y per entry
 

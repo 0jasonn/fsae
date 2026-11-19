@@ -16,7 +16,7 @@ void VBlankIntr(void) {
         index = data_0212c4c8 ^ 1;
         if (data_021348f4[index] != 0) {
             data_021348f4[index] = 0;
-            MIi_CpuCopyFast(data_0213cfa0 + (index << 13), (void *)(0x06000000 + ((*data_02158fa0 & 0x1f00) << 3)), 0x2000);
+            MIi_CpuCopyFast(data_0213cfa0 + (index << 13), (void *)(0x06000000 + ((data_02158fa0.disp->cnt & 0x1f00) << 3)), 0x2000);
         }
         ResourceCtrl();
         DispCtrlSet();

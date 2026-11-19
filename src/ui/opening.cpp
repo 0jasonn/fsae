@@ -1,15 +1,16 @@
 #include "engine/functions.h"
 #include "engine/misc.h"
+#include "engine/display_state.h"
 #include "global.h"
 
 void PaletteFade_ClearBufferFlag(void) {
     paletteFade.bufferSelect = 0;
 }
 
-// Applies the fade level from the entity's x position, blends and uploads the palette buffer.
+// Applies the fade level taken from bg[3].scrollY of the display block (data_0212c6f0), blends and uploads the palette
+// buffer.
 void title_resourceCtrlCallback(DISP_CTRL_ *ctrl) {
-    Entity *e = (Entity *)ctrl; // DISP_CTRL_ layout not known yet; read through the Entity view
-    u16 fadeLevel = e->x.HALF.LO;
+    u16 fadeLevel = ctrl->bg[3].scrollY;
     if (fadeLevel > 0xc0) {
         fadeLevel = 0xc0;
     }

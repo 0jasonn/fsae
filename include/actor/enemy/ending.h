@@ -30,8 +30,6 @@ extern FadeFunc const fadeModeTable[];        // fadeModeTable
 extern u32 data_02134910;
 extern u16 data_02135da0[];
 
-#define GAME_STATE_U8(off) (*((u8 *)&gameState + (off)))
-
 extern u16 data_021355a0;
 extern u8 data_02135840[];
 extern u8 data_0216fd04[];

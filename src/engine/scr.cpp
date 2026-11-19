@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "game/rankingsave.h"
 #include "global.h"
+#include "engine/bg_buff.h"
 
 // Scroll and background helpers (module scr). Address -> name:
 //   0x02056ef0 scr_init (original name, matches)
@@ -19,7 +20,7 @@ void ScrollMove(void) {
 
 int GetBgBuffAdrs(int a) {
     if (((u32)a >> 14) == 2) {
-        return (int)data_02163fa4;
+        return (int)&data_02163fa4;
     }
-    return (int)data_02158fa0;
+    return (int)&data_02158fa0;
 }

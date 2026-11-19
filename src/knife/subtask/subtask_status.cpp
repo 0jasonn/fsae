@@ -6,7 +6,7 @@ void GetSubtaskPlayerStatus(int playerIndex, SUBTASK_PLAYER_WORK *status) {
     int floatValue;
     int linkLevel;
     s32 state;
-    SubtaskMember *member;
+    ComPacket *member;
     void *manager;
 
     floatValue = Fp_PackU32ToFloat(status->floatValue);
@@ -23,7 +23,7 @@ void GetSubtaskPlayerStatus(int playerIndex, SUBTASK_PLAYER_WORK *status) {
         if (!status->linkOk) {
             return;
         }
-        member = &data_0212ca20[playerIndex];
+        member = &comWork.recv[playerIndex];
         status->flag = member->bits.b0;
         status->bit4 = member->bits.b2;
         status->bit5 = member->bits.b3;
@@ -34,8 +34,8 @@ void GetSubtaskPlayerStatus(int playerIndex, SUBTASK_PLAYER_WORK *status) {
         status->field11 = member->bits.b9;
         status->field13 = member->bits.b11;
         status->medalValue = member->bits.b13;
-        status->ruppyValue = member->w28;
-        status->floatValue = member->w2c;
+        status->ruppyValue = member->rupees;
+        status->floatValue = member->stageFlag;
     } else {
         if (playerIndex < 2) {
             linkLevel = 1;

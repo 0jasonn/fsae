@@ -47,11 +47,7 @@ extern const u8 em16_timerTable[];   // em16_timerTable
 extern const s8 getdir_offsetTable[];   // getdir_offsetTable
 extern const u8 data_020d3224[];   // em27 hitbox
 extern const u8 data_020ce4d0[];   // background init table
-extern u16 data_0212c770;
-extern u16 data_0212c77c;
 extern u32 data_02134a68[];        // background animation slots (8 x 8 bytes)
-extern u16 *data_02163fa4;
-extern u16 *data_02158fa0;
 
 // BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.
 void BgInit(void);

@@ -26,8 +26,8 @@ void set09_wait(Entity *e) {
             gameState.unk_26 = 0x1a1;
         }
         if (e->objId == 9) {
-            u8 count52 = ((u8 *)&gameState)[0x52];
-            ((u8 *)&gameState)[0x52] = count52 + 1;
+            u8 count52 = gameState.unk_50[2];
+            gameState.unk_50[2] = count52 + 1;
         }
     }
     e->action = 2;

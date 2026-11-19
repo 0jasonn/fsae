@@ -43,8 +43,7 @@ typedef struct UnkStruct_02134d30 {
 extern UnkStruct_02134d30 data_02134d30;
 extern const u8 data_02104a74[];
 
-extern EntityNode data_0212c6b0[];
-extern EntityNode data_0212c6f0[];
+extern EntityNode data_0212c6b0[8]; // list heads, 8 x 8 bytes up to data_0212c6f0 (a DisplayState)
 extern u16 data_0216fd04[];
 extern u16 data_02170104[];
 extern u8 data_0212c500;
