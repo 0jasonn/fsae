@@ -10,16 +10,7 @@
 
 extern "C" BOOL GameState_UpdatePhase(void);
 
-// Frame counter block (frameCounter at 0x0212c5bc)
-typedef struct FrameCounterBlock {
-    /* 00 */ u16 frame;
-    /* 02 */ u16 timer; // generic countdown used by the scene state machines
-    /* 04 */ u8 unk_04[0xd];
-    /* 11 */ u8 pauseFlag;
-    /* 12 */ u8 unk_12;
-    /* 13 */ u8 inputLock;
-} FrameCounterBlock;
-extern FrameCounterBlock frameCounter;
+#include "engine/frame_counter.h"
 
 #include "engine/blend_request.h"
 

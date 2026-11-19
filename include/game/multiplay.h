@@ -28,7 +28,7 @@ extern u8 data_0212c5ec[];
 extern u16 data_0212c540;
 extern u32 data_0212c54c;
 extern u32 data_0212c558;
-extern u8 data_021361a0[];
+#include "engine/cockpit_state.h"
 
 void RandomSetInit(void);
 void StopBlockInit(void);
@@ -43,7 +43,7 @@ void BgmSet(void);
 void PlayerTrans(void);
 extern u32 data_0212c538;
 extern u8 data_02134cb0[];
-extern u8 comWork[];
+#include "engine/com_work.h"
 void GetSetWorkSp(u8 a, u8 b, u8 c);
 extern u8 data_0212c9ec[];
 extern "C" {
@@ -78,7 +78,7 @@ void CalcHeartLevel(void);
 
 extern u8 localPlayerIndex;
 extern u8 data_0216efa8;                    // makemap state byte
-extern u8 frameCounter[0x20];                  // game state byte block, byte 0x12 cleared by multiplay_init
+#include "engine/frame_counter.h"
 extern u8 data_0212ca44[];                  // 0x34-byte records, first word read by multiplay_init
 extern PlayerData *data_0212c53c;           // current player slot pointer
 extern u32 data_0212c550;

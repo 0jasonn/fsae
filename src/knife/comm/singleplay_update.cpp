@@ -30,7 +30,7 @@ void Knife_Single_SinglePlay_UpdatePause(void *self, PlayerData *player0, Player
     pair.player1->unk_31 = 0;
     pair.player0->unk_31 = pair.player1->unk_31;
     if (((SinglePlayWork *)self)->contChanging != 0) {
-        if (frameCounter[0x13] != 0) {
+        if (frameCounter.playersBound != 0) {
             Knife_Single_SinglePlay_SetContNoDirect(self, ((SinglePlayWork *)self)->contNo);
         }
     } else {

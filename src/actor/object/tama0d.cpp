@@ -84,7 +84,7 @@ void tama0d_move3(Entity *e) {
 
 // tama0d_move4, 0x0207d0b4. Takes the animation bit from frameCounter and removes the actor when it lands.
 void tama0d_move4(Entity *e) {
-    e->spriteSettings.b0 = *(u16 *)frameCounter & 1;
+    e->spriteSettings.b0 = frameCounter.frame & 1;
     UpdateAnimationSingleFrame(e);
     MoveDir(e);
     if (UpdateGravity(e, 0x1800) != 0) {

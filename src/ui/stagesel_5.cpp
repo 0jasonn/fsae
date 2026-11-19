@@ -53,10 +53,10 @@ void stagesel_init0(void) {
             return;
         }
         if ((enemyTypeFlags[localPlayerIndex].flags & 0x1000) != 0) {
-            *(u32 *)(comWork + 0x3c) = 1;
+            comWork.send.stageFlag = 1;
         }
         for (i = 0; i < gameState.playerCount; i++) {
-            if (*(u32 *)(comWork + i * 0x34 + 0xa4) == 1) {
+            if (comWork.recv[i].stageFlag == 1) {
                 gameState.slots[i].flags |= 0x1000;
             }
         }

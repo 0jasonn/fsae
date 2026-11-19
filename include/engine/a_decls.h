@@ -41,7 +41,7 @@ extern u8 *data_02171e0c;     // pointer to a byte table indexed by a tile value
 extern u16 data_02140fa0[];
 extern u16 data_02148fa0[];
 extern u8 data_021348f4[];
-extern u8 data_0212c4c8[];
+#include "engine/vblank_request.h"
 
 // Door and map-block helpers (src/wip/A/frontcheck_2.cpp).
 void setmoveblock(Entity *e, u16 cell, u8 mode); // original setmoveblock(OBJ_WORK_*, unsigned short, unsigned char)

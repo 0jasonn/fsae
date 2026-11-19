@@ -42,7 +42,7 @@ void ending_scene_01(void) {
         }
         break;
     case 3:
-        if ((em12_typeMasks & 8) == 0) {
+        if ((em12_typeMasks[0] & 8) == 0) {
             break;
         }
         SoundReq(0x1ff);
@@ -182,7 +182,7 @@ void bikkuri(void) {
 void ending_finale(void) {
     u8 *palette;
     endingFinaleTable[data_0212c4dc]();
-    if (em12_typeMasks & 0x10) {
+    if (em12_typeMasks[0] & 0x10) {
         return;
     }
     if ((frameState.frameCount & 3) != 0) {

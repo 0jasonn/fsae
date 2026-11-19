@@ -8,7 +8,7 @@
 //   0x02062dc4 set09_move, 0x02062e14 set09_wait2 (original names)
 
 extern const EntityFunc data_020d9f38[]; // indexed by e->action
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 void BgmSet(void);
 void set6b_setenemy(Entity *e, u8 index);
 

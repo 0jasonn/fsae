@@ -32,7 +32,6 @@ void ranking_player_set(void);
 #include "engine/display_state.h"
 
 #include "engine/cockpit_state.h"
-extern u8 data_021361a0[];
 
 #include "engine/effect_state.h"
 

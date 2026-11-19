@@ -28,7 +28,7 @@ extern const u8 set12_directionTable[];       // was set12_directionTable, index
 extern const u16 set12_vgroupIdsA[];          // was set12_vgroupIdsA
 extern const u16 set12_vgroupIdsB[];          // was set12_vgroupIdsB
 extern const Set12MusicEntry *const bgmIndexTable[];
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[];
 
 #endif

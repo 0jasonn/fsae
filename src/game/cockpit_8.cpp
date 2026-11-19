@@ -11,7 +11,7 @@
 
 extern u16 playerKeys[]; // flags per player, bit 0x400 set while the player is active
 extern u16 playerKeysPrev[]; // flags per player, bit 0x1000 blocks the call animation
-extern u8 frameCounter[0x20];
+#include "engine/frame_counter.h"
 extern u8 data_0212c4a0[];
 
 // cockpit_call_check (0x02027bd0): starts the call animation of the player that asks for it. Single play uses the
@@ -36,7 +36,7 @@ void cockpit_call_check(void) {
             return;
         }
         requestMode = messageRequest.phase & 0x7f;
-        if (requestMode != 0 || frameCounter[0x14] != 0 || frameCounter[0x11] != 0) {
+        if (requestMode != 0 || frameCounter.playersBoundPrev != 0 || frameCounter.pauseRequest != 0) {
             return;
         }
         if (playerWork[single[0]].callState != 0) {
@@ -52,7 +52,7 @@ void cockpit_call_check(void) {
         if ((playerKeys[i] & 0x400) == 0) {
             continue;
         }
-        if ((playerKeysPrev[i] & 0x1000) == 0 && frameCounter[0x14] == 0 && frameCounter[0x11] == 0 &&
+        if ((playerKeysPrev[i] & 0x1000) == 0 && frameCounter.playersBoundPrev == 0 && frameCounter.pauseRequest == 0 &&
             playerWork[i].callState == 0) {
             if (hud->startCallAnim(i) != 0) {
                 SoundReq(0x232);

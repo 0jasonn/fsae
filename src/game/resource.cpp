@@ -6,7 +6,7 @@
 // (objAffineSet) to VRAM 0x07000000 when its flag in data_0212c50c is set.
 
 extern u32 data_02171e20[];
-extern u8 data_0212c4c8; // current buffer index
+#include "engine/vblank_request.h"
 extern u8 data_0212c50c[];
 extern u8 objAffineSet[];
 extern u8 data_0212c6f0[];

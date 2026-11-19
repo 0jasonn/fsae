@@ -30,7 +30,7 @@ extern u16 playerKeys[];
 extern u8 data_0212ceb2[];
 extern u8 data_0212ceca[];
 extern u8 data_0212cee4[];
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 extern const s8 data_020d1844[];
 
 #endif

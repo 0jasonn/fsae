@@ -25,7 +25,6 @@ extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
 
-extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 
@@ -62,7 +61,7 @@ void keyDisable(void) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         return;
     }
-    playerCount = frameCounter[0x11] & 3;
+    playerCount = frameCounter.pauseRequest & 3;
     for (i = 0; i < 4; i++) {
         if (i != playerCount) {
             playerKeys[i] = 0;

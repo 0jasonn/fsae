@@ -5,7 +5,7 @@
 
 extern const s8 em1b_dirDeltaTable[]; // em1b_dirDeltaTable, two entries (-1, +1)
 
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 void ofsset(Entity *e); // em1b_2 is not the unit that defines it, see the note in the report
 extern EntityFunc em1b_type1Actions[];   // em1b_type1Actions, indexed by e->action
 extern const u8 em1b_type1Hitbox[];      // em1b_type1Hitbox, used when type == 1
@@ -23,13 +23,13 @@ void em1b_type1_move(Entity *e) {
 
     vars->savedX = e->x.HALF.HI;
     vars->savedY = e->y.HALF.HI;
-    slot = (frameCounter + 1) & 7;
+    slot = (frameCounter.frame + 1) & 7;
     trailByte = vars->trail[slot];
     dx = (trailByte & 0xf) - 8;
     dy = ((trailByte & 0xf0) >> 4) - 8;
     e->x.HALF.HI += dx;
     e->y.HALF.HI += dy;
-    shift = ((frameCounter + 1) & 7) << 2;
+    shift = ((frameCounter.frame + 1) & 7) << 2;
     nextAnim = ((vars->frameAnims >> shift) & 7) + (e->type << 3);
     if (nextAnim != e->animationState) {
         e->animationState = nextAnim;

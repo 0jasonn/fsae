@@ -23,7 +23,7 @@ void hane_open(Entity *e) {
     if (speed == 0x100) {
         e->action = 2;
         func_02085d34(e);
-        em12_typeMasks |= 0x20;
+        em12_typeMasks[0] |= 0x20;
         return;
     }
     scrollArgs.data[0] = speed;

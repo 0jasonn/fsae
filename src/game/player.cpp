@@ -26,7 +26,6 @@ extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
 
-extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 
@@ -43,7 +42,7 @@ void BindPlayers(void) {
     for (i = 0; i < gameState.playerCount; i++) {
         BindPlayer(i);
     }
-    frameCounter[0x13] = 1;
+    frameCounter.playersBound = 1;
 }
 
 void WarpPlayer(void) {

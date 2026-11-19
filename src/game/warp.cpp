@@ -27,10 +27,10 @@ void time_bonus(void) {
         playerCount = 1;
     }
     TelopRequest(0x3ea);
-    telopRequest.unk_08 = (u16)(seconds / 60);
-    telopRequest.unk_0c = (u16)(seconds % 60);
-    telopRequest.unk_10 = get_time_bonus();
-    telopRequest.unk_14 = (u16)playerCount;
+    telopRequest.params[0] = (u16)(seconds / 60);
+    telopRequest.params[1] = (u16)(seconds % 60);
+    telopRequest.params[2] = get_time_bonus();
+    telopRequest.params[3] = (u16)playerCount;
 }
 
 u16 get_time_bonus(void) {

@@ -19,9 +19,9 @@ typedef struct Vars_Set6a {
 
 extern const EntityFunc data_020d91e4[]; // indexed by e->action
 #include "engine/effect_state.h"
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 extern u32 flagBits[]; // one mask per type2
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 #include "engine/map_state.h"
 
 void getDebu(Entity *e);
@@ -73,7 +73,7 @@ void set6a_move(Entity *e) {
             SoundReq(0x800d01a7);
         }
         VARS(Vars_Set6a, e)->t78--;
-        if ((frameCounter & 0xf) == 0) {
+        if ((frameCounter.frame & 0xf) == 0) {
             getDebu(e);
         }
         VARS(Vars_Set6a, e)->counter72--;
@@ -84,7 +84,7 @@ void set6a_move(Entity *e) {
         e->action = 2;
         getMgrInfo(e);
     } else {
-        if ((frameCounter & 0xf) == 0) {
+        if ((frameCounter.frame & 0xf) == 0) {
             getDebu(e);
         }
         VARS(Vars_Set6a, e)->counter72--;

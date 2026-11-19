@@ -13,7 +13,7 @@ u8 em21_crossCheck(Entity *e) {
     s32 dy;
     u8 result;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        idx = frameCounter & 3;
+        idx = frameCounter.frame & 3;
     } else {
         idx = *Knife_Single_SinglePlay_GetInstance();
     }

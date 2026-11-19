@@ -6,7 +6,7 @@
 // Functions in this file (module com, original names from the debug build): frame_ack (frame_ack())
 
 extern u32 data_0212c538;
-extern u8 comWork[];   // communication state block (see com.cpp)
+#include "engine/com_work.h"
 extern u8 data_0212c9ec[];
 extern u8 data_0212c9b8[];
 extern u16 data_02134cb0[];  // four 16-entry key tables, 0x20 bytes apart
@@ -26,7 +26,7 @@ void frame_ack(void) {
     manager = func_020909c8();
     knife = KnifeApp_getInstance();
     index = (data_0212c538 - 2) & 0xf;
-    flags = comWork[3];
+    flags = comWork.status;
     ready = 1;
     if (flags & 1) {
         if (data_02134cb0[index] == 0xc000) {
@@ -50,14 +50,14 @@ void frame_ack(void) {
     }
     if (KnifeApp_isWirelessMode(knife) == 0) {
         if (ready != 0) {
-            *(u32 *)(comWork + 8) = 2;
+            comWork.result = 2;
             return;
         }
         MIi_CpuCopy16(data_0212c9ec, data_0212c9b8, 0x34);
         return;
     }
     if (Knife_Comm_WirelessManager_getFrameFlag(manager) == 0) {
-        *(u32 *)(comWork + 8) = 2;
+        comWork.result = 2;
         return;
     }
     MIi_CpuCopy16(data_0212c9ec, data_0212c9b8, 0x34);

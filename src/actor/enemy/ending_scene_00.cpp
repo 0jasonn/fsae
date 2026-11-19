@@ -13,7 +13,7 @@ void ending_scene_00(void) {
 
     switch (phase) {
     case 0:
-        if (em12_typeMasks & 1) {
+        if (em12_typeMasks[0] & 1) {
             effectState.phase = phase + 1;
             effectState.timer = 0x1e;
         }
@@ -25,7 +25,7 @@ void ending_scene_00(void) {
         }
         effectState.phase = phase + 1;
         effectState.timer = 0x78;
-        em12_typeMasks |= 2;
+        em12_typeMasks[0] |= 2;
         break;
     case 2:
         effectState.timer--;
@@ -159,7 +159,7 @@ void ending_scene_00(void) {
         }
         data_0212c4dc++;
         effectState.phase = 0;
-        em12_typeMasks |= 4;
+        em12_typeMasks[0] |= 4;
         break;
     }
 }

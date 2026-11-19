@@ -26,7 +26,7 @@ extern const EntityFunc set69_type1Actions[]; // set69_type1Actions, indexed by 
 extern const s8 data_020dc044[];              // two y offsets used by type1_suikomare
 extern u32 data_020d70ec[];                   // map load block passed to MapLoad by type0_bgreset
 #include "engine/blend_request.h"
-extern s32 em2f_mapFlag;
+#include "engine/em2f_map_flag.h"
 extern KnifeObjAffineSrcData scrollArgs;     // scale x, scale y, angle for ObjAffineSet2 (scrollArgs, bss)
 
 #endif

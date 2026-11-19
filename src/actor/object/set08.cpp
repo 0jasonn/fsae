@@ -15,7 +15,7 @@ typedef struct Vars_Set08 {
 
 #include "engine/map_state.h"
 extern const EntityFunc data_020d92c0[]; // indexed by e->action
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 
 void doorCheck(Entity *e);
 void srchDoor(Entity *e);

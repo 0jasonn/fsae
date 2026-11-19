@@ -5,7 +5,7 @@
 // Set2c actor, second unit (module set2c). Address -> name:
 //   0x0205a798 set2c_wait (original name)
 
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 
 void set2c_wait(Entity *e) {
     u8 areaIndex;

@@ -8,7 +8,7 @@
 //   0x0205a798 set2c_wait (original name)
 
 extern const EntityFunc set2c_actions[]; // set2c_actions, indexed by e->action
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[]; // flagBits, indexed by e->type
 
 void Set2c(Entity *e) {

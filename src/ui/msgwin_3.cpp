@@ -13,7 +13,7 @@ void deleteWindow(void) {
     if (slot->active != 0) {
         slot->active = 0;
         int firstRow = slot->tileY;
-        tiles = (u16 *)(data_021361a0 + slotIndex * 0x800 + firstRow * 0x40);
+        tiles = (u16 *)(data_021361a0[slotIndex] + firstRow * 0x40);
         row = 0x18 - firstRow;
         do {
             for (col = 0; col < 0x18; col++) {
@@ -28,7 +28,7 @@ void deleteWindow(void) {
     slot = &data_0216eff0[slotIndex];
     if (slot->active != 0) {
         slot->active = 0;
-        tiles = (u16 *)(data_021361a0 + slotIndex * 0x800 + ((slot->tileX + slot->tileY * 0x20) << 1));
+        tiles = (u16 *)(data_021361a0[slotIndex] + ((slot->tileX + slot->tileY * 0x20) << 1));
         row = slot->height + 2;
         do {
             for (col = 0; col < slot->width + 2; col++) {

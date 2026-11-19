@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "engine/entity.h"
 #include "global.h"
-#include "engine/message_request.h"
+#include "ui/message.h"
 
 // Functions in this file (address -> name, pending reviewer apply to symbols.txt):
 //   Callback_Empty0 -> Callback_Empty0
@@ -12,9 +12,6 @@
 //   TelopClose -> TelopClose
 //   MessageRequest -> MessageRequest
 
-// Work blocks in the bss, accessed by byte offset
-extern u8 telopRequest[];
-extern u8 telopBox[];
 extern const u8 messageInitData[];
 
 
@@ -38,11 +35,11 @@ void Status_ArmIfEnabled(void) {
 }
 
 void TelopClose(void) {
-    u16 flags = *(u16 *)(telopRequest + 6);
+    u16 flags = telopRequest.requestId;
     if (flags & 0x8000) {
-        *(u16 *)(telopRequest + 6) = flags & 0x7fff;
+        telopRequest.requestId = flags & 0x7fff;
     }
-    telopBox[0xe7] = 1;
+    telopBox.noTelopWait = 1;
 }
 
 void MessageRequest(u16 value) {

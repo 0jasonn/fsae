@@ -2,7 +2,7 @@
 #include "engine/misc.h"
 #include "global.h"
 
-extern u8 comWork[];
+#include "engine/com_work.h"
 
 // title_savedata (0x02053114): title screen step for the save data / player check. When the blend request is idle and
 // the effect state is 2 it resets the display, finalizes the opening task and, if the players' key group nibbles
@@ -14,7 +14,7 @@ void title_savedata(void) {
     if (blendRequest.blendEnabled != 0) {
         return;
     }
-    *(u16 *)(comWork + 0x12) = 8;
+    comWork.send.keys = 8;
     mode = effectState.phase;
     switch (mode) {
         case 0:

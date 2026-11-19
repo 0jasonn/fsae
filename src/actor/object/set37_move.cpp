@@ -7,13 +7,13 @@
 //   0x0206b648 set37_move (original name)
 
 extern const s8 set37BobTable[]; // set37Table bob offsets, indexed by timer & 7
-extern u16 frameCounter;         // frame counter
+#include "engine/frame_counter.h"
 void adjust(Entity *e);          // 0x0206b768 (set37_2.cpp)
 
 // Bobs up and down every 8 frames. When a player touches it, the player enters state 8 and the actor goes to the
 // pick-up demo and adds a heart container to that player.
 void set37_move(Entity *e) {
-    if ((frameCounter & 7) == 0) {
+    if ((frameCounter.frame & 7) == 0) {
         e->timer++;
         e->z.HALF.HI = set37BobTable[e->timer & 7] - 8;
     }

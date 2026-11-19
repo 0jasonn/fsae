@@ -54,7 +54,7 @@ void rupeeUpdate(void) {
 void heartUpdate(u16 kind) {
     s32 health;
 
-    if ((*(u16 *)frameCounter & 3) != 0) {
+    if ((frameCounter.frame & 3) != 0) {
         return;
     }
     cockpitState.heartKind = (u8)kind;

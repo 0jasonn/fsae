@@ -25,7 +25,6 @@ extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
 
-extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 
@@ -38,7 +37,7 @@ extern u8 localPlayerIndex;
 
 void pause_wait(void) {
     keyDisable();
-    if ((frameCounter[0x11] & 3) == localPlayerIndex) {
+    if ((frameCounter.pauseRequest & 3) == localPlayerIndex) {
         pause_dialogUpdate();
     }
     if (--pauseState[2] == 0) {

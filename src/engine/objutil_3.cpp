@@ -4,7 +4,7 @@
 
 // Sets the sub-action when the player-state flag at frameCounter+0x12 is set or the player's flag is clear (guess).
 void ObjHippariCheck(Entity *e) {
-    if (frameCounter[0x12] != 0) {
+    if (frameCounter.stopRequest != 0) {
         e->subAction = 6;
     }
     if (playerWork[e->type2].specialState == 0) {

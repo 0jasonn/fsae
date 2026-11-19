@@ -107,7 +107,7 @@ void op_init(void) {
         localPlayerIndex = zero;
         cockpitState.mode = zero;
         cockpitState.bufferIndex = zero;
-        displayState.bg[0].buffer = data_021361a0;
+        displayState.bg[0].buffer = data_021361a0[0];
         displayState.bg[0].cnt = *(const u16 *)(data_020ce4d0 + 0x24);
         displayState.bg[1].cnt = valueA;
         displayState.bg[2].cnt = 0x841a;

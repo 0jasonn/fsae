@@ -4,7 +4,7 @@
 #include "engine/functions.h"
 
 // Data used by the communication error screen (not in engine/functions.h or engine/misc.h yet)
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u8 data_0212c4c4;
 extern u8 data_0212c4d8;
 extern u8 data_0212c4dc;

@@ -5,16 +5,7 @@
 // Functions in this file (original names from the debug build):
 //   TelopRequest
 
-// Telop request block (telopRequest)
-typedef struct TelopWork {
-    /* 00 */ u8 active;
-    /* 01 */ u8 unk_01;
-    /* 02 */ u8 flags; // low nibble = 3 while a request is active, bits 4-5 = bank of (id - 1000) / 100
-    /* 03 */ u8 unk_03[3];
-    /* 06 */ u16 requestId; // bit 15 is set while the telop is busy
-} TelopWork;
-
-extern TelopWork telopRequest;
+#include "engine/telop_request.h"
 
 
 typedef struct { u16 ids[8]; } TelopIdList;

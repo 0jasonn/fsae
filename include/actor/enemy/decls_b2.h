@@ -18,8 +18,7 @@ extern "C" void keyClear(void);
 s16 *GetTablePlNum(s16 *table, u8 index);
 
 // display and DMA state (names from symbols.txt)
-extern u8 data_0212c4e0;
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u8 data_0212c4dc;   // doorsel sub-step
 extern u8 data_0212c500;   // doorsel step
 extern u32 data_0212c56c;
@@ -32,7 +31,7 @@ extern s16 data_020f260c[];   // pairs of s16 positions for the door select spri
 extern u8 data_0212ccb0[];
 extern u8 data_0212cdb0[];
 extern u8 data_0212de50[];
-extern u8 data_021361a0[];
+#include "engine/cockpit_state.h"
 extern u8 objAffineSet[];
 
 // em28 module callees (src/enemy/em28_3.cpp, em28_4.cpp, em1c and em26 headers hold the other declarations)

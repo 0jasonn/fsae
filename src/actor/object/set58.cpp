@@ -28,7 +28,7 @@ void body_init(Entity *e) {
     set58_bodyState[0x36] = 0;
     e->timer = 0;
     V58(e)->unk_7c = 0x122;
-    em12_typeMasks = 0;
+    em12_typeMasks[0] = 0;
     if (e->type == 0xb) {
         CgLoad(set58_cgIdsA[*((u8 *)&gameState + 1)]);
         return;

@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/message.h"
+#include "engine/entity.h"
 
 // Functions in this file (original names from the debug build):
 //   tlpInit
@@ -39,5 +40,81 @@ int tlpInit(void) {
     }
     telop->appInfo = data_0216efd4;
     *(KNIFE_MSGSYS **)(data_0216efd4 + 4) = telop;
+    return 0;
+}
+
+// Functions in this file (address -> name, pending reviewer apply to symbols.txt):
+//   msgOpen -> msgOpen
+//   tlpOpen -> tlpOpen
+//   msgClose -> msgClose
+//   tlpClose -> tlpClose
+
+// Scene state handlers: a table entry returns 0 when the state is done
+int msgOpen(void) {
+    if (messageBox.windowMode != 1) {
+        messageBox.windowMode = 1;
+        SoundReq(0x43);
+    }
+    statusUpdate((MSG_STATUS)2);
+    if (msgWinSizeChange(1) != 0) {
+        messageBox.state = 3;
+    }
+    return 0;
+}
+
+int tlpOpen(void) {
+    if (telopUpdate(-1) != 0) {
+        telopBox.state = 3;
+    }
+    return 0;
+}
+
+int msgClose(void) {
+    if (messageBox.windowMode != 3) {
+        messageBox.windowMode = 3;
+        messageBox.lineQueue[3] = 0;
+        messageBox.lineQueue[2] = 0;
+        messageBox.lineQueue[1] = 0;
+        messageBox.lineQueue[0] = 0;
+        SoundReq(0x44);
+    }
+    statusUpdate((MSG_STATUS)7);
+    if (msgWinSizeChange(-1) != 0) {
+        messageBox.state = 5;
+    }
+    return 0;
+}
+
+int tlpClose(void) {
+    if (telopUpdate(1) != 0) {
+        telopBox.state = 5;
+    }
+    return 0;
+}
+
+// Functions in this file (original names from the debug build):
+//   msgDie, tlpDie
+
+// Message box shutdown: starts the close animation and resets the state
+int msgDie(void) {
+    statusUpdate((MSG_STATUS)0);
+    messageBox.windowMode = 4;
+    messageBox.state = 0;
+    return 0;
+}
+
+// Telop box shutdown: stops the telop window and releases the request
+int tlpDie(void) {
+    telopUpdate(0);
+    telopBox.state = 0;
+    telopRequest.active = 0;
+    telopBox.windowPhase = 0;
+    return 0;
+}
+
+// Functions in this file (address -> name, pending reviewer apply to symbols.txt):
+//   Stub_ReturnZero2 -> Stub_ReturnZero2
+
+int Stub_ReturnZero2(void) {
     return 0;
 }

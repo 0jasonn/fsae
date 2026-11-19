@@ -9,7 +9,7 @@
 
 // Plays the heart alarm (sound 0x25) when the alarm timer is clear and the heart block is at most 0x10.
 void heartAlart(void) {
-    if ((frameState.frameCount & 0x3f) != 0 || frameCounter[0x11] != 0) {
+    if ((frameState.frameCount & 0x3f) != 0 || frameCounter.pauseRequest != 0) {
         return;
     }
     if (cockpitState.hearts > 0x10) {
@@ -40,7 +40,7 @@ void pinch_bgm_check(void) {
         if (gameState.unk_50[0x1] == 0) {
             gameState.unk_50[0x1] = 1;
             TelopRequest(0x4b4);
-            KAKERA_U32(0x10) = (u16)func_020867cc();
+            telopRequest.params[2] = (u16)func_020867cc();
         }
     } else {
         gameState.unk_50[0x1] = 0;

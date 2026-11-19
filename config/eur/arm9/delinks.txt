@@ -1952,31 +1952,11 @@ src/ui/message_2.cpp:
 
 src/ui/message_3.cpp:
     complete
-    .text       start:0x0204a048 end:0x0204a110
-
-src/ui/message_4.cpp:
-    complete
-    .text       start:0x0204a110 end:0x0204a250
-
-src/ui/message_5.cpp:
-    complete
-    .text       start:0x0204a250 end:0x0204a258
+    .text       start:0x0204a048 end:0x0204a258
 
 src/ui/message_6.cpp:
     complete
-    .text       start:0x0204a370 end:0x0204a4b4
-
-src/ui/message_7.cpp:
-    complete
-    .text       start:0x0204a4b4 end:0x0204a5bc
-
-src/ui/message_8.cpp:
-    complete
-    .text       start:0x0204a5bc end:0x0204a61c
-
-src/ui/message_9.cpp:
-    complete
-    .text       start:0x0204a61c end:0x0204a624
+    .text       start:0x0204a370 end:0x0204a624
 
 src/game/message_11.cpp:
     complete

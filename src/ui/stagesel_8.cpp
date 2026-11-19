@@ -9,7 +9,7 @@ void stagesel_message(void) {
         return;
     }
     CommUpdateJoy();
-    *(u32 *)(comWork + 0x3c) = 1;
+    comWork.send.stageFlag = 1;
     del_please_wait();
     switch (data_0212c4dc) {
     case 0:

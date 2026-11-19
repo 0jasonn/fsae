@@ -23,7 +23,7 @@ void pinch_bgm_check(void);
 #include "engine/cockpit_state.h"
 extern s32 data_0212c7d4[];
 // Heart alarm and pinch state bytes.
-extern u8 frameCounter[0x20];
+#include "engine/frame_counter.h"
 // Current player entity pointer (cockpit), and the katti graphics tables.
 extern u8 *data_0212c53c; // current player block (PlayerData-sized entries, read as bytes or as an entity pointer at 0x28)
 extern u32 data_020f2530[];
@@ -39,19 +39,16 @@ s32 abs_s32(s32 value);
 extern u8 data_0212c824[];
 extern u8 data_0212c830[];
 extern u16 data_0212c63c[];
-extern u8 telopRequest[];
+#include "engine/telop_request.h"
 
 #define GS_U8(off) (*((u8 *)&gameState + (off)))
 #define GS_S32(off) (*(s32 *)((u8 *)&gameState + (off)))
 
 // Cockpit graphics and object blocks used by the HUD code.
 #include "engine/display_state.h"
-extern u8 data_021361a0[];
 extern u8 data_0212c4a0[];
 extern u8 data_021369a0[];
 extern u16 data_020cf810[];
-
-#define KAKERA_U32(off) (*(u32 *)(telopRequest + (off)))
 
 #define PL_BYTE(i, off) (((u8 *)&playerWork[i])[off])
 #define PL_ENTITY(i) (playerWork[i].entity)

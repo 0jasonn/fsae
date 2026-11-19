@@ -7,7 +7,7 @@
 // actor switches to action 2.
 void body_sazanami(Entity *e) {
     Entity *ripple;
-    if (!(em12_typeMasks & 0x10)) {
+    if (!(em12_typeMasks[0] & 0x10)) {
         return;
     }
     if (V58(e)->unk_7c != 0) {

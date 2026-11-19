@@ -46,7 +46,7 @@ extern u32 data_0218708c;
 
 // Data used by disp_A_button (the OAM buffer is objAffineSet, see include/game/scene_d.h)
 extern u8 objAffineSet[];
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u32 data_021870b0;
 extern const u32 data_020df200[];
 

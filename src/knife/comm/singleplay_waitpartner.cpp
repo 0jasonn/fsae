@@ -16,7 +16,7 @@ void Knife_Single_SinglePlay_UpdateWaitPartner(void *self, PlayerData *player0, 
     ((SinglePlayWork *)self)->unk_08 = 0;
     ((SinglePlayWork *)self)->unk_09 = 0;
     ((SinglePlayWork *)self)->unk_0c = 0;
-    if (frameCounter[0x11] != 0) {
+    if (frameCounter.pauseRequest != 0) {
         return;
     }
     if (player0->entity == NULL) {

@@ -8,7 +8,7 @@
 //   twlInitAgb (0x0208294c): sets the graphics mode and the display control bit.
 //   twlInitSubDisplay (0x02082994): sets up the sub display and the KnifeApp settings block.
 
-extern u8 frameCounter[0x20];
+#include "engine/frame_counter.h"
 extern "C" void Vram_SetLcdcBits(u32 a);
 extern "C" void Vram_DisableBankTail(void);
 extern "C" void func_020148f0(u32 a);
@@ -20,8 +20,8 @@ extern "C" void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
 
 // BeforeTask (0x020828b8)
 void BeforeTask(void) {
-    frameCounter[0x14] = frameCounter[0x13];
-    frameCounter[0x13] = 0;
+    frameCounter.playersBoundPrev = frameCounter.playersBound;
+    frameCounter.playersBound = 0;
 }
 
 // twlInitVRAM (0x020828d4)

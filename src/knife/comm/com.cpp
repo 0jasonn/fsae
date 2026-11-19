@@ -8,9 +8,6 @@
 //   ComStart (ComStart(unsigned char)), ComRequest (ComRequest(unsigned char)), ComFinish (ComFinish(unsigned long)),
 //   func_0202809c (ComFinish(0), dsd name kept because stageseldecls.h declares it)
 
-#define COM_WORK ((ComWork *)comWork)
-
-extern u8 comWork[];
 
 void ComFinish(u32 finishArg);
 void ComRequest(u8 request);
@@ -23,11 +20,11 @@ void ComStart(u8 request) {
 
 // ComRequest (0x02028078): stores the request code and resets the phase and the request state.
 void ComRequest(u8 request) {
-    COM_WORK->request = request;
-    COM_WORK->phase = 0;
-    COM_WORK->requestFlag = 1;
-    COM_WORK->finishArg = 0;
-    COM_WORK->unk_0c = 0;
+    comWork.request = request;
+    comWork.phase = 0;
+    comWork.requestFlag = 1;
+    comWork.result = 0;
+    comWork.errorTimer = 0;
 }
 
 // func_0202809c (0x0202809c): ComFinish with argument 0. C++ linkage, as stageseldecls.h declares it.
@@ -37,9 +34,9 @@ void func_0202809c(void) {
 
 // ComFinish (0x020280ac): ends the request and keeps the argument in finishArg.
 void ComFinish(u32 finishArg) {
-    COM_WORK->request = 0;
-    COM_WORK->phase = 0;
-    COM_WORK->requestFlag = 0;
-    COM_WORK->finishArg = finishArg;
-    COM_WORK->unk_0c = 0;
+    comWork.request = 0;
+    comWork.phase = 0;
+    comWork.requestFlag = 0;
+    comWork.result = finishArg;
+    comWork.errorTimer = 0;
 }

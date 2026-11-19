@@ -5,7 +5,7 @@
 
 // Key synchronisation of the wireless players (module keysync): keysync_init (0x0202877c), keysync_move (0x02028804).
 
-extern u8 comWork[];
+#include "engine/com_work.h"
 extern u8 data_0212c9ec[];
 extern u32 data_0212c538;
 extern u8 data_02134cb0[];
@@ -23,27 +23,27 @@ void keysync_init(void) {
     }
     MIi_CpuClear16(0, data_0212c9ec, 0x34);
     data_0212c538 = 0;
-    comWork[1] += 1;
+    comWork.phase += 1;
 }
 
 // keysync_move (0x02028804): per-frame key synchronisation of the wireless players; calls key_update for every player the
 // comm block flags and acknowledges the frame.
 void keysync_move(void) {
-    *(u32 *)(comWork + 8) = 3;
-    comWork[0x44] = comWork[0x10] = 0x50;
+    comWork.result = 3;
+    comWork.next.tag = comWork.send.tag = 0x50;
     if (CommStatusSync(0x50) == 0) {
         return;
     }
-    if (comWork[3] & 1) {
+    if (comWork.status & 1) {
         key_update(0);
     }
-    if (comWork[3] & 2) {
+    if (comWork.status & 2) {
         key_update(1);
     }
-    if (comWork[3] & 4) {
+    if (comWork.status & 4) {
         key_update(2);
     }
-    if (comWork[3] & 8) {
+    if (comWork.status & 8) {
         key_update(3);
     }
     frame_ack();

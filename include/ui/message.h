@@ -9,18 +9,12 @@
 // A state returns 0 when it is finished for this frame.
 typedef int (*MsgStateFunc)(void);
 
-// Telop request block (telopRequest, 0x18 bytes)
+#include "engine/telop_request.h"
+
 typedef struct TelopDrawBits {
     u8 pos : 5;
     u8 rest : 3;
 } TelopDrawBits;
-typedef struct TelopWork {
-    /* 00 */ u8 active;
-    /* 01 */ u8 unk_01;
-    /* 02 */ u8 flags; // low nibble = 3 while a request is active, bits 4-5 = bank of (id - 1000) / 100
-    /* 03 */ u8 unk_03[3];
-    /* 06 */ u16 requestId; // bit 15 is set while the telop is busy
-} TelopWork;
 
 // One window slot (8 bytes): the telop and message boxes each have a primary and a secondary array of two
 typedef struct WindowSlot {
@@ -97,7 +91,6 @@ typedef struct KNIFE_MSGSYS {
 } // namespace Knife
 typedef Knife::Message::KNIFE_MSGSYS KNIFE_MSGSYS;
 
-extern TelopWork telopRequest;
 extern KNIFE_MSGSYS messageBox;
 extern KNIFE_MSGSYS telopBox;
 extern u8 data_0216efbc[];
@@ -110,7 +103,6 @@ extern u8 data_0216efc8[];
 extern u8 data_0216efd4[];
 extern u8 data_0211ed80[];
 extern u8 data_021371a0[];
-extern u8 data_021361a0[];
 extern MsgStateFunc messageStates[];
 extern MsgStateFunc telopStates[];
 extern VoidFunc msgMoveTable[];

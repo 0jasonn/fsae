@@ -15,7 +15,7 @@ typedef struct Vars_Set03Move {
 } Vars_Set03Move;
 
 extern const u32 flagBits[]; // area flag bit per type
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 
 // Cell of player k (its entity, 3 pixels below the feet).
 #define SET03_PLAYER_CELL(k) ((playerWork[k].entity->x.HALF.HI >> 4) | (((playerWork[k].entity->y.HALF.HI + 3) >> 4) << 6))

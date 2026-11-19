@@ -32,4 +32,8 @@ typedef struct CockpitState {
 } CockpitState;
 extern CockpitState cockpitState; // 0x0212c618
 
+// HUD/message BG tile map (0x1000 bytes): two 0x800-byte pages (32x32 u16 entries), page cockpitState.bufferIndex is
+// the one being drawn. The message windows draw into the same pages. dsd names page 1 data_021369a0.
+extern u8 data_021361a0[2][0x800];
+
 #endif

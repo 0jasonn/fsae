@@ -25,7 +25,6 @@ extern u16 playerKeysPrev[];
 extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
-extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 

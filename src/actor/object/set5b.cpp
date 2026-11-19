@@ -14,7 +14,7 @@ typedef struct Vars_Set5b {
 
 extern u16 data_0213492c[]; // per-area offset, read at [area * 2]
 extern u16 em12_spawnOffsetY[]; // per-area offset, read at [area * 2]
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 
 void Set5b(Entity *e) {
     Vars_Set5b *v = VARS(Vars_Set5b, e);

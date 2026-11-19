@@ -7,13 +7,13 @@
 // mapmode_move() (0x02026a34): steps the map screen of the HUD. While the map is allowed it advances the step byte
 // (3 and 4 draw the frame and the key counters, 5 puts the map markers), otherwise it closes the map and redraws.
 void mapmode_move(void) {
-    if (!(playerKeysPrev[localPlayerIndex] & 0x400) || (u8)(messageRequest.phase & 0x7f) != 0 || frameCounter[0x11] != 0 ||
+    if (!(playerKeysPrev[localPlayerIndex] & 0x400) || (u8)(messageRequest.phase & 0x7f) != 0 || frameCounter.pauseRequest != 0 ||
         gameState.unk_6e >= 2 || cockpitState.mode != 1) {
         cockpitState.mapStep = 0;
         cockpitState.clearMask = 1 << (cockpitState.bufferIndex ^ 1);
         displayState.blendCnt = 0;
         displayState.displayFlags &= ~0x4000;
-        MIi_CpuClearFast(0, data_021361a0 + (cockpitState.bufferIndex << 11) + 0x140, 0x280);
+        MIi_CpuClearFast(0, data_021361a0[cockpitState.bufferIndex] + 0x140, 0x280);
         func_02026774();
     } else {
         switch (cockpitState.mapStep) {

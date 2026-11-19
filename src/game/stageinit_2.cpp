@@ -57,7 +57,7 @@ void knife_native_init_0538e8(u8 param) {
 void Scene_ResetOverlayState(void) {
     MemClearFast(pauseState, 0x20);
     func_020a1a1c(pauseDialogWindow);
-    frameCounter[0x11] = 0;
+    frameCounter.pauseRequest = 0;
 }
 
 // Scene_SetFlag5 -> Scene_SetFlag5, Scene_ClearFlag5 -> Scene_ClearFlag5

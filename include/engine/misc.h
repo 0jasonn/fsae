@@ -53,15 +53,14 @@ extern VoidFunc data_0212c564;
 extern const VoidFunc data_02104a40[];
 extern const u16 mistStepTable[];
 extern const u32 titleDialogBlock;
-extern u8 frameCounter[0x20];
+#include "engine/frame_counter.h"
 extern u8 data_0212c4bc;
 extern u8 data_0212c4f8;
 extern u8 localPlayerIndex;
 #include "engine/cockpit_state.h"
-extern u8 data_021361a0[];
 extern const u8 data_020ce4d0[];
 extern s32 data_02134924;
-extern s32 em2f_mapFlag;
+#include "engine/em2f_map_flag.h"
 extern const VoidFunc data_02104a24[];
 
 

@@ -63,7 +63,7 @@ void em22_aim(Entity *e) {
 }
 
 void em22_move(Entity *e) {
-    if ((frameCounter & 7) == 0) {
+    if ((frameCounter.frame & 7) == 0) {
         func_02086200(e, GetDirectionToEntity(e, VARS(Vars_em22, e)->aimTarget));
     }
     spdmgr(e);

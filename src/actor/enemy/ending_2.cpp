@@ -27,7 +27,7 @@ void ending_init(void) {
     PlWorkClear();
     MIi_CpuClear16(0, &effectState, 0x28);
     DataLoad(8);
-    em12_typeMasks = 0;
+    em12_typeMasks[0] = 0;
     GetNPC(0x5d, 1, 0);
     data_02134d30.entity->x.HALF.HI = 0x1f8;
     data_02134d30.entity->y.HALF.HI = 0x1b8;

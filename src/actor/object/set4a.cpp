@@ -29,7 +29,7 @@ void set4a_init(Entity *e) {
 //   (set4a_init at 0x0205e1a8 is in scratch/agentF/nonmatching)
 
 extern const s8 data_020d8d00[]; // (dx, dy) pairs for the four directions, indexed by animation state
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 
 void set4a_move(Entity *e) {
     s32 hitResult;
@@ -41,7 +41,7 @@ void set4a_move(Entity *e) {
     }
     MoveDir(e);
     UpdateAnimationSingleFrame(e);
-    if (frameCounter & 2) {
+    if (frameCounter.frame & 2) {
         e->spriteSettings.b16 = 6;
     } else {
         e->spriteSettings.b16 = 3;

@@ -9,7 +9,7 @@
 // in effectState.timer, updates the HUD and starts the white-out; state 1 waits for the second timer and starts the
 // next subtask. The terminate handler in data_0212c564 and func_020830ec run on every step.
 extern u8 data_0212c4dc;   // terminate state
-extern u8 data_0212c4c8;   // HUD update mode
+#include "engine/vblank_request.h"
 extern u16 data_0212c510;  // bit 0 requests the white-out
 #include "engine/effect_state.h"
 extern void (*data_0212c564)(void); // terminate handler

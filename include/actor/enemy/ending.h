@@ -38,9 +38,8 @@ extern u8 data_0216fd04[];
 extern u8 objAffineSet[];
 extern u8 data_0212ccb0[];
 #include "engine/cockpit_state.h"
-extern u8 data_021361a0[];
-extern u32 em12_typeMasks;
-extern u32 em2f_mapFlag;
+#include "engine/em12_type_masks.h"
+#include "engine/em2f_map_flag.h"
 extern u8 data_0212c4dc;
 extern u8 data_0212c500;
 extern VoidFunc data_0212c564;

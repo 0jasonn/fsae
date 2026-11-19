@@ -10,7 +10,7 @@
 extern const EntityFunc data_02115a20[]; // indexed by e->action
 extern const s16 data_02115a2c[];
 extern const s16 data_02115a3c[];
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 
 void posAdd(Entity *e, WWORK *offset);
 

@@ -12,14 +12,14 @@ void AddRupeeKakera(Entity *e) {
     switch (data_0212c830[e->type]) {
     case 1:
         TelopRequest(0x515);
-        KAKERA_U32(8) = (u16)(e->type + 1);
-        KAKERA_U32(0x10) = 500;
+        telopRequest.params[0] = (u16)(e->type + 1);
+        telopRequest.params[2] = 500;
         break;
     case 2:
     case 3:
         TelopRequest(0x516);
-        KAKERA_U32(8) = (u16)(e->type + 1);
-        KAKERA_U32(0xc) = (u16)(4 - data_0212c830[e->type]);
+        telopRequest.params[0] = (u16)(e->type + 1);
+        telopRequest.params[1] = (u16)(4 - data_0212c830[e->type]);
         break;
     case 4:
         data_0212c63c[e->type] = 0xf;

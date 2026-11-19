@@ -16,7 +16,7 @@ void knife_commDispDie(KNIFE_MSGSYS *msg) {
 }
 
 extern u8 localPlayerIndex[];
-extern u8 frameCounter[0x20];
+#include "engine/frame_counter.h"
 extern u16 playerKeys[];
 
 // Line feed of the message: waits for the timer and the key flags, then starts the next line
@@ -26,7 +26,7 @@ void knife_commDispLF(KNIFE_MSGSYS *msg) {
     void *instance;
 
     if (msg->openMode == 2) {
-        state = frameCounter[0x11];
+        state = frameCounter.pauseRequest;
         if ((state & 0x80) != 0 && (state & 3) == localPlayerIndex[0]) {
             return;
         }

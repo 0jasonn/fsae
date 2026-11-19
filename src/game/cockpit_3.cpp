@@ -28,5 +28,5 @@ void CockpitRecovery(u8 kind, u8 amount) {
 void cockpit_load(void) {
     DataLoad(1);
     func_02027778();
-    MIi_CpuCopyFast(data_021361a0, data_021369a0, 0x800);
+    MIi_CpuCopyFast(data_021361a0[0], data_021369a0, 0x800);
 }

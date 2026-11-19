@@ -16,7 +16,7 @@ void Tama06(Entity *e) {
         if (e->type == 0) {
             return;
         }
-        if (e->child->action != 7 && frameCounter % 3 + 1 == e->type) {
+        if (e->child->action != 7 && frameCounter.frame % 3 + 1 == e->type) {
             e->spriteSettings.b0 = 1;
         } else {
             e->spriteSettings.b0 = 0;

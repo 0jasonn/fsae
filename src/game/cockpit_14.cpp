@@ -12,6 +12,6 @@ void CockpitOn(void) {
     func_02027778();
     bg_trans_body();
     cockpitState.transMask = 1 << cockpitState.bufferIndex;
-    MIi_CpuCopyFast(data_021361a0 + cockpitState.bufferIndex * 0x800, data_021361a0 + ((cockpitState.bufferIndex ^ 1) * 0x800), 0x140);
+    MIi_CpuCopyFast(data_021361a0[cockpitState.bufferIndex], data_021361a0[cockpitState.bufferIndex ^ 1], 0x140);
     CockpitUpdate();
 }

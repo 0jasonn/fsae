@@ -6,7 +6,7 @@
 //   0x0205afac set2f_move (original name)
 //   0x0205b024 rewlever (original name)
 
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[]; // flagBits, indexed by e->type
 
 void rewlever(Entity *e);

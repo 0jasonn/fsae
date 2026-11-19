@@ -15,6 +15,6 @@ typedef struct Vars_Set30 {
 
 extern const u32 flagBits[];
 extern const s8 motiaAnimTable[];
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 
 #endif

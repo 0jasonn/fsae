@@ -21,7 +21,7 @@ typedef struct Vars_Set03 {
 extern const EntityFunc set03_actions[]; // set03_actions, indexed by e->action
 extern const u8 data_020d8a5c[];          // hitbox of the switch
 extern const u32 flagBits[];             // flagBits, indexed by e->type
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 #include "engine/map_state.h"
 
 // Cell of player k (its entity, 3 pixels below the feet).

@@ -51,7 +51,7 @@ extern u8 data_0217d348[];   // pointer to the table of the received data blocks
 
 extern u8 pauseDialogWindow[];   // pauseDialogWindow, the selection dialog of the lobby
 extern u8 pauseDialogBuffer[];   // pauseDialogBuffer, screen block of the selection dialog (0x600 bytes)
-extern u8 comWork[];   // exchange state, the key block of the four players (stride 0x34) at +0x7a
+#include "engine/com_work.h"
 extern u8 playerKeysPrev[];   // previous key state of the four players (u16 each)
 extern u8 playerKeys[];   // new keys of the four players (u16 each), also the key state of the machine
 extern u8 data_0212c514[];   // key state of the machine (u16)

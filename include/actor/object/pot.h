@@ -47,7 +47,7 @@ void zelda_disp(Entity *e);
 extern const EntityFunc data_020d9028[]; // set5c update state table indexed by e->action
 extern const s16 trigTable[]; // sine table (trigTable)
 #include "engine/effect_state.h"
-extern u32 em12_typeMasks[]; // one mask per area (0x02134954)
+#include "engine/em12_type_masks.h"
 extern u16 data_0213492c[]; // per-area offset, read at [area * 2]
 extern u16 em12_spawnOffsetY[]; // per-area offset, read at [area * 2]
 int func_02083d4c(u16 a, u16 b); // thumb, cell state of the shutter

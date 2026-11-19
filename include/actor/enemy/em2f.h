@@ -25,14 +25,14 @@ extern const EntityFunc em2f_actions[];
 extern const u8 em2f_hitbox[];
 extern const u8 em2f_healthByDifficulty[];
 extern const u8 em2f_mapData[];
-extern s32 em2f_mapFlag;
+#include "engine/em2f_map_flag.h"
 extern u8 localPlayerIndex;
 #include "engine/cockpit_state.h"
 extern const u16 em2f_tsubomiSpeeds[];
 extern const u32 flagBits[];
 extern const s16 trigTable[];
 extern const u8 em2f_fiveAttackCounts[];
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 extern const u8 em2f_slotNext[][8];
 extern const u16 *const em2f_tsubomiPaths[];
 extern const u8 em2f_moveGateMasks[];

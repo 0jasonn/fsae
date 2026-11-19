@@ -7,7 +7,7 @@
 // cursor reaches the end stored in data_0212c570; then that end is set to the start of the half for the next pass.
 typedef u8 *(*QueueHandler)(u8 *cursor);
 extern u8 data_0212ccb0[];
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u32 data_0212c570;
 extern const QueueHandler queueHandlerTable[];
 

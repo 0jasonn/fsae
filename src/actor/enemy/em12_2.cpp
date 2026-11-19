@@ -86,7 +86,7 @@ void em12_return(Entity *e) {
     int diff;
 
     UpdateAnimationSingleFrame(e);
-    playerIndex = (frameCounter & 3) % gameState.playerCount;
+    playerIndex = (frameCounter.frame & 3) % gameState.playerCount;
     target = playerWork[playerIndex].entity;
     if ((u32)(target->x.HALF.HI - V(e)->areaX) <= V(e)->areaW &&
         (u32)(target->y.HALF.HI - V(e)->areaY) <= V(e)->areaH) {

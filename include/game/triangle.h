@@ -8,7 +8,7 @@
 extern s16 triangleTable[];
 // Circle span bank (data_021352a0): 0x180 bytes per bank index, selected by data_0212c4c8.
 extern u8 data_021352a0[];
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 
 extern "C" {
 void make_circle_data(s16 centerX, s16 centerY, s16 count);

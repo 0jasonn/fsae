@@ -12,7 +12,7 @@
 extern u8 data_0212ced8[];
 #define TEMPLATE_OF(type) (*(Entity **)(data_0212ced8 + (type) * 0x94))
 
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u8 data_020d8858[]; // hitbox used when type2 & 2
 extern const u8 data_020d8850[]; // hitbox used otherwise
 

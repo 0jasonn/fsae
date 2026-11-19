@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "game/scene.h"
-#include "engine/misc.h"  // frameCounter[0x20]: byte 0x11 holds the request of the running pause
+#include "engine/misc.h"  // frameCounter.pauseRequest holds the request of the running pause
 #include "global.h"
 
 // pause_req_wait (0x02053aec): waits for the request delay (pauseState[2]) of a pause request to run out, then starts
@@ -27,7 +27,7 @@ void pause_req_wait(void) {
         }
     }
     if (pauseState[0] != 2) {
-        frameCounter[0x11] = 0;
+        frameCounter.pauseRequest = 0;
         pauseState[0] = 0;
     }
 }

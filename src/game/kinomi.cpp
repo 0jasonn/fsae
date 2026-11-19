@@ -6,7 +6,6 @@
 
 // Kinomi HUD display (module kinomi, second file). Original name from the debug build: kinomi_disp().
 
-extern u8 data_021361a0[];
 extern u16 data_020cf868[];
 
 // Writes nine six-halfword rows (rows 5 to 13 of the screen block, 0x40 bytes apart, starting at block + 8) from the
@@ -18,7 +17,7 @@ void kinomi_disp(void) {
     s32 index;
     u8 i;
 
-    block = data_021361a0 + (cockpitState.bufferIndex << 11);
+    block = data_021361a0[cockpitState.bufferIndex];
     table = data_020cf868;
     i = 0;
     do {
@@ -54,9 +53,9 @@ void kinomi_write_sub(u16 *dst, u8 mode, u16 value);
 // kinomi_write (0x02027930): three kinomi tile pairs in the block selected by cockpitState.bufferIndex (0x800 bytes each). Each
 // pair takes its mode from one of the 2-bit fields of the byte at +0x3e of the block pointed to by data_0212c53c.
 void kinomi_write(void) {
-    kinomi_write_sub((u16 *)(data_021361a0 + (cockpitState.bufferIndex << 11) + 0x8e + 0x100), KINOMI_MODES(data_0212c53c)->modeLow, 0x2e);
-    kinomi_write_sub((u16 *)(data_021361a0 + (cockpitState.bufferIndex << 11) + 0x4e + 0x200), KINOMI_MODES(data_0212c53c)->modeMid, 0x102d);
-    kinomi_write_sub((u16 *)(data_021361a0 + (cockpitState.bufferIndex << 11) + 0xe + 0x300), KINOMI_MODES(data_0212c53c)->modeHigh, 0x202c);
+    kinomi_write_sub((u16 *)(data_021361a0[cockpitState.bufferIndex] + 0x8e + 0x100), KINOMI_MODES(data_0212c53c)->modeLow, 0x2e);
+    kinomi_write_sub((u16 *)(data_021361a0[cockpitState.bufferIndex] + 0x4e + 0x200), KINOMI_MODES(data_0212c53c)->modeMid, 0x102d);
+    kinomi_write_sub((u16 *)(data_021361a0[cockpitState.bufferIndex] + 0xe + 0x300), KINOMI_MODES(data_0212c53c)->modeHigh, 0x202c);
 }
 
 // Writes two tile words at dst: mode 0 blanks both with tile 0xc, mode 1 writes value then 0xc, any other mode writes

@@ -45,7 +45,7 @@ void Enemy_ArmSharedState(void) {
 // state byte in encntState.
 
 void Encounter(void) {
-    if (((u8 *)&frameCounter)[0x12] != 0) {
+    if (frameCounter.stopRequest != 0) {
         return;
     }
     encntStateFuncs[encntState.state]();

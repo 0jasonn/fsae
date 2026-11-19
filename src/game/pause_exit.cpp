@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "game/scene.h"
-#include "engine/misc.h"  // frameCounter[0x20]: byte 0x11 holds the request of the running pause
+#include "engine/misc.h"  // frameCounter.pauseRequest holds the request of the running pause
 #include "global.h"
 
 // pause_exit (0x0205420c): waits for the exit choice of the pause dialog. CommJoyCheck of the three keys (0xd0, 0xe0,
@@ -41,7 +41,7 @@ void pause_exit(void) {
             pauseState[0] += 3;
         }
     } else {
-        frameCounter[0x11] = 0;
+        frameCounter.pauseRequest = 0;
         pauseState[0] = 0;
         pauseState[0xe] = 0;
     }

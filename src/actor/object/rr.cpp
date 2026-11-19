@@ -10,7 +10,7 @@
 
 extern const EntityFunc rr_actions[];         // rr_actions, indexed by e->action
 extern const u8 setRupee_kindTable[];         // setRupee_kindTable, indexed by the kind index
-extern u32 em12_typeMasks[];                  // indexed by e->areaIndex
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[];                  // indexed by e->type2
 extern u16 data_0213492c[];                   // per area x offset, u16 pairs
 extern u16 em12_spawnOffsetY[];               // per area y offset, u16 pairs

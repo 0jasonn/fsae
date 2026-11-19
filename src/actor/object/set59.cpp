@@ -35,8 +35,8 @@ void set59_init(Entity *e) {
 }
 
 void set59_move(Entity *e) {
-    em12_typeMasks |= 0x80;
-    if (em12_typeMasks & 0x100) {
+    em12_typeMasks[0] |= 0x80;
+    if (em12_typeMasks[0] & 0x100) {
         PutObjWork(e);
     }
 }

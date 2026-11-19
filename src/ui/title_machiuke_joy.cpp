@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 
-extern u8 comWork[];
+#include "engine/com_work.h"
 extern u16 playerKeys[];
 extern u16 data_0212c514;
 
@@ -15,7 +15,7 @@ void title_machiuke_joy(void) {
     func_020909c8();
     app = KnifeApp_getInstance();
     for (i = 0; i < 4; i++) {
-        u16 key = *(u16 *)(comWork + i * 0x34 + 0x7a);
+        u16 key = comWork.recv[i].keys;
         if (key != 0xffff) {
             playerKeys[i] = key & ~playerKeysPrev[i];
         } else {
@@ -25,7 +25,7 @@ void title_machiuke_joy(void) {
     }
     if (KnifeApp_isWirelessMode(app) == 0) {
         playerKeys[0] = data_0212c514;
-        *(u16 *)(comWork + 0x7a) = data_0212c514;
+        comWork.recv[0].keys = data_0212c514;
     }
-    *(u16 *)(comWork + 0x12) = data_0212c514;
+    comWork.send.keys = data_0212c514;
 }

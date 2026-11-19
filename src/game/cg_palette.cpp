@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 
-extern u32 em2f_mapFlag; // bit per palette slot that has to be uploaded to the screen (called paletteDirtyMask here)
+#include "engine/em2f_map_flag.h"
 extern u16 *data_020f2a18; // colour translation table (3 x 32 entries: red, green, blue), NULL when unused
 extern u16 data_021355a0[]; // palette buffer, 16 colours per slot
 

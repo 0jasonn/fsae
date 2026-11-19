@@ -222,7 +222,7 @@ void Knife_Single_SinglePlay_UpdateMovePartner(void *self, SpWorkPair *pair) {
     }
     ((PalBits *)&pair->player0->paletteBits)->a = 1;
     ((PalBits *)&pair->player1->paletteBits)->a = 3;
-    if (frameCounter[0x11] != 0) {
+    if (frameCounter.pauseRequest != 0) {
         return;
     }
     if (!((pair->unk_18 | pair->unk_1e) & 0xf0)) {

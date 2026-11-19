@@ -6,7 +6,7 @@
 #include "engine/misc.h"
 
 extern u8 data_0212c830[];   // per-player value copied to the HUD block byte 0x0a
-extern u8 data_0212c4c8;     // local player index for the HUD
+#include "engine/vblank_request.h"
 
 
 extern u8 pauseDialogWindow[];

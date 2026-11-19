@@ -5,7 +5,7 @@
 
 extern const s8 em1b_dirDeltaTable[]; // em1b_dirDeltaTable, two entries (-1, +1)
 
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 void ofsset(Entity *e); // em1b_2 is not the unit that defines it, see the note in the report
 extern EntityFunc em1b_type1Actions[];   // em1b_type1Actions, indexed by e->action
 extern const u8 em1b_type1Hitbox[];      // em1b_type1Hitbox, used when type == 1

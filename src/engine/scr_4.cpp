@@ -58,7 +58,7 @@ extern u8 data_02148fa0[];
 extern u8 data_02163fa4[];
 extern u8 data_02135640[];
 extern u8 data_02135840[];
-extern u32 em2f_mapFlag;
+#include "engine/em2f_map_flag.h"
 
 void MultiRoomSet(void) {
     MIi_CpuCopy32(data_02158fa4, data_0215bfa4, 0x2000);

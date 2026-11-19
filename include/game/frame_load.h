@@ -40,7 +40,7 @@ BOOL checkSingleErrorParts(u8 mode, u16 partId);
 
 #include "engine/map_state.h"
 extern u8 localPlayerIndex;
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u8 data_02103e84[];    // 8 byte start layouts, indexed by the low nibble of game state byte 0x4f
 extern u8 data_0212c84c[];          // copy of the 8 start slots
 

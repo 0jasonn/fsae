@@ -18,7 +18,7 @@ void multiplay_init(void) {
         ((MultiFlagByte *)((u8 *)playerWork + i * 0x94 + 0x8b))->b2 = ((MultiFlagWord *)(data_0212ca44 + i * 0x34))->b0;
     }
     PlWorkClear();
-    frameCounter[0x12] = 0;
+    frameCounter.stopRequest = 0;
     data_0212c53c = &playerWork[localPlayerIndex];
     data_0212c500++;
 }
