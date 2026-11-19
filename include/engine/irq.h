@@ -14,6 +14,7 @@ typedef struct HBlankDmaState {
     void *src;  // 0x04
     void *dst;  // 0x08
 } HBlankDmaState;
+extern HBlankDmaState hblankDma;  // 0x0212c59c: the VBlank handler restarts the HBlank DMA from it
 
 typedef struct IrqState {
     u8 unk_00[8];

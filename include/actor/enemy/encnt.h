@@ -1,8 +1,21 @@
-#ifndef WIP_B_ENCNT_H
-#define WIP_B_ENCNT_H
+#ifndef ACTOR_ENEMY_ENCNT_H
+#define ACTOR_ENEMY_ENCNT_H
 
 #include "engine/player.h"
 
+// One record per spawn slot (encntEntries).
+typedef struct ENCNT_ { // original name ENCNT_
+    u16 x;
+    u16 y;
+    u8 angle;
+    u8 taken;                   // set when the slot is taken
+    u8 initialised;             // set once the slot has been initialised
+    u8 unk_07;
+} EncntEntry;
+
+// encntState is one object whose slot records start at +0x18 (the symbol encntEntries at 0x02134b60 is that sub-object).
+// With the records inside the struct the compiler re-reads limit/kind after each store, as the original does
+// (encnt_setinit, encnt_poscheck, encnt_setem).
 // Encounter state (encntState), used by the encnt_* functions at 0x02043760 and their helpers.
 typedef struct EncntState {
     /* 00 */ u8 count;             // number of spawn slots filled so far
@@ -16,23 +29,16 @@ typedef struct EncntState {
     /* 0a */ u8 unk_0a[6];
     /* 10 */ Entity *entity;       // player entity picked by encnt_move
     /* 14 */ const u16 *table;     // pair table indexed by slot
-    /* 18 */ u8 unk_18[0x44];
+    /* 18 */ EncntEntry entries[8];
+    /* 58 */ u8 unk_58[4];
     /* 5c */ u16 timerBase;        // centre of the random timer set by nextset
     /* 5e */ u8 unk_5e[8];
     /* 66 */ u8 timerRange;        // size of the random spread for timerBase
 } EncntState;
 extern EncntState encntState;
+extern EncntEntry encntEntries[];   // the same object as encntState.entries (0x02134b60)
 
-// One record per spawn slot (encntEntries).
-typedef struct ENCNT_ { // original name ENCNT_
-    u16 x;
-    u16 y;
-    u8 angle;
-    u8 taken;                   // set when the slot is taken
-    u8 initialised;             // set once the slot has been initialised
-    u8 unk_07;
-} EncntEntry;
-extern EncntEntry encntEntries[];
+
 
 // Node of the circular lists in data_0212c6b0: next at +4, tag and subtag at +8 and +9 (Entity unk_08/unk_09).
 typedef struct EncntNode {
