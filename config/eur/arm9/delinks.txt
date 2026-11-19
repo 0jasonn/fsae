@@ -4979,7 +4979,7 @@ src/engine/card_2.cpp:
 
 src/engine/card_pullout.cpp:
     complete
-    .text       start:0x020a46b0 end:0x020a4708
+    .text       start:0x020a46b0 end:0x020a4798
 
 src/engine/card_pullout_2.cpp:
     complete
@@ -5636,6 +5636,10 @@ src/ui/widget/rect_list.cpp:
 src/ui/widget/rect_list_2.cpp:
     complete
     .text       start:0x020b826c end:0x020b82f4
+
+src/ui/widget/rect_list_update.cpp:
+    complete
+    .text       start:0x020b82f4 end:0x020b8384
 
 src/ui/widget/rect_list_3.cpp:
     complete

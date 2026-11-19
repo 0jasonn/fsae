@@ -1,11 +1,7 @@
 #include "engine/functions.h"
 #include "engine/card.h"
 
-// NitroSDK card pull-out unit. Functions in this file:
-//   CARDi_WaitAsyncThunk (0x020a46b0), CARDi_SetOwnSignature (0x020a46bc),
-//   CARD_InitPulledOutCallback (0x020a46d4), CARD_GetPulledOutFlag (0x020a4798).
-// The PXI receive callback CARDi_PulledOutCallback (0x020a4708) is parked in scratch/agentC/nonmatching
-// (its two instructions that load the state pointer use r2/r3 the other way round).
+// NitroSDK card pull-out setup and PXI receive callback (0x020a46b0 through 0x020a4798).
 
 void CARDi_WaitAsyncThunk(void) {
     CARDi_WaitAsync();
@@ -23,3 +19,35 @@ void CARD_InitPulledOutCallback(void) {
     data_0217e2c0.callback = NULL;
 }
 
+// Handles PXI pull-out and insertion notices. State fields are defined by
+// CardPulledOutState; message masks and event values come from this callback.
+void CARDi_PulledOutCallback(u32 arg0, u32 message, s32 arg2) {
+    u32 kind = message & 0x3f;
+
+    if (kind == 0x11) {
+        s32 shouldTerminate;
+        s32 (*callback)(void);
+
+        if (data_0217e2c0.pulledOut != 0) {
+            return;
+        }
+        shouldTerminate = 1;
+        data_0217e2c0.pulledOut = 1;
+        CARDi_NotifyEvent(1, 0);
+        callback = data_0217e2c0.callback;
+        if (callback != NULL) {
+            shouldTerminate = callback();
+        }
+        if (shouldTerminate != 0) {
+            CARD_TerminateForPulledOut();
+        }
+        return;
+    }
+    if (kind == 2) {
+        data_0217e2c0.insertCount++;
+        data_0217e2c0.pulledOut = 0;
+        CARDi_NotifyEvent(2, 0);
+        return;
+    }
+    OS_Terminate();
+}
