@@ -1761,6 +1761,10 @@ src/actor/enemy/em29_3.cpp:
     complete
     .text       start:0x02041a3c end:0x02042044
 
+src/actor/enemy/plhikiyose.cpp:
+    complete
+    .text       start:0x02042044 end:0x020421f8
+
 src/actor/enemy/em30.cpp:
     complete
     .text       start:0x020421f8 end:0x02042318
@@ -1793,9 +1797,17 @@ src/actor/enemy/em30_7.cpp:
     complete
     .text       start:0x020429c8 end:0x02042abc
 
+src/actor/enemy/em30_type3.cpp:
+    complete
+    .text       start:0x02042abc end:0x02042c18
+
 src/actor/enemy/em30_8.cpp:
     complete
     .text       start:0x02042c18 end:0x02042dc8
+
+src/actor/enemy/em30_damagecheck.cpp:
+    complete
+    .text       start:0x02042dc8 end:0x02042f30
 
 src/actor/enemy/em30_9.cpp:
     complete
@@ -1896,6 +1908,10 @@ src/actor/enemy/em_aim_drop.cpp:
 src/actor/enemy/enemycommon_2.cpp:
     complete
     .text       start:0x0204602c end:0x02046130
+
+src/game/itemregist.cpp:
+    complete
+    .text       start:0x02046130 end:0x020461e0
 
 src/game/fade.cpp:
     complete
