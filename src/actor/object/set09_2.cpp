@@ -7,7 +7,7 @@
 //   0x02062ce4 set09_wait, 0x02062d90 set09_initset, 0x02062dc4 set09_move, 0x02062e14 set09_wait2 (original names)
 
 extern const EntityFunc data_020d9f38[]; // indexed by e->action
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 void BgmSet(void);
 void set6b_setenemy(Entity *e, u8 index);
 extern u32 flagBits[]; // one bit word per type2 bit (0x1f)
@@ -26,8 +26,8 @@ void set09_wait(Entity *e) {
             gameState.unk_26 = 0x1a1;
         }
         if (e->objId == 9) {
-            u8 count52 = ((u8 *)&gameState)[0x52];
-            ((u8 *)&gameState)[0x52] = count52 + 1;
+            u8 count52 = gameState.unk_50[2];
+            gameState.unk_50[2] = count52 + 1;
         }
     }
     e->action = 2;

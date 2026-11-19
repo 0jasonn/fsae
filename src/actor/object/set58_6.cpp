@@ -53,7 +53,7 @@ void aura_move(Entity *e) {
 
     e->timer--;
     if (e->timer == 0) {
-        em12_typeMasks |= 1;
+        em12_typeMasks[0] |= 1;
         e->action = 3;
         func_02085d34(e);
         return;

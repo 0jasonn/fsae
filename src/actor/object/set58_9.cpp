@@ -92,7 +92,7 @@ void kougyoku_wait(Entity *e) {
     }
     e->action = 3;
     e->timer = 0x3c;
-    em12_typeMasks |= 4;
+    em12_typeMasks[0] |= 4;
 }
 
 void kougyoku_down(Entity *e) {
@@ -100,7 +100,7 @@ void kougyoku_down(Entity *e) {
     if (e->timer != 0) {
         return;
     }
-    em12_typeMasks |= 8;
+    em12_typeMasks[0] |= 8;
     PutObjWork(e);
 }
 
@@ -117,7 +117,7 @@ void kougyoku2_move(Entity *e) {
 }
 
 void kougyoku2_wait(Entity *e) {
-    if (!(em12_typeMasks & 4)) {
+    if (!(em12_typeMasks[0] & 4)) {
         return;
     }
     e->action = 3;
@@ -133,7 +133,7 @@ void kougyoku2_down(Entity *e) {
         MoveDir(e);
         return;
     }
-    if (!(em12_typeMasks & 8)) {
+    if (!(em12_typeMasks[0] & 8)) {
         return;
     }
     child = GetSetWork(0x59, 0, 0);

@@ -19,7 +19,7 @@ typedef struct Set41TimerList {
 extern const EntityFunc set41Table[];       // set41Table, indexed by action
 extern "C" void func_02085fac(Entity *e);
 extern const u8 set41Hitbox[];              // set41Hitbox
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const Set41TimerList set41Timers; // set41Timers
 
 #endif

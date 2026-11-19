@@ -57,7 +57,7 @@ void em0c_shoot(Entity *e) {
     Entity *shot;
 
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance())) {
-        target = playerWork[*(u16 *)frameCounter & 3].entity;
+        target = playerWork[frameCounter.frame & 3].entity;
         if (target == NULL) {
             return;
         }

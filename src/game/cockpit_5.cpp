@@ -14,66 +14,66 @@ void rupeeUpdate(void) {
     u8 value;
 
     value = gameState.unk_24 & 0x7f;
-    if (cockpitState[0xd] != value) {
-        cockpitState[0xd] = value;
-        cockpitState[2] = 1;
+    if (cockpitState.unk_0d != value) {
+        cockpitState.unk_0d = value;
+        cockpitState.redraw = 1;
     }
     target = (s32)gameState.score;
-    diff = abs_s32(target - *(s32 *)(cockpitState + 0x10));
+    diff = abs_s32(target - cockpitState.rupees);
     if (diff == 0) {
         return;
     }
     if (diff > 1000) {
-        current = *(s32 *)(cockpitState + 0x10);
+        current = cockpitState.rupees;
         if ((u32)current < (u32)target) {
-            *(s32 *)(cockpitState + 0x10) = current + 1000;
+            cockpitState.rupees = current + 1000;
         } else {
-            *(s32 *)(cockpitState + 0x10) = current - 1000;
+            cockpitState.rupees = current - 1000;
         }
     } else if (diff > 100) {
-        current = *(s32 *)(cockpitState + 0x10);
+        current = cockpitState.rupees;
         if ((u32)current < (u32)target) {
-            *(s32 *)(cockpitState + 0x10) = current + 100;
+            cockpitState.rupees = current + 100;
         } else {
-            *(s32 *)(cockpitState + 0x10) = current - 100;
+            cockpitState.rupees = current - 100;
         }
     } else if (diff > 10) {
-        current = *(s32 *)(cockpitState + 0x10);
+        current = cockpitState.rupees;
         if ((u32)current < (u32)target) {
-            *(s32 *)(cockpitState + 0x10) = current + 10;
+            cockpitState.rupees = current + 10;
         } else {
-            *(s32 *)(cockpitState + 0x10) = current - 10;
+            cockpitState.rupees = current - 10;
         }
     } else {
-        *(s32 *)(cockpitState + 0x10) = target;
+        cockpitState.rupees = target;
     }
-    cockpitState[2] = 1;
+    cockpitState.redraw = 1;
 }
 
 // Moves the heart display counter (byte 8) one step towards the health of the current player.
 void heartUpdate(u16 kind) {
     s32 health;
 
-    if ((*(u16 *)frameCounter & 3) != 0) {
+    if ((frameCounter.frame & 3) != 0) {
         return;
     }
-    cockpitState[9] = (u8)kind;
-    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0 || (PL_BYTE(0, 0x3c) == 0 && PL_BYTE(1, 0x3c) == 0)) {
-        health = (*(Entity **)(data_0212c53c + 0x28))->health;
+    cockpitState.heartKind = (u8)kind;
+    if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0 || (playerWork[0].callState == 0 && playerWork[1].callState == 0)) {
+        health = data_0212c53c->entity->health;
     } else {
         health = 0;
     }
-    if (cockpitState[8] == health) {
+    if (cockpitState.hearts == health) {
         return;
     }
-    cockpitState[2] = 1;
-    if (cockpitState[8] < health) {
-        cockpitState[8] += 1;
-        if ((cockpitState[8] & 7) == 0) {
+    cockpitState.redraw = 1;
+    if (cockpitState.hearts < health) {
+        cockpitState.hearts += 1;
+        if ((cockpitState.hearts & 7) == 0) {
             SoundReq(7);
         }
     } else {
-        cockpitState[8] -= 1;
+        cockpitState.hearts -= 1;
     }
 }
 
@@ -82,7 +82,7 @@ void bg_trans_body(void) {
     rupee_disp();
     addrupee_disp();
     heart_disp();
-    if (cockpitState[5] != 0) {
+    if (cockpitState.mapStep != 0) {
         kakera_disp();
         kinomi_write();
     }

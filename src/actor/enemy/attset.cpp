@@ -13,7 +13,6 @@ typedef struct Vars_Attset {
 } Vars_Attset;
 #define VAtt(e) VARS(Vars_Attset, e)
 
-extern GridOrigin mapState;
 
 // Attset: saves the attribute byte of the cell under the entity in the layer and marks it with 0x0f.
 void attset(Entity *e) {

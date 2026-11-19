@@ -10,24 +10,10 @@
 
 extern "C" BOOL GameState_UpdatePhase(void);
 
-// Frame counter block (frameCounter at 0x0212c5bc)
-typedef struct FrameCounterBlock {
-    /* 00 */ u16 frame;
-    /* 02 */ u16 timer; // generic countdown used by the scene state machines
-    /* 04 */ u8 unk_04[0xd];
-    /* 11 */ u8 pauseFlag;
-    /* 12 */ u8 unk_12;
-    /* 13 */ u8 inputLock;
-} FrameCounterBlock;
-extern FrameCounterBlock frameCounter;
+#include "engine/frame_counter.h"
 
-// Fade request (blendRequest at 0x0212c5ac): blendEnabled stays nonzero while a fade is running
-typedef struct FadeRequest {
-    /* 00 */ u8 blendEnabled;
-} FadeRequest;
-extern FadeRequest blendRequest;
+#include "engine/blend_request.h"
 
-extern u8 messageRequest[]; // scene control bytes: low 7 bits of [0] are the mode
 extern u8 localPlayerIndex;
 extern u8 data_0212c500; // game phase
 extern u8 data_0212c4dc; // sub-state of the current phase

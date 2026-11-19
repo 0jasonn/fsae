@@ -7,7 +7,7 @@
 // actor switches to action 2.
 void body_sazanami(Entity *e) {
     Entity *ripple;
-    if (!(em12_typeMasks & 0x10)) {
+    if (!(em12_typeMasks[0] & 0x10)) {
         return;
     }
     if (V58(e)->unk_7c != 0) {
@@ -35,6 +35,4 @@ void body_sazanami(Entity *e) {
     ObjPosCopyOfs32(e, ripple, set58_sazanamiOffsets[e->timer] << 16, set58_sazanamiOffsets[e->timer + 1] << 16);
     e->timer += 2;
 }
-
-extern void *data_0212c568; // pointer to the 0x6c byte display control block (see game/dispctrl.cpp)
 

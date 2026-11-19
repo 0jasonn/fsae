@@ -7,7 +7,6 @@
 void cockpit_bg_trans(void);
 void bg_trans_body(void); // original bg_trans_body(), 0x020272a8
 
-// Cockpit state block: [2] nonzero requests a full transfer, [3] page index, [0xb] bitmask of transferred pages.
-extern u8 cockpitState[];
+#include "engine/cockpit_state.h"
 
 #endif

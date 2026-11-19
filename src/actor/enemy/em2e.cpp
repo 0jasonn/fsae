@@ -18,7 +18,7 @@ typedef struct Vars_02036314 {
 
 extern const EntityFunc em2e_actions[];
 extern const u8 em2e_hitbox[];
-extern Entity *mapState;
+#include "engine/map_state.h"
 extern s32 em2e_type4Hidden;
 extern const u16 em2e_hideTimes[];
 extern const u32 em2e_resourceIds[];
@@ -60,8 +60,8 @@ void em2e_init(Entity *e) {
     gatherInit(e);
     e->subtimer = 0x3c;
     V(e)->unk_7b = 0x1e;
-    e->child = mapState;
-    mapState = e;
+    e->child = mapState.target;
+    mapState.target = e;
     CockpitOff();
     em2e_type4Hidden = 0;
     V(e)->unk_6e = 0;
@@ -137,7 +137,7 @@ void em2e_gatherwait(Entity *e) {
         return;
     }
     if (e->type == 0) {
-        mapState = e->child;
+        mapState.target = e->child;
         SoundReq(0x19c);
         CockpitOn();
     }

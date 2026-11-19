@@ -1,13 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/tama11.h"
+#include "engine/display_state.h"
 
 // yousei module (fairy demo), 0x02081b64 onward.
 //   YouseiDemoTask (0x02081ba4): runs the current demo step (table yousei_demoTable), then the frame's shared update.
 
 extern u8 data_0212c500;      // current demo step
 extern u32 data_0212c564;     // callback run after each step
-extern u16 displayState;     // display flags; bit 11 is cleared each frame
 extern void (*const yousei_demoTable[])(void);
 BOOL CommFrameSync(void);
 void CommUpdateJoy(void);
@@ -17,7 +17,7 @@ void CommFrameUpdate(void);
 void func_0208309c(void);
 extern s16 demolinkPosTable[];
 s16 *GetTablePlNum(s16 *table, u8 index);
-extern u32 mapState;
+#include "engine/map_state.h"
 
 extern "C" int func_02081b64(void);
 
@@ -59,7 +59,7 @@ void YouseiDemoTask(void) {
         }
         break;
     }
-    displayState &= 0xf7ff;
+    displayState.displayFlags &= 0xf7ff;
 }
 
 // demolink_set (0x02081c50): places each player's demo object at its table position and sets the player's demo state.
@@ -86,5 +86,5 @@ void demolink_set(void) {
         i++;
         pos += 2;
     }
-    mapState = (u32)GetSetWork(0xd, 0xb, 0);
+    mapState.target = GetSetWork(0xd, 0xb, 0);
 }

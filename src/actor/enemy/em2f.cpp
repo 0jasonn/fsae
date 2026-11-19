@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "actor/enemy/em2f.h"
 #include "global.h"
+#include "engine/message_request.h"
 
 void em2f_main(Entity *e) {
     if (e->health == 0 && e->action < 0x23) {
@@ -48,7 +49,7 @@ void em2f_initWait(Entity *e) {
         e->action = 2;
         e->timer = 0x78;
         e->spriteSettings.b0 = 1;
-        mapState = e;
+        mapState.target = e;
         for (u8 i = 0; i < gameState.playerCount; i++) {
             playerWork[i].entity->animationState = 0;
             BikkuriSet(playerWork[i].entity, -8, -12);
@@ -57,10 +58,10 @@ void em2f_initWait(Entity *e) {
     }
     if (e->subtimer < 0x20) {
         e->subtimer++;
-        blendRequest.unk_c = 0xfff0;
-        blendRequest.unk_7 = 0;
+        blendRequest.resetValue = 0xfff0;
+        blendRequest.blendColor = 0;
         MakeFadeBuff256((e->subtimer >> 2) << 4);
-        blendRequest.unk_c = -1;
+        blendRequest.resetValue = -1;
         return;
     }
     if (timer >= 0x96) {
@@ -100,7 +101,7 @@ void em2f_mesWait(Entity *e) {
         return;
     }
     if (e->subAction == 0) {
-        if ((messageRequest & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();
@@ -115,7 +116,7 @@ void em2f_mesWait(Entity *e) {
     e->action = 5;
     e->timer = 8;
     SoundReq(0x1f9);
-    blendRequest.unk_7 = 0x16;
+    blendRequest.blendColor = 0x16;
     MakeFadeBuff256(0x100);
 }
 
@@ -243,9 +244,9 @@ void em2f_demoEnd(Entity *e) {
     e->spriteSettings.b30 = 2;
     e->unk_5e.b0 = 2;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        mapState = playerWork[localPlayerIndex].entity;
+        mapState.target = playerWork[localPlayerIndex].entity;
     } else {
-        mapState = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
+        mapState.target = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
     for (u8 i = 0; i < gameState.playerCount; i++) {
         PlayerData *player = &playerWork[i];
@@ -255,7 +256,7 @@ void em2f_demoEnd(Entity *e) {
         player->entity->zVelocity = 0x20000;
     }
     SoundReq(0x1af);
-    cockpitState = 1;
+    cockpitState.mode = 1;
     Scene_ClearFlag5();
     CockpitOn();
 }

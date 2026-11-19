@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "game/trianglewin.h"
+#include "engine/irq.h"  // hblankDma (src is the window span table)
 
 // MakeTriangleWindow(x, y, radius, angle) (0x0202b828): builds the triangle window. The three corners lie on the circle
 // of the given radius around (x, y), 0x68 / 0xe8 / 0x40 angle steps apart. The edges are traced into triangleTable
@@ -65,7 +66,7 @@ void MakeTriangleWindow(s16 x, s16 y, s16 radius, s16 angle) {
         }
         span += 2;
     }
-    *(u16 *)&displayState.unk_32[0x26] = *(u16 *)(data_021352a0 + data_0212c4c8 * 0x180);
-    *(u8 **)(&hblankDma + 4) = data_021352a0 + data_0212c4c8 * 0x180;
+    displayState.win0H = *(u16 *)(data_021352a0 + data_0212c4c8 * 0x180);
+    hblankDma.src = data_021352a0 + data_0212c4c8 * 0x180;
     DC_FlushRange(data_021352a0 + data_0212c4c8 * 0x180, 0x180);
 }

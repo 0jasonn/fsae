@@ -5,6 +5,7 @@
 #include "types.h"
 #include "actor/enemy/knife_msgsys.h"
 #include "knife/message/knife_message_api.h"
+#include "engine/message_request.h"
 
 // Functions in this file (module knife_comm, the message box dispatch):
 //   knife_commDispInit (0x0204b2f0)
@@ -12,12 +13,6 @@
 extern u8 pauseDialogBuffer[]; // pause dialog buffer
 extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
-
-// messageRequest byte 5: the width of the message in cells (5 bits)
-typedef struct MsgRequestWidth {
-    u8 unk_00[5];
-    u8 width : 5;
-} MsgRequestWidth;
 
 // Initialises the message box: clears the pause dialog buffer, sets up the text renderer canvas (the normal box or the
 // closing box, openMode 2), tokenizes the message and starts it at subState 1.
@@ -28,9 +23,9 @@ void knife_commDispInit(KNIFE_MSGSYS *msg) {
     void *app;
 
     MI_CpuFill8(pauseDialogBuffer, 0, 0x800);
-    slot = &data_0216efe0[cockpitState[3]];
+    slot = &data_0216efe0[cockpitState.bufferIndex];
     if (msg->openMode != 2) {
-        frameSize = (u16)(((MsgRequestWidth *)messageRequest)->width << 3);
+        frameSize = (u16)(messageRequest.width << 3);
         Knife_Message_MessageTextRender_initWithCanvas(msg->renderer, (void *)data_021371a0,
                                                        (void *)(pauseDialogBuffer + ((slot->tileY * 0x20 + 0x22) * 2)), 0x3090,
                                                        0, 0, frameSize, 0x20);
@@ -39,7 +34,7 @@ void knife_commDispInit(KNIFE_MSGSYS *msg) {
         ((Knife::Message::MessageTextRender *)msg->renderer)->setField34(0x10);
         msg->renderer->canvasOps->clear(&msg->renderer->canvas, 0xf);
         knife_msgLineChange(msg, 0);
-        msgId = *(u16 *)(messageRequest + 6);
+        msgId = messageRequest.msgId;
     } else {
         Knife_Message_MessageTextRender_initWithCanvas(msg->renderer, (void *)0x6014bc0, (void *)((u8 *)pauseDialogBuffer + 0x5c0), 0x305e,
                                                        0, 0, 0xa8, 0x10);

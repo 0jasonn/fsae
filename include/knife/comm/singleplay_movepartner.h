@@ -29,12 +29,6 @@ int func_02083ce4(s16 x, s16 y, u16 layer);
 int func_02083d30(s16 x, s16 y, u16 layer);
 }
 
-// Bit view of PlayerData::unk_3e: the top two bits are cleared by the partner update.
-typedef struct PlayerBits3e {
-    u8 lo : 6;
-    u8 hi : 2;
-} PlayerBits3e;
-
 // abs_s32 is a C++ function (symbols.txt: _Z7abs_s32l)
 s32 abs_s32(s32 value);
 

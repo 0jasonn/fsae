@@ -3,13 +3,7 @@
 
 #include "engine/entity.h"
 
-// Scroll origin used to turn screen position into a map position (mapState, shared).
-typedef struct ScrollOrigin {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 baseX;
-    /* 1a */ u16 baseY;
-} ScrollOrigin;
-
+#include "engine/map_state.h"
 // Actor fields of the Set36 family, file-local.
 typedef struct Vars_Set36 {
     /* 00 */ u8 unk_00[0x78];

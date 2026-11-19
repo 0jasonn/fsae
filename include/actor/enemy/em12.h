@@ -29,15 +29,9 @@ typedef struct Vars_Em12 {
 } Vars_Em12;
 #define V(e) VARS(Vars_Em12, e)
 
-typedef struct UnkStruct_0212c648 {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 unk_18;
-    /* 1a */ u16 unk_1a;
-} UnkStruct_0212c648;
-
-extern UnkStruct_0212c648 mapState;
-extern u16 frameCounter;          // frame counter
-extern u32 em12_typeMasks[];
+#include "engine/map_state.h"
+#include "engine/frame_counter.h"
+#include "engine/em12_type_masks.h"
 extern u16 data_0213492c[];
 extern u16 em12_spawnOffsetY[];
 extern const u8 em12_hitbox[];

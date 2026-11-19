@@ -3,7 +3,7 @@
 
 #include "engine/functions.h"
 
-extern u16 frameCounter; // frame counter (frameCounter)
+#include "engine/frame_counter.h"
 
 // Actor-specific fields of em23 used by the aim code.
 typedef struct Vars_em23_aim {

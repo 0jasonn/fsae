@@ -47,11 +47,11 @@ extern u32 data_02134900;
 
 // Closes the stage select dialog: stops the dialog sound and loads the stage select screen data again
 void stagesel_dialogDelete(void) {
-    if (effectState[0x16] != 0) {
-        effectState[0x16] = 0;
+    if (effectState.dialogSound != 0) {
+        effectState.dialogSound = 0;
         SoundReq(0x80050000);
     }
-    effectState[0x15] = 0;
+    effectState.dialogShown = 0;
     stagesel_loadsel(0x1c0, 0);
 }
 

@@ -42,9 +42,9 @@ void MultiRoomInit(u16 room) {
     }
 
     MemClearFast(triangleTable, 0x800);
-    layerCells = data_0215dfa4;
+    layerCells = data_02158fa0.cellMap;
     MIi_CpuClear16(0xffff, layerCells, 0x1000);
-    layerCells2 = data_02168fa8;
+    layerCells2 = data_02163fa4.cellMap;
     layerCells[0] = 0;
     MIi_CpuClear16(0xffff, layerCells2, 0x1000);
     layerCells2[0] = 0;
@@ -58,20 +58,20 @@ void MultiRoomInit(u16 room) {
     for (i = 0; i < 0x800; i++) {
         cellIndex = *layerCells;
         if (cellIndex < 0x800) {
-            *(u16 *)(data_02158fa0 + cellIndex * 2 + 0x6004) = i;
+            data_02158fa0.cellIndex[cellIndex] = i;
         }
         layerCells++;
     }
     for (i = 0; i < 0x800; i++) {
         cellIndex = *layerCells2;
         if (cellIndex < 0x800) {
-            *(u16 *)(data_02163fa4 + cellIndex * 2 + 0x6004) = i;
+            data_02163fa4.cellIndex[cellIndex] = i;
         }
         layerCells2++;
     }
 
-    (*(u16 **)data_02163fa4)[1] = mapState.offsetX + mapState.scrollX - mapState.originX;
-    (*(u16 **)data_02158fa0)[1] = (*(u16 **)data_02163fa4)[1];
-    (*(u16 **)data_02163fa4)[2] = mapState.offsetY + mapState.scrollY - mapState.originY;
-    (*(u16 **)data_02158fa0)[2] = (*(u16 **)data_02163fa4)[2];
+    data_02163fa4.disp->scrollX = mapState.offsetX + mapState.scrollX - mapState.originX;
+    data_02158fa0.disp->scrollX = data_02163fa4.disp->scrollX;
+    data_02163fa4.disp->scrollY = mapState.offsetY + mapState.scrollY - mapState.originY;
+    data_02158fa0.disp->scrollY = data_02163fa4.disp->scrollY;
 }

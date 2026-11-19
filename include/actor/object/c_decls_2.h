@@ -34,13 +34,13 @@ void Knife_Single_SinglePlay_Initialize(void);
 void zFree(void *p);
 
 // Data of the rupee rush and staffroll sequences (names are the dsd names unless renamed in scratch/agentC/renames.txt)
-extern u8 blendRequest[];
+#include "engine/blend_request.h"
 extern u16 data_021355a0;
 extern u8 data_0212caf0[];
 extern u32 data_0212c558;
 extern u16 data_0212c540;
-extern u8 frameCounter[];
-extern u16 displayState[];
+#include "engine/frame_counter.h"
+#include "engine/display_state.h"
 extern u8 data_0212c500;
 
 // BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.

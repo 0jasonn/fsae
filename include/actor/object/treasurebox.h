@@ -11,6 +11,6 @@ typedef struct TreasureOrder {
 } TreasureOrder;
 extern const TreasureOrder data_020dc65c;
 extern const u8 data_020dc623[];
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 
 #endif

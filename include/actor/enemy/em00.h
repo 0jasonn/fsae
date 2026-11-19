@@ -15,7 +15,7 @@ extern EntityFunc data_020cfddc[];
 extern u8 em2b_hitbox[];
 extern s8 data_020cfdfc[];
 extern EntityFunc data_020cfe10[];
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern EntityFunc data_020cfec8[];
 extern EntityFunc data_020cfe94[];
 

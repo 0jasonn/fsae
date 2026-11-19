@@ -35,7 +35,8 @@ typedef struct OBJ_WORK_ {
     /* 1b */ u8 unk_1b;
     /* 1c */ struct {
         u32 b0 : 2;
-        u32 b2 : 2;
+        u32 flipX : 1;  // bit 2: horizontal flip (boots_plsync, magneMove)
+        u32 b3 : 1;
         u32 b4 : 2;
         u32 b6 : 2;
         u32 b8 : 6;

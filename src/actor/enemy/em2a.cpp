@@ -158,15 +158,15 @@ void em2a_init(Entity *e) {
     e->hitbox = em2a_hitbox;
     e->unk_6a = 1;
     e->poseId = 0x48;
-    e->child = mapState;
-    mapState = e;
+    e->child = mapState.target;
+    mapState.target = e;
     CockpitOff();
 }
 
 void em2a_demowait(Entity *e) {
     if (e->subtimer != 0) {
         if (e->subtimer == 0x3c) {
-            mapState = e->child;
+            mapState.target = e->child;
         } else if (e->subtimer == 0x1e) {
             CockpitOn();
         }

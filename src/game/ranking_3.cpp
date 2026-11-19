@@ -7,7 +7,7 @@
 //   0x020554c8 ranking_init (matches)
 
 void ranking_init(void) {
-    if (blendRequest != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     DispReset();
@@ -35,21 +35,21 @@ void ranking_init(void) {
     calc_result();
     CalcRanking();
     ComRequest(5);
-    displayState.reg66 = 0x3f40;
-    displayState.reg68 = 0x720 - 0x14;
-    displayState.unk_08 = 0x54;
-    displayState.unk_20 = 0x844a;
-    displayState.unk_2c = 0x864b;
-    displayState.unk_0a = 0;
-    displayState.unk_0c = 0;
-    displayState.unk_22 = 0;
-    displayState.scrollX = 0x140;
-    displayState.unk_2e = 0;
-    displayState.unk_30 = 0x140;
-    mapState.unk_20 = 0;
-    mapState.cameraX = 0x140;
+    displayState.blendCnt = 0x3f40;
+    displayState.blendAlpha = 0x720 - 0x14;
+    displayState.bg[0].cnt = 0x54;
+    displayState.bg[2].cnt = 0x844a;
+    displayState.bg[3].cnt = 0x864b;
+    displayState.bg[0].scrollX = 0;
+    displayState.bg[0].scrollY = 0;
+    displayState.bg[2].scrollX = 0;
+    displayState.bg[2].scrollY = 0x140;
+    displayState.bg[3].scrollX = 0;
+    displayState.bg[3].scrollY = 0x140;
+    mapState.scrollX = 0;
+    mapState.scrollY = 0x140;
     displayState.displayFlags = 0x1d40;
-    effectState.unk_27 = 0;
+    effectState.removeFlag = 0;
     FadeSet(2, 4);
     data_0212c500++;
 }
@@ -68,15 +68,15 @@ void ranking_scroll(void) {
     if (wanted > 0x140) {
         wanted = 0x140;
     }
-    cameraX = mapState.cameraX;
+    cameraX = mapState.scrollY;
     if (cameraX != wanted) {
         if (cameraX < wanted) {
             wanted = cameraX + 1;
         } else {
             wanted = cameraX - 1;
         }
-        mapState.cameraX = wanted;
+        mapState.scrollY = wanted;
     }
-    displayState.unk_30 = mapState.cameraX;
-    displayState.scrollX = displayState.unk_30;
+    displayState.bg[3].scrollY = mapState.scrollY;
+    displayState.bg[2].scrollY = displayState.bg[3].scrollY;
 }

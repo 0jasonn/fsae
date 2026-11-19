@@ -7,7 +7,7 @@
 #include "engine/player.h"
 
 extern const EntityFunc data_020dce2c[]; // Tama06 state table, indexed by e->type
-extern u16 frameCounter; // frame counter used to pick the item of the next type
+#include "engine/frame_counter.h"
 extern const EntityFunc data_020dce94[]; // Tama06 type0 action table, indexed by e->action
 extern const u8 data_020dce1c[]; // hitbox of the Tama06 pieces
 

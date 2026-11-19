@@ -1,4 +1,5 @@
 #include "knife/message/seldialog.h"
+#include "engine/message_request.h"
 
 // Knife::Message::selectionDialog::doModal(unsigned short, long, unsigned char, unsigned char) (0x020a1a88): opens the dialog
 // for the message index: sets the animation state, loads the frame graphics for the dialog kind into the character buffer
@@ -56,5 +57,5 @@ extern "C" void Knife_Message_selectionDialog_doModal(void *dialog, u16 msgId, s
     if (self->visibleRequest != 0) {
         SoundReq(0x43);
     }
-    messageRequest[0] = 3;
+    messageRequest.phase = 3;
 }

@@ -21,13 +21,13 @@ void comerror_move(void) {
         *(u16 *)0x05000000 = 0;
         data_021355a0 = 0;
         displayState.displayFlags = displayState.displayFlags & 0xfeff;
-        if (*(u16 *)(effectState + 4) != 0) {
-            *(u16 *)(effectState + 4) = *(u16 *)(effectState + 4) - 1;
-            if (*(u16 *)(effectState + 4) == 0) {
+        if (effectState.timer != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
                 ((Knife::Hud::HudManager *)(app + 0x1f8))->setStateThree();
             }
         }
-        if (*(u16 *)(effectState + 4) == 0 && (data_0212c510 & 1)) {
+        if (effectState.timer == 0 && (data_0212c510 & 1)) {
             SoundReq(0x3e);
             FadeSet(3, 8);
             data_0212c4dc = data_0212c4dc + 1;

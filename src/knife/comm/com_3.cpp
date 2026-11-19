@@ -5,7 +5,7 @@
 
 // Functions in this file (module com, original names from the debug build): cockpit_error_check (error_check())
 
-extern u8 comWork[];   // communication state block (see com.cpp)
+#include "engine/com_work.h"
 extern u32 opTitleState;
 
 // cockpit_error_check (0x020281b0): when the error state in opTitleState says so, resets the serial and the state bytes
@@ -20,15 +20,15 @@ void cockpit_error_check(void) {
         }
         MultiSioStop();
         MultiSioInit();
-        comWork[1] = 0;
-        comWork[3] = 0;
+        comWork.phase = 0;
+        comWork.status = 0;
     } else {
         if ((opTitleState & 0x1000) == 0) {
             return;
         }
         MultiSioStop();
         MultiSioInit();
-        comWork[1] = 0;
-        comWork[3] = 0;
+        comWork.phase = 0;
+        comWork.status = 0;
     }
 }

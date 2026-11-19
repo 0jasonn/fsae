@@ -7,7 +7,6 @@
 //   0x0205aa14 set2e_init (original name)
 
 extern const EntityFunc set2e_actions[]; // set2e_actions, indexed by e->action
-extern PlayerData *data_0212c53c;        // current player slot pointer (see game/multiplay.h)
 void set2e_move(Entity *e);
 
 void Set2e(Entity *e) {

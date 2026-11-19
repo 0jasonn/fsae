@@ -11,7 +11,7 @@ typedef struct Vars_Set16_2 {
     /* 60 */ u32 requestBits; // request bits from the parent; cleared when the actor acts
 } Vars_Set16_2;
 
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 void set16_wait(Entity *e) {
     u32 bits;
     u8 objIdValue;

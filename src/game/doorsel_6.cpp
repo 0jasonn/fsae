@@ -6,13 +6,13 @@
 
 extern u16 playerKeys[];
 
-// Button check of the door selection screen: A restarts the selection (state 5 for data_0212c500, effectState flag set),
+// Button check of the door selection screen: A restarts the selection (state 5 for data_0212c500, effectState.progress set),
 // B counts the cancel, finishes the Zelda fade, plays 0x3f, starts a fade and sets the telop timer to 60 frames.
 void ab_check(void) {
     if (playerKeys[0] & 1) {
         data_0212c500 = 5;
         data_0212c4dc = 0;
-        effectState.unk_06[2] = 1;
+        effectState.progress = 1;
         return;
     }
     if (playerKeys[0] & 2) {

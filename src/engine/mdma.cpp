@@ -11,7 +11,7 @@
 
 void zFree(void *block);
 extern "C" void MI_UncompressLZ16(const void *src, void *dst);
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u32 data_0212c56c;
 extern u8 data_0212ccb0[];
 

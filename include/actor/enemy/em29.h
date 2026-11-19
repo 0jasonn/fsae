@@ -68,12 +68,7 @@ typedef struct SpriteBit2View {
 } SpriteBit2View;
 #define SPRITE_BIT2(e) ((SpriteBit2View *)&(e)->spriteSettings)
 
-typedef struct UnkStruct_0212c648 {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 unk_18;
-    /* 1a */ u16 unk_1a;
-} UnkStruct_0212c648;
-extern UnkStruct_0212c648 mapState;
+#include "engine/map_state.h"
 
 typedef struct UnkStruct_0212c6b0 {
     /* 00 */ u8 unk_00[0x14];
@@ -82,7 +77,7 @@ typedef struct UnkStruct_0212c6b0 {
 extern UnkStruct_0212c6b0 data_0212c6b0;
 extern u8 data_0212c6c0[];          // list sentinel
 
-extern u16 frameCounter;           // frame counter
+#include "engine/frame_counter.h"
 extern u16 scrollArgs[3];        // scroll arguments for ObjAffineSet2
 
 extern const u8 em30_type1Hitbox[];

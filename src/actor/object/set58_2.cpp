@@ -23,7 +23,7 @@ void body_hikari(Entity *e) {
 void body_wait(Entity *e) {
     Entity *child;
 
-    if ((em12_typeMasks & 1) == 0) {
+    if ((em12_typeMasks[0] & 1) == 0) {
         return;
     }
     child = GetSetWork(0x58, 2, 0);
@@ -68,7 +68,7 @@ void body_move(Entity *e) {
     if (e->timer != 0) {
         e->timer--;
     } else {
-        if (e->subtimer == 0 && (em12_typeMasks & 0x40)) {
+        if (e->subtimer == 0 && (em12_typeMasks[0] & 0x40)) {
             child = GetSetWork(0x58, 9, 0);
             if (child != NULL) {
                 ObjPosCopyOfs32(e, child, 0, -0x4c0000);
@@ -78,7 +78,7 @@ void body_move(Entity *e) {
         }
         if (V58(e)->unk_7c == 0) {
             if (func_02081b64() != 0) {
-                em12_typeMasks |= 0x20;
+                em12_typeMasks[0] |= 0x20;
                 V58(e)->unk_7c = 1;
             }
         }

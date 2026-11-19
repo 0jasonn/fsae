@@ -26,7 +26,7 @@ void rr_type0_init_075a9c(Entity *e) {
     e->direction = 0x10;
     e->x.HALF.HI = 0x1f8;
     e->y.HALF.HI = 0x148;
-    *(Entity **)mapState = e;
+    mapState.target = e;
     InitAnimationForceUpdate(e, 0);
     rr_plset(e);
 }
@@ -37,8 +37,8 @@ void set69_type0_follow(Entity *e) {
 }
 
 void type0_scrWait(Entity *e) {
-    if (e->x.HALF.HI == *(s16 *)(mapState + 0x20) + 0x80 &&
-        e->y.HALF.HI == *(s16 *)(mapState + 0x22) + 0x60) {
+    if (e->x.HALF.HI == mapState.scrollX + 0x80 &&
+        e->y.HALF.HI == mapState.scrollY + 0x60) {
         FadeSet(2, 2);
         e->action = 3;
         e->timer = 0xf8;

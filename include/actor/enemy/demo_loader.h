@@ -17,7 +17,7 @@ typedef struct FRAME_INFO_ {
 } FRAME_INFO_;
 
 void MultiRoomInit(u16 roomNo);                           // original MultiRoomInit(unsigned short), 0x02056f4c
-extern "C" void MPlayerSet(FRAME_INFO_ *frame);           // original MPlayerSet(FRAME_INFO_*), 0x0204c950
+void MPlayerSet(FRAME_INFO_ *frame);                      // C++ linkage, original MPlayerSet(FRAME_INFO_*), 0x0204c950
 void MultiEventSet(u16 *list, u8 a, u8 b, u8 c);          // original MultiEventSet(unsigned short*, unsigned char x3), 0x0204602c
 void MultiRoomSet(void);                                  // original MultiRoomSet(), 0x020572b4
 void func_0208309c(void);                                 // thumb helper, mangled _Z13func_0208309cv
@@ -25,7 +25,7 @@ void func_0208309c(void);                                 // thumb helper, mangl
 extern FRAME_INFO_ staffrollFrameInfo;                   // ROM frame record used by StaffrollLoad (staffrollFrameInfo)
 extern FRAME_INFO_ *youseiFrameTable[];                  // frame record table indexed by gameState.unk_01 (youseiFrameTable)
 extern const u32 *data_02134968[];                        // info table, one row pointer per area (see src/engine/info.cpp)
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u8 data_021348f4[];
 
 #endif

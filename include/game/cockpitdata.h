@@ -19,14 +19,12 @@ extern u32 *data_020f253c[];
 // Background music and pinch warning check (cockpit module, defined in cockpit.cpp).
 void pinch_bgm_check(void);
 
-// Rupee counter block at cockpitState (cockpit side) and the per-type rupee value array.
-extern u8 cockpitState[];
+// Cockpit block (cockpitState) and the per-type rupee value array.
+#include "engine/cockpit_state.h"
 extern s32 data_0212c7d4[];
-// Heart alarm and pinch state (frame counter and state bytes).
-extern u16 data_0212c594;
-extern u8 frameCounter[];
-// Current player entity pointer (cockpit), and the katti graphics tables.
-extern u8 *data_0212c53c; // current player block (PlayerData-sized entries, read as bytes or as an entity pointer at 0x28)
+// Heart alarm and pinch state bytes.
+#include "engine/frame_counter.h"
+// Katti graphics tables.
 extern u32 data_020f2530[];
 extern u32 data_020f2524[];
 
@@ -36,28 +34,14 @@ s32 add_sub(s32 value, s32 delta, s32 limit);
 // Absolute value (abs_s32, defined later in the E units).
 s32 abs_s32(s32 value);
 
-// Keys per type, kakera counts per type, kakera telop/effect block and the per-type kakera timers (u16).
+// Keys per type, kakera counts per type and the kakera telop block (the per-type kakera timers are cockpitState.kakeraTimer).
 extern u8 data_0212c824[];
 extern u8 data_0212c830[];
-extern u16 data_0212c63c[];
-extern u8 telopRequest[];
-
-#define GS_U8(off) (*((u8 *)&gameState + (off)))
-#define GS_S32(off) (*(s32 *)((u8 *)&gameState + (off)))
-#define RUPEE_U8(off) (*(u8 *)(cockpitState + (off)))
-#define RUPEE_U16(off) (*(u16 *)(cockpitState + (off)))
-#define RUPEE_S32(off) (*(s32 *)(cockpitState + (off)))
+#include "engine/telop_request.h"
 
 // Cockpit graphics and object blocks used by the HUD code.
-extern u8 displayState[];
-extern u8 data_021361a0[];
-extern u8 data_0212c4a0[];
-extern u8 data_021369a0[];
+#include "engine/display_state.h"
+#include "engine/hud_tile_obj.h"
 extern u16 data_020cf810[];
-
-#define KAKERA_U32(off) (*(u32 *)(telopRequest + (off)))
-
-#define PL_BYTE(i, off) (((u8 *)&playerWork[i])[off])
-#define PL_ENTITY(i) (playerWork[i].entity)
 
 #endif

@@ -14,8 +14,8 @@ typedef struct Vars_Set43 {
 } Vars_Set43;
 
 extern const EntityFunc set43Table[]; // set43Table, indexed by action
-extern u16 frameCounter;       // frame counter
-extern u32 em12_typeMasks[];
+#include "engine/frame_counter.h"
+#include "engine/em12_type_masks.h"
 int switchcheck(Entity *e);
 void setwind(Entity *e);
 void plmove(Entity *e);

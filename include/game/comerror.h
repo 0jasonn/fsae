@@ -4,14 +4,14 @@
 #include "engine/functions.h"
 
 // Data used by the communication error screen (not in engine/functions.h or engine/misc.h yet)
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u8 data_0212c4c4;
 extern u8 data_0212c4d8;
 extern u8 data_0212c4dc;
 extern u16 data_0212c510;
 extern u8 data_020f25a8[];
 extern u8 data_020f25b4[];
-extern u8 effectState[];   // ResultState block (enemy/ending.h): u16 timer at +4
+#include "engine/effect_state.h"
 extern u16 data_021355a0;
 extern void (*data_0212c564)(void);
 extern const u8 data_020ce4d0[];

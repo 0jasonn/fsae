@@ -5,14 +5,14 @@
 // Functions in this file (module disp, original names from the debug build):
 //   DispCtrlClear (DispCtrlClear()), AssignObj (AssignObj(void*))
 
-extern void *data_0212c568;   // pointer to the 0x6c-byte block cleared by DispCtrlClear, its first halfword is set to 0x40
+#include "engine/display_state.h"
 extern u8 data_0212f890[];    // start of the object range of AssignObj
 extern u8 data_02134890[];    // end of the object range of AssignObj
 
-// DispCtrlClear (0x0202a700): clears the 0x6c-byte block and sets its first halfword to 0x40.
+// DispCtrlClear (0x0202a700): clears the display block data_0212c568 points to and sets its displayFlags to 0x40.
 void DispCtrlClear(void) {
-    MemClearFast(data_0212c568, 0x6c);
-    *(u16 *)data_0212c568 = 0x40;
+    MemClearFast(data_0212c568, sizeof(DisplayState));
+    data_0212c568->displayFlags = 0x40;
 }
 
 // AssignObj (0x0202a728): 1 when the pointer lies in the object range data_0212f890 .. data_02134890, otherwise 0.

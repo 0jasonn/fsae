@@ -19,14 +19,14 @@ void dialog_machiuke_joy(void) {
     func_020909c8();
     app = KnifeApp_getInstance();
     for (i = 0; i < 4; i++) {
-        keys = *(u16 *)(comWork + i * 0x34 + 0x7a);
+        keys = comWork.recv[i].keys;
         prev = ((u16 *)playerKeysPrev)[i];
         ((u16 *)playerKeys)[i] = keys & (keys ^ prev);
         ((u16 *)playerKeysPrev)[i] = keys;
     }
     if (KnifeApp_isWirelessMode(app) == 0) {
         *(u16 *)playerKeys = *(u16 *)data_0212c514;
-        *(u16 *)(comWork + 0x7a) = *(u16 *)data_0212c514;
+        comWork.recv[0].keys = *(u16 *)data_0212c514;
     }
-    *(u16 *)(comWork + 0x12) = *(u16 *)data_0212c514;
+    comWork.send.keys = *(u16 *)data_0212c514;
 }

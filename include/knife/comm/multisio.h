@@ -87,9 +87,14 @@ extern u8 data_0212c4d4;
 // Entry of the send table data_021350b0, 0x50 bytes each, selected by multiSioSelect.index
 typedef struct MultiSioEntry {
     /* 00 */ u32 word00;
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 b05;
-    /* 06 */ u16 h06;
+    /* 04 */ union {
+        u32 word04;          // read and written as one word
+        struct {
+            /* 04 */ u8 unk_04;
+            /* 05 */ u8 b05;
+            /* 06 */ u16 h06;
+        };
+    };
     /* 08 */ u16 str08[8];   // zero-terminated, copied into the packet
     /* 18 */ u32 w18;
     /* 1c */ u8 unk_1c[0x48 - 0x1c];
@@ -102,31 +107,8 @@ typedef struct MultiSioSelect {
     /* 04 */ u8 index;
 } MultiSioSelect;
 
-// Bitfield word at packet+0x24 built by MultiSioSendDataSet
-typedef struct MultiSioPacketBits {
-    u32 b0 : 2;
-    u32 b2 : 1;
-    u32 b3 : 1;
-    u32 b4 : 1;
-    u32 b5 : 1;
-    u32 b6 : 1;
-    u32 b7 : 2;
-    u32 b9 : 2;
-    u32 b11 : 2;
-    u32 b13 : 10;
-    u32 b23 : 7;
-    u32 b30 : 2;
-} MultiSioPacketBits;
-
-// Packet passed to MultiSioSendDataSet (the same struct is copied into the send buffer)
-typedef struct MultiSioPacket {
-    /* 00 */ u8 unk_00[0x14];
-    /* 14 */ u16 unk_14[8];
-    /* 24 */ MultiSioPacketBits bits;
-    /* 28 */ u32 unk_28;
-    /* 2c */ u8 unk_2c[4];
-    /* 30 */ u32 unk_30;
-} MultiSioPacket;
+// The packet passed to MultiSioSendDataSet is a ComPacket (engine/com_work.h).
+#include "engine/com_work.h"
 
 extern MultiSioEntry data_021350b0[];
 extern MultiSioSelect multiSioSelect; // multiSioSelect

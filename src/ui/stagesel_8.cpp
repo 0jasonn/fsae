@@ -9,25 +9,25 @@ void stagesel_message(void) {
         return;
     }
     CommUpdateJoy();
-    *(u32 *)(comWork + 0x3c) = 1;
+    comWork.send.stageFlag = 1;
     del_please_wait();
     switch (data_0212c4dc) {
     case 0:
-        stagesel_dialogDisp((u8)*(u16 *)(effectState + 6), 0);
+        stagesel_dialogDisp((u8)effectState.messageIndex, 0);
         data_0212c4dc++;
         break;
     case 1:
-        *(u16 *)(effectState + 4) = *(u16 *)(effectState + 4) + 1;
-        if (*(u16 *)(effectState + 4) == times.frames[*(u16 *)(effectState + 6)]) {
+        effectState.timer = effectState.timer + 1;
+        if (effectState.timer == times.frames[effectState.messageIndex]) {
             stagesel_dialogDelete();
             ObjMoveInit();
             ObjWorkPoolClear();
-            if (effectState[0x0a] != 0) {
+            if (effectState.stepIndex != 0) {
                 GetSetWork(0x46, 2, 0);
                 GetSetWork(0x46, 3, 0);
                 GetSetWork(0x46, 4, 0);
             }
-            if (*(u16 *)(effectState + 6) == 0) {
+            if (effectState.messageIndex == 0) {
                 start_select(0);
             } else {
                 start_select(1);

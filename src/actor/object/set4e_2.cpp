@@ -20,16 +20,10 @@ void set4e_move(Entity *e) {
     }
 }
 
-typedef struct KanaamiScroll {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-} KanaamiScroll;
-
-extern KanaamiScroll mapState; // scroll origin of the current map
+#include "engine/map_state.h"
 
 #define KANAAMI_CELL(dx, dy)                                                                              \
-    ((u16)(((e->x.HALF.HI + (dx) - mapState.scrollX) >> 4) | (((e->y.HALF.HI + (dy) - mapState.scrollY) >> 4) << 6)))
+    ((u16)(((e->x.HALF.HI + (dx) - mapState.originX) >> 4) | (((e->y.HALF.HI + (dy) - mapState.originY) >> 4) << 6)))
 
 void kanaamiRew(Entity *e, u16 index) {
     RewCell(index, KANAAMI_CELL(-0x10, -0x10), 0x8000);

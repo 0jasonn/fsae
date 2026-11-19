@@ -9,7 +9,7 @@
 //   set52_init (0x02070598) is in scratch/agentD/nonmatching/set52_init.cpp
 
 extern const EntityFunc set52_actions[]; // indexed by e->action
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 
 void set52_move(Entity *e) {
     Entity *tmpl;
@@ -18,7 +18,7 @@ void set52_move(Entity *e) {
     func_0208ab14(e, tmpl);
     UpdateAnimationSingleFrame(e);
     if (playerWork[e->type].actionFlags != 0) {
-        if ((frameCounter & 3) != 0) {
+        if ((frameCounter.frame & 3) != 0) {
             return;
         }
         e->spriteSettings.b16 ^= 7;

@@ -4,7 +4,7 @@
 #include "engine/functions.h"
 #include "actor/enemy/em21.h"
 
-extern u16 frameCounter; // frame counter (frameCounter)
+#include "engine/frame_counter.h"
 extern const u8 em21_hitbox[]; // em21_hitbox, hitbox of em21
 extern u8 data_0212ced6[];      // per slot flags, stride 0x94 (checked by em21_crossCheck)
 extern u8 data_0212ced8[];      // per slot Entity pointer, stride 0x94

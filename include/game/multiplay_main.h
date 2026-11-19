@@ -5,7 +5,6 @@
 #include "game/multiplay.h"
 
 extern "C" {
-void StopBlockManager(void);
 void func_02083fb8(void); // thumb
 void func_02062fcc(void);
 void SoundInit(void);
@@ -24,5 +23,8 @@ s32 abs_s32(s32 value);
 
 // CalcItemLevel has C++ linkage (original CalcItemLevel()), 0x0207c26c.
 void CalcItemLevel(void);
+
+// StopBlockManager has C++ linkage (original StopBlockManager()), 0x0204e958.
+void StopBlockManager(void);
 
 #endif

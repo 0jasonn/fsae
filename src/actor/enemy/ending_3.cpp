@@ -1,6 +1,8 @@
 #include "engine/functions.h"
 #include "actor/enemy/ending.h"
 #include "global.h"
+#include "engine/irq.h"
+#include "engine/message_request.h"
 
 // Implementer B, round 6: ending_scene_01 (0x02044b44).
 
@@ -32,7 +34,7 @@ void ending_scene_01(void) {
     case 2:
         effectState.timer--;
         if (effectState.timer == 0) {
-            for (i = 0; i < GAME_STATE_U8(0); i++) {
+            for (i = 0; i < gameState.playerCount; i++) {
                 playerWork[i].state = 0xc;
             }
             SoundReq(0x205);
@@ -40,7 +42,7 @@ void ending_scene_01(void) {
         }
         break;
     case 3:
-        if ((em12_typeMasks & 8) == 0) {
+        if ((em12_typeMasks[0] & 8) == 0) {
             break;
         }
         SoundReq(0x1ff);
@@ -80,7 +82,7 @@ void ending_scene_01(void) {
         messageRequest.unk_04 = messageRequest.unk_04 & ~0x1f;
         break;
     case 7:
-        if ((messageRequest.unk_00 & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             break;
         }
         Status_ArmIfEnabled();
@@ -180,10 +182,10 @@ void bikkuri(void) {
 void ending_finale(void) {
     u8 *palette;
     endingFinaleTable[data_0212c4dc]();
-    if (em12_typeMasks & 0x10) {
+    if (em12_typeMasks[0] & 0x10) {
         return;
     }
-    if ((data_0212c594 & 3) != 0) {
+    if ((frameState.frameCount & 3) != 0) {
         return;
     }
     if (blendRequest.blendEnabled != 0) {

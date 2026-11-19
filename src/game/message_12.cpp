@@ -19,7 +19,7 @@ int telopUpdate(s32 delta) {
         telopBox.draw.pos = 0x18;
         result = 1;
     }
-    slot = cockpitState[3];
+    slot = cockpitState.bufferIndex;
     telopWindowSlots[slot].tileY = telopBox.draw.pos;
     telopWindowSlots[slot].height = 0x18 - telopBox.draw.pos;
     telopWindowSlots[slot].active = 1;

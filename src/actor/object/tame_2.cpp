@@ -16,7 +16,7 @@ typedef struct Vars_TameMove {
 extern "C" Entity *EffectSet(Entity *e, int kind, int arg);
 extern const s8 data_020db580[];
 extern const s8 data_020db588[];
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 
 // tame_move, 0x020702c8. Follows the player slot of e->type (stride 0x94): copies its height and its sprite layer,
 // then offsets the position from the player by the animation table and runs the timer effects.
@@ -72,7 +72,7 @@ void tame_move(Entity *e) {
                 VARS(Vars_TameMove, e)->moveStep = 10;
             }
             if (VARS(Vars_TameMove, e)->effectCounter != 0) {
-                if ((frameCounter & 0x1f) == 0) {
+                if ((frameCounter.frame & 0x1f) == 0) {
                     effect = EffectSet(e, 7, 0);
                     if (effect != 0) {
                         effect->layer = e->layer;

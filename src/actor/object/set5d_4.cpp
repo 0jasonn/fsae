@@ -20,7 +20,7 @@ typedef struct Vars_Set5d {
 
 extern const EntityFunc set5d_fall_states[]; // fall state table indexed by e->subAction
 extern const EntityFunc set5d_standup_states[]; // standup state table indexed by e->subAction
-extern u32 em12_typeMasks[]; // 0x02134954: bit 0 of word 0 is set when the fall ends (also used by em12 as type masks)
+#include "engine/em12_type_masks.h"
 
 void set5d_fall(Entity *e) {
     set5d_fall_states[e->subAction](e);

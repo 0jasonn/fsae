@@ -1,31 +1,19 @@
 #include "engine/functions.h"
 #include "knife/comm/com_sio.h"
 #include "global.h"
+#include "engine/blend_request.h"
 #include "game/demo_api.h"
+#include "engine/display_state.h"
+#include "engine/bg_buff.h"
 
 // Demo module (demo): DemoTask runs the demo phase machine (phase byte data_0212c4dc), demoWaitCk counts down the
 // phase timer, DemoBgBuffClear clears the two neighbour grids.
 //   DemoTask (0x0202a78c), demoWaitCk (0x0202a8bc), DemoBgBuffClear (0x0202a92c)
 
-// Effect state block (0x28 bytes, cleared at the start of the demo); the wait timer is at +4.
-typedef struct DemoEffectState {
-    u8 unk_00[4];
-    u16 timer;
-    u8 unk_06[0x22];
-} DemoEffectState;
-
-// Display shadow block: the display flags at +0, a value at +8.
-typedef struct DemoDisplayShadow {
-    u16 displayFlags;
-    u8 unk_02[6];
-    u16 unk_8;
-} DemoDisplayShadow;
 
 extern u8 data_0212c4dc;                // demo phase, 0..4
-extern u8 blendRequest;                // blendEnabled, first byte of the blend request
 extern u16 data_0212c510;               // nonzero ends the phase wait early
-extern DemoDisplayShadow displayState; // display shadow block
-extern DemoEffectState effectState;   // effect state block
+#include "engine/effect_state.h"
 extern u16 data_021355a0;
 
 // DemoTask (0x0202a78c): phase 0 loads the demo graphics and palette, starts the display and waits;
@@ -37,7 +25,7 @@ void DemoTask(void) {
     switch (data_0212c4dc) {
     case 0:
         displayState.displayFlags = 0x100;
-        displayState.unk_8 = 8;
+        displayState.bg[0].cnt = 8;
         DataLoad(4);
         CgLoad(3);
         MemClearFast(&effectState, 0x28);
@@ -57,7 +45,7 @@ void DemoTask(void) {
         }
         break;
     case 2:
-        if (blendRequest == 0) {
+        if (blendRequest.blendEnabled == 0) {
             data_0212c4dc = 4;
         }
         break;
@@ -67,7 +55,7 @@ void DemoTask(void) {
         }
         break;
     case 4:
-        if (blendRequest == 0) {
+        if (blendRequest.blendEnabled == 0) {
             Task_Chain(7);
         }
         break;
@@ -77,7 +65,7 @@ void DemoTask(void) {
 // demoWaitCk (0x0202a8bc): does nothing while the blend runs. Otherwise counts the timer down and moves to the next
 // phase (returns 1) once the timer is 0 or data_0212c510 is set; returns 0 while waiting.
 int demoWaitCk(void) {
-    if (blendRequest != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return 0;
     }
     effectState.timer = effectState.timer - 1;
@@ -90,9 +78,6 @@ int demoWaitCk(void) {
 
 // DemoBgBuffClear (0x0202a92c): clears the two neighbour grids (0xb004 bytes each).
 void DemoBgBuffClear(void) {
-    extern u8 data_02158fa0[];
-    extern u8 data_02163fa4[];
-
-    OSi_CpuClear32(0, data_02158fa0, 0xb004);
-    OSi_CpuClear32(0, data_02163fa4, 0xb004);
+    OSi_CpuClear32(0, &data_02158fa0, sizeof(BG_BUFF_));
+    OSi_CpuClear32(0, &data_02163fa4, sizeof(BG_BUFF_));
 }

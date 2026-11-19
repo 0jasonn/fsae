@@ -57,7 +57,15 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 3b */ u8 unk_3b;
     /* 3c */ u8 callState; // nonzero blocks the cockpit call animation
     /* 3d */ u8 unk_3d;
-    /* 3e */ u8 unk_3e;
+    /* 3e */ union {
+        u8 unk_3e;
+        struct {
+            u8 b0 : 2; // power: sword level (sword_move damage, radar power, kinomi)
+            u8 b2 : 2; // defense (em2a_4 damage, radar defense, kinomi, katti kind)
+            u8 b4 : 2; // speed (radar speed, kinomi)
+            u8 b6 : 2; // speed shift of the partner (singleplay_movepartner, singleplay_waitpartner)
+        } nutBits; // two-bit counters cleared by ClearNut
+    };
     /* 3f */ s8 yOffset;
     /* 40 */ u8 unk_40[0x4a];
     /* 8a */ u8 unk_8a;
@@ -67,6 +75,7 @@ typedef struct PL_WORK_ { // original name PL_WORK_
 } PlayerData; // size 0x94
 
 extern PlayerData playerWork[4];
+extern PlayerData *data_0212c53c; // current (local) player slot, set by multiplay_init
 // One 8-byte record per player inside the game state (enemyTypeFlags points at the first one)
 typedef struct GameSlot {
     /* 00 */ u32 flags;
@@ -75,8 +84,15 @@ typedef struct GameSlot {
     /* 06 */ u16 counter;
 } GameSlot;
 
-// Game state block (gameState). Other symbols point inside it: data_0212c7d4 (+0x0c), enemyTypeFlags (+0x28),
-// keyTypeFlags (+0x2d), data_0212c7f6 (+0x2e), data_0212c810 (+0x48).
+// One word of GameState.slotWords (per save slot)
+typedef union GameSlotWord {
+    u32 word;
+    u8 b0; // stored by setKnifeSaveData4S; doorsel_init reads bits 0-1 and 2-3
+} GameSlotWord;
+
+// Game state block (gameState, 0xa0 bytes: MultiWorkInit clears it whole). Other symbols point inside it:
+// data_0212c7d4 (+0x0c), enemyTypeFlags (+0x28), keyTypeFlags (+0x2d), data_0212c7f6 (+0x2e), data_0212c810 (+0x48),
+// data_0212c858 (+0x90).
 typedef struct GameState {
     /* 00 */ u8 playerCount;
     /* 01 */ u8 unk_01;       // 0..3 rerolled by shuffleStage; also compared with 2 and 5 (mode) and indexes youseiFrameTable
@@ -116,6 +132,7 @@ typedef struct GameState {
     /* 8d */ u8 unk_8d;
     /* 8e */ u8 unk_8e;       // game state byte
     /* 8f */ u8 unk_8f;
+    /* 90 */ GameSlotWord slotWords[4]; // one word per save slot (data_0212c858); MultiWorkInit keeps it across clears
 } GameState;
 extern GameState gameState;
 extern u16 playerKeysPrev[4];

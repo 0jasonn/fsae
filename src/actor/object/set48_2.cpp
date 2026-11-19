@@ -3,7 +3,7 @@
 #include "actor/object/objdecls_a.h"
 #include "actor/object/effectdecls.h"
 
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 
 typedef struct Vars_Set48 {
     u8 unk_00[0x52];

@@ -34,7 +34,7 @@ void ObjMoveInit(void) {
     EntityNode *node;
 
     node = data_0212c6b0;
-    end = data_0212c6f0;
+    end = data_0212c6b0 + 8;
     if (node < end) {
         do {
             node->next = node;
@@ -56,7 +56,7 @@ void ObjMove(void) {
 
     data_0213493c[0] = data_0213493c[1] = data_0213493c[2] = data_0213493c[3] = 0xffff;
     list = data_0212c6b0;
-    end = data_0212c6f0;
+    end = data_0212c6b0 + 8;
     while (list < end) {
         node = list->next;
         data_0212c52c = node;

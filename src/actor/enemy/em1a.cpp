@@ -77,7 +77,7 @@ void em1a_revivalwait(Entity *e) {
 }
 
 void em1a_move(Entity *e) {
-    e->z.HALF.HI = em1a_bobTable[((frameCounter + e->subtimer) & 0x30) >> 4];
+    e->z.HALF.HI = em1a_bobTable[((frameCounter.frame + e->subtimer) & 0x30) >> 4];
     UpdateAnimationSingleFrame(e);
     em1a_moveActions[e->subAction](e);
 }

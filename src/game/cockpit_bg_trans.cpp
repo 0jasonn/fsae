@@ -6,22 +6,22 @@
 
 // Transfers the background page when it is requested, otherwise adds the current page to the pending pages.
 void cockpit_bg_trans(void) {
-    if (cockpitState[2] != 0) {
+    if (cockpitState.redraw != 0) {
         bg_trans_body();
-        cockpitState[0xb] = 1 << cockpitState[3];
+        cockpitState.transMask = 1 << cockpitState.bufferIndex;
         return;
     }
-    switch (cockpitState[0xb] & 3) {
+    switch (cockpitState.transMask & 3) {
     case 0:
     case 3:
     default:
         return;
     case 1:
     case 2:
-        if ((cockpitState[0xb] & (1 << cockpitState[3])) != 0) {
+        if ((cockpitState.transMask & (1 << cockpitState.bufferIndex)) != 0) {
             return;
         }
         bg_trans_body();
-        cockpitState[0xb] |= (u8)(1 << cockpitState[3]);
+        cockpitState.transMask |= (u8)(1 << cockpitState.bufferIndex);
     }
 }

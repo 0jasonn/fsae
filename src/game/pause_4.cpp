@@ -1,11 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/misc.h"
+#include "game/pause_req.h"
 
-// pauseState is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
-// [0xe] reset flag, [0xf] set when the wireless session is being closed
-
-extern u8 pauseState[];
 extern u16 data_021355a0;
 extern u16 playerKeys[];
 extern u8 data_0212c4b8;
@@ -25,7 +22,6 @@ extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
 
-extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 
@@ -47,7 +43,7 @@ void pause_retry(void) {
     ObjMoveInit();
     MessageInitialize();
     TelopInitialize();
-    MemClearFast(pauseState, 0x20);
+    MemClearFast(&pauseState, sizeof(pauseState));
     gameState.unk_8c = 1;
     data_0212c4b8 = 1;
     data_0212c520 = 1;
@@ -62,7 +58,7 @@ void keyDisable(void) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         return;
     }
-    playerCount = frameCounter[0x11] & 3;
+    playerCount = frameCounter.pauseRequest & 3;
     for (i = 0; i < 4; i++) {
         if (i != playerCount) {
             playerKeys[i] = 0;

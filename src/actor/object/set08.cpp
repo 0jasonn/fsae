@@ -13,15 +13,9 @@ typedef struct Vars_Set08 {
     /* 78 */ u16 cell; // door cell, computed from the position relative to the scroll
 } Vars_Set08;
 
-typedef struct UnkStruct_0212c648_T {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-} UnkStruct_0212c648_T;
-
-extern UnkStruct_0212c648_T mapState;
+#include "engine/map_state.h"
 extern const EntityFunc data_020d92c0[]; // indexed by e->action
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 
 void doorCheck(Entity *e);
 void srchDoor(Entity *e);
@@ -36,8 +30,8 @@ void set08_init(Entity *e) {
     e->action = 1;
     e->timer = 0x18;
     VARS(Vars_Set08, e)->typeBits = ParseTypeBits(e->type);
-    VARS(Vars_Set08, e)->cell = ((e->x.HALF.HI - mapState.scrollX) >> 4) |
-                                (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6);
+    VARS(Vars_Set08, e)->cell = ((e->x.HALF.HI - mapState.originX) >> 4) |
+                                (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
     doorCheck(e);
 }
 

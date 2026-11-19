@@ -5,7 +5,7 @@
 
 // Functions in this file (module com, original names from the debug build): com_machiuke (com_machiuke())
 
-extern u8 comWork[];   // communication state block (see com.cpp)
+#include "engine/com_work.h"
 extern u32 opTitleState;
 extern u8 localPlayerIndex;
 
@@ -21,73 +21,73 @@ void com_machiuke(void) {
 
     func_020909c8();
     kn = KnifeApp_getInstance();
-    comWork[0x10] = 0x20;
-    *(u16 *)(comWork + 0x12) = 0xffff;
-    state = comWork[1];
+    comWork.send.tag = 0x20;
+    comWork.send.keys = 0xffff;
+    state = comWork.phase;
     switch (state) {
     case 0:
-        comWork[3] = 0;
+        comWork.status = 0;
         if (opTitleState & 0x100) {
-            comWork[1] = state + 1;
+            comWork.phase = state + 1;
         } else {
             MultiSioStart();
         }
         break;
     case 1:
-        comWork[2] = 0x14;
-        comWork[1] = state + 1;
+        comWork.counter = 0x14;
+        comWork.phase = state + 1;
         break;
     case 2:
-        comWork[2] -= 1;
-        if (comWork[2] == 0) {
+        comWork.counter -= 1;
+        if (comWork.counter == 0) {
             MultiSioStart();
-            comWork[2] = 0x14;
-            comWork[1] += 1;
+            comWork.counter = 0x14;
+            comWork.phase += 1;
         }
         break;
     case 3:
-        comWork[2] -= 1;
-        if (comWork[2] == 0) {
-            comWork[1] = state + 1;
+        comWork.counter -= 1;
+        if (comWork.counter == 0) {
+            comWork.phase = state + 1;
         }
         break;
     case 4:
-        comWork[0x10] = 0x21;
-        comWork[3] = opTitleState & 0xf;
+        comWork.send.tag = 0x21;
+        comWork.status = opTitleState & 0xf;
         if (CommStatusSync(0x21) != 0) {
-            if (comWork[2] > 0x14) {
-                sel = comWork[3] & 0xf;
+            if (comWork.counter > 0x14) {
+                sel = comWork.status & 0xf;
                 if (sel == 3 || sel == 7 || sel == 0xf) {
-                    comWork[0x11] = 1;
+                    comWork.send.ready = 1;
                 }
             } else {
-                comWork[2] += 1;
+                comWork.counter += 1;
             }
         } else {
-            comWork[2] = 0;
-            comWork[3] |= 1 << localPlayerIndex;
+            comWork.counter = 0;
+            comWork.status |= 1 << localPlayerIndex;
         }
-        flags = comWork[3];
+        flags = comWork.status;
         sel = flags & 0xf;
         if (sel == 3) {
-            if (comWork[0x79] == 1 && comWork[0xad] == 1) {
-                comWork[3] = flags | 0x40;
-                comWork[1] += 1;
+            if (comWork.recv[0].ready == 1 && comWork.recv[1].ready == 1) {
+                comWork.status = flags | 0x40;
+                comWork.phase += 1;
             }
         } else if (sel == 7) {
-            if (comWork[0x79] == 1 && comWork[0xad] == 1 && comWork[0xe1] == 1) {
-                comWork[3] = flags | 0x40;
-                comWork[1] += 1;
+            if (comWork.recv[0].ready == 1 && comWork.recv[1].ready == 1 && comWork.recv[2].ready == 1) {
+                comWork.status = flags | 0x40;
+                comWork.phase += 1;
             }
         } else if (sel == 0xf) {
-            if (comWork[0x79] == 1 && comWork[0xad] == 1 && comWork[0xe1] == 1 && comWork[0x115] == 1) {
-                comWork[3] = flags | 0x40;
-                comWork[1] += 1;
+            if (comWork.recv[0].ready == 1 && comWork.recv[1].ready == 1 && comWork.recv[2].ready == 1 && comWork.recv[3].ready == 1) {
+                comWork.status = flags | 0x40;
+                comWork.phase += 1;
             }
         }
         if (KnifeApp_isWirelessMode(kn) == 0) {
-            comWork[3] |= 0x43;
-            comWork[1] += 1;
+            comWork.status |= 0x43;
+            comWork.phase += 1;
         }
         cockpit_error_check();
         break;
@@ -98,8 +98,8 @@ void com_machiuke(void) {
     default:
         break;
     }
-    comWork[0x78] = 0;
-    comWork[0xac] = 0;
-    comWork[0xe0] = 0;
-    comWork[0x114] = 0;
+    comWork.recv[0].tag = 0;
+    comWork.recv[1].tag = 0;
+    comWork.recv[2].tag = 0;
+    comWork.recv[3].tag = 0;
 }

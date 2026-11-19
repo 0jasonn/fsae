@@ -9,7 +9,7 @@ void recell0(Entity *e) {
     cells = recell0Cells[e->type];
     switch (e->type) {
     case 0:
-        cell = (u16)(((e->x.HALF.HI - 8 - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - 8 - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 65, e->layer);
         RewCell(cells[1], cell - 64, e->layer);
         RewCell(cells[2], cell - 63, e->layer);
@@ -24,7 +24,7 @@ void recell0(Entity *e) {
         RewCell(cells[11], cell + 66, e->layer);
         break;
     case 1:
-        cell = (u16)(((e->x.HALF.HI - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 66, e->layer);
         RewCell(cells[1], cell - 65, e->layer);
         RewCell(cells[2], cell - 64, e->layer);
@@ -42,7 +42,7 @@ void recell0(Entity *e) {
         RewCell(cells[14], cell + 66, e->layer);
         break;
     case 2:
-        cell = (u16)(((e->x.HALF.HI - 8 - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - 8 - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 66, e->layer);
         RewCell(cells[1], cell - 65, e->layer);
         RewCell(cells[2], cell - 64, e->layer);
@@ -63,7 +63,7 @@ void recell0(Entity *e) {
         RewCell(cells[17], cell + 67, e->layer);
         break;
     case 3:
-        cell = (u16)(((e->x.HALF.HI - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 67, e->layer);
         RewCell(cells[1], cell - 66, e->layer);
         RewCell(cells[2], cell - 65, e->layer);
@@ -96,7 +96,7 @@ void recell1(Entity *e) {
     cells = recell1Cells[e->type];
     switch (e->type) {
     case 0:
-        cell = (u16)(((e->x.HALF.HI - 8 - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - 8 - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 65, e->layer);
         RewCell(cells[1], cell - 64, e->layer);
         RewCell(cells[2], cell - 63, e->layer);
@@ -111,7 +111,7 @@ void recell1(Entity *e) {
         RewCell(cells[11], cell + 66, e->layer);
         break;
     case 1:
-        cell = (u16)(((e->x.HALF.HI - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 66, e->layer);
         RewCell(cells[1], cell - 65, e->layer);
         RewCell(cells[2], cell - 64, e->layer);
@@ -129,7 +129,7 @@ void recell1(Entity *e) {
         RewCell(cells[14], cell + 66, e->layer);
         break;
     case 2:
-        cell = (u16)(((e->x.HALF.HI - 8 - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - 8 - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 66, e->layer);
         RewCell(cells[1], cell - 65, e->layer);
         RewCell(cells[2], cell - 64, e->layer);
@@ -150,7 +150,7 @@ void recell1(Entity *e) {
         RewCell(cells[17], cell + 67, e->layer);
         break;
     case 3:
-        cell = (u16)(((e->x.HALF.HI - mapState.scrollX) >> 4) | (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cell = (u16)(((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
         RewCell(cells[0], cell - 67, e->layer);
         RewCell(cells[1], cell - 66, e->layer);
         RewCell(cells[2], cell - 65, e->layer);

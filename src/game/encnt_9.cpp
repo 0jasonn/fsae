@@ -14,8 +14,8 @@ void housha0(EncntEntry *e, u16 index) {
     }
     x = (e->x + (trigTable[e->angle * 8] >> 4)) & 0x3ff;
     y = (e->y + (trigTable[e->angle * 8 + 0x40] >> 4)) & 0x3ff;
-    cell = (x - mapState.x) >> 4 | ((y - mapState.y) >> 4) << 6;
-    if (data_0215afa4[cell] != 0 || data_02165fa8[cell] != 0) {
+    cell = (x - mapState.originX) >> 4 | ((y - mapState.originY) >> 4) << 6;
+    if (data_02158fa0.attr[cell] != 0 || data_02163fa4.attr[cell] != 0) {
         e->taken = 1;
     } else {
         e->x = x;

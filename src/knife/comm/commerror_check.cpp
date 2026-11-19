@@ -10,7 +10,7 @@ int CommErrorCheck(u32 expectedStatus) {
     s32 state;
     u32 timer;
 
-    if (COM_WORK->holdFlag != 0) {
+    if (comWork.holdFlag != 0) {
         return 1;
     }
     if (data_0212c4d4 != 0) {
@@ -28,10 +28,10 @@ int CommErrorCheck(u32 expectedStatus) {
     if (comerror_error_check(expectedStatus) != 0) {
         timer = 0;
     } else {
-        timer = COM_WORK->errorTimer + 1;
+        timer = comWork.errorTimer + 1;
     }
-    COM_WORK->errorTimer = timer;
-    if ((opTitleState & 0x3000) != 0 || COM_WORK->errorTimer > 0x3c) {
+    comWork.errorTimer = timer;
+    if ((opTitleState & 0x3000) != 0 || comWork.errorTimer > 0x3c) {
         func_0202809c();
         Task_Chain(8);
         return 0;

@@ -31,7 +31,7 @@ void youseidama_up(Entity *e) {
 void youseidama_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
     setYouseiEffect(e);
-    if (em12_typeMasks & 1) {
+    if (em12_typeMasks[0] & 1) {
         PutObjWork(e);
     }
 }

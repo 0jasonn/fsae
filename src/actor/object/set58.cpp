@@ -28,9 +28,9 @@ void body_init(Entity *e) {
     set58_bodyState[0x36] = 0;
     e->timer = 0;
     V58(e)->unk_7c = 0x122;
-    em12_typeMasks = 0;
+    em12_typeMasks[0] = 0;
     if (e->type == 0xb) {
-        CgLoad(set58_cgIdsA[*((u8 *)&gameState + 1)]);
+        CgLoad(set58_cgIdsA[gameState.unk_01]);
         return;
     }
     if (func_02081b64() != 0) {
@@ -41,6 +41,6 @@ void body_init(Entity *e) {
         ObjPosCopyOfs32(e, child, 0, 0);
         PutObjWork(e);
     } else {
-        CgLoad(set58_cgIdsB[*((u8 *)&gameState + 1)]);
+        CgLoad(set58_cgIdsB[gameState.unk_01]);
     }
 }

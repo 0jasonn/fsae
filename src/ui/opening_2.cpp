@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/misc.h"
 #include "global.h"
+#include "engine/irq.h"
 
 void OpeningTask(void) {
     Random();
@@ -11,7 +12,7 @@ void OpeningTask(void) {
 s32 OpeningTaskCanPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
-    for (head = data_0212c6b0; head < data_0212c6f0; head++) {
+    for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
         node = head->next;
         if (node != head) {
             do {
@@ -29,7 +30,7 @@ s32 OpeningTaskCanPrepareFinalize(void) {
 void OpeningTaskPrepareFinalize(void) {
     EntityNode *head;
     EntityNode *node;
-    for (head = data_0212c6b0; head < data_0212c6f0; head++) {
+    for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
         node = head->next;
         if (node != head) {
             do {
@@ -45,7 +46,7 @@ void OpeningTaskPrepareFinalize(void) {
         EntityNode *head2;
         EntityNode *node2;
         EntityNode *prevNode;
-        for (head2 = data_0212c6b0; head2 < data_0212c6f0; head2++) {
+        for (head2 = data_0212c6b0; head2 < data_0212c6b0 + 8; head2++) {
             node2 = head2->next;
             if (node2 != head2) {
                 do {
@@ -78,7 +79,7 @@ void op_init(void) {
     SoundReq(0x800b01ad);
     DispReset();
     ZeldaFadeFinish();
-    ((u8 *)&gameState)[0x8e] = 0;
+    gameState.unk_8e = 0;
     initializeVirtualScreenData();
     setupVirtualScreenCallback();
     ObjMoveInit();
@@ -88,7 +89,7 @@ void op_init(void) {
     DemoBgBuffClear();
     MessageInitialize();
     func_0204f978();
-    MIi_CpuClear16(0, effectState, 0x28);
+    MIi_CpuClear16(0, &effectState, 0x28);
     PlWorkClear();
     PlWorkColorReset();
     slotIndex = 0x17;
@@ -104,35 +105,35 @@ void op_init(void) {
         bankValue -= 0x80000010;
         data_02134924 = zero;
         localPlayerIndex = zero;
-        cockpitState[0] = zero;
-        cockpitState[3] = zero;
-        displayState.workBuffer = data_021361a0;
-        displayState.unk_8 = *(const u16 *)(data_020ce4d0 + 0x24);
-        displayState.unk_14 = valueA;
-        displayState.unk_20 = 0x841a;
-        displayState.unk_2c = valueB;
-        displayState.reg66 = 0x3e66;
-        displayState.reg68 = 0x0c0c;
-        displayState.unk_a = zero;
-        displayState.unk_c = bankValue;
-        displayState.frameCounter = zero;
-        displayState.unk_18 = bankValue;
-        displayState.unk_22 = zero;
-        displayState.scrollX = zero;
-        displayState.unk_2e = zero;
-        displayState.unk_30 = 0xb0;
-        mapState.unk_20 = zero;
-        mapState.cameraX = 0xb0;
+        cockpitState.mode = zero;
+        cockpitState.bufferIndex = zero;
+        displayState.bg[0].buffer = data_021361a0[0];
+        displayState.bg[0].cnt = *(const u16 *)(data_020ce4d0 + 0x24);
+        displayState.bg[1].cnt = valueA;
+        displayState.bg[2].cnt = 0x841a;
+        displayState.bg[3].cnt = valueB;
+        displayState.blendCnt = 0x3e66;
+        displayState.blendAlpha = 0x0c0c;
+        displayState.bg[0].scrollX = zero;
+        displayState.bg[0].scrollY = bankValue;
+        displayState.bg[1].scrollX = zero;
+        displayState.bg[1].scrollY = bankValue;
+        displayState.bg[2].scrollX = zero;
+        displayState.bg[2].scrollY = zero;
+        displayState.bg[3].scrollX = zero;
+        displayState.bg[3].scrollY = 0xb0;
+        mapState.scrollX = zero;
+        mapState.scrollY = 0xb0;
         em2f_mapFlag = zero;
     }
     displayState.displayFlags |= 0x1b00;
     func_02026774();
     ((u8 *)KnifeApp_getInstance())[0xcb0] = 0;
     *(volatile u32 *)0x04000000 = (*(volatile u32 *)0x04000000 & 0xffcfffef) | 0x10;
-    effectState[EFFECT_STATE_STEP_TIMER] = 0xb4;
-    effectState[EFFECT_STATE_STEP_INDEX] = zero;
-    effectState[EFFECT_STATE_ACTIVE] = zero;
-    effectState[EFFECT_STATE_LEVEL] = zero;
+    effectState.stepTimer = 0xb4;
+    effectState.stepIndex = zero;
+    effectState.fadeActive = zero;
+    effectState.fadeStep = zero;
     blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
     FadeSet(setupIndexB, 4);
@@ -157,48 +158,48 @@ void op_init(void) {
 void mist_effect(void) {
     u8 stepIndex;
     u16 stepValue;
-    if (effectState[EFFECT_STATE_ACTIVE] != 0) {
+    if (effectState.fadeActive != 0) {
         return;
     }
-    if ((data_0212c594 & 3) == 0) {
-        displayState.frameCounter++;
+    if ((frameState.frameCount & 3) == 0) {
+        displayState.bg[1].scrollX++;
     }
-    if (effectState[EFFECT_STATE_STEP_TIMER] != 0) {
-        effectState[EFFECT_STATE_STEP_TIMER]--;
+    if (effectState.stepTimer != 0) {
+        effectState.stepTimer--;
         return;
     }
-    if ((data_0212c594 & 7) != 0) {
+    if ((frameState.frameCount & 7) != 0) {
         return;
     }
-    stepIndex = effectState[EFFECT_STATE_STEP_INDEX];
+    stepIndex = effectState.stepIndex;
     stepValue = mistStepTable[stepIndex];
     if (stepValue != 0xffff && stepIndex != 0xff) {
-        effectState[EFFECT_STATE_STEP_INDEX] = stepIndex + 1;
-        displayState.reg68 = stepValue;
+        effectState.stepIndex = stepIndex + 1;
+        displayState.blendAlpha = stepValue;
         return;
     }
     displayState.displayFlags &= 0xfdff;
     displayState.displayFlags |= 0x400;
-    displayState.reg66 = 0x3c64;
-    displayState.reg68 = 0x808;
-    displayState.scrollX = mapState.cameraX;
-    effectState[EFFECT_STATE_ACTIVE] = 1;
+    displayState.blendCnt = 0x3c64;
+    displayState.blendAlpha = 0x808;
+    displayState.bg[2].scrollY = mapState.scrollY;
+    effectState.fadeActive = 1;
 }
 
 void color_control(void) {
     u8 *base;
-    if (effectState[EFFECT_STATE_ACTIVE] == 0) {
+    if (effectState.fadeActive == 0) {
         return;
     }
     if (blendRequest.blendEnabled != 0) {
         return;
     }
-    if ((data_0212c594 & 3) == 0) {
+    if ((frameState.frameCount & 3) == 0) {
         base = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x3a);
         CgPalletSet((u16 *)(base + ((Random() & 3) << 5)), 0xf, 1);
     }
-    MakeFadeBuff256(effectState[EFFECT_STATE_LEVEL] << 4);
-    title_MakeFadeBuff256(blendRequest.blendColor, effectState[EFFECT_STATE_LEVEL] << 4);
+    MakeFadeBuff256(effectState.fadeStep << 4);
+    title_MakeFadeBuff256(blendRequest.blendColor, effectState.fadeStep << 4);
 }
 
 void op_demo_skip(void) {
@@ -208,8 +209,8 @@ void op_demo_skip(void) {
     SoundReq(0x80010000);
     blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
-    effectState[EFFECT_STATE_STEP_TIMER] = 0;
-    effectState[EFFECT_STATE_STEP_INDEX] = 0xff;
+    effectState.stepTimer = 0;
+    effectState.stepIndex = 0xff;
     data_0212c500 = 2;
     data_0212c4dc = 0;
     SetCgColor(0, 0x6739);

@@ -3,6 +3,7 @@
 #include "ui/messageselect_api.h"
 #include "ui/selectiondialog_api.h"
 #include "ui/selectiondialog.h"
+#include "engine/message_request.h"
 
 // Functions in this file (original names from the debug build):
 //   selectionDialog::update_close (0x020a2268)
@@ -30,7 +31,6 @@ BOOL Knife_Message_selectionDialog_update_close(void *a) {
 // Functions in this file (original names from the debug build):
 //   selectionDialog::update (0x020a22cc)
 
-extern u8 messageRequest[];
 
 // selectionDialog::update() (0x020a22cc): runs the state machine of the dialog, returns true once it has finished
 BOOL Knife_Message_selectionDialog_update(void *a) {
@@ -62,7 +62,7 @@ BOOL Knife_Message_selectionDialog_update(void *a) {
         break;
     case 6:
         self->state = 0;
-        messageRequest[0] = 0;
+        messageRequest.phase = 0;
         finished = 1;
         break;
     default:

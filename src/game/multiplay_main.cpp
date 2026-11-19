@@ -25,7 +25,7 @@ void multiplay_main(void) {
 
     if (CommFrameSync() != 0) {
         CommUpdateJoy();
-        if (frameCounter[0x11] != 0 || CommKeyCheck(8) != 0) {
+        if (frameCounter.pauseRequest != 0 || CommKeyCheck(8) != 0) {
             Pause();
             Cockpit();
             CommFrameUpdate();
@@ -55,13 +55,13 @@ void multiplay_main(void) {
                 playerWork[3].unk_30 = 0x2d;
             }
         }
-        if (!KnifeApp_isWirelessMode(KnifeApp_getInstance()) && frameCounter[0x14] == 0 && frameCounter[0x13] == 0) {
+        if (!KnifeApp_isWirelessMode(KnifeApp_getInstance()) && frameCounter.playersBoundPrev == 0 && frameCounter.playersBound == 0) {
             playerWork[0].paletteBits = playerWork[0].paletteBits & ~0x80u;
             playerWork[1].paletteBits = playerWork[1].paletteBits & ~0x80u;
             current = *Knife_Single_SinglePlay_GetInstance();
             if (mapState.target == playerWork[current].entity) {
-                distX = (s16)abs_s32(playerWork[current].entity->x.HALF.HI - (s16)mapState.unk_20 - 0x80) * 2;
-                distY = (s16)abs_s32(playerWork[current].entity->y.HALF.HI - mapState.unk_22 - 0x60) * 2;
+                distX = (s16)abs_s32(playerWork[current].entity->x.HALF.HI - mapState.scrollX - 0x80) * 2;
+                distY = (s16)abs_s32(playerWork[current].entity->y.HALF.HI - mapState.scrollY - 0x60) * 2;
                 if (distX >= 0x120 || distY >= 0xe0) {
                     playerKeysPrev[current] |= 0x1000;
                     BindPlayer(current);
@@ -78,16 +78,16 @@ void multiplay_main(void) {
                 playerKeysPrev[0] &= 0x170c;
             }
         }
-        if ((&cockpitState)[0xc] != 0xff && frameCounter[0x14] == 0 && frameCounter[0x11] == 0) {
+        if (cockpitState.item != 0xff && frameCounter.playersBoundPrev == 0 && frameCounter.pauseRequest == 0) {
             if (gameState.frameCount < 0x57e04) {
                 gameState.frameCount++;
             }
         }
-        if ((*(u16 *)frameCounter & 0xff) == 0) {
+        if ((frameCounter.frame & 0xff) == 0) {
             CalcItemLevel();
         }
         gameState.unk_6f = 0;
-        (*(u16 *)frameCounter)++;
+        frameCounter.frame++;
         Encounter();
         data_0212c564();
         ShikakeMove();
@@ -101,14 +101,14 @@ void multiplay_main(void) {
         func_02062fcc();
         func_020830ec();
         VGroupManager();
-        if (frameCounter[0x12] != 0) {
+        if (frameCounter.stopRequest != 0) {
             func_0202809c();
             SoundReq(0x80040000);
             SoundInit();
             data_0212c500 += 2;
             data_0212c4dc = 0;
             data_0212c4b8 = 1;
-            *(u16 *)(frameCounter + 2) = 0xb4;
+            frameCounter.timer = 0xb4;
             if (gameState.unk_01 == 5) {
                 UnlockTokiWave();
             }
@@ -120,7 +120,7 @@ void multiplay_main(void) {
             Scene_SetFlag5();
             SoundReq(0x80040000);
             SoundInit();
-            cockpitState = 2;
+            cockpitState.mode = 2;
             gameState.unk_6e = 2;
             data_0212c520 = 1;
             data_0212c500++;

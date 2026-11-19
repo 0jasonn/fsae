@@ -20,5 +20,5 @@ typedef struct Vars_Set13 {
 } Vars_Set13;
 
 extern const EntityFunc set13_stateTable[]; // indexed by e->action (was set13_stateTable)
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 #endif

@@ -4,7 +4,7 @@
 #include "engine/functions.h"
 #include "actor/enemy/em22.h"
 
-extern u16 frameCounter; // frame counter (frameCounter)
+#include "engine/frame_counter.h"
 
 extern const u8 em22_hitbox[];          // em22_hitbox, hitbox of em22
 extern const EntityFunc em22_stateTable[]; // em22_stateTable, GenericKnockback table of em22

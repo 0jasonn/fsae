@@ -51,7 +51,7 @@ void sazanami_init(Entity *e) {
 }
 
 void sazanami_move(Entity *e) {
-    if (em12_typeMasks & 2) {
+    if (em12_typeMasks[0] & 2) {
         PutObjWork(e);
     } else {
         UpdateAnimationSingleFrame(e);
@@ -86,7 +86,7 @@ void hikari_move(Entity *e) {
         return;
     }
     ObjPosCopyOfs32(e, child, 0, -0x80000);
-    em12_typeMasks |= 2;
+    em12_typeMasks[0] |= 2;
     PutObjWork(e);
 }
 

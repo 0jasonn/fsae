@@ -24,29 +24,8 @@ typedef struct SUBTASK_PLAYER_WORK {
     u32 floatValue;
 } SUBTASK_PLAYER_WORK;
 
-// Wireless member record (0x34 bytes each, data_0212ca20); the status bits are packed like the packet word.
-typedef struct SubtaskMemberBits {
-    u32 b0 : 2;
-    u32 b2 : 1;
-    u32 b3 : 1;
-    u32 b4 : 1;
-    u32 b5 : 1;
-    u32 b6 : 1;
-    u32 b7 : 2;
-    u32 b9 : 2;
-    u32 b11 : 2;
-    u32 b13 : 10;
-    u32 b23 : 7;
-    u32 b30 : 2;
-} SubtaskMemberBits;
-
-typedef struct SubtaskMember {
-    u8 unk_00[0x24];
-    SubtaskMemberBits bits; // 24
-    u32 w28;
-    u32 w2c;
-    u32 unk_30;
-} SubtaskMember;
+// Wireless member records: comWork.recv[] (ComPacket, engine/com_work.h).
+#include "engine/com_work.h"
 
 typedef struct SubtaskSendEntry {
     u32 word00;
@@ -63,7 +42,6 @@ typedef struct SubtaskSelect {
     u8 index;
 } SubtaskSelect;
 
-extern SubtaskMember data_0212ca20[];
 extern SubtaskSendEntry data_021350b0[];
 extern SubtaskSelect multiSioSelect;
 extern u8 localPlayerIndex;

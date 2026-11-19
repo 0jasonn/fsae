@@ -6,7 +6,7 @@
 // Address -> name: 0x0206cac8 set43_move
 
 void set43_move(Entity *e) {
-    if ((frameCounter & 0x3f) == 0) {
+    if ((frameCounter.frame & 0x3f) == 0) {
         setwind(e);
     }
     if (e->linkedEntity != NULL) {

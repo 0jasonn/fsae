@@ -7,7 +7,7 @@
 
 // Redraws the heart or rupee part of the cockpit for a given value (a is the kind, b the amount).
 void CockpitRecovery(u8 kind, u8 amount) {
-    if (cockpitState[0] == 0) {
+    if (cockpitState.mode == 0) {
         return;
     }
     if (kind < 4) {
@@ -28,5 +28,5 @@ void CockpitRecovery(u8 kind, u8 amount) {
 void cockpit_load(void) {
     DataLoad(1);
     func_02027778();
-    MIi_CpuCopyFast(data_021361a0, data_021369a0, 0x800);
+    MIi_CpuCopyFast(data_021361a0[0], data_021361a0[1], 0x800);
 }

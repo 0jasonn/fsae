@@ -14,7 +14,7 @@ typedef struct Vars_Set3c {
     /* 66 */ u16 lastDirection; // copy of e->direction, a change plays the sound 0x8c
 } Vars_Set3c;
 
-extern u32 em12_typeMasks[];         // per-area type flags
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[];         // flag bit for each type2
 extern const EntityFunc data_020d8c18[]; // state table indexed by e->action
 extern const u8 data_020d8c04[];     // hitbox of the set3c actor

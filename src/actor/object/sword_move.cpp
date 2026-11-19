@@ -32,7 +32,7 @@ void sword_move(Entity *e) {
             e->spriteSettings.b16 ^= 3;
         }
         if (playerWork[e->type].actionFlags & 0x40) {
-            e->attackDamage = ((SwordLevelView *)&playerWork[e->type].unk_3e)->level * 2 + 8;
+            e->attackDamage = playerWork[e->type].nutBits.b0 * 2 + 8;
             e->unk_40 = 8;
         }
     }
@@ -42,7 +42,7 @@ void sword_move(Entity *e) {
     if (playerWork[e->type].actionFlags == 0) {
         Entity *effect;
 
-        if (((SwordLevelView *)&playerWork[e->type].unk_3e)->level == 0) {
+        if (playerWork[e->type].nutBits.b0 == 0) {
             return;
         }
         if (!(owner->frame & 0x40)) {
@@ -54,7 +54,7 @@ void sword_move(Entity *e) {
         }
         effect->objKind = 6;
         effect->objId = 0xf;
-        if (((SwordLevelView *)&playerWork[e->type].unk_3e)->level == 1) {
+        if (playerWork[e->type].nutBits.b0 == 1) {
             effect->type = 0x14;
         } else {
             effect->type = 0x12;

@@ -9,7 +9,6 @@ typedef struct SelDialogCharTable {
     u32 v[16];
 } SelDialogCharTable;
 extern const SelDialogCharTable data_020de634;
-extern u8 messageRequest[];
 
 extern "C" {
 void MI_CpuFill8(void *dst, u8 value, u32 size);

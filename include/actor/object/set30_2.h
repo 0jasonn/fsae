@@ -8,7 +8,7 @@
 u8 motiagecheck(Entity *e);
 
 extern const u32 flagBits[];
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u8 set30Hitbox[];
 extern const u16 data_020da714[]; // vgroup ids per stage, three per type2
 extern const u16 data_020da754[]; // vgroup ids per bgm record row, three per type2

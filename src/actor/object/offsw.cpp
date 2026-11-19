@@ -7,7 +7,7 @@
 //   0x02074cac offsw_move (original name)
 
 extern const EntityFunc offsw_actions[]; // offsw_actions, indexed by e->action
-extern u32 em12_typeMasks[];             // indexed by e->areaIndex
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[];             // indexed by e->type2
 
 // File-local overlay. The word at 0x60 is a type bitmask, not a pointer.

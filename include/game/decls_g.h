@@ -45,18 +45,18 @@ extern u32 data_0218708c;
 
 // Data used by disp_A_button (the OAM buffer is objAffineSet, see include/game/scene_d.h)
 extern u8 objAffineSet[];
-extern u8 data_0212c4c8;
+#include "engine/vblank_request.h"
 extern u32 data_021870b0;
 extern const u32 data_020df200[];
 
 // Title and save-error screen data and calls (savefile_error_*, terminateInfo_*)
 extern u8 data_021271cc[];
 extern u8 data_021271d4[];
-extern u8 displayState[];
+#include "engine/display_state.h"
 extern const u8 data_020ce4d0[];
 extern u8 data_0212c508;
-extern u8 blendRequest;
-extern u8 effectState[];
+#include "engine/blend_request.h"
+#include "engine/effect_state.h"
 extern u8 data_0212c500[];
 extern u8 data_0212c4dc;
 extern u8 data_0212720c[];

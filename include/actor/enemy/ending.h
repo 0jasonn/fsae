@@ -21,102 +21,34 @@ typedef struct SceneSlot {
     /* 10 */ u8 unk_10[4];
 } SceneSlot;
 
-// Camera state at mapState: first word is the entity the camera follows
-typedef struct CameraState {
-    /* 00 */ Entity *target;
-    /* 04 */ u8 unk_04[0x1c];
-    /* 20 */ u16 unk_20;
-    /* 22 */ s16 unk_22;
-    /* 24 */ u8 unk_24[4];
-    /* 28 */ u16 unk_28;
-} CameraState;
-
-// Display shadow at displayState (displayFlags is the first halfword)
-typedef struct DisplayShadow {
-    /* 00 */ u16 displayFlags;
-    /* 02 */ u8 unk_02[0x1e];
-    /* 20 */ u16 unk_20;
-    /* 22 */ u16 unk_22;
-    /* 24 */ u16 unk_24;
-    /* 26 */ u8 unk_26[6];
-    /* 2c */ u16 unk_2c;
-    /* 2e */ u16 unk_2e;
-    /* 30 */ u16 unk_30;
-    /* 32 */ u8 unk_32[0x34];
-    /* 66 */ u16 unk_66;
-    /* 68 */ u16 unk_68;
-    /* 6a */ u16 unk_6a;
-} DisplayShadow;
-
-// Result state block at effectState (0x28 bytes, cleared by ending_init)
-typedef struct ResultState {
-    /* 00 */ u8 phase;     // state of the scene machine in ending_scene_01
-    /* 01 */ u8 subPhase; // sub-state of the demo in demo_01 and demo_00
-    /* 02 */ u8 unk_02[2];
-    /* 04 */ u16 timer;    // frames left in the current phase
-    /* 06 */ u8 unk_06[6];
-    /* 0c */ u8 fadeStep;  // 0..0x10, scaled by 0x10 for the fade buffers
-    /* 0d */ u8 unk_0d[0x17];
-    /* 24 */ u32 frames;   // incremented once per frame by ending_rescue
-} ResultState;
-
-// Fade work at blendRequest (the original tag is FADE_WORK_). Blend request read by the palette code.
-typedef struct FADE_WORK_ {
-    /* 00 */ u8 blendEnabled;
-    /* 01 */ u8 blendMode;       // index into fadeModeTable
-    /* 02 */ u8 unk_02;
-    /* 03 */ u8 blendStep;       // per-frame step of blendWeight
-    /* 04 */ u8 fadeRunning;
-    /* 05 */ u8 unk_05[2];
-    /* 07 */ u8 blendColor;
-    /* 08 */ s16 blendWeight;
-    /* 0a */ u8 unk_0a[2];
-    /* 0c */ s32 resetValue;     // bit mask of palette rows to fade, see MakeFadeBuff256
-} FADE_WORK_;
-typedef FADE_WORK_ BlendRequest;
+#include "engine/map_state.h"
+#include "engine/display_state.h"
+#include "engine/effect_state.h"
+#include "engine/blend_request.h"
 typedef void (*FadeFunc)(BlendRequest *);
 extern FadeFunc const fadeModeTable[];        // fadeModeTable
 extern u32 data_02134910;
 extern u16 data_02135da0[];
 
-// Flag block at messageRequest (bits in bytes 0, 3 and 4 are read by the scene code)
-typedef struct UnkStruct_0217d384 {
-    /* 00 */ u8 unk_00;
-    /* 01 */ u8 unk_01[2];
-    /* 03 */ u8 unk_03;
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 unk_05[3];
-    /* 08 */ u32 unk_08; // ending_scene_00 stores the player count here
-} UnkStruct_0217d384;
-
-#define GAME_STATE_U8(off) (*((u8 *)&gameState + (off)))
-
-extern BlendRequest blendRequest;
 extern u16 data_021355a0;
 extern u8 data_02135840[];
 extern u8 data_0216fd04[];
 extern u8 objAffineSet[];
 extern u8 data_0212ccb0[];
-extern u8 cockpitState;
-extern u8 data_021361a0[];
-extern ResultState effectState;
-extern u32 em12_typeMasks;
-extern u32 em2f_mapFlag;
+#include "engine/cockpit_state.h"
+#include "engine/em12_type_masks.h"
+#include "engine/em2f_map_flag.h"
 extern u8 data_0212c4dc;
 extern u8 data_0212c500;
 extern VoidFunc data_0212c564;
 extern SceneSlot data_02134d30; // first record; the others are reached with SCENE_SLOT
 #define SCENE_SLOT(k) (((SceneSlot *)&data_02134d30)[k])
-extern CameraState mapState;
-extern DisplayShadow displayState;
 extern VoidFunc const endingFinaleTable[];
 extern VoidFunc const finaleDemoTable[];
 extern VoidFunc const endingRescueTable[];
 extern u16 playerKeysPrev[4];
-extern u16 data_0212c594;
 extern u8 data_0212c4f8;
 extern s32 data_02134924;
-extern UnkStruct_0217d384 messageRequest;
 
 // Functions called from this range that are not in engine/functions.h
 void ComRequest(u8 a);

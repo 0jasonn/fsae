@@ -2,6 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/set69_3.h"
+#include "engine/message_request.h"
 
 // Set69 actor, third unit (module set69). Address -> name:
 //   0x02075ef0 type0_wait5 (original name)
@@ -32,8 +33,8 @@ void type0_wait5(Entity *e) {
         }
         e->subAction = 0;
         MessageRequest(0x1f4);
-        messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
-        messageRequest[4] = (messageRequest[4] & ~0x1f) | 7;
+        messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+        messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 7;
         spawn = GetSetWork(0x68, 0, 0);
         if (spawn != NULL) {
             ObjPosCopyOfs32(e, spawn, 0, -0x240000);
@@ -41,7 +42,7 @@ void type0_wait5(Entity *e) {
         return;
     }
     if (e->subAction == 0) {
-        if ((messageRequest[0] & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();
@@ -74,7 +75,7 @@ void type0_suikomi(Entity *e) {
     e->action = 0xd;
     e->timer = 8;
     SoundReq(0x21f);
-    blendRequest[7] = 0x16;
+    blendRequest.blendColor = 0x16;
     MakeFadeBuff256(0x100);
 }
 

@@ -7,7 +7,7 @@
 //   0x02064bf4 Set16 (original name)
 
 extern const EntityFunc set16_stateTable[]; // indexed by e->action (was set16_stateTable)
-extern u8 frameCounter[];                // was frameCounter, read as u16 (bit 1 selects the sprite flag)
+#include "engine/frame_counter.h"
 
 typedef struct Vars_Set16 {
     /* 00 */ u8 unk_00[0x70];
@@ -22,7 +22,7 @@ void Set16(Entity *e) {
             return;
         }
         if ((u32)VARS(Vars_Set16, e)->counter < 0x10) {
-            e->spriteSettings.b0 = (*(u16 *)frameCounter & 0x2) >> 1;
+            e->spriteSettings.b0 = (frameCounter.frame & 0x2) >> 1;
         }
     }
     set16_stateTable[e->action](e);

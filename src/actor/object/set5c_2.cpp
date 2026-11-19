@@ -17,7 +17,7 @@ typedef struct Vars_Set5c {
     /* 68 */ s32 cell; // cell index of the actor's position
 } Vars_Set5c;
 
-extern u32 em12_typeMasks[]; // one mask per area
+#include "engine/em12_type_masks.h"
 
 void set5c_block_set(Entity *e);
 

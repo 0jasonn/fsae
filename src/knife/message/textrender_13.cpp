@@ -3,7 +3,7 @@
 #include "knife/comm/multisio.h"
 #include "game/decls_e.h"
 
-extern u8 data_0212ca20[]; // group info block, the member names are 0x34 bytes apart from +0x14
+#include "engine/com_work.h"
 extern const u16 data_020de6f8[]; // empty string
 
 #define BG_CNT(addr) (*(volatile u16 *)(addr))
@@ -27,7 +27,8 @@ void Knife_Message_TextRenderer_getPlayerName(Knife::Message::TextRenderer *self
             count = Knife_Comm_WirelessManager_getLinkLevel(manager);
         }
         if (index < count) {
-            name = (const u16 *)(data_0212ca20 + index * 0x34 + 0x14);
+            ComPacket *member = &comWork.recv[index];
+            name = member->name;
             out->ces = (Knife::Message::ICharacterEncodingScheme *)Knife_Message_getCESObject_021770b4();
             out->data = name;
             out->size = Wstr_Length(name) << 1;

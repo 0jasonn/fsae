@@ -27,7 +27,7 @@ void breakSmokeSet(Entity *e);       // 0x02067770, parked (C++ linkage: symbol 
 extern const u8 data_020d8a54[];                 // hitbox of the lever
 extern const u8 data_020dca70[];                 // hitbox of the tama0a type 1 ball
 extern const u8 *const set25_hitboxTable[];      // hitbox per entity type (declared const: the load is hoisted)
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[];
 
 #endif

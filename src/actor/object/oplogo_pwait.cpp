@@ -1,10 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/irq.h"
 
 extern u8 data_0212c4dc;  // opening/title scene step
 extern u8 localPlayerIndex;
-extern u8 effectState[];
-extern u16 data_0212c594; // frame counter, bit 4 blinks
+#include "engine/effect_state.h"
 
 // oplogo_pwait (0x02068714): "press button" prompt of the opening logo. The first call places the sprite; afterwards it
 // shows the prompt (b0 = 2) while the button blink bit is set.
@@ -24,10 +24,10 @@ void oplogo_pwait(Entity *e) {
         if (data_0212c4dc != 4) {
             return;
         }
-        if (localPlayerIndex == 0 && (effectState[8] & 0x80)) {
+        if (localPlayerIndex == 0 && (effectState.progress & 0x80)) {
             return;
         }
-        if (data_0212c594 & 0x10) {
+        if (frameState.frameCount & 0x10) {
             e->spriteSettings.b0 = 2;
         }
     }

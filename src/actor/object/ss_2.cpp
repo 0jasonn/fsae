@@ -22,7 +22,7 @@ typedef struct Vars_Shutter {
 } Vars_Shutter;
 
 #define SHUTTER_CELL(e) \
-    ((u16)(((((e)->x.HALF.HI - mapState.scrollX) >> 4) | ((((e)->y.HALF.HI - mapState.scrollY) >> 4) << 6))))
+    ((u16)(((((e)->x.HALF.HI - mapState.originX) >> 4) | ((((e)->y.HALF.HI - mapState.originY) >> 4) << 6))))
 
 void ss_init(Entity *e) {
     e->action = 1;

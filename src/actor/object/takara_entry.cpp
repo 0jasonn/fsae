@@ -2,15 +2,8 @@
 #include "global.h"
 #include "game/takara.h"
 
-// Map grid origin (mapState): the position of cell 0 in world units
-typedef struct MapGridOrigin {
-    u8 unk_00[0x18];
-    u16 originX; // 18
-    u16 originY; // 1a
-} MapGridOrigin;
-
 extern TakaraEntry data_02134c30[32];
-extern MapGridOrigin mapState;
+#include "engine/map_state.h"
 
 // Registers e in the first free treasure entry, keyed by its cell (row in bits 6 and up, column below). Returns nothing.
 // Address 0x020772f0, original name unknown.

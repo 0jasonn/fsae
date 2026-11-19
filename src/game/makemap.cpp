@@ -17,16 +17,16 @@ void makemap_00(void) {
     MemClearFast(data_0212caf0, 0x1c0);
     PlWorkReset();
     for (i = 0; i < 4; i++) {
-        playerWork[i].unk_1c = GS_U8(0x58 + i);
+        playerWork[i].unk_1c = gameState.playerTimer58[i];
     }
-    GS_U8(0x8e) = 0;
+    gameState.unk_8e = 0;
     CgLoad(2);
     DataLoad(0x10);
     *(u16 *)0x05000000 = 0;
     data_021355a0 = 0;
     data_0212c4dc++;
     data_0216efa8 = 0;
-    *(u16 *)(frameCounter + 2) = 0xa;
+    frameCounter.timer = 0xa;
     SetCgColor(0, 0);
     SetCgColor(0xe, 0xffff);
     displayState.displayFlags = 0;
@@ -52,7 +52,7 @@ void makemap_sync_0204794c(void) {
         u8 zero = 0;
         data_0212c4dc += 2;
         data_0216efa8 = zero;
-        effectState.unk_02[1] = zero;
+        effectState.entryCount = zero;
         break;
     }
     }

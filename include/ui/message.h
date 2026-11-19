@@ -3,23 +3,18 @@
 
 #include "engine/entity.h"
 #include "types.h"
+#include "engine/message_request.h"
 
 // Per-state function of the message box (messageStates) and the telop box (telopStates).
 // A state returns 0 when it is finished for this frame.
 typedef int (*MsgStateFunc)(void);
 
-// Telop request block (telopRequest, 0x18 bytes)
+#include "engine/telop_request.h"
+
 typedef struct TelopDrawBits {
     u8 pos : 5;
     u8 rest : 3;
 } TelopDrawBits;
-typedef struct TelopWork {
-    /* 00 */ u8 active;
-    /* 01 */ u8 unk_01;
-    /* 02 */ u8 flags; // low nibble = 3 while a request is active, bits 4-5 = bank of (id - 1000) / 100
-    /* 03 */ u8 unk_03[3];
-    /* 06 */ u16 requestId; // bit 15 is set while the telop is busy
-} TelopWork;
 
 // One window slot (8 bytes): the telop and message boxes each have a primary and a secondary array of two
 typedef struct WindowSlot {
@@ -44,6 +39,8 @@ typedef struct KNIFE_MSGSYS {
     /* 00 */ struct MsgRendererView *renderer;
     /* 04 */ TextTokenizer *tokenizer;
     /* 08 */ const void *appInfo; // IAppInfoGetter passed to the tokenizer
+    // +0x0c..+0x24 is a copy of the 0x18-byte request (tlpInit copies telopRequest here; same layout as TelopWork and
+    // MessageRequestWork).
     /* 0c */ u8 windowPhase; // window opening progress, compared with 1 and 6 in Message (guess)
     /* 0d */ u8 unk_0d;
     /* 0e */ union {
@@ -61,9 +58,11 @@ typedef struct KNIFE_MSGSYS {
     };
     /* 11 */ u8 sizeBits;   // low 5 bits: width step, bits 5-7: height step
     /* 12 */ u16 msgId;     // text id of the message
-    /* 14 */ u8 unk_14[0x25 - 0x14];
+    /* 14 */ u8 unk_14[0x24 - 0x14];
+    /* 24 */ u8 datRead;  // message data block given to Knife_MsgReadPtrFromID, which sets this to 1 and datId to the id
     /* 25 */ u8 openMode; // 2 while the message box is closing
-    /* 26 */ u8 unk_26[0x2a - 0x26];
+    /* 26 */ u16 datId;   // text id stored by Knife_MsgReadPtrFromID
+    /* 28 */ u8 unk_28[0x2a - 0x28];
     /* 2a */ u8 unk_2a; // set to 0xa0 by tlpInit
     /* 2b */ u8 unk_2b[0x30 - 0x2b];
     /* 30 */ s16 tokenIndex;
@@ -77,7 +76,8 @@ typedef struct KNIFE_MSGSYS {
     /* d3 */ u8 unk_d3[0xd6 - 0xd3];
     /* d6 */ u8 unk_d6;     // nonzero makes the wait state return early
     /* d7 */ u8 palletBits; // palette bits passed to Knife_palletChange with 0x40
-    /* d8 */ u8 unk_d8[0xda - 0xd8];
+    /* d8 */ u8 unk_d8;    // bit 7: palette to restore after an icon, low 6 bits: that palette (MessageTextRender)
+    /* d9 */ u8 unk_d9;    // MessageTextRender: 1 after drawing a character, 0 after an icon
     /* da */ s8 moveAccum; // text move accumulator: steps are added until it is positive
     /* db */ u8 unk_db;
     /* dc */ u8 stepTimer; // frames left in the wait state / until the line feed is finished
@@ -96,21 +96,14 @@ typedef struct KNIFE_MSGSYS {
 } // namespace Knife
 typedef Knife::Message::KNIFE_MSGSYS KNIFE_MSGSYS;
 
-extern TelopWork telopRequest;
 extern KNIFE_MSGSYS messageBox;
 extern KNIFE_MSGSYS telopBox;
 extern u8 data_0216efbc[];
-extern u8 messageRequest[];
-extern u8 data_0217d3c0[];
-extern u8 data_0217d4a8[];
 extern u8 data_0217d358[];
-extern u8 data_0217d3a8[];
-extern u8 data_0217d490[];
 extern u8 data_0216efc8[];
 extern u8 data_0216efd4[];
 extern u8 data_0211ed80[];
 extern u8 data_021371a0[];
-extern u8 data_021361a0[];
 extern MsgStateFunc messageStates[];
 extern MsgStateFunc telopStates[];
 extern VoidFunc msgMoveTable[];
@@ -118,7 +111,7 @@ extern WindowSlot telopWindowSlots[];
 extern WindowSlot data_0216f010[];
 extern WindowSlot data_0216efe0[];
 extern WindowSlot data_0216eff0[];
-extern u8 cockpitState[];
+#include "engine/cockpit_state.h"
 
 extern void knife_msgLineChange(KNIFE_MSGSYS *msg, s32 lines);
 extern void Knife_msgFrameDma(KNIFE_MSGSYS *msg, u32 bank);

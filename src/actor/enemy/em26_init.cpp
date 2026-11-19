@@ -36,7 +36,7 @@ void em26_wait(Entity *e) {
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
         target = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
     } else {
-        target = playerWork[frameCounter & 3].entity;
+        target = playerWork[frameCounter.frame & 3].entity;
     }
     if (target == NULL) {
         return;

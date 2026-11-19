@@ -1,23 +1,17 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/blend_request.h"
 
 // Opening logo "you" and button objects, 0x02068494 to 0x020686a0 + 0x74 (you_move .. button_move).
 typedef struct Vars_You {
     /* 00 */ u8 unk_00[0x64];
     /* 64 */ u16 moveCounter; // 16-bit movement counter, indexes the sine table
 } Vars_You;
-typedef struct BlendRequestOpl {
-    /* 00 */ u8 unk_00[7];
-    /* 07 */ u8 blendColor;
-    /* 08 */ u8 unk_08[4];
-    /* 0c */ s32 resetValue;
-} BlendRequestOpl;
-extern BlendRequestOpl blendRequest;
 extern const s16 data_020c91fc[][2];
 extern const u8 oplogo_youPosTable[];
 extern EntityFunc oplogo_buttonTable[];
 extern u8 localPlayerIndex;
-extern u8 effectState[];
+#include "engine/effect_state.h"
 extern u8 data_0212c4dc;
 
 void you_move(Entity *e) {
@@ -91,7 +85,7 @@ void button_init(Entity *e) {
 void button_move(Entity *e) {
     u8 value;
     if (localPlayerIndex == 0) {
-        if ((effectState[8] & 0x80) && data_0212c4dc == 4) {
+        if ((effectState.progress & 0x80) && data_0212c4dc == 4) {
             value = 2;
         } else {
             value = 0;

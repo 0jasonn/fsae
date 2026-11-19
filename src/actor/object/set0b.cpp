@@ -6,10 +6,10 @@
 // Set actor unit 8 (module set). Address -> name (original name):
 //   0x02057f40 set0b_move
 
-extern u16 frameCounter; // frame counter
+#include "engine/frame_counter.h"
 
 void set0b_move(Entity *e) {
-    if ((frameCounter & 1) != 0) {
+    if ((frameCounter.frame & 1) != 0) {
         e->z.HALF.HI--;
     }
     e->timer--;

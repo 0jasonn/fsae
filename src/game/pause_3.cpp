@@ -2,10 +2,6 @@
 #include "global.h"
 #include "engine/misc.h"
 
-// pauseState is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
-// [0xe] reset flag, [0xf] set when the wireless session is being closed
-
-extern u8 pauseState[];
 extern u16 data_021355a0;
 extern u16 playerKeys[];
 extern u8 data_0212c4b8;
@@ -25,7 +21,6 @@ extern u8 plScratchBuffer[];
 extern const EntityFunc entityDispatchTable[];
 
 
-extern u8 telopRequest[];
 extern const u32 data_021186e4[];
 extern const u8 data_0212c84c[];
 

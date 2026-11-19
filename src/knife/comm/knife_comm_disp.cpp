@@ -11,7 +11,7 @@ extern "C" int isSkipAvailable(KNIFE_MSGSYS *msg);
 extern "C" void knife_commDispMove(KNIFE_MSGSYS *msg);
 
 extern u8 localPlayerIndex[];
-extern u8 frameCounter[];
+#include "engine/frame_counter.h"
 extern u16 playerKeys[];
 extern const s8 data_020d7c18[]; // step table of the text speed, indexed by the low nibble of speedSetting
 
@@ -66,7 +66,7 @@ void knife_commDispMove(KNIFE_MSGSYS *msg) {
         }
     } else {
         speed = 2;
-        frameState = frameCounter[0x11];
+        frameState = frameCounter.pauseRequest;
         if ((frameState & 0x80) != 0 && (frameState & 3) == localPlayerIndex[0]) {
             return;
         }
@@ -141,7 +141,7 @@ void knife_commDispWait(KNIFE_MSGSYS *msg) {
         }
         return;
     }
-    state = frameCounter[0x11];
+    state = frameCounter.pauseRequest;
     if ((state & 0x80) != 0 && (state & 3) == localPlayerIndex[0]) {
         return;
     }

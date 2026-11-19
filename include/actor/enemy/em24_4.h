@@ -3,7 +3,7 @@
 
 #include "engine/functions.h"
 
-extern u16 frameCounter;                 // frame counter (frameCounter)
+#include "engine/frame_counter.h"
 extern const s8 fuwafuwaTable[];         // fuwafuwaTable, z offset of fuwafuwa, indexed by (frameCounter + subtimer) & 0xf >> 2
 
 #endif

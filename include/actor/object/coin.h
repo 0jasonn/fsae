@@ -11,7 +11,6 @@ typedef struct Vars_Coin {
 #define VCOIN(e) VARS(Vars_Coin, e)
 
 extern const EntityFunc coin_actions[];   // coin_actions, indexed by e->action
-extern u16 data_0212c594;                 // frame counter used by the sparkle and blink code
 void kirakira_set(Entity *e);
 void kirakira(Entity *e);
 

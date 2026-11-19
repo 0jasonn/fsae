@@ -25,7 +25,7 @@ void rupee_move(Entity *e, s8 dx, u32 divisor) {
         e->y.HALF.HI += 5;
     }
     InitAnimationForceUpdate(e, (VPLATE(e->parent)->count / divisor) % 10 + 0xc);
-    if (effectState[0x27] != 0) {
+    if (effectState.removeFlag != 0) {
         PutObjWork(e);
     }
 }

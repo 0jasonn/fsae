@@ -19,27 +19,20 @@ typedef struct Vars_02036ca4 {
 } Vars_02036ca4;
 #define V(e) VARS(Vars_02036ca4, e)
 
-typedef struct UnkStruct_0212c5ac {
-    /* 00 */ u8 unk_00[7];
-    /* 07 */ u8 unk_7;
-    /* 08 */ u8 unk_8[4];
-    /* 0c */ s32 unk_c;
-} UnkStruct_0212c5ac;
-extern UnkStruct_0212c5ac blendRequest;
-extern Entity *mapState;
-extern u8 messageRequest;
+#include "engine/blend_request.h"
+#include "engine/map_state.h"
 extern const EntityFunc em2f_actions[];
 extern const u8 em2f_hitbox[];
 extern const u8 em2f_healthByDifficulty[];
 extern const u8 em2f_mapData[];
-extern s32 em2f_mapFlag;
+#include "engine/em2f_map_flag.h"
 extern u8 localPlayerIndex;
-extern u8 cockpitState;
+#include "engine/cockpit_state.h"
 extern const u16 em2f_tsubomiSpeeds[];
 extern const u32 flagBits[];
 extern const s16 trigTable[];
 extern const u8 em2f_fiveAttackCounts[];
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 extern const u8 em2f_slotNext[][8];
 extern const u16 *const em2f_tsubomiPaths[];
 extern const u8 em2f_moveGateMasks[];

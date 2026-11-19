@@ -1,11 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/cockpit_state.h"
 
 // Kakera HUD functions (module kakera). Original name from the debug build: kakera_write(unsigned char const*).
 
-extern u8 cockpitState[];
-extern u8 data_021361a0[];
 extern u16 data_020cf842[];
 
 // Writes four kakera tiles: each source byte selects a 6-halfword tile pattern, written as a 3 by 2 block into the
@@ -16,7 +15,7 @@ void kakera_write(const u8 *kakera) {
     u8 index;
     const u16 *pattern;
 
-    dst = (u16 *)(data_021361a0 + (cockpitState[3] << 11) + 0x1a8);
+    dst = (u16 *)(data_021361a0[cockpitState.bufferIndex] + 0x1a8);
     count = 4;
     do {
         index = *kakera++;

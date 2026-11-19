@@ -11,8 +11,8 @@ void bg2StSet(void) {
     case 1:
     case 2:
     case 6:
-        mapState.unk_0[8] = 0xc;
-        displayState.unk_2c = *(const u16 *)(data_020ce4d0 + 0x26);
+        mapState.unk_08 = 0xc;
+        displayState.bg[3].cnt = *(const u16 *)(data_020ce4d0 + 0x26);
         displayState.displayFlags |= 0x800;
         func_0208ae14();
         break;

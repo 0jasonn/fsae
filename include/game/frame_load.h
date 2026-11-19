@@ -38,15 +38,15 @@ BOOL historyCheck(void *entry);
 BOOL pasthistoryCheck(void *entry);
 BOOL checkSingleErrorParts(u8 mode, u16 partId);
 
-extern Entity *mapState;      // entity of the local player
+#include "engine/map_state.h"
 extern u8 localPlayerIndex;
-extern u32 em12_typeMasks[];
+#include "engine/em12_type_masks.h"
 extern const u8 data_02103e84[];    // 8 byte start layouts, indexed by the low nibble of game state byte 0x4f
 extern u8 data_0212c84c[];          // copy of the 8 start slots
 
 extern u32 data_0216f834[];   // 0x20 words, copied to data_0216f8b4
 extern u32 data_0216f8b4[];
-extern u16 data_0216f820[];   // [1] holds the part id of the part being set
+#include "engine/floor_parts_state.h"
 
 extern "C" {
 FrameEntry *frame_select(void);                             // 0x0204dcc4

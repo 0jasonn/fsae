@@ -20,13 +20,7 @@ int func_02083d18(Entity *e, int dx, int dy);
 // 0x0205e114, original warphole_exit(OBJ_WORK_*), defined in src/object/warphole_3.cpp
 void warphole_exit(Entity *e);
 
-// Grid origin used to turn world positions into map cells (mapState, u16 pair at +0x18 / +0x1a)
-typedef struct WipGridOrigin {
-    u8 unk_00[0x18];
-    u16 originX;
-    u16 originY;
-} WipGridOrigin;
-extern WipGridOrigin mapState;
+#include "engine/map_state.h"
 
 // Byte view of gameState (game state; GameState in engine/player.h only names its first bytes)
 

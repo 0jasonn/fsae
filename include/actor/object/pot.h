@@ -4,22 +4,10 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-// Scroll origin of the current map (mapState). A cell index is
-// ((x - scrollX) >> 4) | (((y - scrollY) >> 4) << 6); the BG cell is at buffer + 4 + index * 2
-// and its state byte at buffer + 0x2004 + index.
-typedef struct MapScroll {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-    /* 1c */ u8 unk_1c[0xc];
-    /* 28 */ u16 viewX;
-    /* 2a */ u16 viewY;
-} MapScroll;
-
-extern MapScroll mapState;
+#include "engine/map_state.h"
 
 #define MAP_CELL_INDEX(x, y) \
-    ((((x) - mapState.scrollX) >> 4) | ((((y) - mapState.scrollY) >> 4) << 6))
+    ((((x) - mapState.originX) >> 4) | ((((y) - mapState.originY) >> 4) << 6))
 
 // The whole sprite settings word (Entity 0x1c), for single-bit updates
 #define SPRITE_WORD(e) (*(u32 *)&(e)->spriteSettings)
@@ -50,8 +38,7 @@ extern "C" void m4aMusicSetVolume(u16 a, u16 b); // 0x0208d944
 int func_02085ccc(Entity *e); // thumb, nonzero when the cell is held (cellcalls.h)
 void kanaamiRew(Entity *e, u16 index); // 0x0205e758 (set4e_2.cpp)
 void set4e_move(Entity *e); // 0x0205e714 (set4e_2.cpp)
-extern u16 displayState[]; // BG control word (u16 at 0)
-extern u8 data_0212c594[]; // u16 flag word at 0 (read by oplogo), byte at 4 set by the pot
+#include "engine/display_state.h"
 void MultiEventSet(u16 *a, u8 b, u8 c, u8 d); // 0x0204602c, not yet in functions.h
 void RewCellOne(u16 a, u16 b, u16 c);
 extern "C" void RewCellBack(int cell, int layer);
@@ -59,8 +46,8 @@ void set5c_event_check(Entity *e);
 void zelda_disp(Entity *e);
 extern const EntityFunc data_020d9028[]; // set5c update state table indexed by e->action
 extern const s16 trigTable[]; // sine table (trigTable)
-extern u8 effectState[];
-extern u32 em12_typeMasks[]; // one mask per area (0x02134954)
+#include "engine/effect_state.h"
+#include "engine/em12_type_masks.h"
 extern u16 data_0213492c[]; // per-area offset, read at [area * 2]
 extern u16 em12_spawnOffsetY[]; // per-area offset, read at [area * 2]
 int func_02083d4c(u16 a, u16 b); // thumb, cell state of the shutter

@@ -42,7 +42,7 @@ void ObjPosCopyOfs32(Entity *src, Entity *dst, s32 dx, s32 dy) {
     func_0208ae78(dst);
 }
 
-void DropRupeeDir(s32 playerIndex, s32 value, s32 flags) {
+void DropRupeeDir(u8 playerIndex, u16 value, u8 flags) {
     s32 idx;
     Entity *target;
     Entity *fx;

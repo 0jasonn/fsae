@@ -93,7 +93,7 @@ void arrow_move(Entity *e) {
             }
         }
         if (e->attackDamage > 3) {
-            if ((frameCounter & 7) < 4) {
+            if ((frameCounter.frame & 7) < 4) {
                 e->spriteSettings.b16 = 0;
             } else {
                 e->spriteSettings.b16 = 3;

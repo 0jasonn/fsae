@@ -4,13 +4,7 @@
 // Set5e actor, init (module set5e; dispatcher Set5e is in set5e_1.cpp). Address -> name:
 //   0x0205fff0 set5e_init (original name)
 
-typedef struct ScrollOrigin_Set5e {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-} ScrollOrigin_Set5e;
-
-extern ScrollOrigin_Set5e mapState; // scroll origin of the current map
+#include "engine/map_state.h"
 
 typedef struct Vars_Set5e_init {
     /* 00 */ u8 unk_00[0x78];
@@ -27,8 +21,8 @@ void set5e_init(Entity *e) {
     e->action = 1;
     base = GetBgBuffAdrs(e->layer);
     table = (u16 *)(base + 4);
-    cell = ((e->x.HALF.HI - mapState.scrollX) >> 4) |
-           (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6);
+    cell = ((e->x.HALF.HI - mapState.originX) >> 4) |
+           (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
     v->cellPtr = table + cell;
     v->value = table[cell];
 }

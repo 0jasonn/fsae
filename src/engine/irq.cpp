@@ -16,7 +16,6 @@ typedef volatile u16 vu16;
 
 extern IrqState irqState;
 
-extern HBlankDmaState hblankDma;
 
 extern GlobalBuffer globalBuffer;
 
@@ -24,12 +23,9 @@ extern const u16 tokiWaveUnlockIds[];
 extern const u16 tokiWaveLockIds[];
 extern const EntityFunc entityActionTable[];
 extern u8 data_0212c4b8;
-extern u8 data_0212c4c8;
-extern u8 data_0212c4e0;
+#include "engine/vblank_request.h"
 extern u8 data_021348f4[];
 extern u8 data_0213cfa0[];
-extern u16 *data_02158fa0;
-extern u16 data_0212c594[];
 extern u8 data_02fe0000[];
 
 extern void OS_SetIrqFunction(u32 mask, void (*func)(void));

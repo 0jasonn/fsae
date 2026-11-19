@@ -5,7 +5,7 @@
 // Functions in this file: fuwafuwa (0x0203fe0c).
 
 void fuwafuwa(Entity *e) {
-    s32 phase = (frameCounter + e->subtimer) & 0xf;
+    s32 phase = (frameCounter.frame + e->subtimer) & 0xf;
     if ((phase & 3) == 0) {
         e->z.HALF.HI = fuwafuwaTable[phase >> 2];
     }

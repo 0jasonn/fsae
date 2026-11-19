@@ -12,7 +12,7 @@
 //   0x020731d4 Set57 (original name); set57_init (0x020731f0) is in scratch/agentD/nonmatching
 
 extern s32 data_02134924; // game flag word
-extern s32 em12_typeMasks; // game flag word
+#include "engine/em12_type_masks.h"
 extern const u16 union_moveBounds[]; // ObjAnimMoveSet bounds (union_moveBounds)
 extern const EntityFunc union_subActions[]; // indexed by e->subAction (union_subActions)
 
@@ -66,7 +66,7 @@ void union_wait(Entity *e) {
     if (e->timer != 0) {
         return;
     }
-    em12_typeMasks |= 8;
+    em12_typeMasks[0] |= 8;
     playerWork[e->type].state = 2;
 }
 

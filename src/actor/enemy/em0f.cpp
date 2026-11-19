@@ -3,6 +3,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/enemy/em0e_units.h"
+#include "engine/message_request.h"
 
 // Functions in this file (actor em0f, original names from the debug build):
 //   em0f_main (em0f_main), em0f_normal, em0f_damage, em0f_init (em0f_init), em0f_eyeopen,
@@ -21,8 +22,7 @@ typedef struct Vars_Em0f {
 extern EntityFunc em0f_actions[];
 extern EntityFunc em0f_normalActions[];
 extern const u8 em0f_hitbox[];
-extern Entity *mapState;
-extern u8 messageRequest;
+#include "engine/map_state.h"
 extern u8 localPlayerIndex;
 extern u16 playerKeysPrev[4];
 
@@ -112,7 +112,7 @@ void em0f_meswait(Entity *e) {
         return;
     }
     if (e->subAction == 0) {
-        if ((messageRequest & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();
@@ -131,9 +131,9 @@ void em0f_flight(Entity *e) {
     void *app;
 
     app = KnifeApp_getInstance();
-    if ((KnifeApp_isWirelessMode(app) != 0 && mapState != playerWork[localPlayerIndex].entity) ||
-        (KnifeApp_isWirelessMode(app) == 0 && mapState != playerWork[0].entity &&
-         mapState != playerWork[1].entity)) {
+    if ((KnifeApp_isWirelessMode(app) != 0 && mapState.target != playerWork[localPlayerIndex].entity) ||
+        (KnifeApp_isWirelessMode(app) == 0 && mapState.target != playerWork[0].entity &&
+         mapState.target != playerWork[1].entity)) {
         BindPlayers();
     }
     e->z.WORD -= 0x8000;

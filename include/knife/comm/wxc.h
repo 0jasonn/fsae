@@ -4,7 +4,7 @@
 #include "engine/functions.h"
 
 // Comm state block (shared with lobby.h / multiplay.h, byte-array view kept as declared there).
-extern u8 comWork[];
+#include "engine/com_work.h"
 
 extern "C" {
 s32 WXC_GetStateCode(void);

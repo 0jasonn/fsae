@@ -46,7 +46,7 @@ void set41_appear(Entity *e) {
 //   0x0206c594 set41_move (original name)
 // set41_wait / set41_appear are in set41_2.cpp, set41_init in set41.cpp.
 
-extern u32 em12_typeMasks[];        // one mask per area (0x02134954)
+#include "engine/em12_type_masks.h"
 extern const u32 flagBits[];        // flag per entity type (0x020cf9b8)
 extern u8 localPlayerIndex;         // localPlayerIndex
 extern u32 data_02134900;           // pending message flag, cleared once the message is requested

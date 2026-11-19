@@ -6,8 +6,8 @@
 //   rupee_error (0x02082094): requests the message, sets the two display bytes of messageRequest, then goto_nextdemo.
 
 #include "engine/player.h"
+#include "engine/message_request.h"
 
-extern u8 messageRequest[];
 void goto_nextdemo(void);
 
 // getRupeeLevel (0x02082054)
@@ -30,7 +30,7 @@ int getRupeeLevel(void) {
 // rupee_error (0x02082094)
 void rupee_error(u16 message) {
     MessageRequest(message);
-    messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
-    messageRequest[4] = (messageRequest[4] & ~0x1f) | 0xe;
+    messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+    messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0xe;
     goto_nextdemo();
 }

@@ -2,7 +2,7 @@
 #include "actor/object/plate.h"
 
 void plate_posY_set(Entity *e) {
-    s16 screenY = e->parent->y.HALF.HI - mapState.unk_22;
+    s16 screenY = e->parent->y.HALF.HI - mapState.scrollY;
 
     if (screenY < 0x10) {
         e->y.HALF.HI = 0x10;

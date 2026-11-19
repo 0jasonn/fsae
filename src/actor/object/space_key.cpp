@@ -8,7 +8,7 @@
 void space_key(Entity *e) {
     Entity *child;
 
-    if ((((u8 *)&gameState)[0x4c] & (1 << (e->areaIndex - 1))) != 0) {
+    if ((gameState.unk_49[3] & (1 << (e->areaIndex - 1))) != 0) {
         child = GetSetWork(0, 5, 0);
         if (child != NULL) {
             child->areaIndex = e->areaIndex;

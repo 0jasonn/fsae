@@ -5,6 +5,6 @@
 #include "engine/player.h"
 #include "engine/a_decls.h"
 
-extern u16 frameCounter;
+#include "engine/frame_counter.h"
 
 #endif

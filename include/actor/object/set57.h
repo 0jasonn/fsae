@@ -13,12 +13,7 @@ typedef struct Vars_Set57 {
 } Vars_Set57;
 #define V57(e) VARS(Vars_Set57, e)
 
-typedef struct GridOrigin {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 unk_18;
-    /* 1a */ u16 unk_1a;
-} GridOrigin;
-extern GridOrigin mapState; // grid origin, see em12.h
+#include "engine/map_state.h"
 extern const u8 set57_itemIds[];      // set57_itemIds, indexed by e->type
 extern const u8 set57_paletteIndex[]; // set57_paletteIndex, indexed by e->type
 extern const u16 set57_tileIds[];     // set57_tileIds, indexed by e->type

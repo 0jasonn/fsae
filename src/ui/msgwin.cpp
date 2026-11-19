@@ -5,7 +5,7 @@
 #include "types.h"
 
 
-extern u8 data_021361a0[];
+#include "engine/cockpit_state.h"
 
 // Draws the frame of the current window slot and copies it into the saved slot
 void createWindow(void) {
@@ -18,14 +18,14 @@ void createWindow(void) {
         return;
     }
     attr = (u16)((((u32)messageBox.layoutFlags << 24) >> 30) << 12 | 0x88);
-    slotIndex = cockpitState[3];
+    slotIndex = cockpitState.bufferIndex;
     slot = &data_0216efe0[slotIndex];
-    tiles = (u8 *)data_021361a0 + slotIndex * 0x800 + ((slot->tileX + (slot->tileY << 5)) << 1);
+    tiles = data_021361a0[slotIndex] + ((slot->tileX + (slot->tileY << 5)) << 1);
     MessageFrameDisp((u16 *)tiles, slot->width, slot->height, attr);
     dispString();
     dispEnqCursor();
     dispCursor();
-    slotIndex = cockpitState[3];
+    slotIndex = cockpitState.bufferIndex;
     slot = &data_0216efe0[slotIndex];
     {
         WindowSlot *dst = &data_0216eff0[slotIndex];

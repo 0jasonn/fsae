@@ -1,41 +1,31 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/irq.h"
+#include "engine/display_state.h"
 
 // Set02 actor, second unit (module set02). Address -> name:
 //   0x0205a1b0 set02_move (original name)
 
-// displayState as read by set02_move: scroll origins used to place the actor on screen.
-typedef struct Set02Screen {
-    /* 00 */ u8 unk_00[0x0a];
-    /* 0a */ u16 altScrollX; // origin for type 1
-    /* 0c */ u16 altScrollY;
-    /* 0e */ u8 unk_0e[8];
-    /* 16 */ u16 scrollX; // origin for type 0
-    /* 18 */ u16 scrollY;
-} Set02Screen;
-
-extern Set02Screen displayState;
 extern u8 data_021348d8;   // flag, nonzero: the actor is placed low and does not get the x offset
-extern u8 effectState[]; // byte 0x14: nonzero when the actor should be put back into the work list
+#include "engine/effect_state.h"
 extern const s8 data_0211565c[]; // vertical bob table, indexed by timer & 0xf
-extern u16 data_0212c594;  // frame counter, the bob timer advances when its low 5 bits are zero
 
 void set02_move(Entity *e) {
     switch (e->type) {
     case 0:
-        e->x.HALF.HI = 0x58 - displayState.scrollX;
-        e->y.HALF.HI = 0x3c - displayState.scrollY;
-        if (effectState[0x14] != 0) {
+        e->x.HALF.HI = 0x58 - displayState.bg[1].scrollX;
+        e->y.HALF.HI = 0x3c - displayState.bg[1].scrollY;
+        if (effectState.restoreFlag != 0) {
             PutObjWork(e);
         }
         break;
     case 1:
-        e->x.HALF.HI = 0x58 - displayState.altScrollX;
-        e->y.HALF.HI = 0x3c - displayState.altScrollY;
+        e->x.HALF.HI = 0x58 - displayState.bg[0].scrollX;
+        e->y.HALF.HI = 0x3c - displayState.bg[0].scrollY;
         if (data_021348d8 == 0) {
             e->x.HALF.HI += 3;
         }
-        if (effectState[0x14] != 0) {
+        if (effectState.restoreFlag != 0) {
             PutObjWork(e);
         }
         break;
@@ -79,7 +69,7 @@ void set02_move(Entity *e) {
             e->x.HALF.HI = 0x100;
         }
         e->y.HALF.HI = e->subtimer + data_0211565c[e->timer & 0xf];
-        if ((data_0212c594 & 0x1f) == 0) {
+        if ((frameState.frameCount & 0x1f) == 0) {
             e->timer++;
         }
         break;
@@ -87,7 +77,7 @@ void set02_move(Entity *e) {
         if (data_021348d8 != 0) {
             e->y.HALF.HI = 9;
         }
-        if (effectState[0x14] != 0) {
+        if (effectState.restoreFlag != 0) {
             PutObjWork(e);
         }
         break;

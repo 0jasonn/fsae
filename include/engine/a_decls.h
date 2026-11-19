@@ -6,13 +6,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-// Grid origin used to turn a world position into a map cell (mapState, bss). Its u16 pair sits at 0x18 / 0x1a.
-typedef struct GridOrigin {
-    u8 unk_00[0x18];
-    u16 originX; // 0x18
-    u16 originY; // 0x1a
-} GridOrigin;
-extern GridOrigin mapState;
+#include "engine/map_state.h"
 
 extern u8 data_021180a8[];
 extern u8 data_0211857c[];
@@ -47,7 +41,7 @@ extern u8 *data_02171e0c;     // pointer to a byte table indexed by a tile value
 extern u16 data_02140fa0[];
 extern u16 data_02148fa0[];
 extern u8 data_021348f4[];
-extern u8 data_0212c4c8[];
+#include "engine/vblank_request.h"
 
 // Door and map-block helpers (src/wip/A/frontcheck_2.cpp).
 void setmoveblock(Entity *e, u16 cell, u8 mode); // original setmoveblock(OBJ_WORK_*, unsigned short, unsigned char)
@@ -57,9 +51,8 @@ extern s16 data_020cd6e4[];                      // x / y offset pairs indexed b
 struct BG_BUFF_;
 typedef struct BG_BUFF_ BG_BUFF_;
 
-// Cockpit block and player blocks (PlayerData[4], 0x94 bytes each; entity pointer at 0x28).
-extern u8 cockpitState[];
+// Player blocks (PlayerData[4], 0x94 bytes each; entity pointer at 0x28).
+#include "engine/cockpit_state.h"
 extern u8 data_0212c82c[];
-extern u8 *data_0212c53c; // current player block
 
 #endif

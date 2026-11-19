@@ -17,7 +17,7 @@ extern u8 set58_bodyState[];                 // set58_bodyState
 extern const s16 set58_sazanamiOffsets[];    // set58_sazanamiOffsets, indexed by timer (x, y pairs)
 extern const u16 set58_cgIdsA[];             // set58_cgIdsA, indexed by gameState.unk_01
 extern const u16 set58_cgIdsB[];             // set58_cgIdsB, indexed by gameState.unk_01
-extern s32 em12_typeMasks;                    // game flag word
+#include "engine/em12_type_masks.h"
 extern KnifeObjAffineSrcData scrollArgs;     // scrollArgs
 
 extern "C" int func_02081b64(void);          // unmangled, returns non-zero when the scene check passes
