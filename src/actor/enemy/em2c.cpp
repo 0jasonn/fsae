@@ -15,7 +15,7 @@ extern const EntityFunc em2c_actions[];
 extern const EntityFunc em2c_typeActions[];
 extern const EntityFunc em2c_type0Actions[];
 extern const u8 em2c_hitbox[];
-extern Entity *mapState;
+#include "engine/map_state.h"
 extern u8 localPlayerIndex;
 extern s32 em2c_leverDone;
 
@@ -62,7 +62,7 @@ void em2c_type0_init_033378(Entity *e) {
     e->unk_6a = 1;
     e->unk_5e.b0 = 0;
     InitAnimationForceUpdate(e, 0);
-    mapState = e;
+    mapState.target = e;
     CockpitOff();
 }
 
@@ -79,9 +79,9 @@ void em2c_type0_1stDemoWait_0333f0(Entity *e) {
     V(e)->demoTimer = 0x4b0;
     SoundReq(0x19c);
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        mapState = playerWork[localPlayerIndex].entity;
+        mapState.target = playerWork[localPlayerIndex].entity;
     } else {
-        mapState = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
+        mapState.target = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
     CockpitOn();
 }

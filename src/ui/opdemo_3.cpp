@@ -25,25 +25,25 @@ void fairy_talkset(u8 slot, u16 effectId) {
 void opdemo_scroll(void) {
     s32 desired;
     s32 next;
-    if (*(Entity **)&mapState == NULL) {
+    if (mapState.target == NULL) {
         return;
     }
-    desired = (s16)((*(Entity **)&mapState)->y.HALF.HI - 0x60);
+    desired = (s16)(mapState.target->y.HALF.HI - 0x60);
     if (desired < 0) {
         desired = 0;
     }
     if (desired > 0xa0) {
         desired = 0xa0;
     }
-    if (mapState.cameraX != desired) {
-        if (mapState.cameraX < desired) {
-            next = mapState.cameraX + 1;
+    if (mapState.scrollY != desired) {
+        if (mapState.scrollY < desired) {
+            next = mapState.scrollY + 1;
         } else {
-            next = mapState.cameraX - 1;
+            next = mapState.scrollY - 1;
         }
-        mapState.cameraX = next;
+        mapState.scrollY = next;
     }
-    displayState.bg[3].scrollY = mapState.cameraX;
+    displayState.bg[3].scrollY = mapState.scrollY;
     displayState.bg[2].scrollY = displayState.bg[3].scrollY;
 }
 

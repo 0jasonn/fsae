@@ -17,7 +17,7 @@ void CommFrameUpdate(void);
 void func_0208309c(void);
 extern s16 demolinkPosTable[];
 s16 *GetTablePlNum(s16 *table, u8 index);
-extern u32 mapState;
+#include "engine/map_state.h"
 
 extern "C" int func_02081b64(void);
 
@@ -86,5 +86,5 @@ void demolink_set(void) {
         i++;
         pos += 2;
     }
-    mapState = (u32)GetSetWork(0xd, 0xb, 0);
+    mapState.target = GetSetWork(0xd, 0xb, 0);
 }

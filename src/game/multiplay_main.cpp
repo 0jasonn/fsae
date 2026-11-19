@@ -60,8 +60,8 @@ void multiplay_main(void) {
             playerWork[1].paletteBits = playerWork[1].paletteBits & ~0x80u;
             current = *Knife_Single_SinglePlay_GetInstance();
             if (mapState.target == playerWork[current].entity) {
-                distX = (s16)abs_s32(playerWork[current].entity->x.HALF.HI - (s16)mapState.unk_20 - 0x80) * 2;
-                distY = (s16)abs_s32(playerWork[current].entity->y.HALF.HI - mapState.unk_22 - 0x60) * 2;
+                distX = (s16)abs_s32(playerWork[current].entity->x.HALF.HI - mapState.scrollX - 0x80) * 2;
+                distY = (s16)abs_s32(playerWork[current].entity->y.HALF.HI - mapState.scrollY - 0x60) * 2;
                 if (distX >= 0x120 || distY >= 0xe0) {
                     playerKeysPrev[current] |= 0x1000;
                     BindPlayer(current);

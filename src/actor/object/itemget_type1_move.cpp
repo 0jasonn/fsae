@@ -14,7 +14,7 @@ void itemget_type1_move(Entity *e) {
     if (VARS(Vars_Set26, e)->typeBits != (VARS(Vars_Set26, e)->typeBits & em12_typeMasks[e->areaIndex])) {
         return;
     }
-    cell = (u16)(((e->x.HALF.HI - 8 - mapState.unk_18) >> 4) | (((e->y.HALF.HI - 8 - mapState.unk_1a) >> 4) << 6));
+    cell = (u16)(((e->x.HALF.HI - 8 - mapState.originX) >> 4) | (((e->y.HALF.HI - 8 - mapState.originY) >> 4) << 6));
     RewCell(0x14e, cell, e->layer);
     RewCell(0x14f, cell + 1, e->layer);
     RewCell(0x150, cell + 0x40, e->layer);

@@ -6,13 +6,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-// Grid origin used to turn a world position into a map cell (mapState, bss). Its u16 pair sits at 0x18 / 0x1a.
-typedef struct GridOrigin {
-    u8 unk_00[0x18];
-    u16 originX; // 0x18
-    u16 originY; // 0x1a
-} GridOrigin;
-extern GridOrigin mapState;
+#include "engine/map_state.h"
 
 extern u8 data_021180a8[];
 extern u8 data_0211857c[];

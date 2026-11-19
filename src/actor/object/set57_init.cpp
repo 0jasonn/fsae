@@ -20,7 +20,7 @@ void set57_init(Entity *e) {
     InitAnimationForceUpdate(e, 0);
     e->unk_28 = (Random() & 0xf0) + 1;
     base = (u16 *)GetBgBuffAdrs(e->layer);
-    index = ((e->x.HALF.HI - mapState.unk_18) >> 4) | (((e->y.HALF.HI - mapState.unk_1a) >> 4) << 6);
+    index = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
     V57(e)->cellPtr = base + 2 + index;
     V57(e)->tileIndex = set57_tileIds[e->type];
     func_0208366c(V57(e)->tileIndex, index, e->layer);

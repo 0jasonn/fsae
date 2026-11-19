@@ -22,7 +22,7 @@ typedef struct Vars_Em0f {
 extern EntityFunc em0f_actions[];
 extern EntityFunc em0f_normalActions[];
 extern const u8 em0f_hitbox[];
-extern Entity *mapState;
+#include "engine/map_state.h"
 extern u8 localPlayerIndex;
 extern u16 playerKeysPrev[4];
 
@@ -131,9 +131,9 @@ void em0f_flight(Entity *e) {
     void *app;
 
     app = KnifeApp_getInstance();
-    if ((KnifeApp_isWirelessMode(app) != 0 && mapState != playerWork[localPlayerIndex].entity) ||
-        (KnifeApp_isWirelessMode(app) == 0 && mapState != playerWork[0].entity &&
-         mapState != playerWork[1].entity)) {
+    if ((KnifeApp_isWirelessMode(app) != 0 && mapState.target != playerWork[localPlayerIndex].entity) ||
+        (KnifeApp_isWirelessMode(app) == 0 && mapState.target != playerWork[0].entity &&
+         mapState.target != playerWork[1].entity)) {
         BindPlayers();
     }
     e->z.WORD -= 0x8000;

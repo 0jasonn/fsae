@@ -25,8 +25,8 @@ typedef struct Vars_Em0f {
     /* 7f */ u8 darumaMode;          // non-zero: darumaMgr takes over the update
 } Vars_Em0f;
 
+#include "engine/map_state.h"
 // ROM data (names from symbols.txt, renamed in scratch/agentE/renames.txt)
-extern Entity *mapState;
 extern u8 localPlayerIndex;
 #include "engine/cockpit_state.h"
 extern const u8 em0f_aimPlayerTable[];    // em0f_aimPlayerTable, 3 entries per Entity type

@@ -26,7 +26,7 @@ void encnt_poscheck(void) {
             default:
                 entry->x = (entry->x & 0x3f0) + 8;
                 entry->y = (entry->y & 0x3f0) + 8;
-                cell = ((entry->x - mapState.x) >> 4) | (((entry->y - mapState.y) >> 4) << 6);
+                cell = ((entry->x - mapState.originX) >> 4) | (((entry->y - mapState.originY) >> 4) << 6);
                 if (data_02158fa0[cell + 0x2004] != 0 || data_02163fa4[cell + 0x2004] != 0) {
                     entry->taken = 1;
                 }

@@ -17,7 +17,7 @@ void scene_03(void) {
             }
             break;
         case 1:
-            *(Entity **)&mapState = playerWork[0].entity;
+            mapState.target = playerWork[0].entity;
             effectState.timer = 0x78;
             break;
         case 2:

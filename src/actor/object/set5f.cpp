@@ -13,7 +13,7 @@
 
 extern const EntityFunc set5f_typeHandlers[]; // set5f_typeHandlers, indexed by e->type
 extern const EntityFunc set5f_type0Actions[]; // set5f_type0Actions, indexed by e->action
-extern Entity *mapState;
+#include "engine/map_state.h"
 extern s16 scrollArgs[3];
 extern const s16 trigTable[];
 extern const s16 data_020d7f58[];
@@ -48,7 +48,7 @@ void set5f_type0_init(Entity *e) {
     VARS(Vars_Set5f, e)->messageId = 0x191;
     InitAnimationForceUpdate(e, 0);
     set5f_plset(e);
-    mapState = e;
+    mapState.target = e;
     Scene_SetFlag5();
     CockpitOff();
     ScrPosSet(e->x.HALF.HI, e->y.HALF.HI);

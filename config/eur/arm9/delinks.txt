@@ -2416,11 +2416,7 @@ src/game/multiroom.cpp:
 
 src/engine/scr_4.cpp:
     complete
-    .text       start:0x0205715c end:0x020572b4
-
-src/engine/scr_3.cpp:
-    complete
-    .text       start:0x020572b4 end:0x02057344
+    .text       start:0x0205715c end:0x02057344
 
 src/engine/scr_2.cpp:
     complete

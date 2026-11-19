@@ -68,12 +68,7 @@ typedef struct SpriteBit2View {
 } SpriteBit2View;
 #define SPRITE_BIT2(e) ((SpriteBit2View *)&(e)->spriteSettings)
 
-typedef struct UnkStruct_0212c648 {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 unk_18;
-    /* 1a */ u16 unk_1a;
-} UnkStruct_0212c648;
-extern UnkStruct_0212c648 mapState;
+#include "engine/map_state.h"
 
 typedef struct UnkStruct_0212c6b0 {
     /* 00 */ u8 unk_00[0x14];

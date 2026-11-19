@@ -21,16 +21,7 @@ typedef struct SceneSlot {
     /* 10 */ u8 unk_10[4];
 } SceneSlot;
 
-// Camera state at mapState: first word is the entity the camera follows
-typedef struct CameraState {
-    /* 00 */ Entity *target;
-    /* 04 */ u8 unk_04[0x1c];
-    /* 20 */ u16 unk_20;
-    /* 22 */ s16 unk_22;
-    /* 24 */ u8 unk_24[4];
-    /* 28 */ u16 unk_28;
-} CameraState;
-
+#include "engine/map_state.h"
 #include "engine/display_state.h"
 #include "engine/effect_state.h"
 #include "engine/blend_request.h"
@@ -55,7 +46,6 @@ extern u8 data_0212c500;
 extern VoidFunc data_0212c564;
 extern SceneSlot data_02134d30; // first record; the others are reached with SCENE_SLOT
 #define SCENE_SLOT(k) (((SceneSlot *)&data_02134d30)[k])
-extern CameraState mapState;
 extern VoidFunc const endingFinaleTable[];
 extern VoidFunc const finaleDemoTable[];
 extern VoidFunc const endingRescueTable[];

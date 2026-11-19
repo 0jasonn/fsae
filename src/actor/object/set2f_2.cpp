@@ -8,7 +8,6 @@
 
 extern u32 em12_typeMasks[];
 extern const u32 flagBits[]; // flagBits, indexed by e->type
-extern Set2fGridOrigin mapState;
 
 void rewlever(Entity *e);
 

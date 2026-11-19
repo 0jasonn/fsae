@@ -44,8 +44,8 @@ void set18_move(Entity *e) {
     if (--VARS(Vars_Set18, e)->frameTimer != 0) {
         return;
     }
-    dy = e->y.HALF.HI - mapState.unk_1a;
-    dx = e->x.HALF.HI - mapState.unk_18;
+    dy = e->y.HALF.HI - mapState.originY;
+    dx = e->x.HALF.HI - mapState.originX;
     cell = (dx >> 4) | ((dy >> 4) << 6);
     RewCell(0x10d, (u16)cell, e->layer);
     em12_typeMasks[e->areaIndex] &= ~flagBits[e->type];

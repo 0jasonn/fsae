@@ -181,7 +181,7 @@ void em29_die(Entity *e) {
 // mapState. When the cell check returns 0x138, spawns effect 0xf on this entity and reports the cell.
 
 void breakSekichu(Entity *e) {
-    u16 cell = ((e->x.HALF.HI - mapState.unk_18) >> 4) | (((e->y.HALF.HI - mapState.unk_1a) >> 4) << 6);
+    u16 cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
     if (GetCellKind(cell, e->layer) != 0x138) {
         return;
     }

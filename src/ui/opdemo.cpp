@@ -68,13 +68,13 @@ void op_scene_01(void) {
             }
             return;
         case 4:
-            if (mapState.cameraX > 0x10) {
-                mapState.cameraX -= 8;
-                displayState.bg[3].scrollY = mapState.cameraX;
+            if (mapState.scrollY > 0x10) {
+                mapState.scrollY -= 8;
+                displayState.bg[3].scrollY = mapState.scrollY;
                 displayState.bg[2].scrollY = displayState.bg[3].scrollY;
                 return;
             }
-            mapState.cameraX = 0x10;
+            mapState.scrollY = 0x10;
             displayState.bg[3].scrollY = 0x10;
             effectState.phase++;
             effectState.timer = 0x28;
@@ -134,12 +134,12 @@ void op_scene_01(void) {
             if ((frameState.frameCount & 1) == 0) {
                 return;
             }
-            if (mapState.cameraX < 0x88) {
-                mapState.cameraX++;
-                displayState.bg[3].scrollY = mapState.cameraX;
+            if (mapState.scrollY < 0x88) {
+                mapState.scrollY++;
+                displayState.bg[3].scrollY = mapState.scrollY;
                 displayState.bg[2].scrollY = displayState.bg[3].scrollY;
             } else {
-                mapState.cameraX = 0x88;
+                mapState.scrollY = 0x88;
                 data_0212c4dc++;
                 effectState.phase = 4;
                 effectState.timer = 0x28;

@@ -35,6 +35,6 @@ typedef struct Vars_Set66 {
 } Vars_Set66;
 
 void rr_plset(Entity *e);                     // 0x02076620, defined later in the set69 range
-extern u8 mapState[];                    // shared block: Entity * at +0, s16 fields at +0x20 / +0x22
+#include "engine/map_state.h"
 
 #endif

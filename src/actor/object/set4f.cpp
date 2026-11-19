@@ -7,13 +7,7 @@
 //   0x0205e8f8 set4f_wait (original name)
 //   0x0205e914 set4f_move (original name, parked in scratch/agentC/nonmatching)
 
-typedef struct ScrollOrigin_Set4f {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-} ScrollOrigin_Set4f;
-
-extern ScrollOrigin_Set4f mapState; // scroll origin of the current map
+#include "engine/map_state.h"
 extern const EntityFunc set4f_states[]; // state table indexed by e->action
 extern u16 set4f_rewriteIds[]; // RewCell id per actor type
 
@@ -35,8 +29,8 @@ void set4f_init(Entity *e) {
 
     e->action = 1;
     base = GetBgBuffAdrs(e->layer);
-    v->cell = (u16)(((e->x.HALF.HI - mapState.scrollX) >> 4) |
-                    (((e->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+    v->cell = (u16)(((e->x.HALF.HI - mapState.originX) >> 4) |
+                    (((e->y.HALF.HI - mapState.originY) >> 4) << 6));
     v->statePtr = (u8 *)(base + 4 + 0x2000 + v->cell);
 }
 

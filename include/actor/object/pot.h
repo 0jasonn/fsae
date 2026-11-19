@@ -4,22 +4,10 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-// Scroll origin of the current map (mapState). A cell index is
-// ((x - scrollX) >> 4) | (((y - scrollY) >> 4) << 6); the BG cell is at buffer + 4 + index * 2
-// and its state byte at buffer + 0x2004 + index.
-typedef struct MapScroll {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-    /* 1c */ u8 unk_1c[0xc];
-    /* 28 */ u16 viewX;
-    /* 2a */ u16 viewY;
-} MapScroll;
-
-extern MapScroll mapState;
+#include "engine/map_state.h"
 
 #define MAP_CELL_INDEX(x, y) \
-    ((((x) - mapState.scrollX) >> 4) | ((((y) - mapState.scrollY) >> 4) << 6))
+    ((((x) - mapState.originX) >> 4) | ((((y) - mapState.originY) >> 4) << 6))
 
 // The whole sprite settings word (Entity 0x1c), for single-bit updates
 #define SPRITE_WORD(e) (*(u32 *)&(e)->spriteSettings)

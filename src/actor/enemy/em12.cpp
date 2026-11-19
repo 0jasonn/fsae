@@ -48,13 +48,13 @@ void em12_init(Entity *e) {
     e->unk_2e = 0xe;
     e->hitbox = em12_hitbox;
     V(e)->w70.typeBits = ParseTypeBits(e->type);
-    V(e)->areaX = ((e->x.HALF.HI & 0xfc0) >> 2) + mapState.unk_18 + data_0213492c[e->areaIndex * 2];
+    V(e)->areaX = ((e->x.HALF.HI & 0xfc0) >> 2) + mapState.originX + data_0213492c[e->areaIndex * 2];
     V(e)->areaW = ((((u32)e->x.HALF.HI) << 26) >> 22) + 0x20;
-    V(e)->areaY = ((e->y.HALF.HI & 0xfc0) >> 2) + mapState.unk_1a + em12_spawnOffsetY[e->areaIndex * 2];
+    V(e)->areaY = ((e->y.HALF.HI & 0xfc0) >> 2) + mapState.originY + em12_spawnOffsetY[e->areaIndex * 2];
     V(e)->areaH = ((((u32)e->y.HALF.HI) << 26) >> 22) + 0x20;
-    e->x.HALF.HI = (e->type2 << 4) + mapState.unk_18 + data_0213492c[e->areaIndex * 2];
+    e->x.HALF.HI = (e->type2 << 4) + mapState.originX + data_0213492c[e->areaIndex * 2];
     V(e)->homeX = e->x.HALF.HI;
-    e->y.HALF.HI = mapState.unk_1a + (e->timer << 4) + em12_spawnOffsetY[e->areaIndex * 2];
+    e->y.HALF.HI = mapState.originY + (e->timer << 4) + em12_spawnOffsetY[e->areaIndex * 2];
     V(e)->homeY = e->y.HALF.HI;
     func_0208ae30(e);
     e->spriteSettings.b20 = GetObjColor(em12_colorByPlayer[gameState.unk_01]);

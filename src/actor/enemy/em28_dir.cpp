@@ -36,8 +36,8 @@ int bgcheck(Entity *e, u8 direction) {
             y2 = e->y.HALF.HI + box[3];
             break;
     }
-    if (func_02083d4c(((x1 - mapState.unk_18) >> 4) | (((y1 - mapState.unk_1a) >> 4) << 6), e->layer) != 0 ||
-        func_02083d4c(((x2 - mapState.unk_18) >> 4) | (((y2 - mapState.unk_1a) >> 4) << 6), e->layer) != 0) {
+    if (func_02083d4c(((x1 - mapState.originX) >> 4) | (((y1 - mapState.originY) >> 4) << 6), e->layer) != 0 ||
+        func_02083d4c(((x2 - mapState.originX) >> 4) | (((y2 - mapState.originY) >> 4) << 6), e->layer) != 0) {
         return 0;
     }
     return 1;

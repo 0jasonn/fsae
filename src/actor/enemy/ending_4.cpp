@@ -49,9 +49,9 @@ void demo_00(void) {
         return;
     }
     data_02134d30.entity->animationState = 0;
-    if (mapState.unk_22 < 0x7b) {
-        mapState.unk_22 = mapState.unk_22 + 1;
-        displayState.bg[3].scrollY = mapState.unk_22;
+    if (mapState.scrollY < 0x7b) {
+        mapState.scrollY = mapState.scrollY + 1;
+        displayState.bg[3].scrollY = mapState.scrollY;
         displayState.bg[2].scrollY = displayState.bg[3].scrollY;
     } else {
         effectState.phase++;

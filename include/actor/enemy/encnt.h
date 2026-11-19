@@ -88,12 +88,7 @@ extern u8 data_02163fa4[];              // neighbour grid, same layout
 extern const s16 cellDeltaTable[];       // four cell offsets for the neighbour test
 extern const s8 data_020d4170[];        // step table, x and y per entry
 
-typedef struct GridOrigin {
-    u8 unk_00[0x18];
-    u16 x;                              // +18
-    u16 y;                              // +1a
-} GridOrigin;
-extern GridOrigin mapState;
+#include "engine/map_state.h"
 
 extern u8 data_0212c500;
 extern void (*const endingTasks[])(void);

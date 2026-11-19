@@ -4,13 +4,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-// Map scroll position (first fields of mapState at 0x0212c648)
-typedef struct MapScroll {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 scrollX;
-    /* 1a */ u16 scrollY;
-} MapScroll;
-extern MapScroll mapState;
+#include "engine/map_state.h"
 
 typedef struct DirDelta {
     s16 x;

@@ -36,13 +36,7 @@ typedef struct Vars_Timer {
 } Vars_Timer;
 #define VT(e) VARS(Vars_Timer, e)
 
-// mapState is a shared symbol. Other headers declare it as Entity *; these are the fields this range reads.
-typedef struct UnkStruct_0212c648 {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 unk_18;
-    /* 1a */ u16 unk_1a;
-} UnkStruct_0212c648;
-extern UnkStruct_0212c648 mapState;
+#include "engine/map_state.h"
 
 typedef struct UnkStruct_021348cc {
     s32 claimed;

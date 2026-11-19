@@ -57,7 +57,7 @@ void stagesel_save_tutorial_update(void) {
     SoundReq(0x4d);
     displayState.blendCnt = 0x3fff;
     ZeldaFadeFinish();
-    ZeldaFadeSet(*(Entity **)&mapState, 0);
+    ZeldaFadeSet(mapState.target, 0);
     data_0212c500++;
     ComRequest(5);
 }

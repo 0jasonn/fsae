@@ -3,13 +3,7 @@
 
 #include "engine/player.h"
 
-// Grid origin used to turn world positions into map cells (mapState, u16 pair at +0x18 / +0x1a).
-typedef struct GridOrigin {
-    u8 unk_00[0x18];
-    u16 originX;
-    u16 originY;
-} GridOrigin;
-extern GridOrigin mapState;
+#include "engine/map_state.h"
 
 // Actor-specific fields of em13 (Wizzrobe family). Offsets are those of Entity.
 typedef struct Vars_em13 {

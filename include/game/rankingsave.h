@@ -27,19 +27,7 @@ void calc_result(void);
 void ranking_player_set(void);
 
 // Data used by implementer D's files, typed where the D files need fields.
-// mapState: the first word is the entity whose y position the ranking camera follows.
-typedef struct RankScrollState {
-    /* 00 */ Entity *target;
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 yureMode; // YureSet: b & 3
-    /* 06 */ u8 scrollMode; // index into data_020d85b0, see ScrollMove
-    /* 07 */ u8 unk_07[0xf];
-    /* 16 */ u16 yureValue; // YureSet: a
-    /* 18 */ u8 unk_18[8];
-    /* 20 */ u16 unk_20;
-    /* 22 */ s16 cameraX;
-} RankScrollState;
-extern RankScrollState mapState;
+#include "engine/map_state.h"
 
 #include "engine/display_state.h"
 

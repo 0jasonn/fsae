@@ -20,7 +20,7 @@ typedef struct Vars_02036ca4 {
 #define V(e) VARS(Vars_02036ca4, e)
 
 #include "engine/blend_request.h"
-extern Entity *mapState;
+#include "engine/map_state.h"
 extern const EntityFunc em2f_actions[];
 extern const u8 em2f_hitbox[];
 extern const u8 em2f_healthByDifficulty[];

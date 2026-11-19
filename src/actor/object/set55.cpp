@@ -21,7 +21,7 @@ extern const u8 set55_hitbox[];
 extern const EntityFunc set55_actionsTypeN[]; // indexed by e->action, e->type != 0
 extern const EntityFunc set55_actionsType0[]; // indexed by e->action, e->type == 0
 extern u8 localPlayerIndex;
-extern Entity *mapState;
+#include "engine/map_state.h"
 extern const s8 set55_xOffsets[]; // indexed by animationState >> 1
 extern u16 playerKeys[];
 
@@ -62,7 +62,7 @@ void set55_init(Entity *e) {
         return;
     }
     if (localPlayerIndex == e->child->type) {
-        mapState = e;
+        mapState.target = e;
     }
 }
 
@@ -73,7 +73,7 @@ void set55_movei(Entity *e) {
     child = e->child;
     if (playerWork[child->type].statusFlags & 0x1000) {
         playerWork[child->type].statusFlags &= 0xf7ff;
-        mapState = e->child;
+        mapState.target = e->child;
         PutObjWork(e);
         return;
     }
@@ -92,7 +92,7 @@ void set55_movei(Entity *e) {
             case 19:
                 playerWork[child->type].statusFlags &= 0xf7ff;
                 if (playerIndex == e->child->type) {
-                    mapState = e->child;
+                    mapState.target = e->child;
                 }
                 PutObjWork(e);
                 return;
@@ -122,7 +122,7 @@ void set55_movei(Entity *e) {
         }
     }
     if (playerIndex == child->type) {
-        mapState = child;
+        mapState.target = child;
     }
     PutObjWork(e);
 }

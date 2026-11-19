@@ -6,7 +6,7 @@
 //   0x0207481c gufu_body_move (original name; switch on effectState.sceneFlag)
 
 #include "engine/effect_state.h"
-extern Entity *mapState;        // the body entity the scene points at
+#include "engine/map_state.h"
 
 void gufu_body_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
@@ -14,7 +14,7 @@ void gufu_body_move(Entity *e) {
     case 0:
         break;
     case 1:
-        mapState = e;
+        mapState.target = e;
         e->direction = 0x10;
         e->speed = 0x80;
         MoveDir(e);

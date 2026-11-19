@@ -1,6 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/pot.h"
+#include "game/rankingsave.h"
+#include "game/savemedia.h"
 
 // Scroll and map unit (module scr): FrameSet 0x0205715c, PartsSet 0x020571fc.
 // Both load a map into the work buffer and copy it into the two BG layer buffers (BlockCopy).
@@ -17,8 +19,8 @@ void FrameSet(u16 frame) {
 
     MemClearFast(work, 0x4000);
     MapLoad(data_020d7680[frame], 0);
-    BlockCopy((u16 *)data_02158fa4, work, (u16)(mapState.viewX >> 4), (u16)((mapState.viewY >> 4) | 0x8000));
-    BlockCopy((u16 *)data_02163fa8, work + 0x1000, (u16)(mapState.viewX >> 4), (u16)((mapState.viewY >> 4) | 0x8000));
+    BlockCopy((u16 *)data_02158fa4, work, (u16)(mapState.limitX >> 4), (u16)((mapState.limitY >> 4) | 0x8000));
+    BlockCopy((u16 *)data_02163fa8, work + 0x1000, (u16)(mapState.limitX >> 4), (u16)((mapState.limitY >> 4) | 0x8000));
     AtariMake();
 }
 
@@ -38,4 +40,31 @@ void PartsSet(u16 part, u16 cellX, u16 cellY) {
     BlockCopy((u16 *)data_02158fa4 + offset, work, x, (u16)(y | 0x8000));
     BlockCopy((u16 *)data_02163fa8 + offset, work + 0x400, x, (u16)(y | 0x8000));
     AtariMake();
+}
+
+// Scroll and map unit 5 (module scr). Address -> name (original names):
+//   0x020572b4 MultiRoomSet
+
+extern "C" {
+void MakeMapScreen(const void *src, void *dst);
+}
+extern u8 data_02158fa4[];
+extern u8 data_0215bfa4[];
+extern u8 data_02163fa8[];
+extern u8 data_02166fa8[];
+extern u8 data_02140fa0[];
+extern u8 data_02158fa0[];
+extern u8 data_02148fa0[];
+extern u8 data_02163fa4[];
+extern u8 data_02135640[];
+extern u8 data_02135840[];
+extern u32 em2f_mapFlag;
+
+void MultiRoomSet(void) {
+    MIi_CpuCopy32(data_02158fa4, data_0215bfa4, 0x2000);
+    MIi_CpuCopy32(data_02163fa8, data_02166fa8, 0x2000);
+    MakeMapScreen(data_02140fa0, data_02158fa0);
+    MakeMapScreen(data_02148fa0, data_02163fa4);
+    MIi_CpuCopyFast(data_02135640, data_02135840, 0x20);
+    em2f_mapFlag |= 0x200000;
 }

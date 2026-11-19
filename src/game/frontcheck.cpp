@@ -25,8 +25,8 @@ int FrontCheck(Entity *e, PlayerData *player) {
 
     buf = GetBgBuffAdrs(e->layer);
     delta = (const DirDelta *)((u8 *)data_020cd6c4 + ((e->animationState & 6) << 1));
-    cell = (u16)(((e->x.HALF.HI + delta->x - mapState.scrollX) >> 4)
-                 | (((e->y.HALF.HI + delta->y - mapState.scrollY) >> 4) << 6));
+    cell = (u16)(((e->x.HALF.HI + delta->x - mapState.originX) >> 4)
+                 | (((e->y.HALF.HI + delta->y - mapState.originY) >> 4) << 6));
     kind = GetCellKind(cell, e->layer);
     cls = func_02083e54(kind);
     switch (cls) {
@@ -98,7 +98,7 @@ int FrontCheck(Entity *e, PlayerData *player) {
             break;
         }
         obj = player->entity;
-        cellNext = (u16)(((obj->x.HALF.HI - mapState.scrollX) >> 4) | (((obj->y.HALF.HI - mapState.scrollY) >> 4) << 6));
+        cellNext = (u16)(((obj->x.HALF.HI - mapState.originX) >> 4) | (((obj->y.HALF.HI - mapState.originY) >> 4) << 6));
         kind = GetCellKind(cellNext, obj->layer);
         if (func_02083e54(kind) == 0x43) {
             if (kind != ((PalBits *)&playerWork[e->type].paletteBits)->b + 0x176) {

@@ -4,7 +4,7 @@
 #include "engine/functions.h"
 #include "actor/enemy/attset.h"
 
-extern GridOrigin mapState;
+#include "engine/map_state.h"
 extern const u8 cellDeltaTable[]; // per-direction cell step (s16), indexed by direction >> 3
 int func_02083d4c(u16 cell, u16 layer); // thumb helper, C++ linkage (_Z13func_02083d4ctt)
 

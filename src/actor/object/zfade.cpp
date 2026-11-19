@@ -33,17 +33,8 @@ typedef struct Vars_Zfade {
     /* 7e */ s16 phase;      // counts from the start value, 0x1f4 is the upper limit
 } Vars_Zfade;
 
-// mapState as read by zfade_move: scroll origin of the camera.
-typedef struct ZfadeCamera {
-    /* 00 */ Entity *target;
-    /* 04 */ u8 unk_04[0x1c];
-    /* 20 */ s16 scrollX;
-    /* 22 */ s16 scrollY;
-} ZfadeCamera;
-
-
 extern const ZfadeEntry zfadeTable[];        // zeldaFadeTable, indexed by e->type
-extern ZfadeCamera mapState;
+#include "engine/map_state.h"
 extern u8 data_02171d1c;                     // 1 while no fade partner is active
 extern const EntityFunc zfade_typeHandlers[]; // zfade_typeHandlers, indexed by e->type
 

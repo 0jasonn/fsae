@@ -46,8 +46,8 @@ void ranking_init(void) {
     displayState.bg[2].scrollY = 0x140;
     displayState.bg[3].scrollX = 0;
     displayState.bg[3].scrollY = 0x140;
-    mapState.unk_20 = 0;
-    mapState.cameraX = 0x140;
+    mapState.scrollX = 0;
+    mapState.scrollY = 0x140;
     displayState.displayFlags = 0x1d40;
     effectState.removeFlag = 0;
     FadeSet(2, 4);
@@ -68,15 +68,15 @@ void ranking_scroll(void) {
     if (wanted > 0x140) {
         wanted = 0x140;
     }
-    cameraX = mapState.cameraX;
+    cameraX = mapState.scrollY;
     if (cameraX != wanted) {
         if (cameraX < wanted) {
             wanted = cameraX + 1;
         } else {
             wanted = cameraX - 1;
         }
-        mapState.cameraX = wanted;
+        mapState.scrollY = wanted;
     }
-    displayState.bg[3].scrollY = mapState.cameraX;
+    displayState.bg[3].scrollY = mapState.scrollY;
     displayState.bg[2].scrollY = displayState.bg[3].scrollY;
 }

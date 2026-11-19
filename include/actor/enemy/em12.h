@@ -29,13 +29,7 @@ typedef struct Vars_Em12 {
 } Vars_Em12;
 #define V(e) VARS(Vars_Em12, e)
 
-typedef struct UnkStruct_0212c648 {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 unk_18;
-    /* 1a */ u16 unk_1a;
-} UnkStruct_0212c648;
-
-extern UnkStruct_0212c648 mapState;
+#include "engine/map_state.h"
 extern u16 frameCounter;          // frame counter
 extern u32 em12_typeMasks[];
 extern u16 data_0213492c[];

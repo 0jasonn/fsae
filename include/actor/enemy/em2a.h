@@ -36,7 +36,7 @@ typedef struct Vars_Counter {
     /* 62 */ u16 hitCount;
 } Vars_Counter;
 
-extern Entity *mapState;
+#include "engine/map_state.h"
 extern const u8 em2a_hitbox[];
 extern const EntityFunc em2a_secondaryActions[];
 extern const EntityFunc em2a_actions[];

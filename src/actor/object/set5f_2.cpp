@@ -10,7 +10,7 @@
 
 extern const s8 data_020d90ac[];
 extern const s8 data_020d90c0[];
-extern Entity *mapState;
+#include "engine/map_state.h"
 
 void set5f_plset(Entity *e);
 
@@ -76,7 +76,7 @@ void type0_plBackJump(Entity *e) {
         return;
     }
     ObjPosCopy(e, enemy);
-    mapState = enemy;
+    mapState.target = enemy;
     e->child->health = 0;
     FadeSet(2, 0x10);
     SoundReq(0x208 - enemyId);

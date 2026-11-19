@@ -49,7 +49,7 @@ void em2f_initWait(Entity *e) {
         e->action = 2;
         e->timer = 0x78;
         e->spriteSettings.b0 = 1;
-        mapState = e;
+        mapState.target = e;
         for (u8 i = 0; i < gameState.playerCount; i++) {
             playerWork[i].entity->animationState = 0;
             BikkuriSet(playerWork[i].entity, -8, -12);
@@ -244,9 +244,9 @@ void em2f_demoEnd(Entity *e) {
     e->spriteSettings.b30 = 2;
     e->unk_5e.b0 = 2;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        mapState = playerWork[localPlayerIndex].entity;
+        mapState.target = playerWork[localPlayerIndex].entity;
     } else {
-        mapState = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
+        mapState.target = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
     for (u8 i = 0; i < gameState.playerCount; i++) {
         PlayerData *player = &playerWork[i];

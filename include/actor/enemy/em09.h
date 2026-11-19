@@ -55,12 +55,7 @@ extern const EntityFunc em09_normalActions[];
 extern const s8 em09_purupuruSway[];
 
 
-typedef struct UnkStruct_0212c648 {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 unk_18;
-    /* 1a */ u16 unk_1a;
-} UnkStruct_0212c648;
-extern UnkStruct_0212c648 mapState;
+#include "engine/map_state.h"
 extern const u16 em11_blockMasks[];
 extern const EntityFunc em11_actions[];
 extern const EntityFunc em11_normalActions[];

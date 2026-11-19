@@ -25,12 +25,7 @@ extern UnkStruct_0216fcf8 paletteFade;
 
 #include "engine/display_state.h"
 
-typedef struct UnkStruct_0212c648_D {
-    /* 00 */ u8 unk_0[0x20];
-    /* 20 */ u16 unk_20;
-    /* 22 */ s16 cameraX; // guess
-} UnkStruct_0212c648_D;
-extern UnkStruct_0212c648_D mapState;
+#include "engine/map_state.h"
 
 #include "engine/effect_state.h"
 

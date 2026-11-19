@@ -3,7 +3,7 @@
 
 #include "engine/functions.h"
 
-extern Entity *mapState;     // 0x0212c648, first word: entity the camera follows
+#include "engine/map_state.h"
 extern u8 localPlayerIndex;  // 0x0212c504
 
 void ranking_player_set(void); // 0x02055194 (original name ranking_player_set())

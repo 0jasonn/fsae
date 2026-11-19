@@ -119,9 +119,9 @@ void scene_05(void) {
             if ((frameState.frameCount & 1) == 0) {
                 return;
             }
-            if (mapState.cameraX > 0x5b) {
-                mapState.cameraX--;
-                displayState.bg[3].scrollY = mapState.cameraX;
+            if (mapState.scrollY > 0x5b) {
+                mapState.scrollY--;
+                displayState.bg[3].scrollY = mapState.scrollY;
                 displayState.bg[2].scrollY = displayState.bg[3].scrollY;
                 return;
             }

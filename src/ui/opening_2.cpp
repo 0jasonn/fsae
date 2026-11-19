@@ -122,8 +122,8 @@ void op_init(void) {
         displayState.bg[2].scrollY = zero;
         displayState.bg[3].scrollX = zero;
         displayState.bg[3].scrollY = 0xb0;
-        mapState.unk_20 = zero;
-        mapState.cameraX = 0xb0;
+        mapState.scrollX = zero;
+        mapState.scrollY = 0xb0;
         em2f_mapFlag = zero;
     }
     displayState.displayFlags |= 0x1b00;
@@ -182,7 +182,7 @@ void mist_effect(void) {
     displayState.displayFlags |= 0x400;
     displayState.blendCnt = 0x3c64;
     displayState.blendAlpha = 0x808;
-    displayState.bg[2].scrollY = mapState.cameraX;
+    displayState.bg[2].scrollY = mapState.scrollY;
     effectState.fadeActive = 1;
 }
 

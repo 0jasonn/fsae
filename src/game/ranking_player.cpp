@@ -27,7 +27,7 @@ void ranking_player_set(void) {
         link->spriteSettings.b16 = i + 0xc;
         link->spriteSettings.b20 = link->spriteSettings.b16;
         if (i == localPlayerIndex) {
-            mapState = link;
+            mapState.target = link;
         }
         DemoLinkWalkSet(i, 0xff, 0);
         GetSetWork(0xd, 0, i);

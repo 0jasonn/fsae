@@ -8,13 +8,6 @@
 //   0x0205b0d8 set03_init (original name)
 //   set03_wait, set03_move, set03_swoff: scratch/agentF/nonmatching/set03_wait.c, set03_move.c, set03_swoff.c
 
-// mapState as read by set03_init: grid origin of the map cells.
-typedef struct Set03GridOrigin {
-    /* 00 */ u8 unk_00[0x18];
-    /* 18 */ u16 originX;
-    /* 1a */ u16 originY;
-} Set03GridOrigin;
-
 typedef struct Vars_Set03 {
     /* 00 */ u8 unk_00[0x76];
     /* 76 */ u16 cellPlain;  // cell of the actor without the grid origin
@@ -29,7 +22,7 @@ extern const EntityFunc set03_actions[]; // set03_actions, indexed by e->action
 extern const u8 data_020d8a5c[];          // hitbox of the switch
 extern const u32 flagBits[];             // flagBits, indexed by e->type
 extern u32 em12_typeMasks[];
-extern Set03GridOrigin mapState;
+#include "engine/map_state.h"
 
 // Cell of player k (its entity, 3 pixels below the feet).
 #define SET03_PLAYER_CELL(k) ((((playerWork[k].entity->y.HALF.HI + 3) >> 4) << 6) | (playerWork[k].entity->x.HALF.HI >> 4))
