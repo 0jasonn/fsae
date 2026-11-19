@@ -529,6 +529,10 @@ src/engine/engine_block.cpp:
     complete
     .text       start:0x0201a468 end:0x0201a474
 
+src/engine/pxi_receive64.cpp:
+    complete
+    .text       start:0x0201aa78 end:0x0201ab90
+
 src/engine/mutex_wrap.cpp:
     complete
     .text       start:0x0201aff8 end:0x0201b020
