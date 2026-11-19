@@ -4,6 +4,7 @@
     func_0218a5fc = 0x0218a5fc;
     func_02189868 = 0x02189868;
     func_0218a570 = 0x0218a570;
+    func_0218a860 = 0x0218a860;
     /* Provisional names for the empty range table's coincident boundaries. */
     RangeTableStart = 0x020c8cfc;
     RangeTableEnd = 0x020c8cfc;

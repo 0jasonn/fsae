@@ -50,6 +50,9 @@ typedef struct MenuSub {
     /* 61e */ s16 state; // 0 = idle, 1 = active, 2 = set by flag5 (provisional)
     /* 620 */ u8 unk_620;
     /* 621 */ u8 unk_621; // set by Menu_Finish
+    /* 622 */ u8 flag622; // hardware teardown flags
+    /* 623 */ u8 flag623;
+    /* 624 */ u8 flag624;
 } MenuSub;
 
 // Object at 0x358 of the menu. Only the byte at 0xad is used here (it disables the blend setup when set).
