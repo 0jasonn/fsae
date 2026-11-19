@@ -553,9 +553,17 @@ src/engine/wm_datasharing_callback.cpp:
     complete
     .text       start:0x02020894 end:0x0202096c
 
+src/engine/wm_datasharing_receive.cpp:
+    complete
+    .text       start:0x0202096c end:0x02020aa0
+
 src/engine/wm_datasharing_2.cpp:
     complete
     .text       start:0x02020aa0 end:0x02020c54
+
+src/engine/wm_shared_data.cpp:
+    complete
+    .text       start:0x02020da4 end:0x02020df8
 
 src/game/wm_cmd.cpp:
     complete
