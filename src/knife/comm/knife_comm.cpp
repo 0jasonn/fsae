@@ -16,7 +16,7 @@ void knife_commDispDie(KNIFE_MSGSYS *msg) {
 }
 
 extern u8 localPlayerIndex[];
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 extern u16 playerKeys[];
 
 // Line feed of the message: waits for the timer and the key flags, then starts the next line

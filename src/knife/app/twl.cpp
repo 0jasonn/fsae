@@ -8,7 +8,7 @@
 //   twlInitAgb (0x0208294c): sets the graphics mode and the display control bit.
 //   twlInitSubDisplay (0x02082994): sets up the sub display and the KnifeApp settings block.
 
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 extern "C" void Vram_SetLcdcBits(u32 a);
 extern "C" void Vram_DisableBankTail(void);
 extern "C" void func_020148f0(u32 a);

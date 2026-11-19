@@ -7,7 +7,7 @@
 
 extern u16 playerKeysPrev[];       // per-player flag halfwords, bit 12 tested
 extern u8 data_0212c4f4;          // counter compared against 0x70 before the spawn
-extern u8 frameCounter[];         // u16 frame counter at 0, read as halfword
+extern u8 frameCounter[0x20];         // u16 frame counter at 0, read as halfword
 extern const s8 data_02115d38[];  // direction jitter table, indexed by Random() & 7
 
 typedef struct Vars_Set35 {

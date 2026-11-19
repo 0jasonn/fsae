@@ -1741,6 +1741,10 @@ src/actor/enemy/em31.cpp:
     complete
     .text       start:0x020433dc end:0x02043428
 
+src/actor/enemy/honya_move.cpp:
+    complete
+    .text       start:0x02043428 end:0x0204361c
+
 src/actor/enemy/encnt.cpp:
     complete
     .text       start:0x0204361c end:0x0204363c
@@ -1813,6 +1817,10 @@ src/actor/enemy/enemycommon.cpp:
     complete
     .text       start:0x020458f8 end:0x02045cb0
 
+src/actor/enemy/em_aim_drop.cpp:
+    complete
+    .text       start:0x02045eb4 end:0x0204602c
+
 src/actor/enemy/enemycommon_2.cpp:
     complete
     .text       start:0x0204602c end:0x02046130
@@ -1848,6 +1856,10 @@ src/game/game00.cpp:
 src/game/multiplay.cpp:
     complete
     .text       start:0x02047478 end:0x02047490
+
+src/game/multiplay_init.cpp:
+    complete
+    .text       start:0x02047490 end:0x02047564
 
 src/game/multiplay_2.cpp:
     complete
@@ -1896,6 +1908,10 @@ src/engine/irq.cpp:
 src/engine/irq_2.cpp:
     complete
     .text       start:0x02049bd8 end:0x02049cdc
+
+src/game/magne_move.cpp:
+    complete
+    .text       start:0x02049dac end:0x02049ea8
 
 src/ui/message.cpp:
     complete
@@ -1965,6 +1981,10 @@ src/ui/msgwin.cpp:
 src/ui/msgwin_2.cpp:
     complete
     .text       start:0x0204b1b0 end:0x0204b1b4
+
+src/ui/msg_frame_dma.cpp:
+    complete
+    .text       start:0x0204b1b4 end:0x0204b250
 
 src/knife/comm/knife_comm_disp_3.cpp:
     complete
@@ -2178,6 +2198,10 @@ src/actor/object/obj_anim_move_set.cpp:
     complete
     .text       start:0x0205069c end:0x020506d8
 
+src/game/obj_near_pl_check.cpp:
+    complete
+    .text       start:0x0205076c end:0x02050840
+
 src/engine/objutil_3.cpp:
     complete
     .text       start:0x02050840 end:0x02050880
@@ -2218,6 +2242,14 @@ src/ui/title.cpp:
     complete
     .text       start:0x020529fc end:0x02052a80
 
+src/ui/title_machiuke_joy.cpp:
+    complete
+    .text       start:0x02052a80 end:0x02052b3c
+
+src/ui/title_savedata.cpp:
+    complete
+    .text       start:0x02053114 end:0x020531c8
+
 src/ui/title_2.cpp:
     complete
     .text       start:0x020531c8 end:0x02053428
@@ -2234,6 +2266,10 @@ src/game/pause_req.cpp:
     complete
     .text       start:0x02053ab8 end:0x02053aec
 
+src/game/pause_req_wait.cpp:
+    complete
+    .text       start:0x02053aec end:0x02053bc8
+
 src/game/pause.cpp:
     complete
     .text       start:0x02053bc8 end:0x02053c6c
@@ -2241,6 +2277,10 @@ src/game/pause.cpp:
 src/game/pause_2.cpp:
     complete
     .text       start:0x02053ebc end:0x02053f14
+
+src/game/pause_exit.cpp:
+    complete
+    .text       start:0x0205420c end:0x02054340
 
 src/game/pause_3.cpp:
     complete

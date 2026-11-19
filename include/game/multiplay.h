@@ -79,7 +79,7 @@ void CalcHeartLevel(void);
 
 extern u8 localPlayerIndex;
 extern u8 data_0216efa8;                    // makemap state byte
-extern u8 frameCounter[];                  // game state byte block, byte 0x12 cleared by multiplay_init
+extern u8 frameCounter[0x20];                  // game state byte block, byte 0x12 cleared by multiplay_init
 extern u8 data_0212ca44[];                  // 0x34-byte records, first word read by multiplay_init
 extern PlayerData *data_0212c53c;           // current player slot pointer
 extern u32 data_0212c550;

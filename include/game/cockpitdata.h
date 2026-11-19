@@ -24,7 +24,7 @@ extern u8 cockpitState[];
 extern s32 data_0212c7d4[];
 // Heart alarm and pinch state (frame counter and state bytes).
 extern u16 data_0212c594;
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 // Current player entity pointer (cockpit), and the katti graphics tables.
 extern u8 *data_0212c53c; // current player block (PlayerData-sized entries, read as bytes or as an entity pointer at 0x28)
 extern u32 data_020f2530[];

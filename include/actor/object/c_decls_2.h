@@ -39,7 +39,7 @@ extern u16 data_021355a0;
 extern u8 data_0212caf0[];
 extern u32 data_0212c558;
 extern u16 data_0212c540;
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 extern u16 displayState[];
 extern u8 data_0212c500;
 

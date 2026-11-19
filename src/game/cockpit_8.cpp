@@ -10,7 +10,7 @@
 extern u16 playerKeys[]; // flags per player, bit 0x400 set while the player is active
 extern u16 playerKeysPrev[]; // flags per player, bit 0x1000 blocks the call animation
 extern u8 messageRequest[];
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 extern u8 data_0212c4a0[];
 extern u8 cockpitState[];
 

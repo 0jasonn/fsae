@@ -7,7 +7,7 @@
 // Functions in this file (original names from the debug build):
 //   subTask_radar_end (0x020a6f98)
 
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 extern u8 data_0217a258[];
 
 // subTask_radar_end() (0x020a6f98): frees the four radar slots and the OBJInfo, and starts the fade out when the

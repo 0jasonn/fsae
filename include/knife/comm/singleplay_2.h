@@ -53,7 +53,7 @@ typedef struct PalBits {
 extern s16 data_0211b2e4[];
 
 // Frame counter block (symbols.txt: frameCounter); this unit reads its byte at +0x13.
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 
 // Functions the SinglePlay update code calls (plain names, original signatures with this as void *).
 extern "C" {

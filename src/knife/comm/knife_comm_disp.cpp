@@ -11,7 +11,7 @@ extern "C" int isSkipAvailable(KNIFE_MSGSYS *msg);
 extern "C" void knife_commDispMove(KNIFE_MSGSYS *msg);
 
 extern u8 localPlayerIndex[];
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 extern u16 playerKeys[];
 extern const s8 data_020d7c18[]; // step table of the text speed, indexed by the low nibble of speedSetting
 

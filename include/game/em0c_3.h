@@ -16,7 +16,7 @@ typedef struct Em0cSensor {
 
 BOOL areacheck(Entity *e);       // 0x0202c9a8
 extern "C" BOOL areacheck2(Entity *e);   // 0x0202caa0
-extern u8 frameCounter[];
+extern u8 frameCounter[0x20];
 extern "C" {
 void em0c_shoot(Entity *e);      // 0x0202c80c
 }

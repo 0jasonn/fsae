@@ -12,7 +12,7 @@ extern u16 data_0212c510;               // flag word also declared in game/multi
 void RotateObjWork(u8 list);            // original RotateObjWork(unsigned char), 0x0204c1ec
 extern u8 data_0212c4e8;                // byte cleared at the start of AfterPlayer
 int func_02083d18(Entity *e, int dx, int dy); // C++ linkage (_Z13func_02083d18P9OBJ_WORK_ii), same as enemycommon.h
-extern u8 frameCounter[];              // ranking screen block, u16 timer at +2 (declared in another wip header as well)
+extern u8 frameCounter[0x20];              // ranking screen block, u16 timer at +2 (declared in another wip header as well)
 extern u16 data_021355a0;
 
 // Step index of the opening scene state machine (effectState[0x0d], not named in misc_d.h yet)

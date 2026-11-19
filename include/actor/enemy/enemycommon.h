@@ -32,7 +32,7 @@ typedef struct ParseTypeTable {
 extern const ParseTypeTable data_020d42b4;       // copied to the stack by ParseTypeBits
 
 s32 RegistStopBlock(u16 *list, u8 a);
-void *Cockpit_GetGfxAddr(u8 item);
+u8 *Cockpit_GetGfxAddr(s32 index);  // src/game/item.cpp
 
 // Native init lists (rodata) used by the fade_native_init functions
 extern const u8 nativeInitListE[];   // nativeInitListE
@@ -47,6 +47,6 @@ extern const u8 data_020f3a99[];
 extern const u8 data_020f3a9e[];
 
 // Spawns a child actor of e at the given position offsets (dsd name ObjPosCopyOfs32)
-void ObjPosCopyOfs32(Entity *child, Entity *e, int a, int b);
+void ObjPosCopyOfs32(Entity *child, Entity *e, s32 a, s32 b);
 
 #endif
