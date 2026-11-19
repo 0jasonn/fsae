@@ -11,7 +11,7 @@
 //   0x02074b0c gufu_body_right (original name)
 
 extern const s16 trigTable[]; // trigTable, 256 entries of sin, cos is 0x40 entries later
-extern u8 effectState[];    // result state block, see enemy/ending.h
+#include "engine/effect_state.h"
 
 void gufu_body_kaiten(Entity *e) {
     Vars_GufuBody *v = VARS(Vars_GufuBody, e);
@@ -72,14 +72,14 @@ void gufu_body_left(Entity *e) {
     e->action++;
     playerWork[0].entity->animationState = 6;
     DemoLinkWalkSet(0, 0x10, 0);
-    effectState[0] = effectState[0] + 1;
+    effectState.phase = effectState.phase + 1;
 }
 
 void gufu_body_right(Entity *e) {
     u16 pos[2];
 
     UpdateAnimationSingleFrame(e);
-    if (effectState[0x0e] < 5) {
+    if (effectState.sceneFlag < 5) {
         return;
     }
     switch (e->subAction) {
@@ -108,7 +108,7 @@ void gufu_body_right(Entity *e) {
         if (ObjAnimMoveLine(e) == 0) {
             return;
         }
-        effectState[0]++;
+        effectState.phase++;
         PutObjWork(e);
         return;
     }

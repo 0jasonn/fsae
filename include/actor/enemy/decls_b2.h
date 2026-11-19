@@ -25,7 +25,7 @@ extern u8 data_0212c500;   // doorsel step
 extern u32 data_0212c56c;
 extern u32 data_0212c570;
 extern u32 data_0212c528;
-extern u8 effectState[];   // ResultState block (enemy/ending.h), u16 timer at 4
+#include "engine/effect_state.h"
 #include "engine/display_state.h"
 extern u16 playerKeys[];
 extern s16 data_020f260c[];   // pairs of s16 positions for the door select sprites

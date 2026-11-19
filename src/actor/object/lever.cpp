@@ -4,7 +4,7 @@
 #include "engine/irq.h"
 
 extern s16 data_02115c78[];            // shared with door_silver_init, [type][3] flat
-extern u8 effectState[];
+#include "engine/effect_state.h"
 
 // lever, 0x020699a4
 void lever(Entity *e) {
@@ -24,7 +24,7 @@ void lever(Entity *e) {
         InitAnimationForceUpdate(e, 2);
     }
     UpdateAnimationSingleFrame(e);
-    if (effectState[8] >= 1) {
+    if (effectState.progress >= 1) {
         PutObjWork(e);
     }
 }
@@ -50,7 +50,7 @@ void abutton(Entity *e) {
         InitAnimationForceUpdate(e, 0);
     }
     UpdateAnimationSingleFrame(e);
-    if (effectState[8] >= 1) {
+    if (effectState.progress >= 1) {
         PutObjWork(e);
     }
 }
@@ -75,7 +75,7 @@ void pwait(Entity *e) {
         e->y.HALF.HI = pos[1];
     }
     e->spriteSettings.b0 = (frameState.frameCount & 0x10) ? 2 : 0;
-    if (effectState[8] >= 1) {
+    if (effectState.progress >= 1) {
         PutObjWork(e);
     }
 }
@@ -95,7 +95,7 @@ void breturn(Entity *e) {
     }
     e->unk_1b = 0xb2;
     e->spriteSettings.b16 = 8;
-    if (effectState[8] >= 1) {
+    if (effectState.progress >= 1) {
         PutObjWork(e);
     }
 }

@@ -11,7 +11,7 @@ extern const s16 data_020c91fc[][2];
 extern const u8 oplogo_youPosTable[];
 extern EntityFunc oplogo_buttonTable[];
 extern u8 localPlayerIndex;
-extern u8 effectState[];
+#include "engine/effect_state.h"
 extern u8 data_0212c4dc;
 
 void you_move(Entity *e) {
@@ -85,7 +85,7 @@ void button_init(Entity *e) {
 void button_move(Entity *e) {
     u8 value;
     if (localPlayerIndex == 0) {
-        if ((effectState[8] & 0x80) && data_0212c4dc == 4) {
+        if ((effectState.progress & 0x80) && data_0212c4dc == 4) {
             value = 2;
         } else {
             value = 0;

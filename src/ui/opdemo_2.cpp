@@ -8,28 +8,26 @@
 // fairy_talkmove -> fairy_talkmove
 // opdemo_scroll -> opdemo_scroll
 void scene_03(void) {
-    switch (effectState[EFFECT_STATE_SCENE]) {
+    switch (effectState.phase) {
         case 0:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
-                effectState[EFFECT_STATE_SCENE]++;
-                effectState[EFFECT_STATE_FLAG_E] = 4;
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
+                effectState.phase++;
+                effectState.sceneFlag = 4;
             }
             break;
-        case 1: {
-            Entity *player = playerWork[0].entity;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x78;
-            *(Entity **)&mapState = player;
+        case 1:
+            *(Entity **)&mapState = playerWork[0].entity;
+            effectState.timer = 0x78;
             break;
-        }
         case 2:
             opdemo_scroll();
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer != 0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            effectState[EFFECT_STATE_FLAG_E] = 5;
+            effectState.phase++;
+            effectState.sceneFlag = 5;
             {
                 Entity *fx = GetSetWork(0x5a, 1, 0x14);
                 fx->x.HALF.HI = playerWork[0].entity->x.HALF.HI - 8;
@@ -40,37 +38,37 @@ void scene_03(void) {
             break;
         case 3:
             opdemo_scroll();
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0xb4;
+            effectState.timer = 0xb4;
             break;
         case 4:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
-                effectState[EFFECT_STATE_SCENE]++;
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
+                effectState.phase++;
             }
             break;
         case 5:
             if ((frameState.frameCount & 3) != 0) {
                 return;
             }
-            if (effectState[EFFECT_STATE_LEVEL] < 0x10) {
+            if (effectState.fadeStep < 0x10) {
                 blendRequest.resetValue = -1;
-                effectState[EFFECT_STATE_LEVEL]++;
+                effectState.fadeStep++;
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x5a;
+            effectState.phase++;
+            effectState.timer = 0x5a;
             Status_ArmIfEnabled();
             SoundReq(0x80040000);
             break;
         case 6: {
             u8 counter;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer != 0) {
                 return;
             }
             counter = data_0212c4dc;
             data_0212c4dc = counter + 1;
-            effectState[EFFECT_STATE_SCENE] = 0;
+            effectState.phase = 0;
         }
         default:
             break;
@@ -85,11 +83,11 @@ int fairy_talkmove(u8 slot, u16 effectId) {
     }
     mode = messageRequest.phase & 0x7f;
     if (mode == 0) {
-        effectState[EFFECT_STATE_ACTIVE_SLOT] = 0xff;
-        *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-        if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x1e;
+        effectState.activeSlot = 0xff;
+        effectState.timer = effectState.timer - 1;
+        if (effectState.timer == 0) {
+            effectState.phase++;
+            effectState.timer = 0x1e;
             fairy_talkset(slot, effectId);
             return 1;
         }

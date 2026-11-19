@@ -18,7 +18,7 @@ typedef struct Vars_Set6a {
 } Vars_Set6a;
 
 extern const EntityFunc data_020d91e4[]; // indexed by e->action
-extern u8 effectState[];
+#include "engine/effect_state.h"
 extern u32 em12_typeMasks[]; // one mask per area
 extern u32 flagBits[]; // one mask per type2
 extern u16 frameCounter;
@@ -29,7 +29,7 @@ void getMgrInfo(Entity *e);
 void mgrMove(Entity *e);
 
 void Set6a(Entity *e) {
-    if (effectState[1] != 0 && e->objId != 0x72) {
+    if (effectState.subPhase != 0 && e->objId != 0x72) {
         return;
     }
     data_020d91e4[e->action](e);

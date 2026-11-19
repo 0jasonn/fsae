@@ -9,17 +9,10 @@
 // phase timer, DemoBgBuffClear clears the two neighbour grids.
 //   DemoTask (0x0202a78c), demoWaitCk (0x0202a8bc), DemoBgBuffClear (0x0202a92c)
 
-// Effect state block (0x28 bytes, cleared at the start of the demo); the wait timer is at +4.
-typedef struct DemoEffectState {
-    u8 unk_00[4];
-    u16 timer;
-    u8 unk_06[0x22];
-} DemoEffectState;
-
 
 extern u8 data_0212c4dc;                // demo phase, 0..4
 extern u16 data_0212c510;               // nonzero ends the phase wait early
-extern DemoEffectState effectState;   // effect state block
+#include "engine/effect_state.h"
 extern u16 data_021355a0;
 
 // DemoTask (0x0202a78c): phase 0 loads the demo graphics and palette, starts the display and waits;

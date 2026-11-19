@@ -7,7 +7,7 @@
 //   0x0205a1b0 set02_move (original name)
 
 extern u8 data_021348d8;   // flag, nonzero: the actor is placed low and does not get the x offset
-extern u8 effectState[]; // byte 0x14: nonzero when the actor should be put back into the work list
+#include "engine/effect_state.h"
 extern const s8 data_0211565c[]; // vertical bob table, indexed by timer & 0xf
 
 void set02_move(Entity *e) {
@@ -15,7 +15,7 @@ void set02_move(Entity *e) {
     case 0:
         e->x.HALF.HI = 0x58 - displayState.bg[1].scrollX;
         e->y.HALF.HI = 0x3c - displayState.bg[1].scrollY;
-        if (effectState[0x14] != 0) {
+        if (effectState.restoreFlag != 0) {
             PutObjWork(e);
         }
         break;
@@ -25,7 +25,7 @@ void set02_move(Entity *e) {
         if (data_021348d8 == 0) {
             e->x.HALF.HI += 3;
         }
-        if (effectState[0x14] != 0) {
+        if (effectState.restoreFlag != 0) {
             PutObjWork(e);
         }
         break;
@@ -77,7 +77,7 @@ void set02_move(Entity *e) {
         if (data_021348d8 != 0) {
             e->y.HALF.HI = 9;
         }
-        if (effectState[0x14] != 0) {
+        if (effectState.restoreFlag != 0) {
             PutObjWork(e);
         }
         break;

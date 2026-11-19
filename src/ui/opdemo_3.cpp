@@ -17,7 +17,7 @@ void fairy_talkset(u8 slot, u16 effectId) {
     MessageRequest(effectId);
     messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
     messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
-    effectState[EFFECT_STATE_ACTIVE_SLOT] = slot;
+    effectState.activeSlot = slot;
     fairySlots[slot].entity->action = 3;
 }
 
@@ -48,7 +48,7 @@ void opdemo_scroll(void) {
 }
 
 void op_title(void) {
-    effectState[8] = opTitleState & 0xf;
+    effectState.progress = opTitleState & 0xf;
     opTitleTable[data_0212c4dc]();
     data_0212c564();
     func_020830ec();

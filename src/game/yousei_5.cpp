@@ -6,13 +6,13 @@
 #include "engine/display_state.h"
 
 // Yousei demo fade, 0x02081f14 to 0x02082054.
-//   yousei_fade (0x02081f14): step 0 counts the timer at effectState+4 down, then starts the fade and moves to step 1;
+//   yousei_fade (0x02081f14): step 0 counts effectState.timer down, then starts the fade and moves to step 1;
 //   step 1 waits for ZeldaFadeFlagGet, bumps the demo step, sets every player to state 3 and finishes the fade.
 //   yousei_msgFinishWait (0x02082008): 1 while any player's message window (bit 12 of playerKeysPrev) is open.
 
 extern u8 data_0212c4dc; // demo sub-step
 extern u8 data_0212c500; // demo step
-extern u8 effectState[]; // 16-bit timer at +4
+#include "engine/effect_state.h"
 extern u16 playerKeysPrev[];
 
 // yousei_fade (0x02081f14)
@@ -21,8 +21,8 @@ void yousei_fade(void) {
 
     switch (data_0212c4dc) {
     case 0:
-        *(u16 *)(effectState + 4) = *(u16 *)(effectState + 4) - 1;
-        if (*(u16 *)(effectState + 4) != 0) {
+        effectState.timer = effectState.timer - 1;
+        if (effectState.timer != 0) {
             return;
         }
         displayState.blendCnt = 0x3f40;

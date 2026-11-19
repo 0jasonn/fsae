@@ -3,14 +3,14 @@
 #include "actor/object/gufu_vars.h"
 
 // Gufu body movement (module gufu, third unit). Address -> name:
-//   0x0207481c gufu_body_move (original name; switch on the result state byte at effectState + 0x0e)
+//   0x0207481c gufu_body_move (original name; switch on effectState.sceneFlag)
 
-extern u8 effectState[];           // result state block, see enemy/ending.h
+#include "engine/effect_state.h"
 extern Entity *mapState;        // the body entity the scene points at
 
 void gufu_body_move(Entity *e) {
     UpdateAnimationSingleFrame(e);
-    switch (effectState[0x0e]) {
+    switch (effectState.sceneFlag) {
     case 0:
         break;
     case 1:
@@ -21,15 +21,15 @@ void gufu_body_move(Entity *e) {
         if (e->y.HALF.HI <= 0xa0) {
             return;
         }
-        effectState[0] = effectState[0] + 1;
-        effectState[0x0e] = 0;
+        effectState.phase = effectState.phase + 1;
+        effectState.sceneFlag = 0;
         return;
     case 2:
         if (e->frame != 1) {
             return;
         }
         InitAnimationForceUpdate(e, 2);
-        effectState[0x0e] = 0;
+        effectState.sceneFlag = 0;
         return;
     case 3:
         if (e->frame == 1) {
@@ -40,7 +40,7 @@ void gufu_body_move(Entity *e) {
             return;
         }
         InitAnimationForceUpdate(e, 1);
-        effectState[0x0e] = 0;
+        effectState.sceneFlag = 0;
         return;
     case 4: {
         Vars_GufuBody *v;

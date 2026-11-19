@@ -46,18 +46,7 @@ extern RankScrollState mapState;
 #include "engine/cockpit_state.h"
 extern u8 data_021361a0[];
 
-// effectState: effect and result state block of the ranking screen (bytes shared with other files)
-typedef struct RankEffectState {
-    /* 00 */ u8 unk_00[4];
-    /* 04 */ u16 timer; // countdown of the result phase
-    /* 06 */ u8 unk_06[6];
-    /* 0c */ u32 playerFlags; // bit per player, set once that player's result is shown
-    /* 10 */ u32 finishedCount; // number of players whose result was shown
-    /* 14 */ u8 unk_14[0x13];
-    /* 27 */ u8 unk_27;
-} RankEffectState;
-extern RankEffectState effectState;
-
+#include "engine/effect_state.h"
 
 extern VoidFunc data_0212c564; // per-frame handler called by ranking_calc
 extern u8 data_0212c4dc; // phase of the result sequence, 0..3

@@ -7,8 +7,8 @@
 // title_move -> title_move
 // title_machiuke_joy -> title_machiuke_joy
 void title_wait(void) {
-    *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-    if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+    effectState.timer = effectState.timer - 1;
+    if (effectState.timer != 0) {
         return;
     }
     displayState.displayFlags = 0x1f40;

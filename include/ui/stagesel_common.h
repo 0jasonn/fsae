@@ -108,7 +108,7 @@ extern u8 data_0212c4e4;
 extern u16 data_021355a0;
 extern u8 data_0212c500;
 extern u8 localPlayerIndex;
-extern u8 effectState[]; // effect state block, u16 timer at +4
+#include "engine/effect_state.h"
 extern u8 comWork[];
 // Frame counts of the stage select messages (11 words, copied to the stack by stagesel_message)
 typedef struct SselMessageTimes {

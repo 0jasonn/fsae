@@ -11,38 +11,38 @@
 
 // scene_04, 0x02051d84: the fourth opening scene (fairy and message sequence).
 void scene_04(void) {
-    switch (effectState[EFFECT_STATE_SCENE]) {
+    switch (effectState.phase) {
         case 0:
             mapState.cameraX = 0x10;
             displayState.bg[3].scrollY = 0x10;
             displayState.bg[2].scrollY = 0x10;
             SoundReq(0x800b01ad);
-            effectState[EFFECT_STATE_SCENE]++;
+            effectState.phase++;
             return;
         case 1:
             if ((frameState.frameCount & 0x1f) != 0) {
                 return;
             }
-            effectState[EFFECT_STATE_LEVEL]--;
-            if (effectState[EFFECT_STATE_LEVEL] != 0) {
+            effectState.fadeStep--;
+            if (effectState.fadeStep != 0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x78;
+            effectState.phase++;
+            effectState.timer = 0x78;
             SCENE_SLOT_ENTITY(0x0c) = GetSetWork(0x5a, 0, 0);
             SCENE_SLOT_ENTITY(0x20) = GetSetWork(0x5a, 0, 1);
             SCENE_SLOT_ENTITY(0x34) = GetSetWork(0x5a, 0, 2);
             SoundReq(0x201);
             return;
         case 2:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer != 0) {
                 return;
             }
             MessageRequest(8);
             messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
             messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
-            effectState[EFFECT_STATE_SCENE]++;
+            effectState.phase++;
             return;
         case 3:
             if ((frameState.frameCount & 1) == 0) {
@@ -57,7 +57,7 @@ void scene_04(void) {
             MessageRequest(9);
             messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
             messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
-            effectState[EFFECT_STATE_SCENE]++;
+            effectState.phase++;
             return;
         case 4:
             if ((frameState.frameCount & 1) == 0) {
@@ -69,50 +69,50 @@ void scene_04(void) {
             if (mapState.cameraX < 0xa0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x1e;
+            effectState.phase++;
+            effectState.timer = 0x1e;
             fairy_set(1, 0, 0x78);
             return;
         case 5:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer != 0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x1e;
+            effectState.phase++;
+            effectState.timer = 0x1e;
             fairy_set(0, 1, 0x78);
             return;
         case 6:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer != 0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0xb4;
+            effectState.phase++;
+            effectState.timer = 0xb4;
             fairy_set(2, 2, 0x78);
             return;
         case 7:
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0x3c) {
+            if (effectState.timer == 0x3c) {
                 Status_ArmIfEnabled();
             }
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer != 0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x3c;
+            effectState.phase++;
+            effectState.timer = 0x3c;
             playerWork[0].state = 0xa;
             return;
         case 8:
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0x1e) {
+            if (effectState.timer == 0x1e) {
                 playerWork[0].entity->animationState = 0;
             }
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) != 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer != 0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x1e;
+            effectState.phase++;
+            effectState.timer = 0x1e;
             fairy_talkset(0, 0xa);
             return;
         case 9:
@@ -129,21 +129,21 @@ void scene_04(void) {
                 return;
             }
             Status_ArmIfEnabled();
-            effectState[OPSCENE_ACTIVE_SLOT] = 0xff;
+            effectState.activeSlot = 0xff;
             playerWork[0].state = 0xb;
             fairy_set(0, 3, 0x3c);
             fairy_set(1, 4, 0x3c);
             fairy_set(2, 5, 0x3c);
             SoundReq(0x201);
-            effectState[EFFECT_STATE_SCENE]++;
+            effectState.phase++;
             return;
         case 13:
             opdemo_scroll();
             if ((data_02134924 & 4) == 0) {
                 return;
             }
-            effectState[EFFECT_STATE_SCENE] = 0;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x78;
+            effectState.phase = 0;
+            effectState.timer = 0x78;
             data_0212c4dc++;
             return;
         default:

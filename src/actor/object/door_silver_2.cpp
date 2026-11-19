@@ -2,13 +2,13 @@
 #include "global.h"
 #include "actor/object/door_silver.h"
 
-extern u8 effectState[];
+#include "engine/effect_state.h"
 
 void door_silver_wait(Entity *e) {
-    if (effectState[8] < 3) {
+    if (effectState.progress < 3) {
         return;
     }
-    if (effectState[2] != e->type2) {
+    if (effectState.selection != e->type2) {
         return;
     }
     e->action++;

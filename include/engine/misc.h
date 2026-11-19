@@ -32,17 +32,7 @@ typedef struct UnkStruct_0212c648_D {
 } UnkStruct_0212c648_D;
 extern UnkStruct_0212c648_D mapState;
 
-// Effect state block. Kept as a byte array: a struct-typed declaration makes mwcc schedule the stores differently.
-enum {
-    EFFECT_STATE_SCENE = 0x00, // scene state machine of op_scene_00
-    EFFECT_STATE_TIMER = 0x04, // u16 countdown used by op_scene_00
-    EFFECT_STATE_STEP_TIMER = 0x09, // counts down before the step index advances
-    EFFECT_STATE_STEP_INDEX = 0x0a, // index into mistStepTable, 0xff at the end
-    EFFECT_STATE_ACTIVE = 0x0b,
-    EFFECT_STATE_LEVEL = 0x0c,
-    EFFECT_STATE_FLAG_E = 0x0e, // set to 2/3 by gufu_scene_02, cleared by its last state
-};
-extern u8 effectState[];
+#include "engine/effect_state.h"
 
 // Scene control block (data_02134d30)
 typedef struct UnkStruct_02134d30 {

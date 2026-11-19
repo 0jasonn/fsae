@@ -89,7 +89,7 @@ void op_init(void) {
     DemoBgBuffClear();
     MessageInitialize();
     func_0204f978();
-    MIi_CpuClear16(0, effectState, 0x28);
+    MIi_CpuClear16(0, &effectState, 0x28);
     PlWorkClear();
     PlWorkColorReset();
     slotIndex = 0x17;
@@ -130,10 +130,10 @@ void op_init(void) {
     func_02026774();
     ((u8 *)KnifeApp_getInstance())[0xcb0] = 0;
     *(volatile u32 *)0x04000000 = (*(volatile u32 *)0x04000000 & 0xffcfffef) | 0x10;
-    effectState[EFFECT_STATE_STEP_TIMER] = 0xb4;
-    effectState[EFFECT_STATE_STEP_INDEX] = zero;
-    effectState[EFFECT_STATE_ACTIVE] = zero;
-    effectState[EFFECT_STATE_LEVEL] = zero;
+    effectState.stepTimer = 0xb4;
+    effectState.stepIndex = zero;
+    effectState.fadeActive = zero;
+    effectState.fadeStep = zero;
     blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
     FadeSet(setupIndexB, 4);
@@ -158,23 +158,23 @@ void op_init(void) {
 void mist_effect(void) {
     u8 stepIndex;
     u16 stepValue;
-    if (effectState[EFFECT_STATE_ACTIVE] != 0) {
+    if (effectState.fadeActive != 0) {
         return;
     }
     if ((frameState.frameCount & 3) == 0) {
         displayState.bg[1].scrollX++;
     }
-    if (effectState[EFFECT_STATE_STEP_TIMER] != 0) {
-        effectState[EFFECT_STATE_STEP_TIMER]--;
+    if (effectState.stepTimer != 0) {
+        effectState.stepTimer--;
         return;
     }
     if ((frameState.frameCount & 7) != 0) {
         return;
     }
-    stepIndex = effectState[EFFECT_STATE_STEP_INDEX];
+    stepIndex = effectState.stepIndex;
     stepValue = mistStepTable[stepIndex];
     if (stepValue != 0xffff && stepIndex != 0xff) {
-        effectState[EFFECT_STATE_STEP_INDEX] = stepIndex + 1;
+        effectState.stepIndex = stepIndex + 1;
         displayState.blendAlpha = stepValue;
         return;
     }
@@ -183,12 +183,12 @@ void mist_effect(void) {
     displayState.blendCnt = 0x3c64;
     displayState.blendAlpha = 0x808;
     displayState.bg[2].scrollY = mapState.cameraX;
-    effectState[EFFECT_STATE_ACTIVE] = 1;
+    effectState.fadeActive = 1;
 }
 
 void color_control(void) {
     u8 *base;
-    if (effectState[EFFECT_STATE_ACTIVE] == 0) {
+    if (effectState.fadeActive == 0) {
         return;
     }
     if (blendRequest.blendEnabled != 0) {
@@ -198,8 +198,8 @@ void color_control(void) {
         base = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x3a);
         CgPalletSet((u16 *)(base + ((Random() & 3) << 5)), 0xf, 1);
     }
-    MakeFadeBuff256(effectState[EFFECT_STATE_LEVEL] << 4);
-    title_MakeFadeBuff256(blendRequest.blendColor, effectState[EFFECT_STATE_LEVEL] << 4);
+    MakeFadeBuff256(effectState.fadeStep << 4);
+    title_MakeFadeBuff256(blendRequest.blendColor, effectState.fadeStep << 4);
 }
 
 void op_demo_skip(void) {
@@ -209,8 +209,8 @@ void op_demo_skip(void) {
     SoundReq(0x80010000);
     blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
-    effectState[EFFECT_STATE_STEP_TIMER] = 0;
-    effectState[EFFECT_STATE_STEP_INDEX] = 0xff;
+    effectState.stepTimer = 0;
+    effectState.stepIndex = 0xff;
     data_0212c500 = 2;
     data_0212c4dc = 0;
     SetCgColor(0, 0x6739);

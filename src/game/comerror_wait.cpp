@@ -1,9 +1,8 @@
 #include "engine/functions.h"
 #include "game/comerror_wait.h"
 
-// comerror_wait (0x02028b58): phase 0 resets the screen and the object work and starts a 0x3c frame wait (the timer
-// of the result block effectState); phase 1 counts the wait down and when it runs out starts over and advances
-// data_0212c500.
+// comerror_wait (0x02028b58): phase 0 resets the screen and the object work and starts a 0x3c frame wait
+// (effectState.timer); phase 1 counts the wait down and when it runs out starts over and advances data_0212c500.
 void comerror_wait(void) {
     void *knife;
     u8 state;

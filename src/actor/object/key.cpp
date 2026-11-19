@@ -11,7 +11,7 @@ extern s16 kumo0InitTable[];          // kumo0InitTable, [type][3] flat
 extern u8 keyInitUnk21Table[];         // keyInitUnk21Table, indexed by type2
 extern u8 keyInitBankTable[];          // keyInitBankTable, indexed by type2
 extern const s16 trigTable[];
-extern u8 effectState[];
+#include "engine/effect_state.h"
 
 void key_pos_set(Entity *e);
 
@@ -116,7 +116,7 @@ void key_kazan(Entity *e) {
 // key_pos_set, 0x020697e8
 void key_pos_set(Entity *e) {
     u8 index = VARS(Vars_Key, e)->posIndex;
-    u8 scale = effectState[9];
+    u8 scale = effectState.stepTimer;
     e->x.HALF.HI = ((scale * trigTable[index + 0x40]) >> 8) + 0x80;
     e->y.HALF.HI = ((scale * trigTable[index]) >> 8) + 0x6c;
 }

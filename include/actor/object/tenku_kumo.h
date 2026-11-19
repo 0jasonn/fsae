@@ -6,7 +6,7 @@
 #include "actor/object/set46.h"
 
 extern const EntityFunc tenkuKumoTable[]; // tenkuKumoTable, indexed by action
-extern u8 effectState[];                // shared state block (ResultState in enemy/ending.h); read as s16 at +0x26
+#include "engine/effect_state.h"
 int ZeldaFadeFlagGet(void);
 
 void tenku_kumo(Entity *e);

@@ -3,9 +3,6 @@
 
 #include "engine/misc.h"
 
-// Effect state block (effectState) entries used only by the functions in this range
-#define EFFECT_STATE_ACTIVE_SLOT 0x0f // slot of the running effect, 0xff when none (guess)
-
 // One 0x14-byte entry of fairySlots: the first word is the entity that owns the slot
 typedef struct EffectSlot {
     /* 00 */ Entity *entity;

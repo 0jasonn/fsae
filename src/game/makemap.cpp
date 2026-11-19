@@ -52,7 +52,7 @@ void makemap_sync_0204794c(void) {
         u8 zero = 0;
         data_0212c4dc += 2;
         data_0216efa8 = zero;
-        effectState.unk_02[1] = zero;
+        effectState.entryCount = zero;
         break;
     }
     }

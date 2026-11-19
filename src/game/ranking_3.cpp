@@ -49,7 +49,7 @@ void ranking_init(void) {
     mapState.unk_20 = 0;
     mapState.cameraX = 0x140;
     displayState.displayFlags = 0x1d40;
-    effectState.unk_27 = 0;
+    effectState.removeFlag = 0;
     FadeSet(2, 4);
     data_0212c500++;
 }

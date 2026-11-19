@@ -58,7 +58,7 @@ void set5c_event_check(Entity *e);
 void zelda_disp(Entity *e);
 extern const EntityFunc data_020d9028[]; // set5c update state table indexed by e->action
 extern const s16 trigTable[]; // sine table (trigTable)
-extern u8 effectState[];
+#include "engine/effect_state.h"
 extern u32 em12_typeMasks[]; // one mask per area (0x02134954)
 extern u16 data_0213492c[]; // per-area offset, read at [area * 2]
 extern u16 em12_spawnOffsetY[]; // per-area offset, read at [area * 2]

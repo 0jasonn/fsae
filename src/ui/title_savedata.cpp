@@ -14,8 +14,8 @@ void title_savedata(void) {
     if (blendRequest.blendEnabled != 0) {
         return;
     }
-    mode = effectState[0];
     *(u16 *)(comWork + 0x12) = 8;
+    mode = effectState.phase;
     switch (mode) {
         case 0:
         case 1:

@@ -7,20 +7,20 @@
 #include "engine/message_request.h"
 
 // op_scene_01 (symbol op_scene_01, original scene_01()): the first opening scene. The step index is
-// effectState[EFFECT_STATE_SCENE] and the countdown is the u16 at EFFECT_STATE_TIMER.
+// effectState.phase and the countdown is effectState.timer.
 
 void op_scene_01(void) {
-    switch (effectState[EFFECT_STATE_SCENE]) {
+    switch (effectState.phase) {
         case 0:
             if ((frameState.frameCount & 0x1f) != 0) {
                 return;
             }
-            if (effectState[EFFECT_STATE_LEVEL] < 7) {
-                effectState[EFFECT_STATE_LEVEL]++;
+            if (effectState.fadeStep < 7) {
+                effectState.fadeStep++;
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x78;
+            effectState.phase++;
+            effectState.timer = 0x78;
             SoundReq(0x203);
             return;
         case 1:
@@ -28,10 +28,10 @@ void op_scene_01(void) {
                 data_02134d30.entity->animationState = (u8)((Random() & 3) << 1);
                 playerWork[0].entity->animationState = (u8)((Random() & 3) << 1);
             }
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
                 Entity *spawned;
-                effectState[EFFECT_STATE_SCENE]++;
+                effectState.phase++;
                 SoundReq(0x1ae);
                 spawned = GetSetWork(0x62, 0, 0);
                 spawned->x.HALF.HI = 0xa0;
@@ -43,12 +43,12 @@ void op_scene_01(void) {
                 data_02134d30.entity->animationState = (u8)((Random() & 3) << 1);
                 playerWork[0].entity->animationState = (u8)((Random() & 3) << 1);
             }
-            if (effectState[OPSCENE_SUBSTATE] == 1) {
+            if (effectState.subState == 1) {
                 PutNPC(0);
-                effectState[OPSCENE_SUBSTATE] = 0;
+                effectState.subState = 0;
                 return;
             }
-            if (effectState[OPSCENE_SUBSTATE] != 2) {
+            if (effectState.subState != 2) {
                 return;
             }
             {
@@ -56,15 +56,15 @@ void op_scene_01(void) {
                 spawned->x.HALF.HI = playerWork[0].entity->x.HALF.HI - 8;
                 spawned->y.HALF.HI = playerWork[0].entity->y.HALF.HI - 0x10;
             }
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x3c;
+            effectState.phase++;
+            effectState.timer = 0x3c;
             DemoLinkWalkSet(0, 0x10, 0x10);
             playerWork[0].entity->animationState = 0;
             return;
         case 3:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
-                effectState[EFFECT_STATE_SCENE]++;
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
+                effectState.phase++;
             }
             return;
         case 4:
@@ -76,26 +76,26 @@ void op_scene_01(void) {
             }
             mapState.cameraX = 0x10;
             displayState.bg[3].scrollY = 0x10;
-            effectState[EFFECT_STATE_SCENE]++;
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x28;
+            effectState.phase++;
+            effectState.timer = 0x28;
             displayState.bg[2].scrollY = 0x10;
             SoundReq(0x1af);
             return;
         case 5:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
                 gufu_flash();
             }
             return;
         case 6:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
                 gufu_flash();
             }
             return;
         case 7:
-            *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;
-            if (*(u16 *)(effectState + EFFECT_STATE_TIMER) == 0) {
+            effectState.timer = effectState.timer - 1;
+            if (effectState.timer == 0) {
                 gufu_flash();
             }
             return;
@@ -109,11 +109,11 @@ void op_scene_01(void) {
             if ((frameState.frameCount & 7) != 0) {
                 return;
             }
-            if (effectState[EFFECT_STATE_LEVEL] < 7) {
-                effectState[EFFECT_STATE_LEVEL]++;
+            if (effectState.fadeStep < 7) {
+                effectState.fadeStep++;
                 return;
             }
-            effectState[EFFECT_STATE_SCENE]++;
+            effectState.phase++;
             MessageRequest(4);
             messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
             messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
@@ -123,8 +123,8 @@ void op_scene_01(void) {
                 return;
             }
             Status_ArmIfEnabled();
-            effectState[EFFECT_STATE_SCENE]++;
-            effectState[EFFECT_STATE_FLAG_E] = 1;
+            effectState.phase++;
+            effectState.sceneFlag = 1;
             SoundReq(0x1fa);
             return;
         case 10:
@@ -141,8 +141,8 @@ void op_scene_01(void) {
             } else {
                 mapState.cameraX = 0x88;
                 data_0212c4dc++;
-                effectState[EFFECT_STATE_SCENE] = 4;
-                *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x28;
+                effectState.phase = 4;
+                effectState.timer = 0x28;
             }
             return;
         default:
@@ -151,9 +151,9 @@ void op_scene_01(void) {
 }
 
 void gufu_flash(void) {
-    *(u16 *)(effectState + EFFECT_STATE_TIMER) = 0x14;
-    effectState[EFFECT_STATE_SCENE]++;
-    effectState[EFFECT_STATE_LEVEL] = 0;
+    effectState.timer = 0x14;
+    effectState.phase++;
+    effectState.fadeStep = 0;
     blendRequest.resetValue = -1;
     PaletteFade_ClearBufferFlag();
     FadeSet(2, 8);

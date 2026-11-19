@@ -32,19 +32,7 @@ typedef struct CameraState {
 } CameraState;
 
 #include "engine/display_state.h"
-
-// Result state block at effectState (0x28 bytes, cleared by ending_init)
-typedef struct ResultState {
-    /* 00 */ u8 phase;     // state of the scene machine in ending_scene_01
-    /* 01 */ u8 subPhase; // sub-state of the demo in demo_01 and demo_00
-    /* 02 */ u8 unk_02[2];
-    /* 04 */ u16 timer;    // frames left in the current phase
-    /* 06 */ u8 unk_06[6];
-    /* 0c */ u8 fadeStep;  // 0..0x10, scaled by 0x10 for the fade buffers
-    /* 0d */ u8 unk_0d[0x17];
-    /* 24 */ u32 frames;   // incremented once per frame by ending_rescue
-} ResultState;
-
+#include "engine/effect_state.h"
 #include "engine/blend_request.h"
 typedef void (*FadeFunc)(BlendRequest *);
 extern FadeFunc const fadeModeTable[];        // fadeModeTable
@@ -60,7 +48,6 @@ extern u8 objAffineSet[];
 extern u8 data_0212ccb0[];
 #include "engine/cockpit_state.h"
 extern u8 data_021361a0[];
-extern ResultState effectState;
 extern u32 em12_typeMasks;
 extern u32 em2f_mapFlag;
 extern u8 data_0212c4dc;

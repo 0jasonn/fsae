@@ -7,13 +7,13 @@
 // the copy actors by leaving action 0.
 
 void open_move(Entity *e) {
-    effectState[NP_SHOWN] = 1;
+    effectState.panelShown = 1;
     if (e->subtimer < 0x28) {
         e->subtimer += 4;
         displayState.win0V = (e->timer << 8) | (e->timer + e->subtimer);
     } else {
         displayState.displayFlags &= 0xdfff;
-        effectState[NP_PANEL_STATE] = e->type2;
+        effectState.panelState = e->type2;
         e->action = 1;
     }
 }

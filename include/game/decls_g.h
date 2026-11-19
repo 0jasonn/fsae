@@ -57,7 +57,7 @@ extern u8 data_021271d4[];
 extern const u8 data_020ce4d0[];
 extern u8 data_0212c508;
 #include "engine/blend_request.h"
-extern u8 effectState[];
+#include "engine/effect_state.h"
 extern u8 data_0212c500[];
 extern u8 data_0212c4dc;
 extern u8 data_0212720c[];

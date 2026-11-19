@@ -24,7 +24,7 @@ extern const GroupCreateCursorPos data_020de8ac[];
 extern const s32 data_020de854[2]; // position of the wait dialog object (x, y in pixels)
 
 extern u32 opTitleState;
-extern u8 effectState[]; // ResultState block (actor/enemy/ending.h): timer u16 at +4, byte at +8, word at +0x24
+#include "engine/effect_state.h"
 extern u16 data_0212c510;
 extern u8 data_021806f0[];
 

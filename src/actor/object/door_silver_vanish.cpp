@@ -16,6 +16,6 @@ void door_silver_vanish(Entity *e) {
     e->spriteSettings.b0 = 0;
     e->x.HALF.HI = data_02115be2[e->type2 * 2];
     e->y.HALF.HI = data_02115be2[e->type2 * 2 + 1];
-    effectState[8] = 4;
+    effectState.progress = 4;
 }
 
