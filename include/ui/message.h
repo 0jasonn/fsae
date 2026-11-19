@@ -118,7 +118,7 @@ extern WindowSlot telopWindowSlots[];
 extern WindowSlot data_0216f010[];
 extern WindowSlot data_0216efe0[];
 extern WindowSlot data_0216eff0[];
-extern u8 cockpitState[];
+#include "engine/cockpit_state.h"
 
 extern void knife_msgLineChange(KNIFE_MSGSYS *msg, s32 lines);
 extern void Knife_msgFrameDma(KNIFE_MSGSYS *msg, u32 bank);

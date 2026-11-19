@@ -256,7 +256,7 @@ void em2f_demoEnd(Entity *e) {
         player->entity->zVelocity = 0x20000;
     }
     SoundReq(0x1af);
-    cockpitState = 1;
+    cockpitState.mode = 1;
     Scene_ClearFlag5();
     CockpitOn();
 }

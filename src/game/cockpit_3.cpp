@@ -7,7 +7,7 @@
 
 // Redraws the heart or rupee part of the cockpit for a given value (a is the kind, b the amount).
 void CockpitRecovery(u8 kind, u8 amount) {
-    if (cockpitState[0] == 0) {
+    if (cockpitState.mode == 0) {
         return;
     }
     if (kind < 4) {

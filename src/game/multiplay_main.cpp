@@ -78,7 +78,7 @@ void multiplay_main(void) {
                 playerKeysPrev[0] &= 0x170c;
             }
         }
-        if ((&cockpitState)[0xc] != 0xff && frameCounter[0x14] == 0 && frameCounter[0x11] == 0) {
+        if (cockpitState.item != 0xff && frameCounter[0x14] == 0 && frameCounter[0x11] == 0) {
             if (gameState.frameCount < 0x57e04) {
                 gameState.frameCount++;
             }
@@ -120,7 +120,7 @@ void multiplay_main(void) {
             Scene_SetFlag5();
             SoundReq(0x80040000);
             SoundInit();
-            cockpitState = 2;
+            cockpitState.mode = 2;
             gameState.unk_6e = 2;
             data_0212c520 = 1;
             data_0212c500++;

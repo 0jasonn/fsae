@@ -19,8 +19,8 @@ extern u32 *data_020f253c[];
 // Background music and pinch warning check (cockpit module, defined in cockpit.cpp).
 void pinch_bgm_check(void);
 
-// Rupee counter block at cockpitState (cockpit side) and the per-type rupee value array.
-extern u8 cockpitState[];
+// Cockpit block (cockpitState) and the per-type rupee value array.
+#include "engine/cockpit_state.h"
 extern s32 data_0212c7d4[];
 // Heart alarm and pinch state bytes.
 extern u8 frameCounter[0x20];
@@ -43,9 +43,6 @@ extern u8 telopRequest[];
 
 #define GS_U8(off) (*((u8 *)&gameState + (off)))
 #define GS_S32(off) (*(s32 *)((u8 *)&gameState + (off)))
-#define RUPEE_U8(off) (*(u8 *)(cockpitState + (off)))
-#define RUPEE_U16(off) (*(u16 *)(cockpitState + (off)))
-#define RUPEE_S32(off) (*(s32 *)(cockpitState + (off)))
 
 // Cockpit graphics and object blocks used by the HUD code.
 extern u8 displayState[];

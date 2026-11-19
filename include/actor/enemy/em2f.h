@@ -33,7 +33,7 @@ extern const u8 em2f_healthByDifficulty[];
 extern const u8 em2f_mapData[];
 extern s32 em2f_mapFlag;
 extern u8 localPlayerIndex;
-extern u8 cockpitState;
+#include "engine/cockpit_state.h"
 extern const u16 em2f_tsubomiSpeeds[];
 extern const u32 flagBits[];
 extern const s16 trigTable[];

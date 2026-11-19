@@ -57,8 +57,8 @@ extern s16 data_020cd6e4[];                      // x / y offset pairs indexed b
 struct BG_BUFF_;
 typedef struct BG_BUFF_ BG_BUFF_;
 
-// Cockpit block and player blocks (PlayerData[4], 0x94 bytes each; entity pointer at 0x28).
-extern u8 cockpitState[];
+// Player blocks (PlayerData[4], 0x94 bytes each; entity pointer at 0x28).
+#include "engine/cockpit_state.h"
 extern u8 data_0212c82c[];
 extern u8 *data_0212c53c; // current player block
 

@@ -15,7 +15,7 @@ void ending_init(void) {
     MIi_CpuClearFast(0xc0, (void *)0x07000000, 0x400);
     MIi_CpuClearFast(0xc0, objAffineSet, 0x800);
     MIi_CpuClearFast(0, data_0212ccb0, 0x200);
-    cockpitState = 0;
+    cockpitState.mode = 0;
     MIi_CpuClearFast(0, data_021361a0, 0x1000);
     func_02026774();
     ObjWorkPoolClear();

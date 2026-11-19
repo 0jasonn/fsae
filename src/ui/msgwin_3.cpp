@@ -8,7 +8,7 @@ void deleteWindow(void) {
     int col;
     u16 *tiles;
     int row;
-    u8 slotIndex = cockpitState[3];
+    u8 slotIndex = cockpitState.bufferIndex;
     WindowSlot *slot = &data_0216f010[slotIndex];
     if (slot->active != 0) {
         slot->active = 0;
@@ -24,7 +24,7 @@ void deleteWindow(void) {
         } while (row > 0);
         func_02026774();
     }
-    slotIndex = cockpitState[3];
+    slotIndex = cockpitState.bufferIndex;
     slot = &data_0216eff0[slotIndex];
     if (slot->active != 0) {
         slot->active = 0;

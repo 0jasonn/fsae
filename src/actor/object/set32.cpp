@@ -1,13 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/objdecls_a.h"
+#include "engine/cockpit_state.h"
 
 extern EntityFunc set32Table[];        // set32Table, indexed by type
-extern u8 cockpitState[];             // game state; byte 5 is a flag
 
 // Set32, 0x02069e0c
 void Set32(Entity *e) {
-    if (cockpitState[5] == 0) {
+    if (cockpitState.mapStep == 0) {
         PutObjWork(e);
         return;
     }

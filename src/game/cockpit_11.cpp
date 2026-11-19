@@ -36,11 +36,11 @@ extern HudTileObj data_0212c4a0;
 void CockpitInit(void) {
     u8 *app;
 
-    OSi_CpuClear32(0, cockpitState, 0x30);
-    cockpitState[0] = 1;
+    OSi_CpuClear32(0, &cockpitState, sizeof(cockpitState));
+    cockpitState.mode = 1;
     displayState.unk_8 = *(u16 *)(data_020ce4d0 + 0x24);
-    cockpitState[3] = 0;
-    cockpitState[2] = 1;
+    cockpitState.bufferIndex = 0;
+    cockpitState.redraw = 1;
     app = (u8 *)KnifeApp_getInstance();
     cockpit_load();
     ((Knife::Hud::HudManager *)(app + 0x1f8))->initialize();
@@ -57,8 +57,8 @@ void CockpitInit(void) {
     data_0212c4a0.mode2 = 1;
     data_0212c4a0.tile2 = 0x2ec;
     data_0212c4a0.palette2 = 4;
-    cockpitState[0x2c] = 0xff;
-    cockpitState[0xc] = 0xff;
-    cockpitState[7] = 0xff;
+    cockpitState.item2p = 0xff;
+    cockpitState.item = 0xff;
+    cockpitState.kattiKind = 0xff;
     CockpitUpdate();
 }

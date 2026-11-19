@@ -87,7 +87,7 @@ extern u8 data_02135840[];
 extern u8 data_0216fd04[];
 extern u8 objAffineSet[];
 extern u8 data_0212ccb0[];
-extern u8 cockpitState;
+#include "engine/cockpit_state.h"
 extern u8 data_021361a0[];
 extern ResultState effectState;
 extern u32 em12_typeMasks;

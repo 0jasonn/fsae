@@ -23,7 +23,7 @@ void knife_commDispInit(KNIFE_MSGSYS *msg) {
     void *app;
 
     MI_CpuFill8(pauseDialogBuffer, 0, 0x800);
-    slot = &data_0216efe0[cockpitState[3]];
+    slot = &data_0216efe0[cockpitState.bufferIndex];
     if (msg->openMode != 2) {
         frameSize = (u16)(messageRequest.width << 3);
         Knife_Message_MessageTextRender_initWithCanvas(msg->renderer, (void *)data_021371a0,

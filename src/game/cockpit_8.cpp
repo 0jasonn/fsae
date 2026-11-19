@@ -4,6 +4,7 @@
 #include "types.h"
 #include "knife/app/knife_hud.h"
 #include "engine/message_request.h"
+#include "engine/cockpit_state.h"
 
 // Functions in this file (module cockpit, original names from the debug build):
 //   cockpit_call_check (cockpit_call_check()), cockpit_obj_trans (cockpit_obj_trans(unsigned char))
@@ -12,7 +13,6 @@ extern u16 playerKeys[]; // flags per player, bit 0x400 set while the player is 
 extern u16 playerKeysPrev[]; // flags per player, bit 0x1000 blocks the call animation
 extern u8 frameCounter[0x20];
 extern u8 data_0212c4a0[];
-extern u8 cockpitState[];
 
 // cockpit_call_check (0x02027bd0): starts the call animation of the player that asks for it. Single play uses the
 // active player of the single play block; wireless play checks every player.
@@ -73,7 +73,7 @@ void cockpit_obj_trans(u8 mode) {
     cockpit_call_check();
     *(u32 *)(data_0212c4a0 + 4) = (*(u32 *)(data_0212c4a0 + 4) + 1) % 0x30;
     hud = (Knife::Hud::HudManager *)((u8 *)knife + 0x1f8);
-    hud->setField70(0, cockpitState[0xc]);
-    hud->setField70(1, cockpitState[0x2c]);
+    hud->setField70(0, cockpitState.item);
+    hud->setField70(1, cockpitState.item2p);
     hud->update(mode);
 }

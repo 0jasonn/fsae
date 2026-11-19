@@ -51,7 +51,7 @@ void rr_type0_wait(Entity *e) {
     }
     e->action = 2;
     v->typeBits = 0xffff;
-    cockpitState = 2;
+    cockpitState.mode = 2;
     BindPlayers();
     Scene_SetFlag5();
     for (i = 0; i < gameState.playerCount; i++) {

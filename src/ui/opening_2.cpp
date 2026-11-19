@@ -105,8 +105,8 @@ void op_init(void) {
         bankValue -= 0x80000010;
         data_02134924 = zero;
         localPlayerIndex = zero;
-        cockpitState[0] = zero;
-        cockpitState[3] = zero;
+        cockpitState.mode = zero;
+        cockpitState.bufferIndex = zero;
         displayState.workBuffer = data_021361a0;
         displayState.unk_8 = *(const u16 *)(data_020ce4d0 + 0x24);
         displayState.unk_14 = valueA;

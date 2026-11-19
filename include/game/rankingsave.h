@@ -62,7 +62,7 @@ typedef struct RankDispShadow {
 } RankDispShadow;
 extern RankDispShadow displayState;
 
-extern u8 cockpitState[];
+#include "engine/cockpit_state.h"
 extern u8 data_021361a0[];
 
 // effectState: effect and result state block of the ranking screen (bytes shared with other files)

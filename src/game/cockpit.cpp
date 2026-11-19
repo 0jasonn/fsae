@@ -7,8 +7,8 @@
 
 // Turns the cockpit state off: flags in the cockpit block, the screen layer is set to 3.
 void CockpitOff(void) {
-    cockpitState[0] = 0;
-    cockpitState[2] = 1;
-    cockpitState[1] = 0;
-    cockpitState[4] = 3;
+    cockpitState.mode = 0;
+    cockpitState.redraw = 1;
+    cockpitState.unk_01 = 0;
+    cockpitState.clearMask = 3;
 }

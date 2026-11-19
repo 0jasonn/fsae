@@ -12,7 +12,7 @@ void heartAlart(void) {
     if ((frameState.frameCount & 0x3f) != 0 || frameCounter[0x11] != 0) {
         return;
     }
-    if (cockpitState[8] > 0x10) {
+    if (cockpitState.hearts > 0x10) {
         return;
     }
     SoundReq(0x25);
@@ -59,9 +59,9 @@ void kattiUpdate(void) {
     u8 kind;
 
     kind = ((KattiDirBits *)(data_0212c53c + 0x3e))->kind;
-    if (cockpitState[7] == kind) {
+    if (cockpitState.kattiKind == kind) {
         return;
     }
-    cockpitState[7] = kind;
-    func_020845b0(0x6014200, KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), data_020f2530[cockpitState[7]]) + data_020f2524[cockpitState[7]], 0x180);
+    cockpitState.kattiKind = kind;
+    func_020845b0(0x6014200, KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), data_020f2530[cockpitState.kattiKind]) + data_020f2524[cockpitState.kattiKind], 0x180);
 }
