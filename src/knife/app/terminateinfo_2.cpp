@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/blend_request.h"
 #include "types.h"
 #include "knife/app/knife_hud.h"
 #include "engine/g_calls.h"
@@ -8,7 +9,6 @@
 // at effectState + 4, updates the HUD and starts the white-out; state 1 waits for the second timer and starts the
 // next subtask. The terminate handler in data_0212c564 and func_020830ec run on every step.
 extern u8 data_0212c4dc;   // terminate state
-extern u8 blendRequest;   // nonzero while the fade work is busy
 extern u8 data_0212c4c8;   // HUD update mode
 extern u16 data_0212c510;  // bit 0 requests the white-out
 extern u8 effectState[]; // result state block, u16 timer at +4
@@ -22,7 +22,7 @@ void terminateInfo_move(void) {
     app = (u8 *)KnifeApp_getInstance();
     switch (data_0212c4dc) {
     case 0:
-        if (blendRequest != 0) {
+        if (blendRequest.blendEnabled != 0) {
             return;
         }
         block = effectState;
@@ -45,7 +45,7 @@ void terminateInfo_move(void) {
         }
         break;
     case 1:
-        if (blendRequest != 0) {
+        if (blendRequest.blendEnabled != 0) {
             return;
         }
         timer = *(u16 *)(effectState + 4);

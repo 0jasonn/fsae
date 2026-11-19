@@ -2652,11 +2652,7 @@ src/actor/object/fumi.cpp:
 
 src/actor/object/zeldafade.cpp:
     complete
-    .text       start:0x0205b67c end:0x0205b700
-
-src/actor/object/zeldafade_2.cpp:
-    complete
-    .text       start:0x0205b700 end:0x0205b730
+    .text       start:0x0205b67c end:0x0205b730
 
 src/actor/object/set3a.cpp:
     complete

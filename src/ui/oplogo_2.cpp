@@ -1,10 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/blend_request.h"
 
 // Opening logo objects, continued from 0x02068314 (oplogo_2 unit; panel_nop is a no-op state).
 extern EntityFunc oplogo_panelTable[];
 extern EntityFunc oplogo_youTable[];
-extern u8 blendRequest;
 
 void oplogo_shadow_move(Entity *e) {
     s32 target;
@@ -13,7 +13,7 @@ void oplogo_shadow_move(Entity *e) {
     if (e->x.HALF.HI < target) {
         e->x.HALF.HI = target;
     }
-    if (blendRequest == 0) {
+    if (blendRequest.blendEnabled == 0) {
         return;
     }
     PutObjWork(e);

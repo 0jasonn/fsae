@@ -39,7 +39,7 @@ void ranking_exit(void) {
         data_0212c4dc++;
         break;
     case 1:
-        if (blendRequest != 0) {
+        if (blendRequest.blendEnabled != 0) {
             return;
         }
         effectState.timer--;
@@ -50,7 +50,7 @@ void ranking_exit(void) {
         data_0212c4dc++;
         break;
     case 2:
-        if (blendRequest != 0) {
+        if (blendRequest.blendEnabled != 0) {
             return;
         }
         DispReset();

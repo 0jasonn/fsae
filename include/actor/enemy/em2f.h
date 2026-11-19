@@ -19,13 +19,7 @@ typedef struct Vars_02036ca4 {
 } Vars_02036ca4;
 #define V(e) VARS(Vars_02036ca4, e)
 
-typedef struct UnkStruct_0212c5ac {
-    /* 00 */ u8 unk_00[7];
-    /* 07 */ u8 unk_7;
-    /* 08 */ u8 unk_8[4];
-    /* 0c */ s32 unk_c;
-} UnkStruct_0212c5ac;
-extern UnkStruct_0212c5ac blendRequest;
+#include "engine/blend_request.h"
 extern Entity *mapState;
 extern const EntityFunc em2f_actions[];
 extern const u8 em2f_hitbox[];

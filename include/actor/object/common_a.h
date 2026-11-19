@@ -21,11 +21,7 @@ typedef struct FrameCounterBlock {
 } FrameCounterBlock;
 extern FrameCounterBlock frameCounter;
 
-// Fade request (blendRequest at 0x0212c5ac): blendEnabled stays nonzero while a fade is running
-typedef struct FadeRequest {
-    /* 00 */ u8 blendEnabled;
-} FadeRequest;
-extern FadeRequest blendRequest;
+#include "engine/blend_request.h"
 
 extern u8 localPlayerIndex;
 extern u8 data_0212c500; // game phase

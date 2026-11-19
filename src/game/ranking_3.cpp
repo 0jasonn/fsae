@@ -7,7 +7,7 @@
 //   0x020554c8 ranking_init (matches)
 
 void ranking_init(void) {
-    if (blendRequest != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     DispReset();

@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/blend_request.h"
 #include "actor/object/objdecls_f.h"
 
 // Zelda fade window (module zfade). Address -> name:
@@ -40,14 +41,6 @@ typedef struct ZfadeCamera {
     /* 22 */ s16 scrollY;
 } ZfadeCamera;
 
-// Fade work at blendRequest, only the fields read here.
-typedef struct ZfadeFade {
-    /* 00 */ u8 unk_00[3];
-    /* 03 */ u8 blendStep;
-    /* 04 */ u8 unk_04[4];
-    /* 08 */ s16 blendWeight;
-} ZfadeFade;
-
 // displayState as read by zfade_init: only the high byte of the halfword at 0x60 is used.
 typedef struct ZfadeScreen {
     /* 00 */ u8 unk_00[0x60];
@@ -56,7 +49,6 @@ typedef struct ZfadeScreen {
 
 extern const ZfadeEntry zfadeTable[];        // zeldaFadeTable, indexed by e->type
 extern ZfadeCamera mapState;
-extern ZfadeFade blendRequest;
 extern ZfadeScreen displayState;
 extern u8 data_02171d1c;                     // 1 while no fade partner is active
 extern const EntityFunc zfade_typeHandlers[]; // zfade_typeHandlers, indexed by e->type

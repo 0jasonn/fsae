@@ -1,6 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/blend_request.h"
 #include "actor/object/objdecls_f.h"
+#include "engine/misc.h"
 
 // Zelda fade module. Address -> name:
 //   0x0205b67c ZeldaFadeSet (original name)
@@ -14,16 +16,8 @@ typedef struct ZeldaFadeEntry {
     /* 04 */ u8 unk_04[0x10];
 } ZeldaFadeEntry;
 
-// Fade work at blendRequest, only the fields read here.
-typedef struct FadeWorkZelda {
-    /* 00 */ u8 blendEnabled;
-    /* 01 */ u8 unk_01[3];
-    /* 04 */ u8 fadeRunning;
-} FadeWorkZelda;
-
 extern const ZeldaFadeEntry zeldaFadeTable[]; // zeldaFadeTable, indexed by the fade index
 extern u8 data_02171d1c;                      // 1 while no fade partner is active (see ZeldaFadeFlagGet)
-extern FadeWorkZelda blendRequest;
 
 void ZeldaFadeSet(Entity *e, u32 index) {
     Entity *child;
@@ -43,4 +37,15 @@ void ZeldaFadeSet(Entity *e, u32 index) {
 
 u8 ZeldaFadeFlagGet(void) {
     return data_02171d1c;
+}
+
+// Zelda fade module, 0x0205b700 ZeldaFadeFinish (original name; follows ZeldaFadeFlagGet in zeldafade.cpp)
+
+extern u8 data_02171d1c; // 1 while no fade partner is active (see ZeldaFadeFlagGet)
+
+void ZeldaFadeFinish(void) {
+    StopEffectWindow();
+    data_02171d1c = 1;
+    blendRequest.fadeRunning = 1;
+    blendRequest.blendEnabled = 0;
 }

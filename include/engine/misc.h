@@ -21,17 +21,7 @@ typedef struct UnkStruct_0216fcf8 {
 } UnkStruct_0216fcf8;
 extern UnkStruct_0216fcf8 paletteFade;
 
-// Blend request read by title_resourceCtrlCallback and color_control
-typedef struct UnkStruct_0212c5ac_D {
-    /* 00 */ u8 blendEnabled;
-    /* 01 */ u8 blendMode; // 0..5, selects the sign of the weight
-    /* 02 */ u8 unk_2[5];
-    /* 07 */ u8 blendColor;
-    /* 08 */ s16 blendWeight;
-    /* 0a */ u8 unk_a[2];
-    /* 0c */ s32 resetValue; // set to -1 by op_demo_skip (guess)
-} UnkStruct_0212c5ac_D;
-extern UnkStruct_0212c5ac_D blendRequest;
+#include "engine/blend_request.h"
 
 // Display/effect shadow block (hardware-register mirror values; field names are guesses where marked)
 typedef struct UnkStruct_0212c75c {

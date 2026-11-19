@@ -1,18 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/blend_request.h"
 
 // Opening logo "you" and button objects, 0x02068494 to 0x020686a0 + 0x74 (you_move .. button_move).
 typedef struct Vars_You {
     /* 00 */ u8 unk_00[0x64];
     /* 64 */ u16 moveCounter; // 16-bit movement counter, indexes the sine table
 } Vars_You;
-typedef struct BlendRequestOpl {
-    /* 00 */ u8 unk_00[7];
-    /* 07 */ u8 blendColor;
-    /* 08 */ u8 unk_08[4];
-    /* 0c */ s32 resetValue;
-} BlendRequestOpl;
-extern BlendRequestOpl blendRequest;
 extern const s16 data_020c91fc[][2];
 extern const u8 oplogo_youPosTable[];
 extern EntityFunc oplogo_buttonTable[];

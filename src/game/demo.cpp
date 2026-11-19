@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "knife/comm/com_sio.h"
 #include "global.h"
+#include "engine/blend_request.h"
 #include "game/demo_api.h"
 
 // Demo module (demo): DemoTask runs the demo phase machine (phase byte data_0212c4dc), demoWaitCk counts down the
@@ -22,7 +23,6 @@ typedef struct DemoDisplayShadow {
 } DemoDisplayShadow;
 
 extern u8 data_0212c4dc;                // demo phase, 0..4
-extern u8 blendRequest;                // blendEnabled, first byte of the blend request
 extern u16 data_0212c510;               // nonzero ends the phase wait early
 extern DemoDisplayShadow displayState; // display shadow block
 extern DemoEffectState effectState;   // effect state block
@@ -57,7 +57,7 @@ void DemoTask(void) {
         }
         break;
     case 2:
-        if (blendRequest == 0) {
+        if (blendRequest.blendEnabled == 0) {
             data_0212c4dc = 4;
         }
         break;
@@ -67,7 +67,7 @@ void DemoTask(void) {
         }
         break;
     case 4:
-        if (blendRequest == 0) {
+        if (blendRequest.blendEnabled == 0) {
             Task_Chain(7);
         }
         break;
@@ -77,7 +77,7 @@ void DemoTask(void) {
 // demoWaitCk (0x0202a8bc): does nothing while the blend runs. Otherwise counts the timer down and moves to the next
 // phase (returns 1) once the timer is 0 or data_0212c510 is set; returns 0 while waiting.
 int demoWaitCk(void) {
-    if (blendRequest != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return 0;
     }
     effectState.timer = effectState.timer - 1;

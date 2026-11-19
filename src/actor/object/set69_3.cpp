@@ -75,7 +75,7 @@ void type0_suikomi(Entity *e) {
     e->action = 0xd;
     e->timer = 8;
     SoundReq(0x21f);
-    blendRequest[7] = 0x16;
+    blendRequest.blendColor = 0x16;
     MakeFadeBuff256(0x100);
 }
 

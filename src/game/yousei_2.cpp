@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
+#include "engine/blend_request.h"
 #include "game/rank_api.h"
 #include "actor/object/k_yousei.h"
 #include "engine/message_request.h"
@@ -192,7 +193,6 @@ void goto_nextdemo(void) {
 
 extern u8 data_0212c4dc;     // demo sub-step
 extern u8 data_0212c500;     // demo step
-extern u8 blendRequest;     // non-zero while the screen is blanked
 extern u16 data_021355a0;
 
 // yousei_exit (0x020825bc)
@@ -219,7 +219,7 @@ void yousei_exit(void) {
 
 // yousei_end (0x0208265c)
 void yousei_end(void) {
-    if (blendRequest != 0) {
+    if (blendRequest.blendEnabled != 0) {
         return;
     }
     DispReset();

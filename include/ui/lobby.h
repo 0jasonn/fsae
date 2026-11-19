@@ -56,7 +56,7 @@ extern u8 playerKeysPrev[];   // previous key state of the four players (u16 eac
 extern u8 playerKeys[];   // new keys of the four players (u16 each), also the key state of the machine
 extern u8 data_0212c514[];   // key state of the machine (u16)
 
-extern u8 blendRequest[];   // stage change block, the word at +0xc is set to -1 by update_change_stage
+#include "engine/blend_request.h" // update_change_stage sets blendRequest.resetValue to -1
 extern u8 data_0217a258[];   // OBJInfo block freed by subTask_lobby_end
 extern u8 data_02126a48[];   // vtable of the lobby message object (lobby_msgObj_init)
 extern "C" void Heap_VirtualFree(void *heap, void *block); // frees a block of a heap

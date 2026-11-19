@@ -60,20 +60,7 @@ typedef struct ResultState {
     /* 24 */ u32 frames;   // incremented once per frame by ending_rescue
 } ResultState;
 
-// Fade work at blendRequest (the original tag is FADE_WORK_). Blend request read by the palette code.
-typedef struct FADE_WORK_ {
-    /* 00 */ u8 blendEnabled;
-    /* 01 */ u8 blendMode;       // index into fadeModeTable
-    /* 02 */ u8 unk_02;
-    /* 03 */ u8 blendStep;       // per-frame step of blendWeight
-    /* 04 */ u8 fadeRunning;
-    /* 05 */ u8 unk_05[2];
-    /* 07 */ u8 blendColor;
-    /* 08 */ s16 blendWeight;
-    /* 0a */ u8 unk_0a[2];
-    /* 0c */ s32 resetValue;     // bit mask of palette rows to fade, see MakeFadeBuff256
-} FADE_WORK_;
-typedef FADE_WORK_ BlendRequest;
+#include "engine/blend_request.h"
 typedef void (*FadeFunc)(BlendRequest *);
 extern FadeFunc const fadeModeTable[];        // fadeModeTable
 extern u32 data_02134910;
@@ -81,7 +68,6 @@ extern u16 data_02135da0[];
 
 #define GAME_STATE_U8(off) (*((u8 *)&gameState + (off)))
 
-extern BlendRequest blendRequest;
 extern u16 data_021355a0;
 extern u8 data_02135840[];
 extern u8 data_0216fd04[];

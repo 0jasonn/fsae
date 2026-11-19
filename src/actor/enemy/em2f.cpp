@@ -58,10 +58,10 @@ void em2f_initWait(Entity *e) {
     }
     if (e->subtimer < 0x20) {
         e->subtimer++;
-        blendRequest.unk_c = 0xfff0;
-        blendRequest.unk_7 = 0;
+        blendRequest.resetValue = 0xfff0;
+        blendRequest.blendColor = 0;
         MakeFadeBuff256((e->subtimer >> 2) << 4);
-        blendRequest.unk_c = -1;
+        blendRequest.resetValue = -1;
         return;
     }
     if (timer >= 0x96) {
@@ -116,7 +116,7 @@ void em2f_mesWait(Entity *e) {
     e->action = 5;
     e->timer = 8;
     SoundReq(0x1f9);
-    blendRequest.unk_7 = 0x16;
+    blendRequest.blendColor = 0x16;
     MakeFadeBuff256(0x100);
 }
 
