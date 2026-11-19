@@ -2,6 +2,7 @@
 #include "game/scene.h"
 #include "global.h"
 #include "engine/irq.h"
+#include "engine/message_request.h"
 
 // scene_03 -> scene_03 (guess: intro/opening state machine of the scene block)
 // fairy_talkmove -> fairy_talkmove
@@ -78,11 +79,11 @@ void scene_03(void) {
 
 // Waits until the scene control block is idle, then starts effect effectId in slot.
 int fairy_talkmove(u8 slot, u16 effectId) {
-    u8 mode = messageRequest[SCENE_CTRL_MODE] & 0x7f;
+    u8 mode = messageRequest.phase & 0x7f;
     if (mode == 6) {
         Status_ArmIfEnabled();
     }
-    mode = messageRequest[SCENE_CTRL_MODE] & 0x7f;
+    mode = messageRequest.phase & 0x7f;
     if (mode == 0) {
         effectState[EFFECT_STATE_ACTIVE_SLOT] = 0xff;
         *(u16 *)(effectState + EFFECT_STATE_TIMER) = *(u16 *)(effectState + EFFECT_STATE_TIMER) - 1;

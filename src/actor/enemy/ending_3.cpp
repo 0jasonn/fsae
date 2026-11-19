@@ -2,6 +2,7 @@
 #include "actor/enemy/ending.h"
 #include "global.h"
 #include "engine/irq.h"
+#include "engine/message_request.h"
 
 // Implementer B, round 6: ending_scene_01 (0x02044b44).
 
@@ -81,7 +82,7 @@ void ending_scene_01(void) {
         messageRequest.unk_04 = messageRequest.unk_04 & ~0x1f;
         break;
     case 7:
-        if ((messageRequest.unk_00 & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             break;
         }
         Status_ArmIfEnabled();

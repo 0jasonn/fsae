@@ -3,13 +3,13 @@
 #include "global.h"
 #include "types.h"
 #include "knife/app/knife_hud.h"
+#include "engine/message_request.h"
 
 // Functions in this file (module cockpit, original names from the debug build):
 //   cockpit_call_check (cockpit_call_check()), cockpit_obj_trans (cockpit_obj_trans(unsigned char))
 
 extern u16 playerKeys[]; // flags per player, bit 0x400 set while the player is active
 extern u16 playerKeysPrev[]; // flags per player, bit 0x1000 blocks the call animation
-extern u8 messageRequest[];
 extern u8 frameCounter[0x20];
 extern u8 data_0212c4a0[];
 extern u8 cockpitState[];
@@ -35,7 +35,7 @@ void cockpit_call_check(void) {
         if ((playerKeys[0] & 0x400) == 0) {
             return;
         }
-        requestMode = messageRequest[0] & 0x7f;
+        requestMode = messageRequest.phase & 0x7f;
         if (requestMode != 0 || frameCounter[0x14] != 0 || frameCounter[0x11] != 0) {
             return;
         }

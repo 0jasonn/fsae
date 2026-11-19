@@ -4,6 +4,7 @@
 #include "ui/opdemo_api.h"
 #include "global.h"
 #include "engine/irq.h"
+#include "engine/message_request.h"
 
 // data_02134d30 is an array of 0x14-byte NPC slots (see GetNPC); each slot's entity pointer is at +0x0c.
 #define SCENE_SLOT_ENTITY(offset) (*(Entity **)((u8 *)&data_02134d30 + (offset)))
@@ -104,7 +105,7 @@ void scene_05(void) {
             fairy_talkmove(1, 0x12);
             return;
         case 12:
-            if ((messageRequest[SCENE_CTRL_MODE] & 0x7f) != 6) {
+            if ((messageRequest.phase & 0x7f) != 6) {
                 return;
             }
             Status_ArmIfEnabled();

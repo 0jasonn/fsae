@@ -4,6 +4,7 @@
 #include "ui/opdemo_api.h"
 #include "global.h"
 #include "engine/irq.h"
+#include "engine/message_request.h"
 
 // data_02134d30 is an array of 0x14-byte NPC slots (see GetNPC); each slot's entity pointer is at +0x0c.
 #define SCENE_SLOT_ENTITY(offset) (*(Entity **)((u8 *)&data_02134d30 + (offset)))
@@ -39,8 +40,8 @@ void scene_04(void) {
                 return;
             }
             MessageRequest(8);
-            messageRequest[SCENE_CTRL_SUBMODE_3] = (messageRequest[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
-            messageRequest[SCENE_CTRL_SUBMODE_4] = (messageRequest[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
+            messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+            messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
             effectState[EFFECT_STATE_SCENE]++;
             return;
         case 3:
@@ -54,8 +55,8 @@ void scene_04(void) {
                 return;
             }
             MessageRequest(9);
-            messageRequest[SCENE_CTRL_SUBMODE_3] = (messageRequest[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
-            messageRequest[SCENE_CTRL_SUBMODE_4] = (messageRequest[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
+            messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+            messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
             effectState[EFFECT_STATE_SCENE]++;
             return;
         case 4:
@@ -124,7 +125,7 @@ void scene_04(void) {
             fairy_talkmove(0, 0xd);
             return;
         case 12:
-            if ((messageRequest[SCENE_CTRL_MODE] & 0x7f) != 6) {
+            if ((messageRequest.phase & 0x7f) != 6) {
                 return;
             }
             Status_ArmIfEnabled();

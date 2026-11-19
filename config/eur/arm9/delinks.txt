@@ -4200,11 +4200,7 @@ src/game/rupeelevel.cpp:
 
 src/game/yousei_2.cpp:
     complete
-    .text       start:0x020820cc end:0x02082598
-
-src/game/yousei_4.cpp:
-    complete
-    .text       start:0x02082598 end:0x020826b0
+    .text       start:0x020820cc end:0x020826b0
 
 src/game/owner.cpp:
     complete

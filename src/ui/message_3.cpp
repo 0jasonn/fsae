@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/entity.h"
 #include "global.h"
+#include "engine/message_request.h"
 
 // Functions in this file (address -> name, pending reviewer apply to symbols.txt):
 //   MessageInitialize -> MessageInitialize
@@ -8,7 +9,6 @@
 
 // Work blocks in the bss, accessed by byte offset
 extern u8 telopRequest[];
-extern u8 messageRequest[];
 extern u8 messageBox[];
 extern u8 telopBox[];
 extern u8 data_0216efbc[];
@@ -20,7 +20,7 @@ extern u8 data_0217d350[];
 
 
 void MessageInitialize(void) {
-    MemClearFast(messageRequest, 0x18);
+    MemClearFast(&messageRequest, 0x18);
     MemClearFast(messageBox, 0xe8);
     MemClearFast(data_0216efe0, 0x10);
     MemClearFast(data_0216eff0, 0x10);

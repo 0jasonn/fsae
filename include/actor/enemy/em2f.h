@@ -27,7 +27,6 @@ typedef struct UnkStruct_0212c5ac {
 } UnkStruct_0212c5ac;
 extern UnkStruct_0212c5ac blendRequest;
 extern Entity *mapState;
-extern u8 messageRequest;
 extern const EntityFunc em2f_actions[];
 extern const u8 em2f_hitbox[];
 extern const u8 em2f_healthByDifficulty[];

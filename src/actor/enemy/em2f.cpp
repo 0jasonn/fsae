@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "actor/enemy/em2f.h"
 #include "global.h"
+#include "engine/message_request.h"
 
 void em2f_main(Entity *e) {
     if (e->health == 0 && e->action < 0x23) {
@@ -100,7 +101,7 @@ void em2f_mesWait(Entity *e) {
         return;
     }
     if (e->subAction == 0) {
-        if ((messageRequest & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();

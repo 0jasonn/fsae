@@ -26,7 +26,6 @@ extern const EntityFunc set69_type1Actions[]; // set69_type1Actions, indexed by 
 extern const s8 data_020dc044[];              // two y offsets used by type1_suikomare
 extern u32 data_020d70ec[];                   // map load block passed to MapLoad by type0_bgreset
 extern u8 blendRequest[];                    // fade block, byte 7 is the blend colour (see misc_d.h)
-extern u8 messageRequest[];                   // scene control bytes, see game/message.h
 extern s32 em2f_mapFlag;
 extern KnifeObjAffineSrcData scrollArgs;     // scale x, scale y, angle for ObjAffineSet2 (scrollArgs, bss)
 

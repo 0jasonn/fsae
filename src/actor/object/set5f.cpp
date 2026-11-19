@@ -3,6 +3,7 @@
 #include "global.h"
 #include "actor/object/setmisc.h"
 #include "actor/object/set5f.h"
+#include "engine/message_request.h"
 
 // Set5f actor (module set5f). Address -> name:
 //   0x02060104 Set5f (original name)
@@ -12,7 +13,6 @@
 
 extern const EntityFunc set5f_typeHandlers[]; // set5f_typeHandlers, indexed by e->type
 extern const EntityFunc set5f_type0Actions[]; // set5f_type0Actions, indexed by e->action
-extern u8 messageRequest[];
 extern Entity *mapState;
 extern s16 scrollArgs[3];
 extern const s16 trigTable[];
@@ -98,14 +98,14 @@ void type0_meswait(Entity *e) {
         e->subAction = 0;
         MessageRequest(VARS(Vars_Set5f, e)->messageId);
         if (e->action == 3) {
-            messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
-            messageRequest[4] = (messageRequest[4] & ~0x1f) | 5;
+            messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+            messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 5;
         }
         SoundReq(0x203);
         return;
     }
     if (e->subAction == 0) {
-        if ((messageRequest[0] & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();

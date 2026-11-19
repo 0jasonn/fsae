@@ -2,6 +2,7 @@
 #include "actor/enemy/ending.h"
 #include "actor/enemy/ending_scene_00.h"
 #include "global.h"
+#include "engine/message_request.h"
 
 // ending_scene_00 (0x02044700): the first ending scene. Waits for the rescue flag, shows the three ending messages
 // with a surprise mark before each, places the two scene actors and finally hands over to the next task.
@@ -37,7 +38,7 @@ void ending_scene_00(void) {
         messageRequest.unk_04 = messageRequest.unk_04 & ~0x1f;
         break;
     case 3:
-        if ((messageRequest.unk_00 & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             break;
         }
         SoundReq(0x800b01b9);
@@ -77,7 +78,7 @@ void ending_scene_00(void) {
         messageRequest.unk_04 = messageRequest.unk_04 & ~0x1f;
         break;
     case 8:
-        if ((messageRequest.unk_00 & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             break;
         }
         Status_ArmIfEnabled();
@@ -108,10 +109,10 @@ void ending_scene_00(void) {
         MessageRequest(0x1fa);
         messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
         messageRequest.unk_04 = messageRequest.unk_04 & ~0x1f;
-        messageRequest.unk_08 = gameState.playerCount;
+        messageRequest.param = gameState.playerCount;
         break;
     case 12:
-        if ((messageRequest.unk_00 & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             break;
         }
         Status_ArmIfEnabled();

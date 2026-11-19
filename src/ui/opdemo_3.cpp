@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "game/scene.h"
 #include "global.h"
+#include "engine/message_request.h"
 
 // fairy_set -> fairy_set
 // fairy_talkset -> fairy_talkset
@@ -14,8 +15,8 @@ void fairy_set(u8 slot, u8 index, u8 flags) {
 
 void fairy_talkset(u8 slot, u16 effectId) {
     MessageRequest(effectId);
-    messageRequest[SCENE_CTRL_SUBMODE_3] = (messageRequest[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
-    messageRequest[SCENE_CTRL_SUBMODE_4] = (messageRequest[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
+    messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+    messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
     effectState[EFFECT_STATE_ACTIVE_SLOT] = slot;
     fairySlots[slot].entity->action = 3;
 }

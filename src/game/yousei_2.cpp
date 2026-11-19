@@ -3,6 +3,8 @@
 #include "global.h"
 #include "game/rank_api.h"
 #include "actor/object/k_yousei.h"
+#include "engine/message_request.h"
+#include "game/yousei.h"
 
 extern u8 data_0212c4dc; // demo sub-step
 extern u8 effectState[]; // u16 timer at +4, byte +8: clear level
@@ -34,14 +36,14 @@ void yousei_demo(void) {
             message += 0x32;
         }
         MessageRequest(message);
-        messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
-        messageRequest[4] = (messageRequest[4] & ~0x1f) | 0xe;
-        *(u32 *)(messageRequest + 8) = gameState.score;
+        messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+        messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0xe;
+        messageRequest.param = gameState.score;
         data_0212c4dc++;
         break;
     }
     case 2:
-        if ((messageRequest[0] & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();
@@ -104,12 +106,12 @@ void yousei_demo(void) {
         effectState[8] = ClearKeyCheck();
         ClearKeyUpdate(gameState.level);
         MessageRequest(RankCheck() + 0x131);
-        messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
-        messageRequest[4] = (messageRequest[4] & ~0x1f) | 0xe;
+        messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+        messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0xe;
         data_0212c4dc++;
         break;
     case 4:
-        if ((messageRequest[0] & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();
@@ -164,10 +166,68 @@ void yousei_demo(void) {
             break;
         }
         MessageRequest(message);
-        messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
-        messageRequest[4] = (messageRequest[4] & ~0x1f) | 0xe;
+        messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+        messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0xe;
         goto_nextdemo();
         break;
     }
     }
+}
+
+// yousei demo, from 0x02082598: goto_nextdemo sets the demo step to 3 and clears data_0212c4dc.
+
+extern u8 data_0212c500;
+extern u8 data_0212c4dc;
+
+// goto_nextdemo (0x02082598)
+void goto_nextdemo(void) {
+    data_0212c500 = 3;
+    data_0212c4dc = 0;
+}
+
+// Yousei demo exit and end, 0x020825bc to 0x020826b0.
+//   yousei_exit (0x020825bc): three steps. Waits for the fade (messageRequest low bits == 6), then a message, then
+//   sets the demo step to 4 and starts the fades and sounds.
+//   yousei_end (0x0208265c): clears the backdrop colour, resets the object and text pools and jumps to task 6.
+
+extern u8 data_0212c4dc;     // demo sub-step
+extern u8 data_0212c500;     // demo step
+extern u8 blendRequest;     // non-zero while the screen is blanked
+extern u16 data_021355a0;
+
+// yousei_exit (0x020825bc)
+void yousei_exit(void) {
+    switch (data_0212c4dc) {
+    case 0:
+        if ((messageRequest.phase & 0x7f) == 6) {
+            Status_ArmIfEnabled();
+            data_0212c4dc = data_0212c4dc + 1;
+        }
+        break;
+    case 1:
+        if (yousei_msgFinishWait() == 0) {
+            data_0212c500 = 4;
+            FadeSet(3, 2);
+            SoundReq(2 + 0x210);
+            if (func_02081b64() != 0) {
+                SoundReq(3 + 0x238);
+            }
+        }
+        break;
+    }
+}
+
+// yousei_end (0x0208265c)
+void yousei_end(void) {
+    if (blendRequest != 0) {
+        return;
+    }
+    DispReset();
+    *(u16 *)0x5000000 = 0x6739;
+    data_021355a0 = 0x6739;
+    ObjWorkPoolClear();
+    ObjMoveInit();
+    MessageInitialize();
+    TelopInitialize();
+    Task_Chain(6);
 }

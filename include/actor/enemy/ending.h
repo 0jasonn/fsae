@@ -79,16 +79,6 @@ extern FadeFunc const fadeModeTable[];        // fadeModeTable
 extern u32 data_02134910;
 extern u16 data_02135da0[];
 
-// Flag block at messageRequest (bits in bytes 0, 3 and 4 are read by the scene code)
-typedef struct UnkStruct_0217d384 {
-    /* 00 */ u8 unk_00;
-    /* 01 */ u8 unk_01[2];
-    /* 03 */ u8 unk_03;
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 unk_05[3];
-    /* 08 */ u32 unk_08; // ending_scene_00 stores the player count here
-} UnkStruct_0217d384;
-
 #define GAME_STATE_U8(off) (*((u8 *)&gameState + (off)))
 
 extern BlendRequest blendRequest;
@@ -115,7 +105,6 @@ extern VoidFunc const endingRescueTable[];
 extern u16 playerKeysPrev[4];
 extern u8 data_0212c4f8;
 extern s32 data_02134924;
-extern UnkStruct_0217d384 messageRequest;
 
 // Functions called from this range that are not in engine/functions.h
 void ComRequest(u8 a);

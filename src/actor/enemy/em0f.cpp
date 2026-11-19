@@ -3,6 +3,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/enemy/em0e_units.h"
+#include "engine/message_request.h"
 
 // Functions in this file (actor em0f, original names from the debug build):
 //   em0f_main (em0f_main), em0f_normal, em0f_damage, em0f_init (em0f_init), em0f_eyeopen,
@@ -22,7 +23,6 @@ extern EntityFunc em0f_actions[];
 extern EntityFunc em0f_normalActions[];
 extern const u8 em0f_hitbox[];
 extern Entity *mapState;
-extern u8 messageRequest;
 extern u8 localPlayerIndex;
 extern u16 playerKeysPrev[4];
 
@@ -112,7 +112,7 @@ void em0f_meswait(Entity *e) {
         return;
     }
     if (e->subAction == 0) {
-        if ((messageRequest & 0x7f) != 6) {
+        if ((messageRequest.phase & 0x7f) != 6) {
             return;
         }
         Status_ArmIfEnabled();

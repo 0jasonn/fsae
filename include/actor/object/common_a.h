@@ -27,7 +27,6 @@ typedef struct FadeRequest {
 } FadeRequest;
 extern FadeRequest blendRequest;
 
-extern u8 messageRequest[]; // scene control bytes: low 7 bits of [0] are the mode
 extern u8 localPlayerIndex;
 extern u8 data_0212c500; // game phase
 extern u8 data_0212c4dc; // sub-state of the current phase

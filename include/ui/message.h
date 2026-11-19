@@ -3,6 +3,7 @@
 
 #include "engine/entity.h"
 #include "types.h"
+#include "engine/message_request.h"
 
 // Per-state function of the message box (messageStates) and the telop box (telopStates).
 // A state returns 0 when it is finished for this frame.
@@ -100,7 +101,6 @@ extern TelopWork telopRequest;
 extern KNIFE_MSGSYS messageBox;
 extern KNIFE_MSGSYS telopBox;
 extern u8 data_0216efbc[];
-extern u8 messageRequest[];
 extern u8 data_0217d3c0[];
 extern u8 data_0217d4a8[];
 extern u8 data_0217d358[];

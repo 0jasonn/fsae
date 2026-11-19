@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/message.h"
+#include "engine/message_request.h"
 
 // Functions in this file (original names from the debug build):
 //   Message, State_ClearFlagE3
@@ -16,7 +17,7 @@ void Message(void) {
         telopBox.state = 1;
     }
 
-    mode = messageRequest[0];
+    mode = messageRequest.phase;
     switch (mode) {
     case 1:
         messageBox.lineChangeReq = 0;

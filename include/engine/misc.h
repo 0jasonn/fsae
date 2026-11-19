@@ -78,14 +78,6 @@ enum {
 };
 extern u8 effectState[];
 
-// Scene/actor control byte block (messageRequest): low 7 bits of [0] are the mode, [3] and [4] hold 5-bit sub-modes
-enum {
-    SCENE_CTRL_MODE = 0x00,
-    SCENE_CTRL_SUBMODE_3 = 0x03,
-    SCENE_CTRL_SUBMODE_4 = 0x04,
-};
-extern u8 messageRequest[];
-
 // Scene control block (data_02134d30)
 typedef struct UnkStruct_02134d30 {
     /* 00 */ u8 unk_0[2];

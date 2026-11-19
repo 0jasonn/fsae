@@ -3,6 +3,7 @@
 #include "game/npc.h"
 #include "global.h"
 #include "types.h"
+#include "engine/message_request.h"
 
 // Functions in this file (original names from the debug build):
 //   ObjSetTargetWord -> ObjSetTargetWord, ScriptJump -> ScriptJump, script_nop -> script_nop,
@@ -62,8 +63,8 @@ s32 script_seqset(NPC_WORK_ *npc) {
 // Shows a message (id in the argument) and steps over the opcode
 s32 script_message(NPC_WORK_ *npc) {
     MessageRequest(npc->script[1]);
-    messageRequest[3] = (messageRequest[3] & ~0x1f) | 1;
-    messageRequest[4] = (messageRequest[4] & ~0x1f) | ((u8)npc->script[2] & 0x1f);
+    messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+    messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | ((u8)npc->script[2] & 0x1f);
     npc->script += 3;
     return 0;
 }
@@ -138,7 +139,7 @@ s32 script_nop2(NPC_WORK_ *npc) {
 s32 script_message_wait(NPC_WORK_ *npc) {
     u8 state;
 
-    state = messageRequest[0] & 0x7f;
+    state = messageRequest.phase & 0x7f;
     if (state == 0 || state == 6) {
         npc->script += 1;
     }

@@ -4,6 +4,7 @@
 #include "global.h"
 #include "ui/opdemo_api.h"
 #include "engine/irq.h"
+#include "engine/message_request.h"
 
 // op_scene_01 (symbol op_scene_01, original scene_01()): the first opening scene. The step index is
 // effectState[EFFECT_STATE_SCENE] and the countdown is the u16 at EFFECT_STATE_TIMER.
@@ -114,11 +115,11 @@ void op_scene_01(void) {
             }
             effectState[EFFECT_STATE_SCENE]++;
             MessageRequest(4);
-            messageRequest[SCENE_CTRL_SUBMODE_3] = (messageRequest[SCENE_CTRL_SUBMODE_3] & ~0x1f) | 1;
-            messageRequest[SCENE_CTRL_SUBMODE_4] = (messageRequest[SCENE_CTRL_SUBMODE_4] & ~0x1f) | 0x10;
+            messageRequest.unk_03 = (messageRequest.unk_03 & ~0x1f) | 1;
+            messageRequest.unk_04 = (messageRequest.unk_04 & ~0x1f) | 0x10;
             return;
         case 9:
-            if ((messageRequest[SCENE_CTRL_MODE] & 0x7f) != 6) {
+            if ((messageRequest.phase & 0x7f) != 6) {
                 return;
             }
             Status_ArmIfEnabled();
