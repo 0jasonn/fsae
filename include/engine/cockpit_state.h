@@ -23,7 +23,11 @@ typedef struct CockpitState {
     /* 0e */ u8 itemState;   // item 7 uses colour 4 when this is 2
     /* 0f */ u8 unk_0f;
     /* 10 */ s32 rupees;     // displayed rupee count, moved towards gameState.score by rupeeUpdate
-    /* 14 */ u8 unk_14[0x24 - 0x14];
+    /* 14 */ s32 rupeeShown;      // rupee change shown in the HUD (0 none)
+    /* 18 */ s32 rupeeGain;       // AddRupee: sum of gains, max 9999, shown for 0x78 frames
+    /* 1c */ s32 rupeeLoss;       // AddRupee: sum of losses, min -9999, shown for 0x3c frames
+    /* 20 */ u16 rupeeGainTimer;
+    /* 22 */ u16 rupeeLossTimer;
     /* 24 */ u16 kakeraTimer[4]; // per-player kakera timers (also the dsd symbol data_0212c63c)
     /* 2c */ u8 item2p;      // second player's item index
     /* 2d */ u8 itemState2p; // same as itemState for item2p

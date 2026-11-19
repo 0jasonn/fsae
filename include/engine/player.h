@@ -57,7 +57,15 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 3b */ u8 unk_3b;
     /* 3c */ u8 callState; // nonzero blocks the cockpit call animation
     /* 3d */ u8 unk_3d;
-    /* 3e */ u8 unk_3e;
+    /* 3e */ union {
+        u8 unk_3e;
+        struct {
+            u8 b0 : 2;
+            u8 b2 : 2; // sword level (sword_move, hit, em2a_4)
+            u8 b4 : 2;
+            u8 b6 : 2; // speed shift of the partner (singleplay_movepartner)
+        } nutBits; // two-bit counters cleared by ClearNut
+    };
     /* 3f */ s8 yOffset;
     /* 40 */ u8 unk_40[0x4a];
     /* 8a */ u8 unk_8a;
