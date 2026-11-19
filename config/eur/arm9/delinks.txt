@@ -665,6 +665,10 @@ src/actor/object/boots.cpp:
     complete
     .text       start:0x02024498 end:0x020244d4
 
+src/actor/object/boots_init.cpp:
+    complete
+    .text       start:0x020244d4 end:0x020245d0
+
 src/actor/object/boots_2.cpp:
     complete
     .text       start:0x020245d0 end:0x020246b4
@@ -724,6 +728,10 @@ src/game/hit_8.cpp:
 src/game/item.cpp:
     complete
     .text       start:0x02025d2c end:0x02025d9c
+
+src/game/addheart.cpp:
+    complete
+    .text       start:0x02025d9c end:0x0202604c
 
 src/game/utsuwa.cpp:
     complete
@@ -788,6 +796,10 @@ src/game/cockpit_9.cpp:
 src/game/cockpit_4.cpp:
     complete
     .text       start:0x02026cac end:0x02026e4c
+
+src/game/cockpit_move.cpp:
+    complete
+    .text       start:0x02026e4c end:0x0202712c
 
 src/game/cockpit_5.cpp:
     complete
@@ -997,6 +1009,10 @@ src/ui/doorsel.cpp:
     complete
     .text       start:0x0202a968 end:0x0202a9a0
 
+src/game/doorsel_init.cpp:
+    complete
+    .text       start:0x0202a9a0 end:0x0202ab90
+
 src/ui/doorsel_2.cpp:
     complete
     .text       start:0x0202ab90 end:0x0202abb8
@@ -1004,6 +1020,10 @@ src/ui/doorsel_2.cpp:
 src/game/doorsel_5.cpp:
     complete
     .text       start:0x0202abb8 end:0x0202abfc
+
+src/game/doorsel_appear.cpp:
+    complete
+    .text       start:0x0202abfc end:0x0202adc8
 
 src/ui/doorsel_3.cpp:
     complete
