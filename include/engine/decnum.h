@@ -12,6 +12,7 @@ typedef struct DecNum {
 } DecNum;
 
 extern "C" {
+void func_0200a75c(DecNum *self, const u8 *text, s32 exponent);
 s32 DecNum_RoundDir(DecNum *self, s32 keep);
 void DecNum_Increment(DecNum *self, s32 keep);
 void DecNum_Truncate(DecNum *self, s32 keep);

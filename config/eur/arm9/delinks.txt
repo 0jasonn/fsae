@@ -149,6 +149,10 @@ src/engine/decnum_arith.cpp:
     complete
     .text       start:0x0200a4d8 end:0x0200a518
 
+src/engine/decnum_parse.cpp:
+    complete
+    .text       start:0x0200a75c end:0x0200a7f8
+
 src/engine/fp_sign.cpp:
     complete
     .text       start:0x0200ada4 end:0x0200adec
@@ -5424,6 +5428,10 @@ src/ui/lobby.cpp:
 src/ui/lobby_color.cpp:
     complete
     .text       start:0x020b2560 end:0x020b25c0
+
+src/ui/lobby_latch_recv_bits.cpp:
+    complete
+    .text       start:0x020b2614 end:0x020b26d0
 
 src/ui/lobby_7.cpp:
     complete
