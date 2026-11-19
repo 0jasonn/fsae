@@ -46,7 +46,6 @@ extern u8 data_02134cb0[];
 extern u8 comWork[];
 void GetSetWorkSp(u8 a, u8 b, u8 c);
 extern u8 data_0212c9ec[];
-extern u16 data_0212c594;
 extern "C" {
 void InitCircleWindow(u16 a, u16 b);
 void MakeTriangleWindow(s16 a, s16 b, s16 c, s16 d);

@@ -34,7 +34,6 @@ extern const u8 data_020d8ac8[][6];           // animation bytes (shared with em
 extern u16 displayState[];                   // display shadow, halfword registers
 extern const EntityFunc panel_mode_actions[]; // panel_mode_actions, indexed by e->action
 extern u8 data_021348d8;                      // flag, nonzero: the panel moves the entity by 13 per type
-extern u16 data_0212c594;                     // cursor counter, bits 2..4 pick the z offset
 extern const s8 entry_z_table[];             // entry_z_table, z offsets for entry_cursor
 extern u32 data_02171d20[];                   // resource ids, indexed by effectState[NP_PHASE]
 

@@ -51,7 +51,6 @@ int func_02085ccc(Entity *e); // thumb, nonzero when the cell is held (cellcalls
 void kanaamiRew(Entity *e, u16 index); // 0x0205e758 (set4e_2.cpp)
 void set4e_move(Entity *e); // 0x0205e714 (set4e_2.cpp)
 extern u16 displayState[]; // BG control word (u16 at 0)
-extern u8 data_0212c594[]; // u16 flag word at 0 (read by oplogo), byte at 4 set by the pot
 void MultiEventSet(u16 *a, u8 b, u8 c, u8 d); // 0x0204602c, not yet in functions.h
 void RewCellOne(u16 a, u16 b, u16 c);
 extern "C" void RewCellBack(int cell, int layer);

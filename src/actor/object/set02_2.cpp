@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/irq.h"
 
 // Set02 actor, second unit (module set02). Address -> name:
 //   0x0205a1b0 set02_move (original name)
@@ -18,7 +19,6 @@ extern Set02Screen displayState;
 extern u8 data_021348d8;   // flag, nonzero: the actor is placed low and does not get the x offset
 extern u8 effectState[]; // byte 0x14: nonzero when the actor should be put back into the work list
 extern const s8 data_0211565c[]; // vertical bob table, indexed by timer & 0xf
-extern u16 data_0212c594;  // frame counter, the bob timer advances when its low 5 bits are zero
 
 void set02_move(Entity *e) {
     switch (e->type) {
@@ -79,7 +79,7 @@ void set02_move(Entity *e) {
             e->x.HALF.HI = 0x100;
         }
         e->y.HALF.HI = e->subtimer + data_0211565c[e->timer & 0xf];
-        if ((data_0212c594 & 0x1f) == 0) {
+        if ((frameState.frameCount & 0x1f) == 0) {
             e->timer++;
         }
         break;

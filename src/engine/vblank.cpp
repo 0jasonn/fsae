@@ -12,7 +12,7 @@ void VBlankIntr(void) {
     CP_SaveContext(context);
     MultiSioVSync();
     func_0208d5d4();
-    if (data_0212c594[1] == 0 && data_0212c4e0 != 0) {
+    if (frameState.transferLock == 0 && data_0212c4e0 != 0) {
         index = data_0212c4c8 ^ 1;
         if (data_021348f4[index] != 0) {
             data_021348f4[index] = 0;

@@ -80,7 +80,6 @@ extern RankEffectState effectState;
 
 extern VoidFunc data_0212c564; // per-frame handler called by ranking_calc
 extern u8 data_0212c4dc; // phase of the result sequence, 0..3
-extern u16 data_0212c594; // frame counter
 extern const u8 data_020d851c[];
 extern const u8 data_020d8524[];
 extern u8 data_02171d01[];

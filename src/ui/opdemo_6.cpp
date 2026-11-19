@@ -3,6 +3,7 @@
 #include "ui/opdemo.h"
 #include "ui/opdemo_api.h"
 #include "global.h"
+#include "engine/irq.h"
 
 // data_02134d30 is an array of 0x14-byte NPC slots (see GetNPC); each slot's entity pointer is at +0x0c.
 #define SCENE_SLOT_ENTITY(offset) (*(Entity **)((u8 *)&data_02134d30 + (offset)))
@@ -18,7 +19,7 @@ void scene_04(void) {
             effectState[EFFECT_STATE_SCENE]++;
             return;
         case 1:
-            if ((data_0212c594 & 0x1f) != 0) {
+            if ((frameState.frameCount & 0x1f) != 0) {
                 return;
             }
             effectState[EFFECT_STATE_LEVEL]--;
@@ -43,7 +44,7 @@ void scene_04(void) {
             effectState[EFFECT_STATE_SCENE]++;
             return;
         case 3:
-            if ((data_0212c594 & 1) == 0) {
+            if ((frameState.frameCount & 1) == 0) {
                 return;
             }
             mapState.cameraX++;
@@ -58,7 +59,7 @@ void scene_04(void) {
             effectState[EFFECT_STATE_SCENE]++;
             return;
         case 4:
-            if ((data_0212c594 & 1) == 0) {
+            if ((frameState.frameCount & 1) == 0) {
                 return;
             }
             mapState.cameraX++;

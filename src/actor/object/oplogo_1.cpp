@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/pot.h"
+#include "engine/irq.h"
 
 // Opening logo actors, title and sub title (module oplogo). Address -> name:
 //   0x02067d68 oplogo_typeDispatch (per-type handler table data_02115bac indexed by e->type)
@@ -42,7 +43,7 @@ void oplogo_title_init(Entity *e) {
 void oplogo_title_appear(Entity *e) {
     Vars_Oplogo *v = VARS(Vars_Oplogo, e);
 
-    if (*(u16 *)data_0212c594 & 1) {
+    if (frameState.frameCount & 1) {
         return;
     }
     if (e->timer != 0) {

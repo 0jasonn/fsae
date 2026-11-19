@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "actor/enemy/ending.h"
 #include "global.h"
+#include "engine/irq.h"
 
 // Implementer B, round 6: ending_scene_01 (0x02044b44).
 
@@ -183,7 +184,7 @@ void ending_finale(void) {
     if (em12_typeMasks & 0x10) {
         return;
     }
-    if ((data_0212c594 & 3) != 0) {
+    if ((frameState.frameCount & 3) != 0) {
         return;
     }
     if (blendRequest.blendEnabled != 0) {

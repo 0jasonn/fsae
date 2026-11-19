@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/misc.h"
 #include "global.h"
+#include "engine/irq.h"
 
 void OpeningTask(void) {
     Random();
@@ -160,14 +161,14 @@ void mist_effect(void) {
     if (effectState[EFFECT_STATE_ACTIVE] != 0) {
         return;
     }
-    if ((data_0212c594 & 3) == 0) {
+    if ((frameState.frameCount & 3) == 0) {
         displayState.frameCounter++;
     }
     if (effectState[EFFECT_STATE_STEP_TIMER] != 0) {
         effectState[EFFECT_STATE_STEP_TIMER]--;
         return;
     }
-    if ((data_0212c594 & 7) != 0) {
+    if ((frameState.frameCount & 7) != 0) {
         return;
     }
     stepIndex = effectState[EFFECT_STATE_STEP_INDEX];
@@ -193,7 +194,7 @@ void color_control(void) {
     if (blendRequest.blendEnabled != 0) {
         return;
     }
-    if ((data_0212c594 & 3) == 0) {
+    if ((frameState.frameCount & 3) == 0) {
         base = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x3a);
         CgPalletSet((u16 *)(base + ((Random() & 3) << 5)), 0xf, 1);
     }

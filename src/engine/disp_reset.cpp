@@ -14,8 +14,8 @@ void DispReset(void) {
     data_0212c56c = (u32)data_0212ccb0;
     data_0212c570 = (u32)data_0212cdb0;
     data_0212c528 = (u32)data_0212de50;
-    data_0212c594.unk_05 = zero;
-    data_0212c594.unk_04 = zero;
+    frameState.unk_05 = zero;
+    frameState.unk_04 = zero;
     DispCtrlClear();
     MIi_CpuClearFast(0xc0, (void *)0x07000000, 0x400);
     MIi_CpuClearFast(0xc0, objAffineSet, 0x800);

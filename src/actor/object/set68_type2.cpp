@@ -2,9 +2,9 @@
 #include "global.h"
 #include "actor/object/set66.h"
 #include "actor/object/door_silver.h"
+#include "engine/irq.h"
 
 extern DoorSilverBlock displayState;
-extern u16 data_0212c594; // key state word, bit 2 hides the actor
 
 // set68_type2 (0x0207583c): follows its parent. Action 0 sets up the sprite (a type2 other than 0 also takes the
 // second palette setup and display registers), action 1 waits for bit 0 of the game flags, action 2 shows or hides the
@@ -35,7 +35,7 @@ void set68_type2(Entity *e) {
             e->action++;
             break;
         case 2:
-            e->spriteSettings.b0 = (data_0212c594 & 4) == 0;
+            e->spriteSettings.b0 = (frameState.frameCount & 4) == 0;
             if (em12_typeMasks[0] & 2) {
                 PutObjWork(e);
             }

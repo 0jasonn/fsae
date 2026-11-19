@@ -22,7 +22,6 @@ extern const u8 set38Hitbox[];            // set38Hitbox
 extern Entity *data_02134920;             // Set38 child currently linked to the player (shared global)
 extern const u32 flagBits[];              // flagBits, one mask per type & 0x1f
 extern u32 em12_typeMasks[];
-extern u16 data_0212c594;                 // frame counter
 
 int AssignObj(void *obj);                 // AssignObj(void*): C++ linkage in the original
 extern "C" int func_02085c28(Entity *e);

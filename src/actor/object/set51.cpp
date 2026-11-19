@@ -2,6 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/objdecls_f.h"
+#include "engine/irq.h"
 
 // Set51 actor (module set51). Address -> name:
 //   0x0205ad24 Set51 (original name), dispatches on e->type through set51_typeHandlers
@@ -13,7 +14,6 @@
 extern const EntityFunc set51_typeHandlers[]; // set51_typeHandlers, indexed by e->type
 extern const EntityFunc set51_childActions[]; // set51_childActions, indexed by e->action
 extern const s8 data_020d8a34[];              // vertical offset table, indexed by subtimer & 7
-extern u16 data_0212c594;
 
 void set51_move(Entity *e);
 
@@ -70,7 +70,7 @@ void set51_move(Entity *e) {
         e->x.HALF.HI = contact->x.HALF.HI;
         e->y.HALF.HI = contact->y.HALF.HI;
         e->z.HALF.HI = contact->z.HALF.HI + data_020d8a34[e->subtimer & 7];
-        if ((data_0212c594 & 1) != 0) {
+        if ((frameState.frameCount & 1) != 0) {
             e->subtimer++;
         }
     } else {

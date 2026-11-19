@@ -113,7 +113,6 @@ extern VoidFunc const endingFinaleTable[];
 extern VoidFunc const finaleDemoTable[];
 extern VoidFunc const endingRescueTable[];
 extern u16 playerKeysPrev[4];
-extern u16 data_0212c594;
 extern u8 data_0212c4f8;
 extern s32 data_02134924;
 extern UnkStruct_0217d384 messageRequest;

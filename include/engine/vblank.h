@@ -2,12 +2,11 @@
 #define ENGINE_VBLANK_H
 
 #include "types.h"
-#include "engine/irq.h"  // HBlankDmaState hblankDma
+#include "engine/irq.h"  // HBlankDmaState hblankDma, FrameState frameState
 
 typedef volatile u16 vu16;
 
 
-extern u16 data_0212c594[];     // [1] is nonzero while a screen transfer is being prepared (shared decls disagree on its type)
 extern u8 data_0212c4e0;
 extern u8 data_0212c4c8;
 extern u8 data_021348f4[];

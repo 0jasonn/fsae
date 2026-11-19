@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "actor/object/coin.h"
 #include "global.h"
+#include "engine/irq.h"
 
 // Coin actor, continued. Address -> name:
 //   0x02058948 kirakira_set (original name)
@@ -9,7 +10,7 @@
 
 void kirakira_set(Entity *e) {
     Entity *child;
-    if ((data_0212c594 & 7) != 0) {
+    if ((frameState.frameCount & 7) != 0) {
         return;
     }
     child = GetSetWork(0xd, 0xa, 0);
@@ -32,10 +33,10 @@ void coin_move(Entity *e) {
         SoundReq(0x216 - 0x73);
     }
     kirakira_set(e);
-    e->spriteSettings.b16 = ((data_0212c594 & 2) == 0) ? 0 : 3;
+    e->spriteSettings.b16 = ((frameState.frameCount & 2) == 0) ? 0 : 3;
 }
 
 void coin_wait(Entity *e) {
     kirakira_set(e);
-    e->spriteSettings.b16 = ((data_0212c594 & 2) == 0) ? 0 : 3;
+    e->spriteSettings.b16 = ((frameState.frameCount & 2) == 0) ? 0 : 3;
 }

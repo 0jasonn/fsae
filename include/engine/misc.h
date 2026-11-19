@@ -106,7 +106,6 @@ extern u16 data_0216fd04[];
 extern u16 data_02170104[];
 extern u8 data_0212c500;
 extern u8 data_0212c4dc;
-extern u16 data_0212c594;
 extern VoidFunc data_0212c564;
 extern const VoidFunc data_02104a40[];
 extern const u16 mistStepTable[];

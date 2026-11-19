@@ -13569,7 +13569,7 @@ scrollArgs kind:bss addr:0x0212c574
 data_0212c57c kind:bss addr:0x0212c57c
 playerKeysPrev kind:bss addr:0x0212c584
 playerKeys kind:bss addr:0x0212c58c
-data_0212c594 kind:bss addr:0x0212c594
+frameState kind:bss addr:0x0212c594
 hblankDma kind:bss addr:0x0212c59c
 blendRequest kind:bss addr:0x0212c5ac
 frameCounter kind:bss addr:0x0212c5bc

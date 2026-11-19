@@ -8,6 +8,15 @@ typedef struct GlobalBuffer {
     u8 *block; // 0x04, returned by EL_GetGlobalAdr
 } GlobalBuffer;
 
+typedef struct FrameState {
+    u16 frameCount;   // 0x00: incremented once per frame by main; blink and pacing code tests its low bits
+    u16 transferLock; // 0x02: VBlankIntr skips the screen, display and character transfers while nonzero
+    u8 unk_04;        // 0x04: set to 1 by pot_ware, cleared by pot_remove, PlWorkReset and DispReset
+    u8 unk_05;        // 0x05: set by stagesel_init, cleared by DispReset
+    u8 unk_06[2];
+} FrameState;
+extern FrameState frameState;  // 0x0212c594
+
 typedef struct HBlankDmaState {
     u8 enabled; // 0x00
     u8 unk_01[3];

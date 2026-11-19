@@ -3,6 +3,7 @@
 #include "ui/opdemo.h"
 #include "global.h"
 #include "ui/opdemo_api.h"
+#include "engine/irq.h"
 
 // op_scene_01 (symbol op_scene_01, original scene_01()): the first opening scene. The step index is
 // effectState[EFFECT_STATE_SCENE] and the countdown is the u16 at EFFECT_STATE_TIMER.
@@ -10,7 +11,7 @@
 void op_scene_01(void) {
     switch (effectState[EFFECT_STATE_SCENE]) {
         case 0:
-            if ((data_0212c594 & 0x1f) != 0) {
+            if ((frameState.frameCount & 0x1f) != 0) {
                 return;
             }
             if (effectState[EFFECT_STATE_LEVEL] < 7) {
@@ -22,7 +23,7 @@ void op_scene_01(void) {
             SoundReq(0x203);
             return;
         case 1:
-            if ((data_0212c594 & 0xf) == 0) {
+            if ((frameState.frameCount & 0xf) == 0) {
                 data_02134d30.entity->animationState = (u8)((Random() & 3) << 1);
                 playerWork[0].entity->animationState = (u8)((Random() & 3) << 1);
             }
@@ -37,7 +38,7 @@ void op_scene_01(void) {
             }
             return;
         case 2:
-            if (data_02134d30.entity != NULL && (data_0212c594 & 0xf) == 0) {
+            if (data_02134d30.entity != NULL && (frameState.frameCount & 0xf) == 0) {
                 data_02134d30.entity->animationState = (u8)((Random() & 3) << 1);
                 playerWork[0].entity->animationState = (u8)((Random() & 3) << 1);
             }
@@ -104,7 +105,7 @@ void op_scene_01(void) {
             blendRequest.blendColor = 0;
             blendRequest.resetValue = 0x20fff0;
             PaletteFade_ClearBufferFlag();
-            if ((data_0212c594 & 7) != 0) {
+            if ((frameState.frameCount & 7) != 0) {
                 return;
             }
             if (effectState[EFFECT_STATE_LEVEL] < 7) {
@@ -129,7 +130,7 @@ void op_scene_01(void) {
             opdemo_scroll();
             return;
         case 11:
-            if ((data_0212c594 & 1) == 0) {
+            if ((frameState.frameCount & 1) == 0) {
                 return;
             }
             if (mapState.cameraX < 0x88) {

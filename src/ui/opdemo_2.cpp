@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "game/scene.h"
 #include "global.h"
+#include "engine/irq.h"
 
 // scene_03 -> scene_03 (guess: intro/opening state machine of the scene block)
 // fairy_talkmove -> fairy_talkmove
@@ -47,7 +48,7 @@ void scene_03(void) {
             }
             break;
         case 5:
-            if ((data_0212c594 & 3) != 0) {
+            if ((frameState.frameCount & 3) != 0) {
                 return;
             }
             if (effectState[EFFECT_STATE_LEVEL] < 0x10) {

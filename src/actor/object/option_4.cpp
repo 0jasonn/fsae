@@ -1,4 +1,5 @@
 #include "actor/object/option.h"
+#include "engine/irq.h"
 
 // Option panel screen, fourth unit (module option). Address -> name:
 //   0x0205c54c change_panel, 0x0205c618 entry_cursor, 0x0205c6a8 star_cursor, 0x0205c6fc langStar
@@ -49,7 +50,7 @@ void entry_cursor(Entity *e) {
     }
     e->y.HALF.HI = 0xd;
     e->x.HALF.HI = x;
-    offset = data_0212c594 >> 2 & 7;
+    offset = frameState.frameCount >> 2 & 7;
     e->z.HALF.HI = entry_z_table[offset];
     UpdateAnimationSingleFrame(e);
 }

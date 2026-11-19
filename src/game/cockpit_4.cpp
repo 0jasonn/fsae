@@ -2,13 +2,14 @@
 #include "global.h"
 #include "types.h"
 #include "game/cockpit.h"
+#include "engine/irq.h"
 
 // Functions in this file (module cockpit, original names from the debug build):
 //   heartAlart, PinchCheck, pinch_bgm_check, kattiUpdate
 
 // Plays the heart alarm (sound 0x25) when the alarm timer is clear and the heart block is at most 0x10.
 void heartAlart(void) {
-    if ((data_0212c594 & 0x3f) != 0 || frameCounter[0x11] != 0) {
+    if ((frameState.frameCount & 0x3f) != 0 || frameCounter[0x11] != 0) {
         return;
     }
     if (cockpitState[8] > 0x10) {

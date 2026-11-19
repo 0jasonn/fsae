@@ -1,10 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/objdecls_a.h"
+#include "engine/irq.h"
 
 extern s16 data_02115c78[];            // shared with door_silver_init, [type][3] flat
 extern u8 effectState[];
-extern u16 data_0212c594[];
 
 // lever, 0x020699a4
 void lever(Entity *e) {
@@ -74,7 +74,7 @@ void pwait(Entity *e) {
         e->x.HALF.HI = pos[0];
         e->y.HALF.HI = pos[1];
     }
-    e->spriteSettings.b0 = (data_0212c594[0] & 0x10) ? 2 : 0;
+    e->spriteSettings.b0 = (frameState.frameCount & 0x10) ? 2 : 0;
     if (effectState[8] >= 1) {
         PutObjWork(e);
     }

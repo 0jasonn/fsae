@@ -11,7 +11,6 @@ extern s16 kumo0InitTable[];          // kumo0InitTable, [type][3] flat
 extern u8 keyInitUnk21Table[];         // keyInitUnk21Table, indexed by type2
 extern u8 keyInitBankTable[];          // keyInitBankTable, indexed by type2
 extern const s16 trigTable[];
-extern u16 data_0212c594[];
 extern u8 effectState[];
 
 void key_pos_set(Entity *e);

@@ -14,6 +14,7 @@ extern u16 data_0212c520;
 
 
 #include "engine/player.h"
+#include "engine/irq.h"
 
 extern u16 scrollArgs[];
 extern u8 objAffineSet[];
@@ -46,7 +47,7 @@ void PlWorkReset(void) {
     end = &playerWork[4];
     if (player < end) {
         do {
-            *((u8 *)&data_0212c594 + 4) = 0;
+            frameState.unk_04 = 0;
             player->unk_00 = 0;
             player->unk_01 = 0;
             player->unk_02 = 0;

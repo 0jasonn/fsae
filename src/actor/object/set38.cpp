@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/set38.h"
+#include "engine/irq.h"
 
 // Set38 family (module set38), 0x0206b7d4 .. 0x0206bb34.
 // Address -> name: 0x0206b7d4 Set38, 0x0206b7f0 set38_init, 0x0206b900 set38_move, 0x0206ba64 set38_lift,
@@ -126,7 +127,7 @@ void set38_put(Entity *e) {
     ObjPosCopy(e->parent, e);
     held = 1;
     InitAnimationForceUpdate(e, held);
-    if ((data_0212c594 & 1) == 0) {
+    if ((frameState.frameCount & 1) == 0) {
         held = 0;
     }
     e->spriteSettings.b0 = held;

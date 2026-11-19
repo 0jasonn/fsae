@@ -29,7 +29,6 @@ extern u8 data_0212c4e0;
 extern u8 data_021348f4[];
 extern u8 data_0213cfa0[];
 extern u16 *data_02158fa0;
-extern u16 data_0212c594[];
 extern u8 data_02fe0000[];
 
 extern void OS_SetIrqFunction(u32 mask, void (*func)(void));
