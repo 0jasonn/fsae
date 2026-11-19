@@ -94,7 +94,7 @@ void BgChar_CopyBG2(void *src, s32 offset, s32 size);
 void BgChar_CopyBG3(void *src, s32 offset, s32 size);
 u32 OSi_AllocateThreadId(void);
 void OSi_RunThreadExitHook(u32 arg);
-void func_0201918c(void *alarm, u32 lo, u32 hi, void *callback, void *arg);
+void func_0201918c(void *alarm, u64 delay, void *callback, void *arg);
 void func_0201c958(u32 tag, u32 data, s32 err);
 s32 func_02084634(u16 a);
 int func_02084f2c(u16 cell, u16 layer, s32 flags);

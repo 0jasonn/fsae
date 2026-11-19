@@ -481,6 +481,10 @@ src/engine/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
 
+src/engine/os_alarm_set.cpp:
+    complete
+    .text       start:0x0201918c end:0x020191f8
+
 src/engine/os_runon_checks.cpp:
     complete
     .text       start:0x02019968 end:0x02019980
