@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "knife/message/tcl_text.h"
+#include "knife/message/text_box_api.h"
 
 // Layout flags of the TCL text layer (TclText_DrawBlock / DrawBlockAligned / DrawLines)
 #define TCL_ALIGN_BOX_V_CENTER 0x80
@@ -34,8 +35,7 @@ typedef struct TclTextSize {
 } TclTextSize;
 
 extern "C" {
-s32 TextBox_MeasureSegment(TclTextSource *source, s32 charSpacing, const u16 *text, const u16 **next);
-TclTextSize TextBox_MeasureBlock(TclTextSource *source, s32 charSpacing, s32 lineSpacing, const u16 *text);
+TclTextSize TextBox_MeasureBlock(TclTextSource *source, s32 charSpacing, s32 lineSpacing, u32 state);
 s32 TextBox_MeasureHeight(TclTextSource *source, s32 lineSpacing, const u16 *text);
 void func_020c6828(TclLayoutDrawer *self, s32 x, s32 y, s32 palette, const u16 *text, const u16 **next, TclLayoutStep step);
 void TclText_DrawLines(TclLayoutDrawer *self, s32 x, s32 y, s32 width, s32 palette, u32 flags, const u16 *text, TclLayoutStep step);

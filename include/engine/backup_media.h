@@ -18,7 +18,8 @@ u32 Knife_loadSaveFile(u32 slot);
 s32 Knife_fatRead(u16 slot, _SAVEHEADER *header);
 s32 isAccordData(_SAVEHEADER *header, const u32 *data, s32 size);
 s32 FSResultToKnifeFsResult(s32 result);
-s32 Knife_InitialSaveFileALL(void);
-s32 Knife_mediaVerify(u16 slot, const u32 *data, s32 size);
+extern "C" s32 Knife_InitialSaveFileALL(void);
+extern "C" s32 Knife_mediaVerify(u16 slot, const u32 *data, s32 size);
+extern "C" BOOL BackupMediaInitialize(void);
 
 #endif

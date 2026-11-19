@@ -2226,6 +2226,10 @@ src/game/backup.cpp:
     complete
     .text       start:0x02056120 end:0x020561d0
 
+src/game/backup_media_initialize.cpp:
+    complete
+    .text       start:0x020561d0 end:0x020562ec
+
 src/game/backup_media.cpp:
     complete
     .text       start:0x020562ec end:0x02056478
@@ -2237,6 +2241,10 @@ src/game/backup_9.cpp:
 src/game/backup_2.cpp:
     complete
     .text       start:0x020565e8 end:0x02056738
+
+src/game/knife_media_write.cpp:
+    complete
+    .text       start:0x02056738 end:0x0205687c
 
 src/game/backup_14.cpp:
     complete
@@ -5825,6 +5833,10 @@ src/engine/gx_misc.cpp:
     complete
     .text       start:0x020bc3a8 end:0x020bc43c
 
+src/ui/widget/rect_span_write.cpp:
+    complete
+    .text       start:0x020bc43c end:0x020bc51c
+
 src/ui/widget/ctrl_leaf_2.cpp:
     complete
     .text       start:0x020bc51c end:0x020bc528
@@ -5865,17 +5877,41 @@ src/ui/widget/rect_buf_init.cpp:
     complete
     .text       start:0x020bc84c end:0x020bc8bc
 
+src/ui/widget/menu_setup_hardware.cpp:
+    complete
+    .text       start:0x020bc8bc end:0x020bc99c
+
 src/ui/widget/uiobj_create_2.cpp:
     complete
     .text       start:0x020bcd34 end:0x020bce14
+
+src/ui/widget/menu_redraw.cpp:
+    complete
+    .text       start:0x020bd00c end:0x020bd128
+
+src/ui/widget/menu_update_backgrounds.cpp:
+    complete
+    .text       start:0x020bd128 end:0x020bd2c0
 
 src/ui/widget/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd474
 
+src/ui/widget/menu_direction_input.cpp:
+    complete
+    .text       start:0x020bd830 end:0x020bd968
+
 src/ui/widget/menu_20.cpp:
     complete
     .text       start:0x020bd968 end:0x020bdb34
+
+src/ui/widget/menu_init_display.cpp:
+    complete
+    .text       start:0x020bdb34 end:0x020bdd60
+
+src/ui/widget/menu_switch_page.cpp:
+    complete
+    .text       start:0x020bdd60 end:0x020bdfc0
 
 src/ui/widget/menu_6.cpp:
     complete
@@ -6265,6 +6301,10 @@ src/knife/message/text_box_2.cpp:
     complete
     .text       start:0x020c5094 end:0x020c50ec
 
+src/knife/message/textbox_measure_block.cpp:
+    complete
+    .text       start:0x020c50ec end:0x020c5180
+
 src/knife/message/text_box_3.cpp:
     complete
     .text       start:0x020c5268 end:0x020c5284
@@ -6300,6 +6340,10 @@ src/engine/bitstream.cpp:
 src/knife/message/text_stream.cpp:
     complete
     .text       start:0x020c6f2c end:0x020c6f40
+
+src/knife/message/text_stream_utf8.cpp:
+    complete
+    .text       start:0x020c6f40 end:0x020c6fb0
 
 src/knife/message/text_stream_2.cpp:
     complete

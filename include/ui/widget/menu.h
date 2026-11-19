@@ -37,17 +37,19 @@ typedef struct MenuSub {
     /* 000 */ u8 unk_000[0x370];
     /* 370 */ u8 unk_370[8]; // object passed to func_020be518 and Menu_SetActive
     /* 378 */ void *unk_378; // points at the table at 0xf0
-    /* 37c */ u8 unk_37c[0x398 - 0x37c];
+    /* 37c */ u8 unk_37c[0x38c - 0x37c];
+    /* 38c */ s16 scroll38c;
+    /* 38e */ u8 unk_38e[0x398 - 0x38e];
     /* 398 */ u8 unk_398;
     /* 399 */ u8 unk_399[0x39c - 0x399];
-    /* 39c */ s32 unk_39c; // pending reset (Menu_Reset)
+    /* 39c */ s32 unk_39c; // message object address, released by Menu_Reset
     /* 3a0 */ u8 unk_3a0[0x3f8 - 0x3a0];
     /* 3f8 */ u8 unk_3f8[0x608 - 0x3f8]; // object passed to func_020bdd60
     /* 608 */ s32 unk_608;
     /* 60c */ u8 unk_60c[0x616 - 0x60c];
     /* 616 */ u16 unk_616[3];
     /* 61c */ u16 unk_61c;
-    /* 61e */ s16 state; // 0 = idle, 1 = active, 2 = set by flag5 (provisional)
+    /* 61e */ s16 state; // 0 = idle, 1 = active, 2 = set by flag5, 4 = scrolling (provisional)
     /* 620 */ u8 unk_620;
     /* 621 */ u8 unk_621; // set by Menu_Finish
     /* 622 */ u8 flag622; // hardware teardown flags
@@ -117,8 +119,14 @@ typedef struct MenuWork {
     /* 358 */ MenuObj *unk_358; // object with a flag byte at 0xad
     /* 35c */ u8 unk_35c[0x360 - 0x35c];
     /* 360 */ void *unk_360;
-    /* 364 */ MenuView *unk_364;
-    /* 368 */ u8 unk_368[0x40000 - 0x368];
+    /* 364 */ union {
+        MenuView *views[2];
+        struct {
+            MenuView *unk_364;
+            MenuView *view368;
+        };
+    };
+    /* 36c */ u8 unk_36c[0x40000 - 0x36c];
     /* 40000 */ MenuSub sub;
 } MenuWork;
 
@@ -179,6 +187,9 @@ s32 lobby_copyBounds(s16 *out);
 
 // Menu functions in this module. The unit that defines each one is named by the file in src/wip/G.
 void Menu_Begin(MenuWork *menu);
+void Menu_ClearVram(MenuWork *menu);
+void Menu_Bg3WriteA(void *source, s32 offset, s32 size);
+void Menu_Bg3WriteB(void *source, s32 offset, s32 size);
 void Menu_ResetScroll(MenuList *list);
 void Menu_SetActive(MenuList *list, s32 value);
 void Menu_StartTouch(void *callbackArg);

@@ -4,12 +4,12 @@
 
 // Forward to the sub-screen and main-screen BG3 writers.
 
-void Menu_Bg3WriteA(s32 sourceAddress, s32 offset, s32 size, s32) {
-    BgScr_CopyBG3((void *)sourceAddress, offset, size);
+void Menu_Bg3WriteA(void *source, s32 offset, s32 size) {
+    BgScr_CopyBG3(source, offset, size);
 }
 
-void Menu_Bg3WriteB(s32 sourceAddress, s32 offset, s32 size, s32) {
-    BgScr_CopyBG3Alt((void *)sourceAddress, offset, size);
+void Menu_Bg3WriteB(void *source, s32 offset, s32 size) {
+    BgScr_CopyBG3Alt(source, offset, size);
 }
 
 // Handles one input request: the event kind picks an action, then flag5 sets the state and flag6 clears it.
