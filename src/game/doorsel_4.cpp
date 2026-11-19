@@ -17,7 +17,7 @@ void doorsel_select(void) {
     case 0:
         data_0212c4dc = data_0212c4dc + 1;
         if (state[3] == 3) {
-            *(u16 *)displayState = *(u16 *)displayState & 0xfdff;
+            displayState.displayFlags = displayState.displayFlags & 0xfdff;
         }
         GetSetWork(0x31, 3, 0);
         GetSetWork(0x31, 3, 2);

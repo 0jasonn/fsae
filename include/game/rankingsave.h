@@ -41,26 +41,7 @@ typedef struct RankScrollState {
 } RankScrollState;
 extern RankScrollState mapState;
 
-// displayState: display/effect shadow block (same bytes as UnkStruct_0212c75c in engine/misc_d.h)
-typedef struct RankDispShadow {
-    /* 00 */ u16 displayFlags;
-    /* 02 */ u8 unk_02[6];
-    /* 08 */ u16 unk_08;
-    /* 0a */ u16 unk_0a;
-    /* 0c */ u16 unk_0c;
-    /* 0e */ u8 unk_0e[0x12];
-    /* 20 */ u16 unk_20;
-    /* 22 */ u16 unk_22;
-    /* 24 */ u16 scrollX;
-    /* 26 */ u8 unk_26[6];
-    /* 2c */ u16 unk_2c;
-    /* 2e */ u16 unk_2e;
-    /* 30 */ u16 unk_30;
-    /* 32 */ u8 unk_32[0x34];
-    /* 66 */ u16 reg66; // hardware value written by the ranking screen
-    /* 68 */ u16 reg68;
-} RankDispShadow;
-extern RankDispShadow displayState;
+#include "engine/display_state.h"
 
 #include "engine/cockpit_state.h"
 extern u8 data_021361a0[];

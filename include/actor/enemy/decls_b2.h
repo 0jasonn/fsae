@@ -26,7 +26,7 @@ extern u32 data_0212c56c;
 extern u32 data_0212c570;
 extern u32 data_0212c528;
 extern u8 effectState[];   // ResultState block (enemy/ending.h), u16 timer at 4
-extern u8 displayState[];   // DisplayShadow (enemy/ending.h), u16 at 0x18
+#include "engine/display_state.h"
 extern u16 playerKeys[];
 extern s16 data_020f260c[];   // pairs of s16 positions for the door select sprites
 extern u8 data_0212ccb0[];

@@ -21,10 +21,10 @@ void fade_in(FADE_WORK_ *w) {
         MakeFadeBuff256(w->blendWeight);
     } else {
         w->blendWeight = w->blendWeight - w->blendStep;
-        displayState.unk_6a = w->blendWeight >> 4;
+        displayState.blendY = w->blendWeight >> 4;
         if (w->blendWeight <= 0) {
             w->blendEnabled = 0;
-            displayState.unk_6a = 0;
+            displayState.blendY = 0;
         }
     }
 }
@@ -39,10 +39,10 @@ void fade_out(FADE_WORK_ *w) {
         MakeFadeBuff256(0x100 - w->blendWeight);
     } else {
         w->blendWeight = w->blendWeight - w->blendStep;
-        displayState.unk_6a = 0x10 - (w->blendWeight >> 4);
+        displayState.blendY = 0x10 - (w->blendWeight >> 4);
         if (w->blendWeight <= 0) {
             w->blendEnabled = 0;
-            displayState.unk_6a = 0x10;
+            displayState.blendY = 0x10;
         }
     }
 }

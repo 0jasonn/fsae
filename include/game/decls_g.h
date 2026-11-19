@@ -53,7 +53,7 @@ extern const u32 data_020df200[];
 // Title and save-error screen data and calls (savefile_error_*, terminateInfo_*)
 extern u8 data_021271cc[];
 extern u8 data_021271d4[];
-extern u8 displayState[];
+#include "engine/display_state.h"
 extern const u8 data_020ce4d0[];
 extern u8 data_0212c508;
 #include "engine/blend_request.h"

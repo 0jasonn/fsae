@@ -4,7 +4,6 @@
 #include "actor/object/door_silver.h"
 #include "engine/irq.h"
 
-extern DoorSilverBlock displayState;
 
 // set68_type2 (0x0207583c): follows its parent. Action 0 sets up the sprite (a type2 other than 0 also takes the
 // second palette setup and display registers), action 1 waits for bit 0 of the game flags, action 2 shows or hides the
@@ -20,8 +19,8 @@ void set68_type2(Entity *e) {
                 e->spriteSettings.b14 = 2;
                 e->unk_5e.b0 = 3;
                 *(u32 *)&e->spriteSettings = (*(u32 *)&e->spriteSettings & ~0xc00) | 0x400;
-                displayState.unk_66 = 0xf40;
-                displayState.unk_68 = 0x809;
+                displayState.blendCnt = 0xf40;
+                displayState.blendAlpha = 0x809;
             }
             InitAnimationForceUpdate(e, e->type2);
             break;

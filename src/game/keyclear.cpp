@@ -3,25 +3,16 @@
 #include "global.h"
 #include "engine/irq.h"  // hblankDma: enabled flag, DMA destination = window register
 #include "game/keyclear_api.h"
+#include "engine/display_state.h"
 
 // Key and window module: keyClear clears the two key word tables and requests comm mode 5. StopEffectWindow and
 // InitCircleWindow drive the circle window through display flags and the window register mirror hblankDma.
 //   keyClear (0x0202b54c), CircleWindowHook (CircleWindowHook, empty), EffectWindowHook (EffectWindowHook, empty),
 //   StopEffectWindow (0x0202b598), InitCircleWindow (0x0202b5d4)
 
-// Display shadow block (displayState): display flags at +0, window values at +0x5c, +0x60 and +0x62.
-typedef struct WindowDisplay {
-    u16 displayFlags;
-    u8 unk_02[0x5a];
-    u16 unk_5c;
-    u8 unk_5e[2];
-    u16 unk_60;
-    u16 unk_62;
-} WindowDisplay;
 
 extern u16 playerKeysPrev[4];
 extern u16 playerKeys[4];
-extern WindowDisplay displayState;
 
 extern "C" void keyClear(void);
 
@@ -59,9 +50,9 @@ void StopEffectWindow(void) {
 // then calls CircleWindowHook.
 void InitCircleWindow(u16 x, u16 y) {
     displayState.displayFlags = displayState.displayFlags | 0x2000;
-    displayState.unk_60 = x;
-    displayState.unk_62 = y;
-    displayState.unk_5c = 0xc0;
+    displayState.winIn = x;
+    displayState.winOut = y;
+    displayState.win0V = 0xc0;
     hblankDma.enabled = 1;
     hblankDma.dst = (void *)0x04000040;
     CircleWindowHook();

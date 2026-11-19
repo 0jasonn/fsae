@@ -31,22 +31,7 @@ typedef struct CameraState {
     /* 28 */ u16 unk_28;
 } CameraState;
 
-// Display shadow at displayState (displayFlags is the first halfword)
-typedef struct DisplayShadow {
-    /* 00 */ u16 displayFlags;
-    /* 02 */ u8 unk_02[0x1e];
-    /* 20 */ u16 unk_20;
-    /* 22 */ u16 unk_22;
-    /* 24 */ u16 unk_24;
-    /* 26 */ u8 unk_26[6];
-    /* 2c */ u16 unk_2c;
-    /* 2e */ u16 unk_2e;
-    /* 30 */ u16 unk_30;
-    /* 32 */ u8 unk_32[0x34];
-    /* 66 */ u16 unk_66;
-    /* 68 */ u16 unk_68;
-    /* 6a */ u16 unk_6a;
-} DisplayShadow;
+#include "engine/display_state.h"
 
 // Result state block at effectState (0x28 bytes, cleared by ending_init)
 typedef struct ResultState {
@@ -84,7 +69,6 @@ extern VoidFunc data_0212c564;
 extern SceneSlot data_02134d30; // first record; the others are reached with SCENE_SLOT
 #define SCENE_SLOT(k) (((SceneSlot *)&data_02134d30)[k])
 extern CameraState mapState;
-extern DisplayShadow displayState;
 extern VoidFunc const endingFinaleTable[];
 extern VoidFunc const finaleDemoTable[];
 extern VoidFunc const endingRescueTable[];

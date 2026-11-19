@@ -3,6 +3,7 @@
 #include "global.h"
 #include "engine/blend_request.h"
 #include "game/demo_api.h"
+#include "engine/display_state.h"
 
 // Demo module (demo): DemoTask runs the demo phase machine (phase byte data_0212c4dc), demoWaitCk counts down the
 // phase timer, DemoBgBuffClear clears the two neighbour grids.
@@ -15,16 +16,9 @@ typedef struct DemoEffectState {
     u8 unk_06[0x22];
 } DemoEffectState;
 
-// Display shadow block: the display flags at +0, a value at +8.
-typedef struct DemoDisplayShadow {
-    u16 displayFlags;
-    u8 unk_02[6];
-    u16 unk_8;
-} DemoDisplayShadow;
 
 extern u8 data_0212c4dc;                // demo phase, 0..4
 extern u16 data_0212c510;               // nonzero ends the phase wait early
-extern DemoDisplayShadow displayState; // display shadow block
 extern DemoEffectState effectState;   // effect state block
 extern u16 data_021355a0;
 
@@ -37,7 +31,7 @@ void DemoTask(void) {
     switch (data_0212c4dc) {
     case 0:
         displayState.displayFlags = 0x100;
-        displayState.unk_8 = 8;
+        displayState.bg[0].cnt = 8;
         DataLoad(4);
         CgLoad(3);
         MemClearFast(&effectState, 0x28);

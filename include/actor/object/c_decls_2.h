@@ -40,7 +40,7 @@ extern u8 data_0212caf0[];
 extern u32 data_0212c558;
 extern u16 data_0212c540;
 extern u8 frameCounter[0x20];
-extern u16 displayState[];
+#include "engine/display_state.h"
 extern u8 data_0212c500;
 
 // BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.

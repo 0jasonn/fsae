@@ -51,8 +51,8 @@ void demo_00(void) {
     data_02134d30.entity->animationState = 0;
     if (mapState.unk_22 < 0x7b) {
         mapState.unk_22 = mapState.unk_22 + 1;
-        displayState.unk_30 = mapState.unk_22;
-        displayState.unk_24 = displayState.unk_30;
+        displayState.bg[3].scrollY = mapState.unk_22;
+        displayState.bg[2].scrollY = displayState.bg[3].scrollY;
     } else {
         effectState.phase++;
         effectState.subPhase = 0;

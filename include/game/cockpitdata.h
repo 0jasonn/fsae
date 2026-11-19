@@ -45,7 +45,7 @@ extern u8 telopRequest[];
 #define GS_S32(off) (*(s32 *)((u8 *)&gameState + (off)))
 
 // Cockpit graphics and object blocks used by the HUD code.
-extern u8 displayState[];
+#include "engine/display_state.h"
 extern u8 data_021361a0[];
 extern u8 data_0212c4a0[];
 extern u8 data_021369a0[];

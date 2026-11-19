@@ -1,21 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/irq.h"
+#include "engine/display_state.h"
 
 // Set02 actor, second unit (module set02). Address -> name:
 //   0x0205a1b0 set02_move (original name)
 
-// displayState as read by set02_move: scroll origins used to place the actor on screen.
-typedef struct Set02Screen {
-    /* 00 */ u8 unk_00[0x0a];
-    /* 0a */ u16 altScrollX; // origin for type 1
-    /* 0c */ u16 altScrollY;
-    /* 0e */ u8 unk_0e[8];
-    /* 16 */ u16 scrollX; // origin for type 0
-    /* 18 */ u16 scrollY;
-} Set02Screen;
-
-extern Set02Screen displayState;
 extern u8 data_021348d8;   // flag, nonzero: the actor is placed low and does not get the x offset
 extern u8 effectState[]; // byte 0x14: nonzero when the actor should be put back into the work list
 extern const s8 data_0211565c[]; // vertical bob table, indexed by timer & 0xf
@@ -23,15 +13,15 @@ extern const s8 data_0211565c[]; // vertical bob table, indexed by timer & 0xf
 void set02_move(Entity *e) {
     switch (e->type) {
     case 0:
-        e->x.HALF.HI = 0x58 - displayState.scrollX;
-        e->y.HALF.HI = 0x3c - displayState.scrollY;
+        e->x.HALF.HI = 0x58 - displayState.bg[1].scrollX;
+        e->y.HALF.HI = 0x3c - displayState.bg[1].scrollY;
         if (effectState[0x14] != 0) {
             PutObjWork(e);
         }
         break;
     case 1:
-        e->x.HALF.HI = 0x58 - displayState.altScrollX;
-        e->y.HALF.HI = 0x3c - displayState.altScrollY;
+        e->x.HALF.HI = 0x58 - displayState.bg[0].scrollX;
+        e->y.HALF.HI = 0x3c - displayState.bg[0].scrollY;
         if (data_021348d8 == 0) {
             e->x.HALF.HI += 3;
         }

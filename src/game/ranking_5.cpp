@@ -30,9 +30,9 @@ void ranking_exit(void) {
             msgLines = knife_MakeMsgScreen(0x7dc, screen);
         }
         SoundReq(0x79);
-        displayState.unk_0a = 0;
-        displayState.unk_0c = -(0xc0 - (msgLines + 2) * 8) / 2;
-        displayState.unk_08 = *(u16 *)(data_020ce4d0 + 0x24);
+        displayState.bg[0].scrollX = 0;
+        displayState.bg[0].scrollY = -(0xc0 - (msgLines + 2) * 8) / 2;
+        displayState.bg[0].cnt = *(u16 *)(data_020ce4d0 + 0x24);
         displayState.displayFlags |= 0x100;
         FadeSet(0, 8);
         effectState.timer = 0x78;

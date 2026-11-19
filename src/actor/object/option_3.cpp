@@ -58,8 +58,8 @@ void mode_wait(Entity *e) {
 }
 
 void mode_out(Entity *e) {
-    if (DISP_REG(0xc) < 0x20) {
-        DISP_REG(0xc) += 2;
+    if (displayState.bg[0].scrollY < 0x20) {
+        displayState.bg[0].scrollY += 2;
     } else {
         void *instance = KnifeApp_getInstance();
         u8 *resource = KnifeApp_getZeldaResource_08ddcc(instance, data_02171d20[effectState[NP_PHASE]]);
@@ -70,10 +70,10 @@ void mode_out(Entity *e) {
 }
 
 void mode_in(Entity *e) {
-    if (DISP_REG(0xc) != 0) {
-        DISP_REG(0xc) -= 2;
+    if (displayState.bg[0].scrollY != 0) {
+        displayState.bg[0].scrollY -= 2;
     } else {
-        DISP_REG(0xc) = 0;
+        displayState.bg[0].scrollY = 0;
         e->action = 1;
     }
     effectState[NP_SHOWN] = 1;

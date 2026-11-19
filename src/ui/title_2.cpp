@@ -31,7 +31,7 @@ void title_back(void) {
 }
 
 void knife_title_dialogDisp(s32 index) {
-    displayState.unk_c = 0;
+    displayState.bg[0].scrollY = 0;
     knife_title_dialogDelete();
     *(u8 **)((u8 *)&titleDialogBlock + 0xe8) = (u8 *)KnifeApp_getInstance() + 0x1bc;
     *(u8 **)((u8 *)&titleDialogBlock + 0xb8) = titleDialogBuffer;
@@ -61,5 +61,5 @@ void knife_title_dialogDelete(void) {
     }
     ((s8 *)&paletteFade)[7] = 0;
     ((s8 *)&paletteFade)[6] = 0;
-    displayState.unk_c = 0;
+    displayState.bg[0].scrollY = 0;
 }

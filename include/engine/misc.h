@@ -23,31 +23,7 @@ extern UnkStruct_0216fcf8 paletteFade;
 
 #include "engine/blend_request.h"
 
-// Display/effect shadow block (hardware-register mirror values; field names are guesses where marked)
-typedef struct UnkStruct_0212c75c {
-    /* 00 */ u16 displayFlags;
-    /* 02 */ u8 unk_2[6];
-    /* 08 */ u16 unk_8;
-    /* 0a */ u16 unk_a;
-    /* 0c */ u16 unk_c;
-    /* 0e */ u8 unk_e[2];
-    /* 10 */ void *workBuffer; // guess
-    /* 14 */ u16 unk_14;
-    /* 16 */ u16 frameCounter;
-    /* 18 */ u16 unk_18;
-    /* 1a */ u8 unk_1a[6];
-    /* 20 */ u16 unk_20;
-    /* 22 */ u16 unk_22;
-    /* 24 */ u16 scrollX;
-    /* 26 */ u8 unk_26[6];
-    /* 2c */ u16 unk_2c;
-    /* 2e */ u16 unk_2e;
-    /* 30 */ u16 unk_30;
-    /* 32 */ u8 unk_32[0x34];
-    /* 66 */ u16 reg66; // hardware value written by mist_effect
-    /* 68 */ u16 reg68; // hardware value written by mist_effect
-} UnkStruct_0212c75c;
-extern UnkStruct_0212c75c displayState;
+#include "engine/display_state.h"
 
 typedef struct UnkStruct_0212c648_D {
     /* 00 */ u8 unk_0[0x20];

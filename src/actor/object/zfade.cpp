@@ -41,15 +41,9 @@ typedef struct ZfadeCamera {
     /* 22 */ s16 scrollY;
 } ZfadeCamera;
 
-// displayState as read by zfade_init: only the high byte of the halfword at 0x60 is used.
-typedef struct ZfadeScreen {
-    /* 00 */ u8 unk_00[0x60];
-    /* 60 */ u16 fadeMask;
-} ZfadeScreen;
 
 extern const ZfadeEntry zfadeTable[];        // zeldaFadeTable, indexed by e->type
 extern ZfadeCamera mapState;
-extern ZfadeScreen displayState;
 extern u8 data_02171d1c;                     // 1 while no fade partner is active
 extern const EntityFunc zfade_typeHandlers[]; // zfade_typeHandlers, indexed by e->type
 

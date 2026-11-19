@@ -43,8 +43,8 @@ void opdemo_scroll(void) {
         }
         mapState.cameraX = next;
     }
-    displayState.unk_30 = mapState.cameraX;
-    displayState.scrollX = displayState.unk_30;
+    displayState.bg[3].scrollY = mapState.cameraX;
+    displayState.bg[2].scrollY = displayState.bg[3].scrollY;
 }
 
 void op_title(void) {

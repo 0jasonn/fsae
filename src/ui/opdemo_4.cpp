@@ -121,8 +121,8 @@ void scene_05(void) {
             }
             if (mapState.cameraX > 0x5b) {
                 mapState.cameraX--;
-                displayState.unk_30 = mapState.cameraX;
-                displayState.scrollX = displayState.unk_30;
+                displayState.bg[3].scrollY = mapState.cameraX;
+                displayState.bg[2].scrollY = displayState.bg[3].scrollY;
                 return;
             }
             SoundReq(0x1b1);

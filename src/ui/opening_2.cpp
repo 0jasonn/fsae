@@ -107,21 +107,21 @@ void op_init(void) {
         localPlayerIndex = zero;
         cockpitState.mode = zero;
         cockpitState.bufferIndex = zero;
-        displayState.workBuffer = data_021361a0;
-        displayState.unk_8 = *(const u16 *)(data_020ce4d0 + 0x24);
-        displayState.unk_14 = valueA;
-        displayState.unk_20 = 0x841a;
-        displayState.unk_2c = valueB;
-        displayState.reg66 = 0x3e66;
-        displayState.reg68 = 0x0c0c;
-        displayState.unk_a = zero;
-        displayState.unk_c = bankValue;
-        displayState.frameCounter = zero;
-        displayState.unk_18 = bankValue;
-        displayState.unk_22 = zero;
-        displayState.scrollX = zero;
-        displayState.unk_2e = zero;
-        displayState.unk_30 = 0xb0;
+        displayState.bg[0].buffer = data_021361a0;
+        displayState.bg[0].cnt = *(const u16 *)(data_020ce4d0 + 0x24);
+        displayState.bg[1].cnt = valueA;
+        displayState.bg[2].cnt = 0x841a;
+        displayState.bg[3].cnt = valueB;
+        displayState.blendCnt = 0x3e66;
+        displayState.blendAlpha = 0x0c0c;
+        displayState.bg[0].scrollX = zero;
+        displayState.bg[0].scrollY = bankValue;
+        displayState.bg[1].scrollX = zero;
+        displayState.bg[1].scrollY = bankValue;
+        displayState.bg[2].scrollX = zero;
+        displayState.bg[2].scrollY = zero;
+        displayState.bg[3].scrollX = zero;
+        displayState.bg[3].scrollY = 0xb0;
         mapState.unk_20 = zero;
         mapState.cameraX = 0xb0;
         em2f_mapFlag = zero;
@@ -162,7 +162,7 @@ void mist_effect(void) {
         return;
     }
     if ((frameState.frameCount & 3) == 0) {
-        displayState.frameCounter++;
+        displayState.bg[1].scrollX++;
     }
     if (effectState[EFFECT_STATE_STEP_TIMER] != 0) {
         effectState[EFFECT_STATE_STEP_TIMER]--;
@@ -175,14 +175,14 @@ void mist_effect(void) {
     stepValue = mistStepTable[stepIndex];
     if (stepValue != 0xffff && stepIndex != 0xff) {
         effectState[EFFECT_STATE_STEP_INDEX] = stepIndex + 1;
-        displayState.reg68 = stepValue;
+        displayState.blendAlpha = stepValue;
         return;
     }
     displayState.displayFlags &= 0xfdff;
     displayState.displayFlags |= 0x400;
-    displayState.reg66 = 0x3c64;
-    displayState.reg68 = 0x808;
-    displayState.scrollX = mapState.cameraX;
+    displayState.blendCnt = 0x3c64;
+    displayState.blendAlpha = 0x808;
+    displayState.bg[2].scrollY = mapState.cameraX;
     effectState[EFFECT_STATE_ACTIVE] = 1;
 }
 

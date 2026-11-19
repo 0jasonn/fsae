@@ -11,7 +11,7 @@ void mapmode_move(void) {
         gameState.unk_6e >= 2 || cockpitState.mode != 1) {
         cockpitState.mapStep = 0;
         cockpitState.clearMask = 1 << (cockpitState.bufferIndex ^ 1);
-        displayState.reg66 = 0;
+        displayState.blendCnt = 0;
         displayState.displayFlags &= ~0x4000;
         MIi_CpuClearFast(0, data_021361a0 + (cockpitState.bufferIndex << 11) + 0x140, 0x280);
         func_02026774();

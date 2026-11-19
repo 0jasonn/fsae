@@ -2,6 +2,7 @@
 #include "global.h"
 #include "actor/object/fdecls.h"
 #include "actor/object/nameplate.h"
+#include "engine/display_state.h"
 
 // Name plate actor, second unit (module nameplate). Address -> name:
 //   0x0205ba4c namePlate_appear, 0x0205bb1c namePlate_move, 0x0205bc48 namePlate_entry
@@ -21,7 +22,6 @@ extern u8 multiSioSelect[];
 extern const u8 data_020d8aa4[];  // animation flags, indexed by timer * 3 + type2
 extern const u16 data_020d8bae[]; // bounds for the appear animation, 4 bytes per mask
 extern const u16 data_020d8ae0[]; // bounds for the move animation, 4 bytes per index
-extern u16 displayState[];       // display shadow, halfword registers
 extern const u8 namePlateSetTable[]; // namePlateSetTable, table passed to SetTblSetWorks
 
 void namePlate_appear(Entity *e) {
@@ -102,13 +102,13 @@ void namePlate_entry(Entity *e) {
         if (ObjAnimMoveLine(e)) {
             e->subAction = 1;
             e->subtimer = 0x20;
-            displayState[0] |= 0x2e00;
-            displayState[0x60 / 2] = 9;
-            displayState[0x62 / 2] = 0x1f40 - 1;
-            displayState[0x58 / 2] = 0x8e8;
-            displayState[0x5c / 2] = 0x3180 - 0x8e8;
-            displayState[0x66 / 2] = 0x8e8 - 0xa4;
-            displayState[0x68 / 2] = 0x8e8 - 0xdc;
+            displayState.displayFlags |= 0x2e00;
+            displayState.winIn = 9;
+            displayState.winOut = 0x1f40 - 1;
+            displayState.win0H = 0x8e8;
+            displayState.win0V = 0x3180 - 0x8e8;
+            displayState.blendCnt = 0x8e8 - 0xa4;
+            displayState.blendAlpha = 0x8e8 - 0xdc;
             SetTblSetWorks(namePlateSetTable);
         }
         effectState[NP_SHOWN] = 1;
@@ -116,9 +116,9 @@ void namePlate_entry(Entity *e) {
     case 1:
         if (e->subtimer < 0x98) {
             e->subtimer += 8;
-            displayState[0x5c / 2] = ((u8)e->subtimer << 8) | 0x98;
+            displayState.win0V = ((u8)e->subtimer << 8) | 0x98;
         } else {
-            displayState[0] &= 0xdfff;
+            displayState.displayFlags &= 0xdfff;
             e->subAction = 2;
         }
         effectState[NP_SHOWN] = 1;

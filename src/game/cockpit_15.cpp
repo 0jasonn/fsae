@@ -11,7 +11,7 @@ void CockpitScreenSwap(void) {
         return;
     }
     cockpitState.redraw = 0;
-    *(u16 *)(displayState + 0xe) = 1;
-    *(u32 *)(displayState + 0x10) = (u32)(data_021361a0 + (cockpitState.bufferIndex << 11));
+    displayState.bg[0].transRequest = 1;
+    displayState.bg[0].buffer = data_021361a0 + (cockpitState.bufferIndex << 11);
     cockpitState.bufferIndex ^= 1;
 }

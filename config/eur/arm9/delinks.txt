@@ -3890,13 +3890,9 @@ src/actor/object/rupeerush_dice.cpp:
     complete
     .text       start:0x02077650 end:0x02077684
 
-src/actor/object/sr_2.cpp:
-    complete
-    .text       start:0x02077684 end:0x02077810
-
 src/actor/object/sr.cpp:
     complete
-    .text       start:0x02077810 end:0x02077834
+    .text       start:0x02077684 end:0x02077834
 
 src/ui/stagesel.cpp:
     complete

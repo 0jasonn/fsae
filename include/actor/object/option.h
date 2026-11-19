@@ -31,13 +31,11 @@ extern const EntityFunc win_open_actions[];   // win_open_actions, indexed by e-
 extern const EntityFunc panel_copy_actions[]; // panel_copy_actions, indexed by e->action
 extern const u16 win_open_table[];            // win_open_table, indexed by slot
 extern const u8 data_020d8ac8[][6];           // animation bytes (shared with em1d_possess), row picked from effectState[NP_PHASE]
-extern u16 displayState[];                   // display shadow, halfword registers
+#include "engine/display_state.h"
 extern const EntityFunc panel_mode_actions[]; // panel_mode_actions, indexed by e->action
 extern u8 data_021348d8;                      // flag, nonzero: the panel moves the entity by 13 per type
 extern const s8 entry_z_table[];             // entry_z_table, z offsets for entry_cursor
 extern u32 data_02171d20[];                   // resource ids, indexed by effectState[NP_PHASE]
-
-#define DISP_REG(off) displayState[(off) / 2]
 
 void *KnifeApp_getInstance(void);
 

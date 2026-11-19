@@ -17,7 +17,7 @@ void FadeInit(void) {
 
 void FadeClear(void) {
     if (blendRequest.fadeRunning == 0) {
-        displayState.unk_66 = 0;
+        displayState.blendCnt = 0;
         return;
     }
     em2f_mapFlag = 0xffffffff;

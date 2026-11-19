@@ -38,7 +38,7 @@ void CockpitInit(void) {
 
     OSi_CpuClear32(0, &cockpitState, sizeof(cockpitState));
     cockpitState.mode = 1;
-    displayState.unk_8 = *(u16 *)(data_020ce4d0 + 0x24);
+    displayState.bg[0].cnt = *(u16 *)(data_020ce4d0 + 0x24);
     cockpitState.bufferIndex = 0;
     cockpitState.redraw = 1;
     app = (u8 *)KnifeApp_getInstance();

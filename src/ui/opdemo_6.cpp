@@ -14,8 +14,8 @@ void scene_04(void) {
     switch (effectState[EFFECT_STATE_SCENE]) {
         case 0:
             mapState.cameraX = 0x10;
-            displayState.unk_30 = 0x10;
-            displayState.scrollX = 0x10;
+            displayState.bg[3].scrollY = 0x10;
+            displayState.bg[2].scrollY = 0x10;
             SoundReq(0x800b01ad);
             effectState[EFFECT_STATE_SCENE]++;
             return;
@@ -49,8 +49,8 @@ void scene_04(void) {
                 return;
             }
             mapState.cameraX++;
-            displayState.unk_30 = mapState.cameraX;
-            displayState.scrollX = displayState.unk_30;
+            displayState.bg[3].scrollY = mapState.cameraX;
+            displayState.bg[2].scrollY = displayState.bg[3].scrollY;
             if (mapState.cameraX < 0x88) {
                 return;
             }
@@ -64,8 +64,8 @@ void scene_04(void) {
                 return;
             }
             mapState.cameraX++;
-            displayState.unk_30 = mapState.cameraX;
-            displayState.scrollX = displayState.unk_30;
+            displayState.bg[3].scrollY = mapState.cameraX;
+            displayState.bg[2].scrollY = displayState.bg[3].scrollY;
             if (mapState.cameraX < 0xa0) {
                 return;
             }
