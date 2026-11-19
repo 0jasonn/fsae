@@ -16,7 +16,6 @@ typedef volatile u16 vu16;
 
 extern IrqState irqState;
 
-extern HBlankDmaState hblankDma;
 
 extern GlobalBuffer globalBuffer;
 
