@@ -545,6 +545,10 @@ src/engine/pmi_send.cpp:
     complete
     .text       start:0x0201ca78 end:0x0201cafc
 
+src/engine/pm_apply_power.cpp:
+    complete
+    .text       start:0x0201d314 end:0x0201d514
+
 src/engine/pmlist_wrap.cpp:
     complete
     .text       start:0x0201d6dc end:0x0201d70c
