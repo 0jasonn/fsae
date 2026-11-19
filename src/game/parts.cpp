@@ -22,7 +22,7 @@ void parts_set(FRAME_INFO_ *frame, u32 flags) {
         if (i == 0 && gameState.unk_8c == 0) {
             cursor = gameState.unk_49[2];
         }
-        data_0216f820[1] = part->partId;
+        data_0216f820.partId = part->partId;
         data_02134968[i + 1] = part->infoRows;
         PartsSet(part->partId, frame->unk_02[2 + i * 2], frame->unk_02[3 + i * 2]);
         if (GetInfoAdrs(i + 1, 0) != 0) {

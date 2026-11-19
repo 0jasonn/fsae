@@ -39,7 +39,6 @@ void getdir(Entity *e);
 u8 charMove(Entity *e, u8 mode);
 
 // Data used by these units.
-extern u8 data_0212c4a0[];
 extern u8 data_0212c420[];
 extern const u8 em2b_hitbox[];   // em2b_hitbox
 extern const u8 em1c_charAnimTable[];   // em1c_charAnimTable

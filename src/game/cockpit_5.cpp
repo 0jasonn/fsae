@@ -59,7 +59,7 @@ void heartUpdate(u16 kind) {
     }
     cockpitState.heartKind = (u8)kind;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0 || (playerWork[0].callState == 0 && playerWork[1].callState == 0)) {
-        health = (*(Entity **)(data_0212c53c + 0x28))->health;
+        health = data_0212c53c->entity->health;
     } else {
         health = 0;
     }

@@ -16,9 +16,9 @@ void Knife_Message_MessageTextRender_onReadPlainText(Knife::Message::MessageText
 
     copy = *text;
     msg = (KNIFE_MSGSYS *)self->sceneInfo;
-    if (msg->unk_d8[0] & 0x80) {
-        Knife_palletChange(msg, msg->unk_d8[0] & 0x3f);
-        ((KNIFE_MSGSYS *)self->sceneInfo)->unk_d8[0] = 0;
+    if (msg->unk_d8 & 0x80) {
+        Knife_palletChange(msg, msg->unk_d8 & 0x3f);
+        ((KNIFE_MSGSYS *)self->sceneInfo)->unk_d8 = 0;
     }
     ch = copy.readFirstCharacter(0);
     field = KnifeApp_getField20Address(KnifeApp_getInstance());
@@ -36,5 +36,5 @@ void Knife_Message_MessageTextRender_onReadPlainText(Knife::Message::MessageText
         msg->unk_de = 4;
         SoundReq(data_020de480[((KNIFE_MSGSYS *)self->sceneInfo)->unk_0d]);
     }
-    ((KNIFE_MSGSYS *)self->sceneInfo)->unk_d8[1] = 1;
+    ((KNIFE_MSGSYS *)self->sceneInfo)->unk_d9 = 1;
 }

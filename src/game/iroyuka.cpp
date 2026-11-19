@@ -5,24 +5,21 @@
 #include "engine/misc.h"
 #include "game/map.h"
 #include "game/iroyuka_2.h"
+#include "engine/floor_parts_state.h"
 
 // Functions in this file (original names from the debug build):
 //   ChangeIroyuka
 
-// Game state byte 1 (gameState) and the counter block at data_0216f820
-extern u32 data_0216f820[];
 
-// Sets the new value of the counter block when the game state is not 1 and the block is active
+// Sets the pending iroyuka index (value + 1) when the game state is not 1 and there are cell entries
 void ChangeIroyuka(u8 value) {
-    if (gameState.unk_01 != 1 && data_0216f820[2] != 0) {
-        data_0216f820[1] = value + 1;
+    if (gameState.unk_01 != 1 && data_0216f820.iroyukaCount != 0) {
+        data_0216f820.iroyukaIndex = value + 1;
     }
 }
 
 // Functions in this file (original names from the debug build):
 //   UpdateIroyuka (0x0204d3ac)
-
-// Counter block of the iroyuka (see src/game/iroyuka.cpp): [1] = pending index + 1, [2] = number of table entries
 
 // One entry of the cell table: the cell to match and the cell flags passed to RewCellOne
 typedef struct IroyukaCellEntry {
@@ -41,15 +38,15 @@ void UpdateIroyuka(void) {
     u32 paletteIdx;
     PlayerData *player;
 
-    if (data_0216f820[1] == 0) {
+    if (data_0216f820.iroyukaIndex == 0) {
         return;
     }
     if (blendRequest.blendEnabled != 0) {
         return;
     }
     resource = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0xa4);
-    index = (u8)(data_0216f820[1] - 1);
-    for (i = 0; i < data_0216f820[2]; i++) {
+    index = (u8)(data_0216f820.iroyukaIndex - 1);
+    for (i = 0; i < data_0216f820.iroyukaCount; i++) {
         if (index != data_0216f934[i].cell - 0xf) {
             ret = func_02083d00(data_0216f934[i].flags - 0x40, 0x4000);
             if (ret == 0x43 || ret == 6) {
@@ -66,5 +63,5 @@ void UpdateIroyuka(void) {
     SetDataVBlank(resource + (paletteIdx << 7), (void *)0x0600cc00, 0x40);
     paletteIdx = ((u32)player->paletteBits << 28) >> 30;
     SetDataVBlank(resource + (paletteIdx << 7) + 0x40, (void *)0x0600d000, 0x40);
-    data_0216f820[1] = 0;
+    data_0216f820.iroyukaIndex = 0;
 }

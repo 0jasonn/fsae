@@ -7,11 +7,11 @@
 // unsigned long, unsigned char), 0x020284d4), mangled _Z18setKnifeSaveData4Shmmh
 void setKnifeSaveData4S(u8 slot, u32 a, u32 b, u8 flag);
 
-// Shared byte arrays used by com_savedata (also declared in other headers)
+// Data used by com_savedata: comWork, and multiSioSelect (its index selects the send table entry)
 #include "engine/com_work.h"
-extern u8 multiSioSelect[];   // index byte at +4 selects the send table entry
+#include "knife/comm/multisio.h"
 
 // Original com_savedata() (0x020284fc), plain name
-void com_savedata(void);
+extern "C" void com_savedata(void);
 
 #endif

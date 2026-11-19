@@ -76,7 +76,8 @@ typedef struct KNIFE_MSGSYS {
     /* d3 */ u8 unk_d3[0xd6 - 0xd3];
     /* d6 */ u8 unk_d6;     // nonzero makes the wait state return early
     /* d7 */ u8 palletBits; // palette bits passed to Knife_palletChange with 0x40
-    /* d8 */ u8 unk_d8[0xda - 0xd8];
+    /* d8 */ u8 unk_d8;    // bit 7: palette to restore after an icon, low 6 bits: that palette (MessageTextRender)
+    /* d9 */ u8 unk_d9;    // MessageTextRender: 1 after drawing a character, 0 after an icon
     /* da */ s8 moveAccum; // text move accumulator: steps are added until it is positive
     /* db */ u8 unk_db;
     /* dc */ u8 stepTimer; // frames left in the wait state / until the line feed is finished

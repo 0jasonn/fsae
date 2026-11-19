@@ -33,7 +33,7 @@ void Knife_Single_SinglePlay_UpdateMovePartner(void *self, SpWorkPair *pair) {
         }
         pair->unk_3b = 1;
     }
-    if (pair->entity0->speed != (pair->entity1->speed >> ((PlayerBits3e *)&pair->player1->unk_3e)->hi)) {
+    if (pair->entity0->speed != (pair->entity1->speed >> pair->player1->nutBits.b6)) {
         pair->unk_3c = 1;
     }
     switch (work->unk_0a) {
@@ -200,8 +200,8 @@ void Knife_Single_SinglePlay_UpdateMovePartner(void *self, SpWorkPair *pair) {
         }
     }
     }
-    ((PlayerBits3e *)&pair->player1->unk_3e)->hi = 0;
-    ((PlayerBits3e *)&pair->player0->unk_3e)->hi = ((PlayerBits3e *)&pair->player1->unk_3e)->hi;
+    pair->player1->nutBits.b6 = 0;
+    pair->player0->nutBits.b6 = pair->player1->nutBits.b6;
     work->formationChanging = 1;
     {
         s16 stepLimit = *(const s16 *)(data_0211b298 + 0x18);

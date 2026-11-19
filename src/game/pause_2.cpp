@@ -1,11 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/misc.h"
+#include "game/pause_req.h"
 
-// pauseState is the pause state block: [0] phase, [1] chosen pause option, [2] delay timer,
-// [0xe] reset flag, [0xf] set when the wireless session is being closed
-
-extern u8 pauseState[];
 extern u16 data_021355a0;
 extern u16 playerKeys[];
 extern u8 data_0212c4b8;
@@ -40,7 +37,7 @@ void pause_wait(void) {
     if ((frameCounter.pauseRequest & 3) == localPlayerIndex) {
         pause_dialogUpdate();
     }
-    if (--pauseState[2] == 0) {
-        pauseState[0]++;
+    if (--pauseState.mode == 0) {
+        pauseState.count++;
     }
 }

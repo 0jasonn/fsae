@@ -2,6 +2,7 @@
 #define GAME_SCENE_H
 
 #include "engine/misc.h"
+#include "game/pause_req.h"
 
 // One 0x14-byte entry of fairySlots: the first word is the entity that owns the slot
 typedef struct EffectSlot {
@@ -77,7 +78,6 @@ extern const u8 spawnList_0538ac_set[];
 extern const u8 spawnList_0538ac_clear[];
 extern const u8 spawnList_0538e8_set[];
 extern const u8 spawnList_0538e8_clear[];
-extern u8 pauseState[];
 extern u8 pauseDialogWindow[];
 extern const VoidFunc pauseHandlerTable[];
 extern u8 pauseDialogBuffer[];

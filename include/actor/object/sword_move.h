@@ -14,12 +14,6 @@ void func_020841b0(Entity *e);         // thumb
 void PlWeaponFireCheck(Entity *e); // 0x02054c4c
 void zFree(void *p);               // 0x0202a568
 
-// Bit layout of PlayerData::unk_3e: the low two bits hold the current sword level
-typedef struct SwordLevelView {
-    u8 level : 2;
-    u8 rest : 6;
-} SwordLevelView;
-
 // Flip bit of the sprite settings word (bit 2 on its own)
 typedef struct SwordFlipView {
     u32 low : 2;

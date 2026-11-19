@@ -9,7 +9,8 @@
 typedef struct FrameCounterBlock {
     /* 00 */ u16 frame;
     /* 02 */ u16 timer;            // generic countdown used by the scene state machines (makemap, multiplay)
-    /* 04 */ u8 unk_04[0x11 - 0x04];
+    /* 04 */ u16 wipeSize;         // zeroed and stepped by 3 or 4 in zelda_fade, zeroed by multiplay_startdemo
+    /* 06 */ u8 unk_06[0x11 - 0x06];
     /* 11 */ u8 pauseRequest;     // running pause request: pause_req stores kind | 0x80, low 2 bits = requesting player;
                                   // nonzero blocks the HUD/menu input
     /* 12 */ u8 stopRequest;      // nonzero stops Encounter and makes multiplay_main end the stage (cleared by

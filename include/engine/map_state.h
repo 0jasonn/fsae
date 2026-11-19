@@ -19,7 +19,7 @@ typedef struct MapState {
     /* 07 */ u8 unk_07;
     /* 08 */ u8 unk_08;     // bg2StSet sets 0xc
     /* 09 */ u8 unk_09[0x12 - 0x09];
-    /* 12 */ s16 unk_12;    // MultiRoomInit sets 0xe; read by AutoSet
+    /* 12 */ u16 unk_12;    // MultiRoomInit sets 0xe; read by AutoSet (ldrh)
     /* 14 */ s16 unk_14;    // cleared by MultiRoomInit
     /* 16 */ u16 yureValue; // screen shake strength (YureSet: a)
     /* 18 */ u16 originX;   // world x of map cell 0 (grid origin used by every cell lookup)

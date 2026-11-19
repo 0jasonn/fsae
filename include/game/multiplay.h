@@ -70,7 +70,6 @@ void CalcHeartLevel(void);
 extern u8 localPlayerIndex;
 extern u8 data_0216efa8;                    // makemap state byte
 #include "engine/frame_counter.h"
-extern PlayerData *data_0212c53c;           // current player slot pointer
 extern u32 data_0212c550;
 extern u32 data_0212c554;
 

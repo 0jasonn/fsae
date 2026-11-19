@@ -28,7 +28,8 @@ typedef struct ComPacket {
     /* 01 */ u8 ready;      // com_machiuke sets 1 once 2 to 4 players are connected and checks it in every recv packet
     /* 02 */ u16 keys;      // pad keys of the sender (playerKeys edge detection reads the received ones)
     /* 04 */ u32 value;     // e.g. the random seed of com_randomsync (data_0212c550)
-    /* 08 */ u8 unk_08[0x14 - 0x08];
+    /* 08 */ u32 saveWord;  // com_savedata sends and reads it as one word
+    /* 0c */ u8 unk_0c[0x14 - 0x0c];
     /* 14 */ u16 name[8];   // wireless: member name (TextRenderer::getPlayerName; length is a guess, up to +0x24)
     /* 24 */ ComPacketBits bits; // wireless: packed status bits (GetSubtaskPlayerStatus)
     /* 28 */ u32 rupees;    // wireless: rupee value (GetSubtaskPlayerStatus ruppyValue)

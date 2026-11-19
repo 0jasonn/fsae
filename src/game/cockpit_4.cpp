@@ -48,17 +48,12 @@ void pinch_bgm_check(void) {
     BgmSet();
 }
 
-// Copies the katti graphics of the current player's state (bits 2..3 of its base direction byte) to the screen.
-typedef struct KattiDirBits {
-    u8 b0 : 2;
-    u8 kind : 2;
-    u8 rest : 4;
-} KattiDirBits;
+// Copies the katti graphics of the current player's state (nutBits.b2 of the current player) to the screen.
 
 void kattiUpdate(void) {
     u8 kind;
 
-    kind = ((KattiDirBits *)(data_0212c53c + 0x3e))->kind;
+    kind = data_0212c53c->nutBits.b2;
     if (cockpitState.kattiKind == kind) {
         return;
     }

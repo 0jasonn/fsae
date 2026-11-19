@@ -166,7 +166,7 @@ int ObjNearPlCheck(Entity *e, int a, int b);
 Entity *ObjPosCopy(Entity *src, Entity *dst);
 void PutObjWork(Entity *e);
 void RegistObjWork(int list, Entity *e);
-void RewCell(int id, u16 cell, u16 flag);
+void RewCell(u16 id, u16 cell, u16 flag);
 void SoundReq(u32 a);
 void YureSet(int a, int b);
 void func_0208aea0(Entity *e); // thumb, unmangled

@@ -5,7 +5,6 @@
 // Functions in this file (original names from the debug build):
 //   set6c_init (0x0209de18); set6c_move (0x0209dec0) is parked in scratch/agentE/nonmatching/set6c_move.cpp
 
-extern PlayerData *data_0212c53c;     // current player slot pointer
 void set6c_move(Entity *e);
 
 // set6c_init(OBJ_WORK_*) (0x0209de18): attaches the object to the current player's entity

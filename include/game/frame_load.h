@@ -46,7 +46,7 @@ extern u8 data_0212c84c[];          // copy of the 8 start slots
 
 extern u32 data_0216f834[];   // 0x20 words, copied to data_0216f8b4
 extern u32 data_0216f8b4[];
-extern u16 data_0216f820[];   // [1] holds the part id of the part being set
+#include "engine/floor_parts_state.h"
 
 extern "C" {
 FrameEntry *frame_select(void);                             // 0x0204dcc4

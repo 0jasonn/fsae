@@ -6,7 +6,7 @@
 // Functions in this file (module make_item, original names from the debug build):
 //   make_item_color, make_item_color_2p, make_item_char, make_item_char_2p
 
-// make_item_color (0x02027a10): sets the palette bank (bits 12..15) of the item tile word at data_0212c4a0 + 0xc from the
+// make_item_color (0x02027a10): sets the palette bank (bits 12..15) of the first HUD tile word from the
 // item's colour table entry. Item 7 becomes 4 when the byte at +0xe is 2, otherwise it stays 7.
 void make_item_color(void) {
     u8 colorIndex;
@@ -15,7 +15,7 @@ void make_item_color(void) {
     if (colorIndex == 7) {
         colorIndex = (cockpitState.itemState == 2) ? 4 : 7;
     }
-    *(u16 *)(data_0212c4a0 + 0xc) = (*(u16 *)(data_0212c4a0 + 0xc) & ~0xf000) | (((u32)data_020cf81c[colorIndex] << 28) >> 16);
+    data_0212c4a0.entries[0].tileWord = (data_0212c4a0.entries[0].tileWord & ~0xf000) | (((u32)data_020cf81c[colorIndex] << 28) >> 16);
 }
 
 // make_item_color_2p (0x02027a64): the same for the second player's item, bytes +0x2c and +0x2d, word at +0x14.
@@ -26,7 +26,7 @@ void make_item_color_2p(void) {
     if (colorIndex == 7) {
         colorIndex = (cockpitState.itemState2p == 2) ? 4 : 7;
     }
-    *(u16 *)(data_0212c4a0 + 0x14) = (*(u16 *)(data_0212c4a0 + 0x14) & ~0xf000) | (((u32)data_020cf81c[colorIndex] << 28) >> 16);
+    data_0212c4a0.entries[1].tileWord = (data_0212c4a0.entries[1].tileWord & ~0xf000) | (((u32)data_020cf81c[colorIndex] << 28) >> 16);
 }
 
 // make_item_char (0x02027ab8): when the item index at +0xc is not 0, copies 0x80 bytes of item graphics to 0x06405d00.

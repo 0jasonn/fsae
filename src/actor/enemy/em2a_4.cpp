@@ -44,7 +44,7 @@ void em2a_core(Entity *e) {
                         break;
                     }
                     if (TEMPLATE_ENTITY(e->contactedEntity->type)->iframes == 0) {
-                        amount = 4 - ((PalBits *)&playerWork[e->contactedEntity->type].unk_3e)->b;
+                        amount = 4 - playerWork[e->contactedEntity->type].nutBits.b2;
                         if (amount <= 1) {
                             amount = 1;
                         }

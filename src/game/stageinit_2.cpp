@@ -55,29 +55,29 @@ void knife_native_init_0538e8(u8 param) {
 
 // Scene_ResetOverlayState -> Scene_ResetOverlayState
 void Scene_ResetOverlayState(void) {
-    MemClearFast(pauseState, 0x20);
+    MemClearFast(&pauseState, sizeof(pauseState));
     func_020a1a1c(pauseDialogWindow);
     frameCounter.pauseRequest = 0;
 }
 
 // Scene_SetFlag5 -> Scene_SetFlag5, Scene_ClearFlag5 -> Scene_ClearFlag5
 void Scene_SetFlag5(void) {
-    pauseState[5] = 1;
+    pauseState.pauseBlocked = 1;
 }
 
 void Scene_ClearFlag5(void) {
-    pauseState[5] = 0;
+    pauseState.pauseBlocked = 0;
 }
 
 // Pause -> Pause
 void Pause(void) {
-    pauseHandlerTable[pauseState[0]]();
+    pauseHandlerTable[pauseState.count]();
 }
 
 // pause_init -> pause_init (guess)
 void pause_init(void) {
     u8 i;
-    if (blendRequest.blendEnabled != 0 || pauseState[5] != 0) {
+    if (blendRequest.blendEnabled != 0 || pauseState.pauseBlocked != 0) {
         return;
     }
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {

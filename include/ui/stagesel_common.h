@@ -61,7 +61,6 @@ typedef struct SselSaveSlot {
     /* 08 */ u8 unk_08[0x40];
 } SselSaveSlot;
 extern u8 data_021350b0[];
-extern u32 data_0212c858[];
 extern u8 multiSioSelect[];
 extern u8 data_02171d7c[];
 extern u16 playerKeys[];

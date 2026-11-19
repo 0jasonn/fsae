@@ -9,8 +9,8 @@ void Knife_Single_SinglePlay_UpdateWaitPartner(void *self, PlayerData *player0, 
     Entity *entity;
     u16 statusFlags;
 
-    ((PlayerBits3e *)&player1->unk_3e)->hi = 0;
-    ((PlayerBits3e *)&player0->unk_3e)->hi = ((PlayerBits3e *)&player1->unk_3e)->hi;
+    player1->nutBits.b6 = 0;
+    player0->nutBits.b6 = player1->nutBits.b6;
     ((SinglePlayWork *)self)->unk_05[0] = 0;
     ((SinglePlayWork *)self)->unk_05[1] = 0;
     ((SinglePlayWork *)self)->unk_08 = 0;

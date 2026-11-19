@@ -24,8 +24,7 @@ void pinch_bgm_check(void);
 extern s32 data_0212c7d4[];
 // Heart alarm and pinch state bytes.
 #include "engine/frame_counter.h"
-// Current player entity pointer (cockpit), and the katti graphics tables.
-extern u8 *data_0212c53c; // current player block (PlayerData-sized entries, read as bytes or as an entity pointer at 0x28)
+// Katti graphics tables.
 extern u32 data_020f2530[];
 extern u32 data_020f2524[];
 
@@ -42,7 +41,7 @@ extern u8 data_0212c830[];
 
 // Cockpit graphics and object blocks used by the HUD code.
 #include "engine/display_state.h"
-extern u8 data_0212c4a0[];
+#include "engine/hud_tile_obj.h"
 extern u16 data_020cf810[];
 
 #endif
