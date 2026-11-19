@@ -1,10 +1,7 @@
-#ifndef WIP_C_RANKING5_H
-#define WIP_C_RANKING5_H
+#ifndef ACTOR_OBJECT_RANKING5_H
+#define ACTOR_OBJECT_RANKING5_H
 
-#define knife_MakeMsgScreen knife_MakeMsgScreenVoid // functions.h declares it void; it returns the text line count in u16
 #include "engine/functions.h"
-#undef knife_MakeMsgScreen
-int knife_MakeMsgScreen(u16 index, const void *src);
 #include "game/rankingsave.h"
 
 // Shared with other files, declared here until functions.h gets them.
@@ -21,9 +18,8 @@ typedef struct RankingEntry {
 } RankingEntry;
 extern RankingEntry data_02171d00[];
 
-extern "C" {
+// C++ linkage, as in the original
 void ranking_exit(void);          // 0x02055d28, original name ranking_exit()
 s32 Save4Swords(u8 slot);         // 0x020490d8, original name Save4Swords(unsigned char)
-}
 
 #endif
