@@ -1,5 +1,5 @@
-#ifndef OBJECT_SSEL_TOBIRA_API_H
-#define OBJECT_SSEL_TOBIRA_API_H
+#ifndef ACTOR_OBJECT_SSEL_TOBIRA_API_H
+#define ACTOR_OBJECT_SSEL_TOBIRA_API_H
 
 // Functions defined in src/object/ssel_tobira*.cpp.
 

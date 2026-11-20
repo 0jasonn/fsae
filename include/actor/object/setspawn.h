@@ -1,5 +1,5 @@
-#ifndef WIP_C_SETSPAWN_H
-#define WIP_C_SETSPAWN_H
+#ifndef ACTOR_OBJECT_SETSPAWN_H
+#define ACTOR_OBJECT_SETSPAWN_H
 
 #include "engine/entity.h"
 

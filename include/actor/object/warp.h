@@ -1,5 +1,5 @@
-#ifndef WIP_A_WARP_A_H
-#define WIP_A_WARP_A_H
+#ifndef ACTOR_OBJECT_WARP_H
+#define ACTOR_OBJECT_WARP_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

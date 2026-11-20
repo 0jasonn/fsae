@@ -1,5 +1,5 @@
-#ifndef WIP_K_BEFORE_PLAYER_H
-#define WIP_K_BEFORE_PLAYER_H
+#ifndef GAME_BEFORE_PLAYER_H
+#define GAME_BEFORE_PLAYER_H
 
 #include "engine/functions.h"
 

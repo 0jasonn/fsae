@@ -1,5 +1,5 @@
-#ifndef WIP_A_STR_FORMAT_H
-#define WIP_A_STR_FORMAT_H
+#ifndef ENGINE_STR_FORMAT_H
+#define ENGINE_STR_FORMAT_H
 
 #include "global.h"
 #include "types.h"

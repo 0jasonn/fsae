@@ -1,5 +1,5 @@
-#ifndef ENGINE_TEXT_BOX_API_H
-#define ENGINE_TEXT_BOX_API_H
+#ifndef KNIFE_MESSAGE_TEXT_BOX_API_H
+#define KNIFE_MESSAGE_TEXT_BOX_API_H
 
 // Functions defined in src/engine/text_box*.cpp.
 

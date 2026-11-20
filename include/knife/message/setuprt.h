@@ -1,5 +1,5 @@
-#ifndef WIP_E_SETUPRT_E_H
-#define WIP_E_SETUPRT_E_H
+#ifndef KNIFE_MESSAGE_SETUPRT_H
+#define KNIFE_MESSAGE_SETUPRT_H
 
 #include "knife/message/rtinfo.h"
 

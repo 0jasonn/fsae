@@ -1,5 +1,5 @@
-#ifndef ENGINE_WIRELESSMGR_UPDATE_API_H
-#define ENGINE_WIRELESSMGR_UPDATE_API_H
+#ifndef KNIFE_COMM_WIRELESSMGR_UPDATE_API_H
+#define KNIFE_COMM_WIRELESSMGR_UPDATE_API_H
 
 // Functions defined in src/engine/wirelessmgr_update*.cpp.
 

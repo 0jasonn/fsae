@@ -1,5 +1,5 @@
-#ifndef ENGINE_FATFS_WRAP_API_H
-#define ENGINE_FATFS_WRAP_API_H
+#ifndef SDK_FATFS_FATFS_WRAP_API_H
+#define SDK_FATFS_FATFS_WRAP_API_H
 
 // Functions defined in src/engine/fatfs_wrap*.cpp.
 

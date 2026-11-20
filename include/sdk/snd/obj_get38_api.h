@@ -1,5 +1,5 @@
-#ifndef ENGINE_OBJ_GET38_API_H
-#define ENGINE_OBJ_GET38_API_H
+#ifndef SDK_SND_OBJ_GET38_API_H
+#define SDK_SND_OBJ_GET38_API_H
 
 // Functions defined in src/engine/obj_get38*.cpp.
 

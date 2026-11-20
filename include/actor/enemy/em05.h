@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_A_BOSS_02039074_H
-#define UNKNOWN_A_BOSS_02039074_H
+#ifndef ACTOR_ENEMY_EM05_H
+#define ACTOR_ENEMY_EM05_H
 
 #include "actor/enemy/em03.h"
 

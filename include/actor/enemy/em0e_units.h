@@ -1,5 +1,5 @@
-#ifndef WIP_E_EM0E_UNITS_H
-#define WIP_E_EM0E_UNITS_H
+#ifndef ACTOR_ENEMY_EM0E_UNITS_H
+#define ACTOR_ENEMY_EM0E_UNITS_H
 
 // Callees of the em0e units that are defined in another unit (original names from config/eur/original_names.tsv).
 // Declared here so the em0e files compile; the reviewer moves them to engine/functions.h.

@@ -1,5 +1,5 @@
-#ifndef ENGINE_COMM_INTERRUPT_API_H
-#define ENGINE_COMM_INTERRUPT_API_H
+#ifndef KNIFE_COMM_COMM_INTERRUPT_API_H
+#define KNIFE_COMM_COMM_INTERRUPT_API_H
 
 // Functions defined in src/engine/comm_interrupt*.cpp.
 

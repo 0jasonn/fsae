@@ -1,5 +1,5 @@
-#ifndef WIP_B_EM22_H
-#define WIP_B_EM22_H
+#ifndef ACTOR_ENEMY_EM22_H
+#define ACTOR_ENEMY_EM22_H
 
 #include "engine/functions.h"
 

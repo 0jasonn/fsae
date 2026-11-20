@@ -1,5 +1,5 @@
-#ifndef GAME_DIALOG_MACHIUKE_API_H
-#define GAME_DIALOG_MACHIUKE_API_H
+#ifndef UI_DIALOG_MACHIUKE_API_H
+#define UI_DIALOG_MACHIUKE_API_H
 
 // Functions defined in src/game/dialog_machiuke*.cpp.
 

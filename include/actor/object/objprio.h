@@ -1,5 +1,5 @@
-#ifndef WIP_C_OBJPRIO_H
-#define WIP_C_OBJPRIO_H
+#ifndef ACTOR_OBJECT_OBJPRIO_H
+#define ACTOR_OBJECT_OBJPRIO_H
 
 // Declarations for src/wip/C/objprio.cpp. The map cell lookup is thumb code without an original name.
 #include "engine/entity.h"

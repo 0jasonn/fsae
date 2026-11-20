@@ -1,5 +1,5 @@
-#ifndef WIP_A_PMI_SEND_H
-#define WIP_A_PMI_SEND_H
+#ifndef SDK_PM_PMI_SEND_H
+#define SDK_PM_PMI_SEND_H
 
 #include "global.h"
 #include "types.h"

@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_F_TAIMATSU_H
-#define UNKNOWN_WIP_F_TAIMATSU_H
+#ifndef ACTOR_OBJECT_TAIMATSU_H
+#define ACTOR_OBJECT_TAIMATSU_H
 
 #include "engine/objwork.h"
 #include "actor/object/setcommon.h"

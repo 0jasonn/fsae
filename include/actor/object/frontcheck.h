@@ -1,5 +1,5 @@
-#ifndef WIP_A_FRONTCHECK_A_H
-#define WIP_A_FRONTCHECK_A_H
+#ifndef ACTOR_OBJECT_FRONTCHECK_H
+#define ACTOR_OBJECT_FRONTCHECK_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

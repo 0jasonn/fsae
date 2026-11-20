@@ -1,5 +1,5 @@
-#ifndef WIP_B_KNIFE_FONT_H
-#define WIP_B_KNIFE_FONT_H
+#ifndef KNIFE_MESSAGE_KNIFE_FONT_H
+#define KNIFE_MESSAGE_KNIFE_FONT_H
 
 #include "engine/functions.h"
 

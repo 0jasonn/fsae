@@ -1,5 +1,5 @@
-#ifndef WIP_D_LOCAL_DECLS_H
-#define WIP_D_LOCAL_DECLS_H
+#ifndef GAME_SAVEMEDIA_H
+#define GAME_SAVEMEDIA_H
 
 // Implementer D: prototypes of functions the D files call that functions.h does not declare yet.
 // The reviewer moves these into include/engine/functions.h (or the matching module header).

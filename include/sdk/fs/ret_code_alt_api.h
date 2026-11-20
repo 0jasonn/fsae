@@ -1,5 +1,5 @@
-#ifndef ENGINE_RET_CODE_ALT_API_H
-#define ENGINE_RET_CODE_ALT_API_H
+#ifndef SDK_FS_RET_CODE_ALT_API_H
+#define SDK_FS_RET_CODE_ALT_API_H
 
 // Functions defined in src/engine/ret_code_alt*.cpp.
 

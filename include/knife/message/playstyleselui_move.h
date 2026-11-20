@@ -1,5 +1,5 @@
-#ifndef WIP_E_PLAYSTYLESELUI_MOVE_H
-#define WIP_E_PLAYSTYLESELUI_MOVE_H
+#ifndef KNIFE_MESSAGE_PLAYSTYLESELUI_MOVE_H
+#define KNIFE_MESSAGE_PLAYSTYLESELUI_MOVE_H
 
 // playStyleSelUIView move functions (0x020aad08 to 0x020ab098, src/wip/E/playstyleselui_move.cpp). Each one sets the
 // durationFP and start position of the five UIObjects of the play style list (data_0217f1b4, data_0217f20c,

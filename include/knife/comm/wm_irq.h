@@ -1,5 +1,5 @@
-#ifndef WIP_D_WM_IRQ_H
-#define WIP_D_WM_IRQ_H
+#ifndef KNIFE_COMM_WM_IRQ_H
+#define KNIFE_COMM_WM_IRQ_H
 
 #include "types.h"
 

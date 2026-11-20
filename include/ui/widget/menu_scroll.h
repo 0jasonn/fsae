@@ -1,5 +1,5 @@
-#ifndef WIP_F_MENU_SCROLL_H
-#define WIP_F_MENU_SCROLL_H
+#ifndef UI_WIDGET_MENU_SCROLL_H
+#define UI_WIDGET_MENU_SCROLL_H
 
 // Scroll state of the menu background object (MenuWork.unk_358 viewed as a scroll object). Offsets from the original code.
 #include "engine/functions.h"

@@ -1,5 +1,5 @@
-#ifndef WIP_E_EM1C_H
-#define WIP_E_EM1C_H
+#ifndef ACTOR_ENEMY_EM1C_H
+#define ACTOR_ENEMY_EM1C_H
 
 #include "engine/entity.h"
 

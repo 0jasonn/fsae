@@ -1,5 +1,5 @@
-#ifndef WIP_B_BGOBJ_H
-#define WIP_B_BGOBJ_H
+#ifndef ACTOR_ENEMY_BGOBJ_H
+#define ACTOR_ENEMY_BGOBJ_H
 
 #include "engine/functions.h"
 #include "actor/enemy/effectset.h"

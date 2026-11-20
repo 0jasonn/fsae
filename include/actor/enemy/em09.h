@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_A_BOSS_02039ED4_H
-#define UNKNOWN_WIP_A_BOSS_02039ED4_H
+#ifndef ACTOR_ENEMY_EM09_H
+#define ACTOR_ENEMY_EM09_H
 
 #include "engine/entity.h"
 #include "engine/player.h"

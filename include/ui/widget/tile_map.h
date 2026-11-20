@@ -1,5 +1,5 @@
-#ifndef ENGINE_TILE_MAP_H
-#define ENGINE_TILE_MAP_H
+#ifndef UI_WIDGET_TILE_MAP_H
+#define UI_WIDGET_TILE_MAP_H
 
 #include "engine/entity.h"
 

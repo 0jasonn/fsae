@@ -1,5 +1,5 @@
-#ifndef WIP_A_COCKPIT_9_H
-#define WIP_A_COCKPIT_9_H
+#ifndef GAME_COCKPIT_9_H
+#define GAME_COCKPIT_9_H
 
 // Declarations used by src/wip/A/cockpit_9.cpp (cockpit module, map mode and HUD frame).
 #include "engine/functions.h"

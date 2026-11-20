@@ -1,5 +1,5 @@
-#ifndef WIP_E_STAFFROLL_E_H
-#define WIP_E_STAFFROLL_E_H
+#ifndef KNIFE_MESSAGE_STAFFROLL_H
+#define KNIFE_MESSAGE_STAFFROLL_H
 
 #include "engine/functions.h"
 #include "knife/message/text_tokenizer.h"

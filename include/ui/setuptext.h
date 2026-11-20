@@ -1,5 +1,5 @@
-#ifndef WIP_E_SETUPTEXT_E_H
-#define WIP_E_SETUPTEXT_E_H
+#ifndef UI_SETUPTEXT_H
+#define UI_SETUPTEXT_H
 
 #include "knife/message/rtinfo.h"
 #include "engine/functions.h"

@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_A_EM12_H
-#define UNKNOWN_WIP_A_EM12_H
+#ifndef ACTOR_ENEMY_EM12_H
+#define ACTOR_ENEMY_EM12_H
 
 #include "engine/entity.h"
 #include "engine/player.h"

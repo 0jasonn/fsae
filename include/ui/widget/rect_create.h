@@ -1,5 +1,5 @@
-#ifndef WIP_D_RECT_CREATE_H
-#define WIP_D_RECT_CREATE_H
+#ifndef UI_WIDGET_RECT_CREATE_H
+#define UI_WIDGET_RECT_CREATE_H
 
 // Declarations for the rect-family create/init helpers matched in src/wip/D/rect_create.cpp.
 

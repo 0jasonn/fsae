@@ -1,5 +1,5 @@
-#ifndef WIP_B_RANDOMSET_H
-#define WIP_B_RANDOMSET_H
+#ifndef GAME_RANDOMSET_H
+#define GAME_RANDOMSET_H
 
 #include "engine/functions.h"
 #include "game/srchcells_api.h"

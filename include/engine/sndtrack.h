@@ -1,5 +1,5 @@
-#ifndef WIP_E_SNDTRACK_E_H
-#define WIP_E_SNDTRACK_E_H
+#ifndef ENGINE_SNDTRACK_H
+#define ENGINE_SNDTRACK_H
 
 #include "engine/functions.h"
 #include "engine/sound/sndtrack.h"

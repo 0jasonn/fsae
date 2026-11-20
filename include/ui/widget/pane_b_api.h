@@ -1,5 +1,5 @@
-#ifndef ENGINE_PANE_B_API_H
-#define ENGINE_PANE_B_API_H
+#ifndef UI_WIDGET_PANE_B_API_H
+#define UI_WIDGET_PANE_B_API_H
 
 // Functions defined in src/engine/pane_b*.cpp.
 

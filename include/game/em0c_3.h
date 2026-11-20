@@ -1,5 +1,5 @@
-#ifndef WIP_A_EM0C_3_H
-#define WIP_A_EM0C_3_H
+#ifndef GAME_EM0C_3_H
+#define GAME_EM0C_3_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

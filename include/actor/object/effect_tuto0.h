@@ -1,5 +1,5 @@
-#ifndef WIP_A_EFFECT_TUTO0_H
-#define WIP_A_EFFECT_TUTO0_H
+#ifndef ACTOR_OBJECT_EFFECT_TUTO0_H
+#define ACTOR_OBJECT_EFFECT_TUTO0_H
 
 #include "engine/functions.h"
 #include "global.h"

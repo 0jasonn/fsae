@@ -1,5 +1,5 @@
-#ifndef WIP_KEY_H
-#define WIP_KEY_H
+#ifndef GAME_KEYREAD_H
+#define GAME_KEYREAD_H
 
 #include "engine/functions.h"
 

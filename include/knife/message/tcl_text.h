@@ -1,5 +1,5 @@
-#ifndef WIP_F_TCL_TEXT_H
-#define WIP_F_TCL_TEXT_H
+#ifndef KNIFE_MESSAGE_TCL_TEXT_H
+#define KNIFE_MESSAGE_TCL_TEXT_H
 
 // Text run state and helpers of the TCL text layer (0x020b68c8 - 0x020b6b3c). Names are provisional.
 

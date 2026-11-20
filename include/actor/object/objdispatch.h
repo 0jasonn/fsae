@@ -1,5 +1,5 @@
-#ifndef WIP_C_DISPATCH_2076B24_H
-#define WIP_C_DISPATCH_2076B24_H
+#ifndef ACTOR_OBJECT_OBJDISPATCH_H
+#define ACTOR_OBJECT_OBJDISPATCH_H
 
 #include "engine/functions.h"
 

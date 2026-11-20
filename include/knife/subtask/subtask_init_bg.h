@@ -1,5 +1,5 @@
-#ifndef GAME_SUBTASK_INIT_BG_H
-#define GAME_SUBTASK_INIT_BG_H
+#ifndef KNIFE_SUBTASK_SUBTASK_INIT_BG_H
+#define KNIFE_SUBTASK_SUBTASK_INIT_BG_H
 
 #include "engine/entity.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_D_DECLS_H
-#define WIP_D_DECLS_H
+#ifndef GAME_RANKINGSAVE_H
+#define GAME_RANKINGSAVE_H
 
 // Implementer D: declarations shared by the D files that functions.h does not have yet (the reviewer moves them).
 #include "engine/functions.h"

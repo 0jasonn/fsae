@@ -1,5 +1,5 @@
-#ifndef WIP_B_TAMA11_H
-#define WIP_B_TAMA11_H
+#ifndef ACTOR_OBJECT_TAMA11_H
+#define ACTOR_OBJECT_TAMA11_H
 
 // Tama11 / Throw module (src/wip/B/tama11.cpp, throwinit.cpp): the tama11 flying object, the Throw actor and the
 // helpers they share. Callees and data that engine/functions.h does not declare yet.

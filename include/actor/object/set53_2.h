@@ -1,5 +1,5 @@
-#ifndef WIP_C_SET53_2_H
-#define WIP_C_SET53_2_H
+#ifndef ACTOR_OBJECT_SET53_2_H
+#define ACTOR_OBJECT_SET53_2_H
 
 #include "engine/functions.h"
 

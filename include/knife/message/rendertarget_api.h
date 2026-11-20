@@ -1,5 +1,5 @@
-#ifndef GAME_RENDERTARGET_API_H
-#define GAME_RENDERTARGET_API_H
+#ifndef KNIFE_MESSAGE_RENDERTARGET_API_H
+#define KNIFE_MESSAGE_RENDERTARGET_API_H
 
 // Functions defined in src/game/rendertarget*.cpp.
 

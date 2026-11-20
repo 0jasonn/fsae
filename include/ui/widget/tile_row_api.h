@@ -1,5 +1,5 @@
-#ifndef ENGINE_TILE_ROW_API_H
-#define ENGINE_TILE_ROW_API_H
+#ifndef UI_WIDGET_TILE_ROW_API_H
+#define UI_WIDGET_TILE_ROW_API_H
 
 // Functions defined in src/engine/tile_row*.cpp.
 

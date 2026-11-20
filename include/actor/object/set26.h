@@ -1,5 +1,5 @@
-#ifndef WIP_G_SET26_H
-#define WIP_G_SET26_H
+#ifndef ACTOR_OBJECT_SET26_H
+#define ACTOR_OBJECT_SET26_H
 
 #include "engine/functions.h"
 #include "actor/object/setcommon.h"

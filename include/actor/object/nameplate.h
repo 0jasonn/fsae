@@ -1,5 +1,5 @@
-#ifndef OBJECT_NAMEPLATE_H
-#define OBJECT_NAMEPLATE_H
+#ifndef ACTOR_OBJECT_NAMEPLATE_H
+#define ACTOR_OBJECT_NAMEPLATE_H
 
 #include "engine/entity.h"
 

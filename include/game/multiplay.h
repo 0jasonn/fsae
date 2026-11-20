@@ -1,5 +1,5 @@
-#ifndef WIP_B_MULTIPLAY_H
-#define WIP_B_MULTIPLAY_H
+#ifndef GAME_MULTIPLAY_H
+#define GAME_MULTIPLAY_H
 
 // Declarations for the multiplay, makemap and game00 units of implementer B (0x02047454 to 0x02047e34).
 

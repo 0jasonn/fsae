@@ -1,5 +1,5 @@
-#ifndef WIP_E_MSGTEXTRENDER_E_H
-#define WIP_E_MSGTEXTRENDER_E_H
+#ifndef KNIFE_MESSAGE_MSGTEXTRENDER_H
+#define KNIFE_MESSAGE_MSGTEXTRENDER_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

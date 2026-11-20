@@ -1,5 +1,5 @@
-#ifndef WIP_TREASUREBOX_H
-#define WIP_TREASUREBOX_H
+#ifndef ACTOR_OBJECT_TREASUREBOX_H
+#define ACTOR_OBJECT_TREASUREBOX_H
 
 #include "engine/functions.h"
 

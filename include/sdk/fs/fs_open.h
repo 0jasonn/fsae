@@ -1,5 +1,5 @@
-#ifndef WIP_A_FS_OPEN_H
-#define WIP_A_FS_OPEN_H
+#ifndef SDK_FS_FS_OPEN_H
+#define SDK_FS_FS_OPEN_H
 
 // Declarations for src/wip/A/fs_open.cpp. Parameter types follow the call sites in the ROM.
 #include "types.h"

@@ -1,5 +1,5 @@
-#ifndef WIP_C_TAMA06_H
-#define WIP_C_TAMA06_H
+#ifndef ACTOR_OBJECT_TAMA06_H
+#define ACTOR_OBJECT_TAMA06_H
 
 // Declarations for the Tama06 actor family (src/wip/C/tama06.cpp).
 #include "engine/functions.h"

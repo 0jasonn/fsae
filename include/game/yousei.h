@@ -1,5 +1,5 @@
-#ifndef WIP_B_YOUSEI_H
-#define WIP_B_YOUSEI_H
+#ifndef GAME_YOUSEI_H
+#define GAME_YOUSEI_H
 
 #include "engine/entity.h"
 

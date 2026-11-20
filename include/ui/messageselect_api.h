@@ -1,5 +1,5 @@
-#ifndef GAME_MESSAGESELECT_API_H
-#define GAME_MESSAGESELECT_API_H
+#ifndef UI_MESSAGESELECT_API_H
+#define UI_MESSAGESELECT_API_H
 
 // Functions defined in src/game/messageselect*.cpp.
 

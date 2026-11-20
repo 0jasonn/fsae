@@ -1,5 +1,5 @@
-#ifndef WIP_C_OBJWORK_H
-#define WIP_C_OBJWORK_H
+#ifndef ENGINE_OBJWORK_H
+#define ENGINE_OBJWORK_H
 
 #include "engine/entity.h"
 

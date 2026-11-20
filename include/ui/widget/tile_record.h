@@ -1,5 +1,5 @@
-#ifndef WIP_F_TILE_RECORD_H
-#define WIP_F_TILE_RECORD_H
+#ifndef UI_WIDGET_TILE_RECORD_H
+#define UI_WIDGET_TILE_RECORD_H
 
 // Tile map record of tile_map.cpp (base, cell table, width, height, stride) and the source record that
 // TileMap_initWithOffset reads (width and height halfwords, a kind byte at +4, a flag byte at +5, a halfword offset at +6

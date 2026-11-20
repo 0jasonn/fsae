@@ -1,5 +1,5 @@
-#ifndef WIP_C_KNIFESOUND_ARCHIVE_H
-#define WIP_C_KNIFESOUND_ARCHIVE_H
+#ifndef KNIFE_SOUND_KNIFESOUND_ARCHIVE_H
+#define KNIFE_SOUND_KNIFESOUND_ARCHIVE_H
 
 // Functions defined in src/wip/C/knifesound_archive.cpp (plain names, so C linkage).
 extern "C" {

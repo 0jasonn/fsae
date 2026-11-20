@@ -1,5 +1,5 @@
-#ifndef ENGINE_RECT_ITEM_H
-#define ENGINE_RECT_ITEM_H
+#ifndef UI_WIDGET_RECT_ITEM_H
+#define UI_WIDGET_RECT_ITEM_H
 
 #include "engine/entity.h"
 

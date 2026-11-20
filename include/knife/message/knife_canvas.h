@@ -1,5 +1,5 @@
-#ifndef WIP_E_KNIFE_CANVAS_H
-#define WIP_E_KNIFE_CANVAS_H
+#ifndef KNIFE_MESSAGE_KNIFE_CANVAS_H
+#define KNIFE_MESSAGE_KNIFE_CANVAS_H
 
 #include "types.h"
 

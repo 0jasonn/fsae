@@ -1,5 +1,5 @@
-#ifndef WIP_E_TCL_LAYOUT_E_H
-#define WIP_E_TCL_LAYOUT_E_H
+#ifndef KNIFE_MESSAGE_TCL_LAYOUT_H
+#define KNIFE_MESSAGE_TCL_LAYOUT_H
 
 #include "types.h"
 #include "knife/message/tcl_text.h"

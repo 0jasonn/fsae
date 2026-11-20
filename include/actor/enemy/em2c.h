@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_OBJECT_02033708_H
-#define UNKNOWN_OBJECT_02033708_H
+#ifndef ACTOR_ENEMY_EM2C_H
+#define ACTOR_ENEMY_EM2C_H
 
 #include "engine/player.h"
 

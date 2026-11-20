@@ -1,5 +1,5 @@
-#ifndef WIP_E_PICTOGRAM_H
-#define WIP_E_PICTOGRAM_H
+#ifndef KNIFE_MESSAGE_PICTOGRAM_H
+#define KNIFE_MESSAGE_PICTOGRAM_H
 
 #include "engine/functions.h"
 #include "knife/subtask/subtask.h"

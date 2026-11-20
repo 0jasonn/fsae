@@ -1,5 +1,5 @@
-#ifndef WIP_B_KNIFE_MSGSYS_H
-#define WIP_B_KNIFE_MSGSYS_H
+#ifndef ACTOR_ENEMY_KNIFE_MSGSYS_H
+#define ACTOR_ENEMY_KNIFE_MSGSYS_H
 
 #include "types.h"
 #include "knife/message/knife_canvas.h"

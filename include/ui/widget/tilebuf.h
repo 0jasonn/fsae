@@ -1,5 +1,5 @@
-#ifndef WIP_F_TILEBUF_H
-#define WIP_F_TILEBUF_H
+#ifndef UI_WIDGET_TILEBUF_H
+#define UI_WIDGET_TILEBUF_H
 
 // Tile buffer helpers near 0x020b73b8 (provisional names).
 

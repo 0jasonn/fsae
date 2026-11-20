@@ -1,5 +1,5 @@
-#ifndef WIP_E_COCKPIT_H
-#define WIP_E_COCKPIT_H
+#ifndef GAME_COCKPIT_H
+#define GAME_COCKPIT_H
 
 // Cockpit (HUD) callees of the E units that functions.h does not declare yet.
 #include "engine/functions.h"

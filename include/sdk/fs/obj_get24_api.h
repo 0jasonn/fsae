@@ -1,5 +1,5 @@
-#ifndef ENGINE_OBJ_GET24_API_H
-#define ENGINE_OBJ_GET24_API_H
+#ifndef SDK_FS_OBJ_GET24_API_H
+#define SDK_FS_OBJ_GET24_API_H
 
 // Functions defined in src/engine/obj_get24*.cpp.
 

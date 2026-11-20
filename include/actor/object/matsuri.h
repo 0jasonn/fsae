@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_F_MATSURI_H
-#define UNKNOWN_WIP_F_MATSURI_H
+#ifndef ACTOR_OBJECT_MATSURI_H
+#define ACTOR_OBJECT_MATSURI_H
 
 #include "engine/objwork.h"
 #include "actor/object/setcommon.h"

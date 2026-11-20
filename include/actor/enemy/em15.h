@@ -1,5 +1,5 @@
-#ifndef WIP_A_EM15_H
-#define WIP_A_EM15_H
+#ifndef ACTOR_ENEMY_EM15_H
+#define ACTOR_ENEMY_EM15_H
 
 #include "actor/enemy/em13.h"
 

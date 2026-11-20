@@ -1,5 +1,5 @@
-#ifndef WIP_G_SNDSTOP_H
-#define WIP_G_SNDSTOP_H
+#ifndef ENGINE_SOUND_SNDSTOP_H
+#define ENGINE_SOUND_SNDSTOP_H
 
 #include "engine/functions.h"
 #include "global.h"

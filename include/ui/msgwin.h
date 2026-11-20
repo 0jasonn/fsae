@@ -1,5 +1,5 @@
-#ifndef WIP_C_MSGWIN_H
-#define WIP_C_MSGWIN_H
+#ifndef UI_MSGWIN_H
+#define UI_MSGWIN_H
 
 #include "types.h"
 

@@ -1,5 +1,5 @@
-#ifndef OBJECT_SET0A_H
-#define OBJECT_SET0A_H
+#ifndef ACTOR_OBJECT_SET0A_H
+#define ACTOR_OBJECT_SET0A_H
 
 #include "engine/entity.h"
 

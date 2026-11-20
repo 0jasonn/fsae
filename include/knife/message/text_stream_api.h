@@ -1,5 +1,5 @@
-#ifndef ENGINE_TEXT_STREAM_API_H
-#define ENGINE_TEXT_STREAM_API_H
+#ifndef KNIFE_MESSAGE_TEXT_STREAM_API_H
+#define KNIFE_MESSAGE_TEXT_STREAM_API_H
 
 // Character decoders shared by the message and UI text streams.
 

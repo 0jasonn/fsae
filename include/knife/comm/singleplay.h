@@ -1,5 +1,5 @@
-#ifndef WIP_D_SINGLEPLAY_H
-#define WIP_D_SINGLEPLAY_H
+#ifndef KNIFE_COMM_SINGLEPLAY_H
+#define KNIFE_COMM_SINGLEPLAY_H
 
 // The member SinglePlayLogList::Initialize (0x0209a060) under its mangled name. Declared extern "C" with the mangled name so
 // that an asm body can refer to it; the symbol is the same as the C++ one.

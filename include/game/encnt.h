@@ -1,5 +1,5 @@
-#ifndef WIP_A_ENCNT_A_H
-#define WIP_A_ENCNT_A_H
+#ifndef GAME_ENCNT_H
+#define GAME_ENCNT_H
 
 #include "actor/enemy/encnt.h"
 

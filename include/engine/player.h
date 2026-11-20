@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_PLAYER_H
-#define UNKNOWN_PLAYER_H
+#ifndef ENGINE_PLAYER_H
+#define ENGINE_PLAYER_H
 
 #include "engine/entity.h"
 

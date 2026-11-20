@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_ENTITY_H
-#define UNKNOWN_ENTITY_H
+#ifndef ENGINE_ENTITY_H
+#define ENGINE_ENTITY_H
 
 #include "types.h"
 

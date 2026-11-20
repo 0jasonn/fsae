@@ -1,5 +1,5 @@
-#ifndef WIP_E_TEXTRENDER_H
-#define WIP_E_TEXTRENDER_H
+#ifndef KNIFE_MESSAGE_TEXTRENDER_H
+#define KNIFE_MESSAGE_TEXTRENDER_H
 
 #include "engine/functions.h"
 

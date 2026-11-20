@@ -1,5 +1,5 @@
-#ifndef WIP_C_SWORD_MOVE_H
-#define WIP_C_SWORD_MOVE_H
+#ifndef ACTOR_OBJECT_SWORD_MOVE_H
+#define ACTOR_OBJECT_SWORD_MOVE_H
 
 #include "engine/entity.h"
 

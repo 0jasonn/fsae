@@ -1,5 +1,5 @@
-#ifndef WIP_G_SET12_H
-#define WIP_G_SET12_H
+#ifndef ACTOR_OBJECT_SET12_H
+#define ACTOR_OBJECT_SET12_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

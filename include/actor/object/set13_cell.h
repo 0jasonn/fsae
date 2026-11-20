@@ -1,5 +1,5 @@
-#ifndef WIP_K_SET13_CELL_H
-#define WIP_K_SET13_CELL_H
+#ifndef ACTOR_OBJECT_SET13_CELL_H
+#define ACTOR_OBJECT_SET13_CELL_H
 
 #include "engine/functions.h"
 

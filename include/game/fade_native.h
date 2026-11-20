@@ -1,5 +1,5 @@
-#ifndef WIP_B_FADE_NATIVE_H
-#define WIP_B_FADE_NATIVE_H
+#ifndef GAME_FADE_NATIVE_H
+#define GAME_FADE_NATIVE_H
 
 // Declarations for the fade_native and write_native_init units of implementer B (0x020465ec to 0x02047454).
 

@@ -1,5 +1,5 @@
-#ifndef WIP_C_SET_INIT_H
-#define WIP_C_SET_INIT_H
+#ifndef ACTOR_OBJECT_SET_INIT_H
+#define ACTOR_OBJECT_SET_INIT_H
 
 #include "engine/entity.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_C_SHIELD_H
-#define WIP_C_SHIELD_H
+#ifndef ACTOR_OBJECT_SHIELD_H
+#define ACTOR_OBJECT_SHIELD_H
 
 #include "engine/entity.h"
 

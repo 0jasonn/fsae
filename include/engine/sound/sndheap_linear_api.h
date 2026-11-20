@@ -1,5 +1,5 @@
-#ifndef ENGINE_SNDHEAP_LINEAR_API_H
-#define ENGINE_SNDHEAP_LINEAR_API_H
+#ifndef ENGINE_SOUND_SNDHEAP_LINEAR_API_H
+#define ENGINE_SOUND_SNDHEAP_LINEAR_API_H
 
 // Functions defined in src/engine/sndheap_linear*.cpp.
 

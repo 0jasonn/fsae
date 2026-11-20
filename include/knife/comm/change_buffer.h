@@ -1,5 +1,5 @@
-#ifndef WIP_B_CHANGE_BUFFER_H
-#define WIP_B_CHANGE_BUFFER_H
+#ifndef KNIFE_COMM_CHANGE_BUFFER_H
+#define KNIFE_COMM_CHANGE_BUFFER_H
 
 #include "engine/entity.h"
 

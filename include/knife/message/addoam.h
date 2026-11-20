@@ -1,5 +1,5 @@
-#ifndef WIP_E_ADDOAM_E_H
-#define WIP_E_ADDOAM_E_H
+#ifndef KNIFE_MESSAGE_ADDOAM_H
+#define KNIFE_MESSAGE_ADDOAM_H
 
 #include "engine/functions.h"
 #include "knife/subtask/subtask.h"

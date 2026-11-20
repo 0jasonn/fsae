@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_F_COMMON_H
-#define UNKNOWN_WIP_F_COMMON_H
+#ifndef ACTOR_OBJECT_SETCOMMON_H
+#define ACTOR_OBJECT_SETCOMMON_H
 
 #include "engine/entity.h"
 #include "engine/player.h"

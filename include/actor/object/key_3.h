@@ -1,5 +1,5 @@
-#ifndef WIP_A_KEY_3_H
-#define WIP_A_KEY_3_H
+#ifndef ACTOR_OBJECT_KEY_3_H
+#define ACTOR_OBJECT_KEY_3_H
 
 #include "engine/entity.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_B_EM23_5_H
-#define WIP_B_EM23_5_H
+#ifndef ACTOR_ENEMY_EM23_5_H
+#define ACTOR_ENEMY_EM23_5_H
 
 #include "engine/functions.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_C_SUBTASK_HBLANK_H
-#define WIP_C_SUBTASK_HBLANK_H
+#ifndef KNIFE_SUBTASK_SUBTASK_HBLANK_H
+#define KNIFE_SUBTASK_SUBTASK_HBLANK_H
 
 #include "types.h"
 

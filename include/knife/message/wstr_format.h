@@ -1,5 +1,5 @@
-#ifndef WIP_A_WSTR_FORMAT_H
-#define WIP_A_WSTR_FORMAT_H
+#ifndef KNIFE_MESSAGE_WSTR_FORMAT_H
+#define KNIFE_MESSAGE_WSTR_FORMAT_H
 
 #include "global.h"
 #include "types.h"

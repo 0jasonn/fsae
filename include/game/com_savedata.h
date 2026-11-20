@@ -1,5 +1,5 @@
-#ifndef WIP_B_COM_SAVEDATA_H
-#define WIP_B_COM_SAVEDATA_H
+#ifndef GAME_COM_SAVEDATA_H
+#define GAME_COM_SAVEDATA_H
 
 #include "engine/functions.h"
 

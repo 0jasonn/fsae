@@ -1,5 +1,5 @@
-#ifndef WIP_A_DOORSEL_4_H
-#define WIP_A_DOORSEL_4_H
+#ifndef UI_DOORSEL_4_H
+#define UI_DOORSEL_4_H
 
 // Declarations used by src/wip/A/doorsel_4.cpp (door select screen).
 #include "engine/functions.h"

@@ -1,5 +1,5 @@
-#ifndef WIP_E_TILEBUF_E_H
-#define WIP_E_TILEBUF_E_H
+#ifndef KNIFE_MESSAGE_TILEBUF_H
+#define KNIFE_MESSAGE_TILEBUF_H
 
 #include "engine/functions.h"
 #include "ui/widget/tile_row_api.h"

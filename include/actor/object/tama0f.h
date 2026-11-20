@@ -1,5 +1,5 @@
-#ifndef WIP_C_TAMA0F_H
-#define WIP_C_TAMA0F_H
+#ifndef ACTOR_OBJECT_TAMA0F_H
+#define ACTOR_OBJECT_TAMA0F_H
 
 // Actor-specific overlays for the tama0f family (src/wip/C/tama0f*.cpp).
 #include "engine/functions.h"

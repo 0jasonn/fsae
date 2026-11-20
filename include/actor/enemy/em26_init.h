@@ -1,5 +1,5 @@
-#ifndef WIP_EM26_INIT_H
-#define WIP_EM26_INIT_H
+#ifndef ACTOR_ENEMY_EM26_INIT_H
+#define ACTOR_ENEMY_EM26_INIT_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

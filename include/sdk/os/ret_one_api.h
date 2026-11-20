@@ -1,5 +1,5 @@
-#ifndef ENGINE_RET_ONE_API_H
-#define ENGINE_RET_ONE_API_H
+#ifndef SDK_OS_RET_ONE_API_H
+#define SDK_OS_RET_ONE_API_H
 
 // Functions defined in src/engine/ret_one*.cpp.
 

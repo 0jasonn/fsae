@@ -1,5 +1,5 @@
-#ifndef WIP_E_GROUPCREATE_E_H
-#define WIP_E_GROUPCREATE_E_H
+#ifndef KNIFE_MESSAGE_GROUPCREATE_H
+#define KNIFE_MESSAGE_GROUPCREATE_H
 
 #include "engine/functions.h"
 #include "ui/groupcreateui.h"

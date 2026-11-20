@@ -1,5 +1,5 @@
-#ifndef ENGINE_VRAM_BANK_BITS_API_H
-#define ENGINE_VRAM_BANK_BITS_API_H
+#ifndef SDK_GX_VRAM_BANK_BITS_API_H
+#define SDK_GX_VRAM_BANK_BITS_API_H
 
 // Functions defined in src/engine/vram_bank_bits*.cpp.
 

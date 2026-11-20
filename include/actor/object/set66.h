@@ -1,5 +1,5 @@
-#ifndef WIP_D_SET66_H
-#define WIP_D_SET66_H
+#ifndef ACTOR_OBJECT_SET66_H
+#define ACTOR_OBJECT_SET66_H
 
 // Set66 actor family (module set66) and the rr type0/type1 helpers. Shared by set66.cpp and set66_2.cpp.
 

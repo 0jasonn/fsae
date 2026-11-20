@@ -1,5 +1,5 @@
-#ifndef WIP_E_ARROW_H
-#define WIP_E_ARROW_H
+#ifndef ACTOR_OBJECT_ARROW_H
+#define ACTOR_OBJECT_ARROW_H
 
 // Arrow / beam module (src/game/arrow.cpp). Callees that functions.h does not declare yet, with their dsd names.
 // The reviewer moves the ones with an original name into functions.h.

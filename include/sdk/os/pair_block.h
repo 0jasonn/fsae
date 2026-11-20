@@ -1,5 +1,5 @@
-#ifndef WIP_A_PAIR_BLOCK_H
-#define WIP_A_PAIR_BLOCK_H
+#ifndef SDK_OS_PAIR_BLOCK_H
+#define SDK_OS_PAIR_BLOCK_H
 
 #include "global.h"
 #include "types.h"

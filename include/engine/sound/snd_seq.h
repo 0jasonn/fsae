@@ -1,5 +1,5 @@
-#ifndef WIP_G_SND_SEQ_H
-#define WIP_G_SND_SEQ_H
+#ifndef ENGINE_SOUND_SND_SEQ_H
+#define ENGINE_SOUND_SND_SEQ_H
 
 #include "engine/functions.h"
 #include "global.h"

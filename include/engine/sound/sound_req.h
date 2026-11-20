@@ -1,5 +1,5 @@
-#ifndef WIP_C_SOUND_REQ_H
-#define WIP_C_SOUND_REQ_H
+#ifndef ENGINE_SOUND_SOUND_REQ_H
+#define ENGINE_SOUND_SOUND_REQ_H
 
 #include "engine/entity.h"
 

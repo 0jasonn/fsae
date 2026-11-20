@@ -1,5 +1,5 @@
-#ifndef GAME_DOORSEL_INIT_H
-#define GAME_DOORSEL_INIT_H
+#ifndef UI_DOORSEL_INIT_H
+#define UI_DOORSEL_INIT_H
 
 #include "types.h"
 

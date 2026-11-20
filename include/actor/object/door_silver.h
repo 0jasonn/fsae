@@ -1,5 +1,5 @@
-#ifndef OBJECT_DOOR_SILVER_H
-#define OBJECT_DOOR_SILVER_H
+#ifndef ACTOR_OBJECT_DOOR_SILVER_H
+#define ACTOR_OBJECT_DOOR_SILVER_H
 
 #include "engine/entity.h"
 #include "engine/display_state.h"

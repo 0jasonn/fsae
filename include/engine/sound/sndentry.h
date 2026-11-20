@@ -1,5 +1,5 @@
-#ifndef WIP_G_SNDENTRY_H
-#define WIP_G_SNDENTRY_H
+#ifndef ENGINE_SOUND_SNDENTRY_H
+#define ENGINE_SOUND_SNDENTRY_H
 
 #include "engine/functions.h"
 #include "global.h"

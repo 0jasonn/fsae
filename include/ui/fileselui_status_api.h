@@ -1,5 +1,5 @@
-#ifndef GAME_FILESELUI_STATUS_E_API_H
-#define GAME_FILESELUI_STATUS_E_API_H
+#ifndef UI_FILESELUI_STATUS_API_H
+#define UI_FILESELUI_STATUS_API_H
 
 // Functions defined in src/game/fileselui_status_e*.cpp.
 

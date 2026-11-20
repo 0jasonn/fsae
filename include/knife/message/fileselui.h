@@ -1,5 +1,5 @@
-#ifndef WIP_E_FILESELUI_E_H
-#define WIP_E_FILESELUI_E_H
+#ifndef KNIFE_MESSAGE_FILESELUI_H
+#define KNIFE_MESSAGE_FILESELUI_H
 
 #include "engine/functions.h"
 #include "ui/fileselui.h"

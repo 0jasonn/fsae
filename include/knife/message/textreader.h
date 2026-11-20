@@ -1,5 +1,5 @@
-#ifndef GAME_TEXTREADER_H
-#define GAME_TEXTREADER_H
+#ifndef KNIFE_MESSAGE_TEXTREADER_H
+#define KNIFE_MESSAGE_TEXTREADER_H
 
 #include "engine/entity.h"
 

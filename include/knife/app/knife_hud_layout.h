@@ -1,5 +1,5 @@
-#ifndef WIP_E_KNIFE_HUD_LAYOUT_H
-#define WIP_E_KNIFE_HUD_LAYOUT_H
+#ifndef KNIFE_APP_KNIFE_HUD_LAYOUT_H
+#define KNIFE_APP_KNIFE_HUD_LAYOUT_H
 
 #include "types.h"
 #include "knife/app/knife_interp.h"

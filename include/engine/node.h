@@ -1,5 +1,5 @@
-#ifndef WIP_A_NODE_H
-#define WIP_A_NODE_H
+#ifndef ENGINE_NODE_H
+#define ENGINE_NODE_H
 
 #include "global.h"
 #include "types.h"

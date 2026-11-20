@@ -1,5 +1,5 @@
-#ifndef WIP_E_RADAR_INIT_E_H
-#define WIP_E_RADAR_INIT_E_H
+#ifndef ENGINE_RADAR_INIT_H
+#define ENGINE_RADAR_INIT_H
 
 #include "engine/functions.h"
 #include "knife/subtask/subtask_init.h"

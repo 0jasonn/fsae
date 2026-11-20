@@ -1,5 +1,5 @@
-#ifndef WIP_B_KNIFE_COMM_SKIP_H
-#define WIP_B_KNIFE_COMM_SKIP_H
+#ifndef KNIFE_COMM_KNIFE_COMM_SKIP_H
+#define KNIFE_COMM_KNIFE_COMM_SKIP_H
 
 #include "engine/functions.h"
 #include "ui/message.h"

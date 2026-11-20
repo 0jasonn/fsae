@@ -1,5 +1,5 @@
-#ifndef WIP_D_WM_GUARD_H
-#define WIP_D_WM_GUARD_H
+#ifndef KNIFE_COMM_WM_GUARD_H
+#define KNIFE_COMM_WM_GUARD_H
 
 #include "types.h"
 #include "knife/comm/wm_work.h"  // WM_REG_IME

@@ -1,5 +1,5 @@
-#ifndef WIP_E_GROUPCREATEUI_MOVE_H
-#define WIP_E_GROUPCREATEUI_MOVE_H
+#ifndef KNIFE_MESSAGE_GCM_NC_H
+#define KNIFE_MESSAGE_GCM_NC_H
 
 // groupCreateUIView move functions (0x020ab6d0 to 0x020aba60, src/wip/E/groupcreateui_move.cpp). Same shape as the
 // playStyleSelUIView moves (playstyleselui_move.h): durationFP and the start position of four UIObjects of the

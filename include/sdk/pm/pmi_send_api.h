@@ -1,5 +1,5 @@
-#ifndef ENGINE_PMI_SEND_API_H
-#define ENGINE_PMI_SEND_API_H
+#ifndef SDK_PM_PMI_SEND_API_H
+#define SDK_PM_PMI_SEND_API_H
 
 // Functions defined in src/engine/pmi_send*.cpp.
 

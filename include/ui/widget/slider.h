@@ -1,5 +1,5 @@
-#ifndef ENGINE_SLIDER_H
-#define ENGINE_SLIDER_H
+#ifndef UI_WIDGET_SLIDER_H
+#define UI_WIDGET_SLIDER_H
 
 #include "engine/entity.h"
 

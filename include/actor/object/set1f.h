@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_F_SET1F_H
-#define UNKNOWN_WIP_F_SET1F_H
+#ifndef ACTOR_OBJECT_SET1F_H
+#define ACTOR_OBJECT_SET1F_H
 
 #include "engine/functions.h"
 #include "actor/object/setcommon.h"

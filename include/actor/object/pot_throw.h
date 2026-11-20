@@ -1,5 +1,5 @@
-#ifndef WIP_C_POT_THROW_H
-#define WIP_C_POT_THROW_H
+#ifndef ACTOR_OBJECT_POT_THROW_H
+#define ACTOR_OBJECT_POT_THROW_H
 
 #include "engine/entity.h"
 

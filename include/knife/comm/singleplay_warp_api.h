@@ -1,5 +1,5 @@
-#ifndef ENGINE_SINGLEPLAY_WARP_API_H
-#define ENGINE_SINGLEPLAY_WARP_API_H
+#ifndef KNIFE_COMM_SINGLEPLAY_WARP_API_H
+#define KNIFE_COMM_SINGLEPLAY_WARP_API_H
 
 // Functions defined in src/engine/singleplay_warp*.cpp.
 

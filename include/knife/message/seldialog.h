@@ -1,5 +1,5 @@
-#ifndef WIP_E_SELDIALOG_E_H
-#define WIP_E_SELDIALOG_E_H
+#ifndef KNIFE_MESSAGE_SELDIALOG_H
+#define KNIFE_MESSAGE_SELDIALOG_H
 
 #include "engine/functions.h"
 #include "knife/message/selectiondialog.h"

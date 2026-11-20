@@ -1,5 +1,5 @@
-#ifndef WIP_E_MODESELUI_E_H
-#define WIP_E_MODESELUI_E_H
+#ifndef UI_MODESELUI_H
+#define UI_MODESELUI_H
 
 #include "engine/functions.h"
 #include "ui/fileselui.h"

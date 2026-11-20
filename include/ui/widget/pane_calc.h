@@ -1,5 +1,5 @@
-#ifndef WIP_F_PANE_CALC_H
-#define WIP_F_PANE_CALC_H
+#ifndef UI_WIDGET_PANE_CALC_H
+#define UI_WIDGET_PANE_CALC_H
 
 // Parameters of the scaled rectangle helpers (Pane_calcScaledX and Pane_calcScaledY).
 // The record is read as bytes: base[k] at +0, span[k] at +2, and the index at +4.

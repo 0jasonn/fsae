@@ -1,5 +1,5 @@
-#ifndef ENGINE_STUB_ZERO_A_API_H
-#define ENGINE_STUB_ZERO_A_API_H
+#ifndef KNIFE_COMM_STUB_ZERO_A_API_H
+#define KNIFE_COMM_STUB_ZERO_A_API_H
 
 // Functions defined in src/engine/stub_zero_a*.cpp.
 

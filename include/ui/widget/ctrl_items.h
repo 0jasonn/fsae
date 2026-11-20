@@ -1,5 +1,5 @@
-#ifndef WIP_F_CTRL_ITEMS_H
-#define WIP_F_CTRL_ITEMS_H
+#ifndef UI_WIDGET_CTRL_ITEMS_H
+#define UI_WIDGET_CTRL_ITEMS_H
 
 // Item list records used by the controller list code (same layouts as src/engine/ctrl_entry.cpp).
 

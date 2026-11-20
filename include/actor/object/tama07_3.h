@@ -1,5 +1,5 @@
-#ifndef WIP_C_TAMA07_3_H
-#define WIP_C_TAMA07_3_H
+#ifndef ACTOR_OBJECT_TAMA07_3_H
+#define ACTOR_OBJECT_TAMA07_3_H
 
 // Declarations for the tama07 unit src/wip/C/tama07_3.cpp.
 #include "engine/functions.h"

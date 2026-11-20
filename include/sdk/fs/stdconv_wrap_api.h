@@ -1,5 +1,5 @@
-#ifndef ENGINE_STDCONV_WRAP_API_H
-#define ENGINE_STDCONV_WRAP_API_H
+#ifndef SDK_FS_STDCONV_WRAP_API_H
+#define SDK_FS_STDCONV_WRAP_API_H
 
 // Functions defined in src/engine/stdconv_wrap*.cpp.
 

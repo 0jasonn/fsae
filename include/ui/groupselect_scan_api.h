@@ -1,5 +1,5 @@
-#ifndef GAME_GROUPSELECT_SCAN_API_H
-#define GAME_GROUPSELECT_SCAN_API_H
+#ifndef UI_GROUPSELECT_SCAN_API_H
+#define UI_GROUPSELECT_SCAN_API_H
 
 // Functions defined in src/game/groupselect_scan*.cpp.
 

@@ -1,5 +1,5 @@
-#ifndef ENGINE_KNIFESOUND_STUB_API_H
-#define ENGINE_KNIFESOUND_STUB_API_H
+#ifndef KNIFE_SOUND_KNIFESOUND_STUB_API_H
+#define KNIFE_SOUND_KNIFESOUND_STUB_API_H
 
 // Functions defined in src/engine/knifesound_stub*.cpp.
 

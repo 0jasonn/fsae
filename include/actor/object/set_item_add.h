@@ -1,5 +1,5 @@
-#ifndef WIP_C_SET_ITEM_ADD_H
-#define WIP_C_SET_ITEM_ADD_H
+#ifndef ACTOR_OBJECT_SET_ITEM_ADD_H
+#define ACTOR_OBJECT_SET_ITEM_ADD_H
 
 #include "engine/entity.h"
 #include "engine/player.h"

@@ -1,5 +1,5 @@
-#ifndef WIP_ITEMLEVEL_H
-#define WIP_ITEMLEVEL_H
+#ifndef GAME_ITEMLEVEL_H
+#define GAME_ITEMLEVEL_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

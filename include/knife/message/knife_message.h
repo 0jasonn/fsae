@@ -1,5 +1,5 @@
-#ifndef WIP_E_KNIFE_MESSAGE_H
-#define WIP_E_KNIFE_MESSAGE_H
+#ifndef KNIFE_MESSAGE_KNIFE_MESSAGE_H
+#define KNIFE_MESSAGE_KNIFE_MESSAGE_H
 
 #include "engine/functions.h"
 #include "knife/message/knife_canvas.h"

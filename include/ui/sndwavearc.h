@@ -1,5 +1,5 @@
-#ifndef WIP_E_SNDWAVEARC_E_H
-#define WIP_E_SNDWAVEARC_E_H
+#ifndef UI_SNDWAVEARC_H
+#define UI_SNDWAVEARC_H
 
 #include "engine/functions.h"
 

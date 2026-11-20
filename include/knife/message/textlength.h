@@ -1,5 +1,5 @@
-#ifndef GAME_TEXTLENGTH_H
-#define GAME_TEXTLENGTH_H
+#ifndef KNIFE_MESSAGE_TEXTLENGTH_H
+#define KNIFE_MESSAGE_TEXTLENGTH_H
 
 #include "engine/entity.h"
 

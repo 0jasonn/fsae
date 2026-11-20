@@ -1,5 +1,5 @@
-#ifndef WIP_B_OPLOGO_SHADOW_H
-#define WIP_B_OPLOGO_SHADOW_H
+#ifndef UI_OPLOGO_SHADOW_H
+#define UI_OPLOGO_SHADOW_H
 
 #include "engine/functions.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_B_MOJI_H
-#define WIP_B_MOJI_H
+#ifndef ACTOR_OBJECT_MOJI_H
+#define ACTOR_OBJECT_MOJI_H
 
 #include "engine/functions.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_A_HIT_A_H
-#define WIP_A_HIT_A_H
+#ifndef GAME_HIT_H
+#define GAME_HIT_H
 
 #include "engine/functions.h"
 

@@ -1,5 +1,5 @@
-#ifndef ENEMY_ATTSET_H
-#define ENEMY_ATTSET_H
+#ifndef ACTOR_ENEMY_ATTSET_H
+#define ACTOR_ENEMY_ATTSET_H
 
 #include "engine/entity.h"
 

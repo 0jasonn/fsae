@@ -1,5 +1,5 @@
-#ifndef WIP_F_PANE_H
-#define WIP_F_PANE_H
+#ifndef UI_WIDGET_PANE_H
+#define UI_WIDGET_PANE_H
 
 // Pane tree of the 2D UI library (classes Pane, Picture, Window and TextBox; RTTI names N4nt...2d4PaneE and so on).
 // A pane has a vtable (slot 0 = class info, slot 1 = release children, slot 2 = set offset, slot 3 = visit), a parent

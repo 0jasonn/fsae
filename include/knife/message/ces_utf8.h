@@ -1,5 +1,5 @@
-#ifndef WIP_D_CES_UTF8_H
-#define WIP_D_CES_UTF8_H
+#ifndef KNIFE_MESSAGE_CES_UTF8_H
+#define KNIFE_MESSAGE_CES_UTF8_H
 
 #include "types.h"
 #include "knife/message/text_tokenizer.h"

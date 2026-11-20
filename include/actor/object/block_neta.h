@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_F_BLOCK_NETA_H
-#define UNKNOWN_WIP_F_BLOCK_NETA_H
+#ifndef ACTOR_OBJECT_BLOCK_NETA_H
+#define ACTOR_OBJECT_BLOCK_NETA_H
 
 #include "engine/functions.h"
 #include "actor/object/setcommon.h"

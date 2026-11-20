@@ -1,5 +1,5 @@
-#ifndef WIP_G_BG_CHAR_H
-#define WIP_G_BG_CHAR_H
+#ifndef ENGINE_BG_CHAR_H
+#define ENGINE_BG_CHAR_H
 
 #include "global.h"
 

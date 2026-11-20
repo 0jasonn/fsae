@@ -1,5 +1,5 @@
-#ifndef WIP_F_KNIFECOMM_2_H
-#define WIP_F_KNIFECOMM_2_H
+#ifndef UI_WIDGET_KNIFECOMM_H
+#define UI_WIDGET_KNIFECOMM_H
 
 // Declarations for the Knife comm group helpers of implementer F (round 16). Callees that are not in engine/functions.h
 // are declared here; the reviewer moves the shared ones.

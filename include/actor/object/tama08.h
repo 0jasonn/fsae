@@ -1,5 +1,5 @@
-#ifndef WIP_C_TAMA08_H
-#define WIP_C_TAMA08_H
+#ifndef ACTOR_OBJECT_TAMA08_H
+#define ACTOR_OBJECT_TAMA08_H
 
 // Declarations for the Tama08 actor family.
 #include "engine/functions.h"

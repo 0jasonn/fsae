@@ -1,5 +1,5 @@
-#ifndef WIP_E_DATALINK_H
-#define WIP_E_DATALINK_H
+#ifndef KNIFE_COMM_DATALINK_H
+#define KNIFE_COMM_DATALINK_H
 
 #include "engine/functions.h"
 

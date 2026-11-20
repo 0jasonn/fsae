@@ -1,5 +1,5 @@
-#ifndef OBJECT_KEY_H
-#define OBJECT_KEY_H
+#ifndef ACTOR_OBJECT_KEY_H
+#define ACTOR_OBJECT_KEY_H
 
 #include "engine/entity.h"
 

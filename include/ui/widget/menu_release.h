@@ -1,5 +1,5 @@
-#ifndef WIP_F_MENU_RELEASE_H
-#define WIP_F_MENU_RELEASE_H
+#ifndef UI_WIDGET_MENU_RELEASE_H
+#define UI_WIDGET_MENU_RELEASE_H
 
 // Menu cleanup helpers near 0x020bc6c4 (provisional names).
 

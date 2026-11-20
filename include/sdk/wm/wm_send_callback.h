@@ -1,5 +1,5 @@
-#ifndef ENGINE_WM_SEND_CALLBACK_H
-#define ENGINE_WM_SEND_CALLBACK_H
+#ifndef SDK_WM_WM_SEND_CALLBACK_H
+#define SDK_WM_WM_SEND_CALLBACK_H
 
 #include "types.h"
 

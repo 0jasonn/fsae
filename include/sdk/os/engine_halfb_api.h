@@ -1,5 +1,5 @@
-#ifndef ENGINE_ENGINE_HALFB_API_H
-#define ENGINE_ENGINE_HALFB_API_H
+#ifndef SDK_OS_ENGINE_HALFB_API_H
+#define SDK_OS_ENGINE_HALFB_API_H
 
 // Functions defined in src/engine/engine_halfb*.cpp.
 

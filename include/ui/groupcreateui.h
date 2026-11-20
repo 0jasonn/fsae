@@ -1,5 +1,5 @@
-#ifndef WIP_E_GROUPCREATEUI_H
-#define WIP_E_GROUPCREATEUI_H
+#ifndef UI_GROUPCREATEUI_H
+#define UI_GROUPCREATEUI_H
 
 // groupCreateUIView: the group create screen. Derives from basedUIView (0x00..0x30). Slot 0 of its vtable is
 // initialize's first object, slot 3 enter and slot 4 leave are set by initialize through the static block at

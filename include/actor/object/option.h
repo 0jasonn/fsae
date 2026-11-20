@@ -1,5 +1,5 @@
-#ifndef WIP_F_OPTION_H
-#define WIP_F_OPTION_H
+#ifndef ACTOR_OBJECT_OPTION_H
+#define ACTOR_OBJECT_OPTION_H
 
 // Option panel screen (module option): shared state of the panel actors at 0x0205c03c..0x0205c3bb.
 #include "engine/functions.h"

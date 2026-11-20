@@ -1,5 +1,5 @@
-#ifndef WIP_E_SHIKAKE_H
-#define WIP_E_SHIKAKE_H
+#ifndef GAME_SHIKAKE_H
+#define GAME_SHIKAKE_H
 
 // Switch-block ("shikake") module (src/game/shikake.cpp). Callees and data that functions.h does not declare yet.
 #include "engine/functions.h"

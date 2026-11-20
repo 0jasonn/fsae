@@ -1,5 +1,5 @@
-#ifndef WIP_E_EM00_H
-#define WIP_E_EM00_H
+#ifndef ACTOR_ENEMY_EM00_H
+#define ACTOR_ENEMY_EM00_H
 
 // Tables of the em00 actor (dsd names): per-action handler table and the function table passed to the handlers.
 #include "engine/functions.h"

@@ -1,5 +1,5 @@
-#ifndef WIP_DISP_RESET_H
-#define WIP_DISP_RESET_H
+#ifndef ENGINE_DISP_RESET_H
+#define ENGINE_DISP_RESET_H
 
 #include "engine/functions.h"
 #include "game/dispctrl_api.h"

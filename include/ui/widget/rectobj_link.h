@@ -1,5 +1,5 @@
-#ifndef WIP_D_RECTOBJ_LINK_H
-#define WIP_D_RECTOBJ_LINK_H
+#ifndef UI_WIDGET_RECTOBJ_LINK_H
+#define UI_WIDGET_RECTOBJ_LINK_H
 
 #include "types.h"
 

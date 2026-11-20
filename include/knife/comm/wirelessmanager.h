@@ -1,5 +1,5 @@
-#ifndef WIP_D_WIRELESSMANAGER_H
-#define WIP_D_WIRELESSMANAGER_H
+#ifndef KNIFE_COMM_WIRELESSMANAGER_H
+#define KNIFE_COMM_WIRELESSMANAGER_H
 
 #include "types.h"
 #include "knife/comm/wm_work.h"

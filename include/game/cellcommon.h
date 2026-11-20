@@ -1,5 +1,5 @@
-#ifndef WIP_C_COMMON_H
-#define WIP_C_COMMON_H
+#ifndef GAME_CELLCOMMON_H
+#define GAME_CELLCOMMON_H
 
 #include "types.h"
 

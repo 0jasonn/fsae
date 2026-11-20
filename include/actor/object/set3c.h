@@ -1,5 +1,5 @@
-#ifndef WIP_F_SET3C_H
-#define WIP_F_SET3C_H
+#ifndef ACTOR_OBJECT_SET3C_H
+#define ACTOR_OBJECT_SET3C_H
 
 // Prototypes used by src/wip/F/set3c.cpp that engine/functions.h does not declare yet (to be moved there).
 #include "engine/functions.h"

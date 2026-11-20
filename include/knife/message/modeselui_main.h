@@ -1,5 +1,5 @@
-#ifndef WIP_E_MODESELUI_MAIN_E_H
-#define WIP_E_MODESELUI_MAIN_E_H
+#ifndef KNIFE_MESSAGE_MODESELUI_MAIN_H
+#define KNIFE_MESSAGE_MODESELUI_MAIN_H
 
 #include "engine/functions.h"
 #include "ui/modeselui_view.h"

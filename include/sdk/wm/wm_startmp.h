@@ -1,5 +1,5 @@
-#ifndef WIP_WM_MP_H
-#define WIP_WM_MP_H
+#ifndef SDK_WM_WM_STARTMP_H
+#define SDK_WM_WM_STARTMP_H
 
 #include "engine/functions.h"
 

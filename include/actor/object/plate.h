@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_F_PLATE_H
-#define UNKNOWN_WIP_F_PLATE_H
+#ifndef ACTOR_OBJECT_PLATE_H
+#define ACTOR_OBJECT_PLATE_H
 
 #include "actor/object/setcommon.h"
 

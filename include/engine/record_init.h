@@ -1,5 +1,5 @@
-#ifndef WIP_E_RECORD_INIT_E_H
-#define WIP_E_RECORD_INIT_E_H
+#ifndef ENGINE_RECORD_INIT_H
+#define ENGINE_RECORD_INIT_H
 
 #include "engine/functions.h"
 

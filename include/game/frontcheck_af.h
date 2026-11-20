@@ -1,5 +1,5 @@
-#ifndef WIP_FRONTCHECK_AF_H
-#define WIP_FRONTCHECK_AF_H
+#ifndef GAME_FRONTCHECK_AF_H
+#define GAME_FRONTCHECK_AF_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

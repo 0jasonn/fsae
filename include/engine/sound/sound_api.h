@@ -1,5 +1,5 @@
-#ifndef OBJECT_SOUND_API_H
-#define OBJECT_SOUND_API_H
+#ifndef ENGINE_SOUND_SOUND_API_H
+#define ENGINE_SOUND_SOUND_API_H
 
 // Functions defined in src/object/sound*.cpp.
 

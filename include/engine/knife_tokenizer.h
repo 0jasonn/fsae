@@ -1,5 +1,5 @@
-#ifndef WIP_D_MESSAGE_H
-#define WIP_D_MESSAGE_H
+#ifndef ENGINE_KNIFE_TOKENIZER_H
+#define ENGINE_KNIFE_TOKENIZER_H
 
 #include "types.h"
 

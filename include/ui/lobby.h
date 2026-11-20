@@ -1,5 +1,5 @@
-#ifndef WIP_F_LOBBY_H
-#define WIP_F_LOBBY_H
+#ifndef UI_LOBBY_H
+#define UI_LOBBY_H
 
 // Lobby of the multiplayer screens (wireless group, colour choice, dialogs). The lobby state is the block that the
 // pointer at +4 of data_02181860 leads to (see exchange_savedata.cpp). Only the fields that the F round 16 files use

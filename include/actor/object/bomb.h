@@ -1,5 +1,5 @@
-#ifndef WIP_E_BOMB_H
-#define WIP_E_BOMB_H
+#ifndef ACTOR_OBJECT_BOMB_H
+#define ACTOR_OBJECT_BOMB_H
 
 // Bomb module (src/game/bomb*.cpp). Callees and fields that functions.h does not declare yet.
 #include "engine/functions.h"

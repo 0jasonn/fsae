@@ -1,5 +1,5 @@
-#ifndef WIP_D_SET69_3_H
-#define WIP_D_SET69_3_H
+#ifndef ACTOR_OBJECT_SET69_3_H
+#define ACTOR_OBJECT_SET69_3_H
 
 // Set69 units after set69_2 (module set69). Shared by src/wip/D/set69_3.cpp and the later set69 units.
 

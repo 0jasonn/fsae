@@ -1,5 +1,5 @@
-#ifndef WIP_A_MSGSCRN_A_H
-#define WIP_A_MSGSCRN_A_H
+#ifndef KNIFE_COMM_MSGSCRN_H
+#define KNIFE_COMM_MSGSCRN_H
 
 #include "engine/functions.h"
 #include "ui/msgwin.h"

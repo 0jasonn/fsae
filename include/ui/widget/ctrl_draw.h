@@ -1,5 +1,5 @@
-#ifndef WIP_E_CTRL_DRAW_E_H
-#define WIP_E_CTRL_DRAW_E_H
+#ifndef UI_WIDGET_CTRL_DRAW_H
+#define UI_WIDGET_CTRL_DRAW_H
 
 #include "engine/functions.h"
 #include "knife/message/tcl_layout.h"

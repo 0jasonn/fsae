@@ -1,5 +1,5 @@
-#ifndef ACTOR_ENEMY_ENDING_SCENE_H
-#define ACTOR_ENEMY_ENDING_SCENE_H
+#ifndef GAME_ENDING_SCENE_H
+#define GAME_ENDING_SCENE_H
 
 // Declarations for the finale/staff roll scene functions (finale_init, demo_01). The scene slot table data_02134d30 is
 // declared in engine/scene_slot.h.

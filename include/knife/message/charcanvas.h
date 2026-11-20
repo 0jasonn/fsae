@@ -1,5 +1,5 @@
-#ifndef WIP_E_CHARCANVAS_H
-#define WIP_E_CHARCANVAS_H
+#ifndef KNIFE_MESSAGE_CHARCANVAS_H
+#define KNIFE_MESSAGE_CHARCANVAS_H
 
 // Char canvas helpers (src/wip/E/charcanvas.cpp): 4bpp 8x8 tile merges and fills.
 

@@ -1,5 +1,5 @@
-#ifndef ENGINE_STDCONV_TABLE_WRAP_API_H
-#define ENGINE_STDCONV_TABLE_WRAP_API_H
+#ifndef SDK_FATFS_STDCONV_TABLE_WRAP_API_H
+#define SDK_FATFS_STDCONV_TABLE_WRAP_API_H
 
 // Functions defined in src/engine/stdconv_table_wrap*.cpp.
 

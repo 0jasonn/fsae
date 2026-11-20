@@ -1,5 +1,5 @@
-#ifndef WIP_C_CARD_H
-#define WIP_C_CARD_H
+#ifndef SDK_CARD_CARD_H
+#define SDK_CARD_CARD_H
 
 #include "types.h"
 

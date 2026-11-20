@@ -1,5 +1,5 @@
-#ifndef WIP_A_RANGE_LOOKUP_H
-#define WIP_A_RANGE_LOOKUP_H
+#ifndef ENGINE_RANGE_LOOKUP_H
+#define ENGINE_RANGE_LOOKUP_H
 
 #include "types.h"
 

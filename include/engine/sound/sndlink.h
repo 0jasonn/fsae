@@ -1,5 +1,5 @@
-#ifndef WIP_G_SNDLINK_H
-#define WIP_G_SNDLINK_H
+#ifndef ENGINE_SOUND_SNDLINK_H
+#define ENGINE_SOUND_SNDLINK_H
 
 #include "engine/functions.h"
 #include "global.h"

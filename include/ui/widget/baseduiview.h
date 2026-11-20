@@ -1,5 +1,5 @@
-#ifndef WIP_F_BASEDUIVIEW_H
-#define WIP_F_BASEDUIVIEW_H
+#ifndef UI_WIDGET_BASEDUIVIEW_H
+#define UI_WIDGET_BASEDUIVIEW_H
 
 // basedUIView: a screen of the touch UI. Each view is a C++ object with a vtable (slot 3 = enter, slot 4 = leave)
 // and keeps a stack of child views in the view that owns them.

@@ -1,5 +1,5 @@
-#ifndef GAME_SUBTASK_ENDING_API_H
-#define GAME_SUBTASK_ENDING_API_H
+#ifndef KNIFE_SUBTASK_SUBTASK_ENDING_API_H
+#define KNIFE_SUBTASK_SUBTASK_ENDING_API_H
 
 // Functions defined in src/game/subtask_ending*.cpp.
 

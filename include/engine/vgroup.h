@@ -1,5 +1,5 @@
-#ifndef WIP_B_VGROUP_H
-#define WIP_B_VGROUP_H
+#ifndef ENGINE_VGROUP_H
+#define ENGINE_VGROUP_H
 
 // VGroup module (src/wip/B/vgroup.cpp, vgroup_2.cpp): slot table and request queue shared by its functions.
 #include "engine/functions.h"

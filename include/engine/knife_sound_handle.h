@@ -1,5 +1,5 @@
-#ifndef WIP_K_KNIFE_SOUND_HANDLE_H
-#define WIP_K_KNIFE_SOUND_HANDLE_H
+#ifndef ENGINE_KNIFE_SOUND_HANDLE_H
+#define ENGINE_KNIFE_SOUND_HANDLE_H
 
 #include "types.h"
 

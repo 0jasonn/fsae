@@ -1,5 +1,5 @@
-#ifndef ENGINE_WSTR_API_H
-#define ENGINE_WSTR_API_H
+#ifndef KNIFE_MESSAGE_WSTR_API_H
+#define KNIFE_MESSAGE_WSTR_API_H
 
 // Functions defined in src/engine/wstr*.cpp.
 

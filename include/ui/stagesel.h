@@ -1,5 +1,5 @@
-#ifndef WIP_C_STAGESEL_H
-#define WIP_C_STAGESEL_H
+#ifndef UI_STAGESEL_H
+#define UI_STAGESEL_H
 
 // Declarations used by the stage select files (src/wip/C/stagesel*.cpp) that are not in engine/functions.h yet
 

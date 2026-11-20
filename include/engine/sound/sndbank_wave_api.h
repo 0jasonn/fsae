@@ -1,5 +1,5 @@
-#ifndef ENGINE_SNDBANK_WAVE_API_H
-#define ENGINE_SNDBANK_WAVE_API_H
+#ifndef ENGINE_SOUND_SNDBANK_WAVE_API_H
+#define ENGINE_SOUND_SNDBANK_WAVE_API_H
 
 // Functions defined in src/engine/sndbank_wave*.cpp.
 

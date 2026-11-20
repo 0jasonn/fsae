@@ -1,5 +1,5 @@
-#ifndef ENGINE_CARDBUS_LOCK_API_H
-#define ENGINE_CARDBUS_LOCK_API_H
+#ifndef SDK_OS_CARDBUS_LOCK_API_H
+#define SDK_OS_CARDBUS_LOCK_API_H
 
 // Functions defined in src/engine/cardbus_lock*.cpp.
 

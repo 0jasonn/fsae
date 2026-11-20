@@ -1,5 +1,5 @@
-#ifndef ENGINE_RECT_GEOM_COPY_API_H
-#define ENGINE_RECT_GEOM_COPY_API_H
+#ifndef UI_WIDGET_RECT_GEOM_COPY_API_H
+#define UI_WIDGET_RECT_GEOM_COPY_API_H
 
 // Functions defined in src/engine/rect_geom_copy*.cpp.
 

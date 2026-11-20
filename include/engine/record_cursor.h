@@ -1,5 +1,5 @@
-#ifndef WIP_A_RECORD_CURSOR_H
-#define WIP_A_RECORD_CURSOR_H
+#ifndef ENGINE_RECORD_CURSOR_H
+#define ENGINE_RECORD_CURSOR_H
 
 #include "types.h"
 #include "engine/range_lookup.h"

@@ -1,5 +1,5 @@
-#ifndef WIP_E_BLZLOAD_E_H
-#define WIP_E_BLZLOAD_E_H
+#ifndef ENGINE_BLZLOAD_H
+#define ENGINE_BLZLOAD_H
 
 #include "types.h"
 

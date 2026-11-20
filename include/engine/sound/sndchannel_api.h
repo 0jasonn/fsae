@@ -1,5 +1,5 @@
-#ifndef ENGINE_SNDCHANNEL_API_H
-#define ENGINE_SNDCHANNEL_API_H
+#ifndef ENGINE_SOUND_SNDCHANNEL_API_H
+#define ENGINE_SOUND_SNDCHANNEL_API_H
 
 // Functions defined in src/engine/sndchannel*.cpp.
 

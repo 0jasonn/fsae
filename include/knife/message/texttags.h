@@ -1,5 +1,5 @@
-#ifndef WIP_D_TEXTTAGS_H
-#define WIP_D_TEXTTAGS_H
+#ifndef KNIFE_MESSAGE_TEXTTAGS_H
+#define KNIFE_MESSAGE_TEXTTAGS_H
 
 #include "types.h"
 #include "knife/message/text_tokenizer.h"

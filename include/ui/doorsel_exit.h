@@ -1,5 +1,5 @@
-#ifndef GAME_DOORSEL_EXIT_H
-#define GAME_DOORSEL_EXIT_H
+#ifndef UI_DOORSEL_EXIT_H
+#define UI_DOORSEL_EXIT_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

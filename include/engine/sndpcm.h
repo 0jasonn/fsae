@@ -1,5 +1,5 @@
-#ifndef WIP_E_SNDPCM_E_H
-#define WIP_E_SNDPCM_E_H
+#ifndef ENGINE_SNDPCM_H
+#define ENGINE_SNDPCM_H
 
 #include "engine/functions.h"
 

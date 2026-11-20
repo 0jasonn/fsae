@@ -1,5 +1,5 @@
-#ifndef ENGINE_CTRL_FREE_API_H
-#define ENGINE_CTRL_FREE_API_H
+#ifndef UI_WIDGET_CTRL_FREE_API_H
+#define UI_WIDGET_CTRL_FREE_API_H
 
 // Functions defined in src/engine/ctrl_free*.cpp.
 

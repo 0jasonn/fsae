@@ -1,5 +1,5 @@
-#ifndef WIP_E_SUBTASK_DIALOG_H
-#define WIP_E_SUBTASK_DIALOG_H
+#ifndef KNIFE_SUBTASK_SUBTASK_DIALOG_H
+#define KNIFE_SUBTASK_SUBTASK_DIALOG_H
 
 // subtask_dialogWaitSend (0x020abf5c): waits until the dialog object is idle, sends the block of the table entry and
 // returns 1; plays the error sound and returns 0 when the send fails. Defined in src/wip/E/subtask_dialog.cpp.

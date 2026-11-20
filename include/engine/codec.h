@@ -1,5 +1,5 @@
-#ifndef WIP_A_CODEC_H
-#define WIP_A_CODEC_H
+#ifndef ENGINE_CODEC_H
+#define ENGINE_CODEC_H
 
 #include "types.h"
 

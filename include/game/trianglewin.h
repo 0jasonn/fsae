@@ -1,5 +1,5 @@
-#ifndef WIP_A_TRIANGLEWIN_H
-#define WIP_A_TRIANGLEWIN_H
+#ifndef GAME_TRIANGLEWIN_H
+#define GAME_TRIANGLEWIN_H
 
 #include "engine/functions.h"
 #include "engine/misc.h"

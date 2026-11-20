@@ -1,5 +1,5 @@
-#ifndef ENGINE_MAKE_MAP_SCREEN_H
-#define ENGINE_MAKE_MAP_SCREEN_H
+#ifndef GAME_MAKE_MAP_SCREEN_H
+#define GAME_MAKE_MAP_SCREEN_H
 
 #include "engine/bg_buff.h"
 

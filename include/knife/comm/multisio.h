@@ -1,5 +1,5 @@
-#ifndef WIP_C_MULTISIO_H
-#define WIP_C_MULTISIO_H
+#ifndef KNIFE_COMM_MULTISIO_H
+#define KNIFE_COMM_MULTISIO_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

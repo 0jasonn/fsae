@@ -1,5 +1,5 @@
-#ifndef OBJECT_GETAREA_API_H
-#define OBJECT_GETAREA_API_H
+#ifndef ACTOR_OBJECT_GETAREA_API_H
+#define ACTOR_OBJECT_GETAREA_API_H
 
 // Functions defined in src/object/getarea*.cpp.
 

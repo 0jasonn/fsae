@@ -1,5 +1,5 @@
-#ifndef WIP_E_MENUSOUND_E_H
-#define WIP_E_MENUSOUND_E_H
+#ifndef ENGINE_MENUSOUND_H
+#define ENGINE_MENUSOUND_H
 
 #include "engine/functions.h"
 

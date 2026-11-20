@@ -1,5 +1,5 @@
-#ifndef WIP_A_FRAME_LOAD_H
-#define WIP_A_FRAME_LOAD_H
+#ifndef GAME_FRAME_LOAD_H
+#define GAME_FRAME_LOAD_H
 
 // Declarations used by src/wip/A/frame_load.cpp (multiplayer frame / room setup).
 #include "engine/functions.h"

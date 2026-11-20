@@ -1,5 +1,5 @@
-#ifndef GAME_KNIFEINFO_API_H
-#define GAME_KNIFEINFO_API_H
+#ifndef KNIFE_MESSAGE_KNIFEINFO_API_H
+#define KNIFE_MESSAGE_KNIFEINFO_API_H
 
 // Functions defined in src/game/knifeinfo*.cpp.
 

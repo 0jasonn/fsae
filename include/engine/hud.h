@@ -1,5 +1,5 @@
-#ifndef WIP_C_HUD_H
-#define WIP_C_HUD_H
+#ifndef ENGINE_HUD_H
+#define ENGINE_HUD_H
 
 #include "types.h"
 #include "knife/app/knife_interp.h"

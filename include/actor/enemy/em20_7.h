@@ -1,5 +1,5 @@
-#ifndef WIP_B_EM20_7_H
-#define WIP_B_EM20_7_H
+#ifndef ACTOR_ENEMY_EM20_7_H
+#define ACTOR_ENEMY_EM20_7_H
 
 #include "engine/functions.h"
 #include "actor/enemy/kamen.h"

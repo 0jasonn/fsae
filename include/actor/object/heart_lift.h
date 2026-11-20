@@ -1,5 +1,5 @@
-#ifndef WIP_A_HEART_LIFT_H
-#define WIP_A_HEART_LIFT_H
+#ifndef ACTOR_OBJECT_HEART_LIFT_H
+#define ACTOR_OBJECT_HEART_LIFT_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

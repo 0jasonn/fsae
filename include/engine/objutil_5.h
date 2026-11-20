@@ -1,5 +1,5 @@
-#ifndef WIP_B_OBJUTIL_5_H
-#define WIP_B_OBJUTIL_5_H
+#ifndef ENGINE_OBJUTIL_5_H
+#define ENGINE_OBJUTIL_5_H
 
 #include "engine/functions.h"
 

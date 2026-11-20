@@ -1,5 +1,5 @@
-#ifndef WIP_A_EM13_H
-#define WIP_A_EM13_H
+#ifndef ACTOR_ENEMY_EM13_H
+#define ACTOR_ENEMY_EM13_H
 
 #include "engine/player.h"
 

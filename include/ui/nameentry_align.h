@@ -1,5 +1,5 @@
-#ifndef WIP_F_NAMEENTRY_ALIGN_H
-#define WIP_F_NAMEENTRY_ALIGN_H
+#ifndef UI_NAMEENTRY_ALIGN_H
+#define UI_NAMEENTRY_ALIGN_H
 
 // Declarations used by nameentry_align.cpp (not in engine/functions.h).
 

@@ -1,5 +1,5 @@
-#ifndef WIP_A_FORMATION_BREAK_H
-#define WIP_A_FORMATION_BREAK_H
+#ifndef GAME_FORMATION_BREAK_H
+#define GAME_FORMATION_BREAK_H
 
 extern "C" {
 void FormationBreak(void);

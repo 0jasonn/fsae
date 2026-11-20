@@ -1,5 +1,5 @@
-#ifndef WIP_F_LAYOUT_TAG_H
-#define WIP_F_LAYOUT_TAG_H
+#ifndef UI_WIDGET_LAYOUT_TAG_H
+#define UI_WIDGET_LAYOUT_TAG_H
 
 // Layout block dispatcher and the record constructors selected by its tag.
 

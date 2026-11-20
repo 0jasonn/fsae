@@ -1,5 +1,5 @@
-#ifndef WIP_C_MESSAGE_H
-#define WIP_C_MESSAGE_H
+#ifndef UI_MESSAGE_H
+#define UI_MESSAGE_H
 
 #include "engine/entity.h"
 #include "types.h"

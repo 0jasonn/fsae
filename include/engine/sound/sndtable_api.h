@@ -1,5 +1,5 @@
-#ifndef ENGINE_SNDTABLE_API_H
-#define ENGINE_SNDTABLE_API_H
+#ifndef ENGINE_SOUND_SNDTABLE_API_H
+#define ENGINE_SOUND_SNDTABLE_API_H
 
 // Functions defined in src/engine/sndtable*.cpp.
 

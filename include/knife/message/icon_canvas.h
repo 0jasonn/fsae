@@ -1,5 +1,5 @@
-#ifndef WIP_E_ICON_CANVAS_E_H
-#define WIP_E_ICON_CANVAS_E_H
+#ifndef KNIFE_MESSAGE_ICON_CANVAS_H
+#define KNIFE_MESSAGE_ICON_CANVAS_H
 
 #include "engine/functions.h"
 #include "knife/message/knife_canvas.h"

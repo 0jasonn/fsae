@@ -1,5 +1,5 @@
-#ifndef WIP_C_BACKUP_MEDIA_H
-#define WIP_C_BACKUP_MEDIA_H
+#ifndef ENGINE_BACKUP_MEDIA_H
+#define ENGINE_BACKUP_MEDIA_H
 
 // Save media (backup) functions used by src/wip/C/backup_media.cpp. The shared declarations (getEepInfo,
 // readFromSaveBuffer, Knife_mediaWrite, the data_02171d10 global) come from game/rankingsave.h and game/backup.h.

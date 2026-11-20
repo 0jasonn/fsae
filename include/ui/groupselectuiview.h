@@ -1,5 +1,5 @@
-#ifndef WIP_F_GROUPSELECTUIVIEW_H
-#define WIP_F_GROUPSELECTUIVIEW_H
+#ifndef UI_GROUPSELECTUIVIEW_H
+#define UI_GROUPSELECTUIVIEW_H
 
 // groupSelectUIView: the room list of the multiplayer group select screen. The list has four room slots inside the
 // view (0x20 bytes each, from 0x34). Each room has a UIObject in data_0217eb2c (indexed by RoomInfo::uiIndex) that

@@ -1,5 +1,5 @@
-#ifndef OBJECT_RUPEERUSH_API_H
-#define OBJECT_RUPEERUSH_API_H
+#ifndef ACTOR_OBJECT_RUPEERUSH_API_H
+#define ACTOR_OBJECT_RUPEERUSH_API_H
 
 // Functions defined in src/object/rupeerush*.cpp.
 

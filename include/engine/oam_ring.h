@@ -1,5 +1,5 @@
-#ifndef WIP_G_OAM_RING_H
-#define WIP_G_OAM_RING_H
+#ifndef ENGINE_OAM_RING_H
+#define ENGINE_OAM_RING_H
 
 #include "types.h"
 

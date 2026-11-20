@@ -1,5 +1,5 @@
-#ifndef WIP_E_MAP_H
-#define WIP_E_MAP_H
+#ifndef GAME_MAP_H
+#define GAME_MAP_H
 
 // Map / collision-cell module (src/game/map.cpp). Callees that functions.h does not declare yet.
 #include "engine/functions.h"

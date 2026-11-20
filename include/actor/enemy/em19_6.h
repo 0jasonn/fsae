@@ -1,5 +1,5 @@
-#ifndef WIP_B_EM19_6_H
-#define WIP_B_EM19_6_H
+#ifndef ACTOR_ENEMY_EM19_6_H
+#define ACTOR_ENEMY_EM19_6_H
 
 // Declarations for src/wip/B/em19_6.cpp. bgobj_poscopy is defined in src/enemy/bgobj_4.cpp (C++ linkage).
 #include "engine/functions.h"

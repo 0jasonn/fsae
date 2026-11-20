@@ -1,5 +1,5 @@
-#ifndef WIP_G_MENU_H
-#define WIP_G_MENU_H
+#ifndef UI_WIDGET_MENU_H
+#define UI_WIDGET_MENU_H
 
 #include "engine/functions.h"
 #include "global.h"

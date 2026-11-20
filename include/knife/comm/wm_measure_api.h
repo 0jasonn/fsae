@@ -1,5 +1,5 @@
-#ifndef ENGINE_WM_MEASURE_API_H
-#define ENGINE_WM_MEASURE_API_H
+#ifndef KNIFE_COMM_WM_MEASURE_API_H
+#define KNIFE_COMM_WM_MEASURE_API_H
 
 // Functions defined in src/engine/wm_measure*.cpp.
 

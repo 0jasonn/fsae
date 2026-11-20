@@ -1,5 +1,5 @@
-#ifndef ENGINE_STD_SNPRINTF_API_H
-#define ENGINE_STD_SNPRINTF_API_H
+#ifndef SDK_STD_STD_SNPRINTF_API_H
+#define SDK_STD_STD_SNPRINTF_API_H
 
 // Functions defined in src/engine/std_snprintf*.cpp.
 

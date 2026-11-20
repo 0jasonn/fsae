@@ -1,5 +1,5 @@
-#ifndef WIP_A_OS_THREAD_H
-#define WIP_A_OS_THREAD_H
+#ifndef SDK_OS_OS_THREAD_H
+#define SDK_OS_OS_THREAD_H
 
 #include "global.h"
 #include "types.h"

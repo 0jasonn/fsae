@@ -1,5 +1,5 @@
-#ifndef WIP_B_IROYUKA_2_H
-#define WIP_B_IROYUKA_2_H
+#ifndef GAME_IROYUKA_2_H
+#define GAME_IROYUKA_2_H
 
 #include "engine/functions.h"
 

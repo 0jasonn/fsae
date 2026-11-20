@@ -1,5 +1,5 @@
-#ifndef UI_PLAYSTYLESELUI_E_API_H
-#define UI_PLAYSTYLESELUI_E_API_H
+#ifndef UI_PLAYSTYLESELUI_API_H
+#define UI_PLAYSTYLESELUI_API_H
 
 #include "engine/entity.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_COMERROR_WORK_H
-#define WIP_COMERROR_WORK_H
+#ifndef KNIFE_COMM_COMERROR_WORK_H
+#define KNIFE_COMM_COMERROR_WORK_H
 
 #include "engine/functions.h"
 #include "actor/enemy/commerror.h"

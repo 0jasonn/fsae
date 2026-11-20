@@ -1,5 +1,5 @@
-#ifndef WIP_RANDOMBLOCK_H
-#define WIP_RANDOMBLOCK_H
+#ifndef GAME_RANDOMBLOCK_H
+#define GAME_RANDOMBLOCK_H
 
 #include "engine/functions.h"
 

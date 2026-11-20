@@ -1,5 +1,5 @@
-#ifndef WIP_C_KNIFESOUND_PLAYER_H
-#define WIP_C_KNIFESOUND_PLAYER_H
+#ifndef KNIFE_SOUND_KNIFESOUND_PLAYER_H
+#define KNIFE_SOUND_KNIFESOUND_PLAYER_H
 
 // Knife::Sound code around 0x0208bd34 .. 0x0208beac: the sequence starters and the DataManager loaders.
 // Functions defined in src/wip/C/knifesound_seq.cpp and src/wip/C/knifesound_load.cpp.

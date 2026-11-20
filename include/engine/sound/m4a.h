@@ -1,5 +1,5 @@
-#ifndef WIP_D_M4A_H
-#define WIP_D_M4A_H
+#ifndef ENGINE_SOUND_M4A_H
+#define ENGINE_SOUND_M4A_H
 
 #include "types.h"
 #include "knife/app/knife_file_2.h"

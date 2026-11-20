@@ -1,5 +1,5 @@
-#ifndef WIP_D_WIRELESSMGR_D_H
-#define WIP_D_WIRELESSMGR_D_H
+#ifndef KNIFE_COMM_WIRELESSMGR_H
+#define KNIFE_COMM_WIRELESSMGR_H
 
 #include "types.h"
 #include "knife/comm/wireless_manager.h"

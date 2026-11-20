@@ -1,5 +1,5 @@
-#ifndef WIP_G_BG_LOAD_H
-#define WIP_G_BG_LOAD_H
+#ifndef ENGINE_BG_LOAD_H
+#define ENGINE_BG_LOAD_H
 
 #include "global.h"
 

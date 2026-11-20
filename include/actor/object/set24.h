@@ -1,5 +1,5 @@
-#ifndef WIP_G_SET24_H
-#define WIP_G_SET24_H
+#ifndef ACTOR_OBJECT_SET24_H
+#define ACTOR_OBJECT_SET24_H
 
 #include "engine/functions.h"
 #include "actor/object/setcommon.h"

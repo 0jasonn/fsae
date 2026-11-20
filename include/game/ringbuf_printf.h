@@ -1,5 +1,5 @@
-#ifndef WIP_A_RINGBUF_PRINTF_H
-#define WIP_A_RINGBUF_PRINTF_H
+#ifndef GAME_RINGBUF_PRINTF_H
+#define GAME_RINGBUF_PRINTF_H
 
 // Declarations used by src/wip/A/ringbuf_printf.cpp.
 #include "types.h"

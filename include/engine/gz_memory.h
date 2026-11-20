@@ -1,5 +1,5 @@
-#ifndef WIP_D_GZ_MEMORY_H
-#define WIP_D_GZ_MEMORY_H
+#ifndef ENGINE_GZ_MEMORY_H
+#define ENGINE_GZ_MEMORY_H
 
 #include "types.h"
 

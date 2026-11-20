@@ -1,5 +1,5 @@
-#ifndef WIP_E_PLAYSTYLE_UPDATE_E_H
-#define WIP_E_PLAYSTYLE_UPDATE_E_H
+#ifndef KNIFE_MESSAGE_PLAYSTYLE_UPDATE_H
+#define KNIFE_MESSAGE_PLAYSTYLE_UPDATE_H
 
 #include "engine/functions.h"
 #include "ui/playstyleselui.h"

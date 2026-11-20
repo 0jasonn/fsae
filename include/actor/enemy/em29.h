@@ -1,5 +1,5 @@
-#ifndef WIP_B_ENEMY_020417E8_H
-#define WIP_B_ENEMY_020417E8_H
+#ifndef ACTOR_ENEMY_EM29_H
+#define ACTOR_ENEMY_EM29_H
 
 #include "engine/player.h"
 

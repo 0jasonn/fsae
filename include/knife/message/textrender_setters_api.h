@@ -1,5 +1,5 @@
-#ifndef GAME_TEXTRENDER_SETTERS_E_API_H
-#define GAME_TEXTRENDER_SETTERS_E_API_H
+#ifndef KNIFE_MESSAGE_TEXTRENDER_SETTERS_API_H
+#define KNIFE_MESSAGE_TEXTRENDER_SETTERS_API_H
 
 // Functions defined in src/game/textrender_setters_e*.cpp.
 

@@ -1,5 +1,5 @@
-#ifndef OBJECT_OBJFIND_API_H
-#define OBJECT_OBJFIND_API_H
+#ifndef ACTOR_OBJECT_OBJFIND_API_H
+#define ACTOR_OBJECT_OBJFIND_API_H
 
 // Functions defined in src/object/objfind*.cpp.
 

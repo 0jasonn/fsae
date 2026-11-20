@@ -1,5 +1,5 @@
-#ifndef WIP_C_MULTIROOM_H
-#define WIP_C_MULTIROOM_H
+#ifndef ACTOR_OBJECT_MULTIROOM_H
+#define ACTOR_OBJECT_MULTIROOM_H
 
 #include "engine/functions.h"
 #include "engine/entity.h"

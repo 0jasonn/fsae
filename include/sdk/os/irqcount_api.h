@@ -1,5 +1,5 @@
-#ifndef ENGINE_IRQCOUNT_API_H
-#define ENGINE_IRQCOUNT_API_H
+#ifndef SDK_OS_IRQCOUNT_API_H
+#define SDK_OS_IRQCOUNT_API_H
 
 // Functions defined in src/engine/irqcount*.cpp.
 

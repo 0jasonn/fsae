@@ -1,5 +1,5 @@
-#ifndef WIP_E_CTRL_SCROLL_E_H
-#define WIP_E_CTRL_SCROLL_E_H
+#ifndef UI_WIDGET_CTRL_SCROLL_H
+#define UI_WIDGET_CTRL_SCROLL_H
 
 #include "engine/functions.h"
 

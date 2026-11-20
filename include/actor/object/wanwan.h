@@ -1,5 +1,5 @@
-#ifndef WIP_B_WANWAN_H
-#define WIP_B_WANWAN_H
+#ifndef ACTOR_OBJECT_WANWAN_H
+#define ACTOR_OBJECT_WANWAN_H
 
 #include "engine/entity.h"
 

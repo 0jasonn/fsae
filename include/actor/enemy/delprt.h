@@ -1,5 +1,5 @@
-#ifndef WIP_B_DELPRT_H
-#define WIP_B_DELPRT_H
+#ifndef ACTOR_ENEMY_DELPRT_H
+#define ACTOR_ENEMY_DELPRT_H
 
 #include "engine/functions.h"
 

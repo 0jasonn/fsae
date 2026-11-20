@@ -1,5 +1,5 @@
-#ifndef ENGINE_KMSGFILEREADER_API_H
-#define ENGINE_KMSGFILEREADER_API_H
+#ifndef KNIFE_MESSAGE_KMSGFILEREADER_API_H
+#define KNIFE_MESSAGE_KMSGFILEREADER_API_H
 
 // Functions defined in src/engine/kmsgfilereader*.cpp.
 

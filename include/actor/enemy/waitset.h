@@ -1,5 +1,5 @@
-#ifndef WIP_B_WAITSET_H
-#define WIP_B_WAITSET_H
+#ifndef ACTOR_ENEMY_WAITSET_H
+#define ACTOR_ENEMY_WAITSET_H
 
 #include "engine/functions.h"
 

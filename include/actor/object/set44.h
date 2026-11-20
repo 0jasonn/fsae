@@ -1,5 +1,5 @@
-#ifndef WIP_A_SET44_H
-#define WIP_A_SET44_H
+#ifndef ACTOR_OBJECT_SET44_H
+#define ACTOR_OBJECT_SET44_H
 
 #include "engine/functions.h"
 #include "global.h"

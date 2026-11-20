@@ -1,5 +1,5 @@
-#ifndef WIP_F_CTRL_LOADBG_H
-#define WIP_F_CTRL_LOADBG_H
+#ifndef UI_WIDGET_CTRL_LOADBG_H
+#define UI_WIDGET_CTRL_LOADBG_H
 
 // Declarations for the background resource loader of implementer F (round 16). The helpers it calls are declared here
 // with the signatures their call sites use; the reviewer checks them against their own units.

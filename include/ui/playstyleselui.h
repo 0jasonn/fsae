@@ -1,5 +1,5 @@
-#ifndef WIP_E_PLAYSTYLESELUI_H
-#define WIP_E_PLAYSTYLESELUI_H
+#ifndef UI_PLAYSTYLESELUI_H
+#define UI_PLAYSTYLESELUI_H
 
 // playStyleSelUIView: the play style select screen (derives from basedUIView, 0x00..0x30). rootView and secondView are
 // the two static view objects set up by initialize; entries[] (0x3c..0x5c) holds the saved values popped by

@@ -1,5 +1,5 @@
-#ifndef WIP_B_WXC_H
-#define WIP_B_WXC_H
+#ifndef KNIFE_COMM_WXC_H
+#define KNIFE_COMM_WXC_H
 
 #include "engine/functions.h"
 

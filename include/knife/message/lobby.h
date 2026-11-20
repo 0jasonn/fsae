@@ -1,5 +1,5 @@
-#ifndef WIP_E_LOBBY_E_H
-#define WIP_E_LOBBY_E_H
+#ifndef KNIFE_MESSAGE_LOBBY_H
+#define KNIFE_MESSAGE_LOBBY_H
 
 #include "types.h"
 // engine/player.h and ui/lobby.h declare playerKeysPrev differently; player.h only needs GameState here

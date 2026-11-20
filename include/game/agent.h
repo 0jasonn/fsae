@@ -1,5 +1,5 @@
-#ifndef WIP_A_AGENT_A_H
-#define WIP_A_AGENT_A_H
+#ifndef GAME_AGENT_H
+#define GAME_AGENT_H
 
 #include "engine/functions.h"
 

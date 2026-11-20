@@ -1,5 +1,5 @@
-#ifndef WIP_A_DECNUM_H
-#define WIP_A_DECNUM_H
+#ifndef ENGINE_DECNUM_H
+#define ENGINE_DECNUM_H
 
 // Decimal digit string used by the float formatting code.
 #include "types.h"

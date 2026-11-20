@@ -1,5 +1,5 @@
-#ifndef WIP_A_KNIFE_COMM_ICON_H
-#define WIP_A_KNIFE_COMM_ICON_H
+#ifndef KNIFE_COMM_KNIFE_COMM_ICON_H
+#define KNIFE_COMM_KNIFE_COMM_ICON_H
 
 #include "engine/functions.h"
 

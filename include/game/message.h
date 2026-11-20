@@ -1,5 +1,5 @@
-#ifndef WIP_A_MESSAGE_A_H
-#define WIP_A_MESSAGE_A_H
+#ifndef GAME_MESSAGE_H
+#define GAME_MESSAGE_H
 
 #include "engine/functions.h"
 #include "ui/message.h"

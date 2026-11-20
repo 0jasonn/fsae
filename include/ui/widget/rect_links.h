@@ -1,5 +1,5 @@
-#ifndef WIP_F_RECT_LINKS_H
-#define WIP_F_RECT_LINKS_H
+#ifndef UI_WIDGET_RECT_LINKS_H
+#define UI_WIDGET_RECT_LINKS_H
 
 // Declarations used by the implementer F units of the rect family (not in engine/functions.h).
 

@@ -1,5 +1,5 @@
-#ifndef UNKNOWN_WIP_F_SET1A_H
-#define UNKNOWN_WIP_F_SET1A_H
+#ifndef ACTOR_OBJECT_SET1A_H
+#define ACTOR_OBJECT_SET1A_H
 
 #include "engine/entity.h"
 

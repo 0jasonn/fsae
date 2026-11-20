@@ -1,5 +1,5 @@
-#ifndef WIP_D_COMM_PARENTINFO_H
-#define WIP_D_COMM_PARENTINFO_H
+#ifndef KNIFE_COMM_COMM_PARENTINFO_H
+#define KNIFE_COMM_COMM_PARENTINFO_H
 
 #include "types.h"
 

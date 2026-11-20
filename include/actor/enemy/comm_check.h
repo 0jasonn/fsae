@@ -1,5 +1,5 @@
-#ifndef WIP_B_COMM_H
-#define WIP_B_COMM_H
+#ifndef ACTOR_ENEMY_COMM_CHECK_H
+#define ACTOR_ENEMY_COMM_CHECK_H
 
 #include "engine/functions.h"
 

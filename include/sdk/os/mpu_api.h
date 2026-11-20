@@ -1,5 +1,5 @@
-#ifndef ENGINE_MPU_API_H
-#define ENGINE_MPU_API_H
+#ifndef SDK_OS_MPU_API_H
+#define SDK_OS_MPU_API_H
 
 // Functions defined in src/engine/mpu*.cpp.
 

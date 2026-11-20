@@ -1,5 +1,5 @@
-#ifndef WIP_G_SET23_H
-#define WIP_G_SET23_H
+#ifndef ACTOR_OBJECT_SET23_H
+#define ACTOR_OBJECT_SET23_H
 
 #include "engine/functions.h"
 #include "actor/object/setcommon.h"

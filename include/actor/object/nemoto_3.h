@@ -1,5 +1,5 @@
-#ifndef WIP_A_NEMOTO_3_H
-#define WIP_A_NEMOTO_3_H
+#ifndef ACTOR_OBJECT_NEMOTO_3_H
+#define ACTOR_OBJECT_NEMOTO_3_H
 
 #include "engine/functions.h"
 #include "engine/map_state.h"

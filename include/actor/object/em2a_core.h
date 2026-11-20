@@ -1,5 +1,5 @@
-#ifndef WIP_A_EM2A_CORE_A_H
-#define WIP_A_EM2A_CORE_A_H
+#ifndef ACTOR_OBJECT_EM2A_CORE_H
+#define ACTOR_OBJECT_EM2A_CORE_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

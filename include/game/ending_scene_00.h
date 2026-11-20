@@ -1,5 +1,5 @@
-#ifndef ACTOR_ENEMY_ENDING_SCENE_00_H
-#define ACTOR_ENEMY_ENDING_SCENE_00_H
+#ifndef GAME_ENDING_SCENE_00_H
+#define GAME_ENDING_SCENE_00_H
 
 #include "engine/functions.h"
 #include "game/ending.h"

@@ -1,5 +1,5 @@
-#ifndef WIP_A_SUBTASK_INIT_H
-#define WIP_A_SUBTASK_INIT_H
+#ifndef KNIFE_SUBTASK_SUBTASK_INIT_H
+#define KNIFE_SUBTASK_SUBTASK_INIT_H
 
 #include "engine/functions.h"
 #include "knife/subtask/subtask.h"

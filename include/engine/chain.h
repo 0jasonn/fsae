@@ -1,5 +1,5 @@
-#ifndef WIP_A_CHAIN_H
-#define WIP_A_CHAIN_H
+#ifndef ENGINE_CHAIN_H
+#define ENGINE_CHAIN_H
 
 #include "global.h"
 #include "types.h"

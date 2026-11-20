@@ -1,5 +1,5 @@
-#ifndef ENGINE_SNDSTATE_LOOKUP_API_H
-#define ENGINE_SNDSTATE_LOOKUP_API_H
+#ifndef ENGINE_SOUND_SNDSTATE_LOOKUP_API_H
+#define ENGINE_SOUND_SNDSTATE_LOOKUP_API_H
 
 // Functions defined in src/engine/sndstate_lookup*.cpp.
 

@@ -1,5 +1,5 @@
-#ifndef GAME_RADAR_E_API_H
-#define GAME_RADAR_E_API_H
+#ifndef GAME_RADAR_API_H
+#define GAME_RADAR_API_H
 
 // Functions defined in src/game/radar_e*.cpp.
 

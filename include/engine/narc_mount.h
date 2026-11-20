@@ -1,5 +1,5 @@
-#ifndef WIP_E_NARC_MOUNT_E_H
-#define WIP_E_NARC_MOUNT_E_H
+#ifndef ENGINE_NARC_MOUNT_H
+#define ENGINE_NARC_MOUNT_H
 
 #include "engine/functions.h"
 #include "engine/narc_check_api.h"

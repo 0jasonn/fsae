@@ -1,5 +1,5 @@
-#ifndef WIP_E_DATA_H
-#define WIP_E_DATA_H
+#ifndef GAME_COCKPITDATA_H
+#define GAME_COCKPITDATA_H
 
 // Data and helpers shared by the E units (not in functions.h yet).
 #include "engine/functions.h"

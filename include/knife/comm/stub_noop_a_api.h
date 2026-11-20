@@ -1,5 +1,5 @@
-#ifndef ENGINE_STUB_NOOP_A_API_H
-#define ENGINE_STUB_NOOP_A_API_H
+#ifndef KNIFE_COMM_STUB_NOOP_A_API_H
+#define KNIFE_COMM_STUB_NOOP_A_API_H
 
 // Functions defined in src/engine/stub_noop_a*.cpp.
 

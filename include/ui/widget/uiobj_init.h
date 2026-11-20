@@ -1,5 +1,5 @@
-#ifndef WIP_D_UIOBJ_INIT_H
-#define WIP_D_UIOBJ_INIT_H
+#ifndef UI_WIDGET_UIOBJ_INIT_H
+#define UI_WIDGET_UIOBJ_INIT_H
 
 #include "types.h"
 

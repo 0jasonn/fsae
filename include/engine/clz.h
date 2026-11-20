@@ -1,5 +1,5 @@
-#ifndef WIP_K_CLZ_H
-#define WIP_K_CLZ_H
+#ifndef ENGINE_CLZ_H
+#define ENGINE_CLZ_H
 
 #include "types.h"
 

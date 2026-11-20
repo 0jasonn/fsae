@@ -1,5 +1,5 @@
-#ifndef GAME_LOBBY_PTRARRAY_API_H
-#define GAME_LOBBY_PTRARRAY_API_H
+#ifndef UI_LOBBY_PTRARRAY_API_H
+#define UI_LOBBY_PTRARRAY_API_H
 
 // Functions defined in src/game/lobby_ptrarray*.cpp.
 

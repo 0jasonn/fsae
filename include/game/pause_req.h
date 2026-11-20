@@ -1,5 +1,5 @@
-#ifndef WIP_K_PAUSE_REQ_H
-#define WIP_K_PAUSE_REQ_H
+#ifndef GAME_PAUSE_REQ_H
+#define GAME_PAUSE_REQ_H
 
 #include "types.h"
 

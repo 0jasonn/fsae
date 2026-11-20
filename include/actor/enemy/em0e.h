@@ -1,5 +1,5 @@
-#ifndef ENEMY_EM0E_H
-#define ENEMY_EM0E_H
+#ifndef ACTOR_ENEMY_EM0E_H
+#define ACTOR_ENEMY_EM0E_H
 
 #include "engine/entity.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_D_SET57_H
-#define WIP_D_SET57_H
+#ifndef ACTOR_OBJECT_SET57_H
+#define ACTOR_OBJECT_SET57_H
 
 // Set57 actor fields and data (file-local to the D units of module set57; see src/wip/D/kenfuri.cpp and set57.cpp)
 

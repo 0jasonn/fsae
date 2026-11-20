@@ -1,5 +1,5 @@
-#ifndef WIP_F_UIOBJECT_H
-#define WIP_F_UIOBJECT_H
+#ifndef UI_WIDGET_UIOBJECT_H
+#define UI_WIDGET_UIOBJECT_H
 
 // UIObject: one animated value (a position that moves from one point to another over a duration).
 // Original class UIObject (0x58 bytes). Fields not yet used by the functions in uiobject.cpp are left as unk_.

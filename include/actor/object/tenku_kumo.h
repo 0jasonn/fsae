@@ -1,5 +1,5 @@
-#ifndef WIP_A_TENKU_KUMO_H
-#define WIP_A_TENKU_KUMO_H
+#ifndef ACTOR_OBJECT_TENKU_KUMO_H
+#define ACTOR_OBJECT_TENKU_KUMO_H
 
 #include "engine/functions.h"
 #include "global.h"

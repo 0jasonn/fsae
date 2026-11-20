@@ -1,5 +1,5 @@
-#ifndef WIP_B_COMM_H
-#define WIP_B_COMM_H
+#ifndef KNIFE_COMM_COMM_H
+#define KNIFE_COMM_COMM_H
 
 // Communication (com_*, keysync, comerror) functions shared by the B units. Original signatures from the debug build.
 #include "engine/functions.h"

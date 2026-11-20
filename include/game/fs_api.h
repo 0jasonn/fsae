@@ -1,5 +1,5 @@
-#ifndef GAME_FS_E_API_H
-#define GAME_FS_E_API_H
+#ifndef GAME_FS_API_H
+#define GAME_FS_API_H
 
 // Functions defined in src/game/fs_e*.cpp.
 

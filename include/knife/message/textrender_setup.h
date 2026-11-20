@@ -1,5 +1,5 @@
-#ifndef WIP_E_TEXTRENDER_SETUP_E_H
-#define WIP_E_TEXTRENDER_SETUP_E_H
+#ifndef KNIFE_MESSAGE_TEXTRENDER_SETUP_H
+#define KNIFE_MESSAGE_TEXTRENDER_SETUP_H
 
 #include "engine/functions.h"
 #include "knife/message/textrender.h"

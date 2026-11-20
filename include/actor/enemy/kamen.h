@@ -1,5 +1,5 @@
-#ifndef WIP_B_KAMEN_H
-#define WIP_B_KAMEN_H
+#ifndef ACTOR_ENEMY_KAMEN_H
+#define ACTOR_ENEMY_KAMEN_H
 
 #include "engine/functions.h"
 

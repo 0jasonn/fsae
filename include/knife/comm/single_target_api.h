@@ -1,5 +1,5 @@
-#ifndef ENGINE_SINGLE_TARGET_API_H
-#define ENGINE_SINGLE_TARGET_API_H
+#ifndef KNIFE_COMM_SINGLE_TARGET_API_H
+#define KNIFE_COMM_SINGLE_TARGET_API_H
 
 // Functions defined in src/engine/single_target*.cpp.
 

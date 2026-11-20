@@ -1,5 +1,5 @@
-#ifndef ENGINE_TEXTTOKENIZER_API_H
-#define ENGINE_TEXTTOKENIZER_API_H
+#ifndef KNIFE_MESSAGE_TEXTTOKENIZER_API_H
+#define KNIFE_MESSAGE_TEXTTOKENIZER_API_H
 
 // Functions defined in src/engine/texttokenizer*.cpp.
 

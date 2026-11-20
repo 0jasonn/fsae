@@ -1,5 +1,5 @@
-#ifndef ENGINE_PAIR_GET_API_H
-#define ENGINE_PAIR_GET_API_H
+#ifndef SDK_OS_PAIR_GET_API_H
+#define SDK_OS_PAIR_GET_API_H
 
 // Functions defined in src/engine/pair_get*.cpp.
 

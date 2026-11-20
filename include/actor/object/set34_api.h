@@ -1,5 +1,5 @@
-#ifndef OBJECT_SET34_API_H
-#define OBJECT_SET34_API_H
+#ifndef ACTOR_OBJECT_SET34_API_H
+#define ACTOR_OBJECT_SET34_API_H
 
 // Functions defined in src/object/set34*.cpp.
 

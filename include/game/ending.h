@@ -1,5 +1,5 @@
-#ifndef ACTOR_ENEMY_ENDING_H
-#define ACTOR_ENEMY_ENDING_H
+#ifndef GAME_ENDING_H
+#define GAME_ENDING_H
 
 // Declarations for the ending, finale and demo functions of implementer B (0x020443a0 to 0x02048264).
 // Functions missing from engine/functions.h use the original signatures from config/eur/original_names.tsv

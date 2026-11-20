@@ -1,5 +1,5 @@
-#ifndef WIP_E_TEXTRENDER_PICT_E_H
-#define WIP_E_TEXTRENDER_PICT_E_H
+#ifndef KNIFE_MESSAGE_TEXTRENDER_PICT_H
+#define KNIFE_MESSAGE_TEXTRENDER_PICT_H
 
 #include "engine/functions.h"
 #include "engine/player.h"

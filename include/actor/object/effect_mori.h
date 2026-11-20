@@ -1,5 +1,5 @@
-#ifndef WIP_A_EFFECT_MORI_H
-#define WIP_A_EFFECT_MORI_H
+#ifndef ACTOR_OBJECT_EFFECT_MORI_H
+#define ACTOR_OBJECT_EFFECT_MORI_H
 
 #include "engine/functions.h"
 #include "global.h"

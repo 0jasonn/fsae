@@ -1,5 +1,5 @@
-#ifndef WIP_B_ENEMY_B_H
-#define WIP_B_ENEMY_B_H
+#ifndef ACTOR_ENEMY_ENEMYCOMMON_H
+#define ACTOR_ENEMY_ENEMYCOMMON_H
 
 // Declarations for the enemy init helpers of implementer B (0x020458f8 onwards).
 

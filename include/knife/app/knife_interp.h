@@ -1,5 +1,5 @@
-#ifndef WIP_E_KNIFE_INTERP_H
-#define WIP_E_KNIFE_INTERP_H
+#ifndef KNIFE_APP_KNIFE_INTERP_H
+#define KNIFE_APP_KNIFE_INTERP_H
 
 #include "types.h"
 

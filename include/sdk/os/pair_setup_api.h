@@ -1,5 +1,5 @@
-#ifndef ENGINE_PAIR_SETUP_API_H
-#define ENGINE_PAIR_SETUP_API_H
+#ifndef SDK_OS_PAIR_SETUP_API_H
+#define SDK_OS_PAIR_SETUP_API_H
 
 // Functions defined in src/engine/pair_setup*.cpp.
 

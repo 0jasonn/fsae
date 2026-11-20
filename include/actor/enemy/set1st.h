@@ -1,5 +1,5 @@
-#ifndef WIP_SET1ST_H
-#define WIP_SET1ST_H
+#ifndef ACTOR_ENEMY_SET1ST_H
+#define ACTOR_ENEMY_SET1ST_H
 
 #include "engine/functions.h"
 #include "types.h"

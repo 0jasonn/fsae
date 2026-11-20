@@ -1,5 +1,5 @@
-#ifndef ENGINE_OS_SWITCH_API_H
-#define ENGINE_OS_SWITCH_API_H
+#ifndef SDK_OS_OS_SWITCH_API_H
+#define SDK_OS_OS_SWITCH_API_H
 
 // Functions defined in src/engine/os_switch*.cpp.
 

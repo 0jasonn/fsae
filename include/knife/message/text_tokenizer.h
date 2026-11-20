@@ -1,5 +1,5 @@
-#ifndef WIP_D_TEXT_TOKENIZER_H
-#define WIP_D_TEXT_TOKENIZER_H
+#ifndef KNIFE_MESSAGE_TEXT_TOKENIZER_H
+#define KNIFE_MESSAGE_TEXT_TOKENIZER_H
 
 #include "types.h"
 #include "knife/message/kmsgreader.h"

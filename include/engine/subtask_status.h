@@ -1,5 +1,5 @@
-#ifndef WIP_E_SUBTASK_STATUS_E_H
-#define WIP_E_SUBTASK_STATUS_E_H
+#ifndef ENGINE_SUBTASK_STATUS_H
+#define ENGINE_SUBTASK_STATUS_H
 
 #include "engine/functions.h"
 #include "engine/fp_pack_api.h"

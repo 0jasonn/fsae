@@ -1,5 +1,5 @@
-#ifndef WIP_D_KNIFE_SOUND_4_H
-#define WIP_D_KNIFE_SOUND_4_H
+#ifndef KNIFE_SOUND_KNIFE_SOUND_4_H
+#define KNIFE_SOUND_KNIFE_SOUND_4_H
 
 #include "types.h"
 

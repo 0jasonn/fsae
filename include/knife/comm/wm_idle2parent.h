@@ -1,5 +1,5 @@
-#ifndef WIP_C_WM_IDLE2PARENT_H
-#define WIP_C_WM_IDLE2PARENT_H
+#ifndef KNIFE_COMM_WM_IDLE2PARENT_H
+#define KNIFE_COMM_WM_IDLE2PARENT_H
 
 #include "types.h"
 

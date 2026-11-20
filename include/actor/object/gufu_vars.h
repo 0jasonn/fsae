@@ -1,5 +1,5 @@
-#ifndef WIP_D_GUFU_VARS_H
-#define WIP_D_GUFU_VARS_H
+#ifndef ACTOR_OBJECT_GUFU_VARS_H
+#define ACTOR_OBJECT_GUFU_VARS_H
 
 // Gufu body fields past the shared part of Entity (file-local overlay used by the gufu units).
 #include "engine/entity.h"

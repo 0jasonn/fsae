@@ -1,5 +1,5 @@
-#ifndef WIP_ENDINGLINK_H
-#define WIP_ENDINGLINK_H
+#ifndef GAME_ENDINGLINK_H
+#define GAME_ENDINGLINK_H
 
 #include "engine/functions.h"
 

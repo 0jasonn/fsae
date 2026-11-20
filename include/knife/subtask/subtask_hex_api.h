@@ -1,5 +1,5 @@
-#ifndef GAME_SUBTASK_HEX_API_H
-#define GAME_SUBTASK_HEX_API_H
+#ifndef KNIFE_SUBTASK_SUBTASK_HEX_API_H
+#define KNIFE_SUBTASK_SUBTASK_HEX_API_H
 
 // Functions defined in src/game/subtask_hex*.cpp.
 

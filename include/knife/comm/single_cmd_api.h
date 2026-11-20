@@ -1,5 +1,5 @@
-#ifndef ENGINE_SINGLE_CMD_API_H
-#define ENGINE_SINGLE_CMD_API_H
+#ifndef KNIFE_COMM_SINGLE_CMD_API_H
+#define KNIFE_COMM_SINGLE_CMD_API_H
 
 // Functions defined in src/engine/single_cmd*.cpp.
 

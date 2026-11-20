@@ -1,5 +1,5 @@
-#ifndef GAME_COM_H
-#define GAME_COM_H
+#ifndef KNIFE_COMM_COM_H
+#define KNIFE_COMM_COM_H
 
 #include "engine/entity.h"
 

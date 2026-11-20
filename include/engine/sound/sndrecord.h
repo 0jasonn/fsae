@@ -1,5 +1,5 @@
-#ifndef WIP_G_SNDRECORD_H
-#define WIP_G_SNDRECORD_H
+#ifndef ENGINE_SOUND_SNDRECORD_H
+#define ENGINE_SOUND_SNDRECORD_H
 
 #include "engine/functions.h"
 #include "global.h"

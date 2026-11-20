@@ -1,5 +1,5 @@
-#ifndef GAME_EXCHANGE_SAVEDATA_API_H
-#define GAME_EXCHANGE_SAVEDATA_API_H
+#ifndef UI_EXCHANGE_SAVEDATA_API_H
+#define UI_EXCHANGE_SAVEDATA_API_H
 
 // Functions defined in src/game/exchange_savedata*.cpp.
 

@@ -1,5 +1,5 @@
-#ifndef WIP_A_SETBG_H
-#define WIP_A_SETBG_H
+#ifndef GAME_SETBG_H
+#define GAME_SETBG_H
 
 #include "engine/functions.h"
 

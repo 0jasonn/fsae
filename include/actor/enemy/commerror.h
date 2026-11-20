@@ -1,5 +1,5 @@
-#ifndef WIP_B_COMMERROR_H
-#define WIP_B_COMMERROR_H
+#ifndef ACTOR_ENEMY_COMMERROR_H
+#define ACTOR_ENEMY_COMMERROR_H
 
 // Declarations for the commerror unit (src/wip/B/commerror.cpp). Not in engine/functions.h yet.
 // CommErrorCheck returns 1 when the check passes; game/comm.h declares it void, which the reviewer should fix.

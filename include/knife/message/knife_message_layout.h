@@ -1,5 +1,5 @@
-#ifndef WIP_E_KNIFE_MESSAGE_LAYOUT_H
-#define WIP_E_KNIFE_MESSAGE_LAYOUT_H
+#ifndef KNIFE_MESSAGE_KNIFE_MESSAGE_LAYOUT_H
+#define KNIFE_MESSAGE_KNIFE_MESSAGE_LAYOUT_H
 
 #include "types.h"
 #include "knife/message/knife_message.h"

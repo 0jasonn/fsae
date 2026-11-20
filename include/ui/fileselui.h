@@ -1,5 +1,5 @@
-#ifndef WIP_F_FILESELUI_H
-#define WIP_F_FILESELUI_H
+#ifndef UI_FILESELUI_H
+#define UI_FILESELUI_H
 
 // fileSelUIViewCtrl: controller of the file select screen. Holds one UIObject per list entry and the OAM counter.
 

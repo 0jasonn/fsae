@@ -1,5 +1,5 @@
-#ifndef ENGINE_VRAMBANK_API_H
-#define ENGINE_VRAMBANK_API_H
+#ifndef SDK_GX_VRAMBANK_API_H
+#define SDK_GX_VRAMBANK_API_H
 
 // Functions defined in src/engine/vrambank*.cpp.
 

@@ -1,5 +1,5 @@
-#ifndef WIP_A_KUMO_BIG_H
-#define WIP_A_KUMO_BIG_H
+#ifndef ACTOR_OBJECT_KUMO_BIG_H
+#define ACTOR_OBJECT_KUMO_BIG_H
 
 #include "engine/functions.h"
 #include "global.h"

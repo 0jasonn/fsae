@@ -1,5 +1,5 @@
-#ifndef WIP_D_KMSGREADER_H
-#define WIP_D_KMSGREADER_H
+#ifndef KNIFE_MESSAGE_KMSGREADER_H
+#define KNIFE_MESSAGE_KMSGREADER_H
 
 #include "types.h"
 

@@ -1,5 +1,5 @@
-#ifndef WIP_C_TWL_H
-#define WIP_C_TWL_H
+#ifndef KNIFE_APP_TWL_H
+#define KNIFE_APP_TWL_H
 
 // Declarations used by the TWL boot code (twlInit and knifeExitCallback) that are not in
 // engine/functions.h yet. The reviewer moves the shared ones there.

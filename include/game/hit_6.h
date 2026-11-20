@@ -1,5 +1,5 @@
-#ifndef WIP_A_HIT_6_H
-#define WIP_A_HIT_6_H
+#ifndef GAME_HIT_6_H
+#define GAME_HIT_6_H
 
 // Callees and data of the hit units (sixth unit) that functions.h and game/hitdecls.h do not declare yet.
 #include "engine/functions.h"

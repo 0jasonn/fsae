@@ -1,5 +1,5 @@
-#ifndef WIP_K_RUPEERUSH_DICE_H
-#define WIP_K_RUPEERUSH_DICE_H
+#ifndef ACTOR_OBJECT_RUPEERUSH_DICE_H
+#define ACTOR_OBJECT_RUPEERUSH_DICE_H
 
 #include "types.h"
 

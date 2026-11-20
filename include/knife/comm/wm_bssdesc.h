@@ -1,5 +1,5 @@
-#ifndef WIP_WM_BSSDESC_H
-#define WIP_WM_BSSDESC_H
+#ifndef KNIFE_COMM_WM_BSSDESC_H
+#define KNIFE_COMM_WM_BSSDESC_H
 
 #include "types.h"
 

@@ -1,5 +1,5 @@
-#ifndef ENGINE_DMA_CONFLICT_API_H
-#define ENGINE_DMA_CONFLICT_API_H
+#ifndef SDK_MI_DMA_CONFLICT_API_H
+#define SDK_MI_DMA_CONFLICT_API_H
 
 // Functions defined in src/engine/dma_conflict*.cpp.
 

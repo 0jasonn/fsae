@@ -1,5 +1,5 @@
-#ifndef WIP_E_TEXTREADER_PARAM_H
-#define WIP_E_TEXTREADER_PARAM_H
+#ifndef KNIFE_MESSAGE_TEXTREADER_PARAM_H
+#define KNIFE_MESSAGE_TEXTREADER_PARAM_H
 
 // TextReader::readParam_Str(Text*) (0x020a2a2c): reads one text parameter of a tag (src/wip/E/textreader_param.cpp).
 

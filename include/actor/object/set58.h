@@ -1,5 +1,5 @@
-#ifndef WIP_D_SET58_H
-#define WIP_D_SET58_H
+#ifndef ACTOR_OBJECT_SET58_H
+#define ACTOR_OBJECT_SET58_H
 
 // Set58 actor (body, hane, hamon, youseidama, aura, milkcrown, sazanami, hikari, tamahikari, kougyoku, fairy) fields and data
 

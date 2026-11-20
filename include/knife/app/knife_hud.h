@@ -1,5 +1,5 @@
-#ifndef WIP_E_KNIFE_HUD_H
-#define WIP_E_KNIFE_HUD_H
+#ifndef KNIFE_APP_KNIFE_HUD_H
+#define KNIFE_APP_KNIFE_HUD_H
 
 #include "engine/functions.h"
 #include "knife/message/knife_message.h"

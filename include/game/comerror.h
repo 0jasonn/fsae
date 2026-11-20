@@ -1,5 +1,5 @@
-#ifndef WIP_A_COMERROR_H
-#define WIP_A_COMERROR_H
+#ifndef GAME_COMERROR_H
+#define GAME_COMERROR_H
 
 #include "engine/functions.h"
 

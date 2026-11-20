@@ -1,5 +1,5 @@
-#ifndef WIP_E_RADAR_STATUS_E_H
-#define WIP_E_RADAR_STATUS_E_H
+#ifndef ENGINE_RADAR_STATUS_H
+#define ENGINE_RADAR_STATUS_H
 
 #include "engine/functions.h"
 #include "engine/entity.h"

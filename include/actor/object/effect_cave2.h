@@ -1,5 +1,5 @@
-#ifndef WIP_A_EFFECT_CAVE2_H
-#define WIP_A_EFFECT_CAVE2_H
+#ifndef ACTOR_OBJECT_EFFECT_CAVE2_H
+#define ACTOR_OBJECT_EFFECT_CAVE2_H
 
 #include "engine/functions.h"
 #include "global.h"

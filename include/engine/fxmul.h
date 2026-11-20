@@ -1,5 +1,5 @@
-#ifndef WIP_K_FXMUL_H
-#define WIP_K_FXMUL_H
+#ifndef ENGINE_FXMUL_H
+#define ENGINE_FXMUL_H
 
 #include "types.h"
 

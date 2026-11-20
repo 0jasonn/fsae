@@ -1,5 +1,5 @@
-#ifndef ENGINE_M4A_VSYNC_API_H
-#define ENGINE_M4A_VSYNC_API_H
+#ifndef ENGINE_SOUND_M4A_VSYNC_API_H
+#define ENGINE_SOUND_M4A_VSYNC_API_H
 
 // Functions defined in src/engine/m4a_vsync*.cpp.
 
