@@ -4,11 +4,9 @@
 #include "engine/sound/sndstop.h"
 
 extern "C" {
-void SND_StopTimer(u32 timer, u32 unk1, u32 mask, u32 unk3);
 u32 SND_GetCurrentCommandTag(void);
 void SND_FlushCommand(u32 mode);
 void SND_WaitForCommandProc(u32 tag);
-void SND_SetChannelVolume(u32 mask, u32 volumeLow, s32 volumeHigh);
 void SndChannel_ClearWord0(u32 mask);
 void SndChannel_Unlock(u32 mask);
 void SndChannel_ClearWord4(u32 index);

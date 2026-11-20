@@ -29,7 +29,7 @@ void SndVoice_SetPaused(SndVoice *voice, s32 paused) {
     if (v == 0 || paused == v->paused) {
         return;
     }
-    SND_PauseSeq(v->track);
+    SND_PauseSeq(v->track, paused);
     v->paused = paused;
 }
 

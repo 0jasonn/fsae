@@ -2,6 +2,7 @@
 #define ENGINE_SOUND_SND_SEQ_H
 
 #include "engine/functions.h"
+#include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
 #include "global.h"
 #include "engine/sound/sndlist.h"
 #include "engine/sound/sndrecord.h"
@@ -38,19 +39,10 @@ typedef struct SndVoiceRef {
 } SndVoiceRef;
 
 extern "C" {
-void SND_PrepareSeq(u32 track);
-void SND_SetPlayerChannelPriority(u32 player, u8 priority);
-void SND_SetTrackPan(u32 player, u32 trackMask, s32 pan);
-void SND_SetPlayerTempoRatio(u32 track, s32 ratio);
-void SND_StartPreparedSeq(u32 track);
 s32 SND_IsFinishedCommandTag(u32 tag);
 u32 SND_GetPlayerStatus(void);
 void SndVoice_Release(SndVoice *voice);
-void SND_SetTrackAllocatableChannel(u32 track, u32 channels);
 u32 SND_GetCurrentCommandTag(void);
-void SND_PauseSeq(u32 track);
-void SND_StopSeq(u32 track);
-void SND_SetPlayerVolume(u32 track, s32 volume);
 void SndVoice_Release(SndVoice *voice);
 void SndVoice_Reset(SndVoice *voice);
 void SndVoice_InsertGlobal(SndVoice *voice);

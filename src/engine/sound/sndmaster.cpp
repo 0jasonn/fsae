@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "sdk/snd/snd_command.h"
 #include "global.h"
 #include "ui/widget/menu.h"
 
@@ -6,8 +7,6 @@
 //   SndMaster_SetPan (SndMaster_SetPan)
 
 extern "C" {
-void SND_SetMasterPan(u32 pan);
-void SND_ResetMasterPan(void);
 }
 
 // SndMaster_SetPan (0x020bf23c): sets the master pan to the centre when the flag is set, otherwise resets it.

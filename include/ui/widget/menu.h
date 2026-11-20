@@ -2,6 +2,7 @@
 #define UI_WIDGET_MENU_H
 
 #include "engine/functions.h"
+#include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
 #include "global.h"
 
 // Provisional module name for the unnamed UI state code at 0x020bcd34 onward (a guess from the state table and the
@@ -186,7 +187,6 @@ void Vram_DisableBankTail(void);
 void MIi_CpuClearFast(u32 value, void *dst, u32 size);
 void Menu_Run(MenuWork *menu);
 s32 RectSpan_clear(s32 value);
-void SND_SetMasterVolume(s32 volume);
 void SndSys_StartActiveTimer(s32 a, s32 b, s32 c, s32 d);
 void SndVoice_Release(s32 a, s32 b, s32 c, s32 d);
 void SndRangeTree_Remove(s32 a, s32 b, s32 c, s32 d);

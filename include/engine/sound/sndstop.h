@@ -2,6 +2,7 @@
 #define ENGINE_SOUND_SNDSTOP_H
 
 #include "engine/functions.h"
+#include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
 #include "global.h"
 #include "engine/sound/sndlist.h"
 
@@ -30,7 +31,6 @@ extern "C" {
 extern SndStopState data_0218485c;
 extern u8 data_0218481c[];
 s32 OS_ReceiveMessage(void *queue, void *message, s32 flags);
-void SND_SetOutputSelector(u32 a, u32 b, u32 c, u32 d);
 }
 
 extern "C" void func_020c02d0(void);

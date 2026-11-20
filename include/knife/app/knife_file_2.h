@@ -2,6 +2,7 @@
 #define KNIFE_APP_KNIFE_FILE_2_H
 
 #include "types.h"
+#include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
 
 namespace Knife {
 namespace File {
@@ -86,7 +87,6 @@ void FS_CloseFile(void *file);
 void FS_InitFile(void *file);
 u32 WBT_SetPacketSize(s32 a, s32 b);
 void *func_0208e148(u32 size);
-void OS_InitMutex(void *mutex);
 void OS_InitEvent(void *event);
 void OS_SignalEvent(void *event, s32 value);
 void OS_ClearEvent(void *event, s32 value);
