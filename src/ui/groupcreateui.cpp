@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/groupcreateui_api.h"
+#include "ui/groupcreateui.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   groupCreateUIView_leave (0x020ab6cc): empty leave slot 4

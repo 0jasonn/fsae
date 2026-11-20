@@ -6,7 +6,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-extern "C" void func_02089988(void *player);  // thumb, 0x02089988 (same declaration as actor/object/cellcalls.h)
 
 // Actor-specific fields of tama11 and Throw objects, from 0x64 on (offsets are Entity offsets).
 typedef struct Tama11Vars {
@@ -30,7 +29,6 @@ void throwinit(Entity *e);
 void tama11_putObjWorkThunk(Entity *e);
 
 extern "C" void func_0208b658(Entity *e);
-int func_02083ed8(Entity *e, Entity *target);
 
 extern u8 data_0212c4b8;
 

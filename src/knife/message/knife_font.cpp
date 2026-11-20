@@ -1,7 +1,8 @@
 #include "engine/functions.h"
+#include "engine/str_api.h"
 #include "knife/message/knife_font.h"
+#include "knife/app/knife_app.h"
 #include "knife/message/textlength.h"
-#include "knife/message/textlength_api.h"
 
 // knife_GetFontStrWidth (0x0204c2e0): measures the text of a message index with a TextLengthAnalyzer. flag 0 returns the
 // longest line; otherwise the packed line counts are returned.

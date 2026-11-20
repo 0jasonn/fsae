@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/droprupees.h"
 #include "global.h"
 
 // DropRupees (0x02050504): drops the given rupee amount as few objects as possible: value-20 rupees first, then

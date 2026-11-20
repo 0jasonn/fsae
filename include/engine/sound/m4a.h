@@ -100,6 +100,12 @@ extern u8 data_021763e0[];
 extern u8 data_02176430[];
 extern char data_0211ed30[];
 extern char data_0211ed90[];
+void m4aSoundResume(void);
+void m4aSongNumSetPlayerValue(u16 songNum, s32 value);
+void m4aSongNumSetVolume(u16 songNum, u16 volume);
+u32 m4aSongNumStartOrContinue(u16 songNum);
+void m4aSongNumStop(u16 songNum);
+void pauseWavePlayer(s32 pause);
 }
 
 // C++ (mangled) functions called by the m4a code

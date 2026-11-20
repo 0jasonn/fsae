@@ -1,4 +1,6 @@
-#include "sdk/wm/wm_api.h"
+#include "sdk/wm/wm_sleep.h"
+#include "sdk/pm/pmlist_wrap.h"
+#include "engine/functions.h"
 
 extern u32 data_0212b968;
 

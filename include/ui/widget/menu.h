@@ -137,6 +137,27 @@ typedef struct MenuWrapper {
     MenuWork *ptr;
 } MenuWrapper;
 
+// One entry of the 16-entry pool at +0xb4 of the pool object (entries are 0x18 bytes apart). The id is -1 when free.
+typedef struct MenuPoolEntry {
+    /* 00 */ u32 unk_00; // object cleared by Menu_ClearRef (its nonzero value marks the entry as in use)
+    /* 04 */ s32 id;
+    /* 08 */ u32 unk_08;
+    /* 0c */ u32 unk_0c;
+    /* 10 */ u8 unk_10[8];
+} MenuPoolEntry;
+
+// The pool object: a count at +8, the entries at +0xb4, and a current index at +0x240.
+typedef struct MenuPool {
+    /* 00 */ s32 ready; // set to 1 by Menu_InitPool, tested by Menu_UpdatePool
+    /* 04 */ u8 unk_04[0x8 - 0x4];
+    /* 08 */ s32 count;
+    /* 0c */ s32 unk_0c;
+    /* 10 */ u8 unk_10[0xb4 - 0x10];
+    /* 0b4 */ MenuPoolEntry entries[16];
+    /* 234 */ u8 unk_234[0x240 - 0x234];
+    /* 240 */ s32 current;
+} MenuPool;
+
 extern "C" {
 s32 func_020c2c34(MenuChecker *obj, s32 id);
 s32 CtrlItem_init(s32 value);
@@ -175,14 +196,22 @@ void TP_Init(void);
 s32 TP_GetUserInfo(void *info);
 void TP_SetCalibrateParam(void *info);
 void TP_RequestAutoSamplingStartAsync(u32 a, u32 b, void *arg, u32 c);
-void TP_WaitBusy(s32 mode);
-s32 TP_CheckError(s32 mode);
 void G2x_SetBlendBrightness_(u32 reg, s32 plane, s32 value);
 void RectObjPair_setOffsets(MenuView *view, s32 value);
 void Menu_SyncScroll(MenuList *list);
 void Menu_SyncListRect(MenuList *list);
 s32 Menu_CountItems(MenuList *list);
 s32 lobby_copyBounds(s16 *out);
+// Knife manual helper (0x020befd0, unnamed wrapper of the menu object creation; five arguments)
+void Menu_CreateEntryDefault(void *a, void *b, void *c, void *d, void *e);
+s32 func_020bd474(MenuWork *menu, void *event);
+s32 Menu_DispatchKeys(MenuWork *menu);
+void Touch_UpdateFilter(void *obj, MenuEvent *event);
+MenuPoolEntry *Menu_AllocPoolEntry(MenuPool *pool, s32 flag);
+void MenuSound_SetFade(void * volatile *ref, u16 value);
+void MenuSound_SetFadeTimes(void * volatile *ref, u16 value, u16 value2);
+void Menu_CreateEntryEx(void *out, void *checker, void *a, void *b, void *c, u16 d);
+void Menu_SetRefByte40(void * volatile *ref, u8 value);
 }
 
 // Menu functions in this module. The unit that defines each one is named by the file in src/wip/G.
@@ -194,5 +223,8 @@ void Menu_ResetScroll(MenuList *list);
 void Menu_SetActive(MenuList *list, s32 value);
 void Menu_StartTouch(void *callbackArg);
 void Menu_Step(MenuWork *menu, s32 flag);
+s32 Menu_HandleInputB(MenuWork *menu, MenuInput *input);
+s32 Menu_HandleInput(MenuWork *menu, MenuInput *input);
+void Menu_GetRect(s16 *rect, s32 unused); // C++, src/game/menu_8.cpp
 
 #endif

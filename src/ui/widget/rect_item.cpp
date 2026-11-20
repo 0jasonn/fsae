@@ -2,8 +2,8 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/rect_obj_view.h"
-#include "ui/widget/rect_item_api.h"
 #include "ui/widget/rect_item.h"
+#include "engine/heap_vcall.h"
 
 // rect_item: functions RectObjPair_setOffsets (0x020b88dc), RectObjPair_setValue (0x020b895c),
 // RectObjPair_updateChildren (0x020b8964), RectItem_clear (0x020b89e4), RectItem_releaseBlocks (0x020b8a04),
@@ -24,7 +24,6 @@ typedef struct RectObjPair {
 } RectObjPair;
 
 extern "C" void RectObjLink_callB(RectObjF *self, void *arg);
-extern "C" void Heap_VirtualFree(void *heap, void *block);
 
 // RectObjPair_setOffsets(self, value) (0x020b88dc, provisional name): the first child moves to -value / 2 + 6 and
 // the second to value - value / 2 - 6 (both through the offset slot of the child)

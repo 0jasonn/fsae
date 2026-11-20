@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/groupselectuiview.h"
-#include "ui/groupselectuiview_api.h"
 
 // Functions in this file (original names from the debug build):
 //   linkPalToPanePal (0x020b11dc)

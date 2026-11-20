@@ -1,7 +1,7 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "engine/entity.h"
 
 // Set55 actor (module set55). Address -> name:
@@ -20,10 +20,8 @@ typedef struct Vars_Set55 {
 extern const u8 set55_hitbox[];
 extern const EntityFunc set55_actionsTypeN[]; // indexed by e->action, e->type != 0
 extern const EntityFunc set55_actionsType0[]; // indexed by e->action, e->type == 0
-extern u8 localPlayerIndex;
 #include "engine/map_state.h"
 extern const s8 set55_xOffsets[]; // indexed by animationState >> 1
-extern u16 playerKeys[];
 
 void set55_movef(Entity *e);
 

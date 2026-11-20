@@ -3,7 +3,6 @@
 #include "types.h"
 #include "knife/comm/comm_parentinfo.h"
 #include "knife/comm/wireless_manager.h"
-#include "knife/comm/wireless_manager_api.h"
 
 // WirelessManager singleton (0x020909c8) and its initializer with the allocator (0x02090a1c, 0x26c bytes). The object
 // lives in bss at data_021770e0, its guard word is at data_021770bc + 4 (bit 0 set once constructed), and its
@@ -15,7 +14,6 @@ extern u8 data_021770e0[];  // the WirelessManager object (bss)
 
 extern "C" void Chain_Push(void *object, void *dtor, void *handle);
 extern "C" void Knife_Comm_ChildInfo_cleanup(void *self);
-extern "C" void MI_CpuFill8(void *dst, u32 value, u32 size);
 
 // The allocator the manager is initialized with (WirelessAllocator): slot 0 allocates, slot 1 frees. Pure virtual so
 // no vtable is emitted.

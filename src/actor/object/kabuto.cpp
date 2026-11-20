@@ -1,13 +1,11 @@
 #include "engine/functions.h"
+#include "actor/object/kabuto.h"
 #include "global.h"
 
 // Sword module, continued: kabutoEvent (0x0207bc48).
 
-// Spawns an effect (kind 0) at each of the 3 x 3 points that are 16 pixels apart around the object's position
-extern "C" void func_0208a240(Entity *e, u32 kind, u16 x, u16 y); // 0x0208a240, thumb, no original name
 
 // kabutoEvent (0x0207bc48)
-extern "C" void kabutoEvent(Entity *e);
 void kabutoEvent(Entity *e) {
     u8 row;
     u8 col;

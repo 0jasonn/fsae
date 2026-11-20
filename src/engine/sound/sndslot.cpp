@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
+#include "engine/sound/sndslot.h"
 
 // Functions in this file (provisional names; the sound slots are 0x44-byte records at data_02183ec4, the lists are
 // 0x24-byte heads at data_02184304):
@@ -17,7 +17,6 @@ void *LinkList_Next(void *head, void *node);
 }
 
 // SndSlot_ReleaseFirst (0x020bf89c): releases the object held in the first word of the slot.
-extern "C" void SndSlot_ReleaseFirst(void *slot, s32 arg);
 void SndSlot_ReleaseFirst(void *slot, s32 arg) {
     SndVoice_Setup(*(void **)slot, arg);
 }

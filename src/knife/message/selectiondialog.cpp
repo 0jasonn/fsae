@@ -6,7 +6,6 @@
 // Functions in this file (original names from the debug build):
 //   func_020a1a1c (0x020a1a1c, C++ symbol _Z13func_020a1a1cPv, declared in functions.h), selectionDialog::initWithMsgScrn (0x020a1a30)
 
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "actor/enemy/decls_b2.h"
 
 // Functions in this file (module igoal, original names from the debug build):
 //   yukaRewCell (yukaRewCell(OBJ_WORK_*)), igoalRewCell (igoalRewCell(OBJ_WORK_*))

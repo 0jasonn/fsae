@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/protos.h"
+#include "knife/comm/single_play.h"
+#include "engine/vgroup.h"
 #include "actor/object/warphole.h"
 #include "engine/player.h"
 

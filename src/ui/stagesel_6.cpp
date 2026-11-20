@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "ui/stagesel_common.h"
 
 // effect_char_load, 0x02078c80. Loads the graphics of stage select character index (first call sets up the

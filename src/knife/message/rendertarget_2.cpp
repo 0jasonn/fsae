@@ -8,7 +8,6 @@
 extern u8 data_02124984[];  // RenderTarget vtable
 extern u8 data_0217d56c[];  // render target pool: the array pointer is at +0x0c
 extern u8 data_0217d650[];  // render target array, 0x208 bytes per entry, 2 entries
-extern "C" void Knife_Message_RenderTarget_finalize(void *self);
 extern "C" void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);
 
 // RenderTarget::GetRenderTarget(int) (0x020a2efc): the entry of the pool, or NULL while the pool is empty

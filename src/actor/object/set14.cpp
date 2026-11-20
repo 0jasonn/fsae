@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
 
 // Set14 actor (module set14). Address -> name:
 //   0x02064880 Set14, 0x0206489c set14_init (original names)

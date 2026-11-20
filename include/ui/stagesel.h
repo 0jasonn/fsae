@@ -7,7 +7,6 @@
 
 extern "C" {
 void MI_CpuCopy(const void *src, void *dst, u32 size);
-void MI_UncompressLZ16(const void *src, void *dst);
 }
 
 void stagesel_loadsel(u16 index, int mode);
@@ -21,7 +20,6 @@ void del_please_wait(void);
 void start_select(int mode);
 void stagesel_scroll(void);
 int stagesel_save(u8 mode);
-void ZeldaFadeSet(Entity *e, u32 a);
 void ComRequest(u8 request);
 
 // Parameter block of the stage select message dialog (data_02116720). Only the fields used here are named.

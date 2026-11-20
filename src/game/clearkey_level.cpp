@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
-#include "actor/object/k_misc.h"
+#include "game/clearkey.h"
 #include "game/clearkey_level.h"
 
 // ClearKeyLevelCheck (0x02048de8): checks the slots of all players. A player without slot flag 8 gives 1 at once.

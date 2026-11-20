@@ -23,6 +23,7 @@ typedef struct GroupCreateUIView {
 extern "C" {
 void groupCreateUIView_initialize(GroupCreateUIView *self);
 void groupCreateUIView_viewWillApper(GroupCreateUIView *self);
+void groupCreateUIView_leave(void *self);
 }
 
 #endif

@@ -1,9 +1,9 @@
 #include "engine/functions.h"
+#include "game/zmem.h"
 #include "global.h"
 #include "engine/player.h"
 #include "types.h"
-#include "engine/a_decls.h"
-#include "engine/decls_a.h"
+#include "actor/object/boots_plsync.h"
 
 // Per-frame update of the boots object: while its owner is the object itself and the flags say worn it takes the owner's
 // state (plsync), otherwise the object frees its hitbox and is put away.

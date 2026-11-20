@@ -1,8 +1,22 @@
 #include "engine/functions.h"
-#include "knife/subtask/subtask_calls.h"
+#include "knife/subtask/subtask_data.h"
 #include "global.h"
 #include "types.h"
 #include "knife/subtask/subtask_init_bg.h"
+
+// TODO(headers): this declaration of ResChunk_OpenTTLP differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenTTLP(void *entry, void *owner);
+// TODO(headers): this declaration of ResChunk_OpenKBEC differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenKBEC(void *entry, void *owner);
+// TODO(headers): this declaration of ResChunk_OpenRACH differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenRACH(void *entry, void *owner);
+// TODO(headers): this declaration of Menu_ForwardC2cb4 differs from the shared one; see the header restructure report.
+extern "C" s32 Menu_ForwardC2cb4(void *entry, void *owner);
+// TODO(headers): this declaration of Slots_ClearThree differs from the shared one; see the header restructure report.
+extern "C" void Slots_ClearThree(void *block);
+// TODO(headers): this declaration of Slots_ClearThreeAt8 differs from the shared one;
+// see the header restructure report.
+extern "C" void Slots_ClearThreeAt8(void *block);
 
 // subTask_init_obj(int, int, int, int) (0x0209c41c): switches the sub display control register (0x04001000) to the
 // subtask layout, then for each of the four slots (c, d, a, b, in that code order) with an index above -1 loads its

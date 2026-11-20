@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/warp.h"
 #include "game/time_bonus.h"
 #include "global.h"
 

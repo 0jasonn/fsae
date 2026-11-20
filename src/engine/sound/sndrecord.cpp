@@ -2,7 +2,6 @@
 #include "global.h"
 #include "engine/sound/sndrecord.h"
 #include "engine/sound/sndlist.h"
-#include "engine/sound/sndrecord_api.h"
 
 extern "C" {
 void *SndHeap_ReserveLinear(void *heap, s32 size, s32 align);

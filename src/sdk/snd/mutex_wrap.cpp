@@ -1,8 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/callees.h"
 #include "sdk/snd/mutex_wrap_api.h"
+
+extern u8 data_02129d94[];
 
 // Lock and unlock of the global mutex at data_02129d94. Both are tail calls with the mutex as the only argument.
 

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/set58.h"
+#include "game/yousei.h"
 
 // Set58 milkcrown, sazanami, hikari and tamahikari actors (module set58, unit 8). Address -> name:
 //   0x02073bbc set58_milkcrown (original name; dispatches on e->action)

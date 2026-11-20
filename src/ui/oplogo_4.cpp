@@ -2,7 +2,6 @@
 #include "global.h"
 #include "engine/display_state.h"
 
-extern u8 data_0212c4dc;
 
 void oplogo_fadeOff(Entity *e) {
     e->spriteSettings.b0 = 0;

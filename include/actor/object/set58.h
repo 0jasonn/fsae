@@ -20,7 +20,6 @@ extern const u16 set58_cgIdsB[];             // set58_cgIdsB, indexed by gameSta
 #include "engine/em12_type_masks.h"
 extern KnifeObjAffineSrcData scrollArgs;     // scrollArgs
 
-extern "C" int func_02081b64(void);          // unmangled, returns non-zero when the scene check passes
 void set58_actionInit(Entity *e); // 0x020742cc, defined in set58_7.cpp
 void setYouseiEffect(Entity *e); // 0x020742e4, defined in set58 later
 

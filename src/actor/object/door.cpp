@@ -23,7 +23,6 @@ typedef struct SrchEntry {
 extern const s16 cellDeltaTable[]; // cell step per kind (x 4 kinds)
 extern const SrchEntry data_020d9324[]; // cells to look for, per kind
 
-int func_02083cdc(Entity *e);
 
 BOOL DoorTypeCheck(Entity *e) {
     s16 offset;

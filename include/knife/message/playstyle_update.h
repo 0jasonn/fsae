@@ -34,9 +34,6 @@ void playStyleSelUIView_move_out(PlayStyleSelUIView *self);
 void playStyleSelUIView_move_in_return(PlayStyleSelUIView *self);
 void playStyleSelUIView_move_out_return(PlayStyleSelUIView *self);
 void playStyleSelUIView_update(PlayStyleSelUIView *self);
-void clamp_s8(signed char &value, signed char low, signed char high);
-void exchange_savedata(void);
-BOOL is_exchange_savedata_end(void);
 }
 
 #endif

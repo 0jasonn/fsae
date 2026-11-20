@@ -63,7 +63,6 @@ void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);            //
 void func_020c050c(void *p);
 void SndVoiceRef_SetTempo(void *player);
 void Menu_SetRefByte41(void *player);
-void SndSlot_ReleaseFirst(void *player, s32 a);
 void SndSlot_ResetFirst(void *player);
 extern char data_0211ab88[]; // MemoryArchive vtable
 extern char data_0211ab98[]; // SequenceHandle vtable
@@ -74,7 +73,6 @@ void Knife_Sound_WaveHandle_setFlagByte(void *handle, s32 flag);            // K
 void SndSys_Init(void);
 void SndSys_Shutdown(void);
 s32 SndSys_SwapDriverBuffer(void);
-void SndSys_StopAll(void);
 void SndSys_ReadChannelInfoCurrent(s32 index, void *entry);
 }
 
@@ -82,6 +80,10 @@ extern "C" {
 extern KnifeSoundHandleFactory data_02171f74; // sound system's sequence handle factory
 extern KnifeSoundWaveHandle data_02171e74[2];
 extern u8 data_02171eb4[];
+void Knife_Sound_StaticObject_clear(u32 *self);
+void Knife_Sound_StaticObject_dtor(void *self);
+void Knife_Sound_System_destroyWaveHandles(void);
+void *Knife_Sound_WaveHandle_WaveHandle(void *self);
 }
 
 #endif

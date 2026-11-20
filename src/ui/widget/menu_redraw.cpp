@@ -1,7 +1,27 @@
 #include "engine/functions.h"
-#include "game/decls_g.h"
+#include "ui/widget/menu_redraw.h"
 #include "ui/ctrl_scroll.h"
 #include "ui/widget/menu.h"
+
+// Object with two virtual slots; slot 1 (offset 4) is called with two output pointers
+class MenuVirtualObj {
+public:
+    virtual void slot0(void);
+    virtual void slot1(void *a, void *b);
+};
+
+// TODO(headers): this declaration of RectObjPair_updateFlags differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjPair_updateFlags(void *obj, s32 value);
+// TODO(headers): this declaration of RectObjPair_setValue differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjPair_setValue(void *obj, s32 value);
+// TODO(headers): this declaration of RectObjPair_countDownBoth differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjPair_countDownBoth(void *obj);
+// TODO(headers): this declaration of RectObjPair_updateChildren differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjPair_updateChildren(void *obj, s32 value);
 
 extern "C" void Menu_Redraw(MenuWork *menu) {
     u8 changed;

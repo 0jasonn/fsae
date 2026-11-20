@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/set38.h"
+#include "actor/object/setdisp.h"
 #include "engine/irq.h"
 
 // Set38 family (module set38), 0x0206b7d4 .. 0x0206bb34.

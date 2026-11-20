@@ -1,4 +1,6 @@
 #include "engine/functions.h"
+#include "knife/sound/knifesound_stub_api.h"
+#include "engine/sound/sndsys_api.h"
 #include "global.h"
 #include "types.h"
 #include "knife/sound/knifesound_player.h"

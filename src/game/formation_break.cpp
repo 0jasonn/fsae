@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
-#include "actor/enemy/decls_b.h"
+#include "knife/comm/single_play.h"
 #include "game/formation_break.h"
 
 // Formation break in single play: when the active player's call state is set, control passes to the other player

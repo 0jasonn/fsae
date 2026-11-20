@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "actor/enemy/decls_b2.h"
 #include "game/srchcells_api.h"
 
 // Functions in this file (module srchCells, original name from the debug build): srchCells

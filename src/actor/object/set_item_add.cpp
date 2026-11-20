@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/droprupees.h"
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/set_item_add.h"

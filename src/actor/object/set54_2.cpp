@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
-#include "actor/object/objdecls.h"
+#include "actor/object/rewdoor_knife.h"
 #include "actor/object/set54_actions.h"
 #include "global.h"
 

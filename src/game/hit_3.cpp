@@ -1,9 +1,9 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "game/hitdecls.h"
 #include "engine/player.h"
 #include "game/hit_6.h"
+#include "game/hit.h"
 
 // Hit handlers, second hit unit (module hit). Original names from the debug build:
 //   hit_jelly, hit_tgtstop, hit_plhajiki, hit_orgdamageonly, hit_tgtdamageonly, hit_damageonly, hit_orgdie, hit_tgtdie,

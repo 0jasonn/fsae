@@ -1,7 +1,9 @@
 #include "engine/functions.h"
 #include "actor/object/tama0f.h"
-#include "actor/object/tama0f_decls.h"
+#include "actor/object/tama0f_contact.h"
 #include "global.h"
+
+extern const EntityFunc data_020dcb48[];
 
 // tama0f_contact (0x0207d1f4): runs the action, then handles a contact (bit 7 of contactFlags) for a non-zero type2.
 // Contact kind 0 attaches a work object to the touching player (status bit 0x400); kind 1 spawns rupees by type2;

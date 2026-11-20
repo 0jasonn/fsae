@@ -2,6 +2,8 @@
 #include "engine/disp_reset.h"
 #include "engine/irq.h"
 
+extern u8 data_0212de50[];
+
 // DispReset (0x0202a60c): resets the display state: clears the display control register, the buffers that are copied
 // to OAM, palette and VRAM, and stops the HBlank DMA when it is running.
 void DispReset(void) {

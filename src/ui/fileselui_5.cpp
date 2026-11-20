@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/uiobject.h"
-#include "ui/fileselui_api.h"
+#include "ui/fileselui.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   fileSelUIView_moveOut_wait (0x020a8178)

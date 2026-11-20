@@ -8,7 +8,6 @@
 
 extern "C" {
 void *Knife_Message_PictogramRenderer_initGlobal(void *self);
-void MI_CpuFill8(void *dst, u8 value, u32 size);
 }
 
 #endif

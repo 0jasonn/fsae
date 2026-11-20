@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/radar_status.h"
 
 // GetSubtaskRadarStatus(SUBTASK_RADAR_WORK*) (0x020a3570, original name from the debug build): collects the values the

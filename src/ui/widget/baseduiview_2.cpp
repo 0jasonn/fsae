@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/baseduiview.h"
-#include "ui/widget/baseduiview_api.h"
 
 // Functions in this file (no original names in the debug build, so plain C linkage):
 //   groupCreateUIView_vfunc2 (0x020ac014): empty slot 2 of the groupCreateUIView vtable

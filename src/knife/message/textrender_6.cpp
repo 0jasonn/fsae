@@ -1,8 +1,10 @@
 #include "engine/functions.h"
 #include "knife/message/textrender_2.h"
 #include "knife/comm/multisio.h"
-#include "game/decls_e.h"
 
+// TODO(headers): declared in knife/message/textrender.h, which this file cannot include (its types clash with the
+// ones used here); see the header restructure report.
+extern "C" s32 Knife_Message_TextRenderer_getScreenWidth(s32 isBg, s32 index);
 extern const u16 data_020de6f8[]; // empty string
 
 #define BG_CNT(addr) (*(volatile u16 *)(addr))

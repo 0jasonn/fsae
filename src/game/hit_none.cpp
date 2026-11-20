@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/hitdecls.h"
 #include "game/hit.h"
 
 // Hit handler table (0x020ce540 and following) entries: no reaction, and a plain shield check.

@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "engine/blzload.h"
+#include "engine/heap_vcall.h"
 
 // LoadBlzFile(path, heap, align, outSize) (0x020b7b1c, was LoadBlzFile): loads a BLZ-compressed file from the archive into a
 // block of the heap and decompresses it in place. The size after decompression is the file size plus the extra size stored in

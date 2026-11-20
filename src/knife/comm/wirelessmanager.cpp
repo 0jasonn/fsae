@@ -4,7 +4,6 @@
 #include "knife/comm/wm_work.h"
 #include "knife/comm/stub_noop_a_api.h"
 #include "knife/comm/stub_noop_b_api.h"
-#include "knife/comm/comm_parentinfo_api.h"
 #include "knife/comm/comm_childinfo_api.h"
 #include "knife/comm/wirelessmanager.h"
 

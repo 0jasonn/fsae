@@ -30,18 +30,13 @@ extern const u8 data_02104a74[];
 
 #include "engine/palette_buff.h"
 extern u16 data_02170104[];
-extern u8 data_0212c500;
-extern u8 data_0212c4dc;
-extern VoidFunc data_0212c564;
 extern const VoidFunc data_02104a40[];
 extern const u16 mistStepTable[];
 extern const u32 titleDialogBlock;
 #include "engine/frame_counter.h"
 extern u8 data_0212c4bc;
 extern u8 data_0212c4f8;
-extern u8 localPlayerIndex;
 #include "engine/cockpit_state.h"
-extern const u8 data_020ce4d0[];
 extern s32 data_02134924;
 #include "engine/em2f_map_flag.h"
 extern const VoidFunc data_02104a24[];

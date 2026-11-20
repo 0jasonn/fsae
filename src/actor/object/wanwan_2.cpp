@@ -3,7 +3,8 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/wanwan.h"
-#include "actor/object/actor_calls_k.h"
+#include "engine/droprupees.h"
+#include "engine/objutil.h"
 
 // Wanwan (bow-wow chain) fields past the shared Entity header
 typedef struct Vars_Wanwan {

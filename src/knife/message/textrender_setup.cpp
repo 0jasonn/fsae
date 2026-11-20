@@ -1,4 +1,5 @@
 #include "knife/message/textrender_setup.h"
+#include "knife/app/knife_app.h"
 
 // Knife_Message_TextRender_setupFromMsgScrn (0x020a0f24): sets up the text render from a message screen info: copies its parameters, builds the
 // canvas for the text area and draws the first character cells of the window into the screen buffer

@@ -1,8 +1,20 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 #include "ui/widget/slider_index_api.h"
+
+// TODO(headers): declared in ui/widget/slider.h, which this file cannot include (its types clash with the
+// ones used here); see the header restructure report.
+extern "C" void SliderRing_setSelectedChild(void *self, s32 selected);
+
+// TODO(headers): this declaration of RectGroup_updateItems differs from the shared one;
+// see the header restructure report.
+extern "C" void RectGroup_updateItems(void *self);
+// TODO(headers): this declaration of Slider_setPosition differs from the shared one; see the header restructure report.
+extern "C" void Slider_setPosition(void *self, s16 position);
+// TODO(headers): this declaration of Slider_setPositionChecked differs from the shared one;
+// see the header restructure report.
+extern "C" s32 Slider_setPositionChecked(void *self, s16 position);
 
 // Slider setup and selection helpers (0x020b9380 through 0x020b94ac); names and record types are provisional.
 

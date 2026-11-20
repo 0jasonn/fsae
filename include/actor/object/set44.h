@@ -4,7 +4,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/player_flags.h"
-#include "actor/object/cellcalls.h"
 #include "actor/object/nemoto_3.h"
 #include "engine/player.h"
 

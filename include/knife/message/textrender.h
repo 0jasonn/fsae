@@ -76,4 +76,19 @@ typedef struct KnifeTextRender {
     u8 flag84;           // 0x84
 } KnifeTextRender;
 
+extern "C" {
+s32 Knife_Message_TextRenderer_getScreenWidth(s32 isBg, s32 index);  // 0x020a5a58
+u32 Knife_Message_TextRenderer_getTableValue(s32 table, s32 index);
+void Knife_Message_TextRender_clearCanvas(void *a, s32 mode);
+void Knife_Message_TextRender_onReadBlankTag(void *a, s32 value);
+void Knife_Message_TextRender_onReadNewLine(void *a);
+void Knife_Message_TextRender_onReadNop(void *a);
+void Knife_Message_TextRender_onReadSelectTag(void *a);
+void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values);
+void Knife_Message_TextRender_setField83(void *a, u8 value);
+void Knife_Message_TextRender_setFlag83On(void *a);
+void Knife_Message_TextRender_setup(void *a);
+u32 Knife_Message_TextRenderer_getField50(void *a, s32 index);
+}
+
 #endif

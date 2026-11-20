@@ -5,10 +5,8 @@
 #include "game/rankingsave.h"
 
 // Shared with other files, declared here until functions.h gets them.
-extern u8 localPlayerIndex;      // 0x0212c504
 extern u8 rankingStepTable[];    // 0x02115268, the ranking step table (rankingStepTable)
 extern const u8 data_02115298[]; // template of the 0x38-byte message screen record copied by ranking_exit
-extern const u8 data_020ce4d0[];
 
 // One ranking table entry (4 bytes), data_02171d00[player count]. ranking_getKey reads the rank byte.
 typedef struct RankingEntry {

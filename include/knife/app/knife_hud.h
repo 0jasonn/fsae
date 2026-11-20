@@ -36,4 +36,9 @@ public:
 }
 }
 
+extern "C" {
+void Knife_Hud_HudManager_StatusUpMarker_emptyDtor(void *self);
+void Knife_Interp_VecFx32_emptyDtor(void *self);
+}
+
 #endif

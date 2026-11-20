@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/enemy/em2a.h"
-#include "actor/enemy/em2a_api.h"
 
 extern const u8 *em2a_landTimerTables[]; // em2a_landTimerTables: per type table of the four landing subtimers
 

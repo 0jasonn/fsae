@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/ctrl_select.h"
+#include "ui/widget/menu.h"
 
 // ctrl_select: function Ctrl_advanceSelection (0x020bb56c), provisional name Ctrl_advanceSelection. Moves the selection to the
 // next item: first the second slider inside the current item, then the list slider to the next item.

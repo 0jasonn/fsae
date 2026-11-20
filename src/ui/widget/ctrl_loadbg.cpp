@@ -1,4 +1,6 @@
 #include "engine/functions.h"
+#include "engine/os_owner_api.h"
+#include "sdk/std/std_snprintf_api.h"
 #include "global.h"
 #include "types.h"
 #include "ui/widget/ctrl_loadbg.h"

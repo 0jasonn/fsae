@@ -1,5 +1,4 @@
 #include "engine/functions.h"
-#include "actor/object/objdecls.h"
 
 extern s16 scrollArgs[3]; // scale x, scale y, angle for ObjAffineSet2
 

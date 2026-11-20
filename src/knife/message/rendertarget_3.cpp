@@ -9,7 +9,6 @@
 extern u8 data_02124984[];  // RenderTarget vtable
 extern u8 data_0217d56c[];  // render target pool: the array pointer is at +0x0c
 extern u8 data_0217d650[];  // render target array, 0x208 bytes per entry, 2 entries
-extern "C" void Knife_Message_RenderTarget_finalize(void *self);
 extern "C" void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);
 
 // i_IsExText(unsigned long) (0x020a3134): true for the character codes 0x2328 to 0x270f

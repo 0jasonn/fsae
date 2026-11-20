@@ -2,7 +2,6 @@
 #define WIP_D_WIRELESSMANAGER_H
 
 #include "types.h"
-#include "sdk/wm/wm_api.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wm_irq.h"
 
@@ -50,7 +49,6 @@ void Knife_Comm_WirelessManager_update_parent(void *self);
 void Knife_Comm_WirelessManager_update_child(void *self);
 s32 WM_StepDataSharing(void *buf, void *sendBuf, void *recvBuf);
 void *WM_GetSharedDataAddress(void *buf, void *table, u16 index);
-void MI_CpuFill8(void *dst, u32 value, u32 size);
 s32 func_02019968(void);
 s32 WM_PowerOff(void *callback);
 s32 WM_Reset(void *callback);

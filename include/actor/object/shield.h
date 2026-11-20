@@ -21,8 +21,9 @@ typedef struct SpriteFlipView {
 extern const void *const shieldHitboxTable[]; // 0x021166f8, hitbox per half animation state of the owner
 
 extern "C" {
-void func_020841b0(Entity *e); // thumb
 void func_02084320(Entity *e); // thumb
 }
+
+void shieldMove(Entity *e);     // original shieldMove(OBJ_WORK_*), defined in actor/object/shield.cpp
 
 #endif

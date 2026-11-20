@@ -1,7 +1,9 @@
 #include "engine/functions.h"
+#include "game/zmem.h"
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/sword_move.h"
+#include "game/player.h"
 
 // Sword actor (module sword). Address -> name:
 //   0x0207b190 sword_move (original name): per-frame update of the sword: removal, hit sounds, wave spawn

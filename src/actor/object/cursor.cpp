@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
+#include "game/keyclear_api.h"
+#include "game/circlewindow.h"
 
 extern EntityFunc cursorTable[];       // cursorTable
 extern u8 cursorInitTable[][3];        // cursorInitTable: start x, start y, animation per type2

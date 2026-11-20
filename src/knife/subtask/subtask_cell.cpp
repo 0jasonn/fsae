@@ -5,7 +5,6 @@
 extern u8 data_0217a23c[];
 extern u8 data_0217a46c[];
 extern u8 data_0217d06c[];
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 
 // Reserves the first free cell. A full pool leaves the output index untouched and returns the pool base.
 void *subTask_GetNewCellAnimation(s32 *outIndex) {

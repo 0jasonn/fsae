@@ -38,8 +38,6 @@ typedef struct SpWorkPair {
     u8 unk_3c;              // 0x3c
 } SpWorkPair;
 
-s32 abs_s32(s32 value);
-extern u8 data_0212caf0[];
 extern u8 data_0212cb60[];
 
 // SinglePlayWork::SinglePlayWork() (0x02099da8): clears the pointers, then the halfword and byte fields

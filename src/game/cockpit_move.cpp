@@ -1,9 +1,11 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/player.h"
 #include "engine/cockpit_state.h"
 #include "engine/frame_counter.h"
 #include "engine/telop_request.h"
 #include "engine/misc.h"
+#include "actor/object/setdisp.h"
 #include "game/cockpitdata.h"
 #include "game/cockpit_move.h"
 

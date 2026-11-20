@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "ui/lobby.h"
-#include "ui/lobby_api.h"
 
 // Functions in this file (no original names, provisional name):
 //   lobby_updateNone (lobby_updateNone)

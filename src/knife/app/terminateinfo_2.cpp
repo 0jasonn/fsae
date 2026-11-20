@@ -1,18 +1,13 @@
 #include "engine/functions.h"
+#include "engine/data_0212c564.h"
 #include "global.h"
 #include "engine/blend_request.h"
 #include "types.h"
 #include "knife/app/knife_hud.h"
-#include "engine/g_calls.h"
 
-// terminateInfo_move() (0x020c8b2c): the per-frame step of the terminate sequence. State 0 waits for the timer
-// in effectState.timer, updates the HUD and starts the white-out; state 1 waits for the second timer and starts the
-// next subtask. The terminate handler in data_0212c564 and func_020830ec run on every step.
-extern u8 data_0212c4dc;   // terminate state
 #include "engine/vblank_request.h"
 extern u16 data_0212c510;  // bit 0 requests the white-out
 #include "engine/effect_state.h"
-extern void (*data_0212c564)(void); // terminate handler
 
 void terminateInfo_move(void) {
     u8 *app;

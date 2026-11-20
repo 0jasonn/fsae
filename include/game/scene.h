@@ -35,18 +35,13 @@ extern const u16 data_021094c4[];
 extern const u16 data_021094cc[];
 extern const u16 data_021094d4[];
 extern const u16 data_021094dc[];
-void DispReset(void);
 void OpeningTaskFinalzie(void);
 void ObjMoveInit(void);
 
-extern u8 data_0212ccb0[];
-extern u8 data_0212cdb0[];
-extern u8 objAffineSet[];
 extern u8 data_020d80d8[];
 #include "engine/cockpit_state.h"
 #include "engine/vblank_request.h"
 extern u16 data_0212c514;
-extern u16 playerKeys[];
 #include "engine/com_work.h"
 #include "engine/palette_buff.h"
 extern u8 titleDialogBuffer[];
@@ -55,9 +50,6 @@ extern u8 data_0216fcfc[];
 extern u8 data_0216fcfd[];
 extern u8 data_0216fcfe[];
 extern u8 data_0216fcff[];
-extern u32 data_0212c56c;
-extern u32 data_0212c570;
-extern u32 data_0212c528;
 
 extern const u8 spawnList_0537bc_set[];
 extern const u8 spawnList_0537bc_clear[];

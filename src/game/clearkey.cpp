@@ -1,8 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
-#include "actor/object/k_misc.h"
-#include "actor/object/k_yousei.h"
+#include "game/clearkey.h"
 // key_check (0x02048ea8): bit mask of the two-bit fields of keys (field n -> bit n) that are at least threshold
 s32 key_check(u8 keys, u8 threshold) {
     s32 result = 0;

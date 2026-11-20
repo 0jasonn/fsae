@@ -1,9 +1,7 @@
 #include "engine/functions.h"
-#include "engine/common_d.h"
 #include "engine/player.h"
 #include "global.h"
 
-extern u8 objAffineSet[];
 
 void ObjAffineSet2(const KnifeObjAffineSrcData *src, Entity *e) {
     u8 *base = objAffineSet + (e->spriteSettings.b24 >> 1) * 0x20;

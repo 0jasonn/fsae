@@ -1,9 +1,6 @@
 #include "engine/functions.h"
 #include "types.h"
 
-extern "C" u32 OS_DisableInterrupts(void);
-extern "C" void OS_RestoreInterrupts(u32 state);
-extern "C" void OS_Terminate(void);
 extern "C" u64 OS_GetTick(void);
 extern "C" void OSi_InsertAlarm(void *alarm, u64 fire);
 

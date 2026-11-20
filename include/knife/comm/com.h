@@ -5,4 +5,10 @@
 
 #include "engine/com_work.h"
 
+void ComFinish(u32 a);                    // original ComFinish(unsigned long)
+extern "C" {
+void func_020281a8(void);
+void func_020281ac(void);
+}
+
 #endif

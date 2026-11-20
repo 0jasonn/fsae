@@ -8,8 +8,6 @@
 
 extern "C" {
 void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result);
-void MI_CpuFill8(void *dst, u8 value, u32 size);
-void MI_CpuCopy8(const void *src, void *dst, u32 size);
 // the original returns BOOL (TRUE once the scan started), functions.h declares a void result
 BOOL Knife_Comm_WirelessManager_startScan(void *self, BOOL scanMode, const u8 *bssid);
 }

@@ -1,7 +1,16 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
+
+// TODO(headers): this declaration of RectSpan_create differs from the shared one (ui/widget/uiobj_create.h returns
+// void *); see the header restructure report.
+extern "C" s32 RectSpan_create(void *ref);
+extern u8 data_02127178[];
+// TODO(headers): this declaration of RectSpan_callAndMore differs from the shared one;
+// see the header restructure report.
+extern "C" void RectSpan_callAndMore(s32 value, void *data, void *obj, void *ref);
+// TODO(headers): this declaration of Ctrl_setItemList differs from the shared one; see the header restructure report.
+extern "C" void Ctrl_setItemList(void *obj, s32 value);
 
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_Init (Menu_Init)

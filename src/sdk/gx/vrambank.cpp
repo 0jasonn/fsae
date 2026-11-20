@@ -1,8 +1,14 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/callees.h"
 #include "sdk/gx/vrambank_api.h"
+
+extern u8 data_02129872[];
+extern u8 data_02129874[];
+extern u8 data_0212986c[];
+extern u8 data_0212986e[];
+extern u8 data_0212987a[];
+extern u8 data_0212987c[];
 
 // VRAM bank reset helpers. Each clears one display control bit (main DISPCNT at 0x04000000, sub DISPCNT at
 // 0x04001000) and then resets one bank record in the 0x02129864 table through resetBankForX_.

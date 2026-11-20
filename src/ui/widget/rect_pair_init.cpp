@@ -1,7 +1,16 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
+#include "ui/widget/rect_create.h"
+
+// TODO(headers): this declaration of RectObjList_setGeometry differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjList_setGeometry(void *self, s16 *pos, s16 *size, s32 value);
+// TODO(headers): this declaration of RectObjList_setItems differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjList_setItems(void *self, void *holder, void **src, s32 count, s16 *pos, s16 *size);
+// TODO(headers): this declaration of func_020bc200 differs from the shared one; see the header restructure report.
+extern "C" s32 func_020bc200(void *owner, u16 w, s32 x);
 
 // rect_pair_init: function RectObjPair_init (0x020b8440), provisional name.
 

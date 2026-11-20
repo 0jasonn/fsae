@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
 
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_GetPosition (Menu_GetPosition)

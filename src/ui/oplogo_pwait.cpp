@@ -1,9 +1,8 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "engine/irq.h"
 
-extern u8 data_0212c4dc;  // opening/title scene step
-extern u8 localPlayerIndex;
 #include "engine/effect_state.h"
 
 // oplogo_pwait (0x02068714): "press button" prompt of the opening logo. The first call places the sprite; afterwards it

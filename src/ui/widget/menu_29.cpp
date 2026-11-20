@@ -1,8 +1,16 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
-#include "ui/widget/menu_api.h"
+#include "engine/heap_vcall.h"
+#include "engine/sound/sndslot.h"
+#include "engine/sound/sndstate_startlist.h"
+
+// TODO(headers): this declaration of Menu_releaseBlocks differs from the shared one; see the header restructure report.
+extern "C" void Menu_releaseBlocks(void *obj);
+// TODO(headers): this declaration of Menu_InitState differs from the shared one; see the header restructure report.
+extern "C" s32 Menu_InitState(s32 value);
+// TODO(headers): this declaration of RectBufSet_init differs from the shared one; see the header restructure report.
+extern "C" void RectBufSet_init(s32 obj, void *checker, void *a, void *b, void *c, u16 d);
 
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_AcquirePoolEntry (Menu_AcquirePoolEntry)
@@ -142,7 +150,6 @@ s32 Menu_InRange(void *self, s32 value, s32 low, s32 high) {
 //   Menu_CreateEntryDefault (Menu_CreateEntryDefault), Menu_CreateEntryEx (Menu_CreateEntryEx)
 
 // Menu_CreateEntryDefault (0x020befd0): Menu_CreateEntryEx with a zero sixth argument.
-extern "C" void Menu_CreateEntryDefault(void *out, void *checker, void *a, void *b, void *c);
 void Menu_CreateEntryDefault(void *out, void *checker, void *a, void *b, void *c) {
     Menu_CreateEntryEx(out, checker, a, b, c, 0);
 }

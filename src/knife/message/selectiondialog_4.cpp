@@ -1,14 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/messageselect_api.h"
-#include "knife/message/selectiondialog_api.h"
 #include "knife/message/selectiondialog.h"
 #include "engine/message_request.h"
 
 // Functions in this file (original names from the debug build):
 //   selectionDialog::update_close (0x020a2268)
 
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 

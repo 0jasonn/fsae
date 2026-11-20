@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/setmisc.h"
 
 // Set08 actor (module set08). Address -> name:
 //   0x02061be8 Set08 (original name)

@@ -1,7 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
+
+// TODO(headers): this declaration of RectObjList_init differs from the shared one; see the header restructure report.
+extern "C" void *RectObjList_init(void *self);
 
 // rect_slot2: function RectSlot2_init (0x020bba00), provisional name.
 

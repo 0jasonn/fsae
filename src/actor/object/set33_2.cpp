@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 
 extern u16 set33SpeedTable[];          // set33SpeedTable, per type
 extern u8 set33Unk2eTable[];           // set33Unk2eTable, per type

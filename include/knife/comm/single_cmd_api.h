@@ -7,7 +7,6 @@
 
 extern "C" {
 void Knife_Single_SinglePlay_SetObjMoveReqNo(void *self, Entity *obj, u32 player, s32 delta, u8 dir);
-void Knife_Single_SinglePlay_SetObjMoveReqFlag(void *self, Entity *obj, u32 mask, s32 delta, u8 dir);
 }
 
 #endif

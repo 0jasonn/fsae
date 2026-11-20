@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/set53_move3.h"
+#include "engine/map_state.h"
 
 // set53_move3 (0x020713a0): the boat hull moving on the water. Pushes the players aside, moves one pixel step at a
 // time through the current, turns on the flow cells, stops at the landing cells and places the jetty pieces around it.

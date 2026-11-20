@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "knife/comm/multisio.h"
 

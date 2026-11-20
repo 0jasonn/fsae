@@ -91,7 +91,6 @@ extern const s8 data_020d4170[];        // step table, x and y per entry
 
 #include "engine/map_state.h"
 
-extern u8 data_0212c500;
 extern void (*const endingTasks[])(void);
 
 

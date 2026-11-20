@@ -2,7 +2,6 @@
 #include "global.h"
 #include "knife/message/knife_message.h"
 #include "types.h"
-#include "knife/message/knife_message_api.h"
 #include "knife/message/knife_message_layout.h"
 
 // Functions in this file (original names from the debug build):

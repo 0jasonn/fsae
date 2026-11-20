@@ -5,5 +5,7 @@
 #include "engine/functions.h"
 
 void pos_copy(Entity *src, Entity *dst); // 0x0205e05c, original name pos_copy(OBJ_WORK_*, OBJ_WORK_*)
+// 0x0205e114, original warphole_exit(OBJ_WORK_*), defined in src/object/warphole_3.cpp
+void warphole_exit(Entity *e);
 
 #endif

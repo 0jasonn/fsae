@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "knife/comm/com.h"
 #include "global.h"
 #include "types.h"
 #include "knife/comm/comm.h"

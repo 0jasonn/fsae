@@ -12,7 +12,6 @@ extern u8 pauseDialogWindow[];
 
 extern "C" {
 void mapmode_move(void);                           // 0x02026a34
-void CockpitInit(void);                            // 0x020264f4
 void cockpit_bg_trans(void);
 }
 void CockpitUpdate(void);                          // 0x02026628, C++ (original CockpitUpdate())
@@ -22,13 +21,11 @@ void kakera_disp(void);
 void kinomi_disp(void);
 void MapMarkerSet(void);
 void cockpit_write_rupee(u16 *dst, u32 value, u8 count, u16 flags);   // original write_rupee
-extern "C" BOOL Knife_Message_selectionDialog_isModal(const void *a);
 
 // cockpit_obj_set has C++ linkage (original cockpit_obj_set(unsigned char)), 0x02026850.
 void cockpit_obj_set(u8 index);
 
 
 void fill_rect(u8 x, u8 y, u8 width, u8 height);   // 0x0202688c  // C++ linkage (original_names.tsv)
-void Cockpit(void);                                // 0x02026b98  // C++ linkage (original_names.tsv)
 
 #endif

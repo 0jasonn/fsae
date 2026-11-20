@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/hitdecls.h"
+#include "actor/object/bomb.h"
+#include "actor/object/bomb_flash.h"
 #include "engine/player.h"
 
 // Bomb main (module bomb, second unit). Named Bomb (Bomb renamed in scratch/agentE/renames.txt).

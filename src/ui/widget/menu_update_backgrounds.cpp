@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "game/decls_g.h"
+#include "ui/widget/menu_update_backgrounds.h"
 #include "ui/widget/ctrl_wrap_api.h"
 #include "ui/widget/menu.h"
 #include "ui/widget/menu_scroll.h"

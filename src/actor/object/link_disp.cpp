@@ -2,7 +2,6 @@
 #include "engine/player.h"
 #include "global.h"
 
-void func_020859a0(Entity *e, u8 a, u8 b); // 0x020859a0, thumb, C++ linkage (objdecls.h declares it too)
 
 // link_disp (0x02072684): updates the demo Link's sprite from the motion id of its player: bit 2 of the sprite word
 // is set while the animation state is above 4 (facing), the low byte of the motion id (plus half the animation state

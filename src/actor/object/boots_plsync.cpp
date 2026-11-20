@@ -1,10 +1,11 @@
 // boots_plsync (0x020246b4): copies the template's sprite flip to the boots, inverted when bit 1 of animationState is set.
 #include "engine/functions.h"
 #include "global.h"
-#include "engine/decls_a.h"
+#include "actor/object/boots_plsync.h"
 
-extern const s8 data_020ce52c[];
-extern const s8 data_020ce51c[];
+extern const s8 data_020ce52c[];           // hitbox offsets, four bytes per pair of animation states
+extern const s8 data_020ce51c[];           // (x, y) offsets per animation state, pairs of signed bytes
+
 
 void boots_plsync(Entity *e, Entity *tmpl) {
     s8 *hitbox;

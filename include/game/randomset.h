@@ -15,8 +15,6 @@ typedef struct RandomSetWork {
 } RandomSetWork;
 
 extern RandomSetWork data_02134ae8[8];
-
-// original zFree(void*), C++ linkage (_Z5zFreePv)
-void zFree(void *p);
+void RandomSetInit(void);
 
 #endif

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/sdk_wrap.h"
 #include "sdk/os/os_wrap_api.h"
 
 // Calls OSi_IrqCallback with a zero first argument.

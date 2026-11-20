@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "game/hitdecls.h"
 #include "game/hit_6.h"
 
 // Wisp hit (module hit, seventh unit). Original name: hit_wisp (hit_wisp(OBJ_WORK_*, OBJ_WORK_*, unsigned char)).

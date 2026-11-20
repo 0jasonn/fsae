@@ -120,7 +120,6 @@ extern u16 eventList_e334[];
 extern u16 eventList_e33e[];
 
 // Functions from other units that are not in engine/functions.h (original signatures from original_names.tsv)
-void RewCellOne(u16 a, u16 b, u16 c);
 void MultiEventSet(u16 *list, u8 a, u8 b, u8 c);
 
 #endif

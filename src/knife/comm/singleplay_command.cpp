@@ -1,9 +1,8 @@
 #include "engine/functions.h"
 #include "knife/comm/single_play.h"
-#include "knife/comm/single_play_api.h"
+#include "knife/comm/singleplay_command.h"
 
 extern "C" {
-void Knife_Single_SinglePlay_UpdateCommand(void *self, PlayerData *player0, PlayerData *player1);
 }
 
 // Knife::Single::SinglePlay::UpdateCommand(PL_WORK_*, PL_WORK_*) (0x020997fc): runs the pending request. Kind 1 changes the

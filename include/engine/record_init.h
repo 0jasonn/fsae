@@ -2,7 +2,6 @@
 #define WIP_E_RECORD_INIT_E_H
 
 #include "engine/functions.h"
-#include "engine/record_init_api.h"
 
 // Two bytes per size class: [log2 of the height][log2 of the width] (rodata data_020df144)
 typedef struct RecordShapeEntry {
@@ -26,6 +25,7 @@ extern u8 data_020df138[];
 
 extern "C" {
 void Record_InitShape(u8 *self, u32 a, u32 width, u32 height, u32 d);
+void Record_Init(u8 *self, u32 a, u32 b, u32 c, u32 d, u32 e, u32 f);
 }
 
 #endif

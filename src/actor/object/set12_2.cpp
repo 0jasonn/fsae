@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
+#include "actor/object/rc_yuka.h"
 #include "actor/object/set12.h"
 
 // Set12 actor, second unit (module set12). Address -> name:

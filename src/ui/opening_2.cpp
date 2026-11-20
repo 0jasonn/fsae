@@ -1,5 +1,9 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
+#include "engine/data_0212c564.h"
+#include "engine/local_player_index.h"
 #include "engine/misc.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 #include "engine/irq.h"
 

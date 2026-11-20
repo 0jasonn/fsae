@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 
 extern EntityFunc set35Table[];        // set35Table, indexed by action
 extern const u8 set35Hitbox[];         // set35Hitbox

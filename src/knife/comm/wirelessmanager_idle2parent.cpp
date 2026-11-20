@@ -1,9 +1,12 @@
 #include "engine/functions.h"
+#include "knife/comm/wm_child_api.h"
+#include "knife/comm/wm_measure_api.h"
 #include "global.h"
 #include "types.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wm_mp_api.h"
 #include "knife/comm/wirelessmanager.h"
+#include "sdk/wm/wm_start_parent.h"
 #include "knife/comm/wm_idle2parent.h"
 
 // Knife::Comm::WirelessManager::update_idle2parent() (0x02092c0c): the idle-to-parent step, run by the timer at +0x1cd8.

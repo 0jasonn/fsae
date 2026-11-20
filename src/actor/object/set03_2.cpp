@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/fumi_api.h"
-#include "actor/object/cellcalls.h"
+#include "engine/map_state.h"
 
 typedef struct Vars_Set03Move {
     /* 00 */ u8 unk_00[0x76];

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/set36.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set36_actions.h"
 
 

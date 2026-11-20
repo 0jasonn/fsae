@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/check.h"
 #include "global.h"
 #include "types.h"
 #include "engine/player.h"
@@ -16,8 +17,6 @@ typedef struct CheckSlot {
 extern CheckSlot data_0212e590[16];
 extern void *data_0213490c;
 
-extern "C" void CheckInit(void);
-extern "C" void CheckPlsSet(void);
 
 // Clears the flag of all 16 slots, then rotates the link words by the player count (swaps for 2, rotations for 3 and 4).
 void CheckInit(void) {

@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "knife/message/pictogram_ctor_api.h"
 #include "knife/message/setuprt.h"
 
 // Knife::Message::SetupTextRenderer (0x020a2b14): resets the text renderer, sets up the pictogram OAM buffers, screen buffers and

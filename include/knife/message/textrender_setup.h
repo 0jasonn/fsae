@@ -25,13 +25,7 @@ typedef struct TextRenderMsgScrn {
 extern "C" {
 void Knife_Message_TextRender_setupFromMsgScrn(KnifeTextRender *self, const TextRenderMsgScrn *info);
 void Record_InitTable(void *canvas, void *bits, s32 cellWidth, s32 cellHeight, s32 depth);
-void *KnifeApp_getField20Address(void *app);
-s32 func_020c6008(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
-void Knife_Message_TextRender_setup(void *self);
 void Knife_Message_TextRender_setupCanvas(KnifeTextRender *self, const TextRenderMsgScrn *info, s32 index);
-void Knife_Message_TextRender_setField83(void *a, u8 value);
-void Knife_Message_TextRender_setCenteringParam(void *a, s32 count, const u16 *values);
-void Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(void *a);
 }
 
 #endif

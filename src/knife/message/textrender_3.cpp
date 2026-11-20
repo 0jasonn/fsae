@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "knife/message/textrender_api.h"
 #include "knife/message/textrender.h"
 
 // Functions in this file (original names from the debug build, or invented where marked):

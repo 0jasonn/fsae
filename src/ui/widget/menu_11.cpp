@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
 
 // Clears two words.
 void Menu_ClearPair(u32 *pair) {
@@ -23,7 +22,6 @@ void func_020c050c(void *obj, s32 value);
 void func_020c1660(s32 value);
 void SndSys_Init(void *obj);
 void Menu_ClearRef(void *obj);
-void SndSlot_ReleaseFirst(void *obj, s32 value);
 void SndSys_Shutdown(void);
 }
 

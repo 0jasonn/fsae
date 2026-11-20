@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/setmisc.h"
+#include "actor/enemy/rewcell_back.h"
 #include "actor/object/set06.h"
 
 // Set06 actor, second unit (module set06). Address -> name:

@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/entity.h"
 #include "engine/player.h"
 #include "global.h"
@@ -23,7 +24,6 @@ extern EntityFunc em0f_actions[];
 extern EntityFunc em0f_normalActions[];
 extern const u8 em0f_hitbox[];
 #include "engine/map_state.h"
-extern u8 localPlayerIndex;
 extern u16 playerKeysPrev[4];
 
 void em0f_main(Entity *e) {

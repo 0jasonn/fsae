@@ -1,9 +1,9 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/player.h"
 
 extern const u16 data_02115ae0[];
 extern u32 data_021348fc;
-extern u8 localPlayerIndex;
 // itemget_message, 0x02065e14. Requests the item message of the player's current item once per item: in a wireless game
 // only on the machine of the player in question, and only when the item's bit is not yet set in the shown flags.
 void itemget_message(Entity *e) {

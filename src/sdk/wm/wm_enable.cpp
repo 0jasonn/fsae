@@ -1,4 +1,5 @@
-#include "sdk/wm/wm_api.h"
+#include "sdk/wm/wm_enable.h"
+#include "engine/functions.h"
 
 // Inferred SDK name. The standard enable entry uses mode zero.
 s32 WM_Enable(void *callback) {

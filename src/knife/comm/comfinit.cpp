@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "actor/enemy/decls_b.h"
+#include "knife/comm/com.h"
 
 // Functions in this file (provisional name, original function is ComInitState):
 //   ComInitState -> ComInitState

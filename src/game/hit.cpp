@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "game/hitdecls.h"
 
 // Hit and damage helpers (module hit). Original names from the debug build:
 //   decVital, shiledCheck, nakamaCheckTgtOnly, nakamaCheck, setKokin

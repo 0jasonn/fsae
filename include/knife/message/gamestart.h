@@ -24,7 +24,6 @@ extern const StartCellIds data_020df1c4;
 
 extern "C" {
 void subtask_init_hblank_raster(s32 mode);
-void GXx_SetMasterBrightness_(void *reg, s32 value);
 void subTask_game_start_init_vram(s32 mode);
 void subTask_init_bg3(int a, int b, int c);
 void subTask_init_obj_lang(int a, int b);
@@ -32,6 +31,5 @@ void initCellAnimation(void *obj, s32 index1, s32 index2);
 void ResPlayer_SeekAndRefresh(void *entry, s32 value);
 void subTask_game_start_init(void);
 }
-void subTaskSendScr(s16 index, void *data, u32 offset, u32 size);
 
 #endif

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/a_extern.h"
 
 // Range check for a memory region (addr, len, dir): dir 0 means the region grows up from addr, dir 0x800000 means
 // it grows down. The region is rejected (OS_Terminate) when either end lies in the 0x04000000 (I/O) or 0x08000000

@@ -43,7 +43,6 @@ void knife_commDispRoll(KNIFE_MSGSYS *msg) {
 //   knife_commDispEnq (0x0204ba1c)
 
 extern u8 localPlayerIndex[];
-extern u16 playerKeys[];
 extern u8 data_0217d350[];           // saved state, written by the choice dispatch
 extern u8 data_0217d358[];           // choice block of the message box, cleared by MemClearFast
 extern u8 knifeChoiceMsgIds[];       // message id low byte for each choice state (knifeChoiceMsgIds)

@@ -3,7 +3,6 @@
 
 // Opening logo objects, 0x02068044 to 0x0206829c. Names for func_ symbols: scratch/agentA/renames.txt.
 extern EntityFunc oplogo_shadowTable[];
-extern u8 data_0212c4dc;
 
 void oplogo_sword_test0(Entity *e) {
     switch (e->timer) {

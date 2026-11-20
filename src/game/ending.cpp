@@ -2,6 +2,7 @@
 // Implementer B, round 4: nextset (0x02044324), EndingFinish -> EndingFinish (guessed name), EndingTask (0x0204437c).
 
 #include "actor/enemy/encnt.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 
 void nextset(void) {

@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "engine/sound/m4a.h"
-#include "engine/sound/m4a_api.h"
 
 // m4a song stop helpers, 0x0208d52c to 0x0208d5d0 (the m4a_vsync pair follows at 0x0208d5d0).
 

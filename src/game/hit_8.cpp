@@ -1,8 +1,8 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "game/hitdecls.h"
 #include "game/hit_6.h"
+#include "game/hit.h"
 
 // Damage electric hit (module hit, eighth unit). Original name: hit_dengekidamage.
 #define HIT_KNOCKBACK_FRAMES_SHORT(k) (((k) & 0x80) ? (-16 - (s8)(k)) : ((s8)(k) + 16))

@@ -1,4 +1,5 @@
 #include "knife/message/seldialog.h"
+#include "knife/message/knife_message.h"
 
 // Knife::Message::selectionDialog::dispMessage() (0x020a1fbc): shows the message of the dialog. The message screen info of
 // the dialog is copied, moved to the middle of the screen (by the size of the choices) and given to the text render of the

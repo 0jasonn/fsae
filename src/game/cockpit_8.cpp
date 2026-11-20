@@ -10,7 +10,6 @@
 // Functions in this file (module cockpit, original names from the debug build):
 //   cockpit_call_check (cockpit_call_check()), cockpit_obj_trans (cockpit_obj_trans(unsigned char))
 
-extern u16 playerKeys[]; // flags per player, bit 0x400 set while the player is active
 extern u16 playerKeysPrev[]; // flags per player, bit 0x1000 blocks the call animation
 #include "engine/frame_counter.h"
 

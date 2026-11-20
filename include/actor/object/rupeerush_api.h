@@ -7,6 +7,7 @@
 
 extern "C" {
 void changeRupeeRushLevel(u8 level);
+void initRupeeRush(void);
 }
 
 #endif

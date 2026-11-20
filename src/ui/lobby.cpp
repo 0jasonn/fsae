@@ -1,9 +1,10 @@
 #include "engine/functions.h"
 #include "knife/message/lobby.h"
+#include "knife/subtask/subtask.h"
 #include "global.h"
 #include "types.h"
 #include "ui/lobby.h"
-#include "ui/lobby_api.h"
+#include "knife/message/selectiondialog.h"
 
 #define LOBBY (*(LobbyState **)(data_02181860 + 4))
 #define LOBBY_MSG (*(u16 *)((u8 *)LOBBY + 0x2c))

@@ -3,7 +3,6 @@
 #include "types.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/single_cmd_api.h"
-#include "knife/comm/single_play_api.h"
 
 // Knife::Single::SinglePlay move requests and the pending command, 0x02099704 to 0x02099864. The object is the SinglePlay
 // singleton; the fields are read at their offsets, with the width of the original access.

@@ -19,7 +19,6 @@ extern "C" void Knife_Message_TextRenderer_onReadCenterTag(Knife::Message::TextR
 extern "C" void Knife_Message_TextRenderer_onReadRightTag(Knife::Message::TextRenderer *self);
 extern "C" void Knife_Message_TextRenderer_onReadColorTag(Knife::Message::TextRenderer *self, s32 color);
 extern "C" void Knife_Message_TextRenderer_onReadNewLine(Knife::Message::TextRenderer *self);
-extern "C" void *KnifeApp_getField20Address(void *app);
 
 // TextRenderer::onReadPictTag(Pictogram) (0x020a5fd4): a picture while the text is measured adds its width, otherwise it
 // is drawn and its width is added to the line

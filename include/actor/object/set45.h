@@ -3,7 +3,6 @@
 
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/cellcalls.h"
 #include "actor/object/nemoto_3.h"
 
 extern const EntityFunc set45Table[];        // set45Table, indexed by action

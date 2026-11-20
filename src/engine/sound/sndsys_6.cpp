@@ -9,7 +9,6 @@ u32 SND_GetCurrentCommandTag(void);
 void SND_FlushCommand(u32 mode);
 void SND_WaitForCommandProc(u32 tag);
 void OSi_CpuClear32(u32 value, void *dst, u32 size);
-void DC_FlushRange(void *start, u32 size);
 }
 
 // Global stop state at data_0218485c (provisional): active flag at +0, two buffers with their size, two timer values

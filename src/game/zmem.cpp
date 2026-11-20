@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/zmem.h"
 #include "global.h"
 
 // zMalloc / zFree module. The block table at data_0213a7a0 holds a u16 entry count, followed by 4-byte entries

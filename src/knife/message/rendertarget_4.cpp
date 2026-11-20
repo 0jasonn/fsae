@@ -1,13 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/message/message_classes.h"
+#include "knife/message/rendertarget_api.h"
 
 // Functions in this file (original names from the debug build):
 //   RenderTarget::finalize() (0x020a4e8c)
 // Plain (extern "C") because rendertarget.cpp calls it by its plain name.
 
 // RenderTarget::finalize() (0x020a4e8c): if the target is in use, clears its state block and the use flag
-extern "C" void Knife_Message_RenderTarget_finalize(void *self);
 void Knife_Message_RenderTarget_finalize(void *self) {
     u8 *target = (u8 *)self;
 
@@ -36,7 +36,6 @@ void Knife_Message_RenderTarget_finalize(void *self) {
 //   RenderTarget::getNumberOfUsingOBJ() const (0x020a4ee0)
 
 extern "C" s32 func_020c61f4(s32 a, s32 b);
-extern "C" void OS_Terminate(void);
 
 namespace Knife {
 namespace Message {

@@ -1,8 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/cellcalls.h"
 #include "engine/bg_buff.h"
-#include "actor/object/protos.h"
+#include "engine/map_state.h"
+#include "actor/object/setdisp.h"
 #include "actor/object/set3e.h"
 
 // Set3e actor (module set3e). Address -> name:

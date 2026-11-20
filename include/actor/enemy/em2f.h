@@ -26,7 +26,6 @@ extern const u8 em2f_hitbox[];
 extern const u8 em2f_healthByDifficulty[];
 extern const u8 em2f_mapData[];
 #include "engine/em2f_map_flag.h"
-extern u8 localPlayerIndex;
 #include "engine/cockpit_state.h"
 extern const u16 em2f_tsubomiSpeeds[];
 extern const u32 flagBits[];

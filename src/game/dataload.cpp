@@ -1,7 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "actor/enemy/decls_b2.h"
+#include "engine/player.h"
+
+// TODO(headers): this declaration of GetResTranslateID differs from the shared one; see the header restructure report.
+extern "C" u16 GetResTranslateID(u16 id, const void *table, s32 count); // resid.cpp
+// TODO(headers): this declaration of MI_UncompressLZ16 differs from the shared one; see the header restructure report.
+extern "C" void MI_UncompressLZ16(const void *src, void *dst, u32 flags); // flags: the entry word, bit 31 set
 
 // Functions in this file (module dataload, original names from the debug build): DataLoad (DataLoad(unsigned short))
 //

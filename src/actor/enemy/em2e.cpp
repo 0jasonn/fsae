@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
+#include "actor/enemy/em2e.h"
 
 typedef struct Vars_02036314 {
     /* 00 */ u8 unk_00[0x6e];
@@ -19,7 +20,6 @@ typedef struct Vars_02036314 {
 extern const EntityFunc em2e_actions[];
 extern const u8 em2e_hitbox[];
 #include "engine/map_state.h"
-extern s32 em2e_type4Hidden;
 extern const u16 em2e_hideTimes[];
 extern const u32 em2e_resourceIds[];
 extern const u32 em2e_modeMasks[];

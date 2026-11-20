@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set58.h"
 
 // Set58 helpers, third unit (module set58). Address -> name:

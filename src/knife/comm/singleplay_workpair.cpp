@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "knife/comm/singleplay_2.h"
 #include "knife/comm/singleplay_pair.h"
+#include "game/mathutil.h"
 
 // Knife::Single::SinglePlay::SinglePlayWork, the pair work item of the update (0x02099e18 to 0x02099f5c): Initialize
 // fills it from the two players, PlayerChange swaps the two sides.

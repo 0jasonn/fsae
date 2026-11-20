@@ -1,4 +1,5 @@
 #include "knife/message/msgtextrender.h"
+#include "knife/app/knife_app.h"
 
 extern u8 data_0217d350[];        // +4: byte of the scene info used by the glyph drawing
 extern char data_020de464[];      // glyph drawing table of the renderer

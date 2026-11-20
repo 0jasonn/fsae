@@ -1,7 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
-#include "actor/object/effectdecls.h"
 
 extern u8 playerWork[];             // PlayerData array, byte flags at 0x39, 0xcd, 0x161, 0x1f5
 extern u16 set33SpeedTable[];          // set33SpeedTable, per type

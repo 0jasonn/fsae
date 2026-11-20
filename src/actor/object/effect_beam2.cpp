@@ -1,8 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
-#include "actor/object/objdecls_a.h"
 
 // effect_beam2 family (module effect_beam2), 0x0206ecdc .. 0x0206edbc (dispatcher and init).
 // Address -> name: 0x0206ecdc effect_beam2, 0x0206ecf8 effect_beam2_init

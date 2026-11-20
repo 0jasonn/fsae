@@ -8,7 +8,6 @@
 
 extern "C" {
 void func_0208b644(Entity *e); // label, thumb
-void func_0208af0c(Entity *e); // label, thumb
 }
 
 extern const u8 data_020dccc4[]; // hitbox of tama05

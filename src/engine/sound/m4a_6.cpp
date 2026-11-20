@@ -3,7 +3,6 @@
 #include "types.h"
 #include "engine/sound/m4a.h"
 #include "knife/sound/knife_sound_4.h"
-#include "engine/sound/m4a_api.h"
 
 // m4aSongNumStart (0x0208d118). The function after it (func_0208d260) is not matched yet.
 

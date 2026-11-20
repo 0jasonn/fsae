@@ -6,7 +6,6 @@
 // Knife::Comm::ParentInfo::cleanup (0x0209096c) and decrementTTL (0x0209099c): cleanup marks the slot empty and clears
 // the bss description block; decrementTTL counts the time to live down and cleans up when it runs out.
 
-extern "C" void MI_CpuFill8(void *dst, u32 value, u32 size); // 0x02015b94, the byte fill of the SDK
 
 namespace Knife {
 namespace Comm {

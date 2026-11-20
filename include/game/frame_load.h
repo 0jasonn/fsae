@@ -39,7 +39,6 @@ BOOL pasthistoryCheck(void *entry);
 BOOL checkSingleErrorParts(u8 mode, u16 partId);
 
 #include "engine/map_state.h"
-extern u8 localPlayerIndex;
 #include "engine/em12_type_masks.h"
 extern const u8 data_02103e84[];    // 8 byte start layouts, indexed by the low nibble of game state byte 0x4f
 

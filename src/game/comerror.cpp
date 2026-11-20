@@ -1,4 +1,6 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
+#include "engine/data_0212c564.h"
 #include "engine/misc.h"
 #include "knife/app/knife_hud.h"
 #include "game/comerror.h"

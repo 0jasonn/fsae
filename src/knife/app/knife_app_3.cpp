@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/sound/m4a.h"
-#include "knife/app/knife_app_api.h"
+#include "knife/app/knife_app.h"
 
 // KnifeApp::loadAllResource (0x0208db60): loads the three sound and resource files into their globals, the file chosen
 // by a byte in data_021348d8, the two Zelda resources and the text file, then starts the sound system.
@@ -25,7 +25,6 @@ extern KnifeAppNameTable data_0211acf8;
 extern u8 data_021348d8[];
 extern void *data_02171e18;
 extern void *data_02171e10;
-extern void *data_02171e0c;
 
 void KnifeApp_loadAllResource(void *self) {
     u32 size;

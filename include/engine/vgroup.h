@@ -18,5 +18,6 @@ extern VGROUP_ vgroupLines[]; // line slots, from index 8 (vgroupLines)
 extern u32 vgroupQueue[];     // pending requests per slot (vgroupQueue)
 extern u32 vgroupRequestTable[]; // request record per group id (vgroupRequestTable)
 extern u8 vgroupIdTable[];    // id translation table (vgroupIdTable)
+u32 VGroupLoadWait(Entity *e); // 0x020811a8, nonzero while the VRAM group load is pending
 
 #endif

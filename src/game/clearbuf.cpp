@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/clearbuf.h"
 #include "global.h"
 #include "types.h"
 

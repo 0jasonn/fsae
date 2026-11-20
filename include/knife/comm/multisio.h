@@ -70,7 +70,6 @@ extern "C" u32 func_02092168(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getFrameFlag(void *manager);
 extern "C" const void *func_02092100(void *manager, int index);
 extern "C" u32 Knife_Comm_GetPlayerNoByAID(int index, const void *info);
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 int set5c_returnZero(void); // C++ symbol, always returns 0
 extern "C" void func_0200a3c8(u16 *dst, const u16 *src);
 s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm, src/game/subtask_draw_2.cpp
@@ -90,7 +89,6 @@ extern u8 data_0212c4d4;
 // The packet passed to MultiSioSendDataSet is a ComPacket (engine/com_work.h).
 #include "engine/com_work.h"
 
-extern u8 localPlayerIndex;
 extern u8 data_02fe0000[];
 
 #endif

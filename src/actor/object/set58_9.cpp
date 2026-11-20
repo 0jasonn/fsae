@@ -2,6 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/set58.h"
+#include "game/yousei.h"
 #include "engine/entity.h"
 #include "game/rank_api.h"
 

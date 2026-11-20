@@ -3,6 +3,9 @@
 #include "types.h"
 #include "ui/widget/rect_links.h"
 
+// TODO(headers): declared in ui/widget/slider.h, which this file cannot include (its types clash with the
+// ones used here); see the header restructure report.
+extern "C" void SliderRing_setSelectedChild(void *self, s32 selected);
 // rect_flag_pair: function RectFlagPair_setFlag (0x020bb980), provisional name.
 
 // Pair of items at +0x5c and +0x60 (each with a flag byte at +0x3c), and a record at +0x64 (flag byte at +0x29)

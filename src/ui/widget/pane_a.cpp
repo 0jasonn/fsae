@@ -1,8 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/lobby_api.h"
+#include "ui/lobby.h"
 #include "ui/widget/pane.h"
+#include "engine/heap_vcall.h"
 #include "ui/widget/pane_a_api.h"
 
 // pane_a: functions Pane_init, Pane_initFromSpec, Pane_clearLinks, Pane_releaseChildren, Pane_freeBlock, Pane_allocChildren, Pane_allocPtrArray, Pane_appendChild (0x020b5578 to 0x020b5728), all matching.

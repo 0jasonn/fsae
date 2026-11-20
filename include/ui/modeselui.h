@@ -4,7 +4,6 @@
 #include "engine/functions.h"
 #include "ui/fileselui.h"
 #include "ui/modeselui_view.h"
-#include "ui/modeselui_api.h"
 #include "game/setbg.h"
 #include "ui/widget/uiobject.h"
 
@@ -43,8 +42,9 @@ extern u8 *data_02180da0;   // screen buffer of the sub screen BG2
 
 extern "C" {
 void modeSelUIView_updateCopyFileselScreen(ModeSelUIView *self);
+void modeSelUIView_vfunc2(void *self);
+void func_020a94a4(void *self);
 }
 void subtask_redraw_text(s32 index);
-void subTaskSendScr(s16 index, void *data, u32 offset, u32 size);
 
 #endif

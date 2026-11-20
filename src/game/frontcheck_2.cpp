@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/a_decls.h"
+#include "game/setmoveblock.h"
 
 // Front check (module frontcheck, second unit). Original names from the debug build: setmoveblock, openDoor.
 

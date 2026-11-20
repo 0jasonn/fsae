@@ -6,7 +6,6 @@
 
 #include "types.h"
 #include "knife/comm/wireless_manager.h"
-#include "sdk/wm/wm_api.h"
 
 // REG_IME, the interrupt master enable.
 #define WM_REG_IME (*(volatile u16 *)0x04000208)
@@ -60,13 +59,10 @@ s32 WM_GetAID(void);
 s32 WM_GetConnectedAIDs(void);
 s32 WM_SetGameInfo(void *callback, void *gameInfo, u16 unk2, u32 unk3, u16 unk4, u8 unk5);
 s32 Knife_Comm_WirelessManager_getLinkLevel(void *self);
-void OS_Terminate(void);
 BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);
 void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_Reset(void *result);
-void Knife_Comm_WirelessManager_callback_WM_StepTimer5(void *result);
-void Knife_Comm_WirelessManager_callback_WM_ClearFlag(void *result);
 }
 
 // C++-linkage ROM function (mangled symbol _Z13func_02090eccPv).

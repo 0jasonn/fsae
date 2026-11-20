@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 
 // ctrl_bits: function Ctrl_setFlagBits1 (0x020bb1bc), provisional name.
 

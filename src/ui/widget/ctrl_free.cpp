@@ -2,10 +2,10 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/ctrl_free_api.h"
+#include "engine/heap_vcall.h"
 
 // ctrl_free: functions Ctrl_freeBlock (0x020bc78c) and Ctrl_freeVirtualBlock (0x020bc7b8), provisional names.
 
-extern "C" void Heap_VirtualFree(void *heap, void *block);
 // Ctrl_noopA is declared with no parameters in src/engine/ctrl_leaf.cpp; the call here passes (block, holder) and it ignores them
 extern "C" void Ctrl_noopA(void *block, void *holder);
 

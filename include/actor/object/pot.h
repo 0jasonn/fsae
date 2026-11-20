@@ -26,22 +26,15 @@ extern const u8 pot_moveCheckTable[]; // table passed to func_02085890 with the 
 extern const s8 pot_dirOffsets[];     // (dx, dy) pairs for the four directions (pot_dirOffsets)
 extern const u8 grass_hitbox[];       // hitbox of a grass throw (grass_hitbox)
 
-extern "C" Entity *EffectSet(Entity *e, int kind, int arg); // 0x02076a20, unmangled (returns the effect)
 
-int func_02083cdc(Entity *e);
-int func_02085890(Entity *e, const u8 *table, u16 x, u16 y);
-void func_02085cf8(Entity *e);
 void pot_clash(Entity *e, Entity *other);
 void throw_holdoff(Entity *e); // 0x0205f0e0 (pot_4.cpp)
 extern "C" u16 GX_GetSizeOfOBJ(void);
 extern "C" void m4aMusicSetVolume(u16 a, u16 b); // 0x0208d944
-int func_02085ccc(Entity *e); // thumb, nonzero when the cell is held (cellcalls.h)
 void kanaamiRew(Entity *e, u16 index); // 0x0205e758 (set4e_2.cpp)
 void set4e_move(Entity *e); // 0x0205e714 (set4e_2.cpp)
 #include "engine/display_state.h"
 void MultiEventSet(u16 *a, u8 b, u8 c, u8 d); // 0x0204602c, not yet in functions.h
-void RewCellOne(u16 a, u16 b, u16 c);
-extern "C" void RewCellBack(int cell, int layer);
 void set5c_event_check(Entity *e);
 void zelda_disp(Entity *e);
 extern const EntityFunc data_020d9028[]; // set5c update state table indexed by e->action

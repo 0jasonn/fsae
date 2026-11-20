@@ -31,47 +31,32 @@ extern MultiSaveBlock data_0212c5ec;
 
 #include "engine/data_0212c540.h"
 extern u32 data_0212c54c;
-extern u32 data_0212c558;
 #include "engine/cockpit_state.h"
 
-void RandomSetInit(void);
 void StopBlockInit(void);
-void PlWorkReset(void);
 void FadeClear(void);
-void Knife_Single_SinglePlay_Initialize(void);
-void ClearWorkBuffer(void);
-void ShikakeInit(void);
 void LoadTokiWave(void);
 void Enemy_ArmSharedState(void);
 void BgmSet(void);
-void PlayerTrans(void);
 extern u32 data_0212c538;
 extern u8 data_02134cb0[];
 #include "engine/com_work.h"
 void GetSetWorkSp(u8 a, u8 b, u8 c);
-void InitCircleWindow(u16 a, u16 b); // C++ linkage, original InitCircleWindow(unsigned short, unsigned short)
-void LoadJyouchuu(void);
 void func_0204363c(void);
 extern u16 data_0212c510;
 extern u16 data_0212c514;
 extern u16 data_0212c520;
-extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern "C" {
 void AutoSet(void);
-void CockpitInit(void);
-void CheckPlsSet(void);
 void StopEffectWindow(void);
 }
-extern u8 data_0212caf0[];
 extern "C" {
-void CheckInit(void);
 }
 extern "C" {
 void CalcHeartLevel(void);
 }
 
-extern u8 localPlayerIndex;
 extern u8 data_0216efa8;                    // makemap state byte
 #include "engine/frame_counter.h"
 extern u32 data_0212c550;
@@ -81,11 +66,7 @@ extern u32 data_0212c554;
 extern void (*const multiplayMakemapTable[])(void);   // multiplayMakemapTable
 extern void (*const game00TaskTable[])(void);         // game00TaskTable
 
-// BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.
-void BgInit(void);
 
-void MakeTriangleWindow(s16 a, s16 b, s16 c, s16 d);  // C++ linkage (original_names.tsv)
 void FloorInit(void);  // C++ linkage (original_names.tsv)
-void Cockpit(void);  // C++ linkage (original_names.tsv)
 
 #endif

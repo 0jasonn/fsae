@@ -5,7 +5,6 @@
 // Functions in this file (original names from the debug build):
 //   UIObject::init(unsigned char) (0x020acbf4), UIObject::update() (0x020acc2c), UIObject::updateTime(long) (0x020acc7c)
 
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void ResPlayer_AdvanceAndRefresh(void *anim, s32 c); // animation step, the same as game/subtask.h
 
 // UIObject::init(unsigned char) (0x020acbf4): clears the object, stores the kind, sets the active flags, liner curve

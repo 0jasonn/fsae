@@ -67,7 +67,6 @@ void subtask_draw_tokinoshinden(s32 a, s32 b, u32 mode, u8 *buf);
 void subtask_draw_shuurenjo(s32 a, s32 b, u32 mode, u8 *buf);
 void subtask_draw_mori_key(s32 a, s32 b, u32 mode, u8 *buf);
 void subtask_draw_status_wallpaper(s32 a, s32 b);
-extern "C" void DC_FlushRange(const void *base, u32 size);
 extern "C" void Knife_Message_RedrawText(s32 index, const s32 *args);
 void subTask_free_objinfo(OBJInfo *info);
 void subTask_free_slot(s32 index);
@@ -81,5 +80,6 @@ void Knife_Message_CleanupTextRenderer(void);
 extern "C" void func_0209bee4(void);
 extern "C" s32 func_020c40a4(void *oam, s32 a1, s32 a2, s32 a3, s32 *pos, s32 a5, s32 a6);
 extern "C" void ResPlayer_AdvanceAndRefresh(void *anim, s32 c);
+void subTaskSendScr(s16 index, void *data, u32 offset, u32 size);
 
 #endif

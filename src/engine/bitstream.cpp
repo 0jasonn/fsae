@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/k_bitstream.h"
+#include "engine/bitstream.h"
 
 // BitStream_ReadBits (provisional name): reads bits from the stream record. The record holds the byte cursor at +0, the
 // signed count of unread bits in the current byte at +4 and the current byte at +5. When fewer bits are left the next byte is

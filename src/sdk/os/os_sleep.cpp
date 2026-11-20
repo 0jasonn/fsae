@@ -12,8 +12,6 @@ typedef struct OsSleepOwner {
 
 extern OsSleepOwner data_0212991c;
 
-extern "C" u32 OS_DisableInterrupts(void);
-extern "C" void OS_RestoreInterrupts(u32 state);
 extern "C" void Os_LinkThreadAndFlush(s32 flag);
 
 // Sleeps for count units (scaled by 0x82ea and divided by 64 into a 64-bit tick count): the current thread's alarm at

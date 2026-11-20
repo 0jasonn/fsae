@@ -28,6 +28,7 @@ void basedUIView_push_view(basedUIView *self, basedUIView *child);
 void basedUIView_pop_view(basedUIView *self);
 void basedUIView_serialize(basedUIView *self, u8 **buf);
 void basedUIView_deserialize(basedUIView *self, u8 **buf);
+void groupCreateUIView_vfunc2(void *self);
 }
 
 #endif

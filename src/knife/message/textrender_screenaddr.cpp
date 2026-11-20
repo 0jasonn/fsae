@@ -1,6 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/decls_e.h"
+#include "knife/message/message_classes.h"
+#include "knife/message/textrender_screenaddr.h"
+#include "knife/message/textrender_screen.h"
+
+// TODO(headers): declared in knife/message/textrender.h, which this file cannot include (its types clash with the
+// ones used here); see the header restructure report.
+extern "C" s32 Knife_Message_TextRenderer_getScreenWidth(s32 isBg, s32 index);
+extern "C" u32 Knife_Message_TextRenderer_getTableValue(s32 table, s32 index);
 
 // Functions in this file (plain names from the debug build, C linkage; the first argument is the TextRenderer):
 //   Knife_Message_TextRenderer_getScreenAddress (0x020a590c)

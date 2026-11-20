@@ -1,6 +1,14 @@
 #include "engine/functions.h"
+#include "game/bganm_api.h"
+#include "game/player.h"
+#include "engine/scr.h"
+#include "engine/data_0212c564.h"
 #include "global.h"
 #include "game/multiplay_main.h"
+#include "game/mathutil.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
+#include "engine/data_0212c500.h"
 
 // Per-frame main of the multiplayer game (multiplay_main, 0x02047e34).
 

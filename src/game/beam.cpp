@@ -2,7 +2,9 @@
 #include "global.h"
 #include "engine/bg_buff.h"
 #include "types.h"
-#include "engine/a_decls.h"
+#include "engine/map_state.h"
+#include "actor/object/setdisp.h"
+#include "game/player.h"
 
 // Beam (module beam). Original names from the debug build: beam_move.
 

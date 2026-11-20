@@ -81,7 +81,6 @@ extern u8 data_02126b00[];   // vtable of Window
 
 // Shared functions used by the pane and window implementations.
 extern "C" void *func_020c2c34(void *heap, s32 size);
-extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void *func_020b6bf8(void *self, void *spec, void *ctx);
 extern "C" void Window_allocItems(Pane *self, void *owner, s32 count);
 extern "C" Pane *func_020b5ba8(Pane *self, void *owner, const PaneSpec *spec, void *ctx);

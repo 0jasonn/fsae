@@ -7,7 +7,6 @@
 
 extern "C" {
 u32 Stub_ReturnZeroA(u32 a, u32 b, u32 c, u32 d);
-u32 Stub_ReturnZeroB(u32 a, u32 b, u32 c, u32 d);
 }
 
 #endif

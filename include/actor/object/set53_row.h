@@ -20,7 +20,6 @@ typedef struct Vars_Set53Hull {
     /* 6c */ u32 speed;         // capped at 0x200
 } Vars_Set53Hull;
 
-extern u16 playerKeys[]; // keys of the communication slots
 extern const s8 data_020db878[][2]; // rider x offsets, two per animation state
 extern const s8 data_020db888[][2]; // rider y offsets, two per animation state
 extern const u16 data_020db898[]; // rowing motion per facing

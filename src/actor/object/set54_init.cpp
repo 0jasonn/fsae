@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "actor/object/pot.h"
-#include "actor/object/objdecls.h"
+#include "actor/object/door.h"
 
 // set54_init, 0x02071b00. Starts the action, picks the door sprite row from the door type, and asks the map cell
 // under the object to be rewritten.

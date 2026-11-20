@@ -58,7 +58,6 @@ void m4aEnterManualAlias(void) {
 }
 
 // m4aSoundResume (0x0208d9b4): resumes the sound system (pause off)
-extern "C" void m4aSoundResume(void);
 void m4aSoundResume(void) {
     Knife_Sound_System_pause(0);
 }

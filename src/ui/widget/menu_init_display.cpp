@@ -1,7 +1,7 @@
 #include "engine/gx_misc_api.h"
 #include "sdk/gx/vram_bank_bits_api.h"
-#include "game/b_extra.h"
-#include "game/decls_g.h"
+#include "engine/functions.h"
+#include "sdk/gx/vram_group.h"
 #include "ui/widget/ctrl_wrap_api.h"
 
 #define REG16(addr) (*(volatile u16 *)(addr))
@@ -10,7 +10,6 @@
 extern "C" {
 void GXS_SetGraphicsMode(u32 bgMode);
 void func_02014d1c(s32 banks);
-void func_02015120(s32 banks);
 void func_020bdb34(void);
 }
 

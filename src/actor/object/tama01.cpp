@@ -1,5 +1,7 @@
 #include "engine/functions.h"
-#include "actor/object/tama_decls.h"
+
+extern const EntityFunc data_020dcb74[];
+extern const EntityFunc data_020dcb88[];
 
 // Tama01 actor family. Address -> name (original names from symbols.txt):
 //   0x0207df5c Tama01, 0x0207df98 tama01_init, 0x0207dfd8 tama01_move0, 0x0207e04c tama01_move1

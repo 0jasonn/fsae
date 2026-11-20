@@ -48,8 +48,6 @@ extern const MsgButtonTable data_020de570;
 
 extern "C" {
 void Knife_Message_MessageTextRender_onReadPlainText(Knife::Message::MessageTextRender *self, const Knife::Message::Text *text);
-s32 func_020c5e00(void *canvas, void *font, s32 x, s32 y, s32 palette, u16 ch);
-void *KnifeApp_getField20Address(void *app);
 void Knife_Message_MessageTextRender_onReadPictTag(Knife::Message::MessageTextRender *self, s32 pictogram);
 void Knife_Message_MessageTextRender_onReadButtonTag(Knife::Message::MessageTextRender *self, s32 button);
 void IconToCanvas(u8 *icon, const void *canvas, s32 x, s32 y);

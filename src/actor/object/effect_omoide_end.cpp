@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_omoide_end family (module effect_omoide_end), 0x0206f0a8 .. 0x0206f174.
 // Address -> name: 0x0206f0a8 effect_omoide_end, 0x0206f0c4 effect_omoide_end_init, 0x0206f114 effect_omoide_end_move

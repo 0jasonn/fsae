@@ -1,7 +1,12 @@
 #include "engine/functions.h"
 #include "engine/bg_buff.h"
 #include "engine/vblank_request.h"
-#include "engine/a_decls.h"
+#include "actor/enemy/rewcell_back.h"
+
+// TODO(headers): this declaration of data_02140fa0 differs from the shared one; see the header restructure report.
+extern u16 data_02140fa0[];
+// TODO(headers): this declaration of data_02148fa0 differs from the shared one; see the header restructure report.
+extern u16 data_02148fa0[];
 
 // RewCellBack (0x02021df4): restores a map cell from the saved screen of its layer: the tile entry comes back from
 // screenSave, the attribute is looked up from the cell map and the 2x2 tiles are copied again into the map screen.

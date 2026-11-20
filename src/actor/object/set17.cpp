@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
 
 // Set17 actor (module set17). Address -> name:
 //   0x020654c0 set17_run (dispatcher, was set17_run)

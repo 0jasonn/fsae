@@ -1,4 +1,14 @@
-#include "actor/object/common_a.h"
+#include "engine/functions.h"
+#include "engine/blend_request.h"
+#include "engine/frame_counter.h"
+#include "engine/player.h"
+#include "game/bganm_api.h"
+#include "game/dispctrl_api.h"
+#include "game/player.h"
+#include "engine/scr.h"
+#include "engine/data_0212c564.h"
+#include "game/warp.h"
+#include "engine/data_0212c500.h"
 
 // Warp-out sequence of the multiplayer stage (multiplay_warp, 0x020483f8).
 typedef struct WarpSfxList {
@@ -10,7 +20,6 @@ extern u8 data_0216efa8[];
 extern u32 data_0216efac[4]; // sound ids in the order the players are announced
 extern const WarpSfxList multiplayWarpSfx;  // multiplayWarpSfx
 extern const u16 multiplayWarpSfxTimes[2];  // multiplayWarpSfxTimes: timer values at which the sounds play
-extern u16 playerKeys[];
 extern u16 playerKeysPrev[];
 
 void multiplay_warp(void) {

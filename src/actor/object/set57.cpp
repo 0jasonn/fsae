@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set57.h"
 
 // Set57 actor, second unit (module set57). Address -> name:

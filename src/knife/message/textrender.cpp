@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "knife/message/textrender_api.h"
 #include "knife/message/textrender.h"
+#include "knife/app/knife_app.h"
 
 // Functions in this file (original names from the debug build):
 //   TextRender::setup() (0x020a11fc)
@@ -35,8 +35,6 @@ public:
 };
 }
 }
-extern "C" void *KnifeApp_getField20Address(void *app);
-extern "C" s32 func_020c5e00(void *self, void *field, s16 x, s16 y, s32 mode, u16 value);
 
 // Copy of a Knife::Message::Text (three words)
 typedef struct KnifeMsgTextPlain {

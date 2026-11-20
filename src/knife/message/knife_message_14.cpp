@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "knife/message/knife_message_api.h"
+#include "knife/message/knife_message.h"
 
 // Unnamed stubs (owner not identified): empty slots or a single store, dsd names kept.
 

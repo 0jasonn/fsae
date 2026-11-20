@@ -9,9 +9,7 @@
 
 extern "C" {
 BOOL subtask_dialogWaitSend(void);
-void Knife_Comm_WirelessManager_update(void *obj);
 s32 Knife_Comm_WirelessManager_startParent(void *obj, s32 kind, s32 size, void *data, s32 flag);
-void OS_WaitVBlankIntr(void);
 }
 
 #endif

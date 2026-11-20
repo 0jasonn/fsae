@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "knife/comm/com_sio.h"
-#include "knife/comm/com_api.h"
 #include "knife/comm/com.h"
 
 // Functions in this file (module com, original names from the debug build):

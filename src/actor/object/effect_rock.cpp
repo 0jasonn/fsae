@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_rock family (module effect_rock), 0x0206e5fc .. 0x0206e618 (dispatcher) and 0x0206e618 .. 0x0206e688 (init).
 // Address -> name: 0x0206e5fc effect_rock, 0x0206e618 effect_rock_init, 0x0206e688 effect_rock_move

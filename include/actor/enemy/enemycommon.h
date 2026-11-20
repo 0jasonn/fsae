@@ -16,8 +16,6 @@ extern const u16 *const enemyInitIndirect[];
 
 // EmMagneMove (magnet-style move towards the players in range) is declared in engine/functions.h.
 
-// Hit/position test used by EmDivPosSet (dsd name func_02083d18, thumb)
-int func_02083d18(Entity *e, int a, int b);
 
 // Data and helpers used by the enemy registration code
 extern const u8 data_020d41b0[];                 // boss drop table, 4 bytes per row

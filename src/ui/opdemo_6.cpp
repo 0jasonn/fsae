@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "game/scene.h"
 #include "ui/opdemo.h"
-#include "ui/opdemo_api.h"
 #include "global.h"
 #include "engine/irq.h"
 #include "engine/message_request.h"

@@ -1,4 +1,5 @@
 #include "ui/sndwavearc.h"
+#include "engine/sound/sndbank_api.h"
 
 // SndBank_AcquireWaveArc (0x020c1268): returns the wave archive of the table entry when it is cached. Otherwise it
 // reads the archive header to learn the entry count, makes a record in the heap, reads the archive into it, copies

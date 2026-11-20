@@ -29,8 +29,6 @@ extern u32 data_020f2524[];
 // Adds delta to value and clamps to the limit (add_sub, defined in item_2.cpp).
 s32 add_sub(s32 value, s32 delta, s32 limit);
 
-// Absolute value (abs_s32, defined later in the E units).
-s32 abs_s32(s32 value);
 
 // Keys per type, kakera counts per type and the kakera telop block (the per-type kakera timers are cockpitState.kakeraTimer).
 #include "engine/telop_request.h"

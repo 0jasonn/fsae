@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "actor/enemy/em2f.h"
 #include "global.h"
 #include "engine/message_request.h"

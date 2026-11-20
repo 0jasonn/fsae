@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "knife/message/textlength_api.h"
 #include "knife/message/textlength.h"
+#include "knife/app/knife_app.h"
 
 // Functions in this file (original names from the debug build):
 //   Knife::Message::TextLengthAnalyzer::TextLengthAnalyzer() (0x020a16c4)
@@ -56,7 +56,6 @@ public:
 }
 }
 
-extern "C" void *KnifeApp_getField20Address(void *app);
 extern "C" s32 TextBox_FindRange(void *font, u16 character);
 extern "C" void *TextBox_FindRangeEntry(void *font, s32 index);
 

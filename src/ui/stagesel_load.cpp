@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "sdk/mi/mi_uncompress.h"
 #include "ui/stagesel.h"
 #include "global.h"
 

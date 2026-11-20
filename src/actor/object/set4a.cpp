@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/protos.h"
 
 // Set4a actor (module set4a). Address -> name:
 //   0x0205e18c Set4a (original name), 0x0205e1a8 set4a_init

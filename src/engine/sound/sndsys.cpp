@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
 
 // Functions in this file (provisional names): the sound system state at data_02181964 (a byte at +0, the initialized
 // flag at +4, the in-init flag at +0xc, and two callback slots at +0x10 and +0x20).

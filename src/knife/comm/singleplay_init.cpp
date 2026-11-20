@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "knife/comm/singleplay_init.h"
 #include "global.h"
 #include "types.h"
 #include "knife/comm/singleplay.h"

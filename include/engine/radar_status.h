@@ -8,7 +8,6 @@
 #include "engine/radar_init.h"
 
 extern const s32 data_020de6c4[];   // stage name per mode
-extern u8 localPlayerIndex;
 
 extern "C" {
 }

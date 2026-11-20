@@ -1,8 +1,15 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 #include "ui/widget/rect_slot3_api.h"
+
+// TODO(headers): this declaration of func_020bc200 differs from the shared one; see the header restructure report.
+extern "C" s32 func_020bc200(void *owner, u16 w, s32 x);
+// TODO(headers): this declaration of RectObjLink_init differs from the shared one; see the header restructure report.
+extern "C" void RectObjLink_init(void *self);
+// TODO(headers): this declaration of RectObjLink_setGeometry differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjLink_setGeometry(void *self, s16 *pos, s16 *size, s32 value);
 
 // rect_slot3: functions RectSlot2_setFlag (0x020bbb70), RectSlot3_init (0x020bbb78) and RectSlot3_setGeometry
 // (0x020bbba0), provisional names.

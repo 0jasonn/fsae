@@ -1,11 +1,11 @@
 #include "engine/functions.h"
+#include "game/cockpit.h"
 #include "global.h"
 #include "types.h"
 #include "knife/app/knife_hud.h"
 #include "game/cockpit_9.h"
 #include "engine/hud_tile_obj.h"
 
-extern const u8 data_020ce4d0[];
 
 // CockpitInit() (0x020264f4): clears the HUD block, activates it, starts the Knife HUD manager and sets up the two tile
 // objects (their size, mode, tile number and palette) before the first CockpitUpdate.

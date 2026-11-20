@@ -2,6 +2,9 @@
 #include "global.h"
 #include "engine/bg_buff.h"
 #include "actor/object/arrow_move.h"
+#include "engine/map_state.h"
+#include "actor/object/setdisp.h"
+#include "game/player.h"
 
 // Arrow (module arrow): arrow_move, the arrow while it is held (charging) and while it flies.
 

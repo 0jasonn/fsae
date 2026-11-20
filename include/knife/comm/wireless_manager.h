@@ -69,4 +69,8 @@ typedef struct WirelessManagerWork {
     s32 connectPhase;                      // 0x1ce4: connect phase (StartConnect and StartMP callbacks)
 } WirelessManagerWork;
 
+extern "C" {
+BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo);
+}
+
 #endif

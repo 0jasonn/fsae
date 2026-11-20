@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/cellcalls.h"
+#include "engine/map_state.h"
 
 // rewDoor (original name, knife_rewDoor at 0x02071c8c): rewrites the six map cells around the door cell
 // with the ids in table, using a layout chosen by e->type & 3. Cells are relative to the door cell.

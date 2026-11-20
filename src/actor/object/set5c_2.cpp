@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/pot.h"
+#include "actor/enemy/rewcell_one.h"
 
 // Set5c actor, init and states (module set5c). Address -> name:
 //   0x0205f9d4 set5c_init (name from symbols.txt)

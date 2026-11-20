@@ -1,4 +1,4 @@
-#include "engine/g_calls.h"
+#include "engine/functions.h"
 
 extern "C" s32 func_02019968(void) {
     return func_0218a5d4();

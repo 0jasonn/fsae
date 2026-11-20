@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_tokishin_move, second unit of the effect_tokishin module, 0x0206e34c .. 0x0206e3d0.
 // Address -> name: 0x0206e34c effect_tokishin_move

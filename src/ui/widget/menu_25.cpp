@@ -1,7 +1,23 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
+#include "engine/work21_clear.h"
+
+// TODO(headers): this declaration of lobby_callWithZeroPos differs from the shared one;
+// see the header restructure report.
+extern "C" void lobby_callWithZeroPos(s32 active, void *buf);
+
+// State copied from a list by Menu_CopyViewState: a rectangle (filled by Menu_GetRect), then fields at +0x10..+0x1c.
+typedef struct MenuViewState {
+    /* 00 */ s16 rect[4];
+    /* 08 */ u8 unk_08[0x10 - 0x08];
+    /* 10 */ u32 unk_10;
+    /* 14 */ s16 unk_14;
+    /* 16 */ s16 unk_16;
+    /* 18 */ u32 unk_18;
+    /* 1c */ u32 unk_1c;
+    /* 20 */ u32 unk_20;
+} MenuViewState;
 
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_CopyViewState (Menu_CopyViewState), Menu_SyncListRect (Menu_SyncListRect)

@@ -8,7 +8,6 @@
 #include "ui/widget/rect_create.h"
 
 extern "C" {
-void *RectObjList_create(void *holder);
 void *RectObjLink_create(void *holder);
 void *RectSlot2_create(void *holder);
 }

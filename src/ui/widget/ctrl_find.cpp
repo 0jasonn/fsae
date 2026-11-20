@@ -1,8 +1,21 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 #include "ui/widget/ctrl_find_api.h"
+
+// TODO(headers): this declaration of Fs_GetDirFileOffset differs from the shared one;
+// see the header restructure report.
+extern "C" void *Fs_GetDirFileOffset(s32 id);
+// TODO(headers): this declaration of ResChunk_OpenKBEC differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenKBEC(void *entry, void *owner);
+// TODO(headers): this declaration of Menu_ForwardC2cb4 differs from the shared one; see the header restructure report.
+extern "C" s32 Menu_ForwardC2cb4(void *entry, void *owner);
+// TODO(headers): this declaration of ResChunk_OpenRACH differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenRACH(void *entry, void *owner);
+// TODO(headers): this declaration of ResChunk_OpenTTLP differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenTTLP(void *entry, void *owner);
+// TODO(headers): this declaration of ResChunk_GetNRCS differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_GetNRCS(void *entry, void *owner);
 
 // ctrl_find: functions Ctrl_findEntryA (0x020bbe50) to Ctrl_findEntryE (0x020bbf20), provisional names. Each looks the id
 // up with Fs_GetDirFileOffset and returns the entry when its check (a different function per entry) accepts it, otherwise 0.

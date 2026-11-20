@@ -1,4 +1,4 @@
-#include "sdk/wm/wm_api.h"
+#include "sdk/wm/wm_validate_parent.h"
 
 typedef struct WMParentParameter {
     u8 unk_00[4];

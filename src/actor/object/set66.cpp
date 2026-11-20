@@ -2,6 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/set66.h"
+#include "engine/vgroup.h"
 
 // Set66 actor (module set66). Address -> name:
 //   0x0207502c Set66 (original name; dispatches on e->type)

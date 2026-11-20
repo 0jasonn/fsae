@@ -1,5 +1,8 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
+#include "engine/local_player_index.h"
 #include "game/multiplay.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 
 // multiplay_init (0x02047490): resets the display and the multiplay work once the blend request is idle. Copies the

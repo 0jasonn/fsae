@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "game/multiplay.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 
 // multiplay_* and the start of makemap (0x02047478 to 0x02047838).

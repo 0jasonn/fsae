@@ -1,14 +1,14 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_list_api.h"
+#include "ui/widget/rect_list.h"
 #include "ui/widget/rect_group.h"
+#include "engine/heap_vcall.h"
 
 // rect_list_4: functions Group_allocU16Array (0x020b9284), Group_allocU32Array (0x020b92d0), Group_release (0x020b931c),
 // Group_freeBlock (0x020b9350) and Group_freeBlock2 (0x020b9368), all matching.
 
 extern "C" void *func_020c2c34(void *heap, s32 size);
-extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void RectObjList_releaseItems(void *self, void *holder);
 
 // Group_allocU16Array(holder, count) (0x020b9284, provisional name): allocates count halfwords (at least one) from the

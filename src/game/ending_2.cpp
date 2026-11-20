@@ -1,5 +1,11 @@
 #include "engine/functions.h"
+#include "game/bganm_api.h"
+#include "engine/scr.h"
+#include "engine/data_0212c564.h"
 #include "game/ending.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 
 // Implementer B, round 6: ending_init (0x020443a0), ending_link_init (0x02044530), ending_rescue (0x02044638),

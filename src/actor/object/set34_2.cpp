@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/cellcalls.h"
+#include "engine/map_state.h"
 #include "actor/object/set34_2.h"
 #include "actor/object/set34_api.h"
 

@@ -4,17 +4,15 @@
 #include "global.h"
 #include "types.h"
 #include "actor/enemy/knife_msgsys.h"
-#include "knife/message/knife_message_api.h"
 #include "engine/message_request.h"
 #include "knife/comm/knife_comm_skip.h"
 #include "engine/frame_counter.h"
+#include "knife/app/knife_app.h"
 
 // Functions in this file (module knife_comm, the message box dispatch):
 //   knife_commDispInit (0x0204b2f0)
 
 extern u8 pauseDialogBuffer[]; // pause dialog buffer
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
 
 // Initialises the message box: clears the pause dialog buffer, sets up the text renderer canvas (the normal box or the
 // closing box, openMode 2), tokenizes the message and starts it at subState 1.
@@ -70,7 +68,6 @@ extern "C" int isSkipAvailable(KNIFE_MSGSYS *msg);
 extern "C" void knife_commDispMove(KNIFE_MSGSYS *msg);
 
 extern u8 localPlayerIndex[];
-extern u16 playerKeys[];
 extern const s8 data_020d7c18[]; // step table of the text speed, indexed by the low nibble of speedSetting
 
 // Knife::Message::Token as the move function calls it: slot 2 gives the number of parts, slot 5 analyzes one part

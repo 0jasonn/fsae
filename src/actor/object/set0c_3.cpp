@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "actor/object/set0c.h"
+#include "actor/enemy/rewcell_back.h"
 #include "global.h"
 
 // Set0c actor (module set0c). Address -> name:

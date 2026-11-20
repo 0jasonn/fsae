@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/nameentry_align.h"
+#include "knife/app/knife_app.h"
 
 // nameentry_align: function nameEntryUIView_alignCenter (0x020ae7a8).
 

@@ -37,14 +37,10 @@ typedef struct CtrlTouchObj {
 
 extern "C" {
 s32 Ctrl_handleTouch(CtrlTouchObj *self, CtrlTouchResult *result, const CtrlTouchState *touch);
-s32 RectObjList_findHit2(void **items, s32 count, s16 *pos);
 void RectObj_updateHitFlag(void *self, s16 *pos);
-void *Menu_AcquirePoolEntry(void *pool, s32 id, s32 value);
 u8 Ctrl_updateAc(void *self);
 void Ctrl_setCounterA(void *self);
 u8 Ctrl_updateAd(void *self);
-s32 func_020bb450(void *self);
-s32 Ctrl_advanceSelection(void *self);
 void func_020bb788(void *self, u16 mode);
 }
 

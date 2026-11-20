@@ -1,13 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/setmisc.h"
 
 // Set6b actor, second unit (module set6b). Address -> name:
 //   0x020613b4 set6b_move, 0x0206140c set6b_tidimu (original names)
 
 extern s16 scrollArgs[3];
-void func_02085934(Entity *e, u8 mode);
-void func_020859a0(Entity *e, u8 a, u8 b);
 
 void set6b_move(Entity *e) {
     if (e->timer != 0) {

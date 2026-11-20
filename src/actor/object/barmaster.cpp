@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/fdecls.h"
 
 // Bar master and bar slave actors (module barmaster). Address -> name:
 //   0x0205bd60 barMaster (original name), dispatches on e->action through barMaster_actions

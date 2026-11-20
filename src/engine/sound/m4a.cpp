@@ -3,7 +3,6 @@
 #include "types.h"
 #include "engine/sound/m4a.h"
 #include "knife/sound/knife_sound_4.h"
-#include "engine/sound/m4a_api.h"
 
 // m4a sound driver front end: m4aSoundInit and pauseWavePlayer (0x0208cda4 to 0x0208d004). m4aSoundMain (0x0208d004)
 // is parked in scratch/agentD/nonmatching.

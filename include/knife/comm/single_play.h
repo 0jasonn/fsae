@@ -38,4 +38,17 @@ typedef struct SinglePlayWork {
     u8 unk_34[0x34];         // 0x34: the log list (SinglePlayLogList, Initialize at 0x0209a060)
 } SinglePlayWork;
 
+extern "C" {
+void Knife_Single_SinglePlay_SetContNo(void *self, u8 no); // original Knife::Single::SinglePlay::SetContNo(unsigned char), flat name
+void Knife_Single_SinglePlay_SetWarpInfo(void *self, u8 a, u8 b);
+void Knife_Single_SinglePlay_ChangeContPlayer(void *self);
+void Knife_Single_SinglePlay_ChangeContPlayerDirect(void *self);
+void Knife_Single_SinglePlay_ChangeFormationNo(void *self);
+void Knife_Single_SinglePlay_InitializeCont(void *self);
+void Knife_Single_SinglePlay_InitializeFormation(void *self);
+void Knife_Single_SinglePlay_SetContNoDirect(void *self, u8 no);
+void Knife_Single_SinglePlay_SetFormationNo(void *self, u8 no);
+void Knife_Single_SinglePlay_SetFormationNoDirect(void *self, u8 no);
+}
+
 #endif

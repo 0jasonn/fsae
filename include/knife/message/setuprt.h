@@ -43,9 +43,7 @@ void Knife_Message_CleanupTextRenderer(void); // C++ linkage
 extern "C" {
 void Knife_Message_TextRenderer_setField64(Knife::Message::TextRenderer *self, Knife::Message::PictogramRenderer *renderer);
 void Knife_Message_TextRenderer_setField68(Knife::Message::TextRenderer *self, Knife::Message::PictogramRenderer *renderer);
-void *Knife_Message_PictogramRenderer_PictogramRenderer(void *self);
 void *func_0208e148(u32 size);
-void OS_Terminate(void);
 }
 
 #endif

@@ -1,5 +1,10 @@
 #include "engine/functions.h"
+#include "engine/data_0212c564.h"
+#include "engine/local_player_index.h"
 #include "ui/stagesel_common.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
+#include "engine/data_0212c500.h"
 
 // stagesel_dialog, 0x0207abb4. Stage select dialog, once per frame. data_0212c4dc 0 waits for the answer of the
 // selection dialog (data_02171d7c), 1 waits for the confirmation in the pause dialog.

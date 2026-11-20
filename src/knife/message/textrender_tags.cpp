@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/message/message_classes.h"
+#include "knife/app/knife_app.h"
 
 // Functions in this file (plain names from the debug build, C linkage; the first argument is the TextRenderer):
 //   Knife_Message_TextRenderer_onReadNewLine (0x020a5f14)
@@ -19,7 +20,6 @@ extern "C" void Knife_Message_TextRenderer_onReadCenterTag(Knife::Message::TextR
 extern "C" void Knife_Message_TextRenderer_onReadRightTag(Knife::Message::TextRenderer *self);
 extern "C" void Knife_Message_TextRenderer_onReadColorTag(Knife::Message::TextRenderer *self, s32 color);
 extern "C" void Knife_Message_TextRenderer_onReadNewLine(Knife::Message::TextRenderer *self);
-extern "C" void *KnifeApp_getField20Address(void *app);
 
 // TextRenderer::onReadNewLine() (0x020a5f14): counts a line break while measuring; otherwise it ends the line, takes the
 // target's line position and adds the line spacing of the current app settings

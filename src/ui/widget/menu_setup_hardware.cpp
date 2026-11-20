@@ -1,7 +1,7 @@
 #include "engine/functions.h"
-#include "engine/g_calls.h"
 #include "ui/widget/slot_group_api.h"
 #include "knife/app/twl.h"
+#include "sdk/fx/stub_empty.h"
 #include "ui/widget/menu.h"
 
 extern "C" s32 func_0218a870(void);

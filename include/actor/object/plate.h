@@ -11,7 +11,6 @@ typedef struct Vars_Plate {
 } Vars_Plate;
 #define VPLATE(e) VARS(Vars_Plate, e)
 
-extern u8 data_0212c4dc;     // game flag, 1 while counting up, 2 when the count is snapped to limit
 #include "engine/effect_state.h"
 
 void plate_posY_set(Entity *e);

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
 
 // Set16 actor, second unit (module set16). Address -> name:
 //   0x02064dbc set16_wait (original name)

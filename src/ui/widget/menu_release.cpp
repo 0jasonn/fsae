@@ -4,6 +4,7 @@
 #include "engine/packed_set_api.h"
 #include "ui/widget/menu.h"
 #include "ui/widget/menu_release.h"
+#include "engine/heap_vcall.h"
 
 // Menu_releaseBlocks (0x020bc6c4): resets the menu, frees the blocks it holds (the two at +0x34c, then the ones at
 // +0x348, +0x35c, +0x344 and +0x340, through a holder cell that starts with the menu pointer), frees the blocks at

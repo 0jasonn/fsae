@@ -13,6 +13,7 @@ void *RectObjLink_initCopy(void *self);
 void *RectObjLink2_init(void *self);
 void *RectObjLink3_init(RectObjLink3 *self);
 void *RectSlot2_init(void *self);
+void *RectObjList_create(void *holder);
 }
 
 #endif

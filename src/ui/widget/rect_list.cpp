@@ -1,8 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_list_api.h"
 #include "ui/widget/rect_list.h"
+#include "engine/heap_vcall.h"
 
 // rect_list: functions RectObjList_setItems (0x020b8078), RectObjList_allocPtrArray (0x020b80ec), RectObjList_releaseItems
 // (0x020b8138), RectObjList_freeBlock (0x020b8190) and RectObjList_deleteItem (0x020b81a8), all matching.
@@ -21,7 +21,6 @@ extern "C" BOOL RectObj_updateBoundsCheck(void *self, s16 *pos);
 extern "C" void Table_setValueB(void *owner, void *value, s32 kind);
 extern "C" void RectBufTable_setup(void *owner, void *value, s32 x, s32 y);
 extern "C" void *func_020c2c34(void *heap, s32 size);
-extern "C" void Heap_VirtualFree(void *heap, void *block);
 
 // RectObjList_setItems(self, holder, src, count, pos, size) (0x020b8078, provisional name): allocates the item array
 // of count pointers, copies src into it, and sets the offset from pos and the size from size

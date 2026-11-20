@@ -1,6 +1,6 @@
 #include "ui/setuptext.h"
+#include "knife/app/knife_app.h"
 
-extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
 
 // modeSelUIView::setupTextRender() (0x020a9ce0): centres the common text (message 0x84f) on the two option targets,
 // registers the targets with the text renderer and sends the cell buffer to the BG

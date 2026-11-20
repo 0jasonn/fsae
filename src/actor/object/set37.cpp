@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 
 extern EntityFunc set37Table[];        // set37Table, indexed by action
 extern const u8 set37Hitbox[];         // set37Hitbox

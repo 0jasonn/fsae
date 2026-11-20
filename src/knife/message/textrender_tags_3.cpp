@@ -19,7 +19,6 @@ extern "C" void Knife_Message_TextRenderer_onReadCenterTag(Knife::Message::TextR
 extern "C" void Knife_Message_TextRenderer_onReadRightTag(Knife::Message::TextRenderer *self);
 extern "C" void Knife_Message_TextRenderer_onReadColorTag(Knife::Message::TextRenderer *self, s32 color);
 extern "C" void Knife_Message_TextRenderer_onReadNewLine(Knife::Message::TextRenderer *self);
-extern "C" void *KnifeApp_getField20Address(void *app);
 
 // TextRenderer::onReadColorTag(ColorType) (0x020a611c): stores the colour only when the text is drawn
 void Knife_Message_TextRenderer_onReadColorTag(Knife::Message::TextRenderer *self, s32 color) {

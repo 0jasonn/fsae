@@ -1,8 +1,16 @@
 #include "engine/functions.h"
-#include "knife/subtask/subtask_calls.h"
+#include "knife/subtask/subtask_data.h"
+#include "knife/subtask/subtask.h"
 #include "global.h"
 #include "types.h"
 #include "knife/subtask/subtask_init_bg.h"
+
+// TODO(headers): this declaration of ResChunk_OpenRACH2 differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenRACH2(void *entry, void *owner);
+// TODO(headers): this declaration of ResChunk_OpenTTLP differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_OpenTTLP(void *entry, void *owner);
+// TODO(headers): this declaration of ResChunk_GetNRCS differs from the shared one; see the header restructure report.
+extern "C" s32 ResChunk_GetNRCS(void *entry, void *owner);
 
 // subTask_init_bg3 (0x0209c02c) and subTask_init_bg2 (0x0209c1d0): load the background chunks of the three
 // subtask slots (a, b, c) for the language data at data_0212c55c. Each slot keeps its base (the loaded block) and its

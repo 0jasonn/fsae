@@ -1,8 +1,19 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/wip_a_decls.h"
 #include "sdk/pm/pmi_send_api.h"
+
+// TODO(headers): sdk/pm/pmi_send.h declares data_0212b920 with a different PmiSendState layout; see the header
+// restructure report.
+// PMi send state at data_0212b920: busy flag at +0x30 and three parameters saved for the send.
+typedef struct PmiSendState {
+    u8 unk_00[0x30];
+    s32 busy;                // 0x30
+    u32 param34;             // 0x34
+    u32 param38;             // 0x38
+    u32 param3c;             // 0x3c
+} PmiSendState;
+extern PmiSendState data_0212b920;
 
 // Starts sending a block of words over PXI: fails with 1 while a send is busy, otherwise marks the send busy, saves the
 // three parameters, sends each word and returns 0 with interrupts restored.

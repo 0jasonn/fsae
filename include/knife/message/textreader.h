@@ -17,4 +17,8 @@ typedef struct KnifeTextReader {
     s32 paramPos;       // 0x14: bytes of the parameters read so far
 } KnifeTextReader;
 
+extern "C" {
+void *Knife_Message_TextReader_dtor_TextReader_0a2408(void *self);
+}
+
 #endif

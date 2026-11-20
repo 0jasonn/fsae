@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/map.h"
+#include "actor/enemy/rewcell_one.h"
 
 // Map / collision-cell helpers (module map). Original names from the debug build.
 //   isAnkyo, PuyoAnkyo

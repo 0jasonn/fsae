@@ -2,7 +2,7 @@
 #include "global.h"
 #include "engine/player.h"
 #include "game/yousei.h"
-#include "game/b_extra.h"
+#include "actor/object/zeldafade.h"
 #include "engine/display_state.h"
 
 // Yousei demo fade, 0x02081f14 to 0x02082054.
@@ -10,9 +10,8 @@
 //   step 1 waits for ZeldaFadeFlagGet, bumps the demo step, sets every player to state 3 and finishes the fade.
 //   yousei_msgFinishWait (0x02082008): 1 while any player's message window (bit 12 of playerKeysPrev) is open.
 
-extern u8 data_0212c4dc; // demo sub-step
-extern u8 data_0212c500; // demo step
 #include "engine/effect_state.h"
+#include "engine/data_0212c500.h"
 extern u16 playerKeysPrev[];
 
 // yousei_fade (0x02081f14)

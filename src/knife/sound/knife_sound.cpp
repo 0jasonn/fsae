@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "knife/sound/knife_sound.h"
-#include "knife/sound/knife_sound_api.h"
+#include "engine/sound/sndslot.h"
 
 // Knife::Sound::HandleFactory, Knife::Sound::Heap, the static object, MemoryArchive, SequenceHandle and System::initialize,
 // 0x0208c1c8 to 0x0208c530. Knife_Sound_System_update (0x0208c554) is nonmatching, see scratch/agentD/nonmatching.

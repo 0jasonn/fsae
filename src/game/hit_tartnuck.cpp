@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/hitdecls.h"
+#include "game/hit.h"
 #include "game/hit_tartnuck.h"
 
 // Hit handler of the tart nut (module hit). Original name from the debug build: hit_tartnuck.

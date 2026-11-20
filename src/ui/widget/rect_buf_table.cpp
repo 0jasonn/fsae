@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/rect_links.h"
+#include "engine/table_entry.h"
 
 // rect_buf_table: function RectBufTable_setup (0x020bc2d0), provisional name.
 
@@ -20,7 +21,6 @@ typedef struct RectBufTable {
     u8 unk_2c34[0x400];
 } RectBufTable;
 
-extern "C" void *Table_getEntry58(u8 *self, s32 index);
 extern "C" s32 func_020c40a4(void *dst, s32 size, s32 limit, s32 zero, s32 *pair, s32 zero2, s32 zero3);
 extern "C" s32 Cursor_GetSpan(void *dst);
 extern "C" void OamRing_Push(void *dst, void *src, s32 count);

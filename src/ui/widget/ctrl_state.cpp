@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 
 // ctrl_state: function Ctrl_setStateValue (0x020bb85c), provisional name.
 

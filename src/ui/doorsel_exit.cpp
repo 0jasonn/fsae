@@ -1,5 +1,9 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
 #include "ui/doorsel_exit.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
+#include "engine/effect_state.h"
 
 // doorsel_exit (0x0202b470): leaves the door select screen once the fade has finished. In the two story modes
 // (gameState.unk_01 5 and 6) the selection decides the next step (gameState.unk_48), otherwise it sets gameState byte 3

@@ -7,8 +7,6 @@
 #include "engine/player.h"
 
 extern "C" {
-int func_0208b668(Entity *e); // label, thumb, returns nonzero when the actor is blocked
-void func_0208af0c(Entity *e); // label, thumb
 }
 
 extern const u8 data_020dcc80[]; // hitbox of the tama04 family

@@ -3,6 +3,7 @@
 #include "types.h"
 #include "engine/player.h"
 #include "engine/misc.h"
+#include "actor/enemy/rewcell_one.h"
 #include "game/map.h"
 #include "game/iroyuka_2.h"
 #include "engine/floor_parts_state.h"

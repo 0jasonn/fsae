@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
 
@@ -27,7 +28,6 @@ void raderParent(Entity *e) {
 // Rader parent, third unit (module rader). Address -> name:
 //   0x020630cc rp_init (original name)
 
-extern u8 localPlayerIndex; // player index that is shown as the wireless partner
 
 void rp_init(Entity *e) {
     Entity *child;

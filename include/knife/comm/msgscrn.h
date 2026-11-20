@@ -6,7 +6,6 @@
 #include "knife/message/textrender.h"
 #include "knife/message/textrender_setup.h"
 #include "knife/message/knife_font.h"
-#include "knife/message/knife_message_api.h"
 
 // Message screen description (Knife::Message::KNIFE_MSGSCRN, 0x38 bytes) as knife_MakeMsgScreen reads and rewrites it.
 typedef struct KnifeMsgScrn {

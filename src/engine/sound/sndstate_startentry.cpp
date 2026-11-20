@@ -1,6 +1,10 @@
 #include "engine/functions.h"
 #include "engine/menusound.h"
 
+// TODO(headers): declared in ui/widget/menu.h, which this file cannot include (its MenuSound_SetFade and
+// MenuSound_SetFadeTimes take u16, engine/menusound.h's take s32); see the header restructure report.
+extern "C" void Menu_SetRefByte40(void * volatile *ref, u8 value);
+
 // SndState_StartEntry2 (0x020c186c): starts the sound of a menu sound entry for a reference. A voice is taken from the
 // pool, the sequence (kind 6 lookup) and the sound data (lookup 1) are acquired for it; when one of them fails the
 // voice is released and 0 is returned. On success the sequence is prepared and the entry bytes and the fade

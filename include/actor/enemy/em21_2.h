@@ -6,7 +6,6 @@
 
 #include "engine/frame_counter.h"
 extern const u8 em21_hitbox[]; // em21_hitbox, hitbox of em21
-extern u8 data_0212ced6[];      // per slot flags, stride 0x94 (checked by em21_crossCheck)
 
 extern "C" void func_02084828(Entity *e); // thumb helper, no original name yet
 void MizupochaSet(Entity *e);              // original MizupochaSet(OBJ_WORK_*)

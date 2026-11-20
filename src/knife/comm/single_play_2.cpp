@@ -3,7 +3,6 @@
 #include "engine/player.h"
 #include "types.h"
 #include "knife/comm/single_play.h"
-#include "knife/comm/single_play_api.h"
 
 // Knife::Single::SinglePlay initializers and the warp info setter, 0x02099cec to 0x02099da8. The log list is the C++
 // member SinglePlayLogList::Initialize at 0x0209a060 (mangled in symbols.txt).
@@ -49,7 +48,6 @@ void Knife_Single_SinglePlay_InitializeCont(void *self) {
 
 // SinglePlay::SetWarpInfo(unsigned char, unsigned char) (0x02099d88): stores the pair when none is set yet or the
 // player bit of the controller matches the first value
-extern "C" void Knife_Single_SinglePlay_SetWarpInfo(void *self, u8 first, u8 second);
 void Knife_Single_SinglePlay_SetWarpInfo(void *self, u8 first, u8 second) {
     SinglePlayWork *sp;
 

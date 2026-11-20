@@ -1,7 +1,9 @@
 #include "engine/functions.h"
+#include "actor/object/ido_yuka.h"
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/ido_3.h"
+#include "knife/comm/singleplay_objmove.h"
 #include "actor/object/ido_move.h"
 
 #define IDO_MOVE_PLAYER(bit, idx, dir)                                                              \

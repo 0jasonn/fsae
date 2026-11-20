@@ -11,7 +11,6 @@
 //   DemoTask (0x0202a78c), demoWaitCk (0x0202a8bc), DemoBgBuffClear (0x0202a92c)
 
 
-extern u8 data_0212c4dc;                // demo phase, 0..4
 extern u16 data_0212c510;               // nonzero ends the phase wait early
 #include "engine/effect_state.h"
 #include "engine/palette_buff.h"

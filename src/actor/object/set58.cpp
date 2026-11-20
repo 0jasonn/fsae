@@ -1,8 +1,8 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set58.h"
+#include "game/yousei.h"
 
 // Set58 actor (module set58). Address -> name:
 //   0x02073390 Set58 (provisional name; dispatches on e->type)

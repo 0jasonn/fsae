@@ -30,13 +30,11 @@ typedef struct SUBTASK_PLAYER_WORK {
 
 #include "engine/multisio_save.h"   // multiSioSelect
 
-extern u8 localPlayerIndex;
 
 extern "C" {
 void GetSubtaskPlayerStatus(int playerIndex, SUBTASK_PLAYER_WORK *status);
 u32 func_0200dd38(u32 value);
 s32 Knife_Comm_WirelessManager_getLinkLevel(void *manager);
-void MI_CpuFill8(void *dst, u8 value, u32 size);
 }
 s8 subtask_getFlag(u32 index);
 

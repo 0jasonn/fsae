@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/zmem.h"
 #include "game/srchcells_api.h"
 #include "game/randomset.h"
 

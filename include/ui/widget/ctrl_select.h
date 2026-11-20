@@ -74,7 +74,6 @@ void Ctrl_selectCurrentItem(void *self, s32 flag);
 void Ctrl_setSliderIndexA(void *self, s32 value);
 void Ctrl_setSliderIndexB(void *self, s32 value);
 void RectFlagPair_setFlag(void *self, s32 flag);
-void *Menu_AcquirePoolEntry(void *pool, s32 id, s32 value);
 s32 Ctrl_advanceSelection(void *self);
 void Ctrl_updatePosition(void *self, const s16 *delta);
 s32 Ctrl_retreatSelection(void *self);

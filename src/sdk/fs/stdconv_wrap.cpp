@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/callees.h"
 #include "sdk/fs/stdconv_wrap_api.h"
 
 // Five-argument forwards to the string conversion helpers. The fifth argument is on the stack and is copied to the

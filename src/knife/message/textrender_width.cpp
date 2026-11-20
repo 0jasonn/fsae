@@ -1,6 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/decls_e.h"
+#include "knife/message/message_classes.h"
+#include "knife/message/text_tokenizer.h"
+#include "knife/app/knife_app.h"
+#include "knife/message/textrender_width.h"
 
 // Functions in this file (plain names from the debug build, C linkage; the first argument is the TextRenderer):
 //   Knife_Message_TextRenderer_calcTextWidth (0x020a54bc)

@@ -5,7 +5,6 @@
 #include "game/cockpit.h"   // cockpit_move and its callees
 
 extern "C" {
-void EffectSet(Entity *e, int kind, int arg);
 }
 
 #endif

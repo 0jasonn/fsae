@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/bg_info.h"
+#include "knife/subtask/subtask.h"
 
 // Dialog clear block (data_0217e604): a rectangle of tiles in a 0x600-byte screen buffer (32 tiles per row).
 // The block is read through the global at each use (the original does not keep the pointer in a local).

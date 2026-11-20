@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/pot.h"
+#include "actor/object/setdisp.h"
 
 // Pot actor, clash with another entity (module pot). Address -> name:
 //   0x0205f224 pot_clash (original name)

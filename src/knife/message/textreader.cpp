@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "knife/message/textreader_api.h"
 #include "knife/message/textreader.h"
 
 // Functions in this file (original names from the debug build):

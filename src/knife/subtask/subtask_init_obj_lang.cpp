@@ -8,8 +8,6 @@
 extern s32 data_0212c560;
 extern u8 data_0217a258[];
 
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
-extern "C" void DC_FlushRange(void *base, u32 size);
 extern "C" s32 ResChunk_OpenRACH(void *entry, void *owner);
 s32 _get_subtask_data_lang(s32 index);
 s32 _get_subtask_data_size_lang(s32 index);

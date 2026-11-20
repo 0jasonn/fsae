@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 
 // heart_areaCheck, 0x0206b000 (original areaCheck(OBJ_WORK_*)): 1 if the entity is in the area of any connected player.
 int heart_areaCheck(Entity *e) {

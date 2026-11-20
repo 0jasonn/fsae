@@ -13,7 +13,6 @@ typedef struct Vars_IdoMove {
 } Vars_IdoMove;
 
 extern "C" {
-void ido_yukaMove(Entity *e); // 0x020650f4, original yukaMove(OBJ_WORK_*)
 }
 
 #endif

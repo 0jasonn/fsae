@@ -3,7 +3,6 @@
 
 #include "engine/functions.h"
 #include "engine/player.h"
-#include "engine/a_decls.h"
 
 #include "engine/frame_counter.h"
 

@@ -1,4 +1,6 @@
 #include "engine/functions.h"
+#include "sdk/mi/mi_uncompress.h"
+#include "game/zmem.h"
 #include "global.h"
 #include "actor/object/tama11.h"
 
@@ -9,11 +11,7 @@
 //   mdma_zMalloc (0x02080da8): copies the block, then frees its source with zFree.
 //   mdma_forComp (0x02080e0c): decompresses an LZ16 block into the destination.
 
-void zFree(void *block);
-extern "C" void MI_UncompressLZ16(const void *src, void *dst);
 #include "engine/vblank_request.h"
-extern u32 data_0212c56c;
-extern u8 data_0212ccb0[];
 
 // mdma (0x02080d18)
 unsigned char *mdma(unsigned char *record) {

@@ -1,6 +1,9 @@
 #include "engine/functions.h"
+#include "game/bganm_api.h"
 #include "global.h"
 #include "actor/object/throw_throw.h"
+#include "engine/map_state.h"
+#include "actor/object/setdisp.h"
 
 // throw_throw (0x02080560, symbol throw_throw_080560): the Throw actor carrying its child (the thrown object) through
 // the air. While it flies it moves, follows the cell walls and falls; on landing it breaks, bounces or stops; while

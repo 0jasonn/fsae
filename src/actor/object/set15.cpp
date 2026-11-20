@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
 
 // Set15 actor and its two empty state functions (module set15). Address -> name:
 //   0x02064bd0 Set15 (original name), 0x02064bec set15_nop0, 0x02064bf0 set15_nop1

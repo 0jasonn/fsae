@@ -1,8 +1,16 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
-#include "ui/widget/menu_api.h"
+
+// Sound object referenced by a menu sound handle (fields by the offsets used in the sound helpers).
+typedef struct MenuSoundObj {
+    /* 00 */ u8 unk_00[0x34];
+    /* 34 */ u16 state;
+    /* 36 */ u16 unk_36;
+    /* 38 */ u16 value38;
+    /* 3a */ u16 value3a;
+    /* 3c */ u8 player;
+} MenuSoundObj;
 
 // Functions in this file (provisional names, role not confirmed):
 //   MenuSound_SetFade (MenuSound_SetFade), MenuSound_SetFadeTimes (MenuSound_SetFadeTimes)

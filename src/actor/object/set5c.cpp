@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "game/cellcommon.h"
+#include "actor/enemy/rewcell_one.h"
 
 // Functions in this file (original names from the debug build, or renames for the func_ names):
 //   set5c_changeiroankyo, set5c_returnZero -> set5c_returnZero

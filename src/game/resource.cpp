@@ -8,7 +8,6 @@
 extern u32 data_02171e20[];
 #include "engine/vblank_request.h"
 extern u8 data_0212c50c[];
-extern u8 objAffineSet[];
 #include "engine/display_state.h"
 
 // ResourceCtrl (0x02082c64)

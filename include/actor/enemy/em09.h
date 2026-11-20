@@ -37,7 +37,6 @@ extern const EntityFunc em09_type2Actions[];
 extern const u8 em09_paletteByType[];
 extern const u8 em09_altPaletteA[];
 extern const u8 em09_hitbox[];
-extern const u16 playerKeys[];
 extern Entity *data_0212c7d4[];
 extern const s8 data_020d1d96[];
 extern const s8 data_020d1d93[];

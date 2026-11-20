@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/res_table_reloc_api.h"
 #include "global.h"
 #include "engine/res_chunk_c_api.h"
 #include "engine/res_chunk_d_api.h"

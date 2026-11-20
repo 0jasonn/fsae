@@ -14,6 +14,11 @@ extern "C" {
 // Sub-object calls used by the KnifeApp destructor (dsd names)
 void Knife_Hud_HudManager_dtor_HudManager_09e004(void *member);
 void Knife_Comm_WirelessIcon_nop(void *member);
+void *KnifeApp_getField20Address(void *app);
+// KnifeApp::getZelmapResource(unsigned long) (plain name in symbols.txt). The first argument is the KnifeApp instance.
+u32 KnifeApp_getZelmapResource(void *app, u32 id);
+s32 KnifeApp_getCurrentLanguage(void *app);
+void KnifeApp_loadAllResource(void *self);
 }
 
 #endif

@@ -1,5 +1,4 @@
 #include "engine/functions.h"
-#include "sdk/callees.h"
 #include "global.h"
 #include "types.h"
 #include "sdk/os/os_thread.h"
@@ -10,7 +9,6 @@
 extern "C" void OSi_UnlockAllMutex(OsThreadRec *thread);
 extern "C" void OSi_RemoveSpecifiedLinkFromQueue(void *link, OsThreadRec *thread);
 extern "C" void OSi_RemoveThreadFromList(OsThreadRec *thread);
-extern "C" void OS_Terminate(void);
 
 // Os_ExitCurrentThread() (0x02017a00): takes the current thread off its queues and mutexes, marks it as state 2, wakes its
 // wait object and terminates the thread for good.

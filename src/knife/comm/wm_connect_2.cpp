@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "knife/comm/wm_work.h"
-#include "knife/comm/wm_connect_2_api.h"
+#include "knife/comm/wm_connect_api.h"
 
 extern char data_0211b284[];
 

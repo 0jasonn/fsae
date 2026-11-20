@@ -13,8 +13,6 @@ void MachiukeStop(void);
 extern "C" {
 void connectCheck(void);
 s32 Knife_Comm_WirelessManager_getLinkLevel(void *manager);
-BOOL Knife_Message_selectionDialog_isModal(const void *a);
-void Knife_Message_selectionDialog_stop(void *a);
 
 s32 update_confirm_wait(void);
 void dialog_msg_check(s32 kind, s32 player);

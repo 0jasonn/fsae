@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "engine/k_decls.h"
+#include "actor/object/set67_init.h"
 
 // Set67 actor (module set67): set67_init (0x020755c0)
 

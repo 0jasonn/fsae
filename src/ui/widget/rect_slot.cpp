@@ -1,8 +1,16 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 #include "ui/widget/rect_slot_api.h"
+
+// TODO(headers): this declaration of func_020c2c34 differs from the shared one; see the header restructure report.
+extern "C" void *func_020c2c34(void *heap, s32 size);
+// TODO(headers): this declaration of RectItem_clear differs from the shared one; see the header restructure report.
+extern "C" void RectItem_clear(void *self);
+// TODO(headers): this declaration of RectObjLink2_init differs from the shared one; see the header restructure report.
+extern "C" void *RectObjLink2_init(void *self);
+// TODO(headers): this declaration of RectObj_hitTest differs from the shared one; see the header restructure report.
+extern "C" BOOL RectObj_hitTest(void *self, s16 *pos);
 
 // rect_slot: functions RectItem_allocArray (0x020b8e28), RectObjList_findHit2 (0x020b8e88), RectSlot_status (0x020b8ef8)
 // and RectSlot_init (0x020b8f0c), provisional names.

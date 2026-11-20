@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "engine/blend_request.h"
 
@@ -10,9 +11,7 @@ typedef struct Vars_You {
 extern const s16 data_020c91fc[][2];
 extern const u8 oplogo_youPosTable[];
 extern EntityFunc oplogo_buttonTable[];
-extern u8 localPlayerIndex;
 #include "engine/effect_state.h"
-extern u8 data_0212c4dc;
 
 void you_move(Entity *e) {
     u16 counter;

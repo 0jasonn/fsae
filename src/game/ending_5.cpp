@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
 #include "game/ending.h"
 #include "global.h"
 

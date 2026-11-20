@@ -6,8 +6,6 @@
 #include "engine/sound/sndvoice.h"
 
 extern "C" {
-u32 OS_DisableInterrupts(void);
-void OS_RestoreInterrupts(u32 saved);
 extern SndList data_021848fc; // pending list that matched nodes are queued on
 void SndPending_AppendLocked(u8 *node);
 }

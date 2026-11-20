@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
-#include "actor/object/objdecls_f.h"
+#include "game/pl_start_pos.h"
 
 // 0x02054fe4 PlStartPosSet (original name, C linkage): places the entity at the start slot of its type;
 // gameState.startCells (data_0212c84c) holds the (x, y) cell of each of the 4 start slots.

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 #include "ui/widget/rect_slot3_api.h"
 #include "ui/widget/slider_ctrl_api.h"
 #include "ui/widget/slider_index_api.h"

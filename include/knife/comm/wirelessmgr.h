@@ -2,7 +2,6 @@
 #define WIP_D_WIRELESSMGR_D_H
 
 #include "types.h"
-#include "sdk/wm/wm_api.h"
 #include "knife/comm/wireless_manager.h"
 #include "knife/comm/comm_parentinfo.h"
 
@@ -71,11 +70,8 @@ extern "C" s32 WM_PowerOff(void *callback);
 extern "C" s32 WM_GetAID(void);
 extern "C" s32 WM_GetConnectedAIDs(void);
 extern "C" s32 WM_GetLinkLevel(void);
-extern "C" void MI_CpuFill8(void *dst, u32 value, u32 size);
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result);
 extern "C" void WM_EndDataSharing(void *buf);
-extern "C" void OS_Terminate(void);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_Reset(void *arg);
 
 #endif

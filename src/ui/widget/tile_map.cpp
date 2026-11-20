@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/pane.h"
-#include "ui/widget/tile_map_api.h"
 #include "ui/widget/tile_map.h"
 
 // tile_map: functions Rec_returnZero (0x020b7570), TileMap_init (0x020b7578) and TileMap_getCell (0x020b75d0).

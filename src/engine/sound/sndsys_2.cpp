@@ -13,7 +13,6 @@ void SND_ReadDriverInfo(void *buffer);
 s32 SND_ReadChannelInfo(void *table, s32 index, void *entry);
 void SNDi_SetSurroundDecay(s32 decay);
 void SndSlot_ReleaseAll(s32 arg);
-void DC_InvalidateRange(void *start, u32 size);
 void func_020c0350(void);
 void func_020c1a38(s32 value);
 }
@@ -33,7 +32,6 @@ extern "C" u8 data_021819a0[]; // the two driver buffers, 0x11e0 bytes each
 
 // SndSys_StopAll: releases the slots, clears the surround decay and the timer, then flushes the commands and waits for
 // the last one.
-extern "C" void SndSys_StopAll(void);
 void SndSys_StopAll(void) {
     u32 tag;
 

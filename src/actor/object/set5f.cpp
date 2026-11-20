@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/setmisc.h"
+#include "game/multiroom.h"
 #include "actor/object/set5f.h"
 #include "engine/message_request.h"
 

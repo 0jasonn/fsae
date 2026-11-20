@@ -14,7 +14,6 @@
 extern const u8 data_020d8858[]; // hitbox used when type2 & 2
 extern const u8 data_020d8850[]; // hitbox used otherwise
 
-extern "C" void RewCellBack(u16 cell, u16 layer);
 void AshimotoCheck(Entity *e);
 
 #endif

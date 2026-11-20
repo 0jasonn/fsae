@@ -10,6 +10,5 @@ typedef struct Vars_Set20 {
 
 extern const EntityFunc set20_stateTable[]; // indexed by e->action, was set20_stateTable
 extern const void *set20_hitboxTable[];     // hitbox per frame (frames 0 to 4), was set20_hitboxTable
-extern "C" void func_020841b0(Entity *e);  // thumb label, no original name
 
 #endif

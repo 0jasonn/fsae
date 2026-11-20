@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_particle family (module effect_particle), 0x0206e93c .. 0x0206e9ac (dispatcher and init).
 // Address -> name: 0x0206e93c effect_particle, 0x0206e958 effect_particle_init

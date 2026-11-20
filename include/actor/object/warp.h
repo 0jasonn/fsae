@@ -76,12 +76,9 @@ typedef struct SinglePlayWarpHead {
 
 extern "C" {
 BOOL Knife_Single_SinglePlay_CheckShell(void *self, Entity *e, int a);
-void Knife_Single_SinglePlay_InitializeFormation(void *self);
 BOOL Knife_Single_SinglePlay_WarpPartner(void *self, PlayerData *player0, PlayerData *player1);
 BOOL Knife_Single_SinglePlay_WarpPartnerToTarget(void *self, PlayerData *player0, PlayerData *player1, s16 x, s16 y);
 int func_02083d30(s16 x, s16 y, u16 layer);  // thumb, cell class at a map position
 }
-int func_02083d18(Entity *e, int dx, int dy);  // thumb, cell class at an offset of the entity
-int func_02083c74(Entity *e, int dx, int dy);  // thumb, cell kind at an offset of the entity
 
 #endif

@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 #include "engine/irq.h"
 
 extern s16 data_02115c78[];            // shared with door_silver_init, [type][3] flat

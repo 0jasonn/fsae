@@ -4,8 +4,6 @@
 #include "engine/entity.h"
 
 // Local player index (0x0212c504); same declaration as in misc_d.h
-extern u8 localPlayerIndex;
-extern u16 playerKeys[]; // per-player key state, indexed by player
 extern u8 pot_putonLimit;   // 0x021158f0, subtimer limit of a pot being carried
 
 typedef struct Vars_PotPuton {

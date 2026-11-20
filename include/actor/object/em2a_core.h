@@ -14,7 +14,6 @@ typedef struct Vars_Em2aCorePart {
 
 extern const void *const em2a_corePartHitboxes[]; // em2a_corePartHitboxes, indexed by the part number in timer
 extern u8 data_0212cee8[]; // playerWork[0].stateTimer, stride 0x94 (base of the stride access)
-extern u8 localPlayerIndex;
 
 extern "C" void func_0208ab50(Entity *e); // thumb, makes the hit player flash
 extern u8 data_0212cebc[];  // playerWork[0].state, stride 0x94

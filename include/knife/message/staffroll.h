@@ -41,12 +41,9 @@ extern s32 OamRing_dmaNo;
 
 extern "C" {
 void GXS_SetGraphicsMode(u32 mode);
-void Vram_SetBankGroupA(u32 a);
 void Vram_SetBankGroupB(u32 a);
 void *func_0208e148(u32 size);
-void DC_FlushRange(const void *base, u32 size);
 void MI_WaitDma(s32 channel);
-s32 KnifeApp_getCurrentLanguage(void *app);
 void Knife_Message_setPendingPtr(u32 a);
 void Knife_Message_RenderTarget_initialize_forBG(Knife::Message::RenderTarget *target, s32 a, s32 b, s32 c, s32 d, s32 e,
                                                  s32 f, s32 g, s32 h, s32 i, const u16 *text);

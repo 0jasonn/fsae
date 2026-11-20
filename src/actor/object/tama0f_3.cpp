@@ -1,4 +1,22 @@
-#include "actor/object/tama0f_api.h"
+#include "actor/object/tama0f.h"
+#include "engine/functions.h"
+#include "engine/entity.h"
+#include "engine/player.h"
+#include "types.h"
+
+// Overlay of the storm actor (tama0f_storm)
+typedef struct Vars_Tama0fStorm {
+    /* 00 */ u8 unk_00[0x70];
+    /* 70 */ s32 stormTimer;   // frames the storm keeps chasing the player, 0 = homing on the parent
+    /* 74 */ u32 lifeCounter;  // counts up, wraps after 0x21c
+} Vars_Tama0fStorm;
+#define VS(e) VARS(Vars_Tama0fStorm, e)
+
+// Overlay of the parent actor
+typedef struct Vars_Tama0fParent {
+    /* 00 */ u8 unk_00[0x71];
+    /* 71 */ u8 stormActive;
+} Vars_Tama0fParent;
 
 // Storm shot (tama0f_storm, 0x0207d794): hops between the players when hit, then hovers and drops sparks.
 void tama0f_storm(Entity *e) {

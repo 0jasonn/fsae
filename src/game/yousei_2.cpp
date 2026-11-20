@@ -1,14 +1,23 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
 #include "engine/player.h"
 #include "global.h"
 #include "engine/blend_request.h"
 #include "game/rank_api.h"
-#include "actor/object/k_yousei.h"
+#include "game/clearkey.h"
+#include "engine/em12_type_masks.h"
+
+extern const u16 data_02117e10[]; // message ids of the fairy demo, indexed by gameState.unk_01
+
+// TODO(headers): game/rupeelevel.h declares the definition's int getRupeeLevel(void); this file's code needs the u32
+// return, so it declares both rupeelevel functions here; see the header restructure report.
+u32 getRupeeLevel(void);       // 0x02082054, original getRupeeLevel()
+void rupee_error(u16 message); // 0x02082094, original rupee_error(unsigned short)
 #include "engine/message_request.h"
 #include "game/yousei.h"
 
-extern u8 data_0212c4dc; // demo sub-step
 #include "engine/effect_state.h"
+#include "engine/data_0212c500.h"
 
 // yousei_demo, 0x020820cc. Fairy demo after the stage: the sub-step data_0212c4dc waits for the fairy, checks the
 // rupee level and the clear keys of every player, and requests the matching message.
@@ -177,8 +186,6 @@ void yousei_demo(void) {
 
 // yousei demo, from 0x02082598: goto_nextdemo sets the demo step to 3 and clears data_0212c4dc.
 
-extern u8 data_0212c500;
-extern u8 data_0212c4dc;
 
 // goto_nextdemo (0x02082598)
 void goto_nextdemo(void) {
@@ -191,8 +198,6 @@ void goto_nextdemo(void) {
 //   sets the demo step to 4 and starts the fades and sounds.
 //   yousei_end (0x0208265c): clears the backdrop colour, resets the object and text pools and jumps to task 6.
 
-extern u8 data_0212c4dc;     // demo sub-step
-extern u8 data_0212c500;     // demo step
 #include "engine/palette_buff.h"
 
 // yousei_exit (0x020825bc)

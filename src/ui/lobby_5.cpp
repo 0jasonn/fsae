@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/lobby.h"
-#include "ui/lobby_api.h"
+#include "engine/heap_vcall.h"
 
 // Functions in this file (no original names, provisional names from what they do):
 //   lobby_msgObj_init (lobby_msgObj_init), lobby_msgObj_release (lobby_msgObj_release), lobby_freeBlock (lobby_freeBlock)

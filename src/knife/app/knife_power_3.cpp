@@ -1,7 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/decls_g.h"
 #include "knife/app/knife_power.h"
+
+extern u8 data_0218709c[];
+extern u8 data_02187090[];
+extern u32 data_0218708c;
+
+// TODO(headers): this declaration of Chain_Push differs from the shared one; see the header restructure report.
+extern "C" void Chain_Push(void *obj, void (*destructor)(void *), void *dso);
 
 // Functions in this file (original names from the debug build):
 //   Knife_GetPowerManager (provisional name Knife_GetPowerManager, the accessor of the PowerManager object)

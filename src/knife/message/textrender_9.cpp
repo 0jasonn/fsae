@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "knife/message/textrender_api.h"
+#include "knife/message/textrender.h"
 
 // Functions in this file (invented name, the debug build has none):
 //   Knife_Message_TextRenderer_getField50: reads a word of the renderer table at +0x50

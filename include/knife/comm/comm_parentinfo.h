@@ -40,4 +40,8 @@ public:
 }
 }
 
+extern "C" {
+void *Knife_Comm_ParentInfo_ParentInfo(void *self);
+}
+
 #endif

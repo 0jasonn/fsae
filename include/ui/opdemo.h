@@ -11,8 +11,12 @@ extern u16 data_0212c510;               // flag word also declared in game/multi
 // Engine and player helpers that are not in engine/functions.h yet (see report).
 void RotateObjWork(u8 list);            // original RotateObjWork(unsigned char), 0x0204c1ec
 extern u8 data_0212c4e8;                // byte cleared at the start of AfterPlayer
-int func_02083d18(Entity *e, int dx, int dy); // C++ linkage (_Z13func_02083d18P9OBJ_WORK_ii), same as enemycommon.h
 #include "engine/frame_counter.h"
 #include "engine/palette_buff.h"
+
+extern "C" {
+void bunshin_set(void);
+void op_scene_01(void);
+}
 
 #endif

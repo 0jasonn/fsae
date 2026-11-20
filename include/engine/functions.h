@@ -7,6 +7,7 @@
 
 #include "engine/entity.h"
 typedef struct PL_WORK_ PlayerData;
+typedef void (*PMiCallback)(u32 result, u32 arg); // TwlSDK PM callback
 
 struct DISP_CTRL_;
 struct ENCNT_;
@@ -118,7 +119,6 @@ void Menu_setupHardware(void *self, const void *setup);
 void func_020bc99c(void *self, void *bufA, s32 bufB, s32 arg5, u16 arg6);
 s32 func_020c0f90(u32 word, u32 byte, u32 a1, u32 one, u32 zero);
 void func_020c2cc0(u8 *body);
-void ResTable_RelocateKbec(u8 *body);
 s32 func_020c323c(u8 *cursor);
 void OamRing_ResetAll(void *oam);
 void OamRing_Alloc(void *dst, s32 value, s32 size, s32 flag);
@@ -203,6 +203,94 @@ BOOL GameState_UpdatePhase(void); // plain symbol, 0x02049454, no arguments
 u8 ClearKeyCheck(void);
 void G2x_SetBlendAlpha_(void *reg, s32 a, s32 b, s32 c, s32 d);
 s32 AddHeart(Entity *e, s32 amount);
+void func_0208af0c(Entity *e);               // plain dsd name, 0x0208af0c
+int func_020862a8(Entity *e);
+void func_02089988(void *player);
+void func_0208365c(s32 mode, u16 cell, u16 layer);
+void func_02012c40(void);
+void func_02014af4(s32 a);
+void func_020148f0(s32 a);
+void func_02015120(s32 a);
+void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
+void OS_Terminate(void);
+s32 PM_SetLCDPower(s32 a);
+void func_0201d038(s32 a, s32 b, s32 c);
+void OS_WaitVBlankIntr(void);
+void DC_FlushRange(const void *startAddr, u32 nBytes); // TwlSDK
+void func_02086168(Entity *e);
+void func_020841b0(Entity *e);
+void TP_WaitBusy(s32 mode);
+s32 TP_CheckError(s32 mode);
+s32 func_0218a5d4(void);
+s32 func_0218a5fc(void);
+void func_02189868(void);
+s32 func_0218a570(void);
+s32 func_020c6008(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e, s32 f, s32 g);
+s32 func_020c6550(void *cell, s32 a, s32 b, s32 c, s32 d, s32 flag, s32 e);
+s32 func_020c5e00(void *font, void *canvas, s32 x, s32 y, s32 palette, s32 ch);
+void func_0218a860(s32 arg);
+void func_0208530c(Entity *e, s32 speed, u8 direction, u16 wallFlags); // thumb, no original name
+int func_02085a88(Entity *a, Entity *b, s32 w, s32 h); // thumb, overlap test of two entities
+void sword_plsync(Entity *e, Entity *other);
+void ClearNewStageUpdate(void);
+void func_02084228(Entity *e); // thumb label, no original name
+void func_02083f60(Entity *e, Entity *other); // thumb, no original name
+void func_02084200(Entity *e);
+// Callees used by the G files that engine/functions.h does not declare yet (plain symbols in symbols.txt).
+void func_0208a240(Entity *e, u16 kind, u16 x, u16 y); // thumb label, no original name (torch lighting helper)
+int func_0208b668(Entity *e);
+u8 ObjGetDir2(Entity *e, Entity *target, s32 a, s32 b); // 0x0204fdfc, unmangled
+u32 OS_DisableInterrupts(void);
+void OS_RestoreInterrupts(u32 state);
+void DC_InvalidateRange(void *start, u32 size);
+void FATFSi_InitRequest(void);
+void FATFSi_SyncInitialization(u32 arg);
+void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
+s32 Entries_ProcessAll(void);
+void PMi_SendPxiData(u32 word);
+void OS_GetOwnerInfoEx(void *info); // 0x020198e4, TwlSDK (unmangled)
+void GXx_SetMasterBrightness_(void *reg, u32 value); // 0x02012f70, TwlSDK
+void MI_CpuCopy8(const void *src, void *dst, u32 size);
+void MI_CpuFill8(void *dest, u8 data, u32 size); // TwlSDK
+void GXS_BeginLoadBGExtPltt(void);
+void GXS_LoadBGExtPltt(void *data, u32 offset, u32 size);
+void GXS_EndLoadBGExtPltt(void);
+void OS_LockMutexFromWToR(void *mutex);
+void OS_UnlockMutex(void *mutex);
+// Power management list helper (PMi_DeleteList(list, item)).
+void PMi_DeleteList(void *list, void *item);
+u32 STD_ConvertStringSjisToUnicode(void *a, void *b, void *c, void *d, void *e);
+u32 STD_ConvertStringUnicodeToSjis(void *a, void *b, void *c, void *d, void *e);
+u32 OSi_DoTryLockByWord(void *word, u32 id, void *owner, u32 unused);
+void OSi_FreeCardBus(void);
+void OSi_AllocateCardBus(void);
+u32 OS_EnableInterrupts(void);
+void OS_Halt(void);
+// VRAM bank helpers.
+void resetBankForX_(void *bank);
+s32 PMi_SetSoundVolume(u32 volume);
+s32 PMi_SetLEDAsync(u32 value, PMiCallback callback, u32 arg);
+s32 PMi_SetAmp(u32 enabled);
+void PMi_WaitVBlank(void);
+void OS_SpinWaitSysCycles(u32 cycles);
+u32 STDi_GetUnicodeConversionTable(u32 a, u32 b, u32 c, u32 d);
+u32 FATFSi_SendToPXI(u32 a, u32 b, u32 c, u32 d);
+u32 FS_UnmountArchive(u32 a, u32 b, u32 c, u32 d);
+u32 OSi_InitCommon(u32 a, u32 b, u32 c, u32 d);
+u32 OSi_IrqCallback(u32 a, u32 b, u32 c, u32 d);
+u32 OSi_DoLockByWord(u32 a, u32 b, u32 c, u32 d);
+u32 OSi_DoUnlockByWord(u32 a, u32 b, u32 c, u32 d);
+u32 func_0201a070(u32 a, u32 b, u32 c, u32 d);
+s32 WMi_EnableEx(void *callback, u32 flag);
+s32 WMi_StartParentEx(void *callback, u32 flag);
+void func_020bb080(void *self);
+void func_020bb148(void *self);
+void OamRing_Flush(void *entry);
+void OamRing_Clear(void *entry);
+void GX_LoadBGPltt(void *src, s32 offset, s32 size);
+void GXS_LoadBGPltt(void *src, s32 offset, s32 size);
+void func_020bf09c(void *out, void *data, void *obj);
+s32 func_020bb450(void *obj);
 }
 
 void BikkuriSet(Entity *e, s32 a, s32 b);
@@ -227,7 +315,6 @@ void DataLoad(u16 a);
 void DemoBgBuffClear(void);
 void DemoLinkWalkSet(u8 a, u8 b, u8 c);
 void DispCtrlSet(void);
-void DispReset(void);
 void DropRupeeDir(u8 i, u16 value, u8 flags);
 void Em09(Entity *e);
 void Em26(Entity *e);
@@ -650,5 +737,50 @@ int CalcRupeeDiff(u8 index);
 // Ranking screen (C++ linkage, original make_hyosyo() and ranking_hyosyo())
 void make_hyosyo(void);    // 0x020558c0
 void ranking_hyosyo(void); // 0x02055b20, not decompiled yet
+
+void breakset(Entity *e);                               // breakset(OBJ_WORK_*), 0x0206a964
+int func_02083ed8(Entity *e, Entity *other);            // dsd name, C++ linkage, 0x02083ed8
+void func_0208366c(s32 a, u16 b, u16 c);                // _Z13func_0208366cltt (dsd name), 0x0208366c
+int func_02083d18(Entity *e, int dx, int dy);
+void func_020859a0(Entity *e, u8 a, u8 b);
+void func_02085934(Entity *e, u8 mode);
+// Per-type phase counters of the effect_rock, effect_omoideon, effect_particle and beam effects, effectPhaseTable
+extern s32 effectPhaseTable[];
+void bombFire(Entity *e); // original bombFire(OBJ_WORK_*)
+void TaimatuIgnition(Entity *e, u16 kind); // original TaimatuIgnition(OBJ_WORK_*, unsigned short)
+int func_02083ccc(Entity *e, s16 x, s16 y); // 0x02083ccc: cell kind at an offset from the entity
+void *zMalloc(u16 size); // original zMalloc(unsigned short)
+void func_02085e08(Entity *e, Entity *t); // 0x02085e08, called with the hit arguments
+extern u8 data_0212ced6[];
+extern u8 data_0212ceca[];
+extern u8 data_0212ceba[];
+extern u8 data_0212ceb2[];
+u16 func_0208367c(u16 cell, u16 layer);
+u16 func_02083e54(int a); // 0x02083e54, returns a map-cell kind
+int func_02085ccc(Entity *e);
+extern u8 data_0212c4dc;
+// Data used by disp_A_button (the OAM buffer is objAffineSet, see include/game/scene_d.h)
+extern u8 objAffineSet[];
+extern const u8 data_020ce4d0[];
+void CommFrameUpdate(void);
+extern u32 data_0212c56c;
+extern u32 data_0212c570;
+extern u32 data_0212c528;
+extern u16 playerKeys[];
+extern u8 data_0212ccb0[];
+extern u8 data_0212cdb0[];
+void shuffledata(u16 *list, u16 count);  // C++ linkage (original_names.tsv)
+extern u8 data_021180a8[];
+extern u8 data_0211857c[];
+int func_02083cdc(Entity *e);
+int func_02085890(Entity *e, const u8 *table, u16 x, u16 y);
+extern u8 *data_02171e0c;     // pointer to a byte table indexed by a tile value
+extern u8 data_021348f4[];
+void MultiSioInit(void);                 // original MultiSioInit()
+void func_0208309c(void);
+extern u8 data_0212caf0[];
+void Cockpit(void);  // C++ linkage (original_names.tsv)
+extern u32 data_020dfb40;
+extern u32 data_02128920;
 
 #endif

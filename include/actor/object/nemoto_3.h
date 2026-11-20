@@ -2,7 +2,7 @@
 #define WIP_A_NEMOTO_3_H
 
 #include "engine/functions.h"
-#include "actor/object/cellcalls.h"
+#include "engine/map_state.h"
 
 // Actor fields written by nemoto_writecell (file-local overlay, read by the Set44 family too).
 typedef struct Vars_NemotoCell {

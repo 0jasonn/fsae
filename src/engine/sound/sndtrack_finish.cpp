@@ -4,8 +4,6 @@
 
 extern "C" {
 extern u8 data_02185fd8[];
-void OS_LockMutexFromWToR(void *mutex);
-void OS_UnlockMutex(void *mutex);
 void SndEntry_StopIfPending(void *entry);
 }
 

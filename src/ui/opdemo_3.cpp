@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/data_0212c564.h"
 #include "game/scene.h"
 #include "global.h"
 #include "engine/message_request.h"

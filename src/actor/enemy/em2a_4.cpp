@@ -1,4 +1,5 @@
 #include "actor/object/em2a_core.h"
+#include "engine/local_player_index.h"
 
 // Core part of the boss: reacts to hits and follows the parent (em2a_core, 0x02031cb0).
 void em2a_core(Entity *e) {

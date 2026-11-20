@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "engine/record_init_api.h"
+#include "engine/record_init.h"
 #include "engine/record_init_sized_api.h"
 
 extern "C" u8 data_020df120[];

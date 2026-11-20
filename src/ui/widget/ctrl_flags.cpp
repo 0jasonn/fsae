@@ -1,8 +1,16 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
+#include "ui/widget/ctrl_flags.h"
 #include "ui/widget/slider_ctrl_api.h"
+
+// TODO(headers): declared in ui/widget/menu.h, which this file cannot include (its types clash with the
+// ones used here); see the header restructure report.
+extern "C" void *Menu_AcquirePoolEntry(void *pool, s32 id, s32 value);
+
+// TODO(headers): this declaration of RectFlagPair_setFlag differs from the shared one;
+// see the header restructure report.
+extern "C" void RectFlagPair_setFlag(void *self, s32 flag);
 
 // ctrl_flags: functions Ctrl_updateAc (0x020bb660), Ctrl_tryChange (0x020bb698), Ctrl_updateAd (0x020bb6c8) and
 // Ctrl_setCounterA (0x020bb70c), provisional names. The controller record is the one of slider_ctrl.cpp, with the

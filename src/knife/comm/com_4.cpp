@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "types.h"
 #include "knife/comm/com_sio.h"
@@ -6,10 +7,9 @@
 // Functions in this file (module com, original names from the debug build): com_machiuke (com_machiuke())
 
 #include "engine/com_work.h"
+#include "engine/entry_check.h"
 extern u32 opTitleState;
-extern u8 localPlayerIndex;
 
-void entry_check(void);                  // entry_check, parked in scratch/agentB/nonmatching
 void cockpit_error_check(void);          // in com_3.cpp
 
 // com_machiuke (0x02028280): the state machine of the communication handshake, run by the state byte 1 (cases 0..5).

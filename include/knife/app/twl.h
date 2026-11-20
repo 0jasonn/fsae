@@ -16,25 +16,18 @@
 extern u32 data_02171e20[]; // [0] callback, [1] exit flag, [2] byte flag, [3] exit callback fn, [4] param
 extern u32 data_02171e2c;   // 16-byte exit-callback object at data_02171e20 + 0xc
 
-// Touch panel calibration data (shared with the manual-mode restore in src/knife/app/knife_manual_6.cpp)
-extern u8 data_0212c57c[];
 
 // Calls made by twlInit / knifeExitCallback (TwlSDK or dsd names, C linkage).
 extern "C" {
 void twlInit(void);                 // plain (unmangled) symbol in symbols.txt
 void Os_InitCommonWrap(void);
-void Stub_EmptyB(void);
-void func_02012c40(void);
 void TP_Init(void);
 s32 TP_GetUserInfo(void *info);
 void TP_SetCalibrateParam(void *info);
-void OS_Terminate(void);
 void func_0218a804(void *exitInfo);  // target outside the ARM9 image (module:none in relocs.txt)
-void func_0218a860(s32 arg);         // target outside the ARM9 image (module:none in relocs.txt)
 }
 
 // C++-linkage functions (mangled symbols in symbols.txt).
-void Irq_InitVBlank(void);          // _Z14Irq_InitVBlankv
 void twlInitVRAM(void);             // _Z11twlInitVRAMv
 void twlInitAgb(void);              // _Z10twlInitAgbv
 void twlInitSubDisplay(void);       // _Z17twlInitSubDisplayv

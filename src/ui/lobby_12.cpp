@@ -3,9 +3,12 @@
 #include "ui/widget/uiobject.h"
 #include "ui/exchange_savedata_api.h"
 #include "knife/comm/comm.h"
+
+// TODO(headers): this declaration of ResPlayer_SeekAndRefresh differs from the shared one;
+// see the header restructure report.
+extern "C" void ResPlayer_SeekAndRefresh(void *entry, s32 value);
 s8 subtask_getFlag(u32 index);
 #include "ui/lobby_color_api.h"
-#include "ui/widget/rect_f.h"
 #include "ui/groupselectuiview.h"
 extern "C" void func_020ac038(s32, s32, void *, void *);
 

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/setcommon_g.h"
 #include "actor/object/set19.h"
 
 // Set19 actor (module set19). Address -> name:

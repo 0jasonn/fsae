@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
 #include "engine/misc.h"
 #include "global.h"
 

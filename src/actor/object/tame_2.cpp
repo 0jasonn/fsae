@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
+#include "actor/object/setdisp.h"
 
 // Tame actor, second unit (module tame). Address -> name (original names from symbols.txt):
 //   0x020702c8 tame_move
@@ -13,7 +14,6 @@ typedef struct Vars_TameMove {
     /* 6a */ u16 effectCounter; // counts the effects spawned at the end of the timer
 } Vars_TameMove;
 
-extern "C" Entity *EffectSet(Entity *e, int kind, int arg);
 extern const s8 data_020db580[];
 extern const s8 data_020db588[];
 #include "engine/frame_counter.h"

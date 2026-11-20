@@ -4,7 +4,6 @@
 #define m4aSongNumContinue m4aSongNumContinue_header_decl
 #include "engine/sound/m4a.h"
 #undef m4aSongNumContinue
-#include "engine/sound/m4a_api.h"
 
 // m4aSongNumContinue (0x0208d6a8): resumes the song with the given number at the given level (the low 12 bits of arg,
 // scaled by 16): both wave slots for numbers 0x1ea to 0x1f3, otherwise the sequence handle. Starts the song when it is

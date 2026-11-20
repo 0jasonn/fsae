@@ -3,13 +3,12 @@
 #include "types.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/single_target_api.h"
+#include "game/mathutil.h"
 
 // SinglePlay work item (the SinglePlayWork of single_play_d.h) fields used by SetTargetPos, read at their widths.
 #define SP_S16(self, off) (*(s16 *)((u8 *)(self) + (off)))
 #define SP_PTR(self, off) (*(void **)((u8 *)(self) + (off)))
 
-// abs_s32 (0x02029a44): the absolute value of a long (C++ linkage).
-s32 abs_s32(s32 value);
 
 // SinglePlayWork::SetTargetPos (0x02099f5c): the offset of the entity at 0x14 from the work item's origin, stored at
 // 0x2c and 0x2e, and the absolute values (abs_s32) at 0x30 and 0x32.

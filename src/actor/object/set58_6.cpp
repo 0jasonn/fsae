@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set58.h"
+#include "game/yousei.h"
 
 // Set58 aura actions (module set58). Address -> name:
 //   0x02073a4c set58_aura (original name; dispatches on e->action)

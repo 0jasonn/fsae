@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_beam3 family (module effect_beam3), (dispatcher and init).
 // Address -> name: 0x0206ee40 effect_beam3, 0x0206ee5c effect_beam3_init

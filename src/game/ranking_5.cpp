@@ -1,4 +1,7 @@
 #include "actor/object/ranking5.h"
+#include "engine/disp_reset.h"
+#include "engine/local_player_index.h"
+#include "game/ranking.h"
 #include "engine/functions.h"
 #include "game/rankingsave.h"
 #include "global.h"

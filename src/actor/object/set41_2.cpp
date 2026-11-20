@@ -1,7 +1,9 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "actor/object/set41.h"
 #include "engine/player.h"
+#include "engine/data_0212c500.h"
 
 // Set41 family (module set41), 0x0206c4c0 .. 0x0206c594.
 // Address -> name: 0x0206c4c0 appear, 0x0206c4e0 set41_wait, 0x0206c558 set41_appear
@@ -48,9 +50,7 @@ void set41_appear(Entity *e) {
 
 #include "engine/em12_type_masks.h"
 extern const u32 flagBits[];        // flag per entity type (0x020cf9b8)
-extern u8 localPlayerIndex;         // localPlayerIndex
 extern u32 data_02134900;           // pending message flag, cleared once the message is requested
-extern u8 data_0212c500;            // step index, 9 when the message can be shown
 
 #define SPRITE_WORD(e) (*(u32 *)&(e)->spriteSettings)
 

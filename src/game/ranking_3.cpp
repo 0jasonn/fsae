@@ -1,5 +1,9 @@
 #include "engine/functions.h"
+#include "game/clearbuf.h"
+#include "engine/disp_reset.h"
 #include "game/rankingsave.h"
+#include "game/ranking.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 
 // Ranking screen unit 3 (module ranking). Address -> name (original names):

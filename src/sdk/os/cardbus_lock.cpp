@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/callees.h"
 #include "sdk/os/cardbus_lock_api.h"
 
 // Lock word helpers. LockWord_TryLock forwards to OSi_DoTryLockByWord with a zero fourth argument. CardBus_Acquire

@@ -2,7 +2,6 @@
 #define WIP_A_AGENT_A_H
 
 #include "engine/functions.h"
-#include "sdk/wm/wm_api.h"
 
 // Prototypes for functions defined in src/wip/A/ (Implementer A).
 // Plain (unmangled) functions get C linkage here; the original debug names of mangled ones are C++.
@@ -26,11 +25,8 @@ u32 WMi_SendCommandDirect(u16 *data, u32 count);
 void WMi_SetCallbackTable(u32 id, void *table);
 void WM_SetPortCallback(u32 port, u32 a, u32 b);
 u32 WMi_SendCommand(u32 a, u32 b, ...);
-void DC_InvalidateRange(void *addr, u32 size);
 void DC_StoreRange(void *addr, u32 size);
 s32 NWMi_CheckInitialized(void);
-u32 OS_DisableInterrupts(void);
-void OS_RestoreInterrupts(u32 state);
 }
 
 // C++ functions defined in this directory (mangled original names).
@@ -45,10 +41,7 @@ extern const u8 em1c_charAnimTable[];   // em1c_charAnimTable
 extern const u8 em16_timerTable[];   // em16_timerTable
 extern const s8 getdir_offsetTable[];   // getdir_offsetTable
 extern const u8 data_020d3224[];   // em27 hitbox
-extern const u8 data_020ce4d0[];   // background init table
 extern u32 data_02134a68[];        // background animation slots (8 x 8 bytes)
 
-// BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.
-void BgInit(void);
 
 #endif

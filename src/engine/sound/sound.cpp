@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "engine/sound/sound_api.h"
 
@@ -14,7 +15,6 @@ typedef struct SoundVolumeState {
 } SoundVolumeState;
 
 extern SoundVolumeState soundVolumeState;
-extern u8 localPlayerIndex; // player index used by PlSoundReq when the game is not wireless
 extern "C" void m4aSongNumSetParam(u16 value, u16 mask, s32 current);
 
 // volumeSet (0x02076f0c)

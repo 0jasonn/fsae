@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "sdk/wm/wm_api.h"
+#include "sdk/wm/wm_work.h"
 #include "game/agent.h"
 #include "knife/comm/wm_work.h"
 #include "sdk/wm/wm_startmp.h"

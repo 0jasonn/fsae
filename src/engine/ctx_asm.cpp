@@ -1,7 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/a_extern.h"
+
+// TODO(headers): this declaration of RecordCursor_Fetch differs from the shared one; see the header restructure report.
+extern "C" void RecordCursor_Fetch(void *context);
 
 // Restores r4-r11 and sp from a saved context at r0 (fields +0x2c..+0x48 and +0x5c), lowers sp by the word at +0x64
 // and jumps to target (r2). Register-only sequence: it never returns to the caller.

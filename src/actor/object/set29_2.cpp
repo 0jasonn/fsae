@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "actor/object/set29.h"
+#include "actor/enemy/rewcell_one.h"
 #include "global.h"
 
 void set29_move(Entity *e) {

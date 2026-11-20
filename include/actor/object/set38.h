@@ -27,7 +27,6 @@ int AssignObj(void *obj);                 // AssignObj(void*): C++ linkage in th
 extern "C" int func_02085c28(Entity *e);
 extern "C" void func_02085fac(Entity *e);
 extern "C" void func_02085fd0(Entity *e);
-extern "C" void EffectSet(Entity *e, int kind, int arg);
 
 void heart_throw_end(Entity *e);
 

@@ -6,9 +6,7 @@
 // the queue names a handler in queueHandlerTable, which takes the cursor and returns the next one. Handlers run until the
 // cursor reaches the end stored in data_0212c570; then that end is set to the start of the half for the next pass.
 typedef u8 *(*QueueHandler)(u8 *cursor);
-extern u8 data_0212ccb0[];
 #include "engine/vblank_request.h"
-extern u32 data_0212c570;
 extern const QueueHandler queueHandlerTable[];
 
 // func_02080ca4 (0x02080ca4)

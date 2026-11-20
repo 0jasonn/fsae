@@ -88,8 +88,6 @@ u32 WBT_SetPacketSize(s32 a, s32 b);
 void *func_0208e148(u32 size);
 void OS_InitMutex(void *mutex);
 void OS_InitEvent(void *event);
-void OS_LockMutexFromWToR(void *mutex);
-void OS_UnlockMutex(void *mutex);
 void OS_SignalEvent(void *event, s32 value);
 void OS_ClearEvent(void *event, s32 value);
 void Os_WaitEventExWrap(void *event, s32 timeout, s32 flags);

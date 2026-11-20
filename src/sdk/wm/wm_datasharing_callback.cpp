@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "game/agent.h"
+#include "sdk/wm/wm_work.h"
 #include "sdk/wm/wm_datasharing.h"
 #include "sdk/wm/wm_send_callback.h"
 

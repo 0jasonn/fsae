@@ -1,9 +1,11 @@
 #include "engine/functions.h"
 #include "engine/misc.h"
+#include "engine/data_0212c500.h"
 #include "game/scene.h"
 #include "global.h"
 #include "types.h"
 #include "ui/stagesel.h"
+#include "actor/object/zeldafade.h"
 
 // Shared object pointer table (data_02171d58); only the pointers used by the stage select code are named
 typedef struct SselObjTable {

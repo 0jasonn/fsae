@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "game/cockpit.h"
+#include "game/mathutil.h"
 
 // Functions in this file (module cockpit, original names from the debug build):
 //   rupeeUpdate, heartUpdate, bg_trans_body, cockpit_bg_trans

@@ -22,5 +22,7 @@ extern SHIKAKEWORK data_02134e70[];
 
 void shikake_bigblock(u32 *record); // 0x02022110, too large for this unit
 void func_020227b4(u32 *record); // 0x020227b4, too large for this unit
+void ShikakeInit(void);
+BOOL shikake_req_check(SHIKAKEWORK *req); // original shikake_req_check(SHIKAKEWORK_*), C++ linkage
 
 #endif

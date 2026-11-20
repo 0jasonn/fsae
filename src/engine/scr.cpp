@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/scr.h"
 #include "game/rankingsave.h"
 #include "global.h"
 #include "engine/bg_buff.h"

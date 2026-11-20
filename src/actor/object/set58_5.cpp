@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set58.h"
+#include "game/yousei.h"
 
 // Set58 youseidama update (module set58). Address -> name:
 //   0x02073984 youseidama_up (original name)

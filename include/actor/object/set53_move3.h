@@ -3,7 +3,6 @@
 
 #include "engine/functions.h"
 #include "engine/player.h"
-#include "engine/a_decls.h"
 
 // set53 (the rowing boat): fields of the hull. Its child (0x58) is the seat, whose riders sit at 0x64 and 0x68.
 typedef struct Vars_Set53Hull {
@@ -34,8 +33,6 @@ void FormationBreak(void);
 }
 
 // C++ linkage (thumb labels and original names)
-void func_02085e08(Entity *e, Entity *player);
-int func_02083ccc(Entity *e, s16 x, s16 y);
 void set53_nop(Entity *e);
 
 #endif

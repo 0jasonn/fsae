@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "actor/object/set5c_2.h"
 #include "actor/object/pot.h"
+#include "actor/enemy/rewcell_back.h"
 
 // 0x0205fadc (original name). Removes the actor from its cell once its area mask says the cell is clear, then
 // releases the work slot.

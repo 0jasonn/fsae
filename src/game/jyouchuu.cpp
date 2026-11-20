@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/jyouchuu.h"
 #include "global.h"
 #include "types.h"
 #include "engine/player.h"

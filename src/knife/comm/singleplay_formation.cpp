@@ -3,7 +3,6 @@
 #include "types.h"
 #include "engine/player.h"
 #include "knife/comm/single_play.h"
-#include "knife/comm/single_play_api.h"
 #include "knife/comm/singleplay_2.h"
 extern u8 data_0211b298[]; // rodata block of tuning values; see singleplay_2.h
 

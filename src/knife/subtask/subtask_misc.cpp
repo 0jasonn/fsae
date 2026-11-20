@@ -4,8 +4,6 @@
 
 // Subtask OAM helper, 0x0209ad08 (subtask_dispReset at 0x0209aa2c is parked in scratch/agentA/nonmatching).
 
-extern "C" void OamRing_Flush(void *oamManager);
-extern "C" void OamRing_Clear(void *oamManager);
 extern u8 data_0217a23c[];
 extern u8 data_0217d23c[];
 

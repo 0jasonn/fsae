@@ -41,7 +41,6 @@ extern "C" u16 WM_GetAllowedChannel(void);
 extern "C" BOOL Knife_Comm_WirelessManager_checkCallbackResult(void *self, void *result);
 extern "C" void Knife_Comm_WirelessManager_appendScanResult(void *self, void *bssDesc, s32 linkLevel);
 extern "C" BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);
-extern "C" void OS_Terminate(void);
 extern "C" void Knife_Comm_WirelessManager_deleteMPBuffer(void *self);
 extern "C" BOOL Knife_Comm_WirelessManager_internalReset(void *self);
 

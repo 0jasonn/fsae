@@ -4,7 +4,6 @@
 // Option panel screen (module option): shared state of the panel actors at 0x0205c03c..0x0205c3bb.
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/fdecls.h"
 
 // Panel actor fields (file-local overlay of the copy actor)
 typedef struct Vars_Option {
@@ -28,5 +27,7 @@ extern u32 data_02171d20[];                   // resource ids, indexed by effect
 void *KnifeApp_getInstance(void);
 
 void miniPanelPatSet(Entity *e);
+// Option panel helper at 0x0205c770 (star_adjust). Moves the entity's sprite by (a, b) in steps.
+void star_adjust(Entity *e, s16 a, s16 b);
 
 #endif

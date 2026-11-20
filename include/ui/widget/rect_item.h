@@ -13,4 +13,11 @@ typedef struct RectItem {
     u16 count;        // 0x14
 } RectItem;
 
+extern "C" {
+void **RectItem_allocPtrArray(void *holder, s32 count);
+void **RectItem_allocPtrArray2(void *holder, s32 count);
+void RectItem_freeBlock(void *holder, void *block);
+void RectItem_freeBlock2(void *holder, void *block);
+}
+
 #endif

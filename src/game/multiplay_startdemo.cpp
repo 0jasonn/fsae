@@ -1,5 +1,8 @@
 #include "engine/functions.h"
 #include "game/multiplay.h"
+#include "game/keyclear_api.h"
+#include "game/trianglewin.h"
+#include "engine/data_0212c500.h"
 #include "engine/irq.h"
 #include "engine/display_state.h"
 #include "engine/vblank_request.h"

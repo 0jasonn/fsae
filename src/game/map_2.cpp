@@ -1,7 +1,8 @@
 #include "engine/functions.h"
+#include "sdk/mi/mi_uncompress.h"
 #include "global.h"
 #include "types.h"
-#include "engine/decls_a.h"
+#include "knife/app/knife_app.h"
 
 // Map loader (module map, second unit). Original name from the debug build: MapLoad(unsigned long*, unsigned char).
 

@@ -9,6 +9,7 @@ extern "C" {
 void Knife_Comm_WirelessManager_callback_WM_ClearFlag(void *result);
 void Knife_Comm_WirelessManager_callback_WM_SetEntry(void *result);
 void Knife_Comm_WirelessManager_callback_WM_StepTimer5(void *result);
+void Knife_Comm_WirelessManager_callback_WM_StepTimer4(void *result);
 }
 
 #endif

@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "knife/comm/single_play.h"
+#include "knife/comm/singleplay_objmove.h"
 #include "knife/comm/singleplay_pair.h"
 
 // Knife::Single::SinglePlay::SetObjMoveReqFlag(OBJ_WORK_*, unsigned long, long, unsigned char) (0x02099704): for each

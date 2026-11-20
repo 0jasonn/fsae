@@ -12,9 +12,7 @@
 
 
 extern u16 playerKeysPrev[4];
-extern u16 playerKeys[4];
 
-extern "C" void keyClear(void);
 
 // keyClear (0x0202b54c)
 void keyClear(void) {

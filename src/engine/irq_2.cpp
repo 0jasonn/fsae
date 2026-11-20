@@ -28,7 +28,6 @@ extern const u16 tokiWaveLockIds[];
 extern const EntityFunc entityActionTable[];
 extern u8 data_0212c4b8;
 #include "engine/vblank_request.h"
-extern u8 data_021348f4[];
 extern u8 data_0213cfa0[];
 extern u8 data_02fe0000[];
 

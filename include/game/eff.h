@@ -18,8 +18,6 @@ extern u8 data_0217c23c[];
 extern u8 data_0217d23c[];
 extern s32 data_0217d334;
 
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 
 EffWork *effwk_add(void);
 void effwk_del(void *work, s32 index);

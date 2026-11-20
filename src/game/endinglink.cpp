@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "game/endinglink.h"
+#include "game/ranking.h"
 
 // selectEndingLink, 0x02045874. Picks a random player index for the ending: it first steps a random number of
 // players (1 to 16) forward from player 0, then keeps stepping until it lands on a player without a ranking key.

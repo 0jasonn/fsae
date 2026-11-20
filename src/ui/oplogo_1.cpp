@@ -13,7 +13,6 @@
 
 extern EntityFunc data_02115bac[]; // handler per type
 extern EntityFunc data_02115b84[]; // state table indexed by e->action
-extern u8 data_0212c4dc; // stage counter, the title moves once it reaches 3
 
 typedef struct Vars_Oplogo {
     /* 00 */ u8 unk_00[0x7c];

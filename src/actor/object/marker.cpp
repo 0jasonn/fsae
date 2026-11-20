@@ -2,7 +2,6 @@
 #include "global.h"
 #include "engine/player.h"
 #include "engine/player.h"
-#include "actor/object/objdecls_a.h"
 
 
 // light_marker, 0x02069f5c: follows the entity of player type2 (playerWork[type2].entity) and the animation.

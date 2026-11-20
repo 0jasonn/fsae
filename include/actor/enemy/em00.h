@@ -31,6 +31,5 @@ void getmoveinfo(Entity *e);
 
 // Callees of the em0a units (dsd names with their arguments).
 int func_020847c8(Entity *e);
-int func_02083e54(int a); // returns a map-cell kind (0x02083e54) // original getmoveinfo(OBJ_WORK_*), defined later in the E units
 
 #endif

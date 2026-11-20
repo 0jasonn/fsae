@@ -6,5 +6,6 @@
 BOOL Check1BlockOshiYoyaku(u16 a, u16 b);
 
 void Set1BlockOshiYoyaku(u16 a, u16 b);
+void BgAnm(void);
 
 #endif

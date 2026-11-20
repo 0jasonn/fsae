@@ -1,5 +1,7 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/misc.h"
+#include "engine/data_0212c500.h"
 #include "game/scene.h"
 #include "global.h"
 #include "types.h"

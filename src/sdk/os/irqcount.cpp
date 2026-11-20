@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/callees.h"
 #include "sdk/os/irqcount_api.h"
 
 // Interrupt-protected counter at data_0212991c (its count is at +4). Acquire takes a slot while the count is below

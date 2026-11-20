@@ -9,7 +9,6 @@
 //   func_0202809c (ComFinish(0), dsd name kept because stageseldecls.h declares it)
 
 
-void ComFinish(u32 finishArg);
 void ComRequest(u8 request);
 
 // ComStart (0x02028068): sends the request, then starts the multiplayer serial.

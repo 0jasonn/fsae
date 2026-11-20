@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 
 extern EntityFunc set34Table[];        // set34Table, indexed by action
 

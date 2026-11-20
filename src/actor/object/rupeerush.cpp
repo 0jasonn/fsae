@@ -21,7 +21,6 @@ void changeRupeeRushLevel(u8 level) {
 }
 
 // initRupeeRush (0x020775c4): fills the dice with 0..14, then shuffles them with 128 random swaps
-extern "C" void initRupeeRush(void);
 void initRupeeRush(void) {
     int i;
     int count;

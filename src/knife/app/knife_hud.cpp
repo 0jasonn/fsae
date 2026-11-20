@@ -2,7 +2,6 @@
 #include "global.h"
 #include "knife/app/knife_hud.h"
 #include "knife/app/knife_hud_layout.h"
-#include "knife/app/knife_hud_api.h"
 
 // Functions in this file (original names from the debug build, or invented where marked):
 //   Knife::Interp<VecFx32>::Interp (0x0209dfc4), empty dtor of the Interp array (0x0209dfe0, name invented),

@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/stream_api.h"
 #include "global.h"
 #include "types.h"
 #include "game/ringbuf_printf.h"

@@ -108,9 +108,6 @@ extern "C" void Knife_Comm_WirelessManager_requestEndScan(void *manager);
 extern "C" s32 Knife_Comm_WirelessManager_getMaxParents(void *manager);
 extern "C" void *Knife_Comm_WirelessManager_getScanResult(void *manager, s32 index);
 extern "C" s32 Knife_Comm_WirelessManager_getState(void *manager);
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
-extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
 
 // Text render target of a pane (Knife::Message render target, only the fields the room drawing reads)
 typedef struct TextRenderTarget {
@@ -125,7 +122,6 @@ typedef struct TextRenderTarget {
     u32 cellIndex;    // 0x44: index of the cell of the entry
 } TextRenderTarget;
 
-extern "C" void func_020c6550(void *cell, s32 a1, s32 a2, s32 x, s32 y, s32 a5, s32 a6);
 extern "C" void *Knife_Message_GetRenderTarget(s32 pane);
 
 // Palette link table (5 entries, rodata)
@@ -133,5 +129,8 @@ typedef struct LinkPalTable {
     s8 entry[5];
 } LinkPalTable;
 extern const LinkPalTable data_020ded44;
+extern "C" {
+s8 linkPalToPanePal(s8 index);
+}
 
 #endif

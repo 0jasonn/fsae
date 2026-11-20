@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 
 // rect_group_slot: function RectGroup_setSlot (0x020b9d30), provisional name.
 

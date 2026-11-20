@@ -2,6 +2,7 @@
 #include "types.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wirelessmanager.h"
+#include "engine/functions.h"
 
 // Knife::Comm::WirelessManager::update_parent() (0x02092e0c): the parent state step, run from update() in state 8. At timer 0
 // it clears the slot table (+0x1c5c, 16 words) and the link mask, starts the data sharing step (WM_StepDataSharing) and

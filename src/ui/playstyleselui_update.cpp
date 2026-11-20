@@ -1,4 +1,6 @@
 #include "engine/functions.h"
+#include "game/clamp_api.h"
+#include "ui/exchange_savedata_api.h"
 #include "knife/message/playstyle_update.h"
 #define CTRL ((FileSelUIViewCtrl *)data_0217e6f0)
 

@@ -1,7 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/enemy/decls_b2.h"
+#include "ui/doorsel.h"
+#include "engine/data_0212c500.h"
+#include "game/keyclear_api.h"
+#include "engine/effect_state.h"
+#include "engine/player.h"
 #include "ui/doorsel_appear.h"
+
+extern s16 data_020f260c[];   // pairs of s16 positions for the door select sprites
 
 // doorsel_appear (0x0202abfc): steps 0, 1 and 2 of the door select appear sequence. Step 0 sets up the sprite of
 // every player (position from data_020f260c), then sets the timer in effectState and advances the step; step 1 walks

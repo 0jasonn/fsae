@@ -1,5 +1,7 @@
 #include "engine/functions.h"
-#include "engine/g_calls.h"
+#include "engine/fs_dirfile_api.h"
+#include "engine/sound/sndsys_api.h"
+#include "ui/widget/menu_teardown_hardware.h"
 #include "ui/widget/menu.h"
 
 // Stops touch sampling and audio, turns the display off, then releases any menu-owned

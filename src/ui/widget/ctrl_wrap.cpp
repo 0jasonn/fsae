@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 #include "ui/widget/ctrl_wrap_api.h"
 
 // ctrl_wrap: functions Ctrl_updateSlotsA (0x020bc36c), Ctrl_getConst (0x020bc390) and Ctrl_waitVBlank (0x020bc39c),

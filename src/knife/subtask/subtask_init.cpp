@@ -1,8 +1,9 @@
 #include "engine/functions.h"
-#include "knife/subtask/subtask_calls.h"
+#include "sdk/mi/mi_uncompress.h"
+#include "engine/sound/m4a.h"
 #include "global.h"
 #include "types.h"
-#include "knife/subtask/subtask_init_api.h"
+#include "knife/subtask/subtask_init.h"
 
 // subTaskInit_lang (0x0209bbb4): frees the block of the previous language, loads the compressed subtask file of the
 // language (ten entries, "./subtask_<region>_<lang>.cmp"), decompresses it into a new global buffer and keeps the

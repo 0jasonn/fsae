@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 
 // Set53 and Set54 actors (module set54). Address -> name:
 //   0x02071a70 set53_scrcheck (original name; returns the offset index of the first free check point)

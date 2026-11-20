@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "knife/comm/singleplay_init.h"
 #include "knife/comm/singleplay.h"
 
 // Knife::Single::SinglePlay::GetInstance() (0x02093b5c): the first call builds the static instance (data_02178df4): its
@@ -8,7 +9,6 @@
 extern "C" {
 void Chain_Push(void *obj, void *dtor, void *handle);
 void *Knife_Single_SinglePlay_SinglePlayLogList_SinglePlayLogList(void *self);
-void *Knife_Single_SinglePlay_dtor_SinglePlay(void *self);
 }
 
 typedef struct StaticGuard {

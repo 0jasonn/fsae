@@ -1,9 +1,9 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
+#include "actor/object/setwork.h"
 
-extern u8 localPlayerIndex;            // localPlayerIndex
 
 // MapMarkerSet, 0x02069d64: makes the map markers for each player and links the local player's marker to its child.
 void MapMarkerSet(void) {

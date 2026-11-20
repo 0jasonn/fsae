@@ -42,7 +42,6 @@ typedef struct FileSelUIViewCtrl {
 } FileSelUIViewCtrl;
 
 extern "C" {
-void MI_CpuFill8(void *dst, u8 value, u32 size);
 u32 addOamUiObj(u32 oamBuffer, u32 size, UIObject *obj);
 void fileSelUIViewCtrl_initUIObject(FileSelUIViewCtrl *self);
 void fileSelUIViewCtrl_clearOamCount(FileSelUIViewCtrl *self);
@@ -59,7 +58,6 @@ void UIObject_update(UIObject *self);
 void Knife_Message_setPendingPtr(u32 a);
 extern u8 data_0217a258[];
 void OamRing_Push(void *obj, const u32 *attrs, u16 count);
-void Vram_SetBankGroupA(u32 a);
 void fileSelUIViewCtrl_finalize(FileSelUIViewCtrl *self);
 void Vram_SetBankGroupB(u32 a);
 extern u8 data_0217d23c[];
@@ -78,6 +76,10 @@ typedef struct OamSizeTable {
 } OamSizeTable;
 
 extern const OamSizeTable data_020de998;
+void fileSelUIView_vfunc2(void *self);
+s32 fileSelUIView_getText(void *self, void *text, u32 textId, s32 language);
+BOOL fileSelUIView_moveOut_wait(void *self);
+void fileSelUIView_viewDidDisapper(void *a);
 }
 
 #endif

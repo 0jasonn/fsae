@@ -53,13 +53,11 @@ extern u8 pauseDialogWindow[];   // pauseDialogWindow, the selection dialog of t
 extern u8 pauseDialogBuffer[];   // pauseDialogBuffer, screen block of the selection dialog (0x600 bytes)
 #include "engine/com_work.h"
 extern u8 playerKeysPrev[];   // previous key state of the four players (u16 each)
-extern u8 playerKeys[];   // new keys of the four players (u16 each), also the key state of the machine
 extern u8 data_0212c514[];   // key state of the machine (u16)
 
 #include "engine/blend_request.h" // update_change_stage sets blendRequest.resetValue to -1
 extern u8 data_0217a258[];   // OBJInfo block freed by subTask_lobby_end
 extern u8 data_02126a48[];   // vtable of the lobby message object (lobby_msgObj_init)
-extern "C" void Heap_VirtualFree(void *heap, void *block); // frees a block of a heap
 
 extern const s32 data_020ded8c[2]; // start position of the link object (x, y in pixels)
 
@@ -70,12 +68,22 @@ extern const U32Table4 data_020dedc4; // 6 7 8 9
 
 // Sends a block of the screen data to the VBlank transfer queue (original subTaskSendScr(short, void*, unsigned long,
 // unsigned long))
-void subTaskSendScr(s16 index, void *data, u32 offset, u32 size);
 extern "C" u32 addOamUiObj(void *oamBuffer, u32 size, void *obj);
 extern "C" void subTask_init_bg3(int a, int b, int c);
 void OpeningTaskPrepareFinalize(void);
 
 // Received parameter of a player (nibble of the 0x474 word of the wireless block)
 extern "C" s32 getReciveParam(s32 index);
+extern "C" {
+void lobby_freeBlock(void *heap, void *block);
+void lobby_msgObj_release(void *obj, void *heap);
+void lobby_releaseObj(void *holder, void *obj);
+s32 lobby_selection_dialogUpdate(void);
+void lobby_setRecvParam(s32 index, s32 flag, s32 value);
+void lobby_stepAndCall(void *self, void *arg);
+s32 lobby_updateNone(void);
+void subTask_lobby_end(void);
+s32 update_change_filesel(void);
+}
 
 #endif

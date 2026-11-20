@@ -3,7 +3,6 @@
 #include "game/scene.h"
 #include "ui/opdemo.h"
 #include "global.h"
-#include "ui/opdemo_api.h"
 
 // bunshin_set (symbol bunshin_set): sets the animation bounds of the four player entities and plays sound 0x205.
 

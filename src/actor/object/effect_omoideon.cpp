@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_omoideon family (module effect_omoideon), 0x0206e87c .. 0x0206e93c.
 // Address -> name: 0x0206e87c effect_omoideon, 0x0206e898 effect_omoideon_init, 0x0206e8e4 effect_omoideon_move

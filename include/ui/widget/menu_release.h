@@ -8,7 +8,6 @@
 
 extern "C" {
 MenuWork *Menu_releaseBlocks(MenuWork *menu);
-void Heap_VirtualFree(void *heap, void *block);
 }
 
 // Subobject cleanup entry points (C++ linkage: the original names are mangled; defined in menu_8.cpp and menu_11.cpp).

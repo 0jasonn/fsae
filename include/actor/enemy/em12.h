@@ -38,7 +38,6 @@ extern const u8 em12_hitbox[];
 extern const s8 em12_kemuriOffsets[];
 extern const s8 em12_walkOffsets[];
 extern const u16 data_020d2144[];
-extern u8 *data_02171e0c;
 extern u16 playerKeysPrev[4];
 extern const u8 em12_colorByPlayer[];
 

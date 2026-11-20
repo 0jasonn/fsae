@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/blend_request.h"
-#include "actor/object/objdecls_f.h"
 
 // Zelda fade window (module zfade). Address -> name:
 //   zfade_init (0x0205b768) and zfade_move (0x0205b800): scratch/agentF/nonmatching/zfade_init.c, zfade_move.c

@@ -1,4 +1,5 @@
 #include "knife/message/text_stream_api.h"
+#include "knife/message/text_stream_utf8.h"
 
 // Reads one 1-, 2-, or 3-byte UTF-8 code point and advances the stream cursor.
 extern "C" u16 TextStream_ReadUtf8(u8 *self) {

@@ -13,7 +13,6 @@ extern "C" {
 int func_0208af18(u16 value); // thumb, unmangled (0x0208af18); returns non-zero for a key it accepts
 void RewCellBack(u16 cell, u16 flag);
 }
-void RewCellOne(u16 id, u16 cell, u16 flag);       // _Z10RewCellOnettt
 void sbKemuriSet(STOPBLOCK_WORK_ *block);           // _Z11sbKemuriSetP15STOPBLOCK_WORK_
 void set5c_changeiroankyo(u16 cell, u16 value);     // _Z20set5c_changeiroankyott
 

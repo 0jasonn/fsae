@@ -29,5 +29,11 @@ void make_item_color_2p(void);
 void make_item_char_2p(void);
 void cockpit_write_rupee(u16 *dst, u32 value, u8 count, u16 flags); // original write_rupee, cockpit_6.cpp                       // original BgmSet()
 extern "C" u32 func_020867cc(void);     // dsd name, thumb function (0x020867cc), plain symbol
+extern "C" {
+void CockpitInit(void);
+}
+
+// Declared here for the reviewer to move into engine/functions.h (original CockpitRecovery(unsigned char, unsigned char)).
+void CockpitRecovery(u8 kind, u8 amount);
 
 #endif

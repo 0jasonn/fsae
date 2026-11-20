@@ -1,4 +1,6 @@
 #include "engine/functions.h"
+#include "engine/sound/sndstate_start_api.h"
+#include "engine/sound/sndstate_start_ex_api.h"
 #include "global.h"
 #include "types.h"
 #include "knife/sound/knifesound_player.h"

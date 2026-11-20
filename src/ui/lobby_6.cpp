@@ -3,7 +3,6 @@
 #include "types.h"
 #include "knife/subtask/subtask.h"
 #include "ui/lobby.h"
-#include "ui/lobby_api.h"
 
 // Functions in this file (original names from the debug build):
 //   subTask_lobby_end (0x020b1920)

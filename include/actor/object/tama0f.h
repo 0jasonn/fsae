@@ -20,4 +20,8 @@ typedef struct Vars_TamaParent {
     /* 79 */ u8 parentState;
 } Vars_TamaParent;
 
+void tama0f_storm(Entity *e);
+// tama0f_ruppyset has an original (mangled) name: tama0f_ruppyset(OBJ_WORK_*, unsigned char).
+void tama0f_ruppyset(Entity *e, u8 kind);
+
 #endif

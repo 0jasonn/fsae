@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "engine/misc.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 #include "actor/object/sr_api.h"
 #include "engine/display_state.h"
@@ -60,8 +61,6 @@ void setupRupeeRush(int reuseEnemy) {
 // communication to report that the step is complete. data_0212c4dc is the phase inside the wait.
 //   StaffrollTask (0x02077810), sr_wait (0x0207790c).
 
-extern u8 data_0212c4dc;             // phase of sr_wait: 0 requests, 1 waits for the state code, then the step advances
-extern u8 data_0212c500;             // step index into srStepTable
 extern void (*srStepTable[])(void); // srStepTable: sr_init, sr_wait, sr_makemap, sr_start, sr_main, ...
 extern u32 data_0212c550;
 extern u32 data_0212c554;

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set57.h"
 
 // set57_init (0x020731f0): sets the palette from set57_paletteIndex; in game mode 2 the object is nudged by (4, -2)

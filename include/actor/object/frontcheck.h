@@ -16,13 +16,11 @@ extern const DirDelta data_020cd6c4[];  // pixel offset in front of an actor per
 extern const s16 cellDeltaTable[];      // cell index step per direction (up, right, down, left)
 extern const u16 data_020cd6b0[];       // map words written when a pushed block starts to slide
 extern u16 data_0212c510;
-extern u8 data_0212ceca[]; // playerWork[0].unk_1a, stride 0x94
 
 extern "C" {
 BOOL TryUsingKey(Entity *e);
 int FrontCheck(Entity *e, PlayerData *player);
 }
-u16 func_02083e54(int kind);                                      // class of a cell kind (thumb)
 void SetMoveBlockByKind(Entity *e, u8 a, s32 kind, u16 cell);     // 0x0202357c
 void TakaraOpen(Entity *e, u16 cell, u16 layer);                  // 0x0207bd00
 

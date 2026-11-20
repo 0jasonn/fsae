@@ -12,10 +12,8 @@ s32 FX_Sqrt(s32 x);
 }
 
 void ComRequest(u8 request);
-void ClearWorkBuffer(void);
 void ranking_noop(void);
 void ranking_scroll(void);
-void CalcRanking(void);
 void set00itemSet(Entity *e);
 void set0a_moveset(Entity *e);
 void SetItemAdd(Entity *a, Entity *b);
@@ -35,8 +33,6 @@ void ranking_player_set(void);
 
 #include "engine/effect_state.h"
 
-extern VoidFunc data_0212c564; // per-frame handler called by ranking_calc
-extern u8 data_0212c4dc; // phase of the result sequence, 0..3
 extern const u8 data_020d851c[];
 extern const u8 data_020d8524[];
 extern u8 data_02171d01[];
@@ -45,7 +41,6 @@ extern const EntityFunc data_02115398[];
 extern const EntityFunc data_020d8860[];
 #include "engine/palette_buff.h"
 extern u8 data_0212c4f8;
-extern u8 data_0212c500;
 #include "engine/blend_request.h"
 
 

@@ -1,13 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/messageselect_api.h"
-#include "knife/message/selectiondialog_api.h"
 #include "knife/message/selectiondialog.h"
 
 // Functions in this file (original names from the debug build):
 //   selectionDialog::stop (0x020a20e0), close (0x020a2108), setVisible (0x020a2138)
 
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" void SoundReq(u32 sound);
 extern u8 pauseDialogBuffer[];
 

@@ -52,14 +52,8 @@ typedef struct RadarBgBlock {
 extern u8 data_0217a2f8[];
 extern u8 *data_0212c55c;
 
-void subTaskSendScr(s16 index, void *data, u32 offset, u32 size);
-s32 _get_subtask_data(s32 index);
-s32 _get_subtask_data_size(s32 index);
 
 extern "C" {
-s32 KnifeApp_getCurrentLanguage(void *app);
-void MI_CpuCopy8(const void *src, void *dst, u32 size);
-void MI_CpuFill8(void *dst, u8 value, u32 size);
 s32 ResChunk_GetNRCS(void *entry, void *owner);
 void GetSubtaskRadarStatus(SubtaskRadarStatus *status);
 void subtask_init_hblank_raster(s32 mode);

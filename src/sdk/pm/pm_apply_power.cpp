@@ -1,8 +1,8 @@
 #include "engine/functions.h"
-#include "engine/wip_a_decls.h"
+#include "sdk/pm/pmi_send.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/pm/pm_power_api.h"
+#include "sdk/pm/pm_apply_power.h"
 
 // Applies PM sound, LED and amplifier state (0x0201d314).
 // Partial state view: timestamps at +0x0c/+0x10, saved amplifier setting at +0x18.

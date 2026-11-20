@@ -1,5 +1,9 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
+#include "engine/local_player_index.h"
 #include "ui/stagesel_common.h"
+#include "knife/comm/commframe_sync.h"
+#include "engine/data_0212c500.h"
 
 // stagesel_init0, 0x0207868c. Stage select setup, run once per frame by the state in data_0212c4dc:
 // 0 loads the graphics, 1 waits for the wireless check, 2 waits for the partner and sets their player flags.

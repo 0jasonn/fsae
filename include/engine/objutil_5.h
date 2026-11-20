@@ -5,7 +5,6 @@
 
 // Plain (C linkage) original symbol: sets e->animationState from e->direction.
 extern "C" {
-u32 ObjCdirSet(Entity *e);
 }
 
 #endif

@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 
 extern u8 rupeeKindTable[];             // rupee kind per random index (0xff = none)
 extern const s8 rupeeOffsetTable[];       // per type: x and y offsets as s8 pairs (<< 16 when passed)

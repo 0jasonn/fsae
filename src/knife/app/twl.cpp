@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/app/twl.h"
+#include "sdk/gx/vram_group.h"
 
 // TWL boot code, 0x020828b8 to 0x020829d8.
 //   BeforeTask (0x020828b8): moves the pending flag of frameCounter into its second byte and clears the first.
@@ -11,12 +12,7 @@
 #include "engine/frame_counter.h"
 extern "C" void Vram_SetLcdcBits(u32 a);
 extern "C" void Vram_DisableBankTail(void);
-extern "C" void func_020148f0(u32 a);
-extern "C" void func_02014af4(u32 a);
-extern "C" void Vram_SetBankGroupA(u32 a);
-extern "C" void func_02015120(u32 a);
 extern "C" void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(void *self, u32 a, u32 b);
-extern "C" void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
 
 // BeforeTask (0x020828b8)
 void BeforeTask(void) {

@@ -1,5 +1,8 @@
 #include "engine/functions.h"
+#include "engine/data_0212c564.h"
 #include "ui/stagesel_common.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
 
 // stagesel_message, 0x0207a790. Stage select message sequence: data_0212c4dc 0 opens the message, 1 waits for the
 // message frames to finish and then starts the selection. Runs once per frame.

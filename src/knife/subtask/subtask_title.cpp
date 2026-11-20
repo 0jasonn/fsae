@@ -4,10 +4,11 @@
 #include "game/eff.h"
 #include "knife/subtask/subtask_title_api.h"
 
+extern u8 data_0212c508;
+
 // subtask title and push start functions, 0x0209c6c0 to 0x0209c88c.
 
 extern u8 data_0217c23c[];
-extern u8 data_0212c508;
 extern u8 data_0217a23c[];
 extern u8 data_0217d23c[];
 extern u8 data_0217a258[];

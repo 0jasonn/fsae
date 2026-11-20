@@ -1,7 +1,14 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "types.h"
 #include "ui/doorsel_4.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
+#include "game/keyclear_api.h"
+#include "engine/effect_state.h"
+#include "engine/display_state.h"
 
 // Door select screen, selection step (0x0202af70). data_0212c4dc is the sub-step. effectState holds
 // the selected entry (selection), the number of entries (entryCount) and the timer.

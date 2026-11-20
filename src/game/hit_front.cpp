@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/hitdecls.h"
+#include "game/hit.h"
 #include "game/hit_front.h"
 
 // Hit handlers of the front-guard objects (module hit). Original names from the debug build: hit_frontmuteki,

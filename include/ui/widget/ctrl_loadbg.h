@@ -8,8 +8,6 @@
 #include "types.h"
 
 extern "C" {
-u8 OS_getOwnerFlag(void);
-s32 func_0201dc94(void *dst, s32 size, const u8 *format, ...);
 void Ctrl_findEntryD(void *out, const void *name);
 void Ctrl_findEntryC(void *out, const void *name);
 void Ctrl_findEntryE(void *out, const void *name);

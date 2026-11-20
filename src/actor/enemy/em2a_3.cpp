@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "actor/enemy/em2a.h"
 #include "global.h"
 
@@ -23,7 +24,6 @@ typedef struct Vars_BossPart {
 extern const u8 *const em2a_healthTable[];
 extern const u8 em2a_debrisItems[][6];
 extern const u16 em2a_waitTimes[];
-extern u8 localPlayerIndex;
 
 
 extern const u8 em2a_corePartTypes[][4];

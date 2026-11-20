@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "knife/message/textrender_2.h"
 #include "knife/comm/multisio.h"
-#include "game/decls_e.h"
 
 #include "engine/com_work.h"
 extern const u16 data_020de6f8[]; // empty string

@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
 #include "actor/object/set13.h"
 
 // Set13 actor, hidari (left) wall cell writer (module set13). Address -> name:

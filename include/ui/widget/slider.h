@@ -27,4 +27,8 @@ typedef struct Slider {
     u8 unk_3c;              // 0x3c
 } Slider;
 
+extern "C" {
+void SliderRing_setSelectedChild(void *self, s32 selected);
+}
+
 #endif

@@ -16,7 +16,6 @@
 
 #include "engine/scene_slot.h"
 
-extern u8 data_0212c4dc;
 extern u8 data_0212c4f8;
 extern s32 data_02134924;
 #include "engine/palette_buff.h"

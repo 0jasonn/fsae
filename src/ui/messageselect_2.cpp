@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "global.h"
 #include "game/clamp_api.h"
 #include "ui/messageselect_api.h"
@@ -7,8 +8,6 @@
 //   MessageSelect update (0x020a18c4)
 
 extern u16 data_0212c510;
-extern u8 localPlayerIndex;
-extern u16 playerKeys[];
 
 // Selection dialog (Knife::Message::selectionDialog) as MessageSelect update sees it
 typedef struct KnifeSelectMenu {

@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "actor/object/effect_init.h"
-#include "actor/object/effectdecls.h"
+#include "actor/object/set46.h"
 
 // 0x0206e2e4 (original name). Initialises the tokishin (sword beam) effect.
 void effect_tokishin_init(Entity *e) {

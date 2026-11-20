@@ -7,7 +7,6 @@
 // Functions in this file (names from the dsd symbols, renamed by this file's header comment):
 //   groupSelect_startScanWait -> groupSelect_startScanWait
 
-extern "C" void OS_WaitVBlankIntr(void);
 
 // groupSelect_startScanWait() (0x020b0f8c): switches the wireless manager on, waits until it is ready, then starts
 // the scan of the group select screen

@@ -1,8 +1,8 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/shield.h"
-#include "actor/object/shield_decls.h"
 
 // shieldInit (0x02076bf0): ties the shield to the player of its type: registers itself as the player's weapon, takes
 // the player's sprite layer bits and animation, sets its hit values and runs the first move.

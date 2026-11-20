@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "game/fade_native.h"
+#include "actor/enemy/rewcell_one.h"
 #include "global.h"
 
 // write_* (0x020470e8 to 0x02047450): cell writes and the native init routines that call them.

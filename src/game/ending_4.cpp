@@ -1,5 +1,8 @@
 #include "engine/functions.h"
+#include "engine/data_0212c564.h"
 #include "game/ending.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
 #include "global.h"
 
 // Implementer B, round 6: finale_wait (0x02045308), finale_demo (0x0204537c).

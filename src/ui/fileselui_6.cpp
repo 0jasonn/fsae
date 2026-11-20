@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "ui/fileselui_api.h"
+#include "ui/fileselui.h"
 
 // Functions in this file (plain names from the debug build, C linkage):
 //   fileSelUIView_viewDidDisapper (0x020a78f4)

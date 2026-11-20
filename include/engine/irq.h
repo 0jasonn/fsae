@@ -30,4 +30,7 @@ typedef struct IrqState {
     void (*handler)(void); // 0x08
 } IrqState;
 
+
+void Irq_InitVBlank(void);
+
 #endif

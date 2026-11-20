@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "actor/object/effect_init.h"
-#include "actor/object/effectdecls.h"
+#include "actor/object/set46.h"
 
 // 0x0206e3ec (original name). Initialises the syurenjyo (multi-sword) effect.
 void effect_syurenjyo_init(Entity *e) {

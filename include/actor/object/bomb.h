@@ -5,7 +5,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 
-void func_02085ccc(Entity *e); // 0x02085ccc, tail-called by bomb_move
 
 // Bomb-only fields of the Entity overlay (from 0x68 on).
 typedef struct BombVars {
@@ -17,5 +16,6 @@ typedef struct BombVars {
 extern const EntityFunc bomb_liftTable[];
 // Hitbox of the bomb (bomb_hitbox).
 extern const u8 bomb_hitbox[];
+void BombWallCk(Entity *e); // original BombWallCk(OBJ_WORK_*)
 
 #endif

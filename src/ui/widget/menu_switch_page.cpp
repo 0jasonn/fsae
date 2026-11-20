@@ -1,8 +1,16 @@
 #include "engine/functions.h"
 #include "engine/gx_misc_api.h"
-#include "game/decls_g.h"
+#include "ui/widget/menu_redraw.h"
+#include "ui/widget/menu_update_backgrounds.h"
 #include "ui/widget/menu.h"
 #include "ui/widget/menu_release.h"
+
+// TODO(headers): this declaration of RectObjPair_updateFlags differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjPair_updateFlags(void *obj, s32 value);
+// TODO(headers): this declaration of RectObjPair_setValue differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjPair_setValue(void *obj, s32 value);
 
 // Provisional source interface: the ROM calls the resource lookup in vtable slot 3.
 struct MenuPageSource {

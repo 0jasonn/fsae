@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/setmisc.h"
 #include "actor/object/set5f.h"
 
 // Set5f actor, second unit (module set5f). Address -> name:

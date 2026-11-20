@@ -14,4 +14,8 @@ typedef struct TileMap {
     u8 unk_14;          // 0x14
 } TileMap;
 
+extern "C" {
+s32 Rec_returnZero(void *self);
+}
+
 #endif

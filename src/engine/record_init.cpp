@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "engine/record_init_api.h"
+#include "engine/record_init.h"
 
 // Record_Init (provisional name): stores the two words a and b at +0 and +4, c at +8, the byte d at +0xc, the word f at +0x10
 // and the word e at +0x14.

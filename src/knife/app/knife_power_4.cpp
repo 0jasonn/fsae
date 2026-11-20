@@ -1,7 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/app/knife_power.h"
-#include "game/decls_g.h"
+#include "sdk/gx/engine_romhalf.h"
+#include "engine/sound/m4a.h"
 
 // Functions in this file (original names from the debug build):
 //   Knife::PowerManager::update (0x020c81a0)

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/em12_type_masks.h"
 #include "game/stopblock_4.h"
+#include "actor/enemy/rewcell_one.h"
 
 // StopBlockManager() (0x0204e958): per-frame pass over the two stop block tables. A block whose first condition
 // (type bits in em12_typeMasks) is met removes its cell and puffs smoke; the second condition restores the cell below

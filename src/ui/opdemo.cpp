@@ -2,7 +2,6 @@
 #include "engine/misc.h"
 #include "ui/opdemo.h"
 #include "global.h"
-#include "ui/opdemo_api.h"
 #include "engine/irq.h"
 #include "engine/message_request.h"
 

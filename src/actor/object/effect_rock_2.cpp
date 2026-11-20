@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/effectdecls.h"
 
 // effect_rock_move (0x0206e688), original name effect_rock_move(OBJ_WORK_*). Module effect_rock.
 // effectPhaseTable[type2] counts the frames of the rock, the position of the object follows it.

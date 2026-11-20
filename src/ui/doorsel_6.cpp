@@ -2,9 +2,9 @@
 #include "engine/player.h"
 #include "global.h"
 #include "game/ending.h"
+#include "engine/data_0212c500.h"
 #include "ui/doorsel.h"
 
-extern u16 playerKeys[];
 
 // Button check of the door selection screen: A restarts the selection (state 5 for data_0212c500, effectState.progress set),
 // B counts the cancel, finishes the Zelda fade, plays 0x3f, starts a fade and sets the telop timer to 60 frames.

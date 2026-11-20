@@ -12,15 +12,9 @@
 #include "engine/multisio_save.h"
 
 extern "C" s32 WXC_GetStateCode(void);
-int CommFrameSync(void);
-void CommUpdateJoy(void);
-void CommFrameUpdate(void);
 extern "C" {
 s32 Knife_Message_selectionDialog_getResult(void *a);
 void func_0208b644(Entity *e);
-void EffectSet(Entity *e, int kind, int arg);
-void func_0208af0c(Entity *e);
-void func_0208b668(Entity *e);
 int func_02085294(void);
 int ZeldaFadeFlagGet(void);
 void func_0202809c(void);
@@ -54,7 +48,6 @@ typedef struct SselPlayerFlags {
 } SselPlayerFlags;
 
 extern u8 data_02171d7c[];
-extern u16 playerKeys[];
 // Scroll table entries (data_020dc67c): two u16 per step, copied to the stack by stagesel_scroll
 typedef struct SselScrollPair {
     u16 first;
@@ -80,22 +73,17 @@ extern const u8 data_020dcab4[];
 extern const EntityFunc data_020dcaec[];
 void func_0208b628(Entity *e);
 void SKemuriSet(Entity *e);
-extern u8 data_0212ceb2[];
 extern u8 data_0212ceb4[];
 extern u8 data_0212cebf[];
 extern const u8 data_020dc707[];
 void tama00_hajikiInit(Entity *e);
 void tama04_hajikiInit(Entity *e);
 void kabutowari(Entity *e);
-void *zMalloc(u16 size);
 u8 GetRandomTakara(u8 **list, u8 type);
 void set_takara2(u8 kind, u16 value, Entity *e);
 extern const EntityFunc data_020dc71c[]; // sword action table, indexed by e->action
-extern u8 data_0212c4dc;
 extern u8 data_0212c4e4;
 #include "engine/palette_buff.h"
-extern u8 data_0212c500;
-extern u8 localPlayerIndex;
 #include "engine/effect_state.h"
 #include "engine/com_work.h"
 // Frame counts of the stage select messages (11 words, copied to the stack by stagesel_message)

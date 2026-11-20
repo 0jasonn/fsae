@@ -2,7 +2,12 @@
 #include "engine/player.h"
 #include "global.h"
 #include "actor/object/tama0f.h"
-#include "actor/object/tama_decls.h"
+
+typedef struct TamaTelopIds { u16 ids[3]; } TamaTelopIds;
+extern const TamaTelopIds data_020dcb60;
+extern const TamaTelopIds data_020dcb68;
+extern const u8 data_020dcb1b[];
+extern const void *data_02117b90[]; // writable .data table; a const array makes mwcc drop a store tama0f_init keeps
 
 extern "C" void tama0f_init(Entity *e);
 

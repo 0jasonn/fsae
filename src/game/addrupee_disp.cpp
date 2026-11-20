@@ -1,10 +1,11 @@
 // addrupee_disp (0x020274d0): draws the rupee gain/loss counters next to the rupee count (cockpitState +0x14..+0x23).
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/cockpit_state.h"
 #include "engine/frame_counter.h"
 #include "game/cockpit_9.h"
+#include "knife/message/selectiondialog.h"
 
-extern u8 localPlayerIndex;
 
 void addrupee_disp(void) {
     s32 frame[4];

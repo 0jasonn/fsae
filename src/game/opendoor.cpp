@@ -1,7 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/a_decls.h"
+#include "engine/map_state.h"
+#include "engine/bg_buff.h"
+#include "engine/player.h"
+
+extern s16 data_020cd6e4[];                      // x / y offset pairs indexed by (type2 & 3)
 
 // Fields of the door object that openDoor sets.
 typedef struct Vars_OpenDoor {

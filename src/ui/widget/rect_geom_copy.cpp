@@ -1,8 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
 #include "ui/widget/rect_geom_copy_api.h"
+
+// TODO(headers): this declaration of RectObjList_setGeometry differs from the shared one;
+// see the header restructure report.
+extern "C" void RectObjList_setGeometry(void *self, s16 *pos, s16 *size, s32 value);
 
 // rect_geom_copy: function RectObjList_setGeometryCopy (0x020bba38), provisional name.
 

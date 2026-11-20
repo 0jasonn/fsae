@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set58.h"
 
 // Set58 hane open, hamon and youseidama actions (module set58). Address -> name:

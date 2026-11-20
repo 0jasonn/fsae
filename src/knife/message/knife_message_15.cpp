@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "knife/message/knife_message_api.h"
+#include "knife/message/knife_message.h"
 
 // Functions in this file (invented name, the debug build has none):
 //   MessageTextRender::onReadNop (0x020a0898): an empty tag handler

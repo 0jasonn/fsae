@@ -17,7 +17,6 @@ s32 FS_ReadFile(void *file, void *buffer, s32 size);
 void FS_CloseFile(void *file);
 s32 MI_SecureUncompressBLZ(void *data, u32 compressedSize, u32 uncompressedSize);
 void *func_020c2c34(void *heap, s32 size);
-void Heap_VirtualFree(void *heap, void *block);
 
 }
 

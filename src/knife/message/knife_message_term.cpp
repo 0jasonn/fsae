@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/message/knife_message.h"
-#include "actor/object/k_bitstream.h"
+#include "knife/message/knife_message_term.h"
 
 extern u8 data_0217d350[]; // message state: byte 0 is 1 while a message waits for the window to close
 

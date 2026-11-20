@@ -3,6 +3,7 @@
 #include "types.h"
 #include "engine/sound/m4a.h"
 #include "engine/knife_tokenizer.h"
+#include "knife/app/knife_app.h"
 
 // KnifeApp::getZelmapResource (0x0208de38) and KnifeApp::isWirelessMode (0x0208de54).
 extern u8 *data_02171e14;
@@ -10,7 +11,6 @@ extern u8 data_0212c4fc[];
 
 // KnifeApp::getZelmapResource (0x0208de38): an entry of the map table. Even ids are offsets from the table base, odd ids
 // are the raw entry.
-extern "C" u32 KnifeApp_getZelmapResource(void *app, u32 id);
 u32 KnifeApp_getZelmapResource(void *app, u32 id) {
     u32 *table;
     u32 value;

@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "knife/sound/knife_sound.h"
-#include "knife/sound/knife_sound_api.h"
+#include "engine/sound/sndsys_api.h"
 
 // Knife::Sound::System pause and the sequence handle helpers, 0x0208c5f0 to 0x0208c6b4.
 // Provisional names in scratch/agentD/renames.txt: Knife_Sound_System_fwd_08c630 to Knife_Sound_System_destroyWaveHandles.

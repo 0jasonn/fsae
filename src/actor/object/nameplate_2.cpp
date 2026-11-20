@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/fdecls.h"
+#include "actor/object/option.h"
 #include "actor/object/nameplate.h"
 #include "engine/display_state.h"
 

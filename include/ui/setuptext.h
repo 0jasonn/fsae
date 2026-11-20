@@ -23,7 +23,6 @@ typedef struct UIViewTextTarget {
 
 extern "C" {
 s32 knife_GetFontStrWidth_04c2e0(s32 msgId, u8 flag, void *work);
-s32 fsFileCheck(u8 slot);
 void modeSelUIView_setupTextRender(ModeSelUIView *self);
 }
 void Knife_Message_CleanupTextRenderer(void);

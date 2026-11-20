@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/sound/m4a_api.h"
+#include "engine/sound/m4a.h"
 #include "engine/sound/m4a_vsync_api.h"
 
 // Sound helpers after the m4a driver, 0x0208d5d0 to 0x0208d610: an empty callback, an empty function from functions.h,

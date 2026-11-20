@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "engine/entity.h"
 #include "actor/object/set57.h"
 

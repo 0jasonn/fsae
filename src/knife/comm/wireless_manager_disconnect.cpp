@@ -1,4 +1,5 @@
 #include "knife/comm/wireless_manager_methods.h"
+#include "knife/comm/wm_connect_api.h"
 
 // Knife::Comm::WirelessManager::disconnect() (0x02091ba0): disconnects a child session (state 0xb) by stopping
 // the data sharing and the MP session, then moves to state 0xc.

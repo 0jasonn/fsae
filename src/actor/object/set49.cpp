@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/effectdecls.h"
-#include "actor/object/cellcalls.h"
+#include "engine/map_state.h"
 
 // Set49 family (module set49), 0x0206f680 .. 0x0206f69c (dispatcher).
 // Address -> name: 0x0206f680 Set49

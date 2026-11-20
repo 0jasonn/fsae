@@ -1,4 +1,18 @@
-#include "knife/comm/singleplay_api.h"
+#include "engine/obj_list.h"
+#include "actor/enemy/em30.h"
+#include "knife/comm/singleplay_enemycheck.h"
+#include "game/mathutil.h"
+
+// TODO(headers): this declaration of data_0211b298 differs from the shared one; see the header restructure report.
+extern u8 data_0211b298[]; // rodata block of tuning values; see singleplay_2.h
+extern const s16 data_0211b2dc[];   // s16 x offset per facing
+extern const s16 data_0211b2f4[];   // (x, y) s16 offset pairs per facing
+
+// Four key masks indexed by facing (rodata)
+typedef struct SpKeyMasks {
+    u16 v[4];
+} SpKeyMasks;
+extern const SpKeyMasks data_020ddb38;
 
 // Knife::Single::SinglePlay::UpdateEnemyCheck(SinglePlayWork&, SpWorkPair&) (0x02095878): looks for something near the
 // first player that starts a special partner action: the held object (kind 3 id 0xe: pulled together with the second

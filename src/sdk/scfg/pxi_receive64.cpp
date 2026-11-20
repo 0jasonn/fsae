@@ -3,7 +3,6 @@
 #include "types.h"
 
 extern "C" u32 data_02129d78[];
-extern "C" void OS_Terminate(void);
 
 extern "C" void func_0201aa78(u32 arg0, u32 data, s32 arg2) {
     u32 rawMode = data & 0x3f00000;

@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "ui/lobby.h"
-#include "ui/lobby_api.h"
 
 // Functions in this file (original names from the debug build):
 //   update_change_filesel (0x020b3fcc)

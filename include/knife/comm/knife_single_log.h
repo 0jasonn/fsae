@@ -16,7 +16,6 @@ typedef struct VecFx32 {
     s32 z;
 } VecFx32;
 
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
 extern "C" s32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 
 namespace Knife {

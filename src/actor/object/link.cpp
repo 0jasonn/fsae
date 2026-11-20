@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 
 // Link actor, first unit (module link). Address -> name:
 //   0x02072704 link_init_072704 (original name link_init; the suffix keeps it apart from other link_init)

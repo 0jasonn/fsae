@@ -3,7 +3,6 @@
 #include "engine/bg_load.h"
 #include "engine/bg_char.h"
 
-extern "C" void DC_FlushRange(void *base, u32 size);
 extern "C" void BgRect_ClipCopy(u8 *dstVram, BgLoadInfo *src, s32 srcX, s32 srcY, s32 dstX, s32 dstY, s32 dstWidth,
                                 s32 dstHeight, s32 width, s32 height);
 extern "C" u16 *data_020df1a4[];

@@ -1,7 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/decls_e.h"
+#include "knife/message/text_tokenizer.h"
+#include "knife/message/message_classes.h"
+#include "knife/message/textreader_readparam.h"
 
+// TODO(headers): declared in knife/message/textreader_param.h, which this file cannot include (its types clash with the
+// ones used here); see the header restructure report.
+extern "C" void Knife_Message_TextReader_readParam_Str(void *self, void *out);
 // Functions in this file (plain names from the debug build, C linkage; the first argument is the TextReader):
 //   Knife_Message_TextReader_readParams (0x020a2978)
 

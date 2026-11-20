@@ -25,4 +25,12 @@ typedef struct KnifeSelectDialog {
     u32 unk_78;
 } KnifeSelectDialog;
 
+extern "C" {
+void Knife_Message_selectionDialog_close(void *a);
+BOOL Knife_Message_selectionDialog_isModal(const void *a);
+void Knife_Message_selectionDialog_stop(void *a);
+BOOL Knife_Message_selectionDialog_update_close(void *a);
+BOOL Knife_Message_selectionDialog_update_open(void *a);
+}
+
 #endif

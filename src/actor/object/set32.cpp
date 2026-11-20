@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
 #include "engine/cockpit_state.h"
 
 extern EntityFunc set32Table[];        // set32Table, indexed by type

@@ -1,4 +1,5 @@
 #include "knife/message/seldialog.h"
+#include "ui/messageselect_api.h"
 #include "engine/message_request.h"
 
 // Knife::Message::selectionDialog::doModal(unsigned short, long, unsigned char, unsigned char) (0x020a1a88): opens the dialog

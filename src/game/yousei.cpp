@@ -1,25 +1,23 @@
 #include "engine/functions.h"
+#include "game/bganm_api.h"
+#include "engine/scr.h"
 #include "global.h"
 #include "actor/object/tama11.h"
 #include "engine/display_state.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
+#include "ui/doorsel.h"
+#include "engine/data_0212c500.h"
+#include "game/yousei.h"
 
 // yousei module (fairy demo), 0x02081b64 onward.
 //   YouseiDemoTask (0x02081ba4): runs the current demo step (table yousei_demoTable), then the frame's shared update.
 
-extern u8 data_0212c500;      // current demo step
 extern u32 data_0212c564;     // callback run after each step
 extern void (*const yousei_demoTable[])(void);
-BOOL CommFrameSync(void);
-void CommUpdateJoy(void);
-void ScrollMove(void);
-void BgAnm(void);
-void CommFrameUpdate(void);
-void func_0208309c(void);
 extern s16 demolinkPosTable[];
-s16 *GetTablePlNum(s16 *table, u8 index);
 #include "engine/map_state.h"
 
-extern "C" int func_02081b64(void);
 
 // func_02081b64 (0x02081b64): true when every player in the game state has bit 9 set in its status word.
 // Unmangled: implementer D's set58 calls it through extern "C".

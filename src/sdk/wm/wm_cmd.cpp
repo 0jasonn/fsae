@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "knife/comm/wirelessmanager.h"
+#include "sdk/wm/wm_work.h"
 #include "knife/comm/wm_idle2parent.h"
 #include "game/agent.h"
 

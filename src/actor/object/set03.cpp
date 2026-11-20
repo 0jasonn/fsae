@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls_f.h"
 
 // Set03 actor (module set03). Address -> name:
 //   0x0205b0bc Set03 (original name), dispatches on e->action through set03_actions

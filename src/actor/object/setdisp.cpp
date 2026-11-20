@@ -1,8 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "actor/object/setdisp.h"
 
 // EffectSet (0x02076a20): spawns a child work of kind 0xf and links it to e as its parent. Returns the child, or NULL.
-extern "C" Entity *EffectSet(Entity *e, int kind, int arg);
 Entity *EffectSet(Entity *e, int kind, int arg) {
     Entity *child;
 

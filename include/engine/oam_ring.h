@@ -44,8 +44,6 @@ extern s32 OamRing_dmaNo;   // DMA channel for the OAM fill (0..3), -1 or above 
 extern void (*OamRing_copyFuncs[2])(const void *src, u32 dst, u32 size); // VramObj_Copy16, VramObj_Copy16Offset
 
 extern "C" {
-void DC_FlushRange(void *base, u32 size);
-void DC_InvalidateRange(void *base, u32 size);
 void GX_LoadOAM(const void *src, u32 offset, u32 size);
 void GXS_LoadOAM(const void *src, u32 offset, u32 size);
 void MIi_DmaFill32(u32 dmaNo, void *dst, u32 value, u32 size, s32 flag);

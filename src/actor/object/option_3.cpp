@@ -1,4 +1,5 @@
 #include "actor/object/option.h"
+#include "sdk/mi/mi_uncompress.h"
 
 // Option panel screen, third unit (module option). Address -> name:
 //   0x0205c2d8 copy_move, 0x0205c330 copy_hide, 0x0205c364 miniPanelPatSet

@@ -1,8 +1,7 @@
 #include "engine/functions.h"
+#include "ui/staffroll.h"
 #include "actor/enemy/demo_loader.h"
 
-// StaffrollLoad (0x0204d5a4): the same loader as YouseiDemoLoad, for the staff roll frame record.
-extern "C" void StaffrollLoad(void);
 
 void StaffrollLoad(void) {
     data_02134968[0] = staffrollFrameInfo.infoRows;

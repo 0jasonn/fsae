@@ -3,9 +3,7 @@
 
 #include "engine/functions.h"
 #include "ui/modeselui_view.h"
-#include "ui/modeselui_api.h"
 #include "ui/fileselui_view.h"
-#include "ui/fileselui_api.h"
 #include "ui/fileselui.h"
 #include "ui/widget/uiobject.h"
 #include "game/clamp_api.h"

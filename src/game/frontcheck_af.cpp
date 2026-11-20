@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "game/frontcheck_af.h"
+#include "engine/map_state.h"
 
 // FrontCheckAF (0x020233f0): works out the map cell in front of the actor (its position plus the offset pair for its
 // facing) and asks the kind of that cell. For kinds 0x27..0x29 (when the player is in special state 1) and for kind 0x3d

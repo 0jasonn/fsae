@@ -1,7 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "actor/enemy/decls_b2.h"
+
+extern const EntityFunc data_020d334c[]; // per action function table of em28
 
 // Overlay of the em28 enemy record (the idle timer at 0x7a; the enemy's header is not included here because it
 // declares the player data with other types).
@@ -16,6 +17,12 @@ typedef struct Em28Claim {
     s32 unk_4;
 } Em28Claim;
 extern Em28Claim em28_claim;
+
+// TODO(headers): these are declared in actor/enemy/em28.h, which this file cannot include (its V macro and player
+// data declarations clash with the ones above); see the header restructure report.
+Entity *plCheck(Entity *e);
+void dushInit(Entity *e, Entity *target);
+void swordMgr(Entity *e);
 
 // Functions in this file (module em28, fifth unit; em28.cpp to em28_4.cpp hold the others):
 //   em28_normal (em28_normal(OBJ_WORK_*))

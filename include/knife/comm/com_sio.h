@@ -6,7 +6,6 @@
 #include "knife/comm/multisio.h" // MultiSioStart, MultiSioStop, MultiSioSendDataSet
 
 #include "knife/comm/comm.h"   // CommStatusSync
-void MultiSioInit(void);                 // original MultiSioInit()
 
 
 #endif

@@ -10,7 +10,6 @@
 #include "engine/obj_list.h"
 
 // getNumberOfObj (0x020774cc): number of objects with the given kind and id
-extern "C" int getNumberOfObj(u8 kind, u8 id);
 int getNumberOfObj(u8 kind, u8 id) {
     int count;
     EntityNode *head;

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls_f.h"
+#include "game/ranking.h"
 #include "engine/irq.h"
 
 // Set51 actor (module set51). Address -> name:

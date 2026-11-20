@@ -3,8 +3,6 @@
 
 #include "engine/functions.h"
 
-// Not in engine/functions.h yet (original RewCellOne(unsigned short, unsigned short, unsigned short), 0x02021a94).
-void RewCellOne(u16 a, u16 b, u16 c);
 
 BOOL test(Entity *e, u16 a, u16 b);
 

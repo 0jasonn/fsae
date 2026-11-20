@@ -6,4 +6,7 @@
 
 // The em29/em30 follower chain helpers movecheck and hikiyoseSet are declared in engine/functions.h.
 
+int Em30CheckAttack(Entity *e);
+u8 Em30GetRightColor(Entity *e);
+
 #endif

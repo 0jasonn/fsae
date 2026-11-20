@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/cellcalls.h"
+#include "engine/map_state.h"
 
 // Set3f actor (module set3f). Address -> name:
 //   0x0205dc90 Set3f (original name), 0x0205dcac set3f_init, 0x0205dcec set3f_nop (renamed from set3f_nop),

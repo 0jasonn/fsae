@@ -1,5 +1,4 @@
 #include "engine/functions.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set42_actions.h"
 
 // Set42 actor (module set42). Address -> name:

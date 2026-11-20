@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "knife/comm/wm_connect_api.h"
 #include "knife/comm/wireless_manager_methods.h"
 
 // Knife::Comm::WirelessManager::updateUserGameInfo() (0x02091eb4): fills the "KNF" game-info block with the

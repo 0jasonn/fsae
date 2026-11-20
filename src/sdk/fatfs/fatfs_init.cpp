@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "engine/a_extern.h"
 
 // One-time FATFS initialisation, guarded by the flag word at data_02128920. The IME register (0x04000208) is
 // cleared while the interrupt state is saved and restored; a zero IME or a saved state of 0x80 aborts through

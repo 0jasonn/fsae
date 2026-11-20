@@ -60,6 +60,7 @@ BOOL Knife_Single_SinglePlay_UpdateTruck(void *self, SpWorkPair *pair);
 BOOL Knife_Single_SinglePlay_WarpPartner(void *self, PlayerData *player);
 BOOL Knife_Single_SinglePlay_WarpPartnerToTarget(void *self, PlayerData *player0, PlayerData *player1, s16 x, s16 y);
 BOOL Knife_Single_SinglePlay_UpdateStopWarp(void *self, SpWorkPair *pair);
+BOOL Knife_Single_SinglePlay_UpdateWallCheck(void *self, SpWorkPair *pair);
 }
 
 #endif

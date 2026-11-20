@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/setmisc.h"
 #include "actor/object/set06.h"
 
 // Set06 actor (module set06). Address -> name:

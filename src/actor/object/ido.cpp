@@ -1,9 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
+#include "actor/object/ido.h"
+#include "actor/object/ido_yuka.h"
 #include "engine/player.h"
 #include "actor/object/ido_3.h"
+#include "knife/comm/singleplay_objmove.h"
 
 // Ido movement helpers (module ido). Address -> name:
 //   0x02064e74 ido_up, 0x02064ea0 ido_right, 0x02064ecc ido_down, 0x02064ef8 ido_left (original names)

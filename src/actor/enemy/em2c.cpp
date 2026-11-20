@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "engine/local_player_index.h"
 #include "engine/player.h"
 #include "global.h"
 
@@ -16,7 +17,6 @@ extern const EntityFunc em2c_typeActions[];
 extern const EntityFunc em2c_type0Actions[];
 extern const u8 em2c_hitbox[];
 #include "engine/map_state.h"
-extern u8 localPlayerIndex;
 extern s32 em2c_leverDone;
 
 

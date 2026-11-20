@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "engine/k_decls.h"
+#include "ui/nameentryui_checkspace.h"
 
 // nameEntryUIView::checkSpace() const (0x020af344): returns 1 when any of the entered characters (u16 list at +0x34, count
 // in the signed byte at +0x42) is not a space (0x20). The count is read again every pass (volatile access).

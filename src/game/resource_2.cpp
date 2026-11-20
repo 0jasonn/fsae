@@ -1,13 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "knife/subtask/subtask_data.h"
 
 // Functions in this file (original names from the debug build, plain in the ROM):
 //   getResourceData (0x020ac3d0), getResourceSize (0x020ac40c)
 
 // The subtask data helpers (C++ linkage, see src/game/subtask_data.cpp and subtask_data_0.cpp)
-s32 _get_subtask_data(s32 index);
 s32 _get_subtask_data_lang(s32 index);
-s32 _get_subtask_data_size(s32 index);
 s32 _get_subtask_data_size_lang(s32 index);
 
 extern u8 data_0212c55c[]; // pointer to the table of the subtask data (non-language entries)

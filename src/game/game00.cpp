@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "game/multiplay.h"
+#include "engine/data_0212c500.h"
 #include "global.h"
 
 // game00_select (0x02047454): runs the task for the current phase byte.

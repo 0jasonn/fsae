@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "knife/comm/comm_parentinfo.h"
-#include "knife/comm/comm_parentinfo_api.h"
 
 // Knife::Comm::ParentInfo::ParentInfo (0x020922f0): sets the vtable and cleans up. Plain function taking self.
 

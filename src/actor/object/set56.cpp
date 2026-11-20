@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 
 // Set56 actor and its link helpers (module set56). Address -> name:
 //   0x02072608 Set56 (original name)

@@ -1,6 +1,8 @@
 #include "engine/functions.h"
 #include "actor/enemy/em1d_possess.h"
 
+extern u8 data_0212cee6[];
+
 // em1d_possess (0x0202fe98): the enemy hangs on its player. While the player mashes keys the grab timer counts down and
 // every 0x78 frames a heart is drained; when the grab ends (or the player becomes busy) the enemy is thrown off in a
 // random quarter-turn direction.

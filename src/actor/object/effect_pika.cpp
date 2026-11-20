@@ -1,8 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
-#include "actor/object/objdecls_a.h"
 
 // effect_pika family (module effect_pika), 0x0206ef6c .. 0x0206f034 (dispatcher and init).
 // Address -> name: 0x0206ef6c effect_pika, 0x0206ef88 effect_pika_init

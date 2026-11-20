@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "engine/k_decls.h"
+#include "engine/entry_check.h"
 
 #include "engine/com_work.h"
 extern u32 opTitleState;

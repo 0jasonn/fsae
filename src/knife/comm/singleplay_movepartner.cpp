@@ -1,5 +1,8 @@
 #include "engine/functions.h"
+#include "knife/comm/single_target_api.h"
 #include "knife/comm/singleplay_movepartner.h"
+#include "knife/comm/singleplay_enemycheck.h"
+#include "game/mathutil.h"
 
 using namespace Knife::Single::SinglePlay;
 

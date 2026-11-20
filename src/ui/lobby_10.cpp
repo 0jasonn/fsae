@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "ui/lobby.h"
-#include "ui/lobby_api.h"
 
 // Functions in this file (provisional names):
 //   lobby_callWithZeroPos (0x020b5214), lobby_stepAndCall (0x020b523c)

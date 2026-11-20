@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
 
 // Functions in this file (provisional names; the channel reference holds the channel index at +0 and the state words):
 //   SndChannelRef_Stop (SndChannelRef_Stop), SndChannelRef_SetVolume (SndChannelRef_SetVolume), SndChannelRef_SetPan (SndChannelRef_SetPan),

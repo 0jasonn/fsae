@@ -17,10 +17,8 @@ typedef struct PlayStyleSelUIView {
     /* 5d */ u8 unk_5d;
 } PlayStyleSelUIView;
 
-void subTaskSendScr(s16 index, void *data, u32 offset, u32 size);
 
 extern "C" {
-void DC_FlushRange(void *base, u32 size);
 extern void *data_02180d9c;
 }
 

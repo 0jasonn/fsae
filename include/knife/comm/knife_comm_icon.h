@@ -28,7 +28,5 @@ typedef struct ChildInfo {
     u8 bytes0e[0x18]; // 0x0e: copied from the second source
 } ChildInfo;
 
-extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 
 #endif

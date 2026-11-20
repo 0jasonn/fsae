@@ -3,7 +3,7 @@
 #include "global.h"
 #include "types.h"
 #include "knife/comm/wm_callbacks_api.h"
-#include "knife/comm/wm_connect_2_api.h"
+#include "knife/comm/wm_connect_api.h"
 
 // Knife::Comm::WirelessManager state update functions (plain names, self is the manager). The state machine is kept in
 // WirelessManagerWork: state (0x1cc4), timer (0x1cd8, the step inside a state) and the controller flag (0x1cdc).

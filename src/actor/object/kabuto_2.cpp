@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/c_decls_2.h"
+#include "actor/object/kabuto.h"
+#include "game/zmem.h"
 #include "engine/player.h"
 
 extern "C" void kabutowari(Entity *e);

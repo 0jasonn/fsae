@@ -26,8 +26,6 @@ typedef struct Vars_Em0f {
 } Vars_Em0f;
 
 #include "engine/map_state.h"
-// ROM data (names from symbols.txt, renamed in scratch/agentE/renames.txt)
-extern u8 localPlayerIndex;
 #include "engine/cockpit_state.h"
 extern const u8 em0f_aimPlayerTable[];    // em0f_aimPlayerTable, 3 entries per Entity type
 extern const u8 em0f_dashCountTable[];    // em0f_dashCountTable, indexed by Random() & 3

@@ -1,7 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "actor/enemy/decls_b2.h"
+#include "knife/comm/commframe_sync.h"
+#include "knife/comm/commupdatejoy.h"
+#include "engine/data_0212c500.h"
+#include "game/keyclear_api.h"
+#include "engine/display_state.h"
+#include "engine/effect_state.h"
 
 // Functions in this file (module doorsel, third unit; doorsel.cpp and doorsel_2.cpp hold the others):
 //   doorsel_shutter (doorsel_shutter())

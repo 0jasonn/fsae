@@ -13,4 +13,10 @@ BOOL hit_none(Entity *e, Entity *t, u8 mode);   // was hit_none
 BOOL hit_shield(Entity *e, Entity *t, u8 mode); // was FS_UnloadOverlayImage (misnamed), 0x02024b28
 }
 
+u8 decVital(Entity *e, Entity *t); // 0x020248f0, defined in hit.cpp
+void shiledCheck(Entity *e, Entity *t);
+void nakamaCheckTgtOnly(Entity *e, Entity *t);
+void nakamaCheck(Entity *e, Entity *t);
+void setKokin(Entity *e, Entity *t);
+
 #endif

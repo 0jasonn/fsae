@@ -1,4 +1,5 @@
 #include "game/frame_load.h"
+#include "engine/local_player_index.h"
 #include "engine/em12_type_masks.h"
 
 // MPlayerSet(FRAME_INFO_*) (0x0204c950): picks the start cells of the players (a fixed layout in a special mode, otherwise

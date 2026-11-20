@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "game/cellcommon.h"
+#include "actor/enemy/rewcell_one.h"
 #include "game/stopblock.h"
 
 // Functions in this file (original names from the debug build):

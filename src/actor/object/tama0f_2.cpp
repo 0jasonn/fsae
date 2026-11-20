@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "actor/object/tama0f.h"
-#include "actor/object/tama_decls.h"
+#include "actor/enemy/em2e.h"
 
 // tama0f family, address -> name (original names from symbols.txt):
 //   0x0207de68 tama0f_demo, 0x0207df44 tama0f_ruppyset

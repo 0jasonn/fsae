@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/hitdecls.h"
 
 // Bomb wall check (module bomb, third unit). Original name: BombWallCk(OBJ_WORK_*).
 

@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/dispctrl_api.h"
 #include "global.h"
 #include "types.h"
 

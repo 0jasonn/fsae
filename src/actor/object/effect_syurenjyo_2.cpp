@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_syurenjyo_move, second unit of the effect_syurenjyo module, 0x0206e454 .. 0x0206e4d8.
 // Address -> name: 0x0206e454 effect_syurenjyo_move

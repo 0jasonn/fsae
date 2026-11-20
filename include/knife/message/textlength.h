@@ -13,4 +13,10 @@ typedef struct KnifeTextLengthAnalyzer {
     u16 charCount;     // 0x4c
 } KnifeTextLengthAnalyzer;
 
+extern "C" {
+void Knife_Message_TextLengthAnalyzer_TextLengthAnalyzer(void *a);
+void Knife_Message_TextLengthAnalyzer_onReadNewLine(void *a);
+void Knife_Message_TextLengthAnalyzer_onTerminate(void *a);
+}
+
 #endif

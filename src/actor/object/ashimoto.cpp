@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "engine/bg_buff.h"
-#include "actor/object/objdecls_f.h"
+#include "game/pl_start_pos.h"
 
 // Ashimoto check (module ashimoto). Address -> name:
 //   0x0205a8e8 AshimotoCheck (original name)

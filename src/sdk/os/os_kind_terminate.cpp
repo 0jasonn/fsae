@@ -11,7 +11,6 @@ typedef struct OsKindFlags {
 
 extern OsKindFlags data_02129914;
 
-extern "C" void OS_Terminate(void);
 
 // Os_TerminateByKind(unused, code) (0x02017008): takes the kind from bits 8 to 14 of code. Kind 0x10 sets the first flag and
 // returns; kind 0x20 sets the second flag and terminates; any other kind terminates.

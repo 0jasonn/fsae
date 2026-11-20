@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "actor/object/cellcalls.h"
+#include "engine/map_state.h"
 #include "game/objcell.h"
 #include "global.h"
 

@@ -1,7 +1,8 @@
 #include "engine/functions.h"
+#include "game/bganm_api.h"
 #include "global.h"
 #include "engine/blend_request.h"
-#include "game/hitdecls.h"
+#include "game/iroyuka.h"
 
 // Background animation (module bganm). Original names from the debug build:
 //   BgAnm, getanmcnt, SendBgAnmData, BgAnmInit, Set1BlockOshiYoyaku, Check1BlockOshiYoyaku

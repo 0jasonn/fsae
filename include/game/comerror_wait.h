@@ -5,9 +5,7 @@
 #include "game/ending.h"
 #include "game/multiplay_main.h"
 
-extern u8 data_0212c4dc; // phase of the communication error wait (0 reset, 1 count down)
 extern u8 data_0212c4f8;
-extern u8 data_0212c500;
 #include "engine/palette_buff.h"
 
 void subtask_dispReset(bool on); // original subtask_dispReset(bool), 0x0209aa2c

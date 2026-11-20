@@ -2,7 +2,6 @@
 #include "global.h"
 #include "engine/player.h"
 #include "actor/object/setcommon.h"
-#include "actor/object/g_callees.h"
 
 // Set11 actor, second unit (module set11). Address -> name:
 //   0x02063678 set11_move, 0x020637c8 set11_break (original names)

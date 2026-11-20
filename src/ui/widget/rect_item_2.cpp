@@ -2,8 +2,8 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/rect_obj_view.h"
-#include "ui/widget/rect_item_api.h"
 #include "ui/widget/rect_item.h"
+#include "engine/heap_vcall.h"
 
 // rect_item_2: functions RectItem_allocPtrArray (0x020b8b68), RectItem_allocPtrArray2 (0x020b8bb4), RectSpan_clear
 // (0x020b8c00), RectSpan_freeItems (0x020b8c10), RectItem_freeArray (0x020b8c2c) and RectSpan_callAndMore (0x020b8c78).
@@ -15,7 +15,6 @@ typedef struct RectSpan {
 } RectSpan;
 
 extern "C" void RectItem_releaseBlocks(RectItem *self, void *holder);
-extern "C" void Heap_VirtualFree(void *heap, void *block);
 extern "C" void *func_020c2c34(void *heap, s32 size);
 
 // RectItem_allocPtrArray(holder, count) (0x020b8b68, provisional name): allocates count pointers (at least one) from

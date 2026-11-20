@@ -46,6 +46,6 @@ extern const u8 em2a_hitboxType2[];
 extern const u8 em2a_coreHitbox[];
 extern const u16 em2a_wallMasks[];
 extern const s8 em2a_shadowOffsets[];
-
+void shadowSet(Entity *e);              // original shadowSet(OBJ_WORK_*)
 
 #endif

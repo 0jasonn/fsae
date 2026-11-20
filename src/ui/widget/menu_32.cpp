@@ -1,8 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
-#include "ui/widget/menu_wip.h"
-#include "ui/widget/menu_api.h"
 
 // Functions in this file (provisional names, role not confirmed):
 //   Menu_ClearRef (Menu_ClearRef), Menu_ReleaseRef (Menu_ReleaseRef), Menu_GetSlotWord (Menu_GetSlotWord),

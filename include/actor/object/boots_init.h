@@ -7,6 +7,5 @@
 void boots_init(Entity *e);  // original boots_init(OBJ_WORK_*)
 void boots_move(Entity *e);
 
-void *zMalloc(u16 size); // plain symbol (hitdecls.h declares it with C++ linkage)
 
 #endif

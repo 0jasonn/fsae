@@ -1,9 +1,9 @@
 #include "engine/functions.h"
-#include "game/decls_g.h"
+#include "ui/widget/menu_direction_input.h"
 #include "ui/widget/menu.h"
+#include "ui/widget/ctrl_flags.h"
 
 extern "C" {
-s32 Ctrl_isReady(void *obj);
 void RectObjPair_setHitFlags(void *obj, u8 first, u8 second);
 }
 

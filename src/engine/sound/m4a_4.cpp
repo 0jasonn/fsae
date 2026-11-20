@@ -2,7 +2,6 @@
 #include "global.h"
 #include "types.h"
 #include "engine/sound/m4a.h"
-#include "engine/sound/m4a_api.h"
 
 // m4a song parameter helpers, 0x0208d790 to 0x0208d830.
 

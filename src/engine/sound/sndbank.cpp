@@ -3,8 +3,6 @@
 #include "engine/sound/sndbank_api.h"
 
 extern "C" {
-u32 OS_DisableInterrupts(void);
-void OS_RestoreInterrupts(u32 saved);
 u32 CRYPTOi__r_rand_set_default_init_flag(u32 value);
 void SND_InvalidateSeqData(void *obj, void *end);
 void SND_InvalidateBankData(void *obj, void *end);

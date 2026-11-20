@@ -1,5 +1,7 @@
 #include "engine/functions.h"
-#include "ui/widget/rect_f.h"
+
+// TODO(headers): this declaration of RectObjLink2_init differs from the shared one; see the header restructure report.
+extern "C" void *RectObjLink2_init(void *self);
 
 extern u8 data_02126e08[];
 

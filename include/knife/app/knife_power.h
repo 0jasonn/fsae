@@ -27,5 +27,9 @@ public:
 }
 
 extern "C" void _ZN5Knife12PowerManagerC1Ev(Knife::PowerManager *self);
+extern "C" {
+void Knife_PowerManager_dtorComplete_PowerManager(void *self);
+void *Knife_PowerManager_dtor_PowerManager(void *self);
+}
 
 #endif

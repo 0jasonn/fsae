@@ -6,7 +6,6 @@
 //   PictogramRenderer::~PictogramRenderer() (0x020a48d0, deleting), assignOam (0x020a48e4), setCharInfo (0x020a4904),
 //   clearAllPictogram (0x020a4928), clearPictogram (0x020a4968)
 
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);
 
 namespace Knife {
 namespace Message {

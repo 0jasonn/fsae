@@ -1,13 +1,15 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
 #include "engine/player.h"
 #include "global.h"
 #include "engine/misc.h"
+#include "engine/data_0212c500.h"
 #include "engine/com_work.h"
 #include "engine/display_state.h"
 #include "engine/map_state.h"
 #include "engine/effect_state.h"
 #include "actor/object/crystal.h"
-#include "game/b_extra.h"
+#include "actor/object/zeldafade.h"
 #include "ui/doorsel_init.h"
 void doorsel_init(void) {
     int i;

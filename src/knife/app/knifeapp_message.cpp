@@ -2,11 +2,11 @@
 #include "global.h"
 #include "types.h"
 #include "knife/message/text_tokenizer.h"
+#include "knife/app/knife_app.h"
 
 using namespace Knife::Message;
 
 extern "C" {
-s32 KnifeApp_getCurrentLanguage(void *app);
 void KnifeApp_MessageRequest(void *self, s32 textId, void *tokenizer, void *analyzer, s32 value);
 }
 extern u8 data_0211ed80[]; // vtable of the app info getter used for the request

@@ -37,9 +37,6 @@ typedef struct ObjLoadBlock {
     void *chunk1; // 0x0c
 } ObjLoadBlock;
 
-extern "C" void DC_FlushRange(void *base, u32 size);            // TwlSDK, 0x020184b8
-extern "C" void MI_CpuCopy8(const void *src, void *dst, u32 size);    // TwlSDK, 0x02015d0c
-void subTaskSendScr(s16 index, void *data, u32 offset, u32 size); // 0x0209da7c, C++ linkage
 
 extern "C" void subtask_dialogDelete(void);                     // 0x020ac308
 extern "C" u32 getResourceSize(u32 index, u8 kind);             // 0x020ac40c

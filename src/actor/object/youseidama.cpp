@@ -2,8 +2,8 @@
 //   0x02073904 youseidama_init (original name)
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls.h"
 #include "actor/object/set58.h"
+#include "game/yousei.h"
 
 void youseidama_init(Entity *e) {
     Entity *child;

@@ -1,4 +1,5 @@
 #include "actor/object/warp.h"
+#include "knife/comm/single_play.h"
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"

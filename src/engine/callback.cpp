@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "sdk/mi/mi_uncompress.h"
 #include "global.h"
 
 // Small wrappers at the end of the range, 0x02082fbc to 0x02082ffc. Each one passes its arguments on, most of them
@@ -7,7 +8,6 @@
 //   ElGlobalAdrThunk (0x02082fd4): returns EL_GetGlobalAdr(offset, size).
 //   CallbackForJpeg (0x02082fe8): decompresses the JPEG block with MI_UncompressLZ16 (arguments swapped).
 
-extern "C" void MI_UncompressLZ16(const void *src, void *dst);
 
 // WirelessAllocator_deallocate (0x02082fbc)
 void WirelessAllocator_deallocate(void *allocator, void *block) {

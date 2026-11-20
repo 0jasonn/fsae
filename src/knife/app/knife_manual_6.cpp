@@ -1,9 +1,21 @@
 #include "engine/functions.h"
+#include "engine/disp_reset.h"
 #include "global.h"
 #include "knife/app/knife_manual.h"
-#include "knife/app/knife_manual_api.h"
-#include "game/decls_g.h"
+#include "engine/heap_vcall.h"
+#include "engine/palette_buff.h"
+#include "engine/irq.h"
+#include "sdk/gx/vram_group.h"
 #include "knife/app/knife_power.h"
+
+extern u8 data_021271ac[];
+extern u8 data_02187070[];
+extern s32 data_0212c524;
+extern u8 data_0212c57c[];
+
+// TODO(headers): this declaration of Knife_Comm_WirelessIcon_initialize_16x16_ColorMode differs from the shared one;
+// see the header restructure report.
+extern "C" void Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(void *icon, s32 colorType, s32 value);
 
 // Functions in this file (original names from the debug build):
 //   Knife::i_initM2dLibrary (0x020c7da0)

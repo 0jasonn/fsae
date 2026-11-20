@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "engine/work21_clear.h"
 
 // work21_clear: function Work21_clear (0x020b7080), matching. It clears a 0x21 byte record: eight halfwords from +0,
 // a word at +0x10, halfwords at +0x14 and +0x16, words at +0x18 and +0x1c and a byte at +0x20.
@@ -23,7 +24,6 @@ typedef struct Work21 {
 } Work21;
 
 // Work21_clear(self) (0x020b7080, provisional name): zeroes the record
-extern "C" void Work21_clear(void *self);
 void Work21_clear(void *self) {
     Work21 *work;
 

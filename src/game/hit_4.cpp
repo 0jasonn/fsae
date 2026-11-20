@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "game/hitdecls.h"
 #include "game/hit.h"
 
 // Rupee-like hit (hit handler table entry): when the rupee can be taken (the slot is neither busy nor flagged), the slot's

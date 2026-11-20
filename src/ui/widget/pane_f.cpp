@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "ui/widget/pane.h"
+#include "engine/heap_vcall.h"
 #include "ui/widget/pane_d_api.h"
 
 // pane_f.cpp: functions Window_allocItems (0x020b5c58), PaneItem_allocArray (0x020b5c84), Window_release (0x020b5cd4),

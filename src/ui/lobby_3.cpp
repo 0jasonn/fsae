@@ -3,7 +3,6 @@
 #include "types.h"
 #include "ui/lobby.h"
 #include "knife/subtask/subtask.h"
-#include "ui/lobby_api.h"
 
 // Functions in this file (original names from the debug build):
 //   lobby_selection_dialogUpdate (0x020b4d68)

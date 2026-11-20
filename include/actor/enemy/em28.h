@@ -45,7 +45,8 @@ typedef struct UnkStruct_021348cc {
 extern UnkStruct_021348cc em28_claim;
 extern const u16 em29_scrollLimitsOut[];
 extern u16 scrollArgs[3];
-
-
+Entity *plCheck(Entity *e);
+void dushInit(Entity *e, Entity *target);
+void swordMgr(Entity *e);
 
 #endif

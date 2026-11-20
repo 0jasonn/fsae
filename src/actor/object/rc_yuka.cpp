@@ -1,8 +1,10 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
-#include "actor/object/g_callees.h"
-#include "actor/object/actor_calls_k.h"
+#include "actor/object/yuka_api.h"
+#include "actor/object/rc_yuka.h"
+#include "engine/bg_buff.h"
+#include "knife/comm/singleplay_objmove.h"
 
 typedef struct Vars_RcYuka {
     /* 00 */ u8 unk_00[0x60];
@@ -12,7 +14,6 @@ typedef struct Vars_RcYuka {
     /* 7e */ u16 prevY;
 } Vars_RcYuka;
 
-extern "C" void Knife_Single_SinglePlay_SetObjMoveReqFlag(u8 *self, Entity *e, u32 mask, s32 a, u8 b);
 
 #define RC_MOVE_PLAYERS(dir)                              \
     if (mask & 1) func_020852f8(playerWork[0].entity, dist, dir); \

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "knife/message/knife_message.h"
-#include "knife/message/knife_message_api.h"
+#include "knife/app/knife_app.h"
 
 // Functions in this file (original names from the debug build):
 //   Knife::Message::MessageTextRender::clearCanvasLine (0x0209fcdc + 0x020a0508 range; this is 0x020a0508)
@@ -45,9 +45,7 @@ void MessageTextRender::setField34(u8 value) {
 //   Knife::Message::MessageTextRender::initWithCanvas (0x020a0574, Knife_Message_MessageTextRender_initWithCanvas)
 
 extern "C" void Record_InitTable(void *canvas, void *bits, s32 cellWidth, s32 cellHeight, s32 depth);
-extern "C" void func_020c6008(void *buffer, s32 cellWidth, s32 cellHeight, s32 cellX, s32 cellY, s32 a, s32 b, s32 c);
 extern "C" void *KnifeApp_getInstance(void);
-extern "C" void *KnifeApp_getField20Address(void *app);
 
 // MessageTextRender fields this function sets (the class in game/knife_message.h keeps these as bytes)
 typedef struct MessageTextRenderFields {

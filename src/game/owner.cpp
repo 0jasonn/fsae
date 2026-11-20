@@ -1,6 +1,5 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "game/b_extra.h"
 
 // Owner language code, 0x02082838: reads the DS owner info (OS_GetOwnerInfoEx) and maps its language byte
 // to a game language index (4 to 8; 4 for the default).

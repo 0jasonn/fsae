@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/blend_request.h"
-#include "actor/object/objdecls_f.h"
+#include "game/keyclear_api.h"
 #include "engine/misc.h"
 
 // Zelda fade module. Address -> name:

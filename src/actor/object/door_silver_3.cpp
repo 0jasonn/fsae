@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/objdecls_a.h"
+#include "actor/object/zeldafade.h"
 
 #include "engine/effect_state.h"
 

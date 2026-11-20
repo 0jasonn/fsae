@@ -2,6 +2,7 @@
 #include "global.h"
 #include "engine/player.h"
 #include "actor/enemy/comm_check.h"
+#include "knife/comm/commupdatejoy.h"
 
 // CommUpdateJoy (0x02029650): copies the keys received for the current communication frame and keeps the keys that
 // were pressed this frame (all zero while the frame counter is below 8).

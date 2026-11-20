@@ -7,8 +7,9 @@
 
 #include "engine/player.h"
 #include "engine/message_request.h"
+#include "game/rupeelevel.h"
+#include "game/yousei.h"
 
-void goto_nextdemo(void);
 
 // getRupeeLevel (0x02082054)
 int getRupeeLevel(void) {

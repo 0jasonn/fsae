@@ -11,10 +11,7 @@ typedef struct Vars_Em1dPossess {
     /* 72 */ u16 recoverTimer; // 0x78 after each heart drain
 } Vars_Em1dPossess;
 
-extern u8 data_0212ced6[]; // playerWork[i].unk_26, stride 0x94
-extern u8 data_0212cee6[]; // playerWork[i].statusFlags (u16), stride 0x94
 extern u8 data_0212ceec[]; // playerWork[i].unk_3c, stride 0x94
-extern u16 playerKeys[];   // per player key state, indexed by the entity type
 
 extern "C" {
 void func_02084a20(Entity *e); // thumb helper

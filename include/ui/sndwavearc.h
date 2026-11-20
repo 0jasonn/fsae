@@ -22,10 +22,7 @@ u32 SndTable_GetWord14(s32 index);
 void SndTable_SetWord14(s32 index, u32 value);
 void *func_020c05dc(void);
 void DC_StoreRange(void *start, u32 size);
-void SndBank_ReleaseWaveArc(void *obj, s32 unused, void *data, s32 index);
 void *SndBank_AcquireWaveArc(s32 index, void *record, s32 flag);
-void MI_CpuCopy8(const void *src, void *dst, u32 size);
-void MI_CpuFill8(void *dst, u8 value, u32 size);
 }
 
 #endif

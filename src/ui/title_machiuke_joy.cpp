@@ -3,7 +3,6 @@
 #include "global.h"
 
 #include "engine/com_work.h"
-extern u16 playerKeys[];
 extern u16 data_0212c514;
 
 // title_machiuke_joy (0x02052a80): per-frame key update of the waiting screen. For each of the four players it takes

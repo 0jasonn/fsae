@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/frame_asm_api.h"
+#include "sdk/os/frame_asm.h"
 
 // Four short ARM sequences that are only instructions (no C body). Each one matches the ROM byte for byte.
 

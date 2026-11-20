@@ -1,8 +1,11 @@
 #include "engine/functions.h"
+#include "engine/objutil.h"
 #include "engine/objutil_5.h"
-#include "engine/common_d.h"
 #include "engine/player.h"
 #include "global.h"
+
+// TODO(headers): this declaration of data_0212c7d4 differs from the shared one; see the header restructure report.
+extern s32 data_0212c7d4[];
 
 // 0x02050280 (original name ObjCdirSet, plain symbol). Maps the low bits of e->direction to the animation state,
 // moving the b2 sprite bit with it. Returns the new animation state.

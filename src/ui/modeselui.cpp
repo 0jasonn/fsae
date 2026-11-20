@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/modeselui_view.h"
-#include "ui/modeselui_api.h"
 #include "ui/modeselui.h"
 
 // Functions in this file (plain names from the debug build, C linkage):

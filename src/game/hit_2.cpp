@@ -1,7 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
-#include "game/hitdecls.h"
+#include "actor/object/set_item_add.h"
+#include "game/hit.h"
 
 // Hit handlers (module hit, second unit). Original names from the debug build:
 //   hit_orgdamage, hit_tgtdamage, hit_damage

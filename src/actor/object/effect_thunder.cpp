@@ -1,7 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/ss.h"
-#include "actor/object/effectdecls.h"
 
 // effect_thunder family (module effect_thunder), 0x0206e4d8 .. 0x0206e598 (dispatcher and init).
 // Address -> name: 0x0206e4d8 effect_thunder, 0x0206e4f4 effect_thunder_init

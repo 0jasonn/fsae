@@ -1,5 +1,6 @@
 #include "engine/functions.h"
-#include "ui/msgwin_decls.h"
+#include "ui/message.h"
+#include "game/cockpit.h"
 #include "global.h"
 
 // deleteWindow (0x0204a778): clears the tile rows of the current telop slot from its first row down, and the tile

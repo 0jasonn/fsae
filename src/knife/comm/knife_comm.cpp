@@ -17,7 +17,6 @@ void knife_commDispDie(KNIFE_MSGSYS *msg) {
 
 extern u8 localPlayerIndex[];
 #include "engine/frame_counter.h"
-extern u16 playerKeys[];
 
 // Line feed of the message: waits for the timer and the key flags, then starts the next line
 void knife_commDispLF(KNIFE_MSGSYS *msg) {

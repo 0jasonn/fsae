@@ -6,7 +6,6 @@
 
 void ComStart(u8 request);               // original ComStart(unsigned char)
 void ComRequest(u8 request);             // original ComRequest(unsigned char)
-void ComFinish(u32 finishArg);           // original ComFinish(unsigned long)
 int CommStatusSync(u8 status);           // original CommStatusSync(unsigned char)
 void CommErrorCheck(u32 a);              // original CommErrorCheck(unsigned long)
 void key_update(u8 playerNo);            // original key_update(unsigned char)

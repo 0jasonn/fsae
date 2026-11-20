@@ -5,9 +5,6 @@
 
 // NitroSDK CARD / OS functions and data used by the CARD unit.
 extern "C" {
-u32 OS_DisableInterrupts(void);
-void OS_RestoreInterrupts(u32 state);
-void OS_Terminate(void);
 void Os_LinkThreadAndFlush(void *queue);
 void OS_InitEvent(void *event);
 void OS_CreateVAlarm(void *alarm);
@@ -29,7 +26,6 @@ s32 CARDi_GetAccessLevel(void);
 
 // Pulled-out callback unit.
 void CARDi_WaitAsync(void);
-void MI_CpuCopy8(const void *src, void *dst, u32 size);
 void Engine_Relay0201a070(void);
 void PXI_SetFifoRecvCallback(u32 fifo, void (*callback)(u32, u32, s32));
 void CARDi_NotifyEvent(u32 event, u32 arg);

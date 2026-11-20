@@ -1,7 +1,14 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "ui/widget/rect_f.h"
+#include "engine/table_entry.h"
+
+// TODO(headers): this declaration of ResPlayer_AdvanceAndRefresh differs from the shared one;
+// see the header restructure report.
+extern "C" void ResPlayer_AdvanceAndRefresh(void *entry, s32 value);
+// TODO(headers): this declaration of ResPlayer_SeekAndRefresh differs from the shared one;
+// see the header restructure report.
+extern "C" void ResPlayer_SeekAndRefresh(void *entry, s32 value);
 
 // table_set: functions Table_setValueA (0x020bc280) and Table_setValueB (0x020bc2a8), provisional names. Each looks the
 // index up with Table_getEntry58 and passes value to its own setter (ResPlayer_AdvanceAndRefresh and ResPlayer_SeekAndRefresh).
