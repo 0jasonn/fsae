@@ -16,6 +16,17 @@ void rupee_disp(void);                   // original rupee_disp()
 void addrupee_disp(void);                // original addrupee_disp()
 
 void BgmSet(void);
+// cockpit_move() and its callees (original C++ names): kattiUpdate(), rupeeUpdate(), heartUpdate(unsigned short),
+// heartAlart(), make_item_color(), make_item_char(), make_item_color_2p(), make_item_char_2p()
+void cockpit_move(void);                 // 0x02026e4c
+void kattiUpdate(void);
+void rupeeUpdate(void);
+void heartUpdate(u16 kind);
+void heartAlart(void);
+void make_item_color(void);
+void make_item_char(void);
+void make_item_color_2p(void);
+void make_item_char_2p(void);
 void cockpit_write_rupee(u16 *dst, u32 value, u8 count, u16 flags); // original write_rupee, cockpit_6.cpp                       // original BgmSet()
 extern "C" u32 func_020867cc(void);     // dsd name, thumb function (0x020867cc), plain symbol
 

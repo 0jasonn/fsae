@@ -9,17 +9,13 @@
 extern "C" s32 Save4SwordsFile(u8 flags);
 extern "C" void fsCreateFile(u8 slot);
 
-extern u8 data_021350dc[];   // +0x2c of the slot block
-extern u8 data_021350dd[];   // +0x2d of the slot block
+#include "engine/multisio_save.h"
 
 // fsCreateFile(unsigned char) (0x020a7480, invented name): sets the two flags of a slot, writes the file with the 0x80
 // bit set and updates the status
 void fsCreateFile(u8 slot) {
-    s32 offset;
-
-    offset = slot * 0x50;
-    data_021350dc[offset] = 1;
-    data_021350dd[offset] = 1;
+    data_021350b0[slot].unk_2c = 1;
+    data_021350b0[slot].unk_2d = 1;
     fsSaveBegin();
     slot |= 0x80;
     Save4SwordsFile(slot);

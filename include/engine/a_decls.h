@@ -53,6 +53,5 @@ typedef struct BG_BUFF_ BG_BUFF_;
 
 // Player blocks (PlayerData[4], 0x94 bytes each; entity pointer at 0x28).
 #include "engine/cockpit_state.h"
-extern u8 data_0212c82c[];
 
 #endif

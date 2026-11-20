@@ -12,8 +12,7 @@ typedef struct Vars_Set01 {
 
 extern const EntityFunc set01_actions[]; // set01_actions, indexed by e->action
 extern const u8 data_020d410c[];          // indexed by e->type
-extern const u8 data_0212c81c[];          // indexed by e->timer
-extern const u8 *const *const data_020f26dc[]; // indexed by data_020d410c[type], then data_0212c81c[timer], then random
+extern const u8 *const *const data_020f26dc[]; // indexed by data_020d410c[type], then gameState.itemLevel[timer], then random
 
 extern "C" {
 void set01_spawnRandom(Entity *e);

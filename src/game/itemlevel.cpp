@@ -14,7 +14,7 @@ void CalcItemLevel(void) {
         } else {
             level = 0;
         }
-        gameState.unk_50[4] = gameState.unk_50[5] = level;
+        gameState.itemLevel[0] = gameState.itemLevel[1] = level;
         return;
     }
     u8 player;
@@ -32,6 +32,6 @@ void CalcItemLevel(void) {
         if (level > 7) {
             level = 7;
         }
-        gameState.unk_50[4 + player] = level;
+        gameState.itemLevel[player] = level;
     }
 }

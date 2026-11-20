@@ -34,8 +34,8 @@ void mapmode_move(void) {
             cockpitState.mapStep++;
             break;
         }
-        if (cockpitState.kakeraCount != data_0212c830[localPlayerIndex]) {
-            cockpitState.kakeraCount = data_0212c830[localPlayerIndex];
+        if (cockpitState.kakeraCount != gameState.playerFlag68[localPlayerIndex]) {
+            cockpitState.kakeraCount = gameState.playerFlag68[localPlayerIndex];
             cockpitState.redraw = 1;
         }
     }

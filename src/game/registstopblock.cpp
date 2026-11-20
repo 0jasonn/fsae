@@ -4,7 +4,6 @@
 
 extern STOPBLOCK_WORK_ data_02134f30[];
 extern STOPBLOCK_WORK_ data_02134ff0[];
-extern STOPBLOCK_WORK_ data_021350b0[];
 
 // RegistStopBlock (0x0204e744): registers a stop block whose key has kind 6 and low byte 0x5c (first table) or 8
 // (second table, which starts 0x30 records into the first one); returns 0 when registering failed, else 1.
@@ -19,7 +18,7 @@ int RegistStopBlock(u16 *key, u8 kind) {
             }
         }
         if (low == 8) {
-            if (sbRegistSub(key, kind, data_02134f30 + 0x30, data_021350b0) != 0) {
+            if (sbRegistSub(key, kind, data_02134f30 + 0x30, data_02134ff0 + 0x30) != 0) {
                 return 0;
             }
         }

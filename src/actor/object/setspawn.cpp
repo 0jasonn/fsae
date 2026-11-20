@@ -23,7 +23,7 @@ void Set_TrySpawnChild(Entity *parent, u8 tableIndex, Entity *target) {
         return;
     }
     if (AssignObj(target) != 0 && target->objKind != 3 && target->type <= 3) {
-        typeIndex = data_0212c81c[target->type];
+        typeIndex = gameState.itemLevel[target->type];
     } else {
         typeIndex = 5;
     }

@@ -63,7 +63,7 @@ void ranking_hyosyo(void) {
         VGroupInit();
         DispReset();
         *(u16 *)0x05000000 = zero;
-        data_021355a0 = zero;
+        data_021355a0[0] = zero;
         MIi_CpuClearFast(zero, (void *)0x06000000, 0x20000);
         if (gameState.active != 0) {
             Task_Chain(2);

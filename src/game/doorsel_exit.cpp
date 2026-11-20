@@ -13,7 +13,7 @@ void doorsel_exit(void) {
         ZeldaFadeFinish();
         DispReset();
         *(u16 *)0x05000000 = 0;
-        data_021355a0 = 0;
+        data_021355a0[0] = 0;
         ObjMoveInit();
         ObjWorkPoolClear();
         func_0202809c();

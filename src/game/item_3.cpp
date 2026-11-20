@@ -13,7 +13,7 @@ void AddKey(Entity *e) {
     if (keyWork != 0) {
         keyWork->contactedEntity = e;
     }
-    data_0212c824[e->type] += 1;
+    gameState.keys[e->type] += 1;
     cockpitState.redraw = 1;
     SoundReq(9);
 }

@@ -22,7 +22,7 @@ void takara_setKind15(int unused, Entity *e, u16 value) {
     set_takara2(0xf, value, e);
 }
 
-// GetRandomTakara, 0x0207c1fc. Random entry of the table list[data_0212c81c[type]].
+// GetRandomTakara, 0x0207c1fc. Random entry of the table list[gameState.itemLevel[type]].
 u8 GetRandomTakara(u8 **list, u8 type) {
-    return list[data_0212c81c[type]][Random() & 0x1f];
+    return list[gameState.itemLevel[type]][Random() & 0x1f];
 }

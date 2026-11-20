@@ -51,6 +51,5 @@ typedef struct SpKeyMasks {
 extern const SpKeyMasks data_020ddb38;
 extern const s16 data_0211b2dc[];   // s16 x offset per facing
 extern const s16 data_0211b2f4[];   // (x, y) s16 offset pairs per facing
-extern EntityNode data_0212c6d0;   // end sentinel of the object list (the head itself is data_0212c6b0[4])
 
 #endif

@@ -15,12 +15,21 @@ void MultiWorkInit(void);
 typedef struct MultiFlagByte { u8 b0 : 2; u8 b2 : 2; u8 b4 : 2; u8 b6 : 2; } MultiFlagByte;
 typedef struct MultiFlagWord { u32 b0 : 2; u32 b2 : 2; u32 b4 : 2; u32 b6 : 2; } MultiFlagWord;
 
-// Saved multiplay record at data_0212c5ec (byte and word arrays indexed by player)
-extern u8 data_0212c5ec[];
-#define MS_U8(off) (*((u8 *)data_0212c5ec + (off)))
-#define MS_U32(off) (*(u32 *)((u8 *)data_0212c5ec + (off)))
+// Saved multiplay record (data_0212c5ec, 0x2c bytes): a copy of the per-player parts of gameState.
+typedef struct MultiSaveBlock {
+    /* 00 */ u32 score;             // gameState.score
+    /* 04 */ u32 counters[4];       // gameState.playerCounters
+    /* 14 */ u8 flag68[4];          // gameState.playerFlag68 (kakera count)
+    /* 18 */ u8 timer58[4];         // gameState.playerTimer58
+    /* 1c */ u8 timer60[4];         // gameState.playerTimer60 (health)
+    /* 20 */ u8 maxHearts[4];       // gameState.maxHearts
+    /* 24 */ MultiFlagByte nutBits; // packed 2-bit nut counters
+    /* 25 */ u8 unk_25[3];
+    /* 28 */ u32 unk_50;            // copy of gameState.unk_50
+} MultiSaveBlock;
+extern MultiSaveBlock data_0212c5ec;
 
-extern u16 data_0212c540;
+#include "engine/data_0212c540.h"
 extern u32 data_0212c54c;
 extern u32 data_0212c558;
 #include "engine/cockpit_state.h"

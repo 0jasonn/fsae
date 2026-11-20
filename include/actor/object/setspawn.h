@@ -19,7 +19,6 @@ extern const u8 *const *const *const Set_KindTables[]; // [table index][GameStat
 
 // Game state and shared spawn counter (declared in other files too)
 extern u8 data_0212c4f4;           // spawn limit, children are not spawned while it is 0x70 or more
-extern const u8 data_0212c81c[];   // indexed by target type
 
 extern "C" {
 void Set_TrySpawnChild(Entity *parent, u8 tableIndex, Entity *target); // 0x0207c408

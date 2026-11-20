@@ -48,7 +48,7 @@ extern u8 data_020d80d8[];
 extern u16 data_0212c514;
 extern u16 playerKeys[];
 #include "engine/com_work.h"
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 extern u8 titleDialogBuffer[];
 extern const u8 titleDialogData[];
 extern u8 data_0216fcfc[];

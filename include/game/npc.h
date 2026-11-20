@@ -1,5 +1,5 @@
-#ifndef WIP_C_NPC_H
-#define WIP_C_NPC_H
+#ifndef GAME_NPC_H
+#define GAME_NPC_H
 
 #include "engine/entity.h"
 

@@ -151,7 +151,7 @@ void em0d_die(Entity *e) {
 }
 
 void Em0d(Entity *e) {
-    if (data_0212c540[1] > 1) {
+    if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
     Entity *hitResult = func_020849c8(e);

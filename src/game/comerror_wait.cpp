@@ -12,13 +12,13 @@ void comerror_wait(void) {
     CgLoad(2);
     CgLoad(0x15);
     *(u16 *)0x05000000 = 0;
-    data_021355a0 = 0;
+    data_021355a0[0] = 0;
     state = data_0212c4dc;
     switch (state) {
     case 0:
         DispReset();
         *(u16 *)0x05000000 = 0;
-        data_021355a0 = 0;
+        data_021355a0[0] = 0;
         ZeldaFadeFinish();
         subtask_dispReset(1);
         ((u8 *)knife)[0x18] = 0;

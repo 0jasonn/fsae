@@ -10,7 +10,7 @@ void ending_init(void) {
         return;
     }
     *(u16 *)0x05000000 = 0;
-    data_021355a0 = 0;
+    data_021355a0[0] = 0;
     SoundReq(0x80010000);
     MIi_CpuClearFast(0xc0, (void *)0x07000000, 0x400);
     MIi_CpuClearFast(0xc0, objAffineSet, 0x800);

@@ -53,7 +53,7 @@ void set01_spawnRandom(Entity *e) {
     if (e->frame == 0x80) {
         if (e->timer < 4) {
             u8 randomIndex = Random() & 0x1f;
-            u8 slot = data_020f26dc[data_020d410c[e->type]][data_0212c81c[e->timer]][randomIndex];
+            u8 slot = data_020f26dc[data_020d410c[e->type]][gameState.itemLevel[e->timer]][randomIndex];
             if (slot != 0xff && e->type2 == 0) {
                 Entity *child = GetSetWork(0, slot, 1);
                 if (child != NULL) {

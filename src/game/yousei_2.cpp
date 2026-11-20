@@ -193,7 +193,7 @@ void goto_nextdemo(void) {
 
 extern u8 data_0212c4dc;     // demo sub-step
 extern u8 data_0212c500;     // demo step
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 
 // yousei_exit (0x020825bc)
 void yousei_exit(void) {
@@ -224,7 +224,7 @@ void yousei_end(void) {
     }
     DispReset();
     *(u16 *)0x5000000 = 0x6739;
-    data_021355a0 = 0x6739;
+    data_021355a0[0] = 0x6739;
     ObjWorkPoolClear();
     ObjMoveInit();
     MessageInitialize();

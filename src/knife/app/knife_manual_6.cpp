@@ -117,7 +117,7 @@ void i_restoreGfxSettings(void) {
     data_0212c524 = 0;
     DispReset();
     *(u16 *)0x05000000 = 0x6739;
-    data_021355a0 = 0x6739;
+    data_021355a0[0] = 0x6739;
     ObjWorkPoolClear();
     ObjMoveInit();
     MessageInitialize();

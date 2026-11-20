@@ -15,8 +15,6 @@ extern const u8 data_020d7c60[];
 extern const u8 data_020d7dc8[];
 extern u8 data_02134dd0[];
 extern u16 data_0213493c[];
-extern EntityNode *data_0212c52c;
-extern EntityNode data_0212c6b8[];
 extern EntityFunc data_02103c50[];
 void func_02084460(void);
 
@@ -70,7 +68,7 @@ void ObjMove(void) {
                 data_0212c52c = node;
             } while (node != list);
         }
-        if (list == data_0212c6b8) {
+        if (list == &data_0212c6b0[1]) {
             AfterPlayer();
         }
         list++;

@@ -10,8 +10,6 @@
 // Per-type halfword flags (4 entries).
 extern u16 playerKeysPrev[];
 // Per-type health (current) and per-type maximum (in hearts) bytes.
-extern u8 data_0212c828[];
-extern u8 data_0212c82c[];
 // Cockpit tables used by the item code.
 extern u8 data_020cf81c[];
 extern u32 *data_020f253c[];
@@ -35,8 +33,6 @@ s32 add_sub(s32 value, s32 delta, s32 limit);
 s32 abs_s32(s32 value);
 
 // Keys per type, kakera counts per type and the kakera telop block (the per-type kakera timers are cockpitState.kakeraTimer).
-extern u8 data_0212c824[];
-extern u8 data_0212c830[];
 #include "engine/telop_request.h"
 
 // Cockpit graphics and object blocks used by the HUD code.

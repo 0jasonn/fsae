@@ -45,6 +45,6 @@ extern const u8 em08_throwParams[];
 extern const s8 em06_heightByFrame[];
 extern const s8 em0d_dieSway[];
 extern const u16 em08_hitParams[];
-extern u16 data_0212c540[];
+#include "engine/data_0212c540.h"
 
 #endif

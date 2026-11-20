@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/player.h"
 
 // Set4b actor (module set4b). Address -> name:
 //   0x0205e280 Set4b (provisional name for the dispatcher, renamed from Set4b)
@@ -14,7 +15,6 @@ void Set4b(Entity *e) {
 
 // Set4b actor (module set4b), third unit: set4b_init (0x0205e29c), between Set4b and its state functions.
 
-extern u8 data_0212c824[]; // timer value per type of the touching entity
 
 // Advances to the next state, copies the timer from the table entry of the entity that touched the object and starts
 // the animation.
@@ -24,7 +24,7 @@ void set4b_init(Entity *e) {
     e->spriteSettings.b14 = 0;
     e->unk_5e.b0 = 3;
     e->spriteSettings.b30 = 1;
-    e->timer = data_0212c824[e->contactedEntity->type];
+    e->timer = gameState.keys[e->contactedEntity->type];
     InitAnimationForceUpdate(e, e->timer - 1);
 }
 
@@ -32,7 +32,6 @@ void set4b_init(Entity *e) {
 //   0x0205e300 set4b_move (original name)
 //   (set4b_init at 0x0205e29c is in scratch/agentF/nonmatching)
 
-extern u8 data_0212c824[]; // per parent type: animation step for this actor
 
 void set4b_move(Entity *e) {
     Entity *parent = e->contactedEntity;
@@ -47,7 +46,7 @@ void set4b_move(Entity *e) {
         flag = 0;
     }
     e->spriteSettings.b0 = !flag;
-    step = data_0212c824[e->contactedEntity->type];
+    step = gameState.keys[e->contactedEntity->type];
     if (e->timer == step) {
         return;
     }

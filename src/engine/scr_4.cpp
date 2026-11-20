@@ -8,7 +8,7 @@
 // Scroll and map unit (module scr): FrameSet 0x0205715c, PartsSet 0x020571fc.
 // Both load a map into the work buffer and copy it into the two BG layer buffers (BlockCopy).
 
-extern u8 triangleTable[];       // map work buffer
+#include "game/triangle.h"     // triangleTable: start of the map work buffer
 extern u32 *data_020d7680[];     // map table indexed by frame
 extern u32 *data_020d78b4[];     // parts map table
 extern u16 data_020d8168[];      // (x, y) in pixels of each part
@@ -49,8 +49,7 @@ void MakeMapScreen(const void *src, void *dst);
 }
 extern u8 data_02140fa0[];
 extern u8 data_02148fa0[];
-extern u8 data_02135640[];
-extern u8 data_02135840[];
+#include "engine/palette_buff.h"
 #include "engine/em2f_map_flag.h"
 
 void MultiRoomSet(void) {
@@ -58,6 +57,6 @@ void MultiRoomSet(void) {
     MIi_CpuCopy32(data_02163fa4.screen, data_02163fa4.screenSave, 0x2000);
     MakeMapScreen(data_02140fa0, &data_02158fa0);
     MakeMapScreen(data_02148fa0, &data_02163fa4);
-    MIi_CpuCopyFast(data_02135640, data_02135840, 0x20);
+    MIi_CpuCopyFast(&data_021355a0[0x50], &data_021355a0[0x150], 0x20);
     em2f_mapFlag |= 0x200000;
 }

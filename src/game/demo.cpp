@@ -14,7 +14,7 @@
 extern u8 data_0212c4dc;                // demo phase, 0..4
 extern u16 data_0212c510;               // nonzero ends the phase wait early
 #include "engine/effect_state.h"
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 
 // DemoTask (0x0202a78c): phase 0 loads the demo graphics and palette, starts the display and waits;
 // 1 starts the link and waits for the timer, then fades; 2 leaves phase 3 when the blend is done;
@@ -31,7 +31,7 @@ void DemoTask(void) {
         MemClearFast(&effectState, 0x28);
         effectState.timer = 0xf0;
         *(u16 *)0x05000000 = 0;
-        data_021355a0 = 0;
+        data_021355a0[0] = 0;
         FadeSet(0, 8);
         GX_DispOn();
         dispCnt = (u32 *)0x04001000;

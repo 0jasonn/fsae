@@ -12,10 +12,9 @@ extern const u16 enemyInitTable[];
 // Row arrays (enemyInitIndirect), indexed by row[1] of an indirect row; each row is indexed by e->type.
 extern const u16 *const enemyInitIndirect[];
 
-extern u16 data_0212c540[];                                 // flag words read by EmDie
+#include "engine/data_0212c540.h"
 
-// Magnet-style move of an enemy towards the players in range; returns the number of candidate directions
-u8 EmMagneMove(Entity *e, u16 a);
+// EmMagneMove (magnet-style move towards the players in range) is declared in engine/functions.h.
 
 // Hit/position test used by EmDivPosSet (dsd name func_02083d18, thumb)
 int func_02083d18(Entity *e, int a, int b);
@@ -23,8 +22,8 @@ int func_02083d18(Entity *e, int a, int b);
 // Data and helpers used by the enemy registration code
 extern const u8 data_020d41b0[];                 // boss drop table, 4 bytes per row
 extern u8 data_021348e8;                         // registered item count, see ItemRegist
-extern u8 data_02134934[];                       // registered item ids
-extern u8 data_021348f8[];                       // 4-entry table written by MultiEventSet
+extern u8 data_02134934[8];                      // registered item ids
+extern u8 data_021348f8[4];                      // 4-entry table written by MultiEventSet
 
 typedef struct ParseTypeTable {
     u32 bits[8];

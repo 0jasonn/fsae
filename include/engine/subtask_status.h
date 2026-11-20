@@ -27,23 +27,9 @@ typedef struct SUBTASK_PLAYER_WORK {
 // Wireless member records: comWork.recv[] (ComPacket, engine/com_work.h).
 #include "engine/com_work.h"
 
-typedef struct SubtaskSendEntry {
-    u32 word00;
-    u8 unk_04;
-    u8 b05;
-    u16 h06;
-    u8 unk_08[0x10];
-    u32 w18;
-    u8 unk_1c[0x34];
-} SubtaskSendEntry;
 
-typedef struct SubtaskSelect {
-    u8 unk_00[4];
-    u8 index;
-} SubtaskSelect;
+#include "engine/multisio_save.h"   // multiSioSelect
 
-extern SubtaskSendEntry data_021350b0[];
-extern SubtaskSelect multiSioSelect;
 extern u8 localPlayerIndex;
 
 extern "C" {

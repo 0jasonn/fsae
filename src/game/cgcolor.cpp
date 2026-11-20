@@ -12,7 +12,7 @@ typedef struct VBlankEntry {
 } VBlankEntry;
 
 extern const u8 *data_020f2a18;  // colour adjust table (u16 entries), NULL for none
-extern u16 data_021355a0[];      // colour per index
+#include "engine/palette_buff.h"
 #include "engine/em2f_map_flag.h"
 extern u8 data_02134890;         // number of VBlank entries
 extern VBlankEntry data_02134894[2];

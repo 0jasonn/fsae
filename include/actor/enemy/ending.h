@@ -1,5 +1,5 @@
-#ifndef WIP_B_ENDING_B_H
-#define WIP_B_ENDING_B_H
+#ifndef ACTOR_ENEMY_ENDING_H
+#define ACTOR_ENEMY_ENDING_H
 
 // Declarations for the ending, finale and demo functions of implementer B (0x020443a0 to 0x02048264).
 // Functions missing from engine/functions.h use the original signatures from config/eur/original_names.tsv
@@ -19,11 +19,8 @@
 typedef void (*FadeFunc)(BlendRequest *);
 extern FadeFunc const fadeModeTable[];        // fadeModeTable
 extern u32 data_02134910;
-extern u16 data_02135da0[];
+#include "engine/palette_buff.h"
 
-extern u16 data_021355a0;
-extern u8 data_02135840[];
-extern u8 data_0216fd04[];
 extern u8 objAffineSet[];
 extern u8 data_0212ccb0[];
 #include "engine/cockpit_state.h"

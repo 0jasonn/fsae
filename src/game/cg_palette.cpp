@@ -2,7 +2,7 @@
 
 #include "engine/em2f_map_flag.h"
 extern u16 *data_020f2a18; // colour translation table (3 x 32 entries: red, green, blue), NULL when unused
-extern u16 data_021355a0[]; // palette buffer, 16 colours per slot
+#include "engine/palette_buff.h"
 
 // CgPalletSet (0x02029c60): copies `count` palette slots starting at `slot` into the palette buffer, translating every
 // colour through the colour table when there is one, and marks the slots for upload.

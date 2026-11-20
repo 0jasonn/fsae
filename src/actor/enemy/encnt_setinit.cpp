@@ -7,8 +7,8 @@ void encnt_setinit(void) {
     int retry;
     u8 i;
     u8 angle;
-    EncntListHead *head;
-    EncntNode *node;
+    EntityNode *head;
+    EntityNode *node;
     Entity *player;
     EncntEntry *entry;
 
@@ -20,8 +20,8 @@ void encnt_setinit(void) {
     encntState.timerReload = (Random() & 1) + 3;
     retry = 0;
     for (head = data_0212c6b0; head < data_0212c6b0 + 8; head++) {
-        for (node = head->next; node != (EncntNode *)head; node = node->next) {
-            if (node->tag == 3 && node->subtag == encntState.posA) {
+        for (node = head->next; node != head; node = node->next) {
+            if (((Entity *)node)->objKind == 3 && ((Entity *)node)->objId == encntState.posA) {
                 if (retry++ > 8) {
                     nextset();
                     return;
@@ -40,6 +40,6 @@ void encnt_setinit(void) {
         entry->initialised = 0;
         angle = (angle + 4) & 0x1c;
     }
-    encntState.count++;
+    encntState.state++;
     encntState.timer = encntState.timerReload;
 }

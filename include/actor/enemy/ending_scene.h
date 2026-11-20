@@ -19,9 +19,7 @@
 extern u8 data_0212c4dc;
 extern u8 data_0212c4f8;
 extern s32 data_02134924;
-extern u16 data_021355a0;
-extern u8 data_02135840[];
-extern u8 data_0216fd04[];
+#include "engine/palette_buff.h"
 
 void ComRequest(u8 a);
 void yousei_move(void);

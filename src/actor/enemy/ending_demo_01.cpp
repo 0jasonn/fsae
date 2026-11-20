@@ -91,8 +91,8 @@ void demo_01(void) {
         if (effectState.timer != 0) {
             break;
         }
-        MIi_CpuClearFast(0, &data_021355a0, 0x280);
-        MIi_CpuClearFast(0, data_02135840, 0x160);
+        MIi_CpuClearFast(0, data_021355a0, 0x280);
+        MIi_CpuClearFast(0, &data_021355a0[0x150], 0x160);
         MIi_CpuClearFast(0, data_0216fd04, 0x400);
         blendRequest.resetValue = -1;
         PaletteFade_ClearBufferFlag();

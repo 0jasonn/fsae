@@ -12,7 +12,7 @@ typedef struct FrameEntry {
 } FrameEntry;
 
 extern u16 data_0213492c[];   // area origin: [0] and [1] cleared, [2] and [3] hold the frame's start cell * 16
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 
 // Part record returned by parts_select (first word of a frame table entry).
 typedef struct PartRecord {
@@ -29,7 +29,7 @@ typedef struct PartEntry {
     u32 flags;
 } PartEntry;
 
-extern u8 data_021349e8[];          // 0x40 byte order table walked by the part cursor
+extern u8 data_021349e8[0x40];      // 0x40 byte order table walked by the part cursor
 extern const u16 data_02103d48[];   // per game mode limit for the order table values
 extern PartEntry *data_02103d88[];  // per game mode part table
 
@@ -42,7 +42,6 @@ BOOL checkSingleErrorParts(u8 mode, u16 partId);
 extern u8 localPlayerIndex;
 #include "engine/em12_type_masks.h"
 extern const u8 data_02103e84[];    // 8 byte start layouts, indexed by the low nibble of game state byte 0x4f
-extern u8 data_0212c84c[];          // copy of the 8 start slots
 
 extern u32 data_0216f834[];   // 0x20 words, copied to data_0216f8b4
 extern u32 data_0216f8b4[];

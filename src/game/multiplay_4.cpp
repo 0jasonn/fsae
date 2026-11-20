@@ -5,7 +5,7 @@ typedef struct WarpSfxList {
     u32 ids[4];
 } WarpSfxList;
 
-extern u16 data_0212c540;
+#include "engine/data_0212c540.h"
 extern u8 data_0216efa8[];
 extern u32 data_0216efac[4]; // sound ids in the order the players are announced
 extern const WarpSfxList multiplayWarpSfx;  // multiplayWarpSfx
@@ -27,7 +27,7 @@ void multiplay_warp(void) {
     }
     switch (data_0212c4dc) {
     case 0:
-        data_0212c540 = 1;
+        data_0212c540.flags = 1;
         frameCounter.timer = 0x3c;
         data_0212c4dc++;
         break;

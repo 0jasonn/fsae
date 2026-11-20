@@ -13,7 +13,7 @@ void title_timeout(void) {
     }
     DispReset();
     *(u16 *)0x05000000 = 0x6739;
-    *(u16 *)&data_021355a0 = 0x6739;
+    data_021355a0[0] = 0x6739;
     OpeningTaskFinalzie();
     Task_Chain(7);
 }
@@ -24,7 +24,7 @@ void title_back(void) {
     }
     DispReset();
     *(u16 *)0x05000000 = 0x6739;
-    *(u16 *)&data_021355a0 = 0x6739;
+    data_021355a0[0] = 0x6739;
     ObjMoveInit();
     ObjWorkPoolClear();
     OpeningTaskFinalzie();

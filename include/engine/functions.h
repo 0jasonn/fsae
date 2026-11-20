@@ -239,6 +239,7 @@ void EmDie(Entity *e);
 void EmDivPosSet(Entity *e, Entity *a, Entity *b);
 Entity *EmGetAimPl(void);
 Entity *EmGetTama(Entity *e, u8 kind, u8 flags);
+u8 EmMagneMove(Entity *e, u16 speed); // returns the number of candidate directions (u8: mov r0, r7 in the ROM)
 void EmPalamCopy(Entity *, Entity *);
 void EndingFinish(void);
 void EndingTask(void);
@@ -516,6 +517,7 @@ void gufuBindPls(void);
 int gufuVitalCheck(Entity *e);
 void gufu_flash(void);
 void gufu_scene_02(void);
+BOOL hikiyoseSet(Entity *segment, Entity *leader, u16 speed); // hikiyoseSet(OBJ_WORK_*, OBJ_WORK_*, unsigned short)
 void honyaGetInfo(Entity *e);
 void honyaMove(Entity *e);
 void HajikeSet(Entity *e);
@@ -550,6 +552,7 @@ void m4aLockWaveData(u16 id);
 void m4aUnlockWaveData(u16 id);
 void magneMove(Entity *e);
 void mist_effect(void);
+BOOL movecheck(Entity *e);              // movecheck(OBJ_WORK_*)
 void move3Init(Entity *e);
 u8 move3search(Entity *e);
 void moveInit(Entity *e);

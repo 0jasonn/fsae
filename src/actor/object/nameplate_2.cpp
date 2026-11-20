@@ -9,7 +9,7 @@
 //   (namePlate itself is in nameplate.cpp; namePlate_init at 0x0205b9c0 is in scratch/agentF/nonmatching)
 
 #include "engine/effect_state.h"
-extern u8 multiSioSelect[];
+#include "engine/multisio_save.h"
 extern const u8 data_020d8aa4[];  // animation flags, indexed by timer * 3 + type2
 extern const u16 data_020d8bae[]; // bounds for the appear animation, 4 bytes per mask
 extern const u16 data_020d8ae0[]; // bounds for the move animation, 4 bytes per index
@@ -24,7 +24,7 @@ void namePlate_appear(Entity *e) {
                 vars->hideMask = e->timer;
             }
         } else {
-            { int base = (multiSioSelect[4] + 1) * 3; vars->hideMask = base + e->type2; }
+            { int base = (multiSioSelect.index + 1) * 3; vars->hideMask = base + e->type2; }
         }
         if (vars->hideMask != 0xff) {
             ObjAnimMoveSet(e, &data_020d8bae[vars->hideMask * 2], data_020d8aa4[e->timer * 3 + e->type2]);

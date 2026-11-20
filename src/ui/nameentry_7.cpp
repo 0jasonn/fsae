@@ -44,14 +44,13 @@ extern "C" void clearSaveData(s32 a);
 }
 
 extern u8 data_021806f0[];
-extern u8 data_021350b0[];
-extern u8 data_021350f7[];
+#include "engine/multisio_save.h"
 
 // Copies the entered name to the selected save slot and starts the registration delay.
 void nameEntryUIView_entryCheck(void *self) {
     u32 i;
     u8 *obj;
-    u8 *slot;
+    MultiSioEntry *slot;
     u8 selectedSlot;
 
     obj = (u8 *)self;
@@ -61,9 +60,9 @@ void nameEntryUIView_entryCheck(void *self) {
         goto copyDone;
     }
     {
-        slot = data_021350b0 + selectedSlot * 0x50;
+        slot = &data_021350b0[selectedSlot];
         do {
-            *(u16 *)(slot + 8 + i * 2) = *(u16 *)(obj + 0x34 + i * 2);
+            slot->str08[i] = *(u16 *)(obj + 0x34 + i * 2);
             i++;
         } while (i < (u32)*(volatile s8 *)(obj + 0x42));
     }
@@ -91,7 +90,7 @@ void nameEntryUIView_entry_regist(void *self) {
         return;
     }
     subtask_dialogDelete();
-    if ((s8)data_021350f7[sel * 0x50] != 0) {
+    if (data_021350b0[sel].status != 0) {
         clearSaveData(sel);
         func_020ac038(6, 0, 0, 0);
         obj[0x49] = 6;

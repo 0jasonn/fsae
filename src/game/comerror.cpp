@@ -19,7 +19,7 @@ void comerror_move(void) {
     case 0:
         ((Knife::Hud::HudManager *)(app + 0x1f8))->update(data_0212c4c8);
         *(u16 *)0x05000000 = 0;
-        data_021355a0 = 0;
+        data_021355a0[0] = 0;
         displayState.displayFlags = displayState.displayFlags & 0xfeff;
         if (effectState.timer != 0) {
             effectState.timer = effectState.timer - 1;
@@ -40,7 +40,7 @@ void comerror_move(void) {
         }
         DispReset();
         *(u16 *)0x05000000 = 0x6739;
-        data_021355a0 = 0x6739;
+        data_021355a0[0] = 0x6739;
         ObjMoveInit();
         ObjWorkPoolClear();
         Task_Chain(7);

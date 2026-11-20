@@ -12,7 +12,7 @@ extern u16 data_0212c510;
 extern u8 data_020f25a8[];
 extern u8 data_020f25b4[];
 #include "engine/effect_state.h"
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 extern void (*data_0212c564)(void);
 extern const u8 data_020ce4d0[];
 

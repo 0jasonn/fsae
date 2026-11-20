@@ -12,7 +12,7 @@ void ranking_init(void) {
     }
     DispReset();
     *(u16 *)0x05000000 = 0x6739;
-    data_021355a0 = 0x6739;
+    data_021355a0[0] = 0x6739;
     ObjWorkPoolClear();
     ObjMoveInit();
     VGroupInit();
@@ -26,7 +26,7 @@ void ranking_init(void) {
     }
     CgLoad(0x14);
     *(u16 *)0x05000000 = 0x6739;
-    data_021355a0 = 0x6739;
+    data_021355a0[0] = 0x6739;
     DataLoad(1);
     DataLoad(0x23);
     DataLoad(gameState.playerCount + 0x22);

@@ -24,7 +24,7 @@ BOOL trapAttBitCheck(Entity *e); // original trapAttBitCheck(OBJ_WORK_*), define
 
 extern EntityFunc data_020cfd70[];
 extern EntityFunc data_020cfd5c[];
-extern u8 data_0212c540[];
+#include "engine/data_0212c540.h"
 extern u8 data_020cfd54[];
 
 void getmoveinfo(Entity *e);

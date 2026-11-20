@@ -92,7 +92,8 @@ typedef union GameSlotWord {
 
 // Game state block (gameState, 0xa0 bytes: MultiWorkInit clears it whole). Other symbols point inside it:
 // data_0212c7d4 (+0x0c), enemyTypeFlags (+0x28), keyTypeFlags (+0x2d), data_0212c7f6 (+0x2e), data_0212c810 (+0x48),
-// data_0212c858 (+0x90).
+// data_0212c81c (+0x54), data_0212c820 (+0x58), data_0212c824 (+0x5c), data_0212c828 (+0x60), data_0212c82c (+0x64),
+// data_0212c830 (+0x68), data_0212c838 (+0x70), data_0212c84c (+0x84), data_0212c858 (+0x90).
 typedef struct GameState {
     /* 00 */ u8 playerCount;
     /* 01 */ u8 unk_01;       // 0..3 rerolled by shuffleStage; also compared with 2 and 5 (mode) and indexes youseiFrameTable
@@ -114,20 +115,21 @@ typedef struct GameState {
     /* 49 */ u8 unk_49[5];
     /* 4e */ u8 usedPickMask; // bit per unk_01 value already used
     /* 4f */ u8 phaseFlags;
-    /* 50 */ u8 unk_50[8];
+    /* 50 */ u8 unk_50[4];
+    /* 54 */ u8 itemLevel[4];      // per player (data_0212c81c): set by itemlevel, row of the set01/setspawn/takara tables
     /* 58 */ u8 playerTimer58[4];
-    /* 5c */ u8 unk_5c[4];
-    /* 60 */ u8 playerTimer60[4];
-    /* 64 */ u8 unk_64[4];
-    /* 68 */ u8 playerFlag68[4];
+    /* 5c */ u8 keys[4];           // per player (data_0212c824): AddKey adds one, usekey takes one
+    /* 60 */ u8 playerTimer60[4];  // per player (data_0212c828): health, as AddHeart and MPlayerSet use it
+    /* 64 */ u8 maxHearts[4];      // per player (data_0212c82c): heart containers (utsuwa); AddHeart caps health at 8 each
+    /* 68 */ u8 playerFlag68[4];   // per player (data_0212c830): kakera count (kakera_full, item_4, radar)
     /* 6c */ u8 unk_6c;
     /* 6d */ u8 unk_6d;
     /* 6e */ u8 unk_6e;
     /* 6f */ u8 unk_6f;
-    /* 70 */ u8 unk_70[0x10];
+    /* 70 */ Entity *radarChild[4]; // per type2 (data_0212c838): the rader child while it is shown, else NULL
     /* 80 */ s16 targetX; // target position of the heart marker (light_marker)
     /* 82 */ s16 targetY;
-    /* 84 */ u8 unk_84[8];
+    /* 84 */ u8 startCells[8];     // (x, y) start cell per player (data_0212c84c), copied by MPlayerSet
     /* 8c */ u8 unk_8c;
     /* 8d */ u8 unk_8d;
     /* 8e */ u8 unk_8e;       // game state byte

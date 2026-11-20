@@ -15,7 +15,7 @@ extern u8 data_02187070[];
 extern s32 data_0212c524;
 extern u8 data_0212c4dc;
 extern u8 data_0212c57c[];
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 
 // Calls made by Knife::i_restoreGfxSettings (dsd names, C linkage unless the symbol is mangled)
 extern "C" {

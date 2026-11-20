@@ -41,7 +41,7 @@ void cockpit_move(void) {
     }
     kattiUpdate();
     rupeeUpdate();
-    heartUpdate(data_0212c82c[localPlayerIndex]);
+    heartUpdate(gameState.maxHearts[localPlayerIndex]);
     if (cockpitState.item != data_0212c53c->unk_1c) {
         cockpitState.item = data_0212c53c->unk_1c;
         cockpitState.itemState = data_0212c53c->unk_0f & 2;

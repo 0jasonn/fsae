@@ -7,7 +7,7 @@
 #include "engine/map_state.h"
 #include "engine/bg_buff.h" // layer buffers data_02158fa0, data_02163fa4
 
-extern u8 triangleTable[];               // 0x021387a0, cleared by MultiRoomInit (size 0x800)
+#include "game/triangle.h"          // triangleTable, cleared by MultiRoomInit
 extern u32 *const data_020d7110[];       // per-room map data
 extern u16 *const data_020d714c[];       // per-room background animation, may be null
 

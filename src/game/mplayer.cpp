@@ -51,6 +51,6 @@ void MPlayerSet(FRAME_INFO_ *frame) {
         playerWork[i].entity->health = gameState.playerTimer60[i];
         pair += 2;
     }
-    MIi_CpuCopy16(cells, data_0212c84c, 8);
+    MIi_CpuCopy16(cells, gameState.startCells, 8);
     mapState.target = playerWork[localPlayerIndex].entity;
 }

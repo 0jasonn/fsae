@@ -11,8 +11,6 @@ extern const s8 em1e_piyoriSway[];
 extern const EntityFunc em1f_actions[];
 extern const u8 em1f_hitbox[];
 
-extern UnkStruct_0212c540 data_0212c540;
-
 void em1e_main(Entity *e) {
     EnemyFunctionHandler(e, em1e_actions);
 }

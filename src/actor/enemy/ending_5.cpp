@@ -22,7 +22,7 @@ void finale_end(void) {
     }
     DispReset();
     *(u16 *)0x05000000 = 0;
-    data_021355a0 = 0;
+    data_021355a0[0] = 0;
     func_02082c54(0);
     finalizeVirtualScreenData();
     ObjWorkPoolClear();

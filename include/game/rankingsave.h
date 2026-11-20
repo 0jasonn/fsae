@@ -43,7 +43,7 @@ extern u8 data_02171d01[];
 extern const VoidFunc data_020d85b0[];
 extern const EntityFunc data_02115398[];
 extern const EntityFunc data_020d8860[];
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 extern u8 data_0212c4f8;
 extern u8 data_0212c500;
 #include "engine/blend_request.h"

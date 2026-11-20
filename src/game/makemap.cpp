@@ -23,7 +23,7 @@ void makemap_00(void) {
     CgLoad(2);
     DataLoad(0x10);
     *(u16 *)0x05000000 = 0;
-    data_021355a0 = 0;
+    data_021355a0[0] = 0;
     data_0212c4dc++;
     data_0216efa8 = 0;
     frameCounter.timer = 0xa;

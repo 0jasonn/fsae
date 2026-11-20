@@ -14,7 +14,6 @@ typedef struct Vars_PathMover {
 } Vars_PathMover;
 #define V(e) VARS(Vars_PathMover, e)
 
-extern UnkStruct_0212c540 data_0212c540;
 extern const EntityFunc em2b_actions[];
 extern const EntityFunc em2b_moveActions[];
 extern const u8 em2b_hitbox[];

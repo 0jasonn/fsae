@@ -38,7 +38,6 @@ extern u8 objAffineSet[];
 Entity *plCheck(Entity *e);
 void dushInit(Entity *e, Entity *target);
 void swordMgr(Entity *e);
-u8 EmMagneMove(Entity *e, u16 speed);
 extern const EntityFunc data_020d334c[]; // per action function table of em28
 
 // TwlSDK and resid helpers (extern "C", plain names in symbols.txt)

@@ -19,7 +19,7 @@ void FrameLoad_Select(void) {
         CgLoad(2);
         DataLoad(0x10);
         *(u16 *)0x05000000 = 0;
-        data_021355a0 = 0;
+        data_021355a0[0] = 0;
     }
     gameState.active = (frame->roomNo == 4) ? 1 : 0;
     data_02134968[0] = frame->infoRows;

@@ -11,27 +11,27 @@ extern "C" void clearSaveData(u8 index);
 extern "C" void fileSelUIView_errorFileInit(void *self);
 void Knife_InitialSaveFile(u8 index);
 void Knife_mediaWrite(void);
-extern u8 data_021350b0[];
+#include "engine/multisio_save.h"
 
 // fileSelUIView::errorFileInit() (0x020a88a8): the save entries in state 6 (initial file, then clear) and 8 (clear)
 // are cleared to idle, then the media is written
 void fileSelUIView_errorFileInit(void *self) {
-    u8 *base;
+    MultiSioEntry *base;
     u32 i;
-    u8 *entry;
+    MultiSioEntry *entry;
     s8 state;
 
     base = data_021350b0;
     for (i = 0; i < 3; i++) {
-        entry = base + i * 0x50;
-        state = (s8)entry[0x47];
+        entry = &base[i];
+        state = entry->status;
         switch (state) {
         case 6:
             Knife_InitialSaveFile((u8)i);
             /* fall through */
         case 8:
             clearSaveData((u8)i);
-            entry[0x47] = 0;
+            entry->status = 0;
             break;
         }
     }

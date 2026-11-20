@@ -5,7 +5,6 @@
 #include "engine/functions.h"
 #include "engine/misc.h"
 
-extern u8 data_0212c830[];   // per-player value copied to the HUD block byte 0x0a
 #include "engine/vblank_request.h"
 
 
@@ -30,6 +29,5 @@ extern "C" BOOL Knife_Message_selectionDialog_isModal(const void *a);
 // cockpit_obj_set has C++ linkage (original cockpit_obj_set(unsigned char)), 0x02026850.
 void cockpit_obj_set(u8 index);
 
-void cockpit_move(void); // C++ linkage, original cockpit_move(), 0x02026e4c
 
 #endif

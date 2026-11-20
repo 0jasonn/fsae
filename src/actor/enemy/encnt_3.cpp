@@ -27,7 +27,7 @@ void encnt_move(void) {
                 found = area_check(0);
             }
             if (found != 0) {
-                encntState.count++;
+                encntState.state++;
                 return;
             }
             nextset();
@@ -38,6 +38,6 @@ void encnt_move(void) {
         }
     } else if (encntState.timer == 1) {
         encntSpawnCount = 0;
-        data_0212c540 |= 4;
+        data_0212c540.flags |= 4;
     }
 }

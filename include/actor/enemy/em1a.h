@@ -24,11 +24,7 @@ extern EntityFunc em1a_moveActions[];     // em1a_moveActions, indexed by e->sub
 extern const s8 em1a_bobTable[];          // em1a_bobTable, z offset from frameCounter and subtimer
 #include "engine/frame_counter.h"
 
-typedef struct UnkStruct_0212c540 {
-    u16 unk_0;
-    u16 unk_2;
-} UnkStruct_0212c540;
-extern UnkStruct_0212c540 data_0212c540;
+#include "engine/data_0212c540.h"
 
 // Not yet in engine/functions.h
 void em1a_getNextInfo(Entity *e);

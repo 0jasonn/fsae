@@ -12,7 +12,7 @@ void PutObjWork(Entity *e) {
     const u16 *sub;
     u16 value;
 
-    if (((PutObjNode *)e)->next == NULL) {
+    if (((EntityNode *)e)->next == NULL) {
         return;
     }
     if (e->unk_53 != 0) {
@@ -74,17 +74,17 @@ void PutObjWork(Entity *e) {
         }
         break;
     }
-    ((PutObjNode *)e)->prev->next = ((PutObjNode *)e)->next;
-    ((PutObjNode *)e)->next->prev = ((PutObjNode *)e)->prev;
+    ((EntityNode *)e)->prev->next = ((EntityNode *)e)->next;
+    ((EntityNode *)e)->next->prev = ((EntityNode *)e)->prev;
     if (e == (Entity *)data_0212c52c) {
-        data_0212c52c = ((PutObjNode *)e)->prev;
+        data_0212c52c = ((EntityNode *)e)->prev;
     }
     e->spriteSettings.b0 = 0;
     e->statusFlags = 0;
     e->contactFlags = 0;
     e->unk_42 = 0;
     e->health = 0;
-    ((PutObjNode *)e)->next = NULL;
+    ((EntityNode *)e)->next = NULL;
     data_02134dd0[data_021348d4++] = (u32)((u8 *)e - data_0212f890) >> 7;
     if ((u8 *)e < data_02134290) {
         data_0212c4f4 -= 1;

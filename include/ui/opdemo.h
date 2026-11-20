@@ -13,6 +13,6 @@ void RotateObjWork(u8 list);            // original RotateObjWork(unsigned char)
 extern u8 data_0212c4e8;                // byte cleared at the start of AfterPlayer
 int func_02083d18(Entity *e, int dx, int dy); // C++ linkage (_Z13func_02083d18P9OBJ_WORK_ii), same as enemycommon.h
 #include "engine/frame_counter.h"
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 
 #endif

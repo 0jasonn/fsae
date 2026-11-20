@@ -3,9 +3,6 @@
 
 #include "engine/entity.h"
 
-typedef struct UnkStruct_0212c540 {
-    u16 unk_0;
-    u16 unk_2;
-} UnkStruct_0212c540;
+#include "engine/data_0212c540.h"
 
 #endif

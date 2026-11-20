@@ -27,8 +27,8 @@ void plhikiyose(Entity *e) {
             hikiyoseSet(e, playerWork[0].entity, e->speed);
         }
     }
-    end = (Entity *)data_0212c6c0;
-    node = data_0212c6b0.head;
+    end = (Entity *)&data_0212c6b0[2];
+    node = (Entity *)data_0212c6b0[2].next;
     if (node == NULL || end == node) {
         return;
     }
@@ -54,6 +54,6 @@ void plhikiyose(Entity *e) {
             }
             break;
         }
-        node = *(Entity **)&node->unk_00[4];
+        node = (Entity *)((EntityNode *)node)->next;
     } while (end != node);
 }

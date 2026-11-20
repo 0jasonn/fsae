@@ -28,7 +28,7 @@ void GetSubtaskRadarStatus(SubtaskRadarStatus *out) {
     out->defense = (u32)(data_0212c53c->unk_3e << 28) >> 30;
     out->speed = (u32)(data_0212c53c->unk_3e << 26) >> 30;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        out->kakera = data_0212c830[player];
+        out->kakera = gameState.playerFlag68[player];
     } else {
         out->kakera = gameState.playerFlag68[0];
     }

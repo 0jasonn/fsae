@@ -8,19 +8,19 @@
 
 void Task_Chain(u8 index);
 extern "C" void func_020ac038(s32 a, s32 b, s32 c, s32 d);
-extern u8 data_021350b0[];
+#include "engine/multisio_save.h"
 
 // fileSelUIView::checkSaveStatus() (0x020a76d0): looks at the state of the three save entries; the states 3 and 4 start a
 // task chain, 6 and 7 pick a result, and a result shows the status through func_020ac038
 s32 fileSelUIView_checkSaveStatus(void *self) {
     u8 i;
     s32 result;
-    u8 *entry;
+    MultiSioEntry *entry;
 
     result = 0;
     for (i = 0; i < 3; i++) {
-        entry = data_021350b0 + i * 0x50;
-        switch ((s8)entry[0x47]) {
+        entry = &data_021350b0[i];
+        switch (entry->status) {
         case 3:
         case 4:
             Task_Chain(11);

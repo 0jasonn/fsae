@@ -46,8 +46,8 @@ s32 AddHeart(Entity *e, s32 amount) {
         }
     }
 
-    if (newHealth >= gameState.unk_64[e->type] * 8) {
-        newHealth = (s16)(gameState.unk_64[e->type] * 8);
+    if (newHealth >= gameState.maxHearts[e->type] * 8) {
+        newHealth = (s16)(gameState.maxHearts[e->type] * 8);
     } else if (newHealth < 0) {
         newHealth = 0;
     }
@@ -72,7 +72,7 @@ s32 AddHeart(Entity *e, s32 amount) {
         if (gameState.unk_24 == 0) {
             count = gameState.playerCount;
             for (i = 0; i < count; i++) {
-                if (gameState.playerTimer60[i] != gameState.unk_64[i] * 8) {
+                if (gameState.playerTimer60[i] != gameState.maxHearts[i] * 8) {
                     allOk = 0;
                     break;
                 }

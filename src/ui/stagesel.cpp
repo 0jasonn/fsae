@@ -27,7 +27,7 @@ extern SselDialogParams data_02116720;
 extern const SselDialogRow data_020dc6bc[];
 extern const u8 data_02116754[];
 
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 extern u8 data_02171d7c[];
 extern u8 data_0211678c[];
 
@@ -49,7 +49,7 @@ void sr_exit(void) {
     }
     DispReset();
     *(u16 *)0x05000000 = 0;
-    data_021355a0 = 0;
+    data_021355a0[0] = 0;
     ObjWorkPoolClear();
     ObjMoveInit();
     EndingFinish();

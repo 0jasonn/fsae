@@ -42,7 +42,7 @@ void encnt_poscheck(void) {
                 break;
         }
     }
-    encntState.count++;
+    encntState.state++;
 }
 
 // encnt_setem (0x020441cc): spawns the enemy of every free slot (a set object for kinds other than 4, an enemy for kind 4).

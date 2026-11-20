@@ -11,7 +11,7 @@ extern "C" void clearSaveData(u8 index);
 extern "C" void fileSelUIView_errorFileInit(void *self);
 void Knife_InitialSaveFile(u8 index);
 void Knife_mediaWrite(void);
-extern u8 data_021350b0[];
+#include "engine/multisio_save.h"
 
 // fileSelUIView::getText(Knife::Message::Text*, unsigned long, Knife::Message::Language) (0x020a8d78): fills the text
 // record for the save entry textId (entries of 0x50 bytes from 9000)
@@ -19,7 +19,7 @@ s32 fileSelUIView_getText(void *self, void *text, u32 textId, s32 language) {
     FileSelText *msg = (FileSelText *)text;
 
     msg->handle = (u32)Knife_Message_getCESObject_021770b4();
-    msg->str = data_021350b0 + (textId - 9000) * 0x50 + 8;
+    msg->str = (u8 *)data_021350b0[textId - 9000].str08;
     msg->kind = 0x10;
     return 1;
 }

@@ -55,7 +55,7 @@ void ranking_exit(void) {
         }
         DispReset();
         *(u16 *)0x05000000 = 0x6739;
-        data_021355a0 = 0x6739;
+        data_021355a0[0] = 0x6739;
         Task_Chain(5);
         break;
     }

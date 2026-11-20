@@ -15,7 +15,7 @@ void encnt_getpos(void) {
     }
     encntState.timer--;
     if (encntState.timer == 0) {
-        encntState.count++;
+        encntState.state++;
         encntState.timer = 0x31;
     }
 }

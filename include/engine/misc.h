@@ -5,11 +5,7 @@
 #include "engine/player.h"
 
 
-// Node of the intrusive entity lists whose heads are data_0212c6b0[]; the links sit at the start of Entity
-typedef struct EntityNode {
-    struct EntityNode *prev;
-    struct EntityNode *next;
-} EntityNode;
+#include "engine/obj_list.h"
 
 // Palette fade state (guessed from use)
 typedef struct UnkStruct_0216fcf8 {
@@ -32,8 +28,7 @@ extern UnkStruct_0216fcf8 paletteFade;
 #include "engine/scene_slot.h"
 extern const u8 data_02104a74[];
 
-extern EntityNode data_0212c6b0[8]; // list heads, 8 x 8 bytes up to data_0212c6f0 (a DisplayState)
-extern u16 data_0216fd04[];
+#include "engine/palette_buff.h"
 extern u16 data_02170104[];
 extern u8 data_0212c500;
 extern u8 data_0212c4dc;

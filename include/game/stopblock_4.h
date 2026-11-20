@@ -5,10 +5,9 @@
 #include "game/stopblock.h"  // STOPBLOCK_WORK_ and sbRegistSub (C++ linkage, as in the original)
 
 
-// Stop block tables: data_02134f30..data_02134ff0 (first pass), data_02134ff0..data_021350b0 (second pass)
+// Stop block tables: data_02134f30..data_02134ff0 (first pass), data_02134ff0..+0x30 records (second pass); 0x30 records each
 extern STOPBLOCK_WORK_ data_02134f30[];
 extern STOPBLOCK_WORK_ data_02134ff0[];
-extern STOPBLOCK_WORK_ data_021350b0[];
 
 extern "C" {
 int func_0208af18(u16 value); // thumb, unmangled (0x0208af18); returns non-zero for a key it accepts

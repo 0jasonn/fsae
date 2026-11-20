@@ -6,7 +6,7 @@
 
 void nextset(void) {
     u8 range = encntState.timerRange;
-    encntState.count = 0;
+    encntState.state = 0;
     encntState.timer = encntState.timerBase + (Random() & (range - 1)) - ((u32)range >> 1);
 }
 

@@ -2,7 +2,7 @@
 #include "global.h"
 #include "engine/misc.h"
 
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern u8 data_0212c4d4;
@@ -25,7 +25,6 @@ extern const EntityFunc entityDispatchTable[];
 
 
 extern const u32 data_021186e4[];
-extern const u8 data_0212c84c[];
 
 extern const s8 *const data_0211525c[];
 

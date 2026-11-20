@@ -84,34 +84,12 @@ typedef struct MultiSioRegSnapshot {
 extern u32 multiSioFlags; // multiSioFlags
 extern u8 data_0212c4d4;
 
-// Entry of the send table data_021350b0, 0x50 bytes each, selected by multiSioSelect.index
-typedef struct MultiSioEntry {
-    /* 00 */ u32 word00;
-    /* 04 */ union {
-        u32 word04;          // read and written as one word
-        struct {
-            /* 04 */ u8 unk_04;
-            /* 05 */ u8 b05;
-            /* 06 */ u16 h06;
-        };
-    };
-    /* 08 */ u16 str08[8];   // zero-terminated, copied into the packet
-    /* 18 */ u32 w18;
-    /* 1c */ u8 unk_1c[0x48 - 0x1c];
-    /* 48 */ u8 b48;
-    /* 49 */ u8 unk_49[0x50 - 0x49];
-} MultiSioEntry;
 
-typedef struct MultiSioSelect {
-    /* 00 */ u8 unk_00[4];
-    /* 04 */ u8 index;
-} MultiSioSelect;
+#include "engine/multisio_save.h"   // multiSioSelect
 
 // The packet passed to MultiSioSendDataSet is a ComPacket (engine/com_work.h).
 #include "engine/com_work.h"
 
-extern MultiSioEntry data_021350b0[];
-extern MultiSioSelect multiSioSelect; // multiSioSelect
 extern u8 localPlayerIndex;
 extern u8 data_02fe0000[];
 

@@ -3,9 +3,10 @@
 
 #include "engine/functions.h"
 
-// Radius table of the circle code and the edge table of the triangle code (triangleTable, bss, only used by these
-// functions).
-extern s16 triangleTable[];
+// Radius table of the circle code and the edge table of the triangle code (triangleTable, 0x800 bytes up to
+// data_02138fa0). MultiRoomInit clears it; FrameSet and PartsSet (scr_4.cpp) also use this address as the start of their
+// u16 map work buffer, which runs past it (0x4000 bytes).
+extern s16 triangleTable[0x400];
 // Circle span bank (data_021352a0): 0x180 bytes per bank index, selected by data_0212c4c8.
 extern u8 data_021352a0[];
 #include "engine/vblank_request.h"

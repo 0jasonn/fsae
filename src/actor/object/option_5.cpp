@@ -9,7 +9,7 @@
 // Per-slot dialog position {x, y} and animation bounds; the slot is effectState.slotB or effectState.panelState
 extern const u16 data_020d8a8c[][2];
 extern const u8 data_020d8a74[];
-extern s8 data_021350f7[]; // 0x50 bytes per slot, first byte signed
+#include "engine/multisio_save.h"
 
 // No-op action slot
 void option_nop(void) {
@@ -48,7 +48,7 @@ void optionGuide(Entity *e) {
     if (slot >= 3) {
         return;
     }
-    if (data_021350f7[slot * 0x50] <= 0) {
+    if (data_021350b0[slot].status <= 0) {
         return;
     }
     e->y.HALF.HI = data_020d8a74[slot];

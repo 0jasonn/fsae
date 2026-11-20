@@ -7,7 +7,7 @@
 #include "game/yousei.h"
 
 extern u8 doorsel_difficultyBySelection[]; // doorsel_difficultyBySelection: game state byte 3 for each door selection
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 
 // 0x0202b470, original doorsel_exit()
 void doorsel_exit(void);

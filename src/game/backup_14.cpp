@@ -6,7 +6,7 @@
 
 // Save media (backup) layer. 0x0205687c Knife_WriteToMedia
 
-extern u8 multiSioSelect[]; // multiSioSelect: save buffer of slot 7
+#include "engine/multisio_save.h"   // multiSioSelect: the save data of slot 7
 
 // Writes the save header (checksum and its complement) and the save data of a slot to the media.
 // The slot 7 area is written first, then the data of the requested slot unless it is 7.
@@ -19,10 +19,10 @@ s32 Knife_WriteToMedia(u8 slot, const u32 *data) {
 
     info = getEepInfo(7);
     magic = 0x54463453;
-    checksum = CalcChecksum((const u16 *)&magic, 4) + CalcChecksum((const u16 *)multiSioSelect, *(const u16 *)info);
+    checksum = CalcChecksum((const u16 *)&magic, 4) + CalcChecksum((const u16 *)&multiSioSelect, *(const u16 *)info);
     header[0] = checksum;
     header[1] = 0x10000 - checksum;
-    func_020569cc(multiSioSelect, *(const u16 *)((u8 *)info + 6), *(const u16 *)info);
+    func_020569cc(&multiSioSelect, *(const u16 *)((u8 *)info + 6), *(const u16 *)info);
     func_020569cc(header, *(const u16 *)((u8 *)info + 2), 8);
 
     if (slot != 7) {

@@ -95,7 +95,7 @@ void EmDie(Entity *e) {
         if (child != NULL) {
             ObjPosCopy(e, child);
             child->timer = e->unk_16;
-            if (data_0212c540[1] == 1) {
+            if (data_0212c540.unk_2 == 1) {
                 child->type2 |= 0x80;
             }
         }

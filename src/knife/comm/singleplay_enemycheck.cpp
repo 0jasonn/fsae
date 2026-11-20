@@ -70,7 +70,7 @@ BOOL Knife_Single_SinglePlay_UpdateEnemyCheck(void *self, SpWorkPair *pair) {
             found = 0;
             if (gameState.unk_01 == 2 && gameState.periodicFlag != 0) {
                 node = (Entity *)data_0212c6b0[4].next;
-                while (node != (Entity *)&data_0212c6d0) {
+                while (node != (Entity *)&data_0212c6b0[4]) {
                     if (node->objId == 0x30 && node->type == 0 && Em30CheckAttack(node)) {
                         if (abs_s32(node->x.HALF.HI - pair->entity0->x.HALF.HI) <= *(s16 *)(data_0211b298 + 0x26) &&
                             abs_s32(node->y.HALF.HI - pair->entity0->y.HALF.HI) <= *(s16 *)(data_0211b298 + 0x24)) {
@@ -84,7 +84,7 @@ BOOL Knife_Single_SinglePlay_UpdateEnemyCheck(void *self, SpWorkPair *pair) {
                 }
             } else {
                 node = (Entity *)data_0212c6b0[4].next;
-                while (node != (Entity *)&data_0212c6d0) {
+                while (node != (Entity *)&data_0212c6b0[4]) {
                     if (node->objId == 8 && node->action == 3) {
                         VecFx32 posA = {0, 0, 0};
                         posA.x = pair->entity0->x.HALF.HI << 12;

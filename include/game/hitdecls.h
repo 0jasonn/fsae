@@ -27,7 +27,6 @@ void func_020841b0(Entity *e);
 void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // 0x0208a224
 
 // Hit module callees.
-extern "C" s32 AddHeart(Entity *e, s32 amount); // original name, unmangled
 
 u8 decVital(Entity *e, Entity *t); // 0x020248f0, defined in hit.cpp
 void shiledCheck(Entity *e, Entity *t);

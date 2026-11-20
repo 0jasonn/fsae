@@ -19,7 +19,8 @@
 // Not matched (kept in scratch/agentB/nonmatching): plhikiyose, type0_kamae, em30_type3, damageCheck,
 // em31_init, honyaMove, honyaGetInfo, func_0204363c.
 
-#include "actor/enemy/em29.h"
+#include "actor/enemy/encnt.h"
+#include "engine/frame_counter.h"
 #include "global.h"
 
 extern const EntityFunc em29_stateTable[];

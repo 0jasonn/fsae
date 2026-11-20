@@ -9,6 +9,7 @@
 #include "types.h"
 #include "ui/stagesel.h"
 #include "engine/misc.h"
+#include "engine/multisio_save.h"
 
 extern "C" s32 WXC_GetStateCode(void);
 int CommFrameSync(void);
@@ -52,16 +53,6 @@ typedef struct SselPlayerFlags {
     /* 06 */ u16 unk_06;
 } SselPlayerFlags;
 
-// One save slot (data_021350b0, 0x50 bytes each); the slot index is multiSioSelect[4]
-typedef struct SselSaveSlot {
-    /* 00 */ u32 flags;
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 unk_05;
-    /* 06 */ u16 unk_06;
-    /* 08 */ u8 unk_08[0x40];
-} SselSaveSlot;
-extern u8 data_021350b0[];
-extern u8 multiSioSelect[];
 extern u8 data_02171d7c[];
 extern u16 playerKeys[];
 // Scroll table entries (data_020dc67c): two u16 per step, copied to the stack by stagesel_scroll
@@ -104,7 +95,7 @@ void set_takara2(u8 kind, u16 value, Entity *e);
 extern const EntityFunc data_020dc71c[]; // sword action table, indexed by e->action
 extern u8 data_0212c4dc;
 extern u8 data_0212c4e4;
-extern u16 data_021355a0;
+#include "engine/palette_buff.h"
 extern u8 data_0212c500;
 extern u8 localPlayerIndex;
 #include "engine/effect_state.h"
@@ -134,7 +125,6 @@ extern u32 data_0213491c;
 extern u8 *data_02117a68[];
 extern u8 *data_02117a48[];
 extern u8 *data_02117a28[];
-extern u8 data_0212c81c[];
 extern u32 data_0212c54c;
 extern s32 data_0212c7d4[];
 extern u8 data_02117b20[];

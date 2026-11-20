@@ -70,12 +70,7 @@ typedef struct SpriteBit2View {
 
 #include "engine/map_state.h"
 
-typedef struct UnkStruct_0212c6b0 {
-    /* 00 */ u8 unk_00[0x14];
-    /* 14 */ Entity *head;         // first entity of the list walked by Enemy_UpdateChainInserts
-} UnkStruct_0212c6b0;
-extern UnkStruct_0212c6b0 data_0212c6b0;
-extern u8 data_0212c6c0[];          // list sentinel
+#include "engine/obj_list.h"   // object list heads data_0212c6b0
 
 #include "engine/frame_counter.h"
 extern u16 scrollArgs[3];        // scroll arguments for ObjAffineSet2
@@ -93,32 +88,7 @@ extern const EntityFunc em31_handlerTable[];
 extern const u16 data_020d35ec[];
 extern const u16 *encntScripts[];
 extern u8 encntSharedState[];
-typedef struct RecordEntry {
-    u16 a;
-    u16 b;
-    u16 c;
-    u16 d;
-    u16 e;
-    u8 f;
-    u8 g;
-} RecordEntry;
-
-typedef struct UnkStruct_02134b48 {
-    /* 00 */ u8 state;
-    /* 01 */ u8 unk_01[0x57];
-    /* 58 */ const RecordEntry *record;
-    /* 5c */ u16 recA;
-    /* 5e */ u16 recB;
-    /* 60 */ u16 recC;
-    /* 62 */ u16 recD;
-    /* 64 */ u16 recE;
-    /* 66 */ u8 recF;
-    /* 67 */ u8 recG;
-} UnkStruct_02134b48;
-extern UnkStruct_02134b48 encntState;
 extern const u8 data_020f270c[];
-extern const u8 data_020f273c[];
-extern void (*const encntStateFuncs[])(void);
 extern const void *data_020d35f4[];
 
 

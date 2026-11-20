@@ -15,7 +15,6 @@ typedef struct Vars_Wanwan {
 
 extern u8 data_0212ceed[];      // playerWork[i].unk_3d, stride 0x94
 extern u8 data_0212ced8[];      // playerWork[i].entity, stride 0x94
-extern EntityNode data_0212c6d0; // sentinel of the object list
 
 #define WANWAN_V(e) VARS(Vars_Wanwan, e)
 
@@ -43,7 +42,7 @@ void wanwan_move(Entity *e) {
         UpdateAnimationSingleFrame(e);
         if (e->timer-- == 0) {
             e->timer = 0x78;
-            end = (Entity *)&data_0212c6d0;
+            end = (Entity *)&data_0212c6b0[4];
             node = (Entity *)((EntityNode *)end)->next;
             while (node != end) {
                 if (node != WANWAN_V(e)->target && func_02085a88(e, node, 0x30, 0x30) != 0 &&

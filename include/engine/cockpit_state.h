@@ -16,7 +16,7 @@ typedef struct CockpitState {
     /* 07 */ u8 kattiKind;   // katti graphics kind loaded at 0x06014200 (0xff none)
     /* 08 */ u8 hearts;      // displayed health, moved one step per update towards the player's health
     /* 09 */ u8 heartKind;   // argument of heartUpdate
-    /* 0a */ u8 kakeraCount; // copy of data_0212c830[local player]
+    /* 0a */ u8 kakeraCount; // copy of gameState.playerFlag68[local player] (kakera count)
     /* 0b */ u8 transMask;   // bitmask of pages already transferred by cockpit_bg_trans
     /* 0c */ u8 item;        // first player's item index (0 none, 0xff unset)
     /* 0d */ u8 unk_0d;      // copy of gameState.unk_24 & 0x7f, a change requests a redraw

@@ -119,7 +119,7 @@ void ending_scene_01(void) {
         }
         DispReset();
         *(u16 *)0x05000000 = 0;
-        data_021355a0 = 0;
+        data_021355a0[0] = 0;
         ObjWorkPoolClear();
         ObjMoveInit();
         effectState.phase = 0;
@@ -160,7 +160,7 @@ void ending_scene_02(void) {
         }
         DispReset();
         *(u16 *)0x05000000 = 0;
-        data_021355a0 = 0;
+        data_021355a0[0] = 0;
         ObjWorkPoolClear();
         ObjMoveInit();
         dispcnt = *(u32 *)0x04000000;

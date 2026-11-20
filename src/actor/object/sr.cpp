@@ -11,7 +11,6 @@ u8 getRupeeRushDiceIndex(void); // 0x02077650, rupeerush_dice.cpp
 extern u8 rupeeRushState[];        // rupeeRushState: [0] rush step counter, [1] index into rupeeRushSetId
 extern const u8 rupeeRushSetId[];  // rupeeRushSetId: set id per index
 extern const u8 rupeeRushCell[];   // rupeeRushCell: (x, y) cell pairs
-extern EntityNode data_0212c6d0;   // end sentinel of the object list (the head itself is data_0212c6b0[4])
 
 // setupRupeeRush (0x02077684)
 void setupRupeeRush(int reuseEnemy) {
@@ -38,7 +37,7 @@ void setupRupeeRush(int reuseEnemy) {
             obj->x.HALF.HI = (rupeeRushCell[cell * 2] << 4) + 7;
             obj->y.HALF.HI = (rupeeRushCell[cell * 2 + 1] << 4) + 7;
             cur = (Entity *)data_0212c6b0[4].next;
-            while (cur != (Entity *)&data_0212c6d0) {
+            while (cur != (Entity *)&data_0212c6b0[4]) {
                 if (cur != obj && cur->objKind == 3 && cur->objId == 9 && cur->x.HALF.HI == obj->x.HALF.HI &&
                     cur->y.HALF.HI == obj->y.HALF.HI) {
                     found = 1;

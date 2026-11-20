@@ -16,9 +16,21 @@ typedef struct ENCNT_ { // original name ENCNT_
 // encntState is one object whose slot records start at +0x18 (the symbol encntEntries at 0x02134b60 is that sub-object).
 // With the records inside the struct the compiler re-reads limit/kind after each store, as the original does
 // (encnt_setinit, encnt_poscheck, encnt_setem).
-// Encounter state (encntState), used by the encnt_* functions at 0x02043760 and their helpers.
+// One encounter record (data_020f273c, 12 bytes); nextset copies the current one to encntState+0x5c.
+typedef struct RecordEntry {
+    u16 a;
+    u16 b;
+    u16 c;
+    u16 d;
+    u16 e;
+    u8 f;
+    u8 g;
+} RecordEntry;
+extern const RecordEntry data_020f273c[8];
+
+// Encounter state (encntState, 0x68 bytes), used by the encnt_* functions at 0x02043760 and their helpers.
 typedef struct EncntState {
-    /* 00 */ u8 count;             // number of spawn slots filled so far
+    /* 00 */ u8 state;             // index into encntStateFuncs, advanced as each phase finishes
     /* 01 */ u8 kind;              // bits 12-15 of the table entry
     /* 02 */ u8 unk_02[2];
     /* 04 */ u8 posA;              // low byte of the first table halfword
@@ -30,29 +42,22 @@ typedef struct EncntState {
     /* 10 */ Entity *entity;       // player entity picked by encnt_move
     /* 14 */ const u16 *table;     // pair table indexed by slot
     /* 18 */ EncntEntry entries[8];
-    /* 58 */ u8 unk_58[4];
-    /* 5c */ u16 timerBase;        // centre of the random timer set by nextset
-    /* 5e */ u8 unk_5e[8];
-    /* 66 */ u8 timerRange;        // size of the random spread for timerBase
+    /* 58 */ const RecordEntry *record; // current record; +0x5c..+0x67 hold a copy of it
+    /* 5c */ u16 timerBase;        // record a: centre of the random timer set by nextset
+    /* 5e */ u16 recB;
+    /* 60 */ u16 recC;
+    /* 62 */ u16 recD;
+    /* 64 */ u16 recE;
+    /* 66 */ u8 timerRange;        // record f: size of the random spread for timerBase
+    /* 67 */ u8 recG;
 } EncntState;
 extern EncntState encntState;
+extern void (*const encntStateFuncs[])(void);
 extern EncntEntry encntEntries[];   // the same object as encntState.entries (0x02134b60)
 
 
 
-// Node of the circular lists in data_0212c6b0: next at +4, tag and subtag at +8 and +9 (Entity unk_08/unk_09).
-typedef struct EncntNode {
-    u8 unk_00[4];
-    struct EncntNode *next;
-    u8 tag;
-    u8 subtag;
-} EncntNode;
-
-typedef struct EncntListHead {  // 8-byte head; the list runs through next
-    u8 unk_00[4];
-    EncntNode *next;
-} EncntListHead;
-extern EncntListHead data_0212c6b0[8]; // list heads, 8 x 8 bytes up to data_0212c6f0 (a DisplayState)
+#include "engine/obj_list.h"   // object list heads data_0212c6b0
 
 // Fields that encnt_setem writes on the spawned entity (beyond the Entity common part).
 typedef struct EncntSpawnVars {
@@ -66,7 +71,7 @@ typedef struct EncntSpawnVars {
 
 extern u8 encntSharedState[];
 extern u8 encntSpawnCount;
-extern u16 data_0212c540;
+#include "engine/data_0212c540.h"
 extern u16 playerKeysPrev[4];
 
 typedef struct AreaRect {

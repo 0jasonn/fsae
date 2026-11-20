@@ -101,7 +101,7 @@ void getmoveinfo(Entity *e) {
 
 // Actor main of the em0a unit: a check of the counter, then the handler for the state of the entity.
 void Em0a(Entity *e) {
-    if (*(u16 *)(data_0212c540 + 2) > 1) {
+    if (data_0212c540.unk_2 > 1) {
         func_02084700(e);
     }
     data_020cfd70[func_02084a30(e)](e);

@@ -24,7 +24,6 @@ extern EntityFunc em1c_normalActions[];   // em1c_normalActions, indexed by e->a
 extern const u8 em1c_hitbox[];            // em1c_hitbox
 extern const u8 em1c_charAnimTable[];     // em1c_charAnimTable, indexed by ((child->direction + 4) & 0x18) >> 3
 
-void EmMagneMove(Entity *e, u16 speed);   // EmMagneMove
 void em1c_waitSet(Entity *e);             // em1c_waitSet, in em1c_2.cpp
 void charMove(Entity *e, u8 mode);        // charMove, in em1c_2.cpp
 

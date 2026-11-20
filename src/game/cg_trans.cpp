@@ -9,8 +9,7 @@ typedef struct CgTransferEntry {
 
 extern u32 data_02134904; // palette slots to upload from the translated palette (data_02135da0), 0 when none
 extern u32 data_02134918; // palette slots to upload from the plain palette (data_021355a0)
-extern u16 data_021355a0[];
-extern u16 data_02135da0[];
+#include "engine/palette_buff.h"
 extern u8 data_02134890; // number of queued transfers
 extern CgTransferEntry data_02134894[];
 
