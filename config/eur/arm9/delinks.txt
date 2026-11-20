@@ -2025,6 +2025,10 @@ src/game/multiplay_4.cpp:
     complete
     .text       start:0x020483f8 end:0x02048948
 
+src/game/clear_stage.cpp:
+    complete
+    .text       start:0x02048cb8 end:0x02048de8
+
 src/game/clearkey_level.cpp:
     complete
     .text       start:0x02048de8 end:0x02048ea8
@@ -2165,6 +2169,10 @@ src/knife/message/knife_font.cpp:
 src/knife/message/msgscreen.cpp:
     complete
     .text       start:0x0204c4bc end:0x0204c87c
+
+src/game/mplayer_init.cpp:
+    complete
+    .text       start:0x0204c87c end:0x0204c950
 
 src/game/mplayer.cpp:
     complete
@@ -2345,6 +2353,10 @@ src/ui/opening.cpp:
 src/ui/opening_2.cpp:
     complete
     .text       start:0x02050b08 end:0x0205114c
+
+src/ui/op_scene_00.cpp:
+    complete
+    .text       start:0x0205114c end:0x02051508
 
 src/ui/opdemo.cpp:
     complete
