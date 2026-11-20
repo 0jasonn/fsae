@@ -2,7 +2,7 @@
 #define WIP_E_SELDIALOG_E_H
 
 #include "engine/functions.h"
-#include "ui/selectiondialog.h"
+#include "knife/message/selectiondialog.h"
 #include "knife/message/textrender_setup.h"
 
 typedef struct SelDialogCharTable {

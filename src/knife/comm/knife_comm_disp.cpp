@@ -1,8 +1,67 @@
 #include "engine/functions.h"
+#include "knife/message/knife_message.h"
+#include "ui/message.h"
 #include "global.h"
 #include "types.h"
 #include "actor/enemy/knife_msgsys.h"
-#include "ui/message.h"
+#include "knife/message/knife_message_api.h"
+#include "engine/message_request.h"
+#include "knife/comm/knife_comm_skip.h"
+#include "engine/frame_counter.h"
+
+// Functions in this file (module knife_comm, the message box dispatch):
+//   knife_commDispInit (0x0204b2f0)
+
+extern u8 pauseDialogBuffer[]; // pause dialog buffer
+extern "C" void MI_CpuFill8(void *dst, u8 value, u32 size);
+extern "C" s32 KnifeApp_getCurrentLanguage(void *app);
+
+// Initialises the message box: clears the pause dialog buffer, sets up the text renderer canvas (the normal box or the
+// closing box, openMode 2), tokenizes the message and starts it at subState 1.
+void knife_commDispInit(KNIFE_MSGSYS *msg) {
+    WindowSlot *slot;
+    u16 frameSize;
+    u16 msgId;
+    void *app;
+
+    MI_CpuFill8(pauseDialogBuffer, 0, 0x800);
+    slot = &data_0216efe0[cockpitState.bufferIndex];
+    if (msg->openMode != 2) {
+        frameSize = (u16)(messageRequest.width << 3);
+        Knife_Message_MessageTextRender_initWithCanvas(msg->renderer, (void *)data_021371a0,
+                                                       (void *)(pauseDialogBuffer + ((slot->tileY * 0x20 + 0x22) * 2)), 0x3090,
+                                                       0, 0, frameSize, 0x20);
+        ((Knife::Message::MessageTextRender *)msg->renderer)->setSceneInfo(msg);
+        ((Knife::Message::MessageTextRender *)msg->renderer)->setField35(2);
+        ((Knife::Message::MessageTextRender *)msg->renderer)->setField34(0x10);
+        msg->renderer->canvasOps->clear(&msg->renderer->canvas, 0xf);
+        knife_msgLineChange(msg, 0);
+        msgId = messageRequest.msgId;
+    } else {
+        Knife_Message_MessageTextRender_initWithCanvas(msg->renderer, (void *)0x6014bc0, (void *)((u8 *)pauseDialogBuffer + 0x5c0), 0x305e,
+                                                       0, 0, 0xa8, 0x10);
+        ((Knife::Message::MessageTextRender *)msg->renderer)->setSceneInfo(msg);
+        ((Knife::Message::MessageTextRender *)msg->renderer)->setField35(2);
+        msg->renderer->canvasOps->clear(&msg->renderer->canvas, 0xf);
+        Knife_palletChange(msg, 0x71);
+        msgId = msg->msgId;
+    }
+    app = KnifeApp_getInstance();
+    msg->tokenizer->tokenize(msgId, (Knife::Message::Language)KnifeApp_getCurrentLanguage(app), (const Knife::Message::IAppInfoGetter *)msg->appInfo);
+    msg->tokenIndex = 0;
+    msg->tokenSub = 0;
+    msg->subState = 1;
+}
+
+// 0x0204b488 (original name, plain symbol). Message ids 100-199, 200-299 and 600-699 can be skipped.
+int isSkipAvailable(KNIFE_MSGSYS *msg) {
+    u16 id = msg->msgId;
+
+    if ((id >= 100 && id <= 199) || (id >= 200 && id <= 299) || (id >= 600 && id <= 699)) {
+        return 1;
+    }
+    return 0;
+}
 
 // Functions in this file (module knife_comm, the message box dispatch):
 //   knife_commDispMove (0x0204b4dc)
@@ -11,7 +70,6 @@ extern "C" int isSkipAvailable(KNIFE_MSGSYS *msg);
 extern "C" void knife_commDispMove(KNIFE_MSGSYS *msg);
 
 extern u8 localPlayerIndex[];
-#include "engine/frame_counter.h"
 extern u16 playerKeys[];
 extern const s8 data_020d7c18[]; // step table of the text speed, indexed by the low nibble of speedSetting
 

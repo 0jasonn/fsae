@@ -2,7 +2,7 @@
 #define WIP_A_AGENT_A_H
 
 #include "engine/functions.h"
-#include "engine/wm_api.h"
+#include "sdk/wm/wm_api.h"
 
 // Prototypes for functions defined in src/wip/A/ (Implementer A).
 // Plain (unmangled) functions get C linkage here; the original debug names of mangled ones are C++.

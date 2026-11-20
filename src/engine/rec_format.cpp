@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/packed_set_api.h"
-#include "engine/std_snprintf_api.h"
+#include "sdk/std/std_snprintf_api.h"
 
 // rec_format: functions Rec_formatStrU32 (0x020b7154) and Rec_formatStrU32S16 (0x020b71ac), matching. The formatters of the record class of rec_init.cpp. The name is the string at +4, the output buffer is
 // the 0x7f bytes at +0x83, and the halfword at +0x102 selects the variant that also prints a packed halfword.

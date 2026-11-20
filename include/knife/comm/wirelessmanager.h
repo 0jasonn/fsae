@@ -2,7 +2,7 @@
 #define WIP_D_WIRELESSMANAGER_H
 
 #include "types.h"
-#include "engine/wm_api.h"
+#include "sdk/wm/wm_api.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wm_irq.h"
 

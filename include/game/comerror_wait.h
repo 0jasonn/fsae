@@ -2,7 +2,7 @@
 #define GAME_COMERROR_WAIT_H
 
 #include "engine/functions.h"
-#include "actor/enemy/ending.h"
+#include "game/ending.h"
 #include "game/multiplay_main.h"
 
 extern u8 data_0212c4dc; // phase of the communication error wait (0 reset, 1 count down)

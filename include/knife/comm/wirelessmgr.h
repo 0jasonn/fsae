@@ -2,7 +2,7 @@
 #define WIP_D_WIRELESSMGR_D_H
 
 #include "types.h"
-#include "engine/wm_api.h"
+#include "sdk/wm/wm_api.h"
 #include "knife/comm/wireless_manager.h"
 #include "knife/comm/comm_parentinfo.h"
 

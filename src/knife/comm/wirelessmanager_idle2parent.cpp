@@ -4,7 +4,7 @@
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wm_mp_api.h"
 #include "knife/comm/wirelessmanager.h"
-#include "actor/object/wm_idle2parent.h"
+#include "knife/comm/wm_idle2parent.h"
 
 // Knife::Comm::WirelessManager::update_idle2parent() (0x02092c0c): the idle-to-parent step, run by the timer at +0x1cd8.
 // Step 1 measures the next channel, or sets the parent parameter once the channels are done; step 3 starts the parent

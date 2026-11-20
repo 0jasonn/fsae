@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "actor/enemy/enemycommon.h"
-#include "actor/enemy/ending.h"
+#include "game/ending.h"
 #include "global.h"
 
 // Implementer B, round 6: EnemyInit (0x020458f8), unmangled in the original, and the enemy helpers after it.

@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "actor/enemy/ending.h"
+#include "game/ending.h"
 
 // FadeSet (0x0204625c): starts a palette fade with the given mode and step.
 void FadeSet(u8 mode, u8 step) {

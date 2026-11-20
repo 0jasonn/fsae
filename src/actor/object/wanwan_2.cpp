@@ -2,7 +2,7 @@
 #include "engine/misc.h"
 #include "engine/player.h"
 #include "global.h"
-#include "game/wanwan.h"
+#include "actor/object/wanwan.h"
 #include "actor/object/actor_calls_k.h"
 
 // Wanwan (bow-wow chain) fields past the shared Entity header

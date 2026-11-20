@@ -1,5 +1,5 @@
 #include "engine/gx_misc_api.h"
-#include "engine/vram_bank_bits_api.h"
+#include "sdk/gx/vram_bank_bits_api.h"
 #include "game/b_extra.h"
 #include "game/decls_g.h"
 #include "ui/widget/ctrl_wrap_api.h"

@@ -6,7 +6,7 @@
 
 #include "types.h"
 #include "knife/comm/wireless_manager.h"
-#include "engine/wm_api.h"
+#include "sdk/wm/wm_api.h"
 
 // REG_IME, the interrupt master enable.
 #define WM_REG_IME (*(volatile u16 *)0x04000208)

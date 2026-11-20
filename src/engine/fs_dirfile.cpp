@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "engine/fs_dirfile_api.h"
-#include "engine/obj_get24_api.h"
+#include "sdk/fs/obj_get24_api.h"
 
 extern "C" void FS_InitFile(void *file);
 extern "C" BOOL FS_FindDir(void *file, void *path);

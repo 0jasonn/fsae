@@ -1,0 +1,10 @@
+#include "engine/functions.h"
+#include "global.h"
+#include "types.h"
+#include "sdk/sdk_wrap.h"
+#include "sdk/os/os_wrap_api.h"
+
+// Calls OSi_IrqCallback with a zero first argument.
+u32 Os_IrqCallbackWrap(u32 unused, u32 b, u32 c, u32 d) {
+    return OSi_IrqCallback(0, b, c, d);
+}

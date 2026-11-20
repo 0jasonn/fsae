@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "engine/g_calls.h"
-#include "engine/slot_group_api.h"
+#include "ui/widget/slot_group_api.h"
 #include "knife/app/twl.h"
 #include "ui/widget/menu.h"
 

@@ -2,8 +2,8 @@
 #include "global.h"
 #include "engine/sound/m4a.h"
 #include "engine/sound/m4a_api.h"
-#include "actor/object/sound_api.h"
-#include "actor/object/sound_req.h"
+#include "engine/sound/sound_api.h"
+#include "engine/sound/sound_req.h"
 
 // Sound module (module sound). Address -> name:
 //   0x02076fe0 SoundReq (original name): song / sound request. Plain ids start a song and set the volume; ids with bit 31
