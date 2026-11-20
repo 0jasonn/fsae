@@ -1205,6 +1205,10 @@ src/actor/enemy/em1b.cpp:
     complete
     .text       start:0x0202f098 end:0x0202f138
 
+src/actor/enemy/em1b_type0_init.cpp:
+    complete
+    .text       start:0x0202f138 end:0x0202f29c
+
 src/actor/enemy/em1b_2.cpp:
     complete
     .text       start:0x0202f29c end:0x0202f3e4
@@ -1876,6 +1880,10 @@ src/actor/enemy/em30_damagecheck.cpp:
 src/actor/enemy/em30_9.cpp:
     complete
     .text       start:0x02042f30 end:0x020432dc
+
+src/actor/enemy/em31_init.cpp:
+    complete
+    .text       start:0x020432dc end:0x020433dc
 
 src/actor/enemy/em31.cpp:
     complete

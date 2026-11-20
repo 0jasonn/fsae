@@ -22,4 +22,16 @@ typedef struct Vars_Em1b {
     /* 7d */ s8 dirDelta;    // added to e->direction every 4 frames, picked from em1b_dirDeltaTable
 } Vars_Em1b;
 
+
+// Hitbox tables of the em1b segments (rodata)
+extern const u8 em1b_hitbox[];       // 0x020d0326, hitbox of the head (type 0)
+extern const u8 em1b_otherHitbox[];  // 0x020d032e, hitbox of a type 1 segment that is not type 1 itself
+extern const u8 em1b_type1Hitbox[];  // 0x020d0348
+
+// Original names type0_init/type1_init(OBJ_WORK_*) are shared by many enemies, so these keep prefixed C names.
+extern "C" {
+void em1b_type0_init(Entity *e);  // 0x0202f138
+void em1b_type1_init(Entity *e);  // 0x0202f3e4
+}
+
 #endif
