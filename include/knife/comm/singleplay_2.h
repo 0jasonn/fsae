@@ -38,14 +38,6 @@ typedef struct SpWorkPair {
     u8 unk_3c;
 } SpWorkPair;
 
-// Bit view of PlayerData::paletteBits (0x8b): a = bits 0..1, b = bits 2..3 (palette index), c = bits 4..6, d = bit 7.
-typedef struct PalBits {
-    u8 a : 2;
-    u8 b : 2;
-    u8 c : 3;
-    u8 d : 1;
-} PalBits;
-
 // data_0211b298, the rodata block of tuning values, is declared by each user: the partner update must read it as const
 // (its loads are hoisted), while the enemy check and the formation code must not.
 

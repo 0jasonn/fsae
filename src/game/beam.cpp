@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/bg_buff.h"
 #include "types.h"
 #include "engine/a_decls.h"
 
@@ -14,7 +15,7 @@ typedef struct Vars_Beam {
 // Beam move: counts the lifetime down, moves, and removes the beam when it hits a wall, a target or the time runs out.
 void beam_move(Entity *e) {
     s32 lifetimeBefore;
-    u16 *cellBase;
+    BG_BUFF_ *bg;
     s32 cell;
     u16 flags;
     u16 index;
@@ -31,11 +32,11 @@ void beam_move(Entity *e) {
         }
         PlWeaponFireCheck(e);
 
-        cellBase = (u16 *)GetBgBuffAdrs(e->layer);
+        bg = (BG_BUFF_ *)GetBgBuffAdrs(e->layer);
         cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
-        flags = cellBase[cell + 2];
+        flags = bg->screen[cell];
         index = (u16)(flags & 0x7ff);
-        value = *(u16 *)((u8 *)cellBase + (index << 1) + 0x5004);
+        value = bg->cellMap[index];
         if (func_020899bc(value, data_021180a8) == 0) {
             if (func_02083cdc(e) != 0x47) {
                 if (func_02085890(e, data_0211857c, e->x.HALF.HI, e->y.HALF.HI) != 0) {

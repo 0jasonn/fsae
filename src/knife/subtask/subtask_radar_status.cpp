@@ -24,13 +24,13 @@ void GetSubtaskRadarStatus(SubtaskRadarStatus *out) {
     out->stage = data_020de6c4[mode];
     out->area = gameState.phaseTimer;
     out->time = gameState.frameCount / 60;
-    out->power = (u32)(data_0212c53c->unk_3e << 30) >> 30;
-    out->defense = (u32)(data_0212c53c->unk_3e << 28) >> 30;
-    out->speed = (u32)(data_0212c53c->unk_3e << 26) >> 30;
+    out->power = data_0212c53c->nutBits.b0;
+    out->defense = data_0212c53c->nutBits.b2;
+    out->speed = data_0212c53c->nutBits.b4;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
-        out->kakera = gameState.playerFlag68[player];
+        out->kakera = gameState.kakeraCount[player];
     } else {
-        out->kakera = gameState.playerFlag68[0];
+        out->kakera = gameState.kakeraCount[0];
     }
     out->player = player;
     for (i = 0; i < 4; i++) {

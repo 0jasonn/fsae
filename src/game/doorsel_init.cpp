@@ -18,7 +18,7 @@ void doorsel_init(void) {
     MIi_CpuClear16(0, &effectState, 0x28);
     gameState.unk_8e = 0;
     for (i = 0; i < 4; i++) {
-        ((PlFlagsByte *)&playerWork[i].paletteBits)->b2 = comWork.recv[i].bits.b0;
+        playerWork[i].paletteBits.color = comWork.recv[i].bits.b0;
     }
     CgLoad(2);
     switch (gameState.unk_01) {
@@ -53,12 +53,12 @@ void doorsel_init(void) {
         effectState.entryCount = ClearKeyCheck();
         break;
     case 5: {
-        int level = gameState.slotWords[0].b0 & 3;
+        int level = gameState.slotWords[0].stageProgress & 3;
         effectState.entryCount = level == 3 ? 3 : level + 1;
         break;
     }
     case 6: {
-        int level = (gameState.slotWords[0].b0 >> 2) & 3;
+        int level = (gameState.slotWords[0].stageProgress >> 2) & 3;
         effectState.entryCount = level == 0 ? 1 : level;
         break;
     }

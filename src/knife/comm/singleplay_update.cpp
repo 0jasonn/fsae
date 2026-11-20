@@ -22,10 +22,10 @@ void Knife_Single_SinglePlay_UpdatePause(void *self, PlayerData *player0, Player
     ((SinglePlayWork *)self)->flags07 = 0;
     Knife_Single_SinglePlay_SinglePlayWork_Initialize(&pair, contNo, player0, player1);
 
-    ((PalBits *)&pair.player1->paletteBits)->a = 0;
-    ((PalBits *)&pair.player0->paletteBits)->a = ((PalBits *)&pair.player1->paletteBits)->a;
-    ((PalBits *)&pair.player0->paletteBits)->c = ((PalBits *)&pair.player0->paletteBits)->c << 1;
-    ((PalBits *)&pair.player1->paletteBits)->c = ((PalBits *)&pair.player1->paletteBits)->c << 1;
+    pair.player1->paletteBits.pairRole = 0;
+    pair.player0->paletteBits.pairRole = pair.player1->paletteBits.pairRole;
+    pair.player0->paletteBits.bind = pair.player0->paletteBits.bind << 1;
+    pair.player1->paletteBits.bind = pair.player1->paletteBits.bind << 1;
 
     pair.player1->unk_31 = 0;
     pair.player0->unk_31 = pair.player1->unk_31;

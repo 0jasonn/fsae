@@ -8,12 +8,6 @@ extern u8 localPlayerIndex;
 extern u16 playerKeys[]; // per-player key state, indexed by player
 extern u8 pot_putonLimit;   // 0x021158f0, subtimer limit of a pot being carried
 
-// Bit layout of PlayerData::paletteBits (0x8b): the low two bits are tested here (proposed bitfield for the shared struct)
-typedef struct PaletteBitsView {
-    u8 low : 2;
-    u8 rest : 6;
-} PaletteBitsView;
-
 typedef struct Vars_PotPuton {
     /* 00 */ u8 unk_00[0x66];
     /* 66 */ u16 heldKeys;

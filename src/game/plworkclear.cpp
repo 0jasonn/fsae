@@ -5,13 +5,13 @@
 // PlWorkClear (0x02054b64): clears the whole player work array (4 * 0x94 bytes) but keeps each player's colour index
 // (bits 2..3 of paletteBits).
 void PlWorkClear(void) {
-    u32 color0 = ((u32)playerWork[0].paletteBits << 28) >> 30;
-    u32 color1 = ((u32)playerWork[1].paletteBits << 28) >> 30;
-    u32 color2 = ((u32)playerWork[2].paletteBits << 28) >> 30;
-    u32 color3 = ((u32)playerWork[3].paletteBits << 28) >> 30;
+    u8 color0 = playerWork[0].paletteBits.color;
+    u8 color1 = playerWork[1].paletteBits.color;
+    u8 color2 = playerWork[2].paletteBits.color;
+    u8 color3 = playerWork[3].paletteBits.color;
     OSi_CpuClear32(0, playerWork, 0x250);
-    playerWork[0].paletteBits = (playerWork[0].paletteBits & ~0xc) | ((color0 << 30) >> 28);
-    playerWork[1].paletteBits = (playerWork[1].paletteBits & ~0xc) | ((color1 << 30) >> 28);
-    playerWork[2].paletteBits = (playerWork[2].paletteBits & ~0xc) | ((color2 << 30) >> 28);
-    playerWork[3].paletteBits = (playerWork[3].paletteBits & ~0xc) | ((color3 << 30) >> 28);
+    playerWork[0].paletteBits.color = color0;
+    playerWork[1].paletteBits.color = color1;
+    playerWork[2].paletteBits.color = color2;
+    playerWork[3].paletteBits.color = color3;
 }

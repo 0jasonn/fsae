@@ -42,8 +42,8 @@ void cockpit_move(void) {
     kattiUpdate();
     rupeeUpdate();
     heartUpdate(gameState.maxHearts[localPlayerIndex]);
-    if (cockpitState.item != data_0212c53c->unk_1c) {
-        cockpitState.item = data_0212c53c->unk_1c;
+    if (cockpitState.item != data_0212c53c->heldItem) {
+        cockpitState.item = data_0212c53c->heldItem;
         cockpitState.itemState = data_0212c53c->unk_0f & 2;
         make_item_color();
         make_item_char();
@@ -55,8 +55,8 @@ void cockpit_move(void) {
     }
     if (!KnifeApp_isWirelessMode(KnifeApp_getInstance())) {
         second = &playerWork[1];
-        if (cockpitState.item2p != second->unk_1c) {
-            cockpitState.item2p = second->unk_1c;
+        if (cockpitState.item2p != second->heldItem) {
+            cockpitState.item2p = second->heldItem;
             cockpitState.itemState2p = second->unk_0f & 2;
             make_item_color_2p();
             make_item_char_2p();
@@ -70,7 +70,7 @@ void cockpit_move(void) {
     heartAlart();
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance())) {
         for (i = 0; i < gameState.playerCount; i++) {
-            if (cockpitState.kakeraTimer[i] == 0 && gameState.playerFlag68[i] >= 4) {
+            if (cockpitState.kakeraTimer[i] == 0 && gameState.kakeraCount[i] >= 4) {
                 Entity *player = playerWork[i].entity;
                 EffectSet(player, 0x15, zero);
                 TelopRequest(0x517);
@@ -80,7 +80,7 @@ void cockpit_move(void) {
             cockpitState.kakeraTimer[i] = cockpitState.kakeraTimer[i] - 1;
         }
     } else {
-        if (cockpitState.kakeraTimer[0] == 0 && gameState.playerFlag68[0] >= 4) {
+        if (cockpitState.kakeraTimer[0] == 0 && gameState.kakeraCount[0] >= 4) {
             Entity *player = playerWork[0].entity;
             Entity *player2 = playerWork[1].entity;
             EffectSet(player, 0x15, zero);

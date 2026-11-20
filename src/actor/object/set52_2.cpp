@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/template.h"
+#include "engine/player.h"
 #include "engine/player.h"
 
 // Set52 actor, second unit (module set52). Address -> name:
@@ -14,7 +14,7 @@ extern const EntityFunc set52_actions[]; // indexed by e->action
 void set52_move(Entity *e) {
     Entity *tmpl;
 
-    tmpl = OBJ_TEMPLATE(e->type);
+    tmpl = playerWork[e->type].entity;
     func_0208ab14(e, tmpl);
     UpdateAnimationSingleFrame(e);
     if (playerWork[e->type].actionFlags != 0) {

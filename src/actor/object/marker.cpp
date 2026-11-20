@@ -1,11 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/player.h"
-#include "actor/object/template.h"
+#include "engine/player.h"
 #include "actor/object/objdecls_a.h"
 
 
-// light_marker, 0x02069f5c: follows the actor template of its type2 (OBJ_TEMPLATE) and the animation.
+// light_marker, 0x02069f5c: follows the entity of player type2 (playerWork[type2].entity) and the animation.
 void light_marker(Entity *e) {
     u8 action = e->action;
     Entity *target;
@@ -19,7 +19,7 @@ void light_marker(Entity *e) {
         e->spriteSettings.b30 = 0;
         InitAnimationForceUpdate(e, e->type);
     }
-    target = OBJ_TEMPLATE(e->type2);
+    target = playerWork[e->type2].entity;
     e->x.HALF.HI = ((target->x.HALF.HI >> 4) & 0x3f) + 0x58;
     e->y.HALF.HI = ((target->y.HALF.HI >> 4) & 0x3f) + 0x30;
     UpdateAnimationSingleFrame(e);

@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/bg_buff.h"
 #include "actor/object/pot.h"
 
 // Grass throw actor, dispatcher (module grass). Address -> name:
@@ -18,17 +19,17 @@ void grass_throw(Entity *e) {
 
 void grass_throw_init(Entity *e) {
     Vars_Pot *v = VARS(Vars_Pot, e);
-    u8 *bg;
+    BG_BUFF_ *bg;
     int cell;
 
-    bg = (u8 *)GetBgBuffAdrs(e->layer);
+    bg = (BG_BUFF_ *)GetBgBuffAdrs(e->layer);
     e->hitbox = grass_hitbox;
     e->statusFlags = 0x89;
     e->poseId = 1;
     e->unk_5c = playerWork[e->type2].entity->unk_5c & 0x55;
     cell = MAP_CELL_INDEX(e->x.HALF.HI, e->y.HALF.HI);
-    *(u16 *)(bg + cell * 2 + 4) = v->savedCell;
+    bg->screen[cell] = v->savedCell;
     cell = MAP_CELL_INDEX(e->x.HALF.HI, e->y.HALF.HI);
-    *(bg + cell + 0x2004) = v->savedCellState;
+    bg->attr[cell] = v->savedCellState;
     e->subAction = e->subAction + 1;
 }

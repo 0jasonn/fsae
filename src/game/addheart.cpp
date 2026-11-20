@@ -52,15 +52,15 @@ s32 AddHeart(Entity *e, s32 amount) {
         newHealth = 0;
     }
     e->health = (u8)newHealth;
-    gameState.playerTimer60[e->type] = (u8)newHealth;
+    gameState.health[e->type] = (u8)newHealth;
 
     if (KnifeApp_isWirelessMode(app) == 0) {
         if (newHealth <= 0 && singlePlay[1] == 0) {
             playerWork[e->type ^ 1].entity->health = 0x28;
-            gameState.playerTimer60[e->type ^ 1] = 0x28;
+            gameState.health[e->type ^ 1] = 0x28;
         } else {
             playerWork[e->type ^ 1].entity->health = (u8)newHealth;
-            gameState.playerTimer60[e->type ^ 1] = (u8)newHealth;
+            gameState.health[e->type ^ 1] = (u8)newHealth;
         }
     }
 
@@ -72,7 +72,7 @@ s32 AddHeart(Entity *e, s32 amount) {
         if (gameState.unk_24 == 0) {
             count = gameState.playerCount;
             for (i = 0; i < count; i++) {
-                if (gameState.playerTimer60[i] != gameState.maxHearts[i] * 8) {
+                if (gameState.health[i] != gameState.maxHearts[i] * 8) {
                     allOk = 0;
                     break;
                 }

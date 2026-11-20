@@ -9,15 +9,15 @@
 void em12_wait2(Entity *e) {
     Entity *target;
 
-    target = *(Entity **)&data_0212ced8[(frameCounter.frame & 3) * 0x94];
+    target = playerWork[frameCounter.frame & 3].entity;
     if (!tgtareacheck(e, target)) {
         return;
     }
     e->action = 3;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance())) {
-        e->child = *(Entity **)&data_0212ced8[(frameCounter.frame & 3) * 0x94];
+        e->child = playerWork[frameCounter.frame & 3].entity;
     } else {
-        e->child = *(Entity **)&data_0212ced8[*Knife_Single_SinglePlay_GetInstance() * 0x94];
+        e->child = playerWork[*Knife_Single_SinglePlay_GetInstance()].entity;
     }
     target = e->child;
     e->direction = (GetFacingDirection(e, target) + 4) & 0x18;

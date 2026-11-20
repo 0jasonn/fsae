@@ -3,6 +3,7 @@
 #include "actor/object/setcommon.h"
 #include "actor/object/g_callees.h"
 #include "actor/object/yuka_api.h"
+#include "actor/object/actor_calls_k.h"
 
 // Yuka (player and wall checks, module yuka). Address -> name:
 //   0x02063fd8 rc_yukaPlMoveCheck, 0x0206402c yukaCheck, 0x0206412c ue_bgcheck, 0x02064214 shita_bgcheck,
@@ -25,7 +26,7 @@ typedef struct Vars_Yuka {
     } while (0)
 
 int rc_yukaPlMoveCheck(PlayerData *player) {
-    if ((((u32)((u8 *)player)[0x8b]) << 25) >> 29) {
+    if (player->paletteBits.bind) {
         return 1;
     }
     if (player->motionId == 0x1ac) {
@@ -69,28 +70,28 @@ void yukaCheck(Entity *e) {
     }
 }
 
-void ue_bgcheck(Entity *e) {
+void ue_bgcheck(Entity *e, BG_BUFF_ *bgBuffer) {
     BG_PROBE(-21, -25, 0x2);
     BG_PROBE(-5, -25, 0x2);
     BG_PROBE(4, -25, 0x4);
     BG_PROBE(20, -25, 0x4);
 }
 
-void shita_bgcheck(Entity *e) {
+void shita_bgcheck(Entity *e, BG_BUFF_ *bgBuffer) {
     BG_PROBE(-21, 24, 0x20);
     BG_PROBE(-5, 24, 0x20);
     BG_PROBE(4, 24, 0x40);
     BG_PROBE(20, 24, 0x40);
 }
 
-void migi_bgcheck(Entity *e) {
+void migi_bgcheck(Entity *e, BG_BUFF_ *bgBuffer) {
     BG_PROBE(24, -21, 0x2000);
     BG_PROBE(24, -5, 0x2000);
     BG_PROBE(24, 4, 0x4000);
     BG_PROBE(24, 20, 0x4000);
 }
 
-void hidari_bgcheck(Entity *e) {
+void hidari_bgcheck(Entity *e, BG_BUFF_ *bgBuffer) {
     BG_PROBE(-25, -21, 0x200);
     BG_PROBE(-25, -5, 0x200);
     BG_PROBE(-25, 4, 0x400);

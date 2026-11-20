@@ -3,7 +3,7 @@
 
 // Bomb module (src/game/bomb*.cpp). Callees and fields that functions.h does not declare yet.
 #include "engine/functions.h"
-#include "actor/object/template.h"
+#include "engine/player.h"
 
 void func_02085ccc(Entity *e); // 0x02085ccc, tail-called by bomb_move
 

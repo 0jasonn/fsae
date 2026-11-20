@@ -14,7 +14,7 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 06 */ u8 unk_06;
     /* 07 */ u8 unk_07; // bit 7 is a flag, see BindPlayer
     /* 08 */ u16 motionId; // animation/motion code set per Link action (walk 4, stand-up 0xc, item get 0xad, dead 0x1af)
-    /* 0a */ u8 unk_0a;
+    /* 0a */ u8 unk_0a; // only the low nibble is used
     /* 0b */ u8 unk_0b; // bit 7 is cleared by set38
     /* 0c */ u8 state;
     /* 0d */ u8 unk_0d;
@@ -24,7 +24,7 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 11 */ u8 unk_11;
     /* 12 */ u8 unk_12;
     /* 13 */ u8 unk_13;
-    /* 14 */ u8 unk_14;
+    /* 14 */ u8 unk_14; // countdown timer (AfterPlayer decrements it)
     /* 15 */ u8 unk_15;
     /* 16 */ u8 unk_16;
     /* 17 */ u8 unk_17;
@@ -32,9 +32,10 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 19 */ u8 unk_19;
     /* 1a */ u8 unk_1a;
     /* 1b */ u8 actionFlags; // bits 0x01, 0x08, 0x20, 0x40 and 0xc0 are tested by the sword and tame code
-    /* 1c */ u8 unk_1c;
+    /* 1c */ u8 heldItem; // id of the item the player holds (cockpit_move copies it to cockpitState.item / item2p)
     /* 1d */ u8 unk_1d;
-    /* 1e */ u8 hitFlags; // bits 0x80 and 0x20 are tested by em2a, 0x60 by hit_jelly
+    /* 1e */ u8 hitFlags; // bits 0x80 and 0x20 are tested by em2a, 0x60 by hit_jelly; also the equipment (boots) flags:
+                          // boots stay while nonzero, 0x40 without 0x80 selects the active boots state (boots_init, boots_2)
     /* 1f */ u8 unk_1f;
     /* 20 */ u8 unk_20;
     /* 21 */ u8 tameState; // nonzero while tame is active; >= 0x14 selects the second tame table
@@ -44,7 +45,7 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     /* 27 */ u8 unk_27;
     /* 28 */ Entity *entity;
     /* 2c */ Entity *weapon;
-    /* 30 */ u8 unk_30;
+    /* 30 */ u8 unk_30; // countdown timer (AfterPlayer decrements it); multiplay_main sets 0x2d on a bind
     /* 31 */ u8 unk_31;
     /* 32 */ u8 unk_32;
     /* 33 */ u8 unk_33;
@@ -68,8 +69,13 @@ typedef struct PL_WORK_ { // original name PL_WORK_
     };
     /* 3f */ s8 yOffset;
     /* 40 */ u8 unk_40[0x4a];
-    /* 8a */ u8 unk_8a;
-    /* 8b */ u8 paletteBits; // bits 2..3 hold a color/palette index (PlWorkColorReset); bits 4..6 are tested by set11
+    /* 8a */ u8 unk_8a; // countdown timer (AfterPlayer decrements it)
+    /* 8b */ struct {
+        u8 pairRole : 2; // set to 1 / 3 for the two players of the single-player pair (and swapped with it); pot_puton tests 0
+        u8 color : 2;    // color/palette index (PlWorkColorReset, iroyuka, crystal); cell kind 0x176 + color is the player's own
+        u8 bind : 3;     // bind state (multiplay_main, BindPlayer); shifted left by the single-player update, tested by set11
+        u8 partner : 1;  // marks the partner of the single-player mode (multiplay_main, frontcheck)
+    } paletteBits;
     /* 8c */ u8 unk_8c[4];
     /* 90 */ Entity *holdObject; // object the player is attached to (the boat in set53_row)
 } PlayerData; // size 0x94
@@ -79,15 +85,21 @@ extern PlayerData *data_0212c53c; // current (local) player slot, set by multipl
 // One 8-byte record per player inside the game state (enemyTypeFlags points at the first one)
 typedef struct GameSlot {
     /* 00 */ u32 flags;
-    /* 04 */ u8 unk_04;
-    /* 05 */ u8 fieldBits; // bitfield written by ClearKeyUpdate
-    /* 06 */ u16 counter;
+    /* 04 */ union {
+        u32 word4; // second save word, stored whole by setKnifeSaveData4S
+        struct {
+            u8 unk_04;
+            u8 fieldBits; // bitfield written by ClearKeyUpdate
+            u16 counter;
+        };
+    };
 } GameSlot;
 
 // One word of GameState.slotWords (per save slot)
 typedef union GameSlotWord {
     u32 word;
-    u8 b0; // stored by setKnifeSaveData4S; doorsel_init reads bits 0-1 and 2-3
+    u8 stageProgress; // stage progress byte (setKnifeSaveData4S, ClearNewStageUpdate): bits 0-1 the next stage level in
+                      // mode 5, bits 4-6 the stages cleared in mode 6; doorsel_init reads bits 0-1 and 2-3
 } GameSlotWord;
 
 // Game state block (gameState, 0xa0 bytes: MultiWorkInit clears it whole). Other symbols point inside it:
@@ -117,11 +129,11 @@ typedef struct GameState {
     /* 4f */ u8 phaseFlags;
     /* 50 */ u8 unk_50[4];
     /* 54 */ u8 itemLevel[4];      // per player (data_0212c81c): set by itemlevel, row of the set01/setspawn/takara tables
-    /* 58 */ u8 playerTimer58[4];
+    /* 58 */ u8 heldItems[4];      // per player (data_0212c820): held item id, copied to PlayerData.heldItem by makemap_00
     /* 5c */ u8 keys[4];           // per player (data_0212c824): AddKey adds one, usekey takes one
-    /* 60 */ u8 playerTimer60[4];  // per player (data_0212c828): health, as AddHeart and MPlayerSet use it
+    /* 60 */ u8 health[4];         // per player (data_0212c828): health in eighths of a heart (AddHeart, MPlayerSet)
     /* 64 */ u8 maxHearts[4];      // per player (data_0212c82c): heart containers (utsuwa); AddHeart caps health at 8 each
-    /* 68 */ u8 playerFlag68[4];   // per player (data_0212c830): kakera count (kakera_full, item_4, radar)
+    /* 68 */ u8 kakeraCount[4];    // per player (data_0212c830): kakera count (kakera_full, item_4, radar)
     /* 6c */ u8 unk_6c;
     /* 6d */ u8 unk_6d;
     /* 6e */ u8 unk_6e;

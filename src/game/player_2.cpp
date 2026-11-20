@@ -79,9 +79,10 @@ void PlWorkReset(void) {
             player->unk_3d = 0;
             player->unk_26 = 0;
             player->yOffset = 0;
-            player->unk_3e = (s32)player->unk_3e & ~0xc0;
+            player->nutBits.b6 = 0;
             player->weapon = 0;
-            player->paletteBits = (u8)(player->paletteBits & ~3) & ~0x70;
+            player->paletteBits.pairRole = 0;
+            player->paletteBits.bind = 0;
             OSi_CpuClear32(0xffffffff, player->unk_40, 0x40);
             player++;
         } while (player < end);

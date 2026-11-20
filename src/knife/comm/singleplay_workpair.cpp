@@ -53,7 +53,7 @@ void Knife_Single_SinglePlay_SinglePlayWork_PlayerChange(void *self) {
     work->entity1 = work->player1->entity;
     work->diffX = -work->diffX;
     work->diffY = -work->diffY;
-    bits = ((PalBits *)&work->player0->paletteBits)->a;
-    ((PalBits *)&work->player0->paletteBits)->a = ((PalBits *)&work->player1->paletteBits)->a;
-    ((PalBits *)&work->player1->paletteBits)->a = bits;
+    bits = work->player0->paletteBits.pairRole;
+    work->player0->paletteBits.pairRole = work->player1->paletteBits.pairRole;
+    work->player1->paletteBits.pairRole = bits;
 }

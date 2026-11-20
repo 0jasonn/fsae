@@ -48,7 +48,7 @@ void pot_puton(Entity *e) {
         return;
     }
     if (playerIndex == e->child->type) {
-        if (((PaletteBitsView *)&playerWork[e->child->type].paletteBits)->low == 0 ||
+        if (playerWork[e->child->type].paletteBits.pairRole == 0 ||
             (playerWork[e->child->type ^ 1].statusFlags & 4)) {
             pot_ware(e);
             return;

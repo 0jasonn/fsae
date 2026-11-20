@@ -20,9 +20,7 @@ extern u8 data_0212cee6[];         // u16 flags, stride 0x94 per player block
 void zFree(void *p);                       // original zFree(void*)
 void boots_plsync(Entity *e, Entity *tmpl); // original plsync(OBJ_WORK_*, OBJ_WORK_*)
 extern "C" void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
-extern u8 data_0212ced8[];                 // template pointer per type (stride 0x94)
 extern u8 data_0212cece[];                 // flag byte per template entry (stride 0x94)
-extern u8 data_0212cedc[];                 // second pointer per template entry: boots object in use
 extern const s8 data_020ce52c[];           // hitbox offsets, four bytes per pair of animation states
 extern const s8 data_020ce51c[];           // (x, y) offsets per animation state, pairs of signed bytes
 

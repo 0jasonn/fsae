@@ -57,7 +57,7 @@ void tama11_move1(Entity *e) {
                 if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) || Knife_Single_SinglePlay_GetInstance()[1] != 0) {
                     e->direction = e->baseDirection;
                 } else {
-                    e->direction = func_02086078(e, *(Entity **)(tama11_objTemplates + e->spriteSettings.b20 * 0x94));
+                    e->direction = func_02086078(e, playerWork[e->spriteSettings.b20 - 7].entity);
                 }
             } else {
                 e->action = 1;

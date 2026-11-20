@@ -84,12 +84,4 @@ int func_02083d30(s16 x, s16 y, u16 layer);  // thumb, cell class at a map posit
 int func_02083d18(Entity *e, int dx, int dy);  // thumb, cell class at an offset of the entity
 int func_02083c74(Entity *e, int dx, int dy);  // thumb, cell kind at an offset of the entity
 
-// Bit view of PlayerData::paletteBits (0x8b): b = bits 2..3 (palette index)
-typedef struct PalBits {
-    u8 a : 2;
-    u8 b : 2;
-    u8 c : 3;
-    u8 d : 1;
-} PalBits;
-
 #endif

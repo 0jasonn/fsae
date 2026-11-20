@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/template.h"
+#include "engine/player.h"
 #include "game/hitdecls.h"
 #include "engine/player.h"
 

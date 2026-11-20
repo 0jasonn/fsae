@@ -50,5 +50,5 @@ void Knife_Single_SinglePlay_UpdateWaitPartner(void *self, PlayerData *player0, 
     *(u16 *)((u8 *)self + 0x14) = 0x1000;
     *(u16 *)&player1->unk_8c[2] = 0;
     *(u16 *)&player1->unk_8c[0] = 0;
-    ((PalBits *)&player1->paletteBits)->c |= 1;
+    player1->paletteBits.bind |= 1;
 }

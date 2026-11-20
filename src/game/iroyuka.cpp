@@ -59,9 +59,9 @@ void UpdateIroyuka(void) {
         }
     }
     player = &playerWork[index];
-    paletteIdx = ((u32)player->paletteBits << 28) >> 30;
+    paletteIdx = player->paletteBits.color;
     SetDataVBlank(resource + (paletteIdx << 7), (void *)0x0600cc00, 0x40);
-    paletteIdx = ((u32)player->paletteBits << 28) >> 30;
+    paletteIdx = player->paletteBits.color;
     SetDataVBlank(resource + (paletteIdx << 7) + 0x40, (void *)0x0600d000, 0x40);
     data_0216f820.iroyukaIndex = 0;
 }

@@ -38,7 +38,7 @@ void PlWorkColorReset(void) {
     i = 0;
     if (player < end) {
         do {
-            player->paletteBits = (player->paletteBits & ~0xc) | ((i & 3) << 2);
+            player->paletteBits.color = i;
             i++;
             player++;
         } while (player < end);

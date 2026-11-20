@@ -13,7 +13,7 @@ void em1d_possess(Entity *e) {
     ObjPosCopyOfs32(e->child, e, 0, (s32)(s8)((e->frame & 3) - 1) << 16);
     e->z.HALF.HI -= 4;
     if (KnifeApp_isWirelessMode(KnifeApp_getInstance()) == 0) {
-        if (e->child != *(Entity **)&data_0212ced8[*Knife_Single_SinglePlay_GetInstance() * 0x94]) {
+        if (e->child != playerWork[*Knife_Single_SinglePlay_GetInstance()].entity) {
             vars->grabTimer = 0;
         }
     }

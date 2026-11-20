@@ -22,10 +22,10 @@ void cry0_init(Entity *e) {
     e->spriteSettings.b14 = 3;
     e->action = action + 1;
     e->spriteSettings.b30 = 3;
-    e->spriteSettings.b16 = 8 + ((PlFlagsByte *)&playerWork[e->type2].paletteBits)->b2;
+    e->spriteSettings.b16 = 8 + playerWork[e->type2].paletteBits.color;
     VCRY(e)->spriteWord = (VCRY(e)->spriteWord & ~0xc00) | 0x400;
-    e->x.HALF.HI = TEMPLATE_OF(e->type2)->x.HALF.HI;
-    e->y.HALF.HI = TEMPLATE_OF(e->type2)->y.HALF.HI + 0x18;
+    e->x.HALF.HI = playerWork[e->type2].entity->x.HALF.HI;
+    e->y.HALF.HI = playerWork[e->type2].entity->y.HALF.HI + 0x18;
     VCRY(e)->anchorY = e->y.HALF.HI + 0x20;
     InitAnimationForceUpdate(e, 0);
 }
@@ -49,8 +49,8 @@ void set_crystal_child(Entity *e) {
 }
 
 void cry0_move(Entity *e) {
-    e->x.HALF.HI = TEMPLATE_OF(e->type2)->x.HALF.HI;
-    e->y.HALF.HI = TEMPLATE_OF(e->type2)->y.HALF.HI + 0x18;
+    e->x.HALF.HI = playerWork[e->type2].entity->x.HALF.HI;
+    e->y.HALF.HI = playerWork[e->type2].entity->y.HALF.HI + 0x18;
     set_crystal_child(e);
 }
 

@@ -6,7 +6,7 @@
 // sound every 8 frames and copies the player's palette/frame state; when the player no longer owns it (bit 0 of
 // playerWork[i].unk_0f is clear) it unregisters itself and removes the entity.
 void magneMove(Entity *e) {
-    Entity *player = *(Entity **)&data_0212ced8[(s16)e->type * 0x94];
+    Entity *player = playerWork[(s16)e->type].entity;
     if (data_0212cebf[(s16)e->type * 0x94] & 2) {
         e->spriteSettings.b16 = 1;
     } else {
@@ -23,7 +23,7 @@ void magneMove(Entity *e) {
         e->frame = player->frame;
         e->unk_2f = player->unk_2f;
     } else {
-        *(Entity **)&data_0212cedc[(s16)e->type * 0x94] = NULL;
+        playerWork[(s16)e->type].weapon = NULL;
         PutObjWork(e);
     }
 }

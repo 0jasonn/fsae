@@ -5,6 +5,7 @@
 #include "engine/player.h"
 
 #include "engine/map_state.h"
+#include "engine/bg_buff.h"
 
 typedef struct DirDelta {
     s16 x;
@@ -17,14 +18,6 @@ extern const u16 data_020cd6b0[];       // map words written when a pushed block
 extern u16 data_0212c510;
 extern u8 data_0212ceca[]; // playerWork[0].unk_1a, stride 0x94
 
-// Bit view of PlayerData::paletteBits (0x8b): a = bits 0..1, b = bits 2..3 (palette index), c = bits 4..6, d = bit 7.
-typedef struct PalBits {
-    u8 a : 2;
-    u8 b : 2;
-    u8 c : 3;
-    u8 d : 1;
-} PalBits;
-
 extern "C" {
 BOOL TryUsingKey(Entity *e);
 int FrontCheck(Entity *e, PlayerData *player);
@@ -34,7 +27,6 @@ void SetMoveBlockByKind(Entity *e, u8 a, s32 kind, u16 cell);     // 0x0202357c
 void TakaraOpen(Entity *e, u16 cell, u16 layer);                  // 0x0207bd00
 
 // openDoor (0x0202375c, src/game/opendoor.cpp) has C++ linkage, as in the original openDoor(OBJ_WORK_*, PL_WORK_*, BG_BUFF_*).
-struct BG_BUFF_;
-void openDoor(Entity *e, PlayerData *player, struct BG_BUFF_ *bg);
+void openDoor(Entity *e, PlayerData *player, BG_BUFF_ *bg);
 
 #endif

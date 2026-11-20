@@ -18,8 +18,6 @@ typedef struct Vars_Tama0fParent {
     /* 71 */ u8 stormActive;
 } Vars_Tama0fParent;
 
-extern u8 data_0212ced8[]; // playerWork[0].entity, stride 0x94
-#define PLAYER_ENTITY(i) (*(Entity **)(data_0212ced8 + (i) * 0x94))
 
 extern "C" BOOL func_02085a88(Entity *a, Entity *b, s32 w, s32 h); // thumb, overlap test
 void tama0f_storm(Entity *e);

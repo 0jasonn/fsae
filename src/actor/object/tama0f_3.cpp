@@ -19,9 +19,9 @@ void tama0f_storm(Entity *e) {
                             index = 0;
                         }
                     }
-                    e->direction = func_02086078(e, PLAYER_ENTITY(index));
+                    e->direction = func_02086078(e, playerWork[index].entity);
                 } else {
-                    e->direction = func_02086078(e, PLAYER_ENTITY(e->timer));
+                    e->direction = func_02086078(e, playerWork[e->timer].entity);
                 }
             } else {
                 index = func_02085608();
@@ -31,7 +31,7 @@ void tama0f_storm(Entity *e) {
                         index = 0;
                     }
                 }
-                e->direction = func_02086078(e, PLAYER_ENTITY(index));
+                e->direction = func_02086078(e, playerWork[index].entity);
             }
             EnqueueSFX(0xb4);
             break;
@@ -53,7 +53,7 @@ void tama0f_storm(Entity *e) {
                     e->spriteSettings.b16 = (index & 0xff) + 7;
                     e->spriteSettings.b20 = e->spriteSettings.b16;
                     if (VS(e)->stormTimer != 0) {
-                        e->direction = func_02086078(e, PLAYER_ENTITY(index));
+                        e->direction = func_02086078(e, playerWork[index].entity);
                     } else {
                         e->direction = func_02086078(e, e->parent);
                     }

@@ -30,7 +30,7 @@ BOOL Knife_Single_SinglePlay_WarpPartner(void *self, PlayerData *player0, Player
     cls = func_02083d18(e0, zero, 3);
     if (cls == 0x21 || cls == 0x25) {
         kind = func_02083c74(e0, zero, 3);
-        if (kind - 0x176 == ((PalBits *)&playerWork[e0->type].paletteBits)->b) {
+        if (kind - 0x176 == playerWork[e0->type].paletteBits.color) {
             return zero;
         }
         if (player0->unk_14 == 0

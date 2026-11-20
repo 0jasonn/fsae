@@ -41,7 +41,5 @@ extern const u8 tama11_throwParams[][4];
 extern const EntityFunc Throw_stateTable[];
 extern const s32 tama11_speedTable[];
 extern const s32 tama11_zVelTable[];
-// Pointer table with 0x94-byte entries, indexed by sprite kind (see tama11_move1).
-extern u8 tama11_objTemplates[];
 
 #endif

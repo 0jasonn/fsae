@@ -7,9 +7,9 @@
 
 // Counts one kakera for the entity's type and gives the telop for the collected count.
 void AddRupeeKakera(Entity *e) {
-    gameState.playerFlag68[e->type] += 1;
+    gameState.kakeraCount[e->type] += 1;
     SoundReq(0x8f);
-    switch (gameState.playerFlag68[e->type]) {
+    switch (gameState.kakeraCount[e->type]) {
     case 1:
         TelopRequest(0x515);
         telopRequest.params[0] = (u16)(e->type + 1);
@@ -19,7 +19,7 @@ void AddRupeeKakera(Entity *e) {
     case 3:
         TelopRequest(0x516);
         telopRequest.params[0] = (u16)(e->type + 1);
-        telopRequest.params[1] = (u16)(4 - gameState.playerFlag68[e->type]);
+        telopRequest.params[1] = (u16)(4 - gameState.kakeraCount[e->type]);
         break;
     case 4:
         cockpitState.kakeraTimer[e->type] = 0xf;

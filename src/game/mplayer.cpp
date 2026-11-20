@@ -48,7 +48,7 @@ void MPlayerSet(FRAME_INFO_ *frame) {
     pair = cells;
     for (i = 0; i < gameState.playerCount; i++) {
         MPlayerInit(i, pair[0], pair[1]);
-        playerWork[i].entity->health = gameState.playerTimer60[i];
+        playerWork[i].entity->health = gameState.health[i];
         pair += 2;
     }
     MIi_CpuCopy16(cells, gameState.startCells, 8);

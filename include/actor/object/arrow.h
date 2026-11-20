@@ -8,7 +8,7 @@
 void func_020841b0(Entity *e);
 void func_02086168(Entity *e);
 
-#include "actor/object/template.h"
+#include "engine/player.h"
 
 // Beam-only fields that Entity does not name (file-local overlay on unk_64).
 typedef struct BeamVars {

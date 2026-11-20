@@ -121,7 +121,7 @@ void Knife_Single_SinglePlay_UpdateMovePartner(void *self, SpWorkPair *pair) {
             POS posC = LOG->GetCurrentLogPos();
             pair->unk_20 = posC.x;
             pair->unk_22 = posC.y;
-            if (pair->player0->unk_24 - 0x176 == ((PalBits *)&pair->player0->paletteBits)->b &&
+            if (pair->player0->unk_24 - 0x176 == pair->player0->paletteBits.color &&
                 (pair->nearFlag != 0 || (work->unk_12 & 2))) {
                 pair->unk_20 = pair->entity1->x.HALF.HI;
                 pair->unk_22 = pair->entity1->y.HALF.HI;
@@ -220,8 +220,8 @@ void Knife_Single_SinglePlay_UpdateMovePartner(void *self, SpWorkPair *pair) {
         Knife_Single_SinglePlay_SetContNoDirect(work, work->contNo);
         return;
     }
-    ((PalBits *)&pair->player0->paletteBits)->a = 1;
-    ((PalBits *)&pair->player1->paletteBits)->a = 3;
+    pair->player0->paletteBits.pairRole = 1;
+    pair->player1->paletteBits.pairRole = 3;
     if (frameCounter.pauseRequest != 0) {
         return;
     }

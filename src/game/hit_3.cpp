@@ -2,7 +2,7 @@
 #include "engine/player.h"
 #include "global.h"
 #include "game/hitdecls.h"
-#include "actor/object/template.h"
+#include "engine/player.h"
 #include "game/hit_6.h"
 
 // Hit handlers, second hit unit (module hit). Original names from the debug build:
@@ -146,8 +146,8 @@ BOOL hit_wanwan(Entity *e, Entity *t, u8 unused) {
 BOOL hit_tateorghajiki(Entity *e, Entity *t, u8 unused) {
     e->unk_42 = *(u8 *)&t->attackKnockback;
     e->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&t->attackKnockback);
-    if (OBJ_TEMPLATE(e->type)->iframes == 0) {
-        OBJ_TEMPLATE(e->type)->iframes = 0x80;
+    if (playerWork[e->type].entity->iframes == 0) {
+        playerWork[e->type].entity->iframes = 0x80;
     }
     nakamaCheckTgtOnly(t, e);
     if (t->iframes == 0) {
@@ -161,8 +161,8 @@ BOOL hit_tateorghajiki(Entity *e, Entity *t, u8 unused) {
 BOOL hit_tatetgthajiki(Entity *e, Entity *t, u8 unused) {
     t->unk_42 = *(u8 *)&e->attackKnockback;
     t->iframes = HIT_KNOCKBACK_FRAMES(*(u8 *)&e->attackKnockback);
-    if (OBJ_TEMPLATE(t->type)->iframes == 0) {
-        OBJ_TEMPLATE(t->type)->iframes = 0x80;
+    if (playerWork[t->type].entity->iframes == 0) {
+        playerWork[t->type].entity->iframes = 0x80;
     }
     if (e->iframes == 0) {
         e->iframes = 0xff;

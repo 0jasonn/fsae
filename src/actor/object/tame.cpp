@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/template.h"
+#include "engine/player.h"
 
 // Tame actor (module tame). Address -> name:
 //   0x020701b8 tame_dispatch (provisional, runs the action table of the actor)
@@ -23,7 +23,7 @@ void tame_dispatch(Entity *e) {
 void tame_init(Entity *e) {
     Entity *tmpl;
 
-    tmpl = OBJ_TEMPLATE(e->type);
+    tmpl = playerWork[e->type].entity;
     e->unk_5e.b0 = 3;
     e->spriteSettings.b30 = tmpl->spriteSettings.b30;
     e->action++;

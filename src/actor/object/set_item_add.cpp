@@ -95,39 +95,39 @@ void SetItemAdd(Entity *item, Entity *player) {
     case 10:
         if (player->objKind == 1) {
             func_02085f98(player, 0x7a);
-            if (POWERUP_LEVELS(p0)->power < 2) {
+            if (p0->nutBits.b0 < 2) {
                 Knife_Hud_HudManager_startPowerUpAnim((u8 *)app + 0x1f8, e0->type);
                 if (e0 != e1) {
                     Knife_Hud_HudManager_startPowerUpAnim((u8 *)app + 0x1f8, e1->type);
                 }
-                POWERUP_LEVELS(p0)->power = POWERUP_LEVELS(p0)->power + 1;
-                POWERUP_LEVELS(p1)->power = POWERUP_LEVELS(p0)->power;
+                p0->nutBits.b0 = p0->nutBits.b0 + 1;
+                p1->nutBits.b0 = p0->nutBits.b0;
             }
         }
         break;
     case 11:
         if (player->objKind == 1) {
             func_02085f98(player, 0x7a);
-            if (POWERUP_LEVELS(p0)->defence < 2) {
+            if (p0->nutBits.b2 < 2) {
                 Knife_Hud_HudManager_startDefenceUpAnim((u8 *)app + 0x1f8, e0->type);
                 if (e0 != e1) {
                     Knife_Hud_HudManager_startDefenceUpAnim((u8 *)app + 0x1f8, e1->type);
                 }
-                POWERUP_LEVELS(p0)->defence = POWERUP_LEVELS(p0)->defence + 1;
-                POWERUP_LEVELS(p1)->defence = POWERUP_LEVELS(p0)->defence;
+                p0->nutBits.b2 = p0->nutBits.b2 + 1;
+                p1->nutBits.b2 = p0->nutBits.b2;
             }
         }
         break;
     case 12:
         if (player->objKind == 1) {
             func_02085f98(player, 0x7a);
-            if (POWERUP_LEVELS(p0)->speed < 2) {
+            if (p0->nutBits.b4 < 2) {
                 Knife_Hud_HudManager_startSpeedUpAnim((u8 *)app + 0x1f8, e0->type);
                 if (e0 != e1) {
                     Knife_Hud_HudManager_startSpeedUpAnim((u8 *)app + 0x1f8, e1->type);
                 }
-                POWERUP_LEVELS(p0)->speed = POWERUP_LEVELS(p0)->speed + 1;
-                POWERUP_LEVELS(p1)->speed = POWERUP_LEVELS(p0)->speed;
+                p0->nutBits.b4 = p0->nutBits.b4 + 1;
+                p1->nutBits.b4 = p0->nutBits.b4;
             }
         }
         break;

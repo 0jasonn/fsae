@@ -82,8 +82,6 @@ void func_0208b628(Entity *e);
 void SKemuriSet(Entity *e);
 extern u8 data_0212ceb2[];
 extern u8 data_0212ceb4[];
-extern u8 data_0212ced8[];
-extern u8 data_0212cedc[];
 extern u8 data_0212cebf[];
 extern const u8 data_020dc707[];
 void tama00_hajikiInit(Entity *e);

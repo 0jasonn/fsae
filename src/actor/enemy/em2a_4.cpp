@@ -43,12 +43,12 @@ void em2a_core(Entity *e) {
                     if (e->parent->action == 0x10) {
                         break;
                     }
-                    if (TEMPLATE_ENTITY(e->contactedEntity->type)->iframes == 0) {
+                    if (playerWork[e->contactedEntity->type].entity->iframes == 0) {
                         amount = 4 - playerWork[e->contactedEntity->type].nutBits.b2;
                         if (amount <= 1) {
                             amount = 1;
                         }
-                        AddHeart(TEMPLATE_ENTITY(e->contactedEntity->type), (s16)-amount);
+                        AddHeart(playerWork[e->contactedEntity->type].entity, (s16)-amount);
                     }
                     e->contactedEntity->iframes = 0x18;
                     if (e->parent->action != 0xe) {
@@ -76,8 +76,8 @@ void em2a_core(Entity *e) {
                         parent->timer = 0x78;
                         e->parent->action = 0xe;
                     }
-                    if (TEMPLATE_ENTITY(e->contactedEntity->type)->iframes == 0) {
-                        TEMPLATE_ENTITY(e->contactedEntity->type)->iframes = 0x18;
+                    if (playerWork[e->contactedEntity->type].entity->iframes == 0) {
+                        playerWork[e->contactedEntity->type].entity->iframes = 0x18;
                         func_0208ab50(e->contactedEntity);
                     }
                     break;

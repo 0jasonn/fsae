@@ -1,18 +1,19 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/bg_buff.h"
 #include "actor/object/setcommon.h"
 #include "actor/object/set18.h"
 
 // Waits for the BG cell under the entity to show tile 0x10e, then sets its type bits in the area mask. Starts the
 // timer, or removes the entity when the timer is 0.
 void set18_wait(Entity *e) {
-    int bg;
+    BG_BUFF_ *bg;
     u16 cellValue;
     u16 tile;
 
-    bg = GetBgBuffAdrs(e->layer);
+    bg = (BG_BUFF_ *)GetBgBuffAdrs(e->layer);
     cellValue = *VARS(Vars_Set18, e)->cellPtr;
-    tile = *(u16 *)(bg + cellValue * 2 + 0x5004);
+    tile = bg->cellMap[cellValue];
     if (tile != 0x10e) {
         return;
     }

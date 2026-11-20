@@ -15,7 +15,7 @@ void multiplay_init(void) {
     data_021355a0[0] = 0;
     MultiWorkInit();
     for (i = 0; i < 4; i++) {
-        ((MultiFlagByte *)((u8 *)playerWork + i * 0x94 + 0x8b))->b2 = comWork.recv[i].bits.b0;
+        playerWork[i].paletteBits.color = comWork.recv[i].bits.b0;
     }
     PlWorkClear();
     frameCounter.stopRequest = 0;

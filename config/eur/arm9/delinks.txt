@@ -2812,15 +2812,7 @@ src/actor/object/set3d_4.cpp:
 
 src/actor/object/set3e.cpp:
     complete
-    .text       start:0x0205d9d4 end:0x0205d9f0
-
-src/actor/object/set3e_2.cpp:
-    complete
-    .text       start:0x0205d9f0 end:0x0205dad8
-
-src/actor/object/set3e_3.cpp:
-    complete
-    .text       start:0x0205dad8 end:0x0205dc90
+    .text       start:0x0205d9d4 end:0x0205dc90
 
 src/actor/object/set3f.cpp:
     complete

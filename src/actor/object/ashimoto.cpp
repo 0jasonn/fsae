@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "global.h"
+#include "engine/bg_buff.h"
 #include "actor/object/objdecls_f.h"
 
 // Ashimoto check (module ashimoto). Address -> name:
@@ -12,11 +13,11 @@
 void AshimotoCheck(Entity *e) {
     u16 cell;
     PlayerData *player;
-    int base;
+    BG_BUFF_ *bg;
     int i;
     int k;
 
-    base = GetBgBuffAdrs(e->layer);
+    bg = (BG_BUFF_ *)GetBgBuffAdrs(e->layer);
     for (i = 0; i < gameState.playerCount; i++) {
         player = &playerWork[i];
         if (player->entity == NULL) {
@@ -36,7 +37,7 @@ void AshimotoCheck(Entity *e) {
             if (cell == 0xffff) {
                 continue;
             }
-            if (*(u8 *)(base + cell + 0x2004) != 0xf) {
+            if (bg->attr[cell] != 0xf) {
                 player->entity->x.HALF.HI = (((u32)cell << 26) >> 22) + 8;
                 player->entity->y.HALF.HI = ((CELL_AT(player, k) & 0xfc0) >> 2) + 6;
                 break;

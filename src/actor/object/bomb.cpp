@@ -27,7 +27,7 @@ void bomb_throw_init(Entity *e) {
     Entity *tmpl;
     Entity *child;
 
-    tmpl = OBJ_TEMPLATE(e->type2);
+    tmpl = playerWork[e->type2].entity;
     e->subAction++;
     if (e->timer == 0 && e->subtimer == 0) {
         e->timer = 0xf0;

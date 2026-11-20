@@ -14,7 +14,7 @@ u8 decVital(Entity *e, Entity *t) {
 
     if (e->objKind == 1) {
         player = &playerWork[e->type];
-        damage = t->attackDamage - (s32)((u32)(player->unk_3e << 28) >> 30);
+        damage = t->attackDamage - player->nutBits.b2;
         if (damage <= 1) {
             damage = 1;
         }

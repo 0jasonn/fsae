@@ -26,7 +26,7 @@ void set11_move(Entity *e) {
         other = e->contactedEntity;
         if (other != NULL && other->objKind == 1) {
             PlayerData *player = &playerWork[other->type];
-            if ((((u32)player->paletteBits << 25) >> 29) != 0 && playerWork[other->type].unk_0f == 0) {
+            if (player->paletteBits.bind != 0 && playerWork[other->type].unk_0f == 0) {
                 goto timer_step;
             }
         }

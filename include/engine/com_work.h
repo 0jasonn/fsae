@@ -24,12 +24,21 @@ typedef struct ComPacketBits {
 // CommStatusSync compares the received tags with the expected status. In a wireless session the received records
 // (recv[]) also serve as the group member records: name, status word, rupees and the group word.
 typedef struct ComPacket {
-    /* 00 */ u8 tag;
-    /* 01 */ u8 ready;      // com_machiuke sets 1 once 2 to 4 players are connected and checks it in every recv packet
-    /* 02 */ u16 keys;      // pad keys of the sender (playerKeys edge detection reads the received ones)
-    /* 04 */ u32 value;     // e.g. the random seed of com_randomsync (data_0212c550)
-    /* 08 */ u32 saveWord;  // com_savedata sends and reads it as one word
-    /* 0c */ u8 unk_0c[0x14 - 0x0c];
+    union {
+        struct {
+            /* 00 */ u8 tag;
+            /* 01 */ u8 ready;      // com_machiuke sets 1 once 2 to 4 players are connected and checks it in every recv packet
+            /* 02 */ u16 keys;      // pad keys of the sender (playerKeys edge detection reads the received ones)
+            /* 04 */ u32 value;     // e.g. the random seed of com_randomsync (data_0212c550)
+            /* 08 */ u32 saveWord;  // com_savedata sends and reads it as one word
+        };
+        struct {
+            /* 00 */ u8 unk_00[2];
+            /* 02 */ u16 keyHistory[5]; // key sync: the last five key words, copied into the key ring by key_update
+        };
+    };
+    /* 0c */ u32 keySlot;   // key sync: the low nibble is the slot of the key ring (key_update)
+    /* 10 */ u8 unk_10[0x14 - 0x10];
     /* 14 */ u16 name[8];   // wireless: member name (TextRenderer::getPlayerName; length is a guess, up to +0x24)
     /* 24 */ ComPacketBits bits; // wireless: packed status bits (GetSubtaskPlayerStatus)
     /* 28 */ u32 rupees;    // wireless: rupee value (GetSubtaskPlayerStatus ruppyValue)

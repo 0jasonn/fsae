@@ -4,16 +4,6 @@
 #include "engine/entity.h"
 #include "engine/player.h"
 
-// Bit layout of PlayerData::unk_3e: the three power-up levels (0..2) collected by the player
-typedef struct PowerUpLevels {
-    u8 power : 2;
-    u8 defence : 2;
-    u8 speed : 2;
-    u8 rest : 2;
-} PowerUpLevels;
-#define POWERUP_LEVELS(p) ((PowerUpLevels *)&(p)->unk_3e)
-
-
 void AddRupeeKakera(Entity *e); // 0x0202639c
 void AddKey(Entity *e);         // 0x020262b4
 void SetItemAdd(Entity *item, Entity *player); // 0x0205784c

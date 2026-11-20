@@ -125,7 +125,7 @@ void throw_throw_080560(Entity *e) {
                 cell = GetCellKind(((thrown->x.HALF.HI - mapState.originX) >> 4) |
                                        (((thrown->y.HALF.HI - mapState.originY) >> 4) << 6),
                                    thrown->layer);
-                if (func_02083e54(cell) == 0x43 && cell != ((PalBits *)&playerWork[thrown->type].paletteBits)->b + 0x176) {
+                if (func_02083e54(cell) == 0x43 && cell != playerWork[thrown->type].paletteBits.color + 0x176) {
                     playerWork[thrown->type].unk_32 = 1;
                 }
             }

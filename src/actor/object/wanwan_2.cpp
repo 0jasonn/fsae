@@ -14,7 +14,6 @@ typedef struct Vars_Wanwan {
 } Vars_Wanwan;
 
 extern u8 data_0212ceed[];      // playerWork[i].unk_3d, stride 0x94
-extern u8 data_0212ced8[];      // playerWork[i].entity, stride 0x94
 
 #define WANWAN_V(e) VARS(Vars_Wanwan, e)
 
@@ -26,9 +25,8 @@ void wanwan_move(Entity *e) {
     Entity *node;
     Entity *player;
     u8 i;
-    u32 offset;
     u8 flag = data_0212ceed[e->type * 0x94];
-    Entity *owner = *(Entity **)(data_0212ced8 + e->type * 0x94);
+    Entity *owner = playerWork[e->type].entity;
     if (flag == 0) {
         PutObjWork(e);
         func_020841b0(e);
@@ -63,14 +61,14 @@ void wanwan_move(Entity *e) {
             if (e->subAction != 1 && KnifeApp_isWirelessMode(KnifeApp_getInstance()) != 0) {
                 for (i = 0; i < gameState.playerCount; i++) {
                     if (i != e->type &&
-                        (player = *(Entity **)((u8 *)playerWork + (offset = i * 0x94) + 0x28)) != WANWAN_V(e)->target &&
+                        (player = playerWork[i].entity) != WANWAN_V(e)->target &&
                         func_02085a88(e, player, 0x30, 0x30) != 0) {
-                        e->direction = GetFacingDirection(e, *(Entity **)(data_0212ced8 + offset));
+                        e->direction = GetFacingDirection(e, playerWork[i].entity);
                         ObjCdirSet(e);
                         InitAnimationForceUpdate(e, (e->animationState >> 1) + 9);
                         e->speed = 0x300;
                         e->subAction = 1;
-                        WANWAN_V(e)->target = *(Entity **)(data_0212ced8 + offset);
+                        WANWAN_V(e)->target = playerWork[i].entity;
                         WANWAN_V(e)->chaseTimer = 3;
                         e->statusFlags |= 0x80;
                         break;

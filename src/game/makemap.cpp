@@ -17,7 +17,7 @@ void makemap_00(void) {
     MemClearFast(data_0212caf0, 0x1c0);
     PlWorkReset();
     for (i = 0; i < 4; i++) {
-        playerWork[i].unk_1c = gameState.playerTimer58[i];
+        playerWork[i].heldItem = gameState.heldItems[i];
     }
     gameState.unk_8e = 0;
     CgLoad(2);

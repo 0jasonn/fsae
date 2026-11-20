@@ -12,9 +12,6 @@ typedef struct Vars_Crystal {
 } Vars_Crystal;
 #define VCRY(e) VARS(Vars_Crystal, e)
 
-// Byte at PlayerData.unk_3d[0x4e] (0x8b of the player work), read as bitfields
-typedef struct PlFlagsByte { u8 b0 : 2; u8 b2 : 2; u8 b4 : 4; } PlFlagsByte;
-
 extern const EntityFunc crystal0_actions[]; // crystal0_actions, indexed by e->action
 extern const EntityFunc crystal1_actions[]; // crystal1_actions, indexed by e->action
 extern const EntityFunc cry1_plate_actions[]; // cry1_plate_actions, indexed by e->action

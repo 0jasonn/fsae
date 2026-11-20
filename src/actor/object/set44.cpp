@@ -70,19 +70,19 @@ void set44_move(Entity *e) {
     hitMask = func_020862a8(e);
     if (hitMask != 0) {
         if (hitMask & 1) {
-            PLAYER_ENTITY(0)->contactFlags = 0xb8;
+            playerWork[0].entity->contactFlags = 0xb8;
             func_02089988(&playerWork[0]);
         }
         if (hitMask & 2) {
-            PLAYER_ENTITY(1)->contactFlags = 0xb8;
+            playerWork[1].entity->contactFlags = 0xb8;
             func_02089988(&playerWork[1]);
         }
         if (hitMask & 4) {
-            PLAYER_ENTITY(2)->contactFlags = 0xb8;
+            playerWork[2].entity->contactFlags = 0xb8;
             func_02089988(&playerWork[2]);
         }
         if (hitMask & 8) {
-            PLAYER_ENTITY(3)->contactFlags = 0xb8;
+            playerWork[3].entity->contactFlags = 0xb8;
             func_02089988(&playerWork[3]);
         }
     }

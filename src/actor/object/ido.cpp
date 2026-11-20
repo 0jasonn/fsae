@@ -152,7 +152,7 @@ void ido_getNextInfo(Entity *e) {
 extern "C" int ido_yukaPlMoveCheck(PlayerData *player);
 
 int ido_yukaPlMoveCheck(PlayerData *player) {
-    if ((((u32)((u8 *)player)[0x8b]) << 25) >> 29) {
+    if (player->paletteBits.bind) {
         return 1;
     }
     if (player->motionId == 0x1ac) {

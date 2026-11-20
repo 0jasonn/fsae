@@ -13,9 +13,9 @@ void itemget_message(Entity *e) {
             return;
         }
     }
-    if (data_021348fc & (1 << player->unk_1c)) {
+    if (data_021348fc & (1 << player->heldItem)) {
         return;
     }
-    data_021348fc |= 1 << player->unk_1c;
-    MessageRequest(data_02115ae0[player->unk_1c]);
+    data_021348fc |= 1 << player->heldItem;
+    MessageRequest(data_02115ae0[player->heldItem]);
 }

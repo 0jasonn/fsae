@@ -22,12 +22,12 @@ extern "C" void Knife_Single_SinglePlay_SetObjMoveReqFlag(u8 *self, Entity *e, u
 
 void rc_yukaMove(Entity *e) {
     Vars_RcYuka *v;
-    void *bgBuffer;
+    BG_BUFF_ *bgBuffer;
     u8 dir;
     u8 mask;
     u32 dist;
     v = VARS(Vars_RcYuka, e);
-    bgBuffer = (void *)GetBgBuffAdrs(e->layer);
+    bgBuffer = (BG_BUFF_ *)GetBgBuffAdrs(e->layer);
     v->prevX = e->x.HALF.HI;
     v->prevY = e->y.HALF.HI;
     mask = v->moveCheckMask & 0xf;

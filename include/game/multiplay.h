@@ -11,7 +11,7 @@ extern "C" {
 void MultiWorkInit(void);
 }
 
-// Packed 2-bit fields: the player flag byte at 0x8b and the status word of comWork.recv[] (ComPacketBits)
+// Packed 2-bit fields: the nut counters of the save block and the status word of comWork.recv[] (ComPacketBits)
 typedef struct MultiFlagByte { u8 b0 : 2; u8 b2 : 2; u8 b4 : 2; u8 b6 : 2; } MultiFlagByte;
 typedef struct MultiFlagWord { u32 b0 : 2; u32 b2 : 2; u32 b4 : 2; u32 b6 : 2; } MultiFlagWord;
 
@@ -19,9 +19,9 @@ typedef struct MultiFlagWord { u32 b0 : 2; u32 b2 : 2; u32 b4 : 2; u32 b6 : 2; }
 typedef struct MultiSaveBlock {
     /* 00 */ u32 score;             // gameState.score
     /* 04 */ u32 counters[4];       // gameState.playerCounters
-    /* 14 */ u8 flag68[4];          // gameState.playerFlag68 (kakera count)
-    /* 18 */ u8 timer58[4];         // gameState.playerTimer58
-    /* 1c */ u8 timer60[4];         // gameState.playerTimer60 (health)
+    /* 14 */ u8 flag68[4];          // gameState.kakeraCount
+    /* 18 */ u8 timer58[4];         // gameState.heldItems
+    /* 1c */ u8 timer60[4];         // gameState.health
     /* 20 */ u8 maxHearts[4];       // gameState.maxHearts
     /* 24 */ MultiFlagByte nutBits; // packed 2-bit nut counters
     /* 25 */ u8 unk_25[3];

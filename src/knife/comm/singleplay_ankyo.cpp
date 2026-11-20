@@ -11,7 +11,7 @@ BOOL Knife_Single_SinglePlay_CheckAnkyo_094a88(void *self, u8 kind, Entity *e, s
         return FALSE;
     }
     s32 value = func_02083c8c(x, y, e->layer);
-    if (value - 0x176 == ((PalBits *)&playerWork[e->type].paletteBits)->b || (u16)(value + 0xbfea) <= 1) {
+    if (value - 0x176 == playerWork[e->type].paletteBits.color || (u16)(value + 0xbfea) <= 1) {
         return FALSE;
     }
     return TRUE;
@@ -23,7 +23,7 @@ BOOL Knife_Single_SinglePlay_CheckAnkyo_094b08(void *self, PlayerData *player) {
         return FALSE;
     }
     u16 value = player->unk_24;
-    if (value - 0x176 == ((PalBits *)&player->paletteBits)->b || (u16)(value + 0xbfea) <= 1) {
+    if (value - 0x176 == player->paletteBits.color || (u16)(value + 0xbfea) <= 1) {
         return FALSE;
     }
     return TRUE;

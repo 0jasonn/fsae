@@ -35,7 +35,7 @@ BOOL Knife_Single_SinglePlay_UpdateFormationMode2p(void *self, SpWorkPair *pair)
         }
         break;
     palette:
-        if ((s32)pair->player0->unk_24 - 0x176 != ((PalBits *)&pair->player0->paletteBits)->b) {
+        if ((s32)pair->player0->unk_24 - 0x176 != pair->player0->paletteBits.color) {
             break;
         }
         if (pair->nearFlag == 0) {

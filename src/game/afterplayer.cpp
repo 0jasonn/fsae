@@ -22,7 +22,7 @@ void AfterPlayer(void) {
                 player->unk_14--;
             }
             if (player->unk_1a != 0) {
-                if ((((u32)player->paletteBits << 25) >> 29) == 0 || !(player->hitFlags & 0x20)) {
+                if (player->paletteBits.bind == 0 || !(player->hitFlags & 0x20)) {
                     func_0208919c(player->entity);
                 }
             }

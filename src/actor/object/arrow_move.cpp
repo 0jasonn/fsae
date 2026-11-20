@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/bg_buff.h"
 #include "actor/object/arrow_move.h"
 
 // Arrow (module arrow): arrow_move, the arrow while it is held (charging) and while it flies.
@@ -47,10 +48,10 @@ void arrow_move(Entity *e) {
         }
         PlWeaponFireCheck(e);
         {
-            u16 *cellBase = (u16 *)GetBgBuffAdrs(e->layer);
+            BG_BUFF_ *bg = (BG_BUFF_ *)GetBgBuffAdrs(e->layer);
             s32 cell = ((e->x.HALF.HI - mapState.originX) >> 4) | (((e->y.HALF.HI - mapState.originY) >> 4) << 6);
-            u16 index = (u16)(cellBase[cell + 2] & 0x7ff);
-            u16 value = *(u16 *)((u8 *)cellBase + (index << 1) + 0x5004);
+            u16 index = (u16)(bg->screen[cell] & 0x7ff);
+            u16 value = bg->cellMap[index];
             if (func_020899bc(value, data_021180a8) == 0 && func_02083cdc(e) != 0x47 &&
                 func_02085890(e, data_0211857c, e->x.HALF.HI, e->y.HALF.HI) != 0) {
                 e->action++;

@@ -3,7 +3,7 @@
 
 #include "engine/functions.h"
 
-extern u8 data_0212ced8[]; // PlayerData.entity pointers, stride 0x94 (playerWork[i].entity)
+#include "engine/player.h"
 #include "engine/frame_counter.h"
 
 // Second wait state of em12 (original em12_wait2(OBJ_WORK_*)), 0x0203b594.

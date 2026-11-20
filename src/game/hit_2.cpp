@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "global.h"
-#include "actor/object/template.h"
+#include "engine/player.h"
 #include "game/hitdecls.h"
 
 // Hit handlers (module hit, second unit). Original names from the debug build:
@@ -120,10 +120,10 @@ BOOL hit_hajiki(Entity *e, Entity *t, u8 unused) {
 BOOL hit_item(Entity *e, Entity *t, u8 unused) {
     if (e->objKind == 6 && e->objId == 0) {
         e->statusFlags &= 0x7f;
-        SetItemAdd(e, OBJ_TEMPLATE(t->type));
+        SetItemAdd(e, playerWork[t->type].entity);
     } else {
         t->statusFlags &= 0x7f;
-        SetItemAdd(t, OBJ_TEMPLATE(e->type));
+        SetItemAdd(t, playerWork[e->type].entity);
     }
     return 2;
 }
