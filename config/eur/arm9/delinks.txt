@@ -397,6 +397,10 @@ src/sdk/mi/frame_asm_3.cpp:
     complete
     .text       start:0x02016af4 end:0x02016af8
 
+src/sdk/os/os_wait_irq.cpp:
+    complete
+    .text       start:0x02016c00 end:0x02016c7c
+
 src/sdk/os/stub_empty.cpp:
     complete
     .text       start:0x02016c7c end:0x02016c80
@@ -405,9 +409,17 @@ src/sdk/os/os_wrap_2.cpp:
     complete
     .text       start:0x02016d08 end:0x02016d18
 
+src/sdk/os/os_irq.cpp:
+    complete
+    .text       start:0x02016d18 end:0x02016ecc
+
 src/sdk/os/os_external_query.cpp:
     complete
     .text       start:0x02016ecc end:0x02016ed8
+
+src/sdk/os/os_irq_2.cpp:
+    complete
+    .text       start:0x02016ed8 end:0x02016fd4
 
 src/sdk/os/os_kind_terminate.cpp:
     complete
@@ -473,6 +485,10 @@ src/sdk/os/ret_one.cpp:
     complete
     .text       start:0x02017fcc end:0x02017fd4
 
+src/sdk/os/dc_cache.cpp:
+    complete
+    .text       start:0x0201844c end:0x02018530
+
 src/sdk/os/os_wrap.cpp:
     complete
     .text       start:0x02018530 end:0x0201853c
@@ -492,6 +508,10 @@ src/sdk/os/engine_halfc.cpp:
 src/sdk/os/os_alarm_set.cpp:
     complete
     .text       start:0x0201918c end:0x020191f8
+
+src/sdk/os/os_interrupts.cpp:
+    complete
+    .text       start:0x020196f0 end:0x02019780
 
 src/sdk/os/os_runon_checks.cpp:
     complete

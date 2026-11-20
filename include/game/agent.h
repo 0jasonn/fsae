@@ -2,6 +2,9 @@
 #define GAME_AGENT_H
 
 #include "engine/functions.h"
+#include "sdk/os/os_interrupts.h"
+#include "sdk/os/dc_cache.h"
+#include "sdk/os/os_irq.h"
 
 // Prototypes for functions defined in src/wip/A/ (Implementer A).
 // Plain (unmangled) functions get C linkage here; the original debug names of mangled ones are C++.
@@ -25,7 +28,6 @@ u32 WMi_SendCommandDirect(u16 *data, u32 count);
 void WMi_SetCallbackTable(u32 id, void *table);
 void WM_SetPortCallback(u32 port, u32 a, u32 b);
 u32 WMi_SendCommand(u32 a, u32 b, ...);
-void DC_StoreRange(void *addr, u32 size);
 s32 NWMi_CheckInitialized(void);
 }
 

@@ -2,6 +2,9 @@
 #define KNIFE_SUBTASK_SUBTASK_RASTER_H
 
 #include "types.h"
+#include "sdk/os/os_interrupts.h"
+#include "sdk/os/dc_cache.h"
+#include "sdk/os/os_irq.h"
 
 // Work block of the subtask screens (pointer at data_0217d348) as the HBlank raster setup uses it: one s32 scroll offset
 // per scanline (256 of them) at 0x534.
@@ -16,13 +19,11 @@ extern s32 data_0217d17c;
 extern s32 data_0217d180;
 extern s32 data_0217d184;
 
-void OS_SetIrqFunction(u32 mask, void (*func)(void)); // _Z17OS_SetIrqFunctionmPFvvE
 
 extern "C" {
 void subtask_make_lobby_raster(void);
 void subtask_init_hblank_raster(s32 mode);
 void GX_HBlankIntr(s32 enable);
-void OS_DisableIrqMask(u32 mask);
 }
 
 #endif

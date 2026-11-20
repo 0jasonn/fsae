@@ -8,7 +8,7 @@
 extern "C" {
 u32 Os_DoLockByWordWrap(u32 a, u32 b, u32 c, u32 unused);
 u32 Os_InitCommonWrap(u32 a, u32 b, u32 c, u32 d);
-u32 Os_IrqCallbackWrap(u32 unused, u32 b, u32 c, u32 d);
+void OSi_IrqDma0(void);
 }
 
 #endif

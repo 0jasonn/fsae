@@ -2,6 +2,9 @@
 #define UI_SNDWAVEARC_H
 
 #include "engine/functions.h"
+#include "sdk/os/os_interrupts.h"
+#include "sdk/os/dc_cache.h"
+#include "sdk/os/os_irq.h"
 
 // Wave archive image as it is read from the sound table: a 0x3c byte header whose word at +0x38 counts the entries,
 // followed by the entry words (and a second block of the same size that is filled by the copy).
@@ -21,7 +24,6 @@ void *func_020c0b20(void *record, u32 size, void *callback, void *data, s32 inde
 u32 SndTable_GetWord14(s32 index);
 void SndTable_SetWord14(s32 index, u32 value);
 void *func_020c05dc(void);
-void DC_StoreRange(void *start, u32 size);
 void *SndBank_AcquireWaveArc(s32 index, void *record, s32 flag);
 }
 

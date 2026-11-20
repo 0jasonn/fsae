@@ -6,6 +6,9 @@
 // (config/eur/original_names.tsv); extern "C" functions were unmangled in the original or are TwlSDK.
 
 #include "engine/entity.h"
+#include "sdk/os/os_interrupts.h"
+#include "sdk/os/dc_cache.h"
+#include "sdk/os/os_irq.h"
 typedef struct PL_WORK_ PlayerData;
 typedef void (*PMiCallback)(u32 result, u32 arg); // TwlSDK PM callback
 
@@ -57,7 +60,6 @@ void DmaCopy32Fast(u32 dmaNo, const void *src, void *dst, u32 size); // ARM9 ext
 void OS_CreateAlarm(void *alarm);
 void OS_DisableMainExArena(void);
 void OS_GetOwnerInfo(void *info);
-u32 OS_GetProcMode(void);
 s32 OS_IsValidDeliverArg(u32 arg);
 u32 OS_SaveContext(void *thread);
 void *OS_SelectThread(void);
@@ -160,7 +162,6 @@ void MIi_CpuClearFast(u32 value, void *dst, u32 size);
 void MIi_CpuCopy32(const void *src, void *dst, u32 size);
 void MIi_CpuCopyFast(const void *src, void *dst, u32 size);
 void MoveDir(Entity *e);
-void OS_EnableIrqMask(u32 mask);
 void OSi_CpuClear32(u32 value, void *dst, u32 size);
 int ObjNearPlCheck(Entity *e, int a, int b);
 Entity *ObjPosCopy(Entity *src, Entity *dst);
@@ -216,7 +217,6 @@ void OS_Terminate(void);
 s32 PM_SetLCDPower(s32 a);
 void func_0201d038(s32 a, s32 b, s32 c);
 void OS_WaitVBlankIntr(void);
-void DC_FlushRange(const void *startAddr, u32 nBytes); // TwlSDK
 void func_02086168(Entity *e);
 void func_020841b0(Entity *e);
 void TP_WaitBusy(s32 mode);
@@ -240,9 +240,6 @@ void func_02084200(Entity *e);
 void func_0208a240(Entity *e, u16 kind, u16 x, u16 y); // thumb label, no original name (torch lighting helper)
 int func_0208b668(Entity *e);
 u8 ObjGetDir2(Entity *e, Entity *target, s32 a, s32 b); // 0x0204fdfc, unmangled
-u32 OS_DisableInterrupts(void);
-void OS_RestoreInterrupts(u32 state);
-void DC_InvalidateRange(void *start, u32 size);
 void FATFSi_InitRequest(void);
 void FATFSi_SyncInitialization(u32 arg);
 void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
@@ -264,7 +261,6 @@ u32 STD_ConvertStringUnicodeToSjis(void *a, void *b, void *c, void *d, void *e);
 u32 OSi_DoTryLockByWord(void *word, u32 id, void *owner, u32 unused);
 void OSi_FreeCardBus(void);
 void OSi_AllocateCardBus(void);
-u32 OS_EnableInterrupts(void);
 void OS_Halt(void);
 // VRAM bank helpers.
 void resetBankForX_(void *bank);
@@ -277,7 +273,6 @@ u32 STDi_GetUnicodeConversionTable(u32 a, u32 b, u32 c, u32 d);
 u32 FATFSi_SendToPXI(u32 a, u32 b, u32 c, u32 d);
 u32 FS_UnmountArchive(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_InitCommon(u32 a, u32 b, u32 c, u32 d);
-u32 OSi_IrqCallback(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_DoLockByWord(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_DoUnlockByWord(u32 a, u32 b, u32 c, u32 d);
 u32 func_0201a070(u32 a, u32 b, u32 c, u32 d);

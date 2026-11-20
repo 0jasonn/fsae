@@ -3,7 +3,7 @@
 #include "types.h"
 #include "sdk/os/os_wrap_api.h"
 
-// Calls OSi_IrqCallback with a zero first argument.
-u32 Os_IrqCallbackWrap(u32 unused, u32 b, u32 c, u32 d) {
-    return OSi_IrqCallback(0, b, c, d);
+// OSi_IrqDma0: runs the DMA 0 interrupt callback (OSi_IrqCallback(0)).
+void OSi_IrqDma0(void) {
+    OSi_IrqCallback(0);
 }
