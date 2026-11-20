@@ -2146,6 +2146,10 @@ src/ui/message_13.cpp:
     complete
     .text       start:0x0204ab00 end:0x0204ab20
 
+src/ui/msgwin_size.cpp:
+    complete
+    .text       start:0x0204ab20 end:0x0204ac5c
+
 src/ui/msgwin.cpp:
     complete
     .text       start:0x0204ac5c end:0x0204ad38
@@ -2481,6 +2485,10 @@ src/game/pause_3.cpp:
 src/game/pause_4.cpp:
     complete
     .text       start:0x02054510 end:0x02054788
+
+src/game/player_bind.cpp:
+    complete
+    .text       start:0x02054788 end:0x020547ec
 
 src/game/player.cpp:
     complete
