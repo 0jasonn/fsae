@@ -748,7 +748,6 @@ extern s32 effectPhaseTable[];
 void bombFire(Entity *e); // original bombFire(OBJ_WORK_*)
 void TaimatuIgnition(Entity *e, u16 kind); // original TaimatuIgnition(OBJ_WORK_*, unsigned short)
 int func_02083ccc(Entity *e, s16 x, s16 y); // 0x02083ccc: cell kind at an offset from the entity
-void *zMalloc(u16 size); // original zMalloc(unsigned short)
 void func_02085e08(Entity *e, Entity *t); // 0x02085e08, called with the hit arguments
 extern u8 data_0212ced6[];
 extern u8 data_0212ceca[];

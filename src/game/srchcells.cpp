@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/zmem.h"
 #include "global.h"
 #include "types.h"
 #include "game/srchcells_api.h"

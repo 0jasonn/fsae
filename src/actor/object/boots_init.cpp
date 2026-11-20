@@ -1,4 +1,5 @@
 #include "engine/functions.h"
+#include "game/zmem.h"
 #include "engine/player.h"
 #include "actor/object/boots_init.h"
 

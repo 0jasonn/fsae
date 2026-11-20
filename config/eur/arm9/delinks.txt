@@ -1037,6 +1037,10 @@ src/game/keyread.cpp:
     complete
     .text       start:0x0202a190 end:0x0202a39c
 
+src/game/zmem_malloc.cpp:
+    complete
+    .text       start:0x0202a39c end:0x0202a568
+
 src/game/zmem.cpp:
     complete
     .text       start:0x0202a568 end:0x0202a5f4
