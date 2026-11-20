@@ -4,8 +4,7 @@
 #include "ui/widget/rect_f.h"
 #include "ui/widget/slider_index_api.h"
 
-// slider_index: functions Slider_setIndex (0x020b9424) and Slider_setPositionFromIndex (0x020b9478), provisional names.
-// Slider_setupItems (0x020b9380) is parked in scratch/agentF/nonmatching.
+// Slider setup and selection helpers (0x020b9380 through 0x020b94ac); names and record types are provisional.
 
 // Item of a slider: the vtable (slot 4 is called with the index) and the index byte at +0x29
 typedef struct SliderItem {
@@ -33,6 +32,23 @@ typedef struct SliderIndex {
     s16 unk_3a;        // 0x3a
     u8 flag;           // 0x3c
 } SliderIndex;
+
+// Set the item count, reset the page and selection state, and initialize each visible row.
+void Slider_setupItems(void *selfv, s32 value) {
+    SliderIndex *self = (SliderIndex *)selfv;
+    s32 i;
+
+    self->unk_20 = value;
+    self->unk_28 = (s16)_s32_div_f(self->unk_20 + self->count - 1, self->count);
+    RectGroup_updateItems(self);
+    Slider_setPosition(self, 0);
+    self->index = -1;
+    self->unk_2c = -1;
+    for (i = 0; i < (u16)(self->count + 1); i++) {
+        self->items[i]->index = 0;
+        SLIDER_ITEM_CALL(self->items[i], 0);
+    }
+}
 
 // Slider_setIndex(self, value) (0x020b9424, provisional name): returns 0 when value is already the index and the flag is
 // set; otherwise sets the flag, updates both sides through SliderRing_setSelectedChild around the new index and returns 1

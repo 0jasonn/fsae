@@ -30,7 +30,7 @@ void Os_SleepAlarm(u32 count) {
     irq = OS_DisableInterrupts();
     ticks = ((u64)count * 0x82ea) >> 6;
     *(void **)((u8 *)waiter + 0xb0) = alarm;
-    func_0201918c(alarm, (u32)ticks, (u32)(ticks >> 32), OSi_SleepAlarmCallback, &waiter);
+    func_0201918c(alarm, ticks, OSi_SleepAlarmCallback, &waiter);
     if (waiter != NULL) {
         do {
             Os_LinkThreadAndFlush(0);

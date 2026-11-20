@@ -1,8 +1,8 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "engine/sound/sndstate_lookup_api.h"
 
 extern "C" {
-u8 *func_020c05ec(s32 index);
 u8 *func_020c0650(s32 index);
 s32 func_020c0e50(u16 entryIndex, u32 flags, u32 size, s32 flag, u32 extra);
 void *SndBank_AcquireSeqData(s32 index, u32 size, s32 flag);
@@ -19,7 +19,7 @@ s32 func_020c0d6c(s32 index, u32 flags, u32 size, s32 flag, u32 *out) {
     s32 status;
     void *result;
 
-    entry = func_020c05ec(index);
+    entry = SndState_LookupAt08(index);
     if (entry == 0) {
         return 2;
     }

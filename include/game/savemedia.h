@@ -16,7 +16,7 @@ void set0a_setenemy(Entity *e); // 0x02057dec, set_6.cpp
 void SetInit(Entity *e); // 0x02057614, not yet written
 u16 CalcChecksum(const u16 *data, s32 size); // 0x02056120, backup.cpp
 s32 Knife_fatRead(u16 slot, _SAVEHEADER *header); // 0x020565e8, backup_2.cpp
-s32 Knife_mediaVerify(u16 slot, const u32 *data, s32 size); // 0x0205657c, parked in scratch/agentD/nonmatching
+extern "C" s32 Knife_mediaVerify(u16 slot, const u32 *data, s32 size); // 0x0205657c
 
 extern "C" {
 u32 OS_GetBootType(void);

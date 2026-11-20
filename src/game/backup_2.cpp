@@ -60,3 +60,18 @@ u32 Knife_loadSaveFile(u32 slot) {
     }
     return result;
 }
+
+void readFromSaveBuffer(u32 *buffer, u16 index, s32 size) {
+    size /= 8;
+    index >>= 3;
+    s32 count = size;
+    size--;
+    if (count <= 0) {
+        return;
+    }
+    do {
+        ReadSaveBufferDword(index, (u16 *)buffer);
+        index++;
+        buffer += 2;
+    } while (size-- > 0);
+}

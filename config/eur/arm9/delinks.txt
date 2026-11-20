@@ -97,6 +97,10 @@ src/engine/str_format.cpp:
     complete
     .text       start:0x02008080 end:0x02008110
 
+src/engine/runtime_callback.cpp:
+    complete
+    .text       start:0x02008110 end:0x02008138
+
 src/engine/stub_7.cpp:
     complete
     .text       start:0x02008138 end:0x0200813c
@@ -104,6 +108,10 @@ src/engine/stub_7.cpp:
 src/engine/str.cpp:
     complete
     .text       start:0x02008264 end:0x02008280
+
+src/engine/str_copy.cpp:
+    complete
+    .text       start:0x02008348 end:0x02008398
 
 src/engine/strchr.cpp:
     complete
@@ -140,6 +148,14 @@ src/engine/stub_3.cpp:
 src/engine/decnum_arith.cpp:
     complete
     .text       start:0x0200a4d8 end:0x0200a518
+
+src/engine/decnum_parse.cpp:
+    complete
+    .text       start:0x0200a75c end:0x0200a7f8
+
+src/engine/decnum_format.cpp:
+    complete
+    .text       start:0x0200acf8 end:0x0200ada4
 
 src/engine/fp_sign.cpp:
     complete
@@ -232,6 +248,10 @@ src/engine/slot_restore.cpp:
 src/engine/packed_rec.cpp:
     complete
     .text       start:0x0200c998 end:0x0200ca38
+
+src/engine/range_default.cpp:
+    complete
+    .text       start:0x0200ca38 end:0x0200ca58
 
 src/engine/packed_optional.cpp:
     complete
@@ -357,6 +377,10 @@ src/engine/vram_disable.cpp:
     complete
     .text       start:0x02015448 end:0x0201545c
 
+src/engine/os_external_init.cpp:
+    complete
+    .text       start:0x0201556c end:0x02015578
+
 src/engine/dma_conflict.cpp:
     complete
     .text       start:0x02015940 end:0x020159cc
@@ -380,6 +404,10 @@ src/engine/stub_empty.cpp:
 src/engine/os_wrap_2.cpp:
     complete
     .text       start:0x02016d08 end:0x02016d18
+
+src/engine/os_external_query.cpp:
+    complete
+    .text       start:0x02016ecc end:0x02016ed8
 
 src/engine/os_kind_terminate.cpp:
     complete
@@ -461,6 +489,14 @@ src/engine/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
 
+src/engine/os_alarm_set.cpp:
+    complete
+    .text       start:0x0201918c end:0x020191f8
+
+src/engine/os_runon_checks.cpp:
+    complete
+    .text       start:0x02019968 end:0x02019980
+
 src/engine/frame_asm_4.cpp:
     complete
     .text       start:0x02019980 end:0x02019988
@@ -493,6 +529,10 @@ src/engine/engine_block.cpp:
     complete
     .text       start:0x0201a468 end:0x0201a474
 
+src/engine/pxi_receive64.cpp:
+    complete
+    .text       start:0x0201aa78 end:0x0201ab90
+
 src/engine/mutex_wrap.cpp:
     complete
     .text       start:0x0201aff8 end:0x0201b020
@@ -509,9 +549,17 @@ src/engine/pmi_init.cpp:
     complete
     .text       start:0x0201c8b8 end:0x0201c958
 
+src/engine/pm_receive.cpp:
+    complete
+    .text       start:0x0201c958 end:0x0201ca78
+
 src/engine/pmi_send.cpp:
     complete
     .text       start:0x0201ca78 end:0x0201cafc
+
+src/engine/pm_apply_power.cpp:
+    complete
+    .text       start:0x0201d314 end:0x0201d514
 
 src/engine/pmlist_wrap.cpp:
     complete
@@ -533,9 +581,17 @@ src/engine/wm_enable.cpp:
     complete
     .text       start:0x0201f838 end:0x0201f848
 
+src/engine/wm_validate_parent.cpp:
+    complete
+    .text       start:0x0201faac end:0x0201fafc
+
 src/engine/wm_start_parent.cpp:
     complete
     .text       start:0x0201fb74 end:0x0201fb84
+
+src/engine/wm_startmp_internal.cpp:
+    complete
+    .text       start:0x0201ff40 end:0x020200c0
 
 src/engine/wm_startmp.cpp:
     complete
@@ -2474,6 +2530,10 @@ src/game/backup.cpp:
     complete
     .text       start:0x02056120 end:0x020561d0
 
+src/game/backup_media_initialize.cpp:
+    complete
+    .text       start:0x020561d0 end:0x020562ec
+
 src/game/backup_media.cpp:
     complete
     .text       start:0x020562ec end:0x02056478
@@ -2484,11 +2544,15 @@ src/game/backup_9.cpp:
 
 src/game/backup_2.cpp:
     complete
-    .text       start:0x020565e8 end:0x020566dc
+    .text       start:0x020565e8 end:0x02056738
+
+src/game/knife_media_write.cpp:
+    complete
+    .text       start:0x02056738 end:0x0205687c
 
 src/game/backup_14.cpp:
     complete
-    .text       start:0x0205687c end:0x020569cc
+    .text       start:0x0205687c end:0x02056a28
 
 src/game/backup_3.cpp:
     complete
@@ -2597,6 +2661,10 @@ src/actor/object/coin.cpp:
 src/actor/object/coin_2.cpp:
     complete
     .text       start:0x02058948 end:0x02058aa0
+
+src/actor/object/kirakira.cpp:
+    complete
+    .text       start:0x02058b60 end:0x02058c04
 
 src/actor/object/center.cpp:
     complete
@@ -4514,17 +4582,33 @@ src/knife/message/texttokenizer_9.cpp:
     complete
     .text       start:0x0208e854 end:0x0208e8d4
 
+src/knife/message/texttags_wait_auto.cpp:
+    complete
+    .text       start:0x0208e8d4 end:0x0208e9ec
+
 src/knife/message/texttags.cpp:
     complete
     .text       start:0x0208e9ec end:0x0208ea6c
+
+src/knife/message/texttags_next.cpp:
+    complete
+    .text       start:0x0208ea6c end:0x0208eaf8
 
 src/knife/message/texttags_2.cpp:
     complete
     .text       start:0x0208eaf8 end:0x0208eb78
 
+src/knife/message/texttags_se_pict.cpp:
+    complete
+    .text       start:0x0208eb78 end:0x0208ec90
+
 src/knife/message/texttags_3.cpp:
     complete
     .text       start:0x0208ec90 end:0x0208ed0c
+
+src/knife/message/texttags_button.cpp:
+    complete
+    .text       start:0x0208ed0c end:0x0208ed98
 
 src/knife/message/texttags_blank.cpp:
     complete
@@ -5299,11 +5383,7 @@ src/engine/card_2.cpp:
 
 src/engine/card_pullout.cpp:
     complete
-    .text       start:0x020a46b0 end:0x020a4708
-
-src/engine/card_pullout_2.cpp:
-    complete
-    .text       start:0x020a4798 end:0x020a47a8
+    .text       start:0x020a46b0 end:0x020a47a8
 
 src/knife/message/pictogram_init.cpp:
     complete
@@ -5725,6 +5805,10 @@ src/ui/lobby_color.cpp:
     complete
     .text       start:0x020b2560 end:0x020b25c0
 
+src/ui/lobby_latch_recv_bits.cpp:
+    complete
+    .text       start:0x020b2614 end:0x020b26d0
+
 src/ui/lobby_7.cpp:
     complete
     .text       start:0x020b26d0 end:0x020b2898
@@ -5789,6 +5873,10 @@ src/ui/widget/pane_setoffset.cpp:
     complete
     .text       start:0x020b57c8 end:0x020b57f4
 
+src/ui/widget/pane_visit.cpp:
+    complete
+    .text       start:0x020b57f4 end:0x020b5840
+
 src/ui/widget/pane_b.cpp:
     complete
     .text       start:0x020b5840 end:0x020b5850
@@ -5799,7 +5887,7 @@ src/ui/widget/pane_c.cpp:
 
 src/ui/widget/pane_e.cpp:
     complete
-    .text       start:0x020b5950 end:0x020b5998
+    .text       start:0x020b5950 end:0x020b5a34
 
 src/ui/widget/pane_calc.cpp:
     complete
@@ -5953,6 +6041,10 @@ src/ui/widget/rect_list_2.cpp:
     complete
     .text       start:0x020b826c end:0x020b82f4
 
+src/ui/widget/rect_list_update.cpp:
+    complete
+    .text       start:0x020b82f4 end:0x020b8384
+
 src/ui/widget/rect_list_3.cpp:
     complete
     .text       start:0x020b8384 end:0x020b8398
@@ -6011,7 +6103,7 @@ src/ui/widget/rect_list_4.cpp:
 
 src/ui/widget/slider_index.cpp:
     complete
-    .text       start:0x020b9424 end:0x020b94ac
+    .text       start:0x020b9380 end:0x020b94ac
 
 src/ui/widget/rect_group_update.cpp:
     complete
@@ -6137,6 +6229,10 @@ src/engine/gx_misc.cpp:
     complete
     .text       start:0x020bc3a8 end:0x020bc43c
 
+src/ui/widget/rect_span_write.cpp:
+    complete
+    .text       start:0x020bc43c end:0x020bc51c
+
 src/ui/widget/ctrl_leaf_2.cpp:
     complete
     .text       start:0x020bc51c end:0x020bc528
@@ -6177,17 +6273,41 @@ src/ui/widget/rect_buf_init.cpp:
     complete
     .text       start:0x020bc84c end:0x020bc8bc
 
+src/ui/widget/menu_setup_hardware.cpp:
+    complete
+    .text       start:0x020bc8bc end:0x020bc99c
+
 src/ui/widget/uiobj_create_2.cpp:
     complete
     .text       start:0x020bcd34 end:0x020bce14
+
+src/ui/widget/menu_redraw.cpp:
+    complete
+    .text       start:0x020bd00c end:0x020bd128
+
+src/ui/widget/menu_update_backgrounds.cpp:
+    complete
+    .text       start:0x020bd128 end:0x020bd2c0
 
 src/ui/widget/menu_2.cpp:
     complete
     .text       start:0x020bd2c0 end:0x020bd474
 
+src/ui/widget/menu_direction_input.cpp:
+    complete
+    .text       start:0x020bd830 end:0x020bd968
+
 src/ui/widget/menu_20.cpp:
     complete
     .text       start:0x020bd968 end:0x020bdb34
+
+src/ui/widget/menu_init_display.cpp:
+    complete
+    .text       start:0x020bdb34 end:0x020bdd60
+
+src/ui/widget/menu_switch_page.cpp:
+    complete
+    .text       start:0x020bdd60 end:0x020bdfc0
 
 src/ui/widget/menu_6.cpp:
     complete
@@ -6205,9 +6325,21 @@ src/ui/widget/menu_31.cpp:
     complete
     .text       start:0x020be154 end:0x020be244
 
+src/ui/widget/menu_teardown_hardware.cpp:
+    complete
+    .text       start:0x020be244 end:0x020be2f8
+
 src/ui/widget/menu_8.cpp:
     complete
     .text       start:0x020be2f8 end:0x020be518
+
+src/ui/widget/menu_scroll_input.cpp:
+    complete
+    .text       start:0x020be518 end:0x020be5a4
+
+src/ui/widget/menu_scroll_delta.cpp:
+    complete
+    .text       start:0x020be5a4 end:0x020be66c
 
 src/ui/widget/menu_25.cpp:
     complete
@@ -6323,7 +6455,7 @@ src/engine/sound/sndstate_get.cpp:
 
 src/engine/sound/sndstate_lookup.cpp:
     complete
-    .text       start:0x020c0650 end:0x020c0844
+    .text       start:0x020c05ec end:0x020c0844
 
 src/engine/sound/sndstate.cpp:
     complete
@@ -6424,6 +6556,10 @@ src/engine/sound/sndtrack_3.cpp:
 src/engine/sound/sndlist.cpp:
     complete
     .text       start:0x020c1dcc end:0x020c1fa0
+
+src/engine/sound/sndlist_insert_before.cpp:
+    complete
+    .text       start:0x020c1fa0 end:0x020c2004
 
 src/engine/sound/sndlink.cpp:
     complete
@@ -6561,6 +6697,10 @@ src/knife/message/text_box_2.cpp:
     complete
     .text       start:0x020c5094 end:0x020c50ec
 
+src/knife/message/textbox_measure_block.cpp:
+    complete
+    .text       start:0x020c50ec end:0x020c5180
+
 src/knife/message/text_box_3.cpp:
     complete
     .text       start:0x020c5268 end:0x020c5284
@@ -6597,9 +6737,17 @@ src/knife/message/text_stream.cpp:
     complete
     .text       start:0x020c6f2c end:0x020c6f40
 
+src/knife/message/text_stream_utf8.cpp:
+    complete
+    .text       start:0x020c6f40 end:0x020c6fb0
+
 src/knife/message/text_stream_2.cpp:
     complete
     .text       start:0x020c6fb0 end:0x020c7018
+
+src/engine/bg_dimensions.cpp:
+    complete
+    .text       start:0x020c7018 end:0x020c70ac
 
 src/knife/subtask/subtask_game_start.cpp:
     complete
@@ -6632,6 +6780,10 @@ src/knife/app/knife_power_4.cpp:
 src/knife/app/knife_power_2.cpp:
     complete
     .text       start:0x020c8314 end:0x020c836c
+
+src/knife/app/knife_power_ctor.cpp:
+    complete
+    .text       start:0x020c836c end:0x020c83a0
 
 src/knife/app/knife_power_5.cpp:
     complete

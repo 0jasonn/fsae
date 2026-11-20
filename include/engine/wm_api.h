@@ -9,6 +9,7 @@ void WMi_UnregisterSleepCallback(void);
 void OSi_TerminateThunk(void);
 s32 WM_Enable(void *callback);
 s32 WM_StartParent(void *callback);
+BOOL WMi_ValidateParentParameter(const void *parameter);
 
 void PmList_DeleteFirst(void *item);
 void OS_Terminate(void);

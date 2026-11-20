@@ -10,7 +10,7 @@ extern "C" void *Knife_Message_getCESObject_021770b4(void);
 extern "C" void clearSaveData(u8 index);
 extern "C" void fileSelUIView_errorFileInit(void *self);
 void Knife_InitialSaveFile(u8 index);
-void Knife_mediaWrite(void);
+s32 Knife_mediaWrite(void);
 
 // fileSelUIView slot 2 (0x020a8f7c): empty
 void fileSelUIView_vfunc2(void *self) {

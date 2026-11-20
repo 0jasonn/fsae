@@ -52,7 +52,7 @@ void BgChar_Load(s32 screen, BgCharData *charData, BgCharRect *rect) {
 }
 
 // BgScreen_Load (provisional name): copies the BG map of info to the screen base of the BG of the screen, clipped to the
-// size of the BG in tiles (func_020c7018) and to the size of the map. The data of info is flushed from the cache first.
+// size of the BG in tiles and to the size of the map. The data of info is flushed from the cache first.
 extern "C" void BgScreen_Load(s32 screen, BgLoadInfo *info);
 void BgScreen_Load(s32 screen, BgLoadInfo *info) {
     u32 screenBlock;
@@ -76,7 +76,7 @@ void BgScreen_Load(s32 screen, BgLoadInfo *info) {
     dst = (u8 *)vramBase + screenBlock * 0x800;
     widthTiles = (u32)info->widthPx >> 3;
     heightTiles = (u32)info->heightPx >> 3;
-    func_020c7018((u32 *)&rawW, (u32 *)&rawH, screen);
+    BgScreen_GetTileDimensions((u32 *)&rawW, (u32 *)&rawH, screen);
     sizeW = widthTiles;
     if (rawW <= widthTiles) {
         sizeW = rawW;

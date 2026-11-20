@@ -26,4 +26,6 @@ public:
 
 }
 
+extern "C" void _ZN5Knife12PowerManagerC1Ev(Knife::PowerManager *self);
+
 #endif

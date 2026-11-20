@@ -12,5 +12,6 @@ typedef struct Vars_Coin {
 
 extern const EntityFunc coin_actions[];   // coin_actions, indexed by e->action
 void kirakira_set(Entity *e);
+void kirakira(Entity *e);
 
 #endif

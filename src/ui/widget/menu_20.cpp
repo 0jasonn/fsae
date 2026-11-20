@@ -76,8 +76,8 @@ void Menu_SetTable(MenuWork *menu, void *const *table) {
     menu->sub.unk_378 = menu->unk_0f0;
 }
 
-// Clears the video memory (BG and OBJ VRAM, palettes) before the menu starts.
-void Menu_ClearVram(void) {
+// Clears video memory before the menu starts. The caller's menu argument is unused here.
+void Menu_ClearVram(MenuWork *menu) {
     Vram_SetLcdcBits(0x1ff);
     MIi_CpuClearFast(0, (void *)0x6800000, 0xa4000);
     Vram_DisableBankTail();

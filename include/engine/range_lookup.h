@@ -22,7 +22,7 @@ typedef struct RangeLookup {
 
 extern "C" {
 void RangeLookup_Resolve(u32 key, RangeLookup *out);
-s32 func_0200ca38(RangeLookup *out, u32 key);
+s32 RangeLookup_SetDefaultBounds(RangeLookup *out, u32 key);
 void *RangeTable_Find(void *table, s32 count, u32 key);
 const u8 *Packed_ReadOptional(const u8 *src);
 }

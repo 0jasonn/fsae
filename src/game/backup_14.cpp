@@ -22,8 +22,8 @@ s32 Knife_WriteToMedia(u8 slot, const u32 *data) {
     checksum = CalcChecksum((const u16 *)&magic, 4) + CalcChecksum((const u16 *)&multiSioSelect, *(const u16 *)info);
     header[0] = checksum;
     header[1] = 0x10000 - checksum;
-    func_020569cc(&multiSioSelect, *(const u16 *)((u8 *)info + 6), *(const u16 *)info);
-    func_020569cc(header, *(const u16 *)((u8 *)info + 2), 8);
+    writeToSaveBuffer(&multiSioSelect, *(const u16 *)((u8 *)info + 6), *(const u16 *)info);
+    writeToSaveBuffer(header, *(const u16 *)((u8 *)info + 2), 8);
 
     if (slot != 7) {
         info = getEepInfo(slot);
@@ -31,8 +31,8 @@ s32 Knife_WriteToMedia(u8 slot, const u32 *data) {
         checksum = CalcChecksum((const u16 *)&magic, 4) + CalcChecksum((const u16 *)data, *(const u16 *)info);
         header[0] = checksum;
         header[1] = 0x10000 - checksum;
-        func_020569cc((const void *)data, *(const u16 *)((u8 *)info + 6), *(const u16 *)info);
-        func_020569cc(header, *(const u16 *)((u8 *)info + 2), 8);
+        writeToSaveBuffer((const void *)data, *(const u16 *)((u8 *)info + 6), *(const u16 *)info);
+        writeToSaveBuffer(header, *(const u16 *)((u8 *)info + 2), 8);
     }
     result = FSResultToKnifeFsResult(Knife_mediaWrite());
     SAVE_LOAD_RESULT = result;
@@ -50,5 +50,21 @@ void Knife_InitialSaveFile(u8 slot) {
         return;
     }
     info = getEepInfo((u8)(slot | 4));
-    func_020569cc(name, info->unk_02, 8);
+    writeToSaveBuffer(name, info->unk_02, 8);
+}
+
+// Provisional name. Program successive eight-byte blocks from the buffer.
+void writeToSaveBuffer(const void *buffer, u16 value, s32 size) {
+    size /= 8;
+    value >>= 3;
+    s32 count = size;
+    size--;
+    if (count <= 0) {
+        return;
+    }
+    do {
+        ProgramSaveBufferDwordEx(value, (u16 *)buffer);
+        value++;
+        buffer = (const u8 *)buffer + 8;
+    } while (size-- > 0);
 }

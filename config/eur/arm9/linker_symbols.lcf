@@ -1,2 +1,12 @@
-    /* ARM9 code calls this DMA helper at a fixed address outside the linked image. */
+    /* ARM9 code calls these helpers at fixed addresses outside the linked image. */
     DmaCopy32Fast = 0x021893a0;
+    func_0218a5d4 = 0x0218a5d4;
+    func_0218a5fc = 0x0218a5fc;
+    func_02189868 = 0x02189868;
+    func_0218a570 = 0x0218a570;
+    func_0218a76c = 0x0218a76c;
+    func_0218a860 = 0x0218a860;
+    func_0218a870 = 0x0218a870;
+    /* Provisional names for the empty range table's coincident boundaries. */
+    RangeTableStart = 0x020c8cfc;
+    RangeTableEnd = 0x020c8cfc;

@@ -10,7 +10,7 @@ extern "C" void *Knife_Message_getCESObject_021770b4(void);
 extern "C" void clearSaveData(u8 index);
 extern "C" void fileSelUIView_errorFileInit(void *self);
 void Knife_InitialSaveFile(u8 index);
-void Knife_mediaWrite(void);
+s32 Knife_mediaWrite(void);
 #include "engine/multisio_save.h"
 
 // fileSelUIView::errorFileInit() (0x020a88a8): the save entries in state 6 (initial file, then clear) and 8 (clear)

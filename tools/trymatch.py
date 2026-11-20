@@ -72,12 +72,14 @@ def name_to_addr(name):
             for line in ren.read_text().splitlines():
                 parts = line.split()
                 if len(parts) == 2 and parts[0].startswith("func_"):
-                    _NAMES[parts[1]] = int(parts[0][5:13], 16)
+                    # Live symbols take precedence over provisional scratch renames.
+                    _NAMES.setdefault(parts[1], int(parts[0][5:13], 16))
     return _NAMES.get(name)
 
 
 def call_mismatches(obj: bytes, data: bytes, base: int):
-    """{function: [(offset, called symbol, original target)]} for ARM bl/blx whose target differs from the ROM.
+    """{function: [(offset, called symbol, original target, original opcode)]} for mismatched calls.
+    A None target means the ROM word at the compiled call offset is not an ARM branch.
     The byte comparison masks relocated bits, so a call to the wrong function would otherwise pass."""
     from io import BytesIO
     from elftools.elf.elffile import ELFFile
@@ -104,11 +106,17 @@ def call_mismatches(obj: bytes, data: bytes, base: int):
                         break
                     pc = addr + rel["r_offset"] - start
                     word = int.from_bytes(data[pc - base:pc - base + 4], "little")
+                    offset = rel["r_offset"] - start
+                    # B, BL and immediate BLX share bits 27:25 = 101. A different
+                    # opcode here indicates shifted code, not a decoded call target.
+                    if word & 0x0e000000 != 0x0a000000:
+                        out.setdefault(f.name, []).append((offset, target, None, word))
+                        break
                     imm = word & 0xffffff
                     imm = imm - 0x1000000 if imm & 0x800000 else imm
                     got = pc + 8 + imm * 4 + (2 if word >> 28 == 0xf and word & 0x1000000 else 0)
                     if got & ~1 != want & ~1:
-                        out.setdefault(f.name, []).append((rel["r_offset"] - start, target, got))
+                        out.setdefault(f.name, []).append((offset, target, got, word))
                     break
     return out
 
@@ -147,8 +155,12 @@ def main():
                 ok += good
                 bad += not good
                 lines.append(f"  {'OK  ' if good else 'FAIL'} {name} size={len(code):#x}")
-                for off, target, got in calls.get(name, []):
-                    lines.append(f"    call at +{off:#x} goes to {target}, the original calls {got:#010x}")
+                for off, target, got, original_word in calls.get(name, []):
+                    if got is None:
+                        lines.append(f"    call at +{off:#x} goes to {target}, but original opcode at that offset is "
+                                     f"{original_word:#010x} (not an ARM branch); likely call-position mismatch")
+                    else:
+                        lines.append(f"    call at +{off:#x} goes to {target}, the original calls {got:#010x}")
                 if args.diff and not good:
                     lines.append(diff(data[addr - args.base:addr - args.base + len(code)], code, mask, addr, thumb))
             print(f"{version}: {ok} match, {bad} differ")
