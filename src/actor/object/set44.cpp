@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/set44.h"
+#include "game/frame_load.h"
 
 // Set44 family (module set44), 0x0206cf74 .. 0x0206d350.
 // Address -> name: 0x0206cf74 Set44, 0x0206cf90 set44_init, 0x0206d060 set44_wait,
@@ -22,7 +23,7 @@ void set44_init(Entity *e) {
     nemoto_writecell(e);
     InitAnimationForceUpdate(e, 0);
     if (gameState.unk_01 >= 5) {
-        GetVGroup(e, set44VgroupTable[bgmIndexTable[gameState.unk_01][gameState.unk_48].table[1]]);
+        GetVGroup(e, set44VgroupTable[bgmIndexTable[gameState.unk_01][gameState.unk_48].frame->roomNo]);
     } else {
         GetVGroup(e, set44VgroupIds[gameState.unk_01]);
     }

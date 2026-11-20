@@ -15,7 +15,6 @@ typedef struct Vars_Set23 {
 extern const EntityFunc set23_stateTable[]; // indexed by e->action, was set23_stateTable
 extern const u16 set23_kindTable[];        // was set23_kindTable, indexed by the animation index (below 5)
 extern const u16 set23_valueTable[];       // was set23_valueTable, indexed by the entry byte 1
-extern const u8 *set23_ptrTable[];         // was bgmIndexTable, 8-byte entries per index
 extern const u8 set23_hitbox[];            // was set23_hitbox, hitbox of the actor
 extern const u32 flagBits[];               // area mask bit per type
 

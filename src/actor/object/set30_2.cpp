@@ -2,10 +2,11 @@
 #include "engine/player.h"
 #include "actor/object/rewhalf.h"
 #include "actor/object/set30_2.h"
+#include "game/frame_load.h"
 #include "global.h"
 
 // set30_init (0x02068e18): sets up the actor (type2 keeps its low two bits, bit 7 becomes typeFlag) and picks its
-// vgroup from the per-stage table (data_020da714) or, from stage 5 on, from the bgm index record (data_020da754).
+// vgroup from the per-stage table (data_020da714) or, from stage 5 on, from the current frame's roomNo (data_020da754).
 void set30_init(Entity *e) {
     if ((e->type2 & 0x7f) == 3) {
         e->type2 = (e->type2 & 0x80) | (gameState.playerCount - 2);
@@ -24,8 +25,8 @@ void set30_init(Entity *e) {
         return;
     }
     if (gameState.unk_01 >= 5) {
-        const u8 *record = bgmIndexTable[gameState.unk_01][gameState.unk_48].table;
-        GetVGroup(e, data_020da754[e->type2 + record[1] * 3]);
+        const FRAME_INFO_ *frame = bgmIndexTable[gameState.unk_01][gameState.unk_48].frame;
+        GetVGroup(e, data_020da754[e->type2 + frame->roomNo * 3]);
     } else {
         GetVGroup(e, data_020da714[e->type2 + gameState.unk_01 * 3]);
     }

@@ -14,7 +14,7 @@ typedef struct Vars_02036ca4 {
     /* 78 */ u16 targetX; // target x
     /* 7a */ u16 targetY; // target y
     /* 7c */ u8 attackSeed; // attack history
-    /* 7d */ s8 stormDir;
+    /* 7d */ u8 stormDir;  // +1 or 0xff (-1): swing direction added to unk_73
     /* 7e */ u8 pathWait;
 } Vars_02036ca4;
 #define V(e) VARS(Vars_02036ca4, e)
@@ -39,6 +39,9 @@ extern const u8 data_020d1458[];
 extern const u16 *const em2f_stormPaths[];
 extern const u16 *const em2f_fivePaths[];
 extern const u8 em2f_vitalThresholds[][2];
+
+void em2f_stormSmash(Entity *e); // 0x020379d8
+void stormMove(Entity *e);       // 0x02038414
 
 
 #endif

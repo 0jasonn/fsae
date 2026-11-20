@@ -1,20 +1,21 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "actor/object/set6b_rewdoor.h"
+#include "game/frame_load.h"
 
 // Rewrites the map cells under a door block (set6b_rewDoor, 0x020623c8). Same scheme as rewHalf; bit 2 of the type
 // selects the second set of cell lists and type & 7 the cells around the block.
 void set6b_rewDoor(Entity *e) {
     const u16 *list;
     int cell;
-    const u8 *bgmRow;
+    const FRAME_INFO_ *frame;
 
     if (gameState.unk_01 == 6) {
-        bgmRow = bgmIndexTable[gameState.unk_01][gameState.unk_48].table;
+        frame = bgmIndexTable[gameState.unk_01][gameState.unk_48].frame;
         if (e->type2 & 4) {
-            list = rewDoorListsBgmB[bgmRow[1]] + (VS(e)->listSet * 0x18 + (e->type2 & 3) * 6);
+            list = rewDoorListsBgmB[frame->roomNo] + (VS(e)->listSet * 0x18 + (e->type2 & 3) * 6);
         } else {
-            list = rewDoorListsBgmA[bgmRow[1]] + (VS(e)->listSet * 0x18 + (e->type2 & 3) * 6);
+            list = rewDoorListsBgmA[frame->roomNo] + (VS(e)->listSet * 0x18 + (e->type2 & 3) * 6);
         }
     } else {
         if (e->type2 & 4) {

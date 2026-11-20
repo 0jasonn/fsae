@@ -11,8 +11,7 @@ extern "C" {
 void MultiWorkInit(void);
 }
 
-// Packed 2-bit fields: the nut counters of the save block and the status word of comWork.recv[] (ComPacketBits)
-typedef struct MultiFlagByte { u8 b0 : 2; u8 b2 : 2; u8 b4 : 2; u8 b6 : 2; } MultiFlagByte;
+// Packed 2-bit fields: the status word of comWork.recv[] (ComPacketBits)
 typedef struct MultiFlagWord { u32 b0 : 2; u32 b2 : 2; u32 b4 : 2; u32 b6 : 2; } MultiFlagWord;
 
 // Saved multiplay record (data_0212c5ec, 0x2c bytes): a copy of the per-player parts of gameState.
@@ -23,14 +22,15 @@ typedef struct MultiSaveBlock {
     /* 18 */ u8 timer58[4];         // gameState.heldItems
     /* 1c */ u8 timer60[4];         // gameState.health
     /* 20 */ u8 maxHearts[4];       // gameState.maxHearts
-    /* 24 */ MultiFlagByte nutBits; // packed 2-bit nut counters
-    /* 25 */ u8 unk_25[3];
-    /* 28 */ u32 unk_50;            // copy of gameState.unk_50
+    /* 24 */ u8 nutBits[4];         // playerWork[i].nutBits b0 | b2 << 2 | b4 << 4, one byte per player
+    /* 28 */ u8 unk_50;             // copy of gameState.unk_50[0]
+    /* 29 */ u8 unk_29[3];
 } MultiSaveBlock;
 extern MultiSaveBlock data_0212c5ec;
 
 #include "engine/data_0212c540.h"
 extern u32 data_0212c54c;
+extern u32 data_0212c558;
 #include "engine/cockpit_state.h"
 
 void StopBlockInit(void);

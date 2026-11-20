@@ -1,13 +1,14 @@
 #include "actor/object/rewhalf.h"
+#include "game/frame_load.h"
 
 // Rewrites the map cells under a half block (rewHalf, 0x02061e44). The cell list comes from the pick index (or from the
-// bgm record when it is 6) and the block type; the type & 3 selects the cells around the block.
+// frame's roomNo when it is 6) and the block type; the type & 3 selects the cells around the block.
 void rewHalf(Entity *e) {
     const u16 *list;
     int cell;
 
     if (gameState.unk_01 == 6) {
-        list = rewHalfListsBgm[bgmIndexTable[gameState.unk_01][gameState.unk_48].table[1]]
+        list = rewHalfListsBgm[bgmIndexTable[gameState.unk_01][gameState.unk_48].frame->roomNo]
                + (VS(e)->listSet * 0x18 + (e->type2 & 3) * 6);
     } else {
         list = rewHalfListsPick[gameState.unk_01] + (VS(e)->listSet * 0x18 + (e->type2 & 3) * 6);

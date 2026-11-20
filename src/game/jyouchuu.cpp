@@ -3,24 +3,24 @@
 #include "global.h"
 #include "types.h"
 #include "engine/player.h"
+#include "game/frame_load.h"
 
 // Functions in this file (original names from the debug build):
 //   LoadJyouchuu
 
-// Game state byte 1, the row table of bgmIndexTable (row byte 1 indexes data_020d7da8) and the per-state table data_020d7d84
-extern u32 bgmIndexTable[];
+// Per-room table (indexed by the current frame's roomNo) and per-state table
 extern const u16 data_020d7da8[];
 extern const u16 data_020d7d84[];
 
-// Loads the data of the current stage (state 5 and up use the row of the current stage)
+// Loads the data of the current stage (state 5 and up use the room of the current frame)
 void LoadJyouchuu(void) {
     u8 state;
-    u8 *row;
+    FRAME_INFO_ *frame;
 
     state = gameState.unk_01;
     if (state >= 5) {
-        row = *(u8 **)((u8 *)bgmIndexTable[state] + gameState.unk_48 * 8);
-        DataLoad(data_020d7da8[row[1]]);
+        frame = bgmIndexTable[state][gameState.unk_48].frame;
+        DataLoad(data_020d7da8[frame->roomNo]);
     } else {
         DataLoad(data_020d7d84[state]);
     }

@@ -13,13 +13,7 @@ typedef struct Vars_Rew {
 } Vars_Rew;
 #define VS(e) VARS(Vars_Rew, e)
 
-typedef struct BgmIndexEntry {
-    /* 00 */ const u8 *table; // record table, byte 1 selects the cell list set
-    /* 04 */ u32 unk_4;
-} BgmIndexEntry;
-
-extern const BgmIndexEntry *const bgmIndexTable[];
-extern const u16 *const rewHalfListsBgm[];   // rewHalfListsBgm, indexed by a bgm row byte
+extern const u16 *const rewHalfListsBgm[];   // rewHalfListsBgm, indexed by the frame's roomNo
 extern const u16 *const rewHalfListsPick[];  // rewHalfListsPick, indexed by the pick index
 
 void rewHalf(Entity *e);

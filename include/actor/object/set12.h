@@ -17,17 +17,11 @@ typedef struct Vars_Set12 {
     /* 7a */ u16 homeY;
 } Vars_Set12;
 
-typedef struct Set12MusicEntry {
-    const u8 *table; // record table, byte 1 is the index used for the vgroup lookup
-    u32 unk_4;
-} Set12MusicEntry;
-
 extern const EntityFunc set12_stateTable[];   // indexed by e->action (was set12_stateTable)
 extern const u8 set12_hitbox[];               // was set12_hitbox
 extern const u8 set12_directionTable[];       // was set12_directionTable, indexed by the move slot
 extern const u16 set12_vgroupIdsA[];          // was set12_vgroupIdsA
 extern const u16 set12_vgroupIdsB[];          // was set12_vgroupIdsB
-extern const Set12MusicEntry *const bgmIndexTable[];
 #include "engine/em12_type_masks.h"
 extern const u32 flagBits[];
 

@@ -685,7 +685,6 @@ void sleepSet(Entity *e);
 typedef enum MSG_STATUS { MSG_STATUS_DUMMY } MSG_STATUS; // values not known yet
 void statusUpdate(MSG_STATUS mode);
 void stormGetTama(Entity *e);
-void stormMove(Entity *e);
 void *subTask_GetNewCellAnimation(s32 *outIndex);
 void subTaskSendBgChar(s16 index, void *data, u32 offset, u32 size);
 void subTaskSendBgPlt(void *data, u32 offset, u32 size);

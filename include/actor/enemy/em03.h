@@ -30,4 +30,7 @@ extern u8 data_0212cee4[];
 #include "engine/frame_counter.h"
 extern const s8 data_020d1844[];
 
+void em03_damage(Entity *e);     // 0x020385cc
+void em03_kuttsuki(Entity *e);   // 0x0203888c
+
 #endif

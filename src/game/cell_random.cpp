@@ -3,6 +3,7 @@
 #include "types.h"
 #include "game/cellcommon.h"
 #include "engine/player.h"
+#include "game/frame_load.h"
 
 // Functions in this file (original names from the debug build):
 //   random_baneyuka_set
@@ -24,13 +25,10 @@ void random_baneyuka_set(u16 key, u16 index) {
     func_02083694((u16)cell, index, 0x4000);
 }
 
-// Table of pointers (bgmIndexTable) indexed by the game state; each entry is a record table of 8-byte rows
-extern u32 bgmIndexTable[];
-
 // Places the ochiba tile at the cell of key, chosen at random (the 0x8000 variant is used for key 0xcb)
 void random_ochiba_set(u16 key, u16 index) {
     u8 state;
-    u8 *row;
+    FRAME_INFO_ *frame;
     u16 tile;
 
     state = gameState.unk_01;
@@ -38,8 +36,8 @@ void random_ochiba_set(u16 key, u16 index) {
         if (state < 5) {
             return;
         }
-        row = *(u8 **)((u8 *)bgmIndexTable[state] + gameState.unk_48 * 8);
-        if (row[1] != 2 && row[1] != 0xc) {
+        frame = bgmIndexTable[state][gameState.unk_48].frame;
+        if (frame->roomNo != 2 && frame->roomNo != 0xc) {
             return;
         }
     }
@@ -58,7 +56,7 @@ void random_ochiba_set(u16 key, u16 index) {
 // Places the rupeemizu tile at the cell of key 0x82, chosen at random between two tiles
 void random_rupeemizu_set(u16 key, u16 index) {
     u8 state;
-    u8 *row;
+    FRAME_INFO_ *frame;
     u16 tile;
 
     state = gameState.unk_01;
@@ -72,9 +70,9 @@ void random_rupeemizu_set(u16 key, u16 index) {
     if (state < 5) {
         return;
     }
-    row = *(u8 **)((u8 *)bgmIndexTable[state] + gameState.unk_48 * 8);
-    if (row[1] != 2 && row[1] != 1 && row[1] != 8 && row[1] != 9 && row[1] != 0xc) {
-        if (row[1] != 0xb) {
+    frame = bgmIndexTable[state][gameState.unk_48].frame;
+    if (frame->roomNo != 2 && frame->roomNo != 1 && frame->roomNo != 8 && frame->roomNo != 9 && frame->roomNo != 0xc) {
+        if (frame->roomNo != 0xb) {
             return;
         }
     }

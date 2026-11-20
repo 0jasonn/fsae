@@ -5,8 +5,8 @@
 #include "engine/player.h"
 #include "actor/object/rewhalf.h"
 
-extern const u16 *const rewDoorListsBgmA[];   // 0x020d9380, indexed by a bgm row byte (type bit 2 clear)
-extern const u16 *const rewDoorListsBgmB[];   // 0x020d93bc, indexed by a bgm row byte (type bit 2 set)
+extern const u16 *const rewDoorListsBgmA[];   // 0x020d9380, indexed by the frame's roomNo (type bit 2 clear)
+extern const u16 *const rewDoorListsBgmB[];   // 0x020d93bc, indexed by the frame's roomNo (type bit 2 set)
 extern const u16 *const rewDoorListsPickA[];  // 0x020d9308, indexed by the pick index (type bit 2 clear)
 extern const u16 *const rewDoorListsPickB[];  // 0x020d92d0, indexed by the pick index (type bit 2 set)
 

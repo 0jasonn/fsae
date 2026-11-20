@@ -1345,6 +1345,10 @@ src/actor/enemy/em2f.cpp:
     complete
     .text       start:0x02036ca4 end:0x020379d8
 
+src/actor/enemy/em2f_stormsmash.cpp:
+    complete
+    .text       start:0x020379d8 end:0x02037a6c
+
 src/actor/enemy/em2f_2.cpp:
     complete
     .text       start:0x02037a6c end:0x02037f6c
@@ -1361,6 +1365,10 @@ src/actor/enemy/em2f_4.cpp:
     complete
     .text       start:0x020383bc end:0x02038414
 
+src/actor/enemy/em2f_stormmove.cpp:
+    complete
+    .text       start:0x02038414 end:0x02038460
+
 src/actor/enemy/em2f_5.cpp:
     complete
     .text       start:0x02038460 end:0x02038544
@@ -1369,9 +1377,17 @@ src/actor/enemy/em03.cpp:
     complete
     .text       start:0x02038544 end:0x020385cc
 
+src/actor/enemy/em03_damage.cpp:
+    complete
+    .text       start:0x020385cc end:0x02038660
+
 src/actor/enemy/em03_2.cpp:
     complete
     .text       start:0x02038660 end:0x0203888c
+
+src/actor/enemy/em03_kuttsuki.cpp:
+    complete
+    .text       start:0x0203888c end:0x02038a34
 
 src/actor/enemy/em04.cpp:
     complete
@@ -1933,6 +1949,10 @@ src/game/ending_3.cpp:
     complete
     .text       start:0x02044b44 end:0x020450e4
 
+src/game/finale_init.cpp:
+    complete
+    .text       start:0x020450e4 end:0x02045308
+
 src/game/ending_4.cpp:
     complete
     .text       start:0x02045308 end:0x020454a8
@@ -2000,6 +2020,10 @@ src/game/multiplay.cpp:
 src/game/multiplay_init.cpp:
     complete
     .text       start:0x02047490 end:0x02047564
+
+src/game/multiplay_restart.cpp:
+    complete
+    .text       start:0x02047564 end:0x02047794
 
 src/game/multiplay_2.cpp:
     complete
@@ -2217,6 +2241,10 @@ src/game/takara_5.cpp:
 src/game/history.cpp:
     complete
     .text       start:0x0204d834 end:0x0204d950
+
+src/game/parts_select.cpp:
+    complete
+    .text       start:0x0204d950 end:0x0204daf4
 
 src/engine/maplevel.cpp:
     complete

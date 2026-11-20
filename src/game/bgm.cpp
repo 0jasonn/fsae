@@ -4,15 +4,10 @@
 //   GameState_SetTrackVariant -> GameState_SetTrackVariant
 #include "game/player_flags.h"
 #include "global.h"
-
-typedef struct MusicIndexEntry {
-    /* 00 */ const u8 *table;
-    /* 04 */ u32 unk_04;
-} MusicIndexEntry;
+#include "game/frame_load.h"
 
 extern const u32 bgmGameModeTracks[];
 extern const u32 bgmSpecialTracks[];
-extern const MusicIndexEntry *const bgmIndexTable[];
 extern const u32 bgmVariantTracks[];
 
 
@@ -33,7 +28,7 @@ void BgmSet(void) {
         if (gameState.unk_01 == 5) {
             trackId = bgmSpecialTracks[gameState.unk_48];
         } else {
-            trackId = bgmVariantTracks[bgmIndexTable[gameState.gameMode][gameState.unk_48].table[1]];
+            trackId = bgmVariantTracks[bgmIndexTable[gameState.gameMode][gameState.unk_48].frame->roomNo];
         }
     } else {
         trackId = bgmGameModeTracks[gameState.gameMode];
@@ -62,7 +57,7 @@ void GameState_SetTrackVariant(void) {
     if (gameState.unk_01 < 5) {
         return;
     }
-    key = bgmIndexTable[gameState.unk_01][gameState.unk_48].table[1];
+    key = bgmIndexTable[gameState.unk_01][gameState.unk_48].frame->roomNo;
     switch (key) {
         case 7:
             gameState.unk_8e = 1;

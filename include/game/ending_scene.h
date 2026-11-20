@@ -20,6 +20,7 @@ extern u8 data_0212c4f8;
 extern s32 data_02134924;
 #include "engine/palette_buff.h"
 
+void finale_init(void);  // 0x020450e4
 void ComRequest(u8 a);
 void yousei_move(void);
 void subTask_staffroll_setFlagOff(void);
