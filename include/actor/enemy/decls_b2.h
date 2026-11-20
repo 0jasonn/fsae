@@ -45,7 +45,8 @@ extern "C" u16 GetResTranslateID(u16 id, const void *table, s32 count); // resid
 extern "C" void MI_UncompressLZ16(const void *src, void *dst, u32 flags); // flags: the entry word, bit 31 set
 
 // srchcells.cpp callees (plain names in symbols.txt)
-extern "C" void *zMalloc(u16 size);
-extern "C" void shuffledata(u16 *list, u16 count);
+
+void *zMalloc(u16 size);  // C++ linkage (original_names.tsv)
+void shuffledata(u16 *list, u16 count);  // C++ linkage (original_names.tsv)
 
 #endif

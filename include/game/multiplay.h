@@ -50,9 +50,6 @@ extern u8 data_02134cb0[];
 #include "engine/com_work.h"
 void GetSetWorkSp(u8 a, u8 b, u8 c);
 void InitCircleWindow(u16 a, u16 b); // C++ linkage, original InitCircleWindow(unsigned short, unsigned short)
-extern "C" {
-void MakeTriangleWindow(s16 a, s16 b, s16 c, s16 d);
-}
 void LoadJyouchuu(void);
 void func_0204363c(void);
 extern u16 data_0212c510;
@@ -61,12 +58,10 @@ extern u16 data_0212c520;
 extern u16 playerKeys[];
 extern u8 data_0212c4b8;
 extern "C" {
-void FloorInit(void);
 void AutoSet(void);
 void CockpitInit(void);
 void CheckPlsSet(void);
 void StopEffectWindow(void);
-void Cockpit(void);
 }
 extern u8 data_0212caf0[];
 extern "C" {
@@ -88,5 +83,9 @@ extern void (*const game00TaskTable[])(void);         // game00TaskTable
 
 // BgInit has C++ linkage (original BgInit()), so it is declared outside the extern "C" blocks.
 void BgInit(void);
+
+void MakeTriangleWindow(s16 a, s16 b, s16 c, s16 d);  // C++ linkage (original_names.tsv)
+void FloorInit(void);  // C++ linkage (original_names.tsv)
+void Cockpit(void);  // C++ linkage (original_names.tsv)
 
 #endif

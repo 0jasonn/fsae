@@ -28,7 +28,8 @@ void DispCtrlClear(void);           // 0x0202a700
 void func_0208309c(void);           // thumb
 extern "C" {
 void ClearNewStageUpdate(void);
-void Cockpit(void);
 }
+
+void Cockpit(void);  // C++ linkage (original_names.tsv)
 
 #endif
