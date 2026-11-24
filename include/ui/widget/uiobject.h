@@ -14,14 +14,14 @@ typedef enum AnimationCurve {
     ANIMATION_CURVE_NONE = 3
 } AnimationCurve;
 
-// Interpolates from[0..1] to to[0..1] at ratio (0x1000 = the end) into out[0..1]
-typedef void (*UIObjectCalcFunc)(s32 *out, const s32 *from, const s32 *to, s32 ratio);
-
 // Position pair used when the move result is copied
 typedef struct UIPos2 {
     s32 x;
     s32 y;
 } UIPos2;
+
+// Interpolates from[0..1] to to[0..1] at ratio (0x1000 = the end).
+typedef UIPos2 (*UIObjectCalcFunc)(const s32 *from, const s32 *to, s32 ratio);
 
 typedef struct UIObject {
     /* 00 */ u8 kind; // set from the argument of UIObject_init
@@ -49,9 +49,9 @@ BOOL UIObject_updateMovePos(UIObject *self, s32 step);
 s32 UIObject_getDurationRatio(const UIObject *self);
 BOOL UIObject_updateTime(UIObject *self, s32 step);
 void UIObject_init(UIObject *self, u8 kind);
-void calc_liner(s32 *out, const s32 *from, const s32 *to, s32 ratio);
-void calc_easeIn(s32 *out, const s32 *from, const s32 *to, s32 ratio);
-void calc_easeOut(s32 *out, const s32 *from, const s32 *to, s32 ratio);
+UIPos2 calc_liner(const s32 *from, const s32 *to, s32 ratio);
+UIPos2 calc_easeIn(const s32 *from, const s32 *to, s32 ratio);
+UIPos2 calc_easeOut(const s32 *from, const s32 *to, s32 ratio);
 }
 
 #endif

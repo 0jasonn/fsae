@@ -5765,6 +5765,10 @@ src/ui/widget/uiobject.cpp:
     complete
     .text       start:0x020acca0 end:0x020acd1c
 
+src/ui/widget/uiobject_update_move_pos.cpp:
+    complete
+    .text       start:0x020acd1c end:0x020acd74
+
 src/ui/widget/uiobject_2.cpp:
     complete
     .text       start:0x020acd74 end:0x020acd98
