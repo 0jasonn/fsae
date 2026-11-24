@@ -10,8 +10,7 @@ void Menu_ForwardC28b0(void *heap);
 
 // SndHeap_CreateRecord: makes a record at the 4-byte aligned start of [base, base + size). Its heap is the rest of the range
 // after a 0x10-byte header. Returns the record, or 0 when the range is too small or the heap could not be made.
-extern "C" void *SndHeap_CreateRecord(void *base, s32 size);
-void *SndHeap_CreateRecord(void *base, s32 size) {
+void *SndHeap_CreateRecord(void *base, u32 size) {
     u32 rounded;
     u32 start;
     u32 end;

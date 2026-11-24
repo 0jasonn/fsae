@@ -1,11 +1,11 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sound/sndlist.h"
+#include "engine/sound/sndrecord.h"
 
 extern "C" {
 u32 SndTable_GetWord10(u32 index);
 s32 SndTable_ReadBlock(s32 index, void *payload, u32 size, s32 flag);
-void *func_020c0b20(void *record, u32 size, void *callback, void *data, s32 index2);
 void DC_StoreRange(void *start, u32 size);
 }
 

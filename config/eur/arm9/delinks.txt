@@ -6585,6 +6585,10 @@ src/engine/sound/sndtable_3.cpp:
     complete
     .text       start:0x020c09d8 end:0x020c0a64
 
+src/engine/sound/snd_payload_record.cpp:
+    complete
+    .text       start:0x020c0b20 end:0x020c0b88
+
 src/engine/sound/sndrecord.cpp:
     complete
     .text       start:0x020c0b88 end:0x020c0c28
