@@ -49,6 +49,10 @@ src/engine/bits.cpp:
     complete
     .text       start:0x02005b1c end:0x02005bcc
 
+src/engine/fp_classify_double.cpp:
+    complete
+    .text       start:0x02005bcc end:0x02005c3c
+
 src/engine/codec.cpp:
     complete
     .text       start:0x02005c3c end:0x02005c90
@@ -164,6 +168,10 @@ src/engine/fp_sign.cpp:
 src/engine/stub_4.cpp:
     complete
     .text       start:0x0200b10c end:0x0200b12c
+
+src/engine/console_read.cpp:
+    complete
+    .text       start:0x0200b12c end:0x0200b17c
 
 src/engine/stub_ret0.cpp:
     complete
