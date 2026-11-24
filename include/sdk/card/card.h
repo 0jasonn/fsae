@@ -44,11 +44,23 @@ s32 CARD_GetPulledOutFlag(void);
 }
 
 typedef struct CardLock {
-    u8 pad_00[0x14];
+    void *commandArea; // 0x00; first word is the command result
+    u32 flags;        // 0x04
+    u8 pad_08[0x0c];
     s32 owner;      // 0x14
     s32 count;      // 0x18
     u32 queue[2];   // 0x1c
     s32 level;      // 0x24
+    u8 unknown_028[0x4c0];
+    void (*currentTask)(void *); // 0x4e8
+    void (*completion)(void *);  // 0x4ec
+    void *completionArg;        // 0x4f0
+    u32 waitQueue[2];           // 0x4f4
+    u32 romAddress;             // 0x4fc
+    void *destination;          // 0x500
+    u32 transferSize;           // 0x504
+    u8 unknown_508[0x14];
+    void *waitingThread;        // 0x51c
 } CardLock;
 
 // The stack block CARD_LockRom builds: an OSEvent at +0, an OSVAlarm at +0xc and the bus-lock listener at +0x34.

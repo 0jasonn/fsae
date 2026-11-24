@@ -5465,9 +5465,29 @@ src/sdk/card/card_end_task.cpp:
     complete
     .text       start:0x020a3d90 end:0x020a3ddc
 
+src/sdk/card/card_dma_interface.cpp:
+    complete
+    .text       start:0x020a3ddc end:0x020a3e14
+
+src/sdk/card/card_fifo_callback.cpp:
+    complete
+    .text       start:0x020a3e8c end:0x020a3ec0
+
 src/sdk/card/card_rom_core.cpp:
     complete
     .text       start:0x020a3f40 end:0x020a4030
+
+src/sdk/card/card_refresh_rom_core.cpp:
+    complete
+    .text       start:0x020a40f8 end:0x020a4144
+
+src/sdk/card/card_dma_read_done.cpp:
+    complete
+    .text       start:0x020a437c end:0x020a43ac
+
+src/sdk/card/card_read_rom_sync_core.cpp:
+    complete
+    .text       start:0x020a4460 end:0x020a44ac
 
 src/sdk/card/card_pullout.cpp:
     complete

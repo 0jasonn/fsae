@@ -3,25 +3,29 @@
 
 #include "sdk/card/card.h"
 
-// Fields of the CARD work area used by command setup and task completion.
-typedef struct CardTaskWork {
-    void *commandArea;          // 0x000; first word is the command result
-    u32 flags;                  // 0x004
-    u8 unknown_008[0x4e0];
-    void (*currentTask)(void *); // 0x4e8
-    void (*completion)(void *);  // 0x4ec
-    void *completionArg;        // 0x4f0
-    u32 waitQueue[2];           // 0x4f4
-    u8 unknown_4fc[0x20];
-    void *waitingThread;        // 0x51c
-} CardTaskWork;
+// The CARD task and resource-lock operations share the same work area.
+typedef CardLock CardTaskWork;
+
+typedef void (*CardRomReadFunction)(u32 mode, void *destination, u32 romAddress, u32 size);
+
+typedef struct CardRomTransferCore {
+    u32 romBase;
+    CardRomReadFunction readFunction;
+} CardRomTransferCore;
 
 extern u8 data_0217da80[];
+extern CardRomTransferCore data_0217e004;
 
 extern "C" {
 void CARDi_InitCommand(void);
 void CARDi_EndTask(CardTaskWork *work);
 void CARDi_OnFifoRecv(u32 fifo, u32 data, s32 error);
+void *CARDi_GetDmaInterface(u32 mode);
+void CARDi_RefreshRomCore(void);
+void CARDi_DmaReadDone(void);
+void CARDi_ReadRomSyncCore(CardTaskWork *work);
+void CARDi_RefreshRom(u32 mask);
+void CARDi_CheckPulledOutCore(u32 romId);
 }
 
 #endif
