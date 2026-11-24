@@ -5453,6 +5453,14 @@ src/sdk/card/card_2.cpp:
     complete
     .text       start:0x020a3a60 end:0x020a3b54
 
+src/sdk/card/card_wait_async.cpp:
+    complete
+    .text       start:0x020a3b54 end:0x020a3b74
+
+src/sdk/card/card_rom_core.cpp:
+    complete
+    .text       start:0x020a3f40 end:0x020a4030
+
 src/sdk/card/card_pullout.cpp:
     complete
     .text       start:0x020a46b0 end:0x020a47a8

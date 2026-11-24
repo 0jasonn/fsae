@@ -26,6 +26,11 @@ s32 CARDi_GetAccessLevel(void);
 
 // Pulled-out callback unit.
 void CARDi_WaitAsync(void);
+s32 CARDi_WaitForTask(void *work, u32 flag, void (*callback)(void *), void *arg);
+s32 CARDi_IsNormalMode(void);
+void CARDi_SetRomOp(u32 command, u32 address);
+void CARDi_StartRomPageTransfer(u32 page);
+u32 CARDi_ReadRomIDCore(void);
 void Engine_Relay0201a070(void);
 void PXI_SetFifoRecvCallback(u32 fifo, void (*callback)(u32, u32, s32));
 void CARDi_NotifyEvent(u32 event, u32 arg);
