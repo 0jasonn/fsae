@@ -21,6 +21,7 @@ void *SndVoicePool_Start(void * volatile *ref, s32 pool, s32 priority);
 void *SndVoicePool_Acquire(s32 pool, void *voice);
 s32 func_020c0d6c(s32 index, u32 flags, void *record, s32 flag, MenuSoundData **out);
 s32 func_020c0e50(s32 index, u32 flags, void *record, s32 flag, MenuSoundData **out);
+s32 SndState_AcquireAt0c(s32 index, u32 flags, void *record, s32 flag, MenuSoundData **out);
 void func_020bfd28(void *voice, void *data, s32 a, s32 b);
 void SndRef_setPriority(void * volatile *ref, u8 value);
 void MenuSound_SetFadeTimes(void * volatile *ref, s32 fadeIn, s32 fadeOut);
