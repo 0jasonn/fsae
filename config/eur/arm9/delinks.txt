@@ -6641,6 +6641,10 @@ src/engine/sound/sndbank_wave.cpp:
     complete
     .text       start:0x020c1490 end:0x020c14d8
 
+src/engine/sound/sndsys_record_slots.cpp:
+    complete
+    .text       start:0x020c1660 end:0x020c16f8
+
 src/engine/sound/sndstate_start.cpp:
     complete
     .text       start:0x020c16f8 end:0x020c1740
