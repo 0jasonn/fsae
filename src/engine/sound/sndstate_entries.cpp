@@ -44,7 +44,7 @@ s32 SndState_RunEntries(u32 id, u32 a1) {
                 }
                 break;
             case 2:
-                result = func_020c0f90(*(u32 *)(entry + 4), entry[1], a1, 1, 0);
+                result = func_020c0f90(*(u32 *)(entry + 4), entry[1], (void *)a1, 1, 0);
                 if (result != 0) {
                     return result;
                 }

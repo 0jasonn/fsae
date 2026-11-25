@@ -119,7 +119,7 @@ void func_020bb208(void *self);
 void Ctrl_selectCurrentItem(void *self, s32 flag);
 void Menu_setupHardware(void *self, const void *setup);
 void func_020bc99c(void *self, void *bufA, s32 bufB, s32 arg5, u16 arg6);
-s32 func_020c0f90(u32 word, u32 byte, u32 a1, u32 one, u32 zero);
+s32 func_020c0f90(s32 index, u32 flags, void *record, s32 flag, u32 *out);
 void func_020c2cc0(u8 *body);
 s32 func_020c323c(u8 *cursor);
 void OamRing_ResetAll(void *oam);

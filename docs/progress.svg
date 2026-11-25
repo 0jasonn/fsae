@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1064" width="960" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
 <rect width="100%" height="100%" fill="#0d1117" rx="6"/>
-<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 4122 / 4940 game functions decompiled (83.4%, 62.5% of code)</text>
+<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition (EUR) ARM9: 4124 / 4940 game functions decompiled (83.5%, 62.5% of code)</text>
 <rect x="12" y="34" width="12" height="12" fill="#3fb950" rx="2"/><text x="29" y="44" fill="#8b949e" font-size="12">Decompiled (C++)</text>
 <rect x="202" y="34" width="12" height="12" fill="#58a6ff" rx="2"/><text x="219" y="44" fill="#8b949e" font-size="12">TwlSDK / runtime</text>
 <rect x="392" y="34" width="12" height="12" fill="#30363d" rx="2"/><text x="409" y="44" fill="#8b949e" font-size="12">Not decompiled yet</text>
@@ -995,12 +995,10 @@
 <rect x="579.12" y="952" width="167.45" height="12" fill="#3fb950"/>
 <rect x="746.56" y="952" width="15.88" height="12" fill="#30363d"/>
 <rect x="762.45" y="952" width="2.07" height="12" fill="#58a6ff"/>
-<rect x="764.52" y="952" width="100.12" height="12" fill="#3fb950"/>
-<rect x="864.64" y="952" width="16.23" height="12" fill="#30363d"/>
-<rect x="880.87" y="952" width="70.43" height="12" fill="#3fb950"/>
+<rect x="764.52" y="952" width="186.78" height="12" fill="#3fb950"/>
 <rect x="951.30" y="952" width="8.70" height="12" fill="#30363d"/>
-<rect x="0.00" y="966" width="30.31" height="12" fill="#30363d"/>
-<rect x="30.31" y="966" width="105.30" height="12" fill="#3fb950"/>
+<rect x="0.00" y="966" width="18.92" height="12" fill="#30363d"/>
+<rect x="18.92" y="966" width="116.69" height="12" fill="#3fb950"/>
 <rect x="135.61" y="966" width="46.95" height="12" fill="#30363d"/>
 <rect x="182.57" y="966" width="224.41" height="12" fill="#3fb950"/>
 <rect x="406.98" y="966" width="10.70" height="12" fill="#30363d"/>

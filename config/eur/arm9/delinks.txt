@@ -6589,6 +6589,10 @@ src/engine/sound/sndtable_3.cpp:
     complete
     .text       start:0x020c09d8 end:0x020c0a64
 
+src/engine/sound/sndrecord_clear.cpp:
+    complete
+    .text       start:0x020c0a64 end:0x020c0b20
+
 src/engine/sound/snd_payload_record.cpp:
     complete
     .text       start:0x020c0b20 end:0x020c0b88
@@ -6612,6 +6616,10 @@ src/engine/sound/sndstate_entries.cpp:
 src/engine/sound/sndstate_acquire.cpp:
     complete
     .text       start:0x020c0d6c end:0x020c0e50
+
+src/engine/sound/sndstate_acquire_wave.cpp:
+    complete
+    .text       start:0x020c0f90 end:0x020c1014
 
 src/engine/sound/sndtable_payload.cpp:
     complete
