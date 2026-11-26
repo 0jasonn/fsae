@@ -4834,9 +4834,17 @@ src/knife/comm/wireless_manager_updategameinfo.cpp:
     complete
     .text       start:0x02091eb4 end:0x0209200c
 
+src/knife/comm/wm_shared_size.cpp:
+    complete
+    .text       start:0x0209200c end:0x0209205c
+
 src/knife/comm/wireless_manager_sendpacket.cpp:
     complete
     .text       start:0x0209205c end:0x02092100
+
+src/knife/comm/wm_received_data.cpp:
+    complete
+    .text       start:0x02092100 end:0x020921b0
 
 src/knife/comm/wirelessmgr_aid.cpp:
     complete
@@ -6868,6 +6876,10 @@ src/engine/record_init_shape.cpp:
 src/engine/record_init_sized.cpp:
     complete
     .text       start:0x020c5fcc end:0x020c6008
+
+src/knife/message/fill_tile_grid.cpp:
+    complete
+    .text       start:0x020c6198 end:0x020c61f4
 
 src/knife/message/obj_block_count.cpp:
     complete

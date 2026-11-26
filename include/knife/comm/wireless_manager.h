@@ -69,6 +69,20 @@ typedef struct WirelessManagerWork {
     s32 connectPhase;                      // 0x1ce4: connect phase (StartConnect and StartMP callbacks)
 } WirelessManagerWork;
 
+namespace Knife {
+namespace Comm {
+
+// Native methods share the field layout used by the procedural manager API.
+class WirelessManager : private WirelessManagerWork {
+public:
+    u32 getSharedDataSize() const;
+    const void *getSharedData(int index) const;
+    u32 getReceivedAIDs() const;
+};
+
+}
+}
+
 extern "C" {
 BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo);
 }

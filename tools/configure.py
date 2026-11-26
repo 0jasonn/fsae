@@ -614,9 +614,11 @@ def add_delink_and_lcf_builds(n: ninja_syntax.Writer, project: Project):
     lcf_file = project.arm9_lcf_file()
     objects_file = project.arm9_objects_file()
     linker_symbols = project.arm9_config_yaml().with_name("linker_symbols.lcf")
+    function_sections = project.arm9_config_yaml().with_name("function_sections.json")
     n.build(
         inputs=project.delinks_files + [str(rom_config)],
-        implicit=[DSD, "tools/generate_lcf.py", str(linker_symbols)],
+        implicit=[DSD, "tools/generate_lcf.py", str(linker_symbols)]
+                 + ([str(function_sections)] if function_sections.exists() else []),
         rule="lcf",
         outputs=[lcf_file, objects_file],
         variables={

@@ -184,7 +184,7 @@ void GX_SetDefaultDMA(s32 dma);
 s32 OS_TryLockMutex(void *mutex);
 s32 Knife_Message_TextRenderer_getBgMode(s32 isBg);                  // 0x020a58d0
 s32 func_020c60b8(void *screen, s32 a, s32 b, s32 c, s32 d);
-s32 func_020c6198(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e);
+void func_020c6198(u16 *dst, s32 width, s32 height, s32 pitch, s32 tile, s32 palette);
 s32 func_020c6250(void *cell, s32 a, s32 b, s32 c, s32 d, s32 flag, s32 e, s32 sel);
 void Knife_Message_TextRenderer_finalize(void *self);  // 0x020a507c
 s32 PM_GetLCDPower(void);

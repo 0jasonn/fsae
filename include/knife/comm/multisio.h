@@ -65,10 +65,7 @@ extern "C" void Knife_Comm_removePlayerFromGroup(int index, void *flags);
 extern "C" u16 MultiSioRecvDataCheck(void *a);
 extern "C" u32 MultiSioMain(void *a, s32 b);
 extern "C" void MultiSioSendDataSet(void *a);
-extern "C" u32 func_0209200c(void *manager);
-extern "C" u32 func_02092168(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getFrameFlag(void *manager);
-extern "C" const void *func_02092100(void *manager, int index);
 extern "C" u32 Knife_Comm_GetPlayerNoByAID(int index, const void *info);
 int set5c_returnZero(void); // C++ symbol, always returns 0
 extern "C" void func_0200a3c8(u16 *dst, const u16 *src);
