@@ -5721,6 +5721,10 @@ src/ui/playstyleselui_update.cpp:
     complete
     .text       start:0x020ab190 end:0x020ab4c4
 
+src/ui/playstyleselui_clear_screen.cpp:
+    complete
+    .text       start:0x020ab4c4 end:0x020ab520
+
 src/ui/playstyleselui_2.cpp:
     complete
     .text       start:0x020ab520 end:0x020ab524
