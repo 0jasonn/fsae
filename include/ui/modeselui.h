@@ -4,6 +4,7 @@
 #include "engine/functions.h"
 #include "ui/fileselui.h"
 #include "ui/modeselui_view.h"
+#include "ui/file_selection_buffers.h"
 #include "game/setbg.h"
 #include "ui/widget/uiobject.h"
 
@@ -37,8 +38,6 @@ typedef struct ModeSelWork {
 
 extern ModeSelWork *data_0217d348;
 extern u8 data_0217a23c[];  // screen resources: palette sources at 0xb0 and 0xd0
-extern u8 *data_02180d9c;   // screen buffer of the sub screen BG1
-extern u8 *data_02180da0;   // screen buffer of the sub screen BG2
 
 extern "C" {
 void modeSelUIView_updateCopyFileselScreen(ModeSelUIView *self);
