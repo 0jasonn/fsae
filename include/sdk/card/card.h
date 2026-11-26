@@ -2,14 +2,14 @@
 #define SDK_CARD_CARD_H
 
 #include "types.h"
+#include "sdk/os/os_boot.h"
+#include "sdk/os/os_event.h"
+#include "sdk/os/os_thread.h"
+#include "sdk/os/os_valarm.h"
 
 // NitroSDK CARD / OS functions and data used by the CARD unit.
 extern "C" {
 void Os_LinkThreadAndFlush(void *queue);
-void OS_InitEvent(void *event);
-void OS_CreateVAlarm(void *alarm);
-u32 OS_WaitEventEx(void *event, u32 a, u32 b, u32 c);
-s32 OS_GetBootType(void);
 void CARDi_PeekEventListener(void *event);
 s32 CARDi_LockBusCondition(u16 *value);
 s32 CardBus_Release(u32 owner);
@@ -26,8 +26,6 @@ s32 CARDi_GetAccessLevel(void);
 
 // Pulled-out callback unit.
 void CARDi_WaitAsync(void);
-void Engine_Relay0201a070(void);
-void PXI_SetFifoRecvCallback(u32 fifo, void (*callback)(u32, u32, s32));
 void CARDi_NotifyEvent(u32 event, u32 arg);
 void CARD_TerminateForPulledOut(void);
 
@@ -42,15 +40,14 @@ typedef struct CardLock {
     u8 pad_00[0x14];
     s32 owner;      // 0x14
     s32 count;      // 0x18
-    u32 queue[2];   // 0x1c
+    OsThreadQueue queue; // 0x1c
     s32 level;      // 0x24
 } CardLock;
 
 // The stack block CARD_LockRom builds: an OSEvent at +0, an OSVAlarm at +0xc and the bus-lock listener at +0x34.
 typedef struct CardLockEvent {
-    u8 event[0x0c]; // OSEvent
-    u8 alarm[0x1c]; // OSVAlarm
-    u8 pad_28[0x34 - 0x28];
+    OsEvent event;  // 0x00
+    OsVAlarm alarm; // 0x0c
     void *fn;       // 0x34
     void *arg;      // 0x38
     u8 pad_3c[4];

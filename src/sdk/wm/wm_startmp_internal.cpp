@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "sdk/wm/wm_work.h"
+#include "sdk/wm/wm_system.h"
 #include "game/agent.h"
 #include "knife/comm/wm_work.h"
 #include "sdk/wm/wm_startmp.h"
@@ -49,7 +49,7 @@ extern "C" s32 func_0201ff40(void *callback, void *recvBuf, u16 recvBufSize, voi
         }
     }
 
-    WMi_SetCallbackTable(0xe, callback);
+    WMi_SetCallbackTable(0xe, (WmCallback)callback);
     OSi_CpuClear32(0, command, 0x40);
     ((u16 *)command)[0] = 0xe;
     command[1] = (u32)recvBuf;

@@ -2,6 +2,7 @@
 #include "sdk/card/card.h"
 #include "knife/comm/wireless_manager.h"
 #include "knife/comm/wireless_manager_methods.h"
+#include "sdk/wm/wm_system.h"
 
 // Updates the recipient mask and packet data while interrupts are disabled.
 void Knife_Comm_WirelessManager_setSendPacket(void *self, const void *packet) {

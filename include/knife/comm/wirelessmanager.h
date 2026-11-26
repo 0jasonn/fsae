@@ -37,8 +37,6 @@ void Knife_Comm_WirelessManager_stepNextChannel(void *self);
 BOOL Knife_Comm_WirelessManager_setEntry(void *self, BOOL flag);
 u32 WM_SetEntry(void *callback, BOOL flag);
 s32 WM_StartMP(void *callback, void *recvBuf, u16 recvSize, void *sendBuf, u16 sendSize, s32 flag);
-s32 WM_GetAID(void);
-s32 WM_GetConnectedAIDs(void);
 void Knife_Comm_WirelessManager_callback_WM_StartMP(void *result);
 s32 WM_EndDataSharing(void *buf);
 s32 WM_EndMP(void *callback);

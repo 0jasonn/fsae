@@ -2,6 +2,9 @@
 #define SDK_SND_SND_COMMAND_H
 
 #include "engine/entity.h"
+#include "sdk/os/os_mutex.h"
+
+extern OsMutex data_02129d94; // the SND library mutex
 
 // TwlSDK sound library command front end. Every function here queues one command for the ARM7 sound driver.
 extern "C" {
@@ -40,7 +43,6 @@ void SND_AlarmInit(void);
 void SNDi_IncAlarmId(s32 alarmNo);
 void *SND_AllocCommand(u32 block);
 void SND_PushCommand(void *command);
-void OS_InitMutex(void *mutex);
 }
 
 #endif

@@ -39,7 +39,7 @@ extern "C" void Menu_setupHardware(void *self, const void *param) {
     GX_DispOff();
     *(volatile u32 *)0x04001000 &= ~0x10000;
     func_020be9f0(obj + 0x403a0);
-    Menu_StartTouch(obj + 0x403a6);
+    Menu_StartTouch((TpSample *)(obj + 0x403a6));
     GX_VBlankIntr(1);
     Menu_ClearVram(menu);
 }

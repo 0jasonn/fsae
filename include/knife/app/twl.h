@@ -21,9 +21,6 @@ extern u32 data_02171e2c;   // 16-byte exit-callback object at data_02171e20 + 0
 extern "C" {
 void twlInit(void);                 // plain (unmangled) symbol in symbols.txt
 void Os_InitCommonWrap(void);
-void TP_Init(void);
-s32 TP_GetUserInfo(void *info);
-void TP_SetCalibrateParam(void *info);
 void func_0218a804(void *exitInfo);  // target outside the ARM9 image (module:none in relocs.txt)
 }
 

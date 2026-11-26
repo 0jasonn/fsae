@@ -5,6 +5,9 @@
 #include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
 #include "sdk/fs/fs_file.h"
 #include "sdk/fs/fs_api.h"
+#include "sdk/os/os_event.h"
+#include "sdk/os/os_mutex.h"
+#include "sdk/os/os_thread.h"
 
 namespace Knife {
 namespace File {
@@ -45,9 +48,9 @@ public:
     s32 quitRequested;  // 0x00
     u8 unk_04[0x0c];
     List queue;         // 0x10
-    u8 event[0x0c];     // 0x1c: OSEvent
-    u8 mutex[0x18];     // 0x28: OSMutex
-    u8 thread[0xc0];    // 0x40: OSThread
+    OsEvent event;      // 0x1c
+    OsMutex mutex;      // 0x28
+    OsThread thread;    // 0x40
 };
 
 // One record of the file table, 0x30 bytes each: valid flag at 0x14, file name at 0x15
@@ -81,10 +84,6 @@ public:
 extern "C" {
 // TwlSDK and engine calls used by the Knife file loader (dsd names where the library name is not known)
 void *func_0208e148(u32 size);
-void OS_InitEvent(void *event);
-void OS_SignalEvent(void *event, s32 value);
-void OS_ClearEvent(void *event, s32 value);
-void Os_WaitEventExWrap(void *event, s32 timeout, s32 flags);
 void OS_CreateThread(void *thread, void (*entry)(void *), void *arg, void *stackTop, u32 stackSize, s32 priority);
 void OS_WakeupThreadDirect(void *thread);
 void OS_ExitThread(void);
@@ -99,7 +98,6 @@ extern Knife::File::System data_02172138;
 extern Knife::File::FileTable data_02176238;
 extern Knife::File::Entity *data_02176278[16];
 extern Knife::File::SlotInfo data_021762b8[16];
-extern u32 data_02129938[]; // word 1 holds the main OSThread pointer
 }
 
 #endif

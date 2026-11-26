@@ -50,16 +50,8 @@ void MIi_CpuCopy16(const void *src, void *dst, u32 size);
 void MIi_DmaCopy16(u32 dmaNo, const void *src, void *dst, u32 size, u32 flag);
 void MIi_DmaCopy32(u32 dmaNo, const void *src, void *dst, u32 size, u32 flag);
 void DmaCopy32Fast(u32 dmaNo, const void *src, void *dst, u32 size); // ARM9 external entry at 0x021893a0
-void OS_CreateAlarm(void *alarm);
-void OS_DisableMainExArena(void);
 void OS_GetOwnerInfo(void *info);
-s32 OS_IsValidDeliverArg(u32 arg);
-u32 OS_SaveContext(void *thread);
-void *OS_SelectThread(void);
-void OS_WakeupThread(void *waitObject);
-u32 OSi_DetectDeviceType(void);
 void OSi_SleepAlarmCallback(void);
-s32 PXI_IsCallbackReady(u32 fifo, u32 kind);
 void STD_CopyLString(void *dst, const void *src, s32 size);
 void Slider_setupItems(void *slider, s32 count);
 u8 *Str_CopyN(u8 *dst, const u8 *src, u32 count);
@@ -90,7 +82,6 @@ void BgChar_CopyBG2(void *src, s32 offset, s32 size);
 void BgChar_CopyBG3(void *src, s32 offset, s32 size);
 u32 OSi_AllocateThreadId(void);
 void OSi_RunThreadExitHook(u32 arg);
-void func_0201918c(void *alarm, u64 delay, void *callback, void *arg);
 void func_0201c958(u32 tag, u32 data, s32 err);
 s32 func_02084634(u16 a);
 int func_02084f2c(u16 cell, u16 layer, s32 flags);
@@ -167,15 +158,12 @@ int func_02085764(Entity *a, Entity *b, s32 c, s32 d); // 0x02085764, thumb, ret
 int func_020899bc(u16 value, const u8 *table);
 int func_02089e28(Entity *e, int kind);
 void MI_UncompressLZ8(const void *src, void *dst);
-void TP_RequestAutoSamplingStopAsync(void);
 void GX_SetDefaultDMA(s32 dma);
-s32 OS_TryLockMutex(void *mutex);
 s32 Knife_Message_TextRenderer_getBgMode(s32 isBg);                  // 0x020a58d0
 s32 func_020c60b8(void *screen, s32 a, s32 b, s32 c, s32 d);
 s32 func_020c6198(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e);
 s32 func_020c6250(void *cell, s32 a, s32 b, s32 c, s32 d, s32 flag, s32 e, s32 sel);
 void Knife_Message_TextRenderer_finalize(void *self);  // 0x020a507c
-s32 PM_GetLCDPower(void);
 void func_020be9f0(void *obj);
 void func_020bed14(void *obj);
 s32 func_020be66c(void *obj, u8 *flag);
@@ -201,13 +189,10 @@ void func_020148f0(s32 a);
 void func_02015120(s32 a);
 void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
 void OS_Terminate(void);
-s32 PM_SetLCDPower(s32 a);
 void func_0201d038(s32 a, s32 b, s32 c);
 void OS_WaitVBlankIntr(void);
 void func_02086168(Entity *e);
 void func_020841b0(Entity *e);
-void TP_WaitBusy(s32 mode);
-s32 TP_CheckError(s32 mode);
 s32 func_0218a5d4(void);
 s32 func_0218a5fc(void);
 void func_02189868(void);
@@ -232,26 +217,20 @@ void FATFSi_SyncInitialization(u32 arg);
 void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
 s32 Entries_ProcessAll(void);
 void PMi_SendPxiData(u32 word);
+u32 OS_SaveContext(void *thread); // only caller: src/sdk/os/os_switch.cpp, which cannot include sdk/os/os_thread.h
+void *OS_SelectThread(void);
 void OS_GetOwnerInfoEx(void *info); // 0x020198e4, TwlSDK (unmangled)
 void MI_CpuCopy8(const void *src, void *dst, u32 size);
 void MI_CpuFill8(void *dest, u8 data, u32 size); // TwlSDK
-s32 OS_SendMessage(void *queue, void *message, s32 flags); // TwlSDK
 s32 STD_GetStringLength(const char *s); // TwlSDK
-void PMi_SetDispOffCount(void); // TwlSDK
 s32 func_020a44ac(u32 dmaNo, u32 src, void *dst, u32 length, void (*callback)(FSArchive *), FSArchive *arg, s32 async); // card ROM read
 void GXS_BeginLoadBGExtPltt(void);
 void GXS_LoadBGExtPltt(void *data, u32 offset, u32 size);
 void GXS_EndLoadBGExtPltt(void);
-void OS_LockMutexFromWToR(void *mutex);
-void OS_UnlockMutex(void *mutex);
-// Power management list helper (PMi_DeleteList(list, item)).
-void PMi_DeleteList(void *list, void *item);
 u32 STD_ConvertStringSjisToUnicode(void *a, void *b, void *c, void *d, void *e);
 u32 STD_ConvertStringUnicodeToSjis(void *a, void *b, void *c, void *d, void *e);
 u32 OSi_DoTryLockByWord(void *word, u32 id, void *owner, u32 unused);
-void OSi_FreeCardBus(void);
 void OSi_AllocateCardBus(void);
-void OS_Halt(void);
 // VRAM bank helpers.
 void resetBankForX_(void *bank);
 s32 PMi_SetSoundVolume(u32 volume);
@@ -265,7 +244,6 @@ u32 FS_UnmountArchive(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_InitCommon(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_DoLockByWord(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_DoUnlockByWord(u32 a, u32 b, u32 c, u32 d);
-u32 func_0201a070(u32 a, u32 b, u32 c, u32 d);
 s32 WMi_EnableEx(void *callback, u32 flag);
 s32 WMi_StartParentEx(void *callback, u32 flag);
 void func_020bb080(void *self);

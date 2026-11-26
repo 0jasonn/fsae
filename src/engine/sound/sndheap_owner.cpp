@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sound/sndheap_owner_api.h"
+#include "sdk/os/os_arena.h"
 
 extern "C" {
 void *SndHeap_Allocate(u32 *heap, u32 size, s32 flag);
@@ -8,11 +9,10 @@ void SndHeap_Free(u32 *heap, u8 *block);
 void *SndHeap_ReserveLinear(u32 heap, u32 size, u32 flag);
 void *SndHeapPool_Alloc(u32 heap, u32 size);
 void *SndHeapPool_Push(u32 heap);
-void *OS_AllocFromHeap(u32 heap, void *ptr, u32 size);
-void OS_FreeToHeap(u32 heap, void *ptr, u32 block);
 }
 
-// The owner keeps the heap at +4 and an allocation flag at +8 (the owner itself is passed in r0).
+// The owner keeps the heap at +4 and an allocation flag at +8 (for the OS heap calls: the heap id at +4 and the arena
+// at +8) (the owner itself is passed in r0).
 // Allocates from the owner's heap with its flag.
 void *SndHeapOwner_Allocate(u32 *owner, u32 size) {
     return SndHeap_Allocate((u32 *)owner[1], size, owner[2]);
@@ -50,10 +50,10 @@ void *SndHeapOwner_Reset(u32 *owner) {
 
 // Allocates from the operating system heap of the owner (OS_AllocFromHeap).
 void *SndHeapOwner_AllocFromHeap(u32 *owner, u32 size) {
-    return OS_AllocFromHeap(owner[2], (void *)owner[1], size);
+    return OS_AllocFromHeap(owner[2], owner[1], size);
 }
 
 // Returns a block to the operating system heap of the owner (OS_FreeToHeap).
 void SndHeapOwner_FreeToHeap(u32 *owner, u32 block) {
-    OS_FreeToHeap(owner[2], (void *)owner[1], block);
+    OS_FreeToHeap(owner[2], owner[1], (void *)block);
 }

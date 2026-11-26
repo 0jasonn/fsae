@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sound/sndentry.h"
-#include "sdk/pm/pmlist_wrap.h"
+#include "sdk/pm/pm.h"
 
 // SndEntry_Start: starts the entry's timer and, the first time, hooks it into the post-exit callbacks.
 extern "C" void SndEntry_Start(SndEntry *entry);

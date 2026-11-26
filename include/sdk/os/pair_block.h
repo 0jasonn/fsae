@@ -13,4 +13,11 @@ typedef struct PairBlock {
 
 extern PairBlock data_02129cac;
 
+// The deliver-argument module (0x02019c0c .. 0x02019d08): Pair_Restore, OS_DisableMainExArena (clears flags; the dsd name
+// does not fit what it does), Pair_GetIfEnabled, OS_IsValidDeliverArg.
+extern "C" {
+void OS_DisableMainExArena(void);
+BOOL OS_IsValidDeliverArg(void);
+}
+
 #endif

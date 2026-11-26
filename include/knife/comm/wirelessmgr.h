@@ -67,8 +67,6 @@ extern "C" void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);  // WM_PowerOff callback
 extern "C" s32 WM_Reset(void *callback);
 extern "C" s32 WM_PowerOff(void *callback);
-extern "C" s32 WM_GetAID(void);
-extern "C" s32 WM_GetConnectedAIDs(void);
 extern "C" s32 WM_GetLinkLevel(void);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result);
 extern "C" void WM_EndDataSharing(void *buf);

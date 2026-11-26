@@ -40,12 +40,12 @@ void CARD_LockRom(u16 value) {
     CardLockEvent ev;
 
     CARDi_AcquireLock(value, 1);
-    OS_InitEvent(&ev);
-    OS_CreateVAlarm(ev.alarm);
+    OS_InitEvent(&ev.event);
+    OS_CreateVAlarm(&ev.alarm);
     ev.fn = (void *)CARDi_LockBusCondition;
     ev.arg = &value;
     CARDi_PeekEventListener(&ev);
-    OS_WaitEventEx(&ev, 1, 0, 1);
+    OS_WaitEventEx(&ev.event, 1, 0, 1);
 }
 
 void G3C_Direct1(u16 value) {

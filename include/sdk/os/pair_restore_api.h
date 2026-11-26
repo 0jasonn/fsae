@@ -6,7 +6,7 @@
 #include "engine/entity.h"
 
 extern "C" {
-s32 Pair_Restore(u32 arg);
+s32 Pair_Restore(void);
 }
 
 #endif

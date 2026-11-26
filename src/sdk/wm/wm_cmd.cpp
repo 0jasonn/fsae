@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "knife/comm/wirelessmanager.h"
-#include "sdk/wm/wm_work.h"
+#include "sdk/wm/wm_system.h"
 #include "knife/comm/wm_idle2parent.h"
 #include "game/agent.h"
 
@@ -31,7 +31,7 @@ s32 WM_SetGameInfo(void *callback, void *gameInfo, u16 unk2, u32 unk3, u16 unk4,
     }
     MIi_CpuCopy16(gameInfo, data_0212c420, unk2);
     DC_StoreRange(data_0212c420, unk2);
-    WMi_SetCallbackTable(0x18, callback);
+    WMi_SetCallbackTable(0x18, (WmCallback)callback);
     status = WMi_SendCommand(0x18, 5, data_0212c420, unk2, unk3, unk4, unk5);
     if (status == 0) {
         status = 2;
@@ -50,7 +50,7 @@ s32 WM_MeasureChannel(void *callback, u16 unk1, u16 unk2, u16 channel, u16 unk4)
     if (status != 0) {
         return status;
     }
-    WMi_SetCallbackTable(0x1e, callback);
+    WMi_SetCallbackTable(0x1e, (WmCallback)callback);
     data[0] = 0x1e;
     data[1] = unk1;
     data[2] = unk2;
@@ -71,7 +71,7 @@ u32 WM_SetEntry(void *callback, BOOL flag) {
     if (status != 0) {
         return status;
     }
-    WMi_SetCallbackTable(0x21, callback);
+    WMi_SetCallbackTable(0x21, (WmCallback)callback);
     status = WMi_SendCommand(0x21, 1, flag);
     if (status == 0) {
         status = 2;

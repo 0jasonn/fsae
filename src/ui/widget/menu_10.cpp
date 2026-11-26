@@ -19,15 +19,15 @@ void Menu_ClearCells(MenuCellWork *work) {
     }
 }
 
-// Starts the touch panel sampling with the calibration of the user info, then waits for the request to finish.
-void Menu_StartTouch(void *callbackArg) {
-    u8 info[8];
+// Starts the touch panel auto sampling into samples (9 entries) with the calibration of the user info, then waits for the request to finish.
+void Menu_StartTouch(TpSample *samples) {
+    TpCalibrateParam calibrate;
 
     TP_Init();
-    if (TP_GetUserInfo(info) != 0) {
-        TP_SetCalibrateParam(info);
+    if (TP_GetUserInfo(&calibrate) != 0) {
+        TP_SetCalibrateParam(&calibrate);
     }
-    TP_RequestAutoSamplingStartAsync(0, 4, callbackArg, 9);
+    TP_RequestAutoSamplingStartAsync(0, 4, samples, 9);
     TP_WaitBusy(2);
     TP_CheckError(2);
 }

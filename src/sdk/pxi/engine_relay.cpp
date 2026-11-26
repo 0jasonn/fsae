@@ -1,10 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "sdk/pxi/pxi_fifo.h"
 
-extern "C" u32 Engine_Relay0201a070(u32 a, u32 b, u32 c, u32 d);
-
-// Tail call to func_0201a070 (not matched yet; keeps its dsd name).
-u32 Engine_Relay0201a070(u32 a, u32 b, u32 c, u32 d) {
-    return func_0201a070(a, b, c, d);
+// Tail call to func_0201a070 (not matched yet; keeps its dsd name). Every caller passes no arguments.
+void Engine_Relay0201a070(void) {
+    func_0201a070();
 }

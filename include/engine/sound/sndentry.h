@@ -3,6 +3,7 @@
 
 #include "engine/functions.h"
 #include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
+#include "sdk/pm/pm.h"
 #include "global.h"
 
 // Sound entry (provisional layout from the sound code at 0x020c0130..0x020c02c0). The two hook fields are passed to
@@ -21,8 +22,6 @@ typedef struct SndEntry {
 } SndEntry;
 
 extern "C" {
-extern "C" void PM_PrependPostExitCallback(void *callback);
-extern "C" void PM_AppendPostExitCallback(void *callback);
 extern "C" void SndChannel_ClearWord4(u32 index);
 extern "C" void LinkList_Remove(void *list, void *entry);
 extern "C" s32 SND_CalcChannelVolume(s32 value);

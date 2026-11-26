@@ -1,6 +1,6 @@
 #include "engine/functions.h"
 #include "knife/comm/wirelessmanager.h"
-#include "sdk/wm/wm_work.h"
+#include "sdk/wm/wm_system.h"
 #include "game/agent.h"
 
 // WM_EndMP (0x02020260): stops the MP session.
@@ -16,7 +16,7 @@ s32 WM_EndMP(void *callback) {
     if (*(u32 *)(*(u8 **)((u8 *)work + 4) + 0xc) == 0) {
         return 3;
     }
-    WMi_SetCallbackTable(0x10, callback);
+    WMi_SetCallbackTable(0x10, (WmCallback)callback);
     status = WMi_SendCommand(0x10, 0);
     if (status == 0) {
         status = 2;

@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "game/agent.h"
 #include "sdk/wm/wm_datasharing.h"
+#include "sdk/wm/wm_system.h"
 
 // WmDataSharingReceiveCallback_Child (0x02020aa0): child side. Received data of the parent is stored in the next data
 // set (limited to 0x200 bytes), together with its sequence number.

@@ -39,7 +39,6 @@ typedef struct SndCommand {
 } SndCommand;
 
 extern u32 data_02129d90;
-extern u8 data_02129d94[];
 
 // SND_StopSeq(playerNo) (0x0201ab90) ... SNDi_SetSurroundDecay (0x0201af5c): thin wrappers around PushCommand_impl.
 
@@ -183,7 +182,7 @@ void SND_Init(void) {
         return;
     }
     data_02129d90 = 1;
-    OS_InitMutex(data_02129d94);
+    OS_InitMutex(&data_02129d94);
     SND_CommandInit();
     SND_AlarmInit();
 }

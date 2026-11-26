@@ -55,8 +55,6 @@ s32 WM_Reset(void *callback);
 s32 WM_PowerOff(void *callback);
 s32 WM_EndDataSharing(void *buf);
 s32 WM_EndMP(void *callback);
-s32 WM_GetAID(void);
-s32 WM_GetConnectedAIDs(void);
 s32 WM_SetGameInfo(void *callback, void *gameInfo, u16 unk2, u32 unk3, u16 unk4, u8 unk5);
 s32 Knife_Comm_WirelessManager_getLinkLevel(void *self);
 BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);

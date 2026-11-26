@@ -46,8 +46,6 @@ typedef struct WmPortRecvCallback {
 extern "C" {
 // Queues data for sending through a port (the SDK's WM_SetMPDataToPortEx); parked, not matched yet.
 s32 func_02020128(void *callback, void *arg, void *sendData, u16 sendDataSize, u16 destBitmap, u16 port, u16 priority);
-s32 WM_GetAID(void);
-s32 WM_GetConnectedAIDs(void);
 void WmDataSharingReceiveCallback_Parent(WmPortRecvCallback *callback);
 void WmDataSharingStoreData(WmDataSharing *sharing, u16 aid, u16 *data); // 0x02020b84, called WmDataSharingStoreData
 void WmDataSharingSendDataSet(WmDataSharing *sharing, s32 flag); // 0x02020c54

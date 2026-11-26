@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "sdk/os/irqcount_api.h"
+#include "sdk/os/os_halt_api.h"
 
 // Interrupt-protected counter at data_0212991c (its count is at +4). Acquire takes a slot while the count is below
 // 0xffffffff, release gives one back while it is not zero; both return the old count.

@@ -2,9 +2,8 @@
 #include "global.h"
 #include "types.h"
 #include "sdk/pm/pmi_send.h"
+#include "sdk/pxi/pxi_fifo.h"
 
-extern "C" void Engine_Relay0201a070(void);
-extern "C" void PXI_SetFifoRecvCallback(u32 fifo, void (*callback)(u32, u32, s32));
 extern "C" void PMi_InitSend(void);
 
 // PMi_InitSend() (0x0201c8b8): once only (the ready flag is 0), clears the busy flag and the parameter, calls

@@ -61,4 +61,6 @@ typedef struct Vars_Controller {
 
 extern const s16 trigTable[];
 
+extern "C" void em2c_type1_init_033744(Entity *e); // 0x02033744 (plain symbol)
+
 #endif

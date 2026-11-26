@@ -16,6 +16,10 @@ typedef struct ThreadSwitchState {
     void *next;
 } ThreadSwitchState;
 
+// TODO(unify): the shared types are OsSchedBlock data_0212991c and OsThreadInfo data_02129938 (sdk/os/os_thread.h), but
+// this function reads +0x1e and writes +0x20 through the data_0212991c base, i.e. past its end into data_02129938 (the
+// original pools the OS thread statics under one base). Neither shared type can express that, so this file keeps its
+// own view of both and does not include os_thread.h.
 extern ThreadSwitchState data_0212991c;
 extern u32 data_02129938[];
 

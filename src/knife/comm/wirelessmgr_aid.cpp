@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "knife/comm/wireless_manager.h"
 #include "knife/comm/wireless_manager_methods.h"
+#include "sdk/wm/wm_system.h"
 
 // WirelessManager::getFrameFlag (0x020921b0, no original name): the byte at 0x1cdd that update clears each frame.
 extern "C" u8 Knife_Comm_WirelessManager_getFrameFlag(void *self);

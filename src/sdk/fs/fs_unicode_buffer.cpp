@@ -7,5 +7,5 @@ void FSi_ReleaseUnicodeBuffer(void *buffer) {
     if (buffer == NULL) {
         return;
     }
-    OS_SendMessage(data_02128b4c, buffer, 1);
+    OS_SendMessage(&data_02128b4c, buffer, 1);
 }

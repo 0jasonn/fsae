@@ -42,7 +42,6 @@ extern u32 data_0212c538;
 extern u8 data_02134cb0[];
 #include "engine/com_work.h"
 void GetSetWorkSp(u8 a, u8 b, u8 c);
-void func_0204363c(void);
 extern u16 data_0212c510;
 extern u16 data_0212c514;
 extern u16 data_0212c520;

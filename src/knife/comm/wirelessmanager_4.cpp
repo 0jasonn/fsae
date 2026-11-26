@@ -4,6 +4,7 @@
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wm_mp_api.h"
 #include "knife/comm/wirelessmanager.h"
+#include "sdk/wm/wm_system.h"
 
 // Knife::Comm::WirelessManager::update_idle2child() (0x02092fd8): the idle-to-child step, run by the timer at +0x1cd8.
 // Step 1 allocates the MP buffers and starts the MP connection (WM_StartMP); a successful start moves the timer to 2,

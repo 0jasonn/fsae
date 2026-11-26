@@ -5,20 +5,20 @@
 #include "sdk/os/os_thread.h"
 #include "sdk/os/os_switch_api.h"
 
-extern "C" void OSi_InsertLinkToQueue(OsThreadRec *thread, OsThreadRec *queue);
+extern "C" void OSi_InsertLinkToQueue(OsThreadQueue *queue, OsThread *thread);
 
-// Os_LinkThreadAndFlush(thread) (0x02017a5c): with interrupts off, links thread to the current thread's queue (when thread
-// is not NULL) and clears the state word of the current thread, then runs Os_ThreadSwitch and restores the interrupts.
+// Os_LinkThreadAndFlush(queue) (0x02017a5c): with interrupts off, puts the current thread on queue (when queue is not
+// NULL) and clears the state word of the current thread, then runs Os_ThreadSwitch and restores the interrupts.
 void Os_LinkThreadAndFlush(void *queue) {
-    OsThreadRec *thread = (OsThreadRec *)queue;
+    OsThreadQueue *threadQueue = (OsThreadQueue *)queue;
     u32 state;
-    OsThreadRec *current;
+    OsThread *current;
 
     state = OS_DisableInterrupts();
     current = *data_0212991c.curHolder;
-    if (thread != NULL) {
-        current->link = thread;
-        OSi_InsertLinkToQueue(thread, current);
+    if (threadQueue != NULL) {
+        current->link = threadQueue;
+        OSi_InsertLinkToQueue(threadQueue, current);
     }
     current->state = 0;
     Os_ThreadSwitch();

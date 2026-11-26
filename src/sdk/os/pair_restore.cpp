@@ -8,13 +8,13 @@
 // The pair buffer is re-read from the block at every use (the original keeps no local copy of the pointer).
 #define PAIR_BUF ((u8 *)data_02129cac.pair)
 
-// Pair_Restore(arg) (0x02019c0c): copies the saved 0x300-byte buffer from main RAM back into the pair buffer and
+// Pair_Restore() (0x02019c0c): copies the saved 0x300-byte buffer from main RAM back into the pair buffer and
 // checks its CRC. A matching CRC enables the pair (flags = 1) and clears bit 0 of the kind byte; otherwise the buffer
 // is cleared and the main arena is disabled.
-s32 Pair_Restore(u32 arg) {
+s32 Pair_Restore(void) {
     u16 savedCrc;
 
-    if (OS_IsValidDeliverArg(arg) == 0) {
+    if (OS_IsValidDeliverArg() == 0) {
         return -1;
     }
     if (PAIR_BUF == NULL) {

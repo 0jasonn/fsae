@@ -21,7 +21,7 @@ header of the module that defines each function (or include/engine/functions.h f
 | engine/cardbus_lock_api.h | sdk/os/cardbus_lock_api.h |
 | engine/device_flags_api.h | sdk/os/device_flags_api.h |
 | engine/dma_conflict_api.h | sdk/mi/dma_conflict_api.h |
-| engine/engine_block_api.h | sdk/rtc/engine_block_api.h |
+| engine/engine_block_api.h | sdk/rtc/rtc.h |
 | engine/engine_halfb_api.h | sdk/os/engine_halfb_api.h |
 | engine/engine_halfc_api.h | sdk/os/engine_halfc_api.h |
 | engine/engine_romword_api.h | sdk/fatfs/engine_romword_api.h |
@@ -120,7 +120,7 @@ header of the module that defines each function (or include/engine/functions.h f
 | engine/sound/m4a_api.h | engine/sound/m4a.h |
 | engine/sound/sndrecord_api.h | engine/sound/sndrecord.h |
 | engine/stub_empty_api.h | sdk/os/stub_empty.h, sdk/fx/stub_empty.h |
-| engine/wm_api.h | engine/functions.h, sdk/wm/wm_sleep.h, sdk/pm/pmlist_wrap.h, sdk/wm/wm_work.h, sdk/wm/wm_enable.h, knife/comm/wirelessmgr.h |
+| engine/wm_api.h | engine/functions.h, sdk/wm/wm_sleep.h, sdk/pm/pm.h, sdk/wm/wm_system.h, sdk/wm/wm_enable.h, knife/comm/wirelessmgr.h |
 | game/b_extra.h | engine/functions.h, actor/object/zeldafade.h, knife/app/knife_file_2.h, knife/app/twl.h |
 | game/backup_api.h | game/backup.h |
 | game/decls_e.h | ui/groupselectuiview.h, knife/message/textrender.h, knife/app/knife_app.h, engine/functions.h, knife/message/text_tokenizer.h, knife/subtask/subtask_work.h |

@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "sdk/card/card.h"
+#include "sdk/pxi/pxi_fifo.h"
 
 // NitroSDK card pull-out setup and PXI receive callback (0x020a46b0 through 0x020a4798).
 

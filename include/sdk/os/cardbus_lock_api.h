@@ -8,6 +8,7 @@
 extern "C" {
 void CardBus_Acquire(u32 id);
 void CardBus_Release(u32 id);
+void OSi_FreeCardBus(void);
 u32 LockWord_TryLock(void *word, u32 id, void *owner);
 }
 

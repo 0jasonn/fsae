@@ -3,6 +3,7 @@
 #include "global.h"
 #include "types.h"
 #include "sdk/os/os_sleep_api.h"
+#include "sdk/os/os_alarm.h"
 
 // Current-thread record: the thread pointer sits at +8 of data_0212991c and points at the record whose +0xb0 holds the
 // sleep alarm.
@@ -18,17 +19,17 @@ extern OsSleepOwner data_0212991c;
 // +0xb0 is armed and the caller waits until the callback clears the thread pointer.
 
 void Os_SleepAlarm(u32 count) {
-    u8 alarm[0x2c];
+    OsAlarm alarm;
     void *waiter;
     u64 ticks;
     u32 irq;
 
-    OS_CreateAlarm(alarm);
+    OS_CreateAlarm(&alarm);
     waiter = data_0212991c.thread[0];
     irq = OS_DisableInterrupts();
     ticks = ((u64)count * 0x82ea) >> 6;
-    *(void **)((u8 *)waiter + 0xb0) = alarm;
-    func_0201918c(alarm, ticks, OSi_SleepAlarmCallback, &waiter);
+    *(void **)((u8 *)waiter + 0xb0) = &alarm;
+    func_0201918c(&alarm, ticks, OSi_SleepAlarmCallback, &waiter);
     if (waiter != NULL) {
         do {
             Os_LinkThreadAndFlush(NULL);

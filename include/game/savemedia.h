@@ -7,6 +7,7 @@
 #include "engine/entity.h"
 #include "game/rankingsave.h"
 #include "sdk/fs/fs_file.h"
+#include "sdk/os/os_boot.h"
 #include "sdk/fs/fs_open.h"
 
 void set0b_itemAdd(Entity *e); // 0x02057f30, set_3.cpp
@@ -17,7 +18,6 @@ s32 Knife_fatRead(u16 slot, _SAVEHEADER *header); // 0x020565e8, backup_2.cpp
 extern "C" s32 Knife_mediaVerify(u16 slot, const u32 *data, s32 size); // 0x0205657c
 
 extern "C" {
-u32 OS_GetBootType(void);
 void *Knife_GetPowerManager(void); // returns the Knife::PowerManager object
 void func_0208ae14(void); // thumb
 }

@@ -9,11 +9,12 @@
 #include "knife/app/knife_power.h"
 #include "sdk/os/cp_context.h"
 #include "sdk/gx/gx.h"
+#include "sdk/tp/tp.h"
 
 extern u8 data_021271ac[];
 extern u8 data_02187070[];
 extern s32 data_0212c524;
-extern u8 data_0212c57c[];
+extern TpCalibrateParam data_0212c57c; // touch panel calibration read at boot
 
 // TODO(headers): this declaration of Knife_Comm_WirelessIcon_initialize_16x16_ColorMode differs from the shared one;
 // see the header restructure report.
@@ -118,10 +119,10 @@ void i_restoreGfxSettings(void) {
     Vram_SetBankGroupA(4);
     func_02015120(8);
     TP_Init();
-    if (TP_GetUserInfo(data_0212c57c) == 0) {
+    if (TP_GetUserInfo(&data_0212c57c) == 0) {
         OS_Terminate();
     }
-    TP_SetCalibrateParam(data_0212c57c);
+    TP_SetCalibrateParam(&data_0212c57c);
     app = (u8 *)KnifeApp_getInstance();
     Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(app + 4, 1, 0xf);
     app[0x18] = 1;

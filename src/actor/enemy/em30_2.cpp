@@ -17,7 +17,7 @@
 //   Enemy_ArmSharedState Enemy_ArmSharedState             Encounter Encounter
 //   plback plback                plfront plfront
 // Not matched (kept in scratch/agentB/nonmatching): plhikiyose, type0_kamae, em30_type3, damageCheck,
-// em31_init, honyaMove, honyaGetInfo, func_0204363c.
+// em31_init, honyaMove, honyaGetInfo, Encnt_Reset.
 
 #include "actor/enemy/em29.h"
 #include "global.h"

@@ -2,6 +2,7 @@
 #define ENGINE_GZ_MEMORY_H
 
 #include "types.h"
+#include "sdk/os/os_arena.h"
 
 namespace Gz {
 namespace Memory {
@@ -16,9 +17,6 @@ typedef struct GzAllocator {
 
 extern "C" {
 // Arena and heap calls (dsd names where the library name is not known)
-void *OS_GetArenaLo(s32 arena);
-void *OS_GetArenaHi(s32 arena);
-void *OS_AllocFromArenaLo(s32 arena, u32 size, u32 align);
 void *SndHeap_Create(void *block, u32 size, s32 flags);
 void *SndHeap_Allocate(void *heap, u32 size, u32 align);
 void SndHeap_Free(void *heap, void *block, s32 flags);

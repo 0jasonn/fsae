@@ -509,6 +509,10 @@ src/sdk/mi/os_external_init.cpp:
     complete
     .text       start:0x0201556c end:0x02015578
 
+src/sdk/mi/mi_wram_bank.cpp:
+    complete
+    .text       start:0x02015578 end:0x02015588
+
 src/sdk/mi/dma_conflict.cpp:
     complete
     .text       start:0x02015940 end:0x020159cc
@@ -532,6 +536,10 @@ src/sdk/os/os_wait_irq.cpp:
 src/sdk/os/stub_empty.cpp:
     complete
     .text       start:0x02016c7c end:0x02016c80
+
+src/sdk/os/os_irq_callback.cpp:
+    complete
+    .text       start:0x02016c80 end:0x02016d08
 
 src/sdk/os/os_wrap_2.cpp:
     complete
@@ -564,6 +572,10 @@ src/sdk/os/os_wrap_4.cpp:
 src/sdk/os/cardbus_lock.cpp:
     complete
     .text       start:0x02017338 end:0x02017380
+
+src/sdk/os/os_cardbus_free.cpp:
+    complete
+    .text       start:0x020173c4 end:0x020173dc
 
 src/sdk/os/os_thread_id.cpp:
     complete
@@ -609,9 +621,21 @@ src/sdk/os/device_flags.cpp:
     complete
     .text       start:0x02017f64 end:0x02017f9c
 
+src/sdk/os/os_device_type.cpp:
+    complete
+    .text       start:0x02017f9c end:0x02017fcc
+
 src/sdk/os/ret_one.cpp:
     complete
     .text       start:0x02017fcc end:0x02017fd4
+
+src/sdk/os/os_message.cpp:
+    complete
+    .text       start:0x02017fd4 end:0x0201832c
+
+src/sdk/os/os_mutex_queue.cpp:
+    complete
+    .text       start:0x02018404 end:0x0201844c
 
 src/sdk/os/dc_cache.cpp:
     complete
@@ -621,6 +645,14 @@ src/sdk/os/os_wrap.cpp:
     complete
     .text       start:0x02018530 end:0x0201853c
 
+src/sdk/os/os_arena.cpp:
+    complete
+    .text       start:0x02018740 end:0x02018768
+
+src/sdk/os/os_arena_2.cpp:
+    complete
+    .text       start:0x020188e0 end:0x02018c10
+
 src/sdk/os/mpu.cpp:
     complete
     .text       start:0x02018c70 end:0x02018cf0
@@ -629,17 +661,37 @@ src/sdk/os/engine_halfb.cpp:
     complete
     .text       start:0x02018efc end:0x02018f0c
 
+src/sdk/os/os_tick_lo.cpp:
+    complete
+    .text       start:0x02018fac end:0x02018fbc
+
 src/sdk/os/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
+
+src/sdk/os/os_alarm_create.cpp:
+    complete
+    .text       start:0x02019054 end:0x02019064
 
 src/sdk/os/os_alarm_set.cpp:
     complete
     .text       start:0x0201918c end:0x020191f8
 
+src/sdk/os/os_valarm_create.cpp:
+    complete
+    .text       start:0x02019420 end:0x02019434
+
 src/sdk/os/os_interrupts.cpp:
     complete
     .text       start:0x020196f0 end:0x02019780
+
+src/sdk/os/os_boot.cpp:
+    complete
+    .text       start:0x020197d8 end:0x020197f4
+
+src/sdk/os/os_mac_address.cpp:
+    complete
+    .text       start:0x02019848 end:0x02019864
 
 src/sdk/os/os_runon_checks.cpp:
     complete
@@ -657,25 +709,57 @@ src/sdk/os/pair_restore.cpp:
     complete
     .text       start:0x02019c0c end:0x02019cb8
 
+src/sdk/os/os_main_ex_arena.cpp:
+    complete
+    .text       start:0x02019cb8 end:0x02019ccc
+
 src/sdk/os/pair_get.cpp:
     complete
     .text       start:0x02019ccc end:0x02019cf0
+
+src/sdk/os/os_deliver_arg.cpp:
+    complete
+    .text       start:0x02019cf0 end:0x02019d08
 
 src/sdk/os/os_halt.cpp:
     complete
     .text       start:0x02019e54 end:0x02019e64
 
+src/sdk/os/os_event.cpp:
+    complete
+    .text       start:0x02019e64 end:0x02019e84
+
 src/sdk/os/os_wrap_5.cpp:
     complete
     .text       start:0x02019e84 end:0x02019e94
+
+src/sdk/os/os_event_2.cpp:
+    complete
+    .text       start:0x02019e94 end:0x02019fa0
 
 src/sdk/pxi/engine_relay.cpp:
     complete
     .text       start:0x0201a064 end:0x0201a070
 
+src/sdk/pxi/pxi_fifo.cpp:
+    complete
+    .text       start:0x0201a1b8 end:0x0201a254
+
+src/sdk/rtc/rtc.cpp:
+    complete
+    .text       start:0x0201a354 end:0x0201a468
+
 src/sdk/rtc/engine_block.cpp:
     complete
     .text       start:0x0201a468 end:0x0201a474
+
+src/sdk/rtc/rtc_util.cpp:
+    complete
+    .text       start:0x0201a8b8 end:0x0201a930
+
+src/sdk/rtc/rtc_raw.cpp:
+    complete
+    .text       start:0x0201a948 end:0x0201aa50
 
 src/sdk/scfg/pxi_receive64.cpp:
     complete
@@ -692,6 +776,22 @@ src/sdk/snd/mutex_wrap.cpp:
 src/sdk/snd/obj_get38.cpp:
     complete
     .text       start:0x0201bdf4 end:0x0201bdfc
+
+src/sdk/tp/tp.cpp:
+    complete
+    .text       start:0x0201c0e0 end:0x0201c2d8
+
+src/sdk/tp/tp_sampling.cpp:
+    complete
+    .text       start:0x0201c3e0 end:0x0201c490
+
+src/sdk/tp/tp_wait.cpp:
+    complete
+    .text       start:0x0201c798 end:0x0201c7c4
+
+src/sdk/pm/pm_dummy_callback.cpp:
+    complete
+    .text       start:0x0201c848 end:0x0201c854
 
 src/sdk/pm/pm_callback.cpp:
     complete
@@ -713,6 +813,14 @@ src/sdk/pm/pm_apply_power.cpp:
     complete
     .text       start:0x0201d314 end:0x0201d514
 
+src/sdk/pm/pm_lcd.cpp:
+    complete
+    .text       start:0x0201d514 end:0x0201d56c
+
+src/sdk/pm/pm_post_exit.cpp:
+    complete
+    .text       start:0x0201d678 end:0x0201d6dc
+
 src/sdk/pm/pmlist_wrap.cpp:
     complete
     .text       start:0x0201d6dc end:0x0201d70c
@@ -721,9 +829,17 @@ src/sdk/std/std_snprintf.cpp:
     complete
     .text       start:0x0201dc94 end:0x0201dcbc
 
+src/sdk/wm/wm_set_callback.cpp:
+    complete
+    .text       start:0x0201ec48 end:0x0201ec60
+
 src/sdk/wm/wm_work.cpp:
     complete
     .text       start:0x0201eddc end:0x0201edec
+
+src/sdk/wm/wm_check.cpp:
+    complete
+    .text       start:0x0201edec end:0x0201eedc
 
 src/sdk/wm/wm_sleep.cpp:
     complete
@@ -1465,6 +1581,10 @@ src/actor/enemy/em2c_2.cpp:
     complete
     .text       start:0x02033708 end:0x02033744
 
+src/actor/enemy/em2c_type1_init.cpp:
+    complete
+    .text       start:0x02033744 end:0x020337e4
+
 src/actor/enemy/em2c_3.cpp:
     complete
     .text       start:0x020337e4 end:0x020340a8
@@ -1477,6 +1597,10 @@ src/actor/enemy/em2c_4.cpp:
     complete
     .text       start:0x02034508 end:0x0203464c
 
+src/actor/enemy/kuki_range_set.cpp:
+    complete
+    .text       start:0x0203464c end:0x02034730
+
 src/actor/enemy/em2c_5.cpp:
     complete
     .text       start:0x02034730 end:0x020347dc
@@ -1484,6 +1608,10 @@ src/actor/enemy/em2c_5.cpp:
 src/actor/enemy/em2d.cpp:
     complete
     .text       start:0x020347dc end:0x02035a8c
+
+src/actor/enemy/em2d_open_init.cpp:
+    complete
+    .text       start:0x02035a8c end:0x02035ba4
 
 src/actor/enemy/em2d_2.cpp:
     complete
@@ -2053,6 +2181,10 @@ src/game/encnt.cpp:
     complete
     .text       start:0x0204361c end:0x0204363c
 
+src/game/encnt_reset.cpp:
+    complete
+    .text       start:0x0204363c end:0x0204370c
+
 src/game/encnt_2.cpp:
     complete
     .text       start:0x0204370c end:0x02043760
@@ -2425,6 +2557,10 @@ src/game/parts.cpp:
 src/game/frame_load.cpp:
     complete
     .text       start:0x0204df84 end:0x0204e0f8
+
+src/game/shuffledata.cpp:
+    complete
+    .text       start:0x0204e0f8 end:0x0204e3e0
 
 src/game/srchcells.cpp:
     complete

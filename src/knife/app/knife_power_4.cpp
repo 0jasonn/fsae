@@ -2,6 +2,7 @@
 #include "global.h"
 #include "knife/app/knife_power.h"
 #include "sdk/gx/engine_romhalf.h"
+#include "sdk/pm/pm.h"
 #include "engine/sound/m4a.h"
 
 // Functions in this file (original names from the debug build):

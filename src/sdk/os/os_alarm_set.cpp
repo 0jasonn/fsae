@@ -1,5 +1,6 @@
 #include "engine/functions.h"
 #include "types.h"
+#include "sdk/os/os_alarm.h"
 
 extern "C" u64 OS_GetTick(void);
 extern "C" void OSi_InsertAlarm(void *alarm, u64 fire);
@@ -10,7 +11,7 @@ extern "C" void OSi_InsertAlarm(void *alarm, u64 fire);
 // handler at +0 with the argument at +4. This entry saves r1/r2 as low/high delay
 // words, r3 as the handler, and the final argument from [sp+0x18], matching a
 // CW ABI u64 second parameter.
-extern "C" void func_0201918c(void *alarm, u64 delay, void *callback, void *arg) {
+void func_0201918c(OsAlarm *alarm, u64 delay, void *callback, void *arg) {
     u8 *bytes = (u8 *)alarm;
     u32 irq;
     u64 fire;

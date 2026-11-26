@@ -5,6 +5,7 @@
 #include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
 #include "global.h"
 #include "engine/sound/sndlist.h"
+#include "sdk/os/os_message.h"
 
 // Global stop state at data_0218485c (fuller layout than the one in src/engine/sndsys_6.cpp). mode is 0 or 1; the
 // list at +0x3c holds the volume curve, its current value is the volume (value >> 8) applied to the timer channel.
@@ -27,10 +28,16 @@ typedef struct SndStopState {
     /* 50 */ s32 volume;
 } SndStopState;
 
+// data_0218481c (0x40 bytes): a message queue, followed by 0x20 bytes the decompiled code does not touch (likely its
+// message buffer).
+typedef struct SndStopMessageQueue {
+    OsMessageQueue queue; // 0x00
+    u8 unk_20[0x20];      // 0x20
+} SndStopMessageQueue;
+
 extern "C" {
 extern SndStopState data_0218485c;
-extern u8 data_0218481c[];
-s32 OS_ReceiveMessage(void *queue, void *message, s32 flags);
+extern SndStopMessageQueue data_0218481c;
 }
 
 extern "C" void func_020c02d0(void);

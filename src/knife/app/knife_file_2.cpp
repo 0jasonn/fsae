@@ -69,22 +69,22 @@ void System::threadFunction(void *arg) {
     if (data_02172138.quitRequested == 0) {
         do {
             for (;;) {
-                OS_LockMutexFromWToR(data_02172138.mutex);
+                OS_LockMutexFromWToR(&data_02172138.mutex);
                 empty = (List *)&data_02172138.queue == data_02172138.queue.next;
-                OS_UnlockMutex(data_02172138.mutex);
+                OS_UnlockMutex(&data_02172138.mutex);
                 if (!empty) {
                     break;
                 }
-                Os_WaitEventExWrap(data_02172138.event, 1, 0);
-                OS_ClearEvent(data_02172138.event, 1);
+                Os_WaitEventExWrap(&data_02172138.event, 1, 0);
+                OS_ClearEvent(&data_02172138.event, 1);
             }
-            OS_LockMutexFromWToR(data_02172138.mutex);
+            OS_LockMutexFromWToR(&data_02172138.mutex);
             entity = (Entity *)data_02172138.queue.next;
             entity->next->prev = entity->prev;
             entity->prev->next = entity->next;
             entity->prev = entity;
             entity->next = entity;
-            OS_UnlockMutex(data_02172138.mutex);
+            OS_UnlockMutex(&data_02172138.mutex);
             entity->read();
             yieldThread();
         } while (data_02172138.quitRequested == 0);
@@ -104,11 +104,11 @@ void System::initialize(u32 flags) {
     tableBuf = func_0208e148(tableSize);
     WBT_SetPacketSize(tableBuf, tableSize);
     OS_EnableIrqMask((flags & 0x10 ? 0x10000000 : 0x100) << (flags & 3));
-    OS_InitMutex(data_02172138.mutex);
-    OS_InitEvent(data_02172138.event);
-    OS_CreateThread(data_02172138.thread, System::threadFunction, 0, &data_02176238, 0x4000,
-                    Obj_GetField70((void *)data_02129938[1]));
-    OS_WakeupThreadDirect(data_02172138.thread);
+    OS_InitMutex(&data_02172138.mutex);
+    OS_InitEvent(&data_02172138.event);
+    OS_CreateThread(&data_02172138.thread, System::threadFunction, 0, &data_02176238, 0x4000,
+                    Obj_GetField70(data_02129938.current));
+    OS_WakeupThreadDirect(&data_02172138.thread);
     Stub_EmptyC();
 }
 
@@ -127,16 +127,16 @@ Entity *System::alloc(const char *name) {
     if (entity != NULL) {
         entity = Knife_File_Entity_ctor(entity, name);
     }
-    OS_LockMutexFromWToR(data_02172138.mutex);
+    OS_LockMutexFromWToR(&data_02172138.mutex);
     wasEmpty = (List *)&data_02172138.queue == data_02172138.queue.next;
     entity->next = data_02172138.queue.prev->next;
     entity->prev = data_02172138.queue.prev;
     data_02172138.queue.prev->next = entity;
     data_02172138.queue.prev = entity;
     if (wasEmpty) {
-        OS_SignalEvent(data_02172138.event, 1);
+        OS_SignalEvent(&data_02172138.event, 1);
     }
-    OS_UnlockMutex(data_02172138.mutex);
+    OS_UnlockMutex(&data_02172138.mutex);
     return entity;
 }
 

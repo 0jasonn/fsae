@@ -2,6 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "sdk/gx/gx.h"
+#include "sdk/pm/pm.h"
 
 void GX_DispOff(void) {
     volatile u32 *dispcnt = (volatile u32 *)0x4000000;

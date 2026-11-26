@@ -59,7 +59,7 @@ void func_020c0350(void) {
         tag = SND_GetCurrentCommandTag();
         SND_FlushCommand(1);
         SND_WaitForCommandProc(tag);
-        while (OS_ReceiveMessage(data_0218481c, 0, 0) != 0) {
+        while (OS_ReceiveMessage(&data_0218481c.queue, NULL, 0) != 0) {
         }
     }
     if (state->timerB != 0) {

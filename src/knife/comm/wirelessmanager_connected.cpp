@@ -3,11 +3,11 @@
 #include "types.h"
 #include "knife/comm/wm_work.h"
 #include "knife/comm/wm_irq.h"
+#include "sdk/wm/wm_system.h"
 #include "knife/comm/wirelessmanager_connected_api.h"
 
 // Knife::Comm::WirelessManager connected-AID and link level queries, 0x02092234 to 0x020922ec.
 
-extern "C" u16 WM_GetConnectedAIDs(void);
 extern "C" u16 WM_GetLinkLevel(void);
 extern "C" s32 MATH_CountPopulation(u32 value);
 

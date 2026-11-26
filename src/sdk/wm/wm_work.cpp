@@ -1,8 +1,6 @@
-#include "sdk/wm/wm_work.h"
-
-extern void *data_0212b960[];
+#include "sdk/wm/wm_system.h"
 
 // Provisional name. Return the wireless system work pointer.
 void *WMi_GetWorkPointer(void) {
-    return data_0212b960[1];
+    return data_0212b960.work;
 }

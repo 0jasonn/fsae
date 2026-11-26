@@ -3,6 +3,7 @@
 
 #include "engine/functions.h"
 #include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
+#include "sdk/tp/tp.h"
 #include "global.h"
 
 // Provisional module name for the unnamed UI state code at 0x020bcd34 onward (a guess from the state table and the
@@ -192,10 +193,6 @@ void SndVoice_Release(s32 a, s32 b, s32 c, s32 d);
 void SndRangeTree_Remove(s32 a, s32 b, s32 c, s32 d);
 void ResChunk_OpenKNBA(s32 a, s32 b, s32 c, s32 d);
 
-void TP_Init(void);
-s32 TP_GetUserInfo(void *info);
-void TP_SetCalibrateParam(void *info);
-void TP_RequestAutoSamplingStartAsync(u32 a, u32 b, void *arg, u32 c);
 void G2x_SetBlendBrightness_(u32 reg, s32 plane, s32 value);
 void RectObjPair_setOffsets(MenuView *view, s32 value);
 void Menu_SyncScroll(MenuList *list);
@@ -221,7 +218,7 @@ void Menu_Bg3WriteA(void *source, s32 offset, s32 size);
 void Menu_Bg3WriteB(void *source, s32 offset, s32 size);
 void Menu_ResetScroll(MenuList *list);
 void Menu_SetActive(MenuList *list, s32 value);
-void Menu_StartTouch(void *callbackArg);
+void Menu_StartTouch(TpSample *samples);
 void Menu_Step(MenuWork *menu, s32 flag);
 s32 Menu_HandleInputB(MenuWork *menu, MenuInput *input);
 s32 Menu_HandleInput(MenuWork *menu, MenuInput *input);

@@ -3,6 +3,7 @@
 
 // TwlSDK FS library setup (FS_Init, the ROM archive tables) and the Shift-JIS / Unicode path helpers.
 #include "types.h"
+#include "sdk/os/os_message.h"
 
 // data_0212981c: set once FS_Init has run, and once the FAT driver is up.
 typedef struct FsInitState {
@@ -11,7 +12,7 @@ typedef struct FsInitState {
 } FsInitState;
 
 extern FsInitState data_0212981c;
-extern u8 data_02128b4c[0x20];          // message queue of the Unicode conversion buffers
+extern OsMessageQueue data_02128b4c;    // message queue of the Unicode conversion buffers
 
 extern "C" {
 void FS_Init(u32 dmaNo);

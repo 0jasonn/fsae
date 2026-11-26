@@ -21,7 +21,7 @@ void CARDi_ReleaseLock(u32 owner, u32 level) {
         if (--lock->count == 0) {
             lock->owner = -3;
             lock->level = 0;
-            OS_WakeupThread(lock->queue);
+            OS_WakeupThread(&lock->queue);
         }
     }
     OS_RestoreInterrupts(state);
