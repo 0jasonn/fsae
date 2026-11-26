@@ -2,6 +2,7 @@
 #include "global.h"
 #include "knife/message/message_classes.h"
 #include "knife/message/textrender_screen.h"
+#include "sdk/gx/g2.h"
 
 // Functions in this file (plain names from the debug build, C linkage; the first argument is the TextRenderer):
 //   func_020a59ac (0x020a59ac): screen buffer of the BG (isBg) or OBJ layer at index, from the screen buffer list or the

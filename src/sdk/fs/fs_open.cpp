@@ -3,32 +3,30 @@
 #include "types.h"
 #include "sdk/fs/fs_open.h"
 
-// Opens a path: the resolver (func_0200f9fc) fills a value and a scratch buffer. A zero handle returns 0 at once.
-// Otherwise the record is initialised, its argument block is passed to func_0200f69c (mode 0xd, flag 1), and the
-// result is 1 on success or 0 with the handle cleared.
-extern "C" s32 FsFile_OpenPath(FsOpenRecord *rec, u32 path, u32 arg);
-
-s32 FsFile_OpenPath(FsOpenRecord *rec, u32 path, u32 arg) {
+// Opens a path: the resolver (func_0200f9fc) returns the archive and fills a value and a scratch buffer. No archive
+// returns 0 at once. Otherwise the file is initialised, its argument block is passed to func_0200f69c (command 0xd,
+// blocking), and the result is 1 on success or 0 with the archive cleared.
+s32 FsFile_OpenPath(FSFile *file, const char *path, u32 mode) {
     u32 resolved;
     u8 buffer[0x118];
     FsOpenArgs args;
-    s32 handle;
+    FSArchive *arc;
     s32 result;
 
     result = 0;
     resolved = 0;
-    handle = func_0200f9fc(path, &resolved, buffer);
-    if (handle != 0) {
-        FS_InitFile(rec);
-        rec->args = &args;
-        rec->handle = handle;
+    arc = func_0200f9fc(path, &resolved, buffer);
+    if (arc != NULL) {
+        FS_InitFile(file);
+        file->argument = &args;
+        file->arc = arc;
         args.resolved = resolved;
         args.buffer = buffer;
-        args.arg = arg;
-        if (func_0200f69c(rec, 0xd, 1) != 0) {
+        args.mode = mode;
+        if (func_0200f69c(file, 0xd, 1) != 0) {
             result = 1;
         } else {
-            rec->handle = 0;
+            file->arc = NULL;
         }
     }
     return result;

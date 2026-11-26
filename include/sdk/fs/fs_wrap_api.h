@@ -4,9 +4,10 @@
 // Functions defined in src/engine/fs_wrap*.cpp.
 
 #include "engine/entity.h"
+#include "sdk/fs/fs_file.h"
 
 extern "C" {
-u32 Fs_GetFileLengthWrap(u32 a, u32 b, u32 c, u32 d);
+u32 Fs_GetFileLengthWrap(FSFile *file);
 }
 
 #endif

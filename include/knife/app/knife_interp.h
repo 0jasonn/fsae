@@ -2,13 +2,7 @@
 #define KNIFE_APP_KNIFE_INTERP_H
 
 #include "types.h"
-
-// Fixed point vector (VecFx32 of the NitroSDK): x, y and z in 20.12 format
-typedef struct VecFx32 {
-    s32 x;
-    s32 y;
-    s32 z;
-} VecFx32;
+#include "sdk/fx/fx.h"
 
 namespace Knife {
 

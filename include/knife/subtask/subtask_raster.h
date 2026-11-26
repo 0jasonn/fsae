@@ -23,7 +23,6 @@ extern s32 data_0217d184;
 extern "C" {
 void subtask_make_lobby_raster(void);
 void subtask_init_hblank_raster(s32 mode);
-void GX_HBlankIntr(s32 enable);
 }
 
 #endif

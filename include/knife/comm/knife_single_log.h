@@ -2,21 +2,13 @@
 #define KNIFE_COMM_KNIFE_SINGLE_LOG_H
 
 #include "engine/functions.h"
+#include "sdk/fx/fx.h"
 
 // Position pair entry used by the single player log (4 bytes, passed and returned by value).
 typedef struct POS {
     s16 x;
     s16 y;
 } POS;
-
-// Three-component fixed point vector (VecFx32 in the SDK).
-typedef struct VecFx32 {
-    s32 x;
-    s32 y;
-    s32 z;
-} VecFx32;
-
-extern "C" s32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 
 namespace Knife {
 namespace Single {

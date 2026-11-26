@@ -3,12 +3,12 @@
 #include "engine/functions.h"
 #include "sdk/gx/vram_group.h"
 #include "ui/widget/ctrl_wrap_api.h"
+#include "sdk/gx/gx.h"
 
 #define REG16(addr) (*(volatile u16 *)(addr))
 #define REG32(addr) (*(volatile u32 *)(addr))
 
 extern "C" {
-void GXS_SetGraphicsMode(u32 bgMode);
 void func_02014d1c(s32 banks);
 void func_020bdb34(void);
 }

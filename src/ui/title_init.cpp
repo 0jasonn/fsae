@@ -8,6 +8,7 @@
 #include "engine/em2f_map_flag.h"
 #include "engine/vblank_request.h"
 #include "engine/disp_reset.h"
+#include "sdk/gx/gx.h"
 
 // title_init() (0x020527f0): sets up the title screen once the previous fade has finished: clears the display shadow,
 // OAM and VRAM areas, loads the title graphics and colors, configures the BG layers and starts the effect state.

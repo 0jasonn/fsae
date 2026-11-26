@@ -8,7 +8,7 @@
 // Returns the block (NULL on failure) and stores the decompressed size in *outSize when outSize is not NULL
 void *LoadBlzFile(const char *path, void *heap, s32 align, u32 *outSize) {
     u32 trailer;
-    BlzFile file;
+    FSFile file;
     u32 fileSize;
     u32 totalSize;
     u8 *mem;
@@ -17,7 +17,7 @@ void *LoadBlzFile(const char *path, void *heap, s32 align, u32 *outSize) {
     u8 *aligned;
 
     FS_InitFile(&file);
-    if (!FS_FindDir(&file, (void *)path)) {
+    if (!FS_FindDir(&file, path)) {
         return NULL;
     }
     fileSize = Fs_GetFileLengthWrap(&file);

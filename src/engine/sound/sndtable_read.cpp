@@ -1,10 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
+#include "sdk/fs/fs_file.h"
 
 extern "C" {
 extern u8 *data_021848b0; // sound state pointer
-s32 FS_SeekFile(void *file, s32 pos, s32 origin);
-s32 FS_ReadFile(void *file, void *dst, s32 size);
 }
 
 // SndTable_ReadBlock: reads up to size bytes of the file block of table entry index into payload, starting offset bytes
@@ -44,10 +43,10 @@ s32 SndTable_ReadBlock(s32 index, void *payload, s32 size, s32 offset) {
         if (chunk == 0) {
             break;
         }
-        if (FS_SeekFile(state + 0x34, *(s32 *)entry + offset, 0) == 0) {
+        if (FS_SeekFile((FSFile *)(state + 0x34), *(s32 *)entry + offset, 0) == 0) {
             return -1;
         }
-        read = FS_ReadFile(state + 0x34, dst, chunk);
+        read = FS_ReadFile((FSFile *)(state + 0x34), dst, chunk);
         if (read < 0) {
             return read;
         }

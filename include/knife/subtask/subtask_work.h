@@ -14,7 +14,6 @@ typedef struct SubtaskPushStartWork {
     s32 blinkCount;    // 0x530
 } SubtaskPushStartWork;
 
-extern "C" void GXS_SetGraphicsMode(u32 mode);
 extern "C" void Vram_SetBankGroupB(u32 a);
 extern "C" void subTaskSetBG0Offset_reset(void);
 extern "C" void subTaskSetBG1Offset_reset(void);

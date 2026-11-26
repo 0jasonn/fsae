@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "knife/subtask/subtask_raster.h"
 #include "knife/subtask/subtask_hblank.h"
+#include "sdk/gx/gx.h"
 
 #define SUBTASK_REG_IME (*(volatile u16 *)0x04000208)
 

@@ -3,6 +3,8 @@
 
 #include "types.h"
 #include "sdk/snd/snd_command.h"  // TwlSDK SND command API (and OS_InitMutex)
+#include "sdk/fs/fs_file.h"
+#include "sdk/fs/fs_api.h"
 
 namespace Knife {
 namespace File {
@@ -22,7 +24,7 @@ class Entity : public List {
 public:
     BOOL read(void);
 
-    u8 fsFile[0x48];    // 0x0c: FS file handle
+    FSFile fsFile;      // 0x0c: FS file handle
     u32 buffer;         // 0x54: block the file is read into
     u32 fileSize;       // 0x58
     u8 path[0x40];      // 0x5c: archive path, written by the constructor
@@ -78,14 +80,6 @@ public:
 
 extern "C" {
 // TwlSDK and engine calls used by the Knife file loader (dsd names where the library name is not known)
-void FS_Init(void);
-BOOL FS_FindDir(void *file, void *path);
-u32 FS_GetFileLength(void *file);
-u32 FS_ReadFileAsync(void *file, void *dst, u32 size);
-BOOL FS_WaitAsync(void *file);
-void FS_CloseFile(void *file);
-void FS_InitFile(void *file);
-u32 WBT_SetPacketSize(s32 a, s32 b);
 void *func_0208e148(u32 size);
 void OS_InitEvent(void *event);
 void OS_SignalEvent(void *event, s32 value);

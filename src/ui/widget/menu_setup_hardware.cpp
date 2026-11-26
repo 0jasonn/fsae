@@ -3,6 +3,7 @@
 #include "knife/app/twl.h"
 #include "sdk/fx/stub_empty.h"
 #include "ui/widget/menu.h"
+#include "sdk/gx/gx.h"
 
 extern "C" s32 func_0218a870(void);
 extern "C" void func_020be9f0(void *obj);

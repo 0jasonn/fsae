@@ -1,48 +1,37 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "sdk/fs/fs_rom.h"
 
-// File handle with its archive pointer at +8.
-typedef struct FsFile {
-    u8 unk_00[8];
-    void *archive;
-} FsFile;
+extern u8 data_020c90fc[]; // interface table of the ROM FAT archive (FSArchive.vtbl)
 
-// ROM FAT archive: the archive kind at +0x24 is compared with data_020c90fc.
-typedef struct FsArchive {
-    u8 unk_00[0x24];
-    u8 *kind;
-} FsArchive;
+extern "C" s32 FsRomFile_LengthIsZero(FSFile *file, u32 *length);
+extern "C" s32 FsRomFile_PositionIsZero(FSFile *file, u32 *position);
 
-extern u8 data_020c90fc[];
-
-extern "C" s32 FSi_ROMFAT_GetFileLength(void *archive, FsFile *file, u32 arg);
-extern "C" s32 FSi_ROMFAT_GetFilePosition(void *archive, FsFile *file, u32 arg);
-extern "C" s32 FsRomFile_LengthIsZero(FsFile *file, u32 arg);
-extern "C" s32 FsRomFile_PositionIsZero(FsFile *file, u32 arg);
-
-// FsRomFile_LengthIsZero(file, arg) (0x02012488): 1 when the file is in the ROM FAT archive and its length is zero.
-s32 FsRomFile_LengthIsZero(FsFile *file, u32 arg) {
-    FsArchive *archive;
+// FsRomFile_LengthIsZero(file, length) (0x02012488): 1 when the file is in the ROM FAT archive and
+// FSi_ROMFAT_GetFileLength succeeds (result 0; the length is stored in *length). The name is misleading.
+s32 FsRomFile_LengthIsZero(FSFile *file, u32 *length) {
+    FSArchive *archive;
     s32 result;
 
-    archive = (FsArchive *)file->archive;
+    archive = file->arc;
     result = 0;
-    if (archive->kind == data_020c90fc) {
-        result = (FSi_ROMFAT_GetFileLength(archive, file, arg) == 0);
+    if (archive->vtbl == data_020c90fc) {
+        result = (FSi_ROMFAT_GetFileLength(archive, file, length) == 0);
     }
     return result;
 }
 
-// FsRomFile_PositionIsZero(file, arg) (0x020124c8): 1 when the file is in the ROM FAT archive and its position is zero.
-s32 FsRomFile_PositionIsZero(FsFile *file, u32 arg) {
-    FsArchive *archive;
+// FsRomFile_PositionIsZero(file, position) (0x020124c8): 1 when the file is in the ROM FAT archive and
+// FSi_ROMFAT_GetFilePosition succeeds (result 0; the position is stored in *position). The name is misleading.
+s32 FsRomFile_PositionIsZero(FSFile *file, u32 *position) {
+    FSArchive *archive;
     s32 result;
 
-    archive = (FsArchive *)file->archive;
+    archive = file->arc;
     result = 0;
-    if (archive->kind == data_020c90fc) {
-        result = (FSi_ROMFAT_GetFilePosition(archive, file, arg) == 0);
+    if (archive->vtbl == data_020c90fc) {
+        result = (FSi_ROMFAT_GetFilePosition(archive, file, position) == 0);
     }
     return result;
 }

@@ -16,17 +16,17 @@ namespace File {
 BOOL Entity::read(void) {
     BOOL ok = FALSE;
 
-    if (FS_FindDir(fsFile, path) != FALSE) {
-        fileSize = FS_GetFileLength(fsFile);
+    if (FS_FindDir(&fsFile, (const char *)path) != FALSE) {
+        fileSize = FS_GetFileLength(&fsFile);
         buffer = (u32)EL_GetGlobalAdr(fileSize, 0x20);
         if (buffer != 0) {
-            if (FS_ReadFileAsync(fsFile, (void *)buffer, fileSize) == fileSize) {
-                if (FS_WaitAsync(fsFile) != FALSE) {
+            if (FS_ReadFileAsync(&fsFile, (void *)buffer, fileSize) == fileSize) {
+                if (FS_WaitAsync(&fsFile) != FALSE) {
                     ok = TRUE;
                 }
             }
         }
-        FS_CloseFile(fsFile);
+        FS_CloseFile(&fsFile);
     }
     readDone = 1;
     return ok;
@@ -99,10 +99,10 @@ void System::initialize(u32 flags) {
     void *tableBuf;
 
     data_02172138.quitRequested = 0;
-    FS_Init();
+    FS_Init(flags);
     tableSize = WBT_SetPacketSize(0, 0);
     tableBuf = func_0208e148(tableSize);
-    WBT_SetPacketSize((s32)tableBuf, tableSize);
+    WBT_SetPacketSize(tableBuf, tableSize);
     OS_EnableIrqMask((flags & 0x10 ? 0x10000000 : 0x100) << (flags & 3));
     OS_InitMutex(data_02172138.mutex);
     OS_InitEvent(data_02172138.event);

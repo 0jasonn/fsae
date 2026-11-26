@@ -7,10 +7,6 @@
 #include "game/player_flags.h"
 #include "engine/player.h"
 
-extern "C" {
-s32 FX_Sqrt(s32 x);
-}
-
 void ComRequest(u8 request);
 void ranking_noop(void);
 void ranking_scroll(void);

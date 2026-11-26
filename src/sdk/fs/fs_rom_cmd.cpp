@@ -1,28 +1,14 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "sdk/fs/fs_rom.h"
 
-// Context of the ROM command: the offset at +8 and the second value at +0x30 are passed to FSi_IsUnreadableRomOffset.
-typedef struct FsRomCmdCtx {
-    u8 unk_00[8];
-    u32 offset;              // 0x08
-    u8 unk_0c[0x24];
-    u32 romOffset;           // 0x30
-} FsRomCmdCtx;
-
-// Shared word with the ROM bank value at +4, passed (as u16) to the CARD and G3C lock calls.
-typedef struct FsRomCmdState {
-    u8 unk_00[4];
-    u32 value;               // 0x04
-} FsRomCmdState;
-
-extern FsRomCmdState data_021297b8;
-
-// FsRom_Command(ctx, cmd) (0x02012810): cmd 1 gives 4; cmd 7 gives 9 for an unreadable offset and 0x101 otherwise;
+// FsRom_Command(file, cmd) (0x02012810): cmd 1 gives 4; cmd 7 gives 9 when FSi_IsUnreadableRomOffset says so for the
+// file's archive (and the first command word) and 0x101 otherwise;
 // cmd 9 and 10 lock the ROM or switch to direct mode with the value and give 0. Other values give 0x102.
-extern "C" s32 FsRom_Command(FsRomCmdCtx *ctx, s32 cmd);
+extern "C" s32 FsRom_Command(FSFile *file, s32 cmd);
 
-s32 FsRom_Command(FsRomCmdCtx *ctx, s32 cmd) {
+s32 FsRom_Command(FSFile *file, s32 cmd) {
     switch (cmd) {
     case 9:
         CARD_LockRom((u16)data_021297b8.value);
@@ -31,7 +17,7 @@ s32 FsRom_Command(FsRomCmdCtx *ctx, s32 cmd) {
         G3C_Direct1((u16)data_021297b8.value);
         return 0;
     case 7:
-        if (FSi_IsUnreadableRomOffset(ctx->offset, ctx->romOffset) != 0) {
+        if (FSi_IsUnreadableRomOffset(file->arc, file->command.a.value) != 0) {
             return 9;
         }
         return 0x101;

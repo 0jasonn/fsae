@@ -6,10 +6,8 @@
 // Functions whose symbol is unmangled in config/eur/arm9/symbols.txt are declared extern "C".
 #include "engine/entity.h"
 #include "game/rankingsave.h"
-
-typedef struct FSFile {
-    u8 unk_00[0x48]; // FS file handle, layout not known yet
-} FSFile;
+#include "sdk/fs/fs_file.h"
+#include "sdk/fs/fs_open.h"
 
 void set0b_itemAdd(Entity *e); // 0x02057f30, set_3.cpp
 void set0a_setenemy(Entity *e); // 0x02057dec, set_6.cpp
@@ -21,15 +19,6 @@ extern "C" s32 Knife_mediaVerify(u16 slot, const u32 *data, s32 size); // 0x0205
 extern "C" {
 u32 OS_GetBootType(void);
 void *Knife_GetPowerManager(void); // returns the Knife::PowerManager object
-void FS_InitFile(FSFile *file);
-s32 FsFile_OpenPath(FSFile *file, const char *path, s32 mode); // open
-u32 FS_GetFileLength(FSFile *file);
-void FS_ReadFile(FSFile *file, void *buffer, u32 size);
-void FS_CloseFile(FSFile *file);
-void FS_CreateFile(const char *path, u32 mode);
-void FS_SetFileLength(FSFile *file, u32 length);
-void FS_WriteFileAsync(FSFile *file, const void *buffer, u32 size);
-void FS_WaitAsync(FSFile *file);
 void func_0208ae14(void); // thumb
 }
 

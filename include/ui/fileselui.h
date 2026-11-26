@@ -53,7 +53,6 @@ void fileSelUIViewCtrl_deserialize(FileSelUIViewCtrl *self, u8 **buf);
 void fileSelUIViewCtrl_update(FileSelUIViewCtrl *self);
 void fileSelUIViewCtrl_addOamEntry_0ad9a4(FileSelUIViewCtrl *self, const void *entries, s32 count);
 void fileSelUIViewCtrl_finalize(FileSelUIViewCtrl *self);
-void GXS_SetGraphicsMode(u32 mode);
 void UIObject_update(UIObject *self);
 void Knife_Message_setPendingPtr(u32 a);
 extern u8 data_0217a258[];

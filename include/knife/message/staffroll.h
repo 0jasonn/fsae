@@ -40,7 +40,6 @@ extern const u16 data_021250d0[];
 extern s32 OamRing_dmaNo;
 
 extern "C" {
-void GXS_SetGraphicsMode(u32 mode);
 void Vram_SetBankGroupB(u32 a);
 void *func_0208e148(u32 size);
 void MI_WaitDma(s32 channel);

@@ -6,6 +6,7 @@
 #include "engine/data_0212c500.h"
 #include "global.h"
 #include "engine/irq.h"
+#include "sdk/gx/gx.h"
 
 void OpeningTask(void) {
     Random();

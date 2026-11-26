@@ -31,7 +31,7 @@ s32 NarcArchive_Mount(NarcArchive *archive, const u8 *name, u8 *narc) {
         }
         section = (NarcSection *)((u8 *)section + section->size);
     }
-    FS_InitArchive(archive);
+    FS_InitArchive(&archive->arc);
     image = (NarcSection *)((u8 *)image + 8);
     archive->narc = narc;
     archive->fat = (u8 *)fat;

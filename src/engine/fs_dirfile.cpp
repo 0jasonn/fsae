@@ -3,10 +3,8 @@
 #include "types.h"
 #include "engine/fs_dirfile_api.h"
 #include "sdk/fs/obj_get24_api.h"
+#include "sdk/fs/fs_file.h"
 
-extern "C" void FS_InitFile(void *file);
-extern "C" BOOL FS_FindDir(void *file, void *path);
-extern "C" void FS_CloseFile(void *file);
 extern "C" u32 Fs_UnmountArchiveWrap(u32 archive);
 
 // Fs_ReleaseArchive (Fs_ReleaseArchive, provisional name): unmounts the archive. When the unmount succeeds it runs
@@ -23,18 +21,18 @@ s32 Fs_ReleaseArchive(void *archive) {
 // offset of the directory (word at +0x64 of the directory) plus the field at +0x24 of the file handle; returns 0 otherwise.
 extern "C" s32 Fs_GetDirFileOffset(void *path);
 s32 Fs_GetDirFileOffset(void *path) {
-    u8 file[0x48];
+    FSFile file;
     u8 *dir;
     s32 offset;
     s32 fieldOffset;
 
     offset = 0;
-    FS_InitFile(file);
-    if (FS_FindDir(file, path)) {
-        dir = *(u8 **)(file + 8);
-        fieldOffset = Obj_GetField24(file);
+    FS_InitFile(&file);
+    if (FS_FindDir(&file, (const char *)path)) {
+        dir = (u8 *)file.arc;
+        fieldOffset = Obj_GetField24(&file);
         offset = *(s32 *)(dir + 0x64) + fieldOffset;
-        FS_CloseFile(file);
+        FS_CloseFile(&file);
     }
     return offset;
 }

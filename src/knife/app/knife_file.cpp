@@ -23,7 +23,7 @@ KnifeFileEntity *Knife_File_Entity_ctor(KnifeFileEntity *self, s32 arg) {
     self->vtbl = data_0211abbc;
     self->next = self;
     self->readDone = 0;
-    FS_InitFile(self->fsFile);
+    FS_InitFile(&self->fsFile);
     Knife_File_Entity_fwd_08c75c(self, arg);
     return self;
 }

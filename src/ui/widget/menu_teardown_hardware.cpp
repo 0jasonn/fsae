@@ -3,6 +3,7 @@
 #include "engine/sound/sndsys_api.h"
 #include "ui/widget/menu_teardown_hardware.h"
 #include "ui/widget/menu.h"
+#include "sdk/gx/gx.h"
 
 // Stops touch sampling and audio, turns the display off, then releases any menu-owned
 // resources. The flags are confirmed at menu offsets 0x40622..0x40624.

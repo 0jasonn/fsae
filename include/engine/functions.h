@@ -15,24 +15,17 @@ typedef void (*PMiCallback)(u32 result, u32 arg); // TwlSDK PM callback
 struct DISP_CTRL_;
 struct ENCNT_;
 struct NPC_WORK_;
+struct FSArchive;
 
 extern "C" {
 void BgExtPalette_Load(s32 screen, u8 *palette, u8 *table);
 void BgPalette_Load(s32 screen, u8 *palette, u8 *table);
 void BgPalette_LoadAuto(s32 screen, u8 *palette, u8 *flagTable, u8 *loadTable);
 void CARD_LockRom(u16 value);
-s32 FS_IsArchiveTableLoaded(void);
-s32 FSi_IsUnreadableRomOffset(u32 offset, u32 romOffset);
-void *G2_GetBG0ScrPtr(void);
-void *G2_GetBG1ScrPtr(void);
 void *G2_GetBG2ScrPtr(void);
 void *G2_GetBG3ScrPtr(void);
-void *G2S_GetBG0ScrPtr(void);
-void *G2S_GetBG1ScrPtr(void);
 void *G2S_GetBG2ScrPtr(void);
 void *G2S_GetBG3ScrPtr(void);
-void *G2S_GetBG0CharPtr(void);
-void *G2S_GetBG1CharPtr(void);
 void *G2S_GetBG2CharPtr(void);
 void *G2S_GetBG3CharPtr(void);
 void G3C_Direct1(u16 value);
@@ -131,14 +124,9 @@ BOOL EnemyInit(Entity *e);
 void AfterPlayer(void);
 s32 _s32_div_f(s32 a, s32 b); // runtime signed divide
 void AddRupee(Entity *a, int b);
-void CP_SaveContext(void *context);
-void CPi_RestoreContext(void *context);
 void *EL_GetGlobalAdr(u32 offset, u32 size);
-void GX_DispOff(void);
 void GX_DispOn(void);
-void GX_SetVCountEqVal(u32 line);
 void GX_TrySetBankForLCDC(s32 bank);
-BOOL GX_VBlankIntr(BOOL enable);
 int GetBgBuffAdrs(int a);
 Entity *GetObjWork(void);
 Entity *GetSetWork(s32 a, s32 b, s32 c);
@@ -202,7 +190,6 @@ void OS_EnableDTCM(void);
 void func_020855bc(Entity *e); // dsd name (thumb label 0x020855bc), takes the player entity
 BOOL GameState_UpdatePhase(void); // plain symbol, 0x02049454, no arguments
 u8 ClearKeyCheck(void);
-void G2x_SetBlendAlpha_(void *reg, s32 a, s32 b, s32 c, s32 d);
 s32 AddHeart(Entity *e, s32 amount);
 void func_0208af0c(Entity *e);               // plain dsd name, 0x0208af0c
 int func_020862a8(Entity *e);
@@ -246,9 +233,12 @@ void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
 s32 Entries_ProcessAll(void);
 void PMi_SendPxiData(u32 word);
 void OS_GetOwnerInfoEx(void *info); // 0x020198e4, TwlSDK (unmangled)
-void GXx_SetMasterBrightness_(void *reg, u32 value); // 0x02012f70, TwlSDK
 void MI_CpuCopy8(const void *src, void *dst, u32 size);
 void MI_CpuFill8(void *dest, u8 data, u32 size); // TwlSDK
+s32 OS_SendMessage(void *queue, void *message, s32 flags); // TwlSDK
+s32 STD_GetStringLength(const char *s); // TwlSDK
+void PMi_SetDispOffCount(void); // TwlSDK
+s32 func_020a44ac(u32 dmaNo, u32 src, void *dst, u32 length, void (*callback)(FSArchive *), FSArchive *arg, s32 async); // card ROM read
 void GXS_BeginLoadBGExtPltt(void);
 void GXS_LoadBGExtPltt(void *data, u32 offset, u32 size);
 void GXS_EndLoadBGExtPltt(void);

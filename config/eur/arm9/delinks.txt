@@ -293,29 +293,109 @@ src/sdk/fatfs/engine_romword.cpp:
     complete
     .text       start:0x0200e5f8 end:0x0200e608
 
+src/sdk/os/cp_context.cpp:
+    complete
+    .text       start:0x0200eec8 end:0x0200ef44
+
+src/sdk/fs/fs_archive_init.cpp:
+    complete
+    .text       start:0x0200fce4 end:0x0200fd08
+
+src/sdk/fs/fs_archive_mount.cpp:
+    complete
+    .text       start:0x0200feb4 end:0x0200ff0c
+
+src/sdk/fs/fs_sjis_decrement.cpp:
+    complete
+    .text       start:0x020101c8 end:0x02010208
+
+src/sdk/fs/fs_sjis_slash.cpp:
+    complete
+    .text       start:0x0201025c end:0x020102d4
+
+src/sdk/fs/fs_file_length.cpp:
+    complete
+    .text       start:0x02010aac end:0x02010b1c
+
 src/sdk/fs/fs_open.cpp:
     complete
     .text       start:0x02010b1c end:0x02010ba0
+
+src/sdk/fs/fs_file_close.cpp:
+    complete
+    .text       start:0x02010ba0 end:0x02010be0
+
+src/sdk/fs/fs_dir_close.cpp:
+    complete
+    .text       start:0x02010e50 end:0x02010e78
+
+src/sdk/fs/fs_find_dir.cpp:
+    complete
+    .text       start:0x02010edc end:0x02010eec
 
 src/sdk/fs/fs_wrap.cpp:
     complete
     .text       start:0x02010eec end:0x02010ef8
 
+src/sdk/fs/fs_unicode_buffer.cpp:
+    complete
+    .text       start:0x02010fdc end:0x02010ffc
+
 src/sdk/fs/stdconv_wrap.cpp:
     complete
     .text       start:0x02010ffc end:0x02011024
+
+src/sdk/fs/fs_srl_read.cpp:
+    complete
+    .text       start:0x02011094 end:0x020110cc
+
+src/sdk/fs/fs_dir_seek.cpp:
+    complete
+    .text       start:0x0201112c end:0x02011158
+
+src/sdk/fs/fs_open_default.cpp:
+    complete
+    .text       start:0x02011938 end:0x0201195c
 
 src/sdk/fs/stub_ret0_2.cpp:
     complete
     .text       start:0x020119bc end:0x020119c4
 
+src/sdk/fs/fs_romfat_rw.cpp:
+    complete
+    .text       start:0x02011a94 end:0x02011b1c
+
+src/sdk/fs/fs_romfat_open.cpp:
+    complete
+    .text       start:0x02011d28 end:0x02011db4
+
+src/sdk/fs/fs_romfat_state.cpp:
+    complete
+    .text       start:0x02011e08 end:0x02011f08
+
+src/sdk/fs/fs_romfat_query.cpp:
+    complete
+    .text       start:0x02011fc4 end:0x02011ffc
+
 src/sdk/fs/fs_archive_reset.cpp:
     complete
     .text       start:0x02011ffc end:0x0201202c
 
+src/sdk/fs/fs_romfat_caps.cpp:
+    complete
+    .text       start:0x0201202c end:0x02012038
+
+src/sdk/fs/fs_romfat_dir_close.cpp:
+    complete
+    .text       start:0x02012090 end:0x020120a8
+
 src/sdk/fs/ret_code_alt.cpp:
     complete
     .text       start:0x02012250 end:0x02012264
+
+src/sdk/fs/fs_mem_callback.cpp:
+    complete
+    .text       start:0x020123bc end:0x02012410
 
 src/sdk/fs/fs_wrap_2.cpp:
     complete
@@ -325,9 +405,21 @@ src/sdk/fs/fs_rom.cpp:
     complete
     .text       start:0x02012488 end:0x02012508
 
+src/sdk/fs/fs_archive_proc.cpp:
+    complete
+    .text       start:0x0201256c end:0x0201258c
+
+src/sdk/fs/fs_archive_base.cpp:
+    complete
+    .text       start:0x02012750 end:0x02012780
+
 src/sdk/fs/obj_get24.cpp:
     complete
     .text       start:0x02012780 end:0x02012788
+
+src/sdk/fs/fs_rom_callback.cpp:
+    complete
+    .text       start:0x020127a4 end:0x02012810
 
 src/sdk/fs/fs_rom_cmd.cpp:
     complete
@@ -337,17 +429,53 @@ src/sdk/fs/ret_const.cpp:
     complete
     .text       start:0x020128c0 end:0x020128e4
 
+src/sdk/fs/fs_init.cpp:
+    complete
+    .text       start:0x02012a38 end:0x02012a90
+
+src/sdk/fx/mtx_identity22.cpp:
+    complete
+    .text       start:0x02012ab8 end:0x02012ad0
+
+src/sdk/fx/fx_sqrt_vec.cpp:
+    complete
+    .text       start:0x02012b30 end:0x02012bc0
+
 src/sdk/fx/stub_empty_2.cpp:
     complete
     .text       start:0x02012c3c end:0x02012c40
+
+src/sdk/gx/gx_display_intr.cpp:
+    complete
+    .text       start:0x02012dc0 end:0x02012e58
 
 src/sdk/gx/engine_romhalf.cpp:
     complete
     .text       start:0x02012e58 end:0x02012e68
 
+src/sdk/gx/gx_disp_off.cpp:
+    complete
+    .text       start:0x02012e68 end:0x02012ea8
+
+src/sdk/gx/gx_graphics_mode.cpp:
+    complete
+    .text       start:0x02012f54 end:0x02012f98
+
 src/sdk/gx/field_kind.cpp:
     complete
     .text       start:0x02012f98 end:0x02012fd8
+
+src/sdk/gx/g2_blend_alpha.cpp:
+    complete
+    .text       start:0x020130d0 end:0x020130ec
+
+src/sdk/gx/g2_bg_scr_ptr.cpp:
+    complete
+    .text       start:0x02013110 end:0x020131b8
+
+src/sdk/gx/g2_bg_char_ptr.cpp:
+    complete
+    .text       start:0x020133a8 end:0x02013450
 
 src/sdk/gx/bg_copy.cpp:
     complete

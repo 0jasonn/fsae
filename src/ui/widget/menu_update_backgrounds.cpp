@@ -3,9 +3,9 @@
 #include "ui/widget/ctrl_wrap_api.h"
 #include "ui/widget/menu.h"
 #include "ui/widget/menu_scroll.h"
+#include "sdk/fx/fx.h"
 
 extern "C" {
-void MTX_Identity22_(void *matrix);
 void G2x_SetBGyAffine_(u32 reg, const void *matrix, s32 a, s32 b, s32 x, s32 y);
 }
 
@@ -19,20 +19,20 @@ extern "C" void func_020bd128(MenuWork *menu, s32 offset) {
     s32 y;
     s32 secondY;
     s16 scroll;
-    u32 matrix[4];
+    MtxFx22 matrix;
     s16 first[2];
     s16 second[2];
 
     Ctrl_updateSlotsA(*(void **)((u8 *)menu + 0x340));
     Ctrl_updateSlotsA(*(void **)((u8 *)menu + 0x344));
     Menu_applyBgScroll((MenuScrollObj *)menu->unk_358);
-    MTX_Identity22_(matrix);
+    MTX_Identity22_(&matrix);
     scroll = menu->sub.scroll38c;
     zero = 0;
     y = scroll - 0x12;
-    G2x_SetBGyAffine_(0x04001030, matrix, zero, zero, offset, y);
+    G2x_SetBGyAffine_(0x04001030, &matrix, zero, zero, offset, y);
     secondY = y + 0xc0;
-    G2x_SetBGyAffine_(0x04000030, matrix, zero, zero, offset, secondY);
+    G2x_SetBGyAffine_(0x04000030, &matrix, zero, zero, offset, secondY);
     if (offset == 0) {
         if (((*(volatile u32 *)0x04001000 & 0xe000) >> 13) != 0) {
             if (menu->unk_358->flagAd == 0) {

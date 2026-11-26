@@ -7,6 +7,8 @@
 #include "engine/irq.h"
 #include "sdk/gx/vram_group.h"
 #include "knife/app/knife_power.h"
+#include "sdk/os/cp_context.h"
+#include "sdk/gx/gx.h"
 
 extern u8 data_021271ac[];
 extern u8 data_02187070[];
