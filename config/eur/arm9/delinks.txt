@@ -6869,6 +6869,10 @@ src/engine/record_init_sized.cpp:
     complete
     .text       start:0x020c5fcc end:0x020c6008
 
+src/knife/message/obj_block_count.cpp:
+    complete
+    .text       start:0x020c61f4 end:0x020c6250
+
 src/knife/message/tcl_layout_2.cpp:
     complete
     .text       start:0x020c6b50 end:0x020c6c30
