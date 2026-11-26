@@ -6,7 +6,6 @@
 //   fsCreateFile (0x020a7480), fsSaveBegin (0x020a74cc, empty hook), fsSaveEnd (0x020a74d0, empty hook),
 //   fsLoadFiles() (0x020a74d4)
 
-extern "C" s32 Save4SwordsFile(u8 flags);
 extern "C" void fsCreateFile(u8 slot);
 
 #include "engine/multisio_save.h"
