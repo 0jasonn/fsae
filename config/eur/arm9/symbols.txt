@@ -1180,11 +1180,11 @@ _Z13type2_buttobiP9OBJ_WORK_ kind:function(arm,size=0x78) addr:0x0202d080
 _Z9type2_dieP9OBJ_WORK_ kind:function(arm,size=0x94) addr:0x0202d0f8
 _Z15em0e_type2_initP9OBJ_WORK_ kind:function(arm,size=0x68) addr:0x0202d18c
 _Z15em0e_type2_moveP9OBJ_WORK_ kind:function(arm,size=0x9c) addr:0x0202d1f4
-type2_piyori kind:function(arm,size=0x284) addr:0x0202d290
+_Z12type2_piyoriP9OBJ_WORK_ kind:function(arm,size=0x284) addr:0x0202d290
 _Z10em0e_type3P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x0202d514
 _Z10type3_initP9OBJ_WORK_ kind:function(arm,size=0x28) addr:0x0202d530
 _Z10type3_moveP9OBJ_WORK_ kind:function(arm,size=0x64) addr:0x0202d558
-hippariCheck kind:function(arm,size=0x51c) addr:0x0202d5bc
+_Z12hippariCheckP9OBJ_WORK_ kind:function(arm,size=0x51c) addr:0x0202d5bc
 _Z9em0f_mainP9OBJ_WORK_ kind:function(arm,size=0x28) addr:0x0202dad8
 _Z11em0f_normalP9OBJ_WORK_ kind:function(arm,size=0x30) addr:0x0202db00
 _Z11em0f_damageP9OBJ_WORK_ kind:function(arm,size=0x68) addr:0x0202db30
@@ -2019,7 +2019,7 @@ _Z15TelopInitializev kind:function(arm,size=0x5c) addr:0x0204a0b4
 _Z7Messagev kind:function(arm,size=0x12c) addr:0x0204a110
 _Z17State_ClearFlagE3v kind:function(arm,size=0x14) addr:0x0204a23c
 _Z15Stub_ReturnZerov kind:function(arm,size=0x8) addr:0x0204a250
-msgInit kind:function(arm,size=0x118) addr:0x0204a258
+_Z7msgInitv kind:function(arm,size=0x118) addr:0x0204a258
 _Z7tlpInitv kind:function(arm,size=0x144) addr:0x0204a370
 _Z7msgOpenv kind:function(arm,size=0x50) addr:0x0204a4b4
 _Z7tlpOpenv kind:function(arm,size=0x28) addr:0x0204a504
@@ -2230,7 +2230,7 @@ _Z10pause_waitv kind:function(arm,size=0x58) addr:0x02053ebc
 pause_move kind:function(arm,size=0x2f8) addr:0x02053f14
 _Z10pause_exitv kind:function(arm,size=0x134) addr:0x0205420c
 _Z12pause_returnv kind:function(arm,size=0x6c) addr:0x02054340
-pause_return_to_title kind:function(arm,size=0x164) addr:0x020543ac
+_Z21pause_return_to_titlev kind:function(arm,size=0x164) addr:0x020543ac
 _Z11pause_retryv kind:function(arm,size=0x98) addr:0x02054510
 _Z10keyDisablev kind:function(arm,size=0x54) addr:0x020545a8
 _Z22Entity_DispatchByUnk09P9OBJ_WORK_ kind:function(arm,size=0x1c) addr:0x020545fc
@@ -5866,7 +5866,7 @@ data_020cfe24 kind:data(any) addr:0x020cfe24
 data_020cfe2a kind:data(any) addr:0x020cfe2a
 data_020cfe30 kind:data(any) addr:0x020cfe30
 em0e_type1_motiageStates kind:data(any) addr:0x020cfe38
-data_020cfe40 kind:data(any) addr:0x020cfe40
+em0e_pullStrengthTable kind:data(any) addr:0x020cfe40
 em0e_dieSpawnTypes kind:data(any) addr:0x020cfe48
 data_020cfe50 kind:data(any) addr:0x020cfe50
 data_020cfe58 kind:data(any) addr:0x020cfe58

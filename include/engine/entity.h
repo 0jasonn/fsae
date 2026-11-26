@@ -39,7 +39,8 @@ typedef struct OBJ_WORK_ {
         u32 b3 : 1;
         u32 b4 : 2;
         u32 b6 : 2;
-        u32 b8 : 6;
+        u32 affineMode : 2; // bits 8-9: OBJ affine / double-size mode (type2_piyori sets 2)
+        u32 b10 : 4;
         u32 b14 : 2;
         u32 b16 : 4;
         u32 b20 : 4;

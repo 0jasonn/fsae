@@ -4,6 +4,7 @@
 //   shuffleStage -> shuffleStage
 #include "game/player_flags.h"
 #include "global.h"
+#include "game/stage.h"
 
 BOOL isBossFloor(void) {
     gameState.periodicFlag = (gameState.phaseTimer % 3 == 2) ? 0x81 : 0;

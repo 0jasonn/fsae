@@ -9,6 +9,14 @@ typedef void (*WmCallback)(void *result);
 // Status block shared with the ARM7 (read after DC_InvalidateRange).
 typedef struct WmStatusBlock {
     u16 state; // 0x00: current WM state (0 = ready, 1 = stop, 2 = idle, ...)
+    u8 unk_02[0x7c - 0x02];
+    void *mpSendBuf;     // 0x07c: data being sent (WM_SetMPDataToPortEx refuses it again)
+    u8 unk_80[0x86 - 0x80];
+    u16 unk_86;          // 0x086: invalidated before sending (child)
+    u8 unk_88[0x182 - 0x88];
+    u16 mpReadyBitmap;   // 0x182: child: nonzero once the parent's MP is ready (name is a guess)
+    u8 unk_184[0x188 - 0x184];
+    u16 aid;             // 0x188: own AID, 0 = parent (name is a guess)
 } WmStatusBlock;
 
 // Work area owned by the WM library (handed to WM_Init by the caller).

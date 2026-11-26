@@ -98,7 +98,7 @@ typedef Knife::Message::KNIFE_MSGSYS KNIFE_MSGSYS;
 
 extern KNIFE_MSGSYS messageBox;
 extern KNIFE_MSGSYS telopBox;
-extern u8 data_0216efbc[];
+extern u8 data_0216efbc[0x34]; // sized: unsized, mwcc reorders msgInit's stores past it (block up to data_0216eff0)
 extern u8 data_0217d358[];
 extern u8 data_0216efc8[];
 extern u8 data_0216efd4[];
@@ -116,5 +116,7 @@ extern WindowSlot data_0216eff0[];
 extern void knife_msgLineChange(KNIFE_MSGSYS *msg, s32 lines);
 extern void Knife_msgFrameDma(KNIFE_MSGSYS *msg, u32 bank);
 extern void Knife_palletChange(KNIFE_MSGSYS *msg, u8 pallet);
+
+int msgInit(void); // 0x0204a258, original msgInit()
 
 #endif

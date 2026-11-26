@@ -114,7 +114,7 @@ void BgScreen_GetTileDimensions(u32 *widthTiles, u32 *heightTiles, s32 screen);
 BOOL EnemyInit(Entity *e);
 void AfterPlayer(void);
 s32 _s32_div_f(s32 a, s32 b); // runtime signed divide
-void AddRupee(Entity *a, int b);
+void AddRupee(Entity *e, s32 delta);
 void *EL_GetGlobalAdr(u32 offset, u32 size);
 void GX_DispOn(void);
 void GX_TrySetBankForLCDC(s32 bank);

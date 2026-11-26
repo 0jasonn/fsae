@@ -24,4 +24,6 @@ typedef struct PauseState {
 
 extern PauseState pauseState;
 
+void pause_return_to_title(void); // 0x020543ac, original pause_return_to_title()
+
 #endif

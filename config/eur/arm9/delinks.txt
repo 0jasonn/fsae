@@ -865,9 +865,17 @@ src/sdk/wm/wm_startmp.cpp:
     complete
     .text       start:0x020200c0 end:0x02020128
 
+src/sdk/wm/wm_mp_port.cpp:
+    complete
+    .text       start:0x02020128 end:0x02020260
+
 src/sdk/wm/wm_endmp.cpp:
     complete
     .text       start:0x02020260 end:0x020202d8
+
+src/sdk/wm/wm_datasharing_start.cpp:
+    complete
+    .text       start:0x020202d8 end:0x02020518
 
 src/sdk/wm/wm_datasharing_end.cpp:
     complete
@@ -884,6 +892,10 @@ src/sdk/wm/wm_datasharing_receive.cpp:
 src/sdk/wm/wm_datasharing_2.cpp:
     complete
     .text       start:0x02020aa0 end:0x02020c54
+
+src/sdk/wm/wm_datasharing_send.cpp:
+    complete
+    .text       start:0x02020c54 end:0x02020da4
 
 src/sdk/wm/wm_shared_data.cpp:
     complete
@@ -1064,6 +1076,10 @@ src/game/utsuwa.cpp:
 src/game/item_2.cpp:
     complete
     .text       start:0x020260ac end:0x020260c8
+
+src/game/item_rupee.cpp:
+    complete
+    .text       start:0x020260c8 end:0x020262b4
 
 src/game/item_3.cpp:
     complete
@@ -1433,9 +1449,17 @@ src/actor/enemy/em0e_3.cpp:
     complete
     .text       start:0x0202cfc4 end:0x0202d290
 
+src/actor/enemy/em0e_piyori.cpp:
+    complete
+    .text       start:0x0202d290 end:0x0202d514
+
 src/actor/enemy/em0e_4.cpp:
     complete
     .text       start:0x0202d514 end:0x0202d5bc
+
+src/actor/enemy/em0e_hippari.cpp:
+    complete
+    .text       start:0x0202d5bc end:0x0202dad8
 
 src/actor/enemy/em0f.cpp:
     complete
@@ -2225,6 +2249,10 @@ src/game/encnt_7.cpp:
     complete
     .text       start:0x02043f00 end:0x02043f70
 
+src/game/encnt_plinit.cpp:
+    complete
+    .text       start:0x02043f70 end:0x0204406c
+
 src/game/encnt_poscheck.cpp:
     complete
     .text       start:0x0204406c end:0x02044324
@@ -2365,6 +2393,10 @@ src/game/stage.cpp:
     complete
     .text       start:0x020493e0 end:0x02049454
 
+src/game/stage_phase.cpp:
+    complete
+    .text       start:0x02049454 end:0x02049654
+
 src/game/bgm.cpp:
     complete
     .text       start:0x020497e4 end:0x020499c8
@@ -2401,6 +2433,10 @@ src/ui/message_2.cpp:
 src/ui/message_3.cpp:
     complete
     .text       start:0x0204a048 end:0x0204a258
+
+src/ui/message_init.cpp:
+    complete
+    .text       start:0x0204a258 end:0x0204a370
 
 src/ui/message_6.cpp:
     complete
@@ -2773,6 +2809,10 @@ src/game/pause_exit.cpp:
 src/game/pause_3.cpp:
     complete
     .text       start:0x02054340 end:0x020543ac
+
+src/game/pause_return.cpp:
+    complete
+    .text       start:0x020543ac end:0x02054510
 
 src/game/pause_4.cpp:
     complete
