@@ -13276,6 +13276,7 @@ data_02124aa8 kind:data(any) addr:0x02124aa8
 data_02124ab4 kind:data(any) addr:0x02124ab4
 data_02124ac8 kind:data(any) addr:0x02124ac8
 data_02124ad6 kind:data(any) addr:0x02124ad6
+_ZTV18playStyleSelUIView kind:data(any) addr:0x02124af0
 data_02124af8 kind:data(any) addr:0x02124af8
 data_02124b1c kind:data(any) addr:0x02124b1c
 data_02124b40 kind:data(any) addr:0x02124b40
