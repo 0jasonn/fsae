@@ -34,7 +34,7 @@ void zelda_fade(void) {
     }
     data_0212c510 = zero;
     data_0212c514 = zero;
-    ((u16 *)(data_02134cb0 + localPlayerIndex * 0x20))[data_0212c538 & 0xf] = zero;
+    (data_02134cb0 + localPlayerIndex * 0x10)[data_0212c538 & 0xf] = zero;
     data_0212c550 = data_0212c554;
     if (frameCounter.wipeSize < 0x118) {
         MakeTriangleWindow(0x80, 0x60, (s16)frameCounter.wipeSize, (u8)(frameCounter.frame * 5));

@@ -38,8 +38,6 @@ void FadeClear(void);
 void LoadTokiWave(void);
 void Enemy_ArmSharedState(void);
 void BgmSet(void);
-extern u32 data_0212c538;
-extern u8 data_02134cb0[];
 #include "engine/com_work.h"
 void GetSetWorkSp(u8 a, u8 b, u8 c);
 extern u16 data_0212c510;
@@ -52,6 +50,7 @@ void CalcHeartLevel(void);
 
 extern u8 data_0216efa8;                    // makemap state byte
 #include "engine/frame_counter.h"
+#include "engine/key_ring.h"
 extern u32 data_0212c550;
 extern u32 data_0212c554;
 

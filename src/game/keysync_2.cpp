@@ -6,8 +6,7 @@
 // Key synchronisation of the wireless players (module keysync): keysync_init (0x0202877c), keysync_move (0x02028804).
 
 #include "engine/com_work.h"
-extern u32 data_0212c538;
-extern u8 data_02134cb0[];
+#include "engine/key_ring.h"
 
 // keysync_init (0x0202877c): clears the key buffers and copies the cleared entry of the last two players over the
 // other three history rows.

@@ -8,5 +8,5 @@
 
 // BootErrorInfoTask() (0x020c83b8): calls the boot error handler for the state byte at data_0212c500
 void BootErrorInfoTask(void) {
-    data_021271cc[data_0212c500[0]]();
+    data_021271cc[data_0212c500]();
 }

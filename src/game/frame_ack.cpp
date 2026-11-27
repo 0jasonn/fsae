@@ -5,9 +5,8 @@
 
 // Functions in this file (module com, original names from the debug build): frame_ack (frame_ack())
 
-extern u32 data_0212c538;
 #include "engine/com_work.h"
-extern u16 data_02134cb0[];  // four 16-entry key tables, 0x20 bytes apart
+#include "engine/key_ring.h"
 extern u16 data_02134cd0[];
 extern u16 data_02134cf0[];
 extern u16 data_02134d10[];
