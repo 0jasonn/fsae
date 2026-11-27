@@ -9,7 +9,8 @@ typedef struct Em0cSensor {
     u8 unk_00[0x70];
     u16 boxX;       // 0x70: left edge of the box
     u16 boxY;       // 0x72: top edge of the box
-    u8 unk_74[8];
+    u32 typeBits2;  // 0x74: ParseTypeBits(type2), set by em0c_init
+    u32 typeBits;   // 0x78: ParseTypeBits(type), set by em0c_init
     u16 boxWidth;   // 0x7c
     u16 boxHeight;  // 0x7e
 } Em0cSensor;

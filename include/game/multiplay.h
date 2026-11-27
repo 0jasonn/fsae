@@ -47,10 +47,7 @@ extern u16 data_0212c514;
 extern u16 data_0212c520;
 extern u8 data_0212c4b8;
 extern "C" {
-void AutoSet(void);
 void StopEffectWindow(void);
-}
-extern "C" {
 }
 extern "C" {
 void CalcHeartLevel(void);
@@ -67,5 +64,7 @@ extern void (*const game00TaskTable[])(void);         // game00TaskTable
 
 
 void FloorInit(void);  // C++ linkage (original_names.tsv)
+
+void AutoSet(void); // C++ linkage, original AutoSet(); 0x02023940 (game/autoset.h has its tables)
 
 #endif

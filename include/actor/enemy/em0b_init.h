@@ -6,7 +6,8 @@
 // Overlay of the fields em0b_init touches (offsets are those of Entity).
 typedef struct Vars_Em0bInit {
     /* 00 */ u8 unk_00[0x78];
-    /* 78 */ s32 counter78; // cleared on init
+    /* 78 */ u32 counter78; // cleared on init; em0b_move counts it up to 0x3c (unsigned compare)
+    /* 7c */ u16 slideLimit; // em0b_move: x or y coordinate where the slide turns around
 } Vars_Em0bInit;
 
 extern u8 em2b_hitbox[]; // em2b_hitbox, shared with em0b

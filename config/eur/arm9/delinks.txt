@@ -973,6 +973,10 @@ src/game/make_map_screen.cpp:
     complete
     .text       start:0x0202382c end:0x02023940
 
+src/game/autoset.cpp:
+    complete
+    .text       start:0x02023940 end:0x02023b50
+
 src/game/bganm.cpp:
     complete
     .text       start:0x02023b50 end:0x02023d78
@@ -1229,6 +1233,10 @@ src/game/keysync_2.cpp:
     complete
     .text       start:0x0202877c end:0x02028894
 
+src/game/key_update.cpp:
+    complete
+    .text       start:0x02028894 end:0x02028944
+
 src/game/frame_ack.cpp:
     complete
     .text       start:0x02028944 end:0x02028a64
@@ -1377,6 +1385,10 @@ src/ui/doorsel_4.cpp:
     complete
     .text       start:0x0202af70 end:0x0202b18c
 
+src/ui/doorsel_dooropen.cpp:
+    complete
+    .text       start:0x0202b18c end:0x0202b470
+
 src/ui/doorsel_exit.cpp:
     complete
     .text       start:0x0202b470 end:0x0202b54c
@@ -1389,9 +1401,17 @@ src/game/circlewindow.cpp:
     complete
     .text       start:0x0202b620 end:0x0202b72c
 
+src/game/make_circle_data.cpp:
+    complete
+    .text       start:0x0202b72c end:0x0202b828
+
 src/game/trianglewin.cpp:
     complete
     .text       start:0x0202b828 end:0x0202ba58
+
+src/game/calc_triangle.cpp:
+    complete
+    .text       start:0x0202ba58 end:0x0202bb4c
 
 src/actor/enemy/em00.cpp:
     complete
@@ -1417,6 +1437,10 @@ src/actor/enemy/em0b_2.cpp:
     complete
     .text       start:0x0202c2b4 end:0x0202c350
 
+src/actor/enemy/em0b_move.cpp:
+    complete
+    .text       start:0x0202c350 end:0x0202c4a0
+
 src/actor/enemy/em0b_3.cpp:
     complete
     .text       start:0x0202c4a0 end:0x0202c5c0
@@ -1424,6 +1448,10 @@ src/actor/enemy/em0b_3.cpp:
 src/actor/enemy/em0c.cpp:
     complete
     .text       start:0x0202c5c0 end:0x0202c5fc
+
+src/actor/enemy/em0c_init.cpp:
+    complete
+    .text       start:0x0202c5fc end:0x0202c768
 
 src/actor/enemy/em0c_2.cpp:
     complete
@@ -1464,6 +1492,10 @@ src/actor/enemy/em0e_hippari.cpp:
 src/actor/enemy/em0f.cpp:
     complete
     .text       start:0x0202dad8 end:0x0202de80
+
+src/actor/enemy/em0f_tatsumaki.cpp:
+    complete
+    .text       start:0x0202de80 end:0x0202e0b8
 
 src/actor/enemy/em0f_2.cpp:
     complete

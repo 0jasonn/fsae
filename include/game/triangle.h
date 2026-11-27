@@ -11,9 +11,9 @@ extern s16 triangleTable[0x400];
 extern u8 data_021352a0[];
 #include "engine/vblank_request.h"
 
-extern "C" {
-void make_circle_data(s16 centerX, s16 centerY, s16 count);
-void calc_triangle(s16 x0, s16 y0, s16 x1, s16 y1, s16 base);
-}
+
+void make_circle_data(s16 centerX, s16 centerY, s16 count); // C++ linkage, original make_circle_data(short, short, short)
+
+void calc_triangle(s16 x0, s16 y0, s16 x1, s16 y1, s16 base); // C++ linkage, original calc_triangle(short x5)
 
 #endif
