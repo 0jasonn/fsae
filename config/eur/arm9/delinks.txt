@@ -137,6 +137,10 @@ src/knife/message/wstr.cpp:
     complete
     .text       start:0x0200a3ac end:0x0200a3c8
 
+src/engine/string16_copy.cpp:
+    complete
+    .text       start:0x0200a3c8 end:0x0200a3e8
+
 src/knife/message/wstr_2.cpp:
     complete
     .text       start:0x0200a3e8 end:0x0200a41c
