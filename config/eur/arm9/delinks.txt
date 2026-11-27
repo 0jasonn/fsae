@@ -5277,6 +5277,10 @@ src/knife/message/knife_bitreader.cpp:
     complete
     .text       start:0x0209ffec end:0x020a004c
 
+src/knife/message/canvas_base.cpp:
+    complete
+    .text       start:0x020a02a0 end:0x020a0378
+
 src/knife/message/knife_message.cpp:
     complete
     .text       start:0x020a0508 end:0x020a0640
