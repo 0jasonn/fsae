@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
+#include "engine/sound/sndsys_api.h"
 
 // Clears two words.
 void Menu_ClearPair(u32 *pair) {
@@ -19,7 +20,6 @@ extern "C" {
 s32 SndState_GetEntryCount(s32 value);
 s32 SndState_GetBlockWord(void);
 void func_020c050c(void *obj, s32 value);
-void func_020c1660(s32 value);
 void SndSys_Init(void *obj);
 void Menu_ClearRef(void *obj);
 void SndSys_Shutdown(void);

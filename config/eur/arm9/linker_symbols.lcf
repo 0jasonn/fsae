@@ -7,6 +7,8 @@
     func_0218a76c = 0x0218a76c;
     func_0218a860 = 0x0218a860;
     func_0218a870 = 0x0218a870;
+    /* TWL CARD DMA interface, outside the linked ARM9 image. */
+    data_0218aa08 = 0x0218aa08;
     /* Provisional names for the empty range table's coincident boundaries. */
     RangeTableStart = 0x020c8cfc;
     RangeTableEnd = 0x020c8cfc;

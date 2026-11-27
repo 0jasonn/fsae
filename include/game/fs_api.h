@@ -6,6 +6,7 @@
 #include "engine/entity.h"
 
 extern "C" {
+s32 Save4SwordsFile(u8 flags);
 void fsCopyFile(u8 srcSlot, u8 dstSlot);
 void fsDeleteFile(u8 slot);
 s32 fsFileCheck(u8 slot);

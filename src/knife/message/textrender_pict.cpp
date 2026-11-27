@@ -14,7 +14,7 @@ void Knife_Message_TextRender_onReadPictTag(KnifeTextRender *self, s32 pictogram
     } else {
         sheet = KnifeApp_getZeldaResource_08ddcc(KnifeApp_getInstance(), 0x1be);
     }
-    IconToCanvas(sheet + (((u32)cell << 24) >> 17), (u8 *)self + 4, self->startX, self->unk_32 + self->unk_77);
+    IconToCanvas(sheet + (((u32)cell << 24) >> 17), (const NNSG2dCharCanvas *)((u8 *)self + 4), self->startX, self->unk_32 + self->unk_77);
     self->startX = self->startX + 0x10;
 }
 
@@ -41,7 +41,7 @@ void Knife_Message_TextRender_onReadButtonTag(KnifeTextRender *self, s32 button)
     if (button == 4) {
         cell = 0x22;
     }
-    IconToCanvas(sheet + (((u32)cell << 24) >> 17), (u8 *)self + 4, self->startX, self->unk_32 + self->unk_77);
+    IconToCanvas(sheet + (((u32)cell << 24) >> 17), (const NNSG2dCharCanvas *)((u8 *)self + 4), self->startX, self->unk_32 + self->unk_77);
     if (self->startX > 0) {
         self->startX = (self->startX + 7) & 0xf8;
     }

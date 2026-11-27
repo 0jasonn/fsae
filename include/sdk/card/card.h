@@ -2,6 +2,7 @@
 #define SDK_CARD_CARD_H
 
 #include "types.h"
+#include "sdk/pxi/pxi_fifo.h"  // Engine_Relay0201a070, PXI_SetFifoRecvCallback
 #include "sdk/os/os_boot.h"
 #include "sdk/os/os_event.h"
 #include "sdk/os/os_thread.h"
@@ -26,6 +27,11 @@ s32 CARDi_GetAccessLevel(void);
 
 // Pulled-out callback unit.
 void CARDi_WaitAsync(void);
+s32 CARDi_WaitForTask(void *work, u32 flag, void (*callback)(void *), void *arg);
+s32 CARDi_IsNormalMode(void);
+void CARDi_SetRomOp(u32 command, u32 address);
+void CARDi_StartRomPageTransfer(u32 page);
+u32 CARDi_ReadRomIDCore(void);
 void CARDi_NotifyEvent(u32 event, u32 arg);
 void CARD_TerminateForPulledOut(void);
 
@@ -37,11 +43,23 @@ s32 CARD_GetPulledOutFlag(void);
 }
 
 typedef struct CardLock {
-    u8 pad_00[0x14];
+    void *commandArea; // 0x00; first word is the command result
+    u32 flags;        // 0x04
+    u8 pad_08[0x0c];
     s32 owner;      // 0x14
     s32 count;      // 0x18
     OsThreadQueue queue; // 0x1c
     s32 level;      // 0x24
+    u8 unknown_028[0x4c0];
+    void (*currentTask)(void *); // 0x4e8
+    void (*completion)(void *);  // 0x4ec
+    void *completionArg;        // 0x4f0
+    OsThreadQueue waitQueue;    // 0x4f4: threads waiting for the task
+    u32 romAddress;             // 0x4fc
+    void *destination;          // 0x500
+    u32 transferSize;           // 0x504
+    u8 unknown_508[0x14];
+    void *waitingThread;        // 0x51c
 } CardLock;
 
 // The stack block CARD_LockRom builds: an OSEvent at +0, an OSVAlarm at +0xc and the bus-lock listener at +0x34.

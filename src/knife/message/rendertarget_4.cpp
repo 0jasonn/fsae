@@ -35,8 +35,6 @@ void Knife_Message_RenderTarget_finalize(void *self) {
 // Functions in this file (original names from the debug build):
 //   RenderTarget::getNumberOfUsingOBJ() const (0x020a4ee0)
 
-extern "C" s32 func_020c61f4(s32 a, s32 b);
-
 namespace Knife {
 namespace Message {
 

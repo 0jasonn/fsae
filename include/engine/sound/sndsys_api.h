@@ -7,7 +7,8 @@
 
 extern "C" {
 s32 SndSys_CheckValue(void *obj, s32 value);
-s32 SndSys_StartSlot(s32 slotIndex, void *arg1, void *arg2);
+s32 SndSys_StartSlot(s32 slotIndex, void *record, u32 size);
+BOOL func_020c1660(void *record);
 void SndSys_StopActiveTimer(void);
 void SndSys_StopAll(void);
 }

@@ -103,7 +103,7 @@ void func_020bb208(void *self);
 void Ctrl_selectCurrentItem(void *self, s32 flag);
 void Menu_setupHardware(void *self, const void *setup);
 void func_020bc99c(void *self, void *bufA, s32 bufB, s32 arg5, u16 arg6);
-s32 func_020c0f90(u32 word, u32 byte, u32 a1, u32 one, u32 zero);
+s32 func_020c0f90(s32 index, u32 flags, void *record, s32 flag, void **out);
 void func_020c2cc0(u8 *body);
 s32 func_020c323c(u8 *cursor);
 void OamRing_ResetAll(void *oam);
@@ -161,7 +161,7 @@ void MI_UncompressLZ8(const void *src, void *dst);
 void GX_SetDefaultDMA(s32 dma);
 s32 Knife_Message_TextRenderer_getBgMode(s32 isBg);                  // 0x020a58d0
 s32 func_020c60b8(void *screen, s32 a, s32 b, s32 c, s32 d);
-s32 func_020c6198(void *screen, s32 a, s32 b, s32 c, s32 d, s32 e);
+void func_020c6198(u16 *dst, s32 width, s32 height, s32 pitch, s32 tile, s32 palette);
 s32 func_020c6250(void *cell, s32 a, s32 b, s32 c, s32 d, s32 flag, s32 e, s32 sel);
 void Knife_Message_TextRenderer_finalize(void *self);  // 0x020a507c
 void func_020be9f0(void *obj);

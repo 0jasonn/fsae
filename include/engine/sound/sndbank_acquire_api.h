@@ -8,6 +8,8 @@
 extern "C" {
 void *SndBank_AcquireBank(s32 index, void *record, s32 flag);
 void *SndBank_AcquireWave(s32 index, void *record, s32 flag);
+void *SndBank_AcquireSeqData(s32 index, void *record, s32 flag);
+void *SndBank_AcquireSeqDataB(s32 index, void *record, s32 flag);
 }
 
 #endif

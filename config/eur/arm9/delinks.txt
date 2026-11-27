@@ -49,6 +49,10 @@ src/engine/bits.cpp:
     complete
     .text       start:0x02005b1c end:0x02005bcc
 
+src/engine/fp_classify_double.cpp:
+    complete
+    .text       start:0x02005bcc end:0x02005c3c
+
 src/engine/codec.cpp:
     complete
     .text       start:0x02005c3c end:0x02005c90
@@ -133,6 +137,10 @@ src/knife/message/wstr.cpp:
     complete
     .text       start:0x0200a3ac end:0x0200a3c8
 
+src/engine/string16_copy.cpp:
+    complete
+    .text       start:0x0200a3c8 end:0x0200a3e8
+
 src/knife/message/wstr_2.cpp:
     complete
     .text       start:0x0200a3e8 end:0x0200a41c
@@ -164,6 +172,10 @@ src/engine/fp_sign.cpp:
 src/engine/stub_4.cpp:
     complete
     .text       start:0x0200b10c end:0x0200b12c
+
+src/engine/console_read.cpp:
+    complete
+    .text       start:0x0200b12c end:0x0200b17c
 
 src/engine/stub_ret0.cpp:
     complete
@@ -5186,9 +5198,17 @@ src/knife/comm/wireless_manager_updategameinfo.cpp:
     complete
     .text       start:0x02091eb4 end:0x0209200c
 
+src/knife/comm/wm_shared_size.cpp:
+    complete
+    .text       start:0x0209200c end:0x0209205c
+
 src/knife/comm/wireless_manager_sendpacket.cpp:
     complete
     .text       start:0x0209205c end:0x02092100
+
+src/knife/comm/wm_received_data.cpp:
+    complete
+    .text       start:0x02092100 end:0x020921b0
 
 src/knife/comm/wirelessmgr_aid.cpp:
     complete
@@ -5617,6 +5637,10 @@ src/knife/message/knife_bitreader.cpp:
     complete
     .text       start:0x0209ffec end:0x020a004c
 
+src/knife/message/canvas_base.cpp:
+    complete
+    .text       start:0x020a02a0 end:0x020a0378
+
 src/knife/message/knife_message.cpp:
     complete
     .text       start:0x020a0508 end:0x020a0640
@@ -5805,6 +5829,42 @@ src/sdk/card/card_2.cpp:
     complete
     .text       start:0x020a3a60 end:0x020a3b54
 
+src/sdk/card/card_wait_async.cpp:
+    complete
+    .text       start:0x020a3b54 end:0x020a3b74
+
+src/sdk/card/card_init_command.cpp:
+    complete
+    .text       start:0x020a3b9c end:0x020a3be8
+
+src/sdk/card/card_end_task.cpp:
+    complete
+    .text       start:0x020a3d90 end:0x020a3ddc
+
+src/sdk/card/card_dma_interface.cpp:
+    complete
+    .text       start:0x020a3ddc end:0x020a3e14
+
+src/sdk/card/card_fifo_callback.cpp:
+    complete
+    .text       start:0x020a3e8c end:0x020a3ec0
+
+src/sdk/card/card_rom_core.cpp:
+    complete
+    .text       start:0x020a3f40 end:0x020a4030
+
+src/sdk/card/card_refresh_rom_core.cpp:
+    complete
+    .text       start:0x020a40f8 end:0x020a4144
+
+src/sdk/card/card_dma_read_done.cpp:
+    complete
+    .text       start:0x020a437c end:0x020a43ac
+
+src/sdk/card/card_read_rom_sync_core.cpp:
+    complete
+    .text       start:0x020a4460 end:0x020a44ac
+
 src/sdk/card/card_pullout.cpp:
     complete
     .text       start:0x020a46b0 end:0x020a47a8
@@ -5949,6 +6009,10 @@ src/game/fs_2.cpp:
     complete
     .text       start:0x020a73ec end:0x020a7410
 
+src/game/fs_save.cpp:
+    complete
+    .text       start:0x020a7410 end:0x020a7480
+
 src/game/fs_3.cpp:
     complete
     .text       start:0x020a7480 end:0x020a74fc
@@ -5985,9 +6049,17 @@ src/ui/fileselui_8.cpp:
     complete
     .text       start:0x020a8d78 end:0x020a8dbc
 
+src/ui/fileselui_persistence.cpp:
+    complete
+    .text       start:0x020a8dbc end:0x020a8f7c
+
 src/ui/fileselui_9.cpp:
     complete
     .text       start:0x020a8f7c end:0x020a8f80
+
+src/ui/modeselui_initialize.cpp:
+    complete
+    .text       start:0x020a8f80 end:0x020a8ff0
 
 src/ui/modeselui.cpp:
     complete
@@ -6020,6 +6092,10 @@ src/ui/playstyleselui.cpp:
 src/ui/playstyleselui_update.cpp:
     complete
     .text       start:0x020ab190 end:0x020ab4c4
+
+src/ui/playstyleselui_clear_screen.cpp:
+    complete
+    .text       start:0x020ab4c4 end:0x020ab520
 
 src/ui/playstyleselui_2.cpp:
     complete
@@ -6069,17 +6145,13 @@ src/game/clamp.cpp:
     complete
     .text       start:0x020ac898 end:0x020ac8b4
 
-src/ui/widget/uiobject_3.cpp:
-    complete
-    .text       start:0x020acab4 end:0x020acbf4
-
-src/ui/widget/uiobject_4.cpp:
-    complete
-    .text       start:0x020acbf4 end:0x020acca0
-
 src/ui/widget/uiobject.cpp:
     complete
-    .text       start:0x020acca0 end:0x020acd1c
+    .text       start:0x020acab4 end:0x020acd1c
+
+src/ui/widget/uiobject_update_move_pos.cpp:
+    complete
+    .text       start:0x020acd1c end:0x020acd74
 
 src/ui/widget/uiobject_2.cpp:
     complete
@@ -6132,6 +6204,10 @@ src/knife/comm/knifecomm_2.cpp:
 src/ui/nameentry.cpp:
     complete
     .text       start:0x020ae558 end:0x020ae634
+
+src/ui/nameentry_keybord_disp.cpp:
+    complete
+    .text       start:0x020ae72c end:0x020ae7a8
 
 src/ui/nameentry_align.cpp:
     complete
@@ -6333,6 +6409,10 @@ src/engine/tween.cpp:
     complete
     .text       start:0x020b6868 end:0x020b68c8
 
+src/knife/message/tcl_draw_char.cpp:
+    complete
+    .text       start:0x020b68c8 end:0x020b69e4
+
 src/engine/tcli_accessor.cpp:
     complete
     .text       start:0x020b69e4 end:0x020b69f4
@@ -6396,6 +6476,10 @@ src/engine/packed_reset.cpp:
 src/engine/packed_reset_2.cpp:
     complete
     .text       start:0x020b735c end:0x020b7378
+
+src/ui/widget/tile_file_header.cpp:
+    complete
+    .text       start:0x020b7378 end:0x020b73b8
 
 src/ui/widget/tilebuf.cpp:
     complete
@@ -6897,6 +6981,14 @@ src/engine/sound/sndtable_3.cpp:
     complete
     .text       start:0x020c09d8 end:0x020c0a64
 
+src/engine/sound/sndrecord_clear.cpp:
+    complete
+    .text       start:0x020c0a64 end:0x020c0b20
+
+src/engine/sound/snd_payload_record.cpp:
+    complete
+    .text       start:0x020c0b20 end:0x020c0b88
+
 src/engine/sound/sndrecord.cpp:
     complete
     .text       start:0x020c0b88 end:0x020c0c28
@@ -6917,6 +7009,14 @@ src/engine/sound/sndstate_acquire.cpp:
     complete
     .text       start:0x020c0d6c end:0x020c0e50
 
+src/engine/sound/sndstate_bank_entries.cpp:
+    complete
+    .text       start:0x020c0e50 end:0x020c0f90
+
+src/engine/sound/sndstate_acquire_wave.cpp:
+    complete
+    .text       start:0x020c0f90 end:0x020c1014
+
 src/engine/sound/sndtable_payload.cpp:
     complete
     .text       start:0x020c1014 end:0x020c10b8
@@ -6936,6 +7036,14 @@ src/engine/sound/sndbank.cpp:
 src/engine/sound/sndbank_wave.cpp:
     complete
     .text       start:0x020c1490 end:0x020c14d8
+
+src/engine/sound/sndbank_assign_wave_arc.cpp:
+    complete
+    .text       start:0x020c15a0 end:0x020c1660
+
+src/engine/sound/sndsys_record_slots.cpp:
+    complete
+    .text       start:0x020c1660 end:0x020c16f8
 
 src/engine/sound/sndstate_start.cpp:
     complete
@@ -7144,6 +7252,14 @@ src/engine/record_init_shape.cpp:
 src/engine/record_init_sized.cpp:
     complete
     .text       start:0x020c5fcc end:0x020c6008
+
+src/knife/message/fill_tile_grid.cpp:
+    complete
+    .text       start:0x020c6198 end:0x020c61f4
+
+src/knife/message/obj_block_count.cpp:
+    complete
+    .text       start:0x020c61f4 end:0x020c6250
 
 src/knife/message/tcl_layout_2.cpp:
     complete

@@ -56,15 +56,15 @@ u32 MultiSioRecvDataCheck(void *recvData) {
     switch (Knife_Comm_WirelessManager_getState(manager)) {
     case 8:
     case 0xb:
-        size = func_0209200c(manager);
-        packetOrMask = func_02092168(manager);
+        size = ((Knife::Comm::WirelessManager *)manager)->getSharedDataSize();
+        packetOrMask = ((Knife::Comm::WirelessManager *)manager)->getReceivedAIDs();
         result = 0;
         if (Knife_Comm_WirelessManager_getFrameFlag(manager)) {
             return result;
         }
         for (aid = 0; aid < 4; aid++) {
             if (packetOrMask & (1 << aid)) {
-                src = func_02092100(manager, aid);
+                src = ((Knife::Comm::WirelessManager *)manager)->getSharedData(aid);
                 if (src != NULL) {
                     index = 0;
                     if (aid != 0) {

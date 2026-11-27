@@ -3,6 +3,7 @@
 
 #include "engine/functions.h"
 #include "engine/player.h"
+#include "engine/string16_copy.h"
 
 // Wireless link work used by the MultiSio* functions (0x0216fb38, cleared as 0x1b8 bytes by MultiSioInit).
 // The pointers at 0x1c..0x2c point into the work itself. Field names are provisional.
@@ -95,13 +96,9 @@ extern "C" void Knife_Comm_removePlayerFromGroup(int index, void *flags);
 u32 MultiSioRecvDataCheck(void *recvData);
 u32 MultiSioMain(void *recvData, bool keepLink);
 extern "C" void MultiSioSendDataSet(void *a);
-extern "C" u32 func_0209200c(void *manager);
-extern "C" u32 func_02092168(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getFrameFlag(void *manager);
-extern "C" const void *func_02092100(void *manager, int index);
 extern "C" u32 Knife_Comm_GetPlayerNoByAID(int index, const void *info);
 int set5c_returnZero(void); // C++ symbol, always returns 0
-extern "C" void func_0200a3c8(u16 *dst, const u16 *src);
 s8 subtask_getFlag(u32 index); // C++ symbol _Z15subtask_getFlagm, src/game/subtask_draw_2.cpp
 
 // Timer control value snapshot taken by MultiSioMain

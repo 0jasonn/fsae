@@ -1,0 +1,9 @@
+{
+  "wm_shared_size.o": [
+    "_ZNK5Knife4Comm15WirelessManager17getSharedDataSizeEv"
+  ],
+  "wm_received_data.o": [
+    "_ZNK5Knife4Comm15WirelessManager13getSharedDataEi",
+    "_ZNK5Knife4Comm15WirelessManager15getReceivedAIDsEv"
+  ]
+}

@@ -3,6 +3,7 @@
 
 #include "engine/functions.h"
 #include "engine/player.h"
+#include "knife/message/icon_canvas.h"
 // knife_message.h and text_tokenizer.h both define the Voice and Language enums; rename the first copy locally
 #define Voice KnifeMessageVoice
 #define Language KnifeMessageLanguage
@@ -50,7 +51,6 @@ extern "C" {
 void Knife_Message_MessageTextRender_onReadPlainText(Knife::Message::MessageTextRender *self, const Knife::Message::Text *text);
 void Knife_Message_MessageTextRender_onReadPictTag(Knife::Message::MessageTextRender *self, s32 pictogram);
 void Knife_Message_MessageTextRender_onReadButtonTag(Knife::Message::MessageTextRender *self, s32 button);
-void IconToCanvas(u8 *icon, const void *canvas, s32 x, s32 y);
 }
 
 #endif

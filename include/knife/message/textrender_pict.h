@@ -4,6 +4,7 @@
 #include "engine/functions.h"
 #include "engine/player.h"
 #include "knife/message/textrender.h"
+#include "knife/message/icon_canvas.h"
 
 // Pictogram table: one entry per pictogram, the glyph cell index packed in the low and high bits (rodata, copied to the stack)
 typedef struct PictogramTable {
@@ -20,7 +21,6 @@ extern const ButtonTable data_020de5d8;
 extern "C" {
 void Knife_Message_TextRender_onReadPictTag(KnifeTextRender *self, s32 pictogram);
 void Knife_Message_TextRender_onReadButtonTag(KnifeTextRender *self, s32 button);
-void IconToCanvas(u8 *icon, const void *canvas, s32 x, s32 y);
 }
 
 #endif

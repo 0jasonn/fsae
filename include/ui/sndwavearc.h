@@ -2,6 +2,7 @@
 #define UI_SNDWAVEARC_H
 
 #include "engine/functions.h"
+#include "engine/sound/sndrecord.h"
 #include "sdk/os/os_interrupts.h"
 #include "sdk/os/dc_cache.h"
 #include "sdk/os/os_irq.h"
@@ -20,7 +21,6 @@ extern SndWaveHdrBuf data_021848b0;
 
 extern "C" {
 s32 SndTable_ReadBlock(s32 index, void *payload, s32 size, s32 offset);
-void *func_020c0b20(void *record, u32 size, void *callback, void *data, s32 index2);
 u32 SndTable_GetWord14(s32 index);
 void SndTable_SetWord14(s32 index, u32 value);
 void *func_020c05dc(void);

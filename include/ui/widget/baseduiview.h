@@ -13,6 +13,8 @@ public:
     virtual void vfunc2(void);
     virtual void enter(void); // vtable slot 3
     virtual void leave(void); // vtable slot 4
+    virtual void serialize(u8 **buf); // vtable slot 5
+    virtual void deserialize(u8 **buf); // vtable slot 6
 
     /* 04 */ u32 unk_04; // set to 7 by basedUIView_initialize, serialized
     /* 08 */ basedUIView *parent;

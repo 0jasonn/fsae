@@ -8,6 +8,7 @@
 
 #include "types.h"
 #include "ui/widget/baseduiview.h"
+#include "ui/view_construction.h"
 
 typedef struct ModeSelUIView {
     /* 00 */ basedUIView base;
@@ -36,8 +37,6 @@ s32 modeSelUIView_updateCopy(void *self);
 s32 modeSelUIView_updateRemove(void *self);
 void func_020a9494(void *self);
 extern u8 data_0217d23c[];
-extern u8 data_0217e2d4[];
-extern u8 data_0217e3d4[];
 extern u8 data_0217e6f0[];
 extern u8 data_02124af8[];
 }

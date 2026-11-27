@@ -7,6 +7,7 @@
 
 #include "types.h"
 #include "ui/widget/baseduiview.h"
+#include "ui/file_selection_buffers.h"
 
 typedef struct PlayStyleSelUIView {
     /* 00 */ basedUIView base;
@@ -17,9 +18,5 @@ typedef struct PlayStyleSelUIView {
     /* 5d */ u8 unk_5d;
 } PlayStyleSelUIView;
 
-
-extern "C" {
-extern void *data_02180d9c;
-}
 
 #endif

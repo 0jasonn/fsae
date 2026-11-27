@@ -10,6 +10,7 @@
 #include "ui/stagesel.h"
 #include "engine/misc.h"
 #include "engine/multisio_save.h"
+#include "game/fs_api.h"
 
 extern "C" s32 WXC_GetStateCode(void);
 extern "C" {
@@ -54,7 +55,6 @@ typedef struct SselScrollPair {
     u16 second;
 } SselScrollPair;
 extern const SselScrollPair data_020dc67c[5];
-int Save4SwordsFile(u8 slot);
 extern SselPlayerFlags enemyTypeFlags[];
 
 extern u8 data_0212c4d0;

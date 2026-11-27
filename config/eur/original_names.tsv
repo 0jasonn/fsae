@@ -2537,6 +2537,9 @@
 0x02091d40	Knife_Comm_WirelessManager_getScanResult	Knife::Comm::WirelessManager::getScanResult(int) const
 0x02091d84	Knife_Comm_WirelessManager_setEntry	Knife::Comm::WirelessManager::setEntry(bool)
 0x02091eb4	Knife_Comm_WirelessManager_updateUserGameInfo	Knife::Comm::WirelessManager::updateUserGameInfo()
+0x0209200c	Knife_Comm_WirelessManager_getSharedDataSize	Knife::Comm::WirelessManager::getSharedDataSize() const
+0x02092100	Knife_Comm_WirelessManager_getSharedData	Knife::Comm::WirelessManager::getSharedData(int) const
+0x02092168	Knife_Comm_WirelessManager_getReceivedAIDs	Knife::Comm::WirelessManager::getReceivedAIDs() const
 0x020921bc	Knife_Comm_WirelessManager_getAID	Knife::Comm::WirelessManager::getAID() const
 0x020922d0	Knife_Comm_WirelessManager_getLinkLevel	Knife::Comm::WirelessManager::getLinkLevel() const
 0x020922f0	Knife_Comm_ParentInfo_ParentInfo	Knife::Comm::ParentInfo::ParentInfo()

@@ -15,7 +15,7 @@ void modeSelUIView_setupTextRender(ModeSelUIView *self) {
     Knife_Message_CleanupTextRenderer();
     width = knife_GetFontStrWidth_04c2e0(0x84f, 0, (u8 *)KnifeApp_getInstance() + 0x1bc);
     half = (0x100 - width) / 2;
-    cellBufferRef = &data_02180da4;
+    cellBufferRef = &data_02180d9c.cells;
     for (i = 0; i < 2; i++) {
         target = &data_02124bb4[i];
         target->msgId = 0x84f;
