@@ -669,6 +669,7 @@ void title_MakeFadeBuff256(u32 color, u32 weight);
 void title_back(void);
 void title_init(void);
 void title_machiuke_joy(void);
+void title_machiuke(void); // original title_machiuke(), 0x02052b3c
 void title_move(void);
 void title_resourceCtrlCallback(DISP_CTRL_ *e);
 void title_savedata(void);

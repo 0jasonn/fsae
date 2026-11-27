@@ -5,6 +5,7 @@
 #include "knife/comm/wm_irq.h"
 #include "sdk/wm/wm_system.h"
 #include "knife/comm/wirelessmanager_connected_api.h"
+#include "knife/comm/wirelessmanager.h"
 
 // Knife::Comm::WirelessManager connected-AID and link level queries, 0x02092234 to 0x020922ec.
 
@@ -15,7 +16,6 @@ extern "C" s32 MATH_CountPopulation(u32 value);
 extern "C" u16 Knife_Comm_WirelessManager_getConnectedAIDs(void *self);
 
 // WirelessManager::getLinkLevel() const (0x020922d0): the number of set bits in the connected AIDs.
-extern "C" s32 Knife_Comm_WirelessManager_getLinkLevel(void *self);
 s32 Knife_Comm_WirelessManager_getLinkLevel(void *self) {
     return MATH_CountPopulation(Knife_Comm_WirelessManager_getConnectedAIDs(self));
 }

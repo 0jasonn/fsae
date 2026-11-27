@@ -25,8 +25,8 @@ void dialog_machiuke_joy(void) {
         ((u16 *)playerKeysPrev)[i] = keys;
     }
     if (KnifeApp_isWirelessMode(app) == 0) {
-        *(u16 *)playerKeys = *(u16 *)data_0212c514;
-        comWork.recv[0].keys = *(u16 *)data_0212c514;
+        playerKeys[0] = data_0212c514;
+        comWork.recv[0].keys = data_0212c514;
     }
-    comWork.send.keys = *(u16 *)data_0212c514;
+    comWork.send.keys = data_0212c514;
 }

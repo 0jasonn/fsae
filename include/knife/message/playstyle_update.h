@@ -6,6 +6,7 @@
 #include "ui/fileselui.h"
 #include "ui/widget/uiobject.h"
 #include "engine/player.h"
+#include "knife/comm/comm.h"
 
 extern UIObject data_0217f1b4;
 
@@ -24,7 +25,6 @@ extern const PlayStyleOamRows data_020de780;
 extern const PlayStyleCursorPos data_020de88c[];
 
 void MachiukeStart(void);
-void func_0202809c(void); // ComFinish(0)
 extern u16 data_0212c510;
 
 extern "C" {

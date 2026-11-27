@@ -3,6 +3,7 @@
 
 #include "engine/functions.h"
 #include "game/multiplay.h"
+#include "knife/comm/comm.h"
 
 extern "C" {
 void func_02083fb8(void); // thumb
@@ -15,7 +16,6 @@ void Encounter(void);
 void ShikakeMove(void);
 int warp_check(void);
 void WarpPlayer(void);
-void func_0202809c(void);
 
 // CalcItemLevel has C++ linkage (original CalcItemLevel()), 0x0207c26c.
 void CalcItemLevel(void);

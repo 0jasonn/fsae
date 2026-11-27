@@ -29,7 +29,7 @@ void Knife_Single_SinglePlay_UpdateWaitPartner(void *self, PlayerData *player0, 
     statusFlags = player1->statusFlags;
     if (player0->statusFlags & statusFlags & 0x1000) {
         if (player0->holdObject == player1->holdObject) {
-            Knife_Single_SinglePlay_ChangeFormationNo(self);
+            Knife_Single_SinglePlay_ChangeFormationNo(self, player0, player1);
             return;
         }
     }

@@ -53,9 +53,9 @@ extern u8 pauseDialogWindow[];   // pauseDialogWindow, the selection dialog of t
 extern u8 pauseDialogBuffer[];   // pauseDialogBuffer, screen block of the selection dialog (0x600 bytes)
 #include "engine/com_work.h"
 extern u8 playerKeysPrev[];   // previous key state of the four players (u16 each)
-extern u8 data_0212c514[];   // key state of the machine (u16)
 
 #include "engine/blend_request.h" // update_change_stage sets blendRequest.resetValue to -1
+#include "game/keyread.h"
 extern u8 data_0217a258[];   // OBJInfo block freed by subTask_lobby_end
 extern u8 data_02126a48[];   // vtable of the lobby message object (lobby_msgObj_init)
 

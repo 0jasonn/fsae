@@ -1,5 +1,5 @@
 #include "engine/functions.h"
-#include "knife/comm/wirelessmgr_update_api.h"
+#include "knife/comm/wirelessmanager.h"
 #include "knife/subtask/subtask_dialog.h"
 
 extern u8 data_021806f0[]; // the game state block of the subtask

@@ -6,6 +6,7 @@
 
 #include "types.h"
 #include "knife/comm/wireless_manager.h"
+#include "knife/comm/wirelessmanager.h"
 
 // REG_IME, the interrupt master enable.
 #define WM_REG_IME (*(volatile u16 *)0x04000208)
@@ -56,7 +57,6 @@ s32 WM_PowerOff(void *callback);
 s32 WM_EndDataSharing(void *buf);
 s32 WM_EndMP(void *callback);
 s32 WM_SetGameInfo(void *callback, void *gameInfo, u16 unk2, u32 unk3, u16 unk4, u8 unk5);
-s32 Knife_Comm_WirelessManager_getLinkLevel(void *self);
 BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);
 void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
@@ -70,7 +70,6 @@ s32 func_02090ecc(void *self);
 extern "C" {
 BOOL Knife_Comm_WirelessManager_turnOn(void *self, BOOL on);
 BOOL Knife_Comm_WirelessManager_turnOff(void *self);
-BOOL Knife_Comm_WirelessManager_reset(void *self);
 BOOL Knife_Comm_WirelessManager_endParent(void *self);
 BOOL Knife_Comm_WirelessManager_disconnect(void *self);
 BOOL Knife_Comm_WirelessManager_updateUserGameInfo(void *self);

@@ -2,6 +2,7 @@
 #define KNIFE_COMM_SINGLE_PLAY_H
 
 #include "types.h"
+#include "engine/player.h"
 #include "knife/comm/knife_single_log.h"
 
 // Knife::Single::SinglePlay state (the object the controller, formation and warp functions work on). Offsets from the
@@ -23,7 +24,10 @@ typedef struct SinglePlayWork {
     u8 unk_0f;
     u8 unk_10[2];
     u8 unk_12;               // 0x12
-    u8 unk_13[0x1a - 0x13];
+    u8 unk_13;
+    u16 keysOn;              // 0x14: keys CommFrameUpdate ORs into the partner's packet / the local key ring
+    u16 keysOff;             // 0x16: keys CommFrameUpdate masks out of the controlled player's keys
+    u8 unk_18[0x1a - 0x18];
     u16 unk_1a;              // 0x1a: key mask set by SetContNoDirect
     u8 unk_1c[0x20 - 0x1c];
     u16 unk_20;              // 0x20: set to 0xffff by the initializers
@@ -43,7 +47,7 @@ void Knife_Single_SinglePlay_SetContNo(void *self, u8 no); // original Knife::Si
 void Knife_Single_SinglePlay_SetWarpInfo(void *self, u8 a, u8 b);
 void Knife_Single_SinglePlay_ChangeContPlayer(void *self);
 void Knife_Single_SinglePlay_ChangeContPlayerDirect(void *self);
-void Knife_Single_SinglePlay_ChangeFormationNo(void *self);
+void Knife_Single_SinglePlay_ChangeFormationNo(void *self, PlayerData *player0, PlayerData *player1); // original ChangeFormationNo(PL_WORK_*, PL_WORK_*)
 void Knife_Single_SinglePlay_InitializeCont(void *self);
 void Knife_Single_SinglePlay_InitializeFormation(void *self);
 void Knife_Single_SinglePlay_SetContNoDirect(void *self, u8 no);

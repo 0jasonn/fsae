@@ -35,6 +35,11 @@ void Frame_LoopC868(void *array, s32 count, u32 size, void *dtor);
 void *Knife_Comm_WirelessManager_dtor_WirelessManager_0923fc(void *self);
 void Knife_Comm_WirelessManager_stepNextChannel(void *self);
 BOOL Knife_Comm_WirelessManager_setEntry(void *self, BOOL flag);
+BOOL Knife_Comm_WirelessManager_reset(void *self);
+void Knife_Comm_WirelessManager_update(void *self);
+s32 Knife_Comm_WirelessManager_getMaxParents(void *self);
+void *Knife_Comm_WirelessManager_getScanResult(void *self, s32 index); // getScanResult(int) const
+BOOL Knife_Comm_WirelessManager_connect(void *self, const void *parent, u32 size, const void *data); // connect(ParentInfo const *, unsigned long, void const *)
 u32 WM_SetEntry(void *callback, BOOL flag);
 s32 WM_StartMP(void *callback, void *recvBuf, u16 recvSize, void *sendBuf, u16 sendSize, s32 flag);
 void Knife_Comm_WirelessManager_callback_WM_StartMP(void *result);

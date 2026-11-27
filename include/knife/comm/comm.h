@@ -7,7 +7,7 @@
 void ComStart(u8 request);               // original ComStart(unsigned char)
 void ComRequest(u8 request);             // original ComRequest(unsigned char)
 int CommStatusSync(u8 status);           // original CommStatusSync(unsigned char)
-void CommErrorCheck(u32 a);              // original CommErrorCheck(unsigned long)
+int CommErrorCheck(u32 a);               // original CommErrorCheck(unsigned long)
 void key_update(u8 playerNo);            // original key_update(unsigned char)
 void frame_ack(void);                    // original frame_ack()
 void func_0202809c(void);                // dsd name (ComFinish(0)), C++ linkage as in stageseldecls.h

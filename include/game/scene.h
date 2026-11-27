@@ -41,9 +41,9 @@ void ObjMoveInit(void);
 extern u8 data_020d80d8[];
 #include "engine/cockpit_state.h"
 #include "engine/vblank_request.h"
-extern u16 data_0212c514;
 #include "engine/com_work.h"
 #include "engine/palette_buff.h"
+#include "game/keyread.h"
 extern u8 titleDialogBuffer[];
 extern const u8 titleDialogData[];
 extern u8 data_0216fcfc[];

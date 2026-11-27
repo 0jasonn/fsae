@@ -3,6 +3,7 @@
 
 #include "engine/functions.h"
 
+void ChangeIroyuka(u8 contNo); // original ChangeIroyuka(unsigned char), 0x0204d380
 void UpdateIroyuka(void); // original name, C++ (0x0204d3ac)
 
 #endif

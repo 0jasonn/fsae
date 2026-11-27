@@ -18,7 +18,6 @@ s32 Knife_Message_selectionDialog_getResult(void *a);
 void func_0208b644(Entity *e);
 int func_02085294(void);
 int ZeldaFadeFlagGet(void);
-void func_0202809c(void);
 void SoundInit(void);
 void Knife_Single_SinglePlay_Initialize(u8 *self);
 }
@@ -86,6 +85,7 @@ extern u8 data_0212c4e4;
 #include "engine/palette_buff.h"
 #include "engine/effect_state.h"
 #include "engine/com_work.h"
+#include "knife/comm/comm.h"
 // Frame counts of the stage select messages (11 words, copied to the stack by stagesel_message)
 typedef struct SselMessageTimes {
     u32 frames[11];

@@ -7,12 +7,12 @@
 #include "engine/player.h"
 #undef playerKeysPrev
 #include "ui/lobby.h"
+#include "knife/comm/wirelessmanager.h"
 
 void MachiukeStop(void);
 
 extern "C" {
 void connectCheck(void);
-s32 Knife_Comm_WirelessManager_getLinkLevel(void *manager);
 
 s32 update_confirm_wait(void);
 void dialog_msg_check(s32 kind, s32 player);

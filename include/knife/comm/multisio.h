@@ -87,8 +87,6 @@ extern "C" void MultiSioStop(void);
 #define REG_IME (*(vu16 *)0x04000208)
 
 // Not in functions.h yet (plain symbol names in the original)
-extern "C" void Knife_Comm_WirelessManager_reset(void *manager);
-extern "C" int Knife_Comm_WirelessManager_getLinkLevel(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getParentFlag(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getConnectedAIDs(void *manager, int a);
 extern "C" void Knife_Comm_setPlayerBit(int index, void *flags);
@@ -115,6 +113,7 @@ extern u8 data_0212c4d4;
 
 // The packet passed to MultiSioSendDataSet is a ComPacket (engine/com_work.h).
 #include "engine/com_work.h"
+#include "knife/comm/wirelessmanager.h"
 
 extern u8 data_02fe0000[];
 

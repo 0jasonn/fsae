@@ -3,7 +3,7 @@
 #include "global.h"
 
 #include "engine/com_work.h"
-extern u16 data_0212c514;
+#include "game/keyread.h"
 
 // title_machiuke_joy (0x02052a80): per-frame key update of the waiting screen. For each of the four players it takes
 // the key word from the exchange work (stride 0x34, 0xffff = no data), derives the newly pressed keys against the

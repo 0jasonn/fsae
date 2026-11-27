@@ -2,12 +2,12 @@
 #include "global.h"
 #include "types.h"
 #include "knife/comm/single_play.h"
+#include "game/keyread.h"
 
 // Knife::Single::SinglePlay controller and formation requests, 0x02099550 to 0x02099704. The object is the SinglePlay
 // singleton (SinglePlayWork in single_play_d.h); the members are plain names, so they are extern "C" taking self.
 
 extern u16 data_0212c510; // key mask (bss)
-extern u16 data_0212c514; // key state (bss)
 
 // SinglePlay::SetContNo(unsigned char) (0x02099550): requests a controller change unless it is the current one
 void Knife_Single_SinglePlay_SetContNo(void *self, u8 no) {
@@ -88,8 +88,8 @@ void Knife_Single_SinglePlay_SetFormationNoDirect(void *self, u8 no) {
     Knife_Single_SinglePlay_InitializeFormation(self);
 }
 
-// SinglePlay::ChangeFormationNo() (0x02099694): requests the next formation
-void Knife_Single_SinglePlay_ChangeFormationNo(void *self) {
+// SinglePlay::ChangeFormationNo(PL_WORK_ *, PL_WORK_ *) (0x02099694): requests the next formation
+void Knife_Single_SinglePlay_ChangeFormationNo(void *self, PlayerData *player0, PlayerData *player1) {
     SinglePlayWork *sp;
 
     sp = (SinglePlayWork *)self;

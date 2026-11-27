@@ -2,7 +2,7 @@
 #include "global.h"
 #include "types.h"
 #include "knife/comm/wirelessmgr.h"
-#include "knife/comm/wirelessmgr_update_api.h"
+#include "knife/comm/wirelessmanager.h"
 
 // Knife::Comm::WirelessManager::update() (0x02090c88): runs with interrupts disabled. Dispatches on the state index
 // (0 to 15) to the state functions, then decrements the TTL of the 16 parent entries while connected.

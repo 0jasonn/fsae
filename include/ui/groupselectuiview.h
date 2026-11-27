@@ -12,6 +12,7 @@
 #include "types.h"
 #include "ui/widget/baseduiview.h"
 #include "ui/widget/uiobject.h"
+#include "knife/comm/wirelessmanager.h"
 
 // Text handle of Knife::Message::Text (handle, string and kind)
 typedef struct KnifeMsgText {
@@ -105,8 +106,6 @@ extern const RoomUiIndexTable data_020ded24;
 
 extern "C" u32 Knife_Message_getCESObject_021770b4(const void *a);
 extern "C" void Knife_Comm_WirelessManager_requestEndScan(void *manager);
-extern "C" s32 Knife_Comm_WirelessManager_getMaxParents(void *manager);
-extern "C" void *Knife_Comm_WirelessManager_getScanResult(void *manager, s32 index);
 extern "C" s32 Knife_Comm_WirelessManager_getState(void *manager);
 
 // Text render target of a pane (Knife::Message render target, only the fields the room drawing reads)

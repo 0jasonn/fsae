@@ -5,7 +5,6 @@
 
 // Not in engine/functions.h yet: copies a block to VRAM during VBlank (original SetDataVBlank(void const*, void*, unsigned long), 0x02029d88)
 void SetDataVBlank(const void *src, void *dst, u32 size);
-// Original UpdateIroyuka() (0x0204d3ac), mangled _Z13UpdateIroyukav
-void UpdateIroyuka(void);
+#include "game/iroyuka.h"
 
 #endif

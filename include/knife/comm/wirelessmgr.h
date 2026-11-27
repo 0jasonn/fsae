@@ -62,14 +62,14 @@ extern "C" void Knife_Comm_WirelessManager_update_waitScan(void *self);
 
 // SDK and dsd-named functions called by the WirelessManager code (the names are the ROM symbols).
 extern "C" s32 func_02019968(void);                    // thunk to a function outside the ARM9 image (a check)
-extern "C" s32 Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);  // WM result handler
+extern "C" BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);  // WM result handler
 extern "C" void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);  // WM_Enable callback
 extern "C" void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);  // WM_PowerOff callback
 extern "C" s32 WM_Reset(void *callback);
 extern "C" s32 WM_PowerOff(void *callback);
 extern "C" s32 WM_GetLinkLevel(void);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_StartScanEx(void *result);
-extern "C" void WM_EndDataSharing(void *buf);
+extern "C" s32 WM_EndDataSharing(void *buf);
 extern "C" void Knife_Comm_WirelessManager_callback_WM_Reset(void *arg);
 
 #endif

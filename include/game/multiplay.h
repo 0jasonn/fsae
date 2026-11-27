@@ -41,7 +41,6 @@ void BgmSet(void);
 #include "engine/com_work.h"
 void GetSetWorkSp(u8 a, u8 b, u8 c);
 extern u16 data_0212c510;
-extern u16 data_0212c514;
 extern u16 data_0212c520;
 extern u8 data_0212c4b8;
 extern "C" {
@@ -51,6 +50,7 @@ void CalcHeartLevel(void);
 extern u8 data_0216efa8;                    // makemap state byte
 #include "engine/frame_counter.h"
 #include "engine/key_ring.h"
+#include "game/keyread.h"
 extern u32 data_0212c550;
 extern u32 data_0212c554;
 
