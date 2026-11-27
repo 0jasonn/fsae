@@ -47,9 +47,6 @@ extern u16 data_0212c514;
 extern u16 data_0212c520;
 extern u8 data_0212c4b8;
 extern "C" {
-void StopEffectWindow(void);
-}
-extern "C" {
 void CalcHeartLevel(void);
 }
 

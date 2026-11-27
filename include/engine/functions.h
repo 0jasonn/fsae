@@ -727,7 +727,7 @@ void CommFrameUpdate(void);
 extern u32 data_0212c56c;
 extern u32 data_0212c570;
 extern u32 data_0212c528;
-extern u16 playerKeys[];
+extern u16 playerKeys[4];
 extern u8 data_0212ccb0[];
 extern u8 data_0212cdb0[];
 void shuffledata(u16 *list, u16 count);  // C++ linkage (original_names.tsv)

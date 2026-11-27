@@ -5,14 +5,9 @@
 #include "engine/map_state.h"
 #include "actor/object/setdisp.h"
 #include "game/player.h"
+#include "actor/object/beam.h"
 
 // Beam (module beam). Original names from the debug build: beam_move.
-
-// Beam-only fields that Entity does not name (file-local overlay on unk_64).
-typedef struct Vars_Beam {
-    u8 unk_00[0x64];
-    s32 lifetime; // 0x64: counts down each frame; the beam is removed at 0
-} Vars_Beam;
 
 // Beam move: counts the lifetime down, moves, and removes the beam when it hits a wall, a target or the time runs out.
 void beam_move(Entity *e) {
@@ -23,8 +18,8 @@ void beam_move(Entity *e) {
     u16 index;
     u16 value;
 
-    lifetimeBefore = VARS(Vars_Beam, e)->lifetime;
-    VARS(Vars_Beam, e)->lifetime = lifetimeBefore - 1;
+    lifetimeBefore = VARS(BeamVars, e)->lifetime;
+    VARS(BeamVars, e)->lifetime = lifetimeBefore - 1;
     if (lifetimeBefore != 0) {
         UpdateAnimationSingleFrame(e);
         MoveDir(e);

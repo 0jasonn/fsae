@@ -900,12 +900,12 @@ WM_MeasureChannel kind:function(arm,size=0x7c) addr:0x02020eec
 WM_SetEntry kind:function(arm,size=0x54) addr:0x02020f68
 WM_CheckInitialized kind:function(arm,size=0xc) addr:0x02020fbc
 _Z5ArrowP9OBJ_WORK_ kind:function(arm,size=0x3c) addr:0x02020fc8
-arrow_init kind:function(arm,size=0x2b4) addr:0x02021004
+_Z10arrow_initP9OBJ_WORK_ kind:function(arm,size=0x2b4) addr:0x02021004
 _Z10arrow_moveP9OBJ_WORK_ kind:function(arm,size=0x418) addr:0x020212b8
 _Z10arrow_waitP9OBJ_WORK_ kind:function(arm,size=0x44) addr:0x020216d0
 _Z11arrow_kokinP9OBJ_WORK_ kind:function(arm,size=0x34) addr:0x02021714
 _Z4BeamP9OBJ_WORK_ kind:function(arm,size=0x3c) addr:0x02021748
-beam_init kind:function(arm,size=0x11c) addr:0x02021784
+_Z9beam_initP9OBJ_WORK_ kind:function(arm,size=0x11c) addr:0x02021784
 _Z9beam_moveP9OBJ_WORK_ kind:function(arm,size=0x170) addr:0x020218a0
 _Z6BgInitv kind:function(arm,size=0x84) addr:0x02021a10
 _Z10RewCellOnettt kind:function(arm,size=0xe4) addr:0x02021a94
@@ -1969,9 +1969,9 @@ _Z17multiplay_makemapv kind:function(arm,size=0x24) addr:0x02047814
 _Z10makemap_00v kind:function(arm,size=0x114) addr:0x02047838
 _Z21makemap_sync_0204794cv kind:function(arm,size=0x88) addr:0x0204794c
 _Z20makemap_nop_020479d4v kind:function(arm,size=0x4) addr:0x020479d4
-makemap_30 kind:function(arm,size=0x13c) addr:0x020479d8
+_Z10makemap_30v kind:function(arm,size=0x13c) addr:0x020479d8
 _Z19multiplay_startdemov kind:function(arm,size=0x188) addr:0x02047b14
-zelda_fade kind:function(arm,size=0x198) addr:0x02047c9c
+_Z10zelda_fadev kind:function(arm,size=0x198) addr:0x02047c9c
 _Z14multiplay_mainv kind:function(arm,size=0x430) addr:0x02047e34
 _Z10warp_checkv kind:function(arm,size=0x80) addr:0x02048264
 _Z10time_bonusv kind:function(arm,size=0x94) addr:0x020482e4
@@ -2090,7 +2090,7 @@ _Z13UpdateIroyukav kind:function(arm,size=0x160) addr:0x0204d3ac
 YouseiDemoLoad kind:function(arm,size=0x98) addr:0x0204d50c
 StaffrollLoad kind:function(arm,size=0x90) addr:0x0204d5a4
 _Z11GetInfoAdrshh kind:function(arm,size=0x1c) addr:0x0204d634
-parts_init kind:function(arm,size=0x138) addr:0x0204d650
+_Z10parts_initv kind:function(arm,size=0x138) addr:0x0204d650
 takara_set kind:function(arm,size=0xac) addr:0x0204d788
 _Z12historyCheckPv kind:function(arm,size=0x54) addr:0x0204d834
 _Z16pasthistoryCheckPv kind:function(arm,size=0x40) addr:0x0204d888
@@ -4457,7 +4457,7 @@ _ZN5Knife7Message17MessageTextRender12setSceneInfoEPv kind:function(arm,size=0x8
 Knife_Message_MessageTextRender_onReadPlainText kind:function(arm,size=0x148) addr:0x020a0640
 Knife_Message_MessageTextRender_onReadNewLine kind:function(arm,size=0x8c) addr:0x020a0788
 _ZN5Knife7Message17MessageTextRender13onReadWaitTagEi kind:function(arm,size=0x18) addr:0x020a0814
-_ZN5Knife7Message17MessageTextRender9setOffsetEss kind:function(arm,size=0xc) addr:0x020a082c
+_ZN5Knife7Message17MessageTextRender9setOffsetEll kind:function(arm,size=0xc) addr:0x020a082c
 _ZN5Knife7Message17MessageTextRender16setSceneField_dcEh kind:function(arm,size=0xc) addr:0x020a0838
 Knife_Message_MessageTextRender_onReadSyncTag kind:function(arm,size=0x54) addr:0x020a0844
 Knife_Message_MessageTextRender_onReadNop kind:function(arm,size=0x4) addr:0x020a0898
@@ -5617,9 +5617,9 @@ data_020cd26c kind:data(any) addr:0x020cd26c
 data_020cd280 kind:data(any) addr:0x020cd280
 data_020cd380 kind:data(any) addr:0x020cd380
 data_020cd658 kind:data(any) addr:0x020cd658
-data_020cd680 kind:data(any) addr:0x020cd680
-data_020cd688 kind:data(any) addr:0x020cd688
-data_020cd690 kind:data(any) addr:0x020cd690
+arrow_hitboxUpDown kind:data(any) addr:0x020cd680
+arrow_spawnOffsets kind:data(any) addr:0x020cd688
+arrow_hitboxSideways kind:data(any) addr:0x020cd690
 arrow_stateTable kind:data(any) addr:0x020cd698
 data_020cd6b0 kind:data(any) addr:0x020cd6b0
 data_020cd6b8 kind:data(any) addr:0x020cd6b8

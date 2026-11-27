@@ -18,7 +18,7 @@ typedef struct SHIKAKEWORK_ {
 extern u8 data_021348e4; // number of records in data_02134bb0
 extern u8 data_021348f0; // number of records in data_02134e70
 extern u8 data_02134bb0[];
-extern SHIKAKEWORK data_02134e70[];
+extern SHIKAKEWORK data_02134e70[8];
 
 void shikake_bigblock(u32 *record); // 0x02022110, too large for this unit
 void func_020227b4(u32 *record); // 0x020227b4, too large for this unit

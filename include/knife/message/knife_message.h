@@ -36,7 +36,7 @@ public:
     void clearField36(void);
     u8 getField36(void) const;
     void setSceneInfo(void *info);
-    void setOffset(s16 x, s16 y);
+    void setOffset(s32 x, s32 y); // (long, long): knife_msgLineChange passes the smulbb product without truncation
     void setSceneField_dc(u8 value);
     void onReadWaitTag(int value);
     void onReadBlankTag(int value);

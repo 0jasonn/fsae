@@ -2,19 +2,12 @@
 #include "global.h"
 #include "engine/bg_buff.h"
 #include "actor/object/arrow_move.h"
+#include "actor/object/arrow.h"
 #include "engine/map_state.h"
 #include "actor/object/setdisp.h"
 #include "game/player.h"
 
 // Arrow (module arrow): arrow_move, the arrow while it is held (charging) and while it flies.
-
-// Arrow-only fields that Entity does not name.
-typedef struct Vars_Arrow {
-    u8 unk_00[0x64];
-    s32 hitOffsetX; // 0x64: low half is the x offset of the wall-hit probe
-    s32 hitOffsetY; // 0x68: low half is the y offset of the wall-hit probe
-    u8 lifetime;    // 0x6c: frames left; the arrow blinks for the last 0x18
-} Vars_Arrow;
 
 // Arrow move. While held (subtimer set) it follows its owner, charges with the tame counter and fires a copy once
 // the owner's animation frame flag is set; in flight it moves, sticks into walls and bounces off shields.
@@ -24,16 +17,16 @@ void arrow_move(Entity *e) {
 
     if (e->subtimer != 0) {
         UpdateAnimationSingleFrame(e);
-        if (VARS(Vars_Arrow, e)->lifetime < 0x18) {
+        if (VARS(ArrowVars, e)->lifetime < 0x18) {
             e->spriteSettings.b0 ^= 1;
         }
-        if (--VARS(Vars_Arrow, e)->lifetime == 0) {
+        if (--VARS(ArrowVars, e)->lifetime == 0) {
             func_020841b0(e);
             PutObjWork(e);
             return;
         }
-        if (func_02089e34(e, 4, e->x.HALF.HI + (s16)VARS(Vars_Arrow, e)->hitOffsetX,
-                          e->y.HALF.HI + (s16)VARS(Vars_Arrow, e)->hitOffsetY) != 0) {
+        if (func_02089e34(e, 4, e->x.HALF.HI + (s16)VARS(ArrowVars, e)->hitOffsetX,
+                          e->y.HALF.HI + (s16)VARS(ArrowVars, e)->hitOffsetY) != 0) {
             if (e->attackDamage > 3) {
                 return;
             }

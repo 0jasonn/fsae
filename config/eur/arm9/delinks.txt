@@ -921,6 +921,10 @@ src/actor/object/arrow.cpp:
     complete
     .text       start:0x02020fc8 end:0x02021004
 
+src/actor/object/arrow_init.cpp:
+    complete
+    .text       start:0x02021004 end:0x020212b8
+
 src/actor/object/arrow_move.cpp:
     complete
     .text       start:0x020212b8 end:0x020216d0
@@ -929,7 +933,11 @@ src/actor/object/arrow_2.cpp:
     complete
     .text       start:0x020216d0 end:0x02021784
 
-src/game/beam.cpp:
+src/actor/object/beam_init.cpp:
+    complete
+    .text       start:0x02021784 end:0x020218a0
+
+src/actor/object/beam.cpp:
     complete
     .text       start:0x020218a0 end:0x02021a10
 
@@ -2417,9 +2425,17 @@ src/game/makemap.cpp:
     complete
     .text       start:0x02047838 end:0x020479d8
 
+src/game/makemap_30.cpp:
+    complete
+    .text       start:0x020479d8 end:0x02047b14
+
 src/game/multiplay_startdemo.cpp:
     complete
     .text       start:0x02047b14 end:0x02047c9c
+
+src/game/zelda_fade.cpp:
+    complete
+    .text       start:0x02047c9c end:0x02047e34
 
 src/game/multiplay_main.cpp:
     complete
@@ -2554,6 +2570,10 @@ src/ui/msg_frame_dma.cpp:
     complete
     .text       start:0x0204b1b4 end:0x0204b250
 
+src/ui/message_line_change.cpp:
+    complete
+    .text       start:0x0204b250 end:0x0204b2f0
+
 src/knife/comm/knife_comm_disp.cpp:
     complete
     .text       start:0x0204b2f0 end:0x0204b7d8
@@ -2629,6 +2649,10 @@ src/ui/staffroll_4.cpp:
 src/engine/info.cpp:
     complete
     .text       start:0x0204d634 end:0x0204d650
+
+src/game/parts_init.cpp:
+    complete
+    .text       start:0x0204d650 end:0x0204d788
 
 src/game/takara_5.cpp:
     complete
@@ -2789,6 +2813,10 @@ src/engine/objutil_3.cpp:
 src/ui/opening.cpp:
     complete
     .text       start:0x02050910 end:0x02050ac4
+
+src/ui/opening_finalize.cpp:
+    complete
+    .text       start:0x02050ac4 end:0x02050b08
 
 src/ui/opening_2.cpp:
     complete
@@ -2954,6 +2982,10 @@ src/game/ranking_2.cpp:
     complete
     .text       start:0x020552c0 end:0x02055328
 
+src/game/ranking_result.cpp:
+    complete
+    .text       start:0x02055328 end:0x020554c8
+
 src/game/ranking_3.cpp:
     complete
     .text       start:0x020554c8 end:0x020556c0
@@ -3017,6 +3049,10 @@ src/game/multiroom.cpp:
 src/engine/scr_4.cpp:
     complete
     .text       start:0x0205715c end:0x02057344
+
+src/game/atari_make.cpp:
+    complete
+    .text       start:0x02057344 end:0x0205747c
 
 src/engine/scr_2.cpp:
     complete

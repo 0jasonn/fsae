@@ -18,7 +18,7 @@ void MessageTextRender::onReadWaitTag(int value) {
 }
 
 // MessageTextRender::setOffset (0x020a082c): stores the x and y offsets of the text
-void MessageTextRender::setOffset(s16 x, s16 y) {
+void MessageTextRender::setOffset(s32 x, s32 y) {
     offsetX = x;
     offsetY = y;
 }
