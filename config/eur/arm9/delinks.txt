@@ -2033,6 +2033,10 @@ src/actor/enemy/kamen_3.cpp:
     complete
     .text       start:0x0203eed4 end:0x0203ef24
 
+src/actor/enemy/magne_check.cpp:
+    complete
+    .text       start:0x0203ef24 end:0x0203f1d0
+
 src/actor/enemy/em21.cpp:
     complete
     .text       start:0x0203f1d0 end:0x0203f228
@@ -2328,6 +2332,10 @@ src/game/endinglink.cpp:
 src/actor/enemy/enemycommon.cpp:
     complete
     .text       start:0x020458f8 end:0x02045cb0
+
+src/actor/enemy/em_magne_move.cpp:
+    complete
+    .text       start:0x02045cb0 end:0x02045eb4
 
 src/actor/enemy/em_aim_drop.cpp:
     complete

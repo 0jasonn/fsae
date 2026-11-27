@@ -6469,7 +6469,7 @@ data_020d2a60 kind:data(any) addr:0x020d2a60
 data_020d2a74 kind:data(any) addr:0x020d2a74
 data_020d2a78 kind:data(any) addr:0x020d2a78
 data_020d2a7c kind:data(any) addr:0x020d2a7c
-data_020d2a80 kind:data(any) addr:0x020d2a80
+magneShakeOffsets kind:data(any) addr:0x020d2a80
 data_020d2a84 kind:data(any) addr:0x020d2a84
 em20_hitbox kind:data(any) addr:0x020d2a88
 kamen_actionTable kind:data(any) addr:0x020d2a90
