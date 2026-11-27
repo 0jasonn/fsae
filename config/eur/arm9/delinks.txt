@@ -6053,6 +6053,10 @@ src/engine/tween.cpp:
     complete
     .text       start:0x020b6868 end:0x020b68c8
 
+src/knife/message/tcl_draw_char.cpp:
+    complete
+    .text       start:0x020b68c8 end:0x020b69e4
+
 src/engine/tcli_accessor.cpp:
     complete
     .text       start:0x020b69e4 end:0x020b69f4

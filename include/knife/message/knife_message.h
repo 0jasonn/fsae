@@ -48,7 +48,7 @@ public:
     s16 offsetY;   // 0x06
     u8 unk_08[0x04];
     NNSG2dCharCanvas canvas; // 0x0c: the text canvas (pBits, width and height in cells, colour depth)
-    u8 unk_1c[0x34 - 0x1c];
+    u8 unk_24[0x34 - 0x24];
     s8 field34; // read with ldrsb
     u8 field35;
     u8 field36;
