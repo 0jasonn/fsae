@@ -285,13 +285,41 @@ src/engine/stub_6.cpp:
     complete
     .text       start:0x0200de04 end:0x0200de08
 
+src/sdk/rtc/rtc_extra_callback.cpp:
+    complete
+    .text       start:0x0200dedc end:0x0200df54
+
+src/sdk/nwm/nwm_init.cpp:
+    complete
+    .text       start:0x0200df54 end:0x0200df70
+
 src/sdk/fatfs/stdconv_table_wrap.cpp:
     complete
     .text       start:0x0200df70 end:0x0200df7c
 
+src/sdk/fatfs/fatfs_pxi.cpp:
+    complete
+    .text       start:0x0200e000 end:0x0200e060
+
+src/sdk/fatfs/fatfs_buffer.cpp:
+    complete
+    .text       start:0x0200e060 end:0x0200e0c8
+
+src/sdk/fatfs/fatfs_buffer_release.cpp:
+    complete
+    .text       start:0x0200e1a4 end:0x0200e214
+
 src/sdk/fatfs/fatfs_wrap.cpp:
     complete
     .text       start:0x0200e214 end:0x0200e220
+
+src/sdk/fatfs/fatfs_sync.cpp:
+    complete
+    .text       start:0x0200e3e0 end:0x0200e42c
+
+src/sdk/fatfs/fatfs_string.cpp:
+    complete
+    .text       start:0x0200e4b4 end:0x0200e568
 
 src/sdk/fatfs/engine_word.cpp:
     complete
@@ -304,6 +332,10 @@ src/sdk/fatfs/fatfs_init.cpp:
 src/sdk/fatfs/engine_romword.cpp:
     complete
     .text       start:0x0200e5f8 end:0x0200e608
+
+src/sdk/fatfs/fatfs_command.cpp:
+    complete
+    .text       start:0x0200e608 end:0x0200eec8
 
 src/sdk/os/cp_context.cpp:
     complete
@@ -325,6 +357,10 @@ src/sdk/fs/fs_sjis_slash.cpp:
     complete
     .text       start:0x0201025c end:0x020102d4
 
+src/sdk/fs/fs_path_ops.cpp:
+    complete
+    .text       start:0x02010300 end:0x02010534
+
 src/sdk/fs/fs_file_length.cpp:
     complete
     .text       start:0x02010aac end:0x02010b1c
@@ -336,6 +372,14 @@ src/sdk/fs/fs_open.cpp:
 src/sdk/fs/fs_file_close.cpp:
     complete
     .text       start:0x02010ba0 end:0x02010be0
+
+src/sdk/fs/fs_file_ops.cpp:
+    complete
+    .text       start:0x02010be0 end:0x02010c84
+
+src/sdk/fs/fs_file_async.cpp:
+    complete
+    .text       start:0x02010cdc end:0x02010dcc
 
 src/sdk/fs/fs_dir_close.cpp:
     complete
@@ -448,6 +492,10 @@ src/sdk/fs/fs_init.cpp:
 src/sdk/fx/mtx_identity22.cpp:
     complete
     .text       start:0x02012ab8 end:0x02012ad0
+
+src/sdk/fx/mtx_scale_apply22.cpp:
+    complete
+    .text       start:0x02012adc end:0x02012b30
 
 src/sdk/fx/fx_sqrt_vec.cpp:
     complete

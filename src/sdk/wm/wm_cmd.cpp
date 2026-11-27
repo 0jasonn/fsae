@@ -3,6 +3,7 @@
 #include "sdk/wm/wm_system.h"
 #include "knife/comm/wm_idle2parent.h"
 #include "game/agent.h"
+#include "sdk/nwm/nwm.h"
 
 // Wireless manager commands, 0x02020df8 .. 0x02020fc8.
 

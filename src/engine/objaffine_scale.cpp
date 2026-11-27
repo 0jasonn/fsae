@@ -1,3 +1,4 @@
+#include "sdk/fx/fx.h"
 #include "engine/functions.h"
 #include "engine/objaffine.h"
 

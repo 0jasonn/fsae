@@ -4,6 +4,6 @@
 #include "sdk/fatfs/stdconv_table_wrap_api.h"
 
 // Tail call to STDi_GetUnicodeConversionTable.
-u32 StdConv_GetUnicodeTable(u32 a, u32 b, u32 c, u32 d) {
-    return STDi_GetUnicodeConversionTable(a, b, c, d);
+void StdConv_GetUnicodeTable(u32 *table0, u32 *table1) {
+    STDi_GetUnicodeConversionTable(table0, table1);
 }

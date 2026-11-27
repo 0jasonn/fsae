@@ -51,6 +51,20 @@ typedef struct FSFile {
     FSFileCommand command;              // 0x30
 } FSFile; // 0x48 bytes
 
+// Argument blocks of the FS path commands (FSFile.argument).
+// Create / get-path-info / create-directory commands: resolved path value, scratch buffer, extra word.
+typedef struct FsPathArgsEx {
+    u32 resolved;           // 0x00
+    u8 *buffer;             // 0x04
+    u32 extra;              // 0x08: mode or output pointer
+} FsPathArgsEx;
+
+// Delete commands.
+typedef struct FsPathArgs {
+    u32 resolved;           // 0x00
+    u8 *buffer;             // 0x04
+} FsPathArgs;
+
 extern "C" {
 void FS_InitFile(FSFile *file);
 s32 FS_FindDir(FSFile *file, const char *path);
@@ -69,13 +83,20 @@ s32 FS_SeekFile(FSFile *file, s32 offset, s32 origin);
 s32 FS_ReadFile(FSFile *file, void *buffer, s32 length);
 s32 FS_ReadFileAsync(FSFile *file, void *buffer, s32 length);
 s32 FS_WaitAsync(FSFile *file);
-void FS_CreateFile(const char *path, u32 mode);
-void FS_WriteFileAsync(FSFile *file, const void *buffer, u32 size);
+s32 FS_CreateFile(const char *path, u32 mode);
+s32 FS_WriteFileAsync(FSFile *file, const void *buffer, u32 size);
 s32 FSi_ReadFileDefault(FSFile *file);
 s32 FSi_WriteFileDefault(FSFile *file);
 s32 func_0200f69c(FSFile *file, u32 command, s32 blocking); // runs a command on the file
 s32 FSi_TranslateCommand(FSFile *file, u32 command, s32 blocking);
 s32 func_0200f068(FSFile *file, u32 command);
+s32 FS_DeleteFile(const char *path);
+s32 FS_GetPathInfo(const char *path, void *info);
+s32 FS_CreateDirectory(const char *path, u32 mode);
+s32 FS_DeleteDirectory(const char *path);
+s32 FsRomFile_LengthIsZero(FSFile *file, u32 *length);
+s32 FsRomFile_PositionIsZero(FSFile *file, u32 *position);
+s32 FSi_SeekFileIfProc(FSFile *file);
 }
 
 #endif

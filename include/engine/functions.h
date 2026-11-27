@@ -212,8 +212,6 @@ void func_02084200(Entity *e);
 void func_0208a240(Entity *e, u16 kind, u16 x, u16 y); // thumb label, no original name (torch lighting helper)
 int func_0208b668(Entity *e);
 u8 ObjGetDir2(Entity *e, Entity *target, s32 a, s32 b); // 0x0204fdfc, unmangled
-void FATFSi_InitRequest(void);
-void FATFSi_SyncInitialization(u32 arg);
 void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
 s32 Entries_ProcessAll(void);
 void PMi_SendPxiData(u32 word);
@@ -221,6 +219,9 @@ u32 OS_SaveContext(void *thread); // only caller: src/sdk/os/os_switch.cpp, whic
 void *OS_SelectThread(void);
 void OS_GetOwnerInfoEx(void *info); // 0x020198e4, TwlSDK (unmangled)
 void MI_CpuCopy8(const void *src, void *dst, u32 size);
+void MI_CpuCopy(const void *src, void *dst, u32 size);
+void OS_GetLowEntropyData(void *buffer);
+void func_0200dea0(void *src, void *dst, u32 length); // thumb helper (hash of the entropy data)
 void MI_CpuFill8(void *dest, u8 data, u32 size); // TwlSDK
 s32 STD_GetStringLength(const char *s); // TwlSDK
 s32 func_020a44ac(u32 dmaNo, u32 src, void *dst, u32 length, void (*callback)(FSArchive *), FSArchive *arg, s32 async); // card ROM read
@@ -238,8 +239,7 @@ s32 PMi_SetLEDAsync(u32 value, PMiCallback callback, u32 arg);
 s32 PMi_SetAmp(u32 enabled);
 void PMi_WaitVBlank(void);
 void OS_SpinWaitSysCycles(u32 cycles);
-u32 STDi_GetUnicodeConversionTable(u32 a, u32 b, u32 c, u32 d);
-u32 FATFSi_SendToPXI(u32 a, u32 b, u32 c, u32 d);
+void STDi_GetUnicodeConversionTable(u32 *table0, u32 *table1);
 u32 FS_UnmountArchive(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_InitCommon(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_DoLockByWord(u32 a, u32 b, u32 c, u32 d);

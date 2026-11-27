@@ -6,7 +6,6 @@
 #include "types.h"
 
 extern "C" {
-void MI_CpuCopy(const void *src, void *dst, u32 size);
 }
 
 void stagesel_loadsel(u16 index, int mode);

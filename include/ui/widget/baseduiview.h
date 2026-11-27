@@ -23,7 +23,6 @@ public:
 };
 
 extern "C" {
-void MI_CpuCopy(const void *src, void *dst, u32 size);
 void basedUIView_initialize(basedUIView *self);
 void basedUIView_setRootView(basedUIView *self, basedUIView *root);
 void basedUIView_push_view(basedUIView *self, basedUIView *child);

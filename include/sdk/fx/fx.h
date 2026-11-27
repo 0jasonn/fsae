@@ -22,6 +22,7 @@ s32 FX_Sqrt(s32 value);
 s32 FX_GetSqrtResult(void);
 void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 void MTX_Identity22_(MtxFx22 *mtx);
+void MTX_ScaleApply22(const s32 *src, s32 *dst, s32 scaleX, s32 scaleY); // 0x02012adc
 
 // Not decompiled yet.
 s32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);

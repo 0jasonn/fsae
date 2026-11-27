@@ -26,7 +26,6 @@ u32 MATH_CountPopulation(u32 value);
 u32 WMi_SendCommandDirect(u16 *data, u32 count);
 void WM_SetPortCallback(u32 port, u32 a, u32 b);
 u32 WMi_SendCommand(u32 a, u32 b, ...);
-s32 NWMi_CheckInitialized(void);
 }
 
 // C++ functions defined in this directory (mangled original names).

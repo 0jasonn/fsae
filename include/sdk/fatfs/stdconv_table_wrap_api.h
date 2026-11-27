@@ -6,7 +6,7 @@
 #include "engine/entity.h"
 
 extern "C" {
-u32 StdConv_GetUnicodeTable(u32 a, u32 b, u32 c, u32 d);
+void StdConv_GetUnicodeTable(u32 *table0, u32 *table1);
 }
 
 #endif
