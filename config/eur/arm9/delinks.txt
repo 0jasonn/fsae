@@ -2690,6 +2690,10 @@ src/actor/object/set5c.cpp:
     complete
     .text       start:0x0204eca4 end:0x0204ed00
 
+src/knife/comm/multisio_init.cpp:
+    complete
+    .text       start:0x0204ed00 end:0x0204edc4
+
 src/knife/comm/multisio.cpp:
     complete
     .text       start:0x0204edc4 end:0x0204ee64
@@ -2697,6 +2701,10 @@ src/knife/comm/multisio.cpp:
 src/knife/comm/multisio_2.cpp:
     complete
     .text       start:0x0204f1c0 end:0x0204f4a8
+
+src/knife/comm/multisio_link.cpp:
+    complete
+    .text       start:0x0204f4a8 end:0x0204f978
 
 src/game/npc_init.cpp:
     complete
@@ -2717,6 +2725,10 @@ src/game/objcell.cpp:
 src/engine/objutil_4.cpp:
     complete
     .text       start:0x0204fdf0 end:0x0204fdfc
+
+src/game/obj_get_dir2.cpp:
+    complete
+    .text       start:0x0204fdfc end:0x0204fe54
 
 src/actor/object/objprio_2.cpp:
     complete
@@ -2837,6 +2849,10 @@ src/game/pause_req_wait.cpp:
 src/game/pause.cpp:
     complete
     .text       start:0x02053bc8 end:0x02053c6c
+
+src/game/pause_start.cpp:
+    complete
+    .text       start:0x02053c6c end:0x02053ebc
 
 src/game/pause_2.cpp:
     complete

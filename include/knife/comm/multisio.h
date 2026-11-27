@@ -34,11 +34,41 @@ typedef struct MultiSioWork {
     /* 148 */ u8 subE[0x70];
 } MultiSioWork;
 
+// Multi-play SIO control (GBA REG_SIOCNT layout) and data word
+typedef struct SioMultiCnt {
+    u16 baudRate : 2;
+    u16 si : 1;       // 0 = parent
+    u16 sd : 1;       // 1 = all linked
+    u16 id : 2;
+    u16 error : 1;
+    u16 enable : 1;   // transfer busy
+    u16 unk_8 : 4;
+    u16 mode : 2;
+    u16 irqEnable : 1;
+    u16 unk_15 : 1;
+    u16 data;
+} SioMultiCnt;
+
+typedef union MultiSioFlags {
+    struct {
+        u32 players : 4;
+        u32 unk_4 : 3;
+        u32 parent : 1;
+        u32 unk_8 : 24;
+    };
+    u32 word; // the whole flag word (copied into the packet's group word)
+} MultiSioFlags;
+
 // Timer / SIO register shadow words (0x02171e3c): +0x08 control, +0x0a count, +0x1e
 typedef struct MultiSioRegs {
     /* 00 */ u8 unk_00[8];
+    union {
+        struct {
     /* 08 */ u16 timerCtrl;
     /* 0a */ u16 timerCount;
+        };
+    /* 08 */ SioMultiCnt sioCnt;
+    };
     /* 0c */ u8 unk_0c[0x1e - 0x0c];
     /* 1e */ u16 unk_1e;
 } MultiSioRegs;
@@ -62,8 +92,8 @@ extern "C" int Knife_Comm_WirelessManager_getParentFlag(void *manager);
 extern "C" int Knife_Comm_WirelessManager_getConnectedAIDs(void *manager, int a);
 extern "C" void Knife_Comm_setPlayerBit(int index, void *flags);
 extern "C" void Knife_Comm_removePlayerFromGroup(int index, void *flags);
-extern "C" u16 MultiSioRecvDataCheck(void *a);
-extern "C" u32 MultiSioMain(void *a, s32 b);
+u32 MultiSioRecvDataCheck(void *recvData);
+u32 MultiSioMain(void *recvData, bool keepLink);
 extern "C" void MultiSioSendDataSet(void *a);
 extern "C" u32 func_0209200c(void *manager);
 extern "C" u32 func_02092168(void *manager);
@@ -80,7 +110,7 @@ typedef struct MultiSioRegSnapshot {
     /* 02 */ u16 count;
 } MultiSioRegSnapshot;
 
-extern u32 multiSioFlags; // multiSioFlags
+extern MultiSioFlags multiSioFlags; // multiSioFlags
 extern u8 data_0212c4d4;
 
 

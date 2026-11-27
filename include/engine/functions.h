@@ -621,7 +621,7 @@ void opdemo_scroll(void);
 void openEndSet(Entity *e);
 void openInit(Entity *e);
 void pause_dialogDisp(u32 index, s32 unused, u8 value);
-void pause_dialogUpdate(void);
+int pause_dialogUpdate(void);
 void pause_init(void);
 void pause_req(u8 index);
 void pause_req_wait(void);

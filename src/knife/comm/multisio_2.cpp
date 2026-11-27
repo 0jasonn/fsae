@@ -50,7 +50,7 @@ void MultiSioSendDataSet(void *a) {
         return;
     }
     if (state == 8) {
-        packet->groupWord = multiSioFlags;
+        packet->groupWord = multiSioFlags.word;
     }
     Knife_Comm_WirelessManager_setSendPacket(manager, packet);
 }
