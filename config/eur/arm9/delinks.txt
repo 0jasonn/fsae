@@ -537,9 +537,29 @@ src/sdk/gx/g2_bg_char_ptr.cpp:
     complete
     .text       start:0x020133a8 end:0x02013450
 
+src/sdk/gx/g2_bg23_char_ptr.cpp:
+    complete
+    .text       start:0x020134a0 end:0x02013580
+
+src/sdk/gx/gx_load.cpp:
+    complete
+    .text       start:0x02013580 end:0x02013a38
+
 src/sdk/gx/bg_copy.cpp:
     complete
     .text       start:0x02013a38 end:0x02014034
+
+src/sdk/gx/gx_ext_load.cpp:
+    complete
+    .text       start:0x02014034 end:0x020144cc
+
+src/sdk/gx/gx_tex_load.cpp:
+    complete
+    .text       start:0x02014528 end:0x02014858
+
+src/sdk/gx/gx_vramcnt_lcdc.cpp:
+    complete
+    .text       start:0x02014858 end:0x020148f0
 
 src/sdk/gx/vram_lcdc_mode.cpp:
     complete
@@ -549,6 +569,10 @@ src/sdk/gx/vram_lcdc.cpp:
     complete
     .text       start:0x0201500c end:0x02015030
 
+src/sdk/gx/gx_try_set_bank_lcdc.cpp:
+    complete
+    .text       start:0x02015030 end:0x02015084
+
 src/sdk/gx/vram_group.cpp:
     complete
     .text       start:0x02015084 end:0x02015120
@@ -557,6 +581,10 @@ src/sdk/gx/vram_bank_bits.cpp:
     complete
     .text       start:0x02015190 end:0x02015290
 
+src/sdk/gx/gx_reset_bank.cpp:
+    complete
+    .text       start:0x02015290 end:0x020152c8
+
 src/sdk/gx/vrambank.cpp:
     complete
     .text       start:0x020152c8 end:0x02015388
@@ -564,6 +592,10 @@ src/sdk/gx/vrambank.cpp:
 src/sdk/gx/vram_disable.cpp:
     complete
     .text       start:0x02015448 end:0x0201545c
+
+src/sdk/gx/gx_vram_state.cpp:
+    complete
+    .text       start:0x0201545c end:0x0201556c
 
 src/sdk/mi/os_external_init.cpp:
     complete
@@ -584,10 +616,6 @@ src/sdk/mi/region_check.cpp:
 src/sdk/mi/frame_asm_2.cpp:
     complete
     .text       start:0x02016440 end:0x02016448
-
-src/sdk/mi/frame_asm_3.cpp:
-    complete
-    .text       start:0x02016af4 end:0x02016af8
 
 src/sdk/os/os_wait_irq.cpp:
     complete
@@ -621,13 +649,29 @@ src/sdk/os/os_kind_terminate.cpp:
     complete
     .text       start:0x02017008 end:0x02017054
 
+src/sdk/os/os_sync_pxi.cpp:
+    complete
+    .text       start:0x02017054 end:0x02017160
+
+src/sdk/os/os_lock_by_word.cpp:
+    complete
+    .text       start:0x020171ec end:0x02017238
+
 src/sdk/os/os_wrap_3.cpp:
     complete
     .text       start:0x02017238 end:0x02017248
 
+src/sdk/os/os_unlock_by_word.cpp:
+    complete
+    .text       start:0x02017248 end:0x020172bc
+
 src/sdk/os/os_wrap_4.cpp:
     complete
     .text       start:0x020172bc end:0x020172cc
+
+src/sdk/os/os_try_lock_by_word.cpp:
+    complete
+    .text       start:0x020172cc end:0x02017338
 
 src/sdk/os/cardbus_lock.cpp:
     complete
@@ -641,9 +685,17 @@ src/sdk/os/os_thread_id.cpp:
     complete
     .text       start:0x02017464 end:0x0201747c
 
+src/sdk/os/os_thread_queue.cpp:
+    complete
+    .text       start:0x0201747c end:0x02017650
+
 src/sdk/os/os_switch.cpp:
     complete
     .text       start:0x02017650 end:0x02017714
+
+src/sdk/os/os_thread_create.cpp:
+    complete
+    .text       start:0x02017860 end:0x02017970
 
 src/sdk/os/os_start_context.cpp:
     complete
@@ -657,6 +709,10 @@ src/sdk/os/os_thread_link.cpp:
     complete
     .text       start:0x02017a5c end:0x02017aac
 
+src/sdk/os/os_thread_wakeup.cpp:
+    complete
+    .text       start:0x02017aac end:0x02017b68
+
 src/sdk/os/os_irq_flush.cpp:
     complete
     .text       start:0x02017b68 end:0x02017b84
@@ -664,6 +720,10 @@ src/sdk/os/os_irq_flush.cpp:
 src/sdk/os/stub_empty_c.cpp:
     complete
     .text       start:0x02017c34 end:0x02017c38
+
+src/sdk/os/os_thread_priority.cpp:
+    complete
+    .text       start:0x02017c38 end:0x02017ce0
 
 src/sdk/os/obj_get70.cpp:
     complete
@@ -673,9 +733,17 @@ src/sdk/os/os_sleep.cpp:
     complete
     .text       start:0x02017ce8 end:0x02017d88
 
+src/sdk/os/os_thread_callbacks.cpp:
+    complete
+    .text       start:0x02017d88 end:0x02017dd0
+
 src/sdk/os/irqcount.cpp:
     complete
     .text       start:0x02017dd0 end:0x02017e4c
+
+src/sdk/os/os_context.cpp:
+    complete
+    .text       start:0x02017eb8 end:0x02017f64
 
 src/sdk/os/device_flags.cpp:
     complete
@@ -705,17 +773,37 @@ src/sdk/os/os_wrap.cpp:
     complete
     .text       start:0x02018530 end:0x0201853c
 
+src/sdk/os/os_arena_init.cpp:
+    complete
+    .text       start:0x020185e8 end:0x02018740
+
 src/sdk/os/os_arena.cpp:
     complete
     .text       start:0x02018740 end:0x02018768
+
+src/sdk/os/os_arena_init_hi.cpp:
+    complete
+    .text       start:0x02018768 end:0x02018840
 
 src/sdk/os/os_arena_2.cpp:
     complete
     .text       start:0x020188e0 end:0x02018c10
 
+src/sdk/os/os_protection_unit.cpp:
+    complete
+    .text       start:0x02018c10 end:0x02018c70
+
 src/sdk/os/mpu.cpp:
     complete
     .text       start:0x02018c70 end:0x02018cf0
+
+src/sdk/os/os_exception_init.cpp:
+    complete
+    .text       start:0x02018cf0 end:0x02018d78
+
+src/sdk/os/os_exception_handler.cpp:
+    complete
+    .text       start:0x02018d78 end:0x02018efc
 
 src/sdk/os/engine_halfb.cpp:
     complete
@@ -737,6 +825,10 @@ src/sdk/os/os_alarm_set.cpp:
     complete
     .text       start:0x0201918c end:0x020191f8
 
+src/sdk/os/os_alarm_handler.cpp:
+    complete
+    .text       start:0x020191f8 end:0x02019208
+
 src/sdk/os/os_valarm_create.cpp:
     complete
     .text       start:0x02019420 end:0x02019434
@@ -744,6 +836,10 @@ src/sdk/os/os_valarm_create.cpp:
 src/sdk/os/os_interrupts.cpp:
     complete
     .text       start:0x020196f0 end:0x02019780
+
+src/sdk/os/os_spin_wait.cpp:
+    complete
+    .text       start:0x02019780 end:0x020197d8
 
 src/sdk/os/os_boot.cpp:
     complete
@@ -760,6 +856,10 @@ src/sdk/os/os_runon_checks.cpp:
 src/sdk/os/frame_asm_4.cpp:
     complete
     .text       start:0x02019980 end:0x02019988
+
+src/sdk/os/os_vram_exclusive_init.cpp:
+    complete
+    .text       start:0x02019988 end:0x020199bc
 
 src/sdk/os/pair_setup.cpp:
     complete
@@ -817,6 +917,10 @@ src/sdk/rtc/rtc_util.cpp:
     complete
     .text       start:0x0201a8b8 end:0x0201a930
 
+src/sdk/rtc/rtc_wait_busy.cpp:
+    complete
+    .text       start:0x0201a930 end:0x0201a948
+
 src/sdk/rtc/rtc_raw.cpp:
     complete
     .text       start:0x0201a948 end:0x0201aa50
@@ -833,9 +937,49 @@ src/sdk/snd/mutex_wrap.cpp:
     complete
     .text       start:0x0201aff8 end:0x0201b020
 
+src/sdk/snd/snd_command_queue.cpp:
+    complete
+    .text       start:0x0201b0f0 end:0x0201b2b0
+
+src/sdk/snd/snd_command_wait.cpp:
+    complete
+    .text       start:0x0201b44c end:0x0201b5c8
+
+src/sdk/snd/snd_command_pxi.cpp:
+    complete
+    .text       start:0x0201b5c8 end:0x0201b700
+
+src/sdk/snd/snd_alarm.cpp:
+    complete
+    .text       start:0x0201b700 end:0x0201b79c
+
+src/sdk/snd/snd_status.cpp:
+    complete
+    .text       start:0x0201b79c end:0x0201b7ec
+
+src/sdk/snd/snd_finished_tag.cpp:
+    complete
+    .text       start:0x0201b968 end:0x0201ba08
+
+src/sdk/snd/snd_channel_volume.cpp:
+    complete
+    .text       start:0x0201ba08 end:0x0201ba78
+
+src/sdk/snd/snd_wave_arc.cpp:
+    complete
+    .text       start:0x0201ba78 end:0x0201bc28
+
+src/sdk/snd/snd_inst_data.cpp:
+    complete
+    .text       start:0x0201bc28 end:0x0201bc48
+
 src/sdk/snd/obj_get38.cpp:
     complete
     .text       start:0x0201bdf4 end:0x0201bdfc
+
+src/sdk/snd/snd_wave_data.cpp:
+    complete
+    .text       start:0x0201bdfc end:0x0201be6c
 
 src/sdk/tp/tp.cpp:
     complete
@@ -849,6 +993,10 @@ src/sdk/tp/tp_wait.cpp:
     complete
     .text       start:0x0201c798 end:0x0201c7c4
 
+src/sdk/pm/pm_wait_busy.cpp:
+    complete
+    .text       start:0x0201c7c4 end:0x0201c848
+
 src/sdk/pm/pm_dummy_callback.cpp:
     complete
     .text       start:0x0201c848 end:0x0201c854
@@ -856,6 +1004,10 @@ src/sdk/pm/pm_dummy_callback.cpp:
 src/sdk/pm/pm_callback.cpp:
     complete
     .text       start:0x0201c854 end:0x0201c884
+
+src/sdk/pm/pm_wait_vblank.cpp:
+    complete
+    .text       start:0x0201c884 end:0x0201c8b8
 
 src/sdk/pm/pmi_init.cpp:
     complete
@@ -869,6 +1021,14 @@ src/sdk/pm/pmi_send.cpp:
     complete
     .text       start:0x0201ca78 end:0x0201cafc
 
+src/sdk/pm/pm_utility_command.cpp:
+    complete
+    .text       start:0x0201cbc0 end:0x0201cea0
+
+src/sdk/pm/pm_amp_backlight.cpp:
+    complete
+    .text       start:0x0201cee0 end:0x0201cf9c
+
 src/sdk/pm/pm_apply_power.cpp:
     complete
     .text       start:0x0201d314 end:0x0201d514
@@ -876,6 +1036,10 @@ src/sdk/pm/pm_apply_power.cpp:
 src/sdk/pm/pm_lcd.cpp:
     complete
     .text       start:0x0201d514 end:0x0201d56c
+
+src/sdk/pm/pm_callback_list.cpp:
+    complete
+    .text       start:0x0201d56c end:0x0201d678
 
 src/sdk/pm/pm_post_exit.cpp:
     complete
@@ -885,13 +1049,53 @@ src/sdk/pm/pmlist_wrap.cpp:
     complete
     .text       start:0x0201d6dc end:0x0201d70c
 
+src/sdk/pm/pm_lcd_avoid_reset.cpp:
+    complete
+    .text       start:0x0201d70c end:0x0201d7b4
+
+src/sdk/pm/pm_disp_off_count.cpp:
+    complete
+    .text       start:0x0201d7b4 end:0x0201d7d0
+
+src/sdk/std/std_copy_string.cpp:
+    complete
+    .text       start:0x0201d7d0 end:0x0201d804
+
+src/sdk/std/std_get_string_length.cpp:
+    complete
+    .text       start:0x0201d96c end:0x0201d9f0
+
+src/sdk/std/std_compare_string.cpp:
+    complete
+    .text       start:0x0201d9f0 end:0x0201daa8
+
+src/sdk/std/std_sink.cpp:
+    complete
+    .text       start:0x0201db90 end:0x0201dc68
+
+src/sdk/std/std_tsprintf.cpp:
+    complete
+    .text       start:0x0201dc68 end:0x0201dc94
+
 src/sdk/std/std_snprintf.cpp:
     complete
     .text       start:0x0201dc94 end:0x0201dcbc
 
+src/sdk/wm/wm_init.cpp:
+    complete
+    .text       start:0x0201e94c end:0x0201e974
+
+src/sdk/wm/wm_finish.cpp:
+    complete
+    .text       start:0x0201ebd8 end:0x0201ec48
+
 src/sdk/wm/wm_set_callback.cpp:
     complete
     .text       start:0x0201ec48 end:0x0201ec60
+
+src/sdk/wm/wm_send_command.cpp:
+    complete
+    .text       start:0x0201ec60 end:0x0201eddc
 
 src/sdk/wm/wm_work.cpp:
     complete
@@ -901,21 +1105,77 @@ src/sdk/wm/wm_check.cpp:
     complete
     .text       start:0x0201edec end:0x0201eedc
 
+src/sdk/wm/wm_fifo_flag.cpp:
+    complete
+    .text       start:0x0201f2c4 end:0x0201f2e8
+
+src/sdk/wm/wm_aid.cpp:
+    complete
+    .text       start:0x0201f2e8 end:0x0201f348
+
+src/sdk/wm/wm_register_sleep.cpp:
+    complete
+    .text       start:0x0201f348 end:0x0201f37c
+
 src/sdk/wm/wm_sleep.cpp:
     complete
     .text       start:0x0201f37c end:0x0201f39c
+
+src/sdk/wm/wm_check_enable.cpp:
+    complete
+    .text       start:0x0201f39c end:0x0201f3c4
+
+src/sdk/wm/wm_mp_buffer_size.cpp:
+    complete
+    .text       start:0x0201f49c end:0x0201f69c
+
+src/sdk/wm/wm_dispersion.cpp:
+    complete
+    .text       start:0x0201f69c end:0x0201f7c8
+
+src/sdk/wm/wm_next_tgid.cpp:
+    complete
+    .text       start:0x0201f7c8 end:0x0201f838
 
 src/sdk/wm/wm_enable.cpp:
     complete
     .text       start:0x0201f838 end:0x0201f848
 
+src/sdk/wm/wm_command_simple.cpp:
+    complete
+    .text       start:0x0201f848 end:0x0201f9c0
+
+src/sdk/wm/wm_set_parent_parameter.cpp:
+    complete
+    .text       start:0x0201f9c0 end:0x0201faac
+
 src/sdk/wm/wm_validate_parent.cpp:
     complete
     .text       start:0x0201faac end:0x0201fafc
 
+src/sdk/wm/wm_start_parent_ex.cpp:
+    complete
+    .text       start:0x0201fafc end:0x0201fb74
+
 src/sdk/wm/wm_start_parent.cpp:
     complete
     .text       start:0x0201fb74 end:0x0201fb84
+
+src/sdk/wm/wm_end_parent.cpp:
+    complete
+    .text       start:0x0201fb84 end:0x0201fbc8
+
+src/sdk/wm/wm_end_scan.cpp:
+    complete
+    .text       start:0x0201fd2c end:0x0201fd70
+
+src/sdk/wm/wm_start_connect_ex.cpp:
+    complete
+    .text       start:0x0201fd70 end:0x0201fe50
+
+src/sdk/wm/wm_disconnect.cpp:
+    complete
+    .text       start:0x0201fe50 end:0x0201ff40
 
 src/sdk/wm/wm_startmp_internal.cpp:
     complete

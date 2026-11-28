@@ -52,12 +52,8 @@ public:
 // SDK and ROM functions the WirelessManager methods call.
 extern "C" {
 s32 func_02019968(void);                                          // thunk to a check outside the ARM9 image
-s32 WM_Reset(void *callback);
-s32 WM_PowerOff(void *callback);
-s32 WM_EndDataSharing(void *buf);
 s32 WM_EndMP(void *callback);
 s32 WM_SetGameInfo(void *callback, void *gameInfo, u16 unk2, u32 unk3, u16 unk4, u8 unk5);
-BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);
 void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_Reset(void *result);

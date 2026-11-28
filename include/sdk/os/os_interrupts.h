@@ -12,6 +12,8 @@ u32 OS_RestoreInterrupts_IrqAndFiq(u32 state);
 u32 OS_GetCpsrIrq(void);
 u32 OS_GetProcMode(void);
 void OS_SpinWaitCpuCycles(u32 cycles);
+void OS_SpinWaitSysCycles(u32 cycles);
+void OS_WaitVBlankIntr(void);
 }
 
 #endif

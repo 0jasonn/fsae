@@ -27,11 +27,27 @@ typedef struct OsHeapInfo {
 
 extern OsHeapInfo *data_02129b9c[9]; // heap info per arena (0x24 bytes)
 
+// Arena initialisation state (data_02129b94).
+typedef struct OsArenaState {
+    /* 00 */ u32 initialized;        // set once OS_InitArena has run
+    /* 04 */ u32 hasExtendedMemory;  // nonzero when the extended main memory arena is available
+} OsArenaState;
+
+extern OsArenaState data_02129b94;
+
+// Linker symbols: their addresses are the IRQ and system stack sizes (0x400 and 0).
+extern char SDK_IRQ_STACKSIZE[];
+extern char SDK_SYS_STACKSIZE[];
+
 extern "C" {
 void *OS_GetArenaHi(s32 id);
 void *OS_GetArenaLo(s32 id);
 void OS_SetArenaHi(s32 id, void *hi);
 void OS_SetArenaLo(s32 id, void *lo);
+void OS_InitArena(void);
+void OS_InitArenaEx(void);
+void *OS_GetInitArenaHi(s32 id);
+void *OS_GetInitArenaLo(s32 id); // not decompiled yet
 void *OS_AllocFromArenaLo(s32 id, u32 size, u32 align);
 OsHeapCell *DLAddFront(OsHeapCell *list, OsHeapCell *cell);
 OsHeapCell *DLExtract(OsHeapCell *list, OsHeapCell *cell);

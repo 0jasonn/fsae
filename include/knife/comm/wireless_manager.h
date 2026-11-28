@@ -85,6 +85,7 @@ public:
 
 extern "C" {
 BOOL Knife_Comm_WirelessManager_init(void *self, void *allocatorPtr, u32 dmaNo);
+BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name); // src/knife/comm/wm_result.cpp
 }
 
 #endif

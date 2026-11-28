@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sound/snd_seq.h"
+#include "sdk/snd/snd_work.h"
 
 // SndVoice_UpdateList: updates every voice of the global list once per frame. A voice that has finished and whose
 // track is not in the player status mask is released. Other voices advance their sub-list, get a new volume from three

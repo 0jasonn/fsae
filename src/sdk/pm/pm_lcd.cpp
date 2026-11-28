@@ -4,7 +4,6 @@
 #include "sdk/gx/engine_romhalf.h"
 #include "sdk/gx/gx.h"
 #include "sdk/pm/pm.h"
-#include "sdk/pm/pm_apply_power.h"
 
 // PM_SetLCDPower(on) (0x0201d514): anything but 1 means off; powering the LCD off first switches the display off when it is
 // on. The state is then applied through func_0201d314 (mode = on).

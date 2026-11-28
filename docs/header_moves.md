@@ -163,3 +163,7 @@ header of the module that defines each function (or include/engine/functions.h f
 | ui/widget/rect_item_api.h | ui/widget/rect_item.h |
 | ui/widget/rect_list_api.h | ui/widget/rect_list.h |
 | ui/widget/tile_map_api.h | ui/widget/tile_map.h |
+| sdk/fatfs/fatfs_wrap_api.h | sdk/fatfs/fatfs.h |
+| knife/comm/wirelessmgr_update_api.h | knife/comm/wirelessmanager.h |
+| sdk/pm/pmi_send.h, sdk/pm/pmi_send_api.h, sdk/pm/pm_callback_api.h, sdk/pm/pm_apply_power.h | sdk/pm/pm.h |
+| engine/sound/snd_inst_data.h | sdk/snd/snd_bank.h |

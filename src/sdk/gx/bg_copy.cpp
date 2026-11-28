@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/oam_ring.h"
 #include "sdk/gx/g2.h"
+#include "sdk/mi/mi_dma.h"
 
 void BgScr_CopyBG0(void *src, s32 offset, s32 size) {
     s32 dmaNo;

@@ -3,6 +3,7 @@
 #include "types.h"
 #include "knife/comm/comm_parentinfo.h"
 #include "knife/comm/wireless_manager.h"
+#include "sdk/wm/wm_system.h"
 
 // WirelessManager singleton (0x020909c8) and its initializer with the allocator (0x02090a1c, 0x26c bytes). The object
 // lives in bss at data_021770e0, its guard word is at data_021770bc + 4 (bit 0 set once constructed), and its

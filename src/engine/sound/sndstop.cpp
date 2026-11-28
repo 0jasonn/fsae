@@ -2,11 +2,9 @@
 #include "global.h"
 #include "engine/sound/sndlist.h"
 #include "engine/sound/sndstop.h"
+#include "sdk/snd/snd_command.h"
 
 extern "C" {
-u32 SND_GetCurrentCommandTag(void);
-void SND_FlushCommand(u32 mode);
-void SND_WaitForCommandProc(u32 tag);
 void SndChannel_ClearWord0(u32 mask);
 void SndChannel_Unlock(u32 mask);
 void SndChannel_ClearWord4(u32 index);

@@ -24,7 +24,6 @@ typedef struct SndEntry {
 extern "C" {
 extern "C" void SndChannel_ClearWord4(u32 index);
 extern "C" void LinkList_Remove(void *list, void *entry);
-extern "C" s32 SND_CalcChannelVolume(s32 value);
 }
 
 extern "C" void SndEntry_Start(SndEntry *entry);

@@ -1,7 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
-#include "sdk/pm/pmi_send.h"
+#include "sdk/pm/pm.h"
 #include "sdk/pxi/pxi_fifo.h"
 
 extern "C" void PMi_InitSend(void);
@@ -15,7 +15,7 @@ void PMi_InitSend(void) {
     }
     data_0212b920.ready = 1;
     data_0212b920.busy = 0;
-    data_0212b920.param34 = 0;
+    data_0212b920.callback = NULL;
     *(u32 *)0x02fff684 = 0;
     Engine_Relay0201a070();
     if (PXI_IsCallbackReady(8, 1) == 0) {

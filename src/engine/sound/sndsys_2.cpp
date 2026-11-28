@@ -1,17 +1,10 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sound/sndsys_api.h"
+#include "sdk/snd/snd_command.h"
 
 extern "C" {
-void SND_StopTimer(u32 mask, u32 a, u32 b, u32 c);
-u32 SND_GetCurrentCommandTag(void);
-void SND_FlushCommand(u32 mode);
-void SND_WaitForCommandProc(u32 tag);
-s32 SND_RecvCommandReply(u32 tag);
-s32 SND_IsFinishedCommandTag(u32 tag);
-void SND_ReadDriverInfo(void *buffer);
 s32 SND_ReadChannelInfo(void *table, s32 index, void *entry);
-void SNDi_SetSurroundDecay(s32 decay);
 void SndSlot_ReleaseAll(s32 arg);
 void func_020c0350(void);
 void func_020c1a38(s32 value);

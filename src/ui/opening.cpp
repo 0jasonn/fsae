@@ -2,6 +2,8 @@
 #include "engine/misc.h"
 #include "engine/display_state.h"
 #include "global.h"
+#include "sdk/gx/gx_vramcnt.h"
+#include "sdk/gx/vrambank_api.h"
 
 void PaletteFade_ClearBufferFlag(void) {
     paletteFade.bufferSelect = 0;

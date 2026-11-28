@@ -13,6 +13,8 @@ typedef struct OsAlarm {
 
 extern "C" {
 void OS_CreateAlarm(OsAlarm *alarm);
+void OSi_AlarmHandler(void);  // timer interrupt handler (hand-written ARM)
+void OSi_ArrangeTimer(void);  // not decompiled yet
 void func_0201918c(OsAlarm *alarm, u64 delay, void *callback, void *arg); // OS_SetAlarm (src/sdk/os/os_alarm_set.cpp)
 }
 

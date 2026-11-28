@@ -2,6 +2,7 @@
 #include "types.h"
 #include "engine/functions.h"
 #include "sdk/fs/fs_api.h"
+#include "sdk/std/std_string.h"
 
 s32 FSi_DecrementSjisPositionToSlash(const u8 *path, s32 pos) {
     do {

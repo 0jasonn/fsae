@@ -4,15 +4,7 @@
 #include "types.h"
 #include "sdk/os/os_sleep_api.h"
 #include "sdk/os/os_alarm.h"
-
-// Current-thread record: the thread pointer sits at +8 of data_0212991c and points at the record whose +0xb0 holds the
-// sleep alarm.
-typedef struct OsSleepOwner {
-    u8 unk_00[8];
-    void **thread;           // 0x08: pointer to the record pointer
-} OsSleepOwner;
-
-extern OsSleepOwner data_0212991c;
+#include "sdk/os/os_thread.h"
 
 
 // Sleeps for count units (scaled by 0x82ea and divided by 64 into a 64-bit tick count): the current thread's alarm at
@@ -25,7 +17,7 @@ void Os_SleepAlarm(u32 count) {
     u32 irq;
 
     OS_CreateAlarm(&alarm);
-    waiter = data_0212991c.thread[0];
+    waiter = *data_0212991c.curHolder;
     irq = OS_DisableInterrupts();
     ticks = ((u64)count * 0x82ea) >> 6;
     *(void **)((u8 *)waiter + 0xb0) = &alarm;

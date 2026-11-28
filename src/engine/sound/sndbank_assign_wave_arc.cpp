@@ -1,5 +1,5 @@
 #include "engine/entity.h"
-#include "engine/sound/snd_inst_data.h"
+#include "sdk/snd/snd_bank.h"
 #include "engine/sound/sndbank_wave_api.h"
 
 // Scan the bank's instrument data and assign the matching wave archive data.

@@ -2,6 +2,7 @@
 #include "engine/vblank.h"
 #include "global.h"
 #include "sdk/os/cp_context.h"
+#include "sdk/mi/mi_dma.h"
 
 // VBlankIntr (0x02049a94): per-frame VBlank work. Uploads the pending screen buffer, runs the resource, display and
 // character transfers, the subtask hook and the HBlank DMA restart, then raises the IRQ check flag in the shared block.

@@ -8,9 +8,6 @@
 
 #include "sdk/os/os_mutex.h"
 
-extern "C" void OSi_RemoveSpecifiedLinkFromQueue(OsThreadQueue *queue, OsThread *thread);
-extern "C" void OSi_RemoveThreadFromList(OsThread *thread);
-
 // Os_ExitCurrentThread() (0x02017a00): takes the current thread off its queues and mutexes, marks it as state 2, wakes the threads
 // joined to it and terminates the thread for good.
 void Os_ExitCurrentThread(void) {

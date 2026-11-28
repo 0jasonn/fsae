@@ -5,7 +5,7 @@
 #include "types.h"
 
 // Receive callback installed per tag: the tag, the 26-bit payload and the error flag.
-typedef void (*PxiFifoCallback)(u32 tag, u32 data, s32 err);
+typedef void (*PxiFifoCallbackFn)(u32 tag, u32 data, s32 err);
 
 extern "C" {
 void Engine_Relay0201a070(void); // tail call to func_0201a070 (src/sdk/pxi/engine_relay.cpp)
@@ -14,7 +14,8 @@ s32 PXI_SendWordByFifo(u32 tag, u32 data, u32 err);
 
 // Not decompiled yet.
 void func_0201a070(void);
-void PXI_SetFifoRecvCallback(u32 tag, PxiFifoCallback callback);
+void PXI_SetFifoRecvCallback(u32 tag, PxiFifoCallbackFn callback);
+void PXIi_HandlerRecvFifoNotEmpty(void);
 }
 
 #endif

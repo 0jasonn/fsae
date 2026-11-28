@@ -2,15 +2,13 @@
 #include "global.h"
 #include "ui/widget/menu.h"
 #include "sdk/pm/pm.h"
+#include "sdk/snd/snd_command.h"
 
 // Functions in this file (provisional names): the sound system state at data_02181964 (a byte at +0, the initialized
 // flag at +4, the in-init flag at +0xc, and two callback slots at +0x10 and +0x20).
 //   SndSys_Init (SndSys_Init), SndSys_Shutdown (SndSys_Shutdown)
 
 extern "C" {
-void SND_Init(void);
-s32 SND_RecvCommandReply(u32 tag);
-void SND_FlushCommand(u32 mode);
 void SndSys_ExitStopTimer(void);
 void func_020bfa68(void);
 void SndChannel_Reset(void);

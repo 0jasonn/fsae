@@ -9,8 +9,8 @@
 #include "sdk/os/os_interrupts.h"
 #include "sdk/os/dc_cache.h"
 #include "sdk/os/os_irq.h"
+#include "sdk/mi/mi_memory.h"
 typedef struct PL_WORK_ PlayerData;
-typedef void (*PMiCallback)(u32 result, u32 arg); // TwlSDK PM callback
 
 struct DISP_CTRL_;
 struct ENCNT_;
@@ -26,8 +26,6 @@ void *G2_GetBG2ScrPtr(void);
 void *G2_GetBG3ScrPtr(void);
 void *G2S_GetBG2ScrPtr(void);
 void *G2S_GetBG3ScrPtr(void);
-void *G2S_GetBG2CharPtr(void);
-void *G2S_GetBG3CharPtr(void);
 void G3C_Direct1(u16 value);
 u16 GetCRC16(u16 crc, const void *data, u32 size);
 void *GetCellsInRandomSet(u16 cell, u16 w, u16 h); // returns the matched or new table entry, NULL on failure
@@ -46,23 +44,18 @@ BOOL Knife_Message_selectionDialog_update_move(void *self);
 void Knife_Single_SinglePlay_ChangeFormationNoDirect(void *self, struct PL_WORK_ *player0, struct PL_WORK_ *player1);
 void nameEntryUIView_setRowCursor(void *self);
 void nameEntryUIView_entryCheck(void *self);
-void MIi_CpuCopy16(const void *src, void *dst, u32 size);
-void MIi_DmaCopy16(u32 dmaNo, const void *src, void *dst, u32 size, u32 flag);
-void MIi_DmaCopy32(u32 dmaNo, const void *src, void *dst, u32 size, u32 flag);
 void DmaCopy32Fast(u32 dmaNo, const void *src, void *dst, u32 size); // ARM9 external entry at 0x021893a0
+void DmaCopy32AsyncFast(u32 dmaNo, const void *src, void *dst, u32 size, void *callback, void *arg); // 0x021893f8
+void DmaWaitFast(u32 dmaNo); // ARM9 external entry at 0x0218947c
+void func_02189338(void);    // ARM9 external helper outside the linked image (called by MI_Init)
+void func_0218a5b8(void);    // ARM9 external helper outside the linked image (called by OS_InitArenaEx)
 void OS_GetOwnerInfo(void *info);
-void OSi_SleepAlarmCallback(void);
 void STD_CopyLString(void *dst, const void *src, s32 size);
 void Slider_setupItems(void *slider, s32 count);
 u8 *Str_CopyN(u8 *dst, const u8 *src, u32 count);
 void TaskSlot_Release(s32 value);
 void SndRef_setPan(void * volatile *ref, u32 trackMask, s32 pan);
 void Task_Dispatch(s32 flag);
-u32 WM_Disable(void *callback);
-u32 WM_Disconnect(void *callback, u16 aid);
-u32 WM_EndParent(void *callback);
-int WM_Init(void *sysWork, u32 dmaNo);
-u32 WM_PowerOn(void *callback);
 void WaitByLoop(u32 count);
 void bgTrans(void *bg);
 void disableBankForX_(void *bank);
@@ -80,7 +73,6 @@ void BgChar_CopyBG0(void *src, s32 offset, s32 size);
 void BgChar_CopyBG1(void *src, s32 offset, s32 size);
 void BgChar_CopyBG2(void *src, s32 offset, s32 size);
 void BgChar_CopyBG3(void *src, s32 offset, s32 size);
-u32 OSi_AllocateThreadId(void);
 void OSi_RunThreadExitHook(u32 arg);
 void func_0201c958(u32 tag, u32 data, s32 err);
 s32 func_02084634(u16 a);
@@ -117,7 +109,6 @@ s32 _s32_div_f(s32 a, s32 b); // runtime signed divide
 void AddRupee(Entity *e, s32 delta);
 void *EL_GetGlobalAdr(u32 offset, u32 size);
 void GX_DispOn(void);
-void GX_TrySetBankForLCDC(s32 bank);
 int GetBgBuffAdrs(int a);
 Entity *GetObjWork(void);
 Entity *GetSetWork(s32 a, s32 b, s32 c);
@@ -133,15 +124,7 @@ void Knife_Message_selectionDialog_initWithMsgScrn(void *a, const void *b);
 void Knife_Message_selectionDialog_setVisible(void *a, s32 b);
 BOOL Knife_Message_selectionDialog_update(void *a);
 u8 *Knife_Single_SinglePlay_GetInstance(void);
-void MI_CpuFill(void *dst, u32 value, u32 size);
-void MI_HBlankDmaCopy16(u32 dmaNo, const void *src, void *dst, u32 size);
-void MI_StopDma(u32 dmaNo);
-void MIi_CpuClear16(u16 value, void *dst, u32 size);
-void MIi_CpuClearFast(u32 value, void *dst, u32 size);
-void MIi_CpuCopy32(const void *src, void *dst, u32 size);
-void MIi_CpuCopyFast(const void *src, void *dst, u32 size);
 void MoveDir(Entity *e);
-void OSi_CpuClear32(u32 value, void *dst, u32 size);
 int ObjNearPlCheck(Entity *e, int a, int b);
 Entity *ObjPosCopy(Entity *src, Entity *dst);
 void PutObjWork(Entity *e);
@@ -169,12 +152,10 @@ void func_020bed14(void *obj);
 s32 func_020be66c(void *obj, u8 *flag);
 void func_020be798(void *obj);
 void KnifeApp_MessageRequest(void *self, s32 index, void *tokenizer, void *analyzer, s32 flag);
-s32 WM_GetDispersionScanPeriod(void);
 s32 WM_StartScanEx(void *callback, void *param);
 s32 WM_StartDataSharing(void *buf, s32 kind, u16 mask, u16 param, s32 flag);
 BOOL Knife_Message_KMsgFileReader_initialize(void *self, const void *data, u32 size);
 void subTaskSetBG3Offset_reset(void);
-void OS_EnableDTCM(void);
 void func_020855bc(Entity *e); // dsd name (thumb label 0x020855bc), takes the player entity
 BOOL GameState_UpdatePhase(void); // plain symbol, 0x02049454, no arguments
 u8 ClearKeyCheck(void);
@@ -190,7 +171,6 @@ void func_02015120(s32 a);
 void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
 void OS_Terminate(void);
 void func_0201d038(s32 a, s32 b, s32 c);
-void OS_WaitVBlankIntr(void);
 void func_02086168(Entity *e);
 void func_020841b0(Entity *e);
 s32 func_0218a5d4(void);
@@ -214,44 +194,23 @@ int func_0208b668(Entity *e);
 u8 ObjGetDir2(Entity *e, Entity *target, s32 a, s32 b); // 0x0204fdfc, unmangled
 void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
 s32 Entries_ProcessAll(void);
-void PMi_SendPxiData(u32 word);
-u32 OS_SaveContext(void *thread); // only caller: src/sdk/os/os_switch.cpp, which cannot include sdk/os/os_thread.h
-void *OS_SelectThread(void);
 void OS_GetOwnerInfoEx(void *info); // 0x020198e4, TwlSDK (unmangled)
-void MI_CpuCopy8(const void *src, void *dst, u32 size);
 void MI_CpuCopy(const void *src, void *dst, u32 size);
 void OS_GetLowEntropyData(void *buffer);
 void func_0200dea0(void *src, void *dst, u32 length); // thumb helper (hash of the entropy data)
-void MI_CpuFill8(void *dest, u8 data, u32 size); // TwlSDK
-s32 STD_GetStringLength(const char *s); // TwlSDK
 s32 func_020a44ac(u32 dmaNo, u32 src, void *dst, u32 length, void (*callback)(FSArchive *), FSArchive *arg, s32 async); // card ROM read
-void GXS_BeginLoadBGExtPltt(void);
-void GXS_LoadBGExtPltt(void *data, u32 offset, u32 size);
-void GXS_EndLoadBGExtPltt(void);
 u32 STD_ConvertStringSjisToUnicode(void *a, void *b, void *c, void *d, void *e);
 u32 STD_ConvertStringUnicodeToSjis(void *a, void *b, void *c, void *d, void *e);
-u32 OSi_DoTryLockByWord(void *word, u32 id, void *owner, u32 unused);
 void OSi_AllocateCardBus(void);
-// VRAM bank helpers.
-void resetBankForX_(void *bank);
-s32 PMi_SetSoundVolume(u32 volume);
-s32 PMi_SetLEDAsync(u32 value, PMiCallback callback, u32 arg);
-s32 PMi_SetAmp(u32 enabled);
-void PMi_WaitVBlank(void);
-void OS_SpinWaitSysCycles(u32 cycles);
 void STDi_GetUnicodeConversionTable(u32 *table0, u32 *table1);
 u32 FS_UnmountArchive(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_InitCommon(u32 a, u32 b, u32 c, u32 d);
-u32 OSi_DoLockByWord(u32 a, u32 b, u32 c, u32 d);
-u32 OSi_DoUnlockByWord(u32 a, u32 b, u32 c, u32 d);
-s32 WMi_EnableEx(void *callback, u32 flag);
-s32 WMi_StartParentEx(void *callback, u32 flag);
+s32 func_02019968(void); // src/sdk/os/os_runon_checks.cpp (thunk out of the ARM9 image); belongs in an sdk/os header
+s32 func_02019974(void); // src/sdk/os/os_runon_checks.cpp (thunk out of the ARM9 image); belongs in an sdk/os header
 void func_020bb080(void *self);
 void func_020bb148(void *self);
 void OamRing_Flush(void *entry);
 void OamRing_Clear(void *entry);
-void GX_LoadBGPltt(void *src, s32 offset, s32 size);
-void GXS_LoadBGPltt(void *src, s32 offset, s32 size);
 void func_020bf09c(void *out, void *data, void *obj);
 s32 func_020bb450(void *obj);
 }
@@ -480,9 +439,6 @@ void firepostSet(Entity *e, u16 x, u16 y);
 void flashcheck(Entity *e);
 void flowerDie(Entity *e);
 void flowerTamaSet(Entity *e);
-void func_02014c24(s32 a);
-void Vram_ResetMainBankA(void);
-void Vram_ResetMainBankB(void);
 void func_02026774(void);
 void ComInitState(void);
 u32 func_020280e0(void);

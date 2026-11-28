@@ -44,9 +44,7 @@ extern s32 OamRing_dmaNo;   // DMA channel for the OAM fill (0..3), -1 or above 
 extern void (*OamRing_copyFuncs[2])(const void *src, u32 dst, u32 size); // VramObj_Copy16, VramObj_Copy16Offset
 
 extern "C" {
-void GX_LoadOAM(const void *src, u32 offset, u32 size);
-void GXS_LoadOAM(const void *src, u32 offset, u32 size);
-void MIi_DmaFill32(u32 dmaNo, void *dst, u32 value, u32 size, s32 flag);
+// GX_LoadOAM / GXS_LoadOAM: sdk/gx/gx_load.h; MIi_DmaFill32: sdk/mi/mi_dma.h.
 
 // OamRing_ResetAll and OamRing_Alloc are declared in engine/functions.h. Real signatures of the others (not matched
 // yet): s32 OamRing_Alloc(OamRing *, u32 start, u32 count, u32 bank); s32 OamRing_Push(OamRing *, const OamRecord *,

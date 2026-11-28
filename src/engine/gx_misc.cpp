@@ -4,6 +4,7 @@
 #include "engine/gx_misc_api.h"
 #include "sdk/gx/gx.h"
 #include "sdk/gx/g2.h"
+#include "sdk/gx/gx_load.h"
 
 // gx_misc: functions Gx_setBrightnessPair (0x020bc3a8), Gx_setBlendAlpha (0x020bc3d4) and Gx_loadPalette (0x020bc3fc),
 // provisional names.

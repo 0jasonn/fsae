@@ -9,7 +9,6 @@
 
 // Knife::Comm::WirelessManager connected-AID and link level queries, 0x02092234 to 0x020922ec.
 
-extern "C" u16 WM_GetLinkLevel(void);
 extern "C" s32 MATH_CountPopulation(u32 value);
 
 // Parked in scratch/agentD/nonmatching/Knife_Comm_WirelessManager_getConnectedAIDs.cpp (not part of this unit).

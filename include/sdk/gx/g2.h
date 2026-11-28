@@ -13,6 +13,9 @@ void *G2_GetBG0CharPtr(void);
 void *G2S_GetBG0CharPtr(void);
 void *G2_GetBG1CharPtr(void);
 void *G2S_GetBG1CharPtr(void);
+void *G2S_GetBG2CharPtr(void); // 0 when BG2 is an extended / bitmap layer
+void *G2_GetBG3CharPtr(void);  // 0 when BG3 is an extended / bitmap layer
+void *G2S_GetBG3CharPtr(void);
 void G2x_SetBlendAlpha_(void *reg, s32 plane1, s32 plane2, s32 ev1, s32 ev2);
 }
 

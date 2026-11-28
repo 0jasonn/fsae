@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "engine/disp_reset.h"
 #include "engine/irq.h"
+#include "sdk/mi/mi_dma.h"
 
 extern u8 data_0212de50[];
 

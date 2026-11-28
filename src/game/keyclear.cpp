@@ -4,6 +4,7 @@
 #include "engine/irq.h"  // hblankDma: enabled flag, DMA destination = window register
 #include "game/keyclear_api.h"
 #include "engine/display_state.h"
+#include "sdk/mi/mi_dma.h"
 
 // Key and window module: keyClear clears the two key word tables and requests comm mode 5. StopEffectWindow and
 // InitCircleWindow drive the circle window through display flags and the window register mirror hblankDma.

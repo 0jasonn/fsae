@@ -1,15 +1,17 @@
 #ifndef SDK_OS_CARDBUS_LOCK_API_H
 #define SDK_OS_CARDBUS_LOCK_API_H
 
-// Functions defined in src/engine/cardbus_lock*.cpp.
+// Functions defined in src/sdk/os/cardbus_lock*.cpp: the card bus lock word at 0x02ffffe0 (TwlSDK OS_TryLockCard,
+// OS_UnlockCard) and OSi_DoTryLockByWord with FIQ left enabled (OS_TryLockByWord).
 
 #include "engine/entity.h"
+#include "sdk/os/os_lock.h"
 
 extern "C" {
-void CardBus_Acquire(u32 id);
-void CardBus_Release(u32 id);
+s32 CardBus_Acquire(u16 lockId);
+s32 CardBus_Release(u16 lockId);
 void OSi_FreeCardBus(void);
-u32 LockWord_TryLock(void *word, u32 id, void *owner);
+s32 LockWord_TryLock(u16 lockId, OsLockWord *lock, void (*control)(void));
 }
 
 #endif

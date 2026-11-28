@@ -84,10 +84,7 @@ public:
 extern "C" {
 // TwlSDK and engine calls used by the Knife file loader (dsd names where the library name is not known)
 void *func_0208e148(u32 size);
-void OS_CreateThread(void *thread, void (*entry)(void *), void *arg, void *stackTop, u32 stackSize, s32 priority);
-void OS_WakeupThreadDirect(void *thread);
-void OS_ExitThread(void);
-void OS_YieldThread(void);
+// OS_CreateThread, OS_WakeupThreadDirect, OS_ExitThread, OS_YieldThread: sdk/os/os_thread.h.
 s32 Obj_GetField70(void *thread);
 void Stub_EmptyC(void);
 Knife::File::Entity *Knife_File_Entity_ctor(Knife::File::Entity *self, const char *name);

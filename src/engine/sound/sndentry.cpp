@@ -2,6 +2,7 @@
 #include "global.h"
 #include "engine/sound/sndentry.h"
 #include "sdk/pm/pm.h"
+#include "sdk/snd/snd_util.h"
 
 // SndEntry_Start: starts the entry's timer and, the first time, hooks it into the post-exit callbacks.
 extern "C" void SndEntry_Start(SndEntry *entry);
@@ -46,10 +47,6 @@ void SndEntry_ApplyVolumes(SndEntry *entry, s32 volumeBase) {
 }
 
 extern "C" {
-void PmList_DeleteSecond(void *hook);
-u32 SND_GetCurrentCommandTag(void);
-void SND_FlushCommand(u32 mode);
-void SND_WaitForCommandProc(u32 tag);
 extern u8 data_02184788[]; // list that released entries are removed from
 extern u32 data_02184814;
 extern u32 data_0218485c;

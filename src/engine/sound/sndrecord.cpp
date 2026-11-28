@@ -2,12 +2,10 @@
 #include "global.h"
 #include "engine/sound/sndrecord.h"
 #include "engine/sound/sndlist.h"
+#include "sdk/snd/snd_command.h"
 
 extern "C" {
 void *SndHeap_ReserveLinear(void *heap, s32 size, s32 align);
-void SND_FlushCommand(u32 mode);
-void SND_WaitForCommandProc(u32 tag);
-u32 SND_GetCurrentCommandTag(void);
 }
 
 // SndList_Reset: resets the count of a list (it is SndList_Init with a count of zero).

@@ -1,13 +1,9 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sound/sndsys_api.h"
+#include "sdk/snd/snd_command.h"
 
 extern "C" {
-void SND_StopTimer(u32 timer, u32 unk1, u32 mask, u32 unk3);
-void SND_StartTimer(u32 timer, u32 unk1, u32 mask, u32 unk3);
-u32 SND_GetCurrentCommandTag(void);
-void SND_FlushCommand(u32 mode);
-void SND_WaitForCommandProc(u32 tag);
 void OSi_CpuClear32(u32 value, void *dst, u32 size);
 }
 

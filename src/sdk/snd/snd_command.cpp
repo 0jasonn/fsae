@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "types.h"
+#include "sdk/snd/snd_alarm.h"
 #include "sdk/snd/snd_command.h"
 
 // Command ids understood by the ARM7 sound driver (SND_COMMAND_*).
@@ -30,13 +31,6 @@ enum {
     SND_CMD_INVALIDATE_WAVE = 32,
     SND_CMD_READ_DRIVER_INFO = 33
 };
-
-// One queued command: link, command id and four arguments.
-typedef struct SndCommand {
-    void *next;
-    u32 command;
-    u32 arg[4];
-} SndCommand;
 
 extern u32 data_02129d90;
 
@@ -163,7 +157,7 @@ void SNDi_SetSurroundDecay(s32 decay) {
 
 // PushCommand_impl(command, arg0..arg3) (0x0201af7c): allocates a command (blocking), fills it and queues it.
 void PushCommand_impl(u32 command, u32 arg0, u32 arg1, u32 arg2, u32 arg3) {
-    SndCommand *cmd = (SndCommand *)SND_AllocCommand(1);
+    SndQueuedCommand *cmd = SND_AllocCommand(1);
 
     if (cmd == NULL) {
         return;

@@ -2,6 +2,7 @@
 #include "global.h"
 #include "engine/bg_load.h"
 #include "engine/bg_char.h"
+#include "sdk/mi/mi_dma.h"
 
 extern "C" void BgRect_ClipCopy(u8 *dstVram, BgLoadInfo *src, s32 srcX, s32 srcY, s32 dstX, s32 dstY, s32 dstWidth,
                                 s32 dstHeight, s32 width, s32 height);

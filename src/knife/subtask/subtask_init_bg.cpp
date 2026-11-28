@@ -4,6 +4,7 @@
 #include "global.h"
 #include "types.h"
 #include "knife/subtask/subtask_init_bg.h"
+#include "sdk/gx/gx_load.h"
 
 // TODO(headers): this declaration of ResChunk_OpenRACH2 differs from the shared one; see the header restructure report.
 extern "C" s32 ResChunk_OpenRACH2(void *entry, void *owner);

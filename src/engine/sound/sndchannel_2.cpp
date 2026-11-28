@@ -1,21 +1,12 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "ui/widget/menu.h"
+#include "sdk/snd/snd_command.h"
+#include "sdk/snd/snd_work.h"
 
 // Functions in this file (provisional names; the channel reference holds the channel index at +0 and the state words):
 //   SndChannelRef_Stop (SndChannelRef_Stop), SndChannelRef_SetVolume (SndChannelRef_SetVolume), SndChannelRef_SetPan (SndChannelRef_SetPan),
 //   SndChannelRef_Update (SndChannelRef_Update), SndChannelRef_Wait (SndChannelRef_Wait)
-
-extern "C" {
-void SND_StopTimer(u32 mask, u32 a, u32 b, u32 c);
-void SND_SetChannelVolume(u32 mask, s32 volume, s32 fade);
-void SND_SetChannelPan(u32 mask, s32 pan);
-s32 SND_IsFinishedCommandTag(u32 tag);
-u32 SND_GetChannelStatus(void);
-u32 SND_GetCurrentCommandTag(void);
-void SND_FlushCommand(u32 mode);
-void SND_WaitForCommandProc(u32 tag);
-}
 
 // A channel reference: the channel index, a flag, the active flag, a finished flag and the command tag.
 typedef struct SndChannelRef {

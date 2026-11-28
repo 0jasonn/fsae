@@ -26,9 +26,9 @@ BOOL OS_TryLockMutex(OsMutex *mutex);
 void OSi_EnqueueTail(OsThread *thread, OsMutex *mutex);
 void OSi_DequeueItem(OsThread *thread, OsMutex *mutex);
 
+OsMutex *OSi_RemoveMutexLinkFromQueue(OsMutexQueue *queue);
 // Not decompiled yet.
 void OSi_UnlockMutexCore(OsMutex *mutex, u32 type); // OSi_UnlockMutexCore (rename pending in scratch/agentC2/renames.txt)
-OsMutex *OSi_RemoveMutexLinkFromQueue(OsMutexQueue *queue);
 }
 
 #endif

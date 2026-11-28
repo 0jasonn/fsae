@@ -1,14 +1,13 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/sound/sndbank_api.h"
+#include "sdk/snd/snd_bank.h"
 
 extern "C" {
 u32 CRYPTOi__r_rand_set_default_init_flag(u32 value);
 void SND_InvalidateSeqData(void *obj, void *end);
 void SND_InvalidateBankData(void *obj, void *end);
-void SND_DestroyBank(void *obj);
 void SND_InvalidateWaveData(void *obj, void *end);
-void SND_DestroyWaveArc(void *obj);
 }
 
 extern "C" u32 SndTable_GetWord14(s32 index);
@@ -44,7 +43,7 @@ extern "C" void SndBank_ReleaseBank(void *obj, u32 size, void *data, s32 index);
 void SndBank_ReleaseBank(void *obj, u32 size, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
     SND_InvalidateBankData(obj, (u8 *)obj + size);
-    SND_DestroyBank(obj);
+    SND_DestroyBank((SndBank *)obj);
 }
 
 // SndBank_ReleaseWave: detaches obj, invalidates its wave data for size bytes and destroys the wave archive.
@@ -52,11 +51,11 @@ extern "C" void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index);
 void SndBank_ReleaseWave(void *obj, u32 size, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
     SND_InvalidateWaveData(obj, (u8 *)obj + size);
-    SND_DestroyWaveArc(obj);
+    SND_DestroyWaveArc((SndWaveArc *)obj);
 }
 
 // SndBank_ReleaseWaveArc: detaches obj and destroys its wave archive (the second argument is not used).
 void SndBank_ReleaseWaveArc(void *obj, s32 unused, void *data, s32 index) {
     SndBank_Detach(obj, data, index);
-    SND_DestroyWaveArc(obj);
+    SND_DestroyWaveArc((SndWaveArc *)obj);
 }

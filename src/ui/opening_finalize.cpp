@@ -1,6 +1,7 @@
 #include "engine/functions.h"
 #include "global.h"
 #include "engine/misc.h"
+#include "sdk/gx/vrambank_api.h"
 
 // Functions in this file (original names from the debug build): OpeningTaskFinalzie
 

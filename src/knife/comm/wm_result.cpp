@@ -6,7 +6,6 @@
 // WirelessManager::handleResult (0x02092758): handles the result of a WM call with code (the WM status) and flag. Codes
 // 3, 4 and 6 reset the manager (internalReset), code 8 moves the state to 15 with the timer cleared, code 1 resets only
 // when flag is set. Returns TRUE for any other code.
-extern "C" BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name);
 BOOL Knife_Comm_WirelessManager_handleResult(void *self, s32 code, s32 flag, const char *name) {
     WirelessManagerWork *wm;
 

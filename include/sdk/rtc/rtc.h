@@ -30,6 +30,7 @@ typedef struct RtcDate {
 } RtcDate;
 
 extern RtcWork data_02129d50;
+extern volatile s32 data_02129d54; // data_02129d50.busy, named on its own by dsd (MicWaitBusy reaches it directly)
 
 extern "C" {
 void RTC_Init(void);
@@ -42,10 +43,10 @@ s32 RTCi_ReadRawTimeAsync(void);
 s32 RTCi_WriteRawStatus2Async(void);
 s32 RtcexSendPxiCommand(u32 command);
 s32 RTC_GetDayOfWeek(RtcDate *date);
+void MicWaitBusy(void);
 
 // Not decompiled yet.
 void RtcCommonCallback(u32 tag, u32 data, s32 err);
-void MicWaitBusy(void);
 }
 
 #endif

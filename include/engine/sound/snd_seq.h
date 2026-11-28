@@ -39,10 +39,7 @@ typedef struct SndVoiceRef {
 } SndVoiceRef;
 
 extern "C" {
-s32 SND_IsFinishedCommandTag(u32 tag);
-u32 SND_GetPlayerStatus(void);
 void SndVoice_Release(SndVoice *voice);
-u32 SND_GetCurrentCommandTag(void);
 void SndVoice_Release(SndVoice *voice);
 void SndVoice_Reset(SndVoice *voice);
 void SndVoice_InsertGlobal(SndVoice *voice);

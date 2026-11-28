@@ -4,6 +4,7 @@
 #include "engine/entity.h"
 
 extern "C" {
+void WMi_RegisterSleepCallback(void);
 void WMi_UnregisterSleepCallback(void);
 void OSi_TerminateThunk(void);
 }

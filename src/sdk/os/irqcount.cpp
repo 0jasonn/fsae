@@ -3,15 +3,10 @@
 #include "types.h"
 #include "sdk/os/irqcount_api.h"
 #include "sdk/os/os_halt_api.h"
+#include "sdk/os/os_thread.h"
 
-// Interrupt-protected counter at data_0212991c (its count is at +4). Acquire takes a slot while the count is below
-// 0xffffffff, release gives one back while it is not zero; both return the old count.
-typedef struct IrqCountWork {
-    u32 unk_00;
-    u32 count;
-} IrqCountWork;
-
-extern IrqCountWork data_0212991c;
+// Scheduler disable count (data_0212991c.busy): Acquire takes a slot while the count is below 0xffffffff, release gives
+// one back while it is not zero; both return the old count.
 
 void Os_EnableIrqAndHalt(void) {
     OS_EnableInterrupts();
@@ -23,9 +18,9 @@ void Os_EnableIrqAndHalt(void) {
 u32 IrqCount_Acquire(void) {
     u32 state = OS_DisableInterrupts();
     u32 old;
-    if (data_0212991c.count < 0xffffffff) {
-        old = data_0212991c.count;
-        data_0212991c.count = old + 1;
+    if (data_0212991c.busy < 0xffffffff) {
+        old = data_0212991c.busy;
+        data_0212991c.busy = old + 1;
     }
     OS_RestoreInterrupts(state);
     return old;
@@ -34,9 +29,9 @@ u32 IrqCount_Acquire(void) {
 u32 IrqCount_Release(void) {
     u32 state = OS_DisableInterrupts();
     u32 old = 0;
-    if (data_0212991c.count != 0) {
-        old = data_0212991c.count;
-        data_0212991c.count = old - 1;
+    if (data_0212991c.busy != 0) {
+        old = data_0212991c.busy;
+        data_0212991c.busy = old - 1;
     }
     OS_RestoreInterrupts(state);
     return old;

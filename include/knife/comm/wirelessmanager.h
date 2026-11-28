@@ -43,7 +43,6 @@ BOOL Knife_Comm_WirelessManager_connect(void *self, const void *parent, u32 size
 u32 WM_SetEntry(void *callback, BOOL flag);
 s32 WM_StartMP(void *callback, void *recvBuf, u16 recvSize, void *sendBuf, u16 sendSize, s32 flag);
 void Knife_Comm_WirelessManager_callback_WM_StartMP(void *result);
-s32 WM_EndDataSharing(void *buf);
 s32 WM_EndMP(void *callback);
 s32 WM_SetGameInfo(void *callback, void *gameInfo, u16 unk2, u32 unk3, u16 unk4, u8 unk5);
 s32 Knife_Comm_WirelessManager_getLinkLevel(void *self);
@@ -53,8 +52,6 @@ void Knife_Comm_WirelessManager_update_child(void *self);
 s32 WM_StepDataSharing(void *buf, void *sendBuf, void *recvBuf);
 void *WM_GetSharedDataAddress(void *buf, void *table, u16 index);
 s32 func_02019968(void);
-s32 WM_PowerOff(void *callback);
-s32 WM_Reset(void *callback);
 void Knife_Comm_WirelessManager_callback_WM_EnableStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_PowerOffStep(void *result);
 void Knife_Comm_WirelessManager_callback_WM_Reset(void *result);

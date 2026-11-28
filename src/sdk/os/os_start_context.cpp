@@ -4,10 +4,6 @@
 #include "sdk/os/os_thread.h"
 #include "sdk/os/os_thread_exit_api.h"
 
-extern "C" void OS_InitContext(OsThread *context, void (*func)(void), u32 stack);
-extern "C" void OS_LoadContext(OsThread *context);
-extern "C" void Os_StartContext(OsThread *context, u32 arg);
-
 // Os_StartContext(context, arg) (0x02017970): when the scheduler block has an initial stack, sets the context up on it to
 // run OSi_RunThreadExitHook with arg (flag 0x80 in the first word, arg at +4, state 1) and loads it. Without a stack,
 // calls the hook directly.

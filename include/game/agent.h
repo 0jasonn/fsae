@@ -16,16 +16,13 @@ int areacheck2(Entity *e);
 void em16_getdir(Entity *e);
 void kamen_init(Entity *e);
 void em21_buttobi(Entity *e);
-s32 WM_CheckInitialized(void);
 void WM_DataSharingReceiveSlot(void *base, u32 index, void *src);
 
 // Engine / Knife helpers called by these units (missing from engine/functions.h).
 void func_02084828(Entity *e);
 void *WmGetSharedDataAddress(void *base, u32 mask, void *shared, u32 index);
 u32 MATH_CountPopulation(u32 value);
-u32 WMi_SendCommandDirect(u16 *data, u32 count);
 void WM_SetPortCallback(u32 port, u32 a, u32 b);
-u32 WMi_SendCommand(u32 a, u32 b, ...);
 }
 
 // C++ functions defined in this directory (mangled original names).
