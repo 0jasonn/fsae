@@ -9,7 +9,8 @@ extern u16 data_02129c98[9];    // VRAM exclusive owner (lock ID) of each bank
 
 extern "C" {
 void OSi_InitVramExclusive(void);
-u32 OSi_TryLockVram(u16 banks, u16 lockId); // not decompiled yet; 0 when a bank is held by another lock ID
+u32 OSi_TryLockVram(u16 banks, u16 lockId); // 0 when a bank is held by another lock ID
+void OSi_UnlockVram(u16 banks, u16 lockId);
 }
 
 #endif

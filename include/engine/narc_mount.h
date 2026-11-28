@@ -21,8 +21,6 @@ typedef struct NarcArchive {
 } NarcArchive;
 
 extern "C" {
-s32 func_0200fd08(NarcArchive *archive, const u8 *name, u32 length); // FS_RegisterArchiveName
-s32 FS_LoadArchive(NarcArchive *archive, u32 base, u32 fat, u32 fatSize, u32 fnt, u32 fntSize, void *readFunc, void *writeFunc);
 s32 NarcArchive_Mount(NarcArchive *archive, const u8 *name, u8 *narc);
 }
 

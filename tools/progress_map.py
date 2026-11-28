@@ -83,11 +83,13 @@ def svg(funcs, height, s, interactive):
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {height + top + 4:.0f}" width="{WIDTH}" '
              f'font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">',
              f'<rect width="100%" height="100%" fill="#0d1117" rx="6"/>']
-    dec, game = s["decompiled"], s["game"]
-    pct_f = 100 * dec["functions"] / game["functions"]
-    pct_b = 100 * dec["bytes"] / game["bytes"]
+    # The headline counts against every ARM9 function (a fixed total). Undecompiled TwlSDK functions used to be left out
+    # of the denominator, so it grew each time an SDK function was decompiled.
+    dec, tot = s["decompiled"], s["total"]
+    pct_f = 100 * dec["functions"] / tot["functions"]
+    pct_b = 100 * dec["bytes"] / tot["bytes"]
     parts.append(f'<text x="12" y="24" fill="#e6edf3" font-size="17" font-weight="600">Four Swords Anniversary Edition '
-                 f'(EUR) ARM9: {dec["functions"]} / {game["functions"]} game functions decompiled '
+                 f'(EUR) ARM9: {dec["functions"]} / {tot["functions"]} functions decompiled '
                  f'({pct_f:.1f}%, {pct_b:.1f}% of code)</text>')
     lx = 12
     for state, color in COLORS.items():
@@ -164,8 +166,8 @@ def main():
     page = PAGE.replace("__SVG__", svg(funcs, height, s, True)).replace("__DATA__", json.dumps(data, separators=(",", ":")))
     (DOCS / "progress.html").write_text(page, encoding="utf-8", newline="\n")
     (DOCS / "progress.json").write_text(json.dumps(s, indent=1) + "\n", encoding="utf-8", newline="\n")
-    d, g = s["decompiled"], s["game"]
-    print(f"{d['functions']}/{g['functions']} game functions, {100 * d['bytes'] / g['bytes']:.1f}% of game code")
+    d, t = s["decompiled"], s["total"]
+    print(f"{d['functions']}/{t['functions']} ARM9 functions, {100 * d['bytes'] / t['bytes']:.1f}% of ARM9 code")
 
 
 if __name__ == "__main__":

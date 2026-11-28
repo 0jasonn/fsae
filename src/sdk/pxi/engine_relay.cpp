@@ -3,7 +3,7 @@
 #include "types.h"
 #include "sdk/pxi/pxi_fifo.h"
 
-// Tail call to func_0201a070 (not matched yet; keeps its dsd name). Every caller passes no arguments.
+// Tail call to PXI_Init (src/sdk/pxi/pxi_init.cpp). Every caller passes no arguments.
 void Engine_Relay0201a070(void) {
-    func_0201a070();
+    PXI_Init();
 }

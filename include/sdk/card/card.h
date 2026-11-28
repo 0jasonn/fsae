@@ -38,6 +38,7 @@ void CARD_TerminateForPulledOut(void);
 void CARDi_WaitAsyncThunk(void);
 void CARDi_SetOwnSignature(const void *src);
 void CARD_InitPulledOutCallback(void);
+void CARD_Init(void);
 void CARDi_PulledOutCallback(u32 arg0, u32 arg1, s32 arg2);
 s32 CARD_GetPulledOutFlag(void);
 }

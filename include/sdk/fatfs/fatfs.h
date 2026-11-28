@@ -131,6 +131,7 @@ void FATFSi_InitRequest(void);
 u32 FATFSi_GetThreadHandle(void);
 void FATFSi_SetRequestBuffer(FatfsRequest *request, void (*callback)(FatfsRequest *), u32 argument);
 void FATFSi_NotifyRequestCompletion(FatfsRequest *request);
+void FATFS_RegisterResultBuffer(FatfsWaiter *waiter, s32 enable);
 void FATFSi_SendToPXI(FatfsRequest *request);
 void FATFSi_PXICallback(u32 tag, u32 data, s32 err);
 void Fatfs_SendToPxi(FatfsRequest *request); // tail call to FATFSi_SendToPXI (src/sdk/fatfs/fatfs_wrap.cpp)

@@ -16,7 +16,7 @@ s32 FSi_ROMFAT_GetPath(FSArchive *arc, FSFile *file, void *id, void *buffer, u32
     return result;
 }
 
-s32 FSi_ROMFAT_OpenFileFast(FSArchive *arc, FSFile *file, u32 id) {
+s32 FSi_ROMFAT_OpenFileFast(FSArchive *arc, FSFile *file, u32 id, u32 mode) {
     s32 result;
 
     file->command.b.word = id;

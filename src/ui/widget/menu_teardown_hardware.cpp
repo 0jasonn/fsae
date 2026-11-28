@@ -20,7 +20,7 @@ extern "C" void Menu_teardownHardware(MenuWork *menu) {
     if (menu->sub.flag622 != 0) {
         GX_SetDefaultDMA(-1);
     }
-    func_02012c40();
+    GX_Init();
     if (menu->sub.flag623 != 0) {
         GX_VBlankIntr(1);
     }

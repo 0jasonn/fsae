@@ -17,6 +17,18 @@
     /* Linker-defined stack sizes that the OS arena code loads from literal pools. */
     SDK_IRQ_STACKSIZE = 0x400;
     SDK_SYS_STACKSIZE = 0;
+    /* Helpers outside the linked image called by FS_InitFatDriver, GX_Init (NDMA fill) and OSi_InitPrevTitleId. */
+    func_02188f10 = 0x02188f10;
+    func_02189350 = 0x02189350;
+    func_0218a620 = 0x0218a620;
+    /* PM and FS helpers outside the linked image (PM_ForceToPowerOff, PMi_PreSleepForDma, FSi_ReadSRLCallback, SRL loader). */
+    func_021894e4 = 0x021894e4;
+    func_0218a6b0 = 0x0218a6b0;
+    func_0218b768 = 0x0218b768;
+    func_0218ac04 = 0x0218ac04;
+    func_0218b0e4 = 0x0218b0e4;
+    data_021bfb04 = 0x021bfb04;
+    data_021bfb08 = 0x021bfb08;
     /* Provisional names for the empty range table's coincident boundaries. */
     RangeTableStart = 0x020c8cfc;
     RangeTableEnd = 0x020c8cfc;

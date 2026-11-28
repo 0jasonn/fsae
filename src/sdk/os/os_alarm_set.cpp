@@ -1,9 +1,9 @@
 #include "engine/functions.h"
 #include "types.h"
 #include "sdk/os/os_alarm.h"
+#include "sdk/os/os_tick.h"
+#include "sdk/os/os_alarm.h"
 
-extern "C" u64 OS_GetTick(void);
-extern "C" void OSi_InsertAlarm(void *alarm, u64 fire);
 
 // Provisional interpretation: this arms an opaque alarm record. At 0x0201918c,
 // +0 is checked and then receives the handler, +4 receives its argument, and

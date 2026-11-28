@@ -31,7 +31,7 @@ extern "C" void Menu_setupHardware(void *self, const void *param) {
     }
     vblank = GX_VBlankIntr(1);
     menu->sub.flag623 = (vblank != 0) ? 1 : 0;
-    func_02012c40();
+    GX_Init();
     if (Ctrl_isSlotGroup() == 0) {
         GX_SetDefaultDMA(3);
         menu->sub.flag622 = 1;

@@ -9,7 +9,10 @@
 #include "sdk/os/os_interrupts.h"
 #include "sdk/os/dc_cache.h"
 #include "sdk/os/os_irq.h"
+#include "sdk/os/os_terminate.h"
+#include "sdk/os/os_owner_info.h"
 #include "sdk/mi/mi_memory.h"
+#include "sdk/gx/gx.h"
 typedef struct PL_WORK_ PlayerData;
 
 struct DISP_CTRL_;
@@ -49,8 +52,9 @@ void DmaCopy32AsyncFast(u32 dmaNo, const void *src, void *dst, u32 size, void *c
 void DmaWaitFast(u32 dmaNo); // ARM9 external entry at 0x0218947c
 void func_02189338(void);    // ARM9 external helper outside the linked image (called by MI_Init)
 void func_0218a5b8(void);    // ARM9 external helper outside the linked image (called by OS_InitArenaEx)
-void OS_GetOwnerInfo(void *info);
-void STD_CopyLString(void *dst, const void *src, s32 size);
+void func_02188f10(void);    // ARM9 external helper outside the linked image (called by FS_InitFatDriver)
+u64 func_0218a620(u64 a, u64 b); // ARM9 external helper outside the linked image (called by OSi_InitPrevTitleId)
+void func_02189350(u32 channel, void *dest, u32 data, u32 size); // ARM9 external NDMA fill, outside the linked image (called by GX_Init)
 void Slider_setupItems(void *slider, s32 count);
 u8 *Str_CopyN(u8 *dst, const u8 *src, u32 count);
 void TaskSlot_Release(s32 value);
@@ -58,7 +62,6 @@ void SndRef_setPan(void * volatile *ref, u32 trackMask, s32 pan);
 void Task_Dispatch(s32 flag);
 void WaitByLoop(u32 count);
 void bgTrans(void *bg);
-void disableBankForX_(void *bank);
 s32 func_02005798(u32 a, u32 b, u32 c, u32 d);
 s32 RingBuf_Printf(const char *fmt, ...);
 const u8 *func_0200b24c(const u8 *src, u32 *value);
@@ -141,7 +144,6 @@ int func_02085764(Entity *a, Entity *b, s32 c, s32 d); // 0x02085764, thumb, ret
 int func_020899bc(u16 value, const u8 *table);
 int func_02089e28(Entity *e, int kind);
 void MI_UncompressLZ8(const void *src, void *dst);
-void GX_SetDefaultDMA(s32 dma);
 s32 Knife_Message_TextRenderer_getBgMode(s32 isBg);                  // 0x020a58d0
 s32 func_020c60b8(void *screen, s32 a, s32 b, s32 c, s32 d);
 void func_020c6198(u16 *dst, s32 width, s32 height, s32 pitch, s32 tile, s32 palette);
@@ -164,13 +166,6 @@ void func_0208af0c(Entity *e);               // plain dsd name, 0x0208af0c
 int func_020862a8(Entity *e);
 void func_02089988(void *player);
 void func_0208365c(s32 mode, u16 cell, u16 layer);
-void func_02012c40(void);
-void func_02014af4(s32 a);
-void func_020148f0(s32 a);
-void func_02015120(s32 a);
-void GX_SetGraphicsMode(u32 a, u32 b, u32 c);
-void OS_Terminate(void);
-void func_0201d038(s32 a, s32 b, s32 c);
 void func_02086168(Entity *e);
 void func_020841b0(Entity *e);
 s32 func_0218a5d4(void);
@@ -194,16 +189,14 @@ int func_0208b668(Entity *e);
 u8 ObjGetDir2(Entity *e, Entity *target, s32 a, s32 b); // 0x0204fdfc, unmangled
 void func_0208a224(Entity *e, u32 a, s32 x, s32 y); // thumb, 0x0208a224
 s32 Entries_ProcessAll(void);
-void OS_GetOwnerInfoEx(void *info); // 0x020198e4, TwlSDK (unmangled)
-void MI_CpuCopy(const void *src, void *dst, u32 size);
 void OS_GetLowEntropyData(void *buffer);
+s32 func_02005470(void *arg); // thumb; the argument is not used
 void func_0200dea0(void *src, void *dst, u32 length); // thumb helper (hash of the entropy data)
 s32 func_020a44ac(u32 dmaNo, u32 src, void *dst, u32 length, void (*callback)(FSArchive *), FSArchive *arg, s32 async); // card ROM read
 u32 STD_ConvertStringSjisToUnicode(void *a, void *b, void *c, void *d, void *e);
 u32 STD_ConvertStringUnicodeToSjis(void *a, void *b, void *c, void *d, void *e);
 void OSi_AllocateCardBus(void);
 void STDi_GetUnicodeConversionTable(u32 *table0, u32 *table1);
-u32 FS_UnmountArchive(u32 a, u32 b, u32 c, u32 d);
 u32 OSi_InitCommon(u32 a, u32 b, u32 c, u32 d);
 s32 func_02019968(void); // src/sdk/os/os_runon_checks.cpp (thunk out of the ARM9 image); belongs in an sdk/os header
 s32 func_02019974(void); // src/sdk/os/os_runon_checks.cpp (thunk out of the ARM9 image); belongs in an sdk/os header

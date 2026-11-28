@@ -29,6 +29,51 @@ typedef struct RtcDate {
     s32 day;
 } RtcDate;
 
+// Raw date as the ARM7 leaves it in the shared area at 0x02fffde8 (BCD digits).
+typedef struct RtcRawDate {
+    u32 year : 8;   // 0
+    u32 month : 5;  // 8
+    u32 unk_0d : 3; // 13
+    u32 day : 6;    // 16
+    u32 unk_16 : 2; // 22
+    u32 week : 3;   // 24
+    u32 unk_1b : 5; // 27
+} RtcRawDate;
+
+// Raw time at 0x02fffdec: the current time (time view) or an alarm setting (alarm view, with an enable bit per field).
+typedef union RtcRawTime {
+    struct {
+        u32 hour : 6;
+        u32 unk_06 : 2;
+        u32 minute : 7;
+        u32 unk_0f : 1;
+        u32 second : 7;
+        u32 unk_17 : 9;
+    } time;
+    struct {
+        u32 week : 3;
+        u32 unk_03 : 4;
+        u32 weekEnable : 1;
+        u32 hour : 6;
+        u32 unk_0e : 1;
+        u32 hourEnable : 1;
+        u32 minute : 7;
+        u32 minuteEnable : 1;
+        u32 unk_18 : 8;
+    } alarm;
+} RtcRawTime;
+
+// Raw status register 2 at 0x02fffdea.
+typedef struct RtcRawStatus {
+    u16 intrMode : 4;
+    u16 unk_04 : 2;
+    u16 flag6 : 1;
+    u16 unk_07 : 9;
+} RtcRawStatus;
+
+#define RTC_RAW_DATE (*(RtcRawDate *)0x02fffde8)
+#define RTC_RAW_TIME (*(RtcRawTime *)0x02fffdec)
+
 extern RtcWork data_02129d50;
 extern volatile s32 data_02129d54; // data_02129d50.busy, named on its own by dsd (MicWaitBusy reaches it directly)
 

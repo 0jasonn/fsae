@@ -8,5 +8,5 @@
 
 
 u16 Engine_ReadRomHalf(void) {
-    return data_020dfb7c;
+    return data_020dfb7c.isDispOn;
 }

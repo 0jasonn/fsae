@@ -36,11 +36,11 @@ s32 NarcArchive_Mount(NarcArchive *archive, const u8 *name, u8 *narc) {
     archive->narc = narc;
     archive->fat = (u8 *)fat;
     archive->image = (u8 *)image;
-    if (func_0200fd08(archive, name, Str_Length(name)) == 0) {
+    if (func_0200fd08(&archive->arc, (const char *)name, Str_Length(name)) == 0) {
         return 0;
     }
     zero = 0;
-    if (FS_LoadArchive(archive, (u32)image, (u32)fat + 0xc - (u32)image, fat->size - 0xc, (u32)fnt + 8 - (u32)image, fnt->size - 8, (void *)zero, (void *)zero) != 0) {
+    if (FS_LoadArchive(&archive->arc, (u32)image, (u32)fat + 0xc - (u32)image, fat->size - 0xc, (u32)fnt + 8 - (u32)image, fnt->size - 8, (FSArchiveAccessFunc)zero, (FSArchiveAccessFunc)zero) != 0) {
         return 1;
     }
     func_0200fe08(archive);

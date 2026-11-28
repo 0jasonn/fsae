@@ -45,7 +45,7 @@ void PowerManager::update(void) {
     if (view->lidClosed != 0) {
         ret = Knife_Comm_WirelessManager_getState(func_020909c8());
         if (sleepLockCount == 0 && ret == 0) {
-            func_0201d038(0xc, 0x8000, 0);
+            PM_GoSleepMode(0xc, 0x8000, 0);
         }
     }
     if (view->lidJustOpened != 0) {

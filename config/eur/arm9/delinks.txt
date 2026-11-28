@@ -313,9 +313,17 @@ src/sdk/fatfs/fatfs_wrap.cpp:
     complete
     .text       start:0x0200e214 end:0x0200e220
 
+src/sdk/fatfs/fatfs_request_wait.cpp:
+    complete
+    .text       start:0x0200e32c end:0x0200e3e0
+
 src/sdk/fatfs/fatfs_sync.cpp:
     complete
     .text       start:0x0200e3e0 end:0x0200e42c
+
+src/sdk/fatfs/fatfs_waiter.cpp:
+    complete
+    .text       start:0x0200e42c end:0x0200e4b4
 
 src/sdk/fatfs/fatfs_string.cpp:
     complete
@@ -341,6 +349,18 @@ src/sdk/os/cp_context.cpp:
     complete
     .text       start:0x0200eec8 end:0x0200ef44
 
+src/sdk/fs/fs_command_end.cpp:
+    complete
+    .text       start:0x0200ef44 end:0x0200f068
+
+src/sdk/fs/fs_command_run.cpp:
+    complete
+    .text       start:0x0200f594 end:0x0200f69c
+
+src/sdk/fs/fs_current_dir.cpp:
+    complete
+    .text       start:0x0200f7d4 end:0x0200f9fc
+
 src/sdk/fs/fs_archive_init.cpp:
     complete
     .text       start:0x0200fce4 end:0x0200fd08
@@ -348,6 +368,10 @@ src/sdk/fs/fs_archive_init.cpp:
 src/sdk/fs/fs_archive_mount.cpp:
     complete
     .text       start:0x0200feb4 end:0x0200ff0c
+
+src/sdk/fs/fs_archive_unmount.cpp:
+    complete
+    .text       start:0x0200ff0c end:0x020101c8
 
 src/sdk/fs/fs_sjis_decrement.cpp:
     complete
@@ -360,6 +384,26 @@ src/sdk/fs/fs_sjis_slash.cpp:
 src/sdk/fs/fs_path_ops.cpp:
     complete
     .text       start:0x02010300 end:0x02010534
+
+src/sdk/fs/fs_complement_directory.cpp:
+    complete
+    .text       start:0x020105b4 end:0x020106d8
+
+src/sdk/fs/fs_create_directory_auto.cpp:
+    complete
+    .text       start:0x020106d8 end:0x02010728
+
+src/sdk/fs/fs_delete_directory_auto.cpp:
+    complete
+    .text       start:0x02010728 end:0x02010910
+
+src/sdk/fs/fs_archive_resource.cpp:
+    complete
+    .text       start:0x02010910 end:0x02010970
+
+src/sdk/fs/fs_space.cpp:
+    complete
+    .text       start:0x02010a28 end:0x02010aac
 
 src/sdk/fs/fs_file_length.cpp:
     complete
@@ -381,9 +425,17 @@ src/sdk/fs/fs_file_async.cpp:
     complete
     .text       start:0x02010cdc end:0x02010dcc
 
+src/sdk/fs/fs_dir_read.cpp:
+    complete
+    .text       start:0x02010dcc end:0x02010e50
+
 src/sdk/fs/fs_dir_close.cpp:
     complete
     .text       start:0x02010e50 end:0x02010e78
+
+src/sdk/fs/fs_dir_read_2.cpp:
+    complete
+    .text       start:0x02010e78 end:0x02010edc
 
 src/sdk/fs/fs_find_dir.cpp:
     complete
@@ -392,6 +444,10 @@ src/sdk/fs/fs_find_dir.cpp:
 src/sdk/fs/fs_wrap.cpp:
     complete
     .text       start:0x02010eec end:0x02010ef8
+
+src/sdk/fs/fs_unicode_get.cpp:
+    complete
+    .text       start:0x02010ef8 end:0x02010fdc
 
 src/sdk/fs/fs_unicode_buffer.cpp:
     complete
@@ -404,6 +460,10 @@ src/sdk/fs/stdconv_wrap.cpp:
 src/sdk/fs/fs_srl_read.cpp:
     complete
     .text       start:0x02011094 end:0x020110cc
+
+src/sdk/fs/fs_read_table.cpp:
+    complete
+    .text       start:0x020110cc end:0x0201112c
 
 src/sdk/fs/fs_dir_seek.cpp:
     complete
@@ -421,13 +481,25 @@ src/sdk/fs/fs_romfat_rw.cpp:
     complete
     .text       start:0x02011a94 end:0x02011b1c
 
+src/sdk/fs/fs_romfat_dir.cpp:
+    complete
+    .text       start:0x02011b1c end:0x02011c9c
+
 src/sdk/fs/fs_romfat_open.cpp:
     complete
     .text       start:0x02011d28 end:0x02011db4
 
+src/sdk/fs/fs_romfat_open_file.cpp:
+    complete
+    .text       start:0x02011db4 end:0x02011e08
+
 src/sdk/fs/fs_romfat_state.cpp:
     complete
     .text       start:0x02011e08 end:0x02011f08
+
+src/sdk/fs/fs_romfat_open_path.cpp:
+    complete
+    .text       start:0x02011f08 end:0x02011f58
 
 src/sdk/fs/fs_romfat_query.cpp:
     complete
@@ -441,9 +513,21 @@ src/sdk/fs/fs_romfat_caps.cpp:
     complete
     .text       start:0x0201202c end:0x02012038
 
+src/sdk/fs/fs_romfat_open_dir.cpp:
+    complete
+    .text       start:0x02012038 end:0x02012090
+
 src/sdk/fs/fs_romfat_dir_close.cpp:
     complete
     .text       start:0x02012090 end:0x020120a8
+
+src/sdk/fs/fs_romfat_path_info.cpp:
+    complete
+    .text       start:0x020120a8 end:0x020121d4
+
+src/sdk/fs/fs_srl_callback.cpp:
+    complete
+    .text       start:0x02012224 end:0x02012250
 
 src/sdk/fs/ret_code_alt.cpp:
     complete
@@ -453,6 +537,10 @@ src/sdk/fs/fs_mem_callback.cpp:
     complete
     .text       start:0x020123bc end:0x02012410
 
+src/sdk/fs/fs_load_archive.cpp:
+    complete
+    .text       start:0x02012410 end:0x0201247c
+
 src/sdk/fs/fs_wrap_2.cpp:
     complete
     .text       start:0x0201247c end:0x02012488
@@ -461,9 +549,17 @@ src/sdk/fs/fs_rom.cpp:
     complete
     .text       start:0x02012488 end:0x02012508
 
+src/sdk/fs/fs_seek_proc.cpp:
+    complete
+    .text       start:0x02012508 end:0x0201256c
+
 src/sdk/fs/fs_archive_proc.cpp:
     complete
     .text       start:0x0201256c end:0x0201258c
+
+src/sdk/fs/fs_archive_tables.cpp:
+    complete
+    .text       start:0x0201258c end:0x02012750
 
 src/sdk/fs/fs_archive_base.cpp:
     complete
@@ -472,6 +568,10 @@ src/sdk/fs/fs_archive_base.cpp:
 src/sdk/fs/obj_get24.cpp:
     complete
     .text       start:0x02012780 end:0x02012788
+
+src/sdk/fs/fs_rom_offset.cpp:
+    complete
+    .text       start:0x02012788 end:0x020127a4
 
 src/sdk/fs/fs_rom_callback.cpp:
     complete
@@ -485,9 +585,17 @@ src/sdk/fs/ret_const.cpp:
     complete
     .text       start:0x020128c0 end:0x020128e4
 
+src/sdk/fs/fs_rom_init.cpp:
+    complete
+    .text       start:0x020128e4 end:0x02012a38
+
 src/sdk/fs/fs_init.cpp:
     complete
     .text       start:0x02012a38 end:0x02012a90
+
+src/sdk/fs/fs_init_fat_driver.cpp:
+    complete
+    .text       start:0x02012a90 end:0x02012ab8
 
 src/sdk/fx/mtx_identity22.cpp:
     complete
@@ -505,6 +613,10 @@ src/sdk/fx/stub_empty_2.cpp:
     complete
     .text       start:0x02012c3c end:0x02012c40
 
+src/sdk/gx/gx_init.cpp:
+    complete
+    .text       start:0x02012c40 end:0x02012dc0
+
 src/sdk/gx/gx_display_intr.cpp:
     complete
     .text       start:0x02012dc0 end:0x02012e58
@@ -517,6 +629,10 @@ src/sdk/gx/gx_disp_off.cpp:
     complete
     .text       start:0x02012e68 end:0x02012ea8
 
+src/sdk/gx/gx_set_graphics_mode.cpp:
+    complete
+    .text       start:0x02012eec end:0x02012f54
+
 src/sdk/gx/gx_graphics_mode.cpp:
     complete
     .text       start:0x02012f54 end:0x02012f98
@@ -524,6 +640,10 @@ src/sdk/gx/gx_graphics_mode.cpp:
 src/sdk/gx/field_kind.cpp:
     complete
     .text       start:0x02012f98 end:0x02012fd8
+
+src/sdk/gx/gx_set_default_dma.cpp:
+    complete
+    .text       start:0x02012fd8 end:0x02013030
 
 src/sdk/gx/g2_blend_alpha.cpp:
     complete
@@ -536,6 +656,10 @@ src/sdk/gx/g2_bg_scr_ptr.cpp:
 src/sdk/gx/g2_bg_char_ptr.cpp:
     complete
     .text       start:0x020133a8 end:0x02013450
+
+src/sdk/gx/g2_bg2_char_ptr.cpp:
+    complete
+    .text       start:0x02013450 end:0x020134a0
 
 src/sdk/gx/g2_bg23_char_ptr.cpp:
     complete
@@ -561,9 +685,25 @@ src/sdk/gx/gx_vramcnt_lcdc.cpp:
     complete
     .text       start:0x02014858 end:0x020148f0
 
+src/sdk/gx/gx_set_bank_for_obj.cpp:
+    complete
+    .text       start:0x02014af4 end:0x02014c24
+
 src/sdk/gx/vram_lcdc_mode.cpp:
     complete
     .text       start:0x02014c24 end:0x02014d1c
+
+src/sdk/gx/gx_set_bank_for_obj_ext_pltt.cpp:
+    complete
+    .text       start:0x02014d1c end:0x02014db8
+
+src/sdk/gx/gx_set_bank_for_tex.cpp:
+    complete
+    .text       start:0x02014db8 end:0x02014f30
+
+src/sdk/gx/gx_set_bank_for_tex_pltt.cpp:
+    complete
+    .text       start:0x02014f30 end:0x0201500c
 
 src/sdk/gx/vram_lcdc.cpp:
     complete
@@ -577,6 +717,10 @@ src/sdk/gx/vram_group.cpp:
     complete
     .text       start:0x02015084 end:0x02015120
 
+src/sdk/gx/gx_set_bank_for_sub_obj.cpp:
+    complete
+    .text       start:0x02015120 end:0x02015190
+
 src/sdk/gx/vram_bank_bits.cpp:
     complete
     .text       start:0x02015190 end:0x02015290
@@ -588,6 +732,10 @@ src/sdk/gx/gx_reset_bank.cpp:
 src/sdk/gx/vrambank.cpp:
     complete
     .text       start:0x020152c8 end:0x02015388
+
+src/sdk/gx/gx_disable_bank.cpp:
+    complete
+    .text       start:0x02015388 end:0x02015448
 
 src/sdk/gx/vram_disable.cpp:
     complete
@@ -605,6 +753,14 @@ src/sdk/mi/mi_wram_bank.cpp:
     complete
     .text       start:0x02015578 end:0x02015588
 
+src/sdk/mi/mi_dma.cpp:
+    complete
+    .text       start:0x02015588 end:0x020158b0
+
+src/sdk/mi/mi_stop_dma_all.cpp:
+    complete
+    .text       start:0x02015918 end:0x02015940
+
 src/sdk/mi/dma_conflict.cpp:
     complete
     .text       start:0x02015940 end:0x020159cc
@@ -613,9 +769,33 @@ src/sdk/mi/region_check.cpp:
     complete
     .text       start:0x020159cc end:0x02015a3c
 
+src/sdk/mi/mi_cpu_mem.cpp:
+    complete
+    .text       start:0x02015a3c end:0x02015e3c
+
+src/sdk/mi/mi_cpu_copy_move.cpp:
+    complete
+    .text       start:0x02015e3c end:0x02016440
+
 src/sdk/mi/frame_asm_2.cpp:
     complete
     .text       start:0x02016440 end:0x02016448
+
+src/sdk/mi/mi_card_dma.cpp:
+    complete
+    .text       start:0x0201664c end:0x020166e4
+
+src/sdk/mi/mi_cache_init.cpp:
+    complete
+    .text       start:0x020166e4 end:0x02016900
+
+src/sdk/mi/mi_load_cache.cpp:
+    complete
+    .text       start:0x02016a84 end:0x02016af8
+
+src/sdk/mi/mi_secure_uncompress.cpp:
+    complete
+    .text       start:0x02016af8 end:0x02016c00
 
 src/sdk/os/os_wait_irq.cpp:
     complete
@@ -813,6 +993,10 @@ src/sdk/os/os_tick_lo.cpp:
     complete
     .text       start:0x02018fac end:0x02018fbc
 
+src/sdk/os/os_alarm_queue.cpp:
+    complete
+    .text       start:0x02018fbc end:0x02019044
+
 src/sdk/os/engine_halfc.cpp:
     complete
     .text       start:0x02019044 end:0x02019054
@@ -820,6 +1004,10 @@ src/sdk/os/engine_halfc.cpp:
 src/sdk/os/os_alarm_create.cpp:
     complete
     .text       start:0x02019054 end:0x02019064
+
+src/sdk/os/os_alarm_queue_2.cpp:
+    complete
+    .text       start:0x02019064 end:0x0201918c
 
 src/sdk/os/os_alarm_set.cpp:
     complete
@@ -829,9 +1017,21 @@ src/sdk/os/os_alarm_handler.cpp:
     complete
     .text       start:0x020191f8 end:0x02019208
 
+src/sdk/os/os_alarm_arrange.cpp:
+    complete
+    .text       start:0x02019208 end:0x020192f4
+
+src/sdk/os/os_valarm_queue.cpp:
+    complete
+    .text       start:0x020192f4 end:0x02019420
+
 src/sdk/os/os_valarm_create.cpp:
     complete
     .text       start:0x02019420 end:0x02019434
+
+src/sdk/os/os_valarm_handler.cpp:
+    complete
+    .text       start:0x020194c0 end:0x020196f0
 
 src/sdk/os/os_interrupts.cpp:
     complete
@@ -845,9 +1045,17 @@ src/sdk/os/os_boot.cpp:
     complete
     .text       start:0x020197d8 end:0x020197f4
 
+src/sdk/os/os_reset.cpp:
+    complete
+    .text       start:0x020197f4 end:0x02019848
+
 src/sdk/os/os_mac_address.cpp:
     complete
     .text       start:0x02019848 end:0x02019864
+
+src/sdk/os/os_owner_info.cpp:
+    complete
+    .text       start:0x02019864 end:0x02019968
 
 src/sdk/os/os_runon_checks.cpp:
     complete
@@ -860,6 +1068,10 @@ src/sdk/os/frame_asm_4.cpp:
 src/sdk/os/os_vram_exclusive_init.cpp:
     complete
     .text       start:0x02019988 end:0x020199bc
+
+src/sdk/os/os_vram_lock.cpp:
+    complete
+    .text       start:0x020199bc end:0x02019b00
 
 src/sdk/os/pair_setup.cpp:
     complete
@@ -881,6 +1093,10 @@ src/sdk/os/os_deliver_arg.cpp:
     complete
     .text       start:0x02019cf0 end:0x02019d08
 
+src/sdk/os/os_terminate.cpp:
+    complete
+    .text       start:0x02019dd4 end:0x02019e54
+
 src/sdk/os/os_halt.cpp:
     complete
     .text       start:0x02019e54 end:0x02019e64
@@ -900,6 +1116,10 @@ src/sdk/os/os_event_2.cpp:
 src/sdk/pxi/engine_relay.cpp:
     complete
     .text       start:0x0201a064 end:0x0201a070
+
+src/sdk/pxi/pxi_init.cpp:
+    complete
+    .text       start:0x0201a070 end:0x0201a16c
 
 src/sdk/pxi/pxi_fifo.cpp:
     complete
@@ -924,6 +1144,10 @@ src/sdk/rtc/rtc_wait_busy.cpp:
 src/sdk/rtc/rtc_raw.cpp:
     complete
     .text       start:0x0201a948 end:0x0201aa50
+
+src/sdk/scfg/scfg_init.cpp:
+    complete
+    .text       start:0x0201aa50 end:0x0201aa78
 
 src/sdk/scfg/pxi_receive64.cpp:
     complete
@@ -1025,9 +1249,17 @@ src/sdk/pm/pm_utility_command.cpp:
     complete
     .text       start:0x0201cbc0 end:0x0201cea0
 
+src/sdk/pm/pm_force_power_off.cpp:
+    complete
+    .text       start:0x0201cea0 end:0x0201cee0
+
 src/sdk/pm/pm_amp_backlight.cpp:
     complete
     .text       start:0x0201cee0 end:0x0201cf9c
+
+src/sdk/pm/pm_sleep.cpp:
+    complete
+    .text       start:0x0201d038 end:0x0201d314
 
 src/sdk/pm/pm_apply_power.cpp:
     complete
@@ -1061,6 +1293,10 @@ src/sdk/std/std_copy_string.cpp:
     complete
     .text       start:0x0201d7d0 end:0x0201d804
 
+src/sdk/std/std_copy_lstring.cpp:
+    complete
+    .text       start:0x0201d804 end:0x0201d908
+
 src/sdk/std/std_get_string_length.cpp:
     complete
     .text       start:0x0201d96c end:0x0201d9f0
@@ -1080,6 +1316,10 @@ src/sdk/std/std_tsprintf.cpp:
 src/sdk/std/std_snprintf.cpp:
     complete
     .text       start:0x0201dc94 end:0x0201dcbc
+
+src/sdk/std/std_unicode_table.cpp:
+    complete
+    .text       start:0x0201e498 end:0x0201e4c4
 
 src/sdk/wm/wm_init.cpp:
     complete

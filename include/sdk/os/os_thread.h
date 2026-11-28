@@ -76,7 +76,6 @@ extern OsSchedBlock data_0212991c;
 extern OsThreadInfo data_02129938;
 extern OsThread data_02129948;          // idle thread record
 extern OsThread data_02129a08;          // main thread record
-extern u8 data_02129b90[];              // idle thread stack
 
 extern "C" {
 void OS_InitThread(void);

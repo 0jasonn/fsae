@@ -7,6 +7,7 @@
 #include "sdk/os/dc_cache.h"
 #include "sdk/os/os_interrupts.h"
 #include "sdk/fatfs/stdconv_table_wrap_api.h"
+#include "sdk/std/std_string.h"
 
 void FATFSi_CopyString(char *dst, const char *src, s32 size) {
     STD_CopyLString(dst, src, size);

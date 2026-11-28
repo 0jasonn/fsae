@@ -38,6 +38,9 @@ extern const EntityFunc data_020d8860[];
 #include "engine/palette_buff.h"
 extern u8 data_0212c4f8;
 #include "engine/blend_request.h"
+#include "sdk/fs/fs_api.h"
+#include "sdk/fs/fs_path.h"
+#include "sdk/fs/fs_resource.h"
 
 
 // Save media (backup) layer, see src/game/backup*.cpp
@@ -61,10 +64,6 @@ s32 Knife_mediaWrite(void); // returns the FSResult
 void writeToSaveBuffer(const void *buffer, u16 value, s32 size);
 
 extern "C" {
-s32 FS_CreateDirectoryAuto(const char *path, u32 flag);
-s32 FS_GetArchiveResultCode(const char *path);
-s32 FS_GetArchiveResource(const char *path, void *resource);
-s32 FS_HasEnoughSpaceToCreateFile(void *resource, const char *path, s32 size);
 }
 extern void *data_02171d10;
 

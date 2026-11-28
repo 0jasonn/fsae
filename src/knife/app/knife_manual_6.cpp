@@ -102,7 +102,7 @@ namespace Knife {
 void i_restoreGfxSettings(void) {
     u8 *app;
 
-    func_02012c40();
+    GX_Init();
     GX_DispOff();
     *(u32 *)0x04001000 = *(u32 *)0x04001000 & ~0x10000;
     Vram_SetLcdcBits(0x1ff);
@@ -112,12 +112,12 @@ void i_restoreGfxSettings(void) {
     MIi_CpuClearFast(0, (void *)0x05000000, 0x400);
     MIi_CpuClearFast(0xc0, (void *)0x07000400, 0x400);
     MIi_CpuClearFast(0, (void *)0x05000400, 0x400);
-    func_020148f0(1);
-    func_02014af4(2);
+    GX_SetBankForBG(1);
+    GX_SetBankForOBJ(2);
     GX_SetGraphicsMode(1, 0, 0);
     *(u32 *)0x04000000 = (*(u32 *)0x04000000 & 0xffcfffef) | 0x10;
     Vram_SetBankGroupA(4);
-    func_02015120(8);
+    GX_SetBankForSubOBJ(8);
     TP_Init();
     if (TP_GetUserInfo(&data_0212c57c) == 0) {
         OS_Terminate();

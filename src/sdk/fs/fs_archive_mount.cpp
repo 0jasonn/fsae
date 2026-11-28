@@ -10,7 +10,7 @@ const char *FS_GetArchiveName(FSArchive *arc) {
     return (const char *)arc;
 }
 
-s32 FS_MountArchive(FSArchive *arc, FSArchiveContext *context, const void *vtbl) {
+s32 FS_MountArchive(FSArchive *arc, FSArchiveContext *context, const FSArchiveVtbl *vtbl) {
     FSFile file;
 
     arc->context = context;

@@ -98,7 +98,7 @@ void GX_EndLoadOBJExtPltt(void) {
             MI_WaitDma((u32)dmaNo);
         }
     }
-    func_02014d1c(data_02129828.mainObjBanks);
+    GX_SetBankForOBJExtPltt(data_02129828.mainObjBanks);
     data_02129828.mainObjAddr = data_02129828.mainObjBanks = 0;
 }
 

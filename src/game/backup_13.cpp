@@ -91,12 +91,12 @@ void ProgramSaveBufferDwordEx(u16 index, u16 *data) {
 //   0x02056ee0 Knife_getSaveBuffer (provisional)
 
 s32 Knife_checkFileSpace(s32 fileSize, const char *path) {
-    u8 resource[0x30];
+    FSArchiveResource resource;
 
-    if (FS_GetArchiveResource(path, resource) == 0) {
+    if (FS_GetArchiveResource(path, &resource) == 0) {
         return 10;
     }
-    if (FS_HasEnoughSpaceToCreateFile(resource, path, fileSize) != 0) {
+    if (FS_HasEnoughSpaceToCreateFile(&resource, path, fileSize) != 0) {
         return 0;
     }
     return 7;

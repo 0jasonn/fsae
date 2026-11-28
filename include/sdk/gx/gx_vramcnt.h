@@ -30,7 +30,8 @@ extern u16 data_02129826; // lock ID of the GX library for OSi_TryLockVram
 extern "C" {
 void GX_VRAMCNT_SetLCDC_(u32 mask);      // maps the banks in mask to the LCDC
 u32 GX_TrySetBankForLCDC(u32 banks);     // 0 when the banks are locked by the other processor
-u32 resetBankForX_(u16 *bank);           // clears one record, maps its banks to the LCDC and returns them
+u32 disableBankForX_(u16 *bank);         // clears one record, disables the VRAMCNT of its banks, unlocks them and returns them
+u32 resetBankForX_(u16 *bank);          // clears one record, maps its banks to the LCDC and returns them
 u32 GX_GetSizeOfX_(u32 mask);            // bytes of VRAM in the banks of mask
 u32 GX_GetSizeOfARM7(void);
 void GX_InitGXState(void);
@@ -38,10 +39,10 @@ void Vram_SetLcdcBits(u32 mask);        // adds banks to the LCDC (src/sdk/gx/vr
 void Vram_DisableBankTail(void);        // disables the LCDC banks (src/sdk/gx/vram_disable.cpp)
 u32 MATH_CountPopulation(u32 x);         // number of set bits (sits with the GX code in the ROM)
 void func_02014c24(s32 mode);            // sets the main BG extended palette banks (src/sdk/gx/vram_lcdc_mode.cpp)
-// Not decompiled yet: set the banks of a use back after a Begin/End load (see sdk/gx/gx_load.h).
-void func_02014d1c(u32 banks);           // main OBJ extended palette
-void func_02014db8(u32 banks);           // texture
-void func_02014f30(u32 banks);           // texture palette
+// Set the banks of a use (also called when a Begin/End load ends, see sdk/gx/gx_load.h).
+void GX_SetBankForOBJExtPltt(s32 banks);           // main OBJ extended palette (GX_SetBankForOBJExtPltt)
+void GX_SetBankForTex(s32 banks);           // texture (GX_SetBankForTex)
+void GX_SetBankForTexPltt(s32 banks);           // texture palette (GX_SetBankForTexPltt)
 }
 
 #endif

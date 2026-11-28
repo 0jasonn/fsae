@@ -23,7 +23,7 @@ s32 FS_SeekFile(FSFile *file, s32 offset, s32 origin) {
     s32 args[2];
     s32 done;
 
-    done = FSi_SeekFileIfProc(file);
+    done = FSi_SeekFileIfProc(file, offset, origin);
     if (done != 0) {
         return done;
     }

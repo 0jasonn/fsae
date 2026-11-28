@@ -67,7 +67,7 @@ void GX_EndLoadTex(void) {
             MI_WaitDma((u32)dmaNo);
         }
     }
-    func_02014db8(data_02129844.texBanks);
+    GX_SetBankForTex(data_02129844.texBanks);
     data_02129844.texBanks = data_02129844.texAddr = data_02129844.texAddr2 = data_02129844.texSplitSize = 0;
 }
 
@@ -100,6 +100,6 @@ void GX_EndLoadTexPltt(void) {
             MI_WaitDma((u32)dmaNo);
         }
     }
-    func_02014f30(data_02129844.texPlttBanks);
+    GX_SetBankForTexPltt(data_02129844.texPlttBanks);
     data_02129844.texPlttAddr = data_02129844.texPlttBanks = 0;
 }

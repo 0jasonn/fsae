@@ -167,3 +167,4 @@ header of the module that defines each function (or include/engine/functions.h f
 | knife/comm/wirelessmgr_update_api.h | knife/comm/wirelessmanager.h |
 | sdk/pm/pmi_send.h, sdk/pm/pmi_send_api.h, sdk/pm/pm_callback_api.h, sdk/pm/pm_apply_power.h | sdk/pm/pm.h |
 | engine/sound/snd_inst_data.h | sdk/snd/snd_bank.h |
+| sdk/fs/fs_path_ops.h | sdk/fs/fs_file.h, sdk/fs/fs_path.h |

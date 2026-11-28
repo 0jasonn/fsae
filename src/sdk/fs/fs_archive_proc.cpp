@@ -8,6 +8,6 @@ void FS_SetArchiveProc(FSArchive *arc, void *proc, u32 flags) {
     } else if (proc == NULL) {
         flags = 0;
     }
-    arc->proc = proc;
-    arc->procFlags = flags;
+    arc->ownContext.proc = (s32 (*)(struct FSFile *))proc;
+    arc->ownContext.procFlags = flags;
 }

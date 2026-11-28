@@ -18,7 +18,7 @@ typedef struct PmState {
     u32 lcdPowerState;    // 0x14: set to 3 when a forced power off starts
     u32 unk_18;           // 0x18: amplifier setting restored when the LCD is switched on
     void *preExitList;    // 0x1c: callback list head (dsd: data_0212b93c)
-    u8 unk_20[0x10];      // 0x20
+    u32 savedDmaControl[4]; // 0x20: DMA control words saved by PMi_PreSleepForDma (dsd: data_0212b940)
     s32 busy;             // 0x30: a request is in flight (dsd: data_0212b950)
     PMiCallback callback; // 0x34: run with the reply
     u32 callbackArg;      // 0x38
@@ -31,6 +31,7 @@ extern PmState data_0212b920;
 extern void *data_0212b924;         // postExitList: appended to by PM_AppendPostExitCallback
 extern void *data_0212b93c;         // preExitList: prepended to by PM_PrependPostExitCallback, insertion by priority
                                     // in WBT_MpChildSendHook
+extern u32 data_0212b940[4];        // savedDmaControl: the DMA channel control words before sleep
 extern volatile u32 data_0212b950;  // busy: non-zero while a PM request is in flight
 
 // How PMi_WaitBusy waits (TwlSDK wait-busy method): bit 1 polls the PXI FIFO while in IRQ mode, bit 2 while IRQs are
@@ -72,6 +73,15 @@ void PM_AppendPostExitCallback(void *item);
 void WBT_MpChildSendHook(void *item, s32 priority);
 void PmList_DeleteFirst(void *item);
 void PmList_DeleteSecond(void *item);
+
+void PM_ForceToPowerOff(void);
+void PM_GoSleepMode(u32 trigger, u32 logic, u32 keyTrigger);
+void PMi_PreSleepForDma(void);
+
+// Outside the ARM9 image (linker symbols needed): called by PM_ForceToPowerOff after the timers are stopped, and by
+// PMi_PreSleepForDma for each DMA channel.
+void func_021894e4(void);
+void func_0218a6b0(u32 dmaNo);
 
 // Not decompiled yet.
 void PMi_TryToSendPxiDataTillSuccess(u32 *words, s32 count);

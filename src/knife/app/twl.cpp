@@ -35,8 +35,8 @@ void twlInitVRAM(void) {
 void twlInitAgb(void) {
     u32 control;
 
-    func_020148f0(1);
-    func_02014af4(2);
+    GX_SetBankForBG(1);
+    GX_SetBankForOBJ(2);
     GX_SetGraphicsMode(1, 0, 0);
     control = *(volatile u32 *)0x4000000;
     *(volatile u32 *)0x4000000 = (control & 0xffcfffef) | 0x10;
@@ -47,7 +47,7 @@ void twlInitSubDisplay(void) {
     u8 *app;
 
     Vram_SetBankGroupA(4);
-    func_02015120(8);
+    GX_SetBankForSubOBJ(8);
     app = (u8 *)KnifeApp_getInstance();
     Knife_Comm_WirelessIcon_initialize_16x16_ColorMode(app + 4, 1, 0xf);
     app[0x18] = 1;
